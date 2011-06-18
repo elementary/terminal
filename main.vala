@@ -21,14 +21,13 @@
 //      Daniel Fore <???@gmail.com>
 // 
 
-/* Set system font
+/* Use system font
  * Set preferences via GSettings ?
- * Set notifications with tab color change and OSD bubble
- * Do not focus on button
+ * Do not focus on buttons
  * Improve window resize
- * Add drag and drop
  * Add menu, copy, past, about, etc
- * Do not notify on resize event
+ * Notify with system bubbles if the window is not focused
+ * Create new tabs after the one focused on, not at the end
  */
 
 using Gtk;
@@ -47,6 +46,7 @@ private class PantheonTerminal : Window
 	{
         Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
         set_title("Terminal");
+        destroy.connect(close);
                 
         notebook = new Notebook();
 		var left_box = new HBox(false, 0);
@@ -55,83 +55,66 @@ private class PantheonTerminal : Window
         right_box.show();
         notebook.set_action_widget(left_box, PackType.START);
         notebook.set_action_widget(right_box, PackType.END);
+        notebook.set_scrollable(true);
+        add(notebook);
         
         left_box.set_size_request(10, 0);
         
-        // Set "Add" button
+        // Set "New tab" button
         var add_button = new Button();
         add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
         add_button.show();
         add_button.set_relief(ReliefStyle.NONE);
         add_button.set_tooltip_text("Open a new tab");
-        
-        right_box.pack_start(add_button);
-        
-        add_button.clicked.connect(add_clicked);
-        
-
-        
+        add_button.clicked.connect(new_tab);
+        right_box.pack_start(add_button, false, false, 0);
+                
         // Get the system's style
         realize();
         bgcolor = get_style().bg[StateType.NORMAL];
         fgcolor = get_style().fg[StateType.NORMAL];
+		        
+		// Try to set the icon FIXME
+        Gdk.Pixbuf icon = new Gdk.Pixbuf(Gdk.Colorspace.RGB, true, 8, 1, 1);
+        try { IconTheme.get_default().load_icon("terminal", 16, IconLookupFlags.FORCE_SVG); } catch (Error er) {}
+		try { set_icon(icon); } catch(Error er) {}
         
-		//connect exiting on the terminal with quiting the app
-		destroy.connect ( (t)=> { Gtk.main_quit(); } );
-		add(notebook);
-		//try to set the icon
-//~ 		try{
-//~ 			set_icon_from_file("/usr/share/pixmaps/gnome-term.png");
-//~ 		}catch(Error er)
-//~ 		{
-//~ 			//we don't really need to print this error
-//~ 			stdout.printf(er.message);
-//~ 		}
 		show_all();
-        add_clicked();
+        new_tab();
 	}
     
-    private void add_clicked()
+    private void new_tab()
     {
         // Set up terminal
-        var t = new Terminal();
+        var t = new TerminalWithNotification();
         t.fork_command(null,null,null,null, true, true,true);
         t.set_size_request(600, 400);
+        
+        // Test the "task_over" signal
+        t.task_over.connect(() => {stdout.printf("task_over\n");});
+
         t.show();
         
         // Create a new tab with the terminal
-        notebook.append_page(t, new Label("Terminal"));
+        var tab = new TabWithCloseButton("Terminal");
+        notebook.append_page(t, tab);
         notebook.set_tab_reorderable(t, true);
         
-        // Unnotify a page when switching to it
-        notebook.switch_page.connect((page) => { notebook.set_tab_label(page, new Label(notebook.get_tab_label_text(page))); });
+        // Set connections
+        tab.clicked.connect(() => { notebook.remove(t); });
+        t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
+        notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
+        t.task_over.connect(() => { tab.set_notification(true); });
+        t.task_over.connect(() => { stdout.printf("task over\n"); });
         
         // Set up style
         t.set_color_background(bgcolor);
         t.set_color_foreground(fgcolor);
-        t.window_title_changed.connect(() => { notify(t); });
     }
     
-    private void notify(Terminal t)
+    private void close()
     {
-        var title = new Label(t.get_window_title());
-        var color = new Gdk.Color();
-        color.red = (uint16) ((double) 65535 * 0.1);
-        color.green = (uint16) ((double) 65535 * 0.65);
-        color.blue = (uint16) ((double) 65535 * 0.85);
-//~         title.modify_fg(StateType.PRELIGHT, color);
-        if (notebook.page_num(t) != notebook.get_current_page())
-            title.modify_fg(StateType.PRELIGHT, color);
-            title.set_state(StateType.PRELIGHT);
-        notebook.set_tab_label(t, title); // Add color, bold, somthing, to the label
-//~         else
-//~             notebook.set_tab_label(t, new Label(t.get_window_title()));
-//~             notification = (Notify.Notification)GLib.Object.new (
-//~                             typeof (Notify.Notification),
-//~                             "summary", "Title",
-//~                             "body", "Artist\nAlbum");
-//~         notification = new Notify.Notification(t.get_window_title(), "Task over\n", "");
-//~         stdout.printf("%s, task over\n", t.get_window_title());
+        Gtk.main_quit();
     }
     
 	private static void main(string[] args)
@@ -140,4 +123,72 @@ private class PantheonTerminal : Window
 		new PantheonTerminal();
 		Gtk.main();
 	}
+}
+
+public class TerminalWithNotification : Terminal
+{
+    public signal void task_over();
+    
+    long last_row_count = 0;
+    long last_column_count = 0;
+    
+    public TerminalWithNotification()
+    {
+        window_title_changed.connect(check_for_notification);
+    }
+    
+    private void check_for_notification()
+    {
+        if (get_row_count() == last_row_count && get_column_count() == last_column_count)
+            task_over();
+        last_row_count = get_row_count();
+        last_column_count = get_column_count();
+    }
+}
+
+public class TabWithCloseButton : HBox
+{
+    public signal void clicked();
+    
+    private Button button;
+    private Label label;
+    private string text;
+    bool notification = false;
+    
+    public TabWithCloseButton(string text)
+    {
+        this.text = text;
+        
+        // Button
+        button = new Button();
+        button.set_image(new Image.from_stock(Stock.CLOSE, IconSize.MENU));
+        button.show();
+        button.set_relief(ReliefStyle.NONE);
+        button.clicked.connect(() => { clicked(); });
+        
+        // Label
+        label = new Label(text);
+        label.show();
+        
+        // Pack the elements
+        pack_start(button, false, true, 0);
+        pack_end(label, true, true, 0);
+        show();
+    }
+    
+    public void set_notification(bool notification)
+    {
+        this.notification = notification;
+        if (notification)
+        { label.set_markup("<span color=\"#18a0c0\">"+text+"</span>"); }
+        else
+        { label.set_markup(text); }
+    }
+    
+    public void set_text(string text)
+    {
+        stdout.printf("title2: %s\n", text);
+        this.text = text;
+        set_notification(notification);
+    }
 }
