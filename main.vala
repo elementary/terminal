@@ -27,7 +27,6 @@
  * Improve window resize
  * Add menu, copy, past, about, etc
  * Notify with system bubbles if the window is not focused
- * Create new tabs after the one focused on, not at the end
  */
 
 using Gtk;
@@ -97,15 +96,15 @@ private class PantheonTerminal : Window
         
         // Create a new tab with the terminal
         var tab = new TabWithCloseButton("Terminal");
-        notebook.append_page(t, tab);
+        notebook.insert_page(t, tab, notebook.get_current_page() + 1);
+        notebook.next_page();
         notebook.set_tab_reorderable(t, true);
         
         // Set connections
         tab.clicked.connect(() => { notebook.remove(t); });
         t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
         notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
-        t.task_over.connect(() => { tab.set_notification(true); });
-        t.task_over.connect(() => { stdout.printf("task over\n"); });
+        t.task_over.connect(() => { if (notebook.page_num(t) != notebook.get_current_page()) tab.set_notification(true); });
         
         // Set up style
         t.set_color_background(bgcolor);
@@ -139,6 +138,10 @@ public class TerminalWithNotification : Terminal
     
     private void check_for_notification()
     {
+        /* Curently I use this trick to know if a task is over, the drawnback is
+         * that when the window is resized and a notification should be received,
+         * the user will not be notified.
+         */
         if (get_row_count() == last_row_count && get_column_count() == last_column_count)
             task_over();
         last_row_count = get_row_count();
@@ -187,7 +190,6 @@ public class TabWithCloseButton : HBox
     
     public void set_text(string text)
     {
-        stdout.printf("title2: %s\n", text);
         this.text = text;
         set_notification(notification);
     }
