@@ -33,7 +33,7 @@
 using Gtk;
 using Vte;
 using Pango;
-using Notify;
+//~ using Notify;
 
 private class PantheonTerminal : Window
 {
@@ -44,7 +44,7 @@ private class PantheonTerminal : Window
     
     bool window_focus = false;
     
-    Notify.Notification notification;
+//~     Notify.Notification notification;
     
 	private PantheonTerminal()
 	{

@@ -8,7 +8,7 @@ include(ValaPrecompile)
 
 # pkgconfig, real C code
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 vte-2.90 libnotify)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 vte-2.90)
 set(CFLAGS
 	${DEPS_CFLAGS} ${DEPS_CFLAGS_OTHER}
 )
@@ -22,8 +22,7 @@ add_definitions(${CFLAGS})
 vala_precompile(VALA_C main.vala
 PACKAGES
     gtk+-3.0
-    Vte-2.90
-    libnotify
+    vte-2.90
 OPTIONS
     --thread)
 
