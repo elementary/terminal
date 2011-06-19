@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Terminal
+Comment=Use the command line
+TryExec=pantheon-terminal
+Exec=pantheon-terminal
+Icon=utilities-terminal
+Type=Application
+Categories=GTK;Utility;TerminalEmulator;
+StartupNotify=true
+

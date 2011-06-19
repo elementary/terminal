@@ -18,27 +18,31 @@
 //  Authors:
 //      Adrien Plazas <kekun.plazas@laposte.net>
 //  Artists:
-//      Daniel Fore <???@gmail.com>
+//      Daniel Foré <daniel@elementaryos.org>
 // 
 
-/* Use system font
+/* Use default system font (tag FIXME)
  * Set preferences via GSettings ?
  * Do not focus on buttons
  * Improve window resize (is it useful ?)
  * Add right click menu with: copy, paste, preferences?, about
- * Notify with system bubbles if the window is not focused (check FIXME)
+ * Notify with system bubbles if the window is not focused (tag FIXME)
  * Set Dan correctly as the artist
  */
 
 using Gtk;
 using Vte;
+using Pango;
 using Notify;
 
 private class PantheonTerminal : Window
 {
     Notebook notebook;
+    FontDescription font;
     Gdk.Color bgcolor;
     Gdk.Color fgcolor;
+    
+    bool window_focus = false;
     
     Notify.Notification notification;
     
@@ -49,6 +53,10 @@ private class PantheonTerminal : Window
         default_width = 640;
         default_height = 400;
         destroy.connect(close);
+        
+        // Check if the window have the focus
+        focus_in_event.connect(() => { window_focus = true; return false; });
+        focus_out_event.connect(() => { window_focus = false; return false; });
                 
         notebook = new Notebook();
 		var left_box = new HBox(false, 0);
@@ -73,6 +81,7 @@ private class PantheonTerminal : Window
                 
         // Get the system's style
         realize();
+        font = FontDescription.from_string(system_font());
         bgcolor = get_style().bg[StateType.NORMAL];
         fgcolor = get_style().fg[StateType.NORMAL];
 		        
@@ -84,6 +93,17 @@ private class PantheonTerminal : Window
 		show_all();
         new_tab();
 	}
+    
+    static string system_font()
+    {
+        string font_name = null;
+        /* Wait for GNOME 3 FIXME
+         * var settings = new GLib.Settings("org.gnome.desktop.interface");
+         * font_name = settings.get_string("monospace-font-name");
+         */
+        font_name = "Droid Sans Mono 10";
+        return font_name;
+    }
     
     private void new_tab()
     {
@@ -106,14 +126,28 @@ private class PantheonTerminal : Window
         tab.clicked.connect(() => { notebook.remove(t); });
         t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
         notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
+        focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
+        
+        // If a task is over
         t.task_over.connect(() => {
-            if (notebook.page_num(t) != notebook.get_current_page())
+            if (notebook.page_num(t) != notebook.get_current_page() || !window_focus)
                 tab.set_notification(true);
-            if (is_focus) // Check if the window have the focus FIXME
+            if (!window_focus)
+//~                 notification = (Notify.Notification)GLib.Object.new (
+//~                     typeof (Notify.Notification),
+//~                     "summary", "sum",
+//~                     "body", "message",
+//~                     "icon-name", "");
+                    // Notify OSD
+//~                 notification = new Notification("test", "test", "test");
+//~                 try { notification.show(); }
+//~                 catch {}
+                    
                 stdout.printf("focus\n");
             });
         
         // Set up style
+        t.set_font(font);
         t.set_color_background(bgcolor);
         t.set_color_foreground(fgcolor);
     }

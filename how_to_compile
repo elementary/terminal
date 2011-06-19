@@ -1,6 +1,6 @@
 Setting the vapi files up:
 
-sudo cp /usr/share/vala-0.12/vapi/libnotify.vapi /usr/share//vala/vapi/notify.vapi
+sudo cp /usr/share/vala-0.12/vapi/libnotify.vapi /usr/share/vala/vapi/libnotify.vapi
 sudo cp /usr/share/vala-0.12/vapi/vte.vapi /usr/share/vala/vapi/vte-2.90.vapi
 
 Needed:
