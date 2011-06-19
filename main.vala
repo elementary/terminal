@@ -24,9 +24,10 @@
 /* Use system font
  * Set preferences via GSettings ?
  * Do not focus on buttons
- * Improve window resize
- * Add menu, copy, past, about, etc
- * Notify with system bubbles if the window is not focused
+ * Improve window resize (is it useful ?)
+ * Add right click menu with: copy, paste, preferences?, about
+ * Notify with system bubbles if the window is not focused (check FIXME)
+ * Set Dan correctly as the artist
  */
 
 using Gtk;
@@ -45,6 +46,8 @@ private class PantheonTerminal : Window
 	{
         Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
         set_title("Terminal");
+        default_width = 640;
+        default_height = 400;
         destroy.connect(close);
                 
         notebook = new Notebook();
@@ -87,7 +90,6 @@ private class PantheonTerminal : Window
         // Set up terminal
         var t = new TerminalWithNotification();
         t.fork_command(null,null,null,null, true, true,true);
-        t.set_size_request(600, 400);
         
         // Test the "task_over" signal
         t.task_over.connect(() => {stdout.printf("task_over\n");});
@@ -104,7 +106,12 @@ private class PantheonTerminal : Window
         tab.clicked.connect(() => { notebook.remove(t); });
         t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
         notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
-        t.task_over.connect(() => { if (notebook.page_num(t) != notebook.get_current_page()) tab.set_notification(true); });
+        t.task_over.connect(() => {
+            if (notebook.page_num(t) != notebook.get_current_page())
+                tab.set_notification(true);
+            if (is_focus) // Check if the window have the focus FIXME
+                stdout.printf("focus\n");
+            });
         
         // Set up style
         t.set_color_background(bgcolor);
@@ -133,6 +140,7 @@ public class TerminalWithNotification : Terminal
     
     public TerminalWithNotification()
     {
+        set_size_request(320, 200);
         window_title_changed.connect(check_for_notification);
     }
     
