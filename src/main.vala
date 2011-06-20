@@ -23,9 +23,8 @@
 
 /* Use default system font (tag FIXME)
  * Set preferences via GSettings ?
- * Do not focus on buttons
+ * Do not focus on buttons (is it useful ?)
  * Debug Ctrl+C and Ctrl+V
- * Improve window resize (is it useful ?)
  * Notify with system bubbles if the window is not focused (tag FIXME)
  * Polish the overall look
  * Pass command line arguments to the first terminal emulator
@@ -51,10 +50,14 @@ namespace PantheonTerminal
             
         bool window_focus = false;
         
+        string[] args;
+        
     //~     Notify.Notification notification;
         
-        private PantheonTerminal()
+        private PantheonTerminal(string[] args)
         {
+            this.args = args;
+            
             Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             set_title("Terminal");
             default_width = 640;
@@ -116,7 +119,7 @@ namespace PantheonTerminal
         {
             // Set up terminal
             var t = new TerminalWithNotification();
-            t.fork_command(null,null,null,null, true, true,true);
+            t.fork_command(null, args, null, null, true, true, true);
                 
             t.show();
             
@@ -193,7 +196,7 @@ namespace PantheonTerminal
         private static void main(string[] args)
         {
             Gtk.init(ref args);
-            new PantheonTerminal();
+            new PantheonTerminal(args);
             Gtk.main();
         }
     }
