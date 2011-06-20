@@ -24,7 +24,7 @@
 /* Use default system font (tag FIXME)
  * Set preferences via GSettings ?
  * Do not focus on buttons
- * Add Ctrl+C and Ctrl+V
+ * Debug Ctrl+C and Ctrl+V
  * Improve window resize (is it useful ?)
  * Notify with system bubbles if the window is not focused (tag FIXME)
  * Polish the overall look
@@ -138,7 +138,13 @@ namespace PantheonTerminal
             t.task_over.connect(() => {
                 if (notebook.page_num(t) != notebook.get_current_page() || !window_focus)
                     tab.set_notification(true);
-//~                 if (!window_focus)
+                if (!window_focus)
+                {
+                    try
+                    { GLib.Process.spawn_command_line_async("notify-send \"" + t.get_window_title() + "\" \"Task over\""); }
+                    catch
+                    {  }
+                }
     //~                 notification = (Notify.Notification)GLib.Object.new (
     //~                     typeof (Notify.Notification),
     //~                     "summary", "sum",
