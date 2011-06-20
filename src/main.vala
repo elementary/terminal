@@ -24,13 +24,16 @@
 /* Use default system font (tag FIXME)
  * Set preferences via GSettings ?
  * Do not focus on buttons
+ * Add Ctrl+C and Ctrl+V
  * Improve window resize (is it useful ?)
- * Add right click menu with: copy, paste, preferences?, about
  * Notify with system bubbles if the window is not focused (tag FIXME)
- * Set Dan correctly as the artist
+ * Polish the overall look
+ * Pass command line arguments to the first terminal emulator
+ * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
  */
 
 using Gtk;
+using Gdk;
 using Vte;
 using Pango;
 //~ using Notify;
@@ -39,7 +42,7 @@ using Resources;
 
 namespace PantheonTerminal
 {
-    private class PantheonTerminal : Window
+    private class PantheonTerminal : Gtk.Window
     {
         Notebook notebook;
         FontDescription font;
@@ -90,7 +93,7 @@ namespace PantheonTerminal
             fgcolor = get_style().fg[StateType.NORMAL];
                     
             // Try to set the icon FIXME
-            Gdk.Pixbuf icon = new Gdk.Pixbuf(Gdk.Colorspace.RGB, true, 8, 1, 1);
+            Pixbuf icon = new Pixbuf(Colorspace.RGB, true, 8, 1, 1);
             try { IconTheme.get_default().load_icon("terminal", 16, IconLookupFlags.FORCE_SVG); } catch (Error er) {}
             set_icon(icon);
             
@@ -198,6 +201,10 @@ namespace PantheonTerminal
         long last_row_count = 0;
         long last_column_count = 0;
         
+        // Control keys
+		bool ctrlL = false;
+		bool ctrlR = false;
+        
         public TerminalWithNotification()
         {
             set_size_request(320, 200);
@@ -223,6 +230,9 @@ namespace PantheonTerminal
             preferences_menuitem.activate.connect(() => { preferences(); });
             about_menuitem.activate.connect(() => { about(); });
             
+            key_press_event.connect(on_key_press_event);
+            key_release_event.connect(on_key_release_event);
+            
             // Pop menu up
             button_press_event.connect((event) => {
                 if (event.button == 3) {
@@ -231,6 +241,30 @@ namespace PantheonTerminal
                 }
                 return false;
             });
+        }
+        
+        public bool on_key_press_event(EventKey event)
+		{
+            string key = Gdk.keyval_name(event.keyval);
+			if (key == "Control_L")
+			{ ctrlL = true; }
+			if (key == "Control_R")
+			{ ctrlR = true; }
+			if (key == "c" && (ctrlL || ctrlR))
+			{ copy_clipboard(); }
+			if (key == "v" && (ctrlL || ctrlR))
+			{ paste_clipboard(); }
+            return false;
+        }
+        
+        public bool on_key_release_event(EventKey event)
+		{
+            string key = Gdk.keyval_name(event.keyval);
+			if (key == "Control_L")
+			{ ctrlL = false; }
+			if (key == "Control_R")
+			{ ctrlR = false; }
+            return false;
         }
         
         private void check_for_notification()
