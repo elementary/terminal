@@ -21,14 +21,18 @@
 //      Daniel Foré <daniel@elementaryos.org>
 // 
 
-/* Use default system font (tag FIXME)
- * Set preferences via GSettings ?
- * Do not focus on buttons (is it useful ?)
+/* 
+ * 
  * Debug Ctrl+C and Ctrl+V
  * Notify with system bubbles if the window is not focused (tag FIXME)
  * Polish the overall look
  * Pass command line arguments to the first terminal emulator
+ * 
+ * 
+ * For 0.2
+ * Set preferences via GSettings ? (legacy theme)
  * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
+ * Do not focus on buttons (is it useful ?) (guess not)
  */
 
 using Gtk;
@@ -136,6 +140,9 @@ namespace PantheonTerminal
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
             t.about.connect(about);
+            t.child_exited.connect(() => { stdout.printf("child exited\n"); });
+            t.status_line_changed.connect(() => { stdout.printf("status_line_changed\n"); });
+            t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
             
             // If a task is over
             t.task_over.connect(() => {
@@ -198,94 +205,6 @@ namespace PantheonTerminal
             Gtk.init(ref args);
             new PantheonTerminal(args);
             Gtk.main();
-        }
-    }
-    
-    public class TerminalWithNotification : Terminal
-    {
-        public signal void task_over();
-        public signal void preferences();
-        public signal void about();
-        
-        long last_row_count = 0;
-        long last_column_count = 0;
-        
-        // Control keys
-		bool ctrlL = false;
-		bool ctrlR = false;
-        
-        public TerminalWithNotification()
-        {
-            set_size_request(320, 200);
-            window_title_changed.connect(check_for_notification);
-            
-            // Set menu
-            var menu = new Menu();
-            
-            var copy_menuitem = new MenuItem.with_label("Copy");
-            var paste_menuitem = new MenuItem.with_label("Paste");
-            var preferences_menuitem = new MenuItem.with_label("Preferences");
-            var about_menuitem = new MenuItem.with_label("About");
-            
-            menu.append(copy_menuitem);
-            menu.append(paste_menuitem);
-            menu.append(new MenuItem());
-            menu.append(preferences_menuitem);
-            menu.append(about_menuitem);
-            menu.show_all();
-            
-            copy_menuitem.activate.connect(() => { copy_clipboard(); });
-            paste_menuitem.activate.connect(() => { paste_clipboard(); });
-            preferences_menuitem.activate.connect(() => { preferences(); });
-            about_menuitem.activate.connect(() => { about(); });
-            
-            key_press_event.connect(on_key_press_event);
-            key_release_event.connect(on_key_release_event);
-            
-            // Pop menu up
-            button_press_event.connect((event) => {
-                if (event.button == 3) {
-                    menu.select_first (true);
-                    menu.popup (null, null, null, event.button, event.time);
-                }
-                return false;
-            });
-        }
-        
-        public bool on_key_press_event(EventKey event)
-		{
-            string key = Gdk.keyval_name(event.keyval);
-			if (key == "Control_L")
-			{ ctrlL = true; }
-			if (key == "Control_R")
-			{ ctrlR = true; }
-			if (key == "c" && (ctrlL || ctrlR))
-			{ copy_clipboard(); }
-			if (key == "v" && (ctrlL || ctrlR))
-			{ paste_clipboard(); }
-            return false;
-        }
-        
-        public bool on_key_release_event(EventKey event)
-		{
-            string key = Gdk.keyval_name(event.keyval);
-			if (key == "Control_L")
-			{ ctrlL = false; }
-			if (key == "Control_R")
-			{ ctrlR = false; }
-            return false;
-        }
-        
-        private void check_for_notification()
-        {
-            /* Curently I use this trick to know if a task is over, the drawnback is
-             * that when the window is resized and a notification should be received,
-             * the user will not be notified.
-             */
-            if (get_row_count() == last_row_count && get_column_count() == last_column_count)
-                task_over();
-            last_row_count = get_row_count();
-            last_column_count = get_column_count();
         }
     }
     
