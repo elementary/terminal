@@ -20,6 +20,7 @@ link_directories(${LIB_PATHS})
 
 add_definitions(${CFLAGS})
 vala_precompile(VALA_C main.vala
+    Resources.vala
 PACKAGES
     gtk+-3.0
     vte-2.90
