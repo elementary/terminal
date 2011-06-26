@@ -21,15 +21,11 @@
 //      Daniel Foré <daniel@elementaryos.org>
 // 
 
-/* 
- * 
- * Debug Ctrl+C and Ctrl+V
- * Notify with system bubbles if the window is not focused (tag FIXME)
- * Polish the overall look
- * Pass command line arguments to the first terminal emulator
- * 
+/* Notify with system bubbles if the window is not focused (tag FIXME)
+ * Keep focus on terminal if terminal focused
  * 
  * For 0.2
+ * Set text colors
  * Set preferences via GSettings ? (legacy theme)
  * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
  * Do not focus on buttons (is it useful ?) (guess not)
@@ -61,6 +57,8 @@ namespace PantheonTerminal
         private PantheonTerminal(string[] args)
         {
             this.args = args;
+            foreach (string arg in args)
+				stdout.printf("%s\n", arg);
             
             Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             set_title("Terminal");
@@ -73,16 +71,16 @@ namespace PantheonTerminal
             focus_out_event.connect(() => { window_focus = false; return false; });
                     
             notebook = new Notebook();
-            var left_box = new HBox(false, 0);
+//~             var left_box = new HBox(false, 0);
             var right_box = new HBox(false, 0);
-            left_box.show();
+//~             left_box.show();
             right_box.show();
-            notebook.set_action_widget(left_box, PackType.START);
+//~             notebook.set_action_widget(left_box, PackType.START);
             notebook.set_action_widget(right_box, PackType.END);
             notebook.set_scrollable(true);
             add(notebook);
             
-            left_box.set_size_request(10, 0);
+//~             left_box.set_size_request(10, 0);
             
             // Set "New tab" button
             var add_button = new Button();
@@ -90,7 +88,7 @@ namespace PantheonTerminal
             add_button.show();
             add_button.set_relief(ReliefStyle.NONE);
             add_button.set_tooltip_text("Open a new tab");
-            add_button.clicked.connect(new_tab);
+            add_button.clicked.connect(() => { new_tab(false); } );
             right_box.pack_start(add_button, false, false, 0);
             
             // Get the system's style
@@ -105,7 +103,7 @@ namespace PantheonTerminal
             set_icon(icon);
             
             show_all();
-            new_tab();
+            new_tab(true);
         }
         
         static string system_font()
@@ -119,11 +117,15 @@ namespace PantheonTerminal
             return font_name;
         }
         
-        private void new_tab()
+        private void new_tab(bool first)
         {
             // Set up terminal
             var t = new TerminalWithNotification();
-            t.fork_command(null, args, null, null, true, true, true);
+            if (first)
+				t.fork_command(args[0], args, null, null, true, true, true);
+			else
+				t.fork_command(null, null, null, null, true, true, true);
+			
                 
             t.show();
             
@@ -140,9 +142,9 @@ namespace PantheonTerminal
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
             t.about.connect(about);
-            t.child_exited.connect(() => { stdout.printf("child exited\n"); });
-            t.status_line_changed.connect(() => { stdout.printf("status_line_changed\n"); });
-            t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
+            t.child_exited.connect(() => { t.fork_command(null, null, null, null, true, true, true); });
+//~             t.status_line_changed.connect(() => { stdout.printf("status_line_changed\n"); });
+//~             t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
             
             // If a task is over
             t.task_over.connect(() => {
@@ -170,6 +172,8 @@ namespace PantheonTerminal
             t.set_font(font);
             t.set_color_background(bgcolor);
             t.set_color_foreground(fgcolor);
+//~             t.set_background_transparent(true);
+//~ 			t.set_opacity(32000);
         }
         
         public void about()
@@ -203,7 +207,7 @@ namespace PantheonTerminal
         private static void main(string[] args)
         {
             Gtk.init(ref args);
-            new PantheonTerminal(args);
+            new PantheonTerminal(args[1:args.length]);
             Gtk.main();
         }
     }

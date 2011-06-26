@@ -70,10 +70,7 @@ namespace PantheonTerminal
             paste_menuitem.activate.connect(() => { paste_clipboard(); });
             preferences_menuitem.activate.connect(() => { preferences(); });
             about_menuitem.activate.connect(() => { about(); });
-            
-            key_press_event.connect(on_key_press_event);
-            key_release_event.connect(on_key_release_event);
-            
+                        
             // Pop menu up
             button_press_event.connect((event) => {
                 if (event.button == 3) {
@@ -84,35 +81,41 @@ namespace PantheonTerminal
             });
         }
         
-        public bool on_key_press_event(EventKey event)
+        public override bool key_press_event(EventKey event)
 		{
             string key = Gdk.keyval_name(event.keyval);
 			if (key == "Control_L")
-			{ ctrlL = true; }
-			if (key == "Control_R")
-			{ ctrlR = true; }
-            if (key == "Shift_L")
-			{ shiftL = true; }
-			if (key == "Shift_R")
-			{ shiftR = true; }
-			if ((key == "c" || key == "C") && (ctrlL || ctrlR) && (shiftL || shiftR))
-			{ copy_clipboard(); }
-			if ((key == "v" || key == "V") && (ctrlL || ctrlR) && (shiftL || shiftR))
-			{ paste_clipboard(); }
+				ctrlL = true;
+			else if (key == "Control_R")
+				ctrlR = true;
+            else if (key == "Shift_L")
+				shiftL = true;
+			else if (key == "Shift_R")
+				shiftR = true;
+			else if ((key == "a" || key == "A") && (ctrlL || ctrlR) && (shiftL || shiftR))
+				select_all();
+			else if ((key == "c" || key == "C") && (ctrlL || ctrlR) && (shiftL || shiftR))
+				copy_clipboard();
+			else if ((key == "v" || key == "V") && (ctrlL || ctrlR) && (shiftL || shiftR))
+				paste_clipboard();
+			else
+				base.key_press_event(event);
             return false;
         }
         
-        public bool on_key_release_event(EventKey event)
+        public override bool key_release_event(EventKey event)
 		{
             string key = Gdk.keyval_name(event.keyval);
 			if (key == "Control_L")
-			{ ctrlL = false; }
-			if (key == "Control_R")
-			{ ctrlR = false; }
-            if (key == "Shift_L")
-			{ shiftL = false; }
-			if (key == "Shift_R")
-			{ shiftR = false; }
+				ctrlL = false;
+			else if (key == "Control_R")
+				ctrlR = false;
+            else if (key == "Shift_L")
+				shiftL = false;
+			else if (key == "Shift_R")
+				shiftR = false;
+			else
+				base.key_release_event(event);
             return false;
         }
         
