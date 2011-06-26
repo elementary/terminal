@@ -36,11 +36,13 @@ namespace PantheonTerminal
         public signal void task_over();
         public signal void preferences();
         public signal void about();
+//~         public signal void close();
+//~         public signal void quit();
         
         long last_row_count = 0;
         long last_column_count = 0;
         
-        // Control keys
+        // Control and Shift keys
 		bool ctrlL = false;
 		bool ctrlR = false;
         bool shiftL = false;
@@ -98,6 +100,10 @@ namespace PantheonTerminal
 				copy_clipboard();
 			else if ((key == "v" || key == "V") && (ctrlL || ctrlR) && (shiftL || shiftR))
 				paste_clipboard();
+//~ 			else if ((key == "w" || key == "W") && (ctrlL || ctrlR) && (shiftL || shiftR))
+//~ 				close();
+//~ 			else if ((key == "q" || key == "Q") && (ctrlL || ctrlR) && (shiftL || shiftR))
+//~ 				quit();
 			else
 				base.key_press_event(event);
             return false;

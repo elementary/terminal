@@ -23,6 +23,7 @@
 
 /* Notify with system bubbles if the window is not focused (tag FIXME)
  * Keep focus on terminal if terminal focused
+ * ctrl+w +q
  * 
  * For 0.2
  * Set text colors
@@ -55,6 +56,12 @@ namespace PantheonTerminal
         string[] args;
         
     //~     Notify.Notification notification;
+		
+		// Control and Shift keys
+		bool ctrlL = false;
+		bool ctrlR = false;
+        bool shiftL = false;
+        bool shiftR = false;
         
         private PantheonTerminal(string[] args)
         {
@@ -103,6 +110,41 @@ namespace PantheonTerminal
             
             show_all();
             new_tab(true);
+            
+            key_press_event.connect(on_key_press_event);
+            key_release_event.connect(on_key_release_event);
+        }
+        
+        public bool on_key_press_event(EventKey event)
+		{
+            string key = Gdk.keyval_name(event.keyval);
+			if (key == "Control_L")
+				ctrlL = true;
+			else if (key == "Control_R")
+				ctrlR = true;
+            else if (key == "Shift_L")
+				shiftL = true;
+			else if (key == "Shift_R")
+				shiftR = true;
+			else if ((key == "w" || key == "W") && (ctrlL || ctrlR) && (shiftL || shiftR))
+				notebook.remove_page(notebook.get_current_page());
+			else if ((key == "q" || key == "Q") && (ctrlL || ctrlR) && (shiftL || shiftR))
+				close();
+            return false;
+        }
+        
+        public bool on_key_release_event(EventKey event)
+		{
+            string key = Gdk.keyval_name(event.keyval);
+			if (key == "Control_L")
+				ctrlL = false;
+			else if (key == "Control_R")
+				ctrlR = false;
+            else if (key == "Shift_L")
+				shiftL = false;
+			else if (key == "Shift_R")
+				shiftR = false;
+            return false;
         }
         
         private void new_tab(bool first)
@@ -158,17 +200,10 @@ namespace PantheonTerminal
             
             // Set up style
             set_terminal_theme(t);
-//~             t.set_font(font);
-//~             t.set_color_background(bgcolor);
-//~             t.set_color_foreground(fgcolor);
-//~             t.set_background_transparent(true);
-//~ 			t.set_opacity(32000);
         }
         
         public void set_terminal_theme(TerminalWithNotification t)
 		{
-			// Dark theme
-			Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
 			t.set_font(font);
 			t.set_color_background(bgcolor);
             t.set_color_foreground(fgcolor);
@@ -176,13 +211,27 @@ namespace PantheonTerminal
 		
 		public void set_theme()
 		{
-			Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
-			
-			// Get the system's style
-            realize();
-            font = FontDescription.from_string(system_font());
-            bgcolor = get_style().bg[StateType.NORMAL];
-            fgcolor = get_style().fg[StateType.NORMAL];
+			string theme = "dark";
+			if (theme == "normal")
+			{
+				Gtk.Settings.get_default().gtk_application_prefer_dark_theme = false;
+				
+				// Get the system's style
+				realize();
+				font = FontDescription.from_string(system_font());
+				bgcolor = get_style().bg[StateType.NORMAL];
+				fgcolor = get_style().fg[StateType.NORMAL];
+			}
+			else
+			{
+				Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+				
+				// Get the system's style
+				realize();
+				font = FontDescription.from_string(system_font());
+				bgcolor = get_style().bg[StateType.NORMAL];
+				fgcolor = get_style().fg[StateType.NORMAL];
+			}
             			
 			theme_changed();
 		}
