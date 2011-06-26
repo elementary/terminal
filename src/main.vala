@@ -43,11 +43,13 @@ namespace PantheonTerminal
 {
     private class PantheonTerminal : Gtk.Window
     {
+		public signal void theme_changed();
+		
         Notebook notebook;
         FontDescription font;
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
-            
+        
         bool window_focus = false;
         
         string[] args;
@@ -60,7 +62,7 @@ namespace PantheonTerminal
             foreach (string arg in args)
 				stdout.printf("%s\n", arg);
             
-            Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+//~             Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             set_title("Terminal");
             default_width = 640;
             default_height = 400;
@@ -90,31 +92,17 @@ namespace PantheonTerminal
             add_button.set_tooltip_text("Open a new tab");
             add_button.clicked.connect(() => { new_tab(false); } );
             right_box.pack_start(add_button, false, false, 0);
-            
-            // Get the system's style
-            realize();
-            font = FontDescription.from_string(system_font());
-            bgcolor = get_style().bg[StateType.NORMAL];
-            fgcolor = get_style().fg[StateType.NORMAL];
                     
             // Try to set the icon FIXME
             Pixbuf icon = new Pixbuf(Colorspace.RGB, true, 8, 1, 1);
             try { IconTheme.get_default().load_icon("terminal", 16, IconLookupFlags.FORCE_SVG); } catch (Error er) {}
             set_icon(icon);
             
+            // Set the theme
+            set_theme();
+            
             show_all();
             new_tab(true);
-        }
-        
-        static string system_font()
-        {
-            string font_name = null;
-            /* Wait for GNOME 3 FIXME
-             * var settings = new GLib.Settings("org.gnome.desktop.interface");
-             * font_name = settings.get_string("monospace-font-name");
-             */
-            font_name = "Droid Sans Mono 10";
-            return font_name;
         }
         
         private void new_tab(bool first)
@@ -143,7 +131,7 @@ namespace PantheonTerminal
             t.preferences.connect(preferences);
             t.about.connect(about);
             t.child_exited.connect(() => { t.fork_command(null, null, null, null, true, true, true); });
-//~             t.status_line_changed.connect(() => { stdout.printf("status_line_changed\n"); });
+            theme_changed.connect(() => { set_terminal_theme(t); });
 //~             t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
             
             // If a task is over
@@ -169,11 +157,45 @@ namespace PantheonTerminal
                 });
             
             // Set up style
-            t.set_font(font);
-            t.set_color_background(bgcolor);
-            t.set_color_foreground(fgcolor);
+            set_terminal_theme(t);
+//~             t.set_font(font);
+//~             t.set_color_background(bgcolor);
+//~             t.set_color_foreground(fgcolor);
 //~             t.set_background_transparent(true);
 //~ 			t.set_opacity(32000);
+        }
+        
+        public void set_terminal_theme(TerminalWithNotification t)
+		{
+			// Dark theme
+			Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+			t.set_font(font);
+			t.set_color_background(bgcolor);
+            t.set_color_foreground(fgcolor);
+		}
+		
+		public void set_theme()
+		{
+			Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+			
+			// Get the system's style
+            realize();
+            font = FontDescription.from_string(system_font());
+            bgcolor = get_style().bg[StateType.NORMAL];
+            fgcolor = get_style().fg[StateType.NORMAL];
+            			
+			theme_changed();
+		}
+		
+		static string system_font()
+        {
+            string font_name = null;
+            /* Wait for GNOME 3 FIXME
+             * var settings = new GLib.Settings("org.gnome.desktop.interface");
+             * font_name = settings.get_string("monospace-font-name");
+             */
+            font_name = "Droid Sans Mono 10";
+            return font_name;
         }
         
         public void about()
@@ -192,7 +214,7 @@ namespace PantheonTerminal
 //~      				"translator-credits", _("translator-credits"), // FIXME
                 null);
         }
-            
+        
         public void preferences()
         {
             stdout.printf("Preferences not yet available.\n");
