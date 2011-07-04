@@ -1,0 +1,21 @@
+Source: pantheon-terminal
+Section: x11
+Priority: optional
+Maintainer: Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~),
+               cmake (>= 2.6),
+               valac (>= 0.11.3),
+               libgtk-3-dev,
+               libvte-2.90-dev,
+               libnotify-dev
+Standards-Version: 3.8.4
+Homepage: http://elementaryos.org/
+Vcs-Bzr: https://code.launchpad.net/~kekun-plazas/pantheon-terminal/trunk
+Vcs-Browser: http://bazaar.launchpad.net/~kekun-plazas/pantheon-terminal/trunk/files
+
+Package: pantheon-terminal
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A modern terminal from elementary project
+ Pantheon Terminal is a modern terminal designed in elementary Project for
+ Pantheon Desktop Environment.
