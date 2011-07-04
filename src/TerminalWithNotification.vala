@@ -21,6 +21,10 @@
 //      Daniel Foré <daniel@elementaryos.org>
 // 
 
+/* TODO
+ * Check modifiers keys' state at the creation of the object to avoid bugs such as ^T on Ctrl+Maj+T
+ */
+
 using Gtk;
 using Gdk;
 using Vte;
@@ -36,8 +40,6 @@ namespace PantheonTerminal
         public signal void task_over();
         public signal void preferences();
         public signal void about();
-//~         public signal void close();
-//~         public signal void quit();
         
         long last_row_count = 0;
         long last_column_count = 0;
@@ -94,16 +96,17 @@ namespace PantheonTerminal
 				shiftL = true;
 			else if (key == "Shift_R")
 				shiftR = true;
-			else if ((key == "a" || key == "A") && (ctrlL || ctrlR) && (shiftL || shiftR))
-				select_all();
-			else if ((key == "c" || key == "C") && (ctrlL || ctrlR) && (shiftL || shiftR))
-				copy_clipboard();
-			else if ((key == "v" || key == "V") && (ctrlL || ctrlR) && (shiftL || shiftR))
-				paste_clipboard();
-//~ 			else if ((key == "w" || key == "W") && (ctrlL || ctrlR) && (shiftL || shiftR))
-//~ 				close();
-//~ 			else if ((key == "q" || key == "Q") && (ctrlL || ctrlR) && (shiftL || shiftR))
-//~ 				quit();
+			else if ((ctrlL || ctrlR) && (shiftL || shiftR))
+			{
+				if (key == "a" || key == "A")
+					select_all();
+				else if (key == "c" || key == "C")
+					copy_clipboard();
+				else if (key == "v" || key == "V")
+					paste_clipboard();
+				else
+					return false;
+			}
 			else
 				base.key_press_event(event);
             return false;

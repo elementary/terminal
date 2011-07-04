@@ -21,15 +21,16 @@
 //      Daniel Foré <daniel@elementaryos.org>
 // 
 
-/* Notify with system bubbles if the window is not focused (tag FIXME)
- * Keep focus on terminal if terminal focused
- * ctrl+w +q
+/* TODO
+ * For 0.1
+ * Keep focus on terminal if terminal focused (tag FIXME)
  * 
  * For 0.2
- * Set text colors
+ * Notify with system bubbles if the window is not focused (tag FIXME)
+ * Set text colors ?
  * Set preferences via GSettings ? (legacy theme)
  * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
- * Do not focus on buttons (is it useful ?) (guess not)
+ * Start the port to the terminal background service
  */
 
 using Gtk;
@@ -62,6 +63,7 @@ namespace PantheonTerminal
 		bool ctrlR = false;
         bool shiftL = false;
         bool shiftR = false;
+        bool arrow = false;
         
         private PantheonTerminal(string[] args)
         {
@@ -80,17 +82,12 @@ namespace PantheonTerminal
             focus_out_event.connect(() => { window_focus = false; return false; });
                     
             notebook = new Notebook();
-//~             var left_box = new HBox(false, 0);
             var right_box = new HBox(false, 0);
-//~             left_box.show();
             right_box.show();
-//~             notebook.set_action_widget(left_box, PackType.START);
             notebook.set_action_widget(right_box, PackType.END);
             notebook.set_scrollable(true);
             add(notebook);
-            
-//~             left_box.set_size_request(10, 0);
-            
+                        
             // Set "New tab" button
             var add_button = new Button();
             add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
@@ -115,8 +112,16 @@ namespace PantheonTerminal
             key_release_event.connect(on_key_release_event);
         }
         
+        public void remove_page(int page)
+        {
+			notebook.remove_page(page);
+			if (notebook.get_n_pages() == 0)
+				new_tab(false);
+		}
+        
         public bool on_key_press_event(EventKey event)
 		{
+			
             string key = Gdk.keyval_name(event.keyval);
 			if (key == "Control_L")
 				ctrlL = true;
@@ -126,10 +131,19 @@ namespace PantheonTerminal
 				shiftL = true;
 			else if (key == "Shift_R")
 				shiftR = true;
-			else if ((key == "w" || key == "W") && (ctrlL || ctrlR) && (shiftL || shiftR))
-				notebook.remove_page(notebook.get_current_page());
-			else if ((key == "q" || key == "Q") && (ctrlL || ctrlR) && (shiftL || shiftR))
-				close();
+			else if ((ctrlL || ctrlR) && (shiftL || shiftR))
+			{
+				if (key == "t" || key == "T")
+					new_tab(false);
+				else if (key == "w" || key == "W")
+					remove_page(notebook.get_current_page());
+				else if (key == "q" || key == "Q")
+					close();
+				else
+					return false;
+			}
+			else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
+				arrow = true;
             return false;
         }
         
@@ -144,6 +158,8 @@ namespace PantheonTerminal
 				shiftL = false;
 			else if (key == "Shift_R")
 				shiftR = false;
+			else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
+				arrow = false;
             return false;
         }
         
@@ -166,7 +182,7 @@ namespace PantheonTerminal
             notebook.set_tab_reorderable(t, true);
             
             // Set connections
-            tab.clicked.connect(() => { notebook.remove(t); });
+            tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
             t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
             notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
@@ -175,6 +191,13 @@ namespace PantheonTerminal
             t.child_exited.connect(() => { t.fork_command(null, null, null, null, true, true, true); });
             theme_changed.connect(() => { set_terminal_theme(t); });
 //~             t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
+			// Make the terminal keep the focus when arrows are pressed FIXME
+            t.focus_out_event.connect((event) => {
+				if (notebook.page_num(t) == notebook.get_current_page() && arrow)
+				{
+					t.grab_focus();
+				}
+				return false; });
             
             // If a task is over
             t.task_over.connect(() => {
