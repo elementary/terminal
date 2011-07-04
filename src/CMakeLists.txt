@@ -27,7 +27,7 @@ PACKAGES
     gtk+-3.0
     vte-2.90
 OPTIONS
-    --vapidir=/usr/share/vala-0.14
+    --vapidir=/usr/share/vala-0.12
     --thread)
 
 add_executable(pantheon-terminal
