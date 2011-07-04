@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove x-terminal-emulator /usr/bin/pantheon-terminal
+fi
+
