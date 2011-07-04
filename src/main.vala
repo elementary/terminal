@@ -137,6 +137,13 @@ namespace PantheonTerminal
 					new_tab(false);
 				else if (key == "w" || key == "W")
 					remove_page(notebook.get_current_page());
+				else if (key == "Tab" || key == "ISO_Left_Tab")
+				{
+					if (notebook.get_current_page() < notebook.get_n_pages() - 1)
+						notebook.next_page();
+					else
+						notebook.set_current_page(0);
+				}
 				else if (key == "q" || key == "Q")
 					close();
 				else
@@ -144,6 +151,7 @@ namespace PantheonTerminal
 			}
 			else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
 				arrow = true;
+			// stdout.printf("%s\n", key);
             return false;
         }
         
