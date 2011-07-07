@@ -27,7 +27,7 @@ PACKAGES
     gtk+-3.0
     vte-2.90
 OPTIONS
-    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}../vapi
+    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/../vapi
     --thread)
 
 add_executable(pantheon-terminal
