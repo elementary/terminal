@@ -31,6 +31,7 @@
  * Set preferences via GSettings ? (legacy theme)
  * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
  * Start the port to the terminal background service
+ * If the last page is moved to another instance, close the window ?
  */
 
 using Gtk;
@@ -176,9 +177,14 @@ namespace PantheonTerminal
             // Set up terminal
             var t = new TerminalWithNotification();
             if (first)
-				t.fork_command(args[0], args, null, null, true, true, true);
+				t.fork_command_full(0, "~/", args, null, 0, null, 0);
+//~ 				t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.FILE_AND_ARGV_ZERO, null, 0);
+//~ 				t.fork_command(args[0], args, null, null, true, true, true);
 			else
-				t.fork_command(null, null, null, null, true, true, true);
+				t.fork_command_full(0, "~/", {}, null, 0, null, 0);
+//~ 				t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.LEAVE_DESCRIPTORS_OPEN, null, t.get_pty());
+//~ 				t.fork_command(null, null, null, null, true, true, true);
+//~ 				t.forkpty(null, null, true, true, true);
 			
                 
             t.show();
@@ -188,6 +194,7 @@ namespace PantheonTerminal
             notebook.insert_page(t, tab, notebook.get_current_page() + 1);
             notebook.next_page();
             notebook.set_tab_reorderable(t, true);
+            notebook.set_tab_detachable(t, true);
             
             // Set connections
             tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
