@@ -221,7 +221,7 @@ namespace PantheonTerminal
                 if (!window_focus)
                 {
                     try
-                    { GLib.Process.spawn_command_line_async("notify-send \"" + t.get_window_title() + "\" \"Task over\""); }
+                    { GLib.Process.spawn_command_line_async("notify-send --icon=\"terminal\" \"" + t.get_window_title() + "\" \"Task finished.\""); }
                     catch
                     {  }
                 }
