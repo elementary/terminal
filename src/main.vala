@@ -65,6 +65,7 @@ namespace PantheonTerminal
         bool shiftL = false;
         bool shiftR = false;
         bool arrow = false;
+        bool tab = false;
         
         private PantheonTerminal(string[] args)
         {
@@ -91,7 +92,9 @@ namespace PantheonTerminal
                         
             // Set "New tab" button
             var add_button = new Button();
-            add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
+            add_button.can_focus = false;
+//~             add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
+            add_button.set_image(new Image.from_icon_name("list-add", IconSize.MENU));
             add_button.show();
             add_button.set_relief(ReliefStyle.NONE);
             add_button.set_tooltip_text("Open a new tab");
@@ -132,6 +135,11 @@ namespace PantheonTerminal
 				shiftL = true;
 			else if (key == "Shift_R")
 				shiftR = true;
+//~ 			else if (key == "Tab")
+//~ 			{
+//~ 				notebook.get_nth_page(notebook.get_current_page()).grab_focus();
+//~ 				stdout.printf("tab %i\n", notebook.get_current_page());
+//~ 			}
 			else if ((ctrlL || ctrlR) && (shiftL || shiftR))
 			{
 				if (key == "t" || key == "T")
@@ -152,6 +160,8 @@ namespace PantheonTerminal
 			}
 			else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
 				arrow = true;
+			else if (key == "Tab")
+				tab = true;
 			// stdout.printf("%s\n", key);
             return false;
         }
@@ -169,6 +179,8 @@ namespace PantheonTerminal
 				shiftR = false;
 			else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
 				arrow = false;
+			else if (key == "Tab")
+				tab = false;
             return false;
         }
         
@@ -176,6 +188,8 @@ namespace PantheonTerminal
         {
             // Set up terminal
             var t = new TerminalWithNotification();
+            // Set up style
+            set_terminal_theme(t);
             if (first)
 				t.fork_command_full(0, "~/", args, null, 0, null, 0);
 //~ 				t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.FILE_AND_ARGV_ZERO, null, 0);
@@ -186,9 +200,11 @@ namespace PantheonTerminal
 //~ 				t.fork_command(null, null, null, null, true, true, true);
 //~ 				t.forkpty(null, null, true, true, true);
 			
-                
+            // Set up style
+            set_terminal_theme(t);
             t.show();
-            
+            // Set up style
+            set_terminal_theme(t);
             // Create a new tab with the terminal
             var tab = new TabWithCloseButton("Terminal");
             notebook.insert_page(t, tab, notebook.get_current_page() + 1);
@@ -208,7 +224,7 @@ namespace PantheonTerminal
 //~             t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
 			// Make the terminal keep the focus when arrows are pressed FIXME
             t.focus_out_event.connect((event) => {
-				if (notebook.page_num(t) == notebook.get_current_page() && arrow)
+				if (notebook.page_num(t) == notebook.get_current_page() && (arrow || this.tab))
 				{
 					t.grab_focus();
 				}
