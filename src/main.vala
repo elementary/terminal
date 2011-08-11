@@ -307,7 +307,7 @@ namespace PantheonTerminal
 	    try {
 	        logo = IconTheme.get_default ().load_icon ("terminal", 64, 0);
 		} catch (Error err) {
-	            stderr.printf ("Unable to load marlin icon: %s", err.message);
+	            stderr.printf ("Unable to load terminal icon: %s", err.message);
 		}
 
             show_about_dialog(this,
