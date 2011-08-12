@@ -74,9 +74,10 @@ namespace PantheonTerminal
 				stdout.printf("%s\n", arg);
             
 //~             Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
-            set_title("Terminal");
+            title = "Terminal";
             default_width = 640;
             default_height = 400;
+	    icon_name = "terminal";
             destroy.connect(close);
             
             // Check if the window have the focus
@@ -100,11 +101,6 @@ namespace PantheonTerminal
             add_button.set_tooltip_text("Open a new tab");
             add_button.clicked.connect(() => { new_tab(false); } );
             right_box.pack_start(add_button, false, false, 0);
-                    
-            // Try to set the icon FIXME
-            Pixbuf icon = new Pixbuf(Colorspace.RGB, true, 8, 1, 1);
-            try { IconTheme.get_default().load_icon("terminal", 16, IconLookupFlags.FORCE_SVG); } catch (Error er) {}
-            set_icon(icon);
             
             // Set the theme
             set_theme();
