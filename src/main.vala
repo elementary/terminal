@@ -59,9 +59,9 @@ namespace PantheonTerminal
         
     //~     Notify.Notification notification;
 		
-		// Control and Shift keys
-		bool ctrlL = false;
-		bool ctrlR = false;
+	// Control and Shift keys
+	bool ctrlL = false;
+	bool ctrlR = false;
         bool shiftL = false;
         bool shiftR = false;
         bool arrow = false;
@@ -74,9 +74,10 @@ namespace PantheonTerminal
 				stdout.printf("%s\n", arg);
             
 //~             Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
-            set_title("Terminal");
+            title = "Terminal";
             default_width = 640;
             default_height = 400;
+	    icon_name = "terminal";
             destroy.connect(close);
             
             // Check if the window have the focus
@@ -100,11 +101,6 @@ namespace PantheonTerminal
             add_button.set_tooltip_text("Open a new tab");
             add_button.clicked.connect(() => { new_tab(false); } );
             right_box.pack_start(add_button, false, false, 0);
-                    
-            // Try to set the icon FIXME
-            Pixbuf icon = new Pixbuf(Colorspace.RGB, true, 8, 1, 1);
-            try { IconTheme.get_default().load_icon("terminal", 16, IconLookupFlags.FORCE_SVG); } catch (Error er) {}
-            set_icon(icon);
             
             // Set the theme
             set_theme();
@@ -303,6 +299,13 @@ namespace PantheonTerminal
         
         public void about()
         {
+	    Gdk.Pixbuf logo = null;
+	    try {
+	        logo = IconTheme.get_default ().load_icon ("terminal", 64, 0);
+		} catch (Error err) {
+	            stderr.printf ("Unable to load terminal icon: %s", err.message);
+		}
+
             show_about_dialog(this,
                 "program-name", Resources.APP_TITLE,
                 "version", Resources.VERSION,
@@ -313,7 +316,7 @@ namespace PantheonTerminal
                 "website-label",  Resources.WEBSITE_LABEL,
                 "authors", Resources.AUTHORS,
                 "artists", Resources.ARTISTS,
-//~     				"logo", new Pixbuf.from_file(Resources.ICON_ABOUT_LOGO),
+        	"logo", logo,
 //~      				"translator-credits", _("translator-credits"), // FIXME
                 null);
         }
