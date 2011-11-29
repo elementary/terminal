@@ -184,14 +184,20 @@ namespace PantheonTerminal
         {
             // Set up terminal
             var t = new TerminalWithNotification();
+
+            /* To avoid a gtk/vte bug (needs more investigating) */
+            var box = new Gtk.Grid();
+            box.add(t);
+            t.vexpand = true;
+            t.hexpand = true;
             // Set up style
             set_terminal_theme(t);
-            if (first)
-				t.fork_command_full(0, "~/", args, null, 0, null, 0);
+            if (first && args.length != 0)
+				t.fork_command_full(Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
 //~ 				t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.FILE_AND_ARGV_ZERO, null, 0);
 //~ 				t.fork_command(args[0], args, null, null, true, true, true);
 			else
-				t.fork_command_full(0, "~/", {}, null, 0, null, 0);
+				t.fork_command_full(Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
 //~ 				t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.LEAVE_DESCRIPTORS_OPEN, null, t.get_pty());
 //~ 				t.fork_command(null, null, null, null, true, true, true);
 //~ 				t.forkpty(null, null, true, true, true);
@@ -203,7 +209,7 @@ namespace PantheonTerminal
             set_terminal_theme(t);
             // Create a new tab with the terminal
             var tab = new TabWithCloseButton("Terminal");
-            notebook.insert_page(t, tab, notebook.get_current_page() + 1);
+            notebook.insert_page(box, tab, notebook.get_current_page() + 1);
             notebook.next_page();
             notebook.set_tab_reorderable(t, true);
             notebook.set_tab_detachable(t, true);
@@ -215,7 +221,7 @@ namespace PantheonTerminal
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
             t.about.connect(about);
-            t.child_exited.connect(() => { t.fork_command(null, null, null, null, true, true, true); });
+            //t.child_exited.connect(() => { t.fork_command(null, null, null, null, true, true, true); });
             theme_changed.connect(() => { set_terminal_theme(t); });
 //~             t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
 			// Make the terminal keep the focus when arrows are pressed FIXME
@@ -250,6 +256,7 @@ namespace PantheonTerminal
             
             // Set up style
             set_terminal_theme(t);
+            box.show_all();
         }
         
         public void set_terminal_theme(TerminalWithNotification t)
