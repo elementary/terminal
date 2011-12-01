@@ -19,3 +19,15 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: A modern terminal from elementary project
  Pantheon Terminal is a modern terminal designed in elementary Project for
  Pantheon Desktop Environment.
+
+Package: pantheon-terminal-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: pantheon-terminal (= ${binary:Version}), ${misc:Depends}
+Enhances: pantheon-terminal
+Description: A modern terminal from elementary project (debugging symbols)
+ Pantheon Terminal is a modern terminal designed in elementary Project for
+ Pantheon Desktop Environment.
+ .
+ This package contains debugging symbols for pantheon-terminal.
