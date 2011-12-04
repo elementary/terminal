@@ -113,10 +113,10 @@ namespace PantheonTerminal
             key_release_event.connect(on_key_release_event);
         }
 
-        public void remove_page(int page)
+        public void remove_page (int page)
         {
-
             notebook.remove_page(page);
+
             if (notebook.get_n_pages() == 0)
                 new_tab(false);
         }

@@ -34,9 +34,9 @@ namespace PantheonTerminal
 {
     public class TerminalWithNotification : Terminal
     {
-        public signal void task_over();
-        public signal void preferences();
-        public signal void about();
+        public signal void task_over ();
+        public signal void preferences ();
+        public signal void about ();
 
         long last_row_count = 0;
         long last_column_count = 0;
@@ -47,25 +47,25 @@ namespace PantheonTerminal
         bool shiftL = false;
         bool shiftR = false;
 
-        public TerminalWithNotification()
+        public TerminalWithNotification ()
         {
-            set_size_request(320, 200);
-            window_title_changed.connect(check_for_notification);
+            set_size_request (320, 200);
+            window_title_changed.connect (check_for_notification);
 
             // Set menu
             var menu = new Menu();
 
-            var copy_menuitem = new MenuItem.with_label("Copy");
-            var paste_menuitem = new MenuItem.with_label("Paste");
-            var preferences_menuitem = new MenuItem.with_label("Preferences");
-            var about_menuitem = new MenuItem.with_label("About");
+            var copy_menuitem = new MenuItem.with_label ("Copy");
+            var paste_menuitem = new MenuItem.with_label ("Paste");
+            var preferences_menuitem = new MenuItem.with_label ("Preferences");
+            var about_menuitem = new MenuItem.with_label ("About");
 
-            menu.append(copy_menuitem);
-            menu.append(paste_menuitem);
-            menu.append(new MenuItem());
-            menu.append(preferences_menuitem);
-            menu.append(about_menuitem);
-            menu.show_all();
+            menu.append (copy_menuitem);
+            menu.append (paste_menuitem);
+            menu.append (new MenuItem());
+            menu.append (preferences_menuitem);
+            menu.append (about_menuitem);
+            menu.show_all ();
 
             copy_menuitem.activate.connect(() => { copy_clipboard(); });
             paste_menuitem.activate.connect(() => { paste_clipboard(); });
