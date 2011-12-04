@@ -19,7 +19,8 @@ link_directories(${LIB_PATHS})
 
 
 add_definitions(${CFLAGS})
-vala_precompile(VALA_C main.vala
+vala_precompile(VALA_C
+    main.vala
     TerminalWithNotification.vala
     PantheonTerminalPreferences.vala
     Resources.vala
