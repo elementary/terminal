@@ -340,21 +340,28 @@ namespace PantheonTerminal
                 stderr.printf ("Unable to load terminal icon: %s", err.message);
             }
 
-            //Granite.Widgets.AboutDialog about_dialog = new Granite.Widgets.AboutDialog ();
+            Granite.Widgets.AboutDialog about_dialog = new Granite.Widgets.AboutDialog ();
+            about_dialog.bug = "http://bugs.launchpad.net/pantheon-terminal";
+            about_dialog.translate = "http://translations.launchpad.net/pantheon-terminal";
+            about_dialog.help = "http://answers.launchpad.net/pantheon-terminal";
+            about_dialog.artists = Resources.ARTISTS;
+            about_dialog.authors = Resources.AUTHORS;
+            about_dialog.comments = Resources.COMMENTS;
+            about_dialog.copyright = Resources.COPYRIGHT;
+            about_dialog.license = Resources.LICENSE;
+            about_dialog.website_label = Resources.WEBSITE_LABEL;
+            about_dialog.program_name = Resources.APP_TITLE;
+            about_dialog.website = Resources.WEBSITE_URL;
+            about_dialog.version = Resources.VERSION;
+            about_dialog.translator_credits = Resources.TRANSLATORS;
+            about_dialog.logo = logo;
+            about_dialog.logo_icon_name = ICON_ABOUT_LOGO;
 
-            show_about_dialog(this,
-                "program-name", Resources.APP_TITLE,
-                "version", Resources.VERSION,
-                "comments", Resources.COMMENTS,
-                "copyright", Resources.COPYRIGHT,
-                "license", Resources.LICENSE,
-                "website", Resources.WEBSITE_URL,
-                "website-label",  Resources.WEBSITE_LABEL,
-                "authors", Resources.AUTHORS,
-                "artists", Resources.ARTISTS,
-                "logo", logo,
-                //"translator-credits", _("translator-credits"), //FIXME
-                null);
+            about_dialog.set_position (WindowPosition.CENTER);
+            about_dialog.show_all ();
+            about_dialog.run ();
+            about_dialog.destroy ();
+
         }
 
         public void preferences()

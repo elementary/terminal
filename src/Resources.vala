@@ -37,6 +37,8 @@ namespace Resources
         null
     };
 
+    public const string TRANSLATORS = "Translated by Launchpad Translators";
+
     public const string ICON_ABOUT_LOGO = "terminal";
 
     public const string LICENSE = """

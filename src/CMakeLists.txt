@@ -8,7 +8,7 @@ include(ValaPrecompile)
 
 # pkgconfig, real C code
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 vte-2.90)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 vte-2.90 granite)
 set(CFLAGS
 	${DEPS_CFLAGS} ${DEPS_CFLAGS_OTHER}
 )
