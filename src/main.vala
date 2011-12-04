@@ -114,10 +114,10 @@ namespace PantheonTerminal
             
             Image add_image = null;
             try {
-                add_image = new Image.from_icon_name ("list-add", IconSize.MENU);
+                add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
             } catch (Error err1) {
                 try {
-                    add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
+                    add_image = new Image.from_icon_name ("list-add", IconSize.MENU);
                 } catch (Error err2) {
                     stderr.printf ("Unable to load list-add icon: %s", err2.message);
                 }
