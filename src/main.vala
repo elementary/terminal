@@ -66,7 +66,7 @@ namespace PantheonTerminal
         bool arrow = false;
         bool tab = false;
 
-        private PantheonTerminal(string[] args)
+        public PantheonTerminal(string[] args)
         {
 
             this.args = args;
@@ -205,7 +205,7 @@ namespace PantheonTerminal
         {
 
             // Set up terminal
-            var t = new TerminalWithNotification();
+            var t = new TerminalWithNotification(this);
 
             /* To avoid a gtk/vte bug (needs more investigating) */
             var box = new Gtk.Grid();

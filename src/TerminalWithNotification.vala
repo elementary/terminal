@@ -38,6 +38,8 @@ namespace PantheonTerminal
         public signal void preferences ();
         public signal void about ();
 
+        private Gtk.Window parent_window;
+
         long last_row_count = 0;
         long last_column_count = 0;
 
@@ -47,8 +49,10 @@ namespace PantheonTerminal
         bool shiftL = false;
         bool shiftR = false;
 
-        public TerminalWithNotification ()
+        public TerminalWithNotification (Gtk.Window parent_window)
         {
+            this.parent_window = parent_window;
+
             set_size_request (320, 200);
             window_title_changed.connect (check_for_notification);
 
@@ -105,6 +109,10 @@ namespace PantheonTerminal
                     copy_clipboard();
                 else if (key == "v" || key == "V")
                     paste_clipboard();
+                else if (key == "n" || key == "N") {
+                    new PantheonTerminal ({});
+                    Gtk.main ();
+                }
                 else
                     return false;
             }
