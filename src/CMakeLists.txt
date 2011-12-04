@@ -23,9 +23,11 @@ vala_precompile(VALA_C main.vala
     TerminalWithNotification.vala
     PantheonTerminalPreferences.vala
     Resources.vala
+    PreferencesDialog.vala
 PACKAGES
     gtk+-3.0
     vte-2.90
+    granite
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/../vapi
     --thread)

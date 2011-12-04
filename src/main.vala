@@ -330,7 +330,10 @@ namespace PantheonTerminal
         
         public void preferences()
         {
-            stdout.printf("Preferences not yet available.\n");
+            var dialog = new Preferences ("Preferences", this);
+            dialog.show_all ();
+            dialog.run ();
+            dialog.destroy ();
         }
         
         
