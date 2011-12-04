@@ -25,8 +25,6 @@ namespace PantheonTerminal {
 
     public class Preferences : Dialog {
 
-        private SpinButton opacity;
-
         public Preferences (string? title, Window main_window) {
 
             this.title = title;
@@ -41,18 +39,8 @@ namespace PantheonTerminal {
         }
 
         private void create_layout () {
-            /*var transparency_label = new Label (_("Transparency"));
-           
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 5;
-            grid.column_spacing = 5;
-            grid.margin_left = 12;
-            grid.margin_right = 12;
-            grid.margin_top = 12;
-            grid.margin_bottom = 12;
 
             // TODO Finish Preferences Dialog
-            */
         }
 
     }

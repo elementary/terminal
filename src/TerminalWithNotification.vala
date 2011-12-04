@@ -98,12 +98,8 @@ namespace PantheonTerminal
                 shiftL = true;
             else if (key == "Shift_R")
                 shiftR = true;
-
-            /*
-            else if (key == "Tab")
-                grab_focus();
-            */
-
+            //else if (key == "Tab")
+            //    grab_focus();
             else if ((ctrlL || ctrlR) && (shiftL || shiftR))
             {
                 if (key == "a" || key == "A")
