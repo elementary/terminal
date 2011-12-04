@@ -324,7 +324,7 @@ namespace PantheonTerminal
 
             //Granite.Widgets.AboutDialog about_dialog = new Granite.Widgets.AboutDialog ();
 
-            /*show_about_dialog(this,
+            show_about_dialog(this,
                 "program-name", Resources.APP_TITLE,
                 "version", Resources.VERSION,
                 "comments", Resources.COMMENTS,
@@ -336,7 +336,7 @@ namespace PantheonTerminal
                 "artists", Resources.ARTISTS,
                 "logo", logo,
                 //"translator-credits", _("translator-credits"), //FIXME
-                null);*/
+                null);
         }
 
         public void preferences()
