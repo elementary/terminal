@@ -41,7 +41,7 @@ namespace PantheonTerminal {
         }
 
         private void create_layout () {
-            var transparency_label = new Label (_("Transparency"));
+            /*var transparency_label = new Label (_("Transparency"));
            
             var grid = new Gtk.Grid ();
             grid.row_spacing = 5;
@@ -52,7 +52,7 @@ namespace PantheonTerminal {
             grid.margin_bottom = 12;
 
             // TODO Finish Preferences Dialog
-
+            */
         }
 
     }
