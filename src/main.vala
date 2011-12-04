@@ -250,8 +250,8 @@ namespace PantheonTerminal
             var tab = new TabWithCloseButton("Terminal");
             notebook.insert_page(box, tab, notebook.get_current_page() + 1);
             notebook.next_page();
-            notebook.set_tab_reorderable(t, true);
-            notebook.set_tab_detachable(t, true);
+            notebook.set_tab_reorderable(tab, true);
+            notebook.set_tab_detachable(tab, true);
 
             // Set connections
             tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
@@ -412,6 +412,8 @@ namespace PantheonTerminal
         private Label label;
         private string text;
         bool notification = false;
+        public bool reorderable = true;
+        public bool detachable = true;
 
         public TabWithCloseButton(string text)
         {
