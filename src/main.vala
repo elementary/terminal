@@ -90,6 +90,7 @@ namespace PantheonTerminal
             right_box.show ();
             notebook.set_action_widget (right_box, PackType.END);
             notebook.set_scrollable (true);
+            notebook.can_focus = false;
             add (notebook);
 
             notebook.scroll_event.connect ((event) => {
@@ -148,13 +149,14 @@ namespace PantheonTerminal
             else if (key == "Shift_R")
                 shiftR = true;
 
-            /*
+            /* 
             else if (key == "Tab")
             {
                 notebook.get_nth_page(notebook.get_current_page()).grab_focus();
                 stdout.printf("tab %i\n", notebook.get_current_page());
             }
             */
+            
 
             else if ((ctrlL || ctrlR) && (shiftL || shiftR))
             {
@@ -209,7 +211,7 @@ namespace PantheonTerminal
 
             /* To avoid a gtk/vte bug (needs more investigating) */
             var box = new Gtk.Grid();
-            box.add(t);
+            box.add (t);
             t.vexpand = true;
             t.hexpand = true;
             // Set up style
@@ -275,6 +277,8 @@ namespace PantheonTerminal
     //~                 try { notification.show(); }
     //~                 catch {}
                 });
+
+            t.child_exited.connect (() => {remove_page (notebook.page);});
 
             // Set up style
             set_terminal_theme(t);
@@ -410,9 +414,9 @@ namespace PantheonTerminal
         {
             this.notification = notification;
             if (notification)
-            { label.set_markup("<span color=\"#18a0c0\">"+text+"</span>"); }
+                label.set_markup("<span color=\"#18a0c0\">"+text+"</span>");
             else
-            { label.set_markup(text); }
+                label.set_markup(text);
         }
 
         public void set_text(string text)

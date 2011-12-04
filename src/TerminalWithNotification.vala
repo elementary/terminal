@@ -39,6 +39,7 @@ namespace PantheonTerminal
         public signal void about ();
 
         private Gtk.Window parent_window;
+        public Adjustment adjustment; 
 
         long last_row_count = 0;
         long last_column_count = 0;
@@ -98,8 +99,10 @@ namespace PantheonTerminal
             else if (key == "Shift_R")
                 shiftR = true;
 
-            //else if (key == "Tab")
-            //    grab_focus();
+            /*
+            else if (key == "Tab")
+                grab_focus();
+            */
 
             else if ((ctrlL || ctrlR) && (shiftL || shiftR))
             {
