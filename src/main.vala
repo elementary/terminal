@@ -85,12 +85,26 @@ namespace PantheonTerminal
             focus_in_event.connect(() => { window_focus = true; return false; });
             focus_out_event.connect(() => { window_focus = false; return false; });
 
-            notebook = new Notebook();
-            var right_box = new HBox(false, 0);
-            right_box.show();
-            notebook.set_action_widget(right_box, PackType.END);
-            notebook.set_scrollable(true);
-            add(notebook);
+            notebook = new Notebook ();
+            var right_box = new HBox (false, 0);
+            right_box.show ();
+            notebook.set_action_widget (right_box, PackType.END);
+            notebook.set_scrollable (true);
+            add (notebook);
+
+            notebook.scroll_event.connect ((event) => {
+                switch (event.direction.to_string ()) {
+                    case "GDK_SCROLL_UP":
+                    case "GDK_SCROLL_RIGHT":
+                        notebook.page++;
+                        break;
+                    case "GDK_SCROLL_DOWN":
+                    case "GDK_SCROLL_LEFT":
+                        notebook.page--;    
+                        break;
+                }
+                return false;
+            });
 
             // Set "New tab" button
             var add_button = new Button();
