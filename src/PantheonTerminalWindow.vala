@@ -38,8 +38,6 @@ using Pango;
 using Granite;
 //~ using Notify;
 
-using Resources;
-
 namespace PantheonTerminal
 {
     public class PantheonTerminalWindow : Gtk.Window
