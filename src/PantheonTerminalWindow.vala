@@ -42,11 +42,13 @@ using Resources;
 
 namespace PantheonTerminal
 {
-    private class PantheonTerminal : Gtk.Window
+    public class PantheonTerminalWindow : Gtk.Window
     {
 
         public signal void theme_changed();
-
+        
+        public Granite.Application app;
+        
         Notebook notebook;
         FontDescription font;
         Gdk.Color bgcolor;
@@ -66,13 +68,15 @@ namespace PantheonTerminal
         bool arrow = false;
         bool tab = false;
 
-        public PantheonTerminal(string[] args)
+        public PantheonTerminalWindow (Granite.Application app = null)
         {
+            
+            this.app = app;
+            set_application (app);
+            //this.args = args;
 
-            this.args = args;
-
-            foreach (string arg in args)
-                stdout.printf("%s\n", arg);
+            //foreach (string arg in args)
+            //    stdout.printf("%s\n", arg);
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = "Terminal";
@@ -396,12 +400,6 @@ namespace PantheonTerminal
             Gtk.main_quit();
         }
 
-        private static void main(string[] args)
-        {
-            Gtk.init(ref args);
-            new PantheonTerminal(args[1:args.length]);
-            Gtk.main();
-        }
     }
 
     public class TabWithCloseButton : HBox

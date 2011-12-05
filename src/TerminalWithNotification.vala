@@ -50,7 +50,7 @@ namespace PantheonTerminal
         bool shiftL = false;
         bool shiftR = false;
 
-        public TerminalWithNotification (Gtk.Window parent_window)
+        public TerminalWithNotification (PantheonTerminalWindow parent_window)
         {
             this.parent_window = parent_window;
 
@@ -75,7 +75,7 @@ namespace PantheonTerminal
             copy_menuitem.activate.connect(() => { copy_clipboard(); });
             paste_menuitem.activate.connect(() => { paste_clipboard(); });
             preferences_menuitem.activate.connect(() => { preferences(); });
-            about_menuitem.activate.connect(() => { about(); });
+            about_menuitem.activate.connect(() => { parent_window.app.show_about (parent_window); });
 
             // Pop menu up
             button_press_event.connect((event) => {
@@ -109,7 +109,7 @@ namespace PantheonTerminal
                 else if (key == "v" || key == "V")
                     paste_clipboard();
                 else if (key == "n" || key == "N") {
-                    new PantheonTerminal ({});
+                    new PantheonTerminalWindow ();
                     Gtk.main ();
                 }
                 else
