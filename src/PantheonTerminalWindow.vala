@@ -79,7 +79,7 @@ namespace PantheonTerminal
             //    stdout.printf("%s\n", arg);
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
-            title = "Terminal";
+            title = _("Terminal");
             default_width = 640;
             default_height = 400;
             icon_name = "terminal";
@@ -264,7 +264,6 @@ namespace PantheonTerminal
             notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
-            t.about.connect(about);
 
             theme_changed.connect(() => { set_terminal_theme(t); });
             //t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
@@ -353,43 +352,9 @@ namespace PantheonTerminal
             return font_name;
         }
 
-        public void about()
-        {
-            Gdk.Pixbuf logo = null;
-
-            try {
-                logo = IconTheme.get_default ().load_icon ("terminal", 64, 0);
-            } catch (Error err) {
-                stderr.printf ("Unable to load terminal icon: %s", err.message);
-            }
-
-            Granite.Widgets.AboutDialog about_dialog = new Granite.Widgets.AboutDialog ();
-            about_dialog.bug = "http://bugs.launchpad.net/pantheon-terminal";
-            about_dialog.translate = "http://translations.launchpad.net/pantheon-terminal";
-            about_dialog.help = "http://answers.launchpad.net/pantheon-terminal";
-            about_dialog.artists = Resources.ARTISTS;
-            about_dialog.authors = Resources.AUTHORS;
-            about_dialog.comments = Resources.COMMENTS;
-            about_dialog.copyright = Resources.COPYRIGHT;
-            about_dialog.license = Resources.LICENSE;
-            about_dialog.website_label = Resources.WEBSITE_LABEL;
-            about_dialog.program_name = Resources.APP_TITLE;
-            about_dialog.website = Resources.WEBSITE_URL;
-            about_dialog.version = Resources.VERSION;
-            about_dialog.translator_credits = Resources.TRANSLATORS;
-            about_dialog.logo = logo;
-            about_dialog.logo_icon_name = ICON_ABOUT_LOGO;
-
-            about_dialog.set_position (WindowPosition.CENTER);
-            about_dialog.show_all ();
-            about_dialog.run ();
-            about_dialog.destroy ();
-
-        }
-
         public void preferences()
         {
-            var dialog = new Preferences ("Preferences", this);
+            var dialog = new Preferences (_("Preferences"), this);
             dialog.show_all ();
             dialog.run ();
             dialog.destroy ();

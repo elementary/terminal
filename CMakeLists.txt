@@ -2,50 +2,28 @@
 
 project (pantheon-terminal)
 cmake_minimum_required (VERSION 2.8)
-
+cmake_policy (VERSION 2.6)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
 
 #
 # Base bits
 #
+
+enable_testing ()
+
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/pantheon-terminal")
 set (GETTEXT_PACKAGE "pantheon-terminal")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.1")
 set (VERSION_INFO "Release")
+set (CMAKE_C_FLAGS "-ggdb")
+set (PREFIX ${CMAKE_INSTALL_PREFIX})
+set (DOLLAR "$")
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
-#
-# Niceties
-#
-set (ARCHIVE_NAME pantheon-terminal-${VERSION})
-add_custom_target (dist
-    COMMAND bzr export --root=${ARCHIVE_NAME} ${CMAKE_BINARY_DIR}/${ARCHIVE_NAME}.tar.bz2
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-
-add_custom_target (distcheck
-    COMMAND cd ${CMAKE_BINARY_DIR}
-    && rm -rf ${ARCHIVE_NAME}
-    && tar xf ${ARCHIVE_NAME}.tar.bz2
-    && mkdir ${ARCHIVE_NAME}/build
-    && cd ${ARCHIVE_NAME}/build
-    && cmake -DCMAKE_INSTALL_PREFIX=../install -DGSETTINGS_LOCALINSTALL=ON .. -DCMAKE_MODULE_PATH=/usr/share/cmake
-    && make -j8
-    && make -j8 install
-    && make check
-    )
-add_dependencies(distcheck dist)
-
-add_custom_target (uninstall "${CMAKE_COMMAND}" -P
-  "${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake")
-
-#
-# config.h
-#
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
@@ -77,7 +55,9 @@ OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
     )
 
-add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
+add_subdirectory (po)
+
+#add_definitions(${CFLAGS} -Wall -Winit-self -Wwrite-strings -Wunreachable-code -Wstrict-prototypes )
 add_executable(pantheon-terminal ${VALA_C})
 
 install(TARGETS pantheon-terminal RUNTIME DESTINATION bin)

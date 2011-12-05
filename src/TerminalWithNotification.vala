@@ -60,10 +60,10 @@ namespace PantheonTerminal
             // Set menu
             var menu = new Menu();
 
-            var copy_menuitem = new MenuItem.with_label ("Copy");
-            var paste_menuitem = new MenuItem.with_label ("Paste");
-            var preferences_menuitem = new MenuItem.with_label ("Preferences");
-            var about_menuitem = new MenuItem.with_label ("About");
+            var copy_menuitem = new MenuItem.with_label (_("Copy"));
+            var paste_menuitem = new MenuItem.with_label (_("Paste"));
+            var preferences_menuitem = new MenuItem.with_label (_("Preferences"));
+            var about_menuitem = new MenuItem.with_label (_("About"));
 
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);

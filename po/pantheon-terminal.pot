@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-05 21:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:82
+msgid "Terminal"
+msgstr ""
+
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:357
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:65
+msgid "Preferences"
+msgstr ""
+
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:63
+msgid "Copy"
+msgstr ""
+
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:64
+msgid "Paste"
+msgstr ""
+
+#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:66
+msgid "About"
+msgstr ""
