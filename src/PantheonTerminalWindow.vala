@@ -252,7 +252,21 @@ namespace PantheonTerminal
 
             // Set connections
             tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
-            t.window_title_changed.connect(() => { tab.set_text(t.get_window_title()); });
+            
+            t.window_title_changed.connect(() => {
+                string new_text = t.get_window_title ();
+                int i;
+                
+                for (i = 0; i < new_text.length; i++) {
+                    if (new_text[i] == ':') {
+                        new_text = new_text[i + 2:new_text.length];
+                        break;
+                    }
+                }
+                
+                tab.set_text (new_text);
+            });
+            
             notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
