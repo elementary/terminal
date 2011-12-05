@@ -43,7 +43,7 @@ namespace PantheonTerminal {
                 program_name = app_cmd_name;
 		        exec_name = app_cmd_name.down();
 		        app_years = "2011";
-		        app_icon = "terminal";
+		        app_icon = "utilities-terminal";
 		        app_launcher = "pantheon-terminal.desktop";
 		        application_id = "net.launchpad.pantheon-terminal";
 		        main_url = "https://launchpad.net/pantheon-terminal";

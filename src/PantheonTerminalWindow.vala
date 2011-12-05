@@ -82,7 +82,7 @@ namespace PantheonTerminal
             title = _("Terminal");
             default_width = 640;
             default_height = 400;
-            icon_name = "terminal";
+            icon_name = "utilities-terminal";
             destroy.connect(close);
 
             // Check if the window have the focus
@@ -283,7 +283,7 @@ namespace PantheonTerminal
                 if (!window_focus)
                 {
                     try
-                    { GLib.Process.spawn_command_line_async("notify-send --icon=\"terminal\" \"" + t.get_window_title() + "\" \"Task finished.\""); }
+                    { GLib.Process.spawn_command_line_async("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title() + "\" \"Task finished.\""); }
                     catch
                     {  }
                 }
