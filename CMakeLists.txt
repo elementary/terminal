@@ -45,7 +45,6 @@ vala_precompile(VALA_C
     src/PantheonTerminalWindow.vala
     src/PreferencesDialog.vala
     src/TerminalWithNotification.vala
-    src/Resources.vala
 PACKAGES
     vte-2.90
     granite

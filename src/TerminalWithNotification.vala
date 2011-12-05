@@ -28,8 +28,6 @@ using Vte;
 using Pango;
 //~ using Notify;
 
-using Resources;
-
 namespace PantheonTerminal
 {
     public class TerminalWithNotification : Terminal

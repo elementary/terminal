@@ -19,7 +19,6 @@
 ***/
 
 using Gtk;
-using Resources;
 
 namespace PantheonTerminal {
 
