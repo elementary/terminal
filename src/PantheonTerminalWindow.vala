@@ -223,10 +223,11 @@ namespace PantheonTerminal
         {
             // Set up terminal
             var t = new TerminalWithNotification(this);
-
+            var s = new ScrolledWindow (null, null);
+            s.add (t);
             /* To avoid a gtk/vte bug (needs more investigating) */
             var box = new Gtk.Grid();
-            box.add (t);
+            box.add (s);
             t.vexpand = true;
             t.hexpand = true;
 
