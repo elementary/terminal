@@ -19,16 +19,10 @@
 ***/
 
 /* TODO
- * For 0.1
- * Keep focus on terminal if terminal focused (tag FIXME)
- *
  * For 0.2
  * Notify with system bubbles if the window is not focused (tag FIXME)
- * Set text colors ?
- * Set preferences via GSettings ? (legacy theme)
  * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
  * Start the port to the terminal background service
- * If the last page is moved to another instance, close the window ?
  */
 
 using Gtk;
