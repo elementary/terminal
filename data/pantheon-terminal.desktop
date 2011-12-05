@@ -7,4 +7,4 @@ Icon=utilities-terminal
 Type=Application
 Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
-
+MimeType=x-directory/gnome-default-handler;x-directory/normal;inode/directory;
