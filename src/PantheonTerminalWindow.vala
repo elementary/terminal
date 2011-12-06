@@ -32,10 +32,9 @@ using Pango;
 using Granite;
 //~ using Notify;
 
-namespace PantheonTerminal
-{
-    public class PantheonTerminalWindow : Gtk.Window
-    {
+namespace PantheonTerminal {
+
+    public class PantheonTerminalWindow : Gtk.Window {
 
         public signal void theme_changed();
         
@@ -60,8 +59,7 @@ namespace PantheonTerminal
         bool arrow = false;
         bool tab = false;
 
-        public PantheonTerminalWindow (Granite.Application app = null)
-        {
+        public PantheonTerminalWindow (Granite.Application app = null) {
             
             this.app = app;
             set_application (app);
@@ -136,18 +134,18 @@ namespace PantheonTerminal
             key_release_event.connect(on_key_release_event);
         }
 
-        public void remove_page (int page)
-        {
+        public void remove_page (int page) {
+
             notebook.remove_page(page);
 
             if (notebook.get_n_pages() == 0)
                 new_tab(false);
         }
 
-        public bool on_key_press_event(EventKey event)
-        {
+        public bool on_key_press_event(EventKey event) {
 
             string key = Gdk.keyval_name(event.keyval);
+
             if (key == "Control_L")
                 ctrlL = true;
             else if (key == "Control_R")
@@ -166,8 +164,7 @@ namespace PantheonTerminal
             */
             
 
-            else if ((ctrlL || ctrlR) && (shiftL || shiftR))
-            {
+            else if ((ctrlL || ctrlR) && (shiftL || shiftR)) {
                 if (key == "t" || key == "T")
                     new_tab(false);
                 else if (key == "w" || key == "W")
@@ -192,10 +189,10 @@ namespace PantheonTerminal
             return false;
         }
 
-        public bool on_key_release_event(EventKey event)
-        {
+        public bool on_key_release_event(EventKey event) {
 
             string key = Gdk.keyval_name(event.keyval);
+
             if (key == "Control_L")
                 ctrlL = false;
             else if (key == "Control_R")
@@ -208,15 +205,17 @@ namespace PantheonTerminal
                 arrow = false;
             else if (key == "Tab")
                 tab = false;
+
             return false;
         }
 
-        private void new_tab(bool first)
-        {
+        private void new_tab(bool first) {
+
             // Set up terminal
             var t = new TerminalWithNotification(this);
             var s = new ScrolledWindow (null, null);
             s.add (t);
+
             /* To avoid a gtk/vte bug (needs more investigating) */
             var box = new Gtk.Grid();
             box.add (s);
@@ -273,14 +272,6 @@ namespace PantheonTerminal
 
             theme_changed.connect(() => { set_terminal_theme(t); });
             //t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
-            
-            // Make the terminal keep the focus when arrows are pressed FIXME
-            t.focus_out_event.connect((event) => {
-                if (notebook.page_num(t) == notebook.get_current_page() && (arrow || this.tab))
-                {
-                    t.grab_focus();
-                }
-                return false; });
 
             // If a task is over
             t.task_over.connect(() => {
@@ -312,16 +303,15 @@ namespace PantheonTerminal
             box.show_all();
         }
 
-        public void set_terminal_theme(TerminalWithNotification t)
-        {
+        public void set_terminal_theme(TerminalWithNotification t) {
             t.set_font(font);
             t.set_color_background(bgcolor);
             t.set_color_foreground(fgcolor);
         }
 
-        public void set_theme()
-        {
+        public void set_theme() {
             string theme = "dark";
+
             if (theme == "normal")
             {
                 Gtk.Settings.get_default().gtk_application_prefer_dark_theme = false;
@@ -346,10 +336,10 @@ namespace PantheonTerminal
             theme_changed();
         }
 
-        static string system_font()
-        {
+        static string system_font() {
+
             string font_name = null;
-            
+
             /* Wait for GNOME 3 FIXME */
             //var settings = new GLib.Settings("org.gnome.desktop.interface");
             //font_name = settings.get_string("monospace-font-name");
@@ -358,8 +348,8 @@ namespace PantheonTerminal
             return font_name;
         }
 
-        public void preferences()
-        {
+        public void preferences() {
+
             var dialog = new Preferences (_("Preferences"), this);
             dialog.show_all ();
             dialog.run ();
@@ -367,15 +357,15 @@ namespace PantheonTerminal
         }
 
 
-        private void close()
-        {
+        private void close() {
+
             Gtk.main_quit();
         }
 
     }
 
-    public class TabWithCloseButton : HBox
-    {
+    public class TabWithCloseButton : HBox {
+
         public signal void clicked();
 
         private Button button;
@@ -385,8 +375,8 @@ namespace PantheonTerminal
         public bool reorderable = true;
         public bool detachable = true;
 
-        public TabWithCloseButton(string text)
-        {
+        public TabWithCloseButton(string text) {
+
             this.text = text;
 
             // Button
@@ -407,8 +397,8 @@ namespace PantheonTerminal
             show();
         }
 
-        public void set_notification(bool notification)
-        {
+        public void set_notification(bool notification) {
+
             this.notification = notification;
             if (notification)
                 label.set_markup("<span color=\"#18a0c0\">"+text+"</span>");
@@ -416,8 +406,8 @@ namespace PantheonTerminal
                 label.set_markup(text);
         }
 
-        public void set_text(string text)
-        {
+        public void set_text(string text) {
+
             this.text = text;
             set_notification(notification);
         }

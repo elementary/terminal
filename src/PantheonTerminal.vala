@@ -77,6 +77,7 @@ namespace PantheonTerminal {
         }  
         
         public static int main(string[] args) {
+
                 app_cmd_name = "Pantheon Terminal";
                 Gtk.init(ref args);
                 var app = new PantheonTerminal ();
