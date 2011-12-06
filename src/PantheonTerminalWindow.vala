@@ -157,7 +157,7 @@ namespace PantheonTerminal
             else if (key == "Shift_R")
                 shiftR = true;
 
-            /* 
+            /*
             else if (key == "Tab")
             {
                 notebook.get_nth_page(notebook.get_current_page()).grab_focus();
