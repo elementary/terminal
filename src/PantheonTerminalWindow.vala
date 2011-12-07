@@ -211,15 +211,15 @@ namespace PantheonTerminal {
             return false;
         }
 
-        private void new_tab(bool first) {
+        private void new_tab (bool first) {
 
             // Set up terminal
-            var t = new TerminalWithNotification(this);
+            var t = new TerminalWithNotification (this);
             var s = new ScrolledWindow (null, null);
             s.add (t);
 
             /* To avoid a gtk/vte bug (needs more investigating) */
-            var box = new Gtk.Grid();
+            var box = new Gtk.Grid ();
             box.add (s);
             t.vexpand = true;
             t.hexpand = true;
@@ -227,34 +227,34 @@ namespace PantheonTerminal {
             // Set up style
             set_terminal_theme(t);
             if (first && args.length != 0) {
-                t.fork_command_full(Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
+                t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
                 //t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.FILE_AND_ARGV_ZERO, null, 0);
                 //t.fork_command(args[0], args, null, null, true, true, true);
             } else {
-                t.fork_command_full(Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
+                t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
                 //t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.LEAVE_DESCRIPTORS_OPEN, null, t.get_pty());
                 //t.fork_command(null, null, null, null, true, true, true);
                 //t.forkpty(null, null, true, true, true);
             }
 
             // Set up style
-            set_terminal_theme(t);
-            t.show();
+            set_terminal_theme (t);
+            t.show ();
 
             // Set up style
-            set_terminal_theme(t);
+            set_terminal_theme (t);
 
             // Create a new tab with the terminal
-            var tab = new TabWithCloseButton("Terminal");
-            notebook.insert_page(box, tab, notebook.get_current_page() + 1);
-            notebook.next_page();
-            notebook.set_tab_reorderable(tab, true);
-            notebook.set_tab_detachable(tab, true);
+            var tab = new TabWithCloseButton ("Terminal");
+            notebook.insert_page (box, tab, notebook.get_current_page() + 1);
+            notebook.next_page ();
+            notebook.set_tab_reorderable (tab, true);
+            notebook.set_tab_detachable (tab, true);
 
             // Set connections
-            tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
+            tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
 
-            t.window_title_changed.connect(() => {
+            t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
                 int i;
 
@@ -268,21 +268,22 @@ namespace PantheonTerminal {
                 tab.set_text (new_text);
             });
 
-            notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
-            focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
-            t.preferences.connect(preferences);
+            notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
+            focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
+            t.preferences.connect (preferences);
 
-            theme_changed.connect(() => { set_terminal_theme(t); });
-            //t.contents_changed.connect(() => { stdout.printf("pty %i\n", t.get_pty()); });
+            theme_changed.connect (() => { set_terminal_theme (t); });
 
             // If a task is over
-            t.task_over.connect(() => {
-                if (notebook.page_num(t) != notebook.get_current_page() || !window_focus)
-                    tab.set_notification(true);
+            t.task_over.connect (() => {
+
+                if (notebook.page_num (t) != notebook.get_current_page () || !window_focus)
+                    tab.set_notification (true);
+
                 if (!window_focus)
                 {
                     try
-                    { GLib.Process.spawn_command_line_async("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title() + "\" \"Task finished.\""); }
+                    { GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\""); }
                     catch
                     {  }
                 }
