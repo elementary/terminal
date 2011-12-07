@@ -26,56 +26,56 @@ using Granite.Services;
 using PantheonTerminal;
 
 namespace PantheonTerminal {
-    
+
     public class PantheonTerminal : Granite.Application {
-    
+
             public PantheonTerminalWindow window = null;
-		    static string app_cmd_name;
-		
-		    construct {
+            static string app_cmd_name;
+
+            construct {
             /*
                 build_data_dir = Constants.DATADIR;
-			    build_pkg_data_dir = Constants.PKGDATADIR;
-			    build_release_name = Constants.RELEASE_NAME;
-			    build_version = Constants.VERSION;
-			    build_version_info = Constants.VERSION_INFO;
-			*/
-                program_name = app_cmd_name;
-		        exec_name = app_cmd_name.down();
-		        app_years = "2011";
-		        app_icon = "utilities-terminal";
-		        app_launcher = "pantheon-terminal.desktop";
-		        application_id = "net.launchpad.pantheon-terminal";
-		        main_url = "https://launchpad.net/pantheon-terminal";
-		        bug_url = "https://bugs.launchpad.net/pantheon-terminal";
-		        help_url = "https://answers.launchpad.net/pantheon-terminal";
-		        translate_url = "https://translations.launchpad.net/pantheon-terminal";
-		        //about_authors = { null };
-		        //about_documenters = {"",""};
-		        //about_artists = { null };
-		        about_translators = "Launchpad Translators";
-		        about_license_type = License.GPL_3_0;
-		        
-		    }
-        
+                build_pkg_data_dir = Constants.PKGDATADIR;
+                build_release_name = Constants.RELEASE_NAME;
+                build_version = Constants.VERSION;
+                build_version_info = Constants.VERSION_INFO;
+            */
+            program_name = app_cmd_name;
+                exec_name = app_cmd_name.down();
+                app_years = "2011";
+                app_icon = "utilities-terminal";
+                app_launcher = "pantheon-terminal.desktop";
+                application_id = "net.launchpad.pantheon-terminal";
+                main_url = "https://launchpad.net/pantheon-terminal";
+                bug_url = "https://bugs.launchpad.net/pantheon-terminal";
+                help_url = "https://answers.launchpad.net/pantheon-terminal";
+                translate_url = "https://translations.launchpad.net/pantheon-terminal";
+                //about_authors = { null };
+                //about_documenters = {"",""};
+                //about_artists = { null };
+                about_translators = "Launchpad Translators";
+                about_license_type = License.GPL_3_0;
+
+            }
+
         public PantheonTerminal () {
-        
+
             Logger.initialize ("PantheonTerminal");
-		    Logger.DisplayLevel = LogLevel.DEBUG;
-        
-        } 
-        
+            Logger.DisplayLevel = LogLevel.DEBUG;
+
+        }
+
         protected override void activate () {
 
             if (get_windows () == null) {
-    			window = new PantheonTerminalWindow (this);
-    			window.show ();
+                window = new PantheonTerminalWindow (this);
+                window.show ();
             } else {
                 window.present ();
             }
 
-        }  
-        
+        }
+
         public static int main(string[] args) {
 
                 app_cmd_name = "Pantheon Terminal";

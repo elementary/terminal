@@ -20,19 +20,26 @@
 
 using Gtk;
 using Gdk;
+
 using Vte;
-using Pango;
-//~ using Notify;
+//using Pango;
+//using Notify;
 
 namespace PantheonTerminal {
-    
+
     public class TerminalWithNotification : Terminal {
-        
+
         public signal void task_over ();
         public signal void preferences ();
         public signal void about ();
 
-        private Gtk.Window parent_window;
+        private Menu menu;
+        private MenuItem copy_menuitem;
+        private MenuItem paste_menuitem;
+        private MenuItem preferences_menuitem;
+        private MenuItem about_menuitem;
+
+        private PantheonTerminalWindow parent_window;
 
         long last_row_count = 0;
         long last_column_count = 0;
@@ -50,25 +57,33 @@ namespace PantheonTerminal {
             set_size_request (320, 200);
             window_title_changed.connect (check_for_notification);
 
-            // Set menu
-            var menu = new Menu();
+            setup_ui ();
+            connect_signals ();
+        }
 
-            var copy_menuitem = new MenuItem.with_label (_("Copy"));
-            var paste_menuitem = new MenuItem.with_label (_("Paste"));
-            var preferences_menuitem = new MenuItem.with_label (_("Preferences"));
-            var about_menuitem = new MenuItem.with_label (_("About"));
 
+        private void setup_ui () {
+
+            /* Set up the menu */
+            menu = new Menu();
+            copy_menuitem = new MenuItem.with_label (_("Copy"));
+            paste_menuitem = new MenuItem.with_label (_("Paste"));
+            preferences_menuitem = new MenuItem.with_label (_("Preferences"));
+            about_menuitem = new MenuItem.with_label (_("About"));
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
             menu.append (new MenuItem());
             menu.append (preferences_menuitem);
             menu.append (about_menuitem);
             menu.show_all ();
+        }
+
+        private void connect_signals () {
 
             copy_menuitem.activate.connect (() => { copy_clipboard(); });
             paste_menuitem.activate.connect (() => { paste_clipboard(); });
             preferences_menuitem.activate.connect (() => { preferences(); });
-            about_menuitem.activate.connect (() => { parent_window.app.show_about (parent_window); });
+            about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
 
             // Pop menu up
             button_press_event.connect ((event) => {
