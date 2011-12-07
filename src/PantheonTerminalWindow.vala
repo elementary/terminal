@@ -50,6 +50,9 @@ namespace PantheonTerminal {
         string[] args;
 
         //Notify.Notification notification;
+        public Toolbar toolbar;
+
+        public Gtk.ActionGroup main_actions;
 
         // Control and Shift keys
         bool ctrlL = false;
@@ -63,10 +66,6 @@ namespace PantheonTerminal {
             
             this.app = app;
             set_application (app);
-            //this.args = args;
-
-            //foreach (string arg in args)
-            //    stdout.printf("%s\n", arg);
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
@@ -251,7 +250,7 @@ namespace PantheonTerminal {
 
             // Set connections
             tab.clicked.connect(() => { remove_page(notebook.page_num(t)); });
-            
+
             t.window_title_changed.connect(() => {
                 string new_text = t.get_window_title ();
                 int i;
@@ -312,8 +311,7 @@ namespace PantheonTerminal {
         public void set_theme() {
             string theme = "dark";
 
-            if (theme == "normal")
-            {
+            if (theme == "normal") {
                 Gtk.Settings.get_default().gtk_application_prefer_dark_theme = false;
 
                 // Get the system's style
@@ -322,8 +320,7 @@ namespace PantheonTerminal {
                 bgcolor = get_style().bg[StateType.NORMAL];
                 fgcolor = get_style().fg[StateType.NORMAL];
             }
-            else
-            {
+            else {
                 Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
 
                 // Get the system's style
@@ -369,7 +366,7 @@ namespace PantheonTerminal {
         public signal void clicked();
 
         private Button button;
-        private Label label;
+        public Label label;
         private string text;
         bool notification = false;
         public bool reorderable = true;
