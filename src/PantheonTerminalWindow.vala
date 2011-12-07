@@ -30,7 +30,7 @@ using Gdk;
 using Vte;
 using Pango;
 using Granite;
-//~ using Notify;
+//using Notify;
 
 namespace PantheonTerminal {
 
@@ -68,8 +68,7 @@ namespace PantheonTerminal {
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
-            default_width = 640;
-            default_height = 400;
+            set_default_size (640, 400);
             icon_name = "utilities-terminal";
 
             setup_ui ();
@@ -82,6 +81,7 @@ namespace PantheonTerminal {
 
         private void setup_ui () {
 
+            /* Set up the Notebook */
             notebook = new Notebook ();
             var right_box = new HBox (false, 0);
             right_box.show ();
@@ -90,7 +90,7 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
 
-            // Set "New tab" button
+            /* Set up the Add button */
             add_button = new Button();
             add_button.can_focus = false;
 
@@ -109,7 +109,6 @@ namespace PantheonTerminal {
             add_button.show();
             add_button.set_relief(ReliefStyle.NONE);
             add_button.set_tooltip_text("Open a new tab");
-
             right_box.pack_start (add_button, false, false, 0);
         }
 
