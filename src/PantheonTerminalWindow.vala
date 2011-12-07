@@ -246,7 +246,8 @@ namespace PantheonTerminal {
 
             // Create a new tab with the terminal
             var tab = new TabWithCloseButton ("Terminal");
-            notebook.insert_page (box, tab, notebook.get_current_page() + 1);
+            int new_page = notebook.get_current_page () + 1;
+            notebook.insert_page (box, tab, new_page);
             notebook.next_page ();
             notebook.set_tab_reorderable (tab, true);
             notebook.set_tab_detachable (tab, true);
@@ -304,6 +305,7 @@ namespace PantheonTerminal {
             // Set up style
             set_terminal_theme (t);
             box.show_all ();
+            notebook.page = new_page;
         }
 
         public void set_terminal_theme (TerminalWithNotification t) {
