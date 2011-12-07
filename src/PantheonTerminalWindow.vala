@@ -37,22 +37,18 @@ namespace PantheonTerminal {
     public class PantheonTerminalWindow : Gtk.Window {
 
         public signal void theme_changed();
-        
+
         public Granite.Application app;
-        
         Notebook notebook;
+        public Toolbar toolbar;
         FontDescription font;
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
-
-        bool window_focus = false;
-
-        string[] args;
-
         //Notify.Notification notification;
-        public Toolbar toolbar;
 
         public Gtk.ActionGroup main_actions;
+
+        string[] args;
 
         // Control and Shift keys
         bool ctrlL = false;
@@ -62,8 +58,10 @@ namespace PantheonTerminal {
         bool arrow = false;
         bool tab = false;
 
+        bool window_focus = false;
+
         public PantheonTerminalWindow (Granite.Application app = null) {
-            
+
             this.app = app;
             set_application (app);
 
@@ -73,10 +71,6 @@ namespace PantheonTerminal {
             default_height = 400;
             icon_name = "utilities-terminal";
             destroy.connect(close);
-
-            // Check if the window have the focus
-            focus_in_event.connect(() => { window_focus = true; return false; });
-            focus_out_event.connect(() => { window_focus = false; return false; });
 
             notebook = new Notebook ();
             var right_box = new HBox (false, 0);
@@ -94,7 +88,7 @@ namespace PantheonTerminal {
                         break;
                     case "GDK_SCROLL_DOWN":
                     case "GDK_SCROLL_LEFT":
-                        notebook.page--;    
+                        notebook.page--;
                         break;
                 }
                 return false;
@@ -104,7 +98,7 @@ namespace PantheonTerminal {
             var add_button = new Button();
             add_button.can_focus = false;
             //add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
-            
+
             Image add_image = null;
             try {
                 add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
@@ -161,7 +155,6 @@ namespace PantheonTerminal {
                 stdout.printf("tab %i\n", notebook.get_current_page());
             }
             */
-            
 
             else if ((ctrlL || ctrlR) && (shiftL || shiftR)) {
                 if (key == "t" || key == "T")
@@ -254,17 +247,17 @@ namespace PantheonTerminal {
             t.window_title_changed.connect(() => {
                 string new_text = t.get_window_title ();
                 int i;
-                
+
                 for (i = 0; i < new_text.length; i++) {
                     if (new_text[i] == ':') {
                         new_text = new_text[i + 2:new_text.length];
                         break;
                     }
                 }
-                
+
                 tab.set_text (new_text);
             });
-            
+
             notebook.switch_page.connect((page, page_num) => { if (notebook.page_num(t) == (int) page_num) tab.set_notification(false); });
             focus_in_event.connect(() => { if (notebook.page_num(t) == notebook.get_current_page()) tab.set_notification(false); return false; });
             t.preferences.connect(preferences);
@@ -298,54 +291,55 @@ namespace PantheonTerminal {
             t.child_exited.connect (() => {remove_page (notebook.page);});
 
             // Set up style
-            set_terminal_theme(t);
-            box.show_all();
+            set_terminal_theme (t);
+            box.show_all ();
         }
 
-        public void set_terminal_theme(TerminalWithNotification t) {
-            t.set_font(font);
-            t.set_color_background(bgcolor);
-            t.set_color_foreground(fgcolor);
+        public void set_terminal_theme (TerminalWithNotification t) {
+            t.set_font (font);
+            t.set_color_background (bgcolor);
+            t.set_color_foreground (fgcolor);
         }
 
-        public void set_theme() {
+        public void set_theme () {
+
             string theme = "dark";
 
             if (theme == "normal") {
-                Gtk.Settings.get_default().gtk_application_prefer_dark_theme = false;
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = false;
 
                 // Get the system's style
-                realize();
-                font = FontDescription.from_string(system_font());
-                bgcolor = get_style().bg[StateType.NORMAL];
-                fgcolor = get_style().fg[StateType.NORMAL];
+                realize ();
+                font = FontDescription.from_string (system_font ());
+                bgcolor = get_style ().bg[StateType.NORMAL];
+                fgcolor = get_style ().fg[StateType.NORMAL];
             }
             else {
-                Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
                 // Get the system's style
-                realize();
-                font = FontDescription.from_string(system_font());
-                bgcolor = get_style().bg[StateType.NORMAL];
-                fgcolor = get_style().fg[StateType.NORMAL];
+                realize ();
+                font = FontDescription.from_string (system_font ());
+                bgcolor = get_style ().bg[StateType.NORMAL];
+                fgcolor = get_style ().fg[StateType.NORMAL];
             }
 
-            theme_changed();
+            theme_changed ();
         }
 
-        static string system_font() {
+        static string system_font () {
 
             string font_name = null;
 
             /* Wait for GNOME 3 FIXME */
             //var settings = new GLib.Settings("org.gnome.desktop.interface");
             //font_name = settings.get_string("monospace-font-name");
-             
+
             font_name = "Droid Sans Mono 10";
             return font_name;
         }
 
-        public void preferences() {
+        public void preferences () {
 
             var dialog = new Preferences (_("Preferences"), this);
             dialog.show_all ();
@@ -356,57 +350,59 @@ namespace PantheonTerminal {
 
         private void close() {
 
-            Gtk.main_quit();
+            Gtk.main_quit ();
         }
 
     }
 
     public class TabWithCloseButton : HBox {
 
-        public signal void clicked();
+        public signal void clicked ();
 
         private Button button;
         public Label label;
+
         private string text;
         bool notification = false;
         public bool reorderable = true;
         public bool detachable = true;
 
-        public TabWithCloseButton(string text) {
+        public TabWithCloseButton (string text) {
 
             this.text = text;
 
             // Button
-            button = new Button();
-            button.set_image(new Image.from_stock(Stock.CLOSE, IconSize.MENU));
-            button.show();
-            button.set_relief(ReliefStyle.NONE);
-            button.clicked.connect(() => { clicked(); });
+            button = new Button ();
+            button.set_image (new Image.from_stock (Stock.CLOSE, IconSize.MENU));
+            button.show ();
+            button.set_relief (ReliefStyle.NONE);
+            button.clicked.connect (() => { clicked(); });
 
             // Label
-            label = new Label(text);
-            label.show();
+            label = new Label (text);
+            label.show ();
 
             // Pack the elements
-            pack_start(button, false, true, 0);
-            pack_end(label, true, true, 0);
+            pack_start (button, false, true, 0);
+            pack_end (label, true, true, 0);
 
-            show();
+            show ();
         }
 
-        public void set_notification(bool notification) {
+        public void set_notification (bool notification) {
 
             this.notification = notification;
+
             if (notification)
-                label.set_markup("<span color=\"#18a0c0\">"+text+"</span>");
+                label.set_markup ("<span color=\"#18a0c0\">" + text + "</span>");
             else
-                label.set_markup(text);
+                label.set_markup (text);
         }
 
-        public void set_text(string text) {
+        public void set_text (string text) {
 
             this.text = text;
-            set_notification(notification);
+            set_notification (notification);
         }
     }
 }
