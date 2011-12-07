@@ -44,6 +44,7 @@ namespace PantheonTerminal {
         FontDescription font;
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
+        private Button add_button;
         //Notify.Notification notification;
 
         public Gtk.ActionGroup main_actions;
@@ -70,7 +71,16 @@ namespace PantheonTerminal {
             default_width = 640;
             default_height = 400;
             icon_name = "utilities-terminal";
-            destroy.connect(close);
+
+            setup_ui ();
+            set_theme ();
+            show_all ();
+            connect_signals ();
+
+            new_tab (true);
+        }
+
+        private void setup_ui () {
 
             notebook = new Notebook ();
             var right_box = new HBox (false, 0);
@@ -80,24 +90,9 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
 
-            notebook.scroll_event.connect ((event) => {
-                switch (event.direction.to_string ()) {
-                    case "GDK_SCROLL_UP":
-                    case "GDK_SCROLL_RIGHT":
-                        notebook.page++;
-                        break;
-                    case "GDK_SCROLL_DOWN":
-                    case "GDK_SCROLL_LEFT":
-                        notebook.page--;
-                        break;
-                }
-                return false;
-            });
-
             // Set "New tab" button
-            var add_button = new Button();
+            add_button = new Button();
             add_button.can_focus = false;
-            //add_button.set_image(new Image.from_stock(Stock.ADD, IconSize.MENU));
 
             Image add_image = null;
             try {
@@ -114,30 +109,46 @@ namespace PantheonTerminal {
             add_button.show();
             add_button.set_relief(ReliefStyle.NONE);
             add_button.set_tooltip_text("Open a new tab");
+
+            right_box.pack_start (add_button, false, false, 0);
+        }
+
+        private void connect_signals () {
+
+            destroy.connect (close);
+
             add_button.clicked.connect(() => { new_tab(false); } );
-            right_box.pack_start(add_button, false, false, 0);
 
-            // Set the theme
-            set_theme();
-
-            show_all();
-            new_tab(true);
-
-            key_press_event.connect(on_key_press_event);
-            key_release_event.connect(on_key_release_event);
+            key_press_event.connect (on_key_press_event);
+            key_release_event.connect (on_key_release_event);
         }
 
         public void remove_page (int page) {
 
-            notebook.remove_page(page);
+            notebook.remove_page (page);
 
-            if (notebook.get_n_pages() == 0)
-                new_tab(false);
+            if (notebook.get_n_pages () == 0)
+                new_tab (false);
         }
 
-        public bool on_key_press_event(EventKey event) {
+        public override bool scroll_event (EventScroll event) {
 
-            string key = Gdk.keyval_name(event.keyval);
+            switch (event.direction.to_string ()) {
+                case "GDK_SCROLL_UP":
+                case "GDK_SCROLL_RIGHT":
+                    notebook.page++;
+                    break;
+                case "GDK_SCROLL_DOWN":
+                case "GDK_SCROLL_LEFT":
+                    notebook.page--;
+                    break;
+            }
+            return false;
+        }
+
+        public bool on_key_press_event (EventKey event) {
+
+            string key = Gdk.keyval_name (event.keyval);
 
             if (key == "Control_L")
                 ctrlL = true;
@@ -296,6 +307,7 @@ namespace PantheonTerminal {
         }
 
         public void set_terminal_theme (TerminalWithNotification t) {
+
             t.set_font (font);
             t.set_color_background (bgcolor);
             t.set_color_foreground (fgcolor);
