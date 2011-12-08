@@ -154,8 +154,9 @@ namespace PantheonTerminal {
              * the user will not be notified.
              */
 
-            if (get_row_count() == last_row_count && get_column_count() == last_column_count)
-                task_over();
+            if (get_row_count() == last_row_count && get_column_count() == last_column_count) {
+                task_over ();
+            }
 
             last_row_count = get_row_count();
             last_column_count = get_column_count();

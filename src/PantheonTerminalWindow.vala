@@ -278,32 +278,11 @@ namespace PantheonTerminal {
             // If a task is over
             t.task_over.connect (() => {
 
-                if (notebook.page_num (t) != notebook.get_current_page () || !window_focus)
-                    tab.set_notification (true);
-
-                if (this.is_focus) {
-                    print ("Hey focus...\n");
-                } else { print ("No focus...\n"); }
-
-                if (!this.is_focus)
-                {
-                    try {
-                        //if (this.is_focus) {
-                            GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\"");
-                        //}
-                    }
-                    catch {  }
-                }
-                /*
-                notification = (Notify.Notification)GLib.Object.new (
-                    typeof (Notify.Notification),
-                    "summary", "sum",
-                    "body", "message",
-                    "icon-name", "");
-                // Notify OSD
-                notification = new Notification("test", "test", "test");
-                try { notification.show(); } catch {}
-                */
+                try {
+                //if (this.is_focus) {
+                    GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\"");
+                //}
+                } catch {  }
             });
 
             t.child_exited.connect (() => {remove_page (notebook.page);});
