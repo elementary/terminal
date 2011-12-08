@@ -279,16 +279,13 @@ namespace PantheonTerminal {
             t.task_over.connect (() => {
 
                 try {
-                //if (this.is_focus) {
                     GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\"");
-                //}
                 } catch {  }
             });
 
             t.child_exited.connect (() => {remove_page (notebook.page);});
 
-            if (first)
-                t.grab_focus ();
+            if (first) t.grab_focus ();
             set_terminal_theme (t);
             box.show_all ();
             notebook.page = new_page;

@@ -155,7 +155,7 @@ namespace PantheonTerminal {
              */
 
             if (get_row_count() == last_row_count && get_column_count() == last_column_count) {
-                task_over ();
+                if (!parent_window.is_active) task_over ();
             }
 
             last_row_count = get_row_count();
