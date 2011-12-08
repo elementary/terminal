@@ -30,7 +30,7 @@ using Gdk;
 using Vte;
 using Pango;
 using Granite;
-//using Notify;
+using Notify;
 
 namespace PantheonTerminal {
 
@@ -65,6 +65,8 @@ namespace PantheonTerminal {
 
             this.app = app;
             set_application (app);
+
+            Notify.init ("Pantheon Terminal");
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
@@ -213,7 +215,7 @@ namespace PantheonTerminal {
 
         private void new_tab (bool first) {
 
-            // Set up terminal
+            /* Set up terminal */
             var t = new TerminalWithNotification (this);
             var s = new ScrolledWindow (null, null);
             s.add (t);
@@ -224,7 +226,7 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
-            // Set up style
+            /* Set up style */
             set_terminal_theme(t);
             if (first && args.length != 0) {
                 t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
@@ -256,6 +258,7 @@ namespace PantheonTerminal {
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
 
             t.window_title_changed.connect (() => {
+
                 string new_text = t.get_window_title ();
                 int i;
 
@@ -265,7 +268,7 @@ namespace PantheonTerminal {
                         break;
                     }
                 }
-
+ 
                 tab.set_text (new_text);
             });
 
@@ -279,7 +282,8 @@ namespace PantheonTerminal {
             t.task_over.connect (() => {
 
                 try {
-                    GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\"");
+                    var notification = new Notification (t.get_window_title (), "Task finished.", "utilities-terminal");
+                    notification.show ();
                 } catch {  }
             });
 

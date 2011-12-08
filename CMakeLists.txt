@@ -28,7 +28,7 @@ configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/sr
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite vte-2.90)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite vte-2.90 libnotify)
 
 add_definitions(${DEPS_CFLAGS})
 
@@ -50,6 +50,7 @@ PACKAGES
     vte-2.90
     granite
     gtk+-3.0
+    libnotify
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
