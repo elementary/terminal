@@ -149,7 +149,7 @@ namespace PantheonTerminal {
 
         private void check_for_notification() {
 
-            /* Curently I use this trick to know if a task is over, the drawnback is
+            /* Curently I use this trick to know if a task is over, the drawback is
              * that when the window is resized and a notification should be received,
              * the user will not be notified.
              */

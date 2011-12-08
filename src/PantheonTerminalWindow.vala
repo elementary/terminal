@@ -20,8 +20,7 @@
 
 /* TODO
  * For 0.2
- * Notify with system bubbles if the window is not focused (tag FIXME)
- * Use stepped window resize ? (usefull if using another terminal background color than the one from the window)
+ * Use stepped window resize ? (useful if using another terminal background color than the one from the window)
  * Start the port to the terminal background service
  */
 
@@ -45,7 +44,6 @@ namespace PantheonTerminal {
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
         private Button add_button;
-        //Notify.Notification notification;
 
         public Gtk.ActionGroup main_actions;
 
@@ -58,8 +56,6 @@ namespace PantheonTerminal {
         bool shiftR = false;
         bool arrow = false;
         bool tab = false;
-
-        bool window_focus = false;
 
         public PantheonTerminalWindow (Granite.Application app = null) {
 
@@ -230,23 +226,11 @@ namespace PantheonTerminal {
             set_terminal_theme(t);
             if (first && args.length != 0) {
                 t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
-                //t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.FILE_AND_ARGV_ZERO, null, 0);
-                //t.fork_command(args[0], args, null, null, true, true, true);
             } else {
                 t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
-                //t.fork_command_full(PtyFlags.DEFAULT, null, null, null, SpawnFlags.LEAVE_DESCRIPTORS_OPEN, null, t.get_pty());
-                //t.fork_command(null, null, null, null, true, true, true);
-                //t.forkpty(null, null, true, true, true);
             }
 
-            // Set up style
-            set_terminal_theme (t);
-            t.show ();
-
-            // Set up style
-            set_terminal_theme (t);
-
-            // Create a new tab with the terminal
+            /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton ("Terminal");
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (box, tab, new_page);
@@ -254,8 +238,13 @@ namespace PantheonTerminal {
             notebook.set_tab_reorderable (tab, true);
             notebook.set_tab_detachable (tab, true);
 
-            // Set connections
+            /* Bind signals */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
+            notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
+            focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
+            t.preferences.connect (preferences);
+            theme_changed.connect (() => { set_terminal_theme (t); });
+            t.child_exited.connect (() => {remove_page (notebook.page);});
 
             t.window_title_changed.connect (() => {
 
@@ -272,22 +261,15 @@ namespace PantheonTerminal {
                 tab.set_text (new_text);
             });
 
-            notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
-            focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
-            t.preferences.connect (preferences);
-
-            theme_changed.connect (() => { set_terminal_theme (t); });
-
-            // If a task is over
             t.task_over.connect (() => {
 
                 try {
                     var notification = new Notification (t.get_window_title (), "Task finished.", "utilities-terminal");
                     notification.show ();
-                } catch {  }
+                } catch (Error err) {
+                    stderr.printf ("Unable to send notification: %s", err.message);
+                }
             });
-
-            t.child_exited.connect (() => {remove_page (notebook.page);});
 
             if (first) t.grab_focus ();
             set_terminal_theme (t);
@@ -311,7 +293,7 @@ namespace PantheonTerminal {
 
                 // Get the system's style
                 realize ();
-                font = FontDescription.from_string (system_font ());
+                font = FontDescription.from_string (get_system_font ());
                 bgcolor = get_style ().bg[StateType.NORMAL];
                 fgcolor = get_style ().fg[StateType.NORMAL];
             }
@@ -320,7 +302,7 @@ namespace PantheonTerminal {
 
                 // Get the system's style
                 realize ();
-                font = FontDescription.from_string (system_font ());
+                font = FontDescription.from_string (get_system_font ());
                 bgcolor = get_style ().bg[StateType.NORMAL];
                 fgcolor = get_style ().fg[StateType.NORMAL];
             }
@@ -328,7 +310,7 @@ namespace PantheonTerminal {
             theme_changed ();
         }
 
-        static string system_font () {
+        static string get_system_font () {
 
             string font_name = null;
 
