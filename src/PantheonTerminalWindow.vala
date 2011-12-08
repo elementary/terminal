@@ -352,7 +352,7 @@ namespace PantheonTerminal {
 
     }
 
-    public class TabWithCloseButton : HBox {
+    public class TabWithCloseButton : EventBox {
 
         public signal void clicked ();
 
@@ -367,7 +367,9 @@ namespace PantheonTerminal {
         public TabWithCloseButton (string text) {
 
             this.text = text;
-
+            
+            var hbox = new HBox (false, 0);
+            
             // Button
             button = new Button ();
             button.set_image (new Image.from_stock (Stock.CLOSE, IconSize.MENU));
@@ -380,10 +382,14 @@ namespace PantheonTerminal {
             label.show ();
 
             // Pack the elements
-            pack_start (button, false, true, 0);
-            pack_end (label, true, true, 0);
-
-            show ();
+            hbox.pack_start (button, false, true, 0);
+            hbox.pack_end (label, true, true, 0);
+            
+            add (hbox);
+            
+            button_press_event.connect (on_button_press_event);            
+            
+            show_all ();
         }
 
         public void set_notification (bool notification) {
@@ -400,6 +406,12 @@ namespace PantheonTerminal {
 
             this.text = text;
             set_notification (notification);
+        }
+        
+        bool on_button_press_event (EventButton event) {
+            if (event.button == 2)
+                clicked ();
+            return false;
         }
     }
 }
