@@ -281,12 +281,18 @@ namespace PantheonTerminal {
                 if (notebook.page_num (t) != notebook.get_current_page () || !window_focus)
                     tab.set_notification (true);
 
-                if (!window_focus)
+                if (this.is_focus) {
+                    print ("Hey focus...\n");
+                } else { print ("No focus...\n"); }
+
+                if (!this.is_focus)
                 {
-                    try
-                    { GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\""); }
-                    catch
-                    {  }
+                    try {
+                        //if (this.is_focus) {
+                            GLib.Process.spawn_command_line_async ("notify-send --icon=\"utilities-terminal\" \"" + t.get_window_title () + "\" \"Task finished.\"");
+                        //}
+                    }
+                    catch {  }
                 }
                 /*
                 notification = (Notify.Notification)GLib.Object.new (
@@ -302,7 +308,7 @@ namespace PantheonTerminal {
 
             t.child_exited.connect (() => {remove_page (notebook.page);});
 
-            // Set up style
+            t.grab_focus ();
             set_terminal_theme (t);
             box.show_all ();
             notebook.page = new_page;
