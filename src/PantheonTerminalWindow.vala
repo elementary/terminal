@@ -308,7 +308,8 @@ namespace PantheonTerminal {
 
             t.child_exited.connect (() => {remove_page (notebook.page);});
 
-            //t.grab_focus ();
+            if (first)
+                t.grab_focus ();
             set_terminal_theme (t);
             box.show_all ();
             notebook.page = new_page;
