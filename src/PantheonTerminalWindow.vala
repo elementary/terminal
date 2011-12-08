@@ -225,9 +225,17 @@ namespace PantheonTerminal {
             /* Set up style */
             set_terminal_theme(t);
             if (first && args.length != 0) {
-                t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
+                try {
+                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
+                } catch (Error err) {
+                    stderr.printf ("Unable to load terminal: %s", err.message);
+                }
             } else {
-                t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
+                try {
+                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
+                } catch (Error err) {
+                    stderr.printf ("Unable to load terminal: %s", err.message);
+                }
             }
 
             /* Create a new tab with the terminal */
