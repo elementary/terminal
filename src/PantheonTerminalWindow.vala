@@ -44,7 +44,9 @@ namespace PantheonTerminal {
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
         private Button add_button;
-
+        
+        TabWithCloseButton current_tab_label = null;
+        
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
@@ -59,14 +61,6 @@ namespace PantheonTerminal {
         Gtk.UIManager ui;
 
         string[] args;
-
-        // Control and Shift keys
-        bool ctrlL = false;
-        bool ctrlR = false;
-        bool shiftL = false;
-        bool shiftR = false;
-        bool arrow = false;
-        bool tab = false;
 
         public PantheonTerminalWindow (Granite.Application app) {
 
@@ -124,15 +118,7 @@ namespace PantheonTerminal {
             add_button.can_focus = false;
 
             Image add_image = null;
-            //try {
-                add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
-            /*} catch (Error err1) {
-                try {
-                    add_image = new Image.from_icon_name ("list-add", IconSize.MENU);
-                } catch (Error err2) {
-                    stderr.printf ("Unable to load list-add icon: %s", err2.message);
-                }
-            }*/
+            add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
 
             add_button.set_image (add_image);
             add_button.show();
@@ -144,13 +130,17 @@ namespace PantheonTerminal {
         private void connect_signals () {
 
             destroy.connect (action_quit);
-
+            
+            notebook.switch_page.connect (on_switch_page);
+            
             add_button.clicked.connect(() => { new_tab(false); } );
 
-            key_press_event.connect (on_key_press_event);
-            key_release_event.connect (on_key_release_event);
         }
-
+        
+        void on_switch_page (Widget page, uint n) {
+            current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;            
+        }
+        
         public void remove_page (int page) {
 
             notebook.remove_page (page);
@@ -171,72 +161,6 @@ namespace PantheonTerminal {
                     notebook.page--;
                     break;
             }
-            return false;
-        }
-
-        public bool on_key_press_event (EventKey event) {
-
-            string key = Gdk.keyval_name (event.keyval);
-
-            if (key == "Control_L")
-                ctrlL = true;
-            else if (key == "Control_R")
-                ctrlR = true;
-            else if (key == "Shift_L")
-                shiftL = true;
-            else if (key == "Shift_R")
-                shiftR = true;
-
-            /*
-            else if (key == "Tab")
-            {
-                notebook.get_nth_page(notebook.get_current_page()).grab_focus();
-                stdout.printf("tab %i\n", notebook.get_current_page());
-            }
-            */
-
-            else if ((ctrlL || ctrlR) && (shiftL || shiftR)) {
-                if (key == "t" || key == "T")
-                    new_tab(false);
-                else if (key == "w" || key == "W")
-                    remove_page(notebook.get_current_page());
-                else if (key == "Tab" || key == "ISO_Left_Tab")
-                {
-                    if (notebook.get_current_page() < notebook.get_n_pages() - 1)
-                        notebook.next_page();
-                    else
-                        notebook.set_current_page(0);
-                }
-                else if (key == "q" || key == "Q")
-                    return true;//close()
-                else
-                    return false;
-            }
-            else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
-                arrow = true;
-            else if (key == "Tab")
-                tab = true;
-            // stdout.printf("%s\n", key);
-            return false;
-        }
-
-        public bool on_key_release_event(EventKey event) {
-
-            string key = Gdk.keyval_name(event.keyval);
-
-            if (key == "Control_L")
-                ctrlL = false;
-            else if (key == "Control_R")
-                ctrlR = false;
-            else if (key == "Shift_L")
-                shiftL = false;
-            else if (key == "Shift_R")
-                shiftR = false;
-            else if (key == "Up" || key == "Down" || key == "Left" || key == "Right")
-                arrow = false;
-            else if (key == "Tab")
-                tab = false;
-
             return false;
         }
 
@@ -376,7 +300,7 @@ namespace PantheonTerminal {
         }
         
         void action_close_tab () {
-        
+            current_tab_label.clicked ();
         }
         
         void action_new_tab () {
