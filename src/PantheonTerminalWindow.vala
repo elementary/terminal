@@ -313,12 +313,12 @@ namespace PantheonTerminal {
           /* tooltip */                  N_("Quit"),
                                          action_quit },
            { "CloseTab", Gtk.Stock.CLOSE,
-          /* label, accelerator */       N_("Close"), "<Control>w",
+          /* label, accelerator */       N_("Close"), "<Control><Shift>w",
           /* tooltip */                  N_("Close"),
                                          action_close_tab },
 
            { "New tab", Gtk.Stock.NEW,
-          /* label, accelerator */       N_("New file"), "<Control>t",
+          /* label, accelerator */       N_("New file"), "<Control><Shift>t",
           /* tooltip */                  N_("Create a new file in a new tab"),
                                          action_new_tab },
 
