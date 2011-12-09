@@ -104,6 +104,9 @@ namespace PantheonTerminal {
 
         private void setup_ui () {
 
+            /* Set up the toolbar */
+            toolbar = new Toolbar (this, main_actions);
+
             /* Set up the Notebook */
             notebook = new Notebook ();
             var right_box = new HBox (false, 0);
@@ -116,10 +119,8 @@ namespace PantheonTerminal {
             /* Set up the Add button */
             add_button = new Button();
             add_button.can_focus = false;
-
             Image add_image = null;
             add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
-
             add_button.set_image (add_image);
             add_button.show();
             add_button.set_relief(ReliefStyle.NONE);
@@ -140,7 +141,7 @@ namespace PantheonTerminal {
         void on_switch_page (Widget page, uint n) {
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;            
         }
-        
+ 
         public void remove_page (int page) {
 
             notebook.remove_page (page);
@@ -317,14 +318,14 @@ namespace PantheonTerminal {
           /* tooltip */                  N_("Close"),
                                          action_close_tab },
 
-           { "New tab", Gtk.Stock.NEW,
-          /* label, accelerator */       N_("New file"), "<Control><Shift>t",
-          /* tooltip */                  N_("Create a new file in a new tab"),
+           { "New", Gtk.Stock.NEW,
+          /* label, accelerator */       N_("New"), "<Control><Shift>t",
+          /* tooltip */                  N_("Create a new tab"),
                                          action_new_tab },
 
            { "Preferences", Gtk.Stock.PREFERENCES,
           /* label, accelerator */       N_("Preferences"), null,
-          /* tooltip */                  N_("Change Scratch settings"),
+          /* tooltip */                  N_("Change Pantheon Terminal settings"),
                                          null }
                                         
         };

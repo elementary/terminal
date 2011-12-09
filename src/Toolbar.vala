@@ -51,17 +51,21 @@ namespace PantheonTerminal {
             SEARCH_ENTRY,
         }
 
-        public Toolbar (PantheonTerminalWindow parent) {
+        public Toolbar (PantheonTerminalWindow parent, Gtk.ActionGroup action_group) {
 
             this.window = parent;
 
             get_style_context ().add_class ("primary-toolbar");
 
-            //copy_button = action_group.get_action ("Copy").create_tool_item () as Gtk.ToolButton;
-            //paste_button = action_group.get_action ("Paste").create_tool_item () as Gtk.ToolButton;
+            /*
+            FIXME Doesn't seem to be working on compiling
+            new_button = action_group.get_action ("New").create_tool_item () as Gtk.ToolButton;
+            copy_button = action_group.get_action ("Copy").create_tool_item () as Gtk.ToolButton;
+            paste_button = action_group.get_action ("Paste").create_tool_item () as Gtk.ToolButton;
 
-            //add (copy_button);
-            //add (paste_button);
+            add (new_button);
+            add (copy_button);
+            add (paste_button);*/
         }
     }
 }
