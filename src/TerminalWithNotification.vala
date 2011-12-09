@@ -117,7 +117,7 @@ namespace PantheonTerminal {
                 else if (key == "v" || key == "V")
                     paste_clipboard ();
                 else if (key == "n" || key == "N") {
-                    new PantheonTerminalWindow ();
+                    new PantheonTerminalWindow (parent_window.get_application () as PantheonTerminal);
                     Gtk.main ();
                 }
                 else

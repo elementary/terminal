@@ -57,7 +57,7 @@ namespace PantheonTerminal {
         bool arrow = false;
         bool tab = false;
 
-        public PantheonTerminalWindow (Granite.Application app = null) {
+        public PantheonTerminalWindow (Granite.Application app) {
 
             this.app = app;
             set_application (app);
@@ -93,15 +93,15 @@ namespace PantheonTerminal {
             add_button.can_focus = false;
 
             Image add_image = null;
-            try {
+            //try {
                 add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
-            } catch (Error err1) {
+            /*} catch (Error err1) {
                 try {
                     add_image = new Image.from_icon_name ("list-add", IconSize.MENU);
                 } catch (Error err2) {
                     stderr.printf ("Unable to load list-add icon: %s", err2.message);
                 }
-            }
+            }*/
 
             add_button.set_image (add_image);
             add_button.show();
