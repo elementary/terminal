@@ -45,7 +45,18 @@ namespace PantheonTerminal {
         Gdk.Color fgcolor;
         private Button add_button;
 
+        const string ui_string = """
+            <ui>
+            <popup name="MenuItemTool">
+                <menuitem name="Quit" action="Quit"/>
+                <menuitem name="New tab" action="New tab"/>
+                <menuitem name="CloseTab" action="CloseTab"/>
+            </popup>
+            </ui>
+        """;
+
         public Gtk.ActionGroup main_actions;
+        Gtk.UIManager ui;
 
         string[] args;
 
@@ -68,7 +79,27 @@ namespace PantheonTerminal {
             title = _("Terminal");
             set_default_size (640, 400);
             icon_name = "utilities-terminal";
+            
+            //Actions and UIManager
+            main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
+            main_actions.set_translation_domain ("pantheon-terminal");
+            main_actions.add_actions (main_entries, this);
+            
+            ui = new Gtk.UIManager ();
 
+            try {
+                ui.add_ui_from_string (ui_string, -1);
+            }
+            catch(Error e) {
+                error ("Couldn't load the UI: %s", e.message);
+            }
+
+            Gtk.AccelGroup accel_group = ui.get_accel_group();
+            add_accel_group (accel_group);
+
+            ui.insert_action_group (main_actions, 0);
+            ui.ensure_update ();
+            
             setup_ui ();
             set_theme ();
             show_all ();
@@ -112,7 +143,7 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
 
-            destroy.connect (close);
+            destroy.connect (action_quit);
 
             add_button.clicked.connect(() => { new_tab(false); } );
 
@@ -177,7 +208,7 @@ namespace PantheonTerminal {
                         notebook.set_current_page(0);
                 }
                 else if (key == "q" || key == "Q")
-                    close();
+                    return true;//close()
                 else
                     return false;
             }
@@ -339,10 +370,40 @@ namespace PantheonTerminal {
         }
 
 
-        private void close() {
+        void action_quit () {
 
             Gtk.main_quit ();
         }
+        
+        void action_close_tab () {
+        
+        }
+        
+        void action_new_tab () {
+            new_tab (true);
+        }
+        
+        static const Gtk.ActionEntry[] main_entries = {
+           { "Quit", Gtk.Stock.QUIT,
+          /* label, accelerator */       N_("Quit"), "<Control>q",
+          /* tooltip */                  N_("Quit"),
+                                         action_quit },
+           { "CloseTab", Gtk.Stock.CLOSE,
+          /* label, accelerator */       N_("Close"), "<Control>w",
+          /* tooltip */                  N_("Close"),
+                                         action_close_tab },
+
+           { "New tab", Gtk.Stock.NEW,
+          /* label, accelerator */       N_("New file"), "<Control>t",
+          /* tooltip */                  N_("Create a new file in a new tab"),
+                                         action_new_tab },
+
+           { "Preferences", Gtk.Stock.PREFERENCES,
+          /* label, accelerator */       N_("Preferences"), null,
+          /* tooltip */                  N_("Change Scratch settings"),
+                                         null }
+                                        
+        };
 
     }
 
