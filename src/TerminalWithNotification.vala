@@ -44,12 +44,6 @@ namespace PantheonTerminal {
         long last_row_count = 0;
         long last_column_count = 0;
 
-        // Control and Shift keys
-        bool ctrlL = false;
-        bool ctrlR = false;
-        bool shiftL = false;
-        bool shiftR = false;
-
         public TerminalWithNotification (PantheonTerminalWindow parent_window) {
 
             this.parent_window = parent_window;
@@ -93,58 +87,6 @@ namespace PantheonTerminal {
                 }
                 return false;
             });
-        }
-
-        public override bool key_press_event(EventKey event) {
-
-            string key = Gdk.keyval_name (event.keyval);
-
-            if (key == "Control_L")
-                ctrlL = true;
-            else if (key == "Control_R")
-                ctrlR = true;
-            else if (key == "Shift_L")
-                shiftL = true;
-            else if (key == "Shift_R")
-                shiftR = true;
-            //else if (key == "Tab")
-            //    grab_focus();
-            else if ((ctrlL || ctrlR) && (shiftL || shiftR)) {
-                if (key == "a" || key == "A")
-                    select_all();
-                else if (key == "c" || key == "C")
-                    copy_clipboard ();
-                else if (key == "v" || key == "V")
-                    paste_clipboard ();
-                else if (key == "n" || key == "N") {
-                    new PantheonTerminalWindow (parent_window.get_application () as PantheonTerminal);
-                    Gtk.main ();
-                }
-                else
-                    return false;
-            }
-            else
-                base.key_press_event(event);
-
-            return false;
-        }
-
-        public override bool key_release_event(EventKey event) {
-
-            string key = Gdk.keyval_name(event.keyval);
-
-            if (key == "Control_L")
-                ctrlL = false;
-            else if (key == "Control_R")
-                ctrlR = false;
-            else if (key == "Shift_L")
-                shiftL = false;
-            else if (key == "Shift_R")
-                shiftR = false;
-            else
-                base.key_release_event(event);
-
-            return false;
         }
 
         private void check_for_notification() {
