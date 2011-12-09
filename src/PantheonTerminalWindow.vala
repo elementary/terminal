@@ -66,8 +66,7 @@ namespace PantheonTerminal {
 
             this.app = app;
             set_application (app);
-
-            Notify.init ("Pantheon Terminal");
+            Notify.init (app.program_name);
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
@@ -78,7 +77,7 @@ namespace PantheonTerminal {
             main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
             main_actions.set_translation_domain ("pantheon-terminal");
             main_actions.add_actions (main_entries, this);
-            
+
             ui = new Gtk.UIManager ();
 
             try {
@@ -117,31 +116,32 @@ namespace PantheonTerminal {
             add (notebook);
 
             /* Set up the Add button */
-            add_button = new Button();
-            add_button.can_focus = false;
+            add_button = new Button ();
             Image add_image = null;
             add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
             add_button.set_image (add_image);
-            add_button.show();
-            add_button.set_relief(ReliefStyle.NONE);
-            add_button.set_tooltip_text("Open a new tab");
+            add_button.show ();
+            add_button.set_relief (ReliefStyle.NONE);
+            add_button.set_tooltip_text ("Open a new tab");
             right_box.pack_start (add_button, false, false, 0);
         }
 
         private void connect_signals () {
 
             destroy.connect (action_quit);
-            
+
             notebook.switch_page.connect (on_switch_page);
-            
-            add_button.clicked.connect(() => { new_tab(false); } );
+
+            add_button.clicked.connect(() => { new_tab (false); } );
 
         }
-        
+
         void on_switch_page (Widget page, uint n) {
-            current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;            
+
+            current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
+            page.grab_focus ();
         }
- 
+
         public void remove_page (int page) {
 
             notebook.remove_page (page);
@@ -301,11 +301,13 @@ namespace PantheonTerminal {
         }
         
         void action_close_tab () {
+
             current_tab_label.clicked ();
         }
         
         void action_new_tab () {
-            new_tab (true);
+
+            new_tab (false);
         }
         
         static const Gtk.ActionEntry[] main_entries = {
@@ -318,7 +320,7 @@ namespace PantheonTerminal {
           /* tooltip */                  N_("Close"),
                                          action_close_tab },
 
-           { "New", Gtk.Stock.NEW,
+           { "New tab", Gtk.Stock.NEW,
           /* label, accelerator */       N_("New"), "<Control><Shift>t",
           /* tooltip */                  N_("Create a new tab"),
                                          action_new_tab },
