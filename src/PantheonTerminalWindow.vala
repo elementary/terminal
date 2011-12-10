@@ -39,7 +39,7 @@ namespace PantheonTerminal {
 
         public Granite.Application app;
         Notebook notebook;
-        public Toolbar toolbar;
+        public PantheonTerminalToolbar toolbar;
         FontDescription font;
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
@@ -103,9 +103,11 @@ namespace PantheonTerminal {
         }
 
         private void setup_ui () {
-
+            
+            var container = new VBox (false, 0);
+            
             /* Set up the toolbar */
-            toolbar = new Toolbar (this, main_actions);
+            toolbar = new PantheonTerminalToolbar (this, main_actions);
 
             /* Set up the Notebook */
             notebook = new Notebook ();
@@ -114,8 +116,12 @@ namespace PantheonTerminal {
             notebook.set_action_widget (right_box, PackType.END);
             notebook.set_scrollable (true);
             notebook.can_focus = false;
-            add (notebook);
 
+            container.pack_start (toolbar, false, false, 0);
+            container.pack_start (notebook, true, true, 0);
+            
+            add (container);
+    
             /* Set up the Add button */
             add_button = new Button ();
             Image add_image = null;

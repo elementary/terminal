@@ -23,7 +23,7 @@ using Granite.Widgets;
 
 namespace PantheonTerminal {
     
-    public class Toolbar : Gtk.Toolbar {
+    public class PantheonTerminalToolbar : Gtk.Toolbar {
 
         private PantheonTerminalWindow window;
 
@@ -36,7 +36,7 @@ namespace PantheonTerminal {
         public ToolButton pause_button;
         public ToolButton app_menu_button;
 
-        public enum ToolButton {
+        /*public enum ToolButton {
             NEW_BUTTON,
             COPY_BUTTON,
             PASTE_BUTTON,
@@ -45,27 +45,21 @@ namespace PantheonTerminal {
             STOP_BUTTON,
             PAUSE_BUTTON,
             APPMENU_BUTTON,
-        }
+        }*/
 
         public enum ToolEntry {
             SEARCH_ENTRY,
         }
 
-        public Toolbar (PantheonTerminalWindow parent, Gtk.ActionGroup action_group) {
+        public PantheonTerminalToolbar (PantheonTerminalWindow parent, Gtk.ActionGroup action_group) {
 
             this.window = parent;
 
             get_style_context ().add_class ("primary-toolbar");
 
-            /*
-            FIXME Doesn't seem to be working on compiling
-            new_button = action_group.get_action ("New").create_tool_item () as Gtk.ToolButton;
-            copy_button = action_group.get_action ("Copy").create_tool_item () as Gtk.ToolButton;
-            paste_button = action_group.get_action ("Paste").create_tool_item () as Gtk.ToolButton;
+            new_button = action_group.get_action ("New tab").create_tool_item () as Gtk.ToolButton;
 
             add (new_button);
-            add (copy_button);
-            add (paste_button);*/
         }
     }
 }
