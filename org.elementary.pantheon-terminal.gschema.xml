@@ -22,10 +22,20 @@
 		</key>
 	</schema>
     <schema path="/apps/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
-        <key name="opacity" type="b">
+     <key name="opacity" type="b">
 			<default>false</default>
 			<summary>Use opacity</summary>
-			<description>Check if you want to use the opacity</description>
-		</key>
+			<description>Check if you want to use the opacity.</description>
+    </key>
+    <key name="show-toolbar" type="b">
+      <default>true</default>
+      <summary>Show toolbar</summary>
+      <description>Wether the toolbar should be shown or not.</description>
+    </key>
+    <key name="scrollback-lines" type="i">
+      <default>512</default>
+      <summary>Number of scrollback lines</summary>
+      <description>The number of scrollback lines for the terminal.</description>
+    </key>
     </schema>
 </schemalist>

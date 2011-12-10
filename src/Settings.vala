@@ -18,12 +18,11 @@
   END LICENSE
 ***/
 
-
 namespace PantheonTerminal {
-    
+
     public SavedState saved_state;
     public Settings settings;
-    
+
     public enum PantheonTerminalWindowState {
         NORMAL = 0,
         MAXIMIZED = 1,
@@ -43,9 +42,9 @@ namespace PantheonTerminal {
     }
 
     public class Settings : Granite.Services.Settings {
-        
+
         public bool opacity { get; set; }
-        
+ 
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
         }
