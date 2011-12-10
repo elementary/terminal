@@ -28,7 +28,7 @@ configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/sr
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite vte-2.90 libnotify)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite vte-2.90 libnotify gdk-3.0 gconf-2.0)
 
 add_definitions(${DEPS_CFLAGS})
 
@@ -41,6 +41,8 @@ ensure_vala_version("0.10.0" MINIMUM)
 
 include(ValaPrecompile)
 vala_precompile(VALA_C
+    src/main.vala
+    src/Settings.vala
     src/PantheonTerminal.vala
     src/PantheonTerminalWindow.vala
     src/PreferencesDialog.vala
@@ -51,10 +53,15 @@ PACKAGES
     granite
     gtk+-3.0
     libnotify
+    gdk-3.0
+    gconf-2.0
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
     )
+
+include(GSettings)
+add_schema ("org.elementary.pantheon-terminal.gschema.xml")
 
 add_subdirectory (po)
 

@@ -70,8 +70,9 @@ namespace PantheonTerminal {
 
             //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
-            set_default_size (640, 400);
-            icon_name = "utilities-terminal";
+            restore_saved_state ();
+            set_size_request (40, 40);
+            //icon_name = "utilities-terminal";
             
             //Actions and UIManager
             main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
@@ -294,9 +295,48 @@ namespace PantheonTerminal {
             dialog.destroy ();
         }
 
+        
+        private void restore_saved_state () {
+            
+            var top = get_toplevel () as Gtk.Window;
+            
+            top.default_width = saved_state.window_width;
+            top.default_height = saved_state.window_height;
+            
+            resize (saved_state.window_width, saved_state.window_height);
+            
+            if (saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
+                top.maximize ();
+            else if (saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
+                top.fullscreen ();
 
+        }
+
+        private void update_saved_state () {
+            
+            Gdk.Window win = get_window ();
+            var state = win.get_state ();
+            
+            // Save window state
+            if ((state & WindowState.MAXIMIZED) != 0)
+                saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
+            else if ((state & WindowState.FULLSCREEN) != 0)
+                saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+            else
+                saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+          
+            // Save window size
+            if (saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
+                int width, height;
+                get_size (out width, out height);
+                saved_state.window_width = width;
+                saved_state.window_height = height;
+            }
+
+        }
+        
         void action_quit () {
-
+            update_saved_state ();
             Gtk.main_quit ();
         }
         
@@ -327,8 +367,13 @@ namespace PantheonTerminal {
 
            { "Preferences", Gtk.Stock.PREFERENCES,
           /* label, accelerator */       N_("Preferences"), null,
+<<<<<<< TREE
+          /* tooltip */                  N_("Change Scratch settings"),
+                                         preferences }
+=======
           /* tooltip */                  N_("Change Pantheon Terminal settings"),
                                          null }
+>>>>>>> MERGE-SOURCE
                                         
         };
 

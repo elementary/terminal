@@ -62,6 +62,9 @@ namespace PantheonTerminal {
 
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
+            
+            saved_state = new SavedState ();
+            settings = new Settings ();
 
         }
 
