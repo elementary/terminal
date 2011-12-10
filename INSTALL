@@ -1,11 +1,11 @@
 To compile it:
-mkdir build
-cd build
-cmake ..
-make -j3
+  mkdir build
+  cd build/
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make -j3
 
 To install it:
-make install
+  cd build/
+  sudo make install
 
-Alternatively, you can also (if you are a developer), launch it using "src/pantheon-terminal"
-(when you are in build/)
+Alternatively, you can also (if you are a developer), launch it using "./pantheon-terminal".
