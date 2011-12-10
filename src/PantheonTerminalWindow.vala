@@ -367,13 +367,9 @@ namespace PantheonTerminal {
 
            { "Preferences", Gtk.Stock.PREFERENCES,
           /* label, accelerator */       N_("Preferences"), null,
-<<<<<<< TREE
-          /* tooltip */                  N_("Change Scratch settings"),
-                                         preferences }
-=======
+
           /* tooltip */                  N_("Change Pantheon Terminal settings"),
                                          null }
->>>>>>> MERGE-SOURCE
                                         
         };
 
