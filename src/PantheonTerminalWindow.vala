@@ -54,6 +54,9 @@ namespace PantheonTerminal {
                 <menuitem name="New tab" action="New tab"/>
                 <menuitem name="CloseTab" action="CloseTab"/>
             </popup>
+            <popup name="ToolbarContext">
+                <menuitem name="View toolbar" action="ShowToolbar" />
+            </popup>
             </ui>
         """;
 
@@ -78,6 +81,7 @@ namespace PantheonTerminal {
             main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
             main_actions.set_translation_domain ("pantheon-terminal");
             main_actions.add_actions (main_entries, this);
+            main_actions.add_toggle_actions (toggle_entries, this);
 
             ui = new Gtk.UIManager ();
 
@@ -107,7 +111,7 @@ namespace PantheonTerminal {
             var container = new VBox (false, 0);
             
             /* Set up the toolbar */
-            toolbar = new PantheonTerminalToolbar (this, main_actions);
+            toolbar = new PantheonTerminalToolbar (this, ui, main_actions);
 
             /* Set up the Notebook */
             notebook = new Notebook ();
@@ -356,11 +360,13 @@ namespace PantheonTerminal {
             new_tab (false);
         }
         
+        void show_toolbar () {
+
+            toolbar.visible = false;
+        }
+
         static const Gtk.ActionEntry[] main_entries = {
-           { "Quit", Gtk.Stock.QUIT,
-          /* label, accelerator */       N_("Quit"), "<Control>q",
-          /* tooltip */                  N_("Quit"),
-                                         action_quit },
+           { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE,
           /* label, accelerator */       N_("Close"), "<Control><Shift>w",
           /* tooltip */                  N_("Close"),
@@ -375,8 +381,11 @@ namespace PantheonTerminal {
           /* label, accelerator */       N_("Preferences"), null,
 
           /* tooltip */                  N_("Change Pantheon Terminal settings"),
-                                         null }
-                                        
+                                         null }                                
+        };
+
+        static const Gtk.ToggleActionEntry[] toggle_entries = {
+            {"ShowToolbar", "", N_("Show Toolbar"), null, N_("Toolbar"), show_toolbar}
         };
 
     }

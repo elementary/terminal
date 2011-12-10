@@ -36,6 +36,10 @@ namespace PantheonTerminal {
         public ToolButton pause_button;
         public ToolButton app_menu_button;
 
+        Gtk.Menu menu_ui;
+
+        UIManager ui;
+        
         /*public enum ToolButton {
             NEW_BUTTON,
             COPY_BUTTON,
@@ -51,15 +55,26 @@ namespace PantheonTerminal {
             SEARCH_ENTRY,
         }
 
-        public PantheonTerminalToolbar (PantheonTerminalWindow parent, Gtk.ActionGroup action_group) {
+        public PantheonTerminalToolbar (PantheonTerminalWindow parent, UIManager ui, Gtk.ActionGroup action_group) {
 
             this.window = parent;
+            this.ui = ui;
 
             get_style_context ().add_class ("primary-toolbar");
 
             new_button = action_group.get_action ("New tab").create_tool_item () as Gtk.ToolButton;
 
             add (new_button);
+
+            menu_ui = ui.get_widget ("ui/ToolbarContext") as Gtk.Menu;
+        }
+
+        public override bool button_press_event (Gdk.EventButton event) {
+            if (event.button == 3) {
+                (ui.get_widget ("ui/ToolbarContext") as Gtk.Menu).popup (null, null, null, event.button, Gtk.get_current_event_time ());
+                return true;
+            }
+            return false;
         }
     }
 }
