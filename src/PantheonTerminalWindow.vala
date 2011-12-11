@@ -164,13 +164,13 @@ namespace PantheonTerminal {
 
         public override bool scroll_event (EventScroll event) {
 
-            switch (event.direction.to_string ()) {
-                case "GDK_SCROLL_UP":
-                case "GDK_SCROLL_RIGHT":
+            switch (event.direction) {
+                case ScrollDirection.UP:
+                case ScrollDirection.RIGHT:
                     notebook.page++;
                     break;
-                case "GDK_SCROLL_DOWN":
-                case "GDK_SCROLL_LEFT":
+                case ScrollDirection.DOWN:
+                case ScrollDirection.LEFT:
                     notebook.page--;
                     break;
             }
