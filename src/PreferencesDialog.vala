@@ -29,8 +29,6 @@ namespace PantheonTerminal {
 
         public StaticNotebook main_static_notebook;
 
-        private CheckButton view_tabs;
-
         public Preferences (string? title, PantheonTerminalWindow window) {
 
             this.parent_window = window;
@@ -50,13 +48,20 @@ namespace PantheonTerminal {
 
             // TODO Finish Preferences Dialog
             var general = new Label (_("General"));
-            main_static_notebook.append_page (get_general_box (), general);
+            main_static_notebook.append_page (get_general_box (), general);        
+            
+            var second = new Label (_("Second (?)"));
+            main_static_notebook.append_page (get_second_box (), second);    
+            
+            ((Gtk.Box)get_content_area()).add (main_static_notebook);
+            
         }
 
         Gtk.Widget get_general_box () {
             
-            view_tabs = new CheckButton ();
-
+            var opacity = new Switch ();
+            settings.schema.bind ("opacity", opacity, "active", SettingsBindFlags.DEFAULT);
+            
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
             general_grid.column_spacing = 5;
@@ -64,8 +69,42 @@ namespace PantheonTerminal {
             general_grid.margin_right = 12;
             general_grid.margin_top = 12;
             general_grid.margin_bottom = 12;
-
+            
+            int row = 0;
+            var label = new Label (_("Opacity"));
+            add_option (general_grid, label, opacity, ref row);
+            
             return general_grid;
+        }
+        
+        Gtk.Widget get_second_box () {
+            
+            var show_toolbar = new Switch ();
+            settings.schema.bind ("show-toolbar", show_toolbar, "active", SettingsBindFlags.DEFAULT);
+            
+            var general_grid = new Gtk.Grid ();
+            general_grid.row_spacing = 5;
+            general_grid.column_spacing = 5;
+            general_grid.margin_left = 12;
+            general_grid.margin_right = 12;
+            general_grid.margin_top = 12;
+            general_grid.margin_bottom = 12;
+            
+            int row = 0;
+            var label = new Label (_("Show toolbar"));
+            add_option (general_grid, label, show_toolbar, ref row);
+            
+            return general_grid;
+            
+        }
+        
+        void add_option (Gtk.Grid grid, Gtk.Widget label, Gtk.Widget switcher, ref int row) {
+            label.hexpand = true;
+            label.halign = Gtk.Align.START;
+            switcher.halign = Gtk.Align.END;
+            grid.attach (label, 0, row, 1, 1);
+            grid.attach_next_to (switcher, label, Gtk.PositionType.RIGHT, 1, 1);
+            row ++;
         }
 
     }

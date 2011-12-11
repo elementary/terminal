@@ -42,7 +42,8 @@ namespace PantheonTerminal {
     }
 
     public class Settings : Granite.Services.Settings {
-
+        
+        public bool show_toolbar { get; set; }
         public bool opacity { get; set; }
  
         public Settings ()  {

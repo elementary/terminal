@@ -121,7 +121,8 @@ namespace PantheonTerminal {
             notebook.set_scrollable (true);
             notebook.can_focus = false;
 
-            container.pack_start (toolbar, false, false, 0);
+            if (settings.show_toolbar)
+                container.pack_start (toolbar, false, false, 0);
             container.pack_start (notebook, true, true, 0);
             
             add (container);
