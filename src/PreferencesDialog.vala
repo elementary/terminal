@@ -41,27 +41,21 @@ namespace PantheonTerminal {
             main_static_notebook = new StaticNotebook ();
 
             create_layout ();
-
         }
 
         private void create_layout () {
 
-            // TODO Finish Preferences Dialog
             var general = new Label (_("General"));
             main_static_notebook.append_page (get_general_box (), general);        
-            
-            var second = new Label (_("Second (?)"));
-            main_static_notebook.append_page (get_second_box (), second);    
-            
-            ((Gtk.Box)get_content_area()).add (main_static_notebook);
-            
+
+            var second = new Label (_("Appearance"));
+            main_static_notebook.append_page (get_appearance_box (), second);    
+
+            ((Gtk.Box) get_content_area()).add (main_static_notebook);
         }
 
         Gtk.Widget get_general_box () {
-            
-            var opacity = new Switch ();
-            settings.schema.bind ("opacity", opacity, "active", SettingsBindFlags.DEFAULT);
-            
+
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
             general_grid.column_spacing = 5;
@@ -69,19 +63,36 @@ namespace PantheonTerminal {
             general_grid.margin_right = 12;
             general_grid.margin_top = 12;
             general_grid.margin_bottom = 12;
+
+            var opacity_switch = new Switch ();
+            settings.schema.bind ("opacity", opacity_switch, "active", SettingsBindFlags.DEFAULT);
+
+            var scrollback_counter = new SpinButton.with_range (1, 2147483647, 1);
+            settings.schema.bind ("scrollback-lines", scrollback_counter, "active", SettingsBindFlags.DEFAULT);
             
             int row = 0;
-            var label = new Label (_("Opacity"));
-            add_option (general_grid, label, opacity, ref row);
-            
+
+            var opacity_label = new Label (_("Opacity"));
+            add_option (general_grid, opacity_label, opacity_switch, ref row);
+
+            var scrolling_label = new Label (_("Scrolling"));
+            scrolling_label.set_markup ("<b>%s</b>".printf (_("Scrolling")));
+            general_grid.attach (scrolling_label, 0, row, 2, 1);
+            scrolling_label.hexpand = scrolling_label.vexpand = true;
+            scrolling_label.halign = Gtk.Align.START;
+            row++;
+
+            var scrollback_label = new Label (_("Scrollback lines:"));
+            add_option (general_grid, scrollback_label, scrollback_counter, ref row);
+
             return general_grid;
         }
-        
-        Gtk.Widget get_second_box () {
-            
+
+        Gtk.Widget get_appearance_box () {
+
             var show_toolbar = new Switch ();
             settings.schema.bind ("show-toolbar", show_toolbar, "active", SettingsBindFlags.DEFAULT);
-            
+
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
             general_grid.column_spacing = 5;
@@ -89,16 +100,17 @@ namespace PantheonTerminal {
             general_grid.margin_right = 12;
             general_grid.margin_top = 12;
             general_grid.margin_bottom = 12;
-            
+
             int row = 0;
             var label = new Label (_("Show toolbar"));
             add_option (general_grid, label, show_toolbar, ref row);
-            
+
             return general_grid;
-            
+
         }
         
         void add_option (Gtk.Grid grid, Gtk.Widget label, Gtk.Widget switcher, ref int row) {
+
             label.hexpand = true;
             label.halign = Gtk.Align.START;
             switcher.halign = Gtk.Align.END;

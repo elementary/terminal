@@ -190,8 +190,7 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
-            /* Set up style */
-            set_terminal_theme(t);
+            /* Set up the virtual terminal */
             if (first && args.length != 0) {
                 try {
                     t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);

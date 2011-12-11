@@ -20,10 +20,7 @@
 
 using Gtk;
 using Gdk;
-
 using Vte;
-//using Pango;
-//using Notify;
 
 namespace PantheonTerminal {
 
@@ -51,14 +48,18 @@ namespace PantheonTerminal {
             set_size_request (320, 200);
             window_title_changed.connect (check_for_notification);
 
+            apply_settings ();
             setup_ui ();
             connect_signals ();
         }
 
+        private void apply_settings () {
+            scrollback_lines = settings.scrollback_lines;
+        }
 
         private void setup_ui () {
 
-            /* Set up the menu */
+            /* Set up the menu - FIXME Add shortcuts to the menu */
             menu = new Menu();
             copy_menuitem = new MenuItem.with_label (_("Copy"));
             paste_menuitem = new MenuItem.with_label (_("Paste"));

@@ -65,6 +65,7 @@ namespace PantheonTerminal {
             new_button = action_group.get_action ("New tab").create_tool_item () as Gtk.ToolButton;
 
             add (new_button);
+            add (new SeparatorToolItem ());
 
             menu_ui = ui.get_widget ("ui/ToolbarContext") as Gtk.Menu;
         }
