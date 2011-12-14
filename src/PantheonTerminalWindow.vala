@@ -233,6 +233,10 @@ namespace PantheonTerminal {
                     }
                 }
  
+                if (new_text.length > 40) {
+                    new_text = new_text[new_text.length - 40: new_text.length];
+                }
+
                 tab.set_text (new_text);
             });
 
