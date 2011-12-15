@@ -52,6 +52,8 @@ namespace PantheonTerminal {
             main_static_notebook.append_page (get_appearance_box (), second);
 
             ((Gtk.Box) get_content_area()).add (main_static_notebook);
+
+            add_button (Stock.CLOSE, ResponseType.ACCEPT);
         }
 
         Gtk.Widget get_general_box () {
