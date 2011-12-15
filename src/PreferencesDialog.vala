@@ -46,10 +46,10 @@ namespace PantheonTerminal {
         private void create_layout () {
 
             var general = new Label (_("General"));
-            main_static_notebook.append_page (get_general_box (), general);        
+            main_static_notebook.append_page (get_general_box (), general);
 
             var second = new Label (_("Appearance"));
-            main_static_notebook.append_page (get_appearance_box (), second);    
+            main_static_notebook.append_page (get_appearance_box (), second);
 
             ((Gtk.Box) get_content_area()).add (main_static_notebook);
         }
@@ -69,7 +69,7 @@ namespace PantheonTerminal {
 
             var scrollback_counter = new SpinButton.with_range (1, 2147483647, 1);
             settings.schema.bind ("scrollback-lines", scrollback_counter, "active", SettingsBindFlags.DEFAULT);
-            
+
             int row = 0;
 
             var opacity_label = new Label (_("Opacity"));
@@ -108,7 +108,7 @@ namespace PantheonTerminal {
             return general_grid;
 
         }
-        
+
         void add_option (Gtk.Grid grid, Gtk.Widget label, Gtk.Widget switcher, ref int row) {
 
             label.hexpand = true;
@@ -122,4 +122,3 @@ namespace PantheonTerminal {
     }
 
 } // Namespace
-

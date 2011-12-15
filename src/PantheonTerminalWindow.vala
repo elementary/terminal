@@ -44,9 +44,9 @@ namespace PantheonTerminal {
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
         private Button add_button;
-        
+
         TabWithCloseButton current_tab_label = null;
-        
+
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
@@ -76,7 +76,7 @@ namespace PantheonTerminal {
             restore_saved_state ();
             set_size_request (40, 40);
             //icon_name = "utilities-terminal";
-            
+
             //Actions and UIManager
             main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
             main_actions.set_translation_domain ("pantheon-terminal");
@@ -97,7 +97,7 @@ namespace PantheonTerminal {
 
             ui.insert_action_group (main_actions, 0);
             ui.ensure_update ();
-            
+
             setup_ui ();
             set_theme ();
             show_all ();
@@ -107,9 +107,9 @@ namespace PantheonTerminal {
         }
 
         private void setup_ui () {
-            
+
             var container = new VBox (false, 0);
-            
+
             /* Set up the toolbar */
             toolbar = new PantheonTerminalToolbar (this, ui, main_actions);
 
@@ -124,9 +124,9 @@ namespace PantheonTerminal {
             if (settings.show_toolbar)
                 container.pack_start (toolbar, false, false, 0);
             container.pack_start (notebook, true, true, 0);
-            
+
             add (container);
-    
+
             /* Set up the Add button */
             add_button = new Button ();
             Image add_image = null;
@@ -199,7 +199,7 @@ namespace PantheonTerminal {
                 }
             } else {
                 try {
-                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell() }, null, SpawnFlags.SEARCH_PATH, null, null);
+                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, null);
                 } catch (Error err) {
                     stderr.printf ("Unable to load terminal: %s", err.message);
                 }
@@ -232,9 +232,9 @@ namespace PantheonTerminal {
                         break;
                     }
                 }
- 
+
                 if (new_text.length > 40) {
-                    new_text = new_text[new_text.length - 40: new_text.length];
+                    new_text = new_text[new_text.length -40: new_text.length];
                 }
 
                 tab.set_text (new_text);
@@ -303,22 +303,22 @@ namespace PantheonTerminal {
 
         public void preferences () {
 
-            var dialog = new Preferences (_("Preferences"), this);
+            var dialog = new Preferences ("Preferences", this);
             dialog.show_all ();
             dialog.run ();
             dialog.destroy ();
         }
 
-        
+
         private void restore_saved_state () {
-            
+
             var top = get_toplevel () as Gtk.Window;
-            
+
             top.default_width = saved_state.window_width;
             top.default_height = saved_state.window_height;
-            
+
             resize (saved_state.window_width, saved_state.window_height);
-            
+
             if (saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
                 top.maximize ();
             else if (saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
@@ -327,10 +327,10 @@ namespace PantheonTerminal {
         }
 
         private void update_saved_state () {
-            
+
             Gdk.Window win = get_window ();
             var state = win.get_state ();
-            
+
             // Save window state
             if ((state & WindowState.MAXIMIZED) != 0)
                 saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
@@ -338,7 +338,7 @@ namespace PantheonTerminal {
                 saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
             else
                 saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-          
+
             // Save window size
             if (saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
                 int width, height;
@@ -348,22 +348,22 @@ namespace PantheonTerminal {
             }
 
         }
-        
+
         void action_quit () {
             update_saved_state ();
             Gtk.main_quit ();
         }
-        
+
         void action_close_tab () {
 
             current_tab_label.clicked ();
         }
-        
+
         void action_new_tab () {
 
             new_tab (false);
         }
-        
+
         void show_toolbar () {
 
             toolbar.visible = false;
@@ -385,7 +385,7 @@ namespace PantheonTerminal {
           /* label, accelerator */       N_("Preferences"), null,
 
           /* tooltip */                  N_("Change Pantheon Terminal settings"),
-                                         null }                                
+                                         null }
         };
 
         static const Gtk.ToggleActionEntry[] toggle_entries = {
@@ -409,9 +409,9 @@ namespace PantheonTerminal {
         public TabWithCloseButton (string text) {
 
             this.text = text;
-            
+
             var hbox = new HBox (false, 0);
-            
+
             // Button
             button = new Button ();
             button.set_image (new Image.from_stock (Stock.CLOSE, IconSize.MENU));
@@ -426,11 +426,11 @@ namespace PantheonTerminal {
             // Pack the elements
             hbox.pack_start (button, false, true, 0);
             hbox.pack_end (label, true, true, 0);
-            
+
             add (hbox);
-            
-            button_press_event.connect (on_button_press_event);            
-            
+
+            button_press_event.connect (on_button_press_event);
+
             show_all ();
         }
 
@@ -449,7 +449,7 @@ namespace PantheonTerminal {
             this.text = text;
             set_notification (notification);
         }
-        
+
         bool on_button_press_event (EventButton event) {
             if (event.button == 2)
                 clicked ();
