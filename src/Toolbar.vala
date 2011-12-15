@@ -22,7 +22,7 @@ using Gtk;
 using Granite.Widgets;
 
 namespace PantheonTerminal {
-    
+
     public class PantheonTerminalToolbar : Gtk.Toolbar {
 
         private PantheonTerminalWindow window;
@@ -36,10 +36,8 @@ namespace PantheonTerminal {
         public ToolButton pause_button;
         public ToolButton app_menu_button;
 
-        Gtk.Menu menu_ui;
-
         UIManager ui;
-        
+
         /*public enum ToolButton {
             NEW_BUTTON,
             COPY_BUTTON,
@@ -66,16 +64,6 @@ namespace PantheonTerminal {
 
             add (new_button);
             add (new SeparatorToolItem ());
-
-            menu_ui = ui.get_widget ("ui/ToolbarContext") as Gtk.Menu;
-        }
-
-        public override bool button_press_event (Gdk.EventButton event) {
-            if (event.button == 3) {
-                (ui.get_widget ("ui/ToolbarContext") as Gtk.Menu).popup (null, null, null, event.button, Gtk.get_current_event_time ());
-                return true;
-            }
-            return false;
         }
     }
 }

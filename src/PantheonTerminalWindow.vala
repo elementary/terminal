@@ -54,9 +54,6 @@ namespace PantheonTerminal {
                 <menuitem name="New tab" action="New tab"/>
                 <menuitem name="CloseTab" action="CloseTab"/>
             </popup>
-            <popup name="ToolbarContext">
-                <menuitem name="View toolbar" action="ShowToolbar" />
-            </popup>
             </ui>
         """;
 
