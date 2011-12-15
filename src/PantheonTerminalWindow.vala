@@ -78,7 +78,7 @@ namespace PantheonTerminal {
             main_actions = new Gtk.ActionGroup ("MainActionGroup"); /* Actions and UIManager */
             main_actions.set_translation_domain ("pantheon-terminal");
             main_actions.add_actions (main_entries, this);
-            main_actions.add_toggle_actions (toggle_entries, this);
+            //main_actions.add_toggle_actions (toggle_entries, this);
 
             ui = new Gtk.UIManager ();
 
@@ -361,33 +361,16 @@ namespace PantheonTerminal {
             new_tab (false);
         }
 
-        void show_toolbar () {
-
-            toolbar.visible = false;
-        }
-
         static const Gtk.ActionEntry[] main_entries = {
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
-           { "CloseTab", Gtk.Stock.CLOSE,
-          /* label, accelerator */       N_("Close"), "<Control><Shift>w",
-          /* tooltip */                  N_("Close"),
-                                         action_close_tab },
-
-           { "New tab", Gtk.Stock.NEW,
-          /* label, accelerator */       N_("New"), "<Control><Shift>t",
-          /* tooltip */                  N_("Create a new tab"),
-                                         action_new_tab },
-
-           { "Preferences", Gtk.Stock.PREFERENCES,
-          /* label, accelerator */       N_("Preferences"), null,
-
-          /* tooltip */                  N_("Change Pantheon Terminal settings"),
-                                         null }
+           { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
+           { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
+           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), null }
         };
 
-        static const Gtk.ToggleActionEntry[] toggle_entries = {
+        /*static const Gtk.ToggleActionEntry[] toggle_entries = {
             {"ShowToolbar", "", N_("Show Toolbar"), null, N_("Toolbar"), show_toolbar}
-        };
+        };*/
 
     }
 
