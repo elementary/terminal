@@ -33,6 +33,7 @@ namespace PantheonTerminal {
         private Menu menu;
         private MenuItem copy_menuitem;
         private MenuItem paste_menuitem;
+        private MenuItem select_all_menuitem;
         private MenuItem preferences_menuitem;
         private MenuItem about_menuitem;
 
@@ -63,11 +64,14 @@ namespace PantheonTerminal {
             menu = new Menu();
             copy_menuitem = new MenuItem.with_label (_("Copy"));
             paste_menuitem = new MenuItem.with_label (_("Paste"));
+            select_all_menuitem = new MenuItem.with_label (_("Select All"));
             preferences_menuitem = new MenuItem.with_label (_("Preferences"));
             about_menuitem = new MenuItem.with_label (_("About"));
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
-            menu.append (new MenuItem());
+            menu.append (new MenuItem ());
+            menu.append (select_all_menuitem);
+            menu.append (new MenuItem ());
             menu.append (preferences_menuitem);
             menu.append (about_menuitem);
             menu.show_all ();
@@ -75,9 +79,10 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
 
-            copy_menuitem.activate.connect (() => { copy_clipboard(); });
-            paste_menuitem.activate.connect (() => { paste_clipboard(); });
-            preferences_menuitem.activate.connect (() => { preferences(); });
+            copy_menuitem.activate.connect (() => { copy_clipboard (); });
+            paste_menuitem.activate.connect (() => { paste_clipboard (); });
+            select_all_menuitem.activate.connect (() => { select_all (); });
+            preferences_menuitem.activate.connect (() => { preferences (); });
             about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
 
             // Pop menu up

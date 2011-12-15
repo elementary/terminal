@@ -50,9 +50,9 @@ namespace PantheonTerminal {
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
+                <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Quit" action="Quit"/>
                 <menuitem name="New tab" action="New tab"/>
-                <menuitem name="CloseTab" action="CloseTab"/>
             </popup>
             </ui>
         """;
@@ -336,7 +336,7 @@ namespace PantheonTerminal {
             else
                 saved_state.window_state = PantheonTerminalWindowState.NORMAL;
 
-            // Save window size
+            /* Save window size */
             if (saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
                 int width, height;
                 get_size (out width, out height);
@@ -352,12 +352,10 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-
             current_tab_label.clicked ();
         }
 
         void action_new_tab () {
-
             new_tab (false);
         }
 
