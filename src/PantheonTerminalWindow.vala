@@ -290,11 +290,9 @@ namespace PantheonTerminal {
 
             string font_name = null;
 
-            /* Wait for GNOME 3 FIXME */
-            //var settings = new GLib.Settings("org.gnome.desktop.interface");
-            //font_name = settings.get_string("monospace-font-name");
+            var settings = new GLib.Settings("org.gnome.desktop.interface");
+            font_name = settings.get_string("monospace-font-name");
 
-            font_name = "Droid Sans Mono 10";
             return font_name;
         }
 
