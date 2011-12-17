@@ -206,8 +206,7 @@ namespace PantheonTerminal {
             notebook.insert_page (box, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
-            notebook.set_group_name ("terminal");
-
+            notebook.set_group_name ("pantheon-terminal");
 
             /* Bind signals */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
