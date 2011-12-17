@@ -68,7 +68,7 @@ namespace PantheonTerminal {
 
         public void listen_settings () {
 
-            settings.changed["show-toolbar"].connect (() => {
+            settings.changed.connect (() => {
                 print ("hello\n");
                 this.visible = ! this.visible;
             });
