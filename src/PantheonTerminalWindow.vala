@@ -46,12 +46,17 @@ namespace PantheonTerminal {
         private Button add_button;
 
         TabWithCloseButton current_tab_label = null;
-
+        TerminalWithNotification current_terminal = null;
+        
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
                 <menuitem name="Quit" action="Quit"/>
                 <menuitem name="New tab" action="New tab"/>
+                <menuitem name="Copy" action="Copy"/>
+                <menuitem name="Paste" action="Paste"/>
+                <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Preferences" action="Preferences"/>
             </popup>
             </ui>
         """;
@@ -146,6 +151,7 @@ namespace PantheonTerminal {
         void on_switch_page (Widget page, uint n) {
 
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
+            current_terminal = ((ScrolledWindow)page).get_child () as TerminalWithNotification;
             page.grab_focus ();
         }
 
@@ -180,8 +186,6 @@ namespace PantheonTerminal {
             s.add (t);
 
             /* Add the terminal to the GUI */
-            var box = new Gtk.Grid ();
-            box.add (s);
             t.vexpand = true;
             t.hexpand = true;
 
@@ -203,7 +207,7 @@ namespace PantheonTerminal {
             /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton ("Terminal");
             int new_page = notebook.get_current_page () + 1;
-            notebook.insert_page (box, tab, new_page);
+            notebook.insert_page (s, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
             notebook.set_group_name ("pantheon-terminal");
@@ -247,7 +251,7 @@ namespace PantheonTerminal {
 
             if (first) t.grab_focus ();
             set_terminal_theme (t);
-            box.show_all ();
+            s.show_all ();
             notebook.page = new_page;
         }
 
@@ -352,7 +356,19 @@ namespace PantheonTerminal {
                 app.window_list.remove (this);
             }
         }
+            
+        void action_copy () {
+            current_terminal.copy_clipboard ();
+        }
 
+        void action_paste () {
+            current_terminal.paste_clipboard ();
+        }
+        
+        void action_select_all () {
+            current_terminal.select_all ();
+        }
+        
         void action_close_tab () {
             current_tab_label.clicked ();
         }
@@ -365,6 +381,9 @@ namespace PantheonTerminal {
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
            { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
+           { "Copy", Gtk.Stock.COPY, N_("Copy"), null, N_("Copy the selected text"), action_copy },
+           { "Paste", Gtk.Stock.PASTE, N_("Paste"), null, N_("Paste some text"), action_paste },
+           { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), null, N_("Select all the text in the terminal"), action_select_all },
            { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), null }
         };
 

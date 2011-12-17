@@ -62,10 +62,10 @@ namespace PantheonTerminal {
 
             /* Set up the menu - FIXME Add shortcuts to the menu */
             menu = new Menu();
-            copy_menuitem = new MenuItem.with_label (_("Copy"));
-            paste_menuitem = new MenuItem.with_label (_("Paste"));
-            select_all_menuitem = new MenuItem.with_label (_("Select All"));
-            preferences_menuitem = new MenuItem.with_label (_("Preferences"));
+            copy_menuitem = parent_window.main_actions.get_action("Copy").create_menu_item() as Gtk.MenuItem;//new MenuItem.with_label (_("Copy"));
+            paste_menuitem = parent_window.main_actions.get_action("Paste").create_menu_item() as Gtk.MenuItem;
+            select_all_menuitem = parent_window.main_actions.get_action("Select All").create_menu_item() as Gtk.MenuItem;
+            preferences_menuitem = parent_window.main_actions.get_action("Preferences").create_menu_item() as Gtk.MenuItem;
             about_menuitem = new MenuItem.with_label (_("About"));
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
@@ -79,11 +79,11 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
 
-            copy_menuitem.activate.connect (() => { copy_clipboard (); });
+           /* copy_menuitem.activate.connect (() => { copy_clipboard (); });
             paste_menuitem.activate.connect (() => { paste_clipboard (); });
             select_all_menuitem.activate.connect (() => { select_all (); });
             preferences_menuitem.activate.connect (() => { preferences (); });
-            about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
+           */ about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
 
             // Pop menu up
             button_press_event.connect ((event) => {
