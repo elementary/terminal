@@ -80,6 +80,7 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
 
+            preferences_menuitem.activate.connect (() => { preferences (); });
             about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
 
             /* Pop menu up */
