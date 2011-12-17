@@ -36,20 +36,18 @@ namespace PantheonTerminal {
         public PantheonTerminalWindowState window_state { get; set; }
 
         public SavedState () {
-
             base ("org.elementary.PantheonTerminal.SavedState");
         }
 
     }
 
     public class Settings : Granite.Services.Settings {
-        
+
         public bool show_toolbar { get; set; }
         public bool opacity { get; set; }
         public uint scrollback_lines { get; set; }
  
         public Settings ()  {
-
             base ("org.elementary.PantheonTerminal.Settings");
         }
 

@@ -65,5 +65,15 @@ namespace PantheonTerminal {
             add (new_button);
             add (new SeparatorToolItem ());
         }
+
+        public void listen_settings () {
+
+            settings.changed["show-toolbar"].connect (() => {
+                print ("hello\n");
+                this.visible = ! this.visible;
+            });
+        }
+
+
     }
 }
