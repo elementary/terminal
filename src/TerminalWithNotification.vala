@@ -55,7 +55,7 @@ namespace PantheonTerminal {
         }
 
         private void apply_settings () {
-            scrollback_lines = settings.scrollback_lines;
+            scrollback_lines = (uint) settings.scrollback_lines;
         }
 
         private void setup_ui () {
