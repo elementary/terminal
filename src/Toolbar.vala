@@ -64,12 +64,13 @@ namespace PantheonTerminal {
 
             add (new_button);
             add (new SeparatorToolItem ());
+            
+            listen_settings ();
         }
 
         public void listen_settings () {
 
-            settings.changed.connect (() => {
-                print ("hello\n");
+            settings.changed["show-toolbar"].connect (() => {
                 this.visible = ! this.visible;
             });
         }
