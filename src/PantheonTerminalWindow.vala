@@ -179,7 +179,7 @@ namespace PantheonTerminal {
             var s = new ScrolledWindow (null, null);
             s.add (t);
 
-            /* To avoid a gtk/vte bug (needs more investigating) */
+            /* Add the terminal to the GUI */
             var box = new Gtk.Grid ();
             box.add (s);
             t.vexpand = true;
@@ -204,9 +204,7 @@ namespace PantheonTerminal {
             var tab = new TabWithCloseButton ("Terminal");
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (box, tab, new_page);
-            notebook.next_page ();
-            notebook.set_tab_reorderable (tab, true);
-            notebook.set_tab_detachable (tab, true);
+            notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
 
             /* Bind signals */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
