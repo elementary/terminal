@@ -37,7 +37,7 @@ namespace PantheonTerminal {
 
         public signal void theme_changed();
 
-        public Granite.Application app;
+        public PantheonTerminal app;
         Notebook notebook;
         public PantheonTerminalToolbar toolbar;
         FontDescription font;
@@ -63,7 +63,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow (Granite.Application app) {
 
-            this.app = app;
+            this.app = app as PantheonTerminal;
             set_application (app);
             Notify.init (app.program_name);
 
@@ -342,8 +342,14 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-            update_saved_state ();
-            Gtk.main_quit ();
+            if (app.window_list.length () == 1) {    
+                update_saved_state ();
+                Gtk.main_quit ();
+            }
+            else {
+                hide ();
+                app.window_list.remove (this);
+            }
         }
 
         void action_close_tab () {

@@ -29,7 +29,7 @@ namespace PantheonTerminal {
 
     public class PantheonTerminal : Granite.Application {
 
-            public PantheonTerminalWindow window = null;
+            public GLib.List <PantheonTerminalWindow> window_list = null;
             static string app_cmd_name;
 
             construct {
@@ -63,6 +63,8 @@ namespace PantheonTerminal {
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
             
+            window_list = new GLib.List <PantheonTerminalWindow> ();
+            
             saved_state = new SavedState ();
             settings = new Settings ();
 
@@ -70,12 +72,9 @@ namespace PantheonTerminal {
 
         protected override void activate () {
 
-            if (get_windows () == null) {
-                window = new PantheonTerminalWindow (this);
-                window.show ();
-            } else {
-                window.present ();
-            }
+            var window = new PantheonTerminalWindow (this);
+            window_list.append (window);
+            window.show ();
 
         }
 
