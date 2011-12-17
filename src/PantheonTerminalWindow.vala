@@ -50,7 +50,6 @@ namespace PantheonTerminal {
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
-                <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Quit" action="Quit"/>
                 <menuitem name="New tab" action="New tab"/>
             </popup>
@@ -84,8 +83,7 @@ namespace PantheonTerminal {
 
             try {
                 ui.add_ui_from_string (ui_string, -1);
-            }
-            catch(Error e) {
+            } catch(Error e) {
                 error ("Couldn't load the UI: %s", e.message);
             }
 
@@ -230,8 +228,8 @@ namespace PantheonTerminal {
                     }
                 }
 
-                if (new_text.length > 40) {
-                    new_text = new_text[new_text.length -40: new_text.length];
+                if (new_text.length > 50) {
+                    new_text = new_text[new_text.length - 50: new_text.length];
                 }
 
                 tab.set_text (new_text);
