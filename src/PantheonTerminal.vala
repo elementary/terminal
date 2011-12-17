@@ -50,9 +50,9 @@ namespace PantheonTerminal {
                 bug_url = "https://bugs.launchpad.net/pantheon-terminal";
                 help_url = "https://answers.launchpad.net/pantheon-terminal";
                 translate_url = "https://translations.launchpad.net/pantheon-terminal";
-                //about_authors = { null };
+                about_authors = { "Adrien Plazas <kekun.plazas@lapsote.com>" };
                 //about_documenters = {"",""};
-                //about_artists = { null };
+                about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
                 about_translators = "Launchpad Translators";
                 about_license_type = License.GPL_3_0;
 

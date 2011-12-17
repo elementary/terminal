@@ -205,6 +205,7 @@ namespace PantheonTerminal {
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (box, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
+            notebook.set_tab_detachable (notebook.get_nth_page (new_page), true); //FIXME, can't open more than one window
 
             /* Bind signals */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
