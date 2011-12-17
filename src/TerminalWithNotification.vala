@@ -28,7 +28,6 @@ namespace PantheonTerminal {
 
         public signal void task_over ();
         public signal void preferences ();
-        public signal void about ();
 
         private Menu menu;
         private MenuItem copy_menuitem;
