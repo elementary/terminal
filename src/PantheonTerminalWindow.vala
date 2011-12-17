@@ -47,7 +47,7 @@ namespace PantheonTerminal {
 
         TabWithCloseButton current_tab_label = null;
         TerminalWithNotification current_terminal = null;
-        
+
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
@@ -347,7 +347,7 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-            if (app.window_list.length () == 1) {    
+            if (app.window_list.length () == 1) {
                 update_saved_state ();
                 Gtk.main_quit ();
             }
@@ -356,7 +356,7 @@ namespace PantheonTerminal {
                 app.window_list.remove (this);
             }
         }
-            
+
         void action_copy () {
             current_terminal.copy_clipboard ();
         }
@@ -364,11 +364,11 @@ namespace PantheonTerminal {
         void action_paste () {
             current_terminal.paste_clipboard ();
         }
-        
+
         void action_select_all () {
             current_terminal.select_all ();
         }
-        
+
         void action_close_tab () {
             current_tab_label.clicked ();
         }
