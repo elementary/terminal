@@ -54,7 +54,9 @@ namespace PantheonTerminal {
         }
 
         private void apply_settings () {
+
             scrollback_lines = (uint) settings.scrollback_lines;
+            background_transparent = settings.background_transparent;
         }
 
         private void setup_ui () {
@@ -111,6 +113,10 @@ namespace PantheonTerminal {
 
             settings.changed["scrollback-lines"].connect (() => {
                 scrollback_lines = (uint) settings.scrollback_lines;
+            });
+
+            settings.changed["background-transparent"].connect (() => {
+                background_transparent = ! background_transparent;
             });
         }
 

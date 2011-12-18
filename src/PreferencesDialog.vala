@@ -90,8 +90,8 @@ namespace PantheonTerminal {
             var show_toolbar = new Switch ();
             settings.schema.bind ("show-toolbar", show_toolbar, "active", SettingsBindFlags.DEFAULT);
 
-            var opacity_switch = new Switch ();
-            settings.schema.bind ("opacity", opacity_switch, "active", SettingsBindFlags.DEFAULT);
+            var transparency_switch = new Switch ();
+            settings.schema.bind ("background-transparent", transparency_switch, "active", SettingsBindFlags.DEFAULT);
 
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
@@ -105,8 +105,8 @@ namespace PantheonTerminal {
             var label = new Label (_("Show toolbar"));
             add_option (general_grid, label, show_toolbar, ref row);
 
-            var opacity_label = new Label (_("Opacity"));
-            add_option (general_grid, opacity_label, opacity_switch, ref row);
+            var transparency_label  = new Label (_("Background transparent"));
+            add_option (general_grid, transparency_label, transparency_switch, ref row);
 
             return general_grid;
         }
