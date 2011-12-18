@@ -46,7 +46,7 @@ namespace PantheonTerminal {
         public bool show_toolbar { get; set; }
         public bool opacity { get; set; }
         public int scrollback_lines { get; set; }
- 
+
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
         }

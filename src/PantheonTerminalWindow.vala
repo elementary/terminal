@@ -249,7 +249,7 @@ namespace PantheonTerminal {
             });
 
             /*notebook.page_added.connect ((child, page_index) => {
-                
+
             });*/
 
             if (first) t.grab_focus ();

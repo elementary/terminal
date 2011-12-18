@@ -70,7 +70,7 @@ namespace PantheonTerminal {
             settings.schema.bind ("opacity", opacity_switch, "active", SettingsBindFlags.DEFAULT);
 
             var scrollback_counter = new SpinButton.with_range (1, 2147483647, 1);
-            settings.schema.bind ("scrollback-lines", scrollback_counter, "active", SettingsBindFlags.DEFAULT);
+            settings.schema.bind ("scrollback-lines", scrollback_counter, "value", SettingsBindFlags.DEFAULT);
 
             int row = 0;
 

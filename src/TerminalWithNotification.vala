@@ -50,6 +50,7 @@ namespace PantheonTerminal {
             apply_settings ();
             setup_ui ();
             connect_signals ();
+            listen_settings ();
         }
 
         private void apply_settings () {
@@ -105,5 +106,14 @@ namespace PantheonTerminal {
             last_row_count = get_row_count ();
             last_column_count = get_column_count ();
         }
+
+        private void listen_settings () {
+
+            settings.changed["scrollback-lines"].connect (() => {
+                scrollback_lines = (uint) settings.scrollback_lines;
+            });
+        }
+
     }
-}
+
+} //Namespace
