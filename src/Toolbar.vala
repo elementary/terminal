@@ -64,7 +64,8 @@ namespace PantheonTerminal {
             add (new SeparatorToolItem ());
             add (copy_button);
             add (paste_button);
-            
+            add (new SeparatorToolItem ());
+
             listen_settings ();
         }
 

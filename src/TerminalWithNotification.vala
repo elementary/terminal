@@ -27,7 +27,6 @@ namespace PantheonTerminal {
     public class TerminalWithNotification : Terminal {
 
         public signal void task_over ();
-        public signal void preferences ();
 
         private Menu menu;
         private MenuItem copy_menuitem;
@@ -79,8 +78,8 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
 
-            preferences_menuitem.activate.connect (() => { preferences (); });
-            about_menuitem.activate.connect (() => { this.parent_window.app.show_about (parent_window); });
+            preferences_menuitem.activate.connect (() => { parent_window.preferences (); });
+            about_menuitem.activate.connect (() => { parent_window.app.show_about (parent_window); });
 
             /* Pop menu up */
             button_press_event.connect ((event) => {
@@ -99,12 +98,12 @@ namespace PantheonTerminal {
              * the user will not be notified.
              */
 
-            if (get_row_count() == last_row_count && get_column_count() == last_column_count) {
+            if (get_row_count () == last_row_count && get_column_count () == last_column_count) {
                 if (!parent_window.is_active) task_over ();
             }
 
-            last_row_count = get_row_count();
-            last_column_count = get_column_count();
+            last_row_count = get_row_count ();
+            last_column_count = get_column_count ();
         }
     }
 }

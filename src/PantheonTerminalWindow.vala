@@ -216,7 +216,6 @@ namespace PantheonTerminal {
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
             notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
             focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
-            t.preferences.connect (preferences);
             theme_changed.connect (() => { set_terminal_theme (t); });
             t.child_exited.connect (() => {remove_page (notebook.page);});
 
@@ -248,6 +247,10 @@ namespace PantheonTerminal {
                     stderr.printf ("Unable to send notification: %s", err.message);
                 }
             });
+
+            /*notebook.page_added.connect ((child, page_index) => {
+                
+            });*/
 
             if (first) t.grab_focus ();
             set_terminal_theme (t);
