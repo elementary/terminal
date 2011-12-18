@@ -66,16 +66,10 @@ namespace PantheonTerminal {
             general_grid.margin_top = 12;
             general_grid.margin_bottom = 12;
 
-            var opacity_switch = new Switch ();
-            settings.schema.bind ("opacity", opacity_switch, "active", SettingsBindFlags.DEFAULT);
-
             var scrollback_counter = new SpinButton.with_range (1, 2147483647, 1);
             settings.schema.bind ("scrollback-lines", scrollback_counter, "value", SettingsBindFlags.DEFAULT);
 
             int row = 0;
-
-            var opacity_label = new Label (_("Opacity"));
-            add_option (general_grid, opacity_label, opacity_switch, ref row);
 
             var scrolling_label = new Label (_("Scrolling"));
             scrolling_label.set_markup ("<b>%s</b>".printf (_("Scrolling")));
@@ -92,8 +86,12 @@ namespace PantheonTerminal {
 
         Gtk.Widget get_appearance_box () {
 
+
             var show_toolbar = new Switch ();
             settings.schema.bind ("show-toolbar", show_toolbar, "active", SettingsBindFlags.DEFAULT);
+
+            var opacity_switch = new Switch ();
+            settings.schema.bind ("opacity", opacity_switch, "active", SettingsBindFlags.DEFAULT);
 
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
@@ -107,8 +105,10 @@ namespace PantheonTerminal {
             var label = new Label (_("Show toolbar"));
             add_option (general_grid, label, show_toolbar, ref row);
 
-            return general_grid;
+            var opacity_label = new Label (_("Opacity"));
+            add_option (general_grid, opacity_label, opacity_switch, ref row);
 
+            return general_grid;
         }
 
         void add_option (Gtk.Grid grid, Gtk.Widget label, Gtk.Widget switcher, ref int row) {
