@@ -30,8 +30,6 @@ namespace PantheonTerminal {
         public ToolButton new_button;
         public ToolButton copy_button;
         public ToolButton paste_button;
-        public ToolButton zoom_in_button;
-        public ToolButton zoom_out_button;
         public ToolButton stop_button;
         public ToolButton pause_button;
         public ToolButton app_menu_button;
@@ -42,8 +40,6 @@ namespace PantheonTerminal {
             NEW_BUTTON,
             COPY_BUTTON,
             PASTE_BUTTON,
-            ZOOM_IN_BUTTON,
-            ZOOM_OUT_BUTTON,
             STOP_BUTTON,
             PAUSE_BUTTON,
             APPMENU_BUTTON,
@@ -61,9 +57,13 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("primary-toolbar");
 
             new_button = action_group.get_action ("New tab").create_tool_item () as Gtk.ToolButton;
+            copy_button = action_group.get_action ("Copy").create_tool_item () as Gtk.ToolButton;
+            paste_button = action_group.get_action ("Paste").create_tool_item () as Gtk.ToolButton;
 
             add (new_button);
             add (new SeparatorToolItem ());
+            add (copy_button);
+            add (paste_button);
             
             listen_settings ();
         }
