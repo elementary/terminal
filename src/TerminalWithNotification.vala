@@ -47,10 +47,10 @@ namespace PantheonTerminal {
             set_size_request (320, 200);
             window_title_changed.connect (check_for_notification);
 
-            apply_settings ();
             setup_ui ();
             connect_signals ();
             listen_settings ();
+            apply_settings ();
         }
 
         private void apply_settings () {

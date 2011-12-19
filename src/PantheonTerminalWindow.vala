@@ -47,6 +47,7 @@ namespace PantheonTerminal {
 
         TabWithCloseButton current_tab_label = null;
         TerminalWithNotification current_terminal = null;
+        Widget current_tab;
 
         const string ui_string = """
             <ui>
@@ -150,6 +151,7 @@ namespace PantheonTerminal {
         void on_switch_page (Widget page, uint n) {
 
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
+            current_tab = notebook.get_nth_page ((int) n);
             current_terminal = ((ScrolledWindow) page).get_child () as TerminalWithNotification;
             page.grab_focus ();
             current_terminal.parent_window = this;
@@ -212,7 +214,6 @@ namespace PantheonTerminal {
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
             notebook.set_group_name ("pantheon-terminal");
-            tab.terminal = t;
 
             /* Bind signals to the new tab */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
@@ -400,7 +401,6 @@ namespace PantheonTerminal {
 
         private Button button;
         public Label label;
-        public TerminalWithNotification terminal;
 
         private string text;
         bool notification = false;
