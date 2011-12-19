@@ -49,14 +49,9 @@ namespace PantheonTerminal {
 
             setup_ui ();
             connect_signals ();
-            listen_settings ();
-            apply_settings ();
-        }
+            restore_settings ();
+            settings.changed.connect (restore_settings);
 
-        private void apply_settings () {
-
-            scrollback_lines = (uint) settings.scrollback_lines;
-            background_transparent = settings.background_transparent;
         }
 
         private void setup_ui () {
@@ -109,15 +104,15 @@ namespace PantheonTerminal {
             last_column_count = get_column_count ();
         }
 
-        private void listen_settings () {
+        void restore_settings () {
 
-            settings.changed["scrollback-lines"].connect (() => {
-                scrollback_lines = (uint) settings.scrollback_lines;
-            });
+            //settings.changed["scrollback-lines"].connect (() => {
+            scrollback_lines = (uint) settings.scrollback_lines;
+            //});
 
-            settings.changed["background-transparent"].connect (() => {
-                background_transparent = ! background_transparent;
-            });
+            //settings.changed["background-transparent"].connect (() => {
+            background_transparent = settings.background_transparent;
+            //});
         }
 
     }
