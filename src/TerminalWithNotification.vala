@@ -35,7 +35,7 @@ namespace PantheonTerminal {
         private MenuItem preferences_menuitem;
         private MenuItem about_menuitem;
 
-        private PantheonTerminalWindow parent_window;
+        public PantheonTerminalWindow parent_window;
 
         long last_row_count = 0;
         long last_column_count = 0;
@@ -62,7 +62,7 @@ namespace PantheonTerminal {
         private void setup_ui () {
 
             /* Set up the menu */
-            menu = new Menu();
+            menu = new Menu ();
             copy_menuitem = parent_window.main_actions.get_action ("Copy").create_menu_item () as Gtk.MenuItem;
             paste_menuitem = parent_window.main_actions.get_action ("Paste").create_menu_item () as Gtk.MenuItem;
             select_all_menuitem = parent_window.main_actions.get_action ("Select All").create_menu_item () as Gtk.MenuItem;

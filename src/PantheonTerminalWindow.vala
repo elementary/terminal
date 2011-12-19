@@ -68,11 +68,11 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow (Granite.Application app) {
 
-            this.app = app as PantheonTerminal;
+            app = app as PantheonTerminal;
             set_application (app);
             Notify.init (app.program_name);
 
-            //Gtk.Settings.get_default().gtk_application_prefer_dark_theme = true;
+            //Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
             restore_saved_state ();
             set_size_request (40, 40);
@@ -144,15 +144,15 @@ namespace PantheonTerminal {
 
             notebook.switch_page.connect (on_switch_page);
 
-            add_button.clicked.connect(() => { new_tab (false); } );
-
+            add_button.clicked.connect (() => { new_tab (false); } );
         }
 
         void on_switch_page (Widget page, uint n) {
 
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
-            current_terminal = ((ScrolledWindow)page).get_child () as TerminalWithNotification;
+            current_terminal = ((ScrolledWindow) page).get_child () as TerminalWithNotification;
             page.grab_focus ();
+            current_terminal.parent_window = this;
         }
 
         public void remove_page (int page) {
@@ -184,6 +184,7 @@ namespace PantheonTerminal {
             var t = new TerminalWithNotification (this);
             var s = new ScrolledWindow (null, null);
             s.add (t);
+            current_terminal = t;
 
             /* Add the terminal to the GUI */
             t.vexpand = true;
@@ -211,13 +212,14 @@ namespace PantheonTerminal {
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
             notebook.set_group_name ("pantheon-terminal");
+            tab.terminal = t;
 
-            /* Bind signals */
+            /* Bind signals to the new tab */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });
             notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
             focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
             theme_changed.connect (() => { set_terminal_theme (t); });
-            t.child_exited.connect (() => {remove_page (notebook.page);});
+            t.child_exited.connect (() => { remove_page (notebook.page); });
 
             t.window_title_changed.connect (() => {
 
@@ -248,11 +250,7 @@ namespace PantheonTerminal {
                 }
             });
 
-            /*notebook.page_added.connect ((child, page_index) => {
-
-            });*/
-
-            if (first) t.grab_focus ();
+            t.grab_focus ();
             set_terminal_theme (t);
             s.show_all ();
             notebook.page = new_page;
@@ -272,16 +270,15 @@ namespace PantheonTerminal {
             if (theme == "normal") {
                 Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = false;
 
-                // Get the system's style
+                /* Get the system's style */
                 realize ();
                 font = FontDescription.from_string (get_system_font ());
                 bgcolor = get_style ().bg[StateType.NORMAL];
                 fgcolor = get_style ().fg[StateType.NORMAL];
-            }
-            else {
+            } else {
                 Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
-                // Get the system's style
+                /* Get the system's style */
                 realize ();
                 font = FontDescription.from_string (get_system_font ());
                 bgcolor = get_style ().bg[StateType.NORMAL];
@@ -331,7 +328,7 @@ namespace PantheonTerminal {
             Gdk.Window win = get_window ();
             var state = win.get_state ();
 
-            // Save window state
+            /* Save window state */
             if ((state & WindowState.MAXIMIZED) != 0)
                 saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
             else if ((state & WindowState.FULLSCREEN) != 0)
@@ -381,7 +378,8 @@ namespace PantheonTerminal {
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-           { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
+
+           {  "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
            { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
            { "Copy", Gtk.Stock.COPY, N_("Copy"), null, N_("Copy the selected text"), action_copy },
@@ -402,6 +400,7 @@ namespace PantheonTerminal {
 
         private Button button;
         public Label label;
+        public TerminalWithNotification terminal;
 
         private string text;
         bool notification = false;
@@ -453,6 +452,7 @@ namespace PantheonTerminal {
         }
 
         bool on_button_press_event (EventButton event) {
+
             if (event.button == 2)
                 clicked ();
             return false;
