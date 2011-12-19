@@ -348,14 +348,16 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-            if (app.window_list.length () == 1) {
+
+            /*if (app.window_list.length () == 1) {
                 update_saved_state ();
                 Gtk.main_quit ();
             }
             else {
                 hide ();
                 app.window_list.remove (this);
-            }
+            }*/
+            return;
         }
 
         void action_copy () {
