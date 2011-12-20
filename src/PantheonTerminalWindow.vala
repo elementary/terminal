@@ -103,7 +103,7 @@ namespace PantheonTerminal {
             set_theme ();
             show_all ();
             connect_signals ();
-                
+
             new_tab (true);
         }
 
@@ -137,8 +137,6 @@ namespace PantheonTerminal {
             add_button.set_relief (ReliefStyle.NONE);
             add_button.set_tooltip_text ("Open a new tab");
             right_box.pack_start (add_button, false, false, 0);
-            
-            update_saved_state ();
         }
 
         private void connect_signals () {
@@ -350,7 +348,16 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-            Gtk.main_quit ();
+
+            /*if (app.window_list.length () == 1) {
+                update_saved_state ();
+                Gtk.main_quit ();
+            }
+            else {
+                hide ();
+                app.window_list.remove (this);
+            }*/
+            return;
         }
 
         void action_copy () {

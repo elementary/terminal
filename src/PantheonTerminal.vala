@@ -28,9 +28,8 @@ using PantheonTerminal;
 namespace PantheonTerminal {
 
     public class PantheonTerminal : Granite.Application {
-            
-            PantheonTerminalWindow window;
-            
+
+            public GLib.List <PantheonTerminalWindow> window_list = null;
             static string app_cmd_name;
 
             construct {
@@ -63,24 +62,20 @@ namespace PantheonTerminal {
 
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
-            
-            set_flags (ApplicationFlags.NON_UNIQUE);
-            
+
+            window_list = new GLib.List <PantheonTerminalWindow> ();
+
             saved_state = new SavedState ();
             settings = new Settings ();
 
         }
 
         protected override void activate () {
-            
-            if (get_windows () == null) {
-                window = new PantheonTerminalWindow (this);
-                window.show ();
-            }
-            else {
-                window.present ();
-            }
-            
+
+            var window = new PantheonTerminalWindow (this);
+            window_list.append (window);
+            window.show ();
+
         }
 
         public static int main(string[] args) {

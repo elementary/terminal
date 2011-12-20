@@ -66,17 +66,14 @@ namespace PantheonTerminal {
             add (paste_button);
             add (new SeparatorToolItem ());
 
-            restore_settings ();
-            settings.changed.connect (restore_settings);
+            listen_settings ();
         }
 
-        public void restore_settings () {
-                
-                if (settings.show_toolbar)
-                    show_all ();
-                
-                else 
-                    hide ();                
+        public void listen_settings () {
+
+            settings.changed["show-toolbar"].connect (() => {
+                this.visible = ! this.visible;
+            });
         }
 
 
