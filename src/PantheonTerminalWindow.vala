@@ -103,7 +103,7 @@ namespace PantheonTerminal {
             set_theme ();
             show_all ();
             connect_signals ();
-                
+
             new_tab (true);
         }
 
@@ -137,7 +137,7 @@ namespace PantheonTerminal {
             add_button.set_relief (ReliefStyle.NONE);
             add_button.set_tooltip_text ("Open a new tab");
             right_box.pack_start (add_button, false, false, 0);
-            
+
             update_saved_state ();
         }
 
@@ -453,4 +453,4 @@ namespace PantheonTerminal {
             return false;
         }
     }
-}
+} // Namespace

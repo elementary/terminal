@@ -71,14 +71,14 @@ namespace PantheonTerminal {
         }
 
         public void restore_settings () {
-                
-                if (settings.show_toolbar)
-                    show_all ();
-                
-                else 
-                    hide ();                
+
+
+            if (settings.show_toolbar) {
+                visible = true;
+                show ();
+                show_all ();
+            } else {
+                hide ();}
         }
-
-
     }
-}
+} // Namespace
