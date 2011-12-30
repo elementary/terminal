@@ -27,7 +27,7 @@
 			<summary>Background Transparent</summary>
 			<description>Whether the terminal background should be transparent..</description>
     </key>
-    
+
     <key name="show-toolbar" type="b">
       <default>true</default>
       <summary>Show toolbar</summary>

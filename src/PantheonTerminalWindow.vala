@@ -211,6 +211,7 @@ namespace PantheonTerminal {
 
             /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton ("Terminal");
+            tab.set_size_request (64, 24);
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (s, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
