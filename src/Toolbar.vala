@@ -32,18 +32,10 @@ namespace PantheonTerminal {
         public ToolButton paste_button;
         public ToolButton stop_button;
         public ToolButton pause_button;
-        public ToolButton app_menu_button;
+        public SearchBar search_entry;
+        public AppMenu app_menu;
 
         UIManager ui;
-
-        /*public enum ToolButton {
-            NEW_BUTTON,
-            COPY_BUTTON,
-            PASTE_BUTTON,
-            STOP_BUTTON,
-            PAUSE_BUTTON,
-            APPMENU_BUTTON,
-        }*/
 
         public enum ToolEntry {
             SEARCH_ENTRY,
@@ -66,19 +58,41 @@ namespace PantheonTerminal {
             add (paste_button);
             add (new SeparatorToolItem ());
 
+            search_entry = new Granite.Widgets.SearchBar (_("Search..."));
+            search_entry.width_request = 250;
+            search_entry.changed.connect (on_search_entry_text_changed);
+
+            add (add_spacer ());
+            add (search_entry);
+
             restore_settings ();
             settings.changed.connect (restore_settings);
         }
 
         public void restore_settings () {
 
-
             if (settings.show_toolbar) {
                 visible = true;
                 show ();
                 show_all ();
             } else {
-                hide ();}
+                hide ();
+            }
+        }
+
+        private ToolItem add_spacer () {
+
+            var spacer = new ToolItem ();
+            spacer.set_expand (true);
+
+            return spacer;
+        }
+
+        public void on_search_entry_text_changed () {
+
+            print ("Hello\n");
+            /*regex search_regex = new Regex ();
+            search_entry.search_set_gregex ();*/
         }
     }
 } // Namespace

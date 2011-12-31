@@ -121,6 +121,7 @@ namespace PantheonTerminal {
             notebook.set_action_widget (right_box, PackType.END);
             notebook.set_scrollable (true);
             notebook.can_focus = false;
+            notebook.set_group_name ("pantheon-terminal");
 
             if (settings.show_toolbar)
                 container.pack_start (toolbar, false, false, 0);
@@ -211,12 +212,11 @@ namespace PantheonTerminal {
 
             /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton ("Terminal");
-            tab.set_size_request (64, 24);
+            tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (s, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
-            notebook.set_group_name ("pantheon-terminal");
 
             /* Bind signals to the new tab */
             tab.clicked.connect (() => { remove_page (notebook.page_num (t)); });

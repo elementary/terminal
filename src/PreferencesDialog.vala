@@ -86,12 +86,14 @@ namespace PantheonTerminal {
 
         Gtk.Widget get_appearance_box () {
 
-
             var show_toolbar = new Switch ();
             settings.schema.bind ("show-toolbar", show_toolbar, "active", SettingsBindFlags.DEFAULT);
 
             var transparency_switch = new Switch ();
             settings.schema.bind ("background-transparent", transparency_switch, "active", SettingsBindFlags.DEFAULT);
+
+            var opacity_scale = new HScale.with_range (0, 100, 1);
+            settings.schema.bind ("opacity", opacity_scale, "value", SettingsBindFlags.DEFAULT);
 
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
