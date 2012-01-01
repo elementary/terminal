@@ -93,7 +93,7 @@ namespace PantheonTerminal {
             settings.schema.bind ("background-transparent", transparency_switch, "active", SettingsBindFlags.DEFAULT);
 
             var opacity_scale = new HScale.with_range (0, 100, 1);
-            settings.schema.bind ("opacity", opacity_scale, "value", SettingsBindFlags.DEFAULT);
+            settings.schema.bind ("opacity", opacity_scale, "digits", SettingsBindFlags.DEFAULT);
 
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
@@ -109,6 +109,9 @@ namespace PantheonTerminal {
 
             var transparency_label  = new Label (_("Background transparent"));
             add_option (general_grid, transparency_label, transparency_switch, ref row);
+
+            var opacity_label = new Label (_("Background opacity"));
+            add_option (general_grid, opacity_label, opacity_scale, ref row);
 
             return general_grid;
         }
