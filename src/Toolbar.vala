@@ -67,7 +67,16 @@ namespace PantheonTerminal {
             
             add (add_spacer ());
             add (search_tool);
-
+            
+            var menu = window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;//new Gtk.Menu ();
+            //var preferences = action_group.get_action("Preferences") as Gtk.MenuItem;
+            //menu.append (preferences);
+            
+            app_menu = (window.get_application() as Granite.Application).create_appmenu(menu);
+            
+            add (new SeparatorToolItem ());
+            add (app_menu);
+            
             restore_settings ();
             settings.changed.connect (restore_settings);
         }

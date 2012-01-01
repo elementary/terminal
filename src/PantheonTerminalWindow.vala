@@ -57,13 +57,16 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+            </popup>
+                
+            <popup name="AppMenu">
                 <menuitem name="Preferences" action="Preferences"/>
             </popup>
             </ui>
         """;
 
         public Gtk.ActionGroup main_actions;
-        Gtk.UIManager ui;
+        public Gtk.UIManager ui;
 
         string[] args;
 
@@ -373,7 +376,14 @@ namespace PantheonTerminal {
         void action_new_tab () {
             new_tab (false);
         }
-
+        
+        void action_preferences () {
+            var dialog = new Preferences ("Preferences", this);
+            dialog.show_all ();
+            dialog.run ();
+            dialog.destroy ();
+        }
+        
         static const Gtk.ActionEntry[] main_entries = {
 
            {  "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
@@ -382,7 +392,7 @@ namespace PantheonTerminal {
            { "Copy", Gtk.Stock.COPY, N_("Copy"), null, N_("Copy the selected text"), action_copy },
            { "Paste", Gtk.Stock.PASTE, N_("Paste"), null, N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), null, N_("Select all the text in the terminal"), action_select_all },
-           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), null }
+           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences }
         };
 
         /*static const Gtk.ToggleActionEntry[] toggle_entries = {
