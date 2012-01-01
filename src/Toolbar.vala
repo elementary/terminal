@@ -59,11 +59,14 @@ namespace PantheonTerminal {
             add (new SeparatorToolItem ());
 
             search_entry = new Granite.Widgets.SearchBar (_("Search..."));
-            search_entry.width_request = 250;
+            search_entry.width_request = 200;
             search_entry.changed.connect (on_search_entry_text_changed);
-
+            
+            var search_tool = new ToolItem ();
+            search_tool.add (search_entry);
+            
             add (add_spacer ());
-            add (search_entry);
+            add (search_tool);
 
             restore_settings ();
             settings.changed.connect (restore_settings);
