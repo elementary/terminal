@@ -389,7 +389,7 @@ namespace PantheonTerminal {
            {  "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
            { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
-           { "Copy", null, N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
+           { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
            { "Paste", Gtk.Stock.PASTE, N_("Paste"), null, N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), null, N_("Select all the text in the terminal"), action_select_all },
            { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences }
