@@ -78,7 +78,7 @@ namespace PantheonTerminal {
             set_notification (notification);
         }
 
-        bool on_button_press_event (EventButton event) {
+        bool on_button_press_event (Gdk.EventButton event) {
 
             if (event.button == 2)
                 clicked ();
