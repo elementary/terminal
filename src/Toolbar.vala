@@ -61,22 +61,22 @@ namespace PantheonTerminal {
             search_entry = new Granite.Widgets.SearchBar (_("Search..."));
             search_entry.width_request = 200;
             search_entry.changed.connect (on_search_entry_text_changed);
-            
+
             var search_tool = new ToolItem ();
             search_tool.add (search_entry);
-            
+
             add (add_spacer ());
             add (search_tool);
-            
+
             var menu = window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;//new Gtk.Menu ();
             //var preferences = action_group.get_action("Preferences") as Gtk.MenuItem;
             //menu.append (preferences);
-            
+
             app_menu = (window.get_application() as Granite.Application).create_appmenu(menu);
-            
+
             add (new SeparatorToolItem ());
             add (app_menu);
-            
+
             restore_settings ();
             settings.changed.connect (restore_settings);
         }
@@ -102,9 +102,9 @@ namespace PantheonTerminal {
 
         public void on_search_entry_text_changed () {
 
-            print ("Hello\n");
-            /*regex search_regex = new Regex ();
-            search_entry.search_set_gregex ();*/
+            Regex search_regex = new Regex (search_entry.get_text ());
+            window.current_terminal.search_set_gregex (search_regex);
+            window.current_terminal.search_find_next ();
         }
     }
 } // Namespace

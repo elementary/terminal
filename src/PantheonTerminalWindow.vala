@@ -46,7 +46,7 @@ namespace PantheonTerminal {
         private Button add_button;
 
         TabWithCloseButton current_tab_label = null;
-        TerminalWithNotification current_terminal = null;
+        public TerminalWithNotification current_terminal = null;
         Widget current_tab;
 
         const string ui_string = """
@@ -356,7 +356,7 @@ namespace PantheonTerminal {
 
         void action_quit () {
 
-            if (app.windows.length () == 0) 
+            if (app.windows.length () == 0)
                 Gtk.main_quit ();
             else
                 hide ();
