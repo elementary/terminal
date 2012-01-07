@@ -30,7 +30,8 @@ namespace PantheonTerminal {
     public class PantheonTerminal : Granite.Application {
 
             public GLib.List <PantheonTerminalWindow> windows;
-
+            public int nwindows = 0;
+            
             static string app_cmd_name;
 
             construct {
@@ -76,13 +77,14 @@ namespace PantheonTerminal {
             var window = new PantheonTerminalWindow (this);
             window.show ();
             windows.append (window);
+            nwindows++;
             
         }
 
         public static int main(string[] args) {
 
                 app_cmd_name = "Pantheon Terminal";
-                Gtk.init(ref args);
+
                 var app = new PantheonTerminal ();
                 return app.run (args);
         }

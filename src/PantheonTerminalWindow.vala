@@ -356,11 +356,14 @@ namespace PantheonTerminal {
 
         void action_quit () {
 
-            if (app.windows.length () == 0) 
+            //if (app.nwindows == 1) { 
                 Gtk.main_quit ();
-            else
-                hide ();
-                app.windows.remove (this);
+            //}
+            //else {
+            //    hide ();
+            //    app.nwindows--;
+            //    app.windows.remove (this);
+            //}
         }
 
         void action_copy () {
