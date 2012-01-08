@@ -329,7 +329,6 @@ namespace PantheonTerminal {
                 top.maximize ();
             else if (saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 top.fullscreen ();
-
         }
 
         private void update_saved_state () {
@@ -352,11 +351,9 @@ namespace PantheonTerminal {
                 saved_state.window_width = width;
                 saved_state.window_height = height;
             }
-
         }
 
         void action_quit () {
-
 
             //if (app.nwindows == 1) {
 
@@ -392,15 +389,15 @@ namespace PantheonTerminal {
 
         void action_search () {
 
-            print ("Hello\n");
             toolbar.search_entry.grab_focus ();
         }
 
         void action_preferences () {
+
             var dialog = new Preferences ("Preferences", this);
-            dialog.show_all ();
-            dialog.run ();
-            dialog.destroy ();
+            //dialog.show_all ();
+            //dialog.run ();
+            //dialog.destroy ();
         }
 
         static const Gtk.ActionEntry[] main_entries = {

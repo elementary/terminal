@@ -52,7 +52,6 @@ namespace PantheonTerminal {
             connect_signals ();
             restore_settings ();
             settings.changed.connect (restore_settings);
-
         }
 
         private void setup_ui () {
