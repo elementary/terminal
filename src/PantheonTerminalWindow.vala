@@ -356,11 +356,10 @@ namespace PantheonTerminal {
 
         void action_quit () {
 
-<<<<<<< TREE
-            //if (app.nwindows == 1) { 
-=======
+
+            //if (app.nwindows == 1) {
+
             if (app.windows.length () == 0)
->>>>>>> MERGE-SOURCE
                 Gtk.main_quit ();
             //}
             //else {
