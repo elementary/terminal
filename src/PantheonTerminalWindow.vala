@@ -46,7 +46,7 @@ namespace PantheonTerminal {
         private Button add_button;
 
         TabWithCloseButton current_tab_label = null;
-        TerminalWithNotification current_terminal = null;
+        public TerminalWithNotification current_terminal = null;
         Widget current_tab;
 
         const string ui_string = """
@@ -356,7 +356,11 @@ namespace PantheonTerminal {
 
         void action_quit () {
 
+<<<<<<< TREE
             //if (app.nwindows == 1) { 
+=======
+            if (app.windows.length () == 0)
+>>>>>>> MERGE-SOURCE
                 Gtk.main_quit ();
             //}
             //else {
@@ -410,67 +414,4 @@ namespace PantheonTerminal {
 
     }
 
-    public class TabWithCloseButton : EventBox {
-
-        public signal void clicked ();
-
-        private Button button;
-        public Label label;
-
-        private string text;
-        bool notification = false;
-        public bool reorderable = true;
-        public bool detachable = true;
-
-        public TabWithCloseButton (string text) {
-
-            this.text = text;
-
-            var hbox = new HBox (false, 0);
-
-            // Button
-            button = new Button ();
-            button.set_image (new Image.from_stock (Stock.CLOSE, IconSize.MENU));
-            button.show ();
-            button.set_relief (ReliefStyle.NONE);
-            button.clicked.connect (() => { clicked(); });
-
-            // Label
-            label = new Label (text);
-            label.show ();
-
-            // Pack the elements
-            hbox.pack_start (button, false, true, 0);
-            hbox.pack_end (label, true, true, 0);
-
-            add (hbox);
-
-            button_press_event.connect (on_button_press_event);
-
-            show_all ();
-        }
-
-        public void set_notification (bool notification) {
-
-            this.notification = notification;
-
-            if (notification)
-                label.set_markup ("<span color=\"#18a0c0\">" + text + "</span>");
-            else
-                label.set_markup (text);
-        }
-
-        public void set_text (string text) {
-
-            this.text = text;
-            set_notification (notification);
-        }
-
-        bool on_button_press_event (EventButton event) {
-
-            if (event.button == 2)
-                clicked ();
-            return false;
-        }
-    }
 } // Namespace
