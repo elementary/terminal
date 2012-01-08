@@ -45,7 +45,7 @@ namespace PantheonTerminal {
 
             get_style_context ().add_class ("primary-toolbar");
 
-            new_button = action_group.get_action ("New tab").create_tool_item () as Gtk.ToolButton;
+            new_button = action_group.get_action ("New window").create_tool_item () as Gtk.ToolButton;
             copy_button = action_group.get_action ("Copy").create_tool_item () as Gtk.ToolButton;
             paste_button = action_group.get_action ("Paste").create_tool_item () as Gtk.ToolButton;
 

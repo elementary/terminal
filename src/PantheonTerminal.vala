@@ -42,7 +42,7 @@ namespace PantheonTerminal {
                 build_version = Constants.VERSION;
                 build_version_info = Constants.VERSION_INFO;
             */
-            program_name = app_cmd_name;
+                program_name = app_cmd_name;
                 exec_name = app_cmd_name.down();
                 app_years = "2011";
                 app_icon = "utilities-terminal";
@@ -69,7 +69,6 @@ namespace PantheonTerminal {
             
             saved_state = new SavedState ();
             settings = new Settings ();
-
         }
 
         protected override void activate () {
@@ -78,7 +77,6 @@ namespace PantheonTerminal {
             window.show ();
             windows.append (window);
             nwindows++;
-            
         }
 
         public static int main(string[] args) {

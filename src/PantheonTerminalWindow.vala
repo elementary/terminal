@@ -383,12 +383,20 @@ namespace PantheonTerminal {
             current_tab_label.clicked ();
         }
 
+        void action_new_window () {
+    
+            print ("Hello\n");
+            string app_cmd_name = "Pantheon Terminal";
+
+            var app = new PantheonTerminal ();
+            app.run ({});
+        }
+
         void action_new_tab () {
             new_tab (false);
         }
 
         void action_search () {
-
             toolbar.search_entry.grab_focus ();
         }
 
@@ -404,7 +412,8 @@ namespace PantheonTerminal {
 
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
-           { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
+           { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"), action_new_window }, 
+           { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a", N_("Select all the text in the terminal"), action_select_all },
