@@ -41,6 +41,8 @@ namespace PantheonTerminal {
             SEARCH_ENTRY,
         }
 
+        private string old_searched_text;
+
         public PantheonTerminalToolbar (PantheonTerminalWindow parent, UIManager ui, Gtk.ActionGroup action_group) {
 
             this.window = parent;
@@ -101,8 +103,18 @@ namespace PantheonTerminal {
         }
 
         public void on_search_entry_text_changed () {
+            var searched_text = search_entry.get_text ();
+            var compile_flags = RegexCompileFlags.OPTIMIZE | RegexCompileFlags.MULTILINE;
 
-            Regex search_regex = new Regex (search_entry.get_text ());
+            /* Test for previous searches */
+            if (searched_text != old_searched_text) {
+                /* Reset the search position */
+                window.current_terminal.search_set_gregex (new Regex (".", compile_flags));
+                while (window.current_terminal.search_find_previous ());
+                old_searched_text = searched_text;
+            }
+
+            var search_regex = new Regex (searched_text, compile_flags);
             window.current_terminal.search_set_gregex (search_regex);
             window.current_terminal.search_find_next ();
         }
