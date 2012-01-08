@@ -307,13 +307,13 @@ namespace PantheonTerminal {
             return font_name;
         }
 
-        public void preferences () {
+        /*public void preferences () {
 
             var dialog = new Preferences ("Preferences", this);
             dialog.show_all ();
             dialog.run ();
             dialog.destroy ();
-        }
+        }*/
 
 
         private void restore_saved_state () {
@@ -395,9 +395,9 @@ namespace PantheonTerminal {
         void action_preferences () {
 
             var dialog = new Preferences ("Preferences", this);
-            //dialog.show_all ();
-            //dialog.run ();
-            //dialog.destroy ();
+            dialog.show_all ();
+            dialog.run ();
+            dialog.destroy ();
         }
 
         static const Gtk.ActionEntry[] main_entries = {

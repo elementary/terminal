@@ -33,8 +33,6 @@ namespace PantheonTerminal {
         private MenuItem paste_menuitem;
         private MenuItem select_all_menuitem;
         private MenuItem find_menuitem;
-        private MenuItem preferences_menuitem;
-        private MenuItem about_menuitem;
 
         public PantheonTerminalWindow parent_window;
 
@@ -62,8 +60,6 @@ namespace PantheonTerminal {
             paste_menuitem = parent_window.main_actions.get_action ("Paste").create_menu_item () as Gtk.MenuItem;
             select_all_menuitem = parent_window.main_actions.get_action ("Select All").create_menu_item () as Gtk.MenuItem;
             find_menuitem = parent_window.main_actions.get_action ("Search").create_menu_item () as Gtk.MenuItem;
-            preferences_menuitem = parent_window.main_actions.get_action ("Preferences").create_menu_item () as Gtk.MenuItem;
-            about_menuitem = new MenuItem.with_label (_("About"));
 
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
@@ -71,16 +67,11 @@ namespace PantheonTerminal {
             menu.append (select_all_menuitem);
             menu.append (new MenuItem ());
             menu.append (find_menuitem);
-            menu.append (new MenuItem ());
-            menu.append (preferences_menuitem);
-            menu.append (about_menuitem);
+
             menu.show_all ();
         }
 
         private void connect_signals () {
-
-            preferences_menuitem.activate.connect (() => { parent_window.preferences (); });
-            about_menuitem.activate.connect (() => { parent_window.app.show_about (parent_window); });
 
             /* Pop menu up */
             button_press_event.connect ((event) => {
