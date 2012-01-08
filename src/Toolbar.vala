@@ -26,6 +26,7 @@ namespace PantheonTerminal {
     public class PantheonTerminalToolbar : Gtk.Toolbar {
 
         private PantheonTerminalWindow window;
+        private string old_searched_text;
 
         public ToolButton new_button;
         public ToolButton copy_button;
@@ -36,12 +37,6 @@ namespace PantheonTerminal {
         public AppMenu app_menu;
 
         UIManager ui;
-
-        public enum ToolEntry {
-            SEARCH_ENTRY,
-        }
-
-        private string old_searched_text;
 
         public PantheonTerminalToolbar (PantheonTerminalWindow parent, UIManager ui, Gtk.ActionGroup action_group) {
 
@@ -63,6 +58,7 @@ namespace PantheonTerminal {
             search_entry = new Granite.Widgets.SearchBar (_("Search..."));
             search_entry.width_request = 200;
             search_entry.changed.connect (on_search_entry_text_changed);
+            search_entry.key_press_event.connect (on_search_entry_key_press);
 
             var search_tool = new ToolItem ();
             search_tool.add (search_entry);
@@ -102,7 +98,20 @@ namespace PantheonTerminal {
             return spacer;
         }
 
+        public bool on_search_entry_key_press (Gdk.EventKey event) {
+
+          string key = Gdk.keyval_name (event.keyval);
+
+          if (key == "Escape")
+            window.current_terminal.grab_focus ();
+          if (key == "Return") //FIXME Not working
+            window.current_terminal.search_find_next ();
+
+          return false;
+        }
+
         public void on_search_entry_text_changed () {
+
             var searched_text = search_entry.get_text ();
             var compile_flags = RegexCompileFlags.OPTIMIZE | RegexCompileFlags.MULTILINE;
 

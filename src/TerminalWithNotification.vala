@@ -32,6 +32,7 @@ namespace PantheonTerminal {
         private MenuItem copy_menuitem;
         private MenuItem paste_menuitem;
         private MenuItem select_all_menuitem;
+        private MenuItem find_menuitem;
         private MenuItem preferences_menuitem;
         private MenuItem about_menuitem;
 
@@ -61,6 +62,7 @@ namespace PantheonTerminal {
             copy_menuitem = parent_window.main_actions.get_action ("Copy").create_menu_item () as Gtk.MenuItem;
             paste_menuitem = parent_window.main_actions.get_action ("Paste").create_menu_item () as Gtk.MenuItem;
             select_all_menuitem = parent_window.main_actions.get_action ("Select All").create_menu_item () as Gtk.MenuItem;
+            find_menuitem = parent_window.main_actions.get_action ("Search").create_menu_item () as Gtk.MenuItem;
             preferences_menuitem = parent_window.main_actions.get_action ("Preferences").create_menu_item () as Gtk.MenuItem;
             about_menuitem = new MenuItem.with_label (_("About"));
 
@@ -68,6 +70,8 @@ namespace PantheonTerminal {
             menu.append (paste_menuitem);
             menu.append (new MenuItem ());
             menu.append (select_all_menuitem);
+            menu.append (new MenuItem ());
+            menu.append (find_menuitem);
             menu.append (new MenuItem ());
             menu.append (preferences_menuitem);
             menu.append (about_menuitem);

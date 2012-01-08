@@ -58,6 +58,7 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Search" action="Search"/>
             </popup>
 
             <popup name="AppMenu">
@@ -389,6 +390,12 @@ namespace PantheonTerminal {
             new_tab (false);
         }
 
+        void action_search () {
+
+            print ("Hello\n");
+            toolbar.search_entry.grab_focus ();
+        }
+
         void action_preferences () {
             var dialog = new Preferences ("Preferences", this);
             dialog.show_all ();
@@ -402,8 +409,9 @@ namespace PantheonTerminal {
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
            { "New tab", Gtk.Stock.NEW, N_("New"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
-           { "Paste", Gtk.Stock.PASTE, N_("Paste"), null, N_("Paste some text"), action_paste },
-           { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), null, N_("Select all the text in the terminal"), action_select_all },
+           { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
+           { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a", N_("Select all the text in the terminal"), action_select_all },
+           { "Search", Gtk.Stock.FIND, N_("Search"), "<Control>f", N_("Search on the terminal"), action_search },
            { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences }
         };
 
