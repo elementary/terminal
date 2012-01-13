@@ -102,8 +102,11 @@ namespace PantheonTerminal {
 
           if (key == "Escape")
             window.current_terminal.grab_focus ();
-          if (key == "Return") //FIXME Not working
-            window.current_terminal.search_find_next ();
+          if (key == "Return")
+            if (window.current_terminal.search_find_next () == false) {
+                old_searched_text = "";
+                on_search_entry_text_changed();
+            }
 
           return false;
         }
