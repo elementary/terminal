@@ -148,12 +148,16 @@ namespace PantheonTerminal {
         }
 
         private void connect_signals () {
-
             destroy.connect (action_quit);
+
+            add_button.clicked.connect (() => { new_tab (false); } );
 
             notebook.switch_page.connect (on_switch_page);
 
-            add_button.clicked.connect (() => { new_tab (false); } );
+            notebook.page_removed.connect ( (child, page_num) => {
+                if (notebook.get_n_pages () == 0)
+                    new_tab (true);
+            });
         }
 
         void on_switch_page (Widget page, uint n) {
