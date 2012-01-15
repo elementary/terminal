@@ -74,7 +74,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow (Granite.Application app) {
 
-            app = app as PantheonTerminal;
+            this.app = app as PantheonTerminal;
             set_application (app);
             Notify.init (app.program_name);
 
@@ -388,12 +388,8 @@ namespace PantheonTerminal {
         }
 
         void action_new_window () {
-    
-            print ("Hello\n");
-            string app_cmd_name = "Pantheon Terminal";
-
-            var app = new PantheonTerminal ();
-            app.run ({});
+            var window = new PantheonTerminalWindow (app);
+            window.show ();            
         }
 
         void action_new_tab () {
