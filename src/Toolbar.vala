@@ -119,14 +119,22 @@ namespace PantheonTerminal {
             /* Test for previous searches */
             if (searched_text != old_searched_text) {
                 /* Reset the search position */
-                window.current_terminal.search_set_gregex (new Regex (".", compile_flags));
-                while (window.current_terminal.search_find_previous ());
-                old_searched_text = searched_text;
+                try {
+                    window.current_terminal.search_set_gregex (new Regex (".", compile_flags));
+                    while (window.current_terminal.search_find_previous ());
+                    old_searched_text = searched_text;
+                } catch (RegexError e) {
+                    warning ("%s", e.message);
+                }
             }
 
-            var search_regex = new Regex (searched_text, compile_flags);
-            window.current_terminal.search_set_gregex (search_regex);
-            window.current_terminal.search_find_next ();
+            try {
+                var search_regex = new Regex (searched_text, compile_flags);
+                window.current_terminal.search_set_gregex (search_regex);
+                window.current_terminal.search_find_next ();
+            } catch (RegexError e) {
+                warning ("%s", e.message);
+            }
         }
     }
 } // Namespace
