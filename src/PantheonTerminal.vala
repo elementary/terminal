@@ -27,7 +27,7 @@ using PantheonTerminal;
 
 namespace PantheonTerminal {
 
-    public class PantheonTerminal : Granite.Application {
+    public class PantheonTerminalApp : Granite.Application {
 
             public GLib.List <PantheonTerminalWindow> windows;
             
@@ -53,7 +53,7 @@ namespace PantheonTerminal {
 
             }
 
-        public PantheonTerminal () {
+        public PantheonTerminalApp () {
 
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
@@ -65,17 +65,24 @@ namespace PantheonTerminal {
         }
 
         protected override void activate () {
-
+            new_window ();
+            //var window = new PantheonTerminalWindow (this);
+            //window.show ();
+            //windows.append (window);
+        }
+        
+        public void new_window () {
             var window = new PantheonTerminalWindow (this);
             window.show ();
             windows.append (window);
+            add_window (window);
         }
-
+        
         public static int main(string[] args) {
 
                 app_cmd_name = "Pantheon Terminal";
 
-                var app = new PantheonTerminal ();
+                var app = new PantheonTerminalApp ();
                 return app.run (args);
         }
     }

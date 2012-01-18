@@ -37,7 +37,7 @@ namespace PantheonTerminal {
 
         public signal void theme_changed();
 
-        public PantheonTerminal app;
+        public PantheonTerminalApp app;
         Notebook notebook;
         public PantheonTerminalToolbar toolbar;
         FontDescription font;
@@ -74,7 +74,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow (Granite.Application app) {
 
-            this.app = app as PantheonTerminal;
+            this.app = app as PantheonTerminalApp;
             set_application (app);
             Notify.init (app.program_name);
 
@@ -148,8 +148,9 @@ namespace PantheonTerminal {
         }
 
         private void connect_signals () {
-            destroy.connect (action_quit);
-
+            
+            //destroy.connect (action_quit);
+            
             add_button.clicked.connect (() => { new_tab (false); } );
 
             notebook.switch_page.connect (on_switch_page);
@@ -321,54 +322,50 @@ namespace PantheonTerminal {
 
 
         private void restore_saved_state () {
+            
+            debug ("%d, %d", PantheonTerminal.saved_state.window_width, PantheonTerminal.saved_state.window_height);            
+            
+            default_width = PantheonTerminal.saved_state.window_width;
+            default_height = PantheonTerminal.saved_state.window_height;
 
-            var top = get_toplevel () as Gtk.Window;
-
-            top.default_width = saved_state.window_width;
-            top.default_height = saved_state.window_height;
-
-            resize (saved_state.window_width, saved_state.window_height);
-
-            if (saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
-                top.maximize ();
-            else if (saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
-                top.fullscreen ();
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
+                maximize ();
+            else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
+                fullscreen ();
         }
 
         private void update_saved_state () {
 
-            Gdk.Window win = get_window ();
-            var state = win.get_state ();
-
-            /* Save window state */
-            if ((state & WindowState.MAXIMIZED) != 0)
-                saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-            else if ((state & WindowState.FULLSCREEN) != 0)
-                saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+            // Save window state
+            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
+            else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
             else
-                saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
 
-            /* Save window size */
-            if (saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
+            // Save window size
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
                 int width, height;
                 get_size (out width, out height);
-                saved_state.window_width = width;
-                saved_state.window_height = height;
+                PantheonTerminal.saved_state.window_width = width;
+                PantheonTerminal.saved_state.window_height = height;
             }
         }
 
+        protected override bool delete_event (Gdk.EventAny event) {
+            update_saved_state ();
+            action_quit ();
+            return true;
+        }
+        
         void action_quit () {
-
-            //if (app.nwindows == 1) {
-
-            if (app.windows.length () == 0)
+ 
+            if (app.get_windows ().length () == 1)
                 Gtk.main_quit ();
-            //}
-            //else {
-            //    hide ();
-            //    app.nwindows--;
-            //    app.windows.remove (this);
-            //}
+            else
+                destroy ();
+
         }
 
         void action_copy () {
@@ -388,8 +385,9 @@ namespace PantheonTerminal {
         }
 
         void action_new_window () {
-            var window = new PantheonTerminalWindow (app);
-            window.show ();            
+            app.new_window ();
+            //var window = new PantheonTerminalWindow (app);
+            //window.show ();            
         }
 
         void action_new_tab () {

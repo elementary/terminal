@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <enum id="pantheon-terminal-window-states">
     <value nick="Normal" value="0" />
@@ -6,12 +7,12 @@
   </enum>
   <schema path="/apps/pantheon-terminal/savedstate/" id="org.elementary.PantheonTerminal.SavedState" gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
-      <default>500</default>
+      <default>650</default>
       <summary>The saved width of the window.</summary>
       <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
     </key>
     <key name="window-height" type="i">
-      <default>600</default>
+      <default>550</default>
       <summary>The saved height of the window.</summary>
       <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
     </key>
