@@ -32,7 +32,8 @@ namespace PantheonTerminal {
             public GLib.List <PantheonTerminalWindow> windows;
             
             static string app_cmd_name;
-
+            static bool window;
+            
             construct {
 
                 program_name = app_cmd_name;
@@ -66,9 +67,6 @@ namespace PantheonTerminal {
 
         protected override void activate () {
             new_window ();
-            //var window = new PantheonTerminalWindow (this);
-            //window.show ();
-            //windows.append (window);
         }
         
         public void new_window () {
@@ -77,7 +75,7 @@ namespace PantheonTerminal {
             windows.append (window);
             add_window (window);
         }
-        
+
         public static int main(string[] args) {
 
                 app_cmd_name = "Pantheon Terminal";

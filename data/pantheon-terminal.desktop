@@ -8,7 +8,15 @@ Type=Application
 Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
 
-[New Shortcut Group]
-Name=New Terminal
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
+
+[NewWindow Shortcut Group]
+Name=Create a new window
 Exec=pantheon-terminal
 TargetEnvironment=Unity
+
+[NewRootWindow Shortcut Group]
+Name=Create a new root window
+Exec=gksu pantheon-terminal
+TargetEnvironment=Unity
+
