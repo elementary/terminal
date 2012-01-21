@@ -36,8 +36,9 @@ namespace PantheonTerminal {
 
         public TabWithCloseButton (string text) {
 
+            this.visible_window = false;
             this.text = text;
-
+            
             var hbox = new HBox (false, 0);
 
             // Button
