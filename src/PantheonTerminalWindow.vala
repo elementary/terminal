@@ -161,8 +161,15 @@ namespace PantheonTerminal {
                 if (notebook.get_n_pages () == 0)
                     new_tab (true);
             });
+            
+            settings.changed.connect (restore_settings);
         }
-
+        
+        void restore_settings () {
+            if (settings.show_toolbar) toolbar.show ();
+            else toolbar.hide ();
+        }
+        
         void on_switch_page (Widget page, uint n) {
 
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
