@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-05 21:27+0100\n"
+"POT-Creation-Date: 2012-01-25 16:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,40 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:82
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:48
+msgid "General"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:51
+msgid "Appearance"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:74
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:75
+#, c-format
+msgid "Scrolling"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:81
+msgid "Scrollback lines:"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:109
+msgid "Show toolbar"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:112
+msgid "Background transparent"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:115
+msgid "Background opacity"
+msgstr ""
+
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:82
 msgid "Terminal"
 msgstr ""
 
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:357
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:65
-msgid "Preferences"
-msgstr ""
-
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:63
-msgid "Copy"
-msgstr ""
-
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:64
-msgid "Paste"
-msgstr ""
-
-#: /home/mefrio/Scrivania/pantheon-terminal/po/../src/TerminalWithNotification.vala:66
-msgid "About"
+#: /home/mefrio/elementary/pantheon-terminal/po/../src/Toolbar.vala:58
+msgid "Search..."
 msgstr ""

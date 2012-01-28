@@ -33,6 +33,11 @@ namespace PantheonTerminal {
         private MenuItem paste_menuitem;
         private MenuItem select_all_menuitem;
         private MenuItem find_menuitem;
+        
+        public SeparatorMenuItem separator;
+        public MenuItem preferences_menuitem;
+        public SeparatorMenuItem separator_;
+        public MenuItem about_menuitem;
 
         public PantheonTerminalWindow parent_window;
 
@@ -60,15 +65,33 @@ namespace PantheonTerminal {
             paste_menuitem = parent_window.main_actions.get_action ("Paste").create_menu_item () as Gtk.MenuItem;
             select_all_menuitem = parent_window.main_actions.get_action ("Select All").create_menu_item () as Gtk.MenuItem;
             find_menuitem = parent_window.main_actions.get_action ("Search").create_menu_item () as Gtk.MenuItem;
-
+            
+            separator = new SeparatorMenuItem ();
+            preferences_menuitem = parent_window.main_actions.get_action ("Preferences").create_menu_item () as Gtk.MenuItem;
+            separator_ = new SeparatorMenuItem ();
+            about_menuitem = parent_window.main_actions.get_action ("About").create_menu_item () as Gtk.MenuItem; 
+            
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
             menu.append (new MenuItem ());
             menu.append (select_all_menuitem);
             menu.append (new MenuItem ());
             menu.append (find_menuitem);
-
+            
+            menu.append (separator);
+            menu.append (preferences_menuitem);
+            menu.append (separator_);
+            menu.append (about_menuitem);
+           
             menu.show_all ();
+            
+            if (!settings.show_toolbar) {
+                separator.show ();
+                preferences_menuitem.show ();
+                separator_.show ();
+                about_menuitem.show ();
+            }
+            
         }
 
         private void connect_signals () {
@@ -99,7 +122,7 @@ namespace PantheonTerminal {
         }
 
         void restore_settings () {
-
+            
             //settings.changed["scrollback-lines"].connect (() => {
             scrollback_lines = (uint) settings.scrollback_lines;
             //});
@@ -107,6 +130,20 @@ namespace PantheonTerminal {
             //settings.changed["background-transparent"].connect (() => {
             background_transparent = settings.background_transparent;
             //});
+            
+            if (!settings.show_toolbar) {
+                separator.show ();
+                preferences_menuitem.show ();
+                separator_.show ();
+                about_menuitem.show ();
+            }
+            else {
+                separator.hide ();
+                preferences_menuitem.hide ();
+                separator_.hide ();
+                about_menuitem.hide ();
+            }
+            
         }
 
     }

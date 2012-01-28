@@ -59,6 +59,8 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Search" action="Search"/>
+                <menuitem name="Preferences" action="Preferences"/>
+                <menuitem name="About" action="About"/>
             </popup>
 
             <popup name="AppMenu">
@@ -405,7 +407,11 @@ namespace PantheonTerminal {
             dialog.run ();
             dialog.destroy ();
         }
-
+        
+        void action_about () {
+            app.show_about (this);
+        }
+        
         static const Gtk.ActionEntry[] main_entries = {
 
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
@@ -416,7 +422,8 @@ namespace PantheonTerminal {
            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a", N_("Select all the text in the terminal"), action_select_all },
            { "Search", Gtk.Stock.FIND, N_("Search"), "<Control>f", N_("Search on the terminal"), action_search },
-           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences }
+           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences },
+           { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about }
         };
 
         /*static const Gtk.ToggleActionEntry[] toggle_entries = {

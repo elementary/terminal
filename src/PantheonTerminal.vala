@@ -32,7 +32,6 @@ namespace PantheonTerminal {
             public GLib.List <PantheonTerminalWindow> windows;
             
             static string app_cmd_name;
-            static bool window;
             
             construct {
 
