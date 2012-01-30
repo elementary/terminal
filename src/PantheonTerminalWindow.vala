@@ -165,6 +165,8 @@ namespace PantheonTerminal {
         void restore_settings () {
             if (settings.show_toolbar) toolbar.show ();
             else toolbar.hide ();
+            
+            current_terminal.background_opacity = settings.opacity;
         }
         
         void on_switch_page (Widget page, uint n) {

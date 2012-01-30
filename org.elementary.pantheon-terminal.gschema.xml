@@ -30,8 +30,8 @@
       <summary>Background Transparent</summary>
       <description>Whether the terminal background should be transparent..</description>
     </key>
-    <key name="opacity" type="i">
-      <default>0</default>
+    <key name="opacity" type="d">
+      <default>0.0</default>
       <summary>Background Opacity</summary>
       <description>The opacity value for the terminal background.</description>
     </key>
