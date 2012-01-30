@@ -35,7 +35,7 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
 
-        public signal void theme_changed();
+        public signal void theme_changed ();
 
         public PantheonTerminalApp app;
         Notebook notebook;
@@ -156,13 +156,10 @@ namespace PantheonTerminal {
             add_button.clicked.connect (() => { new_tab (false); } );
 
             notebook.switch_page.connect (on_switch_page);
-
-            notebook.page_removed.connect ( (child, page_num) => {
-                if (notebook.get_n_pages () == 0)
-                    new_tab (true);
-            });
-            
+ 
             settings.changed.connect (restore_settings);
+        
+            notebook.page_removed.connect ((terminal, page) => { if (notebook.get_n_pages () == 0) this.destroy (); });
         }
         
         void restore_settings () {
@@ -171,7 +168,6 @@ namespace PantheonTerminal {
         }
         
         void on_switch_page (Widget page, uint n) {
-
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
             current_tab = notebook.get_nth_page ((int) n);
             current_terminal = ((ScrolledWindow) page).get_child () as TerminalWithNotification;
@@ -180,15 +176,13 @@ namespace PantheonTerminal {
         }
 
         public void remove_page (int page) {
-
             notebook.remove_page (page);
-
+        
             if (notebook.get_n_pages () == 0)
-                new_tab (false);
+                destroy ();
         }
 
         public override bool scroll_event (EventScroll event) {
-
             switch (event.direction) {
                 case ScrollDirection.UP:
                 case ScrollDirection.RIGHT:
@@ -203,7 +197,6 @@ namespace PantheonTerminal {
         }
 
         private void new_tab (bool first) {
-
             /* Set up terminal */
             var t = new TerminalWithNotification (this);
             var s = new ScrolledWindow (null, null);
