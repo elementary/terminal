@@ -2,7 +2,7 @@
 /***
   BEGIN LICENSE
 
-  Copyright (C) 2011 Mario Guerriero <mefrio.g@gmail.com>
+  Copyright (C) 2011-2012 Mario Guerriero <mefrio.g@gmail.com>
   This program is free software: you can redistribute it and/or modify it
   under the terms of the GNU Lesser General Public License version 3, as published
   by the Free Software Foundation.
@@ -37,7 +37,7 @@ namespace PantheonTerminal {
 
                 program_name = app_cmd_name;
                 exec_name = app_cmd_name.down();
-                app_years = "2011";
+                app_years = "2011-2012";
                 app_icon = "utilities-terminal";
                 app_launcher = "pantheon-terminal.desktop";
                 application_id = "net.launchpad.pantheon-terminal";
