@@ -96,7 +96,8 @@ namespace PantheonTerminal {
             //settings.schema.bind ("opacity", opacity_scale, "digits", SettingsBindFlags.DEFAULT);
             var opacity_scale = new SpinButton.with_range (0.0, 1.0, 0.1);
             settings.schema.bind ("opacity", opacity_scale, "value", SettingsBindFlags.DEFAULT);            
-            
+            settings.schema.bind ("background-transparent", opacity_scale, "sensitive", SettingsBindFlags.DEFAULT);
+
             var general_grid = new Gtk.Grid ();
             general_grid.row_spacing = 5;
             general_grid.column_spacing = 5;
