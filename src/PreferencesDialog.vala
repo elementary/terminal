@@ -106,13 +106,13 @@ namespace PantheonTerminal {
             general_grid.margin_bottom = 12;
 
             int row = 0;
-            var label = new Label (_("Show toolbar"));
+            var label = new Label (_("Show toolbar:"));
             add_option (general_grid, label, show_toolbar, ref row);
 
-            var transparency_label  = new Label (_("Background transparent"));
+            var transparency_label  = new Label (_("Background transparent:"));
             add_option (general_grid, transparency_label, transparency_switch, ref row);
 
-            var opacity_label = new Label (_("Background opacity"));
+            var opacity_label = new Label (_("Background opacity:"));
             add_option (general_grid, opacity_label, opacity_scale, ref row);
 
             return general_grid;
