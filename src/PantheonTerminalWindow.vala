@@ -177,6 +177,7 @@ namespace PantheonTerminal {
             current_terminal = ((ScrolledWindow) page).get_child () as TerminalWithNotification;
             page.grab_focus ();
             current_terminal.parent_window = this;
+            current_terminal.on_selection_changed ();
         }
 
         public void remove_page (int page) {

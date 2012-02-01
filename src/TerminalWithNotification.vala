@@ -51,6 +51,7 @@ namespace PantheonTerminal {
             set_size_request (320, 200);
             window_title_changed.connect (check_for_notification);
 
+            on_selection_changed ();
             setup_ui ();
             connect_signals ();
             restore_settings ();
@@ -104,6 +105,9 @@ namespace PantheonTerminal {
                 }
                 return false;
             });
+
+            /* Change toolbar copy button sensitivity */
+            selection_changed.connect (on_selection_changed);
         }
 
         private void check_for_notification() {
@@ -119,6 +123,10 @@ namespace PantheonTerminal {
 
             last_row_count = get_row_count ();
             last_column_count = get_column_count ();
+        }
+
+        public void on_selection_changed () {
+            parent_window.toolbar.copy_button.sensitive = get_has_selection ();
         }
 
         void restore_settings () {
@@ -143,7 +151,7 @@ namespace PantheonTerminal {
                 separator_.hide ();
                 about_menuitem.hide ();
             }
-            
+
         }
 
     }
