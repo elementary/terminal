@@ -363,14 +363,12 @@ namespace PantheonTerminal {
         protected override bool delete_event (Gdk.EventAny event) {
             update_saved_state ();
             action_quit ();
-            return true;
+            return false;
         }
         
         void action_quit () {
  
-            if (app.get_windows ().length () == 1)
-                Gtk.main_quit ();
-            else
+            if (app.get_windows ().length () >= 1)
                 destroy ();
 
         }
