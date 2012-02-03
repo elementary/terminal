@@ -114,6 +114,7 @@ namespace PantheonTerminal {
             add_option (general_grid, transparency_label, transparency_switch, ref row);
 
             var opacity_label = new Label (_("Background opacity:"));
+            opacity_label.margin_left = 20;
             add_option (general_grid, opacity_label, opacity_scale, ref row);
 
             return general_grid;
