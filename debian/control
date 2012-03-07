@@ -18,6 +18,7 @@ Vcs-Browser: http://bazaar.launchpad.net/~kekun-plazas/pantheon-terminal/trunk/f
 Package: pantheon-terminal
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: x-terminal-emulator
 Description: A modern terminal from elementary project
  Pantheon Terminal is a modern terminal designed in elementary Project for
  Pantheon Desktop Environment.
