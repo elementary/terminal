@@ -114,7 +114,6 @@ namespace PantheonTerminal {
             add_option (general_grid, transparency_label, transparency_switch, ref row);
 
             var opacity_label = new Label (_("Background opacity:"));
-            opacity_label.margin_left = 20;
             add_option (general_grid, opacity_label, opacity_scale, ref row);
 
             return general_grid;
@@ -123,8 +122,8 @@ namespace PantheonTerminal {
         void add_option (Gtk.Grid grid, Gtk.Widget label, Gtk.Widget switcher, ref int row) {
 
             label.hexpand = true;
-            label.halign = Gtk.Align.START;
-            switcher.halign = Gtk.Align.END;
+            label.halign = Gtk.Align.END;
+            switcher.halign = Gtk.Align.START;
             grid.attach (label, 0, row, 1, 1);
             grid.attach_next_to (switcher, label, Gtk.PositionType.RIGHT, 1, 1);
             row ++;
