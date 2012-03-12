@@ -18,26 +18,22 @@
   END LICENSE
 ***/
 
-using Gtk;
-using Gdk;
-using Vte;
-
 namespace PantheonTerminal {
 
-    public class TerminalWithNotification : Terminal {
+    public class TerminalWithNotification : Vte.Terminal {
 
         public signal void task_over ();
 
-        private Menu menu;
-        private MenuItem copy_menuitem;
-        private MenuItem paste_menuitem;
-        private MenuItem select_all_menuitem;
-        private MenuItem find_menuitem;
+        private Gtk.Menu menu;
+        private Gtk.MenuItem copy_menuitem;
+        private Gtk.MenuItem paste_menuitem;
+        private Gtk.MenuItem select_all_menuitem;
+        private Gtk.MenuItem find_menuitem;
         
-        public SeparatorMenuItem separator;
-        public MenuItem preferences_menuitem;
-        public SeparatorMenuItem separator_;
-        public MenuItem about_menuitem;
+        public Gtk.SeparatorMenuItem separator;
+        public Gtk.MenuItem preferences_menuitem;
+        public Gtk.SeparatorMenuItem separator_;
+        public Gtk.MenuItem about_menuitem;
 
         public PantheonTerminalWindow parent_window;
 
@@ -62,22 +58,22 @@ namespace PantheonTerminal {
         private void setup_ui () {
 
             /* Set up the menu */
-            menu = new Menu ();
+            menu = new Gtk.Menu ();
             copy_menuitem = parent_window.main_actions.get_action ("Copy").create_menu_item () as Gtk.MenuItem;
             paste_menuitem = parent_window.main_actions.get_action ("Paste").create_menu_item () as Gtk.MenuItem;
             select_all_menuitem = parent_window.main_actions.get_action ("Select All").create_menu_item () as Gtk.MenuItem;
             find_menuitem = parent_window.main_actions.get_action ("Search").create_menu_item () as Gtk.MenuItem;
             
-            separator = new SeparatorMenuItem ();
+            separator = new Gtk.SeparatorMenuItem ();
             preferences_menuitem = parent_window.main_actions.get_action ("Preferences").create_menu_item () as Gtk.MenuItem;
-            separator_ = new SeparatorMenuItem ();
+            separator_ = new Gtk.SeparatorMenuItem ();
             about_menuitem = parent_window.main_actions.get_action ("About").create_menu_item () as Gtk.MenuItem; 
             
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
-            menu.append (new MenuItem ());
+            menu.append (new Gtk.MenuItem ());
             menu.append (select_all_menuitem);
-            menu.append (new MenuItem ());
+            menu.append (new Gtk.MenuItem ());
             menu.append (find_menuitem);
             
             menu.append (separator);
