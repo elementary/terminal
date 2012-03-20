@@ -174,7 +174,7 @@ namespace PantheonTerminal {
         void on_switch_page (Widget page, uint n) {
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
             current_tab = notebook.get_nth_page ((int) n);
-            current_terminal = ((ScrolledWindow) page).get_child () as TerminalWithNotification;
+            current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWithNotification;
             page.grab_focus ();
             current_terminal.parent_window = this;
             current_terminal.on_selection_changed ();
@@ -204,8 +204,11 @@ namespace PantheonTerminal {
         private void new_tab (bool first) {
             /* Set up terminal */
             var t = new TerminalWithNotification (this);
-            var s = new ScrolledWindow (null, null);
-            s.add (t);
+            var g = new Grid ();
+            var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
+            g.attach (t, 0, 0, 1, 1);
+            g.attach (sb, 1, 0, 1, 1);
+            
             current_terminal = t;
 
             /* Add the terminal to the GUI */
@@ -226,17 +229,17 @@ namespace PantheonTerminal {
                     stderr.printf ("Unable to load terminal: %s", err.message);
                 }
             }
-
+            
             /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton ("Terminal");
             tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;
-            notebook.insert_page (s, tab, new_page);
+            notebook.insert_page (g, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
-
+            
             /* Bind signals to the new tab */
-            tab.clicked.connect (() => { notebook.remove (s); });
+            tab.clicked.connect (() => { notebook.remove (g); });
             notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
             focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
             theme_changed.connect (() => { set_terminal_theme (t); });
@@ -270,10 +273,10 @@ namespace PantheonTerminal {
                     stderr.printf ("Unable to send notification: %s", err.message);
                 }
             });
-
+            
             t.grab_focus ();
             set_terminal_theme (t);
-            s.show_all ();
+            g.show_all ();
             notebook.page = new_page;
         }
 
