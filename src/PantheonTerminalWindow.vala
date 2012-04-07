@@ -196,6 +196,7 @@ namespace PantheonTerminal {
             
             /* Create a new tab with the terminal */
             var tab = new TabWithCloseButton (_("Terminal"));
+            tab.terminal = current_terminal;
             tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (g, tab, new_page);
@@ -211,6 +212,8 @@ namespace PantheonTerminal {
                         notebook.remove (g); 
                     d.destroy ();
                 }
+
+                tab.terminal.child_exited ();
             });
             notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
             focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });

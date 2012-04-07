@@ -34,6 +34,8 @@ namespace PantheonTerminal {
         public bool reorderable = true;
         public bool detachable = true;
 
+        public TerminalWidget terminal; 
+
         public TabWithCloseButton (string text) {
 
             this.visible_window = false;
