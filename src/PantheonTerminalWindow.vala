@@ -73,7 +73,6 @@ namespace PantheonTerminal {
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
-            set_size_request (40, 40);
 
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
@@ -88,7 +87,7 @@ namespace PantheonTerminal {
                 error ("Couldn't load the UI: %s", e.message);
             }
 
-            Gtk.AccelGroup accel_group = ui.get_accel_group ();
+            Gtk.AccelGroup accel_group = ui.get_accel_group();
             add_accel_group (accel_group);
 
             ui.insert_action_group (main_actions, 0);
@@ -161,12 +160,11 @@ namespace PantheonTerminal {
         private void new_tab (bool first) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui);
+            current_terminal = t;
             var g = new Grid ();
             var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
             g.attach (t, 0, 0, 1, 1);
             g.attach (sb, 1, 0, 1, 1);
-
-            current_terminal = t;
 
             /* Add the terminal to the GUI */
             t.vexpand = true;
@@ -195,14 +193,13 @@ namespace PantheonTerminal {
                 }
 
                 tab.terminal.child_exited ();
+                notebook.remove_page (notebook.page_num (tab));
             });
 
             t.window_title_changed.connect (() => {
-
                 string new_text = t.get_window_title ();
-                int i;
 
-                for (i = 0; i < new_text.length; i++) {
+                for (int i = 0; i < new_text.length; i++) {
                     if (new_text[i] == ':') {
                         new_text = new_text[i + 2:new_text.length];
                         break;
@@ -210,24 +207,14 @@ namespace PantheonTerminal {
                 }
 
                 if (new_text.length > 50) {
-                    new_text = new_text[new_text.length - 50: new_text.length];
+                    new_text = new_text[new_text.length - 50:new_text.length];
                 }
 
                 tab.set_text (new_text);
             });
 
-            t.task_over.connect (() => {
-                try {
-                    var notification = new Notification (t.get_window_title (), "Task finished.", "utilities-terminal");
-                    notification.show ();
-                } catch (Error err) {
-                    stderr.printf ("Unable to send notification: %s", err.message);
-                }
-            });
-
-            /* Theme */
-            t.set_font(system_font);
-
+            t.set_font (system_font);
+            set_size_request (t.calculate_width (80), t.calculate_height (24));
             tab.grab_focus ();
             g.show_all ();
             notebook.page = new_page;

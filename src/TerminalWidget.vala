@@ -23,14 +23,11 @@ using Vte;
 namespace PantheonTerminal {
 
     public class TerminalWidget : Vte.Terminal {
-
-        public signal void task_over ();
         
         GLib.Pid child_pid;
         
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui) {
-
-            // Create a pop menu
+            /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
             
@@ -42,13 +39,11 @@ namespace PantheonTerminal {
                 return false;
             });
             
-            // Connect to necessary signals
+            /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
         }
         
-        void on_child_exited () {
-
-        }
+        void on_child_exited () { }
 
         public void active_shell (string dir = GLib.Environment.get_home_dir()) {
             try {
@@ -64,14 +59,14 @@ namespace PantheonTerminal {
             return fgpid != this.child_pid && fgpid != -1;
         }
         
-        public int calcul_width (int column_count) {
+        public int calculate_width (int column_count) {
             return (int) (this.get_char_width()) * column_count;
         }
 
-        public int calcul_height (int row_count) {
+        public int calculate_height (int row_count) {
             return (int) (this.get_char_height()) * row_count;	
         }
-        
+
     }
-    
+
 }
