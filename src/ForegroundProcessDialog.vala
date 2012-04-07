@@ -23,14 +23,14 @@ using Vte;
 namespace PantheonTerminal {
 
     public class ForegroundProcessDialog : Gtk.MessageDialog {
-    
+
         public ForegroundProcessDialog () {
             use_markup = true;
-            set_markup ("<b>" + _("This shell was running a process!!") + "</b>\n\n" + 
-                _("Do you want to wait the finishing of the process?"));
+            set_markup ("<b>" + _("There is an active process on this shell!") + "</b>\n\n" + 
+                      _("Do you want to stay on the shell?"));
             add_buttons (Gtk.Stock.YES, 0, Gtk.Stock.NO, 1);            
-        }   
-        
+        } 
+
     }
 
 }

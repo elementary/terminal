@@ -44,7 +44,7 @@ vala_precompile(VALA_C
     src/Settings.vala
     src/PantheonTerminal.vala
     src/PantheonTerminalWindow.vala
-    src/TabWithCloseButton.vala
+    src/TerminalTab.vala
     src/TerminalWidget.vala
     src/ForegroundProcessDialog.vala
 PACKAGES
