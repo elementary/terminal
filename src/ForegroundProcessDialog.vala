@@ -26,10 +26,10 @@ namespace PantheonTerminal {
 
         public ForegroundProcessDialog () {
             use_markup = true;
-            set_markup ("<b>" + _("There is an active process on this shell!") + "</b>\n\n" + 
+            set_markup ("<b>" + _("There is an active process on this shell!") + "</b>\n\n" +
                       _("Do you want to stay on the shell?"));
-            add_buttons (Gtk.Stock.YES, 0, Gtk.Stock.NO, 1);            
-        } 
+            add_buttons (Gtk.Stock.YES, 0, Gtk.Stock.NO, 1);
+        }
 
     }
 

@@ -33,7 +33,7 @@ namespace PantheonTerminal {
         public bool reorderable = true;
         public bool detachable = true;
 
-        public TerminalWidget terminal; 
+        public TerminalWidget terminal;
 
         public TerminalTab (string text) {
             /* Set up the GUI */
