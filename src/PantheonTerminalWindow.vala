@@ -111,7 +111,6 @@ namespace PantheonTerminal {
             notebook.set_scrollable (true);
             notebook.can_focus = false;
             notebook.set_group_name ("pantheon-terminal");
-
             add (notebook);
 
             /* Set up the Add button */
@@ -128,7 +127,12 @@ namespace PantheonTerminal {
         private void connect_signals () {
             add_button.clicked.connect (() => { new_tab (false); } );
             notebook.switch_page.connect (on_switch_page);
-            notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
+            notebook.page_removed.connect (() => {
+              if (notebook.get_n_pages () == 0) this.destroy ();
+              for (int i = 0; i < notebook.get_n_pages (); i++) {
+                // TODO Have a Glib List of tabs, and do tabs.get_nth(i).index--;
+              }
+            });
         }
 
         void on_switch_page (Widget page, uint n) {
@@ -178,6 +182,7 @@ namespace PantheonTerminal {
             tab.terminal = current_terminal;
             tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;
+            tab.index = new_page;
             notebook.insert_page (g, tab, new_page);
             notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
@@ -193,7 +198,7 @@ namespace PantheonTerminal {
                 }
 
                 tab.terminal.child_exited ();
-                notebook.remove_page (notebook.page_num (tab));
+                notebook.remove_page (tab.index);
             });
 
             t.window_title_changed.connect (() => {

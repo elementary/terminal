@@ -34,6 +34,8 @@ namespace PantheonTerminal {
         public bool detachable = true;
 
         public TerminalWidget terminal;
+        
+        public int index;
 
         public TerminalTab (string text) {
             /* Set up the GUI */
