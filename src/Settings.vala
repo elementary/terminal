@@ -43,10 +43,7 @@ namespace PantheonTerminal {
 
     public class Settings : Granite.Services.Settings {
 
-        public bool show_toolbar { get; set; }
-        public bool background_transparent { get; set; }
         public int scrollback_lines { get; set; }
-        public double opacity { get; set; }
         
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");

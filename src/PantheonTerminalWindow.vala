@@ -39,14 +39,13 @@ namespace PantheonTerminal {
 
         public PantheonTerminalApp app;
         Notebook notebook;
-        public PantheonTerminalToolbar toolbar;
         FontDescription font;
         Gdk.Color bgcolor;
         Gdk.Color fgcolor;
         private Button add_button;
 
         TabWithCloseButton current_tab_label = null;
-        public TerminalWithNotification current_terminal = null;
+        public TerminalWidget current_terminal = null;
         Widget current_tab;
 
         const string ui_string = """
@@ -58,21 +57,21 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="Preferences" action="Preferences"/>
                 <menuitem name="About" action="About"/>
             </popup>
 
             <popup name="AppMenu">
-                <menuitem name="Preferences" action="Preferences"/>
+                <menuitem name="Copy" action="Copy"/>
+                <menuitem name="Paste" action="Paste"/>
+                <menuitem name="Select All" action="Select All"/>
+                <separator />
+                <menuitem name="About" action="About"/>
             </popup>
             </ui>
         """;
 
         public Gtk.ActionGroup main_actions;
         public Gtk.UIManager ui;
-
-        string[] args;
 
         public PantheonTerminalWindow (Granite.Application app) {
 
@@ -116,11 +115,6 @@ namespace PantheonTerminal {
 
         private void setup_ui () {
 
-            var container = new VBox (false, 0);
-
-            /* Set up the toolbar */
-            toolbar = new PantheonTerminalToolbar (this, ui, main_actions);
-
             /* Set up the Notebook */
             notebook = new Notebook ();
             var right_box = new HBox (false, 0);
@@ -130,11 +124,9 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             notebook.set_group_name ("pantheon-terminal");
 
-            if (settings.show_toolbar)
-                container.pack_start (toolbar, false, false, 0);
-            container.pack_start (notebook, true, true, 0);
+            //container.pack_start (notebook, true, true, 0);
 
-            add (container);
+            add (notebook);
 
             /* Set up the Add button */
             add_button = new Button ();
@@ -151,33 +143,17 @@ namespace PantheonTerminal {
 
         private void connect_signals () {
             
-            //destroy.connect (action_quit);
-            
             add_button.clicked.connect (() => { new_tab (false); } );
 
             notebook.switch_page.connect (on_switch_page);
- 
-            settings.changed.connect (restore_settings);
-        
-            notebook.page_removed.connect ((terminal, page) => { if (notebook.get_n_pages () == 0) this.destroy (); });
-        }
-        
-        void restore_settings () {
-            if (settings.show_toolbar)
-                toolbar.show ();
-            else
-                toolbar.hide ();
-            
-            current_terminal.background_opacity = settings.opacity;
+            notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
         }
         
         void on_switch_page (Widget page, uint n) {
             current_tab_label = notebook.get_tab_label (page) as TabWithCloseButton;
             current_tab = notebook.get_nth_page ((int) n);
-            current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWithNotification;
+            current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWidget;
             page.grab_focus ();
-            current_terminal.parent_window = this;
-            current_terminal.on_selection_changed ();
         }
 
         public void remove_page (int page) {
@@ -203,7 +179,7 @@ namespace PantheonTerminal {
 
         private void new_tab (bool first) {
             /* Set up terminal */
-            var t = new TerminalWithNotification (this);
+            var t = new TerminalWidget (main_actions, ui);
             var g = new Grid ();
             var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
             g.attach (t, 0, 0, 1, 1);
@@ -216,22 +192,10 @@ namespace PantheonTerminal {
             t.hexpand = true;
 
             /* Set up the virtual terminal */
-            if (first && args.length != 0) {
-                try {
-                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/", args, null, SpawnFlags.SEARCH_PATH, null, null);
-                } catch (Error err) {
-                    stderr.printf ("Unable to load terminal: %s", err.message);
-                }
-            } else {
-                try {
-                    t.fork_command_full (Vte.PtyFlags.DEFAULT, "~/",  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, null);
-                } catch (Error err) {
-                    stderr.printf ("Unable to load terminal: %s", err.message);
-                }
-            }
+            t.active_shell ();
             
             /* Create a new tab with the terminal */
-            var tab = new TabWithCloseButton ("Terminal");
+            var tab = new TabWithCloseButton (_("Terminal"));
             tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;
             notebook.insert_page (g, tab, new_page);
@@ -239,7 +203,15 @@ namespace PantheonTerminal {
             notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
             
             /* Bind signals to the new tab */
-            tab.clicked.connect (() => { notebook.remove (g); });
+            tab.clicked.connect (() => { 
+                /* It was doing something */
+                if (t.has_foreground_process ()) {
+                    var d = new ForegroundProcessDialog ();
+                    if (d.run () == 1)
+                        notebook.remove (g); 
+                    d.destroy ();
+                }
+            });
             notebook.switch_page.connect ((page, page_num) => { if (notebook.page_num (t) == (int) page_num) tab.set_notification (false); });
             focus_in_event.connect (() => { if (notebook.page_num (t) == notebook.get_current_page ()) tab.set_notification (false); return false; });
             theme_changed.connect (() => { set_terminal_theme (t); });
@@ -265,7 +237,6 @@ namespace PantheonTerminal {
             });
 
             t.task_over.connect (() => {
-
                 try {
                     var notification = new Notification (t.get_window_title (), "Task finished.", "utilities-terminal");
                     notification.show ();
@@ -280,7 +251,7 @@ namespace PantheonTerminal {
             notebook.page = new_page;
         }
 
-        public void set_terminal_theme (TerminalWithNotification t) {
+        public void set_terminal_theme (TerminalWidget t) {
 
             t.set_font (font);
             t.set_color_background (bgcolor);
@@ -401,18 +372,6 @@ namespace PantheonTerminal {
         void action_new_tab () {
             new_tab (false);
         }
-
-        void action_search () {
-            toolbar.search_entry.grab_focus ();
-        }
-
-        void action_preferences () {
-
-            var dialog = new Preferences ("Preferences", this);
-            dialog.show_all ();
-            dialog.run ();
-            dialog.destroy ();
-        }
         
         void action_about () {
             app.show_about (this);
@@ -427,14 +386,8 @@ namespace PantheonTerminal {
            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a", N_("Select all the text in the terminal"), action_select_all },
-           { "Search", Gtk.Stock.FIND, N_("Search"), "<Control>f", N_("Search on the terminal"), action_search },
-           { "Preferences", Gtk.Stock.PREFERENCES, N_("Preferences"), null, N_("Change Pantheon Terminal settings"), action_preferences },
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about }
         };
-
-        /*static const Gtk.ToggleActionEntry[] toggle_entries = {
-            {"ShowToolbar", "", N_("Show Toolbar"), null, N_("Toolbar"), show_toolbar}
-        };*/
 
     }
 

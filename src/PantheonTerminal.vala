@@ -45,7 +45,7 @@ namespace PantheonTerminal {
                 bug_url = "https://bugs.launchpad.net/pantheon-terminal";
                 help_url = "https://answers.launchpad.net/pantheon-terminal";
                 translate_url = "https://translations.launchpad.net/pantheon-terminal";
-                about_authors = { "Adrien Plazas <kekun.plazas@lapsote.com>" };
+                about_authors = { "Mario Guerriero <mefrio.g@gmail.com>" };
                 //about_documenters = {"",""};
                 about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
                 about_translators = "Launchpad Translators";
@@ -76,11 +76,10 @@ namespace PantheonTerminal {
         }
 
         public static int main(string[] args) {
+            app_cmd_name = "Pantheon Terminal";
 
-                app_cmd_name = "Pantheon Terminal";
-
-                var app = new PantheonTerminalApp ();
-                return app.run (args);
+            var app = new PantheonTerminalApp ();
+            return app.run (args);
         }
     }
 } // Namespace

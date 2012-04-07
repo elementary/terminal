@@ -28,7 +28,7 @@ configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/sr
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0 clutter-gtk-1.0)
+pkg_check_modules(DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0)
 
 add_definitions(${DEPS_CFLAGS})
 
@@ -45,17 +45,15 @@ vala_precompile(VALA_C
     src/PantheonTerminal.vala
     src/PantheonTerminalWindow.vala
     src/TabWithCloseButton.vala
-    src/PreferencesDialog.vala
-    src/TerminalWithNotification.vala
-    src/Toolbar.vala
+    src/TerminalWidget.vala
+    src/ForegroundProcessDialog.vala
 PACKAGES
     vte-2.90
     granite
     gtk+-3.0
     libnotify
     gdk-3.0
-    #cairo
-    clutter-gtk-1.0
+    posix
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
@@ -66,7 +64,6 @@ add_schema ("org.elementary.pantheon-terminal.gschema.xml")
 
 add_subdirectory (po)
 
-add_definitions(${CFLAGS} -I/usr/include/clutter-gtk-1.0 )
 add_executable(pantheon-terminal ${VALA_C})
 
 install(TARGETS pantheon-terminal RUNTIME DESTINATION bin)

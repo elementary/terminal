@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-09 16:44+0100\n"
+"POT-Creation-Date: 2012-04-07 20:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,112 +17,71 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:48
-msgid "General"
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "This shell was running a process!!"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:51
-msgid "Appearance"
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "Do you want to wait the finishing of the process?"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:74
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:75
-#, c-format
-msgid "Scrolling"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:81
-msgid "Scrollback lines:"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:110
-msgid "Show toolbar:"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:113
-msgid "Background transparent:"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PreferencesDialog.vala:116
-msgid "Background opacity:"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:84
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:83
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:198
 msgid "Terminal"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:420
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:382
 msgid "Quit"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:421
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
 msgid "Close"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:422
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:384
 msgid "New Window"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:422
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:384
 msgid "Open a new window"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:423
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "New Tab"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:423
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "Create a new tab"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:424
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:424
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy the selected text"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:425
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:425
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste some text"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:426
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:388
 msgid "Select All"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:426
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:388
 msgid "Select all the text in the terminal"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:427
-msgid "Search"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:427
-msgid "Search on the terminal"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:428
-msgid "Preferences"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:428
-msgid "Change Pantheon Terminal settings"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:429
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:389
 msgid "About"
 msgstr ""
 
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:429
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:389
 msgid "Show about window"
-msgstr ""
-
-#: /home/mefrio/elementary/pantheon-terminal/po/../src/Toolbar.vala:58
-msgid "Search..."
 msgstr ""
