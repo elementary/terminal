@@ -28,7 +28,7 @@ configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/sr
 add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0 gee-1.0)
+pkg_check_modules(DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0)
 
 add_definitions(${DEPS_CFLAGS})
 

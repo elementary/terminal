@@ -196,9 +196,8 @@ namespace PantheonTerminal {
                         notebook.remove (g);
                     d.destroy ();
                 }
-
-                tab.terminal.child_exited ();
-                notebook.remove_page (tab.index);
+                else
+                    notebook.remove (g);
             });
 
             t.window_title_changed.connect (() => {
@@ -217,7 +216,11 @@ namespace PantheonTerminal {
 
                 tab.set_text (new_text);
             });
-
+            
+            t.child_exited.connect (() => {
+                notebook.remove (g);
+            });
+            
             t.set_font (system_font);
             set_size_request (t.calculate_width (80), t.calculate_height (24));
             tab.grab_focus ();

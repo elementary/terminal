@@ -22,7 +22,7 @@ using Gtk;
 
 namespace PantheonTerminal {
 
-    public class TerminalTab : EventBox {
+    public class TerminalTab : Gtk.Box {
 
         public signal void clicked ();
 
@@ -47,7 +47,7 @@ namespace PantheonTerminal {
             button.set_image (new Image.from_stock (Stock.CLOSE, IconSize.MENU));
             button.show ();
             button.set_relief (ReliefStyle.NONE);
-            button.clicked.connect (() => { clicked(); });
+            button.clicked.connect (() => { clicked (); });
 
             /* Add the label */
             label = new Label (text);
@@ -68,7 +68,10 @@ namespace PantheonTerminal {
         }
 
         bool on_button_press_event (Gdk.EventButton event) {
-            if (event.button == 2) clicked ();
+            if (event.button == 2) { 
+                clicked ();
+                return true;
+            }
             return false;
         }
     }
