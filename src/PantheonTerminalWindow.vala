@@ -18,14 +18,11 @@
   END LICENSE
 ***/
 
-//TODO Which are needed?
-
 using Gtk;
 using Gdk;
 using Vte;
-using Pango;
 using Granite;
-using Notify;
+using Pango;
 
 namespace PantheonTerminal {
 
@@ -127,12 +124,7 @@ namespace PantheonTerminal {
         private void connect_signals () {
             add_button.clicked.connect (() => { new_tab (false); } );
             notebook.switch_page.connect (on_switch_page);
-            notebook.page_removed.connect (() => {
-              if (notebook.get_n_pages () == 0) this.destroy ();
-              for (int i = 0; i < notebook.get_n_pages (); i++) {
-                // TODO Have a Glib List of tabs, and do tabs.get_nth(i).index--;
-              }
-            });
+            notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
         }
 
         void on_switch_page (Widget page, uint n) {
