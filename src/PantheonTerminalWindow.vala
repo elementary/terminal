@@ -48,6 +48,8 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="About" action="About"/>
+
+                <menuitem name="Alt 1" action="Alt 1"/>
             </popup>
 
             <popup name="AppMenu">
@@ -266,8 +268,12 @@ namespace PantheonTerminal {
             app.show_about (this);
         }
 
-        static const Gtk.ActionEntry[] main_entries = {
 
+        void goto_tab1 () {
+            notebook.page = 1;
+        }
+
+        static const Gtk.ActionEntry[] main_entries = {
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
            { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
@@ -277,7 +283,10 @@ namespace PantheonTerminal {
            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
              N_("Select all the text in the terminal"), action_select_all },
-           { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about }
+           { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
+
+           /*Alt + X */
+           { "Tab 1", null, N_("Tab 1"), "<Alt>1", N_("Select tab 1"), goto_tab1}
         };
 
     }
