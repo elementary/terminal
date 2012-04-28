@@ -119,7 +119,7 @@ namespace PantheonTerminal {
             add_button.set_image (add_image);
             add_button.show ();
             add_button.set_relief (ReliefStyle.NONE);
-            add_button.set_tooltip_text ("Open a new tab");
+            add_button.set_tooltip_text (_("Open a new tab"));
             right_box.pack_start (add_button, false, false, 0);
         }
 
