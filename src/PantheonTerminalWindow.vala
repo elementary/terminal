@@ -159,7 +159,6 @@ namespace PantheonTerminal {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui);
             t.scrollback_lines = -1;
-            t.background_transparent = true;
             current_terminal = t;
             var g = new Grid ();
             var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
