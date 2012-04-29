@@ -6,7 +6,7 @@
     <value nick="Fullscreen" value="2" />
   </enum>
   
-  <schema path="/apps/pantheon-terminal/savedstate/" id="org.elementary.PantheonTerminal.SavedState" gettext-domain="pantheon-terminal">
+  <schema path="/org/pantheon/pantheon-terminal/savedstate/" id="org.elementary.PantheonTerminal.SavedState" gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
       <default>650</default>
       <summary>The saved width of the window.</summary>
@@ -24,7 +24,7 @@
     </key>
   </schema>
   
-  <schema path="/apps/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
+  <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
     <key name="scrollback-lines" type="i">
       <default>512</default>
       <summary>Number of scrollback lines</summary>
