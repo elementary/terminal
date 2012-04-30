@@ -72,7 +72,8 @@ namespace PantheonTerminal {
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
-
+            restore_saved_state ();
+            
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
             main_actions.set_translation_domain ("pantheon-terminal");
@@ -127,6 +128,36 @@ namespace PantheonTerminal {
             add_button.clicked.connect (() => { new_tab (false); } );
             notebook.switch_page.connect (on_switch_page);
             notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
+        }
+
+        private void restore_saved_state () {
+            
+            default_width = PantheonTerminal.saved_state.window_width;
+            default_height = PantheonTerminal.saved_state.window_height;
+
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
+                maximize ();
+            else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
+                fullscreen ();
+        }
+
+        private void update_saved_state () {
+
+            // Save window state
+            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
+            else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+            else
+                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+
+            // Save window size
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
+                int width, height;
+                get_size (out width, out height);
+                PantheonTerminal.saved_state.window_width = width;
+                PantheonTerminal.saved_state.window_height = height;
+            }
         }
 
         void on_switch_page (Widget page, uint n) {
@@ -234,6 +265,7 @@ namespace PantheonTerminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
+            update_saved_state ();
             action_quit ();
             return false;
         }
