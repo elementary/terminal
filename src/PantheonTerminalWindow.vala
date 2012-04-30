@@ -141,16 +141,16 @@ namespace PantheonTerminal {
             if (notebook.get_n_pages () == 0) destroy ();
         }
 
-        public override bool scroll_event (EventScroll event) {
-            switch (event.direction) {
-                case ScrollDirection.UP:
-                case ScrollDirection.RIGHT:
-                    notebook.page++;
-                    break;
-                case ScrollDirection.DOWN:
-                case ScrollDirection.LEFT:
-                    notebook.page--;
-                    break;
+        public bool on_scroll_event (EventScroll event) {
+            if (event.direction == ScrollDirection.UP || event.direction == ScrollDirection.LEFT)  {
+                if (notebook.get_current_page() != 0) {
+                    notebook.set_current_page (notebook.get_current_page() - 1);
+                }
+            }
+            if (event.direction == ScrollDirection.DOWN || event.direction == ScrollDirection.RIGHT)  {
+                if (notebook.get_current_page() != notebook.get_n_pages ()) {
+                    notebook.set_current_page (notebook.get_current_page() + 1);
+                }
             }
             return false;
         }
@@ -174,6 +174,7 @@ namespace PantheonTerminal {
 
             /* Create a new tab with the terminal */
             var tab = new TerminalTab (_("Terminal"));
+            tab.scroll_event.connect (on_scroll_event);
             tab.terminal = current_terminal;
             tab.width_request = 64;
             int new_page = notebook.get_current_page () + 1;

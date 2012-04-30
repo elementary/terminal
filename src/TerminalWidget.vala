@@ -41,6 +41,7 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
+
         }
 
         void on_child_exited () { }

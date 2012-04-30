@@ -28,7 +28,14 @@ namespace PantheonTerminal {
             use_markup = true;
             set_markup ("<b>" + _("There is an active process on this shell!") + "</b>\n\n" +
                       _("Do you want to stay on the shell?"));
-            add_buttons (Gtk.Stock.YES, 0, Gtk.Stock.NO, 1);
+            
+            var button = new Gtk.Button.with_label (_("Stay on this terminal"));
+            button.show ();
+            add_action_widget (button, 0);
+            
+            button = new Gtk.Button.with_label (_("Kill terminal"));
+            button.show ();
+            add_action_widget (button, 1);
         }
 
     }
