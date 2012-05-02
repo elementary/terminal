@@ -37,6 +37,20 @@ namespace PantheonTerminal {
             button.show ();
             add_action_widget (button, 1);
         }
+        
+        public ForegroundProcessDialog.before_close () {
+            use_markup = true;
+            set_markup ("<b>" + _("There are some active process on this shell!") + "</b>\n\n" +
+                      _("Do you want to stay on the shell?"));
+            
+            var button = new Gtk.Button.with_label (_("Stay on this terminal"));
+            button.show ();
+            add_action_widget (button, 0);
+            
+            button = new Gtk.Button.with_label (_("Kill terminal"));
+            button.show ();
+            add_action_widget (button, 1);
+        }
 
     }
 

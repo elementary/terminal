@@ -33,7 +33,9 @@ namespace PantheonTerminal {
         Notebook notebook;
         FontDescription system_font;
         private Button add_button;
-
+        
+        private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        
         TerminalTab current_tab_label = null;
         public TerminalWidget current_terminal = null;
         Widget current_tab;
@@ -219,12 +221,16 @@ namespace PantheonTerminal {
                 /* It was doing something */
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
-                    if (d.run () == 1)
+                    if (d.run () == 1) {
                         notebook.remove (g);
+                        terminals.remove (t);
+                    }
                     d.destroy ();
                 }
-                else
+                else {
                     notebook.remove (g);
+                    terminals.remove (t);
+                }
             });
 
             t.window_title_changed.connect (() => {
@@ -246,6 +252,7 @@ namespace PantheonTerminal {
             
             t.child_exited.connect (() => {
                 notebook.remove (g);
+                terminals.remove (t);
             });
             
             t.set_font (system_font);
@@ -253,6 +260,7 @@ namespace PantheonTerminal {
             tab.grab_focus ();
             g.show_all ();
             notebook.page = new_page;
+            terminals.append (t);
         }
 
         static string get_system_font () {
@@ -267,11 +275,24 @@ namespace PantheonTerminal {
         protected override bool delete_event (Gdk.EventAny event) {
             update_saved_state ();
             action_quit ();
+
+            foreach (var t in terminals) {
+                if (((TerminalWidget)t).has_foreground_process ()) {
+                    var d = new ForegroundProcessDialog.before_close ();
+                    if (d.run () == 1)
+                        return false;
+             
+                    else {
+                        d.destroy ();
+                        return true;
+                    }
+                }
+            }
             return false;
         }
 
         void action_quit () {
-            destroy ();
+            
         }
 
         void action_copy () {
