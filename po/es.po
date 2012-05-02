@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-30 21:19+0200\n"
-"PO-Revision-Date: 2012-04-09 17:45+0000\n"
-"Last-Translator: Alfredo Hernández <Unknown>\n"
+"PO-Revision-Date: 2012-05-01 15:48+0000\n"
+"Last-Translator: Juan David Angarita <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-01 05:47+0000\n"
-"X-Generator: Launchpad (build 15171)\n"
+"X-Launchpad-Export-Date: 2012-05-02 05:51+0000\n"
+"X-Generator: Launchpad (build 15177)\n"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:74
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:207
@@ -24,7 +24,7 @@ msgstr "Terminal"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:123
 msgid "Open a new tab"
-msgstr ""
+msgstr "Abrir una pestaña nueva"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:311
 msgid "Quit"
@@ -84,24 +84,24 @@ msgstr "Mostrar la ventana «Acerca de»"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:323
 msgid "Tab 1"
-msgstr ""
+msgstr "Pestaña 1"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:323
 msgid "Select tab 1"
-msgstr ""
+msgstr "Seleccionar pestaña 1"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr ""
+msgstr "Hay un proceso activo en esta consola."
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the shell?"
-msgstr ""
+msgstr "¿Quieres permanecer en la consola?"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 msgid "Stay on this terminal"
-msgstr ""
+msgstr "Permanecer en esta terminal"
 
 #: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
 msgid "Kill terminal"
-msgstr ""
+msgstr "Matar terminal"
