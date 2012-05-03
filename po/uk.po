@@ -7,101 +7,108 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-04-30 21:19+0200\n"
+"POT-Creation-Date: 2012-05-02 17:05+0200\n"
 "PO-Revision-Date: 2012-01-02 10:44+0000\n"
 "Last-Translator: shyn <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-01 05:47+0000\n"
-"X-Generator: Launchpad (build 15171)\n"
+"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
+"X-Generator: Launchpad (build 15185)\n"
 
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:74
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:207
-msgid "Terminal"
-msgstr "Термінал"
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:123
-msgid "Open a new tab"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:311
-msgid "Quit"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:312
-msgid "Close"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:313
-msgid "New Window"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:313
-msgid "Open a new window"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:315
-msgid "New Tab"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:315
-msgid "Create a new tab"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:316
-msgid "Copy"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:316
-msgid "Copy the selected text"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:317
-msgid "Paste"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:317
-msgid "Paste some text"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:318
-msgid "Select All"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:319
-msgid "Select all the text in the terminal"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:320
-msgid "About"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:320
-msgid "Show about window"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:323
-msgid "Tab 1"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:323
-msgid "Select tab 1"
-msgstr ""
-
-#: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
 msgstr ""
 
-#: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
 msgstr ""
 
-#: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay on this terminal"
 msgstr ""
 
-#: /home/fabian/dev/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "Kill terminal"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
+msgid "There are some active process on this shell!"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
+msgid "Terminal"
+msgstr "Термінал"
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
+msgid "Open a new tab"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
+msgid "Quit"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:333
+msgid "Close"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
+msgid "New Window"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
+msgid "Open a new window"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:336
+msgid "New Tab"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:336
+msgid "Create a new tab"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:337
+msgid "Copy"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:337
+msgid "Copy the selected text"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:338
+msgid "Paste"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:338
+msgid "Paste some text"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:339
+msgid "Select All"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:340
+msgid "Select all the text in the terminal"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:341
+msgid "About"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:341
+msgid "Show about window"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
+msgid "Tab 1"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
+msgid "Select tab 1"
 msgstr ""
