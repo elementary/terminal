@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-04-30 18:46+0000\n"
+"PO-Revision-Date: 2012-05-03 06:33+0000\n"
 "Last-Translator: Eduard Gotwig <eduardgotwig@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
-"X-Generator: Launchpad (build 15185)\n"
+"X-Launchpad-Export-Date: 2012-05-04 05:13+0000\n"
+"X-Generator: Launchpad (build 15195)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr "Auf dieser Shell wird ein Prozess ausgeführt!"
+msgstr "Auf dieser Konsolen Instanz befindet sich ein laufender Prozess!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
-msgstr "Möchten Sie auf dieser Shell bleiben?"
+msgstr "Möchten Sie auf dieser Konsolen Instanz bleiben?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
@@ -38,7 +38,7 @@ msgstr "Terminal schließen"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
 msgid "There are some active process on this shell!"
-msgstr ""
+msgstr "Auf dieser Konsolen Instanz befinden sich laufende Prozesse!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
