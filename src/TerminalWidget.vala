@@ -68,6 +68,10 @@ namespace PantheonTerminal {
             return (int) (this.get_char_height()) * row_count;
         }
 
+        void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+          print ("Hello\n");
+        }
+
     }
 
 }

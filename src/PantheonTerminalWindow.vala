@@ -256,7 +256,7 @@ namespace PantheonTerminal {
             });
             
             t.set_font (system_font);
-            set_size_request (t.calculate_width (80), t.calculate_height (24));
+            set_size_request (t.calculate_width (30), t.calculate_height (8));
             tab.grab_focus ();
             g.show_all ();
             notebook.page = new_page;
