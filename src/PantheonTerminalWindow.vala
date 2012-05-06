@@ -44,6 +44,7 @@ namespace PantheonTerminal {
             <ui>
             <popup name="MenuItemTool">
                 <menuitem name="Quit" action="Quit"/>
+                <menuitem name="New window" action="New window"/>
                 <menuitem name="New tab" action="New tab"/>
                 <menuitem name="CloseTab" action="CloseTab"/>
                 <menuitem name="Copy" action="Copy"/>
@@ -340,7 +341,7 @@ namespace PantheonTerminal {
              N_("Select all the text in the terminal"), action_select_all },
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
-           /*Alt + X */
+           /*Alt + N */
            { "Tab 1", null, N_("Tab 1"), "<Alt>1", N_("Select tab 1"), goto_tab1}
         };
 
