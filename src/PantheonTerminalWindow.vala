@@ -205,7 +205,10 @@ namespace PantheonTerminal {
 
             /* Set up the virtual terminal */
             t.active_shell ();
-
+            
+            /* Set up actions releated to the terminal */
+            main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
+            
             /* Create a new tab with the terminal */
             var tab = new TerminalTab (_("Terminal"));
             tab.scroll_event.connect (on_scroll_event);
@@ -254,6 +257,10 @@ namespace PantheonTerminal {
             t.child_exited.connect (() => {
                 notebook.remove (g);
                 terminals.remove (t);
+            });
+            
+            t.selection_changed.connect (() => {
+                main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
             });
             
             t.set_font (system_font);
