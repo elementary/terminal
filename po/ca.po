@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-04-09 17:45+0000\n"
+"PO-Revision-Date: 2012-05-07 20:48+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
-"X-Generator: Launchpad (build 15185)\n"
+"X-Launchpad-Export-Date: 2012-05-08 05:37+0000\n"
+"X-Generator: Launchpad (build 15204)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr ""
+msgstr "Hi ha un procés actiu en aquest intèrpret d'ordres."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
-msgstr ""
+msgstr "Voleu romandre en l'intèrpret d'ordres?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay on this terminal"
-msgstr ""
+msgstr "Roman en aquest terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "Kill terminal"
-msgstr ""
+msgstr "Mata el terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
 msgid "There are some active process on this shell!"
-msgstr ""
+msgstr "Hi ha alguns processos actius en aquest intèrpret d'ordres."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
@@ -47,7 +47,7 @@ msgstr "Terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
 msgid "Open a new tab"
-msgstr ""
+msgstr "Obre una pestanya nova"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
 msgid "Quit"
@@ -107,8 +107,8 @@ msgstr "Mostra la finestra «Quant a»"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Tab 1"
-msgstr ""
+msgstr "Pestanya 1"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
-msgstr ""
+msgstr "Selecciona la pestanya 1"
