@@ -25,8 +25,11 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
 
         GLib.Pid child_pid;
-        
-        public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui) {
+        private PantheonTerminalWindow window;
+
+        public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
+            this.window = parent_window;
+
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
@@ -37,6 +40,10 @@ namespace PantheonTerminal {
                     menu.popup (null, null, null, event.button, event.time);
                 }
                 return false;
+            });
+
+            window_title_changed.connect ((event) => {
+                window.title = window_title;
             });
 
             /* Connect to necessary signals */

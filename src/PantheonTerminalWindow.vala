@@ -167,6 +167,7 @@ namespace PantheonTerminal {
             current_tab_label = notebook.get_tab_label (page) as TerminalTab;
             current_tab = notebook.get_nth_page ((int) n);
             current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWidget;
+            title = current_terminal.window_title;
             page.grab_focus ();
         }
 
@@ -191,7 +192,7 @@ namespace PantheonTerminal {
 
         private void new_tab (bool first) {
             /* Set up terminal */
-            var t = new TerminalWidget (main_actions, ui);
+            var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = -1;
             current_terminal = t;
             var g = new Grid ();
