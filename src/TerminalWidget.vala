@@ -25,9 +25,12 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
 
         GLib.Pid child_pid;
+
         private PantheonTerminalWindow window;
+        public TerminalTab tab;
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
+            /* Set up the parents */
             this.window = parent_window;
 
             /* Create a pop menu */
@@ -43,7 +46,9 @@ namespace PantheonTerminal {
             });
 
             window_title_changed.connect ((event) => {
-                window.title = window_title;
+                if (this == window.current_terminal)
+                    window.title = window_title;
+                tab.set_text(window_title);
             });
 
             /* Connect to necessary signals */

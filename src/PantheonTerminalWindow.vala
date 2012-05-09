@@ -212,6 +212,7 @@ namespace PantheonTerminal {
             
             /* Create a new tab with the terminal */
             var tab = new TerminalTab (_("Terminal"));
+            t.tab = tab;
             tab.scroll_event.connect (on_scroll_event);
             tab.terminal = current_terminal;
             tab.width_request = 64;

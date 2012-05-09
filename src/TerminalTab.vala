@@ -28,7 +28,7 @@ namespace PantheonTerminal {
 
         private Button button;
         public Label label;
-        private string text;
+        public string text;
 
         public bool reorderable = true;
         public bool detachable = true;
@@ -65,6 +65,7 @@ namespace PantheonTerminal {
 
         public void set_text (string text) {
             this.text = text;
+            label.set_text (text);
         }
 
         bool on_button_press_event (Gdk.EventButton event) {
