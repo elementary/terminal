@@ -242,6 +242,8 @@ namespace PantheonTerminal {
             t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
 
+                /* Strips the location */
+                /*
                 for (int i = 0; i < new_text.length; i++) {
                     if (new_text[i] == ':') {
                         new_text = new_text[i + 2:new_text.length];
@@ -252,6 +254,7 @@ namespace PantheonTerminal {
                 if (new_text.length > 50) {
                     new_text = new_text[new_text.length - 50:new_text.length];
                 }
+                */
 
                 tab.set_text (new_text);
             });

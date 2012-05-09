@@ -48,6 +48,7 @@ namespace PantheonTerminal {
             button.show ();
             button.set_relief (ReliefStyle.NONE);
             button.clicked.connect (() => { clicked (); });
+            button.tooltip_text = "Close the tab";
 
             /* Add the label */
             label = new Label (text);
