@@ -134,7 +134,6 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state () {
-            
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
@@ -145,7 +144,6 @@ namespace PantheonTerminal {
         }
 
         private void update_saved_state () {
-
             // Save window state
             if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
@@ -177,12 +175,11 @@ namespace PantheonTerminal {
         }
 
         public bool on_scroll_event (EventScroll event) {
-            if (event.direction == ScrollDirection.UP || event.direction == ScrollDirection.LEFT)  {
+            if (event.direction == ScrollDirection.UP || event.direction == ScrollDirection.LEFT) {
                 if (notebook.get_current_page() != 0) {
                     notebook.set_current_page (notebook.get_current_page() - 1);
                 }
-            }
-            if (event.direction == ScrollDirection.DOWN || event.direction == ScrollDirection.RIGHT)  {
+            } else if (event.direction == ScrollDirection.DOWN || event.direction == ScrollDirection.RIGHT) {
                 if (notebook.get_current_page() != notebook.get_n_pages ()) {
                     notebook.set_current_page (notebook.get_current_page() + 1);
                 }
@@ -200,7 +197,7 @@ namespace PantheonTerminal {
             g.attach (t, 0, 0, 1, 1);
             g.attach (sb, 1, 0, 1, 1);
 
-            /* Add the terminal to the GUI */
+            /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
             t.hexpand = true;
 
@@ -208,7 +205,7 @@ namespace PantheonTerminal {
             t.active_shell ();
             
             /* Set up actions releated to the terminal */
-            main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
+            main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
             
             /* Create a new tab with the terminal */
             var tab = new TerminalTab (_("Terminal"));

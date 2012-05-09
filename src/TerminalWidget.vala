@@ -81,7 +81,7 @@ namespace PantheonTerminal {
         }
 
         void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-          print ("Hello\n");
+          print ("[DEBUG] Drag data received.\n");
         }
 
     }
