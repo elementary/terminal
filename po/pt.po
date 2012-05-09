@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-04-19 13:58+0000\n"
-"Last-Translator: Laurentino <laurentinolopes@gmail.com>\n"
+"PO-Revision-Date: 2012-05-08 16:45+0000\n"
+"Last-Translator: David Gomes <davidrafagomes@gmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
-"X-Generator: Launchpad (build 15185)\n"
+"X-Launchpad-Export-Date: 2012-05-09 05:08+0000\n"
+"X-Generator: Launchpad (build 15213)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr ""
+msgstr "Há um processo ativo neste terminal!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
-msgstr ""
+msgstr "Deseja ficar no terminal?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay on this terminal"
-msgstr ""
+msgstr "Ficar no terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "Kill terminal"
-msgstr ""
+msgstr "Fechar o terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
 msgid "There are some active process on this shell!"
-msgstr ""
+msgstr "Há processos ativos neste terminal!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
@@ -47,7 +47,7 @@ msgstr "Terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
 msgid "Open a new tab"
-msgstr ""
+msgstr "Abrir um novo separador"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
 msgid "Quit"
@@ -59,7 +59,7 @@ msgstr "Fechar"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
 msgid "New Window"
-msgstr "Nova Janela"
+msgstr "Nova janela"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
 msgid "Open a new window"
@@ -107,8 +107,8 @@ msgstr "Mostrar janela acerca"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Tab 1"
-msgstr ""
+msgstr "Separador 1"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
-msgstr ""
+msgstr "Selecionar separador 1"
