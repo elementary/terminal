@@ -58,7 +58,7 @@ namespace PantheonTerminal {
 
         void on_child_exited () { }
 
-        public void active_shell (string dir = GLib.Environment.get_home_dir()) {
+        public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
                 this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
