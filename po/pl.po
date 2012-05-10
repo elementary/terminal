@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-02-25 16:10+0000\n"
-"Last-Translator: Łukasz Serafinowski <Unknown>\n"
+"PO-Revision-Date: 2012-05-09 19:17+0000\n"
+"Last-Translator: Nitreus <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
-"X-Generator: Launchpad (build 15185)\n"
+"X-Launchpad-Export-Date: 2012-05-10 05:55+0000\n"
+"X-Generator: Launchpad (build 15213)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
@@ -47,7 +47,7 @@ msgstr "Terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
 msgid "Open a new tab"
-msgstr ""
+msgstr "Otwórz nową kartę"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
 msgid "Quit"
@@ -107,8 +107,8 @@ msgstr ""
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Tab 1"
-msgstr ""
+msgstr "Zakładka 1"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
-msgstr ""
+msgstr "Wybierz zakładkę 1"
