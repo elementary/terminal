@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-05-04 13:01+0000\n"
-"Last-Translator: Daniele \"OpenNingia\" Simonetti <Unknown>\n"
+"PO-Revision-Date: 2012-05-13 08:47+0000\n"
+"Last-Translator: Bennici Piercarlo <vesnarteach@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-05 05:27+0000\n"
-"X-Generator: Launchpad (build 15195)\n"
+"X-Launchpad-Export-Date: 2012-05-14 05:19+0000\n"
+"X-Generator: Launchpad (build 15238)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr ""
+msgstr "C'è un processo attivo su questo terminale!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
-msgstr ""
+msgstr "Vuoi rimanere su questo terminale?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay on this terminal"
-msgstr ""
+msgstr "Rimani sul questo terminale"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "Kill terminal"
-msgstr ""
+msgstr "Chiudi terminale"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
 msgid "There are some active process on this shell!"
-msgstr ""
+msgstr "Ci sono alcuni processi attivi su questo terminale!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
