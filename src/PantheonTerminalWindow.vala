@@ -33,9 +33,9 @@ namespace PantheonTerminal {
         Notebook notebook;
         FontDescription system_font;
         private Button add_button;
-        
+
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
-        
+
         TerminalTab current_tab_label = null;
         public TerminalWidget current_terminal = null;
         Widget current_tab;
@@ -53,14 +53,6 @@ namespace PantheonTerminal {
                 <menuitem name="About" action="About"/>
 
                 <menuitem name="Alt 1" action="Alt 1"/>
-            </popup>
-
-            <popup name="AppMenu">
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <separator />
-                <menuitem name="About" action="About"/>
             </popup>
             </ui>
         """;
@@ -289,15 +281,15 @@ namespace PantheonTerminal {
             foreach (var t in terminals) {
                 if (((TerminalWidget)t).has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
-                    if (d.run () == 1)
+                    if (d.run () == 1) {
                         return false;
-             
-                    else {
+                    } else {
                         d.destroy ();
                         return true;
                     }
                 }
             }
+
             return false;
         }
 
@@ -333,7 +325,6 @@ namespace PantheonTerminal {
             app.show_about (this);
         }
 
-
         void goto_tab1 () {
             notebook.page = 1;
         }
@@ -351,7 +342,7 @@ namespace PantheonTerminal {
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
            /*Alt + N */
-           { "Tab 1", null, N_("Tab 1"), "<Alt>1", N_("Select tab 1"), goto_tab1}
+           { "Tab 1", null, N_("Tab 1"), "<Alt>1", N_("Select tab 1"), goto_tab1 }
         };
 
     }
