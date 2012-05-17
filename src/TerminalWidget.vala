@@ -39,7 +39,7 @@ namespace PantheonTerminal {
 
             button_press_event.connect ((event) => {
                 if (event.button == 3) {
-                    menu.select_first (true);
+                    menu.select_first (false);
                     menu.popup (null, null, null, event.button, event.time);
                 }
                 return false;

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Terminal
 Comment=Use the command line
+Comment[it]=Usa la riga di comando
 TryExec=pantheon-terminal
 Exec=pantheon-terminal
 Icon=utilities-terminal
@@ -12,11 +13,13 @@ X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
 
 [NewWindow Shortcut Group]
 Name=Create a new window
+Name[it]=Crea una nuova finestra
 Exec=pantheon-terminal
 TargetEnvironment=Unity
 
 [NewRootWindow Shortcut Group]
 Name=Create a new root window
+Name[it]=Crea una finestra da amministratore
 Exec=gksu pantheon-terminal
 TargetEnvironment=Unity
 

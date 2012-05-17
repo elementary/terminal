@@ -54,6 +54,14 @@ namespace PantheonTerminal {
 
                 <menuitem name="Alt 1" action="Alt 1"/>
             </popup>
+            
+            <popup name="AppMenu">
+                <menuitem name="Copy" action="Copy"/>
+                <menuitem name="Paste" action="Paste"/>
+                <menuitem name="Select All" action="Select All"/>
+                <separator />
+                <menuitem name="About" action="About"/>
+            </popup>
             </ui>
         """;
 
