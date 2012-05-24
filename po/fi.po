@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-03-12 22:37+0000\n"
-"Last-Translator: Erkka Juhaninmäki <Unknown>\n"
+"PO-Revision-Date: 2012-05-20 11:39+0000\n"
+"Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-03 05:54+0000\n"
-"X-Generator: Launchpad (build 15185)\n"
+"X-Launchpad-Export-Date: 2012-05-24 12:02+0000\n"
+"X-Generator: Launchpad (build 15288)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
@@ -47,7 +47,7 @@ msgstr "Pääte"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
 msgid "Open a new tab"
-msgstr ""
+msgstr "Avaa uusi välilehti"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
 msgid "Quit"
@@ -107,8 +107,8 @@ msgstr "Näytä tietoikkuna"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Tab 1"
-msgstr ""
+msgstr "Välilehti 1"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
-msgstr ""
+msgstr "Valitse välilehti 1"
