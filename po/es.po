@@ -112,3 +112,8 @@ msgstr "Pestaña 1"
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
 msgstr "Seleccionar pestaña 1"
+
+#: pantheon-terminal.desktop:3
+msgid "Use the command line"
+msgstr "Usar la línea de comandos"
+

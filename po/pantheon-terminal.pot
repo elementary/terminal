@@ -112,3 +112,8 @@ msgstr ""
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
 msgstr ""
+
+#: pantheon-terminal.desktop:3
+msgid "Use the command line"
+msgstr ""
+

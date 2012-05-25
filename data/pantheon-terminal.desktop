@@ -1,13 +1,13 @@
 [Desktop Entry]
 Name=Terminal
 Comment=Use the command line
-Comment[it]=Usa la riga di comando
 TryExec=pantheon-terminal
 Exec=pantheon-terminal
 Icon=utilities-terminal
 Type=Application
 Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
+X-GNOME-Gettext-Domain=pantheon-terminal
 
 X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
 
