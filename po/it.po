@@ -112,3 +112,7 @@ msgstr "Scheda 1"
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
 msgid "Select tab 1"
 msgstr "Seleziona scheda 1"
+
+#: pantheon-terminal.desktop:3
+msgid "Use the command line"
+msgstr "Usa la riga di comando"
