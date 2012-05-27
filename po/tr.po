@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-05-16 16:32+0000\n"
+"PO-Revision-Date: 2012-05-26 16:48+0000\n"
 "Last-Translator: Ebubekir KARUL <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-26 05:41+0000\n"
+"X-Launchpad-Export-Date: 2012-05-27 04:57+0000\n"
 "X-Generator: Launchpad (build 15288)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
@@ -115,4 +115,4 @@ msgstr ""
 
 #: pantheon-terminal.desktop:3
 msgid "Use the command line"
-msgstr ""
+msgstr "Komut satırını kullan"
