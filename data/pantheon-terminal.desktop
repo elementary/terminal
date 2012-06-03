@@ -12,14 +12,14 @@ X-GNOME-Gettext-Domain=pantheon-terminal
 X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
 
 [NewWindow Shortcut Group]
-Name=Create a new window
-Name[it]=Crea una nuova finestra
+Name=New Window
+Name[it]=Nuova Finestra
 Exec=pantheon-terminal
 TargetEnvironment=Unity
 
 [NewRootWindow Shortcut Group]
-Name=Create a new root window
-Name[it]=Crea una finestra da amministratore
+Name=New Root Window
+Name[it]=Finestra da Amministratore
 Exec=gksu pantheon-terminal
 TargetEnvironment=Unity
 
