@@ -337,12 +337,12 @@ namespace PantheonTerminal {
         void action_fullscreen () {
           if (is_fullscreen) {
             unfullscreen();
-            notebook.show_tabs = true;
             is_fullscreen = false;
+            notebook.show_border = true;
           } else {
             fullscreen();
-            notebook.show_tabs = false;
             is_fullscreen = true;
+            notebook.show_border = false;
           }
         }
 
