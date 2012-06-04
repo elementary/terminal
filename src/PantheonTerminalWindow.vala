@@ -39,6 +39,7 @@ namespace PantheonTerminal {
         TerminalTab current_tab_label = null;
         public TerminalWidget current_terminal = null;
         Widget current_tab;
+        private bool is_fullscreen = false;
 
         const string ui_string = """
             <ui>
@@ -52,9 +53,9 @@ namespace PantheonTerminal {
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="About" action="About"/>
 
-                <menuitem name="Alt 1" action="Alt 1"/>
+                <menuitem name="Fullscreen" action="Fullscreen"/>
             </popup>
-            
+
             <popup name="AppMenu">
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
@@ -76,7 +77,7 @@ namespace PantheonTerminal {
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
             restore_saved_state ();
-            
+
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
             main_actions.set_translation_domain ("pantheon-terminal");
@@ -190,7 +191,7 @@ namespace PantheonTerminal {
         private void new_tab (bool first) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
-            t.scrollback_lines = -1;
+            t.scrollback_lines = settings.scrollback_lines;
             current_terminal = t;
             var g = new Grid ();
             var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
@@ -203,10 +204,10 @@ namespace PantheonTerminal {
 
             /* Set up the virtual terminal */
             t.active_shell ();
-            
+
             /* Set up actions releated to the terminal */
             main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
-            
+
             /* Create a new tab with the terminal */
             var tab = new TerminalTab (_("Terminal"));
             t.tab = tab;
@@ -255,16 +256,16 @@ namespace PantheonTerminal {
 
                 tab.set_text (new_text);
             });
-            
+
             t.child_exited.connect (() => {
                 notebook.remove (g);
                 terminals.remove (t);
             });
-            
+
             t.selection_changed.connect (() => {
                 main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
             });
-            
+
             t.set_font (system_font);
             set_size_request (t.calculate_width (30), t.calculate_height (8));
             tab.grab_focus ();
@@ -302,7 +303,7 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-            
+
         }
 
         void action_copy () {
@@ -333,8 +334,16 @@ namespace PantheonTerminal {
             app.show_about (this);
         }
 
-        void goto_tab1 () {
-            notebook.page = 1;
+        void action_fullscreen () {
+          if (is_fullscreen) {
+            unfullscreen();
+            notebook.show_tabs = true;
+            is_fullscreen = false;
+          } else {
+            fullscreen();
+            notebook.show_tabs = false;
+            is_fullscreen = true;
+          }
         }
 
         static const Gtk.ActionEntry[] main_entries = {
@@ -349,8 +358,7 @@ namespace PantheonTerminal {
              N_("Select all the text in the terminal"), action_select_all },
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
-           /*Alt + N */
-           { "Tab 1", null, N_("Tab 1"), "<Alt>1", N_("Select tab 1"), goto_tab1 }
+           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen}
         };
 
     }

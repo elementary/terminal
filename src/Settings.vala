@@ -44,7 +44,7 @@ namespace PantheonTerminal {
     public class Settings : Granite.Services.Settings {
 
         public int scrollback_lines { get; set; }
-        
+
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
         }
