@@ -8,37 +8,37 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-05-02 17:05+0200\n"
-"PO-Revision-Date: 2012-05-31 10:45+0000\n"
-"Last-Translator: empax <emr_orc04@hotmail.com>\n"
+"PO-Revision-Date: 2012-06-03 05:19+0000\n"
+"Last-Translator: Ebubekir KARUL <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-01 05:44+0000\n"
-"X-Generator: Launchpad (build 15342)\n"
+"X-Launchpad-Export-Date: 2012-06-04 04:59+0000\n"
+"X-Generator: Launchpad (build 15353)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this shell!"
-msgstr "Bu kabuk aktif bir süreç içeriyor!"
+msgstr "Bu uçbirim aktif bir süreç içeriyor!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to stay on the shell?"
-msgstr "Kabukda kalmak istiyor musunuz?"
+msgstr "Uçbirimde kalmak istiyor musunuz?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay on this terminal"
-msgstr "Bu terminalde kal"
+msgstr "Bu uçbirimde kal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "Kill terminal"
-msgstr "Terminali Sonlandır"
+msgstr "Uçbirimi Sonlandır"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
 msgid "There are some active process on this shell!"
-msgstr "Bu kabuk aktif bir kaç süreç içeriyor!"
+msgstr "Bu uçbirim aktif bir kaç süreç içeriyor!"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
