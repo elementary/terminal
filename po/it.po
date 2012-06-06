@@ -7,112 +7,112 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-05-02 17:05+0200\n"
+"POT-Creation-Date: 2012-06-05 09:09-0700\n"
 "PO-Revision-Date: 2012-05-25 16:51+0000\n"
 "Last-Translator: Bennici Piercarlo <vesnarteach@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-26 05:41+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-06 05:24+0000\n"
+"X-Generator: Launchpad (build 15353)\n"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this shell!"
-msgstr "C'è un processo attivo su questo terminale!"
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
+msgid "Set shell at launch"
+msgstr ""
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:44
-msgid "Do you want to stay on the shell?"
-msgstr "Vuoi rimanere su questo terminale?"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:32
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:46
-msgid "Stay on this terminal"
-msgstr "Rimani sul questo terminale"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:36
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
-msgid "Kill terminal"
-msgstr "Chiudi terminale"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:43
-msgid "There are some active process on this shell!"
-msgstr "Ci sono alcuni processi attivi su questo terminale!"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:76
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:209
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
 msgid "Terminal"
 msgstr "Terminale"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:125
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:127
 msgid "Open a new tab"
 msgstr "Apri una nuova scheda"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:332
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:350
 msgid "Quit"
 msgstr "Esci"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:333
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:351
 msgid "Close"
 msgstr "Chiudi"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "New Window"
 msgstr "Nuova finestra"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:334
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "Open a new window"
 msgstr "Apri una nuova finestra"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:336
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "New Tab"
 msgstr "Nuova scheda"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:336
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "Create a new tab"
 msgstr "Crea una nuova scheda"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:337
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy"
 msgstr "Copia"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:337
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy the selected text"
 msgstr "Copia il testo selezionato"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:338
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste"
 msgstr "Incolla"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:338
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste some text"
 msgstr "Incolla del testo"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:339
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:357
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:340
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:358
 msgid "Select all the text in the terminal"
 msgstr "Seleziona tutto il testo nel terminale"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:341
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "About"
 msgstr "Informazioni"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:341
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "Show about window"
 msgstr "Mostra finestra di informazioni sull'applicazione"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
-msgid "Tab 1"
-msgstr "Scheda 1"
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+msgid "Fullscreen"
+msgstr ""
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:344
-msgid "Select tab 1"
-msgstr "Seleziona scheda 1"
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+msgid "Toggle/Untoggle fullscreen"
+msgstr ""
 
-#: pantheon-terminal.desktop:3
-msgid "Use the command line"
-msgstr "Usa la riga di comando"
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
+msgid "There is an active process on this terminal!"
+msgstr ""
+
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
+msgid "Do you want to stay on the terminal?"
+msgstr ""
+
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
+msgid "Stay"
+msgstr ""
+
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
+msgid "Close terminal"
+msgstr ""
+
+#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
+msgid "Do you want to close this terminal?"
+msgstr ""
