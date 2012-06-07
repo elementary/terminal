@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-05-31 15:42+0000\n"
+"PO-Revision-Date: 2012-06-06 19:48+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-06 05:25+0000\n"
+"X-Launchpad-Export-Date: 2012-06-07 05:04+0000\n"
 "X-Generator: Launchpad (build 15353)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
-msgstr ""
+msgstr "Set shell at launch"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
@@ -88,31 +88,31 @@ msgstr "Show About window"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Fullscreen"
-msgstr ""
+msgstr "Fullscreen"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Toggle/Untoggle fullscreen"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
 msgid "There is an active process on this terminal!"
-msgstr ""
+msgstr "There is an active process on this terminal!"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the terminal?"
-msgstr ""
+msgstr "Do you want to stay on the terminal?"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay"
-msgstr ""
+msgstr "Stay"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
 msgid "Close terminal"
-msgstr ""
+msgstr "Close terminal"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to close this terminal?"
-msgstr ""
+msgstr "Do you want to close this terminal?"
