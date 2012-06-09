@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-05-27 09:08+0000\n"
+"PO-Revision-Date: 2012-06-08 05:31+0000\n"
 "Last-Translator: Wang Dianjin <Unknown>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-06 05:25+0000\n"
-"X-Generator: Launchpad (build 15353)\n"
+"X-Launchpad-Export-Date: 2012-06-09 06:16+0000\n"
+"X-Generator: Launchpad (build 15376)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
-msgstr ""
+msgstr "启动设置 shell"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
@@ -88,31 +88,31 @@ msgstr "显示关于窗口"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Fullscreen"
-msgstr ""
+msgstr "全屏"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "切换/退出全屏"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
 msgid "There is an active process on this terminal!"
-msgstr ""
+msgstr "在该终端有活动进程！"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the terminal?"
-msgstr ""
+msgstr "您要保留该终端吗？"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay"
-msgstr ""
+msgstr "保留"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
 msgid "Close terminal"
-msgstr ""
+msgstr "关闭终端"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to close this terminal?"
-msgstr ""
+msgstr "您要关闭该终端吗？"
