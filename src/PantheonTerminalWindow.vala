@@ -107,10 +107,28 @@ namespace PantheonTerminal {
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
+            notebook.show_icons = false;
             
             notebook.tab_added.connect ((tab) => {
             	new_tab (tab);
             });
+            notebook.tab_removed.connect ((tab) => {
+                if (((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget).has_foreground_process ()) {
+                    var d = new ForegroundProcessDialog ();
+                    if (d.run () == 1) {
+                        notebook.remove_tab (tab);
+                        if (notebook.n_tabs == 0)
+                        	destroy ();
+                    }
+                    d.destroy ();
+                    return false;
+                } else {
+                	if (notebook.n_tabs - 1 == 0)
+                		destroy ();
+                	return true;
+            	}
+            });
+			
             
             var right_box = new HBox (false, 0);
             right_box.show ();
@@ -194,25 +212,11 @@ namespace PantheonTerminal {
         	} else {
         		tab.page = g;
         		tab.label = _("Terminal");
+        		tab.page.show_all ();
         	}
             t.tab = tab;
+            tab.ellipsize_mode = Pango.EllipsizeMode.START;
             
-            /* Bind signals to the new tab */
-            /*tab.clicked.connect (() => {
-                if (t.has_foreground_process ()) {
-                    var d = new ForegroundProcessDialog ();
-                    if (d.run () == 1) {
-                        notebook.remove (g);
-                        terminals.remove (t);
-                    }
-                    d.destroy ();
-                }
-                else {
-                    notebook.remove (g);
-                    terminals.remove (t);
-                }
-            });*/
-			
             t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
 				
@@ -245,7 +249,6 @@ namespace PantheonTerminal {
             t.set_font (system_font);
             set_size_request (t.calculate_width (30), t.calculate_height (8));
             tab.grab_focus ();
-            g.show_all ();
             terminals.append (t);
             
             if (to_be_inserted)
@@ -297,7 +300,7 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            //TODO current_tab_label.clicked ();
+            notebook.remove_tab (notebook.current);
         }
 
         void action_new_window () {
