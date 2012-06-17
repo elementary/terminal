@@ -36,7 +36,6 @@ namespace PantheonTerminal {
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
-        TerminalTab current_tab_label = null;
         public TerminalWidget current_terminal = null;
         Widget current_tab;
         private bool is_fullscreen = false;
@@ -99,16 +98,20 @@ namespace PantheonTerminal {
 
             setup_ui ();
             show_all ();
-            connect_signals ();
 
             system_font = FontDescription.from_string (get_system_font ());
 
-            new_tab (true);
+            new_tab ();
         }
 
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
+            
+            notebook.tab_added.connect ((tab) => {
+            	new_tab (tab);
+            });
+            
             var right_box = new HBox (false, 0);
             right_box.show ();
             notebook.can_focus = false;
@@ -123,10 +126,6 @@ namespace PantheonTerminal {
             add_button.set_relief (ReliefStyle.NONE);
             add_button.set_tooltip_text (_("Open a new tab"));
             right_box.pack_start (add_button, false, false, 0);
-        }
-
-        private void connect_signals () {
-            add_button.clicked.connect (() => { new_tab (false); } );
         }
 
         private void restore_saved_state () {
@@ -167,7 +166,7 @@ namespace PantheonTerminal {
         public void remove_page (int page) {
         }
 
-        private void new_tab (bool first) {
+        private void new_tab (owned Granite.Widgets.Tab? tab=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
@@ -187,15 +186,19 @@ namespace PantheonTerminal {
             /* Set up actions releated to the terminal */
             main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
 
-            /* Create a new tab with the terminal */
-            var tab = new TerminalTab (_("Terminal"));
+            /* Create a new tab if it hasnt already been created by the plus button press */
+            bool to_be_inserted = false;
+            if (tab == null) {
+            	tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
+            	to_be_inserted = true;
+        	} else {
+        		tab.page = g;
+        		tab.label = _("Terminal");
+        	}
             t.tab = tab;
-            tab.terminal = current_terminal;
-            tab.width_request = 64;
-
+            
             /* Bind signals to the new tab */
-            tab.clicked.connect (() => {
-                /* It was doing something */
+            /*tab.clicked.connect (() => {
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
                     if (d.run () == 1) {
@@ -208,11 +211,11 @@ namespace PantheonTerminal {
                     notebook.remove (g);
                     terminals.remove (t);
                 }
-            });
-
+            });*/
+			
             t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
-
+				
                 /* Strips the location */
                 /*
                 for (int i = 0; i < new_text.length; i++) {
@@ -226,12 +229,12 @@ namespace PantheonTerminal {
                     new_text = new_text[new_text.length - 50:new_text.length];
                 }
                 */
-
-                tab.set_text (new_text);
+				
+                tab.label = new_text;
             });
-
+			
             t.child_exited.connect (() => {
-                notebook.remove (g);
+                notebook.remove_tab (tab);
                 terminals.remove (t);
             });
 
@@ -244,6 +247,9 @@ namespace PantheonTerminal {
             tab.grab_focus ();
             g.show_all ();
             terminals.append (t);
+            
+            if (to_be_inserted)
+            	notebook.insert_tab (tab, -1);
         }
 
         static string get_system_font () {
@@ -291,7 +297,7 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            current_tab_label.clicked ();
+            //TODO current_tab_label.clicked ();
         }
 
         void action_new_window () {
@@ -299,7 +305,7 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            new_tab (false);
+            new_tab ();
         }
 
         void action_about () {
