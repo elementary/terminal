@@ -2,14 +2,14 @@ Source: pantheon-terminal
 Section: x11
 Priority: optional
 Maintainer: Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~),
-               cmake (>= 2.6),
-               valac-0.16 | valac (>= 0.16),
+Build-Depends: cmake (>= 2.6),
+               debhelper (>= 7.0.50~),
                libclutter-gtk-1.0-dev,
                libgranite-dev,
                libgtk-3-dev,
+               libnotify-dev,
                libvte-2.90-dev,
-               libnotify-dev
+               valac-0.16 | valac (>= 0.16)
 Standards-Version: 3.8.4
 Homepage: http://elementaryos.org/
 Vcs-Bzr: https://code.launchpad.net/~kekun-plazas/pantheon-terminal/trunk
@@ -17,7 +17,7 @@ Vcs-Browser: http://bazaar.launchpad.net/~kekun-plazas/pantheon-terminal/trunk/f
 
 Package: pantheon-terminal
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Provides: x-terminal-emulator
 Description: A modern terminal from elementary project
  Pantheon Terminal is a modern terminal designed in elementary Project for
