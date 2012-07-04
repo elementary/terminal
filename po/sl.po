@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-06-23 22:13+0000\n"
+"PO-Revision-Date: 2012-07-03 18:23+0000\n"
 "Last-Translator: MarkoD <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-24 05:46+0000\n"
-"X-Generator: Launchpad (build 15461)\n"
+"X-Launchpad-Export-Date: 2012-07-04 05:16+0000\n"
+"X-Generator: Launchpad (build 15544)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
@@ -92,7 +92,7 @@ msgstr "Celozaslonsko"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Preklopi celozaslonsko"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
