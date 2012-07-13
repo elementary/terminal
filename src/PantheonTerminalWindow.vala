@@ -132,7 +132,7 @@ namespace PantheonTerminal {
             add_button.clicked.connect (() => { new_tab (false); } );
             notebook.switch_page.connect (on_switch_page);
             notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
-            this.key_press_event.connect ( (e) => {
+            this.key_press_event.connect ((e) => {
                 switch (e.keyval){
                     case 49: //ctrl+[1-8]
                     case 50:
@@ -143,15 +143,15 @@ namespace PantheonTerminal {
                     case 55:
                     case 56:
                     case 57:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0){ 
-                            var i = e.keyval - 49;
-                            this.notebook.page = (int)i;
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                            var i = (int) e.keyval - 49;
+                            this.notebook.page = (int) i;
                             return true;
                         }
                         break;
-                    } 
+                    }
                     return false;
-                    });
+            });
         }
 
         private void restore_saved_state () {
@@ -287,7 +287,7 @@ namespace PantheonTerminal {
             });
 
             t.set_font (system_font);
-            set_size_request (t.calculate_width (30), t.calculate_height (8));
+            set_size_request (t.calculate_width (81), t.calculate_height (25));
             tab.grab_focus ();
             g.show_all ();
             notebook.page = new_page;
