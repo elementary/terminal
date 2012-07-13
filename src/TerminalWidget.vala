@@ -52,7 +52,6 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
-
         }
 
         void on_child_exited () { }
@@ -66,6 +65,23 @@ namespace PantheonTerminal {
             if (this.try_get_foreground_pid (out fg_pid))
                 Posix.kill (fg_pid, 9);
             kill_ps ();
+        }
+
+        public bool try_get_foreground_pid (out int pid) {
+            int pty = this.pty_object.fd;
+            int fgpid = Posix.tcgetpgrp (pty);            
+            if (fgpid != this.child_pid && fgpid != -1){
+                pid = (int) fgpid;
+                return true;
+            }
+            else {
+                pid = -1;
+                return false;
+            }
+        } 
+
+        public bool has_foreground_process () {
+            return try_get_foreground_pid (null);
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
@@ -84,20 +100,6 @@ namespace PantheonTerminal {
             return (int) (this.get_char_height()) * row_count;
         }
 
-        public bool try_get_foreground_pid (out int pid) {
-            int pty = this.pty_object.fd;
-            int fgpid = Posix.tcgetpgrp(pty);            
-            if (fgpid != this.child_pid && fgpid != -1){
-                pid = (int) fgpid;
-                return true;
-            }
-            else
-                return false;
-        } 
-
-        public bool has_foreground_process () {
-            return try_get_foreground_pid (null);
-        }
         void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
           print ("[DEBUG] Drag data received.\n");
         }
