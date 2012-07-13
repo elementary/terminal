@@ -61,10 +61,11 @@ namespace PantheonTerminal {
             Posix.kill (this.child_pid, 9);
         }
         
-        public void kill_ps_and_fg () {
+        public void kill_ps_and_fg () {            
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
                 Posix.kill (fg_pid, 9);
+            kill_ps ();
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
