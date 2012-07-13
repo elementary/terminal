@@ -227,12 +227,14 @@ namespace PantheonTerminal {
                     var d = new ForegroundProcessDialog ();
                     if (d.run () == 1) {
                         notebook.remove (g);
+                        t.kill_ps_and_fg ();
                         terminals.remove (t);
                     }
                     d.destroy ();
                 }
                 else {
                     notebook.remove (g);
+                    t.kill_ps ();
                     terminals.remove (t);
                 }
             });

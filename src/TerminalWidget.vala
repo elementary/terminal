@@ -57,6 +57,15 @@ namespace PantheonTerminal {
         }
 
         void on_child_exited () { }
+        
+        public void kill_ps () {           
+            Posix.kill (this.child_pid, 9);
+        }
+        
+        public void kill_ps_and_fg () {
+            if (this.has_foreground_process()) 
+                Posix.kill (this.get_foreground_pid (), 9);
+        }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
@@ -67,9 +76,10 @@ namespace PantheonTerminal {
         }
 
         public bool has_foreground_process () {
-            int pty = this.pty_object.fd;
-            int fgpid = Posix.tcgetpgrp(pty);
-            return fgpid != this.child_pid && fgpid != -1;
+            if (this.get_foreground_pid() !=null)
+                return true;
+            else
+                return false;
         }
 
         public int calculate_width (int column_count) {
@@ -80,6 +90,14 @@ namespace PantheonTerminal {
             return (int) (this.get_char_height()) * row_count;
         }
 
+        public int? get_foreground_pid () {
+            int pty = this.pty_object.fd;
+            int fgpid = Posix.tcgetpgrp(pty);            
+            if (fgpid != this.child_pid && fgpid != -1)
+                return fgpid;
+            else
+                return null;
+        } 
         void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
           print ("[DEBUG] Drag data received.\n");
         }
