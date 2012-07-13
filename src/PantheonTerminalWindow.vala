@@ -286,6 +286,11 @@ namespace PantheonTerminal {
                 main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
             });
 
+            t.drag_data_received.connect ((ctx, x, y, selection_data, target_type, _time) => {
+                var uri = selection_data.get_uris()[0].splice (0, "file://".length);                
+                t.feed_child (uri, uri.length);
+            });
+
             t.set_font (system_font);
             set_size_request (t.calculate_width (30), t.calculate_height (8));
             tab.grab_focus ();
