@@ -132,6 +132,26 @@ namespace PantheonTerminal {
             add_button.clicked.connect (() => { new_tab (false); } );
             notebook.switch_page.connect (on_switch_page);
             notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
+            this.key_press_event.connect ( (e) => {
+                switch (e.keyval){
+                    case 49: //ctrl+[1-8]
+                    case 50:
+                    case 51:
+                    case 52:
+                    case 53:
+                    case 54:
+                    case 55:
+                    case 56:
+                    case 57:
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0){ 
+                            var i = e.keyval - 49;
+                            this.notebook.page = (int)i;
+                            return true;
+                        }
+                        break;
+                    } 
+                    return false;
+                    });
         }
 
         private void restore_saved_state () {
