@@ -60,17 +60,25 @@ namespace PantheonTerminal {
             Posix.kill (this.child_pid, 9);
         }
         
-        public void kill_ps_and_fg () {            
+        public void kill_ps_and_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
                 Posix.kill (fg_pid, 9);
             kill_ps ();
         }
 
+        public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
+            try {
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+            } catch (Error e) {
+                warning (e.message);
+            }
+        }
+
         public bool try_get_foreground_pid (out int pid) {
             int pty = this.pty_object.fd;
-            int fgpid = Posix.tcgetpgrp (pty);            
-            if (fgpid != this.child_pid && fgpid != -1){
+            int fgpid = Posix.tcgetpgrp (pty);
+            if (fgpid != this.child_pid && fgpid != -1) {
                 pid = (int) fgpid;
                 return true;
             }
@@ -84,13 +92,6 @@ namespace PantheonTerminal {
             return try_get_foreground_pid (null);
         }
 
-        public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-            try {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-            } catch (Error e) {
-                warning (e.message);
-            }
-        }
 
         public int calculate_width (int column_count) {
             return (int) (this.get_char_width()) * column_count;
