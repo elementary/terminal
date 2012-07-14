@@ -287,8 +287,12 @@ namespace PantheonTerminal {
             });
 
             t.drag_data_received.connect ((ctx, x, y, selection_data, target_type, _time) => {
-                var uri = selection_data.get_uris()[0].splice (0, "file://".length);                
-                t.feed_child (uri, uri.length);
+                var uris = selection_data.get_uris();
+                for (var i=0; i < uris.length; i++) {
+                    uris[i] = "'"+ uris[i].splice (0, "file://".length) +"'";
+                }
+                string uris_s = string.joinv(" ", uris);
+                t.feed_child (uris_s, uris_s.length);
             });
 
             t.set_font (system_font);
