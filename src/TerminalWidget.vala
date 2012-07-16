@@ -54,6 +54,9 @@ namespace PantheonTerminal {
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
 
+            Gtk.TargetEntry target = {"text/uri-list",0,0};
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL,{target},Gdk.DragAction.COPY);
+
         }
 
         void on_child_exited () { }
@@ -78,10 +81,6 @@ namespace PantheonTerminal {
 
         public int calculate_height (int row_count) {
             return (int) (this.get_char_height()) * row_count;
-        }
-
-        void drag_data_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
-          print ("[DEBUG] Drag data received.\n");
         }
 
     }
