@@ -25,7 +25,6 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
 
         GLib.Pid child_pid;
-
         private PantheonTerminalWindow window;
         public TerminalTab tab;
 
@@ -53,13 +52,27 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
+<<<<<<< TREE
 
             Gtk.TargetEntry target = {"text/uri-list",0,0};
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL,{target},Gdk.DragAction.COPY);
 
+=======
+>>>>>>> MERGE-SOURCE
         }
 
         void on_child_exited () { }
+        
+        public void kill_ps () {
+            Posix.kill (this.child_pid, 9);
+        }
+        
+        public void kill_ps_and_fg () {
+            int fg_pid;
+            if (this.try_get_foreground_pid (out fg_pid))
+                Posix.kill (fg_pid, 9);
+            kill_ps ();
+        }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
@@ -69,11 +82,23 @@ namespace PantheonTerminal {
             }
         }
 
-        public bool has_foreground_process () {
+        public bool try_get_foreground_pid (out int pid) {
             int pty = this.pty_object.fd;
-            int fgpid = Posix.tcgetpgrp(pty);
-            return fgpid != this.child_pid && fgpid != -1;
+            int fgpid = Posix.tcgetpgrp (pty);
+            if (fgpid != this.child_pid && fgpid != -1) {
+                pid = (int) fgpid;
+                return true;
+            }
+            else {
+                pid = -1;
+                return false;
+            }
+        } 
+
+        public bool has_foreground_process () {
+            return try_get_foreground_pid (null);
         }
+
 
         public int calculate_width (int column_count) {
             return (int) (this.get_char_width()) * column_count;
