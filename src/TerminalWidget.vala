@@ -52,13 +52,10 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
-<<<<<<< TREE
 
             Gtk.TargetEntry target = {"text/uri-list",0,0};
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL,{target},Gdk.DragAction.COPY);
 
-=======
->>>>>>> MERGE-SOURCE
         }
 
         void on_child_exited () { }
