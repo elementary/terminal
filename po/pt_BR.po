@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-06-14 18:03+0000\n"
-"Last-Translator: Otto Robba <Unknown>\n"
+"PO-Revision-Date: 2012-07-19 00:14+0000\n"
+"Last-Translator: DavyS <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-15 04:53+0000\n"
-"X-Generator: Launchpad (build 15414)\n"
+"X-Launchpad-Export-Date: 2012-07-19 04:58+0000\n"
+"X-Generator: Launchpad (build 15637)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
@@ -101,7 +101,7 @@ msgstr "Há um processo ativo neste terminal!"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the terminal?"
-msgstr "Você quer ficar no terminal?"
+msgstr "Você deseja ficar no terminal?"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
@@ -115,4 +115,4 @@ msgstr "Fechar terminal"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to close this terminal?"
-msgstr "Você quer fechar este terminal?"
+msgstr "Você deseja fechar este terminal?"
