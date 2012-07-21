@@ -108,27 +108,33 @@ namespace PantheonTerminal {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
+            notebook.tab_switched.connect (on_switch_page);
+            notebook.tab_moved.connect (on_tab_moved);
+            
+            notebook.allow_new_window = true;
             
             notebook.tab_added.connect ((tab) => {
             	new_tab (tab);
             });
             notebook.tab_removed.connect ((tab) => {
-                if (((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget).has_foreground_process ()) {
+                var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+                if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
                     if (d.run () == 1) {
+                        t.kill_ps_and_fg ();
                         notebook.remove_tab (tab);
                         if (notebook.n_tabs == 0)
                         	destroy ();
                     }
                     d.destroy ();
-                    return false;
                 } else {
+                	t.kill_ps ();
                 	if (notebook.n_tabs - 1 == 0)
                 		destroy ();
-                	return true;
             	}
+            	
+            	return false;
             });
-			
             
             var right_box = new HBox (false, 0);
             right_box.show ();
@@ -156,6 +162,26 @@ namespace PantheonTerminal {
                 fullscreen ();
         }
 
+		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y)
+		{
+			if (new_window) {
+				
+				app.new_window ();
+				var win = app.windows.last ().data;
+				win.move (x, y);
+				
+				var n = win.get_children ().nth_data (0) as Granite.Widgets.DynamicNotebook;
+				//remove the one automatically created
+				n.remove_tab (n.tabs.nth_data (0));
+				
+				notebook.remove_tab (tab);
+				if (notebook.n_tabs == 0)
+					destroy ();
+				n.insert_tab (tab, -1);
+				
+			}
+		}
+
         private void update_saved_state () {
             // Save window state
             if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
@@ -174,11 +200,11 @@ namespace PantheonTerminal {
             }
         }
 
-        void on_switch_page (Widget page, uint n) {
-            current_tab = notebook.get_nth_page ((int) n);
-            current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWidget;
+        void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
+            current_tab = new_tab;
+            current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title;
-            page.grab_focus ();
+            new_tab.page.grab_focus ();
         }
 
         public void remove_page (int page) {
@@ -216,7 +242,7 @@ namespace PantheonTerminal {
         	}
             t.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
-            
+
             t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
 				
@@ -246,13 +272,24 @@ namespace PantheonTerminal {
                 main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
             });
 
+            t.drag_data_received.connect ((ctx, x, y, selection_data, target_type, _time) => {
+                var uris = selection_data.get_uris();
+                for (var i=0; i < uris.length; i++) {
+                    uris[i] = "'"+ uris[i].splice (0, "file://".length) +"'";
+                }
+                string uris_s = string.joinv(" ", uris);
+                t.feed_child (uris_s, uris_s.length);
+            });
+
             t.set_font (system_font);
-            set_size_request (t.calculate_width (30), t.calculate_height (8));
-            tab.grab_focus ();
+            set_size_request (t.calculate_width (81), t.calculate_height (25));
             terminals.append (t);
             
             if (to_be_inserted)
             	notebook.insert_tab (tab, -1);
+        	
+        	notebook.current = tab;
+        	t.grab_focus ();
         }
 
         static string get_system_font () {
@@ -301,6 +338,8 @@ namespace PantheonTerminal {
 
         void action_close_tab () {
             notebook.remove_tab (notebook.current);
+            if (notebook.n_tabs == 0)
+            	destroy ();
         }
 
         void action_new_window () {

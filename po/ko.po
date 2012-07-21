@@ -1,118 +1,118 @@
-# Brazilian Portuguese translation for pantheon-terminal
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Korean translation for pantheon-terminal
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-07-19 00:14+0000\n"
-"Last-Translator: DavyS <Unknown>\n"
-"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"PO-Revision-Date: 2012-06-26 22:48+0000\n"
+"Last-Translator: MinSik CHO <Unknown>\n"
+"Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-20 05:01+0000\n"
-"X-Generator: Launchpad (build 15644)\n"
+"X-Launchpad-Export-Date: 2012-06-27 06:05+0000\n"
+"X-Generator: Launchpad (build 15482)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
-msgstr "Definir interface ao iniciar"
+msgstr "시작할 때 쉘을 실행하도록 설정"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
 msgid "Terminal"
-msgstr "Terminal"
+msgstr "터미널"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:127
 msgid "Open a new tab"
-msgstr "Abrir uma nova aba"
+msgstr "새 탭 열기"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:350
 msgid "Quit"
-msgstr "Sair"
+msgstr "종료"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:351
 msgid "Close"
-msgstr "Fechar"
+msgstr "닫기"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "New Window"
-msgstr "Nova janela"
+msgstr "새 창"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "Open a new window"
-msgstr "Abrir uma nova janela"
+msgstr "새 창 열기"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "New Tab"
-msgstr "Nova aba"
+msgstr "새 탭"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "Create a new tab"
-msgstr "Criar uma nova aba"
+msgstr "새 탭을 엽니다"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy"
-msgstr "Copiar"
+msgstr "복사"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy the selected text"
-msgstr "Copiar o texto selecionado"
+msgstr "선택한 텍스트를 복사합니다."
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste"
-msgstr "Colar"
+msgstr "붙여넣기"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste some text"
-msgstr "Colar algum texto"
+msgstr "텍스트를 붙여넣습니다."
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:357
 msgid "Select All"
-msgstr "Selecionar tudo"
+msgstr "전체 선택"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:358
 msgid "Select all the text in the terminal"
-msgstr "Selecionar todo texto no terminal"
+msgstr "터미널에 있는 모든 텍스트를 선택합니다."
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "About"
-msgstr "Sobre"
+msgstr "정보"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "Show about window"
-msgstr "Mostrar a janela sobre"
+msgstr "창에 대해 표시합니다."
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Fullscreen"
-msgstr "Tela cheia"
+msgstr "전체화면"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Habilitar/Desabilitar tela cheia"
+msgstr "전체화면을 설정하고 나갑니다."
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
 msgid "There is an active process on this terminal!"
-msgstr "Há um processo ativo neste terminal!"
+msgstr "터미널에서 실행되고 있는 프로세스가 있습니다!"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the terminal?"
-msgstr "Você deseja ficar no terminal?"
+msgstr "그래도 터미널을 종료하시겠습니까?"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay"
-msgstr "Ficar"
+msgstr "종료 취소"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
 msgid "Close terminal"
-msgstr "Fechar terminal"
+msgstr "터미널 종료"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to close this terminal?"
-msgstr "Você deseja fechar este terminal?"
+msgstr "이 터미널을 닫을까요?"

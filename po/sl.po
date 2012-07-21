@@ -1,25 +1,25 @@
-# Brazilian Portuguese translation for pantheon-terminal
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Slovenian translation for pantheon-terminal
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-06-05 09:09-0700\n"
-"PO-Revision-Date: 2012-07-19 00:14+0000\n"
-"Last-Translator: DavyS <Unknown>\n"
-"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"PO-Revision-Date: 2012-07-03 18:23+0000\n"
+"Last-Translator: MarkoD <Unknown>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-20 05:01+0000\n"
-"X-Generator: Launchpad (build 15644)\n"
+"X-Launchpad-Export-Date: 2012-07-04 05:16+0000\n"
+"X-Generator: Launchpad (build 15544)\n"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
-msgstr "Definir interface ao iniciar"
+msgstr "Nastavi lupino ob zagonu"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
@@ -28,91 +28,91 @@ msgstr "Terminal"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:127
 msgid "Open a new tab"
-msgstr "Abrir uma nova aba"
+msgstr "Odpri nov zavihek"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:350
 msgid "Quit"
-msgstr "Sair"
+msgstr "Končaj"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:351
 msgid "Close"
-msgstr "Fechar"
+msgstr "Zapri"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "New Window"
-msgstr "Nova janela"
+msgstr "Novo okno"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
 msgid "Open a new window"
-msgstr "Abrir uma nova janela"
+msgstr "Odpri novo okno"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "New Tab"
-msgstr "Nova aba"
+msgstr "Nov zavihek"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
 msgid "Create a new tab"
-msgstr "Criar uma nova aba"
+msgstr "Ustvari nov zavihek"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy"
-msgstr "Copiar"
+msgstr "Kopiraj"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
 msgid "Copy the selected text"
-msgstr "Copiar o texto selecionado"
+msgstr "Kopiraj izbrano besedilo"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste"
-msgstr "Colar"
+msgstr "Prilepi"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
 msgid "Paste some text"
-msgstr "Colar algum texto"
+msgstr "Prilepi nekaj besedila"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:357
 msgid "Select All"
-msgstr "Selecionar tudo"
+msgstr "Izberi vse"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:358
 msgid "Select all the text in the terminal"
-msgstr "Selecionar todo texto no terminal"
+msgstr "Izberi vso besedilo v terminalu"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "About"
-msgstr "Sobre"
+msgstr "O programu"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
 msgid "Show about window"
-msgstr "Mostrar a janela sobre"
+msgstr "Pokaži okno o programu"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Fullscreen"
-msgstr "Tela cheia"
+msgstr "Celozaslonsko"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Habilitar/Desabilitar tela cheia"
+msgstr "Preklopi celozaslonsko"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
 msgid "There is an active process on this terminal!"
-msgstr "Há um processo ativo neste terminal!"
+msgstr "Obstaja aktiven proces v tem terminalu!"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
 msgid "Do you want to stay on the terminal?"
-msgstr "Você deseja ficar no terminal?"
+msgstr "Želiš ostati v terminalu?"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
 msgid "Stay"
-msgstr "Ficar"
+msgstr "Ostani"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
 msgid "Close terminal"
-msgstr "Fechar terminal"
+msgstr "Zapri terminal"
 
 #: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
 msgid "Do you want to close this terminal?"
-msgstr "Você deseja fechar este terminal?"
+msgstr "Želiš zapreti ta terminal?"
