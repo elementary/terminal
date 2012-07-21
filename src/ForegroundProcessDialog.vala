@@ -26,30 +26,40 @@ namespace PantheonTerminal {
 
         public ForegroundProcessDialog () {
             use_markup = true;
-            set_markup ("<b>" + _("There is an active process on this terminal!") + "</b>\n\n" +
-                      _("Do you want to stay on the terminal?"));
+            set_markup ("<b>" + _("Are you sure you want to close this tab?") + "</b>\n\n" +
+                      _("There is an active process on this tab.")+"\n"+
+                      _("If you close this tab, this process will end."));
             
-            var button = new Gtk.Button.with_label (_("Stay"));
+            var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
             add_action_widget (button, 0);
             
-            button = new Gtk.Button.with_label (_("Close terminal"));
+            button = new Gtk.Button.with_label (_("Close Tab"));
             button.show ();
             add_action_widget (button, 1);
+
+            var warning_image = new Gtk.Image.from_stock (Gtk.Stock.DIALOG_WARNING, Gtk.IconSize.DIALOG);
+            set_image (warning_image);
+            warning_image.show ();
         }
         
         public ForegroundProcessDialog.before_close () {
             use_markup = true;
-            set_markup ("<b>" + _("There is an active process on this terminal!") + "</b>\n\n" +
-                      _("Do you want to close this terminal?"));
-            
-            var button = new Gtk.Button.with_label (_("Stay"));
+            set_markup ("<b>" + _("Are you sure you want to quit Terminal?") + "</b>\n\n" +
+                      _("There is an active process on this terminal.")+"\n"+
+                      _("If you quit Terminal, this process will end."));
+
+            var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
             add_action_widget (button, 0);
             
-            button = new Gtk.Button.with_label (_("Close terminal"));
+            button = new Gtk.Button.with_label (_("Quit Terminal"));
             button.show ();
             add_action_widget (button, 1);
+
+            var warning_image = new Gtk.Image.from_stock (Gtk.Stock.DIALOG_WARNING, Gtk.IconSize.DIALOG);
+            set_image (warning_image);
+            warning_image.show ();
         }
     }
 }
