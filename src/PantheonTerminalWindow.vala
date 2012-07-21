@@ -337,9 +337,7 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            notebook.remove_tab (notebook.current);
-            if (notebook.n_tabs == 0)
-            	destroy ();
+            notebook.tab_removed (notebook.current);
         }
 
         void action_new_window () {
