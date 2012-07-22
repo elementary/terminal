@@ -7,112 +7,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-05 09:09-0700\n"
+"POT-Creation-Date: 2012-07-22 00:27+0530\n"
 "PO-Revision-Date: 2012-07-19 00:14+0000\n"
 "Last-Translator: DavyS <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-20 05:01+0000\n"
-"X-Generator: Launchpad (build 15644)\n"
+"X-Launchpad-Export-Date: 2012-07-22 04:55+0000\n"
+"X-Generator: Launchpad (build 15654)\n"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
 msgstr "Definir interface ao iniciar"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "There is an active process on this tab."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+msgid "If you close this tab, this process will end."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "Cancel"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+msgid "Close Tab"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+msgid "There is an active process on this terminal."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+msgid "If you quit Terminal, this process will end."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+msgid "Quit Terminal"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:78
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:232
 msgid "Terminal"
 msgstr "Terminal"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:127
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:127
 msgid "Open a new tab"
 msgstr "Abrir uma nova aba"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:350
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:381
 msgid "Quit"
 msgstr "Sair"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:351
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:382
 msgid "Close"
 msgstr "Fechar"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
 msgid "New Window"
 msgstr "Nova janela"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
 msgid "Open a new window"
 msgstr "Abrir uma nova janela"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "New Tab"
 msgstr "Nova aba"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "Create a new tab"
 msgstr "Criar uma nova aba"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy"
 msgstr "Copiar"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy the selected text"
 msgstr "Copiar o texto selecionado"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste"
 msgstr "Colar"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste some text"
 msgstr "Colar algum texto"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:357
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:388
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:358
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:389
 msgid "Select all the text in the terminal"
 msgstr "Selecionar todo texto no terminal"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
 msgid "About"
 msgstr "Sobre"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
 msgid "Show about window"
 msgstr "Mostrar a janela sobre"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Habilitar/Desabilitar tela cheia"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
-msgid "There is an active process on this terminal!"
-msgstr "Há um processo ativo neste terminal!"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
-msgid "Do you want to stay on the terminal?"
-msgstr "Você deseja ficar no terminal?"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
-msgid "Stay"
-msgstr "Ficar"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
-msgid "Close terminal"
-msgstr "Fechar terminal"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
-msgid "Do you want to close this terminal?"
-msgstr "Você deseja fechar este terminal?"

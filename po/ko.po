@@ -7,112 +7,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-06-05 09:09-0700\n"
+"POT-Creation-Date: 2012-07-22 00:27+0530\n"
 "PO-Revision-Date: 2012-06-26 22:48+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-06-27 06:05+0000\n"
-"X-Generator: Launchpad (build 15482)\n"
+"X-Launchpad-Export-Date: 2012-07-22 04:55+0000\n"
+"X-Generator: Launchpad (build 15654)\n"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminal.vala:87
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
 msgstr "시작할 때 쉘을 실행하도록 설정"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:78
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:212
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "There is an active process on this tab."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+msgid "If you close this tab, this process will end."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "Cancel"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+msgid "Close Tab"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+msgid "There is an active process on this terminal."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+msgid "If you quit Terminal, this process will end."
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+msgid "Quit Terminal"
+msgstr ""
+
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:78
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:232
 msgid "Terminal"
 msgstr "터미널"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:127
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:127
 msgid "Open a new tab"
 msgstr "새 탭 열기"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:350
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:381
 msgid "Quit"
 msgstr "종료"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:351
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:382
 msgid "Close"
 msgstr "닫기"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
 msgid "New Window"
 msgstr "새 창"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:352
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
 msgid "Open a new window"
 msgstr "새 창 열기"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "New Tab"
 msgstr "새 탭"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:354
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
 msgid "Create a new tab"
 msgstr "새 탭을 엽니다"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy"
 msgstr "복사"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:355
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
 msgid "Copy the selected text"
 msgstr "선택한 텍스트를 복사합니다."
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:356
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
 msgid "Paste some text"
 msgstr "텍스트를 붙여넣습니다."
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:357
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:388
 msgid "Select All"
 msgstr "전체 선택"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:358
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:389
 msgid "Select all the text in the terminal"
 msgstr "터미널에 있는 모든 텍스트를 선택합니다."
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
 msgid "About"
 msgstr "정보"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:359
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
 msgid "Show about window"
 msgstr "창에 대해 표시합니다."
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
 msgid "Fullscreen"
 msgstr "전체화면"
 
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/PantheonTerminalWindow.vala:361
+#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
 msgid "Toggle/Untoggle fullscreen"
 msgstr "전체화면을 설정하고 나갑니다."
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:29
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:43
-msgid "There is an active process on this terminal!"
-msgstr "터미널에서 실행되고 있는 프로세스가 있습니다!"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:30
-msgid "Do you want to stay on the terminal?"
-msgstr "그래도 터미널을 종료하시겠습니까?"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:32
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:46
-msgid "Stay"
-msgstr "종료 취소"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:36
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:50
-msgid "Close terminal"
-msgstr "터미널 종료"
-
-#: /home/ttosttos/Projects/elementary/Bugs/pantheon-terminal-fix-989076/po/../src/ForegroundProcessDialog.vala:44
-msgid "Do you want to close this terminal?"
-msgstr "이 터미널을 닫을까요?"
