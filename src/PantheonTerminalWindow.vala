@@ -265,6 +265,9 @@ namespace PantheonTerminal {
 			
             t.child_exited.connect (() => {
                 notebook.remove_tab (tab);
+                if (notebook.n_tabs == 0)
+                	destroy ();
+            	
                 terminals.remove (t);
             });
 
