@@ -26,7 +26,7 @@ namespace PantheonTerminal {
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow window;
-        public TerminalTab tab;
+        public Granite.Widgets.Tab tab;
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
             /* Set up the parents */
@@ -47,7 +47,7 @@ namespace PantheonTerminal {
             window_title_changed.connect ((event) => {
                 if (this == window.current_terminal)
                     window.title = window_title;
-                tab.set_text(window_title);
+                tab.label = window_title;
             });
 
             /* Connect to necessary signals */

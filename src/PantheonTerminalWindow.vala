@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /***
-  BEGIN LICENSE
+  BEGIN ICENSE
 
   Copyright (C) 2011-2012 David Gomes <davidrafagomes@gmail.com>
   This program is free software: you can redistribute it and/or modify it
@@ -30,13 +30,12 @@ namespace PantheonTerminal {
 
         public PantheonTerminalApp app;
 
-        Notebook notebook;
+        public Granite.Widgets.DynamicNotebook notebook;
         FontDescription system_font;
         private Button add_button;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
-        TerminalTab current_tab_label = null;
         public TerminalWidget current_terminal = null;
         Widget current_tab;
         private bool is_fullscreen = false;
@@ -99,22 +98,47 @@ namespace PantheonTerminal {
 
             setup_ui ();
             show_all ();
-            connect_signals ();
 
             system_font = FontDescription.from_string (get_system_font ());
 
-            new_tab (true);
+            new_tab ();
         }
 
         private void setup_ui () {
             /* Set up the Notebook */
-            notebook = new Notebook ();
+            notebook = new Granite.Widgets.DynamicNotebook ();
+            notebook.show_icons = false;
+            notebook.tab_switched.connect (on_switch_page);
+            notebook.tab_moved.connect (on_tab_moved);
+            
+            notebook.allow_new_window = true;
+            
+            notebook.tab_added.connect ((tab) => {
+            	new_tab (tab);
+            });
+            notebook.tab_removed.connect ((tab) => {
+                var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+                if (t.has_foreground_process ()) {
+                    var d = new ForegroundProcessDialog ();
+                    if (d.run () == 1) {
+                        t.kill_ps_and_fg ();
+                        notebook.remove_tab (tab);
+                        if (notebook.n_tabs == 0)
+                        	destroy ();
+                    }
+                    d.destroy ();
+                } else {
+                	t.kill_ps ();
+                	if (notebook.n_tabs - 1 == 0)
+                		destroy ();
+            	}
+            	
+            	return false;
+            });
+            
             var right_box = new HBox (false, 0);
             right_box.show ();
-            notebook.set_action_widget (right_box, PackType.END);
-            notebook.set_scrollable (true);
             notebook.can_focus = false;
-            notebook.set_group_name ("pantheon-terminal");
             add (notebook);
 
             /* Set up the Add button */
@@ -128,32 +152,6 @@ namespace PantheonTerminal {
             right_box.pack_start (add_button, false, false, 0);
         }
 
-        private void connect_signals () {
-            add_button.clicked.connect (() => { new_tab (false); } );
-            notebook.switch_page.connect (on_switch_page);
-            notebook.page_removed.connect (() => { if (notebook.get_n_pages () == 0) this.destroy (); });
-            this.key_press_event.connect ((e) => {
-                switch (e.keyval){
-                    case 49: //ctrl+[1-8]
-                    case 50:
-                    case 51:
-                    case 52:
-                    case 53:
-                    case 54:
-                    case 55:
-                    case 56:
-                    case 57:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
-                            var i = (int) e.keyval - 49;
-                            this.notebook.page = (int) i;
-                            return true;
-                        }
-                        break;
-                    }
-                    return false;
-            });
-        }
-
         private void restore_saved_state () {
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
@@ -163,6 +161,26 @@ namespace PantheonTerminal {
             else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 fullscreen ();
         }
+
+		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y)
+		{
+			if (new_window) {
+				
+				app.new_window ();
+				var win = app.windows.last ().data;
+				win.move (x, y);
+				
+				var n = win.get_children ().nth_data (0) as Granite.Widgets.DynamicNotebook;
+				//remove the one automatically created
+				n.remove_tab (n.tabs.nth_data (0));
+				
+				notebook.remove_tab (tab);
+				if (notebook.n_tabs == 0)
+					destroy ();
+				n.insert_tab (tab, -1);
+				
+			}
+		}
 
         private void update_saved_state () {
             // Save window state
@@ -182,33 +200,17 @@ namespace PantheonTerminal {
             }
         }
 
-        void on_switch_page (Widget page, uint n) {
-            current_tab_label = notebook.get_tab_label (page) as TerminalTab;
-            current_tab = notebook.get_nth_page ((int) n);
-            current_terminal = ((Grid) page).get_child_at (0, 0) as TerminalWidget;
+        void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
+            current_tab = new_tab;
+            current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title;
-            page.grab_focus ();
+            new_tab.page.grab_focus ();
         }
 
         public void remove_page (int page) {
-            notebook.remove_page (page);
-            if (notebook.get_n_pages () == 0) destroy ();
         }
 
-        public bool on_scroll_event (EventScroll event) {
-            if (event.direction == ScrollDirection.UP || event.direction == ScrollDirection.LEFT) {
-                if (notebook.get_current_page() != 0) {
-                    notebook.set_current_page (notebook.get_current_page() - 1);
-                }
-            } else if (event.direction == ScrollDirection.DOWN || event.direction == ScrollDirection.RIGHT) {
-                if (notebook.get_current_page() != notebook.get_n_pages ()) {
-                    notebook.set_current_page (notebook.get_current_page() + 1);
-                }
-            }
-            return false;
-        }
-
-        private void new_tab (bool first) {
+        private void new_tab (owned Granite.Widgets.Tab? tab=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
@@ -228,40 +230,22 @@ namespace PantheonTerminal {
             /* Set up actions releated to the terminal */
             main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
 
-            /* Create a new tab with the terminal */
-            var tab = new TerminalTab (_("Terminal"));
+            /* Create a new tab if it hasnt already been created by the plus button press */
+            bool to_be_inserted = false;
+            if (tab == null) {
+            	tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
+            	to_be_inserted = true;
+        	} else {
+        		tab.page = g;
+        		tab.label = _("Terminal");
+        		tab.page.show_all ();
+        	}
             t.tab = tab;
-            tab.scroll_event.connect (on_scroll_event);
-            tab.terminal = current_terminal;
-            tab.width_request = 64;
-            int new_page = notebook.get_current_page () + 1;
-            tab.index = new_page;
-            notebook.insert_page (g, tab, new_page);
-            notebook.set_tab_reorderable (notebook.get_nth_page (new_page), true);
-            notebook.set_tab_detachable (notebook.get_nth_page (new_page), true);
-
-            /* Bind signals to the new tab */
-            tab.clicked.connect (() => {
-                /* It was doing something */
-                if (t.has_foreground_process ()) {
-                    var d = new ForegroundProcessDialog ();
-                    if (d.run () == 1) {
-                        notebook.remove (g);
-                        t.kill_ps_and_fg ();
-                        terminals.remove (t);
-                    }
-                    d.destroy ();
-                }
-                else {
-                    notebook.remove (g);
-                    t.kill_ps ();
-                    terminals.remove (t);
-                }
-            });
+            tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
             t.window_title_changed.connect (() => {
                 string new_text = t.get_window_title ();
-
+				
                 /* Strips the location */
                 /*
                 for (int i = 0; i < new_text.length; i++) {
@@ -275,12 +259,12 @@ namespace PantheonTerminal {
                     new_text = new_text[new_text.length - 50:new_text.length];
                 }
                 */
-
-                tab.set_text (new_text);
+				
+                tab.label = new_text;
             });
-
+			
             t.child_exited.connect (() => {
-                notebook.remove (g);
+                notebook.remove_tab (tab);
                 terminals.remove (t);
             });
 
@@ -299,10 +283,13 @@ namespace PantheonTerminal {
 
             t.set_font (system_font);
             set_size_request (t.calculate_width (81), t.calculate_height (25));
-            tab.grab_focus ();
-            g.show_all ();
-            notebook.page = new_page;
             terminals.append (t);
+            
+            if (to_be_inserted)
+            	notebook.insert_tab (tab, -1);
+        	
+        	notebook.current = tab;
+        	t.grab_focus ();
         }
 
         static string get_system_font () {
@@ -350,7 +337,7 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            current_tab_label.clicked ();
+            notebook.tab_removed (notebook.current);
         }
 
         void action_new_window () {
@@ -358,7 +345,7 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            new_tab (false);
+            new_tab ();
         }
 
         void action_about () {
@@ -369,11 +356,9 @@ namespace PantheonTerminal {
           if (is_fullscreen) {
             unfullscreen();
             is_fullscreen = false;
-            notebook.show_border = true;
           } else {
             fullscreen();
             is_fullscreen = true;
-            notebook.show_border = false;
           }
         }
 
