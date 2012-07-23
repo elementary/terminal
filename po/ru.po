@@ -7,126 +7,137 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-07-22 00:27+0530\n"
+"POT-Creation-Date: 2012-07-22 23:45+0200\n"
 "PO-Revision-Date: 2012-07-20 08:11+0000\n"
 "Last-Translator: Nikita Putko <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-22 04:55+0000\n"
+"X-Launchpad-Export-Date: 2012-07-23 05:27+0000\n"
 "X-Generator: Launchpad (build 15654)\n"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminal.vala:87
-msgid "Set shell at launch"
-msgstr "Назначить оболочку при запуске"
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "Are you sure you want to close this tab?"
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "There is an active process on this tab."
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
-msgid "If you close this tab, this process will end."
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
-msgid "Cancel"
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
-msgid "Close Tab"
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
-msgid "Are you sure you want to quit Terminal?"
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
-msgid "There is an active process on this terminal."
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
-msgid "If you quit Terminal, this process will end."
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
-msgid "Quit Terminal"
-msgstr ""
-
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:78
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:232
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:240
+#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:13
 msgid "Terminal"
 msgstr "Терминал"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:127
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:151
 msgid "Open a new tab"
 msgstr "Открыть новую вкладку"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:381
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:369
 msgid "Quit"
 msgstr "Выход"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:382
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:370
 msgid "Close"
 msgstr "Закрыть"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
+#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:14
 msgid "New Window"
 msgstr "Новое окно"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:383
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
 msgid "Open a new window"
 msgstr "Открыть новое окно"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
 msgid "New Tab"
 msgstr "Новая вкладка"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:385
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
 msgid "Create a new tab"
 msgstr "Создать новую вкладку"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
 msgid "Copy"
 msgstr "Копировать"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:386
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
 msgid "Copy the selected text"
 msgstr "Скопировать выделенный текст"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
 msgid "Paste"
 msgstr "Вставить"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:387
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
 msgid "Paste some text"
 msgstr "Вставить текст"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:388
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:376
 msgid "Select All"
 msgstr "Выбрать все"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:389
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:377
 msgid "Select all the text in the terminal"
 msgstr "Выделить весь текст в терминале"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
 msgid "About"
 msgstr "О программе"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:390
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
 msgid "Show about window"
 msgstr "Показать окно со сведениями о программе"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
 msgid "Fullscreen"
 msgstr "Во весь экран"
 
-#: /home/akshay/Desktop/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:392
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Включить/выключить полноэкранный режим"
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
+msgid "Use the command line"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
+msgid "New Root Window"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
+msgid "Set shell at launch"
+msgstr "Назначить оболочку при запуске"
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "There is an active process on this tab."
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+msgid "If you close this tab, this process will end."
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "Cancel"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+msgid "Close Tab"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+msgid "There is an active process on this terminal."
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+msgid "If you quit Terminal, this process will end."
+msgstr ""
+
+#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+msgid "Quit Terminal"
+msgstr ""
