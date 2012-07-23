@@ -8,12 +8,12 @@
   
   <schema path="/org/pantheon/pantheon-terminal/savedstate/" id="org.elementary.PantheonTerminal.SavedState" gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
-      <default>650</default>
+      <default>500</default>
       <summary>The saved width of the window.</summary>
       <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
     </key>
     <key name="window-height" type="i">
-      <default>550</default>
+      <default>400</default>
       <summary>The saved height of the window.</summary>
       <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
     </key>
