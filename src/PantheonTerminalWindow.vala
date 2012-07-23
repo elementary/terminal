@@ -133,6 +133,11 @@ namespace PantheonTerminal {
                 		destroy ();
             	}
             	
+            	if (notebook.n_tabs == 0) {
+            	    update_saved_state ();
+            	    Gtk.main_quit ();
+            	}
+            	
             	return false;
             });
             
@@ -324,7 +329,7 @@ namespace PantheonTerminal {
         }
 
         void action_quit () {
-
+        
         }
 
         void action_copy () {
