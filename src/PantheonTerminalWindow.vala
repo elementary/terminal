@@ -68,11 +68,16 @@ namespace PantheonTerminal {
         public Gtk.ActionGroup main_actions;
         public Gtk.UIManager ui;
 
+		//variable indicating that a tab might has been closed by exit command
+		bool closed_by_exit;
+
         public PantheonTerminalWindow (Granite.Application app) {
             this.app = app as PantheonTerminalApp;
             set_application (app);
             Notify.init (app.program_name);
-
+			
+			closed_by_exit = true;
+			
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
             restore_saved_state ();
@@ -116,29 +121,35 @@ namespace PantheonTerminal {
             notebook.tab_added.connect ((tab) => {
             	new_tab (tab);
             });
+            
             notebook.tab_removed.connect ((tab) => {
                 var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+                
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
                     if (d.run () == 1) {
                         t.kill_ps_and_fg ();
-                        notebook.remove_tab (tab);
-                        if (notebook.n_tabs == 0)
+                        if (notebook.n_tabs - 1 == 0) {
+                        	update_saved_state ();
                         	destroy ();
+                    	}
+                    	d.destroy ();
+                    	
+                    	return true;
                     }
                     d.destroy ();
+                    
+                    return false;
                 } else {
-                	t.kill_ps ();
-                	if (notebook.n_tabs - 1 == 0)
+                	if (notebook.n_tabs - 1 == 0) {
+                		update_saved_state ();
                 		destroy ();
+            		}
             	}
+            	closed_by_exit = false;
+            	t.kill_ps ();
             	
-            	if (notebook.n_tabs == 0) {
-            	    update_saved_state ();
-            	    Gtk.main_quit ();
-            	}
-            	
-            	return false;
+            	return true;
             });
             
             var right_box = new HBox (false, 0);
@@ -176,14 +187,13 @@ namespace PantheonTerminal {
 				win.move (x, y);
 				
 				var n = win.get_children ().nth_data (0) as Granite.Widgets.DynamicNotebook;
-				//remove the one automatically created
-				n.remove_tab (n.tabs.nth_data (0));
+				//remove the one automatically created after inserting
+				n.insert_tab (tab, -1);
+				n.remove_tab (n.tabs.nth_data (1));
 				
-				notebook.remove_tab (tab);
+				//notebook.remove_tab (tab);
 				if (notebook.n_tabs == 0)
 					destroy ();
-				n.insert_tab (tab, -1);
-				
 			}
 		}
 
@@ -211,10 +221,7 @@ namespace PantheonTerminal {
             title = current_terminal.window_title;
             new_tab.page.grab_focus ();
         }
-
-        public void remove_page (int page) {
-        }
-
+        
         private void new_tab (owned Granite.Widgets.Tab? tab=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
@@ -267,14 +274,6 @@ namespace PantheonTerminal {
 				
                 tab.label = new_text;
             });
-			
-            t.child_exited.connect (() => {
-                notebook.remove_tab (tab);
-                if (notebook.n_tabs == 0)
-                	destroy ();
-            	
-                terminals.remove (t);
-            });
 
             t.selection_changed.connect (() => {
                 main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
@@ -288,7 +287,13 @@ namespace PantheonTerminal {
                 string uris_s = string.joinv(" ", uris);
                 t.feed_child (uris_s, uris_s.length);
             });
-
+            
+            t.child_exited.connect (() => {
+            	if (closed_by_exit)
+            		notebook.remove_tab (tab);
+        		closed_by_exit = true;
+            });
+            
             t.set_font (system_font);
             set_size_request (t.calculate_width (40), t.calculate_height (12));
             terminals.append (t);
@@ -345,7 +350,7 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            notebook.tab_removed (notebook.current);
+            notebook.remove_tab (notebook.current);
         }
 
         void action_new_window () {
