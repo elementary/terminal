@@ -22,6 +22,16 @@
       <summary>The saved state of the window.</summary>
       <description>The saved state of the window.</description>
     </key>
+    <key name="default-column" enum="i">
+      <default>"80"</default>
+      <summary>The default number of columns.</summary>
+      <description>The default number of columns.</description>
+    </key>
+    <key name="default-row" enum="i">
+      <default>"24"</default>
+      <summary>The default number of rows.</summary>
+      <description>The default number of rows.</description>
+    </key>
   </schema>
   
   <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">

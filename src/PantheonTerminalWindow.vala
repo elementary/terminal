@@ -294,7 +294,7 @@ namespace PantheonTerminal {
             });
 
             t.set_font (system_font);
-            set_size_request (t.calculate_width (40), t.calculate_height (12));
+            set_size_request (t.calculate_width (settings.default_column), t.calculate_height (settings.default_row));
             terminals.append (t);
 
             if (to_be_inserted)
