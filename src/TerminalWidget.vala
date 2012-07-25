@@ -36,8 +36,6 @@ namespace PantheonTerminal {
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
 			
-			set_colors_rgba ({1,1,1,1}, {0.2,0.2,0.2,1}, null);
-			
             button_press_event.connect ((event) => {
                 if (event.button == 3) {
                     menu.select_first (false);
