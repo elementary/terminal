@@ -35,7 +35,13 @@ namespace PantheonTerminal {
             static string app_shell_name;
 
             construct {
-
+                
+                build_data_dir = Constants.DATADIR;
+                build_pkg_data_dir = Constants.PKGDATADIR;
+                build_release_name = Constants.RELEASE_NAME;
+                build_version = Constants.VERSION;
+                build_version_info = Constants.VERSION_INFO;
+                
                 program_name = app_cmd_name;
                 exec_name = app_cmd_name.down();
                 app_years = "2011-2012";
