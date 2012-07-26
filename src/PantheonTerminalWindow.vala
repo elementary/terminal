@@ -343,6 +343,8 @@ namespace PantheonTerminal {
                 if (((TerminalWidget)t).has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
+                        ((TerminalWidget) t).kill_ps_and_fg ();
+                        d.destroy ();
                         return false;
                     } else {
                         d.destroy ();
