@@ -130,7 +130,7 @@ namespace PantheonTerminal {
                     if (d.run () == 1) {
                         closed_by_exit = false;
                         t.kill_ps_and_fg ();
-                        
+
                         if (notebook.n_tabs - 1 == 0) {
                         	update_saved_state ();
                         	destroy ();
@@ -158,7 +158,27 @@ namespace PantheonTerminal {
             right_box.show ();
             notebook.can_focus = false;
             add (notebook);
-
+            this.key_press_event.connect ((e) => {
+                switch (e.keyval){
+                    case 49: //ctrl+[1-8]
+                    case 50:
+                    case 51:
+                    case 52:
+                    case 53:
+                    case 54:
+                    case 55:
+                    case 56:
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0){
+                            var i = e.keyval - 49;
+                            if (i > (this.notebook.n_tabs-1)) {
+                                return false;
+                            this.notebook.notebook.page = (int) i;
+                            return true;
+                        }
+                        break;
+                }
+                return false;
+            });
             /* Set up the Add button */
             add_button = new Button ();
             Image add_image = null;
