@@ -33,7 +33,7 @@ namespace PantheonTerminal {
 
             static string app_cmd_name;
             static string app_shell_name;
-            
+
             construct {
 
                 program_name = app_cmd_name;
@@ -58,9 +58,9 @@ namespace PantheonTerminal {
 
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
-            
-            
-            
+
+
+
             windows = new GLib.List <PantheonTerminalWindow> ();
 
             saved_state = new SavedState ();
@@ -72,25 +72,25 @@ namespace PantheonTerminal {
                 GLib.Process.spawn_command_line_async ("gksu chsh -s " + app_shell_name);
                 return;
             }
-            
+
             new_window ();
         }
 
-        public void new_window () {   
+        public void new_window () {
             var window = new PantheonTerminalWindow (this);
             window.show ();
             windows.append (window);
             add_window (window);
         }
-        
+
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { null }
         };
-        
+
         public static int main(string[] args) {
             app_cmd_name = "Pantheon Terminal";
-            
+
             var context = new OptionContext("File");
             context.add_main_entries(entries, "scratch");
             context.add_group(Gtk.get_option_group(true));
@@ -100,7 +100,7 @@ namespace PantheonTerminal {
             catch(Error e) {
                 warning (e.message);
             }
-            
+
             var app = new PantheonTerminalApp ();
             return app.run (args);
         }

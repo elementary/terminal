@@ -35,7 +35,7 @@ namespace PantheonTerminal {
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
-			
+
             button_press_event.connect ((event) => {
                 if (event.button == 3) {
                     menu.select_first (false);
@@ -59,11 +59,11 @@ namespace PantheonTerminal {
         }
 
         void on_child_exited () { }
-        
+
         public void kill_ps () {
             Posix.kill (this.child_pid, 9);
         }
-        
+
         public void kill_ps_and_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
@@ -90,7 +90,7 @@ namespace PantheonTerminal {
                 pid = -1;
                 return false;
             }
-        } 
+        }
 
         public bool has_foreground_process () {
             return try_get_foreground_pid (null);
