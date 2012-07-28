@@ -42,20 +42,22 @@ namespace PantheonTerminal {
             menu.show_all ();
 
             button_press_event.connect ((event) => {
-                if (event.button == 1) {
-                    string? uri = get_link ((long)event.x, (long)event.y);
-                    if (uri != null) {
-                        try {
-                            Gtk.show_uri (null, (!)uri, Gtk.get_current_event_time());
-                            return true;
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
+                switch (event.button) {
+                    case 1:
+                        string? uri = get_link ((long)event.x, (long)event.y);
+                        if (uri != null) {
+                            try {
+                                Gtk.show_uri (null, (!)uri, Gtk.get_current_event_time());
+                                return true;
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
                         }
-                    }
-                }
-                if (event.button == 3) {
-                    menu.select_first (false);
-                    menu.popup (null, null, null, event.button, event.time);
+                        return false;
+                    case 3 :
+                        menu.select_first (false);
+                        menu.popup (null, null, null, event.button, event.time);
+                        return true;
                 }
                 return false;
             });
