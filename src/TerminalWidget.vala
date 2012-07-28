@@ -43,7 +43,7 @@ namespace PantheonTerminal {
 
             button_press_event.connect ((event) => {
                 switch (event.button) {
-                    case 1:
+                    case Gdk.BUTTON_PRIMARY:
                         string? uri = get_link ((long)event.x, (long)event.y);
                         if (uri != null) {
                             try {
@@ -54,7 +54,7 @@ namespace PantheonTerminal {
                             }
                         }
                         return false;
-                    case 3 :
+                    case Gdk.BUTTON_SECONDARY :
                         menu.select_first (false);
                         menu.popup (null, null, null, event.button, event.time);
                         return true;
