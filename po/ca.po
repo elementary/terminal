@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-23 20:42+0200\n"
-"PO-Revision-Date: 2012-07-26 14:09+0000\n"
-"Last-Translator: Alfredo Hernández <Unknown>\n"
+"PO-Revision-Date: 2012-07-27 09:47+0000\n"
+"Last-Translator: Arniroig <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-27 05:33+0000\n"
+"X-Launchpad-Export-Date: 2012-07-28 05:11+0000\n"
 "X-Generator: Launchpad (build 15694)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
@@ -95,11 +95,11 @@ msgstr "Activa/desactiva la pantalla sencera"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Utilitza la línia d'ordres"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Nova finestra robot"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
@@ -107,15 +107,15 @@ msgstr "Estableix un intèrpret d'ordres a l'inici"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Estas segur que vols tancar aquesta pestanya?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Hi ha un procés actiu en aquesta pestanya."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Si tanques aquesta pestanya, el procés s'acabarà"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
@@ -128,16 +128,16 @@ msgstr "Tanca la pestanya"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Estàs segur de que vols tancar la Terminal?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Hi ha un procés actiu en aquesta terminal."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Si tanques la Terminal, aquest procés s'acabarà"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Tanca la Terminal"
