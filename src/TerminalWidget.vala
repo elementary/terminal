@@ -31,6 +31,11 @@ namespace PantheonTerminal {
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
             /* Set up the parents */
             this.window = parent_window;
+            Gdk.Color white = {0,0,0,0};
+            Gdk.Color black = {0, 255,255,255};
+            set_color_background (white);
+            set_opacity (45000);
+            set_color_background (black);
 
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;

@@ -75,6 +75,7 @@ namespace PantheonTerminal {
             this.app = app as PantheonTerminalApp;
             set_application (app);
             Notify.init (app.program_name);
+            set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
 			closed_by_exit = true;
 
