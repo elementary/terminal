@@ -160,7 +160,7 @@ namespace PantheonTerminal {
             add (notebook);
             this.key_press_event.connect ((e) => {
                 switch (e.keyval){
-                    case 49: //ctrl+[1-8]
+                    case 49: //alt+[1-8]
                     case 50:
                     case 51:
                     case 52:

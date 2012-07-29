@@ -20,11 +20,6 @@
 
 using Vte;
 
-// Vte.Terminal.match_check was not well defined in the gtk+-2.0 binding
-// before Valac 0.17.2 (see: https://bugzilla.gnome.org/show_bug.cgi?id=676882)
-private extern string? vte_terminal_match_check (Vte.Terminal terminal,
-                                                    long col, long row,
-                                                    out int tag);
 namespace PantheonTerminal {
 
     public class TerminalWidget : Vte.Terminal {
@@ -145,7 +140,7 @@ namespace PantheonTerminal {
             // Vte.Terminal.match_check need a non-null tag instead of what is
             // written in the doc
             // (see: https://bugzilla.gnome.org/show_bug.cgi?id=676886)
-            return vte_terminal_match_check (this, col, row, out tag);
+            return this.match_check(col, row, out tag);
 
         }
     }
