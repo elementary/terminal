@@ -1,16 +1,16 @@
-# Russian translation for pantheon-terminal
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Estonian translation for pantheon-terminal
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-23 20:42+0200\n"
-"PO-Revision-Date: 2012-07-28 04:05+0000\n"
-"Last-Translator: Nikita Putko <Unknown>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2012-07-28 05:44+0000\n"
+"Last-Translator: Kristjan Vool <Unknown>\n"
+"Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,122 +22,122 @@ msgstr ""
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:240
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:13
 msgid "Terminal"
-msgstr "Терминал"
+msgstr "Terminal"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:151
 msgid "Open a new tab"
-msgstr "Открыть новую вкладку"
+msgstr "Ava uus kaart"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:369
 msgid "Quit"
-msgstr "Выход"
+msgstr "Välju"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:370
 msgid "Close"
-msgstr "Закрыть"
+msgstr "Sulge"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:14
 msgid "New Window"
-msgstr "Новое окно"
+msgstr "Uus aken"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
 msgid "Open a new window"
-msgstr "Открыть новое окно"
+msgstr "Ava uus aken"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
 msgid "New Tab"
-msgstr "Новая вкладка"
+msgstr "Uus kaart"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
 msgid "Create a new tab"
-msgstr "Создать новую вкладку"
+msgstr "Loo uus kaart"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
 msgid "Copy"
-msgstr "Копировать"
+msgstr "Kopeeri"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
 msgid "Copy the selected text"
-msgstr "Скопировать выделенный текст"
+msgstr "Kopeeri valitud tekst"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
 msgid "Paste"
-msgstr "Вставить"
+msgstr "Kleebi"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
 msgid "Paste some text"
-msgstr "Вставить текст"
+msgstr "Kleebi tekst"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:376
 msgid "Select All"
-msgstr "Выделить всё"
+msgstr "Vali kõik"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:377
 msgid "Select all the text in the terminal"
-msgstr "Выделить весь текст в терминале"
+msgstr "Vali kogu tekst terminalis"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
 msgid "About"
-msgstr "О программе"
+msgstr "Programmist"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
 msgid "Show about window"
-msgstr "Показать окно со сведениями о программе"
+msgstr "Akna programmist kuvamine"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
 msgid "Fullscreen"
-msgstr "Во весь экран"
+msgstr "Täisekraan"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Включить/выключить полноэкранный режим"
+msgstr "Täisekraani sisse/välja lülitamine"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "Использование командной строки"
+msgstr "Käsurea kasutamine"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Новое окно от имени суперпользователя"
+msgstr "Uus juurkasutaja aken"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
-msgstr "Назначить оболочку при запуске"
+msgstr "Shell'i määramine süsteemi käivitamisel"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Закрыть эту вкладку?"
+msgstr "Oled kindel, et soovid selle kaardi sulgeda?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "Во вкладке выполяется процесс."
+msgstr "See kaart sisaldab töösolevat protsessi"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Если закрыть эту вкладку, процесс завершится."
+msgstr "Akna sulgemisel lõpeb ka protsess"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Loobu"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Закрыть вкладку"
+msgstr "Kaardi sulgemine"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Закрыть терминал?"
+msgstr "Oled kindel, et soovid terminalist väljuda?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr "В терминале выполняется процесс."
+msgstr "Terminalis on töösolev protsess."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr "Если закрыть терминал, процесс завершится."
+msgstr "Kui väljud terminalist, siis protsess katkestatakse."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr "Закрыть терминал"
+msgstr "Välju terminalist"

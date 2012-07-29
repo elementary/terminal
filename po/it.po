@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-23 20:42+0200\n"
-"PO-Revision-Date: 2012-06-06 09:44+0000\n"
-"Last-Translator: Federico Mameli <requiemvi@gmail.com>\n"
+"PO-Revision-Date: 2012-07-28 10:15+0000\n"
+"Last-Translator: Angelo Rako <angelo.rako@gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-24 06:03+0000\n"
-"X-Generator: Launchpad (build 15668)\n"
+"X-Launchpad-Export-Date: 2012-07-29 04:48+0000\n"
+"X-Generator: Launchpad (build 15694)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
@@ -95,11 +95,11 @@ msgstr "Commuta schermo intero"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Usa la riga di comando"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Nuova finestra root"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
@@ -107,37 +107,37 @@ msgstr "Imposta shell al lancio"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Sei sicuro di voler chiudere questa scheda?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "C'è un processo attivo su questa scheda."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Se chiuderai questa scheda, il processo verrà terminato."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Chiudi scheda"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Sei sicuro di voler chiudere il terminale?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "C'è un processo attivo su questo terminale."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Se chiuderai il terminale, il processo verrà terminato."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Chiudi il terminale"
