@@ -5,7 +5,7 @@
     <value nick="Maximized" value="1" />
     <value nick="Fullscreen" value="2" />
   </enum>
-  
+
   <schema path="/org/pantheon/pantheon-terminal/savedstate/" id="org.elementary.PantheonTerminal.SavedState" gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
       <default>500</default>
@@ -23,7 +23,7 @@
       <description>The saved state of the window.</description>
     </key>
   </schema>
-  
+
   <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
     <key name="scrollback-lines" type="i">
       <default>-1</default>
@@ -39,6 +39,11 @@
       <default>24</default>
       <summary>The default number of rows.</summary>
       <description>The default number of rows.</description>
+    </key>
+    <key name="opacity" type="i">
+      <default>80</default>
+      <summary>The opacity of the terminal background.</summary>
+      <description>The opacity of terminal background [0,100] 0 = complete transparent, 100 = completely opaque.</description>
     </key>
     </schema>
 </schemalist>
