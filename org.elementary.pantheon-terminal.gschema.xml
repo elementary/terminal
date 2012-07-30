@@ -41,6 +41,7 @@
       <description>The default number of rows.</description>
     </key>
     <key name="opacity" type="i">
+      <range min="0" max="100"/>
       <default>80</default>
       <summary>The opacity of the terminal background.</summary>
       <description>The opacity of terminal background [0,100] 0 = complete transparent, 100 = completely opaque.</description>

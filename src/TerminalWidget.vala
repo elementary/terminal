@@ -34,8 +34,7 @@ namespace PantheonTerminal {
             Gdk.Color white = {0,0,0,0};
             Gdk.Color black = {0, 255,255,255};
             set_color_background (white);
-            int op = settings.opacity * 65535;
-            set_opacity ((uint16)(op/100));
+            set_opacity ((uint16) (settings.opacity  / 100.0 * uint16.MAX));
             set_color_background (black);
 
             /* Create a pop menu */
