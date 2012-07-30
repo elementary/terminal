@@ -37,9 +37,22 @@ namespace PantheonTerminal {
             menu.show_all ();
 
             button_press_event.connect ((event) => {
-                if (event.button == 3) {
-                    menu.select_first (false);
-                    menu.popup (null, null, null, event.button, event.time);
+                switch (event.button) {
+                    case Gdk.BUTTON_PRIMARY:
+                        string? uri = get_link ((long)event.x, (long)event.y);
+                        if (uri != null) {
+                            try {
+                                Gtk.show_uri (null, (!)uri, Gtk.get_current_event_time());
+                                return true;
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
+                        }
+                        return false;
+                    case Gdk.BUTTON_SECONDARY :
+                        menu.select_first (false);
+                        menu.popup (null, null, null, event.button, event.time);
+                        return true;
                 }
                 return false;
             });
@@ -55,6 +68,9 @@ namespace PantheonTerminal {
 
             Gtk.TargetEntry target = {"text/uri-list",0,0};
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL,{target},Gdk.DragAction.COPY);
+
+            /*Make Links Clickable */
+            this.clickable("""(https?|ftps?)://\S+""");
 
         }
 
@@ -105,6 +121,27 @@ namespace PantheonTerminal {
             return (int) (this.get_char_height()) * row_count;
         }
 
-    }
+        private void clickable (string str) {
+            try {
+                var regex = new GLib.Regex (str);
+                int id = this.match_add_gregex (regex, 0);
 
+                this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
+            } catch (GLib.RegexError error) {
+                warning (error.message);
+            }
+        }
+
+        private string? get_link (long x, long y) {
+            long col = x / this.get_char_width ();
+            long row = y / this.get_char_height ();
+            int tag;
+
+            // Vte.Terminal.match_check need a non-null tag instead of what is
+            // written in the doc
+            // (see: https://bugzilla.gnome.org/show_bug.cgi?id=676886)
+            return this.match_check(col, row, out tag);
+
+        }
+    }
 }
