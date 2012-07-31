@@ -44,7 +44,7 @@ namespace PantheonTerminal {
             menu.show_all ();
 
             button_press_event.connect ((event) => {
-                uri = get_link ((long)event.x, (long)event.y);
+                uri = get_link ((long) event.x, (long) event.y);
                 switch (event.button) {
                     case Gdk.BUTTON_PRIMARY:
                         if (uri != null) {

@@ -172,7 +172,7 @@ namespace PantheonTerminal {
                     case 54:
                     case 55:
                     case 56:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0){
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
                                 return false;
@@ -183,7 +183,8 @@ namespace PantheonTerminal {
                 }
                 return false;
             });
-            /* Set up the Add button */
+
+            /* Set up the "Add new tab" button */
             add_button = new Button ();
             Image add_image = null;
             add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);

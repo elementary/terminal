@@ -35,13 +35,12 @@ namespace PantheonTerminal {
             static string app_shell_name;
 
             construct {
-                
                 build_data_dir = Constants.DATADIR;
                 build_pkg_data_dir = Constants.PKGDATADIR;
                 build_release_name = Constants.RELEASE_NAME;
                 build_version = Constants.VERSION;
                 build_version_info = Constants.VERSION_INFO;
-                
+
                 program_name = app_cmd_name;
                 exec_name = app_cmd_name.down();
                 app_years = "2011-2012";
@@ -52,20 +51,16 @@ namespace PantheonTerminal {
                 bug_url = "https://bugs.launchpad.net/pantheon-terminal";
                 help_url = "https://answers.launchpad.net/pantheon-terminal";
                 translate_url = "https://translations.launchpad.net/pantheon-terminal";
-                about_authors = { "David Gomes <davidrafagomes@gmail.com>", "Mario Guerriero <mefrio.g@gmail.com>" };
+                about_authors = { "David Gomes <davidrafagomes@gmail.com>", "Mario Guerriero <mefrio.g@gmail.com>", "Akshay Shekher <voldyman666@gmail.com>" };
                 //about_documenters = {"",""};
                 about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
                 about_translators = "Launchpad Translators";
                 about_license_type = License.GPL_3_0;
-
             }
 
         public PantheonTerminalApp () {
-
             Logger.initialize ("PantheonTerminal");
             Logger.DisplayLevel = LogLevel.DEBUG;
-
-
 
             windows = new GLib.List <PantheonTerminalWindow> ();
 
@@ -94,16 +89,15 @@ namespace PantheonTerminal {
             { null }
         };
 
-        public static int main(string[] args) {
+        public static int main (string[] args) {
             app_cmd_name = "Pantheon Terminal";
 
-            var context = new OptionContext("File");
-            context.add_main_entries(entries, "scratch");
-            context.add_group(Gtk.get_option_group(true));
+            var context = new OptionContext ("File");
+            context.add_main_entries (entries, "scratch");
+            context.add_group (Gtk.get_option_group(true));
             try {
-                context.parse(ref args);
-            }
-            catch(Error e) {
+                context.parse (ref args);
+            } catch(Error e) {
                 warning (e.message);
             }
 
