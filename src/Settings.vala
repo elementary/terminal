@@ -46,7 +46,10 @@ namespace PantheonTerminal {
         public int scrollback_lines { get; set; }
         public int default_column { get; set; }
         public int default_row { get; set; }
-        public int opacity {get; set;}
+        public int opacity {get; set; }
+
+        public string foreground { get; set; }
+        public string background { get; set; }
 
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");

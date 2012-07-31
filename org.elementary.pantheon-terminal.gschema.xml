@@ -28,7 +28,7 @@
     <key name="scrollback-lines" type="i">
       <default>-1</default>
       <summary>Number of scrollback lines</summary>
-      <description>The number of scrollback lines for the terminal.</description>
+      <description>The number of scrollback lines of the terminal.</description>
     </key>
         <key name="default-column" type="i">
       <default>80</default>
@@ -45,5 +45,15 @@
       <summary>The opacity of the terminal background.</summary>
       <description>The opacity of terminal background [0,100] 0 = complete transparent, 100 = completely opaque.</description>
     </key>
-    </schema>
+    <key name="foreground" type="s">
+      <default>"#FFFFFF"</default>
+      <summary>Color of the text.</summary>
+      <description>The color of the text of the terminal.</description>
+    </key>
+    <key name="background" type="s">
+      <default>"#000000"</default>
+      <summary>Color of the background.</summary>
+      <description>The color of the background of the terminal.</description>
+    </key>
+  </schema>
 </schemalist>
