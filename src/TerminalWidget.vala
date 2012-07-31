@@ -39,12 +39,24 @@ namespace PantheonTerminal {
 
             Gdk.Color background_color;
             Gdk.Color.parse (settings.background, out background_color);
-            set_color_background (background_color);
 
             Gdk.Color foreground_color;
             Gdk.Color.parse (settings.foreground, out foreground_color);
-            print(foreground_color);
-            set_color_foreground (foreground_color);
+
+            string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60", "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE"};
+            Gdk.Color temp_color = {255, 255, 255, 255};
+
+            /* This next line looks very ugly, it's a dirty hack, anybody know a better way of doing this? */
+            Gdk.Color[] palette = {temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color};
+
+            for (int i = 0; i < hex_palette.length; i++) {
+                Gdk.Color new_color;
+                Gdk.Color.parse(hex_palette[i], out new_color);
+
+                palette[i] = new_color;
+            }
+
+            set_colors(foreground_color, background_color, palette);
 
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
