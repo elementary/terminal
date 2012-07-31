@@ -27,6 +27,7 @@ namespace PantheonTerminal {
         GLib.Pid child_pid;
         private PantheonTerminalWindow window;
         public Granite.Widgets.Tab tab;
+        public string? uri;
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
             /* Set up the parents */
@@ -43,9 +44,9 @@ namespace PantheonTerminal {
             menu.show_all ();
 
             button_press_event.connect ((event) => {
+                uri = get_link ((long)event.x, (long)event.y);
                 switch (event.button) {
                     case Gdk.BUTTON_PRIMARY:
-                        string? uri = get_link ((long)event.x, (long)event.y);
                         if (uri != null) {
                             try {
                                 Gtk.show_uri (null, (!)uri, Gtk.get_current_event_time());
@@ -56,6 +57,9 @@ namespace PantheonTerminal {
                         }
                         return false;
                     case Gdk.BUTTON_SECONDARY :
+                        if (uri != null) {
+                            main_actions.get_action ("Copy").set_sensitive (true);
+                        }
                         menu.select_first (false);
                         menu.popup (null, null, null, event.button, event.time);
                         return true;

@@ -33,6 +33,7 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         FontDescription system_font;
         private Button add_button;
+        private Gtk.Clipboard clipboard;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
@@ -87,6 +88,8 @@ namespace PantheonTerminal {
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
             main_actions.set_translation_domain ("pantheon-terminal");
             main_actions.add_actions (main_entries, this);
+
+            clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
 
             ui = new Gtk.UIManager ();
 
@@ -362,7 +365,10 @@ namespace PantheonTerminal {
         }
 
         void action_copy () {
-            current_terminal.copy_clipboard ();
+            if (current_terminal.uri != null)
+                clipboard.set_text (current_terminal.uri, current_terminal.uri.length);
+            else
+                current_terminal.copy_clipboard ();
         }
 
         void action_paste () {
