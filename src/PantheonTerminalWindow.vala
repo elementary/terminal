@@ -75,6 +75,8 @@ namespace PantheonTerminal {
         public PantheonTerminalWindow (Granite.Application app) {
             this.app = app as PantheonTerminalApp;
             set_application (app);
+            this.icon_name = "utilities-terminal";
+            
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
