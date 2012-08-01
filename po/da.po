@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-07-23 20:42+0200\n"
-"PO-Revision-Date: 2012-06-27 21:40+0000\n"
+"PO-Revision-Date: 2012-07-31 19:04+0000\n"
 "Last-Translator: Niclas Moeslund Overby <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-24 06:03+0000\n"
-"X-Generator: Launchpad (build 15668)\n"
+"X-Launchpad-Export-Date: 2012-08-01 05:23+0000\n"
+"X-Generator: Launchpad (build 15719)\n"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
@@ -95,11 +95,11 @@ msgstr "Slå fuld skærm til/fra"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Brug kommandolinjen"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Ny Root Vindue"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
 msgid "Set shell at launch"
@@ -107,37 +107,37 @@ msgstr "Vælg shell ved opstart"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Er du sikker på, at du vil lukke denne fane?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Der er en aktiv proces i denne fane."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Hvis du lukker denne fane, vil processen stoppe."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Annullér"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Luk Fane"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Er du sikker på, at du vil afslutte Terminal?"
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Der er en aktiv proces i denne terminal."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Hvis du lukker Terminal, vil processen stoppe."
 
 #: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Afslut Terminal"
