@@ -7,137 +7,137 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-07-23 20:42+0200\n"
+"POT-Creation-Date: 2012-08-01 23:58-0500\n"
 "PO-Revision-Date: 2012-07-25 19:43+0000\n"
 "Last-Translator: Jkakolwa <Unknown>\n"
 "Language-Team: Swahili <sw@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-26 05:18+0000\n"
-"X-Generator: Launchpad (build 15679)\n"
+"X-Launchpad-Export-Date: 2012-08-02 05:20+0000\n"
+"X-Generator: Launchpad (build 15719)\n"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:240
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:13
-msgid "Terminal"
-msgstr "Temino"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:151
-msgid "Open a new tab"
-msgstr "Kungua kichupo kipya"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:369
-msgid "Quit"
-msgstr "Ondoka"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:370
-msgid "Close"
-msgstr "Funga"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:14
-msgid "New Window"
-msgstr "windo mpya"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-msgid "Open a new window"
-msgstr "Fungua windo mpya"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "New Tab"
-msgstr "Kichupo Kipya"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "Create a new tab"
-msgstr "Tengeneza kichupo kipya"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy"
-msgstr "Nakili"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy the selected text"
-msgstr "Nakili nakala iliyochaguliwa"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste"
-msgstr "Kuweka"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste some text"
-msgstr "Weka baadhi ya nakala"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:376
-msgid "Select All"
-msgstr "Chagua Zote"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:377
-msgid "Select all the text in the terminal"
-msgstr "Kuchagua matini yote katika temino"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "About"
-msgstr "Kuhusu"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "Show about window"
-msgstr "Kuhusu hii windo"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Fullscreen"
-msgstr "Skrini-yote"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Weka/Kutoweka skrini yote"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Tumia komand"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr ""
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
-msgid "Set shell at launch"
-msgstr "Kuweka shell kwenye cha kuanzia"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
 msgstr "Una uhakika unataka kufunga hiki kichupo ?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
 msgstr "Kuna mchakato wa kazi kwenye hiki kichupo"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
 msgstr "Ukifunga kichupo hiki,mchakato wa kazi hii utaisha."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
 msgstr "Ghairi"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
 msgstr "Funga Kichupo"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Una uhakika unataka kuacha Temino?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
 msgstr "Kuna mchakato wa kazi unafanyika kwenye temino hii."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
 msgstr "Kama ukifunga Temino, mchakato huu utakuwa mwisho."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
 msgstr "Funga temino"
+
+#: /home/codygarver/terminal/po/../src/config.vala:12
+msgid "Use the command line"
+msgstr "Tumia komand"
+
+#: /home/codygarver/terminal/po/../src/config.vala:13
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:275
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:279
+msgid "Terminal"
+msgstr "Temino"
+
+#: /home/codygarver/terminal/po/../src/config.vala:14
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "New Window"
+msgstr "windo mpya"
+
+#: /home/codygarver/terminal/po/../src/config.vala:15
+msgid "New Root Window"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
+msgid "Open a new tab"
+msgstr "Kungua kichupo kipya"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:412
+msgid "Quit"
+msgstr "Ondoka"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:413
+msgid "Close"
+msgstr "Funga"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "Open a new window"
+msgstr "Fungua windo mpya"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "New Tab"
+msgstr "Kichupo Kipya"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "Create a new tab"
+msgstr "Tengeneza kichupo kipya"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy"
+msgstr "Nakili"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy the selected text"
+msgstr "Nakili nakala iliyochaguliwa"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste"
+msgstr "Kuweka"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste some text"
+msgstr "Weka baadhi ya nakala"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:419
+msgid "Select All"
+msgstr "Chagua Zote"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:420
+msgid "Select all the text in the terminal"
+msgstr "Kuchagua matini yote katika temino"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "About"
+msgstr "Kuhusu"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "Show about window"
+msgstr "Kuhusu hii windo"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Fullscreen"
+msgstr "Skrini-yote"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Weka/Kutoweka skrini yote"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:88
+msgid "Set shell at launch"
+msgstr "Kuweka shell kwenye cha kuanzia"

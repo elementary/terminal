@@ -7,137 +7,137 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-07-23 20:42+0200\n"
+"POT-Creation-Date: 2012-08-01 23:58-0500\n"
 "PO-Revision-Date: 2012-07-28 15:06+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-29 04:48+0000\n"
-"X-Generator: Launchpad (build 15694)\n"
+"X-Launchpad-Export-Date: 2012-08-02 05:20+0000\n"
+"X-Generator: Launchpad (build 15719)\n"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:240
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:13
-msgid "Terminal"
-msgstr "Terminal"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:151
-msgid "Open a new tab"
-msgstr "Obre una pestanya nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:369
-msgid "Quit"
-msgstr "Surt"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:370
-msgid "Close"
-msgstr "Tanca"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:14
-msgid "New Window"
-msgstr "Finestra nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-msgid "Open a new window"
-msgstr "Obre una finestra nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "New Tab"
-msgstr "Pestanya nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "Create a new tab"
-msgstr "Crea una pestanya nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy"
-msgstr "Copia"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy the selected text"
-msgstr "Copia el text seleccionat"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste"
-msgstr "Enganxa"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste some text"
-msgstr "Enganxa text"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:376
-msgid "Select All"
-msgstr "Selecciona-ho tot"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:377
-msgid "Select all the text in the terminal"
-msgstr "Selecciona tot el text del terminal"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "About"
-msgstr "Quant a"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "Show about window"
-msgstr "Mostra la finestra «Quant a»"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Activa/desactiva la pantalla completa"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Utilitza la línia d'ordres"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr "Finestra d'administrador nova"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
-msgid "Set shell at launch"
-msgstr "Estableix un intèrpret d'ordres a l'inici"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
 msgstr "Esteu segur que voleu tancar aquesta pestanya?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
 msgstr "Hi ha un procés actiu en aquesta pestanya."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
 msgstr "Si tanqueu aquesta pestanya, aquest procés finalitzarà."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
 msgstr "Canceŀla"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
 msgstr "Tanca la pestanya"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Esteu segur que voleu sortir del terminal?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
 msgstr "Hi ha un procés actiu en aquest terminal."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
 msgstr "Si sortiu del terminal, aquest procés s'acabarà"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
 msgstr "Surt del terminal"
+
+#: /home/codygarver/terminal/po/../src/config.vala:12
+msgid "Use the command line"
+msgstr "Utilitza la línia d'ordres"
+
+#: /home/codygarver/terminal/po/../src/config.vala:13
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:275
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:279
+msgid "Terminal"
+msgstr "Terminal"
+
+#: /home/codygarver/terminal/po/../src/config.vala:14
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "New Window"
+msgstr "Finestra nova"
+
+#: /home/codygarver/terminal/po/../src/config.vala:15
+msgid "New Root Window"
+msgstr "Finestra d'administrador nova"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
+msgid "Open a new tab"
+msgstr "Obre una pestanya nova"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:412
+msgid "Quit"
+msgstr "Surt"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:413
+msgid "Close"
+msgstr "Tanca"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "Open a new window"
+msgstr "Obre una finestra nova"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "New Tab"
+msgstr "Pestanya nova"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "Create a new tab"
+msgstr "Crea una pestanya nova"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy"
+msgstr "Copia"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy the selected text"
+msgstr "Copia el text seleccionat"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste"
+msgstr "Enganxa"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste some text"
+msgstr "Enganxa text"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:419
+msgid "Select All"
+msgstr "Selecciona-ho tot"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:420
+msgid "Select all the text in the terminal"
+msgstr "Selecciona tot el text del terminal"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "About"
+msgstr "Quant a"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "Show about window"
+msgstr "Mostra la finestra «Quant a»"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Activa/desactiva la pantalla completa"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:88
+msgid "Set shell at launch"
+msgstr "Estableix un intèrpret d'ordres a l'inici"

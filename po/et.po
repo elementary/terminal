@@ -7,137 +7,137 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-07-23 20:42+0200\n"
+"POT-Creation-Date: 2012-08-01 23:58-0500\n"
 "PO-Revision-Date: 2012-07-28 05:44+0000\n"
 "Last-Translator: Kristjan Vool <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-07-29 04:48+0000\n"
-"X-Generator: Launchpad (build 15694)\n"
+"X-Launchpad-Export-Date: 2012-08-02 05:20+0000\n"
+"X-Generator: Launchpad (build 15719)\n"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:77
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:236
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:240
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:13
-msgid "Terminal"
-msgstr "Terminal"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:151
-msgid "Open a new tab"
-msgstr "Ava uus kaart"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:369
-msgid "Quit"
-msgstr "Välju"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:370
-msgid "Close"
-msgstr "Sulge"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:14
-msgid "New Window"
-msgstr "Uus aken"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:371
-msgid "Open a new window"
-msgstr "Ava uus aken"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "New Tab"
-msgstr "Uus kaart"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:373
-msgid "Create a new tab"
-msgstr "Loo uus kaart"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy"
-msgstr "Kopeeri"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:374
-msgid "Copy the selected text"
-msgstr "Kopeeri valitud tekst"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste"
-msgstr "Kleebi"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:375
-msgid "Paste some text"
-msgstr "Kleebi tekst"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:376
-msgid "Select All"
-msgstr "Vali kõik"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:377
-msgid "Select all the text in the terminal"
-msgstr "Vali kogu tekst terminalis"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "About"
-msgstr "Programmist"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:378
-msgid "Show about window"
-msgstr "Akna programmist kuvamine"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Fullscreen"
-msgstr "Täisekraan"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:380
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Täisekraani sisse/välja lülitamine"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Käsurea kasutamine"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr "Uus juurkasutaja aken"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/PantheonTerminal.vala:87
-msgid "Set shell at launch"
-msgstr "Shell'i määramine süsteemi käivitamisel"
-
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
 msgstr "Oled kindel, et soovid selle kaardi sulgeda?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
 msgstr "See kaart sisaldab töösolevat protsessi"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
 msgstr "Akna sulgemisel lõpeb ka protsess"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
 msgstr "Loobu"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
 msgstr "Kaardi sulgemine"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Oled kindel, et soovid terminalist väljuda?"
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
 msgstr "Terminalis on töösolev protsess."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
 msgstr "Kui väljud terminalist, siis protsess katkestatakse."
 
-#: /home/mario/elementary/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
 msgstr "Välju terminalist"
+
+#: /home/codygarver/terminal/po/../src/config.vala:12
+msgid "Use the command line"
+msgstr "Käsurea kasutamine"
+
+#: /home/codygarver/terminal/po/../src/config.vala:13
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:275
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:279
+msgid "Terminal"
+msgstr "Terminal"
+
+#: /home/codygarver/terminal/po/../src/config.vala:14
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "New Window"
+msgstr "Uus aken"
+
+#: /home/codygarver/terminal/po/../src/config.vala:15
+msgid "New Root Window"
+msgstr "Uus juurkasutaja aken"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
+msgid "Open a new tab"
+msgstr "Ava uus kaart"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:412
+msgid "Quit"
+msgstr "Välju"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:413
+msgid "Close"
+msgstr "Sulge"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+msgid "Open a new window"
+msgstr "Ava uus aken"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "New Tab"
+msgstr "Uus kaart"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
+msgid "Create a new tab"
+msgstr "Loo uus kaart"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy"
+msgstr "Kopeeri"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
+msgid "Copy the selected text"
+msgstr "Kopeeri valitud tekst"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste"
+msgstr "Kleebi"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
+msgid "Paste some text"
+msgstr "Kleebi tekst"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:419
+msgid "Select All"
+msgstr "Vali kõik"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:420
+msgid "Select all the text in the terminal"
+msgstr "Vali kogu tekst terminalis"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "About"
+msgstr "Programmist"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
+msgid "Show about window"
+msgstr "Akna programmist kuvamine"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Fullscreen"
+msgstr "Täisekraan"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Täisekraani sisse/välja lülitamine"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:88
+msgid "Set shell at launch"
+msgstr "Shell'i määramine süsteemi käivitamisel"
