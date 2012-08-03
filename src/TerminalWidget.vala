@@ -46,8 +46,15 @@ namespace PantheonTerminal {
             string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60", "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE"};
 
             string current_string = "";
+            int current_color = 0;
             for (var i = 0; i < settings.palette.length; i++) {
-
+                if (settings.palette[i] == ':') {
+                    hex_palette[current_color] = current_string;
+                    current_string = "";
+                    current_color++;
+                } else {
+                    current_string += settings.palette[i].to_string();
+                }
             }
 
             Gdk.Color temp_color = {255, 255, 255, 255};
