@@ -55,9 +55,6 @@ namespace PantheonTerminal {
 
                 palette[i] = new_color;
             }
-
-            set_colors(foreground_color, background_color, palette);
-
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
