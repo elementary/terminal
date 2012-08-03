@@ -44,6 +44,12 @@ namespace PantheonTerminal {
             Gdk.Color.parse (settings.foreground, out foreground_color);
 
             string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60", "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE"};
+
+            string current_string = "";
+            for (var i = 0; i < settings.palette.length; i++) {
+
+            }
+
             Gdk.Color temp_color = {255, 255, 255, 255};
 
             /* This next line looks very ugly, it's a dirty hack, anybody know a better way of doing this? */

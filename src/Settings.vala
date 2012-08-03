@@ -38,7 +38,6 @@ namespace PantheonTerminal {
         public SavedState () {
             base ("org.elementary.PantheonTerminal.SavedState");
         }
-
     }
 
     public class Settings : Granite.Services.Settings {
@@ -46,10 +45,11 @@ namespace PantheonTerminal {
         public int scrollback_lines { get; set; }
         public int default_column { get; set; }
         public int default_row { get; set; }
-        public int opacity {get; set; }
 
+        public int opacity {get; set; }
         public string foreground { get; set; }
         public string background { get; set; }
+        public string palette { get; set; }
 
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
