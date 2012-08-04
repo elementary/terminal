@@ -8,43 +8,43 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-06-16 14:57+0000\n"
-"Last-Translator: Benjamin Bultman <bultman.ben@gmail.com>\n"
+"PO-Revision-Date: 2012-08-03 07:31+0000\n"
+"Last-Translator: Zahirovic Mensur <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-03 06:11+0000\n"
-"X-Generator: Launchpad (build 15734)\n"
+"X-Launchpad-Export-Date: 2012-08-04 05:38+0000\n"
+"X-Generator: Launchpad (build 15742)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Är du säker på att du vill stänga denna fliken?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Det finns en aktiv process i denna fliken."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Om du stänger fliken så kommer processen att avslutas."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Stäng flik"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Är du säker på att du vill avslutaTerminalen?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Det finns en aktiv process i denna terminalen."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
@@ -56,7 +56,7 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Använd kommandoraden"
 
 #: /home/codygarver/terminal/po/../src/config.vala:13
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
@@ -72,7 +72,7 @@ msgstr "Nytt fönster"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Nytt Root fönster"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
 msgid "Open a new tab"
@@ -120,7 +120,7 @@ msgstr "Markera allt"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:420
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Markera all text i terminalen"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
 msgid "About"
