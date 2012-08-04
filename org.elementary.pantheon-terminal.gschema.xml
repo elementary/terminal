@@ -30,16 +30,6 @@
       <summary>Number of scrollback lines</summary>
       <description>The number of scrollback lines of the terminal.</description>
     </key>
-        <key name="default-column" type="i">
-      <default>80</default>
-      <summary>The default number of columns.</summary>
-      <description>The default number of columns.</description>
-    </key>
-    <key name="default-row" type="i">
-      <default>24</default>
-      <summary>The default number of rows.</summary>
-      <description>The default number of rows.</description>
-    </key>
 
     <key name="opacity" type="i">
       <range min="0" max="100"/>

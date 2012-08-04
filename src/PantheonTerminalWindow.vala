@@ -76,7 +76,7 @@ namespace PantheonTerminal {
             this.app = app as PantheonTerminalApp;
             set_application (app);
             this.icon_name = "utilities-terminal";
-            
+
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
@@ -323,7 +323,7 @@ namespace PantheonTerminal {
             });
 
             t.set_font (system_font);
-            set_size_request (t.calculate_width (settings.default_column), t.calculate_height (settings.default_row));
+            set_size_request (t.calculate_width (80), t.calculate_height (24));
             terminals.append (t);
 
             if (to_be_inserted)
