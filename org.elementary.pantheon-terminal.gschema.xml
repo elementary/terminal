@@ -62,5 +62,11 @@
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>
+
+    <key name="shell" type="s">
+      <default>""</default>
+      <summary>Terminal shell.</summary>
+      <description>Defines the shell to be used by the terminal.</description>
+    </key>
   </schema>
 </schemalist>

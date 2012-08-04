@@ -128,7 +128,10 @@ namespace PantheonTerminal {
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                if (settings.shell == "")
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                else
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { settings.shell }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }

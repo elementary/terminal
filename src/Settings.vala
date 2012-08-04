@@ -51,6 +51,8 @@ namespace PantheonTerminal {
         public string background { get; set; }
         public string palette { get; set; }
 
+        public string shell { get; set; }
+
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
         }
