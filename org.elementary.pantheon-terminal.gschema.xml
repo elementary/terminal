@@ -68,5 +68,11 @@
       <summary>Terminal shell.</summary>
       <description>Defines the shell to be used by the terminal.</description>
     </key>
+
+    <key name="encoding" type="s">
+      <default>""</default>
+      <summary>Terminal encoding.</summary>
+      <description>Defines the encoding to be used by the terminal.</description>
+    </key>
   </schema>
 </schemalist>

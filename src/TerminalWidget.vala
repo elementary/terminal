@@ -68,6 +68,12 @@ namespace PantheonTerminal {
 
                 palette[i] = new_color;
             }
+
+            /* Load encoding */
+            if (settings.encoding != "") {
+                set_encoding(settings.encoding);
+            }
+
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
