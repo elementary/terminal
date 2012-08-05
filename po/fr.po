@@ -8,26 +8,26 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-06-17 21:34+0000\n"
-"Last-Translator: Benoît LAMY <Unknown>\n"
+"PO-Revision-Date: 2012-08-04 11:02+0000\n"
+"Last-Translator: Damien Horn <horn.damien@riseup.net>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-03 06:11+0000\n"
-"X-Generator: Launchpad (build 15734)\n"
+"X-Launchpad-Export-Date: 2012-08-05 05:01+0000\n"
+"X-Generator: Launchpad (build 15742)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Il y a un processus actif dans cet onglet."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Si vous fermez cet onglet, le processus sera terminé."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
@@ -36,23 +36,23 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Fermer l'onglet"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Êtes-vous certain de vouloir quitter le Terminal ?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Il y a un processus actif dans ce terminal."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Si vous quittez le Terminal, le processus sera terminé."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Quitter le terminal"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
