@@ -18,6 +18,7 @@ Vcs-Browser: http://bazaar.launchpad.net/~kekun-plazas/pantheon-terminal/trunk/f
 Package: pantheon-terminal
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
 Provides: x-terminal-emulator
 Description: A modern terminal from elementary project
  Pantheon Terminal is a modern terminal designed in elementary Project for
@@ -28,6 +29,7 @@ Architecture: any
 Section: debug
 Priority: extra
 Depends: pantheon-terminal (= ${binary:Version}), ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
 Enhances: pantheon-terminal
 Description: A modern terminal from elementary project (debugging symbols)
  Pantheon Terminal is a modern terminal designed in elementary Project for
