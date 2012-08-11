@@ -31,7 +31,7 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app;
 
         public Granite.Widgets.DynamicNotebook notebook;
-        FontDescription system_font;
+        FontDescription term_font;
         private Button add_button;
         private Gtk.Clipboard clipboard;
 
@@ -110,7 +110,7 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
-            system_font = FontDescription.from_string (get_system_font ());
+            term_font = FontDescription.from_string (get_term_font ());
 
             new_tab ();
         }
@@ -322,7 +322,7 @@ namespace PantheonTerminal {
         		closed_by_exit = true;
             });
 
-            t.set_font (system_font);
+            t.set_font (term_font);
             set_size_request (t.calculate_width (80), t.calculate_height (24));
             terminals.append (t);
 
@@ -333,11 +333,15 @@ namespace PantheonTerminal {
         	t.grab_focus ();
         }
 
-        static string get_system_font () {
+        static string get_term_font () {
             string font_name;
 
-            var settings = new GLib.Settings ("org.gnome.desktop.interface");
-            font_name = settings.get_string ("monospace-font-name");
+            if (settings.font == "") {
+                var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+                font_name = settings_sys.get_string ("monospace-font-name");
+            } else {
+                font_name = settings.font;
+            }
 
             return font_name;
         }

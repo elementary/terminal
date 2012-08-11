@@ -51,6 +51,7 @@ namespace PantheonTerminal {
 
         public string shell { get; set; }
         public string encoding { get; set; }
+        public string font {get; set;}
 
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
