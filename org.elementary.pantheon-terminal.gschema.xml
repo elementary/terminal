@@ -22,13 +22,6 @@
       <summary>The saved state of the window.</summary>
       <description>The saved state of the window.</description>
     </key>
-    <key name="font" type="s">
-      <default>""</default>
-      <summary>The default font of the terminal.</summary>
-      <description>
-        The default font of the terminal. use [Font Name] [Property] [Size]. eg. Droid Sans Mono 12
-      </description>
-    </key>
   </schema>
 
   <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
@@ -69,6 +62,13 @@
       <default>""</default>
       <summary>Terminal encoding.</summary>
       <description>Defines the encoding to be used by the terminal.</description>
+    </key>
+    <key name="font" type="s">
+      <default>""</default>
+      <summary>The default font of the terminal.</summary>
+      <description>
+        The default font of the terminal. use [Font Name] [Property] [Size]. eg. Droid Sans Mono 12
+      </description>
     </key>
   </schema>
 </schemalist>

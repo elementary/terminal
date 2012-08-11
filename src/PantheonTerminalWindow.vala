@@ -336,11 +336,11 @@ namespace PantheonTerminal {
         static string get_term_font () {
             string font_name;
 
-            if (saved_state.font == "") {
+            if (settings.font == "") {
                 var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
                 font_name = settings_sys.get_string ("monospace-font-name");
             } else {
-                font_name = saved_state.font;
+                font_name = settings.font;
             }
 
             return font_name;
