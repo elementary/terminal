@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-07-23 04:10+0000\n"
-"Last-Translator: Adrian Widerski <Unknown>\n"
+"PO-Revision-Date: 2012-08-11 08:16+0000\n"
+"Last-Translator: Piotr Sokół <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-03 06:11+0000\n"
-"X-Generator: Launchpad (build 15734)\n"
+"X-Launchpad-Export-Date: 2012-08-12 04:54+0000\n"
+"X-Generator: Launchpad (build 15780)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Czy na pewno chcesz zamknąć tę kartę?"
+msgstr "Zamknąć kartę?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
@@ -27,7 +27,7 @@ msgstr "Istnieje aktywny proces na tej karcie."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Jeśli zamkniesz tę kartę, proces zostanie zakończony."
+msgstr "Zamknięcie karty, spowoduje zakończenie działania procesu."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
@@ -40,7 +40,7 @@ msgstr "Zamknij kartę"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Czy na pewno chcesz zamknąć Terminal?"
+msgstr "Zakończyć działanie programu?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
@@ -48,11 +48,11 @@ msgstr "Istnieje aktywny proces w tym terminalu."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr "Jeśli zamkniesz Terminal, proces zostanie zakończony."
+msgstr "Zakończenie programu, spowoduje zakończenie działania procesu."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr "Zamknij Terminal"
+msgstr "Zakończ Terminal"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
