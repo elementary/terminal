@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-08-04 11:02+0000\n"
+"PO-Revision-Date: 2012-08-12 20:16+0000\n"
 "Last-Translator: Damien Horn <horn.damien@riseup.net>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-05 05:01+0000\n"
-"X-Generator: Launchpad (build 15742)\n"
+"X-Launchpad-Export-Date: 2012-08-13 05:51+0000\n"
+"X-Generator: Launchpad (build 15791)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
@@ -32,7 +32,7 @@ msgstr "Si vous fermez cet onglet, le processus sera terminé."
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
@@ -56,7 +56,7 @@ msgstr "Quitter le terminal"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Utiliser la ligne de commande"
 
 #: /home/codygarver/terminal/po/../src/config.vala:13
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
@@ -72,7 +72,7 @@ msgstr "Nouvelle fenêtre"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Nouvelle fenêtre super-utilisateur"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
 msgid "Open a new tab"
