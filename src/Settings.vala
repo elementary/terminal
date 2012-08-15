@@ -34,6 +34,7 @@ namespace PantheonTerminal {
         public int window_width { get; set; }
         public int window_height { get; set; }
         public PantheonTerminalWindowState window_state { get; set; }
+        public string tabs { get; set; }
 
         public SavedState () {
             base ("org.elementary.PantheonTerminal.SavedState");
