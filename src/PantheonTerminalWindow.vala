@@ -125,7 +125,7 @@ namespace PantheonTerminal {
             notebook.allow_new_window = true;
 
             notebook.tab_added.connect ((tab) => {
-            	new_tab ("",tab);
+            	new_tab ("", tab);
             });
 
             notebook.tab_removed.connect ((tab) => {
@@ -247,7 +247,7 @@ namespace PantheonTerminal {
                 t = (TerminalWidget) t;
                 tab_loc = t.get_shell_location ();
                 if (tab_loc != "")
-                    saved_state.tabs += tab_loc + ";";
+                    saved_state.tabs += tab_loc + ",";
             }
         }
 
@@ -262,14 +262,14 @@ namespace PantheonTerminal {
             if (saved_state.tabs == "")
                 new_tab ();
             else {
-                foreach (string loc in saved_state.tabs.split (";")) {
+                foreach (string loc in saved_state.tabs.split (",")) {
                     if (loc != "")
                         new_tab (loc);
                 }
             }
         }
 
-        private void new_tab (string location="",owned Granite.Widgets.Tab? tab=null) {
+        private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
@@ -376,7 +376,7 @@ namespace PantheonTerminal {
 
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
-                tabs += t.get_shell_location () + ";";
+                tabs += t.get_shell_location () + ",";
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
