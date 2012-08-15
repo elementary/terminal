@@ -196,7 +196,7 @@ namespace PantheonTerminal {
             int pid = (!) (this.child_pid);
 
             try {
-                return GLib.FileUtils.read_link ("/proc/%d/cwd".printf(pid));
+                return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
             } catch(GLib.FileError error) {
                 warning ("An error occured while fetching the current dir of shell");
             }
