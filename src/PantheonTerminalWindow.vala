@@ -112,7 +112,7 @@ namespace PantheonTerminal {
 
             term_font = FontDescription.from_string (get_term_font ());
 
-            new_tab ();
+            open_tabs ();
         }
 
         private void setup_ui () {
@@ -125,7 +125,7 @@ namespace PantheonTerminal {
             notebook.allow_new_window = true;
 
             notebook.tab_added.connect ((tab) => {
-            	new_tab (tab);
+            	new_tab ("", tab);
             });
 
             notebook.tab_removed.connect ((tab) => {
@@ -240,6 +240,15 @@ namespace PantheonTerminal {
                 PantheonTerminal.saved_state.window_width = width;
                 PantheonTerminal.saved_state.window_height = height;
             }
+
+            saved_state.tabs  = "";
+            string tab_loc;
+            foreach (var t in terminals) {
+                t = (TerminalWidget) t;
+                tab_loc = t.get_shell_location ();
+                if (tab_loc != "")
+                    saved_state.tabs += tab_loc + ",";
+            }
         }
 
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
@@ -249,7 +258,18 @@ namespace PantheonTerminal {
             new_tab.page.grab_focus ();
         }
 
-        private void new_tab (owned Granite.Widgets.Tab? tab=null) {
+        private void open_tabs () {
+            if (saved_state.tabs == "")
+                new_tab ();
+            else {
+                foreach (string loc in saved_state.tabs.split (",")) {
+                    if (loc != "")
+                        new_tab (loc);
+                }
+            }
+        }
+
+        private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
@@ -264,7 +284,10 @@ namespace PantheonTerminal {
             t.hexpand = true;
 
             /* Set up the virtual terminal */
-            t.active_shell ();
+            if (location == "")
+                t.active_shell ();
+            else
+                t.active_shell (location);
 
             /* Set up actions releated to the terminal */
             main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
@@ -349,14 +372,16 @@ namespace PantheonTerminal {
         protected override bool delete_event (Gdk.EventAny event) {
             update_saved_state ();
             action_quit ();
+            string tabs = "";
 
             foreach (var t in terminals) {
-                if (((TerminalWidget)t).has_foreground_process ()) {
+                t = (TerminalWidget) t;
+                tabs += t.get_shell_location () + ",";
+                if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
-                        ((TerminalWidget) t).kill_ps_and_fg ();
+                        t.kill_ps_and_fg ();
                         d.destroy ();
-                        return false;
                     } else {
                         d.destroy ();
                         return true;
@@ -364,6 +389,7 @@ namespace PantheonTerminal {
                 }
             }
 
+            saved_state.tabs = tabs;
             return false;
         }
 
@@ -388,6 +414,7 @@ namespace PantheonTerminal {
 
         void action_close_tab () {
             notebook.remove_tab (notebook.current);
+            terminals.remove (current_terminal);
         }
 
         void action_new_window () {
