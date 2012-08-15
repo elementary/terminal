@@ -35,6 +35,12 @@
       <summary>Number of scrollback lines</summary>
       <description>The number of scrollback lines of the terminal.</description>
     </key>
+    <key name="follow-last-tab" type="b">
+      <default>true</default>
+      <summary>Open last active tab path on new tab.</summary>
+      <description>Defines whether a new tab should have the path of the last active tab.</description>
+    </key>
+    
     <key name="opacity" type="i">
       <range min="0" max="100"/>
       <default>80</default>

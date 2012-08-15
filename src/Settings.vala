@@ -44,6 +44,7 @@ namespace PantheonTerminal {
     public class Settings : Granite.Services.Settings {
 
         public int scrollback_lines { get; set; }
+        public bool follow_last_tabs { get; set; }
 
         public int opacity {get; set; }
         public string foreground { get; set; }
