@@ -66,6 +66,8 @@ namespace PantheonTerminal {
                 palette[i] = new_color;
             }
 
+            set_colors (foreground_color, background_color, palette);
+
             /* Load encoding */
             if (settings.encoding != "") {
                 set_encoding(settings.encoding);
