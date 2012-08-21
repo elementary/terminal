@@ -61,7 +61,7 @@ namespace PantheonTerminal {
 
             for (int i = 0; i < hex_palette.length; i++) {
                 Gdk.Color new_color;
-                Gdk.Color.parse(hex_palette[i], out new_color);
+                Gdk.Color.parse (hex_palette[i], out new_color);
 
                 palette[i] = new_color;
             }
@@ -70,7 +70,7 @@ namespace PantheonTerminal {
 
             /* Load encoding */
             if (settings.encoding != "") {
-                set_encoding(settings.encoding);
+                set_encoding (settings.encoding);
             }
 
             /* Create a pop menu */
