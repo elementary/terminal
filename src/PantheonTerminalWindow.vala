@@ -101,7 +101,10 @@ namespace PantheonTerminal {
                 error ("Couldn't load the UI: %s", e.message);
             }
 
-            Gtk.AccelGroup accel_group = ui.get_accel_group();
+            Notify.init ("pantheon-terminal");
+            //new Notify.Notification ("Bye Process", "apt-get moo finished", "utilities-terminal").show ();
+
+            Gtk.AccelGroup accel_group = ui.get_accel_group ();
             add_accel_group (accel_group);
 
             ui.insert_action_group (main_actions, 0);
@@ -422,7 +425,10 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            new_tab ();
+            if (settings.follow_last_tab)
+                new_tab (current_terminal.get_shell_location ());
+            else
+                new_tab ();
         }
 
         void action_about () {

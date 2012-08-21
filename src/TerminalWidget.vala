@@ -116,7 +116,6 @@ namespace PantheonTerminal {
 
             /*Make Links Clickable */
             this.clickable("""(https?|ftps?)://\S+""");
-
         }
 
         void on_child_exited () { }

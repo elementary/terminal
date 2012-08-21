@@ -70,8 +70,12 @@ namespace PantheonTerminal {
 
         protected override void activate () {
             if (app_shell_name != null) {
-                GLib.Process.spawn_command_line_async ("gksu chsh -s " + app_shell_name);
-                return;
+                try {
+                    GLib.Process.spawn_command_line_async ("gksu chsh -s " + app_shell_name);
+                    return;
+                } catch (Error e) {
+                    warning (e.message);
+                }
             }
 
             new_window ();
