@@ -57,10 +57,7 @@ namespace PantheonTerminal {
                 }
             }
 
-            Gdk.Color temp_color = {255, 255, 255, 255};
-
-            /* This next line looks very ugly, it's a dirty hack, anybody know a better way of doing this? */
-            Gdk.Color[] palette = {temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color, temp_color};
+            Gdk.Color[] palette = new Gdk.Color[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
                 Gdk.Color new_color;
