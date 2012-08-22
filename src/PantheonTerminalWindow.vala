@@ -92,6 +92,8 @@ namespace PantheonTerminal {
             main_actions.add_actions (main_entries, this);
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
+            update_context_menu ();
+            clipboard.owner_change.connect (update_context_menu);
 
             ui = new Gtk.UIManager ();
 
@@ -226,6 +228,16 @@ namespace PantheonTerminal {
 					destroy ();
 			}
 		}
+
+        private void update_context_menu () {
+            clipboard.request_targets (update_context_menu_cb);
+        }
+
+        private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[] atoms) {
+            bool can_paste;
+            can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            main_actions.get_action ("Paste").set_sensitive (can_paste);
+        }
 
         private void update_saved_state () {
             /* Save window state */
