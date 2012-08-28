@@ -38,7 +38,7 @@ namespace PantheonTerminal {
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
-        Widget current_tab;
+        public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
 
         const string ui_string = """
@@ -52,6 +52,9 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="About" action="About"/>
+
+                <menuitem name="NextTab" action="NextTab"/>
+                <menuitem name="PreviousTab" action="PreviousTab"/>
 
                 <menuitem name="Fullscreen" action="Fullscreen"/>
             </popup>
@@ -447,6 +450,20 @@ namespace PantheonTerminal {
             app.show_about (this);
         }
 
+        void action_next_tab () {
+            if (notebook.tabs.index (current_tab) != notebook.n_tabs - 1)
+                notebook.current = notebook.get_tab_by_index (notebook.tabs.index (current_tab) + 1);
+            else
+                notebook.current = notebook.get_tab_by_index (0);
+        }
+
+        void action_previous_tab () {
+            if (notebook.tabs.index (current_tab) != 0)
+                notebook.current = notebook.get_tab_by_index (notebook.tabs.index (current_tab) - 1);
+            else
+                notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+        }
+
         void action_fullscreen () {
           if (is_fullscreen) {
             unfullscreen();
@@ -468,6 +485,9 @@ namespace PantheonTerminal {
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
              N_("Select all the text in the terminal"), action_select_all },
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
+
+           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab},
+           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab},
 
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen}
         };
