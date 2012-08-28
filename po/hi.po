@@ -8,136 +8,136 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-02-07 17:41+0000\n"
-"Last-Translator: Satchit Bhogle <Unknown>\n"
+"PO-Revision-Date: 2012-08-22 11:01+0000\n"
+"Last-Translator: Akshay Shekher <voldyman666@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-03 06:11+0000\n"
-"X-Generator: Launchpad (build 15734)\n"
+"X-Launchpad-Export-Date: 2012-08-28 08:56+0000\n"
+"X-Generator: Launchpad (build 15864)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "क्या आप को यकीन है कि आप इस टैब को बंद करना चाहते हैं?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "अगर आप इस टैब को बंद करते हैं, तो प्रक्रिया बंद कर दिया जाएगा"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करें"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "टैब बंद करें"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "क्या आप को यकीन है कि आप इस टर्मिनल को बंद करना चाहते हैं?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "वहाँ इस टर्मिनल पर एक सक्रिय प्रक्रिया है।"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "अगर आप टर्मिनल बंद करें गें, इस प्रक्रिया को खत्म कर दिय जाएगा।"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "टर्मिनल छोड़ दो"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "कमांड लाइन का प्रयोग करें"
 
 #: /home/codygarver/terminal/po/../src/config.vala:13
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:275
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:279
 msgid "Terminal"
-msgstr ""
+msgstr "टर्मिनल"
 
 #: /home/codygarver/terminal/po/../src/config.vala:14
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
 msgid "New Window"
-msgstr ""
+msgstr "नई विंडो"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "नए रूट विंडो"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
 msgid "Open a new tab"
-msgstr ""
+msgstr "नया टैब खोलें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:412
 msgid "Quit"
-msgstr ""
+msgstr "बंद करें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:413
 msgid "Close"
-msgstr ""
+msgstr "बंद करें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
 msgid "Open a new window"
-msgstr ""
+msgstr "नया विंडो खोलें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
 msgid "New Tab"
-msgstr ""
+msgstr "नया टैब"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:416
 msgid "Create a new tab"
-msgstr ""
+msgstr "एक नया टैब बनाएँ"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
 msgid "Copy"
-msgstr ""
+msgstr "नकल"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:417
 msgid "Copy the selected text"
-msgstr ""
+msgstr "चयनित शबदौ की कापी"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
 msgid "Paste"
-msgstr ""
+msgstr "चिपकाएँ(पेस्ट )"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:418
 msgid "Paste some text"
-msgstr ""
+msgstr "कुछ पाठ पेस्ट करें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:419
 msgid "Select All"
-msgstr ""
+msgstr "सभी चुनें"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:420
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "टर्मिनल में सभी शबदौ का चयन"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
 msgid "About"
-msgstr ""
+msgstr "के बारे में"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:421
 msgid "Show about window"
-msgstr ""
+msgstr "खिड़की के के बारे में दिखाऍ"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
 msgid "Fullscreen"
-msgstr ""
+msgstr "पूरी स्क्रीन"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:423
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "टॉगल करें / अनटॉगल पूर्ण स्क्रीन"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:88
 msgid "Set shell at launch"
-msgstr ""
+msgstr "शुरू में शैल निर्धारित करें"
