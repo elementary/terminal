@@ -451,17 +451,11 @@ namespace PantheonTerminal {
         }
 
         void action_next_tab () {
-            if (notebook.tabs.index (current_tab) != notebook.n_tabs - 1)
-                notebook.current = notebook.get_tab_by_index (notebook.tabs.index (current_tab) + 1);
-            else
-                notebook.current = notebook.get_tab_by_index (0);
+            notebook.next_page ();
         }
 
         void action_previous_tab () {
-            if (notebook.tabs.index (current_tab) != 0)
-                notebook.current = notebook.get_tab_by_index (notebook.tabs.index (current_tab) - 1);
-            else
-                notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+            notebook.previous_page ();
         }
 
         void action_fullscreen () {
@@ -486,10 +480,10 @@ namespace PantheonTerminal {
              N_("Select all the text in the terminal"), action_select_all },
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
-           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab},
-           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab},
+           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
+           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
 
-           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen}
+           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
 
     }
