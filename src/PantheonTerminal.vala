@@ -88,6 +88,13 @@ namespace PantheonTerminal {
             add_window (window);
         }
 
+        public void new_window_with_coords (int x, int y) {
+            var window = new PantheonTerminalWindow.with_coords (this, x, y);
+            window.show ();
+            windows.append (window);
+            add_window (window);
+        }
+
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { null }

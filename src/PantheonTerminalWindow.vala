@@ -78,12 +78,23 @@ namespace PantheonTerminal {
         public PantheonTerminalWindow (Granite.Application app) {
             this.app = app as PantheonTerminalApp;
             set_application (app);
+            init ();
+        }
+
+        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y) {
+            this.app = app as PantheonTerminalApp;
+            set_application (app);
+            this.move (x, y);
+            init ();
+        }
+
+        private void init () {
             this.icon_name = "utilities-terminal";
 
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
-			closed_by_exit = true;
+            closed_by_exit = true;
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
@@ -122,7 +133,6 @@ namespace PantheonTerminal {
 
             open_tabs ();
         }
-
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
@@ -217,9 +227,9 @@ namespace PantheonTerminal {
 
 		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
 			if (new_window) {
-				app.new_window ();
+				app.new_window_with_coords (x, y);
 				var win = app.windows.last ().data;
-				win.move (x, y);
+				//win.move (x, y);
 
 				var n = win.get_children ().nth_data (0) as Granite.Widgets.DynamicNotebook;
 				//remove the one automatically created after inserting
