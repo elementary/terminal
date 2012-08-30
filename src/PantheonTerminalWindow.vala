@@ -147,7 +147,7 @@ namespace PantheonTerminal {
 
                         if (notebook.n_tabs - 1 == 0) {
                         	update_saved_state ();
-                        	destroy ();
+                        	t.parent.parent.destroy ();
                     	}
                     	d.destroy ();
 
@@ -172,8 +172,10 @@ namespace PantheonTerminal {
             right_box.show ();
             notebook.can_focus = false;
             add (notebook);
+
+
             this.key_press_event.connect ((e) => {
-                switch (e.keyval){
+                switch (e.keyval) {
                     case 49: //alt+[1-8]
                     case 50:
                     case 51:
@@ -182,7 +184,7 @@ namespace PantheonTerminal {
                     case 54:
                     case 55:
                     case 56:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0 && settings.alt_changes_tab) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
                                 return false;
@@ -191,6 +193,7 @@ namespace PantheonTerminal {
                         }
                         break;
                 }
+
                 return false;
             });
 
@@ -223,14 +226,14 @@ namespace PantheonTerminal {
 
 				var n = win.get_children ().nth_data (0) as Granite.Widgets.DynamicNotebook;
 				//remove the one automatically created after inserting
-				n.insert_tab (tab, -1);
-				n.remove_tab (n.tabs.nth_data (1));
+	            n.insert_tab (tab, -1);
+                n.remove_tab (n.tabs.nth_data (1));
 
-				//notebook.remove_tab (tab);
-				if (notebook.n_tabs == 0)
-					destroy ();
-			}
-		}
+                //notebook.remove_tab (tab);
+                if (notebook.n_tabs == 0)
+                    destroy ();
+            }
+        }
 
         private void update_context_menu () {
             clipboard.request_targets (update_context_menu_cb);
@@ -313,13 +316,13 @@ namespace PantheonTerminal {
             /* Create a new tab if it hasnt already been created by the plus button press */
             bool to_be_inserted = false;
             if (tab == null) {
-            	tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
-            	to_be_inserted = true;
-        	} else {
-        		tab.page = g;
-        		tab.label = _("Terminal");
-        		tab.page.show_all ();
-        	}
+                tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
+                to_be_inserted = true;
+            } else {
+                tab.page = g;
+                tab.label = _("Terminal");
+                tab.page.show_all ();
+            }
 
             t.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
@@ -358,9 +361,9 @@ namespace PantheonTerminal {
             });
 
             t.child_exited.connect (() => {
-            	if (closed_by_exit)
-            		notebook.remove_tab (tab);
-        		closed_by_exit = true;
+                if (closed_by_exit)
+                    notebook.remove_tab (tab);
+                closed_by_exit = true;
             });
 
             t.set_font (term_font);
@@ -368,10 +371,10 @@ namespace PantheonTerminal {
             terminals.append (t);
 
             if (to_be_inserted)
-            	notebook.insert_tab (tab, -1);
+                notebook.insert_tab (tab, -1);
 
-        	notebook.current = tab;
-        	t.grab_focus ();
+            notebook.current = tab;
+            t.grab_focus ();
         }
 
         static string get_term_font () {

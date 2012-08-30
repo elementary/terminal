@@ -40,6 +40,11 @@
       <summary>Open last active tab path on new tab.</summary>
       <description>Defines whether a new tab should have the path of the last active tab.</description>
     </key>
+    <key name="alt-changes-tab" type="b">
+      <default>true</default>
+      <summary>Defines whether Alt+N goes to nth tab.</summary>
+      <description>Defines whether Alt+N goes to nth tab.</description>
+    </key>
     
     <key name="opacity" type="i">
       <range min="0" max="100"/>
