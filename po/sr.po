@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-08-01 23:58-0500\n"
-"PO-Revision-Date: 2012-07-21 20:18+0000\n"
+"PO-Revision-Date: 2012-08-30 14:46+0000\n"
 "Last-Translator: Igor <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-08-28 08:56+0000\n"
-"X-Generator: Launchpad (build 15864)\n"
+"X-Launchpad-Export-Date: 2012-08-31 05:11+0000\n"
+"X-Generator: Launchpad (build 15887)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
@@ -56,7 +56,7 @@ msgstr "Напусти Терминал"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Користите командну линију"
 
 #: /home/codygarver/terminal/po/../src/config.vala:13
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:86
@@ -72,7 +72,7 @@ msgstr "Нови прозор"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Нови Кључни Прозор"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:196
 msgid "Open a new tab"
