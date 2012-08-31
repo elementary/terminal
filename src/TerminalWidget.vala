@@ -120,7 +120,7 @@ namespace PantheonTerminal {
         void on_child_exited () { }
 
         public void kill_ps () {
-            this.pty_object.close ();
+            //this.pty_object.close ();
             Posix.kill (this.child_pid, 9);
         }
 
