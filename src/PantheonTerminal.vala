@@ -77,8 +77,10 @@ namespace PantheonTerminal {
                     warning (e.message);
                 }
             }
-
-            new_window ();
+            if (saved_state.opening_x != 0 && saved_state.opening_y !=0)
+                new_window_with_coords (saved_state.opening_x, saved_state.opening_y);
+            else
+                new_window ();
         }
 
         public void new_window () {

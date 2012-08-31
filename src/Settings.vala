@@ -35,6 +35,8 @@ namespace PantheonTerminal {
         public int window_height { get; set; }
         public PantheonTerminalWindowState window_state { get; set; }
         public string tabs { get; set; }
+        public int opening_x { get; set; }
+        public int opening_y { get; set; }
 
         public SavedState () {
             base ("org.elementary.PantheonTerminal.SavedState");
@@ -46,7 +48,7 @@ namespace PantheonTerminal {
         public int scrollback_lines { get; set; }
         public bool follow_last_tab { get; set; }
         public bool alt_changes_tab { get; set; }
-        
+
         public int opacity {get; set; }
         public string foreground { get; set; }
         public string background { get; set; }
