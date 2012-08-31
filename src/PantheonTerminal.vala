@@ -51,7 +51,7 @@ namespace PantheonTerminal {
                 bug_url = "https://bugs.launchpad.net/pantheon-terminal";
                 help_url = "https://answers.launchpad.net/pantheon-terminal";
                 translate_url = "https://translations.launchpad.net/pantheon-terminal";
-                about_authors = { "David Gomes <davidrafagomes@gmail.com>", "Mario Guerriero <mefrio.g@gmail.com>", "Akshay Shekher <voldyman666@gmail.com>" };
+                about_authors = { "David Gomes <david@elementaryos.org", "Mario Guerriero <mefrio@elementaryos.org>", "Akshay Shekher <voldyman666@gmail.com>" };
                 //about_documenters = {"",""};
                 about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
                 about_translators = "Launchpad Translators";
