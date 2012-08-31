@@ -223,9 +223,15 @@ namespace PantheonTerminal {
                 maximize ();
             else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 fullscreen ();
-            int x = (Gdk.Screen.width ()  - default_width)  / 2;
-            int y = (Gdk.Screen.height () - default_height) / 2;
-            this.move (x, y);
+            int x = saved_state.opening_x;
+            int y = saved_state.opening_y;
+            if (x != 0 && y !=0)
+                this.move (x, y);
+            else {
+                x = (Gdk.Screen.width ()  - default_width)  / 2;
+                y = (Gdk.Screen.height () - default_height) / 2;
+                this.move (x, y);
+            }
         }
 
 		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
