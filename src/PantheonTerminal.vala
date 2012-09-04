@@ -77,7 +77,6 @@ namespace PantheonTerminal {
                     warning (e.message);
                 }
             }
-
             new_window ();
         }
 

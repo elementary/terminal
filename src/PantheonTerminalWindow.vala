@@ -219,6 +219,16 @@ namespace PantheonTerminal {
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
+            int x = saved_state.opening_x;
+            int y = saved_state.opening_y;
+            if (x != -1 && y != -1)
+                this.move (x, y);
+            else {
+                x = (Gdk.Screen.width ()  - default_width)  / 2;
+                y = (Gdk.Screen.height () - default_height) / 2;
+                this.move (x, y);
+            }
+
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
                 maximize ();
             else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
@@ -278,6 +288,10 @@ namespace PantheonTerminal {
                 if (tab_loc != "")
                     saved_state.tabs += tab_loc + ",";
             }
+            int root_x, root_y;
+            this.get_position (out root_x, out root_y);
+            saved_state.opening_x = root_x;
+            saved_state.opening_y = root_y;
         }
 
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {

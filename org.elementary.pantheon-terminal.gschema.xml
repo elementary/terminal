@@ -27,6 +27,16 @@
       <summary>List of tabs which were active when the window was closed</summary>
       <description>List of tabs which were active when the window was closed</description>
     </key>
+    <key name="opening-x" type="i">
+      <default>-1</default>
+      <summary>Most recent x position of terminal</summary>
+      <description>Most recent x position of terminal</description>
+    </key>
+    <key name="opening-y" type="i">
+      <default>-1</default>
+      <summary>Most recent y position of terminal</summary>
+      <description>Most recent y position of terminal</description>
+    </key>
   </schema>
 
   <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.PantheonTerminal.Settings" gettext-domain="pantheon-terminal">
@@ -45,7 +55,7 @@
       <summary>Defines whether Alt+N goes to nth tab.</summary>
       <description>Defines whether Alt+N goes to nth tab.</description>
     </key>
-    
+
     <key name="opacity" type="i">
       <range min="0" max="100"/>
       <default>80</default>
