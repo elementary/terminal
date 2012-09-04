@@ -33,8 +33,9 @@ namespace PantheonTerminal {
 
             static string app_cmd_name;
             static string app_shell_name;
-
+            static bool   print_version;
             construct {
+                print_version = false;
                 build_data_dir = Constants.DATADIR;
                 build_pkg_data_dir = Constants.PKGDATADIR;
                 build_release_name = Constants.RELEASE_NAME;
@@ -96,6 +97,7 @@ namespace PantheonTerminal {
 
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
+            { "version", 'v', 0, OptionArg.NONE, out print_version, "Print version info and exit", null },
             { null }
         };
 
@@ -111,6 +113,11 @@ namespace PantheonTerminal {
                 warning (e.message);
             }
 
+            if (print_version) {
+                stdout.printf("Pantheon Terminal %s\n", Constants.VERSION);
+                stdout.printf("Copyright 2011-2012 Terminal Developers.\n");
+                return 0;
+            }
             var app = new PantheonTerminalApp ();
             return app.run (args);
         }
