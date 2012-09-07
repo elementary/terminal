@@ -178,7 +178,7 @@ namespace PantheonTerminal {
             	return true;
             });
 
-            var right_box = new HBox (false, 0);
+            var right_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             right_box.show ();
             notebook.can_focus = false;
             add (notebook);
