@@ -81,14 +81,14 @@ namespace PantheonTerminal {
             init ();
         }
 
-        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y) {
+        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y, bool should_recreate_tabs = true) {
             this.app = app as PantheonTerminalApp;
             set_application (app);
             this.move (x, y);
-            init ();
+            init (should_recreate_tabs, false);
         }
 
-        private void init () {
+        private void init (bool recreate_tabs=true, bool restore_pos = true) {
             this.icon_name = "utilities-terminal";
 
             Notify.init (app.program_name);
@@ -98,7 +98,7 @@ namespace PantheonTerminal {
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
-            restore_saved_state ();
+            restore_saved_state (restore_pos);
 
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
@@ -131,7 +131,8 @@ namespace PantheonTerminal {
 
             term_font = FontDescription.from_string (get_term_font ());
 
-            open_tabs ();
+            if (recreate_tabs)
+                open_tabs ();
         }
         private void setup_ui () {
             /* Set up the Notebook */
@@ -215,18 +216,20 @@ namespace PantheonTerminal {
             right_box.pack_start (add_button, false, false, 0);
         }
 
-        private void restore_saved_state () {
+        private void restore_saved_state (bool restore_pos = true) {
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
-            int x = saved_state.opening_x;
-            int y = saved_state.opening_y;
-            if (x != -1 && y != -1)
-                this.move (x, y);
-            else {
-                x = (Gdk.Screen.width ()  - default_width)  / 2;
-                y = (Gdk.Screen.height () - default_height) / 2;
-                this.move (x, y);
+            if (restore_pos) {
+                int x = saved_state.opening_x;
+                int y = saved_state.opening_y;
+                if (x != -1 && y != -1)
+                    this.move (x, y);
+                else {
+                    x = (Gdk.Screen.width ()  - default_width)  / 2;
+                    y = (Gdk.Screen.height () - default_height) / 2;
+                    this.move (x, y);
+                }
             }
 
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
@@ -237,7 +240,7 @@ namespace PantheonTerminal {
 
 		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
 			if (new_window) {
-				app.new_window_with_coords (x, y);
+				app.new_window_with_coords (x, y,false);
 				var win = app.windows.last ().data;
 				//win.move (x, y);
 
