@@ -240,7 +240,7 @@ namespace PantheonTerminal {
 
 		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
 			if (new_window) {
-				app.new_window_with_coords (x, y,false);
+				app.new_window_with_coords (x, y, false);
 				var win = app.windows.last ().data;
 				//win.move (x, y);
 
