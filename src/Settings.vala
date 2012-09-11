@@ -53,6 +53,7 @@ namespace PantheonTerminal {
         public int opacity {get; set; }
         public string foreground { get; set; }
         public string background { get; set; }
+        public string cursor_color { get; set; }
         public string palette { get; set; }
 
         public string shell { get; set; }

@@ -53,7 +53,7 @@ namespace PantheonTerminal {
                     current_string = "";
                     current_color++;
                 } else {
-                    current_string += settings.palette[i].to_string();
+                    current_string += settings.palette[i].to_string ();
                 }
             }
 
@@ -68,6 +68,10 @@ namespace PantheonTerminal {
 
             set_colors (foreground_color, background_color, palette);
 
+            Gdk.Color cursor_color;
+            Gdk.Color.parse (settings.cursor_color, out cursor_color);
+            set_color_cursor (cursor_color);
+            
             /* Load encoding */
             if (settings.encoding != "") {
                 set_encoding (settings.encoding);

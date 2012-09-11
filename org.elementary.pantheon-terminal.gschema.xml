@@ -77,6 +77,11 @@
       <summary>Color of the background.</summary>
       <description>The color of the background of the terminal.</description>
     </key>
+    <key name="cursor-color" type="s">
+      <default>"#FFFFFF"</default>
+      <summary>Color of the cursor.</summary>
+      <description>The color of the cursor of the terminal.</description>
+    </key>
     <key name="palette" type="s">
       <default>"#000000:#FF6C60:#A8FF60:#FFFFCC:#96CBFE:#FF73FE:#C6C5FE:#EEEEEE:#000000:#FF6C60:#A8FF60:#FFFFB6:#96CBFE:#FF73FE:#C6C5FE:#EEEEEE"</default>
       <summary>Palette of the terminal.</summary>
