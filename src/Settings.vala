@@ -47,6 +47,7 @@ namespace PantheonTerminal {
 
         public int scrollback_lines { get; set; }
         public bool follow_last_tab { get; set; }
+        public bool remember_tabs { get; set; }
         public bool alt_changes_tab { get; set; }
 
         public int opacity {get; set; }
@@ -61,7 +62,5 @@ namespace PantheonTerminal {
         public Settings ()  {
             base ("org.elementary.PantheonTerminal.Settings");
         }
-
     }
-
-} // Namespace
+}
