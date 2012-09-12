@@ -188,6 +188,18 @@ namespace PantheonTerminal {
             add (notebook);
             this.key_press_event.connect ((e) => {
                 switch (e.keyval){
+                    case 45:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_out_font ();
+                            return true;
+                        }
+                        return false;
+                    case 61: // ctrl +  ->zoom
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_in_font ();
+                            return true;
+                        }
+                        return false;
                     case 49: //alt+[1-8]
                     case 50:
                     case 51:
@@ -483,15 +495,13 @@ namespace PantheonTerminal {
         }
 
         void action_zoom_in_font () {
-            FontDescription current_font = current_terminal.get_font ();
-            current_font.set_size (current_font.get_size () + 1);
-            current_terminal.set_font (current_font);
+            current_terminal.size_increment ();
         }
 
         void action_zoom_out_font () {
-
+            current_terminal.size_decrement ();
         }
-        
+
         void action_next_tab () {
             notebook.next_page ();
         }
@@ -525,9 +535,9 @@ namespace PantheonTerminal {
            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
 
-           { "ZoomInFont", null, N_("Zoom in font"), "<Control>+", N_("Zoom in font"), action_zoom_in_font },
+           { "ZoomInFont", null, N_("Zoom in font"), "<Control><Shift>+", N_("Zoom in font"), action_zoom_in_font },
            { "ZoomOutFont", null, N_("Zoom out font"), "<Control>-", N_("Zoom out font"), action_zoom_out_font },
-           
+
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
 
