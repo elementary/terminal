@@ -43,7 +43,7 @@ namespace PantheonTerminal {
                 build_version_info = Constants.VERSION_INFO;
 
                 program_name = app_cmd_name;
-                exec_name = app_cmd_name.down().replace(" ", "-");
+                exec_name = app_cmd_name.down ().replace (" ", "-");
                 app_years = "2011-2012";
                 app_icon = "utilities-terminal";
                 app_launcher = "pantheon-terminal.desktop";
@@ -109,13 +109,13 @@ namespace PantheonTerminal {
             context.add_group (Gtk.get_option_group(true));
             try {
                 context.parse (ref args);
-            } catch(Error e) {
+            } catch (Error e) {
                 warning (e.message);
             }
 
             if (print_version) {
-                stdout.printf("Pantheon Terminal %s\n", Constants.VERSION);
-                stdout.printf("Copyright 2011-2012 Terminal Developers.\n");
+                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
+                stdout.printf ("Copyright 2011-2012 Terminal Developers.\n");
                 return 0;
             }
             var app = new PantheonTerminalApp ();
