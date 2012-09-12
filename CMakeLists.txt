@@ -19,6 +19,7 @@ set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.1")
 set (VERSION_INFO "Release")
 set (CMAKE_C_FLAGS "-ggdb")
+set (CMAKE_EXE_LINKER_FLAGS "-lm")
 set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
 

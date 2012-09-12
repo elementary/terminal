@@ -56,9 +56,6 @@ namespace PantheonTerminal {
                 <menuitem name="NextTab" action="NextTab"/>
                 <menuitem name="PreviousTab" action="PreviousTab"/>
 
-                <menuitem name="ZoomInFont" action="ZoomInFont"/>
-                <menuitem name="ZoomOutFont" action="ZoomOutFont"/>
-
                 <menuitem name="Fullscreen" action="Fullscreen"/>
             </popup>
 
@@ -537,9 +534,6 @@ namespace PantheonTerminal {
 
            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
-
-           { "ZoomInFont", null, N_("Zoom in font"), "<Control><Shift>+", N_("Zoom in font"), action_zoom_in_font },
-           { "ZoomOutFont", null, N_("Zoom out font"), "<Control>-", N_("Zoom out font"), action_zoom_out_font },
 
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
