@@ -71,7 +71,7 @@ namespace PantheonTerminal {
             Gdk.Color cursor_color;
             Gdk.Color.parse (settings.cursor_color, out cursor_color);
             set_color_cursor (cursor_color);
-            
+
             /* Load encoding */
             if (settings.encoding != "") {
                 set_encoding (settings.encoding);
@@ -204,6 +204,22 @@ namespace PantheonTerminal {
                 warning ("An error occured while fetching the current dir of shell");
             }
             return "";
+        }
+
+        public void size_increment () {
+            Pango.FontDescription desc = this.font_desc;
+            int size = desc.get_size ();
+            desc.set_size (size + (size/10));
+            this.set_font (desc);
+            debug (size.to_string ());
+        }
+
+        public void size_decrement () {
+            Pango.FontDescription desc = this.font_desc;
+            int size = desc.get_size ();
+            desc.set_size (size - (size/10));
+            this.set_font (desc);
+            debug (size.to_string ());
         }
     }
 }

@@ -56,6 +56,9 @@ namespace PantheonTerminal {
                 <menuitem name="NextTab" action="NextTab"/>
                 <menuitem name="PreviousTab" action="PreviousTab"/>
 
+                <menuitem name="ZoomInFont" action="ZoomInFont"/>
+                <menuitem name="ZoomOutFont" action="ZoomOutFont"/>
+
                 <menuitem name="Fullscreen" action="Fullscreen"/>
             </popup>
 
@@ -184,15 +187,29 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
             this.key_press_event.connect ((e) => {
-                switch (e.keyval){
-                    case 49: //alt+[1-8]
-                    case 50:
-                    case 51:
-                    case 52:
-                    case 53:
-                    case 54:
-                    case 55:
-                    case 56:
+               switch (Gdk.keyval_name (e.keyval)) {
+                    case "minus":
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_out_font ();
+                            return true;
+                        }
+
+                        return false;
+                    case "plus": // ctrl +  ->zoom
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_in_font ();
+                            return true;
+                        }
+
+                        return false;
+                    case "1": //alt+[1-8]
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
@@ -202,6 +219,7 @@ namespace PantheonTerminal {
                         }
                         break;
                 }
+
                 return false;
             });
 
@@ -479,6 +497,14 @@ namespace PantheonTerminal {
             app.show_about (this);
         }
 
+        void action_zoom_in_font () {
+            current_terminal.size_increment ();
+        }
+
+        void action_zoom_out_font () {
+            current_terminal.size_decrement ();
+        }
+
         void action_next_tab () {
             notebook.next_page ();
         }
@@ -511,6 +537,9 @@ namespace PantheonTerminal {
 
            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
+
+           { "ZoomInFont", null, N_("Zoom in font"), "<Control><Shift>+", N_("Zoom in font"), action_zoom_in_font },
+           { "ZoomOutFont", null, N_("Zoom out font"), "<Control>-", N_("Zoom out font"), action_zoom_out_font },
 
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
