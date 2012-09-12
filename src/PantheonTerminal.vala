@@ -43,7 +43,7 @@ namespace PantheonTerminal {
                 build_version_info = Constants.VERSION_INFO;
 
                 program_name = app_cmd_name;
-                exec_name = app_cmd_name.down();
+                exec_name = app_cmd_name.down().replace(" ", "-");
                 app_years = "2011-2012";
                 app_icon = "utilities-terminal";
                 app_launcher = "pantheon-terminal.desktop";
