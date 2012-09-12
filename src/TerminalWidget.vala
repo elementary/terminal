@@ -209,7 +209,7 @@ namespace PantheonTerminal {
         public void size_increment () {
             Pango.FontDescription desc = this.font_desc;
             int size = desc.get_size ();
-            desc.set_size (size + (size/4));
+            desc.set_size (size + (size/10));
             this.set_font (desc);
             debug (size.to_string ());
         }
@@ -217,7 +217,7 @@ namespace PantheonTerminal {
         public void size_decrement () {
             Pango.FontDescription desc = this.font_desc;
             int size = desc.get_size ();
-            desc.set_size (size - (size/4));
+            desc.set_size (size - (size/10));
             this.set_font (desc);
             debug (size.to_string ());
         }
