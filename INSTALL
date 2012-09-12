@@ -2,10 +2,10 @@ To compile it:
   mkdir build
   cd build/
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-  make -j3
+  make
 
 To install it:
   cd build/
-  sudo make install
+   make install #Might need sudo
 
 Alternatively, you can also (if you are a developer), launch it using "./pantheon-terminal".
