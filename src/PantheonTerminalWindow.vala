@@ -184,29 +184,29 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
             this.key_press_event.connect ((e) => {
-               switch (Gdk.keyval_name (e.keyval)) {
-                    case "minus":
+               switch (e.keyval) {
+                   case Gdk.Key.minus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
                             action_zoom_out_font ();
                             return true;
                         }
 
                         return false;
-                    case "plus": // ctrl +  ->zoom
+                   case Gdk.Key.plus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
                             action_zoom_in_font ();
                             return true;
                         }
 
                         return false;
-                    case "1": //alt+[1-8]
-                    case "2":
-                    case "3":
-                    case "4":
-                    case "5":
-                    case "6":
-                    case "7":
-                    case "8":
+                    case Gdk.Key.@1: //alt+[1-8]
+                    case Gdk.Key.@2:
+                    case Gdk.Key.@3:
+                    case Gdk.Key.@4:
+                    case Gdk.Key.@5:
+                    case Gdk.Key.@6:
+                    case Gdk.Key.@7:
+                    case Gdk.Key.@8:
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
