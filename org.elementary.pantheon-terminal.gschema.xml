@@ -83,7 +83,7 @@
       <description>The color of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
-      <default>"#101010:#f13a21:#93f91d:#ffd00a:#004f9e:#ec0048:#2aa7e7:#f2f2f2:#1d202f:#ff361e:#ffc005:#93ff00:#0071ff:#ef0051:#4bb8fd:#a020f0"</default>
+      <default>"#303030:#e1321a:#6ab017:#ffc005:#004f9e:#ec0048:#2aa7e7:#f2f2f2:#5d5d5d:#ff361e:#7bc91f:#ffd00a:#0071ff:#ff1d62:#4bb8fd:#a020f0"</default>
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>
