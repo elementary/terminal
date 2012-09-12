@@ -305,10 +305,11 @@ namespace PantheonTerminal {
         }
 
         private void open_tabs () {
-            if (saved_state.tabs == "" || !settings.remember_tabs)
+            string tabs = saved_state.tabs;
+            if (tabs == "" || !settings.remember_tabs || tabs.replace (",", " ").strip () == "")
                 new_tab ();
             else {
-                foreach (string loc in saved_state.tabs.split (",")) {
+                foreach (string loc in tabs.split (",")) {
                     if (loc != "")
                         new_tab (loc);
                 }
