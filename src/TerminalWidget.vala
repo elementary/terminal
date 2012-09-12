@@ -211,7 +211,6 @@ namespace PantheonTerminal {
             int size = desc.get_size ();
             desc.set_size (size + (size/10));
             this.set_font (desc);
-            debug (size.to_string ());
         }
 
         public void size_decrement () {
@@ -219,7 +218,6 @@ namespace PantheonTerminal {
             int size = desc.get_size ();
             desc.set_size (size - (size/10));
             this.set_font (desc);
-            debug (size.to_string ());
         }
     }
 }
