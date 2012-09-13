@@ -184,15 +184,29 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
             this.key_press_event.connect ((e) => {
-                switch (e.keyval){
-                    case 49: //alt+[1-8]
-                    case 50:
-                    case 51:
-                    case 52:
-                    case 53:
-                    case 54:
-                    case 55:
-                    case 56:
+               switch (e.keyval) {
+                   case Gdk.Key.minus:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_out_font ();
+                            return true;
+                        }
+
+                        return false;
+                   case Gdk.Key.plus:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
+                            action_zoom_in_font ();
+                            return true;
+                        }
+
+                        return false;
+                    case Gdk.Key.@1: //alt+[1-8]
+                    case Gdk.Key.@2:
+                    case Gdk.Key.@3:
+                    case Gdk.Key.@4:
+                    case Gdk.Key.@5:
+                    case Gdk.Key.@6:
+                    case Gdk.Key.@7:
+                    case Gdk.Key.@8:
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
@@ -202,6 +216,7 @@ namespace PantheonTerminal {
                         }
                         break;
                 }
+
                 return false;
             });
 
@@ -477,6 +492,14 @@ namespace PantheonTerminal {
 
         void action_about () {
             app.show_about (this);
+        }
+
+        void action_zoom_in_font () {
+            current_terminal.size_increment ();
+        }
+
+        void action_zoom_out_font () {
+            current_terminal.size_decrement ();
         }
 
         void action_next_tab () {

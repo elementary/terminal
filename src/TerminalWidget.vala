@@ -29,6 +29,9 @@ namespace PantheonTerminal {
         public Granite.Widgets.Tab tab;
         public string? uri;
 
+        public int default_size;
+        public double zoom_factor = 1.0;
+
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
             /* Set up the parents */
             this.window = parent_window;
@@ -71,11 +74,10 @@ namespace PantheonTerminal {
             Gdk.Color cursor_color;
             Gdk.Color.parse (settings.cursor_color, out cursor_color);
             set_color_cursor (cursor_color);
-            
+
             /* Load encoding */
-            if (settings.encoding != "") {
+            if (settings.encoding != "")
                 set_encoding (settings.encoding);
-            }
 
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
@@ -87,19 +89,22 @@ namespace PantheonTerminal {
                     case Gdk.BUTTON_PRIMARY:
                         if (uri != null) {
                             try {
-                                Gtk.show_uri (null, (!)uri, Gtk.get_current_event_time());
+                                Gtk.show_uri (null, (!) uri, Gtk.get_current_event_time ());
                                 return true;
                             } catch (GLib.Error error) {
                                 warning ("Could Not Open link");
                             }
                         }
+
                         return false;
                     case Gdk.BUTTON_SECONDARY :
                         if (uri != null) {
                             main_actions.get_action ("Copy").set_sensitive (true);
                         }
+
                         menu.select_first (false);
                         menu.popup (null, null, null, event.button, event.time);
+
                         return true;
                 }
                 return false;
@@ -114,10 +119,10 @@ namespace PantheonTerminal {
             /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
 
-            Gtk.TargetEntry target = {"text/uri-list",0,0};
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL,{target},Gdk.DragAction.COPY);
+            Gtk.TargetEntry target = {"text/uri-list", 0, 0};
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
 
-            /*Make Links Clickable */
+            /* Make Links Clickable */
             this.clickable("""(https?|ftps?)://\S+""");
         }
 
@@ -191,8 +196,7 @@ namespace PantheonTerminal {
             // Vte.Terminal.match_check need a non-null tag instead of what is
             // written in the doc
             // (see: https://bugzilla.gnome.org/show_bug.cgi?id=676886)
-            return this.match_check(col, row, out tag);
-
+            return this.match_check (col, row, out tag);
         }
 
         public string get_shell_location () {
@@ -200,10 +204,30 @@ namespace PantheonTerminal {
 
             try {
                 return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
-            } catch(GLib.FileError error) {
+            } catch (GLib.FileError error) {
                 warning ("An error occured while fetching the current dir of shell");
+                return "";
             }
-            return "";
+        }
+
+        public void size_increment () {
+            Pango.FontDescription desc = this.font_desc;
+            if (default_size == 0) default_size = desc.get_size ();
+            if (desc.get_size () > 60000) return;
+            
+            zoom_factor += 0.1;
+            desc.set_size ((int) Math.floor(default_size * zoom_factor));
+            this.set_font (desc);
+        }
+
+        public void size_decrement () {
+            Pango.FontDescription desc = this.font_desc;
+            if (default_size == 0) default_size = desc.get_size ();
+            if (desc.get_size () < 2048) return;
+
+            zoom_factor -= 0.1;
+            desc.set_size ((int) Math.ceil(default_size * zoom_factor));
+            this.set_font (desc);
         }
     }
 }

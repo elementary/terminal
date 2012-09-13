@@ -25,21 +25,21 @@ set (DOLLAR "$")
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
-add_definitions(-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
+add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
-find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0)
+find_package (PkgConfig)
+pkg_check_modules (DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0)
 
-add_definitions(${DEPS_CFLAGS})
+add_definitions (${DEPS_CFLAGS})
 
-link_libraries(${DEPS_LIBRARIES})
-link_directories(${DEPS_LIBRARY_DIRS})
+link_libraries (${DEPS_LIBRARIES})
+link_directories (${DEPS_LIBRARY_DIRS})
 
-find_package(Vala REQUIRED)
-include(ValaVersion)
-ensure_vala_version("0.16.0" MINIMUM)
+find_package (Vala REQUIRED)
+include (ValaVersion)
+ensure_vala_version ("0.16.0" MINIMUM)
 
-include(ValaPrecompile)
+include (ValaPrecompile)
 vala_precompile(VALA_C
     src/Settings.vala
     src/PantheonTerminal.vala
@@ -59,12 +59,13 @@ OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
 )
 
-include(GSettings)
+include (GSettings)
 add_schema ("org.elementary.pantheon-terminal.gschema.xml")
 
+link_libraries (m)
 add_subdirectory (po)
 
-add_executable(pantheon-terminal ${VALA_C})
+add_executable (pantheon-terminal ${VALA_C})
 
-install(TARGETS pantheon-terminal RUNTIME DESTINATION bin)
+install (TARGETS pantheon-terminal RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/pantheon-terminal.desktop DESTINATION share/applications)
