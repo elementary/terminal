@@ -188,6 +188,9 @@ namespace PantheonTerminal {
             add (notebook);
             this.key_press_event.connect ((e) => {
                 switch (e.keyval) {
+                    case Gdk.Key.plus:
+                        print("Plus signal!");
+                        break;
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
