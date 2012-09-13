@@ -56,6 +56,9 @@ namespace PantheonTerminal {
                 <menuitem name="NextTab" action="NextTab"/>
                 <menuitem name="PreviousTab" action="PreviousTab"/>
 
+                <menuitem name="ZoomIn" action="ZoomIn"/>
+                <menuitem name="ZoomOut" action="ZoomOut"/>
+
                 <menuitem name="Fullscreen" action="Fullscreen"/>
             </popup>
 
@@ -184,29 +187,15 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
             this.key_press_event.connect ((e) => {
-                switch (Gdk.keyval_name (e.keyval)) {
-                    case "minus":
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
-                            action_zoom_out_font ();
-                            return true;
-                        }
-
-                        return false;
-                    case "plus":
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK ) != 0) {
-                            action_zoom_in_font ();
-                            return true;
-                        }
-
-                        return false;
-                    case "1": //alt+[1-8]
-                    case "2":
-                    case "3":
-                    case "4":
-                    case "5":
-                    case "6":
-                    case "7":
-                    case "8":
+                switch (e.keyval) {
+                    case Gdk.Key.@1: //alt+[1-8]
+                    case Gdk.Key.@2:
+                    case Gdk.Key.@3:
+                    case Gdk.Key.@4:
+                    case Gdk.Key.@5:
+                    case Gdk.Key.@6:
+                    case Gdk.Key.@7:
+                    case Gdk.Key.@8:
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
                             if (i > (this.notebook.n_tabs-1))
@@ -535,6 +524,9 @@ namespace PantheonTerminal {
            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
 
+           { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"), action_zoom_in_font },
+           { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"), action_zoom_out_font },
+           
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
 
