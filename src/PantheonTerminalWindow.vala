@@ -196,6 +196,19 @@ namespace PantheonTerminal {
                         }
 
                         break;
+                     case Gdk.Key.KP_Add:
+                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                             action_zoom_in_font ();
+                             return true;
+                         }
+                         break;
+                    case Gdk.Key.KP_Subtract:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            action_zoom_out_font ();
+                            return true;
+                        }
+                        break;
+
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
