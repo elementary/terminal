@@ -485,10 +485,12 @@ namespace PantheonTerminal {
 
         void action_zoom_in_font () {
             current_terminal.size_increment ();
+            print("ZOOM IN\n");
         }
 
         void action_zoom_out_font () {
             current_terminal.size_decrement ();
+            print("ZOOM OUT\n");
         }
 
         void action_next_tab () {
