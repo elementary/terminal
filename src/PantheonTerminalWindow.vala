@@ -186,10 +186,15 @@ namespace PantheonTerminal {
             right_box.show ();
             notebook.can_focus = false;
             add (notebook);
+
             this.key_press_event.connect ((e) => {
                 switch (e.keyval) {
-                    case Gdk.Key.plus:
-                        print("Plus signal!");
+                    case Gdk.Key.@0:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            action_zoom_default_font ();
+                            return true;
+                        }
+
                         break;
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
@@ -364,8 +369,7 @@ namespace PantheonTerminal {
                 string new_text = t.get_window_title ();
 
                 /* Strips the location */
-                /*
-                for (int i = 0; i < new_text.length; i++) {
+                /*for (int i = 0; i < new_text.length; i++) {
                     if (new_text[i] == ':') {
                         new_text = new_text[i + 2:new_text.length];
                         break;
@@ -487,13 +491,15 @@ namespace PantheonTerminal {
         }
 
         void action_zoom_in_font () {
-            current_terminal.size_increment ();
-            print("ZOOM IN\n");
+            current_terminal.increment_size ();
         }
 
         void action_zoom_out_font () {
-            current_terminal.size_decrement ();
-            print("ZOOM OUT\n");
+            current_terminal.decrement_size ();
+        }
+
+        void action_zoom_default_font () {
+            current_terminal.set_default_font_size ();
         }
 
         void action_next_tab () {
@@ -531,7 +537,8 @@ namespace PantheonTerminal {
 
            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"), action_zoom_in_font },
            { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"), action_zoom_out_font },
-           
+           { "ZoomDefault", Gtk.Stock.ZOOM_100, N_("Zoom to default"), "<Control>zero", N_("Zoom to default"), action_zoom_default_font },
+
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
 

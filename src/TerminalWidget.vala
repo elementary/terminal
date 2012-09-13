@@ -210,24 +210,33 @@ namespace PantheonTerminal {
             }
         }
 
-        public void size_increment () {
-            Pango.FontDescription desc = this.font_desc;
-            if (default_size == 0) default_size = desc.get_size ();
-            if (desc.get_size () > 60000) return;
+        public void increment_size () {
+            Pango.FontDescription current_font = this.get_font ();
+            if (default_size == 0) default_size = current_font.get_size ();
+            if (current_font.get_size () > 60000) return;
             
             zoom_factor += 0.1;
-            desc.set_size ((int) Math.floor(default_size * zoom_factor));
-            this.set_font (desc);
+            current_font.set_size ((int) Math.floor(default_size * zoom_factor));
+            this.set_font (current_font);
         }
 
-        public void size_decrement () {
-            Pango.FontDescription desc = this.font_desc;
-            if (default_size == 0) default_size = desc.get_size ();
-            if (desc.get_size () < 2048) return;
+        public void decrement_size () {
+            Pango.FontDescription current_font = this.get_font ();
+            if (default_size == 0) default_size = current_font.get_size ();
+            if (current_font.get_size () < 2048) return;
 
             zoom_factor -= 0.1;
-            desc.set_size ((int) Math.ceil(default_size * zoom_factor));
-            this.set_font (desc);
+            current_font.set_size ((int) Math.ceil(default_size * zoom_factor));
+            this.set_font (current_font);
+        }
+
+        public void set_default_font_size () {
+            Pango.FontDescription current_font = this.get_font ();
+            if (default_size == 0) default_size = current_font.get_size ();
+
+            zoom_factor = 1.0;
+            current_font.set_size (default_size);
+            this.set_font (current_font);
         }
     }
 }
