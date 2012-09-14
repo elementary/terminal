@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-07-28 15:06+0000\n"
+"PO-Revision-Date: 2012-09-13 09:28+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-13 04:58+0000\n"
+"X-Launchpad-Export-Date: 2012-09-14 05:10+0000\n"
 "X-Generator: Launchpad (build 15944)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
@@ -99,19 +99,19 @@ msgstr "Mostrar la ventana «Acerca de»"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr ""
+msgstr "Pestaña siguiente"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr ""
+msgstr "Ir a la pestaña siguiente"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr ""
+msgstr "Pestaña anterior"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Ir a la pestaña anterior"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
