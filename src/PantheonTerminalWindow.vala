@@ -550,7 +550,7 @@ namespace PantheonTerminal {
 
            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"), action_zoom_in_font },
            { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"), action_zoom_out_font },
-           { "ZoomDefault", Gtk.Stock.ZOOM_100, N_("Zoom to default"), "<Control>zero", N_("Zoom to default"), action_zoom_default_font },
+           //{ "ZoomDefault", Gtk.Stock.ZOOM_100, N_("Zoom to default"), "<Control>0", N_("Zoom to default"), action_zoom_default_font },
 
            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
         };
