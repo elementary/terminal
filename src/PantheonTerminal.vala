@@ -105,7 +105,7 @@ namespace PantheonTerminal {
             app_cmd_name = "Pantheon Terminal";
 
             var context = new OptionContext ("File");
-            context.add_main_entries (entries, "scratch");
+            context.add_main_entries (entries, "pantheon-terminal");
             context.add_group (Gtk.get_option_group(true));
             try {
                 context.parse (ref args);
