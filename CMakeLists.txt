@@ -62,10 +62,12 @@ OPTIONS
 include (GSettings)
 add_schema ("org.elementary.pantheon-terminal.gschema.xml")
 
-link_libraries (m)
+#link_libraries (m)
 add_subdirectory (po)
 
 add_executable (pantheon-terminal ${VALA_C})
+find_library (M_LIB m)
+target_link_libraries (pantheon-terminal ${M_LIB})
 
 install (TARGETS pantheon-terminal RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/pantheon-terminal.desktop DESTINATION share/applications)
