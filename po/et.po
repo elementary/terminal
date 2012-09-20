@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-08-06 20:57+0000\n"
+"PO-Revision-Date: 2012-09-19 14:14+0000\n"
 "Last-Translator: Kristjan Vool <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-09-20 04:55+0000\n"
+"X-Generator: Launchpad (build 15985)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -51,7 +51,7 @@ msgstr "Välju"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
 msgid "Close"
-msgstr "Sulge"
+msgstr "Välju"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "Open a new window"
