@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-09-19 14:14+0000\n"
+"PO-Revision-Date: 2012-09-21 18:17+0000\n"
 "Last-Translator: Kristjan Vool <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-20 04:55+0000\n"
+"X-Launchpad-Export-Date: 2012-09-22 05:21+0000\n"
 "X-Generator: Launchpad (build 15985)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
@@ -51,7 +51,7 @@ msgstr "Välju"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
 msgid "Close"
-msgstr "Välju"
+msgstr "Sulge"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "Open a new window"
@@ -75,11 +75,11 @@ msgstr "Kopeeri valitud tekst"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste"
-msgstr "Kleebi"
+msgstr "Aseta"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste some text"
-msgstr "Kleebi tekst"
+msgstr "Aseta tekst"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:508
 msgid "Select All"
@@ -87,11 +87,11 @@ msgstr "Vali kõik"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:509
 msgid "Select all the text in the terminal"
-msgstr "Vali kogu tekst terminalis"
+msgstr "Vali terminali kogu tekst"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "About"
-msgstr "Programmist"
+msgstr "Programmist lähemalt"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "Show about window"
@@ -99,19 +99,19 @@ msgstr "Näita programmist lähemalt akent"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr ""
+msgstr "Järgmine kaart"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr ""
+msgstr "Mine järgmisele kaardile"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr ""
+msgstr "Eelmine kaart"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Mine eelmisele kaardile"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
