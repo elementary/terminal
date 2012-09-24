@@ -1,4 +1,4 @@
-# Chinese (Traditional) translation for pantheon-terminal
+# Amharic translation for pantheon-terminal
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-09-23 04:52+0000\n"
-"Last-Translator: leo  <shing80333@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"PO-Revision-Date: 2012-09-24 04:01+0000\n"
+"Last-Translator: samson <Unknown>\n"
+"Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,141 +19,141 @@ msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "使用指令列"
+msgstr "የትእዛዝ መስመሩን መጠቀሚያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:13
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:100
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:345
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:349
 msgid "Terminal"
-msgstr "終端機"
+msgstr "ተርሚናል"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:14
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "New Window"
-msgstr "新增視窗"
+msgstr "አዲስ መስኮት"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "新的根視窗"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
 msgid "Set shell at launch"
-msgstr "啟動時設定 shell"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:215
 msgid "Open a new tab"
-msgstr "開啟新分頁"
+msgstr "በአዲስ ንዑስ መስኮት መክፈቻ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:501
 msgid "Quit"
-msgstr "退出"
+msgstr "ማጥፊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
 msgid "Close"
-msgstr "關閉"
+msgstr "መዝጊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "Open a new window"
-msgstr "開啟新視窗"
+msgstr "አዲስ መስኮት መክፈቻ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
 msgid "New Tab"
-msgstr "新增分頁"
+msgstr "አዲስ ንዑስ መስኮት"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
 msgid "Create a new tab"
-msgstr "建立新分頁"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
 msgid "Copy"
-msgstr "複製"
+msgstr "ኮፒ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
 msgid "Copy the selected text"
-msgstr "複製所選文字"
+msgstr "የተመረጠውን ጽሁፍ ኮፒ ማድረጊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste"
-msgstr "貼上"
+msgstr "መለጠፊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste some text"
-msgstr "貼上一些文字"
+msgstr "ትንሽ ጽሁፍ መለጠፊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:508
 msgid "Select All"
-msgstr "全部選擇"
+msgstr "ሁሉንም መምረጫ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:509
 msgid "Select all the text in the terminal"
-msgstr "選取終端機中的全部文字"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "About"
-msgstr "關於"
+msgstr "ስለ"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "Show about window"
-msgstr "顯示關於視窗"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr "下個分頁"
+msgstr "የሚቀጥለው ንዑስ መስኮት"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr "前往下個分頁"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr "上一個分頁"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr "前往上一個分頁"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
-msgstr "全螢幕"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Toggle/Untoggle fullscreen"
-msgstr "啟動/關閉全螢幕"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "您確定您想要關閉此分頁嗎？"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "此分頁中有個活動中程序。"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "若您關閉此分頁，此程序將結束。"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr "取消"
+msgstr "መሰረዣ"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "關閉分頁"
+msgstr "ንዑስ መስኮቱን መዝጊያ"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr "您確定想退出終端機？"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr "此終端機中有個活動中程序。"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr "若您退出終端機，此程序將結束。"
+msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr "退出終端機"
+msgstr ""

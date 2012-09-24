@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-07-28 21:57+0000\n"
+"PO-Revision-Date: 2012-09-23 18:22+0000\n"
 "Last-Translator: MarkoD <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-09-24 04:54+0000\n"
+"X-Generator: Launchpad (build 15985)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -99,19 +99,19 @@ msgstr "Pokaži okno o programu"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr ""
+msgstr "Naslednji zavihek"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr ""
+msgstr "Pojdi na naslednji zavihek"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr ""
+msgstr "Prejšnji zavihek"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Pojdi na prejšnji zavihek"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
@@ -136,7 +136,7 @@ msgstr ""
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Preklic"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
