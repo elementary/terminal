@@ -123,7 +123,7 @@ namespace PantheonTerminal {
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
 
             /* Make Links Clickable */
-            this.clickable("""(http?|ftp?|https?|ftps?|irc?|sftp?|mailto?)://\S+""");
+            this.clickable("""(https?|ftps?|irc?|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|git+ssh|bzr|bzr+ssh|svn|svn+ssh|hg|mailto )://\S+""");
         }
 
         void on_child_exited () { }
