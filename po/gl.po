@@ -1,4 +1,4 @@
-# Basque translation for pantheon-terminal
+# Galician translation for pantheon-terminal
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-10-10 19:53+0000\n"
-"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
-"Language-Team: Basque <eu@li.org>\n"
+"PO-Revision-Date: 2012-10-10 16:40+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,141 +19,141 @@ msgstr ""
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "Erabili komando-lerroa"
+msgstr "Usar a liña de ordes"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:13
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:100
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:345
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:349
 msgid "Terminal"
-msgstr "Terminala"
+msgstr "Terminal"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:14
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "New Window"
-msgstr "Leiho berria"
+msgstr "Nova xanela"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Root leiho berria"
+msgstr "Nova xanela de administrador (root)"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
 msgid "Set shell at launch"
-msgstr "Ezarri shell abioan"
+msgstr "Estabelecer un intérprete de ordes no inicio"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:215
 msgid "Open a new tab"
-msgstr "Ireki fitxa berri bat"
+msgstr "Abrir unha nova lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:501
 msgid "Quit"
-msgstr "Irten"
+msgstr "Saír"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
 msgid "Close"
-msgstr "Itxi"
+msgstr "Pechar"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
 msgid "Open a new window"
-msgstr "Ireki leiho berri bat"
+msgstr "Abrir unha nova xanela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
 msgid "New Tab"
-msgstr "Fitxa berria"
+msgstr "Nova lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
 msgid "Create a new tab"
-msgstr "Sortu fitxa berri bat"
+msgstr "Crear unha nova lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
 msgid "Copy"
-msgstr "Kopiatu"
+msgstr "Copiar"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
 msgid "Copy the selected text"
-msgstr "Kopiatu hautatutako testua"
+msgstr "Copiar o texto seleccionado"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste"
-msgstr "Itsatsi"
+msgstr "Pegar"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
 msgid "Paste some text"
-msgstr "Itsatsi testuren bat"
+msgstr "Pegar texto"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:508
 msgid "Select All"
-msgstr "Hautatu guztia"
+msgstr "Seleccionar todo"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:509
 msgid "Select all the text in the terminal"
-msgstr "Hautatu terminaleko testu guztia"
+msgstr "Seleccionar todo o texto do terminal"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "About"
-msgstr "Honi buruz"
+msgstr "Sobre"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
 msgid "Show about window"
-msgstr "Erakutsi 'Honi buruz' leihoa"
+msgstr "Amosar a xanela «Sobre»"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr "Hurrengo fitxa"
+msgstr "Seguinte lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr "Joan hurrengo fitxara"
+msgstr "Ir á seguinte lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr "Aurreko fitxa"
+msgstr "Lapela anterior"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr "Joan aurreko fitxara"
+msgstr "Ir á lapela anterior"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
-msgstr "Pantaila osoa"
+msgstr "Pantalla completa"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Txandakatu pantaila osoa"
+msgstr "Activar/desactivar a pantalla completa"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Ziur zaude fitxa hau itxi nahi duzula?"
+msgstr "Confirma que quere pechar esta lapela?"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "Prozesu aktibo bat dago fitxa honetan."
+msgstr "Hai un proceso activo nesta lapela."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Fitxa ixten baduzu, prozesua amaituko da."
+msgstr "Se pecha esta lapela rematará este proceso."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr "Utzi"
+msgstr "Carcelar"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Itxi fitxa"
+msgstr "Pechar a lapela"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Ziur zaude Terminaletik irten nahi duzula?"
+msgstr "Confirma que quere saír do terminal?"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr "Prozesu aktibo bat dago terminal honetan."
+msgstr "Hai un proceso activo neste terminal"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr "Terminaletik irteten bazara prozesu hau amaituko da."
+msgstr "Se sae deste terminal rematará o proceso."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr "Irten Terminaletik"
+msgstr "Saír do terminal"
