@@ -6,7 +6,7 @@ TryExec=pantheon-terminal
 Exec=pantheon-terminal
 Icon=utilities-terminal
 Type=Application
-Categories=GTK;Utility;TerminalEmulator;
+Categories=GTK;Utility;TerminalEmulator;System;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 
