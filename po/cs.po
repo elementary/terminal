@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-07-11 13:19+0000\n"
-"Last-Translator: Martin Bárta <martin.bartama@gmail.com>\n"
+"PO-Revision-Date: 2012-10-20 12:36+0000\n"
+"Last-Translator: Hlobil Vaclav <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-21 05:08+0000\n"
+"X-Generator: Launchpad (build 16165)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Použít příkazový řádek"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:13
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:100
@@ -35,7 +35,7 @@ msgstr "Nové okno"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Nové hlavní okno"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
 msgid "Set shell at launch"
@@ -99,19 +99,19 @@ msgstr "Zobrazit okno s informacemi o programu"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr ""
+msgstr "Další karta"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr ""
+msgstr "Přejít na další kartu"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr ""
+msgstr "Předchozí karta"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Přejít na předchozí kartu"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
@@ -123,37 +123,37 @@ msgstr "Zapnout / Vypnout režim celé obrazovky"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Opravdu zavřít tuto kartu?"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "V této kartě běží aktivní proces."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Pokud tuto kartu zavřete, proces bude ukončen."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Zavřít kartu"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Opravdu chcete ukončit Terminál?"
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "V tomto terminálu běží aktivní proces."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Pokud ukončíte Terminál, tento proces bude ukončen."
 
 #: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Ukončit Terminál"
