@@ -201,14 +201,15 @@ namespace PantheonTerminal {
                              action_zoom_in_font ();
                              return true;
                          }
+
                          break;
                     case Gdk.Key.KP_Subtract:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_out_font ();
                             return true;
                         }
-                        break;
 
+                        break;
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
@@ -224,13 +225,15 @@ namespace PantheonTerminal {
                             this.notebook.current = this.notebook.get_tab_by_index ((int) i);
                             return true;
                         }
+
                         break;
                     case Gdk.Key.@9:
-                    if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
-                        this.notebook.current = this.notebook.get_tab_by_index (this.notebook.n_tabs - 1);
-                        return true;
-                    }
-                    break;
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                            this.notebook.current = this.notebook.get_tab_by_index (this.notebook.n_tabs - 1);
+                            return true;
+                        }
+
+                        break;
                 }
 
                 return false;
