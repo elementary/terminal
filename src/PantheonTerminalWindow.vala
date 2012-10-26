@@ -219,12 +219,18 @@ namespace PantheonTerminal {
                     case Gdk.Key.@8:
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                             var i = e.keyval - 49;
-                            if (i >= this.notebook.n_tabs - 1)
+                            if (i > this.notebook.n_tabs - 1)
                                 return false;
                             this.notebook.current = this.notebook.get_tab_by_index ((int) i);
                             return true;
                         }
                         break;
+                    case Gdk.Key.@9:
+                    if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                        this.notebook.current = this.notebook.get_tab_by_index (this.notebook.n_tabs - 1);
+                        return true;
+                    }
+                    break;
                 }
 
                 return false;
