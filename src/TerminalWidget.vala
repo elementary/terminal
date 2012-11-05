@@ -124,6 +124,8 @@ namespace PantheonTerminal {
 
             /* Make Links Clickable */
             this.clickable("""(https?|ftps?)://\S+""");
+
+            this.drag_data_received.connect (drag_received);
         }
 
         void on_child_exited () { }
@@ -214,7 +216,7 @@ namespace PantheonTerminal {
             Pango.FontDescription current_font = this.get_font ();
             if (default_size == 0) default_size = current_font.get_size ();
             if (current_font.get_size () > 60000) return;
-            
+
             zoom_factor += 0.1;
             current_font.set_size ((int) Math.floor(default_size * zoom_factor));
             this.set_font (current_font);
@@ -237,6 +239,21 @@ namespace PantheonTerminal {
             zoom_factor = 1.0;
             current_font.set_size (default_size);
             this.set_font (current_font);
+        }
+                public void drag_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+            var uris = selection_data.get_uris ();
+            string path;
+            File file;
+            for (var i = 0; i < uris.length; i++) {
+                file = File.new_for_uri (uris[i]);
+                if ((path = file.get_path ()) != null) {
+                    print (path + "\n");
+                    uris[i] = Shell.quote (path);
+                }
+            }
+            string uris_s = string.joinv (" ", uris);
+            this.feed_child (uris_s, uris_s.length);
+
         }
     }
 }
