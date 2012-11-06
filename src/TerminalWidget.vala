@@ -240,7 +240,8 @@ namespace PantheonTerminal {
             current_font.set_size (default_size);
             this.set_font (current_font);
         }
-                public void drag_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+
+        public void drag_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
             var uris = selection_data.get_uris ();
             string path;
             File file;
@@ -251,9 +252,9 @@ namespace PantheonTerminal {
                     uris[i] = Shell.quote (path);
                 }
             }
+
             string uris_s = string.joinv (" ", uris);
             this.feed_child (uris_s, uris_s.length);
-
         }
     }
 }
