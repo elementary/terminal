@@ -32,7 +32,9 @@ namespace PantheonTerminal {
         public int default_size;
         public double zoom_factor = 1.0;
 
-        public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui, PantheonTerminalWindow parent_window) {
+        public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
+                               PantheonTerminalWindow parent_window) {
+
             /* Set up the parents */
             this.window = parent_window;
 
@@ -46,7 +48,10 @@ namespace PantheonTerminal {
             Gdk.Color foreground_color;
             Gdk.Color.parse (settings.foreground, out foreground_color);
 
-            string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60", "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE", "#EEEEEE"};
+            string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE",
+                                    "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60",
+                                    "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE",
+                                    "#EEEEEE"};
 
             string current_string = "";
             int current_color = 0;
@@ -124,7 +129,8 @@ namespace PantheonTerminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable("""(https?|ftps?|irc|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|git+ssh|bzr|bzr+ssh|svn|svn+ssh|hg|mailto|magnet|)://\S+""");
+            this.clickable("""(https?|ftps?|irc|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|
+                               git+ssh|bzr|bzr+ssh|svn|svn+ssh|hg|mailto|magnet|)://\S+""");
         }
 
         void on_child_exited () { }
@@ -144,9 +150,11 @@ namespace PantheonTerminal {
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
                 if (settings.shell == "")
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () },
+                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
                 else
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { settings.shell }, null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { settings.shell }, null,
+                                            SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -240,7 +248,9 @@ namespace PantheonTerminal {
             this.set_font (current_font);
         }
 
-        public void drag_received (Gdk.DragContext context, int x, int y, Gtk.SelectionData selection_data, uint info, uint time_) {
+        public void drag_received (Gdk.DragContext context, int x, int y,
+                                   Gtk.SelectionData selection_data, uint info, uint time_) {
+
             var uris = selection_data.get_uris ();
             string path;
             File file;
