@@ -84,7 +84,9 @@ namespace PantheonTerminal {
             init ();
         }
 
-        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y, bool should_recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y,
+                                                   bool should_recreate_tabs = true) {
+
             this.app = app as PantheonTerminalApp;
             set_application (app);
             this.move (x, y);
@@ -121,7 +123,7 @@ namespace PantheonTerminal {
             }
 
             Notify.init ("pantheon-terminal");
-            //new Notify.Notification ("Bye Process", "apt-get moo finished", "utilities-terminal").show ();
+            //new Notify.Notification ("Bye Process", "p finished","utilities-terminal").show ();
 
             Gtk.AccelGroup accel_group = ui.get_accel_group ();
             add_accel_group (accel_group);
@@ -229,7 +231,7 @@ namespace PantheonTerminal {
                         break;
                     case Gdk.Key.@9:
                         if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
-                            this.notebook.current = this.notebook.get_tab_by_index (this.notebook.n_tabs - 1);
+                            notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
                         }
 
@@ -535,24 +537,41 @@ namespace PantheonTerminal {
 
         static const Gtk.ActionEntry[] main_entries = {
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
-           { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"), action_close_tab },
+           
+           { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
+             action_close_tab },
+           
            { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
              action_new_window },
-           { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"), action_new_tab },
-           { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"), action_copy },
-           { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"), action_paste },
+           
+           { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
+             action_new_tab },
+           
+           { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
+             action_copy },
+           
+           { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
+             action_paste },
+           
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
              N_("Select all the text in the terminal"), action_select_all },
+           
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
-           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"), action_next_tab },
-           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"), action_previous_tab },
+           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
+             action_next_tab },
+           
+           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"),
+             action_previous_tab },
 
-           { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"), action_zoom_in_font },
-           { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"), action_zoom_out_font },
-           //{ "ZoomDefault", Gtk.Stock.ZOOM_100, N_("Zoom to default"), "<Control>0", N_("Zoom to default"), action_zoom_default_font },
+           { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"),
+             action_zoom_in_font },
+           
+           { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"),
+             action_zoom_out_font },
 
-           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"), action_fullscreen }
+           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
+             action_fullscreen }
         };
 
     }
