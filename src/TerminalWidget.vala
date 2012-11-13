@@ -37,7 +37,7 @@ namespace PantheonTerminal {
 
             /* Set up the parents */
             this.window = parent_window;
-            
+
             /* Load configuration */
             int opacity = settings.opacity * 65535;
             set_opacity ((uint16) (opacity / 100));
