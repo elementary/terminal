@@ -35,6 +35,8 @@ namespace PantheonTerminal {
         private Button add_button;
         private Gtk.Clipboard clipboard;
 
+        private Toolbar toolbar;
+        
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
@@ -149,6 +151,11 @@ namespace PantheonTerminal {
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
 
+            toolbar = new Toolbar();
+            var container = new Box (Gtk.Orientation.VERTICAL, 0);
+            container.pack_start (toolbar, false, false, 0);
+            //add (toolbar);
+            
             notebook.tab_added.connect ((tab) => {
             	new_tab ("", tab);
             });
@@ -188,7 +195,9 @@ namespace PantheonTerminal {
             var right_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             right_box.show ();
             notebook.can_focus = false;
-            add (notebook);
+            //add (notebook);
+            container.pack_start (notebook, true, true, 0);
+            add (container);
 
             this.key_press_event.connect ((e) => {
                 switch (e.keyval) {
