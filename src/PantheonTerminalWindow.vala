@@ -147,6 +147,7 @@ namespace PantheonTerminal {
             notebook.tab_moved.connect (on_tab_moved);
             notebook.allow_new_window = true;
             notebook.allow_duplication = false;
+            notebook.margin_top = 3;
 
             notebook.tab_added.connect ((tab) => {
             	new_tab ("", tab);
@@ -188,7 +189,7 @@ namespace PantheonTerminal {
             right_box.show ();
             notebook.can_focus = false;
             add (notebook);
-            notebook.margin_top=3;
+
             this.key_press_event.connect ((e) => {
                 switch (e.keyval) {
                     case Gdk.Key.@0:
