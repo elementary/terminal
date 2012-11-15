@@ -24,6 +24,8 @@ namespace PantheonTerminal {
 
     public class TerminalWidget : Vte.Terminal {
 
+        public PantheonTerminalApp app;
+        
         GLib.Pid child_pid;
         private PantheonTerminalWindow window;
         public Granite.Widgets.Tab tab;
@@ -37,6 +39,7 @@ namespace PantheonTerminal {
 
             /* Set up the parents */
             this.window = parent_window;
+            app = parent_window.app;
 
             /* Load configuration */
             int opacity = settings.opacity * 65535;
@@ -150,10 +153,10 @@ namespace PantheonTerminal {
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             try {
                 if (settings.shell == "")
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { Vte.get_user_shell () },
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { Vte.get_user_shell () },
                                             null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
                 else
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir,  { settings.shell }, null,
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { settings.shell }, null,
                                             SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
@@ -179,11 +182,13 @@ namespace PantheonTerminal {
 
 
         public int calculate_width (int column_count) {
-            return (int) (this.get_char_width()) * column_count;
+            int width = (int) (this.get_char_width()) * column_count;
+            return width;
         }
 
         public int calculate_height (int row_count) {
-            return (int) (this.get_char_height()) * row_count;
+            int height = (int) (this.get_char_height()) * row_count;
+            return height;
         }
 
         private void clickable (string str) {
@@ -225,7 +230,7 @@ namespace PantheonTerminal {
             if (current_font.get_size () > 60000) return;
 
             zoom_factor += 0.1;
-            current_font.set_size ((int) Math.floor(default_size * zoom_factor));
+            current_font.set_size ((int) Math.floor (default_size * zoom_factor));
             this.set_font (current_font);
         }
 
@@ -235,7 +240,7 @@ namespace PantheonTerminal {
             if (current_font.get_size () < 2048) return;
 
             zoom_factor -= 0.1;
-            current_font.set_size ((int) Math.ceil(default_size * zoom_factor));
+            current_font.set_size ((int) Math.ceil (default_size * zoom_factor));
             this.set_font (current_font);
         }
 

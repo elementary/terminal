@@ -35,8 +35,6 @@ namespace PantheonTerminal {
         private Button add_button;
         private Gtk.Clipboard clipboard;
 
-        private MenuBar menubar;
-
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
@@ -140,6 +138,8 @@ namespace PantheonTerminal {
 
             if (recreate_tabs)
                 open_tabs ();
+
+            set_size_request (app.minimum_width, app.minimum_height);
         }
 
         private void setup_ui () {
@@ -151,10 +151,6 @@ namespace PantheonTerminal {
             notebook.allow_new_window = true;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
-
-            menubar = new MenuBar();
-            var container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            container.pack_start (menubar, false, false, 0);
 
             notebook.tab_added.connect ((tab) => {
             	new_tab ("", tab);
@@ -195,9 +191,7 @@ namespace PantheonTerminal {
             var right_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             right_box.show ();
             notebook.can_focus = false;
-            container.pack_start (notebook, true, true, 0);
-            //add (notebook);
-            add (container);
+            add (notebook);
 
             this.key_press_event.connect ((e) => {
                 switch (e.keyval) {
@@ -269,6 +263,7 @@ namespace PantheonTerminal {
             if (restore_pos) {
                 int x = saved_state.opening_x;
                 int y = saved_state.opening_y;
+
                 if (x != -1 && y != -1)
                     this.move (x, y);
                 else {
@@ -337,6 +332,7 @@ namespace PantheonTerminal {
                 if (tab_loc != "")
                     saved_state.tabs += tab_loc + ",";
             }
+
             int root_x, root_y;
             this.get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
@@ -429,7 +425,13 @@ namespace PantheonTerminal {
             });
 
             t.set_font (term_font);
-            set_size_request (t.calculate_width (80), t.calculate_height (24));
+            
+            int minimum_width = t.calculate_width (80);
+            int minimum_height = t.calculate_height (24);
+            set_size_request (minimum_width, minimum_height);
+            app.minimum_width = minimum_width;
+            app.minimum_height = minimum_height;
+            
             terminals.append (t);
 
             if (to_be_inserted)
