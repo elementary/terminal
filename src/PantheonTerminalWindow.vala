@@ -138,7 +138,10 @@ namespace PantheonTerminal {
 
             if (recreate_tabs)
                 open_tabs ();
+
+            set_size_request (app.minimum_width, app.minimum_height);
         }
+
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
@@ -260,6 +263,7 @@ namespace PantheonTerminal {
             if (restore_pos) {
                 int x = saved_state.opening_x;
                 int y = saved_state.opening_y;
+
                 if (x != -1 && y != -1)
                     this.move (x, y);
                 else {
@@ -328,6 +332,7 @@ namespace PantheonTerminal {
                 if (tab_loc != "")
                     saved_state.tabs += tab_loc + ",";
             }
+
             int root_x, root_y;
             this.get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
@@ -420,7 +425,13 @@ namespace PantheonTerminal {
             });
 
             t.set_font (term_font);
-            set_size_request (t.calculate_width (80), t.calculate_height (24));
+            
+            int minimum_width = t.calculate_width (80);
+            int minimum_height = t.calculate_height (24);
+            set_size_request (minimum_width, minimum_height);
+            app.minimum_width = minimum_width;
+            app.minimum_height = minimum_height;
+            
             terminals.append (t);
 
             if (to_be_inserted)
@@ -538,36 +549,36 @@ namespace PantheonTerminal {
 
         static const Gtk.ActionEntry[] main_entries = {
            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
-           
+
            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
              action_close_tab },
-           
+
            { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
              action_new_window },
-           
+
            { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
              action_new_tab },
-           
+
            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
              action_copy },
-           
+
            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
              action_paste },
-           
+
            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
              N_("Select all the text in the terminal"), action_select_all },
-           
+
            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
              action_next_tab },
-           
+
            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"),
              action_previous_tab },
 
            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"),
              action_zoom_in_font },
-           
+
            { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"),
              action_zoom_out_font },
 

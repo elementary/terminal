@@ -1,21 +1,21 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /***
-  BEGIN LICENSE
+    BEGIN LICENSE
 
-  Copyright (C) 2011-2012 Mario Guerriero <mefrio.g@gmail.com>
-  This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License version 3, as published
-  by the Free Software Foundation.
+    Copyright (C) 2011-2012 Mario Guerriero <mefrio.g@gmail.com>
+    This program is free software: you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License version 3, as published
+    by the Free Software Foundation.
 
-  This program is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranties of
-  MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
-  PURPOSE.  See the GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranties of
+    MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
+    PURPOSE.  See the GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License along
-  with this program.  If not, see <http://www.gnu.org/licenses/>
+    You should have received a copy of the GNU General Public License along
+    with this program.  If not, see <http://www.gnu.org/licenses/>
 
-  END LICENSE
+    END LICENSE
 ***/
 
 using Gtk;
@@ -29,38 +29,42 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalApp : Granite.Application {
 
-            public GLib.List <PantheonTerminalWindow> windows;
+        public GLib.List <PantheonTerminalWindow> windows;
 
-            static string app_cmd_name;
-            static string app_shell_name;
-            static bool   print_version;
-            construct {
-                print_version = false;
-                build_data_dir = Constants.DATADIR;
-                build_pkg_data_dir = Constants.PKGDATADIR;
-                build_release_name = Constants.RELEASE_NAME;
-                build_version = Constants.VERSION;
-                build_version_info = Constants.VERSION_INFO;
+        static string app_cmd_name;
+        static string app_shell_name;
+        static bool print_version;
 
-                program_name = app_cmd_name;
-                exec_name = app_cmd_name.down ().replace (" ", "-");
-                app_years = "2011-2012";
-                app_icon = "utilities-terminal";
-                app_launcher = "pantheon-terminal.desktop";
-                application_id = "net.launchpad.pantheon-terminal";
-                main_url = "https://launchpad.net/pantheon-terminal";
-                bug_url = "https://bugs.launchpad.net/pantheon-terminal";
-                help_url = "https://answers.launchpad.net/pantheon-terminal";
-                translate_url = "https://translations.launchpad.net/pantheon-terminal";
-                about_authors = { "David Gomes <david@elementaryos.org",
-                                  "Mario Guerriero <mefrio@elementaryos.org>",
-                                  "Akshay Shekher <voldyman666@gmail.com>" };
+        public int minimum_width;
+        public int minimum_height;
+        
+        construct {
+            print_version = false;
+            build_data_dir = Constants.DATADIR;
+            build_pkg_data_dir = Constants.PKGDATADIR;
+            build_release_name = Constants.RELEASE_NAME;
+            build_version = Constants.VERSION;
+            build_version_info = Constants.VERSION_INFO;
 
-                //about_documenters = {"",""};
-                about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
-                about_translators = "Launchpad Translators";
-                about_license_type = License.GPL_3_0;
-            }
+            program_name = app_cmd_name;
+            exec_name = app_cmd_name.down ().replace (" ", "-");
+            app_years = "2011-2012";
+            app_icon = "utilities-terminal";
+            app_launcher = "pantheon-terminal.desktop";
+            application_id = "net.launchpad.pantheon-terminal";
+            main_url = "https://launchpad.net/pantheon-terminal";
+            bug_url = "https://bugs.launchpad.net/pantheon-terminal";
+            help_url = "https://answers.launchpad.net/pantheon-terminal";
+            translate_url = "https://translations.launchpad.net/pantheon-terminal";
+            about_authors = { "David Gomes <david@elementaryos.org",
+                              "Mario Guerriero <mefrio@elementaryos.org>",
+                              "Akshay Shekher <voldyman666@gmail.com>" };
+
+            //about_documenters = {"",""};
+            about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
+            about_translators = "Launchpad Translators";
+            about_license_type = License.GPL_3_0;
+        }
 
         public PantheonTerminalApp () {
             Logger.initialize ("PantheonTerminal");
