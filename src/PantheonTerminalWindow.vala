@@ -141,6 +141,7 @@ namespace PantheonTerminal {
             if (recreate_tabs)
                 open_tabs ();
         }
+
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
