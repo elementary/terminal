@@ -25,7 +25,7 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
 
         public PantheonTerminalApp app;
-        
+
         GLib.Pid child_pid;
         private PantheonTerminalWindow window;
         public Granite.Widgets.Tab tab;
@@ -33,6 +33,8 @@ namespace PantheonTerminal {
 
         public int default_size;
         public double zoom_factor = 1.0;
+
+        static const string regex_string = """((https?|file|ftps?|irc|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|git\+ssh|bzr|bzr\+ssh|svn|svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[\~\w\.\-]+)+\/?""";
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
                                PantheonTerminalWindow parent_window) {
@@ -132,8 +134,7 @@ namespace PantheonTerminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable("""(https?|ftps?|irc|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|
-                               git+ssh|bzr|bzr+ssh|svn|svn+ssh|hg|mailto|magnet|)://\S+""");
+            this.clickable(regex_string);
         }
 
         void on_child_exited () { }
