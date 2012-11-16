@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-09-12 23:32+0000\n"
-"Last-Translator: David Gomes <david@elementaryos.org>\n"
+"PO-Revision-Date: 2012-11-15 10:28+0000\n"
+"Last-Translator: Sérgio Marques <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-11-16 04:54+0000\n"
+"X-Generator: Launchpad (build 16272)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -103,7 +103,7 @@ msgstr "Separador seguinte"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr "Ir para o próximo separador"
+msgstr "Ir para o separador SEGUINTE"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
