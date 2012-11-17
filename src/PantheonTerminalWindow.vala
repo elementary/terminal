@@ -33,6 +33,7 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         FontDescription term_font;
         private Button add_button;
+        private string saved_tabs;
         private Gtk.Clipboard clipboard;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
@@ -103,6 +104,7 @@ namespace PantheonTerminal {
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
+            saved_tabs = "";
             restore_saved_state (restore_pos);
 
             /* Actions and UIManager */
@@ -257,8 +259,9 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            default_width = PantheonTerminal.saved_state.window_width;
+            default_width  = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
+            saved_tabs     = saved_state.tabs;
 
             if (restore_pos) {
                 int x = saved_state.opening_x;
@@ -277,6 +280,14 @@ namespace PantheonTerminal {
                 maximize ();
             else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 fullscreen ();
+
+            // Reset The States
+            PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+            PantheonTerminal.saved_state.window_width  = 500;
+            PantheonTerminal.saved_state.window_height = 400;
+            PantheonTerminal.saved_state.opening_y = -1;
+            PantheonTerminal.saved_state.opening_x = -1;
+            PantheonTerminal.saved_state.tabs = "";
         }
 
 		private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
@@ -347,7 +358,7 @@ namespace PantheonTerminal {
         }
 
         private void open_tabs () {
-            string tabs = saved_state.tabs;
+            string tabs = saved_tabs;
             if (tabs == "" || !settings.remember_tabs || tabs.replace (",", " ").strip () == "")
                 new_tab ();
             else {
@@ -425,13 +436,13 @@ namespace PantheonTerminal {
             });
 
             t.set_font (term_font);
-            
+
             int minimum_width = t.calculate_width (80);
             int minimum_height = t.calculate_height (24);
             set_size_request (minimum_width, minimum_height);
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
-            
+
             terminals.append (t);
 
             if (to_be_inserted)
