@@ -36,7 +36,7 @@ namespace PantheonTerminal {
 
         static const string regex_string = """((https?|file|ftps?|irc|sftp|ldaps?|nfs|smb|rsync
                                               |ssh|rlogin|telnet|git|git\+ssh|bzr|bzr\+ssh|svn
-                                              |svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[ -~]+)+\/?""";
+                                              |svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[!-~]+)+\/?""";
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
                                PantheonTerminalWindow parent_window) {
