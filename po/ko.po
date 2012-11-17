@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-08-05 03:45+0000\n"
+"PO-Revision-Date: 2012-11-16 10:15+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-11-17 05:04+0000\n"
+"X-Generator: Launchpad (build 16278)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -99,19 +99,19 @@ msgstr "창에 대해 표시합니다."
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Next Tab"
-msgstr ""
+msgstr "다음 탭"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
 msgid "Go to next tab"
-msgstr ""
+msgstr "다음 탭으로 가기"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Previous Tab"
-msgstr ""
+msgstr "이전 탭"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
 msgid "Go to previous tab"
-msgstr ""
+msgstr "이전 탭으로 가기"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
 msgid "Fullscreen"
