@@ -34,7 +34,9 @@ namespace PantheonTerminal {
         public int default_size;
         public double zoom_factor = 1.0;
 
-        static const string regex_string = """((https?|file|ftps?|irc|sftp|ldaps?|nfs|smb|rsync|ssh|rlogin|telnet|git|git\+ssh|bzr|bzr\+ssh|svn|svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[ -~]+)+\/?""";
+        static const string regex_string = """((https?|file|ftps?|irc|sftp|ldaps?|nfs|smb|rsync
+                                              |ssh|rlogin|telnet|git|git\+ssh|bzr|bzr\+ssh|svn
+                                              |svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[ -~]+)+\/?""";
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
                                PantheonTerminalWindow parent_window) {
@@ -99,7 +101,6 @@ namespace PantheonTerminal {
                     case Gdk.BUTTON_PRIMARY:
                         if (uri != null) {
                             try {
-                                print (uri+"\n");
                                 Gtk.show_uri (null, (!) uri, Gtk.get_current_event_time ());
                                 return true;
                             } catch (GLib.Error error) {
@@ -264,7 +265,6 @@ namespace PantheonTerminal {
             for (var i = 0; i < uris.length; i++) {
                 file = File.new_for_uri (uris[i]);
                 if ((path = file.get_path ()) != null) {
-                    print (path + "\n");
                     uris[i] = Shell.quote (path);
                 }
             }
