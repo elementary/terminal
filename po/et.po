@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-09-13 00:25+0100\n"
-"PO-Revision-Date: 2012-11-14 21:08+0000\n"
+"PO-Revision-Date: 2012-11-17 22:46+0000\n"
 "Last-Translator: Kristjan Vool <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-15 05:14+0000\n"
-"X-Generator: Launchpad (build 16265)\n"
+"X-Launchpad-Export-Date: 2012-11-18 04:52+0000\n"
+"X-Generator: Launchpad (build 16278)\n"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -35,7 +35,7 @@ msgstr "Uus aken"
 
 #: /home/david/src/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Uus juurkasutaja aken"
+msgstr "Uus aken juurkasutajana"
 
 #: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
 msgid "Set shell at launch"
