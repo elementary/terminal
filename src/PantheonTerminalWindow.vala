@@ -276,13 +276,10 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
                 maximize ();
-                notebook.margin_top = 3;
-            } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
+            else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 fullscreen ();
-                notebook.margin_top = 0;
-            }
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
@@ -314,16 +311,12 @@ namespace PantheonTerminal {
 
         private void update_saved_state () {
             /* Save window state */
-            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0) {
+            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-                notebook.margin_top = 3;
-            } else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0) {
+            else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
-                notebook.margin_top = 0;
-            } else {
+            else
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-                notebook.margin_top = 3;
-            }
 
             /* Save window size */
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
@@ -548,13 +541,11 @@ namespace PantheonTerminal {
 
         void action_fullscreen () {
           if (is_fullscreen) {
-              notebook.margin_top = 3;
-              unfullscreen();
-              is_fullscreen = false;
+            unfullscreen();
+            is_fullscreen = false;
           } else {
-              notebook.margin_top = 0;
-              fullscreen();
-              is_fullscreen = true;
+            fullscreen();
+            is_fullscreen = true;
           }
         }
 
