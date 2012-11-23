@@ -544,11 +544,9 @@ namespace PantheonTerminal {
             if (is_fullscreen) {
                 unfullscreen();
                 is_fullscreen = false;
-                margin_top = 3;
             } else {
                 fullscreen();
                 is_fullscreen = true;
-                margin_top = 0;
             }
         }
 
@@ -593,4 +591,4 @@ namespace PantheonTerminal {
 
     }
 
-} // Namespace
+}
