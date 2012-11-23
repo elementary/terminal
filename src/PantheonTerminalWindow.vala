@@ -1,21 +1,21 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /***
-  BEGIN ICENSE
+    BEGIN ICENSE
 
-  Copyright (C) 2011-2012 David Gomes <davidrafagomes@gmail.com>
-  This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License version 3, as published
-  by the Free Software Foundation.
+    Copyright (C) 2011-2012 David Gomes <davidrafagomes@gmail.com>
+    This program is free software: you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License version 3, as published
+    by the Free Software Foundation.
 
-  This program is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranties of
-  MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
-  PURPOSE.  See the GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranties of
+    MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
+    PURPOSE.  See the GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License along
-  with this program.  If not, see <http://www.gnu.org/licenses/>
+    You should have received a copy of the GNU General Public License along
+    with this program.  If not, see <http://www.gnu.org/licenses/>
 
-  END LICENSE
+    END LICENSE
 ***/
 
 using Gtk;
@@ -205,13 +205,13 @@ namespace PantheonTerminal {
                         }
 
                         break;
-                     case Gdk.Key.KP_Add:
-                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                             action_zoom_in_font ();
-                             return true;
-                         }
+                    case Gdk.Key.KP_Add:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            action_zoom_in_font ();
+                            return true;
+                        }
 
-                         break;
+                        break;
                     case Gdk.Key.KP_Subtract:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_out_font ();
@@ -231,6 +231,7 @@ namespace PantheonTerminal {
                             var i = e.keyval - 49;
                             if (i > this.notebook.n_tabs - 1)
                                 return false;
+
                             this.notebook.current = this.notebook.get_tab_by_index ((int) i);
                             return true;
                         }
@@ -402,15 +403,15 @@ namespace PantheonTerminal {
 
                 /* Strips the location */
                 /*for (int i = 0; i < new_text.length; i++) {
-                    if (new_text[i] == ':') {
-                        new_text = new_text[i + 2:new_text.length];
-                        break;
-                    }
-                }
+                  if (new_text[i] == ':') {
+                  new_text = new_text[i + 2:new_text.length];
+                  break;
+                  }
+                  }
 
-                if (new_text.length > 50) {
-                    new_text = new_text[new_text.length - 50:new_text.length];
-                }
+                  if (new_text.length > 50) {
+                  new_text = new_text[new_text.length - 50:new_text.length];
+                  }
                 */
 
                 tab.label = new_text;
@@ -539,53 +540,55 @@ namespace PantheonTerminal {
             notebook.previous_page ();
         }
 
-        void action_fullscreen () {
-          if (is_fullscreen) {
-            unfullscreen();
-            is_fullscreen = false;
-          } else {
-            fullscreen();
-            is_fullscreen = true;
-          }
+        void action_fullscreen (bool to_what=null) {
+            if (is_fullscreen) {
+                unfullscreen();
+                is_fullscreen = false;
+                margin_top = 3;
+            } else {
+                fullscreen();
+                is_fullscreen = true;
+                margin_top = 0;
+            }
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-           { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
+            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
 
-           { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
-             action_close_tab },
+            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
+              action_close_tab },
 
-           { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
-             action_new_window },
+            { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
+              action_new_window },
 
-           { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
-             action_new_tab },
+            { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
+              action_new_tab },
 
-           { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
-             action_copy },
+            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
+              action_copy },
 
-           { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
-             action_paste },
+            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
+              action_paste },
 
-           { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
-             N_("Select all the text in the terminal"), action_select_all },
+            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
+              N_("Select all the text in the terminal"), action_select_all },
 
-           { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
+            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
 
-           { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
-             action_next_tab },
+            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
+              action_next_tab },
 
-           { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"),
-             action_previous_tab },
+            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"),
+              action_previous_tab },
 
-           { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"),
-             action_zoom_in_font },
+            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"),
+              action_zoom_in_font },
 
-           { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"),
-             action_zoom_out_font },
+            { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"),
+              action_zoom_out_font },
 
-           { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
-             action_fullscreen }
+            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
+              action_fullscreen }
         };
 
     }
