@@ -540,7 +540,7 @@ namespace PantheonTerminal {
             notebook.previous_page ();
         }
 
-        void action_fullscreen (bool to_what=null) {
+        void action_fullscreen () {
             if (is_fullscreen) {
                 unfullscreen();
                 is_fullscreen = false;
