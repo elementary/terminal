@@ -113,7 +113,7 @@ namespace PantheonTerminal {
 
             var context = new OptionContext ("File");
             context.add_main_entries (entries, "pantheon-terminal");
-            context.add_group (Gtk.get_option_group(true));
+            context.add_group (Gtk.get_option_group (true));
 
             try {
                 context.parse (ref args);
