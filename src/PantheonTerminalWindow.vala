@@ -276,10 +276,13 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
                 maximize ();
-            else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
+                notebook.margin_top = 3;
+            } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
+                notebook.margin_top = 0;
+            }
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
@@ -311,12 +314,16 @@ namespace PantheonTerminal {
 
         private void update_saved_state () {
             /* Save window state */
-            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
+            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-            else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
+                notebook.margin_top = 3;
+            } else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
-            else
+                notebook.margin_top = 0;
+            } else {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+                notebook.margin_top = 3;
+            }
 
             /* Save window size */
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
@@ -541,11 +548,13 @@ namespace PantheonTerminal {
 
         void action_fullscreen () {
           if (is_fullscreen) {
-            unfullscreen();
-            is_fullscreen = false;
+              notebook.margin_top = 3;
+              unfullscreen();
+              is_fullscreen = false;
           } else {
-            fullscreen();
-            is_fullscreen = true;
+              notebook.margin_top = 0;
+              fullscreen();
+              is_fullscreen = true;
           }
         }
 
