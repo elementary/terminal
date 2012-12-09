@@ -34,9 +34,29 @@ namespace PantheonTerminal {
         public int default_size;
         public double zoom_factor = 1.0;
 
-        static const string regex_string = """((https?|file|ftps?|irc|sftp|ldaps?|nfs|smb|rsync
-                                              |ssh|rlogin|telnet|git|git\+ssh|bzr|bzr\+ssh|svn
-                                              |svn\+ssh|hg|mailto|magnet):\/?)?(\~|\/\/?[!-~]+)+\/?""";
+        /* Following strings are used to build RegEx for matching URIs */
+        const string USERCHARS = "-[:alnum:]";
+        const string USERCHARS_CLASS = "[" + USERCHARS + "]";
+        const string PASSCHARS_CLASS = "[-[:alnum:]\\Q,?;.:/!%$^*&~\"#'\\E]";
+        const string HOSTCHARS_CLASS = "[-[:alnum:]]";
+        const string HOST = HOSTCHARS_CLASS + "+(\\." + HOSTCHARS_CLASS + "+)*";
+        const string PORT = "(?:\\:[[:digit:]]{1,5})?";
+        const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;@&=?/~#%\\E]";
+        const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
+        const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
+                                 |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
+                                 |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
+
+        const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
+        const string URLPATH =  "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
+
+        static const string[] regex_strings = {
+            SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
+            "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
+            "(?:callto:|h323:|sip:)" + USERCHARS_CLASS + "[" + USERCHARS + ".]*(?:" + PORT + "/[a-z0-9]+)?\\@" + HOST,
+            "(?:mailto:)?" + USERCHARS_CLASS + "[" + USERCHARS+ ".]*\\@" + HOSTCHARS_CLASS + "+\\." + HOST,
+            "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
+        };
 
         public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
                                PantheonTerminalWindow parent_window) {
@@ -136,7 +156,7 @@ namespace PantheonTerminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable (regex_string);
+            this.clickable (regex_strings);
         }
 
         void on_child_exited () { }
@@ -194,14 +214,16 @@ namespace PantheonTerminal {
             return height;
         }
 
-        private void clickable (string str) {
-            try {
-                var regex = new GLib.Regex (str);
-                int id = this.match_add_gregex (regex, 0);
+        private void clickable (string[] str) {
+            foreach (string exp in str) {
+                try {
+                    var regex = new GLib.Regex (exp);
+                    int id = this.match_add_gregex (regex, 0);
 
-                this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-            } catch (GLib.RegexError error) {
-                warning (error.message);
+                    this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
+                } catch (GLib.RegexError error) {
+                    warning (error.message);
+                }
             }
         }
 
