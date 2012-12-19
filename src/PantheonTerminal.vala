@@ -33,7 +33,8 @@ namespace PantheonTerminal {
 
         static string app_cmd_name;
         static string app_shell_name;
-        static string command;
+        [CCode (array_length = false, array_null_terminated = true)]
+        static string[]? command = null;
         static bool print_version;
 
         public int minimum_width;
@@ -86,7 +87,8 @@ namespace PantheonTerminal {
                     warning (e.message);
                 }
             }
-            if (command != "") {
+
+            if (command != null) {
                 new_window_with_command (command);
                 return;
             }
@@ -107,18 +109,22 @@ namespace PantheonTerminal {
             add_window (window);
         }
 
-        public void new_window_with_command (string cmd) {
+        public void new_window_with_command (string[] cmd) {
             var window = new PantheonTerminalWindow (this);
             window.show ();
             windows.append (window);
             add_window (window);
-            var _cmd = cmd + "\n";
-            window.current_terminal.feed_child (_cmd, _cmd.length);
+            window.exec_cmd (cmd[0]);
+
+            for (int i = 1; i < cmd.length; i++) {
+                window.new_tab_with_cmd (cmd[i]);
+            }
         }
+
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, "Print version info and exit", null },
-            { "execute" , 'x', 0, OptionArg.STRING, ref command, N_("Command to execute at launch"), ""},
+            { "execute" , 'x', 0, OptionArg.STRING_ARRAY, ref command, N_("Command to execute at launch"), "" },
             { null }
         };
 

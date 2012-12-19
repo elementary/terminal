@@ -444,6 +444,16 @@ namespace PantheonTerminal {
             t.grab_focus ();
         }
 
+        public void new_tab_with_cmd (string cmd) {
+            new_tab ();
+            exec_cmd (cmd);
+        }
+
+        public void exec_cmd (string cmd) {
+            var _cmd = cmd + "\n";
+            current_terminal.feed_child (_cmd, _cmd.length);
+        }
+
         static string get_term_font () {
             string font_name;
 
