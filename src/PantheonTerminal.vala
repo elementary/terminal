@@ -123,7 +123,7 @@ namespace PantheonTerminal {
 
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
-            { "version", 'v', 0, OptionArg.NONE, out print_version, "Print version info and exit", null },
+            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'x', 0, OptionArg.STRING_ARRAY, ref command, N_("Command to execute at launch"), "" },
             { null }
         };
