@@ -40,6 +40,7 @@ namespace PantheonTerminal {
         public TerminalWidget current_terminal = null;
         public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
+        private string saved_tabs;
 
         const string ui_string = """
             <ui>
@@ -261,6 +262,7 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
+            saved_tabs = saved_state.tabs;
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
@@ -281,6 +283,14 @@ namespace PantheonTerminal {
                 maximize ();
             else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
                 fullscreen ();
+
+            /* Reset saved state to avoid restoring it again */
+            saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+            saved_state.window_height = 400;
+            saved_state.window_width = 500;
+            saved_state.opening_x = -1;
+            saved_state.opening_y = -1;
+            saved_state.tabs = "";
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
@@ -350,7 +360,7 @@ namespace PantheonTerminal {
         }
 
         private void open_tabs () {
-            string tabs = saved_state.tabs;
+            string tabs = saved_tabs;
             if (tabs == "" || !settings.remember_tabs || tabs.replace (",", " ").strip () == "")
                 new_tab ();
             else {
