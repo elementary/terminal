@@ -107,6 +107,9 @@ namespace PantheonTerminal {
             Gdk.Color.parse (settings.cursor_color, out cursor_color);
             set_color_cursor (cursor_color);
 
+            /* Bold font */
+            this.allow_bold = settings.allow_bold;
+            
             /* Load encoding */
             if (settings.encoding != "")
                 set_encoding (settings.encoding);

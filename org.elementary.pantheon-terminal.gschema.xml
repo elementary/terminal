@@ -102,9 +102,12 @@
     <key name="font" type="s">
       <default>""</default>
       <summary>The default font of the terminal.</summary>
-      <description>
-        The default font of the terminal. use [Font Name] [Property] [Size]. eg. Droid Sans Mono 12
-      </description>
+      <description>The default font of the terminal. use [Font Name] [Property] [Size]. eg. Droid Sans Mono 12.</description>
+    </key>
+    <key name="allow-bold" type="b">
+      <default>true</default>
+      <summary>Whether to allow bold fonts.</summary>
+      <description>Defines whether fonts can be bold or not.</description>
     </key>
   </schema>
 </schemalist>
