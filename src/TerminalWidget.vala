@@ -109,7 +109,7 @@ namespace PantheonTerminal {
 
             /* Bold font */
             this.allow_bold = settings.allow_bold;
-            
+
             /* Load encoding */
             if (settings.encoding != "")
                 set_encoding (settings.encoding);
@@ -184,6 +184,17 @@ namespace PantheonTerminal {
                 else
                     this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { settings.shell }, null,
                                             SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+            } catch (Error e) {
+                warning (e.message);
+            }
+        }
+
+        public void run_program (string program) {
+            string dir = GLib.Environment.get_current_dir ();
+
+            try {
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { program },
+                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }

@@ -79,10 +79,10 @@ namespace PantheonTerminal {
         //variable indicating that a tab might has been closed by exit command
         bool closed_by_exit;
 
-        public PantheonTerminalWindow (Granite.Application app) {
+        public PantheonTerminalWindow (Granite.Application app, bool should_recreate_tabs=true) {
             this.app = app as PantheonTerminalApp;
             set_application (app);
-            init ();
+            init (should_recreate_tabs);
         }
 
         public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y,
@@ -371,7 +371,7 @@ namespace PantheonTerminal {
             }
         }
 
-        private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null) {
+        private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
@@ -385,11 +385,15 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
-            /* Set up the virtual terminal */
-            if (location == "")
-                t.active_shell ();
-            else
-                t.active_shell (location);
+            if (program == null) {
+                /* Set up the virtual terminal */
+                if (location == "")
+                    t.active_shell ();
+                else
+                    t.active_shell (location);
+            } else {
+                t.run_program (program);
+            }
 
             /* Set up actions releated to the terminal */
             main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
@@ -454,6 +458,9 @@ namespace PantheonTerminal {
             t.grab_focus ();
         }
 
+        public void run_program_term (string program) {
+            new_tab ("", null, program);
+        }
         public void new_tab_with_cmd (string cmd) {
             new_tab ();
             exec_cmd (cmd);
