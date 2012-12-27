@@ -34,7 +34,7 @@ namespace PantheonTerminal {
         static string app_cmd_name;
         static string app_shell_name;
         [CCode (array_length = false, array_null_terminated = true)]
-        static string[]? command = null;
+        static string[]? command_x = null;
         static bool print_version;
 
         public int minimum_width;
@@ -88,8 +88,8 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (command != null) {
-                new_window_with_command (command);
+            if (command_x != null) {
+                new_window_with_command (command_x);
                 return;
             }
             new_window ();
@@ -124,7 +124,7 @@ namespace PantheonTerminal {
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
-            { "execute" , 'x', 0, OptionArg.STRING_ARRAY, ref command, N_("Command to execute at launch"), "" },
+            { "execute" , 'x', 0, OptionArg.STRING_ARRAY, ref command_x, N_("Command to execute at launch"), "" },
             { null }
         };
 
