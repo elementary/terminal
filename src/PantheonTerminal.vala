@@ -33,8 +33,11 @@ namespace PantheonTerminal {
 
         static string app_cmd_name;
         static string app_shell_name;
+
+        /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
-        static string[]? command = null;
+        static string[]? command_e = null;
+
         static bool print_version;
 
         public int minimum_width;
@@ -88,8 +91,8 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (command != null) {
-                new_window_with_command (command);
+            if (command_e != null) {
+                new_window_with_programs (command_e);
                 return;
             }
             new_window ();
@@ -109,22 +112,39 @@ namespace PantheonTerminal {
             add_window (window);
         }
 
-        public void new_window_with_command (string[] cmd) {
-            var window = new PantheonTerminalWindow (this);
-            window.show ();
-            windows.append (window);
-            add_window (window);
-            window.exec_cmd (cmd[0]);
+        public void new_window_with_programs (string[] programs) {
+            PantheonTerminalWindow? window;
+            window = get_last_window ();
 
-            for (int i = 1; i < cmd.length; i++) {
-                window.new_tab_with_cmd (cmd[i]);
+            if (window == null) {
+                window = new PantheonTerminalWindow (this, false);
+                window.show ();
+                windows.append (window);
+                add_window (window);
+            }
+
+            foreach (string program in programs) {
+                string? path = GLib.Environment.find_program_in_path (program);
+                if (path != null) {
+                    window.run_program_term (path);
+                } else {
+                    error ("Unable to run program");
+                    Process.exit (1);
+                }
             }
         }
 
+        private PantheonTerminalWindow? get_last_window () {
+            if (windows.length () > 0) {
+                uint length = windows.length ();
+                return windows.nth_data (length);
+            }
+            return null;
+        }
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
-            { "execute" , 'x', 0, OptionArg.STRING_ARRAY, ref command, N_("Command to execute at launch"), "" },
+            { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { null }
         };
 
