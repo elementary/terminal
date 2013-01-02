@@ -301,11 +301,11 @@ namespace PantheonTerminal {
             for (var i = 0; i < uris.length; i++) {
                 file = File.new_for_uri (uris[i]);
                 if ((path = file.get_path ()) != null) {
-                    uris[i] = Shell.quote (path);
+                    uris[i] = Shell.quote (path) + " ";
                 }
             }
 
-            string uris_s = string.joinv (" ", uris);
+            string uris_s = string.joinv ("", uris);
             this.feed_child (uris_s, uris_s.length);
         }
     }
