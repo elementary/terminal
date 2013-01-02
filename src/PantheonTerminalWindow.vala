@@ -346,6 +346,7 @@ namespace PantheonTerminal {
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
                 tab_loc = t.get_shell_location ();
+
                 if (tab_loc != "")
                     saved_state.tabs += tab_loc + ",";
             }
