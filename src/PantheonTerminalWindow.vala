@@ -45,7 +45,6 @@ namespace PantheonTerminal {
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
-                <menuitem name="Quit" action="Quit"/>
                 <menuitem name="New window" action="New window"/>
                 <menuitem name="New tab" action="New tab"/>
                 <menuitem name="CloseTab" action="CloseTab"/>
@@ -270,9 +269,9 @@ namespace PantheonTerminal {
                 int x = saved_state.opening_x;
                 int y = saved_state.opening_y;
 
-                if (x != -1 && y != -1)
+                if (x != -1 && y != -1) {
                     this.move (x, y);
-                else {
+                } else {
                     x = (Gdk.Screen.width ()  - default_width)  / 2;
                     y = (Gdk.Screen.height () - default_height) / 2;
                     this.move (x, y);
@@ -577,8 +576,6 @@ namespace PantheonTerminal {
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-            { "Quit", Gtk.Stock.QUIT, N_("Quit"), "<Control>q", N_("Quit"), action_quit },
-
             { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
               action_close_tab },
 
