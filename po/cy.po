@@ -7,153 +7,169 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-09-13 00:25+0100\n"
+"POT-Creation-Date: 2013-01-02 20:38+0530\n"
 "PO-Revision-Date: 2012-03-31 18:17+0000\n"
-"Last-Translator: Christopher Griffiths <christopher.swift@linux.com>\n"
+"Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <cy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:16+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
+"X-Generator: Launchpad (build 16393)\n"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:12
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:13
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:100
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:345
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:349
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:13
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:106
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:404
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:408
 msgid "Terminal"
 msgstr "Terfynnell"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:14
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "New Window"
 msgstr "Ffenestr Newydd"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:15
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
-msgid "Set shell at launch"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:215
-msgid "Open a new tab"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:501
-msgid "Quit"
-msgstr "Gadael"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
-msgid "Close"
-msgstr "Cau"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
-msgid "Open a new window"
-msgstr "Agor ffenestr newydd"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
-msgid "New Tab"
-msgstr "Tab Newydd"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
-msgid "Create a new tab"
-msgstr "Creu tab newydd"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
-msgid "Copy"
-msgstr "Copïo"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
-msgid "Copy the selected text"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
-msgid "Paste"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
-msgid "Paste some text"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:508
-msgid "Select All"
-msgstr "Dewis Popeth"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:509
-msgid "Select all the text in the terminal"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
-msgid "About"
-msgstr "Ynghylch"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
-msgid "Show about window"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
-msgid "Next Tab"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
-msgid "Go to next tab"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
-msgid "Previous Tab"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
-msgid "Go to previous tab"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
-msgid "Fullscreen"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
-msgid "Toggle/Untoggle fullscreen"
-msgstr ""
-
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
 msgstr ""
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
+msgid "Set shell at launch"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
+msgid "Print version info and exit"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
+msgid "Run a program in terminal"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
+msgid "Open a new tab"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
+msgid "Quit"
+msgstr "Gadael"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:574
+msgid "Close"
+msgstr "Cau"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
+msgid "Open a new window"
+msgstr "Agor ffenestr newydd"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+msgid "New Tab"
+msgstr "Tab Newydd"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+msgid "Create a new tab"
+msgstr "Creu tab newydd"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+msgid "Copy"
+msgstr "Copïo"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+msgid "Copy the selected text"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+msgid "Paste"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+msgid "Paste some text"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
+msgid "Select All"
+msgstr "Dewis Popeth"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
+msgid "Select all the text in the terminal"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+msgid "About"
+msgstr "Ynghylch"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+msgid "Show about window"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+msgid "Next Tab"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+msgid "Go to next tab"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+msgid "Previous Tab"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+msgid "Go to previous tab"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
+msgid "Zoom in"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
+msgid "Zoom out"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+msgid "Fullscreen"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+msgid "Toggle/Untoggle fullscreen"
 msgstr ""

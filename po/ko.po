@@ -7,153 +7,169 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-09-13 00:25+0100\n"
+"POT-Creation-Date: 2013-01-02 20:38+0530\n"
 "PO-Revision-Date: 2012-11-16 10:15+0000\n"
 "Last-Translator: MinSik CHO <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-11-17 05:04+0000\n"
-"X-Generator: Launchpad (build 16278)\n"
+"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
+"X-Generator: Launchpad (build 16393)\n"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:12
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
 msgstr "명령줄 사용하기"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:13
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:100
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:345
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:349
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:13
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:106
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:404
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:408
 msgid "Terminal"
 msgstr "터미널"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:14
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "New Window"
 msgstr "새 창"
 
-#: /home/david/src/pantheon-terminal/po/../src/config.vala:15
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
 msgstr "새 루트 권한 창 열기"
 
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminal.vala:99
-msgid "Set shell at launch"
-msgstr "시작할 때 쉘을 실행하도록 설정"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:215
-msgid "Open a new tab"
-msgstr "새 탭 열기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:501
-msgid "Quit"
-msgstr "종료"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:502
-msgid "Close"
-msgstr "닫기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:503
-msgid "Open a new window"
-msgstr "새 창 열기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
-msgid "New Tab"
-msgstr "새 탭"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:505
-msgid "Create a new tab"
-msgstr "새 탭을 엽니다"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
-msgid "Copy"
-msgstr "복사"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:506
-msgid "Copy the selected text"
-msgstr "선택한 텍스트를 복사합니다."
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
-msgid "Paste"
-msgstr "붙여넣기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:507
-msgid "Paste some text"
-msgstr "텍스트를 붙여넣습니다."
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:508
-msgid "Select All"
-msgstr "전체 선택"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:509
-msgid "Select all the text in the terminal"
-msgstr "터미널에 있는 모든 텍스트를 선택합니다."
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
-msgid "About"
-msgstr "정보"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:510
-msgid "Show about window"
-msgstr "창에 대해 표시합니다."
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
-msgid "Next Tab"
-msgstr "다음 탭"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:512
-msgid "Go to next tab"
-msgstr "다음 탭으로 가기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
-msgid "Previous Tab"
-msgstr "이전 탭"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:513
-msgid "Go to previous tab"
-msgstr "이전 탭으로 가기"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
-msgid "Fullscreen"
-msgstr "전체화면"
-
-#: /home/david/src/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:515
-msgid "Toggle/Untoggle fullscreen"
-msgstr "전체화면을 설정하고 나갑니다."
-
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
 msgstr "정말로 이 탭을 닫으시겠습니까?"
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
 msgstr "이 탭에 현재 실행 중인 프로세스가 있습니다."
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
 msgstr "이 탭을 닫으면 실행 중인 프로세스가 종료될 것입니다."
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
 msgstr "취소"
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:48
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
 msgstr "정말로 터미널을 닫으시겠습니까?"
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
 msgstr "터미널에 현재 실행 중인 프로세스가 있습니다."
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
 msgstr "터미널을 닫으면 실행 중인 프로세스가 종료될 것입니다."
 
-#: /home/david/src/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:56
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
 msgstr "터미널 종료"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
+msgid "Set shell at launch"
+msgstr "시작할 때 쉘을 실행하도록 설정"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
+msgid "Print version info and exit"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
+msgid "Run a program in terminal"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
+msgid "Open a new tab"
+msgstr "새 탭 열기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
+msgid "Quit"
+msgstr "종료"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:574
+msgid "Close"
+msgstr "닫기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
+msgid "Open a new window"
+msgstr "새 창 열기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+msgid "New Tab"
+msgstr "새 탭"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+msgid "Create a new tab"
+msgstr "새 탭을 엽니다"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+msgid "Copy"
+msgstr "복사"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+msgid "Copy the selected text"
+msgstr "선택한 텍스트를 복사합니다."
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+msgid "Paste"
+msgstr "붙여넣기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+msgid "Paste some text"
+msgstr "텍스트를 붙여넣습니다."
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
+msgid "Select All"
+msgstr "전체 선택"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
+msgid "Select all the text in the terminal"
+msgstr "터미널에 있는 모든 텍스트를 선택합니다."
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+msgid "About"
+msgstr "정보"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+msgid "Show about window"
+msgstr "창에 대해 표시합니다."
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+msgid "Next Tab"
+msgstr "다음 탭"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+msgid "Go to next tab"
+msgstr "다음 탭으로 가기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+msgid "Previous Tab"
+msgstr "이전 탭"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+msgid "Go to previous tab"
+msgstr "이전 탭으로 가기"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
+msgid "Zoom in"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
+msgid "Zoom out"
+msgstr ""
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+msgid "Fullscreen"
+msgstr "전체화면"
+
+#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+msgid "Toggle/Untoggle fullscreen"
+msgstr "전체화면을 설정하고 나갑니다."
