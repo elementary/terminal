@@ -279,10 +279,13 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED)
+            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
                 maximize ();
-            else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN)
+                notebook.margin_top = 3;
+            } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
+                notebook.margin_top = 0;
+            }
 
             /* Reset saved state to avoid restoring it again */
             saved_state.window_state = PantheonTerminalWindowState.NORMAL;
@@ -322,12 +325,13 @@ namespace PantheonTerminal {
 
         private void update_saved_state () {
             /* Save window state */
-            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0)
+            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-            else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0)
+            } else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
-            else
+            } else {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+            }
 
             /* Save window size */
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
@@ -342,6 +346,7 @@ namespace PantheonTerminal {
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
                 tab_loc = t.get_shell_location ();
+
                 if (tab_loc != "")
                     saved_state.tabs += tab_loc + ",";
             }
@@ -438,6 +443,7 @@ namespace PantheonTerminal {
             t.child_exited.connect (() => {
                 if (closed_by_exit)
                     notebook.remove_tab (tab);
+
                 closed_by_exit = true;
             });
 
@@ -560,10 +566,12 @@ namespace PantheonTerminal {
 
         void action_fullscreen () {
             if (is_fullscreen) {
-                unfullscreen();
+                notebook.margin_top = 3;
+                unfullscreen ();
                 is_fullscreen = false;
             } else {
-                fullscreen();
+                notebook.margin_top = 0;
+                fullscreen ();
                 is_fullscreen = true;
             }
         }
