@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-09-06 11:42+0000\n"
+"PO-Revision-Date: 2013-01-05 11:26+0000\n"
 "Last-Translator: Veselin Trakiyski <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
+"X-Launchpad-Export-Date: 2013-01-06 05:05+0000\n"
 "X-Generator: Launchpad (build 16393)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
@@ -35,7 +35,7 @@ msgstr "Нов прозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "Нов root прозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
@@ -80,11 +80,11 @@ msgstr ""
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Принтиране на информация за версията и затваряне"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Изпълняване на програма в терминал"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
@@ -144,27 +144,27 @@ msgstr ""
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Next Tab"
-msgstr ""
+msgstr "Следващ подпрозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Go to next tab"
-msgstr ""
+msgstr "Отиване на следващ подпрозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Previous Tab"
-msgstr ""
+msgstr "Предишен подпрозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Отиване на предишен подпрозорец"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "Увеличаване"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "Намаляване"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
@@ -172,4 +172,4 @@ msgstr "Цял екран"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Включване/Изключване на цял екран"
