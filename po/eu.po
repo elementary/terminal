@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-10-10 19:53+0000\n"
-"Last-Translator: Asier Iturralde Sarasola <Unknown>\n"
+"PO-Revision-Date: 2013-01-11 21:26+0000\n"
+"Last-Translator: Ibai Oihanguren <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
-"X-Generator: Launchpad (build 16393)\n"
+"X-Launchpad-Export-Date: 2013-01-12 05:10+0000\n"
+"X-Generator: Launchpad (build 16420)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -80,11 +80,11 @@ msgstr "Ezarri shell abioan"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Inprimatu bertsioaren informazioa eta irten"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Exekutatu programa bat terminalean"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
@@ -160,11 +160,11 @@ msgstr "Joan aurreko fitxara"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "Handiagotu zooma"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "Txikiagotu zooma"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
