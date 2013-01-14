@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-09-14 17:35+0000\n"
-"Last-Translator: Corentin Noël <tintou@mailoo.org>\n"
+"PO-Revision-Date: 2013-01-13 22:29+0000\n"
+"Last-Translator: Marvin Roger <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
-"X-Generator: Launchpad (build 16393)\n"
+"X-Launchpad-Export-Date: 2013-01-14 04:46+0000\n"
+"X-Generator: Launchpad (build 16420)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -31,7 +31,7 @@ msgstr "Terminal"
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "New Window"
-msgstr "Nouvelle fenêtre"
+msgstr "Nouvelle Fenêtre"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
@@ -72,7 +72,7 @@ msgstr "Si vous quittez le Terminal, le processus sera terminé."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr "Quitter le terminal"
+msgstr "Quitter le Terminal"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
 msgid "Set shell at launch"
@@ -80,11 +80,11 @@ msgstr "Lancer le shell au démarrage"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Afficher les informations sur la version et quitter"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Lancer un programme dans un terminal"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
@@ -104,7 +104,7 @@ msgstr "Ouvrir une nouvelle fenêtre"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "New Tab"
-msgstr "Nouvel onglet"
+msgstr "Nouvel Onglet"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "Create a new tab"
@@ -128,7 +128,7 @@ msgstr "Coller du texte"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr "Tout Sélectionner"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Select all the text in the terminal"
@@ -140,11 +140,11 @@ msgstr "À propos"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "Show about window"
-msgstr "Affiche A propos de"
+msgstr "Affiche la fenêtre À propos"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Next Tab"
-msgstr "Onglet suivant"
+msgstr "Onglet Suivant"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Go to next tab"
@@ -152,7 +152,7 @@ msgstr "Aller à l'onglet suivant"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Previous Tab"
-msgstr "Onglet précédent"
+msgstr "Onglet Précédent"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Go to previous tab"
@@ -160,11 +160,11 @@ msgstr "Aller à l'onglet précédent"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom avant"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom arrière"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
