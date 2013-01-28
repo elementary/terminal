@@ -39,7 +39,7 @@ namespace PantheonTerminal {
         public int opening_y { get; set; }
 
         public SavedState () {
-            base ("org.elementary.PantheonTerminal.SavedState");
+            base ("org.pantheon.terminal.saved-state");
         }
     }
 
@@ -62,7 +62,7 @@ namespace PantheonTerminal {
         public bool allow_bold { get; set; }
 
         public Settings ()  {
-            base ("org.elementary.PantheonTerminal.Settings");
+            base ("org.pantheon.terminal.settings");
         }
     }
 }

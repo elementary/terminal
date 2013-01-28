@@ -60,7 +60,7 @@ OPTIONS
 )
 
 include (GSettings)
-add_schema ("org.pantheon.pantheon-terminal.gschema.xml")
+add_schema ("org.pantheon.terminal.gschema.xml")
 
 #link_libraries (m)
 add_subdirectory (po)

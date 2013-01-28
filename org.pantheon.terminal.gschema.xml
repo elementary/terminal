@@ -6,8 +6,8 @@
     <value nick="Fullscreen" value="2" />
   </enum>
 
-  <schema path="/org/pantheon/pantheon-terminal/saved-state/" 
-  id="org.elementary.pantheon-terminal.saved-state" 
+  <schema path="/org/pantheon/terminal/saved-state/" 
+  id="org.pantheon.terminal.saved-state" 
   gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
       <default>500</default>
@@ -41,7 +41,7 @@
     </key>
   </schema>
 
-  <schema path="/org/pantheon/pantheon-terminal/settings/" id="org.elementary.pantheon-terminal.settings" 
+  <schema path="/org/pantheon/terminal/settings/" id="org.pantheon.terminal.settings" 
   gettext-domain="pantheon-terminal">
     <key name="scrollback-lines" type="i">
       <default>-1</default>
