@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-09-18 23:23+0000\n"
-"Last-Translator: Piotr Sokół <Unknown>\n"
+"PO-Revision-Date: 2013-01-28 14:39+0000\n"
+"Last-Translator: porzadny <porzadny@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-01-04 05:05+0000\n"
-"X-Generator: Launchpad (build 16393)\n"
+"X-Launchpad-Export-Date: 2013-01-29 05:38+0000\n"
+"X-Generator: Launchpad (build 16451)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -80,11 +80,11 @@ msgstr "Ustaw powłokę na starcie"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Wyświetl informację o wersji i zamknij"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Uruchom program w konsoli"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
@@ -160,11 +160,11 @@ msgstr "Przechodzi do poprzedniej karty"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "Powiększ"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "Pomniejsz"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
