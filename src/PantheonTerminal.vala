@@ -124,13 +124,7 @@ namespace PantheonTerminal {
             }
 
             foreach (string program in programs) {
-                string? path = GLib.Environment.find_program_in_path (program);
-                if (path != null) {
-                    window.run_program_term (path);
-                } else {
-                    error ("Unable to run program");
-                    Process.exit (1);
-                }
+                window.run_program_term (program);
             }
         }
 
