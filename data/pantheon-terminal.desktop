@@ -9,7 +9,7 @@ Type=Application
 Categories=GTK;Utility;TerminalEmulator;System;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
-Keywords=Command;Prompt;cmd;Emulator;
+Keywords=command;prompt;cmd;commandline;run;
 
 X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
 
