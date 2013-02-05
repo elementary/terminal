@@ -227,7 +227,7 @@ namespace PantheonTerminal {
                     case Gdk.Key.@6:
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) && settings.alt_changes_tab) {
                             var i = e.keyval - 49;
                             if (i > this.notebook.n_tabs - 1)
                                 return false;
@@ -238,7 +238,7 @@ namespace PantheonTerminal {
 
                         break;
                     case Gdk.Key.@9:
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) && settings.alt_changes_tab) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
                         }
