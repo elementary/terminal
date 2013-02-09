@@ -192,10 +192,11 @@ namespace PantheonTerminal {
         public void run_program (string program) {
             string dir = GLib.Environment.get_current_dir ();
             string[]? program_with_args = process_argv (program);
+
             if (program_with_args != null) {
                 try {
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args ,
-                                                null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args,
+                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
                 } catch (Error e) {
                     warning (e.message);
                 }
@@ -320,7 +321,8 @@ namespace PantheonTerminal {
               tmp[0] == "sudo"
               tmp[1] == "apt-get update"
             */
-            string[] tmp = path.split (" ",2);
+
+            string[] tmp = path.split (" ", 2);
             string? bin_path = GLib.Environment.find_program_in_path (tmp[0]);
             if (path != null) {
                 return (bin_path + " " + tmp[1]).split (" ");
