@@ -191,12 +191,18 @@ namespace PantheonTerminal {
 
         public void run_program (string program) {
             string dir = GLib.Environment.get_current_dir ();
+            string[]? program_with_args = process_argv (program);
 
-            try {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { program },
+            if (program_with_args != null) {
+                try {
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args,
                                             null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-            } catch (Error e) {
-                warning (e.message);
+                } catch (Error e) {
+                    warning (e.message);
+                }
+            } else {
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
+                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             }
         }
 
@@ -307,6 +313,22 @@ namespace PantheonTerminal {
 
             string uris_s = string.joinv ("", uris);
             this.feed_child (uris_s, uris_s.length);
+        }
+
+        private string[]? process_argv (string path) {
+            /* example of the code below.
+              pantheon-terminal -e "sudo apt-get update"
+              tmp[0] == "sudo"
+              tmp[1] == "apt-get update"
+            */
+
+            string[] tmp = path.split (" ", 2);
+            string? bin_path = GLib.Environment.find_program_in_path (tmp[0]);
+            if (path != null) {
+                return (bin_path + " " + tmp[1]).split (" ");
+            } else {
+                return null;
+            }
         }
     }
 }
