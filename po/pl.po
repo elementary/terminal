@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2013-01-28 14:39+0000\n"
+"PO-Revision-Date: 2013-02-10 09:08+0000\n"
 "Last-Translator: porzadny <porzadny@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-10 05:08+0000\n"
+"X-Launchpad-Export-Date: 2013-02-11 05:21+0000\n"
 "X-Generator: Launchpad (build 16482)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
@@ -116,7 +116,7 @@ msgstr "Skopiuj"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy the selected text"
-msgstr "Kopiuje do schowka zaznaczony tekst"
+msgstr "Kopiuj zaznaczony kod"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste"
@@ -132,7 +132,7 @@ msgstr "Zaznacz wszystko"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Select all the text in the terminal"
-msgstr "Zaznacza całą zawartość terminala"
+msgstr "Zaznacz całość tekstu w terminalu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "About"
