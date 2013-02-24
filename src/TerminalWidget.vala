@@ -114,6 +114,9 @@ namespace PantheonTerminal {
             if (settings.encoding != "")
                 set_encoding (settings.encoding);
 
+            /* Disable bell if necessary */
+            audible_bell = settings.audible_bell;
+
             /* Create a pop menu */
             var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             menu.show_all ();
