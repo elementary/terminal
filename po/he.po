@@ -8,25 +8,25 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-04-26 20:57+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2013-02-25 19:56+0000\n"
+"Last-Translator: Danny Damsky <dannydamsky99@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-10 05:08+0000\n"
-"X-Generator: Launchpad (build 16482)\n"
+"X-Launchpad-Export-Date: 2013-02-26 05:19+0000\n"
+"X-Generator: Launchpad (build 16506)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "השתמש בשורת הפקודה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:13
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:106
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:404
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:408
 msgid "Terminal"
-msgstr "מסוף"
+msgstr "טרמינל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
@@ -35,104 +35,104 @@ msgstr "חלון חדש"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr ""
+msgstr "חלון שורש חדש"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "האם אתם בטוחים שאתם רוצים לסגור את הכרטיסייה?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "יש תהליך פעיל בכרטיסייה זו."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "אם אתם רוצים לסגור את הכרטיסייה, תהליך זה יגמר."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
-msgstr ""
+msgstr "בטל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "סגור כרטיסייה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "האם אתם בטוחים שאתם רוצים לצאת מהטרמינל?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "יש תהליך פעיל בטרמינל זה."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "אם תצאו מהטרמינל, תהליך זה יגמר."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr ""
+msgstr "צא מהטרמינל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
 msgid "Set shell at launch"
-msgstr ""
+msgstr "הצב קשוה במשגר"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "הדפס אינפורמציה על הגרסה וצא"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "הפעל תוכנה בטרמינל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
-msgstr ""
+msgstr "פתח כרטיסייה חדשה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
 msgid "Quit"
-msgstr "יציאה"
+msgstr "צא"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:574
 msgid "Close"
-msgstr "סגירה"
+msgstr "סגור"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "Open a new window"
-msgstr "פתיחת חלון חדש"
+msgstr "פתח חלון חדש"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "New Tab"
-msgstr "לשונית חדשה"
+msgstr "כרטיסייה חדשה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "Create a new tab"
-msgstr "יצירת לשונית חדשה"
+msgstr "יצירת כרטיסייה חדשה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy"
-msgstr "העתקה"
+msgstr "העתק"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy the selected text"
-msgstr "העתקת הטקסט הנבחר"
+msgstr "העתק את הטקסט הנבחר"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste"
-msgstr "הדבקה"
+msgstr "הדבק"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste some text"
-msgstr "הדבקת טקסט כלשהו"
+msgstr "הדבק טקסט כלשהו"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
 msgid "Select All"
-msgstr "בחירת הכול"
+msgstr "בחירת הכל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Select all the text in the terminal"
-msgstr "בחירת כל הטקסט בחלון המסוף"
+msgstr "בחירת כל הטקסט בחלון הטרמינל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "About"
@@ -140,36 +140,36 @@ msgstr "על אודות"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "Show about window"
-msgstr "הצגת החלון על אודות"
+msgstr "הצג מידע על חלון זה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Next Tab"
-msgstr ""
+msgstr "כרטיסייה הבאה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Go to next tab"
-msgstr ""
+msgstr "העבור לכרטיסייה הבאה"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Previous Tab"
-msgstr ""
+msgstr "כרטיסייה קודמת"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Go to previous tab"
-msgstr ""
+msgstr "העבור לתקייה קודמת"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "הגדל"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "הקטן"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
-msgstr ""
+msgstr "מסך מלא"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "הגדר מסך מלא"
