@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-01-05 09:51+0000\n"
-"Last-Translator: Kārlis Lukstiņš <Unknown>\n"
+"PO-Revision-Date: 2013-02-26 11:54+0000\n"
+"Last-Translator: marhis <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-02-10 05:08+0000\n"
-"X-Generator: Launchpad (build 16482)\n"
+"X-Launchpad-Export-Date: 2013-02-27 04:57+0000\n"
+"X-Generator: Launchpad (build 16506)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr ""
+msgstr "Izmantot komandrindu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:13
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:106
@@ -31,7 +31,7 @@ msgstr "Terminālis"
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "New Window"
-msgstr ""
+msgstr "Jauns logs"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
 msgid "New Root Window"
@@ -39,40 +39,40 @@ msgstr ""
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Vai tiešām aizvērt šo cilni?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Šajā cilnē vēl norisinās aktīvs process"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr ""
+msgstr "Cinnes aizvēršana apturēs tajā notiekošo procesu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr ""
+msgstr "Aizvērt cilni"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Vai tiešām iziet no šī termināla?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Šajā terminālī vēl norisinās aktīvs process"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr ""
+msgstr "Iziešana no termināla izbeigs noritošo procesu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Iziet no temināla"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
 msgid "Set shell at launch"
@@ -80,63 +80,63 @@ msgstr ""
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Drukāt versijas info un iziet"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Palaist programmu terminālī"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
-msgstr ""
+msgstr "Atvērt jaunu cilni"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
 msgid "Quit"
-msgstr ""
+msgstr "Beigt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:574
 msgid "Close"
-msgstr ""
+msgstr "Aizvērt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
 msgid "Open a new window"
-msgstr ""
+msgstr "Atvērt jaunu logu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "New Tab"
-msgstr ""
+msgstr "Jauna cilne"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "Create a new tab"
-msgstr ""
+msgstr "Izveidot jaunu cilni"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy"
-msgstr ""
+msgstr "Kopēt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy the selected text"
-msgstr ""
+msgstr "Kopēt iezīmēto tekstu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste"
-msgstr ""
+msgstr "Ielīmēt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste some text"
-msgstr ""
+msgstr "Ielīmēt daļu teksta"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
 msgid "Select All"
-msgstr ""
+msgstr "Iezīmēt visu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Iezīmēt visu tekstu terminālī"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "About"
-msgstr ""
+msgstr "Īsi par"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "Show about window"
@@ -144,32 +144,32 @@ msgstr ""
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Next Tab"
-msgstr ""
+msgstr "Nākamā cilne"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Go to next tab"
-msgstr ""
+msgstr "Doties uz nākamo cilni"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Previous Tab"
-msgstr ""
+msgstr "Iepriekšējā cilne"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Doties uz iepriekšējo cilni"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
-msgstr ""
+msgstr "Pietuvināt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
 msgid "Zoom out"
-msgstr ""
+msgstr "Attālināt"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Fullscreen"
-msgstr ""
+msgstr "Pilnekrāns"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Ieslēgt/izslēgt pilnekrānu"
