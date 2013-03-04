@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2012-04-30 14:20+0000\n"
-"Last-Translator: Daniel <Unknown>\n"
+"PO-Revision-Date: 2013-03-03 14:37+0000\n"
+"Last-Translator: Eduard Gotwig <eduardgotwig@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-01 05:16+0000\n"
+"X-Launchpad-Export-Date: 2013-03-04 05:44+0000\n"
 "X-Generator: Launchpad (build 16514)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
@@ -39,15 +39,15 @@ msgstr "Neues Root-Fenster"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Sind Sie sicher, dass sie diesen Reiter schließen wollen?"
+msgstr "Sind Sie sicher, dass sie diesen Tab schließen wollen?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "Dieser Reiter enthält einen laufenden Prozess."
+msgstr "Dieser Tab enthält einen laufenden Prozess."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Wenn Sie diesen Reiter schließen, wird der Prozess beendet."
+msgstr "Wenn Sie diesen Tab schließen, wird der Prozess beendet."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
@@ -56,7 +56,7 @@ msgstr "Abbrechen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Reiter schließen"
+msgstr "Tab schließen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
@@ -88,7 +88,7 @@ msgstr "Ein Programm im Terminal ausführen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
-msgstr "Einen neuen Reiter öffnen"
+msgstr "Einen neuen Tab öffnen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
 msgid "Quit"
@@ -104,11 +104,11 @@ msgstr "Ein neues Fenster öffnen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "New Tab"
-msgstr "Neuer Reiter"
+msgstr "Neuer Tab"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
 msgid "Create a new tab"
-msgstr "Neuen Reiter erstellen"
+msgstr "Neuen Tab erstellen"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy"
@@ -144,19 +144,19 @@ msgstr "Zeige 'Über' Fenster an"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Next Tab"
-msgstr "Nächster Reiter"
+msgstr "Nächster Tab"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
 msgid "Go to next tab"
-msgstr "Zum nächsten Reiter wechseln"
+msgstr "Zum nächsten Tab wechseln"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Previous Tab"
-msgstr "Vorheriger Reiter"
+msgstr "Vorheriger Tab"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Go to previous tab"
-msgstr "Zum vorherigen Reiter wechseln"
+msgstr "Zum vorherigen Tab wechseln"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
 msgid "Zoom in"
