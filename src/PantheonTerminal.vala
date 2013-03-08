@@ -2,7 +2,7 @@
 /***
     BEGIN LICENSE
 
-    Copyright (C) 2011-2012 Mario Guerriero <mefrio.g@gmail.com>
+    Copyright (C) 2011-2012 Pantheon Terminal Developers
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License version 3, as published
     by the Free Software Foundation.
@@ -16,6 +16,10 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
+
+    File created by:
+    - Mario Guerriero <mefrio.g@gmail.com>
+    - David Gomes <davidrafagomes@gmail.com>
 ***/
 
 using Gtk;
