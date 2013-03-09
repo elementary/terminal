@@ -44,6 +44,7 @@ namespace PantheonTerminal {
         public int minimum_height;
 
         construct {
+            flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
             print_version = false;
             build_data_dir = Constants.DATADIR;
             build_pkg_data_dir = Constants.PKGDATADIR;
@@ -90,13 +91,44 @@ namespace PantheonTerminal {
                     warning (e.message);
                 }
             }
+        }
 
+        private int _command_line (ApplicationCommandLine command_line) {
+            var context = new OptionContext ("File");
+            context.add_main_entries (entries, "pantheon-terminal");
+            context.add_group (Gtk.get_option_group (true));
+
+            string[] args = command_line.get_arguments ();
+
+            try {
+                unowned string[] tmp = args;
+                context.parse (ref tmp);
+            } catch (Error e) {
+                stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
+                return 0;
+            }
+
+            if (print_version) {
+                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
+                stdout.printf ("Copyright 2011-2012 Terminal Developers.\n");
+                return 0;
+            }
             if (command_e != null) {
                 new_window_with_programs (command_e);
-                return;
+                return 0;
             }
             new_window ();
+            return 0;
         }
+
+        public override int command_line (ApplicationCommandLine command_line) {
+            // keep the application running until we are done with this commandline
+            this.hold ();
+            int res = _command_line (command_line);
+            this.release ();
+            return res;
+        }
+
 
         public void new_window () {
             var window = new PantheonTerminalWindow (this);
@@ -135,6 +167,7 @@ namespace PantheonTerminal {
             }
             return null;
         }
+
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
@@ -144,23 +177,6 @@ namespace PantheonTerminal {
 
         public static int main (string[] args) {
             app_cmd_name = "Pantheon Terminal";
-
-            var context = new OptionContext ("File");
-            context.add_main_entries (entries, "pantheon-terminal");
-            context.add_group (Gtk.get_option_group (true));
-
-            try {
-                context.parse (ref args);
-            } catch (Error e) {
-                stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
-                return 0;
-            }
-
-            if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
-                stdout.printf ("Copyright 2011-2012 Terminal Developers.\n");
-                return 0;
-            }
             var app = new PantheonTerminalApp ();
             return app.run (args);
         }
