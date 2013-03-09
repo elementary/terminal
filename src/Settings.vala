@@ -16,12 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-
-    File created by:
-    - Giulio Collura <random.cpp@gmail.com>
-    - David Gomes <davidrafagomes@gmail.com>
 ***/
-
 
 namespace PantheonTerminal {
 

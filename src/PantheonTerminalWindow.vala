@@ -16,9 +16,6 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-
-    File created by:
-    - David Gomes <davidrafagomes@gmail.com>
 ***/
 
 using Gtk;

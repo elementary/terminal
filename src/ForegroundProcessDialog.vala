@@ -16,9 +16,6 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-
-    File created by:
-    - Mario Guerriero <mefrio.g@gmail.com>
 ***/
 
 using Vte;
