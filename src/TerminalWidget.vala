@@ -212,11 +212,11 @@ namespace PantheonTerminal {
         public bool try_get_foreground_pid (out int pid) {
             int pty = this.pty_object.fd;
             int fgpid = Posix.tcgetpgrp (pty);
+
             if (fgpid != this.child_pid && fgpid != -1) {
                 pid = (int) fgpid;
                 return true;
-            }
-            else {
+            } else {
                 pid = -1;
                 return false;
             }
