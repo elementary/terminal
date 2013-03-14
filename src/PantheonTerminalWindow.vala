@@ -309,6 +309,8 @@ namespace PantheonTerminal {
                 //notebook.remove_tab (tab);
                 if (notebook.n_tabs == 0)
                     destroy ();
+            } else {
+                current_terminal.grab_focus ();
             }
         }
 
