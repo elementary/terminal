@@ -1,21 +1,21 @@
 # Polish translation for pantheon-terminal
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# Piotr Sokół <psokol@jabster.pl>, 2012, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pantheon-terminal\n"
+"Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-01-02 20:38+0530\n"
-"PO-Revision-Date: 2013-02-10 09:08+0000\n"
-"Last-Translator: porzadny <porzadny@gmail.com>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"PO-Revision-Date: 2013-03-25 00:07+0000\n"
+"Last-Translator: Piotr Sokół <Unknown>\n"
+"Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-22 05:08+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-03-25 05:02+0000\n"
+"X-Generator: Launchpad (build 16540)\n"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
 msgid "Use the command line"
@@ -43,7 +43,7 @@ msgstr "Zamknąć kartę?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "Istnieje aktywny proces na tej karcie."
+msgstr "W tej karcie działa proces."
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
@@ -56,7 +56,7 @@ msgstr "Anuluj"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Zamknij kartę"
+msgstr "Zamyka kartę"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
@@ -64,7 +64,7 @@ msgstr "Zakończyć działanie programu?"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr "Istnieje aktywny proces w tym terminalu."
+msgstr "W tym terminalu działa proces"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
@@ -80,11 +80,11 @@ msgstr "Ustaw powłokę na starcie"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
 msgid "Print version info and exit"
-msgstr "Wyświetl informację o wersji i zamknij"
+msgstr "Wypisuje informacje o wersji i kończy działanie"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
 msgid "Run a program in terminal"
-msgstr "Uruchom program w konsoli"
+msgstr "Uruchomia polecenie w terminalu"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
 msgid "Open a new tab"
@@ -116,7 +116,7 @@ msgstr "Skopiuj"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
 msgid "Copy the selected text"
-msgstr "Kopiuj zaznaczony kod"
+msgstr "Kopiuje zaznaczony tekst"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
 msgid "Paste"
@@ -132,7 +132,7 @@ msgstr "Zaznacz wszystko"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Select all the text in the terminal"
-msgstr "Zaznacz całość tekstu w terminalu"
+msgstr "Zaznacza całą zawartość terminala"
 
 #: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
 msgid "About"
