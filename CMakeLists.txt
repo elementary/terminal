@@ -27,6 +27,15 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
+# Add 'make dist' command for creating release tarball
+set (CPACK_PACKAGE_VERSION ${VERSION})
+set (CPACK_SOURCE_GENERATOR "TGZ")
+set (CPACK_SOURCE_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}")
+set (CPACK_SOURCE_IGNORE_FILES "/build/;/.bzr/;/.bzrignore;~$;${CPACK_SOURCE_IGNORE_FILES}")
+
+include (CPack)
+add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
+
 find_package (PkgConfig)
 pkg_check_modules (DEPS REQUIRED gthread-2.0 gtk+-3.0 granite vte-2.90 libnotify gdk-3.0)
 
