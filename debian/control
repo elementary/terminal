@@ -2,7 +2,7 @@ Source: pantheon-terminal
 Section: x11
 Priority: optional
 Maintainer: Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
-Build-Depends: cmake (>= 2.6),
+Build-Depends: cmake (>= 2.8),
                debhelper (>= 7.0.50~),
                libclutter-gtk-1.0-dev,
                libgranite-dev,
@@ -10,10 +10,8 @@ Build-Depends: cmake (>= 2.6),
                libnotify-dev,
                libvte-2.90-dev,
                valac-0.16 | valac (>= 0.16)
-Standards-Version: 3.8.4
-Homepage: http://elementaryos.org/
-Vcs-Bzr: https://code.launchpad.net/~kekun-plazas/pantheon-terminal/trunk
-Vcs-Browser: http://bazaar.launchpad.net/~kekun-plazas/pantheon-terminal/trunk/files
+Standards-Version: 3.9.3
+Homepage: https://launchpad.net/pantheon-terminal
 
 Package: pantheon-terminal
 Architecture: any

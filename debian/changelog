@@ -1,3 +1,9 @@
+pantheon-terminal (0.2) precise; urgency=low
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementaryos.org>  Tue, 26 Mar 2013 10:00:00 -0500
+
 pantheon-terminal (0.1) natty; urgency=low
 
   * Initial Release.
