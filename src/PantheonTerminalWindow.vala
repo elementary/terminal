@@ -2,7 +2,7 @@
 /***
     BEGIN LICENSE
 
-    Copyright (C) 2011-2013 Pantheon Terminal Developers
+    Copyright (C) 2013 Akshay Shekher <voldyman666@gmail.com>
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License version 3, as published
     by the Free Software Foundation.
@@ -151,6 +151,7 @@ namespace PantheonTerminal {
             notebook.allow_new_window = true;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
+            notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
                 new_tab ("", tab);
@@ -450,8 +451,8 @@ namespace PantheonTerminal {
 
             t.set_font (term_font);
 
-            int minimum_width = t.calculate_width (80);
-            int minimum_height = t.calculate_height (24);
+            int minimum_width = t.calculate_width (80) / 2;
+            int minimum_height = t.calculate_height (24) / 2;
             set_size_request (minimum_width, minimum_height);
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
