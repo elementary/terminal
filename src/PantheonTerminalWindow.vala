@@ -2,7 +2,7 @@
 /***
     BEGIN LICENSE
 
-    Copyright (C) 2013 Akshay Shekher <voldyman666@gmail.com>
+    Copyright (C) 2011-2013 Pantheon Terminal Developers
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License version 3, as published
     by the Free Software Foundation.
@@ -151,7 +151,6 @@ namespace PantheonTerminal {
             notebook.allow_new_window = true;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
-            notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
                 new_tab ("", tab);
