@@ -450,8 +450,8 @@ namespace PantheonTerminal {
 
             t.set_font (term_font);
 
-            int minimum_width = t.calculate_width (80);
-            int minimum_height = t.calculate_height (24);
+            int minimum_width = t.calculate_width (80) / 2;
+            int minimum_height = t.calculate_height (24) / 2;
             set_size_request (minimum_width, minimum_height);
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
