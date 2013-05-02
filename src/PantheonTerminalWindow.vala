@@ -148,7 +148,7 @@ namespace PantheonTerminal {
             notebook.show_icons = false;
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
-            notebook.allow_new_window = true;
+            notebook.allow_new_window = false;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
 
