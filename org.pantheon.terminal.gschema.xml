@@ -10,7 +10,7 @@
   id="org.pantheon.terminal.saved-state" 
   gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
-      <default>500</default>
+      <default>640</default>
       <summary>The saved width of the window.</summary>
       <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
     </key>
@@ -43,6 +43,16 @@
 
   <schema path="/org/pantheon/terminal/settings/" id="org.pantheon.terminal.settings" 
   gettext-domain="pantheon-terminal">
+    <key name="window-width" type="i">
+      <default>640</default>
+      <summary>The saved width of the window.</summary>
+      <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>400</default>
+      <summary>The saved height of the window.</summary>
+      <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
+    </key>
     <key name="scrollback-lines" type="i">
       <default>-1</default>
       <summary>Number of scrollback lines</summary>

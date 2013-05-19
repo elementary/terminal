@@ -288,8 +288,8 @@ namespace PantheonTerminal {
 
             /* Reset saved state to avoid restoring it again */
             saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-            saved_state.window_height = 400;
-            saved_state.window_width = 500;
+            saved_state.window_height = settings.window_height;
+            saved_state.window_width = settings.window_width;
             saved_state.opening_x = -1;
             saved_state.opening_y = -1;
             saved_state.tabs = "";
