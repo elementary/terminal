@@ -7,169 +7,168 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-01-02 20:38+0530\n"
+"POT-Creation-Date: 2013-05-19 09:01-0500\n"
 "PO-Revision-Date: 2013-02-26 11:54+0000\n"
 "Last-Translator: marhis <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-22 05:08+0000\n"
-"X-Generator: Launchpad (build 16532)\n"
+"X-Launchpad-Export-Date: 2013-05-20 05:45+0000\n"
+"X-Generator: Launchpad (build 16626)\n"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Izmantot komandrindu"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:13
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:106
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:404
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:408
-msgid "Terminal"
-msgstr "Terminālis"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:14
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
-msgid "New Window"
-msgstr "Jauns logs"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr ""
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "Are you sure you want to close this tab?"
-msgstr "Vai tiešām aizvērt šo cilni?"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "There is an active process on this tab."
-msgstr "Šajā cilnē vēl norisinās aktīvs process"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:31
-msgid "If you close this tab, this process will end."
-msgstr "Cinnes aizvēršana apturēs tajā notiekošo procesu"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:53
-msgid "Cancel"
-msgstr "Atcelt"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:37
-msgid "Close Tab"
-msgstr "Aizvērt cilni"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:49
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Vai tiešām iziet no šī termināla?"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:50
-msgid "There is an active process on this terminal."
-msgstr "Šajā terminālī vēl norisinās aktīvs process"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "If you quit Terminal, this process will end."
-msgstr "Iziešana no termināla izbeigs noritošo procesu"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/ForegroundProcessDialog.vala:57
-msgid "Quit Terminal"
-msgstr "Iziet no temināla"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:145
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
 msgstr ""
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:146
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
 msgstr "Drukāt versijas info un iziet"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminal.vala:147
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
 msgstr "Palaist programmu terminālī"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:260
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
+#: /home/codygarver/terminal/po/../src/config.vala:13
+msgid "Terminal"
+msgstr "Terminālis"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
 msgid "Open a new tab"
 msgstr "Atvērt jaunu cilni"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:572
-msgid "Quit"
-msgstr "Beigt"
-
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:574
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:581
 msgid "Close"
 msgstr "Aizvērt"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:577
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
+#: /home/codygarver/terminal/po/../src/config.vala:14
+msgid "New Window"
+msgstr "Jauns logs"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 msgid "Open a new window"
 msgstr "Atvērt jaunu logu"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "New Tab"
 msgstr "Jauna cilne"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:580
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "Create a new tab"
 msgstr "Izveidot jaunu cilni"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy"
 msgstr "Kopēt"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:583
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy the selected text"
 msgstr "Kopēt iezīmēto tekstu"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste"
 msgstr "Ielīmēt"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:586
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste some text"
 msgstr "Ielīmēt daļu teksta"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:589
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
 msgid "Select All"
 msgstr "Iezīmēt visu"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:590
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Select all the text in the terminal"
 msgstr "Iezīmēt visu tekstu terminālī"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "About"
 msgstr "Īsi par"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:592
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "Show about window"
 msgstr ""
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
 msgstr "Nākamā cilne"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:594
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Go to next tab"
 msgstr "Doties uz nākamo cilni"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Previous Tab"
 msgstr "Iepriekšējā cilne"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:597
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Go to previous tab"
 msgstr "Doties uz iepriekšējo cilni"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:600
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
 msgid "Zoom in"
 msgstr "Pietuvināt"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:603
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
 msgid "Zoom out"
 msgstr "Attālināt"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Fullscreen"
 msgstr "Pilnekrāns"
 
-#: /home/voldyman/x/pantheon-terminal/pantheon-terminal/po/../src/PantheonTerminalWindow.vala:606
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Ieslēgt/izslēgt pilnekrānu"
+
+#: /home/codygarver/terminal/po/../src/config.vala:12
+msgid "Use the command line"
+msgstr "Izmantot komandrindu"
+
+#: /home/codygarver/terminal/po/../src/config.vala:15
+msgid "New Root Window"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "Are you sure you want to close this tab?"
+msgstr "Vai tiešām aizvērt šo cilni?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "There is an active process on this tab."
+msgstr "Šajā cilnē vēl norisinās aktīvs process"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
+msgid "If you close this tab, this process will end."
+msgstr "Cinnes aizvēršana apturēs tajā notiekošo procesu"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "Cancel"
+msgstr "Atcelt"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
+msgid "Close Tab"
+msgstr "Aizvērt cilni"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Vai tiešām iziet no šī termināla?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
+msgid "There is an active process on this terminal."
+msgstr "Šajā terminālī vēl norisinās aktīvs process"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+msgid "If you quit Terminal, this process will end."
+msgstr "Iziešana no termināla izbeigs noritošo procesu"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
+msgid "Quit Terminal"
+msgstr "Iziet no temināla"
+
+#~ msgid "Quit"
+#~ msgstr "Beigt"
