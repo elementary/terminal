@@ -31,8 +31,9 @@ namespace PantheonTerminal {
 
         public GLib.List <PantheonTerminalWindow> windows;
 
-        static string app_cmd_name;
-        static string app_shell_name;
+        private static string app_cmd_name;
+        private static string app_shell_name;
+        public static string? working_directory = null;
 
         /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
@@ -172,11 +173,23 @@ namespace PantheonTerminal {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
+            { "working-directory", 'd', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
         };
 
         public static int main (string[] args) {
             app_cmd_name = "Pantheon Terminal";
+            
+            var context = new OptionContext ("Terminal");
+            context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
+            
+            try {
+                context.parse(ref args);
+            }
+            catch(Error e) {
+                print(e.message + "\n");
+            }
+            
             var app = new PantheonTerminalApp ();
             return app.run (args);
         }
