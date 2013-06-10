@@ -187,7 +187,7 @@ namespace PantheonTerminal {
                 context.parse(ref args);
             }
             catch (Error e) {
-                print(e.message + "\n");
+                warning (e.message);
             }
             
             var app = new PantheonTerminalApp ();
