@@ -64,7 +64,7 @@ namespace PantheonTerminal {
             help_url = "https://answers.launchpad.net/pantheon-terminal";
             translate_url = "https://translations.launchpad.net/pantheon-terminal";
             about_authors = { "David Gomes <david@elementaryos.org",
-                              "Mario Guerriero <mefrio@elementaryos.org>",
+                              "Mario Guerriero <mario@elementaryos.org>",
                               "Akshay Shekher <voldyman666@gmail.com>" };
 
             //about_documenters = {"",""};
