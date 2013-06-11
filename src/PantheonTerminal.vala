@@ -185,8 +185,7 @@ namespace PantheonTerminal {
             
             try {
                 context.parse(ref args);
-            }
-            catch (Error e) {
+            } catch (Error e) {
                 warning (e.message);
             }
             
