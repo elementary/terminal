@@ -378,6 +378,8 @@ namespace PantheonTerminal {
         }
 
         private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
+            /* If the user choose to use a specific working directory */
+            location = PantheonTerminalApp.working_directory ?? "";
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
