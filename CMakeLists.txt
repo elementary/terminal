@@ -4,7 +4,7 @@ project (pantheon-terminal)
 cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.6)
 
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/vala)
+list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 #
 # Base bits
@@ -16,13 +16,11 @@ set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/pantheon-terminal")
 set (GETTEXT_PACKAGE "pantheon-terminal")
 set (RELEASE_NAME "Fast and connected.")
-set (VERSION "0.2")
+set (VERSION "0.2.1")
 set (VERSION_INFO "Release")
 set (CMAKE_C_FLAGS "-ggdb")
 set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
-
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
