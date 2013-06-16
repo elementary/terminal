@@ -301,7 +301,7 @@ namespace PantheonTerminal {
                 app.new_window_with_coords (x, y, false);
                 var win = app.windows.last ().data;
                 //win.move (x, y);
-                notebook.remove_tab (tab);
+                notebook.remove_tab (tab, /* force */ true);
 
                 var n = win.notebook;
                 //remove the one automatically created after inserting
@@ -363,7 +363,7 @@ namespace PantheonTerminal {
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
-            title = current_terminal.window_title;
+            title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
         }
 
