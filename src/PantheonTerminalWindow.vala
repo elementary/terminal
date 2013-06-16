@@ -148,7 +148,7 @@ namespace PantheonTerminal {
             notebook.show_icons = false;
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
-            notebook.allow_new_window = false;
+            notebook.allow_new_window = true;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
 
@@ -297,14 +297,16 @@ namespace PantheonTerminal {
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
             if (new_window) {
+                assert(tab is Granite.Widgets.Tab);
                 app.new_window_with_coords (x, y, false);
                 var win = app.windows.last ().data;
                 //win.move (x, y);
+                notebook.remove_tab (tab);
 
                 var n = win.notebook;
                 //remove the one automatically created after inserting
                 n.insert_tab (tab, -1);
-                n.remove_tab (n.tabs.nth_data (1));
+                //n.remove_tab (n.tabs.nth_data (1));
 
                 //notebook.remove_tab (tab);
                 if (notebook.n_tabs == 0)
