@@ -148,9 +148,10 @@ namespace PantheonTerminal {
             notebook.show_icons = false;
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
-            notebook.allow_new_window = false;
+            notebook.allow_new_window = true;
             notebook.allow_duplication = false;
             notebook.margin_top = 3;
+            notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
                 new_tab ("", tab);
@@ -297,21 +298,17 @@ namespace PantheonTerminal {
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
             if (new_window) {
-                app.new_window_with_coords (x, y, false);
-                var win = app.windows.last ().data;
-                //win.move (x, y);
+                var win = app.new_window_with_coords (x, y, false);
+                
+                notebook.remove_tab (tab, /* force */ true);
 
                 var n = win.notebook;
-                //remove the one automatically created after inserting
                 n.insert_tab (tab, -1);
-                n.remove_tab (n.tabs.nth_data (1));
-
-                //notebook.remove_tab (tab);
-                if (notebook.n_tabs == 0)
-                    destroy ();
             } else {
                 current_terminal.grab_focus ();
             }
+            if (notebook.n_tabs == 0)
+                destroy ();
         }
 
         private void update_context_menu () {
@@ -361,7 +358,7 @@ namespace PantheonTerminal {
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
-            title = current_terminal.window_title;
+            title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
         }
 
