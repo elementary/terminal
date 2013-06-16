@@ -138,11 +138,12 @@ namespace PantheonTerminal {
             add_window (window);
         }
 
-        public void new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
+        public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
             var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs);
             window.show ();
             windows.append (window);
             add_window (window);
+            return window;
         }
 
         public void new_window_with_programs (string[] programs) {
