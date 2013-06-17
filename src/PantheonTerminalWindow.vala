@@ -300,7 +300,7 @@ namespace PantheonTerminal {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
                 
-                notebook.remove_tab (tab, /* force */ true);
+                notebook.remove_tab_force (tab);
 
                 var n = win.notebook;
                 n.insert_tab (tab, -1);
