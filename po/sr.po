@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2012-08-30 14:46+0000\n"
-"Last-Translator: Igor <Unknown>\n"
+"PO-Revision-Date: 2013-06-19 21:13+0000\n"
+"Last-Translator: IvanBlago <ivan_blagojevic@mail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-20 05:45+0000\n"
-"X-Generator: Launchpad (build 16626)\n"
+"X-Launchpad-Export-Date: 2013-06-20 05:45+0000\n"
+"X-Generator: Launchpad (build 16673)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
@@ -23,11 +23,11 @@ msgstr "Постави шкољку при паљењу"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Штампај информације о издању и изађи"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Покрени програм у терминалу"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
@@ -67,7 +67,7 @@ msgstr "Умножи"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy the selected text"
-msgstr "Умножи изаврани текст"
+msgstr "Умножи изабрани текст"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste"
@@ -95,27 +95,27 @@ msgstr "Прикажи прозор са информацијама о прог�
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
-msgstr ""
+msgstr "Следећи језичак"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Go to next tab"
-msgstr ""
+msgstr "Иди на следећи језичак"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Previous Tab"
-msgstr ""
+msgstr "Претходни језичак"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Иди на претходни језичак"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
 msgid "Zoom in"
-msgstr ""
+msgstr "Увећај"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
 msgid "Zoom out"
-msgstr ""
+msgstr "Умањи"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Fullscreen"
@@ -148,7 +148,7 @@ msgstr "Уколико затворите овај језичак, процес 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
-msgstr "odustani"
+msgstr "Откажи"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
