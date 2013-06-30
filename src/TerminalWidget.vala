@@ -65,8 +65,64 @@ namespace PantheonTerminal {
             this.window = parent_window;
             app = parent_window.app;
 
+            restore_settings ();
+            settings.changed.connect (restore_settings);
+
+            /* Create a pop menu */
+            var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+            menu.show_all ();
+
+            button_press_event.connect ((event) => {
+                uri = get_link ((long) event.x, (long) event.y);
+
+                switch (event.button) {
+                    case Gdk.BUTTON_PRIMARY:
+                        if (uri != null) {
+                            try {
+                                Gtk.show_uri (null, (!) uri, Gtk.get_current_event_time ());
+                                return true;
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
+                        }
+
+                        return false;
+                    case Gdk.BUTTON_SECONDARY :
+                        if (uri != null) {
+                            main_actions.get_action ("Copy").set_sensitive (true);
+                        }
+
+                        menu.select_first (false);
+                        menu.popup (null, null, null, event.button, event.time);
+
+                        return true;
+                }
+
+                return false;
+            });
+
+            window_title_changed.connect ((event) => {
+                if (this == window.current_terminal)
+                    window.title = window_title;
+
+                tab.label = window_title;
+            });
+
+            /* Connect to necessary signals */
+            child_exited.connect (on_child_exited);
+
+            Gtk.TargetEntry target = {"text/uri-list", 0, 0};
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
+
+            /* Make Links Clickable */
+            this.drag_data_received.connect (drag_received);
+            this.clickable (regex_strings);
+        }
+
+        public void restore_settings () {
             /* Load configuration */
             int opacity = settings.opacity * 65535;
+            set_background_image (null);
             set_opacity ((uint16) (opacity / 100));
 
             Gdk.Color background_color;
@@ -116,53 +172,6 @@ namespace PantheonTerminal {
 
             /* Disable bell if necessary */
             audible_bell = settings.audible_bell;
-
-            /* Create a pop menu */
-            var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
-            menu.show_all ();
-
-            button_press_event.connect ((event) => {
-                uri = get_link ((long) event.x, (long) event.y);
-                switch (event.button) {
-                    case Gdk.BUTTON_PRIMARY:
-                        if (uri != null) {
-                            try {
-                                Gtk.show_uri (null, (!) uri, Gtk.get_current_event_time ());
-                                return true;
-                            } catch (GLib.Error error) {
-                                warning ("Could Not Open link");
-                            }
-                        }
-
-                        return false;
-                    case Gdk.BUTTON_SECONDARY :
-                        if (uri != null) {
-                            main_actions.get_action ("Copy").set_sensitive (true);
-                        }
-
-                        menu.select_first (false);
-                        menu.popup (null, null, null, event.button, event.time);
-
-                        return true;
-                }
-                return false;
-            });
-
-            window_title_changed.connect ((event) => {
-                if (this == window.current_terminal)
-                    window.title = window_title;
-                tab.label = window_title;
-            });
-
-            /* Connect to necessary signals */
-            child_exited.connect (on_child_exited);
-
-            Gtk.TargetEntry target = {"text/uri-list", 0, 0};
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
-
-            /* Make Links Clickable */
-            this.drag_data_received.connect (drag_received);
-            this.clickable (regex_strings);
         }
 
         void on_child_exited () { }
