@@ -62,7 +62,7 @@ namespace PantheonTerminal {
                                PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
-            set_word_chars ("-A-Za-z0-9/.,_~#%?");
+            set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
 
             /* Set up the parents */
             this.window = parent_window;
