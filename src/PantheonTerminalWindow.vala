@@ -92,6 +92,15 @@ namespace PantheonTerminal {
             this.move (x, y);
             init (should_recreate_tabs, false);
         }
+        
+        public PantheonTerminalWindow.with_working_directory (Granite.Application app, string location,
+                                                   bool should_recreate_tabs = true) {
+
+            this.app = app as PantheonTerminalApp;
+            set_application (app);
+            init (should_recreate_tabs, false);
+            new_tab (location);
+        }
 
         private void init (bool recreate_tabs=true, bool restore_pos = true) {
             this.icon_name = "utilities-terminal";

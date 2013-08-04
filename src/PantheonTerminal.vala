@@ -118,6 +118,10 @@ namespace PantheonTerminal {
                 new_window_with_programs (command_e);
                 return 0;
             }
+            if (working_directory != null) {
+                new_window_with_working_directory (working_directory);
+                return 0;
+            }
             new_window ();
             return 0;
         }
@@ -140,6 +144,14 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
             var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs);
+            window.show ();
+            windows.append (window);
+            add_window (window);
+            return window;
+        }
+        
+        public PantheonTerminalWindow new_window_with_working_directory (string location) {
+            var window = new PantheonTerminalWindow.with_working_directory (this, location, false);
             window.show ();
             windows.append (window);
             add_window (window);
