@@ -47,7 +47,7 @@ include (ValaVersion)
 ensure_vala_version ("0.16.0" MINIMUM)
 
 include (ValaPrecompile)
-vala_precompile(VALA_C
+vala_precompile (VALA_C
     src/Settings.vala
     src/PantheonTerminal.vala
     src/PantheonTerminalWindow.vala
