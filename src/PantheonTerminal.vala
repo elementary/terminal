@@ -121,7 +121,15 @@ namespace PantheonTerminal {
             }
             if (wd != null) {
                 working_directory = wd;
-                new_window_with_working_directory (working_directory);
+                uint n_windows = windows.length();
+                if (n_windows < 1)
+                    new_window_with_working_directory (working_directory);
+                else {
+                    unowned PantheonTerminalWindow win = windows.nth_data (n_windows -1);
+                    win.add_tab_with_working_directory (working_directory);
+                    win.present();
+                }
+                    
                 return 0;
             }
             new_window ();
@@ -203,9 +211,7 @@ namespace PantheonTerminal {
             
             try {
                 context.parse(ref args);
-            } catch (Error e) {
-                warning (e.message);
-            }
+            } catch {/* errors from extra entries caught later */}
             
             var app = new PantheonTerminalApp ();
 
