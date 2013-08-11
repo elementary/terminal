@@ -95,7 +95,6 @@ namespace PantheonTerminal {
         
         public PantheonTerminalWindow.with_working_directory (Granite.Application app, string location,
                                                    bool should_recreate_tabs = true) {
-
             this.app = app as PantheonTerminalApp;
             set_application (app);
             init (should_recreate_tabs, false);
@@ -365,7 +364,12 @@ namespace PantheonTerminal {
         }
 
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
+
+            if (! (new_tab.page is Grid)) {
+                return;
+            }
             current_tab = new_tab;
+
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
@@ -385,7 +389,9 @@ namespace PantheonTerminal {
 
         private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
             /* If the user choose to use a specific working directory */
-            location = PantheonTerminalApp.working_directory ?? "";
+            if (location == "")
+                //location = PantheonTerminalApp.working_directory ?? "";
+                location = app.working_directory ?? "";
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;

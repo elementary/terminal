@@ -33,8 +33,9 @@ namespace PantheonTerminal {
 
         private static string app_cmd_name;
         private static string app_shell_name;
-        public static string? working_directory = null;
-
+        //public static string? working_directory = null;
+        public string? working_directory = null;
+        static string? wd;
         /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
         static string[]? command_e = null;
@@ -96,7 +97,7 @@ namespace PantheonTerminal {
 
         private int _command_line (ApplicationCommandLine command_line) {
             var context = new OptionContext ("File");
-            context.add_main_entries (entries, "pantheon-terminal");
+            context.add_main_entries (extra_entries, "pantheon-terminal");
             context.add_group (Gtk.get_option_group (true));
 
             string[] args = command_line.get_arguments ();
@@ -118,7 +119,8 @@ namespace PantheonTerminal {
                 new_window_with_programs (command_e);
                 return 0;
             }
-            if (working_directory != null) {
+            if (wd != null) {
+                working_directory = wd;
                 new_window_with_working_directory (working_directory);
                 return 0;
             }
@@ -186,13 +188,16 @@ namespace PantheonTerminal {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
-            { "working-directory", 'd', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
         };
-
+        static const OptionEntry[] extra_entries = {
+            { "working-directory", 'w', 0, OptionArg.STRING, ref wd, N_("Set shell working directory"), "" },
+            { null }
+        };
+        
         public static int main (string[] args) {
             app_cmd_name = "Pantheon Terminal";
-            
+
             var context = new OptionContext ("Terminal");
             context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
             
@@ -203,6 +208,7 @@ namespace PantheonTerminal {
             }
             
             var app = new PantheonTerminalApp ();
+
             return app.run (args);
         }
     }
