@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-11 04:56+0000\n"
+"X-Launchpad-Export-Date: 2013-08-12 05:00+0000\n"
 "X-Generator: Launchpad (build 16723)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
@@ -169,6 +169,3 @@ msgstr "Wenn Sie dieses Terminal schließen, wird der Prozess beendet."
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
 msgstr "Terminal schließen"
-
-#~ msgid "Quit"
-#~ msgstr "Verlassen"
