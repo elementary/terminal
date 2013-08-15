@@ -38,6 +38,7 @@ namespace PantheonTerminal {
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
+        public TerminalWidget previous_terminal = null;
         public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
         private string saved_tabs;
@@ -154,7 +155,14 @@ namespace PantheonTerminal {
             notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
-                new_tab ("", tab);
+                /* Verifying if the tab has already been added */
+                if (tab.ellipsize_mode == Pango.EllipsizeMode.START)
+                    return;
+
+                if (settings.follow_last_tab)
+                    new_tab (previous_terminal.get_shell_location (), tab);
+                else
+                    new_tab ("", tab);
             });
 
             notebook.tab_removed.connect ((tab) => {
@@ -183,6 +191,20 @@ namespace PantheonTerminal {
                     if (notebook.n_tabs - 1 == 0) {
                         update_saved_state ();
                         tab.parent.parent.parent.destroy ();
+                    }
+                }
+               
+                if (current_terminal.tab == tab) {
+                    int new_position = notebook.get_tab_position (notebook.current) + 1;
+                    if (new_position >= notebook.n_tabs) {
+                        new_position = notebook.n_tabs - 2;
+                    }
+
+                    foreach (var terminal in terminals) {
+                        if (notebook.get_tab_position (terminal.tab) == new_position) {
+                            current_terminal = terminal;
+                            break;
+                        }
                     }
                 }
 
@@ -339,7 +361,7 @@ namespace PantheonTerminal {
                 PantheonTerminal.saved_state.window_height = height;
             }
 
-            saved_state.tabs  = "";
+            saved_state.tabs = "";
             string tab_loc;
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
@@ -357,6 +379,7 @@ namespace PantheonTerminal {
 
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
+            previous_terminal = current_terminal;
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
@@ -376,10 +399,13 @@ namespace PantheonTerminal {
 
         private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
             /* If the user choose to use a specific working directory */
-            location = PantheonTerminalApp.working_directory ?? "";
+            if (location == "") {
+                location = PantheonTerminalApp.working_directory ?? "";
+            }
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
+            previous_terminal = current_terminal;
             current_terminal = t;
             var g = new Grid ();
             var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
@@ -413,7 +439,7 @@ namespace PantheonTerminal {
                 tab.label = _("Terminal");
                 tab.page.show_all ();
             }
-
+            
             t.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
@@ -525,8 +551,8 @@ namespace PantheonTerminal {
         }
 
         void action_close_tab () {
-            notebook.remove_tab (notebook.current);
             terminals.remove (current_terminal);
+            notebook.remove_tab (notebook.current);
         }
 
         void action_new_window () {
@@ -534,10 +560,8 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            if (settings.follow_last_tab)
-                new_tab (current_terminal.get_shell_location ());
-            else
-                new_tab ();
+            var tab = new Granite.Widgets.Tab (_("Terminal"));
+            notebook.insert_tab (tab, -1);
         }
 
         void action_about () {
