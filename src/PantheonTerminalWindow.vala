@@ -560,8 +560,7 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            var tab = new Granite.Widgets.Tab (_("Terminal"));
-            notebook.insert_tab (tab, -1);
+            notebook.insert_new_tab_at_end ();
         }
 
         void action_about () {
