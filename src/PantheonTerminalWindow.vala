@@ -155,10 +155,6 @@ namespace PantheonTerminal {
             notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
-                /* Verifying if the tab has already been added */
-                if (tab.ellipsize_mode == Pango.EllipsizeMode.START)
-                    return;
-
                 if (settings.follow_last_tab)
                     new_tab (previous_terminal.get_shell_location (), tab);
                 else
