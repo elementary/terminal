@@ -33,9 +33,7 @@ namespace PantheonTerminal {
 
         private static string app_cmd_name;
         private static string app_shell_name;
-        //public static string? working_directory = null;
-        public string? working_directory = null;
-        static string? wd;
+        public static string? working_directory = null;
         /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
         static string[]? command_e = null;
@@ -97,7 +95,7 @@ namespace PantheonTerminal {
 
         private int _command_line (ApplicationCommandLine command_line) {
             var context = new OptionContext ("File");
-            context.add_main_entries (extra_entries, "pantheon-terminal");
+            context.add_main_entries (entries, "pantheon-terminal");
             context.add_group (Gtk.get_option_group (true));
 
             string[] args = command_line.get_arguments ();
@@ -119,17 +117,16 @@ namespace PantheonTerminal {
                 new_window_with_programs (command_e);
                 return 0;
             }
-            if (wd != null) {
-                working_directory = wd;
+            if (PantheonTerminalApp.working_directory != null) {;
                 uint n_windows = windows.length();
                 if (n_windows < 1)
-                    new_window_with_working_directory (working_directory);
+                    new_window_with_working_directory (PantheonTerminalApp.working_directory);
                 else {
                     unowned PantheonTerminalWindow win = windows.nth_data (n_windows -1);
-                    win.add_tab_with_working_directory (working_directory);
+                    win.add_tab_with_working_directory (PantheonTerminalApp.working_directory);
                     win.present();
                 }
-                    
+
                 return 0;
             }
             new_window ();
@@ -159,7 +156,7 @@ namespace PantheonTerminal {
             add_window (window);
             return window;
         }
-        
+
         public PantheonTerminalWindow new_window_with_working_directory (string location) {
             var window = new PantheonTerminalWindow.with_working_directory (this, location, false);
             window.show ();
@@ -196,26 +193,32 @@ namespace PantheonTerminal {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
+            { "working-directory", 'w', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
         };
-        static const OptionEntry[] extra_entries = {
-            { "working-directory", 'w', 0, OptionArg.STRING, ref wd, N_("Set shell working directory"), "" },
-            { null }
-        };
-        
+
         public static int main (string[] args) {
             app_cmd_name = "Pantheon Terminal";
 
             var context = new OptionContext ("Terminal");
             context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
-            
+
             try {
                 context.parse(ref args);
             } catch {/* errors from extra entries caught later */}
-            
+
+            string[] copy = {};
+            if (working_directory != null) {
+               /* Recreating -w option so that is passed to instance */
+                foreach (string s in args)
+                    copy += s;
+                copy += "-w";
+                copy += working_directory;
+            }
+
             var app = new PantheonTerminalApp ();
 
-            return app.run (args);
+            return app.run (copy);
         }
     }
 } // Namespace

@@ -92,7 +92,7 @@ namespace PantheonTerminal {
             this.move (x, y);
             init (should_recreate_tabs, false);
         }
-        
+
         public PantheonTerminalWindow.with_working_directory (Granite.Application app, string location,
                                                    bool should_recreate_tabs = true) {
             this.app = app as PantheonTerminalApp;
@@ -104,7 +104,7 @@ namespace PantheonTerminal {
         public void add_tab_with_working_directory (string location) {
             new_tab (location);
         }
-        
+
         private void init (bool recreate_tabs=true, bool restore_pos = true) {
             this.icon_name = "utilities-terminal";
 
@@ -311,7 +311,7 @@ namespace PantheonTerminal {
         private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
-                
+
                 notebook.remove_tab_force (tab);
 
                 var n = win.notebook;
@@ -394,8 +394,7 @@ namespace PantheonTerminal {
         private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
             /* If the user choose to use a specific working directory */
             if (location == "")
-                //location = PantheonTerminalApp.working_directory ?? "";
-                location = app.working_directory ?? "";
+                location = PantheonTerminalApp.working_directory ?? "";
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, ui, this);
             t.scrollback_lines = settings.scrollback_lines;
