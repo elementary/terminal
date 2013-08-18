@@ -556,7 +556,10 @@ namespace PantheonTerminal {
         }
 
         void action_new_tab () {
-            notebook.insert_new_tab_at_end ();
+            if (settings.follow_last_tab)
+                new_tab (current_terminal.get_shell_location ());
+            else
+                new_tab ();
         }
 
         void action_about () {
