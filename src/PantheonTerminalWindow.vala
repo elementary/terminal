@@ -193,7 +193,7 @@ namespace PantheonTerminal {
                         tab.parent.parent.parent.destroy ();
                     }
                 }
-               
+
                 if (current_terminal.tab == tab) {
                     int new_position = notebook.get_tab_position (notebook.current) + 1;
                     if (new_position >= notebook.n_tabs) {
@@ -439,7 +439,7 @@ namespace PantheonTerminal {
                 tab.label = _("Terminal");
                 tab.page.show_all ();
             }
-            
+
             t.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
