@@ -41,7 +41,7 @@ namespace PantheonTerminal {
         const string HOSTCHARS_CLASS = "[-[:alnum:]]";
         const string HOST = HOSTCHARS_CLASS + "+(\\." + HOSTCHARS_CLASS + "+)*";
         const string PORT = "(?:\\:[[:digit:]]{1,5})?";
-        const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;@&=?/~#%\\E]";
+        const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;:@&=?/~#%\\E]";
         const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
         const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
                                  |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
