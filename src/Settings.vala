@@ -63,6 +63,7 @@ namespace PantheonTerminal {
         public string encoding { get; set; }
         public string font { get; set; }
         public bool allow_bold { get; set; }
+        public bool hide_tabs { get; set; }
 
         public Settings ()  {
             base ("org.pantheon.terminal.settings");

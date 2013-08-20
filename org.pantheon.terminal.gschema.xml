@@ -127,5 +127,10 @@
       <summary>Whether to allow bold fonts.</summary>
       <description>Defines whether fonts can be bold or not.</description>
     </key>
+    <key name="hide-tabs" type="b">
+      <default>false</default>
+      <summary>Whether to hide tabs.</summary>
+      <description>Defines whether the terminal tabs are visible or not.</description>
+    </key>
   </schema>
 </schemalist>
