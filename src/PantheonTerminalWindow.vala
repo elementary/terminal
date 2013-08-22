@@ -147,7 +147,15 @@ namespace PantheonTerminal {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
-            notebook.show_tabs = !settings.hide_tabs;
+            
+            if (settings.tab_behavior == PantheonTerminalTabBehavior.ALWAYS) {
+                notebook.show_tabs = true;
+            } else if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                notebook.show_tabs = false;
+            } else if (settings.tab_behavior == PantheonTerminalTabBehavior.NEVER) {
+                notebook.show_tabs = false;
+            }
+
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
             notebook.allow_new_window = true;
@@ -209,7 +217,9 @@ namespace PantheonTerminal {
                 t.kill_ps ();
 
                 if (notebook.n_tabs == 2) {
-                    notebook.show_tabs = !settings.hide_tabs;
+                    if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                        notebook.show_tabs = false;
+                    }
                 }
 
                 return true;
@@ -419,7 +429,9 @@ namespace PantheonTerminal {
 
             /* If tabs were hidden and this is not the first tab show tabs */
             if (notebook.n_tabs == 1) {
-                notebook.show_tabs = true;
+                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                    notebook.show_tabs = true;
+                }
             }
             
             if (program == null) {
