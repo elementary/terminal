@@ -68,8 +68,6 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <separator />
-                <menuitem name="Toggle Tabs" action="Toggle Tabs"/>
-                <separator />
                 <menuitem name="About" action="About"/>
             </popup>
             </ui>
@@ -209,6 +207,10 @@ namespace PantheonTerminal {
 
                 closed_by_exit = false;
                 t.kill_ps ();
+
+                if (notebook.n_tabs == 2) {
+                    notebook.show_tabs = !settings.hide_tabs;
+                }
 
                 return true;
             });
@@ -415,6 +417,11 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
+            /* If tabs were hidden and this is not the first tab show tabs */
+            if (notebook.n_tabs == 1) {
+                notebook.show_tabs = true;
+            }
+            
             if (program == null) {
                 /* Set up the virtual terminal */
                 if (location == "")
@@ -554,10 +561,6 @@ namespace PantheonTerminal {
             notebook.remove_tab (notebook.current);
         }
 
-        void action_toggle_tabs () {
-            notebook.show_tabs = !notebook.show_tabs;
-        }
-
         void action_new_window () {
             app.new_window ();
         }
@@ -625,9 +628,6 @@ namespace PantheonTerminal {
               N_("Select all the text in the terminal"), action_select_all },
 
             { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
-
-            { "Toggle Tabs", null, N_("Toggle Tabs"), null, N_("Shows/Hides tabs"),
-              action_toggle_tabs },
 
             { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
               action_next_tab },
