@@ -186,6 +186,12 @@ namespace PantheonTerminal {
 
                         d.destroy ();
 
+                        if (notebook.n_tabs == 2) {
+                            if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                                notebook.show_tabs = false;
+                            }
+                        }
+
                         return true;
                     }
 
@@ -340,8 +346,12 @@ namespace PantheonTerminal {
             } else {
                 current_terminal.grab_focus ();
             }
-            if (notebook.n_tabs == 0)
+
+            if (notebook.n_tabs == 0) {
                 destroy ();
+            } else if (notebook.n_tabs == 1 && settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                notebook.show_tabs = false;
+            }
         }
 
         private void update_context_menu () {
@@ -394,6 +404,16 @@ namespace PantheonTerminal {
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
+
+            if (notebook.n_tabs == 1) {
+                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                    notebook.show_tabs = false;
+                }
+            } else {
+                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                    notebook.show_tabs = true;
+                }
+            }
         }
 
         private void open_tabs () {
