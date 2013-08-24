@@ -149,8 +149,9 @@ namespace PantheonTerminal {
             notebook.show_icons = false;
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
+            notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.allow_new_window = true;
-            notebook.allow_duplication = false;
+            notebook.allow_duplication = true;
             notebook.margin_top = 3;
             notebook.group_name = "pantheon-terminal";
 
@@ -327,6 +328,10 @@ namespace PantheonTerminal {
             }
             if (notebook.n_tabs == 0)
                 destroy ();
+        }
+        
+        private void on_tab_duplicated (Granite.Widgets.Tab tab) {
+            new_tab (current_terminal.get_shell_location ());
         }
 
         private void update_context_menu () {
