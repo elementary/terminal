@@ -369,11 +369,10 @@ namespace PantheonTerminal {
 
         void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
 
-            if (! (new_tab.page is Grid)) {
+            if (! (new_tab.page is Grid))
                 return;
-            }
-            current_tab = new_tab;
 
+            current_tab = new_tab;
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();

@@ -117,16 +117,15 @@ namespace PantheonTerminal {
                 new_window_with_programs (command_e);
                 return 0;
             }
-            if (PantheonTerminalApp.working_directory != null) {;
-                uint n_windows = windows.length();
+            if (PantheonTerminalApp.working_directory != null) {
+                uint n_windows = windows.length ();
                 if (n_windows < 1)
                     new_window_with_working_directory (PantheonTerminalApp.working_directory);
                 else {
                     unowned PantheonTerminalWindow win = windows.nth_data (n_windows -1);
                     win.add_tab_with_working_directory (PantheonTerminalApp.working_directory);
-                    win.present();
+                    win.present ();
                 }
-
                 return 0;
             }
             new_window ();
@@ -205,13 +204,16 @@ namespace PantheonTerminal {
 
             try {
                 context.parse(ref args);
-            } catch {/* errors from extra entries caught later */}
+            } catch (Error e) {
+                warning (e.message);
+            }
 
             string[] copy = {};
             if (working_directory != null) {
                /* Recreating -w option so that is passed to instance */
                 foreach (string s in args)
                     copy += s;
+
                 copy += "-w";
                 copy += working_directory;
             }

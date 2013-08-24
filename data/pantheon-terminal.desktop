@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Pantheon Terminal
+Name=Terminal
 GenericName=Terminal
 Comment=Use the command line
 TryExec=pantheon-terminal
