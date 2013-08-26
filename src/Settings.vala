@@ -29,7 +29,7 @@ namespace PantheonTerminal {
         FULLSCREEN = 2
     }
 
-    public enum PantheonTerminalTabBehavior {
+    public enum PantheonTerminalTabBarBehavior {
         ALWAYS = 0,
         SINGLE = 1,
         NEVER = 2
@@ -69,7 +69,7 @@ namespace PantheonTerminal {
         public string encoding { get; set; }
         public string font { get; set; }
         public bool allow_bold { get; set; }
-        public PantheonTerminalTabBehavior tab_behavior { get; set; }
+        public PantheonTerminalTabBarBehavior tab_bar_behavior { get; set; }
 
         public Settings ()  {
             base ("org.pantheon.terminal.settings");

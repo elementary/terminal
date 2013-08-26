@@ -148,11 +148,11 @@ namespace PantheonTerminal {
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
             
-            if (settings.tab_behavior == PantheonTerminalTabBehavior.ALWAYS) {
+            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.ALWAYS) {
                 notebook.show_tabs = true;
-            } else if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                 notebook.show_tabs = false;
-            } else if (settings.tab_behavior == PantheonTerminalTabBehavior.NEVER) {
+            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.NEVER) {
                 notebook.show_tabs = false;
             }
 
@@ -187,7 +187,7 @@ namespace PantheonTerminal {
                         d.destroy ();
 
                         if (notebook.n_tabs == 2) {
-                            if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                                 notebook.show_tabs = false;
                             }
                         }
@@ -223,7 +223,7 @@ namespace PantheonTerminal {
                 t.kill_ps ();
 
                 if (notebook.n_tabs == 2) {
-                    if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                    if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                         notebook.show_tabs = false;
                     }
                 }
@@ -349,7 +349,7 @@ namespace PantheonTerminal {
 
             if (notebook.n_tabs == 0) {
                 destroy ();
-            } else if (notebook.n_tabs == 1 && settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+            } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                 notebook.show_tabs = false;
             }
         }
@@ -406,11 +406,11 @@ namespace PantheonTerminal {
             new_tab.page.grab_focus ();
 
             if (notebook.n_tabs == 1) {
-                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                     notebook.show_tabs = false;
                 }
             } else {
-                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                     notebook.show_tabs = true;
                 }
             }
@@ -449,7 +449,7 @@ namespace PantheonTerminal {
 
             /* If tabs were hidden and this is not the first tab show tabs */
             if (notebook.n_tabs == 1) {
-                if (settings.tab_behavior == PantheonTerminalTabBehavior.SINGLE) {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                     notebook.show_tabs = true;
                 }
             }
