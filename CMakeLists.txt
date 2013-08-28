@@ -78,3 +78,4 @@ target_link_libraries (pantheon-terminal ${M_LIB})
 
 install (TARGETS pantheon-terminal RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/pantheon-terminal.desktop DESTINATION share/applications)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/open-terminal-here.desktop DESTINATION share/applications)

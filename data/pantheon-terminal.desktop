@@ -3,16 +3,15 @@ Name=Terminal
 GenericName=Terminal
 Comment=Use the command line
 TryExec=pantheon-terminal
-Exec=pantheon-terminal -w %u
+Exec=pantheon-terminal
 Icon=utilities-terminal
 Type=Application
-MimeType=x-directory/normal;
 Categories=GTK;Utility;TerminalEmulator;System;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 Keywords=command;prompt;cmd;commandline;run;
 
-X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
 
 [NewWindow Shortcut Group]
 Name=New Window
@@ -23,3 +22,4 @@ TargetEnvironment=Unity
 Name=New Root Window
 Exec=gksu pantheon-terminal
 TargetEnvironment=Unity
+

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Open Terminal Here
+TryExec=pantheon-terminal
+Exec=pantheon-terminal -w %u
+Icon=utilities-terminal
+Type=Application
+StartupNotify=true
+X-GNOME-Gettext-Domain=pantheon-terminal
+NoDisplay=True;
+MimeType=x-directory/normal;
+
