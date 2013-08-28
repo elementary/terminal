@@ -172,7 +172,6 @@ namespace PantheonTerminal {
 
             notebook.tab_removed.connect ((tab) => {
                 var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
-                print ("Hey\n");
 
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
@@ -200,8 +199,6 @@ namespace PantheonTerminal {
 
                     return false;
                 } else {
-                    print ("Hey\n");
-
                     if (notebook.n_tabs - 1 == 0) {
                         update_saved_state ();
                         tab.parent.parent.parent.destroy ();
