@@ -159,6 +159,15 @@ namespace PantheonTerminal {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
+
+            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.ALWAYS) {
+                notebook.show_tabs = true;
+            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                notebook.show_tabs = false;
+            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.NEVER) {
+                notebook.show_tabs = false;
+            }
+
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
             notebook.allow_new_window = true;
@@ -189,6 +198,12 @@ namespace PantheonTerminal {
 
                         d.destroy ();
 
+                        if (notebook.n_tabs == 2) {
+                            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                                notebook.show_tabs = false;
+                            }
+                        }
+
                         return true;
                     }
 
@@ -218,6 +233,12 @@ namespace PantheonTerminal {
 
                 closed_by_exit = false;
                 t.kill_ps ();
+
+                if (notebook.n_tabs == 2) {
+                    if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                        notebook.show_tabs = false;
+                    }
+                }
 
                 return true;
             });
@@ -283,7 +304,8 @@ namespace PantheonTerminal {
             /* Set up the "Add new tab" button */
             add_button = new Button ();
             Image add_image = null;
-            add_image = new Image.from_icon_name ("list-add-symbolic", IconSize.MENU);
+            add_image = new Image.from_icon_name ("list-add-symbolic",
+                                                  IconSize.MENU);
             add_button.set_image (add_image);
             add_button.show ();
             add_button.set_relief (ReliefStyle.NONE);
@@ -326,7 +348,8 @@ namespace PantheonTerminal {
             saved_state.tabs = "";
         }
 
-        private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos, bool new_window, int x, int y) {
+        private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos,
+                                   bool new_window, int x, int y) {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
 
@@ -337,15 +360,20 @@ namespace PantheonTerminal {
             } else {
                 current_terminal.grab_focus ();
             }
-            if (notebook.n_tabs == 0)
+
+            if (notebook.n_tabs == 0) {
                 destroy ();
+            } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                notebook.show_tabs = false;
+            }
         }
 
         private void update_context_menu () {
             clipboard.request_targets (update_context_menu_cb);
         }
 
-        private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[] atoms) {
+        private void update_context_menu_cb (Gtk.Clipboard clipboard_,
+                                             Gdk.Atom[] atoms) {
             bool can_paste;
             can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
             main_actions.get_action ("Paste").set_sensitive (can_paste);
@@ -385,23 +413,31 @@ namespace PantheonTerminal {
             saved_state.opening_y = root_y;
         }
 
-        void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
-
-            if (! (new_tab.page is Grid))
-                return;
-
+        void on_switch_page (Granite.Widgets.Tab? old,
+                             Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
             previous_terminal = current_terminal;
             current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
+
+            if (notebook.n_tabs == 1) {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                    notebook.show_tabs = false;
+                }
+            } else {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                    notebook.show_tabs = true;
+                }
+            }
         }
 
         private void open_tabs () {
             string tabs = saved_tabs;
-            if (tabs == "" || !settings.remember_tabs || tabs.replace (",", " ").strip () == "")
+            if (tabs == "" || !settings.remember_tabs ||
+                tabs.replace (",", " ").strip () == "") {
                 new_tab ();
-            else {
+            } else {
                 foreach (string loc in tabs.split (",")) {
                     if (loc != "")
                         new_tab (loc);
@@ -409,7 +445,9 @@ namespace PantheonTerminal {
             }
         }
 
-        private void new_tab (string location="", owned Granite.Widgets.Tab? tab=null, string? program=null) {
+        private void new_tab (string location="",
+                              owned Granite.Widgets.Tab? tab=null,
+                              string? program=null) {
             /* If the user choose to use a specific working directory */
             if (location == "") {
                 location = PantheonTerminalApp.working_directory ?? "";
@@ -427,6 +465,13 @@ namespace PantheonTerminal {
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
             t.hexpand = true;
+
+            /* If tabs were hidden and this is not the first tab show tabs */
+            if (notebook.n_tabs == 1) {
+                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
+                    notebook.show_tabs = true;
+                }
+            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
@@ -549,7 +594,8 @@ namespace PantheonTerminal {
 
         void action_copy () {
             if (current_terminal.uri != null)
-                clipboard.set_text (current_terminal.uri, current_terminal.uri.length);
+                clipboard.set_text (current_terminal.uri,
+                                    current_terminal.uri.length);
             else
                 current_terminal.copy_clipboard ();
         }
@@ -615,42 +661,52 @@ namespace PantheonTerminal {
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"), "<Control><Shift>w", N_("Close"),
+            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"),
+              "<Control><Shift>w", N_("Close"),
               action_close_tab },
 
-            { "New window", "window-new", N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
+            { "New window", "window-new",
+              N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
               action_new_window },
 
-            { "New tab", Gtk.Stock.NEW, N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
+            { "New tab", Gtk.Stock.NEW,
+              N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
               action_new_tab },
 
-            { "Copy", "gtk-copy", N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
+            { "Copy", "gtk-copy",
+              N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
               action_copy },
 
-            { "Paste", "gtk-paste", N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
+            { "Paste", "gtk-paste",
+              N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
               action_paste },
 
-            { "Select All", Gtk.Stock.SELECT_ALL, N_("Select All"), "<Control><Shift>a",
+            { "Select All", Gtk.Stock.SELECT_ALL,
+              N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
 
-            { "About", Gtk.Stock.ABOUT, N_("About"), null, N_("Show about window"), action_about },
+            { "About", Gtk.Stock.ABOUT, N_("About"),
+              null, N_("Show about window"), action_about },
 
-            { "NextTab", null, N_("Next Tab"), "<Control><Shift>Right", N_("Go to next tab"),
+            { "NextTab", null, N_("Next Tab"),
+              "<Control><Shift>Right", N_("Go to next tab"),
               action_next_tab },
 
-            { "PreviousTab", null, N_("Previous Tab"), "<Control><Shift>Left", N_("Go to previous tab"),
+            { "PreviousTab", null, N_("Previous Tab"),
+              "<Control><Shift>Left", N_("Go to previous tab"),
               action_previous_tab },
 
-            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"), "<Control>plus", N_("Zoom in"),
+            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"),
+              "<Control>plus", N_("Zoom in"),
               action_zoom_in_font },
 
-            { "ZoomOut", Gtk.Stock.ZOOM_OUT, N_("Zoom out"), "<Control>minus", N_("Zoom out"),
+            { "ZoomOut", Gtk.Stock.ZOOM_OUT,
+              N_("Zoom out"), "<Control>minus", N_("Zoom out"),
               action_zoom_out_font },
 
-            { "Fullscreen", Gtk.Stock.FULLSCREEN, N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
+            { "Fullscreen", Gtk.Stock.FULLSCREEN,
+              N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
               action_fullscreen }
         };
-
     }
-
 }

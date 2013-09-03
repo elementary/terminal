@@ -1,171 +1,171 @@
-# Italian translation for pantheon-terminal
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# Arabic translation for pantheon-terminal
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2013-01-14 21:36+0000\n"
-"Last-Translator: Vesnar Teach <vesnarteach@gmail.com>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 2013-08-27 14:18+0000\n"
+"Last-Translator: Fathallah Wael <fathallahwael80@gmail.com>\n"
+"Language-Team: Arabic <ar@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-27 04:53+0000\n"
+"X-Launchpad-Export-Date: 2013-08-28 05:32+0000\n"
 "X-Generator: Launchpad (build 16738)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
-msgstr "Imposta shell al lancio"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
-msgstr "Stampa informazioni sulla versione ed esci"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
-msgstr "Esegui un programma nel terminale"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
 #: /home/codygarver/terminal/po/../src/config.vala:13
 msgid "Terminal"
-msgstr "Terminale"
+msgstr "نافذة الآوامر"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
 msgid "Open a new tab"
-msgstr "Apre una nuova scheda"
+msgstr "فتح تبويب جديد"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:581
 msgid "Close"
-msgstr "Chiudi"
+msgstr "إغلاق"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 #: /home/codygarver/terminal/po/../src/config.vala:14
 msgid "New Window"
-msgstr "Nuova finestra"
+msgstr "نافذة جديدة"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 msgid "Open a new window"
-msgstr "Apre una nuova finestra"
+msgstr "فتح نافذة جديدة"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "New Tab"
-msgstr "Nuova scheda"
+msgstr "تبويب جديد"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "Create a new tab"
-msgstr "Crea una nuova scheda"
+msgstr "انشئ تبويب جديد"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy"
-msgstr "Copia"
+msgstr "إنسخ"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy the selected text"
-msgstr "Copia il testo selezionato"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste"
-msgstr "Incolla"
+msgstr "إلصاق"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste some text"
-msgstr "Incolla il testo"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
 msgid "Select All"
-msgstr "Seleziona tutto"
+msgstr "حدّد الكل"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Select all the text in the terminal"
-msgstr "Seleziona tutto il testo nel terminale"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "About"
-msgstr "Informazioni"
+msgstr "عن البرنامج"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "Show about window"
-msgstr "Mostra finestra di informazioni"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
-msgstr "Scheda successiva"
+msgstr "التبويب التالي"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Go to next tab"
-msgstr "Vai alla scheda successiva"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Previous Tab"
-msgstr "Scheda precedente"
+msgstr "التبويب السابق"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Go to previous tab"
-msgstr "Vai alla scheda precedente"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
 msgid "Zoom in"
-msgstr "Ingrandire"
+msgstr "تكبير"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
 msgid "Zoom out"
-msgstr "Rimpicciolire"
+msgstr "تصغير"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Fullscreen"
-msgstr "Schermo intero"
+msgstr "ملء الشاشة"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Abilita/Disabilita schermo intero"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "Usa la riga di comando"
+msgstr "استعمل سطرالأوامر"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Nuova finestra root"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Si è sicuri di voler chiudere questa scheda?"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "C'è un processo attivo su questa scheda."
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Se si chiude questa scheda, il processo verrà terminato."
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "إلغاء"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Chiudi scheda"
+msgstr "إغلاق تبويب"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Si è sicuri di voler chiudere il terminale?"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr "C'è un processo attivo su questo terminale."
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr "Se si chiude il terminale, il processo verrà terminato."
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr "Chiudi terminale"
+msgstr ""
