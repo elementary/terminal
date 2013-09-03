@@ -331,7 +331,8 @@ namespace PantheonTerminal {
         }
         
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
-            new_tab (current_terminal.get_shell_location ());
+            var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+            new_tab (t.get_shell_location ());
         }
 
         private void update_context_menu () {
