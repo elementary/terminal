@@ -163,7 +163,7 @@ namespace PantheonTerminal {
             });
 
             notebook.tab_removed.connect ((tab) => {
-                var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+                var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
 
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
@@ -331,7 +331,7 @@ namespace PantheonTerminal {
         }
         
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
-            var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             new_tab (t.get_shell_location ());
         }
 
