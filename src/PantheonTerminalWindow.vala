@@ -158,8 +158,9 @@ namespace PantheonTerminal {
 
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
+            notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.allow_new_window = true;
-            notebook.allow_duplication = false;
+            notebook.allow_duplication = true;
             notebook.margin_top = 3;
             notebook.group_name = "pantheon-terminal";
 
@@ -171,7 +172,7 @@ namespace PantheonTerminal {
             });
 
             notebook.tab_removed.connect ((tab) => {
-                var t = ((tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget);
+                var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
 
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog ();
@@ -354,6 +355,11 @@ namespace PantheonTerminal {
             } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
                 notebook.show_tabs = false;
             }
+        }
+        
+        private void on_tab_duplicated (Granite.Widgets.Tab tab) {
+            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            new_tab (t.get_shell_location ());
         }
 
         private void update_context_menu () {
