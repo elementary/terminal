@@ -7,5 +7,5 @@ Type=Application
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 NoDisplay=True;
-MimeType=inode/directory;
+MimeType=inode/directory;x-directory/normal
 
