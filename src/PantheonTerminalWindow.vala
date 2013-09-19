@@ -161,7 +161,6 @@ namespace PantheonTerminal {
             notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.allow_new_window = true;
             notebook.allow_duplication = true;
-            notebook.margin_top = 3;
             notebook.group_name = "pantheon-terminal";
 
             notebook.tab_added.connect ((tab) => {
