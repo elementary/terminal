@@ -204,22 +204,19 @@ namespace PantheonTerminal {
 
             try {
                 context.parse(ref args);
-            } catch (Error e) {
-                warning (e.message);
-            }
+            } catch (Error e) {}
 
             string[] copy = {};
+            foreach (string s in args)
+                copy += s;
+
             if (working_directory != null) {
                /* Recreating -w option so that is passed to instance */
-                foreach (string s in args)
-                    copy += s;
-
                 copy += "-w";
                 copy += working_directory;
             }
 
             var app = new PantheonTerminalApp ();
-
             return app.run (copy);
         }
     }
