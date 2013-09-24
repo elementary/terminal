@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2012-09-20 13:11+0000\n"
-"Last-Translator: Ebubekir KARUL <Unknown>\n"
+"PO-Revision-Date: 2013-09-23 19:07+0000\n"
+"Last-Translator: Ferhat TUNÇTAN <ferhattnctn66@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-09-06 05:58+0000\n"
-"X-Generator: Launchpad (build 16760)\n"
+"X-Launchpad-Export-Date: 2013-09-24 06:25+0000\n"
+"X-Generator: Launchpad (build 16771)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
@@ -23,11 +23,11 @@ msgstr "Kabuğu başlangıçta ayarla"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Sürüm bilgisini yazdır ve çık"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Uçbirimde bir program çalıştır"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
@@ -111,11 +111,11 @@ msgstr "Önceki sekmeye git"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
 msgid "Zoom in"
-msgstr ""
+msgstr "Yakınlaştır"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
 msgid "Zoom out"
-msgstr ""
+msgstr "Uzaklaştır"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Fullscreen"
