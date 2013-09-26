@@ -23,7 +23,7 @@ set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
 
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
-add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
+add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\" -w)
 
 # Add 'make dist' command for creating release tarball
 set (CPACK_PACKAGE_VERSION ${VERSION})
