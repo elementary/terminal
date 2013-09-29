@@ -25,6 +25,9 @@ set (DOLLAR "$")
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
+# Comment this out to enable C compiler warnings
+add_definitions (-w)
+
 # Add 'make dist' command for creating release tarball
 set (CPACK_PACKAGE_VERSION ${VERSION})
 set (CPACK_SOURCE_GENERATOR "TGZ")
