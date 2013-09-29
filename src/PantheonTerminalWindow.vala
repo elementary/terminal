@@ -18,12 +18,6 @@
     END LICENSE
 ***/
 
-using Gtk;
-using Gdk;
-using Vte;
-using Granite;
-using Pango;
-
 namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
@@ -31,8 +25,8 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app;
 
         public Granite.Widgets.DynamicNotebook notebook;
-        FontDescription term_font;
-        private Button add_button;
+        Pango.FontDescription term_font;
+        private Gtk.Button add_button;
         private Gtk.Clipboard clipboard;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
@@ -135,7 +129,7 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
-            term_font = FontDescription.from_string (get_term_font ());
+            term_font = Pango.FontDescription.from_string (get_term_font ());
 
             if (recreate_tabs)
                 open_tabs ();
@@ -290,13 +284,12 @@ namespace PantheonTerminal {
             });
 
             /* Set up the "Add new tab" button */
-            add_button = new Button ();
-            Image add_image = null;
-            add_image = new Image.from_icon_name ("list-add-symbolic",
-                                                  IconSize.MENU);
+            add_button = new Gtk.Button ();
+            Gtk.Image add_image = null;
+            add_image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.MENU);
             add_button.set_image (add_image);
             add_button.show ();
-            add_button.set_relief (ReliefStyle.NONE);
+            add_button.set_relief (Gtk.ReliefStyle.NONE);
             add_button.set_tooltip_text (_("Open a new tab"));
             right_box.pack_start (add_button, false, false, 0);
         }
@@ -374,9 +367,9 @@ namespace PantheonTerminal {
 
         private void update_saved_state () {
             /* Save window state */
-            if ((get_window ().get_state () & WindowState.MAXIMIZED) != 0) {
+            if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-            } else if ((get_window ().get_state () & WindowState.FULLSCREEN) != 0) {
+            } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
             } else {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
@@ -410,7 +403,7 @@ namespace PantheonTerminal {
                              Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
             previous_terminal = current_terminal;
-            current_terminal = ((Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
+            current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
 
@@ -450,8 +443,8 @@ namespace PantheonTerminal {
             t.scrollback_lines = settings.scrollback_lines;
             previous_terminal = current_terminal;
             current_terminal = t;
-            var g = new Grid ();
-            var sb = new Scrollbar (Orientation.VERTICAL, t.vadjustment);
+            var g = new Gtk.Grid ();
+            var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, t.vadjustment);
             g.attach (t, 0, 0, 1, 1);
             g.attach (sb, 1, 0, 1, 1);
 

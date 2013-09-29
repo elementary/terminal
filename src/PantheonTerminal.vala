@@ -18,13 +18,6 @@
     END LICENSE
 ***/
 
-using Gtk;
-
-using Granite;
-using Granite.Services;
-
-using PantheonTerminal;
-
 namespace PantheonTerminal {
 
     public class PantheonTerminalApp : Granite.Application {
@@ -70,12 +63,12 @@ namespace PantheonTerminal {
             //about_documenters = {"",""};
             about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
             about_translators = "Launchpad Translators";
-            about_license_type = License.GPL_3_0;
+            about_license_type = Gtk.License.GPL_3_0;
         }
 
         public PantheonTerminalApp () {
-            Logger.initialize ("PantheonTerminal");
-            Logger.DisplayLevel = LogLevel.DEBUG;
+            Granite.Services.Logger.initialize ("PantheonTerminal");
+            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
             windows = new GLib.List <PantheonTerminalWindow> ();
 

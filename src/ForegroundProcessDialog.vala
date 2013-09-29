@@ -18,8 +18,6 @@
     END LICENSE
 ***/
 
-using Vte;
-
 namespace PantheonTerminal {
 
     public class ForegroundProcessDialog : Gtk.MessageDialog {
