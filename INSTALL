@@ -8,4 +8,4 @@ To install it:
   cd build/
   make install #Might need sudo
 
-To launch the Terminal locally (for developing purposes), use "./pantheon-terminal" from the build/ directory.
+To launch the Terminal locally (for development purposes), use "./pantheon-terminal" from the build/ directory.
