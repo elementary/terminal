@@ -6,6 +6,6 @@ Icon=utilities-terminal
 Type=Application
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
-NoDisplay=True;
+NoDisplay=true
 MimeType=inode/directory;x-directory/normal
 
