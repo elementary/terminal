@@ -346,12 +346,16 @@ namespace PantheonTerminal {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
                 var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+                var n = win.notebook;
 
                 notebook.remove_tab_force (tab);
-
-                var n = win.notebook;
                 n.insert_tab (tab, -1);
-                t.set_parent_window(win);
+
+                terminals.remove (t);
+                win.terminals.append (t);
+
+                t.set_parent_window (win);
+                win.current_terminal = t;
             } else {
                 current_terminal.grab_focus ();
             }
@@ -520,12 +524,14 @@ namespace PantheonTerminal {
             });
 
             t.selection_changed.connect (() => {
-                main_actions.get_action("Copy").set_sensitive (t.get_has_selection ());
+                main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
             });
 
             t.child_exited.connect (() => {
-                if (closed_by_exit)
-                    notebook.remove_tab (tab);
+                if (closed_by_exit) {
+                    var win = t.get_parent_window ();
+                    win.notebook.remove_tab (tab);
+                }
 
                 closed_by_exit = true;
             });

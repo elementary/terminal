@@ -115,11 +115,15 @@ namespace PantheonTerminal {
             this.clickable (regex_strings);
         }
 
-        public void set_parent_window(PantheonTerminalWindow parent_window) {
+        public void set_parent_window (PantheonTerminalWindow parent_window) {
             this.window = parent_window;
             this.app = parent_window.app;
             this.menu = parent_window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
             this.menu.show_all ();
+        }
+
+        public PantheonTerminalWindow get_parent_window () {
+            return window;
         }
 
         public void restore_settings () {
