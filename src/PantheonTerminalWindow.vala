@@ -345,11 +345,13 @@ namespace PantheonTerminal {
                                    bool new_window, int x, int y) {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
+                var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
 
                 notebook.remove_tab_force (tab);
 
                 var n = win.notebook;
                 n.insert_tab (tab, -1);
+                t.set_parent_window(win);
             } else {
                 current_terminal.grab_focus ();
             }
@@ -451,7 +453,7 @@ namespace PantheonTerminal {
                 location = PantheonTerminalApp.working_directory ?? "";
             }
             /* Set up terminal */
-            var t = new TerminalWidget (main_actions, ui, this);
+            var t = new TerminalWidget (main_actions, this);
             t.scrollback_lines = settings.scrollback_lines;
             previous_terminal = current_terminal;
             current_terminal = t;
