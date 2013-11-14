@@ -66,7 +66,7 @@ namespace PantheonTerminal {
             restore_settings ();
             settings.changed.connect (restore_settings);
 
-            set_parent_window(parent_window);
+            set_parent_window (parent_window);
 
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
