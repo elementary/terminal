@@ -57,6 +57,12 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
+        private bool _manually_closed = false;
+        public bool manually_closed {
+            get { return _manually_closed;  }
+            set { _manually_closed = value; }
+        }
+
         public TerminalWidget (Gtk.ActionGroup main_actions,
                                PantheonTerminalWindow parent_window) {
 
