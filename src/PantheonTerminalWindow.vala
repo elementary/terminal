@@ -26,7 +26,6 @@ namespace PantheonTerminal {
 
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
-        private Gtk.Button add_button;
         private Gtk.Clipboard clipboard;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
@@ -237,8 +236,6 @@ namespace PantheonTerminal {
                 return true;
             });
 
-            var right_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            right_box.show ();
             notebook.can_focus = false;
             add (notebook);
 
@@ -294,16 +291,6 @@ namespace PantheonTerminal {
 
                 return false;
             });
-
-            /* Set up the "Add new tab" button */
-            add_button = new Gtk.Button ();
-            Gtk.Image add_image = null;
-            add_image = new Gtk.Image.from_icon_name ("list-add-symbolic", Gtk.IconSize.MENU);
-            add_button.set_image (add_image);
-            add_button.show ();
-            add_button.set_relief (Gtk.ReliefStyle.NONE);
-            add_button.set_tooltip_text (_("Open a new tab"));
-            right_box.pack_start (add_button, false, false, 0);
         }
 
         private void restore_saved_state (bool restore_pos = true) {
