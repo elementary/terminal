@@ -290,9 +290,9 @@ namespace PantheonTerminal {
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
-            
+
             terminals.remove (t);
-            
+
             if (notebook.n_tabs == 0) {
                 destroy ();
             } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
