@@ -363,11 +363,14 @@ namespace PantheonTerminal {
                                    bool new_window, int x, int y) {
             if (new_window) {
                 var win = app.new_window_with_coords (x, y, false);
+                var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
 
                 notebook.remove_tab_force (tab);
 
                 var n = win.notebook;
                 n.insert_tab (tab, -1);
+                win.previous_terminal = t;
+                win.current_terminal = t;
             } else {
                 current_terminal.grab_focus ();
             }
