@@ -276,8 +276,8 @@ namespace PantheonTerminal {
                 /*
                  * Empty tab created by Granite.
                  * Insert a TerminalWidget into it.
-                 */                
-                if (settings.follow_last_tab)
+                 */
+                if (settings.follow_last_tab && previous_terminal != null)
                     new_tab (previous_terminal.get_shell_location (), tab);
                 else
                     new_tab ("", tab);
@@ -290,7 +290,6 @@ namespace PantheonTerminal {
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
-
             terminals.remove (t);
 
             if (notebook.n_tabs == 0) {
