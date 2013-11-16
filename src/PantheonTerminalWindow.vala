@@ -291,13 +291,14 @@ namespace PantheonTerminal {
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog ();
                 if (d.run () == 1) {
+                    t.manually_closed = true;
                     t.kill_ps_and_fg ();
 
                     if (notebook.n_tabs - 1 == 0) {
                         update_saved_state ();
                         destroy ();
                     }
-                    t.manually_closed = true;
+
                     d.destroy ();
 
                     if (notebook.n_tabs == 2) {
