@@ -47,7 +47,7 @@ namespace PantheonTerminal {
 
             program_name = app_cmd_name;
             exec_name = app_cmd_name.down ().replace (" ", "-");
-            app_years = "2011-2012";
+            app_years = "2011-2013";
             app_icon = "utilities-terminal";
             app_launcher = "pantheon-terminal.desktop";
             application_id = "net.launchpad.pantheon-terminal";
@@ -103,7 +103,7 @@ namespace PantheonTerminal {
 
             if (print_version) {
                 stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
-                stdout.printf ("Copyright 2011-2012 Terminal Developers.\n");
+                stdout.printf ("Copyright 2011-2013 Pantheon Terminal Developers.\n");
                 return 0;
             }
 
