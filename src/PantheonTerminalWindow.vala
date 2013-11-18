@@ -156,10 +156,11 @@ namespace PantheonTerminal {
                 notebook.show_tabs = false;
             }
 
-            notebook.tab_successfully_added.connect (on_tab_added);
-            notebook.tab_successfully_removed.connect (on_tab_removed);
+            notebook.tab_added.connect (on_tab_added);
+            notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
+            notebook.tab_reordered.connect (on_tab_reordered);
             notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.tab_removal_requested.connect (on_tab_removal_requested);
             notebook.allow_new_window = true;
@@ -346,21 +347,19 @@ namespace PantheonTerminal {
             return true;
         }
 
-        private void on_tab_moved (Granite.Widgets.Tab tab, int new_pos,
-                                   bool new_window, int x, int y) {
-            if (new_window) {
-                var win = app.new_window_with_coords (x, y, false);
-                var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+        private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
+            current_terminal.grab_focus ();
+        }
 
-                notebook.remove_tab_force (tab);
-
-                var n = win.notebook;
-                n.insert_tab (tab, -1);
-                win.previous_terminal = t;
-                win.current_terminal = t;
-            } else {
-                current_terminal.grab_focus ();
-            }
+        private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
+            var new_window = app.new_window_with_coords (x, y, false);
+            var terminal = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            var new_notebook = new_window.notebook;
+            
+            notebook.remove_tab_force (tab);
+            new_notebook.insert_tab (tab, -1);
+            new_window.previous_terminal = terminal;
+            new_window.current_terminal = terminal;
         }
         
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
