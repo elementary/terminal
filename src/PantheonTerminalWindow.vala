@@ -441,11 +441,19 @@ namespace PantheonTerminal {
             }
         }
 
-        private void new_tab (string location="", string? program=null) {
-            /* If the user choose to use a specific working directory */
-            if (location == "") {
+        private void new_tab (string directory="", string? program=null) {
+            /* 
+             * If the user choose to use a specific working directory.
+             * Reassigning the directory variable a new value 
+             * leads to free'd memory being read.
+             */
+            string location;
+            if (directory == "") {
                 location = PantheonTerminalApp.working_directory ?? "";
+            } else {
+                location = directory;
             }
+
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, this);
             t.scrollback_lines = settings.scrollback_lines;
