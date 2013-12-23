@@ -26,6 +26,7 @@ namespace PantheonTerminal {
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow window;
+        private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
         public string? uri;
 
@@ -56,22 +57,22 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
-        public TerminalWidget (Gtk.ActionGroup main_actions, Gtk.UIManager ui,
+        private bool _manually_closed = false;
+        public bool manually_closed {
+            get { return _manually_closed;  }
+            set { _manually_closed = value; }
+        }
+
+        public TerminalWidget (Gtk.ActionGroup main_actions,
                                PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
 
-            /* Set up the parents */
-            this.window = parent_window;
-            app = parent_window.app;
-
             restore_settings ();
             settings.changed.connect (restore_settings);
 
-            /* Create a pop menu */
-            var menu = ui.get_widget ("ui/AppMenu") as Gtk.Menu;
-            menu.show_all ();
+            set_parent_window (parent_window);
 
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
@@ -118,6 +119,17 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
+        }
+
+        public void set_parent_window (PantheonTerminalWindow parent_window) {
+            this.window = parent_window;
+            this.app = parent_window.app;
+            this.menu = parent_window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+            this.menu.show_all ();
+        }
+
+        public PantheonTerminalWindow get_parent_window () {
+            return window;
         }
 
         public void restore_settings () {
