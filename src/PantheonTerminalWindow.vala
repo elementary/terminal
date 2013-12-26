@@ -155,6 +155,8 @@ namespace PantheonTerminal {
                 notebook.show_tabs = false;
             }
 
+            main_actions.get_action ("Copy").set_sensitive (false);
+
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
