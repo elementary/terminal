@@ -25,7 +25,18 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app;
 
         GLib.Pid child_pid;
-        private PantheonTerminalWindow window;
+        private PantheonTerminalWindow _window;
+        public PantheonTerminalWindow window {
+            get {
+                return _window;
+            }
+            set {
+                this._window = value;
+                this.app = value.app;
+                this.menu = value.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+                this.menu.show_all ();
+            }
+        }
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
         public string? uri;
@@ -77,7 +88,7 @@ namespace PantheonTerminal {
             restore_settings ();
             settings.changed.connect (restore_settings);
 
-            set_parent_window (parent_window);
+            window = parent_window;
 
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
@@ -124,17 +135,6 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
-        }
-
-        public void set_parent_window (PantheonTerminalWindow parent_window) {
-            this.window = parent_window;
-            this.app = parent_window.app;
-            this.menu = parent_window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
-            this.menu.show_all ();
-        }
-
-        public PantheonTerminalWindow get_parent_window () {
-            return window;
         }
 
         public void restore_settings () {

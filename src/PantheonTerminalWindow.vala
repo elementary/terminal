@@ -263,7 +263,7 @@ namespace PantheonTerminal {
         private void on_tab_added (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.append (t);
-            t.set_parent_window (this);
+            t.window = this;
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
