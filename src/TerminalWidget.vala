@@ -90,6 +90,7 @@ namespace PantheonTerminal {
             child_has_exited = false;
             killed = false;
 
+            /* Connect to necessary signals */
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
 
@@ -130,7 +131,6 @@ namespace PantheonTerminal {
                 tab.label = window_title;
             });
 
-            /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
 
             Gtk.TargetEntry target = {"text/uri-list", 0, 0};
