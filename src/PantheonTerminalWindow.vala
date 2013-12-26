@@ -306,20 +306,6 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (current_terminal.tab == tab) {
-                int new_position = notebook.get_tab_position (notebook.current) + 1;
-                if (new_position >= notebook.n_tabs) {
-                    new_position = notebook.n_tabs - 2;
-                }
-
-                foreach (var terminal in terminals) {
-                    if (notebook.get_tab_position (terminal.tab) == new_position) {
-                        current_terminal = terminal;
-                        break;
-                    }
-                }
-            }
-
             t.manually_closed = true;
             t.kill_ps ();
 
