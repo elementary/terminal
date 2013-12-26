@@ -564,6 +564,9 @@ namespace PantheonTerminal {
                         d.destroy ();
                         return true;
                     }
+
+                } else {
+                    t.kill_ps ();
                 }
             }
 
