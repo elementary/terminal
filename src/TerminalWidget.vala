@@ -57,6 +57,11 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
+        public bool child_has_exited {
+            get;
+            private set;
+        }
+
         private bool _manually_closed = false;
         public bool manually_closed {
             get { return _manually_closed;  }
@@ -187,7 +192,9 @@ namespace PantheonTerminal {
             audible_bell = settings.audible_bell;
         }
 
-        void on_child_exited () { }
+        void on_child_exited () {
+            child_has_exited = true;
+        }
 
         public void kill_ps () {
             //this.pty_object.close ();
@@ -232,6 +239,11 @@ namespace PantheonTerminal {
         }
 
         public bool try_get_foreground_pid (out int pid) {
+            if (child_has_exited) {
+                pid = -1;
+                return false;
+            }
+
             int pty = this.pty_object.fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
