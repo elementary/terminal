@@ -292,8 +292,10 @@ namespace PantheonTerminal {
             }
 
             t.kill_ps ();
-            if (notebook.n_tabs - 1 == 0)
+            if (notebook.n_tabs - 1 == 0) {
                 update_saved_window_state ();
+                reset_saved_tabs ();
+            }
 
             return true;
         }
@@ -358,6 +360,10 @@ namespace PantheonTerminal {
             this.get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
             saved_state.opening_y = root_y;
+        }
+
+        private void reset_saved_tabs () {
+            saved_state.tabs = "";
         }
 
         private void on_switch_page (Granite.Widgets.Tab? old,
