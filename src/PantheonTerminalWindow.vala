@@ -31,7 +31,6 @@ namespace PantheonTerminal {
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
-        public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
         private string saved_tabs;
 
@@ -366,9 +365,8 @@ namespace PantheonTerminal {
             saved_state.opening_y = root_y;
         }
 
-        void on_switch_page (Granite.Widgets.Tab? old,
+        private void on_switch_page (Granite.Widgets.Tab? old,
                              Granite.Widgets.Tab new_tab) {
-            current_tab = new_tab;
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
