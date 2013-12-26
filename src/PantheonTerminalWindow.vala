@@ -264,17 +264,17 @@ namespace PantheonTerminal {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.append (t);
             t.window = this;
+            update_tabs_visibility ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.remove (t);
 
-            if (notebook.n_tabs == 0) {
+            if (notebook.n_tabs == 0)
                 destroy ();
-            } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                notebook.show_tabs = false;
-            }
+            else
+                update_tabs_visibility ();
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
@@ -292,12 +292,6 @@ namespace PantheonTerminal {
                     }
 
                     d.destroy ();
-
-                    if (notebook.n_tabs == 2) {
-                        if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                            notebook.show_tabs = false;
-                        }
-                    }
 
                     return true;
                 }
@@ -328,12 +322,6 @@ namespace PantheonTerminal {
 
             t.manually_closed = true;
             t.kill_ps ();
-
-            if (notebook.n_tabs == 2) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = false;
-                }
-            }
 
             return true;
         }
@@ -415,16 +403,11 @@ namespace PantheonTerminal {
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
+        }
 
-            if (notebook.n_tabs == 1) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = false;
-                }
-            } else {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = true;
-                }
-            }
+        private void update_tabs_visibility () {
+            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE)
+                notebook.show_tabs = notebook.n_tabs > 1;
         }
 
         private void open_tabs () {
@@ -464,13 +447,6 @@ namespace PantheonTerminal {
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
             t.hexpand = true;
-
-            /* If tabs were hidden and this is not the first tab show tabs */
-            if (notebook.n_tabs == 1) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = true;
-                }
-            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
