@@ -78,8 +78,7 @@ namespace PantheonTerminal {
             private set;
         }
 
-        public TerminalWidget (Gtk.ActionGroup main_actions,
-                               PantheonTerminalWindow parent_window) {
+        public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
@@ -108,7 +107,7 @@ namespace PantheonTerminal {
                         return false;
                     case Gdk.BUTTON_SECONDARY :
                         if (uri != null) {
-                            main_actions.get_action ("Copy").set_sensitive (true);
+                            window.main_actions.get_action ("Copy").set_sensitive (true);
                         }
 
                         menu.select_first (false);
@@ -118,6 +117,10 @@ namespace PantheonTerminal {
                 }
 
                 return false;
+            });
+
+            selection_changed.connect (() => {
+                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
             });
 
             window_title_changed.connect ((event) => {

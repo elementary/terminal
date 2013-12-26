@@ -399,7 +399,7 @@ namespace PantheonTerminal {
             }
 
             /* Set up terminal */
-            var t = new TerminalWidget (main_actions, this);
+            var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
             var g = new Gtk.Grid ();
             var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, t.vadjustment);
@@ -419,9 +419,6 @@ namespace PantheonTerminal {
             } else {
                 t.run_program (program);
             }
-
-            /* Set up actions releated to the terminal */
-            main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
 
             var tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
 
@@ -445,10 +442,6 @@ namespace PantheonTerminal {
                 */
 
                 tab.label = new_text;
-            });
-
-            t.selection_changed.connect (() => {
-                main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
             });
 
             t.child_exited.connect (() => {
