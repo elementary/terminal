@@ -286,11 +286,6 @@ namespace PantheonTerminal {
                     t.manually_closed = true;
                     t.kill_ps_and_fg ();
 
-                    if (notebook.n_tabs - 1 == 0) {
-                        update_saved_state ();
-                        destroy ();
-                    }
-
                     d.destroy ();
 
                     return true;
@@ -299,15 +294,12 @@ namespace PantheonTerminal {
                 d.destroy ();
 
                 return false;
-            } else {
-                if (notebook.n_tabs - 1 == 0) {
-                    update_saved_state ();
-                    tab.parent.parent.parent.destroy ();
-                }
             }
-
             t.manually_closed = true;
             t.kill_ps ();
+
+            if (notebook.n_tabs - 1 == 0)
+                update_saved_window_state ();
 
             return true;
         }
@@ -349,7 +341,7 @@ namespace PantheonTerminal {
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
-        private void update_saved_state () {
+        private void update_saved_window_state () {
             /* Save window state */
             if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
@@ -367,16 +359,7 @@ namespace PantheonTerminal {
                 PantheonTerminal.saved_state.window_height = height;
             }
 
-            saved_state.tabs = "";
-            string tab_loc;
-            foreach (var t in terminals) {
-                t = (TerminalWidget) t;
-                tab_loc = t.get_shell_location ();
-
-                if (tab_loc != "")
-                    saved_state.tabs += tab_loc + ",";
-            }
-
+            /* Save window position */
             int root_x, root_y;
             this.get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
@@ -512,7 +495,7 @@ namespace PantheonTerminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            update_saved_state ();
+            update_saved_window_state ();
             action_quit ();
             string tabs = "";
 
