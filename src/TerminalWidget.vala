@@ -73,10 +73,9 @@ namespace PantheonTerminal {
             private set;
         }
 
-        private bool _manually_closed = false;
-        public bool manually_closed {
-            get { return _manually_closed;  }
-            set { _manually_closed = value; }
+        public bool killed {
+            get;
+            private set;
         }
 
         public TerminalWidget (Gtk.ActionGroup main_actions,
@@ -90,6 +89,7 @@ namespace PantheonTerminal {
 
             window = parent_window;
             child_has_exited = false;
+            killed = false;
 
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
@@ -197,15 +197,20 @@ namespace PantheonTerminal {
             child_has_exited = true;
         }
 
+        public void kill_fg () {
+            int fg_pid;
+            if (this.try_get_foreground_pid (out fg_pid))
+                Posix.kill (fg_pid, 9);
+        }
+
         public void kill_ps () {
+            killed = true;
             //this.pty_object.close ();
             Posix.kill (this.child_pid, 9);
         }
 
         public void kill_ps_and_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, 9);
+            kill_fg ();
             kill_ps ();
         }
 

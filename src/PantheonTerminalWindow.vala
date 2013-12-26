@@ -282,21 +282,16 @@ namespace PantheonTerminal {
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog ();
                 if (d.run () == 1) {
-                    t.manually_closed = true;
-                    t.kill_ps_and_fg ();
-
+                    d.destroy ();
+                    t.kill_fg ();
+                } else {
                     d.destroy ();
 
-                    return true;
+                    return false;
                 }
-
-                d.destroy ();
-
-                return false;
             }
-            t.manually_closed = true;
-            t.kill_ps ();
 
+            t.kill_ps ();
             if (notebook.n_tabs - 1 == 0)
                 update_saved_window_state ();
 
@@ -457,7 +452,7 @@ namespace PantheonTerminal {
             });
 
             t.child_exited.connect (() => {
-                if (!t.manually_closed) {
+                if (!t.killed) {
                     tab.close ();
                 }
             });
