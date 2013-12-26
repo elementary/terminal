@@ -31,7 +31,6 @@ namespace PantheonTerminal {
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
-        public TerminalWidget previous_terminal = null;
         public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
         private string saved_tabs;
@@ -348,7 +347,6 @@ namespace PantheonTerminal {
 
             notebook.remove_tab (tab);
             new_notebook.insert_tab (tab, -1);
-            new_window.previous_terminal = terminal;
             new_window.current_terminal = terminal;
         }
         
@@ -358,8 +356,8 @@ namespace PantheonTerminal {
         }
 
         private void on_new_tab_requested () {
-            if (settings.follow_last_tab && previous_terminal != null)
-                new_tab (previous_terminal.get_shell_location ());
+            if (settings.follow_last_tab)
+                new_tab (current_terminal.get_shell_location ());
             else
                 new_tab ();
         }
@@ -412,7 +410,6 @@ namespace PantheonTerminal {
         void on_switch_page (Granite.Widgets.Tab? old,
                              Granite.Widgets.Tab new_tab) {
             current_tab = new_tab;
-            previous_terminal = current_terminal;
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
@@ -457,8 +454,6 @@ namespace PantheonTerminal {
             /* Set up terminal */
             var t = new TerminalWidget (main_actions, this);
             t.scrollback_lines = settings.scrollback_lines;
-            previous_terminal = current_terminal;
-            current_terminal = t;
             var g = new Gtk.Grid ();
             var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, t.vadjustment);
             g.attach (t, 0, 0, 1, 1);
