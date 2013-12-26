@@ -89,6 +89,7 @@ namespace PantheonTerminal {
             settings.changed.connect (restore_settings);
 
             window = parent_window;
+            child_has_exited = false;
 
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
