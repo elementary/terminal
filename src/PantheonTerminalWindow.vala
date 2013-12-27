@@ -29,6 +29,8 @@ namespace PantheonTerminal {
         private Gtk.Clipboard clipboard;
 
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        private HashTable<string, TerminalWidget> restorable_terminals;
+        private int restorable_counter = 0;
 
         public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
@@ -139,6 +141,9 @@ namespace PantheonTerminal {
                 open_tabs ();
 
             set_size_request (app.minimum_width, app.minimum_height);
+
+            destroy.connect (on_destroy);
+            restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
         private void setup_ui () {
@@ -161,11 +166,14 @@ namespace PantheonTerminal {
             notebook.tab_switched.connect (on_switch_page);
             notebook.tab_moved.connect (on_tab_moved);
             notebook.tab_reordered.connect (on_tab_reordered);
+            notebook.tab_restored.connect (on_tab_restored);
             notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.close_tab_requested.connect (on_close_tab_requested);
             notebook.new_tab_requested.connect (on_new_tab_requested);
             notebook.allow_new_window = true;
             notebook.allow_duplication = true;
+            notebook.allow_restoring = true;
+            notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
             add (notebook);
@@ -291,7 +299,14 @@ namespace PantheonTerminal {
                 }
             }
 
-            t.kill_ps ();
+            if (!t.child_has_exited) {
+                if (notebook.n_tabs >= 2) {
+                    make_restorable (tab);
+                } else {
+                    t.kill_ps ();
+                }
+            }
+
             if (notebook.n_tabs - 1 == 0) {
                 update_saved_window_state ();
                 reset_saved_tabs ();
@@ -302,6 +317,16 @@ namespace PantheonTerminal {
 
         private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
             current_terminal.grab_focus ();
+        }
+
+        private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
+            TerminalWidget term = restorable_terminals.get (restore_key);
+            var tab = create_tab(label, icon, term);
+
+            restorable_terminals.remove (restore_key);
+            notebook.insert_tab (tab, -1);
+            notebook.current = tab;
+            term.grab_focus ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -407,10 +432,6 @@ namespace PantheonTerminal {
             /* Set up terminal */
             var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
-            var g = new Gtk.Grid ();
-            var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, t.vadjustment);
-            g.attach (t, 0, 0, 1, 1);
-            g.attach (sb, 1, 0, 1, 1);
 
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
@@ -426,14 +447,11 @@ namespace PantheonTerminal {
                 t.run_program (program);
             }
 
-            var tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
-
-            t.tab = tab;
-            tab.ellipsize_mode = Pango.EllipsizeMode.START;
+            var tab = create_tab(_("Terminal"), null, t);
 
             t.child_exited.connect (() => {
                 if (!t.killed) {
-                    tab.close ();
+                    t.tab.close ();
                 }
             });
 
@@ -448,6 +466,33 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             t.grab_focus ();
+        }
+
+        private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
+            var g = new Gtk.Grid ();
+            var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, term.vadjustment);
+            g.attach (term, 0, 0, 1, 1);
+            g.attach (sb, 1, 0, 1, 1);
+            var tab = new Granite.Widgets.Tab (label, icon, g);
+            term.tab = tab;
+            tab.ellipsize_mode = Pango.EllipsizeMode.START;
+
+            return tab;
+        }
+
+        private void make_restorable (Granite.Widgets.Tab tab) {
+            var restore_key = "%d".printf(restorable_counter++);
+            var page = tab.page as Gtk.Grid;
+            var term = page.get_child_at (0, 0) as TerminalWidget;
+
+            page.remove (term);
+            restorable_terminals.insert (restore_key, term);
+            tab.restore_data = restore_key;
+            tab.dropped_callback = (() => {
+                unowned TerminalWidget t = restorable_terminals.get (tab.restore_data);
+                t.kill_ps ();
+                restorable_terminals.remove (tab.restore_data);
+            });
         }
 
         public void run_program_term (string program) {
@@ -492,6 +537,12 @@ namespace PantheonTerminal {
 
             saved_state.tabs = tabs;
             return false;
+        }
+
+        private void on_destroy () {
+            foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
+                t.kill_ps ();
+            }
         }
 
         void action_quit () {
