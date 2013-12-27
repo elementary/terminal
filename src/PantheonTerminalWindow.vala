@@ -31,8 +31,6 @@ namespace PantheonTerminal {
         private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         public TerminalWidget current_terminal = null;
-        public TerminalWidget previous_terminal = null;
-        public Granite.Widgets.Tab current_tab;
         private bool is_fullscreen = false;
         private string saved_tabs;
 
@@ -156,6 +154,8 @@ namespace PantheonTerminal {
                 notebook.show_tabs = false;
             }
 
+            main_actions.get_action ("Copy").set_sensitive (false);
+
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
@@ -262,18 +262,18 @@ namespace PantheonTerminal {
         private void on_tab_added (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.append (t);
-            t.set_parent_window (this);
+            t.window = this;
+            update_tabs_visibility ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.remove (t);
 
-            if (notebook.n_tabs == 0) {
+            if (notebook.n_tabs == 0)
                 destroy ();
-            } else if (notebook.n_tabs == 1 && settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                notebook.show_tabs = false;
-            }
+            else
+                update_tabs_visibility ();
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
@@ -282,56 +282,19 @@ namespace PantheonTerminal {
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog ();
                 if (d.run () == 1) {
-                    t.manually_closed = true;
-                    t.kill_ps_and_fg ();
-
-                    if (notebook.n_tabs - 1 == 0) {
-                        update_saved_state ();
-                        destroy ();
-                    }
-
+                    d.destroy ();
+                    t.kill_fg ();
+                } else {
                     d.destroy ();
 
-                    if (notebook.n_tabs == 2) {
-                        if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                            notebook.show_tabs = false;
-                        }
-                    }
-
-                    return true;
-                }
-
-                d.destroy ();
-
-                return false;
-            } else {
-                if (notebook.n_tabs - 1 == 0) {
-                    update_saved_state ();
-                    tab.parent.parent.parent.destroy ();
+                    return false;
                 }
             }
 
-            if (current_terminal.tab == tab) {
-                int new_position = notebook.get_tab_position (notebook.current) + 1;
-                if (new_position >= notebook.n_tabs) {
-                    new_position = notebook.n_tabs - 2;
-                }
-
-                foreach (var terminal in terminals) {
-                    if (notebook.get_tab_position (terminal.tab) == new_position) {
-                        current_terminal = terminal;
-                        break;
-                    }
-                }
-            }
-
-            t.manually_closed = true;
             t.kill_ps ();
-
-            if (notebook.n_tabs == 2) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = false;
-                }
+            if (notebook.n_tabs - 1 == 0) {
+                update_saved_window_state ();
+                reset_saved_tabs ();
             }
 
             return true;
@@ -348,7 +311,6 @@ namespace PantheonTerminal {
 
             notebook.remove_tab (tab);
             new_notebook.insert_tab (tab, -1);
-            new_window.previous_terminal = terminal;
             new_window.current_terminal = terminal;
         }
         
@@ -358,8 +320,8 @@ namespace PantheonTerminal {
         }
 
         private void on_new_tab_requested () {
-            if (settings.follow_last_tab && previous_terminal != null)
-                new_tab (previous_terminal.get_shell_location ());
+            if (settings.follow_last_tab)
+                new_tab (current_terminal.get_shell_location ());
             else
                 new_tab ();
         }
@@ -375,7 +337,7 @@ namespace PantheonTerminal {
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
-        private void update_saved_state () {
+        private void update_saved_window_state () {
             /* Save window state */
             if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
                 PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
@@ -393,39 +355,27 @@ namespace PantheonTerminal {
                 PantheonTerminal.saved_state.window_height = height;
             }
 
-            saved_state.tabs = "";
-            string tab_loc;
-            foreach (var t in terminals) {
-                t = (TerminalWidget) t;
-                tab_loc = t.get_shell_location ();
-
-                if (tab_loc != "")
-                    saved_state.tabs += tab_loc + ",";
-            }
-
+            /* Save window position */
             int root_x, root_y;
             this.get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
             saved_state.opening_y = root_y;
         }
 
-        void on_switch_page (Granite.Widgets.Tab? old,
+        private void reset_saved_tabs () {
+            saved_state.tabs = "";
+        }
+
+        private void on_switch_page (Granite.Widgets.Tab? old,
                              Granite.Widgets.Tab new_tab) {
-            current_tab = new_tab;
-            previous_terminal = current_terminal;
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
+        }
 
-            if (notebook.n_tabs == 1) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = false;
-                }
-            } else {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = true;
-                }
-            }
+        private void update_tabs_visibility () {
+            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE)
+                notebook.show_tabs = notebook.n_tabs > 1;
         }
 
         private void open_tabs () {
@@ -455,10 +405,8 @@ namespace PantheonTerminal {
             }
 
             /* Set up terminal */
-            var t = new TerminalWidget (main_actions, this);
+            var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
-            previous_terminal = current_terminal;
-            current_terminal = t;
             var g = new Gtk.Grid ();
             var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, t.vadjustment);
             g.attach (t, 0, 0, 1, 1);
@@ -467,13 +415,6 @@ namespace PantheonTerminal {
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
             t.hexpand = true;
-
-            /* If tabs were hidden and this is not the first tab show tabs */
-            if (notebook.n_tabs == 1) {
-                if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                    notebook.show_tabs = true;
-                }
-            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
@@ -485,39 +426,13 @@ namespace PantheonTerminal {
                 t.run_program (program);
             }
 
-            /* Set up actions releated to the terminal */
-            main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
-
             var tab = new Granite.Widgets.Tab (_("Terminal"), null, g);
 
             t.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
-            t.window_title_changed.connect (() => {
-                string new_text = t.get_window_title ();
-
-                /* Strips the location */
-                /*for (int i = 0; i < new_text.length; i++) {
-                  if (new_text[i] == ':') {
-                  new_text = new_text[i + 2:new_text.length];
-                  break;
-                  }
-                  }
-
-                  if (new_text.length > 50) {
-                  new_text = new_text[new_text.length - 50:new_text.length];
-                  }
-                */
-
-                tab.label = new_text;
-            });
-
-            t.selection_changed.connect (() => {
-                main_actions.get_action ("Copy").set_sensitive (t.get_has_selection ());
-            });
-
             t.child_exited.connect (() => {
-                if (!t.manually_closed) {
+                if (!t.killed) {
                     tab.close ();
                 }
             });
@@ -553,7 +468,7 @@ namespace PantheonTerminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            update_saved_state ();
+            update_saved_window_state ();
             action_quit ();
             string tabs = "";
 
@@ -569,6 +484,9 @@ namespace PantheonTerminal {
                         d.destroy ();
                         return true;
                     }
+
+                } else {
+                    t.kill_ps ();
                 }
             }
 

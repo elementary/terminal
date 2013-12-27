@@ -25,7 +25,21 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app;
 
         GLib.Pid child_pid;
-        private PantheonTerminalWindow window;
+        private PantheonTerminalWindow _window;
+
+        public PantheonTerminalWindow window {
+            get {
+                return _window;
+            }
+
+            set {
+                this._window = value;
+                this.app = value.app;
+                this.menu = value.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+                this.menu.show_all ();
+            }
+        }
+
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
         public string? uri;
@@ -57,14 +71,17 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
-        private bool _manually_closed = false;
-        public bool manually_closed {
-            get { return _manually_closed;  }
-            set { _manually_closed = value; }
+        public bool child_has_exited {
+            get;
+            private set;
         }
 
-        public TerminalWidget (Gtk.ActionGroup main_actions,
-                               PantheonTerminalWindow parent_window) {
+        public bool killed {
+            get;
+            private set;
+        }
+
+        public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
@@ -72,8 +89,11 @@ namespace PantheonTerminal {
             restore_settings ();
             settings.changed.connect (restore_settings);
 
-            set_parent_window (parent_window);
+            window = parent_window;
+            child_has_exited = false;
+            killed = false;
 
+            /* Connect to necessary signals */
             button_press_event.connect ((event) => {
                 uri = get_link ((long) event.x, (long) event.y);
 
@@ -91,7 +111,7 @@ namespace PantheonTerminal {
                         return false;
                     case Gdk.BUTTON_SECONDARY :
                         if (uri != null) {
-                            main_actions.get_action ("Copy").set_sensitive (true);
+                            window.main_actions.get_action ("Copy").set_sensitive (true);
                         }
 
                         menu.select_first (false);
@@ -103,6 +123,10 @@ namespace PantheonTerminal {
                 return false;
             });
 
+            selection_changed.connect (() => {
+                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+            });
+
             window_title_changed.connect ((event) => {
                 if (this == window.current_terminal)
                     window.title = window_title;
@@ -110,7 +134,6 @@ namespace PantheonTerminal {
                 tab.label = window_title;
             });
 
-            /* Connect to necessary signals */
             child_exited.connect (on_child_exited);
 
             Gtk.TargetEntry target = {"text/uri-list", 0, 0};
@@ -119,17 +142,6 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
-        }
-
-        public void set_parent_window (PantheonTerminalWindow parent_window) {
-            this.window = parent_window;
-            this.app = parent_window.app;
-            this.menu = parent_window.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
-            this.menu.show_all ();
-        }
-
-        public PantheonTerminalWindow get_parent_window () {
-            return window;
         }
 
         public void restore_settings () {
@@ -187,17 +199,24 @@ namespace PantheonTerminal {
             audible_bell = settings.audible_bell;
         }
 
-        void on_child_exited () { }
+        void on_child_exited () {
+            child_has_exited = true;
+        }
+
+        public void kill_fg () {
+            int fg_pid;
+            if (this.try_get_foreground_pid (out fg_pid))
+                Posix.kill (fg_pid, 9);
+        }
 
         public void kill_ps () {
+            killed = true;
             //this.pty_object.close ();
             Posix.kill (this.child_pid, 9);
         }
 
         public void kill_ps_and_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, 9);
+            kill_fg ();
             kill_ps ();
         }
 
@@ -232,6 +251,11 @@ namespace PantheonTerminal {
         }
 
         public bool try_get_foreground_pid (out int pid) {
+            if (child_has_exited) {
+                pid = -1;
+                return false;
+            }
+
             int pty = this.pty_object.fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
