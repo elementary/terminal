@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Open Terminal Here
+Name=Terminal
 TryExec=pantheon-terminal
 Exec=pantheon-terminal -w %u
 Icon=utilities-terminal
@@ -8,4 +8,3 @@ StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 NoDisplay=true
 MimeType=inode/directory;x-directory/normal
-
