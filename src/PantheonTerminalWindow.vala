@@ -481,7 +481,7 @@ namespace PantheonTerminal {
         }
 
         private void make_restorable (Granite.Widgets.Tab tab) {
-            var restore_key = "%d".printf(restorable_counter++);
+            var restore_key = "%d".printf (restorable_counter++);
             var page = tab.page as Gtk.Grid;
             var term = page.get_child_at (0, 0) as TerminalWidget;
 
