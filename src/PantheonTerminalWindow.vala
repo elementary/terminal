@@ -321,7 +321,7 @@ namespace PantheonTerminal {
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
             TerminalWidget term = restorable_terminals.get (restore_key);
-            var tab = create_tab(label, icon, term);
+            var tab = create_tab (label, icon, term);
 
             restorable_terminals.remove (restore_key);
             notebook.insert_tab (tab, -1);
@@ -447,7 +447,7 @@ namespace PantheonTerminal {
                 t.run_program (program);
             }
 
-            var tab = create_tab(_("Terminal"), null, t);
+            var tab = create_tab (_("Terminal"), null, t);
 
             t.child_exited.connect (() => {
                 if (!t.killed) {
