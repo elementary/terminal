@@ -485,6 +485,7 @@ namespace PantheonTerminal {
             var page = tab.page as Gtk.Grid;
             var term = page.get_child_at (0, 0) as TerminalWidget;
 
+            terminals.remove (term);
             page.remove (term);
             restorable_terminals.insert (restore_key, term);
             tab.restore_data = restore_key;
