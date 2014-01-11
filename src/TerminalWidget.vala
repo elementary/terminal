@@ -245,8 +245,12 @@ namespace PantheonTerminal {
                     warning (e.message);
                 }
             } else {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                try {
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
+                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                } catch (Error e) {
+                    warning (e.message);
+                }
             }
         }
 
@@ -271,7 +275,6 @@ namespace PantheonTerminal {
         public bool has_foreground_process () {
             return try_get_foreground_pid (null);
         }
-
 
         public int calculate_width (int column_count) {
             int width = (int) (this.get_char_width()) * column_count;
