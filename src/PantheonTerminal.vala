@@ -22,23 +22,22 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalApp : Granite.Application {
 
-        public GLib.List <PantheonTerminalWindow> windows;
+        private GLib.List <PantheonTerminalWindow> windows;
 
         private static string app_cmd_name;
         private static string app_shell_name;
         public static string? working_directory = null;
         /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
-        static string[]? command_e = null;
+        private static string[]? command_e = null;
 
-        static bool print_version;
+        private static bool print_version = false;
 
         public int minimum_width;
         public int minimum_height;
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-            print_version = false;
             build_data_dir = Constants.DATADIR;
             build_pkg_data_dir = Constants.PKGDATADIR;
             build_release_name = Constants.RELEASE_NAME;
@@ -75,6 +74,34 @@ namespace PantheonTerminal {
             settings = new Settings ();
         }
 
+        public void new_window () {
+            new PantheonTerminalWindow (this);
+        }
+
+        public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
+            var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs);
+
+            return window;
+        }
+
+        public override int command_line (ApplicationCommandLine command_line) {
+            // keep the application running until we are done with this commandline
+            this.hold ();
+            int res = _command_line (command_line);
+            this.release ();
+            return res;
+        }
+
+        public override void window_added (Gtk.Window window) {
+            windows.append (window as PantheonTerminalWindow);
+            base.window_added (window);
+        }
+
+        public override void window_removed (Gtk.Window window) {
+            windows.remove (window as PantheonTerminalWindow);
+            base.window_removed (window);
+        }
+
         protected override void activate () {
             if (app_shell_name != null) {
                 try {
@@ -101,93 +128,57 @@ namespace PantheonTerminal {
                 return 0;
             }
 
-            if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
-                stdout.printf ("Copyright 2011-2013 Pantheon Terminal Developers.\n");
-                return 0;
-            }
+            if (command_e != null)
+                run_commands (command_e);
+            else if (working_directory != null)
+                start_terminal_with_working_directory (working_directory);
+            else 
+                new_window ();
 
-            if (command_e != null) {
-                new_window_with_programs (command_e);
-                return 0;
-            }
+            // Do not save the value until the next instance of
+            // Pantheon Terminal is started
+            command_e = null;
 
-            if (PantheonTerminalApp.working_directory != null) {
-                uint n_windows = windows.length ();
-                if (n_windows < 1) {
-                    new_window_with_working_directory (PantheonTerminalApp.working_directory);
-                } else {
-                    unowned PantheonTerminalWindow win = windows.nth_data (n_windows -1);
-                    win.add_tab_with_working_directory (PantheonTerminalApp.working_directory);
-                    win.present ();
-                }
-
-                return 0;
-            }
-
-            new_window ();
             return 0;
         }
 
-        public override int command_line (ApplicationCommandLine command_line) {
-            // keep the application running until we are done with this commandline
-            this.hold ();
-            int res = _command_line (command_line);
-            this.release ();
-            return res;
-        }
-
-
-        public void new_window () {
-            var window = new PantheonTerminalWindow (this);
-            window.show ();
-            windows.append (window);
-            add_window (window);
-        }
-
-        public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
-            var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs);
-            window.show ();
-            windows.append (window);
-            add_window (window);
-            return window;
-        }
-
-        public PantheonTerminalWindow new_window_with_working_directory (string location) {
-            var window = new PantheonTerminalWindow.with_working_directory (this, location, false);
-            window.show ();
-            windows.append (window);
-            add_window (window);
-            return window;
-        }
-
-        public void new_window_with_programs (string[] programs) {
+        private void run_commands (string[] commands) {
             PantheonTerminalWindow? window;
             window = get_last_window ();
 
             if (window == null) {
                 window = new PantheonTerminalWindow (this, false);
-                window.show ();
-                windows.append (window);
-                add_window (window);
             }
 
-            foreach (string program in programs) {
-                window.run_program_term (program);
+            foreach (string command in commands) {
+                window.add_tab_with_command (command);
             }
+        }
+
+        private void start_terminal_with_working_directory (string working_directory) {
+            PantheonTerminalWindow? window;
+            window = get_last_window ();
+
+            if (window != null) {
+                window.add_tab_with_working_directory (working_directory);
+                window.present ();
+            } else
+                new PantheonTerminalWindow.with_working_directory (this, working_directory, false);
         }
 
         private PantheonTerminalWindow? get_last_window () {
-            if (windows.length () > 0) {
-                uint length = windows.length ();
-                return windows.nth_data (length);
-            }
-            return null;
+            uint length = windows.length ();
+
+            return length > 0 ? windows.nth_data (length - 1) : null;
         }
+
+        static const OptionEntry[] version_entry = {
+            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
+            { null }
+        };
 
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
-            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
@@ -197,24 +188,23 @@ namespace PantheonTerminal {
             app_cmd_name = "Pantheon Terminal";
 
             var context = new OptionContext ("Terminal");
-            context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
+            context.add_main_entries (version_entry, Constants.GETTEXT_PACKAGE);
 
             try {
                 context.parse(ref args);
-            } catch (Error e) {}
+            } catch (Error e) {
+                // Ignore unknown arguments
+            }
 
-            string[] copy = {};
-            foreach (string s in args)
-                copy += s;
+            if (print_version) {
+                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
+                stdout.printf ("Copyright 2011-2013 Pantheon Terminal Developers.\n");
 
-            if (working_directory != null) {
-               /* Recreating -w option so that is passed to instance */
-                copy += "-w";
-                copy += working_directory;
+                return 0;
             }
 
             var app = new PantheonTerminalApp ();
-            return app.run (copy);
+            return app.run (args);
         }
     }
 } // Namespace

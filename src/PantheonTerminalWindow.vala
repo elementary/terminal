@@ -22,7 +22,11 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
 
-        public PantheonTerminalApp app;
+        public PantheonTerminalApp app {
+            get {
+                return this.application as PantheonTerminalApp;
+            }
+        }
 
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
@@ -67,35 +71,33 @@ namespace PantheonTerminal {
         public Gtk.ActionGroup main_actions;
         public Gtk.UIManager ui;
 
-        public PantheonTerminalWindow (Granite.Application app, bool should_recreate_tabs=true) {
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
-            init (should_recreate_tabs);
+        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
+            init (app, should_recreate_tabs);
         }
 
-        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y,
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
                                                    bool should_recreate_tabs = true) {
-
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
             this.move (x, y);
-            init (should_recreate_tabs, false);
+            init (app, should_recreate_tabs, false);
         }
 
-        public PantheonTerminalWindow.with_working_directory (Granite.Application app, string location,
+        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
                                                               bool should_recreate_tabs = true) {
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
-            init (should_recreate_tabs, false);
+            init (app, should_recreate_tabs);
             new_tab (location);
+        }
+
+        public void add_tab_with_command (string command) {
+            new_tab ("", command);
         }
 
         public void add_tab_with_working_directory (string location) {
             new_tab (location);
         }
 
-        private void init (bool recreate_tabs=true, bool restore_pos = true) {
+        private void init (PantheonTerminalApp app, bool recreate_tabs=true, bool restore_pos = true) {
             this.icon_name = "utilities-terminal";
+            set_application (app);
 
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
@@ -448,10 +450,6 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             t.grab_focus ();
-        }
-
-        public void run_program_term (string program) {
-            new_tab ("", program);
         }
 
         static string get_term_font () {
