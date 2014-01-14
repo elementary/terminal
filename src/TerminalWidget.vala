@@ -237,20 +237,15 @@ namespace PantheonTerminal {
             string dir = GLib.Environment.get_current_dir ();
             string[]? program_with_args = process_argv (program);
 
-            if (program_with_args != null) {
-                try {
+            try {
+                if (program_with_args != null)
                     this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args,
                                             null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                } catch (Error e) {
-                    warning (e.message);
-                }
-            } else {
-                try {
+                else
                     this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
                                             null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                } catch (Error e) {
-                    warning (e.message);
-                }
+            } catch (Error e) {
+                warning (e.message);
             }
         }
 
