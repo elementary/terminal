@@ -172,13 +172,9 @@ namespace PantheonTerminal {
             return length > 0 ? windows.nth_data (length - 1) : null;
         }
 
-        static const OptionEntry[] version_entry = {
-            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
-            { null }
-        };
-
         static const OptionEntry[] entries = {
             { "shell", 's', 0, OptionArg.STRING, ref app_shell_name, N_("Set shell at launch"), "" },
+            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
@@ -188,12 +184,16 @@ namespace PantheonTerminal {
             app_cmd_name = "Pantheon Terminal";
 
             var context = new OptionContext ("Terminal");
-            context.add_main_entries (version_entry, Constants.GETTEXT_PACKAGE);
+            context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
+
+            string[] args_primary_instance = args;
 
             try {
                 context.parse(ref args);
             } catch (Error e) {
-                // Ignore unknown arguments
+                stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
+
+                return 0;
             }
 
             if (print_version) {
@@ -204,7 +204,7 @@ namespace PantheonTerminal {
             }
 
             var app = new PantheonTerminalApp ();
-            return app.run (args);
+            return app.run (args_primary_instance);
         }
     }
 } // Namespace
