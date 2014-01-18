@@ -566,7 +566,7 @@ namespace PantheonTerminal {
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"),
+            { "CloseTab", "GTK_STOCK_CLOSE", N_("Close"),
               "<Control><Shift>w", N_("Close"),
               action_close_tab },
 
@@ -574,7 +574,7 @@ namespace PantheonTerminal {
               N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
               action_new_window },
 
-            { "New tab", Gtk.Stock.NEW,
+            { "New tab", "GTK_STOCK_NEW",
               N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
               action_new_tab },
 
@@ -586,11 +586,11 @@ namespace PantheonTerminal {
               N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
               action_paste },
 
-            { "Select All", Gtk.Stock.SELECT_ALL,
+            { "Select All", "GTK_STOCK_SELECT_ALL",
               N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
 
-            { "About", Gtk.Stock.ABOUT, N_("About"),
+            { "About", "GTK_STOCK_ABOUT", N_("About"),
               null, N_("Show about window"), action_about },
 
             { "NextTab", null, N_("Next Tab"),
@@ -601,15 +601,15 @@ namespace PantheonTerminal {
               "<Control><Shift>Left", N_("Go to previous tab"),
               action_previous_tab },
 
-            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"),
+            { "ZoomIn", "GTK_STOCK_ZOOM_IN", N_("Zoom in"),
               "<Control>plus", N_("Zoom in"),
               action_zoom_in_font },
 
-            { "ZoomOut", Gtk.Stock.ZOOM_OUT,
+            { "ZoomOut", "GTK_STOCK_ZOOM_OUT",
               N_("Zoom out"), "<Control>minus", N_("Zoom out"),
               action_zoom_out_font },
 
-            { "Fullscreen", Gtk.Stock.FULLSCREEN,
+            { "Fullscreen", "GTK_STOCK_FULLSCREEN",
               N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
               action_fullscreen }
         };
