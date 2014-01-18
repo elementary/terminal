@@ -237,16 +237,15 @@ namespace PantheonTerminal {
             string dir = GLib.Environment.get_current_dir ();
             string[]? program_with_args = process_argv (program);
 
-            if (program_with_args != null) {
-                try {
+            try {
+                if (program_with_args != null)
                     this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args,
                                             null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                } catch (Error e) {
-                    warning (e.message);
-                }
-            } else {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                else
+                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
+                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+            } catch (Error e) {
+                warning (e.message);
             }
         }
 
@@ -271,7 +270,6 @@ namespace PantheonTerminal {
         public bool has_foreground_process () {
             return try_get_foreground_pid (null);
         }
-
 
         public int calculate_width (int column_count) {
             int width = (int) (this.get_char_width()) * column_count;
