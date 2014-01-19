@@ -226,6 +226,15 @@ namespace PantheonTerminal {
                         }
 
                         break;
+                    case Gdk.Key.@d:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            if (!current_terminal.has_foreground_process ()) {
+                                current_terminal.tab.close ();
+                                return true;
+                            }
+                        }
+
+                        break;
                 }
 
                 return false;
