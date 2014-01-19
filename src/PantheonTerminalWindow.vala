@@ -226,6 +226,7 @@ namespace PantheonTerminal {
                         }
 
                         break;
+                    case Gdk.Key.@D:
                     case Gdk.Key.@d:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             if (!current_terminal.has_foreground_process ()) {
