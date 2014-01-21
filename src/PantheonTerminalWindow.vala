@@ -103,7 +103,7 @@ namespace PantheonTerminal {
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
             restore_saved_state (restore_pos);
-            
+
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
             main_actions.set_translation_domain ("pantheon-terminal");
@@ -303,7 +303,7 @@ namespace PantheonTerminal {
             new_notebook.insert_tab (tab, -1);
             new_window.current_terminal = terminal;
         }
-        
+
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             new_tab (t.get_shell_location ());
@@ -377,9 +377,9 @@ namespace PantheonTerminal {
         }
 
         private void new_tab (string directory="", string? program=null) {
-            /* 
+            /*
              * If the user choose to use a specific working directory.
-             * Reassigning the directory variable a new value 
+             * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
             string location;
