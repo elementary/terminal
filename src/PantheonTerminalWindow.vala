@@ -231,6 +231,7 @@ namespace PantheonTerminal {
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             if (!current_terminal.has_foreground_process ()) {
                                 current_terminal.tab.close ();
+                                current_terminal.grab_focus ();
                                 return true;
                             }
                         }
@@ -578,6 +579,7 @@ namespace PantheonTerminal {
 
         void action_close_tab () {
             current_terminal.tab.close ();
+            current_terminal.grab_focus ();
         }
 
         void action_new_window () {
