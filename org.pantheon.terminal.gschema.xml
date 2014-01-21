@@ -6,7 +6,7 @@
     <value nick="Fullscreen" value="2" />
   </enum>
 
-  <enum id="pantheon-terminal-tab-bar-behavior">
+  <enum id="dynamic-notebook-tab-bar-behavior">
     <value value="0" nick="Always Show Tabs"/>
     <value value="1" nick="Hide When Single Tab"/>
     <value value="2" nick="Never Show Tabs"/>
@@ -133,7 +133,7 @@
       <summary>Whether to allow bold fonts.</summary>
       <description>Defines whether fonts can be bold or not.</description>
     </key>
-    <key name="tab-bar-behavior" enum="pantheon-terminal-tab-bar-behavior">
+    <key name="tab-bar-behavior" enum="dynamic-notebook-tab-bar-behavior">
       <default>'Always Show Tabs'</default>
       <summary>Tab Behavior</summary>
       <description>Whether to always show tabs, hide tabs when there is only one tab and never show tabs.</description>
