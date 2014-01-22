@@ -56,8 +56,8 @@ namespace PantheonTerminal {
             button.show ();
             add_action_widget (button, 1);
 
-            var warning_image = new Gtk.Image.from_stock ("dialog-warning",
-                                                          Gtk.IconSize.DIALOG);
+            var warning_image = new Gtk.Image.from_icon_name ("dialog-warning",
+                                                              Gtk.IconSize.DIALOG);
             set_image (warning_image);
             warning_image.show ();
         }

@@ -40,7 +40,7 @@ add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 find_package (PkgConfig)
 pkg_check_modules (DEPS REQUIRED
   gthread-2.0
-  gtk+-3.0>=3.10
+  gtk+-3.0
   granite>=0.3.0
   vte-2.90
   libnotify
