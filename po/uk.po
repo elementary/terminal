@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2013-05-06 18:03+0000\n"
-"Last-Translator: Sergey Cinaylo <funeral20@gmail.com>\n"
+"PO-Revision-Date: 2014-01-23 18:18+0000\n"
+"Last-Translator: Max_ym <kontact.cat@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-31 05:07+0000\n"
-"X-Generator: Launchpad (build 16877)\n"
+"X-Launchpad-Export-Date: 2014-01-24 06:17+0000\n"
+"X-Generator: Launchpad (build 16914)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
@@ -27,7 +27,7 @@ msgstr "Показати версію та вийти"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
-msgstr "Виконати в терміналі"
+msgstr "Виконати програму в терміналі"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
@@ -67,11 +67,11 @@ msgstr "Скопіювати"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy the selected text"
-msgstr "Копіювати виділений текст"
+msgstr "Скопіювати виділений текст"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste"
-msgstr "Вставка"
+msgstr "Вставити"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste some text"
@@ -83,7 +83,7 @@ msgstr "Виділити все"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Select all the text in the terminal"
-msgstr "Виділити весь текст в терміналі."
+msgstr "Виділити весь текст в терміналі"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "About"
@@ -123,11 +123,11 @@ msgstr "Повноекранний режим"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Застосувати/скасувати повноекранний режим"
+msgstr "Ввімкнути/вимкнути повноекранний режим"
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "Використати командну лінію"
+msgstr "Використати командний рядок"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
@@ -135,7 +135,7 @@ msgstr "Нове Root-вікно"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Ви впевнені що бажаєте закрити цю вкладку?"
+msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
@@ -143,7 +143,7 @@ msgstr "У вкладці є активний процес."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Якщо ви закриєте цю вкладку - процес буде закінчено."
+msgstr "Якщо ви закриєте цю вкладку, процес буде завершено."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
@@ -156,16 +156,16 @@ msgstr "Закрити вкладку"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Ви впевнені що бажаєте закрити термінал?"
+msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr "У вкладці є активний процес."
+msgstr "У терміналі є активний процес."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr "Якщо ви закриєте цю вкладку - процес буде закінчено."
+msgstr "Якщо ви вийдете з Терміналу, процес буде завершено."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr "Закрити термінал"
+msgstr "Вийти з Терміналу"
