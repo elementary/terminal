@@ -633,7 +633,7 @@ namespace PantheonTerminal {
         }
 
         static const Gtk.ActionEntry[] main_entries = {
-            { "CloseTab", Gtk.Stock.CLOSE, N_("Close"),
+            { "CloseTab", "gtk-close", N_("Close"),
               "<Control><Shift>w", N_("Close"),
               action_close_tab },
 
@@ -641,7 +641,7 @@ namespace PantheonTerminal {
               N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
               action_new_window },
 
-            { "New tab", Gtk.Stock.NEW,
+            { "New tab", "gtk-new",
               N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
               action_new_tab },
 
@@ -653,11 +653,11 @@ namespace PantheonTerminal {
               N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
               action_paste },
 
-            { "Select All", Gtk.Stock.SELECT_ALL,
+            { "Select All", "gtk-select-all",
               N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
 
-            { "About", Gtk.Stock.ABOUT, N_("About"),
+            { "About", "gtk-about", N_("About"),
               null, N_("Show about window"), action_about },
 
             { "NextTab", null, N_("Next Tab"),
@@ -668,15 +668,15 @@ namespace PantheonTerminal {
               "<Control><Shift>Left", N_("Go to previous tab"),
               action_previous_tab },
 
-            { "ZoomIn", Gtk.Stock.ZOOM_IN, N_("Zoom in"),
+            { "ZoomIn", "gtk-zoom-in", N_("Zoom in"),
               "<Control>plus", N_("Zoom in"),
               action_zoom_in_font },
 
-            { "ZoomOut", Gtk.Stock.ZOOM_OUT,
+            { "ZoomOut", "gtk-zoom-out",
               N_("Zoom out"), "<Control>minus", N_("Zoom out"),
               action_zoom_out_font },
 
-            { "Fullscreen", Gtk.Stock.FULLSCREEN,
+            { "Fullscreen", "gtk-fullscreen",
               N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
               action_fullscreen }
         };
