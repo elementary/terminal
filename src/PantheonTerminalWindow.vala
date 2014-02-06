@@ -22,7 +22,11 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
 
-        public PantheonTerminalApp app;
+        public PantheonTerminalApp app {
+            get {
+                return application as PantheonTerminalApp;
+            }
+        }
 
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
@@ -67,35 +71,33 @@ namespace PantheonTerminal {
         public Gtk.ActionGroup main_actions;
         public Gtk.UIManager ui;
 
-        public PantheonTerminalWindow (Granite.Application app, bool should_recreate_tabs=true) {
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
-            init (should_recreate_tabs);
+        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
+            init (app, should_recreate_tabs);
         }
 
-        public PantheonTerminalWindow.with_coords (Granite.Application app, int x, int y,
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
                                                    bool should_recreate_tabs = true) {
-
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
-            this.move (x, y);
-            init (should_recreate_tabs, false);
+            move (x, y);
+            init (app, should_recreate_tabs, false);
         }
 
-        public PantheonTerminalWindow.with_working_directory (Granite.Application app, string location,
+        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
                                                               bool should_recreate_tabs = true) {
-            this.app = app as PantheonTerminalApp;
-            set_application (app);
-            init (should_recreate_tabs, false);
+            init (app, should_recreate_tabs);
             new_tab (location);
+        }
+
+        public void add_tab_with_command (string command) {
+            new_tab ("", command);
         }
 
         public void add_tab_with_working_directory (string location) {
             new_tab (location);
         }
 
-        private void init (bool recreate_tabs=true, bool restore_pos = true) {
-            this.icon_name = "utilities-terminal";
+        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
+            icon_name = "utilities-terminal";
+            set_application (app);
 
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
@@ -170,7 +172,7 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             add (notebook);
 
-            this.key_press_event.connect ((e) => {
+            key_press_event.connect ((e) => {
                 switch (e.keyval) {
                     case Gdk.Key.@0:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
@@ -203,10 +205,10 @@ namespace PantheonTerminal {
                     case Gdk.Key.@8:
                         if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) && settings.alt_changes_tab) {
                             var i = e.keyval - 49;
-                            if (i > this.notebook.n_tabs - 1)
+                            if (i > notebook.n_tabs - 1)
                                 return false;
 
-                            this.notebook.current = this.notebook.get_tab_by_index ((int) i);
+                            notebook.current = notebook.get_tab_by_index ((int) i);
                             return true;
                         }
 
@@ -234,11 +236,11 @@ namespace PantheonTerminal {
                 int y = saved_state.opening_y;
 
                 if (x != -1 && y != -1) {
-                    this.move (x, y);
+                    move (x, y);
                 } else {
                     x = (Gdk.Screen.width ()  - default_width)  / 2;
                     y = (Gdk.Screen.height () - default_height) / 2;
-                    this.move (x, y);
+                    move (x, y);
                 }
             }
 
@@ -357,7 +359,7 @@ namespace PantheonTerminal {
 
             /* Save window position */
             int root_x, root_y;
-            this.get_position (out root_x, out root_y);
+            get_position (out root_x, out root_y);
             saved_state.opening_x = root_x;
             saved_state.opening_y = root_y;
         }
@@ -448,10 +450,6 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             t.grab_focus ();
-        }
-
-        public void run_program_term (string program) {
-            new_tab ("", program);
         }
 
         static string get_term_font () {
