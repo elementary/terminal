@@ -153,14 +153,6 @@ namespace PantheonTerminal {
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
 
-            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.ALWAYS) {
-                notebook.show_tabs = true;
-            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE) {
-                notebook.show_tabs = false;
-            } else if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.NEVER) {
-                notebook.show_tabs = false;
-            }
-
             main_actions.get_action ("Copy").set_sensitive (false);
 
             notebook.tab_added.connect (on_tab_added);
@@ -178,6 +170,7 @@ namespace PantheonTerminal {
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
+            notebook.tab_bar_behavior = settings.tab_bar_behavior;
             add (notebook);
 
             key_press_event.connect ((e) => {
@@ -284,7 +277,6 @@ namespace PantheonTerminal {
             var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
             terminals.append (t);
             t.window = this;
-            update_tabs_visibility ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
@@ -293,8 +285,6 @@ namespace PantheonTerminal {
 
             if (notebook.n_tabs == 0)
                 destroy ();
-            else
-                update_tabs_visibility ();
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
@@ -409,11 +399,6 @@ namespace PantheonTerminal {
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.page.grab_focus ();
-        }
-
-        private void update_tabs_visibility () {
-            if (settings.tab_bar_behavior == PantheonTerminalTabBarBehavior.SINGLE)
-                notebook.show_tabs = notebook.n_tabs > 1;
         }
 
         private void open_tabs () {
