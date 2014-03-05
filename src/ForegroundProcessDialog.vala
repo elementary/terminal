@@ -24,9 +24,10 @@ namespace PantheonTerminal {
 
         public ForegroundProcessDialog () {
             use_markup = true;
-            set_markup ("<b>" + _("Are you sure you want to close this tab?") + "</b>\n\n" +
+            set_markup ("<span weight='bold' size='larger'>" +
+                      _("Are you sure you want to close this tab?") + "</span>\n\n" +
                       _("There is an active process on this tab.")+"\n"+
-                      _("If you close this tab, this process will end."));
+                      _("If you close it, the process will end."));
 
             var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
@@ -44,9 +45,10 @@ namespace PantheonTerminal {
 
         public ForegroundProcessDialog.before_close () {
             use_markup = true;
-            set_markup ("<b>" + _("Are you sure you want to quit Terminal?") + "</b>\n\n" +
+            set_markup ("<span weight='bold' size='larger'>" + 
+                      _("Are you sure you want to quit Terminal?") + "</span>\n\n" +
                       _("There is an active process on this terminal.")+"\n"+
-                      _("If you quit Terminal, this process will end."));
+                      _("If you quit Terminal, the process will end."));
 
             var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
