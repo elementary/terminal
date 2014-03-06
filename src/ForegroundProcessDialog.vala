@@ -29,6 +29,7 @@ namespace PantheonTerminal {
                       _("There is an active process on this tab.")+"\n"+
                       _("If you close it, the process will end."));
             message_area.set_margin_left (0);
+            message_area.set_margin_right (0);
 
             var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
