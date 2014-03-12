@@ -138,5 +138,10 @@
       <summary>Tab Behavior</summary>
       <description>Whether to always show tabs, hide tabs when there is only one tab and never show tabs.</description>
     </key>
+    <key name="restorable-tabs" type="b">
+      <default>true</default>
+      <summary>Make tabs restorable</summary>
+      <description>When a tab is closed, keep it in memory to restore it later or not</description>
+    </key>
   </schema>
 </schemalist>
