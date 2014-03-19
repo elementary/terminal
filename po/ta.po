@@ -1,16 +1,16 @@
-# Rusyn translation for pantheon-terminal
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# Tamil translation for pantheon-terminal
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2012-10-21 17:27+0000\n"
-"Last-Translator: u.f.djeison@gmail.com <u.f.djeison@gmail.com>\n"
-"Language-Team: Rusyn <rue@li.org>\n"
+"PO-Revision-Date: 2014-03-19 06:09+0000\n"
+"Last-Translator: SyedKhaleel Jageer <jskcse4@gmail.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
-msgstr "Настройити шел при старті"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
@@ -27,87 +27,87 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "முனையத்தில் ஒரு நிரலை இயக்க"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
 #: /home/codygarver/terminal/po/../src/config.vala:13
 msgid "Terminal"
-msgstr "Термінал"
+msgstr "முனையம்"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
 msgid "Open a new tab"
-msgstr "Уткрити нову вкладку"
+msgstr "புதிய தத்தலை திற"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:581
 msgid "Close"
-msgstr "Закрити"
+msgstr "மூடு"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 #: /home/codygarver/terminal/po/../src/config.vala:14
 msgid "New Window"
-msgstr "Новий оболок"
+msgstr "புதிய சாளரம்"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 msgid "Open a new window"
-msgstr "Открити новий оболок"
+msgstr "புதிய சாளரத்தை திற"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "New Tab"
-msgstr "Нова вкладка"
+msgstr "புதிய கீற்று"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "Create a new tab"
-msgstr "Утворити нову вкладку"
+msgstr "புதிய தாவலை உருவாக்க"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy"
-msgstr "Купірувати"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
 msgid "Copy the selected text"
-msgstr "Купірувати убраний текст"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste"
-msgstr "Вложити"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
 msgid "Paste some text"
-msgstr "Вложити текст"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
 msgid "Select All"
-msgstr "Убрати вшитко"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Select all the text in the terminal"
-msgstr "Убрати вшиткий текст у терміналі"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "About"
-msgstr "Про..."
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "Show about window"
-msgstr "Указати оболок з інформаційов про програму"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
-msgstr "Наслідуюча вкладка"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Go to next tab"
-msgstr "Перейти на слідуючу вкладку"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Previous Tab"
-msgstr "Попиридня вкладка"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Go to previous tab"
-msgstr "Перийти на попиридню вкладку"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
 msgid "Zoom in"
@@ -119,53 +119,53 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Fullscreen"
-msgstr "На повну плоху"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Включити / Уключити режим повної плохи"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/config.vala:12
 msgid "Use the command line"
-msgstr "Використати командний рядок"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Новоий главний оболок"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Поправді хочете закрити сю вкладку"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
-msgstr "В сів вкладці активний процес"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Кіть закриєте вкладку та процес буде убитий"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "Cancel"
-msgstr "Удмінити"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Закрити вкладку"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Поправді хочете уйти з термінала?"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
-msgstr "В сьому терміналі є активний процес"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr "Кіть закриєте термінал то процес буде убитий"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr "Уйти з термінала"
+msgstr ""
