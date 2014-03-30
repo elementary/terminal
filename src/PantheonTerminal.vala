@@ -101,6 +101,33 @@ namespace PantheonTerminal {
             base.window_removed (window);
         }
 
+        public override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+            base.dbus_register (connection, object_path);
+
+            var dbus = new DBus ();
+            connection.register_object ("/net/launchpad/pantheon_terminal", dbus);
+
+            dbus.finished_process.connect ((id, process) => {
+                foreach (var window in windows) {
+                    foreach (var terminal in window.terminals) {
+                        if (terminal.terminal_id == id &&
+                            (terminal != window.current_terminal
+                            || (window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0)) {
+
+                            var notification = new Notify.Notification ("Task finished.", process,
+                                "utilities-terminal");
+
+                            try {
+                                notification.show ();
+                            } catch (Error e) { warning (e.message); }
+                        }
+                    }
+                }
+            });
+
+            return true;
+        }
+
         private int _command_line (ApplicationCommandLine command_line) {
             var context = new OptionContext ("File");
             context.add_main_entries (entries, "pantheon-terminal");

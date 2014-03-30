@@ -23,6 +23,7 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
 
         public PantheonTerminalApp app;
+        public string terminal_id;
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -46,6 +47,8 @@ namespace PantheonTerminal {
 
         public int default_size;
         public double zoom_factor = 1.0;
+
+        const string SEND_PROCESS_FINISHED = "dbus-send --print-reply='' --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -82,6 +85,9 @@ namespace PantheonTerminal {
         }
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
+
+            terminal_id = "%lld.%i".printf (new DateTime.now_local ().to_unix (),
+                Random.next_int ());
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
@@ -221,13 +227,25 @@ namespace PantheonTerminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
+            string shell = "";
+            string?[] envv = null;
+
+            if (settings.shell == "")
+                shell = Vte.get_user_shell ();
+
+            switch (File.new_for_path (shell).get_basename ()) {
+                case "bash":
+                case "sh":
+                    envv = {
+                        "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED,
+                        "PANTHEON_TERMINAL_ID=" + terminal_id
+                    };
+                    break;
+            }
+
             try {
-                if (settings.shell == "")
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { Vte.get_user_shell () },
-                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                else
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { settings.shell }, null,
-                                            SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }

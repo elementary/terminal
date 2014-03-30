@@ -32,7 +32,8 @@ namespace PantheonTerminal {
         Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
 
-        private GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+
         private HashTable<string, TerminalWidget> restorable_terminals;
         private int restorable_counter = 0;
 
