@@ -235,7 +235,6 @@ namespace PantheonTerminal {
 
             switch (File.new_for_path (shell).get_basename ()) {
                 case "bash":
-                case "sh":
                     envv = {
                         "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED,
                         "PANTHEON_TERMINAL_ID=" + terminal_id
