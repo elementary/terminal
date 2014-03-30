@@ -48,7 +48,7 @@ namespace PantheonTerminal {
         public int default_size;
         public double zoom_factor = 1.0;
 
-        const string SEND_PROCESS_FINISHED = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"";
+        const string SEND_PROCESS_FINISHED = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"; ";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -236,7 +236,7 @@ namespace PantheonTerminal {
             switch (File.new_for_path (shell).get_basename ()) {
                 case "bash":
                     envv = {
-                        "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED,
+                        "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED + Environment.get_variable("PROMPT_COMMAND"),
                         "PANTHEON_TERMINAL_ID=" + terminal_id
                     };
                     break;
