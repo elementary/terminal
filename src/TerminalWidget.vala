@@ -48,7 +48,7 @@ namespace PantheonTerminal {
         public int default_size;
         public double zoom_factor = 1.0;
 
-        const string SEND_PROCESS_FINISHED = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"; ";
+        const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"; ";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -233,14 +233,14 @@ namespace PantheonTerminal {
             if (settings.shell == "")
                 shell = Vte.get_user_shell ();
 
-            switch (File.new_for_path (shell).get_basename ()) {
-                case "bash":
-                    envv = {
-                        "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED + Environment.get_variable("PROMPT_COMMAND"),
-                        "PANTHEON_TERMINAL_ID=" + terminal_id
-                    };
-                    break;
-            }
+            envv = {
+                    // Export ID so we can identify the terminal for which the
+                    // process completion is reported
+                    "PANTHEON_TERMINAL_ID=" + terminal_id,
+                    // BASH-specific variable, see "man bash" for details
+                    "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
+                    // TODO: support at least ZSH and FISH
+                };
 
             try {
                 this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { shell },
