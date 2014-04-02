@@ -152,7 +152,7 @@ namespace PantheonTerminal {
         private void setup_ui () {
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
-            notebook.show_icons = false;
+            notebook.show_icons = true;
 
             main_actions.get_action ("Copy").set_sensitive (false);
 
@@ -399,6 +399,7 @@ namespace PantheonTerminal {
                              Granite.Widgets.Tab new_tab) {
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
+            new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
 

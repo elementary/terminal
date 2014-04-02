@@ -110,16 +110,21 @@ namespace PantheonTerminal {
             dbus.finished_process.connect ((id, process) => {
                 foreach (var window in windows) {
                     foreach (var terminal in window.terminals) {
-                        if (terminal.terminal_id == id &&
-                            (terminal != window.current_terminal
-                            || (window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0)) {
+                        if (terminal.terminal_id == id) {
 
-                            var notification = new Notify.Notification ("Task finished.", process,
-                                "utilities-terminal");
+                            if (terminal != window.current_terminal) {
+                                terminal.tab.icon = new ThemedIcon ("notification-new-symbolic");
+                            }
 
-                            try {
-                                notification.show ();
-                            } catch (Error e) { warning (e.message); }
+                            if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
+
+                                var notification = new Notify.Notification ("Task finished", process,
+                                    "utilities-terminal");
+
+                                try {
+                                    notification.show ();
+                                } catch (Error e) { warning (e.message); }
+                            }
                         }
                     }
                 }
