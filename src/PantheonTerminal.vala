@@ -113,7 +113,7 @@ namespace PantheonTerminal {
                         if (terminal.terminal_id == id) {
 
                             if (terminal != window.current_terminal) {
-                                terminal.tab.icon = new ThemedIcon ("notification-new-symbolic");
+                                terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
                             }
 
                             if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
