@@ -63,6 +63,7 @@ namespace PantheonTerminal {
         public string encoding { get; set; }
         public string font { get; set; }
         public bool allow_bold { get; set; }
+        public bool save_exited_tabs { get; set; }
         public Granite.Widgets.DynamicNotebook.TabBarBehavior tab_bar_behavior { get; set; }
 
         public Settings ()  {

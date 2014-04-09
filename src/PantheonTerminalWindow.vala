@@ -224,7 +224,7 @@ namespace PantheonTerminal {
                     case Gdk.Key.@D:
                     case Gdk.Key.@d:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            if (!current_terminal.has_foreground_process ()) {
+                            if (!current_terminal.has_foreground_process () && settings.save_exited_tabs) {
                                 action_close_tab ();
 
                                 return true;
@@ -303,7 +303,7 @@ namespace PantheonTerminal {
             }
 
             if (!t.child_has_exited) {
-                if (notebook.n_tabs >= 2) {
+                if (notebook.n_tabs >= 2 && settings.save_exited_tabs) {
                     make_restorable (tab);
                 } else {
                     t.kill_ps ();
