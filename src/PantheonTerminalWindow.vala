@@ -306,7 +306,7 @@ namespace PantheonTerminal {
                 if (notebook.n_tabs >= 2 && settings.save_exited_tabs) {
                     make_restorable (tab);
                 } else {
-                    t.kill_ps ();
+                    t.term_ps ();
                 }
             }
 
@@ -490,7 +490,7 @@ namespace PantheonTerminal {
 
             tab.dropped_callback = (() => {
                 unowned TerminalWidget t = restorable_terminals.get (tab.restore_data);
-                t.kill_ps ();
+                t.term_ps ();
                 restorable_terminals.remove (tab.restore_data);
             });
         }
@@ -523,7 +523,7 @@ namespace PantheonTerminal {
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
-                        t.kill_ps_and_fg ();
+                        t.kill_fg_and_term_ps ();
                         d.destroy ();
                     } else {
                         d.destroy ();
@@ -531,7 +531,7 @@ namespace PantheonTerminal {
                     }
 
                 } else {
-                    t.kill_ps ();
+                    t.term_ps ();
                 }
             }
 
@@ -541,7 +541,7 @@ namespace PantheonTerminal {
 
         private void on_destroy () {
             foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
-                t.kill_ps ();
+                t.term_ps ();
             }
         }
 

@@ -206,18 +206,18 @@ namespace PantheonTerminal {
         public void kill_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, 9);
+                Posix.kill (fg_pid, Posix.SIGKILL);
         }
 
-        public void kill_ps () {
+        public void term_ps () {
             killed = true;
             //this.pty_object.close ();
-            Posix.kill (this.child_pid, 9);
+            Posix.kill (this.child_pid, Posix.SIGTERM);
         }
 
-        public void kill_ps_and_fg () {
+        public void kill_fg_and_term_ps () {
             kill_fg ();
-            kill_ps ();
+            term_ps ();
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
