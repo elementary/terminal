@@ -149,6 +149,13 @@ namespace PantheonTerminal {
         }
 
         private void setup_ui () {
+            /* Use CSD */
+            var header = new Gtk.HeaderBar ();
+            header.set_show_close_button (true);
+            header.get_style_context ().remove_class ("header-bar");
+
+            this.set_titlebar (header);
+
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = false;
