@@ -173,7 +173,7 @@ namespace PantheonTerminal {
             notebook.new_tab_requested.connect (on_new_tab_requested);
             notebook.allow_new_window = true;
             notebook.allow_duplication = true;
-            notebook.allow_restoring = true;
+            notebook.allow_restoring = settings.save_exited_tabs;
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
