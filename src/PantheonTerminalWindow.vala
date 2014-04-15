@@ -371,6 +371,7 @@ namespace PantheonTerminal {
 
             if (atoms != null && atoms.length > 0)
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
