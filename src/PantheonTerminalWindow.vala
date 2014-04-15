@@ -367,8 +367,10 @@ namespace PantheonTerminal {
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_,
                                              Gdk.Atom[] atoms) {
-            bool can_paste;
-            can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            bool can_paste = false;
+
+            if (atoms != null && atoms.length > 0)
+                can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
