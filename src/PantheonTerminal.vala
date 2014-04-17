@@ -117,13 +117,14 @@ namespace PantheonTerminal {
                             }
 
                             if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-
                                 var notification = new Notify.Notification ("Task finished", process,
-                                    "utilities-terminal");
+                                                                            "utilities-terminal");
 
                                 try {
                                     notification.show ();
-                                } catch (Error e) { warning (e.message); }
+                                } catch (Error e) {
+                                    warning (e.message);
+                                }
                             }
                         }
                     }
@@ -152,7 +153,7 @@ namespace PantheonTerminal {
                 run_commands (command_e);
             else if (working_directory != null)
                 start_terminal_with_working_directory (working_directory);
-            else 
+            else
                 new_window ();
 
             // Do not save the value until the next instance of
