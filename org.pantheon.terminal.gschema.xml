@@ -87,27 +87,27 @@
 
     <key name="opacity" type="i">
       <range min="0" max="100"/>
-      <default>80</default>
+      <default>95</default>
       <summary>The opacity of the terminal background.</summary>
       <description>The opacity of terminal background [0,100] 0 = complete transparent, 100 = completely opaque.</description>
     </key>
     <key name="foreground" type="s">
-      <default>"#f2f2f2"</default>
+      <default>"#94a3a5"</default>
       <summary>Color of the text.</summary>
       <description>The color of the text of the terminal.</description>
     </key>
     <key name="background" type="s">
-      <default>"#101010"</default>
+      <default>"#252e32"</default>
       <summary>Color of the background.</summary>
       <description>The color of the background of the terminal.</description>
     </key>
     <key name="cursor-color" type="s">
-      <default>"#FFFFFF"</default>
+      <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
       <description>The color of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
-      <default>"#303030:#e1321a:#6ab017:#ffc005:#004f9e:#ec0048:#2aa7e7:#f2f2f2:#5d5d5d:#ff361e:#7bc91f:#ffd00a:#0071ff:#ff1d62:#4bb8fd:#a020f0"</default>
+      <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>
