@@ -265,10 +265,8 @@ namespace PantheonTerminal {
 
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
                 maximize ();
-                notebook.margin_top = 3;
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
-                notebook.margin_top = 0;
             }
 
             /* Reset saved state to avoid restoring it again */
@@ -617,11 +615,9 @@ namespace PantheonTerminal {
 
         void action_fullscreen () {
             if (is_fullscreen) {
-                notebook.margin_top = 3;
                 unfullscreen ();
                 is_fullscreen = false;
             } else {
-                notebook.margin_top = 0;
                 fullscreen ();
                 is_fullscreen = true;
             }
