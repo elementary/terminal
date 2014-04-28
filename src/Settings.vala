@@ -28,6 +28,12 @@ namespace PantheonTerminal {
         MAXIMIZED = 1,
         FULLSCREEN = 2
     }
+    
+    public enum cursor_shape {
+        BLOCK = 0,
+        IBEAM = 1,
+        UNDERLINE = 2
+    }
 
     public class SavedState : Granite.Services.Settings {
 
@@ -57,7 +63,7 @@ namespace PantheonTerminal {
         public string foreground { get; set; }
         public string background { get; set; }
         public string cursor_color { get; set; }
-        public string cursor_shape { get; set; }
+        public Vte.TerminalCursorShape cursor_shape { get; set; }
         public string palette { get; set; }
 
         public string shell { get; set; }

@@ -80,7 +80,7 @@ namespace PantheonTerminal {
             get;
             private set;
         }
-
+        
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
@@ -199,18 +199,7 @@ namespace PantheonTerminal {
             audible_bell = settings.audible_bell;
             
             /* Cursor shape */ 
-            string cursor_shape = settings.cursor_shape;
-            switch(cursor_shape) {
-				case "block":
-					set_cursor_shape(Vte.TerminalCursorShape.BLOCK);
-					break;
-				case "underline":
-					set_cursor_shape(Vte.TerminalCursorShape.UNDERLINE);
-					break;
-				case "i-beam":
-					set_cursor_shape(Vte.TerminalCursorShape.IBEAM);
-					break;	
-            }
+            set_cursor_shape(settings.cursor_shape);
         }
 
         void on_child_exited () {
