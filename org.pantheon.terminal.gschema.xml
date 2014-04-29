@@ -5,13 +5,11 @@
     <value nick="Maximized" value="1" />
     <value nick="Fullscreen" value="2" />
   </enum>
-
   <enum id="terminal-cursor-shapes">
     <value nick="Block" value="0" />
     <value nick="I-Beam" value="1" />
     <value nick="Underline" value="2" />
   </enum>
-    
   <enum id="dynamic-notebook-tab-bar-behavior">
     <value value="0" nick="Always Show Tabs"/>
     <value value="1" nick="Hide When Single Tab"/>

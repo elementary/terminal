@@ -199,7 +199,7 @@ namespace PantheonTerminal {
             audible_bell = settings.audible_bell;
             
             /* Cursor shape */ 
-            set_cursor_shape(settings.cursor_shape);
+            set_cursor_shape (settings.cursor_shape);
         }
 
         void on_child_exited () {
