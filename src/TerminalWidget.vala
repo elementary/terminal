@@ -25,7 +25,7 @@ namespace PantheonTerminal {
             URILIST,
             STRING
         }
-        
+
 
         public PantheonTerminalApp app;
 
@@ -141,8 +141,9 @@ namespace PantheonTerminal {
 
             child_exited.connect (on_child_exited);
 
-            Gtk.TargetEntry uri_entry = {"text/uri-list", 0, DropTargets.URILIST };
-            Gtk.TargetEntry string_entry = {"STRING", 0, DropTargets.STRING };
+            /* target entries specify what kind of data the terminal widget accepts */
+            Gtk.TargetEntry uri_entry =    { "text/uri-list", 0, DropTargets.URILIST };
+            Gtk.TargetEntry string_entry = { "STRING",        0, DropTargets.STRING  };
 
             Gtk.TargetEntry[] targets = {};
             targets += uri_entry;
@@ -359,27 +360,27 @@ namespace PantheonTerminal {
         public void drag_received (Gdk.DragContext context, int x, int y,
                                    Gtk.SelectionData selection_data, uint target_type, uint time_) {
             switch (target_type) {
-            case DropTargets.URILIST:
-                var uris = selection_data.get_uris ();
-                string path;
-                File file;
-                for (var i = 0; i < uris.length; i++) {
-                    file = File.new_for_uri (uris[i]);
-                    if ((path = file.get_path ()) != null) {
-                        uris[i] = Shell.quote (path) + " ";
-                    }
-                }
+               case DropTargets.URILIST:
+                   var uris = selection_data.get_uris ();
+                   string path;
+                   File file;
+                   for (var i = 0; i < uris.length; i++) {
+                       file = File.new_for_uri (uris[i]);
+                       if ((path = file.get_path ()) != null) {
+                           uris[i] = Shell.quote (path) + " ";
+                       }
+                   }
 
-                string uris_s = string.joinv ("", uris);
-                this.feed_child (uris_s, uris_s.length);
-                break;
-            case DropTargets.STRING:
-                var data = selection_data.get_text ();
-                if (data != null) {
-                    data = Shell.quote (data) + " ";
-                    this.feed_child (data, data.length);
-                }
-                break;
+                    string uris_s = string.joinv ("", uris);
+                    this.feed_child (uris_s, uris_s.length);
+                    break;
+                case DropTargets.STRING:
+                    var data = selection_data.get_text ();
+                    if (data != null) {
+                        data = Shell.quote (data) + " ";
+                        this.feed_child (data, data.length);
+                    }
+                    break;
             }
         }
 
