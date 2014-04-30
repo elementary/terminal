@@ -5,7 +5,11 @@
     <value nick="Maximized" value="1" />
     <value nick="Fullscreen" value="2" />
   </enum>
-
+  <enum id="terminal-cursor-shapes">
+    <value nick="Block" value="0" />
+    <value nick="I-Beam" value="1" />
+    <value nick="Underline" value="2" />
+  </enum>
   <enum id="dynamic-notebook-tab-bar-behavior">
     <value value="0" nick="Always Show Tabs"/>
     <value value="1" nick="Hide When Single Tab"/>
@@ -105,6 +109,11 @@
       <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
       <description>The color of the cursor of the terminal.</description>
+    </key>
+    <key name="cursor-shape" enum="terminal-cursor-shapes">
+    	<default>"Block"</default>
+    	<summary>Shape of the cursor.</summary>
+    	<description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
       <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
