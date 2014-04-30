@@ -28,7 +28,7 @@ namespace PantheonTerminal {
         MAXIMIZED = 1,
         FULLSCREEN = 2
     }
-    
+
     public enum cursor_shape {
         BLOCK = 0,
         IBEAM = 1,

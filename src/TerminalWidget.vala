@@ -80,7 +80,7 @@ namespace PantheonTerminal {
             get;
             private set;
         }
-        
+
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             /* Sets characters that define word for double click selection */
@@ -197,7 +197,7 @@ namespace PantheonTerminal {
 
             /* Disable bell if necessary */
             audible_bell = settings.audible_bell;
-            
+
             /* Cursor shape */ 
             set_cursor_shape (settings.cursor_shape);
         }
