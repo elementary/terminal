@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2013-03-03 14:37+0000\n"
-"Last-Translator: Eduard Gotwig <g@ox.io>\n"
+"PO-Revision-Date: 2014-05-01 12:26+0000\n"
+"Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-25 07:06+0000\n"
+"X-Launchpad-Export-Date: 2014-05-02 06:38+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
@@ -91,7 +91,7 @@ msgstr "Über"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "Show about window"
-msgstr "Zeige 'Über' Fenster an"
+msgstr "Zeige »Über«-Fenster an"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
