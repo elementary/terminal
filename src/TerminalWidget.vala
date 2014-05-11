@@ -142,8 +142,8 @@ namespace PantheonTerminal {
             child_exited.connect (on_child_exited);
 
             /* target entries specify what kind of data the terminal widget accepts */
-            Gtk.TargetEntry uri_entry = { "text/uri-list", 0, DropTargets.URILIST };
-            Gtk.TargetEntry string_entry = { "STRING", 0, DropTargets.STRING };
+            Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
+            Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
 
             Gtk.TargetEntry[] targets = { };
             targets += uri_entry;
