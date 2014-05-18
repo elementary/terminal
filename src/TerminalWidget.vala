@@ -23,7 +23,8 @@ namespace PantheonTerminal {
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
             URILIST,
-            STRING
+            STRING,
+            TEXT
         }
 
 
@@ -144,10 +145,12 @@ namespace PantheonTerminal {
             /* target entries specify what kind of data the terminal widget accepts */
             Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
             Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
+            Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
 
             Gtk.TargetEntry[] targets = { };
             targets += uri_entry;
             targets += string_entry;
+            targets += text_entry;
 
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
 
@@ -377,6 +380,7 @@ namespace PantheonTerminal {
 
                     break;
                 case DropTargets.STRING:
+                case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
