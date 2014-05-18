@@ -384,7 +384,6 @@ namespace PantheonTerminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-                        data = Shell.quote (data) + " ";
                         this.feed_child (data, data.length);
                     }
 
