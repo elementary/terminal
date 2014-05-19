@@ -21,6 +21,12 @@
 namespace PantheonTerminal {
 
     public class TerminalWidget : Vte.Terminal {
+        enum DropTargets {
+            URILIST,
+            STRING,
+            TEXT
+        }
+
 
         public PantheonTerminalApp app;
 
@@ -136,8 +142,17 @@ namespace PantheonTerminal {
 
             child_exited.connect (on_child_exited);
 
-            Gtk.TargetEntry target = {"text/uri-list", 0, 0};
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
+            /* target entries specify what kind of data the terminal widget accepts */
+            Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
+            Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
+            Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
+
+            Gtk.TargetEntry[] targets = { };
+            targets += uri_entry;
+            targets += string_entry;
+            targets += text_entry;
+
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
@@ -349,20 +364,34 @@ namespace PantheonTerminal {
         }
 
         public void drag_received (Gdk.DragContext context, int x, int y,
-                                   Gtk.SelectionData selection_data, uint info, uint time_) {
+                                   Gtk.SelectionData selection_data, uint target_type, uint time_) {
+            switch (target_type) {
+               case DropTargets.URILIST:
+                   var uris = selection_data.get_uris ();
+                   string path;
+                   File file;
 
-            var uris = selection_data.get_uris ();
-            string path;
-            File file;
-            for (var i = 0; i < uris.length; i++) {
-                file = File.new_for_uri (uris[i]);
-                if ((path = file.get_path ()) != null) {
-                    uris[i] = Shell.quote (path) + " ";
-                }
+                   for (var i = 0; i < uris.length; i++) {
+                       file = File.new_for_uri (uris[i]);
+                       if ((path = file.get_path ()) != null) {
+                           uris[i] = Shell.quote (path) + " ";
+                       }
+                   }
+
+                    string uris_s = string.joinv ("", uris);
+                    this.feed_child (uris_s, uris_s.length);
+
+                    break;
+                case DropTargets.STRING:
+                case DropTargets.TEXT:
+                    var data = selection_data.get_text ();
+
+                    if (data != null) {
+                        this.feed_child (data, data.length);
+                    }
+
+                    break;
             }
-
-            string uris_s = string.joinv ("", uris);
-            this.feed_child (uris_s, uris_s.length);
         }
 
         private string[]? process_argv (string path) {
