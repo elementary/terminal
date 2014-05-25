@@ -1,8 +1,8 @@
-pantheon-terminal (0.2.3) UNRELEASED; urgency=low
+pantheon-terminal (0.3.0) trusty; urgency=low
 
   * New upstream release.
 
- -- Cody Garver <cody@elementaryos.org>  Sat, 10 Aug 2013 15:57:37 -0500
+ -- Cody Garver <cody@elementaryos.org>  Sun, 25 May 2014 01:12:23 -0500
 
 pantheon-terminal (0.2.2) precise; urgency=low
 
