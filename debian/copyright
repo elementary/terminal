@@ -1,40 +1,68 @@
-This work was packaged for Debian by:
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pantheon-terminal
+Source: https://launchpad.net/pantheon-terminal
 
-    Sergey "Shnatsel" Davidoff <shnatsel@gmail.com> on Mon, 04 Jul 2011 17:14:43 +0400
+Files: *
+Copyright: <years> <put author's name and email here>
+           <years> <likewise for another author>
+License: GPL-3.0+
 
-It was downloaded from:
+Files: cmake/ParseArguments.cmake
+Copyright: 2000-2009 Kitware, Inc., Insight Software Consortium
+License: 2-clause BSD
 
-    https://launchpad.net/pantheon-terminal
+Files: cmake/FindVala.cmake
+       cmake/ValaPrecompile.cmake
+       cmake/ValaVersion.cmake
+       cmake/README.Vala.rst
+Copyright: 2009-2010 Jakob Westhoff
+License: 2-clause BSD
 
-Upstream Author(s):
+Files: cmake/GSettings.cmake
+       Tests.cmake
+       Translations.cmake
+Copyright: 2011 ammonkey <am.monkeyd@gmail.com>
+License: 2-clause BSD
 
-    Adrien Plazas <kekun.plazas@laposte.net>
-    Daniel Foré <daniel@elementaryos.org>
+Files: debian/*
+Copyright: 2011-2014 Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
+           2011-2013 Cody Garver <cody@elementaryos.org>
+License: GPL-3.0+
 
-Copyright:
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 
-    Copyright (C) 2011 elementary developers
-
-License:
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This package is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program. If not, see <http://www.gnu.org/licenses/>.
-
-On Debian systems, the complete text of the GNU General
-Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
-
-The Debian packaging is:
-
-    Copyright (C) 2011 Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
-
-and is licensed under the GPL version 3, see above.
+License: 2-clause BSD
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
