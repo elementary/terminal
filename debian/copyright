@@ -3,12 +3,22 @@ Upstream-Name: pantheon-terminal
 Source: https://launchpad.net/pantheon-terminal
 
 Files: *
-Copyright: <years> <put author's name and email here>
-           <years> <likewise for another author>
+Copyright: 2011-2013 Mario Guerriero <mario@elementaryos.org>
+           2011-2014 Cody Garver <cody@elementaryos.org>
+           2011-2014 David Gomes <david@elementaryos.org>
+           2011 Adrien Plazas <kekun.plazas@laposte.net>
+           2012-2013 Tom Beckmann <tom@elementaryos.org>
+           2012-2014 Akshay Shekher <akshay@elementaryos.org>
+           2013-2014 Niclas Lockner <niclaslockner@gmail.com>
+           2013 Lucas Baudin <xapantu@gmail.com>
+           2013 Pedro Paredes <gangsterveggies@gmail.com>
+           2014 Daniel Fore <daniel@elementaryos.org>
+           2014 Richard B. <richardbp85@gmail.com>
 License: GPL-3.0+
 
 Files: cmake/ParseArguments.cmake
 Copyright: 2000-2009 Kitware, Inc., Insight Software Consortium
+           2011 Mario Guerriero <mario@elementaryos.org>
 License: 2-clause BSD
 
 Files: cmake/FindVala.cmake
@@ -16,6 +26,7 @@ Files: cmake/FindVala.cmake
        cmake/ValaVersion.cmake
        cmake/README.Vala.rst
 Copyright: 2009-2010 Jakob Westhoff
+           2011 Mario Guerriero <mario@elementaryos.org>
 License: 2-clause BSD
 
 Files: cmake/GSettings.cmake
