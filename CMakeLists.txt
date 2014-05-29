@@ -16,13 +16,13 @@ set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/pantheon-terminal")
 set (GETTEXT_PACKAGE "pantheon-terminal")
 set (RELEASE_NAME "Fast and connected.")
-set (VERSION "0.3.0")
+set (VERSION "0.3.0.1")
 set (VERSION_INFO "Release")
 set (CMAKE_C_FLAGS "-ggdb")
 set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
 
-configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
+configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 # Comment this out to enable C compiler warnings
@@ -40,7 +40,7 @@ add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 find_package (PkgConfig)
 pkg_check_modules (DEPS REQUIRED
   gthread-2.0
-  gtk+-3.0
+  gtk+-3.0>=3.9.10
   granite>=0.3.0
   vte-2.90
   libnotify
@@ -53,7 +53,7 @@ link_directories (${DEPS_LIBRARY_DIRS})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.16.0" MINIMUM)
+ensure_vala_version ("0.22.0" MINIMUM)
 
 include (ValaPrecompile)
 vala_precompile (VALA_C
@@ -62,7 +62,7 @@ vala_precompile (VALA_C
     src/PantheonTerminalWindow.vala
     src/TerminalWidget.vala
     src/ForegroundProcessDialog.vala
-    src/config.vala
+    src/Constants.vala
 PACKAGES
     vte-2.90
     granite
@@ -70,6 +70,8 @@ PACKAGES
     libnotify
     gdk-3.0
     posix
+CUSTOM_VAPIS
+    vapi/config.vapi
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/

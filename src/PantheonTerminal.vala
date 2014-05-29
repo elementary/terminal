@@ -37,11 +37,11 @@ namespace PantheonTerminal {
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-            build_data_dir = Constants.DATADIR;
-            build_pkg_data_dir = Constants.PKGDATADIR;
-            build_release_name = Constants.RELEASE_NAME;
-            build_version = Constants.VERSION;
-            build_version_info = Constants.VERSION_INFO;
+            build_data_dir = Build.DATADIR;
+            build_pkg_data_dir = Build.PKGDATADIR;
+            build_release_name = Build.RELEASE_NAME;
+            build_version = Build.VERSION;
+            build_version_info = Build.VERSION_INFO;
 
             program_name = app_cmd_name;
             exec_name = app_cmd_name.down ().replace (" ", "-");
@@ -171,7 +171,7 @@ namespace PantheonTerminal {
             app_cmd_name = "Pantheon Terminal";
 
             var context = new OptionContext ("Terminal");
-            context.add_main_entries (entries, Constants.GETTEXT_PACKAGE);
+            context.add_main_entries (entries, Build.GETTEXT_PACKAGE);
 
             string[] args_primary_instance = args;
 
@@ -184,7 +184,7 @@ namespace PantheonTerminal {
             }
 
             if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Constants.VERSION);
+                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
                 stdout.printf ("Copyright 2011-2014 Pantheon Terminal Developers.\n");
 
                 return 0;
