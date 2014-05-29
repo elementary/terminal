@@ -1,0 +1,35 @@
+.TH pantheon-terminal 1 "May 29, 2014"
+.SH NAME
+Pantheon Terminal \- Modern terminal emulator from elementary project
+.PP
+\fBPantheon Terminal\fP< is a beautiful and simple terminal emulator.
+It's designed to be setup with sane defaults and little to no configuration
+and follows the elementary OS Human Interface Guidelines.
+.SH SYNOPSIS
+.B pantheon-terminal
+\fR[\fIOPTION...\fR]
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Show help message and exit
+.TP
+.BR \-v ", " \-\-version
+Print version info and exit
+.TP
+.BR \-e ", " \-\-execute =\fIPATH\fR
+Execute the specified binary in terminal
+.TP
+.BR \-w ", " \-\-working-directory =\fIPATH\fR
+Set the specified directory as shell working directory on startup
+.SH BUGS
+Command execution via \fB-e\fR key is broken as of version 0.3.0.1,
+see Launchpad \fBbug #1324577\fR for more information.
+.SH AUTHOR
+Pantheon Terminal was written by Adrien Plazas <kekun.plazas@laposte.net>,
+Mario Guerriero <mario@elementaryos.org>,
+David Gomes <david@elementaryos.org>,
+Tom Beckmann <tom@elementaryos.org>,
+Akshay Shekher <akshay@elementaryos.org> et al.
+.PP
+This manual page was written by Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>,
+for the Debian project (but may be used by others).
