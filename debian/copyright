@@ -14,6 +14,7 @@ Copyright: 2011-2013 Mario Guerriero <mario@elementaryos.org>
            2013 Pedro Paredes <gangsterveggies@gmail.com>
            2014 Daniel Fore <daniel@elementaryos.org>
            2014 Richard B. <richardbp85@gmail.com>
+           2014 Rico Tzschichholz <ricotz@ubuntu.com>
 License: GPL-3.0+
 
 Files: cmake/ParseArguments.cmake

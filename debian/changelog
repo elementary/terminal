@@ -1,3 +1,9 @@
+pantheon-terminal (0.3.0.1) trusty; urgency=low
+
+  * New upstream release.
+
+ -- Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>  Thu, 29 May 2014 15:00:04 +0400
+
 pantheon-terminal (0.3.0) trusty; urgency=low
 
   * New upstream release.
