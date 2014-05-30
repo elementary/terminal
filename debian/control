@@ -18,8 +18,9 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
 Provides: x-terminal-emulator
 Description: Modern terminal from elementary project
- Pantheon Terminal is a modern terminal designed in elementary Project for
- Pantheon Desktop Environment.
+ Pantheon Terminal is a beautiful and simple terminal emulator.
+ It's designed to be setup with sane defaults and little to no configuration
+ and follows the elementary OS Human Interface Guidelines.
 
 Package: pantheon-terminal-dbg
 Architecture: any
@@ -29,7 +30,8 @@ Depends: pantheon-terminal (= ${binary:Version}), ${misc:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
 Enhances: pantheon-terminal
 Description: Modern terminal from elementary project (debugging symbols)
- Pantheon Terminal is a modern terminal designed in elementary Project for
- Pantheon Desktop Environment.
+ Pantheon Terminal is a beautiful and simple terminal emulator.
+ It's designed to be setup with sane defaults and little to no configuration
+ and follows the elementary OS Human Interface Guidelines.
  .
  This package contains debugging symbols for pantheon-terminal.
