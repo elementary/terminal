@@ -19,7 +19,7 @@ Pre-Depends: dpkg (>= 1.15.6)
 Provides: x-terminal-emulator
 Description: Modern terminal from elementary project
  Pantheon Terminal is a beautiful and simple terminal emulator.
- It's designed to be setup with sane defaults and little to no configuration
+ It's designed to be set up with sane defaults and little to no configuration
  and follows the elementary OS Human Interface Guidelines.
 
 Package: pantheon-terminal-dbg
@@ -31,7 +31,7 @@ Pre-Depends: dpkg (>= 1.15.6)
 Enhances: pantheon-terminal
 Description: Modern terminal from elementary project (debugging symbols)
  Pantheon Terminal is a beautiful and simple terminal emulator.
- It's designed to be setup with sane defaults and little to no configuration
+ It's designed to be set up with sane defaults and little to no configuration
  and follows the elementary OS Human Interface Guidelines.
  .
  This package contains debugging symbols for pantheon-terminal.
