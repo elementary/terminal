@@ -1,4 +1,4 @@
-# Check http://webdev.elementaryos.org/docs/developer-guide/cmake for documentation
+# Check http://elementaryos.org/docs/code/the-build-system for documentation
 
 project (pantheon-terminal C)
 cmake_minimum_required (VERSION 2.8)
