@@ -110,7 +110,7 @@ namespace PantheonTerminal {
             dbus.finished_process.connect ((id, process) => {
                 foreach (var window in windows) {
                     foreach (var terminal in window.terminals) {
-                        if (terminal.terminal_id == id) {
+                        if (terminal.terminal_id == id && terminal.ever_had_focus) {
 
                             if (terminal != window.current_terminal) {
                                 terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
@@ -126,6 +126,7 @@ namespace PantheonTerminal {
                                     warning (e.message);
                                 }
                             }
+
                         }
                     }
                 }

@@ -47,7 +47,7 @@ namespace PantheonTerminal {
 
         public ForegroundProcessDialog.before_close () {
             use_markup = true;
-            set_markup ("<span weight='bold' size='larger'>" + 
+            set_markup ("<span weight='bold' size='larger'>" +
                       _("Are you sure you want to quit Terminal?") + "</span>\n\n" +
                       _("There is an active process on this terminal.")+"\n"+
                       _("If you quit Terminal, the process will end."));

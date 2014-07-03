@@ -84,6 +84,11 @@ namespace PantheonTerminal {
             private set;
         }
 
+        public bool ever_had_focus {
+            get;
+            private set;
+        }
+
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             terminal_id = "%lld.%i".printf (new DateTime.now_local ().to_unix (),
@@ -141,6 +146,8 @@ namespace PantheonTerminal {
             });
 
             child_exited.connect (on_child_exited);
+
+            focus_in_event.connect (on_focus);
 
             Gtk.TargetEntry target = {"text/uri-list", 0, 0};
             Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
@@ -309,6 +316,11 @@ namespace PantheonTerminal {
                     warning (error.message);
                 }
             }
+        }
+
+        private bool on_focus (Gdk.EventFocus event) {
+            this.ever_had_focus = true;
+            return false;
         }
 
         private string? get_link (long x, long y) {

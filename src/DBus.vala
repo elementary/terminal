@@ -26,10 +26,9 @@ namespace PantheonTerminal {
 
         public DBus () {
         }
-        
+
         public void process_finished (string terminal_id, string process) {
             finished_process (terminal_id, process);
         }
     }
 }
-
