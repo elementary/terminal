@@ -150,6 +150,13 @@ namespace PantheonTerminal {
         }
 
         private void setup_ui () {
+            /* Use CSD */
+            var header = new Gtk.HeaderBar ();
+            header.set_show_close_button (true);
+            header.get_style_context ().remove_class ("header-bar");
+
+            this.set_titlebar (header);
+
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.show_icons = true;
@@ -167,7 +174,7 @@ namespace PantheonTerminal {
             notebook.new_tab_requested.connect (on_new_tab_requested);
             notebook.allow_new_window = true;
             notebook.allow_duplication = true;
-            notebook.allow_restoring = true;
+            notebook.allow_restoring = settings.save_exited_tabs;
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
@@ -225,7 +232,7 @@ namespace PantheonTerminal {
                     case Gdk.Key.@D:
                     case Gdk.Key.@d:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            if (!current_terminal.has_foreground_process ()) {
+                            if (!current_terminal.has_foreground_process () && settings.save_exited_tabs) {
                                 action_close_tab ();
 
                                 return true;
@@ -259,10 +266,8 @@ namespace PantheonTerminal {
 
             if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
                 maximize ();
-                notebook.margin_top = 3;
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
-                notebook.margin_top = 0;
             }
 
             /* Reset saved state to avoid restoring it again */
@@ -304,10 +309,10 @@ namespace PantheonTerminal {
             }
 
             if (!t.child_has_exited) {
-                if (notebook.n_tabs >= 2) {
+                if (notebook.n_tabs >= 2 && settings.save_exited_tabs) {
                     make_restorable (tab);
                 } else {
-                    t.kill_ps ();
+                    t.term_ps ();
                 }
             }
 
@@ -361,8 +366,11 @@ namespace PantheonTerminal {
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_,
                                              Gdk.Atom[] atoms) {
-            bool can_paste;
-            can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            bool can_paste = false;
+
+            if (atoms != null && atoms.length > 0)
+                can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
@@ -492,7 +500,7 @@ namespace PantheonTerminal {
 
             tab.dropped_callback = (() => {
                 unowned TerminalWidget t = restorable_terminals.get (tab.restore_data);
-                t.kill_ps ();
+                t.term_ps ();
                 restorable_terminals.remove (tab.restore_data);
             });
         }
@@ -525,7 +533,7 @@ namespace PantheonTerminal {
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
-                        t.kill_ps_and_fg ();
+                        t.kill_fg_and_term_ps ();
                         d.destroy ();
                     } else {
                         d.destroy ();
@@ -533,7 +541,7 @@ namespace PantheonTerminal {
                     }
 
                 } else {
-                    t.kill_ps ();
+                    t.term_ps ();
                 }
             }
 
@@ -543,7 +551,7 @@ namespace PantheonTerminal {
 
         private void on_destroy () {
             foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
-                t.kill_ps ();
+                t.term_ps ();
             }
         }
 
@@ -609,11 +617,9 @@ namespace PantheonTerminal {
 
         void action_fullscreen () {
             if (is_fullscreen) {
-                notebook.margin_top = 3;
                 unfullscreen ();
                 is_fullscreen = false;
             } else {
-                notebook.margin_top = 0;
                 fullscreen ();
                 is_fullscreen = true;
             }

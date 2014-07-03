@@ -21,6 +21,12 @@
 namespace PantheonTerminal {
 
     public class TerminalWidget : Vte.Terminal {
+        enum DropTargets {
+            URILIST,
+            STRING,
+            TEXT
+        }
+
 
         public PantheonTerminalApp app;
         public string terminal_id;
@@ -149,8 +155,17 @@ namespace PantheonTerminal {
 
             focus_in_event.connect (on_focus);
 
-            Gtk.TargetEntry target = {"text/uri-list", 0, 0};
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, {target}, Gdk.DragAction.COPY);
+            /* target entries specify what kind of data the terminal widget accepts */
+            Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
+            Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
+            Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
+
+            Gtk.TargetEntry[] targets = { };
+            targets += uri_entry;
+            targets += string_entry;
+            targets += text_entry;
+
+            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
@@ -210,6 +225,9 @@ namespace PantheonTerminal {
 
             /* Disable bell if necessary */
             audible_bell = settings.audible_bell;
+
+            /* Cursor shape */
+            set_cursor_shape (settings.cursor_shape);
         }
 
         void on_child_exited () {
@@ -219,18 +237,18 @@ namespace PantheonTerminal {
         public void kill_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, 9);
+                Posix.kill (fg_pid, Posix.SIGKILL);
         }
 
-        public void kill_ps () {
+        public void term_ps () {
             killed = true;
             //this.pty_object.close ();
-            Posix.kill (this.child_pid, 9);
+            Posix.kill (this.child_pid, Posix.SIGTERM);
         }
 
-        public void kill_ps_and_fg () {
+        public void kill_fg_and_term_ps () {
             kill_fg ();
-            kill_ps ();
+            term_ps ();
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
@@ -257,17 +275,13 @@ namespace PantheonTerminal {
             }
         }
 
-        public void run_program (string program) {
-            string dir = GLib.Environment.get_current_dir ();
-            string[]? program_with_args = process_argv (program);
-
+        public void run_program (string program_string) {
             try {
-                if (program_with_args != null)
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, program_with_args,
-                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                else
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, ("bash -c " + program).split (" "),
-                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                string[]? program_with_args = null;
+                Shell.parse_argv (program_string, out program_with_args);
+
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, null, program_with_args,
+                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -375,35 +389,33 @@ namespace PantheonTerminal {
         }
 
         public void drag_received (Gdk.DragContext context, int x, int y,
-                                   Gtk.SelectionData selection_data, uint info, uint time_) {
+                                   Gtk.SelectionData selection_data, uint target_type, uint time_) {
+            switch (target_type) {
+               case DropTargets.URILIST:
+                   var uris = selection_data.get_uris ();
+                   string path;
+                   File file;
 
-            var uris = selection_data.get_uris ();
-            string path;
-            File file;
-            for (var i = 0; i < uris.length; i++) {
-                file = File.new_for_uri (uris[i]);
-                if ((path = file.get_path ()) != null) {
-                    uris[i] = Shell.quote (path) + " ";
-                }
-            }
+                   for (var i = 0; i < uris.length; i++) {
+                       file = File.new_for_uri (uris[i]);
+                       if ((path = file.get_path ()) != null) {
+                           uris[i] = Shell.quote (path) + " ";
+                       }
+                   }
 
-            string uris_s = string.joinv ("", uris);
-            this.feed_child (uris_s, uris_s.length);
-        }
+                    string uris_s = string.joinv ("", uris);
+                    this.feed_child (uris_s, uris_s.length);
 
-        private string[]? process_argv (string path) {
-            /* example of the code below.
-              pantheon-terminal -e "sudo apt-get update"
-              tmp[0] == "sudo"
-              tmp[1] == "apt-get update"
-            */
+                    break;
+                case DropTargets.STRING:
+                case DropTargets.TEXT:
+                    var data = selection_data.get_text ();
 
-            string[] tmp = path.split (" ", 2);
-            string? bin_path = GLib.Environment.find_program_in_path (tmp[0]);
-            if (path != null) {
-                return (bin_path + " " + tmp[1]).split (" ");
-            } else {
-                return null;
+                    if (data != null) {
+                        this.feed_child (data, data.length);
+                    }
+
+                    break;
             }
         }
     }

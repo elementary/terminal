@@ -6,20 +6,18 @@ TryExec=pantheon-terminal
 Exec=pantheon-terminal
 Icon=utilities-terminal
 Type=Application
-Categories=GTK;Utility;TerminalEmulator;System;
+Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 Keywords=command;prompt;cmd;commandline;run;
+Actions=NewWindow;NewRootWindow;
 
-X-Ayatana-Desktop-Shortcuts=NewWindow;NewRootWindow
-
-[NewWindow Shortcut Group]
+[Desktop Action NewWindow]
 Name=New Window
+Icon=utilities-terminal
 Exec=pantheon-terminal
-TargetEnvironment=Unity
 
-[NewRootWindow Shortcut Group]
+[Desktop Action NewRootWindow]
 Name=New Root Window
+Icon=utilities-terminal
 Exec=gksu pantheon-terminal
-TargetEnvironment=Unity
-
