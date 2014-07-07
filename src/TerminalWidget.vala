@@ -29,6 +29,7 @@ namespace PantheonTerminal {
 
 
         public PantheonTerminalApp app;
+        public string terminal_id;
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -52,6 +53,8 @@ namespace PantheonTerminal {
 
         public int default_size;
         public double zoom_factor = 1.0;
+
+        const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -d ' ' -f 5-)\"; ";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -87,7 +90,15 @@ namespace PantheonTerminal {
             private set;
         }
 
+        public bool ever_had_focus {
+            get;
+            private set;
+        }
+
         public TerminalWidget (PantheonTerminalWindow parent_window) {
+
+            terminal_id = "%lld.%i".printf (new DateTime.now_local ().to_unix (),
+                                            Random.next_int ());
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
@@ -141,6 +152,8 @@ namespace PantheonTerminal {
             });
 
             child_exited.connect (on_child_exited);
+
+            focus_in_event.connect (on_focus);
 
             /* target entries specify what kind of data the terminal widget accepts */
             Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
@@ -213,7 +226,7 @@ namespace PantheonTerminal {
             /* Disable bell if necessary */
             audible_bell = settings.audible_bell;
 
-            /* Cursor shape */ 
+            /* Cursor shape */
             set_cursor_shape (settings.cursor_shape);
         }
 
@@ -239,13 +252,24 @@ namespace PantheonTerminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
+            string shell = "";
+            string?[] envv = null;
+
+            if (settings.shell == "")
+                shell = Vte.get_user_shell ();
+
+            envv = {
+                // Export ID so we can identify the terminal for which the
+                // process completion is reported
+                "PANTHEON_TERMINAL_ID=" + terminal_id,
+                // BASH-specific variable, see "man bash" for details
+                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
+                // TODO: support at least ZSH and FISH
+            };
+
             try {
-                if (settings.shell == "")
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { Vte.get_user_shell () },
-                                            null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
-                else
-                    this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { settings.shell }, null,
-                                            SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -306,6 +330,11 @@ namespace PantheonTerminal {
                     warning (error.message);
                 }
             }
+        }
+
+        private bool on_focus (Gdk.EventFocus event) {
+            this.ever_had_focus = true;
+            return false;
         }
 
         private string? get_link (long x, long y) {
