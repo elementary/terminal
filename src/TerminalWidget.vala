@@ -252,10 +252,10 @@ namespace PantheonTerminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-            string shell = "";
+            string shell = settings.shell;
             string?[] envv = null;
 
-            if (settings.shell == "")
+            if (shell == "")
                 shell = Vte.get_user_shell ();
 
             envv = {
