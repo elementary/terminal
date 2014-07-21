@@ -48,6 +48,11 @@ pkg_check_modules (DEPS REQUIRED
 
 add_definitions (${DEPS_CFLAGS})
 
+# Work around http://www.cmake.org/Bug/view.php?id=12928:
+# CMake ignores CPPFLAGS where Debian and Ubuntu pass their hardening options.
+# See the bug linked above and https://wiki.debian.org/Hardening for more info.
+add_definitions (${CPPFLAGS})
+
 link_libraries (${DEPS_LIBRARIES})
 link_directories (${DEPS_LIBRARY_DIRS})
 
