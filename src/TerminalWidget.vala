@@ -55,6 +55,7 @@ namespace PantheonTerminal {
         public double zoom_factor = 1.0;
 
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\"; ";
+        const string SEND_PROCESS_FINISHED_ZSH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(fc -ln -1)\"; ";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -264,7 +265,9 @@ namespace PantheonTerminal {
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
                 // BASH-specific variable, see "man bash" for details
                 "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
-                // TODO: support at least ZSH and FISH
+                // Variable that we will read from ZSH config files supplied by us
+                "PT_ZSH_COMMAND_COMPLETION_CALLBACK=" + SEND_PROCESS_FINISHED_ZSH,
+                // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
             try {
