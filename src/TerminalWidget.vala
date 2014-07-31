@@ -55,7 +55,6 @@ namespace PantheonTerminal {
         public double zoom_factor = 1.0;
 
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\"; ";
-        const string SEND_PROCESS_FINISHED_ZSH = "dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(fc -ln -1)\"; ";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -263,11 +262,10 @@ namespace PantheonTerminal {
                 // Export ID so we can identify the terminal for which the process completion is reported
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
 
-                // BASH-specific variable, see "man bash" for details
+                // Export callback command a BASH-specific variable, see "man bash" for details
                 "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
 
-                // ZSH callback command, will be read from ZSH config file supplied by us
-                "PT_ZSH_COMMAND_COMPLETION_CALLBACK=" + SEND_PROCESS_FINISHED_ZSH,
+                // ZSH callback command will be read from ZSH config file supplied by us, see data/
 
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
