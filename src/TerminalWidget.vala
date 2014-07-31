@@ -266,13 +266,8 @@ namespace PantheonTerminal {
                 // BASH-specific variable, see "man bash" for details
                 "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
 
-                // ZSH support. Here we go...
-                // Callback command, will be read from ZSH config files supplied by us
+                // ZSH callback command, will be read from ZSH config file supplied by us
                 "PT_ZSH_COMMAND_COMPLETION_CALLBACK=" + SEND_PROCESS_FINISHED_ZSH,
-                // Preserve original ZSH config location, as we're about to change it
-                "PT_ORIG_ZDOTDIR=" + Environment.get_variable("ZDOTDIR"),
-                // Set custom config location to inject the above callback command
-                "ZDOTDIR=" + PKGDATADIR + "/zsh-config/",
 
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
