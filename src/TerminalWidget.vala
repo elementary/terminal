@@ -247,7 +247,7 @@ namespace PantheonTerminal {
             // Retry to terminate as long as the process is still alive.
             while (Posix.kill (this.child_pid, 0) != -1) {
                 Posix.usleep (100);
-                term_ps ();
+                Posix.kill (this.child_pid, Posix.SIGTERM);
             }
         }
 
