@@ -242,13 +242,13 @@ namespace PantheonTerminal {
 
         public void term_ps () {
             killed = true;
-            //this.pty_object.close ();
             Posix.kill (this.child_pid, Posix.SIGTERM);
-        }
 
-        public void kill_fg_and_term_ps () {
-            kill_fg ();
-            term_ps ();
+            // Retry to terminate as long as the process is still alive.
+            while (Posix.kill (this.child_pid, 0) != -1) {
+                Posix.usleep (100);
+                term_ps ();
+            }
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
