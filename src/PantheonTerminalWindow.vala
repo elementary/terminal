@@ -35,7 +35,6 @@ namespace PantheonTerminal {
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         private HashTable<string, TerminalWidget> restorable_terminals;
-        private int restorable_counter = 0;
 
         public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
@@ -489,14 +488,13 @@ namespace PantheonTerminal {
         }
 
         private void make_restorable (Granite.Widgets.Tab tab) {
-            var restore_key = "%d".printf (restorable_counter++);
             var page = tab.page as Gtk.Grid;
             var term = page.get_child_at (0, 0) as TerminalWidget;
 
             terminals.remove (term);
             page.remove (term);
-            restorable_terminals.insert (restore_key, term);
-            tab.restore_data = restore_key;
+            restorable_terminals.insert (term.terminal_id, term);
+            tab.restore_data = term.terminal_id;
 
             tab.dropped_callback = (() => {
                 unowned TerminalWidget t = restorable_terminals.get (tab.restore_data);
