@@ -526,6 +526,7 @@ namespace PantheonTerminal {
             update_saved_window_state ();
             action_quit ();
             string tabs = "";
+            var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
@@ -533,17 +534,19 @@ namespace PantheonTerminal {
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
-                        t.kill_fg_and_term_ps ();
+                        t.kill_fg ();
                         d.destroy ();
                     } else {
                         d.destroy ();
                         return true;
                     }
-
-                } else {
-                    t.term_ps ();
                 }
+
+                tabs_to_terminate.append (t);
             }
+
+            foreach (var t in tabs_to_terminate)
+                t.term_ps ();
 
             saved_state.tabs = tabs;
             return false;
