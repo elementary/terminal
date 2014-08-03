@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2013-08-15 08:59+0000\n"
-"Last-Translator: Filippos Kolyvas <Unknown>\n"
+"PO-Revision-Date: 2014-08-02 18:15+0000\n"
+"Last-Translator: James Spentzos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-07-13 06:22+0000\n"
-"X-Generator: Launchpad (build 17111)\n"
+"X-Launchpad-Export-Date: 2014-08-03 05:59+0000\n"
+"X-Generator: Launchpad (build 17147)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
 msgid "Set shell at launch"
-msgstr "Καθορισμός κελύφους κατά την εκκίνηση"
+msgstr "Ορισμός κελύφους κατά την εκκίνηση"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
 msgid "Print version info and exit"
@@ -47,7 +47,7 @@ msgstr "Κλείσιμο"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 #: /home/codygarver/terminal/po/../src/config.vala:14
 msgid "New Window"
-msgstr "Νέο παράθυρο"
+msgstr "Νέο Παράθυρο"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
 msgid "Open a new window"
@@ -55,7 +55,7 @@ msgstr "Άνοιγμα ενός νέου παραθύρου"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "New Tab"
-msgstr "Νέα καρτέλα"
+msgstr "Νέα Καρτέλα"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
 msgid "Create a new tab"
@@ -79,7 +79,7 @@ msgstr "Επικόλληση κειμένου"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
 msgid "Select All"
-msgstr "Επιλογή όλων"
+msgstr "Επιλογή Όλων"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
 msgid "Select all the text in the terminal"
@@ -87,7 +87,7 @@ msgstr "Επιλογή όλου του κειμένου στο τερματικ�
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "About"
-msgstr "Σχετικά"
+msgstr "Περί"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
 msgid "Show about window"
@@ -95,7 +95,7 @@ msgstr "Εμφάνιση παραθύρου πληροφοριών"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Next Tab"
-msgstr "Επόμενη καρτέλα"
+msgstr "Επόμενη Καρτέλα"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
 msgid "Go to next tab"
@@ -103,7 +103,7 @@ msgstr "Μετάβαση στην επόμενη καρτέλα"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Previous Tab"
-msgstr "Προηγούμενη καρτέλα"
+msgstr "Προηγούμενη Καρτέλα"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
 msgid "Go to previous tab"
@@ -131,11 +131,11 @@ msgstr "Χρήση γραμμής εντολών"
 
 #: /home/codygarver/terminal/po/../src/config.vala:15
 msgid "New Root Window"
-msgstr "Νέο παράθυρο υπερχρήστη"
+msgstr "Νέο Παράθυρο Διαχειριστή (Root)"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "Are you sure you want to close this tab?"
-msgstr "Θέλετε σίγουρα να κλείσετε αυτή την καρτέλα;"
+msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε αυτή την καρτέλα;"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "There is an active process on this tab."
@@ -143,7 +143,7 @@ msgstr "Υπάρχει μια ενεργή διεργασία σε αυτή τη
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
 msgid "If you close this tab, this process will end."
-msgstr "Αν κλείσετε αυτή την καρτέλα, η διεργασία θα τερματιστεί."
+msgstr "Αν κλείσετε αυτή την καρτέλα, αυτή η διεργασία θα τερματιστεί."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
@@ -152,11 +152,11 @@ msgstr "Ακύρωση"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
 msgid "Close Tab"
-msgstr "Κλείσιμο καρτέλας"
+msgstr "Κλείσιμο Καρτέλας"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
 msgid "Are you sure you want to quit Terminal?"
-msgstr ":έλετε σίγουρα να κλείσετε το τερματικό;"
+msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε το Τερματικό;"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
 msgid "There is an active process on this terminal."
@@ -164,8 +164,8 @@ msgstr "Υπάρχει μια ενεργή διεργασία σε αυτό το
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "If you quit Terminal, this process will end."
-msgstr "Αν κλείσετε το τερματικό, η διεργασία αυτή θα τερματιστεί."
+msgstr "Αν κλείσετε το Τερματικό, αυτή η διεργασία θα τερματιστεί."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
 msgid "Quit Terminal"
-msgstr "Κλείσιμο τερματικού"
+msgstr "Κλείσιμο Τερματικού"
