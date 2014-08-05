@@ -242,10 +242,8 @@ namespace PantheonTerminal {
 
         public void term_ps () {
             killed = true;
-            Posix.kill (this.child_pid, Posix.SIGTERM);
 
-            // Check if the shell is still alive by sending a 0 signal.
-            // Retry to terminate it as long as it's still running.
+            /* Check if the shell process is still alive by sending 0 signals */
             while (Posix.kill (this.child_pid, 0) == 0) {
                 Posix.kill (this.child_pid, Posix.SIGTERM);
                 Thread.usleep (100);
