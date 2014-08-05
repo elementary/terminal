@@ -72,6 +72,9 @@ namespace PantheonTerminal {
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH =  "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
 
+        /* Max number of tries to terminate the shell process */
+        const int MAX_TERM_TRIES = 5;
+
         static const string[] regex_strings = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
             "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
@@ -245,10 +248,17 @@ namespace PantheonTerminal {
             Posix.kill (this.child_pid, Posix.SIGTERM);
 
             // Retry to terminate as long as the process is still alive.
+            int tries = 0;
             while (Posix.kill (this.child_pid, 0) != -1) {
                 Posix.usleep (100);
                 Posix.kill (this.child_pid, Posix.SIGTERM);
+
+                if (++tries >= MAX_TERM_TRIES)
+                    break;
             }
+
+            if (Posix.kill (this.child_pid, 0) != -1)
+                Posix.kill (this.child_pid, Posix.SIGKILL);
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
