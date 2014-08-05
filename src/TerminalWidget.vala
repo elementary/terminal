@@ -30,6 +30,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalApp app;
         public string terminal_id;
+        static int terminal_id_counter = 0;
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -97,8 +98,7 @@ namespace PantheonTerminal {
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
-            terminal_id = "%lld.%i".printf (new DateTime.now_local ().to_unix (),
-                                            Random.next_int ());
+            terminal_id = "%i".printf (terminal_id_counter++);
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
