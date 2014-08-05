@@ -246,7 +246,6 @@ namespace PantheonTerminal {
 
             // Check if the shell is still alive by sending a 0 signal.
             // Retry to terminate it as long as it's still running.
-            int tries = 0;
             while (Posix.kill (this.child_pid, 0) == 0) {
                 Posix.kill (this.child_pid, Posix.SIGTERM);
                 Thread.usleep (100);
