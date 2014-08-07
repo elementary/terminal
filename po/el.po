@@ -7,165 +7,178 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-05-19 09:01-0500\n"
+"POT-Creation-Date: 2014-08-06 22:09-0500\n"
 "PO-Revision-Date: 2014-08-02 18:15+0000\n"
 "Last-Translator: James Spentzos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-03 05:59+0000\n"
+"X-Launchpad-Export-Date: 2014-08-07 06:11+0000\n"
 "X-Generator: Launchpad (build 17147)\n"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
-msgid "Set shell at launch"
-msgstr "Ορισμός κελύφους κατά την εκκίνηση"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
-msgid "Print version info and exit"
-msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
-msgid "Run a program in terminal"
-msgstr "Εκτέλεση ενός προγράμματος στο τερματικό"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
-#: /home/codygarver/terminal/po/../src/config.vala:13
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:108
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:457
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Terminal"
 msgstr "Τερματικό"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
-msgid "Open a new tab"
-msgstr "Άνοιγμα νέας καρτέλας"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:581
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:630
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:631
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
-#: /home/codygarver/terminal/po/../src/config.vala:14
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:635
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "New Window"
 msgstr "Νέο Παράθυρο"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:635
 msgid "Open a new window"
 msgstr "Άνοιγμα ενός νέου παραθύρου"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:639
 msgid "New Tab"
 msgstr "Νέα Καρτέλα"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:639
 msgid "Create a new tab"
 msgstr "Δημιουργία νέας καρτέλας"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:643
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:643
 msgid "Copy the selected text"
 msgstr "Αντιγραφή του επιλεγμένου κειμένου"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:647
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:647
 msgid "Paste some text"
 msgstr "Επικόλληση κειμένου"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:651
 msgid "Select All"
 msgstr "Επιλογή Όλων"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:652
 msgid "Select all the text in the terminal"
 msgstr "Επιλογή όλου του κειμένου στο τερματικό"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:654
 msgid "About"
 msgstr "Περί"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:655
 msgid "Show about window"
 msgstr "Εμφάνιση παραθύρου πληροφοριών"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:657
 msgid "Next Tab"
 msgstr "Επόμενη Καρτέλα"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:658
 msgid "Go to next tab"
 msgstr "Μετάβαση στην επόμενη καρτέλα"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:661
 msgid "Previous Tab"
 msgstr "Προηγούμενη Καρτέλα"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:662
 msgid "Go to previous tab"
 msgstr "Μετάβαση στην προηγούμενη καρτέλα"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:665
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:666
 msgid "Zoom in"
 msgstr "Μεγέθυνση"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:670
 msgid "Zoom out"
 msgstr "Σμίκρυνση"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:674
 msgid "Fullscreen"
 msgstr "Πλήρης οθόνη"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:674
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Εναλλαγή πλήρους οθόνης"
 
-#: /home/codygarver/terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Χρήση γραμμής εντολών"
-
-#: /home/codygarver/terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr "Νέο Παράθυρο Διαχειριστή (Root)"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
 msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε αυτή την καρτέλα;"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this tab."
 msgstr "Υπάρχει μια ενεργή διεργασία σε αυτή την καρτέλα."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
-msgid "If you close this tab, this process will end."
-msgstr "Αν κλείσετε αυτή την καρτέλα, αυτή η διεργασία θα τερματιστεί."
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
 msgid "Close Tab"
 msgstr "Κλείσιμο Καρτέλας"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε το Τερματικό;"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
 msgstr "Υπάρχει μια ενεργή διεργασία σε αυτό το τερματικό."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "If you quit Terminal, this process will end."
-msgstr "Αν κλείσετε το Τερματικό, αυτή η διεργασία θα τερματιστεί."
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
 msgstr "Κλείσιμο Τερματικού"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "Use the command line"
+msgstr "Χρήση γραμμής εντολών"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+msgid "New Root Window"
+msgstr "Νέο Παράθυρο Διαχειριστή (Root)"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "Open Terminal Here"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Run a program in terminal"
+msgstr "Εκτέλεση ενός προγράμματος στο τερματικό"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Set shell working directory"
+msgstr ""
+
+#~ msgid "Open a new tab"
+#~ msgstr "Άνοιγμα νέας καρτέλας"
+
+#~ msgid "If you close this tab, this process will end."
+#~ msgstr "Αν κλείσετε αυτή την καρτέλα, αυτή η διεργασία θα τερματιστεί."
+
+#~ msgid "Set shell at launch"
+#~ msgstr "Ορισμός κελύφους κατά την εκκίνηση"
+
+#~ msgid "If you quit Terminal, this process will end."
+#~ msgstr "Αν κλείσετε το Τερματικό, αυτή η διεργασία θα τερματιστεί."

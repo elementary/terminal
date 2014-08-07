@@ -7,165 +7,178 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2014-07-17 15:14+0000\n"
-"Last-Translator: Tobias Bannert <Unknown>\n"
+"POT-Creation-Date: 2014-08-06 22:09-0500\n"
+"PO-Revision-Date: 2014-05-01 12:26+0000\n"
+"Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-07-18 05:14+0000\n"
-"X-Generator: Launchpad (build 17114)\n"
+"X-Launchpad-Export-Date: 2014-08-07 06:11+0000\n"
+"X-Generator: Launchpad (build 17147)\n"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
-msgid "Set shell at launch"
-msgstr "Konsole beim Start setzen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:173
-msgid "Print version info and exit"
-msgstr "Versionsinformation anzeigen und beenden"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:174
-msgid "Run a program in terminal"
-msgstr "Ein Programm im Terminal ausführen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:105
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:410
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:414
-#: /home/codygarver/terminal/po/../src/config.vala:13
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:108
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:457
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Terminal"
 msgstr "Terminal"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
-msgid "Open a new tab"
-msgstr "Einen neuen Tab öffnen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:581
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:630
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:631
 msgid "Close"
 msgstr "Beenden"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
-#: /home/codygarver/terminal/po/../src/config.vala:14
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:635
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "New Window"
 msgstr "Neues Fenster"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:584
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:635
 msgid "Open a new window"
 msgstr "Ein neues Fenster öffnen"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:639
 msgid "New Tab"
 msgstr "Neuer Tab"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:587
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:639
 msgid "Create a new tab"
 msgstr "Neuen Tab erstellen"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:643
 msgid "Copy"
 msgstr "Kopieren"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:590
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:643
 msgid "Copy the selected text"
 msgstr "Ausgewählten Text kopieren"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:647
 msgid "Paste"
 msgstr "Einfügen"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:593
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:647
 msgid "Paste some text"
 msgstr "Text einfügen"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:596
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:651
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:597
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:652
 msgid "Select all the text in the terminal"
 msgstr "Ganzen Text im Terminal kopieren"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:654
 msgid "About"
 msgstr "Über"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:599
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:655
 msgid "Show about window"
 msgstr "Zeige »Über«-Fenster an"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:657
 msgid "Next Tab"
 msgstr "Nächster Tab"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:601
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:658
 msgid "Go to next tab"
 msgstr "Zum nächsten Tab wechseln"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:661
 msgid "Previous Tab"
 msgstr "Vorheriger Tab"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:604
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:662
 msgid "Go to previous tab"
 msgstr "Zum vorherigen Tab wechseln"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:607
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:665
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:666
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:610
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:670
 msgid "Zoom out"
 msgstr "Verkleinern"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:674
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:613
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:674
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Vollbild aktivieren/deaktivieren"
 
-#: /home/codygarver/terminal/po/../src/config.vala:12
-msgid "Use the command line"
-msgstr "Die Befehlszeile verwenden"
-
-#: /home/codygarver/terminal/po/../src/config.vala:15
-msgid "New Root Window"
-msgstr "Neues Root-Fenster"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
 msgstr "Sind Sie sicher, dass sie diesen Tab schließen wollen?"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this tab."
 msgstr "Dieser Tab enthält einen laufenden Prozess."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
-msgid "If you close this tab, this process will end."
-msgstr "Wenn Sie diesen Tab schließen, wird der Prozess beendet."
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:33
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:37
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
 msgid "Close Tab"
 msgstr "Tab schließen"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:49
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:50
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
 msgstr "Dieses Terminal enthält einen laufenden Prozess."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "If you quit Terminal, this process will end."
-msgstr "Wenn Sie dieses Terminal schließen, wird der Prozess beendet."
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:57
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
 msgstr "Terminal schließen"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "Use the command line"
+msgstr "Die Befehlszeile verwenden"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+msgid "New Root Window"
+msgstr "Neues Root-Fenster"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "Open Terminal Here"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr "Versionsinformation anzeigen und beenden"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Run a program in terminal"
+msgstr "Ein Programm im Terminal ausführen"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Set shell working directory"
+msgstr ""
+
+#~ msgid "Set shell at launch"
+#~ msgstr "Konsole beim Start setzen"
+
+#~ msgid "If you quit Terminal, this process will end."
+#~ msgstr "Wenn Sie dieses Terminal schließen, wird der Prozess beendet."
+
+#~ msgid "If you close this tab, this process will end."
+#~ msgstr "Wenn Sie diesen Tab schließen, wird der Prozess beendet."
+
+#~ msgid "Open a new tab"
+#~ msgstr "Einen neuen Tab öffnen"
