@@ -245,7 +245,7 @@ namespace PantheonTerminal {
 
             /* Check if the shell process is still alive by sending 0 signals */
             while (Posix.kill (this.child_pid, 0) == 0) {
-                Posix.kill (this.child_pid, Posix.SIGTERM);
+                Posix.kill (this.child_pid, Posix.SIGHUP);
                 Thread.usleep (100);
             }
         }
