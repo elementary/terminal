@@ -18,6 +18,6 @@ Icon=utilities-terminal
 Exec=pantheon-terminal
 
 [Desktop Action NewRootWindow]
-Name=New Root Window
+Name=New Root Tab
 Icon=utilities-terminal
-Exec=gksu pantheon-terminal
+Exec=pantheon-terminal -e "sudo -s"
