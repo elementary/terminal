@@ -412,13 +412,18 @@ namespace PantheonTerminal {
 
         private void open_tabs () {
             string[] tabs = saved_tabs;
-            if (tabs.length == 0) {
-                new_tab ();
-            } else {
-                foreach (string loc in tabs) {
-                    new_tab (loc);
+            if (settings.remember_tabs) {
+                if (tabs.length == 0) {
+                    new_tab ();
+                } else {
+                    foreach (string loc in tabs) {
+                        new_tab (loc);
+                    }
                 }
+            } else {
+                new_tab ("");
             }
+
         }
 
         private void new_tab (string directory="", string? program=null) {
