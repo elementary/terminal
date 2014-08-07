@@ -214,9 +214,7 @@ namespace PantheonTerminal {
             try {
                 context.parse(ref args);
             } catch (Error e) {
-                stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
-
-                return 1;
+                error (e.message); 
             }
 
             if (print_version) {
@@ -225,6 +223,9 @@ namespace PantheonTerminal {
 
                 return 0;
             }
+
+            Gtk.init (ref args);
+            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             var app = new PantheonTerminalApp ();
             return app.run (args_primary_instance);
