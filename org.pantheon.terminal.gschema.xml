@@ -34,8 +34,8 @@
       <summary>The saved state of the window.</summary>
       <description>The saved state of the window.</description>
     </key>
-    <key name="tabs" type="s">
-      <default>""</default>
+    <key name="tabs" type="as">
+      <default>[]</default>
       <summary>List of tabs which were active when the window was closed</summary>
       <description>List of tabs which were active when the window was closed</description>
     </key>

@@ -38,7 +38,7 @@ namespace PantheonTerminal {
 
         public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
-        private string saved_tabs;
+        private string[] saved_tabs;
 
         const string ui_string = """
             <ui>
@@ -275,7 +275,7 @@ namespace PantheonTerminal {
             saved_state.window_width = settings.window_width;
             saved_state.opening_x = -1;
             saved_state.opening_y = -1;
-            saved_state.tabs = "";
+            saved_state.tabs = {};
         }
 
         private void on_tab_added (Granite.Widgets.Tab tab) {
@@ -399,7 +399,7 @@ namespace PantheonTerminal {
         }
 
         private void reset_saved_tabs () {
-            saved_state.tabs = "";
+            saved_state.tabs = {};
         }
 
         private void on_switch_page (Granite.Widgets.Tab? old,
@@ -411,16 +411,19 @@ namespace PantheonTerminal {
         }
 
         private void open_tabs () {
-            string tabs = saved_tabs;
-            if (tabs == "" || !settings.remember_tabs ||
-                tabs.replace (",", " ").strip () == "") {
-                new_tab ();
-            } else {
-                foreach (string loc in tabs.split (",")) {
-                    if (loc != "")
+            string[] tabs = saved_tabs;
+            if (settings.remember_tabs) {
+                if (tabs.length == 0) {
+                    new_tab ();
+                } else {
+                    foreach (string loc in tabs) {
                         new_tab (loc);
+                    }
                 }
+            } else {
+                new_tab ("");
             }
+
         }
 
         private void new_tab (string directory="", string? program=null) {
@@ -523,12 +526,12 @@ namespace PantheonTerminal {
         protected override bool delete_event (Gdk.EventAny event) {
             update_saved_window_state ();
             action_quit ();
-            string tabs = "";
+            string[] tabs = {};
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
-                tabs += t.get_shell_location () + ",";
+                tabs += t.get_shell_location ();
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close ();
                     if (d.run () == 1) {
