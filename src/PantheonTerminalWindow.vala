@@ -268,14 +268,6 @@ namespace PantheonTerminal {
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
             }
-
-            /* Reset saved state to avoid restoring it again */
-            saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-            saved_state.window_height = settings.window_height;
-            saved_state.window_width = settings.window_width;
-            saved_state.opening_x = -1;
-            saved_state.opening_y = -1;
-            saved_state.tabs = {};
         }
 
         private void on_tab_added (Granite.Widgets.Tab tab) {
