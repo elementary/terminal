@@ -1,0 +1,22 @@
+# This file should be sources from /etc/zshrc or $ZDOTDIR/.zshrc in order to
+# enable process completion notifications in Pantheon Terminal.
+
+# If you come up with a way to inject this without requiring modifications
+# to those files, please let me know at <sergey@elementaryos.org>
+
+if [[ -n "$PANTHEON_TERMINAL_ID" ]] \
+&& builtin hash dbus-send 2> /dev/null \
+&& [[ -z $(whence pantheon_terminal_command_competion_callback) ]]
+then
+    pantheon_terminal_command_competion_callback() {
+        dbus-send \
+            --type=method_call \
+            --session \
+            --dest=net.launchpad.pantheon-terminal \
+            /net/launchpad/pantheon_terminal \
+            org.pantheon.terminal.ProcessFinished \
+            string:$PANTHEON_TERMINAL_ID \
+            string:"$(fc -ln -1)"
+    }
+    precmd_functions=(pantheon_terminal_command_competion_callback)
+fi

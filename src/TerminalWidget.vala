@@ -258,12 +258,15 @@ namespace PantheonTerminal {
                 shell = Vte.get_user_shell ();
 
             envv = {
-                // Export ID so we can identify the terminal for which the
-                // process completion is reported
+                // Export ID so we can identify the terminal for which the process completion is reported
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
-                // BASH-specific variable, see "man bash" for details
+
+                // Export callback command a BASH-specific variable, see "man bash" for details
                 "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
-                // TODO: support at least ZSH and FISH
+
+                // ZSH callback command will be read from ZSH config file supplied by us, see data/
+
+                // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
             try {
