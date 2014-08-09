@@ -104,7 +104,6 @@ namespace PantheonTerminal {
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
-            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
             title = _("Terminal");
             restore_saved_state (restore_pos);
 

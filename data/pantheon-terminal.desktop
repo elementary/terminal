@@ -10,7 +10,7 @@ Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 Keywords=command;prompt;cmd;commandline;run;
-Actions=NewWindow;NewRootWindow;
+Actions=NewWindow;NewRootWindow;AboutDialog;
 
 [Desktop Action NewWindow]
 Name=New Window
@@ -21,3 +21,7 @@ Exec=pantheon-terminal
 Name=New Root Tab
 Icon=utilities-terminal
 Exec=pantheon-terminal -e "sudo -s"
+
+[Desktop Action AboutDialog]
+Name=About Terminal
+Exec=pantheon-terminal --about

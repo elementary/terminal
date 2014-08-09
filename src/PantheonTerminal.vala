@@ -31,6 +31,7 @@ namespace PantheonTerminal {
         private static string[]? command_e = null;
 
         private static bool print_version = false;
+        private static bool show_about_dialog = false;
 
         public int minimum_width;
         public int minimum_height;
@@ -196,6 +197,7 @@ namespace PantheonTerminal {
 
         static const OptionEntry[] entries = {
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
+            { "about", 'a', 0, OptionArg.NONE, out show_about_dialog, N_("Show about dialog"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
             { null }
@@ -212,9 +214,7 @@ namespace PantheonTerminal {
             try {
                 context.parse(ref args);
             } catch (Error e) {
-                stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
-
-                return 0;
+                error (e.message); 
             }
 
             if (print_version) {
@@ -223,6 +223,9 @@ namespace PantheonTerminal {
 
                 return 0;
             }
+
+            Gtk.init (ref args);
+            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             var app = new PantheonTerminalApp ();
             return app.run (args_primary_instance);
