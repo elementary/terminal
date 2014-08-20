@@ -421,7 +421,7 @@ namespace PantheonTerminal {
 
                         if (null_dirs == tabs.length)
                         {
-                            tabs[0] == "~";
+                            tabs[0] = "~";
                         }
                     }
 
