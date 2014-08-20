@@ -24,7 +24,6 @@ namespace PantheonTerminal {
 
         private GLib.List <PantheonTerminalWindow> windows;
 
-        private static string app_cmd_name;
         public static string? working_directory = null;
         /* command_e (-e) is used for running commands independently (not inside a shell) */
         [CCode (array_length = false, array_null_terminated = true)]
@@ -44,8 +43,8 @@ namespace PantheonTerminal {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            program_name = app_cmd_name;
-            exec_name = app_cmd_name.down ().replace (" ", "-");
+            program_name = _("Terminal");
+            exec_name = "pantheon-terminal";
             app_years = "2011-2014";
             app_icon = "utilities-terminal";
             app_launcher = "pantheon-terminal.desktop";
@@ -204,8 +203,6 @@ namespace PantheonTerminal {
         };
 
         public static int main (string[] args) {
-            app_cmd_name = "Pantheon Terminal";
-
             var context = new OptionContext ("Terminal");
             context.add_main_entries (entries, Build.GETTEXT_PACKAGE);
 
