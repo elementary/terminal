@@ -411,7 +411,7 @@ namespace PantheonTerminal {
                     /* Check wether the dir exists (LP #1351898) */
                     for (int i = 0; i < tabs.length; i++)
                     {
-                        File file = File.new_for_path (loc);
+                        File file = File.new_for_path (tabs[i]);
                         if (file.query_exists () == false)
                             tabs[i] = "";
                     }
