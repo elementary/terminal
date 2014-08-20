@@ -408,7 +408,12 @@ namespace PantheonTerminal {
                     new_tab ();
                 } else {
                     foreach (string loc in tabs) {
-                        new_tab (loc);
+
+                        /* Check wether the dir exists (LP #1351898) */
+                        File file = File.new_for_path (loc);
+
+                        if (file.query_exist ())
+                            new_tab (loc);
                     }
                 }
             } else {
