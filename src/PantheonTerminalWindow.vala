@@ -413,7 +413,7 @@ namespace PantheonTerminal {
                     {
                         File file = File.new_for_path (loc);
                         if (file.query_exists () == false)
-                            tabs[i] == "";
+                            tabs[i] = "";
                     }
 
                     foreach (string loc in tabs) 
