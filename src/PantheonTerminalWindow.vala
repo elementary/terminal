@@ -410,32 +410,26 @@ namespace PantheonTerminal {
 
                     /* Check wether the dir exists (LP #1351898) */
                     int null_dirs = 0;
-                    for (int i = 0; i < tabs.length; i++)
-                    {
+                    for (int i = 0; i < tabs.length; i++) {
                         File file = File.new_for_path (tabs[i]);
-                        if (file.query_exists () == false)
-                        {
+
+                        if (file.query_exists () == false) {
                             null_dirs++;
                             tabs[i] = "";
                         }
 
-                        if (null_dirs == tabs.length)
-                        {
+                        if (null_dirs == tabs.length) {
                             tabs[0] = "~";
                         }
                     }
 
-                    foreach (string loc in tabs) 
-                    {
+                    foreach (string loc in tabs) {
 
                         if (loc == "")
-                        {
                             continue;
-                        }
+
                         else 
-                        {
                             new_tab (loc);        
-                        }
                     }
                 }
             } else {
