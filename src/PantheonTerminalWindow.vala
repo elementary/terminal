@@ -407,8 +407,7 @@ namespace PantheonTerminal {
                 if (tabs.length == 0) {
                     new_tab ();
                 } else {
-
-                    /* Check wether the dir exists (LP #1351898) */
+                    
                     int null_dirs = 0;
                     for (int i = 0; i < tabs.length; i++) {
                         File file = File.new_for_path (tabs[i]);
@@ -427,7 +426,6 @@ namespace PantheonTerminal {
 
                         if (loc == "")
                             continue;
-
                         else 
                             new_tab (loc);        
                     }
