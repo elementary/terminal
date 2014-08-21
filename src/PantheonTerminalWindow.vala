@@ -464,6 +464,11 @@ namespace PantheonTerminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
+            Gdk.Geometry hints = Gdk.Geometry();
+            hints.width_inc = (int) t.get_char_width ();
+            hints.height_inc = (int) t.get_char_height ();
+            set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
+
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             t.grab_focus ();
