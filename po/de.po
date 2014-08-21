@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-20 00:17-0500\n"
-"PO-Revision-Date: 2014-08-19 14:55+0000\n"
-"Last-Translator: UweS <Unknown>\n"
+"PO-Revision-Date: 2014-08-20 08:37+0000\n"
+"Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-20 06:05+0000\n"
+"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
 "X-Generator: Launchpad (build 17163)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
@@ -149,7 +149,7 @@ msgstr "Terminal schließen"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Über Terminal"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -169,7 +169,7 @@ msgstr "Versionsinformation anzeigen und beenden"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Show about dialog"
-msgstr ""
+msgstr "Info-Dialog anzeigen"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Run a program in terminal"
