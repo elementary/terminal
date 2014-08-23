@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-20 00:17-0500\n"
-"PO-Revision-Date: 2013-04-08 21:43+0000\n"
+"PO-Revision-Date: 2014-08-22 11:22+0000\n"
 "Last-Translator: Pedro Monteiro <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
+"X-Launchpad-Export-Date: 2014-08-23 07:00+0000\n"
 "X-Generator: Launchpad (build 17163)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
@@ -120,7 +120,7 @@ msgstr "Ainda existe um processo ativo neste separador"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Se fechar, o processo terminará."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -141,7 +141,7 @@ msgstr "Ainda existe um processo ativo neste terminal"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Se fechar o Terminal, o processo terminará."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -149,7 +149,7 @@ msgstr "Sair do terminal"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Sobre Terminal"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -161,7 +161,7 @@ msgstr "Nova Janela de Root"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Abrir Terminal Aqui"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Print version info and exit"
@@ -169,7 +169,7 @@ msgstr "Mostrar informação de versão e sair"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Show about dialog"
-msgstr ""
+msgstr "Mostrar janela \"Sobre\""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Run a program in terminal"
