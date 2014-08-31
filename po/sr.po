@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-20 00:17-0500\n"
-"PO-Revision-Date: 2013-06-19 21:13+0000\n"
+"PO-Revision-Date: 2014-08-30 08:57+0000\n"
 "Last-Translator: Иван Благојевић <ivan_blagojevic@mail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2014-08-31 07:11+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
@@ -104,7 +104,7 @@ msgstr "Умањи"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Fullscreen"
-msgstr "Цео екран"
+msgstr "Преко целог екрана"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
@@ -120,7 +120,7 @@ msgstr "На овом језичку се одвија активан проце
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Ако затворите, процес ће бити прекинут."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -141,7 +141,7 @@ msgstr "У овом терминалу се одвија активан проц
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Ако напустите Терминал, процес ће бити прекинут."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -149,19 +149,19 @@ msgstr "Напусти Терминал"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "О Терминалу"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "Користите командну линију"
+msgstr "Користи командну линију"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:9
 msgid "New Root Window"
-msgstr "Нови Кључни Прозор"
+msgstr "Нови коренски прозор"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Отвори терминал овде"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Print version info and exit"
@@ -169,7 +169,7 @@ msgstr "Штампај информације о издању и изађи"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Show about dialog"
-msgstr ""
+msgstr "Прикажи информацијски дијалог"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Run a program in terminal"
@@ -177,7 +177,7 @@ msgstr "Покрени програм у терминалу"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:202
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Подеси радни директоријум шкољке"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Уколико напустите Терминал, процес ће се завршити."
