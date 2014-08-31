@@ -117,7 +117,7 @@ namespace PantheonTerminal {
                             }
 
                             if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                var notification = new Notify.Notification ("Task finished", process,
+                                var notification = new Notify.Notification (_("Task finished"), process,
                                                                             "utilities-terminal");
 
                                 try {
