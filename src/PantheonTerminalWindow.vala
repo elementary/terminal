@@ -407,8 +407,27 @@ namespace PantheonTerminal {
                 if (tabs.length == 0) {
                     new_tab ();
                 } else {
+                    
+                    int null_dirs = 0;
+                    for (int i = 0; i < tabs.length; i++) {
+                        File file = File.new_for_path (tabs[i]);
+
+                        if (file.query_exists () == false) {
+                            null_dirs++;
+                            tabs[i] = "";
+                        }
+
+                        if (null_dirs == tabs.length) {
+                            tabs[0] = "~";
+                        }
+                    }
+
                     foreach (string loc in tabs) {
-                        new_tab (loc);
+
+                        if (loc == "")
+                            continue;
+                        else 
+                            new_tab (loc);        
                     }
                 }
             } else {
