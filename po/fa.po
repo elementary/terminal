@@ -7,32 +7,106 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-20 00:17-0500\n"
+"POT-Creation-Date: 2014-08-31 15:26-0500\n"
 "PO-Revision-Date: 2013-08-28 05:46+0000\n"
 "Last-Translator: Amir Masoud <amirmasoud.ab@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2014-09-01 07:16+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 "Language: \n"
 
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "آیا واقعاً می‌خواهید این برگه را ببندید؟"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "فرآیندی در این برگه در حال اجراء است."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "لغو"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "بستن برگه"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "آیا واقعاً می‌خواهید از پایانه خارج شوید؟"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "فرآیندی در این پایانه در حال اجراء است."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "خروج از پایانه"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:46
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
-#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "Terminal"
 msgstr "پایانه"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
+msgid "Task finished"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Show about dialog"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Run a program in terminal"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
+msgid "Set shell working directory"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "About Terminal"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "استفاده از خط فرمان"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+msgid "New Window"
+msgstr "پنجره جدید"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "پنجره ریشه جدید"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
 msgid "Close"
 msgstr "بستن"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
-#: /home/codygarver/terminal/po/../src/Constants.vala:8
-msgid "New Window"
-msgstr "پنجره جدید"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
 msgid "Open a new window"
@@ -110,75 +184,6 @@ msgstr "تمام‌صفحه"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
 msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "آیا واقعاً می‌خواهید این برگه را ببندید؟"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "فرآیندی در این برگه در حال اجراء است."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "لغو"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "بستن برگه"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "آیا واقعاً می‌خواهید از پایانه خارج شوید؟"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "فرآیندی در این پایانه در حال اجراء است."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "خروج از پایانه"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:5
-msgid "About Terminal"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "استفاده از خط فرمان"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "پنجره ریشه جدید"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
-msgid "Print version info and exit"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
-msgid "Show about dialog"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
-msgid "Run a program in terminal"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:202
-msgid "Set shell working directory"
-msgstr ""
 
 #~ msgid "Set shell at launch"
 #~ msgstr "تعیین مسیر در هنگام راه‌اندازی"

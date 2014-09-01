@@ -7,31 +7,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 00:17-0500\n"
+"POT-Creation-Date: 2014-08-31 15:26-0500\n"
 "PO-Revision-Date: 2012-08-22 11:01+0000\n"
 "Last-Translator: Akshay Shekher <voldyman666@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2014-09-01 07:15+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "क्या आप को यकीन है कि आप इस टैब को बंद करना चाहते हैं?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "टैब बंद करें"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "क्या आप को यकीन है कि आप इस टर्मिनल को बंद करना चाहते हैं?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "वहाँ इस टर्मिनल पर एक सक्रिय प्रक्रिया है।"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "टर्मिनल छोड़ दो"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:46
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
-#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
+msgid "Task finished"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Show about dialog"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Run a program in terminal"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
+msgid "Set shell working directory"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "About Terminal"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "कमांड लाइन का प्रयोग करें"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+msgid "New Window"
+msgstr "नई विंडो"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "नए रूट विंडो"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
 msgid "Close"
 msgstr "बंद करें"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
-#: /home/codygarver/terminal/po/../src/Constants.vala:8
-msgid "New Window"
-msgstr "नई विंडो"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
 msgid "Open a new window"
@@ -109,75 +183,6 @@ msgstr "पूरी स्क्रीन"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
 msgstr "टॉगल करें / अनटॉगल पूर्ण स्क्रीन"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "क्या आप को यकीन है कि आप इस टैब को बंद करना चाहते हैं?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "रद्द करें"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "टैब बंद करें"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप को यकीन है कि आप इस टर्मिनल को बंद करना चाहते हैं?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "वहाँ इस टर्मिनल पर एक सक्रिय प्रक्रिया है।"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "टर्मिनल छोड़ दो"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:5
-msgid "About Terminal"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "कमांड लाइन का प्रयोग करें"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "नए रूट विंडो"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
-msgid "Print version info and exit"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
-msgid "Show about dialog"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
-msgid "Run a program in terminal"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:202
-msgid "Set shell working directory"
-msgstr ""
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "अगर आप इस टैब को बंद करते हैं, तो प्रक्रिया बंद कर दिया जाएगा"

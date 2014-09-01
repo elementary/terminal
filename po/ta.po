@@ -7,31 +7,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 00:17-0500\n"
+"POT-Creation-Date: 2014-08-31 15:26-0500\n"
 "PO-Revision-Date: 2014-03-20 08:29+0000\n"
-"Last-Translator: SyedKhaleel Jageer <jskcse4@gmail.com>\n"
+"Last-Translator: Khaleel Jageer <jskcse4@gmail.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2014-09-01 07:16+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+"நீங்கள் தவலிளிருந்து வெளியேற வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "இந்த தவலில் ஒரு செயல் செயல்பாட்டில் உள்ளது."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "இரத்துசெய்"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "தத்தலை மூடுக"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+"நீங்கள் முனையத்திலிருந்து வெளியேற வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "இந்த முனையத்தில் ஒரு செயல் செயல்பாட்டில் உள்ளது."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "முனையத்திலிருந்து வெளியேறு"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:46
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
-#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "Terminal"
 msgstr "முனையம்"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
+msgid "Task finished"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr "பதிப்பின் தகவல்களை அச்சிட்டு வெளியேறவும்"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Show about dialog"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Run a program in terminal"
+msgstr "முனையத்தில் ஒரு நிரலை இயக்க"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
+msgid "Set shell working directory"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "About Terminal"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "கட்டளை வரியை பயன்படுத்து"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+msgid "New Window"
+msgstr "புதிய சாளரம்"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "புதிய ரூட் சாளரம்"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr ""
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
 msgid "Close"
 msgstr "மூடு"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
-#: /home/codygarver/terminal/po/../src/Constants.vala:8
-msgid "New Window"
-msgstr "புதிய சாளரம்"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
 msgid "Open a new window"
@@ -109,77 +185,6 @@ msgstr "முழுத்திரை"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
 msgstr "டாகுள்/அண்டாகுள் முழுதிரை"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr ""
-"நீங்கள் தவலிளிருந்து வெளியேற வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "இந்த தவலில் ஒரு செயல் செயல்பாட்டில் உள்ளது."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "இரத்துசெய்"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "தத்தலை மூடுக"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr ""
-"நீங்கள் முனையத்திலிருந்து வெளியேற வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "இந்த முனையத்தில் ஒரு செயல் செயல்பாட்டில் உள்ளது."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "முனையத்திலிருந்து வெளியேறு"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:5
-msgid "About Terminal"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "கட்டளை வரியை பயன்படுத்து"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "புதிய ரூட் சாளரம்"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
-msgid "Print version info and exit"
-msgstr "பதிப்பின் தகவல்களை அச்சிட்டு வெளியேறவும்"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
-msgid "Show about dialog"
-msgstr ""
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
-msgid "Run a program in terminal"
-msgstr "முனையத்தில் ஒரு நிரலை இயக்க"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:202
-msgid "Set shell working directory"
-msgstr ""
 
 #~ msgid "Open a new tab"
 #~ msgstr "புதிய தத்தலை திற"

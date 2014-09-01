@@ -7,31 +7,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 00:17-0500\n"
+"POT-Creation-Date: 2014-08-31 15:26-0500\n"
 "PO-Revision-Date: 2014-08-20 08:37+0000\n"
 "Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 06:28+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2014-09-01 07:15+0000\n"
+"X-Generator: Launchpad (build 17176)\n"
 
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "Sind Sie sicher, dass Sie diesen Tab schließen wollen?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "Dieser Tab enthält einen laufenden Prozess."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr "Wenn Sie es schließen, wird der Prozess beendet."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "Tab schließen"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "Dieses Terminal enthält einen laufenden Prozess."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
+
+#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "Terminal schließen"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:46
+#: /home/codygarver/terminal/po/../src/Constants.vala:7
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
-#: /home/codygarver/terminal/po/../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
+msgid "Task finished"
+msgstr ""
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+msgid "Print version info and exit"
+msgstr "Versionsinformation anzeigen und beenden"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+msgid "Show about dialog"
+msgstr "Info-Dialog anzeigen"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+msgid "Run a program in terminal"
+msgstr "Ein Programm im Terminal ausführen"
+
+#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
+msgid "Set shell working directory"
+msgstr "Arbeitsordner des Terminals festlegen"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Über Terminal"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Die Befehlszeile verwenden"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:8
+#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+msgid "New Window"
+msgstr "Neues Fenster"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "Neues Root-Fenster"
+
+#: /home/codygarver/terminal/po/../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Terminal hier öffnen"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
 msgid "Close"
 msgstr "Beenden"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
-#: /home/codygarver/terminal/po/../src/Constants.vala:8
-msgid "New Window"
-msgstr "Neues Fenster"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
 msgid "Open a new window"
@@ -109,75 +183,6 @@ msgstr "Vollbild"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Vollbild aktivieren/deaktivieren"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "Sind Sie sicher, dass Sie diesen Tab schließen wollen?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "Dieser Tab enthält einen laufenden Prozess."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr "Wenn Sie es schließen, wird der Prozess beendet."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "Tab schließen"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "Dieses Terminal enthält einen laufenden Prozess."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "Terminal schließen"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Über Terminal"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Die Befehlszeile verwenden"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Neues Root-Fenster"
-
-#: /home/codygarver/terminal/po/../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Terminal hier öffnen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
-msgid "Print version info and exit"
-msgstr "Versionsinformation anzeigen und beenden"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
-msgid "Show about dialog"
-msgstr "Info-Dialog anzeigen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
-msgid "Run a program in terminal"
-msgstr "Ein Programm im Terminal ausführen"
-
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:202
-msgid "Set shell working directory"
-msgstr "Arbeitsordner des Terminals festlegen"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Konsole beim Start setzen"
