@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2013-01-03 19:14+0000\n"
+"PO-Revision-Date: 2014-09-06 13:30+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-01 07:16+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-09-07 06:40+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -27,7 +27,7 @@ msgstr "There is an active process on this tab."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "If you close it, the process will end."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -48,7 +48,7 @@ msgstr "There is an active process on this terminal."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "If you quit Terminal, the process will end."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -63,7 +63,7 @@ msgstr "Terminal"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
 msgid "Task finished"
-msgstr ""
+msgstr "Task finished"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
@@ -71,7 +71,7 @@ msgstr "Print version info and exit"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Show about dialog"
-msgstr ""
+msgstr "Show about dialogue"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Run a program in terminal"
@@ -79,11 +79,11 @@ msgstr "Run a program in terminal"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Set shell working directory"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "About Terminal"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -100,7 +100,7 @@ msgstr "New Root Window"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Open Terminal Here"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
