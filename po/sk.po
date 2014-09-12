@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2013-10-26 19:07+0000\n"
-"Last-Translator: Milan Slovák <Unknown>\n"
+"PO-Revision-Date: 2014-09-11 09:05+0000\n"
+"Last-Translator: smutok <smutok@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-01 07:16+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-09-12 06:42+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -27,7 +27,7 @@ msgstr "Na tejto karte prebieha aktívny proces."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Keď to zatvoríte, proces bude ukončený."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -48,7 +48,7 @@ msgstr "V termináli je aktívny proces."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Keď ukončíte Terminal, proces bude ukončený."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -63,7 +63,7 @@ msgstr "Terminál"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
 msgid "Task finished"
-msgstr ""
+msgstr "Úloha dokončená"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
@@ -71,7 +71,7 @@ msgstr "Vytlačiť informácie o verzii a ukončiť"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Show about dialog"
-msgstr ""
+msgstr "Zobraziť informácie o programe"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Run a program in terminal"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "O programe Terminal"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -100,7 +100,7 @@ msgstr "Nové okno správcu"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Otvoriť Terminál tu"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
