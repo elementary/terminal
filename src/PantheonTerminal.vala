@@ -114,10 +114,8 @@ namespace PantheonTerminal {
 
                             if (!terminal.is_init_complete ()) {
                                 terminal.set_init_complete ();
+
                             } else {
-
-
-
                                 if (terminal != window.current_terminal) {
                                     terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
                                 }
