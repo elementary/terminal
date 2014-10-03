@@ -116,13 +116,13 @@ namespace PantheonTerminal {
                                 terminal.set_init_complete ();
 
                             } else {
-                               if (terminal != window.current_terminal) {
+                                if (terminal != window.current_terminal) {
                                     terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
                                 }
 
                                 if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
                                     var notification = new Notify.Notification (_("Task finished"), process,
-                                                                            "utilities-terminal");
+                                                                                "utilities-terminal");
 
                                     try {
                                         notification.show ();
