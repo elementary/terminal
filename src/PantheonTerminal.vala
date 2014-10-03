@@ -112,18 +112,23 @@ namespace PantheonTerminal {
                     foreach (var terminal in window.terminals) {
                         if (terminal.terminal_id == id && terminal.ever_had_focus) {
 
-                            if (terminal != window.current_terminal) {
-                                terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
-                            }
+                            if (!terminal.is_init_complete ()) {
+                                terminal.set_init_complete ();
+                            } else {
 
-                            if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                var notification = new Notify.Notification (_("Task finished"), process,
+                               if (terminal != window.current_terminal) {
+                                    terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
+                                }
+
+                                if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
+                                    var notification = new Notify.Notification (_("Task finished"), process,
                                                                             "utilities-terminal");
 
-                                try {
-                                    notification.show ();
-                                } catch (Error e) {
-                                    warning (e.message);
+                                    try {
+                                        notification.show ();
+                                    } catch (Error e) {
+                                        warning (e.message);
+                                    }
                                 }
                             }
 
@@ -211,7 +216,7 @@ namespace PantheonTerminal {
             try {
                 context.parse(ref args);
             } catch (Error e) {
-                error (e.message); 
+                error (e.message);
             }
 
             if (print_version) {
