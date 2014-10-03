@@ -31,6 +31,7 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
+        private bool init_complete;
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -99,6 +100,8 @@ namespace PantheonTerminal {
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             terminal_id = "%i".printf (terminal_id_counter++);
+
+            init_complete = false;
 
             /* Sets characters that define word for double click selection */
             set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
@@ -389,6 +392,14 @@ namespace PantheonTerminal {
             zoom_factor = 1.0;
             current_font.set_size (default_size);
             this.set_font (current_font);
+        }
+
+        public bool is_init_complete () {
+            return init_complete;
+        }
+
+        public void set_init_complete () {
+            init_complete = true;
         }
 
         public void drag_received (Gdk.DragContext context, int x, int y,
