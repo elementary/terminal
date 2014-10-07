@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2014-08-15 08:21+0000\n"
-"Last-Translator: Jaycee Lock <jaycee.lock@gmail.com>\n"
+"PO-Revision-Date: 2014-10-06 19:05+0000\n"
+"Last-Translator: Deavmi <deavmi@gmail.com>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-01 07:15+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-10-07 06:44+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -48,7 +48,7 @@ msgstr "Die terminaal bevat 'n aktiewe proses."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "As jy die Terminaal toemaak, sal die proses eindig."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
-msgstr ""
+msgstr "Gebruik die bevellyn"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:8
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
