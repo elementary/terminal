@@ -25,7 +25,7 @@
       <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
     </key>
     <key name="window-height" type="i">
-      <default>400</default>
+      <default>476</default>
       <summary>The saved height of the window.</summary>
       <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
     </key>
