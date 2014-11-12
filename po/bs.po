@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2014-10-25 23:24+0000\n"
+"PO-Revision-Date: 2014-11-11 12:49+0000\n"
 "Last-Translator: Coa_brate <aleksandar.todorovic@mail.ru>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-10-26 05:45+0000\n"
-"X-Generator: Launchpad (build 17203)\n"
+"X-Launchpad-Export-Date: 2014-11-12 06:32+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -105,81 +105,81 @@ msgstr "Otvori terminal ovdje"
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
 msgid "Close"
-msgstr ""
+msgstr "Zatvori"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
 msgid "Open a new window"
-msgstr ""
+msgstr "Otvori novi prozor"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:633
 msgid "New Tab"
-msgstr ""
+msgstr "Novi tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:633
 msgid "Create a new tab"
-msgstr ""
+msgstr "Kreiraj novi tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:637
 msgid "Copy"
-msgstr ""
+msgstr "Kopiraj"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:637
 msgid "Copy the selected text"
-msgstr ""
+msgstr "Kopiraj odabrani tekst"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:641
 msgid "Paste"
-msgstr ""
+msgstr "Zalijepi"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:641
 msgid "Paste some text"
-msgstr ""
+msgstr "Zalijepi neki tekst"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:645
 msgid "Select All"
-msgstr ""
+msgstr "Izaberi sve"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:646
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Označi sav tekst u terminalu"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:648
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:649
 msgid "Show about window"
-msgstr ""
+msgstr "Prikaži prozor sa informacijama o programu"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:651
 msgid "Next Tab"
-msgstr ""
+msgstr "Naredni tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:652
 msgid "Go to next tab"
-msgstr ""
+msgstr "Idi na naredni tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:655
 msgid "Previous Tab"
-msgstr ""
+msgstr "Prethodni tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:656
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Idi na prethodni tab"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:659
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:660
 msgid "Zoom in"
-msgstr ""
+msgstr "Povećaj"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:664
 msgid "Zoom out"
-msgstr ""
+msgstr "Smanji"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Fullscreen"
-msgstr ""
+msgstr "Preko cijelog ekrana"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Uključi/isključi prikaz preko cijelog ekrana"
