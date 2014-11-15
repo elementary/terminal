@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2012-08-22 11:01+0000\n"
-"Last-Translator: Akshay Shekher <voldyman666@gmail.com>\n"
+"PO-Revision-Date: 2014-11-14 20:56+0000\n"
+"Last-Translator: Sandeep Pinge <spinge@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-01 07:15+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-11-15 06:44+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -27,7 +27,7 @@ msgstr "इस टैब पर एक सक्रिय प्रक्रि�
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -63,7 +63,7 @@ msgstr "टर्मिनल"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
 msgid "Task finished"
-msgstr ""
+msgstr "कार्य समाप्त हुआ"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
