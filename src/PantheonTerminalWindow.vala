@@ -238,6 +238,16 @@ namespace PantheonTerminal {
                             }
                         }
                         break;
+                    case Gdk.Key.@V:
+                    case Gdk.Key.@v:
+                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                            if (clipboard.wait_is_text_available ()) {
+                                current_terminal.paste_clipboard ();
+                                print("Pasting\n");
+                                return true;
+                            }
+                        }
+                        break;
                     case Gdk.Key.@D:
                     case Gdk.Key.@d:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
