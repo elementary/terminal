@@ -231,7 +231,8 @@ namespace PantheonTerminal {
                     case Gdk.Key.@c:
                         /*  When Ctrl-C is pressed, copy selected text,
                             if nothing is selected let the widget handle it */
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                            settings.natural_copy_paste) {
                             if (current_terminal.get_has_selection ()) {
                                 current_terminal.copy_clipboard ();
                                 return true;
@@ -240,7 +241,8 @@ namespace PantheonTerminal {
                         break;
                     case Gdk.Key.@V:
                     case Gdk.Key.@v:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                            settings.natural_copy_paste) {
                             if (clipboard.wait_is_text_available ()) {
                                 current_terminal.paste_clipboard ();
                                 print("Pasting\n");
