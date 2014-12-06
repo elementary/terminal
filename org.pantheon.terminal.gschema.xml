@@ -88,6 +88,11 @@
       <summary>Defines whether the terminal has a bell or not.</summary>
       <description>Enables or disables the terminal bell.</description>
     </key>
+    <key name="natural-copy-paste" type="b">
+      <default>true</default>
+      <summary>Defined whether to use ctrl-c or ctrl-shift-c for copy</summary>
+      <description>Enables or disables natural copy paste.</description>
+    </key>
 
     <key name="opacity" type="i">
       <range min="0" max="100"/>

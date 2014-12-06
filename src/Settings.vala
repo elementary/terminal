@@ -58,6 +58,7 @@ namespace PantheonTerminal {
         public bool remember_tabs { get; set; }
         public bool alt_changes_tab { get; set; }
         public bool audible_bell { get; set; }
+        public bool natural_copy_paste { get; set; }
 
         public int opacity {get; set; }
         public string foreground { get; set; }
