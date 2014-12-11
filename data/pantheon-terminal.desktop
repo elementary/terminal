@@ -10,7 +10,7 @@ Categories=GTK;Utility;TerminalEmulator;
 StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 Keywords=command;prompt;cmd;commandline;run;
-X-GNOME-UsesNotifications=true;
+X-GNOME-UsesNotifications=true
 Actions=NewWindow;NewRootWindow;AboutDialog;
 
 [Desktop Action NewWindow]
