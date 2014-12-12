@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2013-06-29 19:54+0000\n"
-"Last-Translator: Veselin Trakiyski <Unknown>\n"
+"PO-Revision-Date: 2014-12-11 17:03+0000\n"
+"Last-Translator: ITPROJECTS <Unknown>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-01 07:15+0000\n"
-"X-Generator: Launchpad (build 17176)\n"
+"X-Launchpad-Export-Date: 2014-12-12 06:22+0000\n"
+"X-Generator: Launchpad (build 17286)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -27,7 +27,7 @@ msgstr "Има активен процес в този подпрозорец."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Ако затворите този процес, той ще спре."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -48,7 +48,7 @@ msgstr "Има активен процес в този терминал."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Ако затворите Терминал, процеса ще спре."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -63,7 +63,7 @@ msgstr "Терминал"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
 msgid "Task finished"
-msgstr ""
+msgstr "Задачата завършена"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
@@ -71,7 +71,7 @@ msgstr "Принтиране на информация за версията и 
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Show about dialog"
-msgstr ""
+msgstr "Показвне на относната информация за приложението"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Run a program in terminal"
@@ -79,11 +79,11 @@ msgstr "Изпълняване на програма в терминал"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Задай работната папка на обвивката"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Относно Терминал"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -100,7 +100,7 @@ msgstr "Нов root прозорец"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Отваряне на терминал тук"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
