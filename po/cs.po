@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2014-12-06 00:34+0000\n"
-"Last-Translator: Ondra Voves <o.voves@gmail.com>\n"
+"PO-Revision-Date: 2014-12-22 23:24+0000\n"
+"Last-Translator: Marek Doležel <marekdolezel@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-18 06:33+0000\n"
+"X-Launchpad-Export-Date: 2014-12-23 07:03+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
@@ -27,7 +27,7 @@ msgstr "V této kartě běží aktivní proces."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Pokud ji zavřete, proces bude ukončen."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -67,11 +67,11 @@ msgstr "Úloha byla dokončena"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Zobrazit informace o verzi a ukončit"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Show about dialog"
-msgstr ""
+msgstr "Zobrazit dialog o programu"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Run a program in terminal"
@@ -100,7 +100,7 @@ msgstr "Nové administrátorské okno"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Otevřít terminál zde"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
@@ -174,7 +174,7 @@ msgstr "Přiblížit"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:664
 msgid "Zoom out"
-msgstr ""
+msgstr "Oddálit"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Fullscreen"
