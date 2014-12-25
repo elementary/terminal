@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 15:26-0500\n"
-"PO-Revision-Date: 2014-01-05 09:03+0000\n"
+"PO-Revision-Date: 2014-12-24 13:16+0000\n"
 "Last-Translator: George Gzirishvili <Unknown>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-12-18 06:33+0000\n"
+"X-Launchpad-Export-Date: 2014-12-25 05:57+0000\n"
 "X-Generator: Launchpad (build 17286)\n"
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
@@ -27,7 +27,7 @@ msgstr "ამ ჩანართში მიმდინარეობს პ
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "თუ ამას დახურავთ, პროცესი დასრულდება."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
@@ -48,7 +48,7 @@ msgstr "ამ ტერმინალში მიმდინარეობ�
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "თუ ტერმინალიდან გამოხვალთ, პროცესი დასრულდება."
 
 #: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
@@ -63,7 +63,7 @@ msgstr "ტერმინალი"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
 msgid "Task finished"
-msgstr ""
+msgstr "ამოცანა დასრულებულია"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
 msgid "Print version info and exit"
@@ -71,7 +71,7 @@ msgstr "ვერსიის ინფორმაციის გამოტ�
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
 msgid "Show about dialog"
-msgstr ""
+msgstr "პროგრამის შესახებ ინფორმაციის დიალოგის ფანჯრის ჩვენება"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
 msgid "Run a program in terminal"
@@ -79,11 +79,11 @@ msgstr "პროგრამის ტერმინალში გაშვ�
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
 msgid "Set shell working directory"
-msgstr ""
+msgstr "გარსის სამუშაო კატალოგის დაყენება"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "ტერმინალის შესახებ"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -100,7 +100,7 @@ msgstr "ახალი ფანჯარა (root)"
 
 #: /home/codygarver/terminal/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "ტერმინალის გახსნა აქ"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
@@ -182,7 +182,7 @@ msgstr "სრული ეკრანი"
 
 #: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
 msgid "Toggle/Untoggle fullscreen"
-msgstr "სრული ეკრანის ჩართვა/გამორთვა"
+msgstr "სრული ეკრანის რეჟიმის ჩართვა/გამორთვა"
 
 #~ msgid "Open a new tab"
 #~ msgstr "ახალი ჩანართის გახსნა"
