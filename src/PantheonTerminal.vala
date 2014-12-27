@@ -74,7 +74,7 @@ namespace PantheonTerminal {
         }
 
         public void new_window () {
-            new PantheonTerminalWindow (this);
+            new PantheonTerminalWindow (this).present ();
         }
 
         public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
@@ -155,12 +155,19 @@ namespace PantheonTerminal {
                 return 0;
             }
 
-            if (command_e != null)
+            if (command_e != null) {
                 run_commands (command_e);
-            else if (working_directory != null)
+
+            } else if (working_directory != null) {
                 start_terminal_with_working_directory (working_directory);
-            else
+
+            } else if (print_version) {
+                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
+                stdout.printf ("Copyright 2011-2014 Pantheon Terminal Developers.\n");
+
+            } else {
                 new_window ();
+            }
 
             // Do not save the value until the next instance of
             // Pantheon Terminal is started
@@ -208,29 +215,10 @@ namespace PantheonTerminal {
         };
 
         public static int main (string[] args) {
-            var context = new OptionContext ("Terminal");
-            context.add_main_entries (entries, Build.GETTEXT_PACKAGE);
-
-            string[] args_primary_instance = args;
-
-            try {
-                context.parse(ref args);
-            } catch (Error e) {
-                error (e.message);
-            }
-
-            if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
-                stdout.printf ("Copyright 2011-2014 Pantheon Terminal Developers.\n");
-
-                return 0;
-            }
-
-            Gtk.init (ref args);
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             var app = new PantheonTerminalApp ();
-            return app.run (args_primary_instance);
+            return app.run (args);
         }
     }
 } // Namespace
