@@ -210,7 +210,7 @@ namespace PantheonTerminal {
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "about", 'a', 0, OptionArg.NONE, out show_about_dialog, N_("Show about dialog"), null },
             { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
-            { "working-directory", 'w', 0, OptionArg.STRING, ref working_directory, N_("Set shell working directory"), "" },
+            { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
             { null }
         };
 
