@@ -215,8 +215,6 @@ namespace PantheonTerminal {
         };
 
         public static int main (string[] args) {
-            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
-
             var app = new PantheonTerminalApp ();
             return app.run (args);
         }

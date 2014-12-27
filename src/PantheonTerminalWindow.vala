@@ -101,6 +101,8 @@ namespace PantheonTerminal {
             icon_name = "utilities-terminal";
             set_application (app);
 
+            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
+
             Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
