@@ -68,6 +68,7 @@ vala_precompile (VALA_C
     src/PantheonTerminalWindow.vala
     src/TerminalWidget.vala
     src/ForegroundProcessDialog.vala
+    src/UnsafePasteDialog.vala
     src/Constants.vala
 PACKAGES
     vte-2.90
