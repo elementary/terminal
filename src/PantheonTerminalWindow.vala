@@ -621,11 +621,14 @@ namespace PantheonTerminal {
             var text = intext.strip();
             if (text.has_prefix("sudo") && (text.index_of("\n") != 0)) {
                 var d = new UnsafePasteDialog (this);
-                if (d.run () == 0) {
-                    current_terminal.paste_clipboard();
+                if (d.run () == 1) {
+                    d.destroy ();
+                    return;
                 }
                 d.destroy ();
             }
+            current_terminal.paste_clipboard();
+
         }
 
         void action_paste () {
