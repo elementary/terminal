@@ -31,24 +31,24 @@ namespace PantheonTerminal {
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
                       _("Are you sure you want to paste this command?") + "</span>\n\n" +
-                      _("Copying a command from the internet is a bad idea.")+"\n"+
-                      _("Make sure you know what it does."));
+                      _("Copying commands from the internet can be dangerous. This command is asking for the highest level of privileges to your computer.")+"\n"+
+                      _("Be sure you understand what each part of this command does."));
 
             message_area.set_margin_left (0);
             message_area.set_margin_right (0);
-
-            var ignore_button = new Gtk.Button.with_label (_("Ignore"));
-            ignore_button.get_style_context ().add_class ("destructive-action");
-            ignore_button.show ();
-
             var cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.show ();
+
+            var ignore_button = new Gtk.Button.with_label (_("Paste Anyway"));
+            ignore_button.get_style_context ().add_class ("destructive-action");
+            ignore_button.show ();
 
             var warning_image = new Gtk.Image.from_icon_name ("dialog-warning",
                                                               Gtk.IconSize.DIALOG);
 
-            add_action_widget (ignore_button, 0);
             add_action_widget (cancel_button, 1);
+            add_action_widget (ignore_button, 0);
+
             set_image (warning_image);
             warning_image.show ();
         }
