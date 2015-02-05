@@ -30,13 +30,13 @@ namespace PantheonTerminal {
 
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
-                      _("Are you sure you want to paste this command?") + "</span>\n\n" +
-                      _("Copying commands from the internet can be dangerous. This command is asking for the highest level of privileges to your computer.")+"\n"+
-                      _("Be sure you understand what each part of this command does."));
+                        _("This command is asking for elevated privileges to your computer.") + "</span>\n\n" +
+                        _("Copying commands from the internet can be dangerous. ") + "\n" +
+                        _("Be sure you understand what each part of this command does."));
 
             message_area.set_margin_left (0);
             message_area.set_margin_right (0);
-            var cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            var cancel_button = new Gtk.Button.with_label (_("Don't Paste"));
             cancel_button.show ();
 
             var ignore_button = new Gtk.Button.with_label (_("Paste Anyway"));
