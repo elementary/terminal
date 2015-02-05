@@ -247,7 +247,6 @@ namespace PantheonTerminal {
                             settings.natural_copy_paste) {
                             if (clipboard.wait_is_text_available ()) {
                                 action_paste ();
-                                print("Pasting\n");
                                 return true;
                             }
                         }
