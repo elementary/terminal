@@ -246,8 +246,7 @@ namespace PantheonTerminal {
                         if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
                             settings.natural_copy_paste) {
                             if (clipboard.wait_is_text_available ()) {
-                                current_terminal.paste_clipboard ();
-                                print("Pasting\n");
+                                action_paste ();
                                 return true;
                             }
                         }
@@ -599,6 +598,31 @@ namespace PantheonTerminal {
             }
         }
 
+        void on_get_text (Gtk.Clipboard board, string? intext) {
+            /* if unsafe paste alert is enabled, show dialog */
+            if (settings.unsafe_paste_alert) {
+
+                if (intext == null) {
+                    return;
+                }
+                if (!intext.validate()) {
+                    warning("Dropping invalid UTF-8 paste");
+                    return;
+                }
+                var text = intext.strip();
+
+                if (text.has_prefix("sudo") && (text.index_of("\n") != 0)) {
+                    var d = new UnsafePasteDialog (this);
+                    if (d.run () == 1) {
+                        d.destroy ();
+                        return;
+                    }
+                    d.destroy ();
+                }
+            }
+            current_terminal.paste_clipboard();
+        }
+
         void action_quit () {
 
         }
@@ -612,7 +636,7 @@ namespace PantheonTerminal {
         }
 
         void action_paste () {
-            current_terminal.paste_clipboard ();
+            clipboard.request_text (on_get_text);
         }
 
         void action_select_all () {
