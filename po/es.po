@@ -7,182 +7,202 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-31 15:26-0500\n"
+"POT-Creation-Date: 2015-02-09 12:48-0600\n"
 "PO-Revision-Date: 2014-09-06 13:58+0000\n"
 "Last-Translator: Alfredo Hernández <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-05 06:32+0000\n"
-"X-Generator: Launchpad (build 17286)\n"
+"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:28
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
 msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:29
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this tab."
 msgstr "Hay un proceso activo en esta pestaña."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:30
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
 msgstr "Si cierra la pestaña, se terminará el proceso."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:34
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:55
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:34
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:55
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:38
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:38
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
 msgstr "¿Está seguro de que quiere salir del terminal?"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:52
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
 msgstr "Hay un proceso activo en este terminal."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:53
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
 msgstr "Si sale del terminal, se terminará el proceso."
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:59
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
 msgstr "Salir del terminal"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:46
-#: /home/codygarver/terminal/po/../src/Constants.vala:7
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:107
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:451
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:46
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:7
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:109
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:494
 msgid "Terminal"
 msgstr "Terminal"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:120
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:124
 msgid "Task finished"
 msgstr "Tarea finalizada"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:198
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:210
 msgid "Print version info and exit"
 msgstr "Imprimir información de la versión y salir"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:199
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:211
 msgid "Show about dialog"
 msgstr "Mostrar diálogo «Acerca de»"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:200
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:212
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en un terminal"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:201
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:213
 msgid "Set shell working directory"
 msgstr "Configurar directorio de trabajo del intérprete de órdenes"
 
-#: /home/codygarver/terminal/po/../src/Constants.vala:5
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:5
 msgid "About Terminal"
 msgstr "Acerca de Terminal"
 
-#: /home/codygarver/terminal/po/../src/Constants.vala:6
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "Usar la línea de órdenes"
 
-#: /home/codygarver/terminal/po/../src/Constants.vala:8
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:8
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
 msgid "New Window"
 msgstr "Ventana nueva"
 
-#: /home/codygarver/terminal/po/../src/Constants.vala:9
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:9
 msgid "New Root Window"
 msgstr "Ventana de administrador nueva"
 
-#: /home/codygarver/terminal/po/../src/Constants.vala:10
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
 msgstr "Abrir un terminal aquí"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:624
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:625
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:697
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:698
 msgid "Close"
 msgstr "Cerrar"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:629
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
 msgid "Open a new window"
 msgstr "Abrir una ventana nueva"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:633
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
 msgid "New Tab"
 msgstr "Pestaña nueva"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:633
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
 msgid "Create a new tab"
 msgstr "Crear una pestaña nueva"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:637
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
 msgid "Copy"
 msgstr "Copiar"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:637
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
 msgid "Copy the selected text"
 msgstr "Copiar el texto seleccionado"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:641
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
 msgid "Paste"
 msgstr "Pegar"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:641
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
 msgid "Paste some text"
 msgstr "Pegar texto"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:645
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:718
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:646
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:719
 msgid "Select all the text in the terminal"
 msgstr "Selecciona todo el texto del terminal"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:648
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:721
 msgid "About"
 msgstr "Acerca de"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:649
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:722
 msgid "Show about window"
 msgstr "Mostrar la ventana «Acerca de»"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:651
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:724
 msgid "Next Tab"
 msgstr "Pestaña siguiente"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:652
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:725
 msgid "Go to next tab"
 msgstr "Ir a la pestaña siguiente"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:655
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:728
 msgid "Previous Tab"
 msgstr "Pestaña anterior"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:656
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:729
 msgid "Go to previous tab"
 msgstr "Ir a la pestaña anterior"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:659
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:660
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:732
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:733
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:664
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:737
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:668
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Activar/deactivar pantalla completa"
+
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr ""
+
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr ""
+
+#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr ""
 
 #~ msgid "Open a new tab"
 #~ msgstr "Abrir una pestaña nueva"
