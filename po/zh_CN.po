@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2014-09-19 04:20+0000\n"
+"PO-Revision-Date: 2015-02-10 16:30+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-11 06:12+0000\n"
+"X-Generator: Launchpad (build 17336)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -186,23 +186,23 @@ msgstr "进出/退出全屏"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "运行此命令需要管理员权限。"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "从网络复制的命令可能不安全。 "
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "请确定您理解指令各部分的作用。"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "取消粘贴"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "仍然粘贴"
 
 #~ msgid "Open a new tab"
 #~ msgstr "打开新标签"

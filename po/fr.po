@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2015-01-09 21:49+0000\n"
-"Last-Translator: Thomas Moraine <th.moraine@gmail.com>\n"
+"PO-Revision-Date: 2015-02-10 14:35+0000\n"
+"Last-Translator: Julien F/ <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-11 06:12+0000\n"
+"X-Generator: Launchpad (build 17336)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -186,23 +186,23 @@ msgstr "Activer/Désactiver le plein écran"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Cette commande demande l'accès Administrateur à votre ordinateur."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Copier des commandes depuis internet peut être dangereux. "
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Soyez sûr de comprendre ce que fait chaque partie de cette commande"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Ne pas coller"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Coller quand même"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Ouvrir un nouvel onglet"
