@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2014-09-11 12:07+0000\n"
-"Last-Translator: Beren <berencamlost@msn.com>\n"
+"PO-Revision-Date: 2015-02-14 08:11+0000\n"
+"Last-Translator: ProsjektX <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-15 05:51+0000\n"
+"X-Generator: Launchpad (build 17341)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -186,23 +186,23 @@ msgstr "Slå på/av fullskjerm"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Denne kommandoen spør om administrativ tilgang til din datamaskin"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Kopiering av kommandoer fra Internett kan være farlig. "
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Vær sikker på at du forstår hva hver del av denne kommandoen gjør."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Ikke lim inn"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Lim inn likevel"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "sett skall til start"
