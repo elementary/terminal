@@ -51,7 +51,7 @@ namespace PantheonTerminal.Widgets {
         }
         
         void search_changed_cb () {
-            stdout.printf ("Searching for %s\n".printf (search_entry.text));
+            debug ("Searching for %s\n".printf (search_entry.text));
             try {
                 var regex = new Regex (search_entry.text);
                 this.window.current_terminal.search_set_gregex (regex);
