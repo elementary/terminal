@@ -21,9 +21,10 @@ namespace PantheonTerminal.Widgets {
             tool_search_entry = new Gtk.ToolItem ();
             tool_search_entry.add (search_entry);
 
-            var previous_button = new Gtk.ToolButton (new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
-            
-            var next_button = new Gtk.ToolButton (new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
+            var previous_button = new Gtk.ToolButton (
+                new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
+            var next_button = new Gtk.ToolButton (
+                new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
 
             this.add (tool_search_entry);
             this.add (previous_button);
@@ -31,14 +32,16 @@ namespace PantheonTerminal.Widgets {
 
             this.show_all();
             this.set_style (Gtk.ToolbarStyle.ICONS);
-            
-            //Signals and callbacks
+            this.get_style_context () .add_class ("search-bar");
+
+            // Signals and callbacks
             this.clear.connect(clear_cb);
             this.grab_focus.connect(grab_focus_cb);
             search_entry.search_changed.connect (search_changed_cb);
             previous_button.clicked.connect (previous_search);
             next_button.clicked.connect (next_search);
-            //Events
+
+            // Events
             this.search_entry.key_press_event.connect (on_key_press);
         }
 
