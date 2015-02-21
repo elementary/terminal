@@ -203,7 +203,7 @@ namespace PantheonTerminal {
             container.pack_start (notebook, true);
             add (container);
 
-            key_press_event.connect ((e) => {
+            key_press_event.connect_after ((e) => {
                 switch (e.keyval) {
                     case Gdk.Key.@0:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
