@@ -51,12 +51,10 @@ namespace PantheonTerminal.Widgets {
         }
         
         void search_changed_cb () {
-            debug ("Searching for %s\n".printf (search_entry.text));
             try {
                 var regex = new Regex (search_entry.text);
                 this.window.current_terminal.search_set_gregex (regex);
                 this.window.current_terminal.search_set_wrap_around (true);
-                this.window.current_terminal.search_find_next ();
             } catch ( RegexError er) {
                 error ("There was an error to compile the regex: %s", er.message);
             }
