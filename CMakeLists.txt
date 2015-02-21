@@ -70,6 +70,7 @@ vala_precompile (VALA_C
     src/ForegroundProcessDialog.vala
     src/UnsafePasteDialog.vala
     src/Constants.vala
+    src/Widgets/SearchToolbar.vala
 PACKAGES
     vte-2.90
     granite

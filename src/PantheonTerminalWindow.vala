@@ -31,6 +31,9 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
+        private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.Revealer search_revealer;
+        public Gtk.ToggleButton search_button;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
@@ -49,6 +52,7 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Search" action="Search"/>
                 <menuitem name="About" action="About"/>
 
                 <menuitem name="NextTab" action="NextTab"/>
@@ -64,6 +68,7 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Search" action="Search"/>
                 <separator />
                 <menuitem name="About" action="About"/>
             </popup>
@@ -138,12 +143,15 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
+            this.search_revealer.visible = false;
             term_font = Pango.FontDescription.from_string (get_term_font ());
 
             if (recreate_tabs)
                 open_tabs ();
 
             set_size_request (app.minimum_width, app.minimum_height);
+            
+            search_button.toggled.connect (on_toggle_search);
 
             destroy.connect (on_destroy);
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
@@ -156,6 +164,18 @@ namespace PantheonTerminal {
             header.get_style_context ().remove_class ("header-bar");
 
             this.set_titlebar (header);
+
+            search_button = new Gtk.ToggleButton();
+            var img = new Gtk.Image.from_icon_name ("edit-find", Gtk.IconSize.SMALL_TOOLBAR);
+            search_button.set_image (img);
+            header.pack_end (search_button);
+
+            var container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar(this);
+            this.search_revealer = new Gtk.Revealer ();
+            this.search_revealer.add (this.search_toolbar);
+            
+            container.pack_start (this.search_revealer);
 
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
@@ -179,7 +199,9 @@ namespace PantheonTerminal {
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
             notebook.tab_bar_behavior = settings.tab_bar_behavior;
-            add (notebook);
+
+            container.pack_start (notebook, true);
+            add (container);
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
@@ -290,6 +312,20 @@ namespace PantheonTerminal {
                 maximize ();
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
+            }
+        }
+
+        private void on_toggle_search () {
+
+            var is_search = this.search_button.get_active ();
+
+            this.search_revealer.set_reveal_child (is_search);
+            this.search_revealer.visible = is_search;
+            if (is_search) {
+               search_toolbar.grab_focus ();
+            } else {
+               this.search_toolbar.clear ();
+               this.current_terminal.grab_focus ();
             }
         }
 
@@ -683,6 +719,10 @@ namespace PantheonTerminal {
             notebook.previous_page ();
         }
 
+        void action_search () {
+            this.search_button.active = !this.search_button.active;
+        }
+
         void action_fullscreen () {
             if (is_fullscreen) {
                 unfullscreen ();
@@ -709,6 +749,10 @@ namespace PantheonTerminal {
             { "Copy", "gtk-copy",
               N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
               action_copy },
+
+            { "Search", "edit-find",
+              N_("Find in text"), "<Control><Shift>f",
+              N_("Search for a given string in the terminal"), action_search },
 
             { "Paste", "gtk-paste",
               N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
