@@ -143,7 +143,7 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
-            this.search_revealer.visible = false;
+            this.search_revealer.set_reveal_child (false);
             term_font = Pango.FontDescription.from_string (get_term_font ());
 
             if (recreate_tabs)
@@ -166,13 +166,16 @@ namespace PantheonTerminal {
             this.set_titlebar (header);
 
             search_button = new Gtk.ToggleButton ();
-            var img = new Gtk.Image.from_icon_name ("edit-find", Gtk.IconSize.SMALL_TOOLBAR);
+            var img = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.set_image (img);
+            search_button.get_style_context ().add_class ("flat");
+            search_button.set_tooltip_text (_("Display the find bar"));
             header.pack_end (search_button);
 
             var grid = new Gtk.Grid ();
             this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
             this.search_revealer = new Gtk.Revealer ();
+            this.search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
             this.search_revealer.add (this.search_toolbar);
             
             grid.attach (this.search_revealer, 0, 0, 1, 1);
@@ -320,7 +323,6 @@ namespace PantheonTerminal {
             var is_search = this.search_button.get_active ();
 
             this.search_revealer.set_reveal_child (is_search);
-            this.search_revealer.visible = is_search;
             if (is_search) {
                 search_toolbar.grab_focus ();
             } else {

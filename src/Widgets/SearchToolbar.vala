@@ -16,15 +16,19 @@ namespace PantheonTerminal.Widgets {
             this.search_entry = new Gtk.SearchEntry ();
             this.search_entry.placeholder_text = _("Find");
             this.search_entry.width_request = 250;
+            this.search_entry.margin_left = 6;
 
             // Items
             this.tool_search_entry = new Gtk.ToolItem ();
             this.tool_search_entry.add (search_entry);
 
-            var previous_button = new Gtk.ToolButton (
-                new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
-            var next_button = new Gtk.ToolButton (
-                new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
+            var i = new Gtk.Image.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            i.pixel_size = 16;
+            var previous_button = new Gtk.ToolButton (i, null);
+
+            i = new Gtk.Image.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            i.pixel_size = 16;
+            var next_button = new Gtk.ToolButton (i, null);
 
             this.add (tool_search_entry);
             this.add (previous_button);
