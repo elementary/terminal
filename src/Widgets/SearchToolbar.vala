@@ -25,10 +25,12 @@ namespace PantheonTerminal.Widgets {
             var i = new Gtk.Image.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             i.pixel_size = 16;
             var previous_button = new Gtk.ToolButton (i, null);
+            previous_button.set_tooltip_text (_("Previous result"));
 
             i = new Gtk.Image.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             i.pixel_size = 16;
             var next_button = new Gtk.ToolButton (i, null);
+            next_button.set_tooltip_text (_("Next result"));
 
             this.add (tool_search_entry);
             this.add (previous_button);
