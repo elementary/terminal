@@ -8,35 +8,35 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2014-02-01 14:20+0000\n"
-"Last-Translator: Gim <Unknown>\n"
+"PO-Revision-Date: 2015-02-22 01:21+0000\n"
+"Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-22 05:22+0000\n"
+"X-Generator: Launchpad (build 17355)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Je i sigurt që do të mbyllësh këtë skedë?"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Ka një proces aktiv në këtë skedë."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:30
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Nëse e mbyll, procesi do të përfundojë."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:34
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:55
 msgid "Cancel"
-msgstr ""
+msgstr "Anulo"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:38
 msgid "Close Tab"
-msgstr ""
+msgstr "Mbyll skedën"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Ka një proces aktiv në këtë terminal."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
