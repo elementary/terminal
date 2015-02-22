@@ -165,17 +165,17 @@ namespace PantheonTerminal {
 
             this.set_titlebar (header);
 
-            search_button = new Gtk.ToggleButton();
+            search_button = new Gtk.ToggleButton ();
             var img = new Gtk.Image.from_icon_name ("edit-find", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.set_image (img);
             header.pack_end (search_button);
 
-            var container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar(this);
+            var grid = new Gtk.Grid ();
+            this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
             this.search_revealer = new Gtk.Revealer ();
             this.search_revealer.add (this.search_toolbar);
             
-            container.pack_start (this.search_revealer);
+            grid.attach (this.search_revealer, 0, 0, 1, 1);
 
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
@@ -200,8 +200,8 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             notebook.tab_bar_behavior = settings.tab_bar_behavior;
 
-            container.pack_start (notebook, true);
-            add (container);
+            grid.attach (notebook, 0, 1, 1, 1);
+            add (grid);
 
             key_press_event.connect_after ((e) => {
                 switch (e.keyval) {
@@ -322,10 +322,10 @@ namespace PantheonTerminal {
             this.search_revealer.set_reveal_child (is_search);
             this.search_revealer.visible = is_search;
             if (is_search) {
-               search_toolbar.grab_focus ();
+                search_toolbar.grab_focus ();
             } else {
-               this.search_toolbar.clear ();
-               this.current_terminal.grab_focus ();
+                this.search_toolbar.clear ();
+                this.current_terminal.grab_focus ();
             }
         }
 

@@ -8,7 +8,7 @@ namespace PantheonTerminal.Widgets {
 
         public Gtk.SearchEntry search_entry;
 
-	public signal void clear ();
+        public signal void clear ();
 
         public SearchToolbar (PantheonTerminalWindow window) {
             this.window = window;
@@ -30,12 +30,12 @@ namespace PantheonTerminal.Widgets {
             this.add (previous_button);
             this.add (next_button);
 
-            this.show_all();
+            this.show_all ();
             this.set_style (Gtk.ToolbarStyle.ICONS);
             this.get_style_context () .add_class ("search-bar");
 
             // Signals and callbacks
-            this.clear.connect(clear_cb);
+            this.clear.connect (clear_cb);
             this.grab_focus.connect(grab_focus_cb);
             search_entry.search_changed.connect (search_changed_cb);
             previous_button.clicked.connect (previous_search);
@@ -81,7 +81,7 @@ namespace PantheonTerminal.Widgets {
                 case "Return":
                     if ((event.state & Gdk.ModifierType.SHIFT_MASK) !=0){
                         previous_search ();
-                    }else{
+                    }else {
                         next_search ();
                     }
                     return true;
