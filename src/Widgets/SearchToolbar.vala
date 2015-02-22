@@ -13,13 +13,13 @@ namespace PantheonTerminal.Widgets {
         public SearchToolbar (PantheonTerminalWindow window) {
             this.window = window;
 
-            search_entry = new Gtk.SearchEntry ();
-            search_entry.placeholder_text = _("Find");
-            search_entry.width_request = 250;
+            this.search_entry = new Gtk.SearchEntry ();
+            this.search_entry.placeholder_text = _("Find");
+            this.search_entry.width_request = 250;
 
             // Items
-            tool_search_entry = new Gtk.ToolItem ();
-            tool_search_entry.add (search_entry);
+            this.tool_search_entry = new Gtk.ToolItem ();
+            this.tool_search_entry.add (search_entry);
 
             var previous_button = new Gtk.ToolButton (
                 new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
@@ -36,8 +36,8 @@ namespace PantheonTerminal.Widgets {
 
             // Signals and callbacks
             this.clear.connect (clear_cb);
-            this.grab_focus.connect(grab_focus_cb);
-            search_entry.search_changed.connect (search_changed_cb);
+            this.grab_focus.connect (grab_focus_cb);
+            this.search_entry.search_changed.connect (search_changed_cb);
             previous_button.clicked.connect (previous_search);
             next_button.clicked.connect (next_search);
 
@@ -75,16 +75,19 @@ namespace PantheonTerminal.Widgets {
             var key = Gdk.keyval_name (event.keyval).replace ("KP_", "");
 
             switch (key) {
+
                 case "Escape":
                     this.window.search_button.active = !this.window.search_button.active;
                     return true;
+
                 case "Return":
-                    if ((event.state & Gdk.ModifierType.SHIFT_MASK) !=0){
+                    if ((event.state & Gdk.ModifierType.SHIFT_MASK) != 0){
                         previous_search ();
-                    }else {
+                    } else {
                         next_search ();
                     }
                     return true;
+
                 default:
                     return false;
             }
