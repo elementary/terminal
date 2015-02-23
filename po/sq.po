@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2015-02-22 01:21+0000\n"
+"PO-Revision-Date: 2015-02-22 09:22+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-22 05:22+0000\n"
+"X-Launchpad-Export-Date: 2015-02-23 05:23+0000\n"
 "X-Generator: Launchpad (build 17355)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
@@ -40,7 +40,7 @@ msgstr "Mbyll skedën"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Je i sigurt që do të mbyllësh terminalin?"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
@@ -48,11 +48,11 @@ msgstr "Ka një proces aktiv në këtë terminal."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Nëse mbyll terminalin, procesi do të përfundojë."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:59
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Mbyll terminalin"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:46
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:7
@@ -67,15 +67,15 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:210
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Shtyp informacione mbi versionin dhe dil"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:211
 msgid "Show about dialog"
-msgstr ""
+msgstr "Shfaq dritaren e informacioneve"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:212
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Ekzekuto një program në terminal"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:213
 msgid "Set shell working directory"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Rreth Terminalit"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:6
 msgid "Use the command line"
@@ -92,7 +92,7 @@ msgstr ""
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:8
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
 msgid "New Window"
-msgstr ""
+msgstr "Dritare e re"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:9
 msgid "New Root Window"
@@ -100,12 +100,12 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Hap terminalin këtu"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:697
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:698
 msgid "Close"
-msgstr ""
+msgstr "Mbyll"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
 msgid "Open a new window"
@@ -113,11 +113,11 @@ msgstr "Hap një dritare të re"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
 msgid "New Tab"
-msgstr ""
+msgstr "Skedë e re"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
 msgid "Create a new tab"
-msgstr ""
+msgstr "Krijo një skedë të re"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
 msgid "Copy"
@@ -125,11 +125,11 @@ msgstr "Kopjo"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
 msgid "Copy the selected text"
-msgstr ""
+msgstr "Kopjo tekstin e përzgjedhur"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
 msgid "Paste"
-msgstr ""
+msgstr "Ngjit"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
 msgid "Paste some text"
@@ -137,19 +137,19 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:718
 msgid "Select All"
-msgstr ""
+msgstr "Përzgjidh gjithçka"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:719
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Përzgjidh të gjithë tekstin në terminal"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:721
 msgid "About"
-msgstr ""
+msgstr "Rreth"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:722
 msgid "Show about window"
-msgstr ""
+msgstr "Shfaq dritaren e informacioneve"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:724
 msgid "Next Tab"
@@ -170,15 +170,15 @@ msgstr ""
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:732
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:733
 msgid "Zoom in"
-msgstr ""
+msgstr "Zmadho"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:737
 msgid "Zoom out"
-msgstr ""
+msgstr "Zvogëlo"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
 msgid "Fullscreen"
-msgstr ""
+msgstr "Ekran të plotë"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
 msgid "Toggle/Untoggle fullscreen"
@@ -194,11 +194,11 @@ msgstr ""
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Sigurohu të kesh kuptuar ç'bën ç'do pjesë e kësaj komande."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Mos ngjit"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
