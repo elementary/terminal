@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-09 12:48-0600\n"
-"PO-Revision-Date: 2014-12-22 23:24+0000\n"
-"Last-Translator: Marek Doležel <marekdolezel@gmail.com>\n"
+"PO-Revision-Date: 2015-02-23 16:41+0000\n"
+"Last-Translator: Tomo Moto <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-24 05:35+0000\n"
+"X-Generator: Launchpad (build 17355)\n"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
@@ -186,23 +186,23 @@ msgstr "Zapnout / Vypnout režim celé obrazovky"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Pouhé kopírování příkazů z internetu nemusí být zcela bezpečné. "
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dělá."
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Nevkládat"
 
 #: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Přesto vložit"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Otevřít novou kartu"
