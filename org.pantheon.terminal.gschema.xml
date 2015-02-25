@@ -116,7 +116,7 @@
       <description>The color of the cursor of the terminal.</description>
     </key>
     <key name="cursor-shape" enum="terminal-cursor-shapes">
-    	<default>"Underline"</default>
+    	<default>"Block"</default>
     	<summary>Shape of the cursor.</summary>
     	<description>The shape of the cursor of the terminal.</description>
     </key>
