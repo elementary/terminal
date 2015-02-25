@@ -84,7 +84,7 @@
       <description>Defines whether Alt+N goes to nth tab.</description>
     </key>
     <key name="audible-bell" type="b">
-      <default>true</default>
+      <default>false</default>
       <summary>Defines whether the terminal has a bell or not.</summary>
       <description>Enables or disables the terminal bell.</description>
     </key>
