@@ -78,7 +78,8 @@ namespace PantheonTerminal.Widgets {
 
         void search_changed_cb () {
             try {
-                var regex = new Regex (search_entry.text);
+                //FIXME Have a configuration menu or something.
+                var regex = new Regex (Regex.escape_string(search_entry.text), RegexCompileFlags.CASELESS);
                 this.window.current_terminal.search_set_gregex (regex);
                 this.window.current_terminal.search_set_wrap_around (true);
             } catch ( RegexError er) {
