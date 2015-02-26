@@ -66,9 +66,6 @@ namespace PantheonTerminal.Widgets {
             this.search_entry.search_changed.connect (search_changed_cb);
             previous_button.clicked.connect (previous_search);
             next_button.clicked.connect (next_search);
-
-            // Events
-            this.search_entry.key_press_event.connect (on_key_press);
         }
 
         void clear_cb () {
@@ -95,28 +92,6 @@ namespace PantheonTerminal.Widgets {
 
         void next_search () {
             this.window.current_terminal.search_find_next ();
-        }
-
-        bool on_key_press (Gdk.EventKey event) {
-            var key = Gdk.keyval_name (event.keyval).replace ("KP_", "");
-
-            switch (key) {
-
-                case "Escape":
-                    this.window.search_button.active = !this.window.search_button.active;
-                    return true;
-
-                case "Return":
-                    if ((event.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
-                        previous_search ();
-                    } else {
-                        next_search ();
-                    }
-                    return true;
-
-                default:
-                    return false;
-            }
         }
     }
 }
