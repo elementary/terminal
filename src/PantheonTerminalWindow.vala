@@ -169,7 +169,7 @@ namespace PantheonTerminal {
             var img = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.set_image (img);
             search_button.get_style_context ().add_class ("flat");
-            search_button.set_tooltip_text (_("Display the find bar"));
+            search_button.set_tooltip_text (_("Find…"));
             header.pack_end (search_button);
 
             var grid = new Gtk.Grid ();
