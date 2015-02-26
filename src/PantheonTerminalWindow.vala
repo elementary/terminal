@@ -287,7 +287,9 @@ namespace PantheonTerminal {
                         break;
                     case Gdk.Key.@V:
                     case Gdk.Key.@v:
-                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            return false;
+                        }else if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
                             settings.natural_copy_paste) {
                             if (clipboard.wait_is_text_available ()) {
                                 action_paste ();
