@@ -31,6 +31,9 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
+        private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.Revealer search_revealer;
+        public Gtk.ToggleButton search_button;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
@@ -49,6 +52,7 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Search" action="Search"/>
                 <menuitem name="About" action="About"/>
 
                 <menuitem name="NextTab" action="NextTab"/>
@@ -64,6 +68,7 @@ namespace PantheonTerminal {
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
+                <menuitem name="Search" action="Search"/>
                 <separator />
                 <menuitem name="About" action="About"/>
             </popup>
@@ -138,12 +143,15 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
+            this.search_revealer.set_reveal_child (false);
             term_font = Pango.FontDescription.from_string (get_term_font ());
 
             if (recreate_tabs)
                 open_tabs ();
 
             set_size_request (app.minimum_width, app.minimum_height);
+
+            search_button.toggled.connect (on_toggle_search);
 
             destroy.connect (on_destroy);
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
@@ -156,6 +164,21 @@ namespace PantheonTerminal {
             header.get_style_context ().remove_class ("header-bar");
 
             this.set_titlebar (header);
+
+            search_button = new Gtk.ToggleButton ();
+            var img = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            search_button.set_image (img);
+            search_button.get_style_context ().add_class ("flat");
+            search_button.set_tooltip_text (_("Display the find bar"));
+            header.pack_end (search_button);
+
+            var grid = new Gtk.Grid ();
+            this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
+            this.search_revealer = new Gtk.Revealer ();
+            this.search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
+            this.search_revealer.add (this.search_toolbar);
+
+            grid.attach (this.search_revealer, 0, 0, 1, 1);
 
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
@@ -179,10 +202,31 @@ namespace PantheonTerminal {
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
             notebook.tab_bar_behavior = settings.tab_bar_behavior;
-            add (notebook);
+
+            grid.attach (notebook, 0, 1, 1, 1);
+            add (grid);
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
+                    case Gdk.Key.Escape:
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            this.search_button.active = !this.search_button.active;
+                            return true;
+                        }
+
+                        break;
+                    case Gdk.Key.Return:
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
+                                this.search_toolbar.previous_search ();
+                            } else {
+                                this.search_toolbar.next_search ();
+                            }
+
+                            return true;
+                        }
+
+                        break;
                     case Gdk.Key.@0:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_default_font ();
@@ -243,7 +287,9 @@ namespace PantheonTerminal {
                         break;
                     case Gdk.Key.@V:
                     case Gdk.Key.@v:
-                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            return false;
+                        }else if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
                             settings.natural_copy_paste) {
                             if (clipboard.wait_is_text_available ()) {
                                 action_paste ();
@@ -290,6 +336,19 @@ namespace PantheonTerminal {
                 maximize ();
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
+            }
+        }
+
+        private void on_toggle_search () {
+
+            var is_search = this.search_button.get_active ();
+
+            this.search_revealer.set_reveal_child (is_search);
+            if (is_search) {
+                search_toolbar.grab_focus ();
+            } else {
+                this.search_toolbar.clear ();
+                this.current_terminal.grab_focus ();
             }
         }
 
@@ -683,6 +742,10 @@ namespace PantheonTerminal {
             notebook.previous_page ();
         }
 
+        void action_search () {
+            this.search_button.active = !this.search_button.active;
+        }
+
         void action_fullscreen () {
             if (is_fullscreen) {
                 unfullscreen ();
@@ -709,6 +772,10 @@ namespace PantheonTerminal {
             { "Copy", "gtk-copy",
               N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
               action_copy },
+
+            { "Search", "edit-find",
+              N_("Find in text"), "<Control><Shift>f",
+              N_("Search for a given string in the terminal"), action_search },
 
             { "Paste", "gtk-paste",
               N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
