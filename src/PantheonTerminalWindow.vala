@@ -150,7 +150,7 @@ namespace PantheonTerminal {
                 open_tabs ();
 
             set_size_request (app.minimum_width, app.minimum_height);
-            
+
             search_button.toggled.connect (on_toggle_search);
 
             destroy.connect (on_destroy);
@@ -177,7 +177,7 @@ namespace PantheonTerminal {
             this.search_revealer = new Gtk.Revealer ();
             this.search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
             this.search_revealer.add (this.search_toolbar);
-            
+
             grid.attach (this.search_revealer, 0, 0, 1, 1);
 
             /* Set up the Notebook */
