@@ -206,8 +206,27 @@ namespace PantheonTerminal {
             grid.attach (notebook, 0, 1, 1, 1);
             add (grid);
 
-            key_press_event.connect_after ((e) => {
+            key_press_event.connect ((e) => {
                 switch (e.keyval) {
+                    case Gdk.Key.Escape:
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            this.search_button.active = !this.search_button.active;
+                            return true;
+                        }
+
+                        break;
+                    case Gdk.Key.Return:
+                        if (this.search_toolbar.search_entry.has_focus) {
+                            if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
+                                this.search_toolbar.previous_search ();
+                            } else {
+                                this.search_toolbar.next_search ();
+                            }
+
+                            return true;
+                        }
+
+                        break;
                     case Gdk.Key.@0:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_default_font ();
