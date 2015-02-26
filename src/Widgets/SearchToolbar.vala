@@ -86,11 +86,11 @@ namespace PantheonTerminal.Widgets {
             }
         }
 
-        void previous_search () {
+        public void previous_search () {
             this.window.current_terminal.search_find_previous ();
         }
 
-        void next_search () {
+        public void next_search () {
             this.window.current_terminal.search_find_next ();
         }
     }
