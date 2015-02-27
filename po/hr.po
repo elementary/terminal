@@ -7,202 +7,224 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-02-09 12:48-0600\n"
+"POT-Creation-Date: 2015-02-26 12:24-0600\n"
 "PO-Revision-Date: 2015-02-09 21:20+0000\n"
 "Last-Translator: Ivan Vrljić <vrlja92@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "Sigurno želite zatvoriti ovu karticu?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "U tijeku je aktivan proces na ovoj kartici."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr "Ako zatvorite, proces će završiti."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:34
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "Otkaži"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "Zatvori karticu"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Sigurno želite zatvoriti Terminal?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "U tijeku je aktivan proces na ovom terminalu."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr "Ukoliko izađete iz Terminala, proces će završiti."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "Zatvori Terminal"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:46
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:7
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:109
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:494
-msgid "Terminal"
-msgstr "Terminal"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Zadatak završen"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Ispiši informacije o inačici i izađi"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Prikaži dijalog o programu"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Pokreni program u terminalu"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Postavite radnu mapu ljuske"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:5
+#: ../src/Constants.vala:5
 msgid "About Terminal"
 msgstr "O Terminalu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:6
+#: ../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "Koristiti naredbeni redak"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:8
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
 msgid "New Window"
 msgstr "Novi prozor"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:9
+#: ../src/Constants.vala:9
 msgid "New Root Window"
 msgstr "Novi 'Root' prozor"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:10
+#: ../src/Constants.vala:10
 msgid "Open Terminal Here"
 msgstr "Ovdje otvori terminal"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:697
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:698
+#: ../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "Sigurno želite zatvoriti ovu karticu?"
+
+#: ../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "U tijeku je aktivan proces na ovoj kartici."
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr "Ako zatvorite, proces će završiti."
+
+#: ../src/ForegroundProcessDialog.vala:34
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: ../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "Zatvori karticu"
+
+#: ../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Sigurno želite zatvoriti Terminal?"
+
+#: ../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "U tijeku je aktivan proces na ovom terminalu."
+
+#: ../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr "Ukoliko izađete iz Terminala, proces će završiti."
+
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "Zatvori Terminal"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Zadatak završen"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Ispiši informacije o inačici i izađi"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Prikaži dijalog o programu"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Pokreni program u terminalu"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Postavite radnu mapu ljuske"
+
+#: ../src/PantheonTerminalWindow.vala:172
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
 msgid "Close"
 msgstr "Zatvori"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/PantheonTerminalWindow.vala:765
 msgid "Open a new window"
 msgstr "Otvori novi prozor"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "New Tab"
 msgstr "Nova kartica"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "Create a new tab"
 msgstr "Stvori novu karticu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy the selected text"
 msgstr "Kopiraj odabrani tekst"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find in text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
 msgstr "Zalijepi"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste some text"
 msgstr "Zalijepi dijelove teksta"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:718
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Select All"
 msgstr "Odaberi sve"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:719
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Select all the text in the terminal"
 msgstr "Odaberi sav tekst u terminalu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:721
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "About"
 msgstr "O programu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:722
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
 msgstr "Prikaži o prozoru"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:724
+#: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
 msgstr "Sljedeća kartica"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:725
+#: ../src/PantheonTerminalWindow.vala:792
 msgid "Go to next tab"
 msgstr "Idi na sljedeću karticu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:728
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Previous Tab"
 msgstr "Prijašnja kartica"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:729
+#: ../src/PantheonTerminalWindow.vala:796
 msgid "Go to previous tab"
 msgstr "Idi na prijašnju karticu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:732
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:733
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
 msgid "Zoom in"
 msgstr "Uvećaj"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:737
+#: ../src/PantheonTerminalWindow.vala:804
 msgid "Zoom out"
 msgstr "Umanji"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
 msgstr "Cijeli zaslon"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Uključi/Isključi Cijeli zaslon"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
+#: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
+#: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr "Kopiranje naredbi sa interneta može biti opasno. "
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
+#: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Provjerite razumijete li što čini svaki dio ove naredbe."
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
+#: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
 msgstr "Nemoj zalijepiti"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
+#: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Svejedno zalijepi"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr ""
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Ako zatvorite ovu karticu, ovaj proces će završiti."

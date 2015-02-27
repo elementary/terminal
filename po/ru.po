@@ -7,201 +7,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-02-09 12:48-0600\n"
+"POT-Creation-Date: 2015-02-26 12:24-0600\n"
 "PO-Revision-Date: 2014-09-11 00:59+0000\n"
 "Last-Translator: Artem Anufrij <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-10 06:48+0000\n"
-"X-Generator: Launchpad (build 17331)\n"
+"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "Закрыть эту вкладку?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "Во вкладке выполяется процесс."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr "Если вы закроете Терминал, процесс будет остановлен."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:34
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "Отмена"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "Закрыть вкладку"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Вы уверены, что хотите выйти из Терминала?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "В терминале выполняется процесс."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr "Если вы выйдете из Терминала, процесс будет остановлен."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "Закрыть терминал"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:46
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:7
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:109
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:494
-msgid "Terminal"
-msgstr "Терминал"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Задание завершено"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Распечатать информацию о версии и выйти"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "О программе"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Запустить программу в терминале"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Установить рабочyю папку для shell"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:5
+#: ../src/Constants.vala:5
 msgid "About Terminal"
 msgstr "О программе"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:6
+#: ../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "Использовать командную строку"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:8
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "Терминал"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
 msgid "New Window"
 msgstr "Новое окно"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:9
+#: ../src/Constants.vala:9
 msgid "New Root Window"
 msgstr "Новое окно от имени суперпользователя"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:10
+#: ../src/Constants.vala:10
 msgid "Open Terminal Here"
 msgstr "Открыть терминал здесь"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:697
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:698
+#: ../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "Закрыть эту вкладку?"
+
+#: ../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "Во вкладке выполяется процесс."
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr "Если вы закроете Терминал, процесс будет остановлен."
+
+#: ../src/ForegroundProcessDialog.vala:34
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "Закрыть вкладку"
+
+#: ../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Вы уверены, что хотите выйти из Терминала?"
+
+#: ../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "В терминале выполняется процесс."
+
+#: ../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr "Если вы выйдете из Терминала, процесс будет остановлен."
+
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "Закрыть терминал"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Задание завершено"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Распечатать информацию о версии и выйти"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "О программе"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Запустить программу в терминале"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Установить рабочyю папку для shell"
+
+#: ../src/PantheonTerminalWindow.vala:172
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
 msgid "Close"
 msgstr "Закрыть"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/PantheonTerminalWindow.vala:765
 msgid "Open a new window"
 msgstr "Открыть новое окно"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "New Tab"
 msgstr "Новая вкладка"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "Create a new tab"
 msgstr "Создать новую вкладку"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy"
 msgstr "Копировать"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy the selected text"
 msgstr "Копировать выделенный текст"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find in text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
 msgstr "Вставить"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste some text"
 msgstr "Вставить текст"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:718
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:719
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Select all the text in the terminal"
 msgstr "Выделить весь текст в терминале"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:721
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "About"
 msgstr "О программе"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:722
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
 msgstr "Показать окно со сведениями о программе"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:724
+#: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
 msgstr "Следующая вкладка"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:725
+#: ../src/PantheonTerminalWindow.vala:792
 msgid "Go to next tab"
 msgstr "Перейти к следующей вкладке"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:728
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Previous Tab"
 msgstr "Предыдущая вкладка"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:729
+#: ../src/PantheonTerminalWindow.vala:796
 msgid "Go to previous tab"
 msgstr "Перейти к предыдущей вкладке"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:732
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:733
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:737
+#: ../src/PantheonTerminalWindow.vala:804
 msgid "Zoom out"
 msgstr "Уменьшить"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
 msgstr "Во весь экран"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Включить/выключить полноэкранный режим"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
+#: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
+#: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr ""
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
+#: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
+#: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
 msgstr ""
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
+#: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
 msgstr ""
 
 #~ msgid "Open a new tab"

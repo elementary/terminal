@@ -7,202 +7,224 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-02-09 12:48-0600\n"
+"POT-Creation-Date: 2015-02-26 12:24-0600\n"
 "PO-Revision-Date: 2015-02-13 11:14+0000\n"
 "Last-Translator: Damian Dygulski <dygulski13@gmail.com>\n"
 "Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-14 05:49+0000\n"
-"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
+"X-Generator: Launchpad (build 17361)\n"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "Zamknąć kartę?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "W tej karcie działa proces."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr "Po zamknięciu, proces zostanie zakończony"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:34
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "Zamyka kartę"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Zakończyć działanie programu?"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "W oknie terminala znajduje się aktywny proces."
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr "Jeżeli wyłączysz Terminal, proces zostanie zakończony"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "Zakończ Terminal"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:46
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:7
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:109
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:494
-msgid "Terminal"
-msgstr "Terminal"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Zadanie zakończone"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Wypisuje informacje o wersji i kończy działanie"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Pokaż okno o programie"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Uruchom program w terminalu"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Ustaw aktualną ścieżkę powłoki"
-
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:5
+#: ../src/Constants.vala:5
 msgid "About Terminal"
 msgstr "O Terminalu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:6
+#: ../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "Umożliwia korzystanie z wiersza poleceń"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:8
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
 msgid "New Window"
 msgstr "Nowe okno"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:9
+#: ../src/Constants.vala:9
 msgid "New Root Window"
 msgstr "Nowe okno użytkownika Root"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/Constants.vala:10
+#: ../src/Constants.vala:10
 msgid "Open Terminal Here"
 msgstr "Otwórz terminal tutaj"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:697
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:698
+#: ../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr "Zamknąć kartę?"
+
+#: ../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr "W tej karcie działa proces."
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr "Po zamknięciu, proces zostanie zakończony"
+
+#: ../src/ForegroundProcessDialog.vala:34
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: ../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr "Zamyka kartę"
+
+#: ../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Zakończyć działanie programu?"
+
+#: ../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr "W oknie terminala znajduje się aktywny proces."
+
+#: ../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr "Jeżeli wyłączysz Terminal, proces zostanie zakończony"
+
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr "Zakończ Terminal"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Zadanie zakończone"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Wypisuje informacje o wersji i kończy działanie"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Pokaż okno o programie"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Uruchom program w terminalu"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Ustaw aktualną ścieżkę powłoki"
+
+#: ../src/PantheonTerminalWindow.vala:172
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
 msgid "Close"
 msgstr "Zamknij"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:702
+#: ../src/PantheonTerminalWindow.vala:765
 msgid "Open a new window"
 msgstr "Otwiera nowe okno programu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "New Tab"
 msgstr "Nowa karta"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:706
+#: ../src/PantheonTerminalWindow.vala:769
 msgid "Create a new tab"
 msgstr "Tworzy nową kartę"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:710
+#: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy the selected text"
 msgstr "Kopiuje zaznaczony tekst"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find in text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
 msgstr "Wklej"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:714
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste some text"
 msgstr "Wkleja tekst ze schowka"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:718
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:719
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Select all the text in the terminal"
 msgstr "Zaznacz całą zawartość terminala"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:721
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "About"
 msgstr "O programie"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:722
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
 msgstr "Wyświetla informacje o programie"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:724
+#: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
 msgstr "Następna karta"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:725
+#: ../src/PantheonTerminalWindow.vala:792
 msgid "Go to next tab"
 msgstr "Przechodzi do następnej karty"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:728
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Previous Tab"
 msgstr "Poprzednia karta"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:729
+#: ../src/PantheonTerminalWindow.vala:796
 msgid "Go to previous tab"
 msgstr "Przechodzi do poprzedniej karty"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:732
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:733
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
 msgid "Zoom in"
 msgstr "Powiększ"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:737
+#: ../src/PantheonTerminalWindow.vala:804
 msgid "Zoom out"
 msgstr "Pomniejsz"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
 msgstr "Pełny ekran"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/PantheonTerminalWindow.vala:741
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Włącza/Wyłącza tryb pełnego ekranu"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:33
+#: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ta komenda pyta o dostęp do konta Administratora na twoim komputerze"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:34
+#: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr "Kopiowanie komend z internetu może być niebezpieczne. "
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:35
+#: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Upewnij się, że rozumiesz co robi dana komenda."
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:39
+#: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
 msgstr "Nie wklejaj"
 
-#: /tmp/tmp.ULay4H2Zzf/t/po/../src/UnsafePasteDialog.vala:42
+#: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Wklej"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr ""
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Ustaw powłokę na starcie"
