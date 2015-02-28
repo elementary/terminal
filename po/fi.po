@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2015-02-09 22:37+0000\n"
+"PO-Revision-Date: 2015-02-27 09:36+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
+"X-Launchpad-Export-Date: 2015-02-28 05:58+0000\n"
 "X-Generator: Launchpad (build 17361)\n"
 
 #: ../src/Constants.vala:5
@@ -102,7 +102,7 @@ msgstr "Aseta komentotulkin työskentelyhakemisto"
 
 #: ../src/PantheonTerminalWindow.vala:172
 msgid "Find…"
-msgstr ""
+msgstr "Etsi…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -131,11 +131,11 @@ msgstr "Kopioi valittu teksti"
 
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find in text"
-msgstr ""
+msgstr "Etsi tekstistä"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Etsi merkkijonoa päätteestä"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -216,15 +216,15 @@ msgstr "Liitä silti"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Etsi"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Edellinen tulos"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Seuraava tulos"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Avaa uusi välilehti"
