@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2015-02-23 16:41+0000\n"
+"PO-Revision-Date: 2015-03-04 12:22+0000\n"
 "Last-Translator: Tomo Moto <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-05 05:49+0000\n"
+"X-Generator: Launchpad (build 17374)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -102,7 +102,7 @@ msgstr "Nastavit pracovní adresář shellu"
 
 #: ../src/PantheonTerminalWindow.vala:172
 msgid "Find…"
-msgstr ""
+msgstr "Hledat…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -131,11 +131,11 @@ msgstr "Kopírovat vybraný text"
 
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find in text"
-msgstr ""
+msgstr "Hledat v textu"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Hledat daný řetězec v terminálu"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -216,15 +216,15 @@ msgstr "Přesto vložit"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Hledat"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Předchozí výsledek"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Další výsledek"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Otevřít novou kartu"
