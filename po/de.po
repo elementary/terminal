@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2014-10-24 11:20+0000\n"
-"Last-Translator: UweS <Unknown>\n"
+"PO-Revision-Date: 2015-03-06 14:45+0000\n"
+"Last-Translator: Edward Lancaster <elancaster4@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-07 05:32+0000\n"
+"X-Generator: Launchpad (build 17383)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -23,7 +23,7 @@ msgstr "Info zu Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "Die Befehlszeile verwenden"
+msgstr "Befehlszeile verwenden"
 
 #: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
 #: ../src/PantheonTerminalWindow.vala:114
@@ -131,11 +131,11 @@ msgstr "Ausgewählten Text kopieren"
 
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find in text"
-msgstr ""
+msgstr "Im Text suchen"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Nach einer gegebenen Zeichenfolge im Terminal suchen"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -197,22 +197,27 @@ msgstr "Vollbild aktivieren/deaktivieren"
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
+"Dieser Befehl versucht mit Administrator-Rechte auf diesen Computer zu "
+"zugreifen."
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr ""
+"Es besteht ein Sicherheitsrisiko beim kopieren von Befehlen aus dem "
+"Internet. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
+"Vergewissern Sie sich, dass Sie die Funktionalität dieses Befehls verstehen."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Nicht Einfügen"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Trotzdem Einfügen"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
@@ -224,7 +229,7 @@ msgstr ""
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Nächstes Ergebnis"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Konsole beim Start setzen"
