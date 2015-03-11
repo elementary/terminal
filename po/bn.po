@@ -1,0 +1,227 @@
+# Bengali translation for pantheon-terminal
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the pantheon-terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-terminal\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-02-26 12:24-0600\n"
+"PO-Revision-Date: 2015-03-10 05:47+0000\n"
+"Last-Translator: Nazir Ahmed Sabbir <na_sabbir@yahoo.com>\n"
+"Language-Team: Bengali <bn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-03-11 05:32+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr ""
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr ""
+
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "টার্মিনাল"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
+msgid "New Window"
+msgstr "নতুন উইন্ডো"
+
+#: ../src/Constants.vala:9
+msgid "New Root Window"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "এখানে টার্মিনাল খুলুন"
+
+#: ../src/ForegroundProcessDialog.vala:28
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:29
+msgid "There is an active process on this tab."
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "If you close it, the process will end."
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:34
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Cancel"
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:38
+msgid "Close Tab"
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:51
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:52
+msgid "There is an active process on this terminal."
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:53
+msgid "If you quit Terminal, the process will end."
+msgstr ""
+
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Quit Terminal"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:172
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
+msgid "Close"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:765
+msgid "Open a new window"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "New Tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "Create a new tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy the selected text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find in text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste some text"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:785
+msgid "Select All"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:786
+msgid "Select all the text in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "About"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Show about window"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "Next Tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Go to next tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Previous Tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:796
+msgid "Go to previous tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
+msgid "Zoom in"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:804
+msgid "Zoom out"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Fullscreen"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Toggle/Untoggle fullscreen"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr ""
