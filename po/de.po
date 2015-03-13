@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2015-03-06 14:45+0000\n"
-"Last-Translator: Edward Lancaster <elancaster4@gmail.com>\n"
+"PO-Revision-Date: 2015-03-13 00:43+0000\n"
+"Last-Translator: UweS <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-07 05:32+0000\n"
-"X-Generator: Launchpad (build 17383)\n"
+"X-Launchpad-Export-Date: 2015-03-13 05:20+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -197,35 +197,35 @@ msgstr "Vollbild aktivieren/deaktivieren"
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
-"Dieser Befehl versucht mit Administrator-Rechte auf diesen Computer zu "
-"zugreifen."
+"Dieser Befehl versucht, mit Administratorrechten auf diesen Computer "
+"zuzugreifen."
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr ""
-"Es besteht ein Sicherheitsrisiko beim kopieren von Befehlen aus dem "
+"Es besteht ein Sicherheitsrisiko beim Kopieren von Befehlen aus dem "
 "Internet. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
-"Vergewissern Sie sich, dass Sie die Funktionalität dieses Befehls verstehen."
+"Vergewissern Sie sich, dass Sie verstehen, was dieser Befehl bewirkt."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr "Nicht Einfügen"
+msgstr "Nicht einfügen"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Trotzdem Einfügen"
+msgstr "Trotzdem einfügen"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Suchen"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Vorheriges Ergebnis"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
