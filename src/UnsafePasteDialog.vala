@@ -42,6 +42,7 @@ namespace PantheonTerminal {
             var ignore_button = new Gtk.Button.with_label (_("Paste Anyway"));
             ignore_button.get_style_context ().add_class ("destructive-action");
             ignore_button.show ();
+            ignore_button.clicked.connect (on_ignore);
 
             var warning_image = new Gtk.Image.from_icon_name ("dialog-warning",
                                                               Gtk.IconSize.DIALOG);
@@ -52,5 +53,13 @@ namespace PantheonTerminal {
             set_image (warning_image);
             warning_image.show ();
         }
+
+        private void on_ignore () {
+            var terminal_window = get_transient_for ();
+            if (terminal_window is PantheonTerminalWindow) {
+                (terminal_window as PantheonTerminalWindow).unsafe_ignored = true;
+            }
+        }
+
     }
 }
