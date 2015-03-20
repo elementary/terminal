@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2015-02-10 20:22+0000\n"
+"PO-Revision-Date: 2015-03-19 14:36+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-20 05:01+0000\n"
+"X-Generator: Launchpad (build 17405)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -102,7 +102,7 @@ msgstr "Töötamise kausta määramine"
 
 #: ../src/PantheonTerminalWindow.vala:172
 msgid "Find…"
-msgstr ""
+msgstr "Otsi…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -131,11 +131,11 @@ msgstr "Kopeeri valitud tekst"
 
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find in text"
-msgstr ""
+msgstr "Otsi tekstist"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Terminalist antud teksti otsimine"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -216,15 +216,15 @@ msgstr "Kleebi"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Otsi terminalist..."
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Eelmine"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Järgmine"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Ava uus kaart"
