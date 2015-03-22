@@ -45,7 +45,7 @@ namespace PantheonTerminal {
 
             program_name = _("Terminal");
             exec_name = "pantheon-terminal";
-            app_years = "2011-2014";
+            app_years = "2011-2015";
             app_icon = "utilities-terminal";
             app_launcher = "pantheon-terminal.desktop";
             application_id = "net.launchpad.pantheon-terminal";
@@ -163,7 +163,7 @@ namespace PantheonTerminal {
 
             } else if (print_version) {
                 stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
-                stdout.printf ("Copyright 2011-2014 Pantheon Terminal Developers.\n");
+                stdout.printf ("Copyright 2011-2015 Pantheon Terminal Developers.\n");
 
             } else {
                 new_window ();
