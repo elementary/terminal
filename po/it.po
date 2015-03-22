@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2015-02-26 18:45+0000\n"
+"PO-Revision-Date: 2015-03-21 19:36+0000\n"
 "Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-22 05:21+0000\n"
+"X-Generator: Launchpad (build 17405)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -45,7 +45,7 @@ msgstr "Apri il terminale qui"
 
 #: ../src/ForegroundProcessDialog.vala:28
 msgid "Are you sure you want to close this tab?"
-msgstr "Si è sicuri di voler chiudere questa scheda?"
+msgstr "Sicuro di voler chiudere questa scheda?"
 
 #: ../src/ForegroundProcessDialog.vala:29
 msgid "There is an active process on this tab."
@@ -66,7 +66,7 @@ msgstr "Chiudi scheda"
 
 #: ../src/ForegroundProcessDialog.vala:51
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Si è sicuri di voler chiudere il terminale?"
+msgstr "Sicuro di voler chiudere il terminale?"
 
 #: ../src/ForegroundProcessDialog.vala:52
 msgid "There is an active process on this terminal."
