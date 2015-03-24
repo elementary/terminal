@@ -23,6 +23,8 @@ namespace PantheonTerminal {
     public class ForegroundProcessDialog : Gtk.MessageDialog {
 
         public ForegroundProcessDialog () {
+            /* get rid of the close button */
+            deletable = false;
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
                       _("Are you sure you want to close this tab?") + "</span>\n\n" +
@@ -46,6 +48,8 @@ namespace PantheonTerminal {
         }
 
         public ForegroundProcessDialog.before_close () {
+            /* get rid of the close button */
+            deletable = false;
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
                       _("Are you sure you want to quit Terminal?") + "</span>\n\n" +

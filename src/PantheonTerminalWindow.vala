@@ -78,6 +78,8 @@ namespace PantheonTerminal {
         public Gtk.ActionGroup main_actions;
         public Gtk.UIManager ui;
 
+        public bool unsafe_ignored;
+
         public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
             init (app, should_recreate_tabs);
         }
@@ -659,7 +661,7 @@ namespace PantheonTerminal {
 
         void on_get_text (Gtk.Clipboard board, string? intext) {
             /* if unsafe paste alert is enabled, show dialog */
-            if (settings.unsafe_paste_alert) {
+            if (settings.unsafe_paste_alert && !unsafe_ignored ) {
 
                 if (intext == null) {
                     return;
