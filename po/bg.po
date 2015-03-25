@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-02-26 12:24-0600\n"
-"PO-Revision-Date: 2014-12-11 17:03+0000\n"
-"Last-Translator: ITPROJECTS <Unknown>\n"
+"PO-Revision-Date: 2015-03-25 00:03+0000\n"
+"Last-Translator: Petar Djakov <shinnobivalley@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-03-25 05:55+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -102,7 +102,7 @@ msgstr "Задай работната папка на обвивката"
 
 #: ../src/PantheonTerminalWindow.vala:172
 msgid "Find…"
-msgstr ""
+msgstr "Търси…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -131,11 +131,11 @@ msgstr "Копирай избраният текст"
 
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find in text"
-msgstr ""
+msgstr "Намери в текста"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Търси за определен текс в терминала"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -196,35 +196,35 @@ msgstr "Включване/Изключване на цял екран"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Тази команда изисква Административни права"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Копирането команди от интернет може да е опасно "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Бъдете сигурен какво прави всяка част от тази команда"
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Не поставяй"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Постави"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Търси"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Предишни резултати"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Следващи резултати"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Ако затворите този подпрозорец, процесът ще спре."
