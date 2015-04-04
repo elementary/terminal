@@ -7,78 +7,139 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-02-26 12:24-0600\n"
+"POT-Creation-Date: 2015-04-03 09:30-0700\n"
 "PO-Revision-Date: 2015-03-01 06:49+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-02 05:27+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-04-04 05:36+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "关于终端"
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "运行此命令需要管理员权限。"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "使用命令行"
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "从网络复制的命令可能不安全。 "
 
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "请确定您理解指令各部分的作用。"
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "取消粘贴"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "仍然粘贴"
+
+#: ../src/PantheonTerminalWindow.vala:116
+#: ../src/PantheonTerminalWindow.vala:555 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "终端"
 
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:174
+msgid "Find…"
+msgstr "查找..."
+
+#: ../src/PantheonTerminalWindow.vala:762
+#: ../src/PantheonTerminalWindow.vala:763
+msgid "Close"
+msgstr "关闭"
+
+#: ../src/PantheonTerminalWindow.vala:767 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "新建窗口"
 
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "新建管理员窗口"
+#: ../src/PantheonTerminalWindow.vala:767
+msgid "Open a new window"
+msgstr "打开一个新窗口"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "在此处打开终端"
+#: ../src/PantheonTerminalWindow.vala:771
+msgid "New Tab"
+msgstr "新建标签页"
 
-#: ../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "您确定要关闭该标签吗？"
+#: ../src/PantheonTerminalWindow.vala:771
+msgid "Create a new tab"
+msgstr "创建一个新标签页"
 
-#: ../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "该标签中有一个运行的进程。"
+#: ../src/PantheonTerminalWindow.vala:775
+msgid "Copy"
+msgstr "复制"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
-msgstr "如果您关闭它，进程将会中断。"
+#: ../src/PantheonTerminalWindow.vala:775
+msgid "Copy the selected text"
+msgstr "复制选中文本"
 
-#: ../src/ForegroundProcessDialog.vala:34
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "取消"
+#: ../src/PantheonTerminalWindow.vala:779
+msgid "Find in text"
+msgstr "在文本中查找"
 
-#: ../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "关闭标签"
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Search for a given string in the terminal"
+msgstr "在终端中搜索指定的内容"
 
-#: ../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "您确定要退出终端？"
+#: ../src/PantheonTerminalWindow.vala:783
+msgid "Paste"
+msgstr "粘贴"
 
-#: ../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "此终端中有一个进程正在运行。"
+#: ../src/PantheonTerminalWindow.vala:783
+msgid "Paste some text"
+msgstr "粘帖部分文本"
 
-#: ../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
-msgstr "如果您退出终端，进程将会中断。"
+#: ../src/PantheonTerminalWindow.vala:787
+msgid "Select All"
+msgstr "全部选中"
 
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "退出终端"
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select all the text in the terminal"
+msgstr "选中终端中所有文本"
+
+#: ../src/PantheonTerminalWindow.vala:790
+msgid "About"
+msgstr "关于"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "Show about window"
+msgstr "显示关于窗口"
+
+#: ../src/PantheonTerminalWindow.vala:793
+msgid "Next Tab"
+msgstr "下一个标签"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Go to next tab"
+msgstr "转到下一个标签"
+
+#: ../src/PantheonTerminalWindow.vala:797
+msgid "Previous Tab"
+msgstr "上一个标签"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Go to previous tab"
+msgstr "转到上一个标签"
+
+#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:802
+msgid "Zoom in"
+msgstr "放大"
+
+#: ../src/PantheonTerminalWindow.vala:806
+msgid "Zoom out"
+msgstr "缩小"
+
+#: ../src/PantheonTerminalWindow.vala:810
+msgid "Fullscreen"
+msgstr "全屏"
+
+#: ../src/PantheonTerminalWindow.vala:810
+msgid "Toggle/Untoggle fullscreen"
+msgstr "进出/退出全屏"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
@@ -100,119 +161,58 @@ msgstr "在终端运行程序"
 msgid "Set shell working directory"
 msgstr "设置Shell工作目录"
 
-#: ../src/PantheonTerminalWindow.vala:172
-msgid "Find…"
-msgstr "查找..."
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "关于终端"
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
-msgid "Close"
-msgstr "关闭"
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "使用命令行"
 
-#: ../src/PantheonTerminalWindow.vala:765
-msgid "Open a new window"
-msgstr "打开一个新窗口"
+#: ../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "新建管理员窗口"
 
-#: ../src/PantheonTerminalWindow.vala:769
-msgid "New Tab"
-msgstr "新建标签页"
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "在此处打开终端"
 
-#: ../src/PantheonTerminalWindow.vala:769
-msgid "Create a new tab"
-msgstr "创建一个新标签页"
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "您确定要关闭该标签吗？"
 
-#: ../src/PantheonTerminalWindow.vala:773
-msgid "Copy"
-msgstr "复制"
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "该标签中有一个运行的进程。"
 
-#: ../src/PantheonTerminalWindow.vala:773
-msgid "Copy the selected text"
-msgstr "复制选中文本"
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
+msgstr "如果您关闭它，进程将会中断。"
 
-#: ../src/PantheonTerminalWindow.vala:777
-msgid "Find in text"
-msgstr "在文本中查找"
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "取消"
 
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Search for a given string in the terminal"
-msgstr "在终端中搜索指定的内容"
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "关闭标签"
 
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "Paste"
-msgstr "粘贴"
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "您确定要退出终端？"
 
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "Paste some text"
-msgstr "粘帖部分文本"
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "此终端中有一个进程正在运行。"
 
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Select All"
-msgstr "全部选中"
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
+msgstr "如果您退出终端，进程将会中断。"
 
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Select all the text in the terminal"
-msgstr "选中终端中所有文本"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "About"
-msgstr "关于"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Show about window"
-msgstr "显示关于窗口"
-
-#: ../src/PantheonTerminalWindow.vala:791
-msgid "Next Tab"
-msgstr "下一个标签"
-
-#: ../src/PantheonTerminalWindow.vala:792
-msgid "Go to next tab"
-msgstr "转到下一个标签"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Previous Tab"
-msgstr "上一个标签"
-
-#: ../src/PantheonTerminalWindow.vala:796
-msgid "Go to previous tab"
-msgstr "转到上一个标签"
-
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
-msgid "Zoom in"
-msgstr "放大"
-
-#: ../src/PantheonTerminalWindow.vala:804
-msgid "Zoom out"
-msgstr "缩小"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Fullscreen"
-msgstr "全屏"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Toggle/Untoggle fullscreen"
-msgstr "进出/退出全屏"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "运行此命令需要管理员权限。"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "从网络复制的命令可能不安全。 "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "请确定您理解指令各部分的作用。"
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "取消粘贴"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "仍然粘贴"
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "退出终端"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"

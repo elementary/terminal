@@ -7,78 +7,139 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-02-26 12:24-0600\n"
+"POT-Creation-Date: 2015-04-03 09:30-0700\n"
 "PO-Revision-Date: 2012-08-15 15:33+0000\n"
 "Last-Translator: Michael Moroni <michael.moroni@openmailbox.org>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-02-27 05:38+0000\n"
-"X-Generator: Launchpad (build 17361)\n"
+"X-Launchpad-Export-Date: 2015-04-04 05:35+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
 msgstr ""
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Uzi komandlinion"
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr ""
 
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:116
+#: ../src/PantheonTerminalWindow.vala:555 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminalo"
 
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:174
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:762
+#: ../src/PantheonTerminalWindow.vala:763
+msgid "Close"
+msgstr "Fermi"
+
+#: ../src/PantheonTerminalWindow.vala:767 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Nova fenestro"
 
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Nova fenestro kiel ĉefuzanto"
+#: ../src/PantheonTerminalWindow.vala:767
+msgid "Open a new window"
+msgstr "Malfermi novan fenestron"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
+#: ../src/PantheonTerminalWindow.vala:771
+msgid "New Tab"
+msgstr "Nova langeto"
+
+#: ../src/PantheonTerminalWindow.vala:771
+msgid "Create a new tab"
+msgstr "Krei novan langeton"
+
+#: ../src/PantheonTerminalWindow.vala:775
+msgid "Copy"
+msgstr "Kopii"
+
+#: ../src/PantheonTerminalWindow.vala:775
+msgid "Copy the selected text"
+msgstr "Kopii la elektitan tekston"
+
+#: ../src/PantheonTerminalWindow.vala:779
+msgid "Find in text"
 msgstr ""
 
-#: ../src/ForegroundProcessDialog.vala:28
-msgid "Are you sure you want to close this tab?"
-msgstr "Ĉu vi certe volas fermi ĉi tiun langeton?"
-
-#: ../src/ForegroundProcessDialog.vala:29
-msgid "There is an active process on this tab."
-msgstr "Estas aktivaj procezoj en ĉi tiu langeto."
-
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "If you close it, the process will end."
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Search for a given string in the terminal"
 msgstr ""
 
-#: ../src/ForegroundProcessDialog.vala:34
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Cancel"
-msgstr "Nuligi"
+#: ../src/PantheonTerminalWindow.vala:783
+msgid "Paste"
+msgstr "Alglui"
 
-#: ../src/ForegroundProcessDialog.vala:38
-msgid "Close Tab"
-msgstr "Fermi langeton"
+#: ../src/PantheonTerminalWindow.vala:783
+msgid "Paste some text"
+msgstr "Alglui tekston"
 
-#: ../src/ForegroundProcessDialog.vala:51
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Ĉu vi certe volas ĉesigi terminalon?"
+#: ../src/PantheonTerminalWindow.vala:787
+msgid "Select All"
+msgstr "Elekti ĉiujn"
 
-#: ../src/ForegroundProcessDialog.vala:52
-msgid "There is an active process on this terminal."
-msgstr "Estas aktivaj procezoj en ĉi tiu terminalo."
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select all the text in the terminal"
+msgstr "Elekti ĉiun tekston en terminalo"
 
-#: ../src/ForegroundProcessDialog.vala:53
-msgid "If you quit Terminal, the process will end."
+#: ../src/PantheonTerminalWindow.vala:790
+msgid "About"
+msgstr "Pri"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "Show about window"
+msgstr "Montri pri fenestro"
+
+#: ../src/PantheonTerminalWindow.vala:793
+msgid "Next Tab"
 msgstr ""
 
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Quit Terminal"
-msgstr "Ĉesigi terminalon"
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Go to next tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:797
+msgid "Previous Tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Go to previous tab"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:802
+msgid "Zoom in"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:806
+msgid "Zoom out"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:810
+msgid "Fullscreen"
+msgstr "Tutekrane"
+
+#: ../src/PantheonTerminalWindow.vala:810
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Ŝalti tutekranan reĝimon"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
@@ -100,119 +161,58 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:172
-msgid "Find…"
+#: ../src/Constants.vala:5
+msgid "About Terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
-msgid "Close"
-msgstr "Fermi"
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Uzi komandlinion"
 
-#: ../src/PantheonTerminalWindow.vala:765
-msgid "Open a new window"
-msgstr "Malfermi novan fenestron"
+#: ../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "Nova fenestro kiel ĉefuzanto"
 
-#: ../src/PantheonTerminalWindow.vala:769
-msgid "New Tab"
-msgstr "Nova langeto"
-
-#: ../src/PantheonTerminalWindow.vala:769
-msgid "Create a new tab"
-msgstr "Krei novan langeton"
-
-#: ../src/PantheonTerminalWindow.vala:773
-msgid "Copy"
-msgstr "Kopii"
-
-#: ../src/PantheonTerminalWindow.vala:773
-msgid "Copy the selected text"
-msgstr "Kopii la elektitan tekston"
-
-#: ../src/PantheonTerminalWindow.vala:777
-msgid "Find in text"
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Search for a given string in the terminal"
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "Ĉu vi certe volas fermi ĉi tiun langeton?"
+
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "Estas aktivaj procezoj en ĉi tiu langeto."
+
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "Paste"
-msgstr "Alglui"
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "Nuligi"
 
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "Paste some text"
-msgstr "Alglui tekston"
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "Fermi langeton"
 
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Select All"
-msgstr "Elekti ĉiujn"
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ĉu vi certe volas ĉesigi terminalon?"
 
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Select all the text in the terminal"
-msgstr "Elekti ĉiun tekston en terminalo"
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "Estas aktivaj procezoj en ĉi tiu terminalo."
 
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "About"
-msgstr "Pri"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Show about window"
-msgstr "Montri pri fenestro"
-
-#: ../src/PantheonTerminalWindow.vala:791
-msgid "Next Tab"
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:792
-msgid "Go to next tab"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Previous Tab"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:796
-msgid "Go to previous tab"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
-msgid "Zoom in"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:804
-msgid "Zoom out"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Fullscreen"
-msgstr "Tutekrane"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Ŝalti tutekranan reĝimon"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr ""
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "Ĉesigi terminalon"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
