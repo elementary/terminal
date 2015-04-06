@@ -69,8 +69,6 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Search" action="Search"/>
-                <separator />
-                <menuitem name="About" action="About"/>
             </popup>
             </ui>
         """;
