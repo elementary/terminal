@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-03 09:30-0700\n"
-"PO-Revision-Date: 2015-03-27 08:00+0000\n"
+"PO-Revision-Date: 2015-04-06 19:11+0000\n"
 "Last-Translator: Ivan Vrljić <vrlja92@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-04 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-04-07 05:20+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
 #: ../src/UnsafePasteDialog.vala:33
@@ -78,11 +78,11 @@ msgstr "Kopiraj odabrani tekst"
 
 #: ../src/PantheonTerminalWindow.vala:779
 msgid "Find in text"
-msgstr ""
+msgstr "Pronađi u tekstu"
 
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Nađi zadani tekst u terminalu"
 
 #: ../src/PantheonTerminalWindow.vala:783
 msgid "Paste"
