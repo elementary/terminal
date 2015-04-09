@@ -8,27 +8,27 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-03 09:30-0700\n"
-"PO-Revision-Date: 2013-08-28 05:46+0000\n"
-"Last-Translator: Amir Masoud <amirmasoud.ab@gmail.com>\n"
+"PO-Revision-Date: 2015-04-08 14:49+0000\n"
+"Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-04 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-04-09 05:33+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 "Language: \n"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "این دستور درخواست بالاترین دسترسی به رایانه شما را دارد"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "مطمئن شوید که می دانید هر قسمت از دستور چه کاری انجام می دهد."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
@@ -46,7 +46,7 @@ msgstr "پایانه"
 
 #: ../src/PantheonTerminalWindow.vala:174
 msgid "Find…"
-msgstr ""
+msgstr "پیدا کردن..."
 
 #: ../src/PantheonTerminalWindow.vala:762
 #: ../src/PantheonTerminalWindow.vala:763
@@ -79,11 +79,11 @@ msgstr "رونویسی متن انتخاب شده"
 
 #: ../src/PantheonTerminalWindow.vala:779
 msgid "Find in text"
-msgstr ""
+msgstr "پیدا کردن در متن"
 
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "جست‌و‌جوی کلمات داده شده در ترمینال"
 
 #: ../src/PantheonTerminalWindow.vala:783
 msgid "Paste"
@@ -144,11 +144,11 @@ msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr ""
+msgstr "پایان عملیات"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Print version info and exit"
-msgstr ""
+msgstr "چاپ اطلاعات نسخه و خارج شدن"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Show about dialog"
@@ -156,15 +156,15 @@ msgstr ""
 
 #: ../src/PantheonTerminal.vala:212
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "اجرای برنامه در ترمینال"
 
 #: ../src/PantheonTerminal.vala:213
 msgid "Set shell working directory"
-msgstr ""
+msgstr "تنظیم کارکردن مستقیم شل"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "درباره ترمینال"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
@@ -176,7 +176,7 @@ msgstr "پنجره ریشه جدید"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "باز کردن ترمینال در اینجا"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -188,7 +188,7 @@ msgstr "فرآیندی در این برگه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "بررسی پایان می باد اگر شما ببندیدش"
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -209,7 +209,7 @@ msgstr "فرآیندی در این پایانه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "بررسی پایان می یابد اگر ترمینال را ببندید"
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -217,15 +217,15 @@ msgstr "خروج از پایانه"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "یافتن"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "نتیجه قبلی"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "نتیجه بعدی"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "تعیین مسیر در هنگام راه‌اندازی"
