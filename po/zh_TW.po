@@ -8,34 +8,34 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-03 09:30-0700\n"
-"PO-Revision-Date: 2014-11-13 13:58+0000\n"
+"PO-Revision-Date: 2015-04-12 02:10+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-04 05:36+0000\n"
-"X-Generator: Launchpad (build 17413)\n"
+"X-Launchpad-Export-Date: 2015-04-12 05:44+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "此指令要求您電腦的管理權限"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "從網際網路複製指令來用可能會有危險。 "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "不要貼上"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "無論如何都要貼上"
 
 #: ../src/PantheonTerminalWindow.vala:116
 #: ../src/PantheonTerminalWindow.vala:555 ../src/PantheonTerminal.vala:46
@@ -45,7 +45,7 @@ msgstr "終端機"
 
 #: ../src/PantheonTerminalWindow.vala:174
 msgid "Find…"
-msgstr ""
+msgstr "尋找…"
 
 #: ../src/PantheonTerminalWindow.vala:762
 #: ../src/PantheonTerminalWindow.vala:763
@@ -78,11 +78,11 @@ msgstr "複製所選文字"
 
 #: ../src/PantheonTerminalWindow.vala:779
 msgid "Find in text"
-msgstr ""
+msgstr "尋找文字"
 
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "在終端機中搜尋指定的字串"
 
 #: ../src/PantheonTerminalWindow.vala:783
 msgid "Paste"
@@ -216,15 +216,15 @@ msgstr "退出終端機"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "尋找"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "上個結果"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "下個結果"
 
 #~ msgid "Open a new tab"
 #~ msgstr "開啟新分頁"
