@@ -1,3 +1,9 @@
+pantheon-terminal (0.3.1.1) trusty; urgency=low
+
+  * Change "Find in text" to "Find…" (lp:1426475)
+
+ -- Cody Garver <cody@elementaryos.org>  Thu, 16 Apr 2015 02:38:51 -0500
+
 pantheon-terminal (0.3.1) trusty; urgency=low
 
   * New upstream release.
