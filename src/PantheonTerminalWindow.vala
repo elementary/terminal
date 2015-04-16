@@ -774,7 +774,7 @@ namespace PantheonTerminal {
               action_copy },
 
             { "Search", "edit-find",
-              N_("Find in text"), "<Control><Shift>f",
+              N_("Find…"), "<Control><Shift>f",
               N_("Search for a given string in the terminal"), action_search },
 
             { "Paste", "gtk-paste",
