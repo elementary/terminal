@@ -7,160 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-03 09:30-0700\n"
+"POT-Creation-Date: 2015-04-16 02:28-0500\n"
 "PO-Revision-Date: 2015-04-08 14:49+0000\n"
 "Last-Translator: awat <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-09 05:33+0000\n"
-"X-Generator: Launchpad (build 17413)\n"
+"X-Launchpad-Export-Date: 2015-04-17 05:24+0000\n"
+"X-Generator: Launchpad (build 17430)\n"
 "Language: \n"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "این دستور درخواست بالاترین دسترسی به رایانه شما را دارد"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "مطمئن شوید که می دانید هر قسمت از دستور چه کاری انجام می دهد."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:116
-#: ../src/PantheonTerminalWindow.vala:555 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "پایانه"
-
-#: ../src/PantheonTerminalWindow.vala:174
-msgid "Find…"
-msgstr "پیدا کردن..."
-
-#: ../src/PantheonTerminalWindow.vala:762
-#: ../src/PantheonTerminalWindow.vala:763
-msgid "Close"
-msgstr "بستن"
-
-#: ../src/PantheonTerminalWindow.vala:767 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "پنجره جدید"
-
-#: ../src/PantheonTerminalWindow.vala:767
-msgid "Open a new window"
-msgstr "باز کردن پنجره جدید"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "New Tab"
-msgstr "برگه جدید"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Create a new tab"
-msgstr "ساختن یک برگه جدید"
-
-#: ../src/PantheonTerminalWindow.vala:775
-msgid "Copy"
-msgstr "رونویسی"
-
-#: ../src/PantheonTerminalWindow.vala:775
-msgid "Copy the selected text"
-msgstr "رونویسی متن انتخاب شده"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Find in text"
-msgstr "پیدا کردن در متن"
-
-#: ../src/PantheonTerminalWindow.vala:780
-msgid "Search for a given string in the terminal"
-msgstr "جست‌و‌جوی کلمات داده شده در ترمینال"
-
-#: ../src/PantheonTerminalWindow.vala:783
-msgid "Paste"
-msgstr "چسباندن"
-
-#: ../src/PantheonTerminalWindow.vala:783
-msgid "Paste some text"
-msgstr "انتقال یک متن"
-
-#: ../src/PantheonTerminalWindow.vala:787
-msgid "Select All"
-msgstr "انتخاب همه"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Select all the text in the terminal"
-msgstr "انتخاب همه نوشته‌های روی پایانه"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "About"
-msgstr "درباره"
-
-#: ../src/PantheonTerminalWindow.vala:791
-msgid "Show about window"
-msgstr "نمایش پنجره درباره"
-
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Next Tab"
-msgstr "برگه بعدی"
-
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Go to next tab"
-msgstr "رفتن به برگه بعدی"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Previous Tab"
-msgstr "برگه قبلی"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Go to previous tab"
-msgstr "رفتن به برگه قبلی"
-
-#: ../src/PantheonTerminalWindow.vala:801
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Zoom in"
-msgstr "بزرگ‌نمایی"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Zoom out"
-msgstr "کوچک‌نمایی"
-
-#: ../src/PantheonTerminalWindow.vala:810
-msgid "Fullscreen"
-msgstr "تمام‌صفحه"
-
-#: ../src/PantheonTerminalWindow.vala:810
-msgid "Toggle/Untoggle fullscreen"
-msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "پایان عملیات"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "چاپ اطلاعات نسخه و خارج شدن"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr ""
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "اجرای برنامه در ترمینال"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "تنظیم کارکردن مستقیم شل"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -169,6 +25,16 @@ msgstr "درباره ترمینال"
 #: ../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "استفاده از خط فرمان"
+
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "پایانه"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
+msgid "New Window"
+msgstr "پنجره جدید"
 
 #: ../src/Constants.vala:9
 msgid "New Root Window"
@@ -214,6 +80,137 @@ msgstr "بررسی پایان می یابد اگر ترمینال را ببند�
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
 msgstr "خروج از پایانه"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "پایان عملیات"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "چاپ اطلاعات نسخه و خارج شدن"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "اجرای برنامه در ترمینال"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "تنظیم کارکردن مستقیم شل"
+
+#: ../src/PantheonTerminalWindow.vala:172
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find…"
+msgstr "پیدا کردن..."
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
+msgid "Close"
+msgstr "بستن"
+
+#: ../src/PantheonTerminalWindow.vala:765
+msgid "Open a new window"
+msgstr "باز کردن پنجره جدید"
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "New Tab"
+msgstr "برگه جدید"
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "Create a new tab"
+msgstr "ساختن یک برگه جدید"
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy"
+msgstr "رونویسی"
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy the selected text"
+msgstr "رونویسی متن انتخاب شده"
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr "جست‌و‌جوی کلمات داده شده در ترمینال"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste"
+msgstr "چسباندن"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste some text"
+msgstr "انتقال یک متن"
+
+#: ../src/PantheonTerminalWindow.vala:785
+msgid "Select All"
+msgstr "انتخاب همه"
+
+#: ../src/PantheonTerminalWindow.vala:786
+msgid "Select all the text in the terminal"
+msgstr "انتخاب همه نوشته‌های روی پایانه"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "About"
+msgstr "درباره"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Show about window"
+msgstr "نمایش پنجره درباره"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "Next Tab"
+msgstr "برگه بعدی"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Go to next tab"
+msgstr "رفتن به برگه بعدی"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Previous Tab"
+msgstr "برگه قبلی"
+
+#: ../src/PantheonTerminalWindow.vala:796
+msgid "Go to previous tab"
+msgstr "رفتن به برگه قبلی"
+
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
+msgid "Zoom in"
+msgstr "بزرگ‌نمایی"
+
+#: ../src/PantheonTerminalWindow.vala:804
+msgid "Zoom out"
+msgstr "کوچک‌نمایی"
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Toggle/Untoggle fullscreen"
+msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه"
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "این دستور درخواست بالاترین دسترسی به رایانه شما را دارد"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "مطمئن شوید که می دانید هر قسمت از دستور چه کاری انجام می دهد."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr ""
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
