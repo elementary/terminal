@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2014-09-14 21:40+0000\n"
-"Last-Translator: smutok <smutok@gmail.com>\n"
+"PO-Revision-Date: 2015-04-18 11:05+0000\n"
+"Last-Translator: jurosh <Jurosh@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-17 05:24+0000\n"
+"X-Launchpad-Export-Date: 2015-04-19 05:40+0000\n"
 "X-Generator: Launchpad (build 17430)\n"
 
 #: ../src/Constants.vala:5
@@ -103,7 +103,7 @@ msgstr "Nastaviť pracovný adresár pre shell"
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr ""
+msgstr "Nájsť…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -132,7 +132,7 @@ msgstr "Kopírovať označený text"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Vyhľadať zadaný reťazec v terminále"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -193,19 +193,19 @@ msgstr "Prepínanie na celú obrazovku"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Tento príkaz vyžaduje administrátorský prístup do počítača"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Kopírovanie príkazov z internetu môže byť nebezpečné. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Budte si istý, že viete čo každá časť príkazu vykoná."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Nevkladať"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
@@ -213,15 +213,15 @@ msgstr ""
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Hľadanie"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Predchádzajúci výsledok"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Ďalší výsledok"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Otvoriť na novej karte"
