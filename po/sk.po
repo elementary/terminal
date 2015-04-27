@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-04-18 11:05+0000\n"
-"Last-Translator: jurosh <Jurosh@gmail.com>\n"
+"PO-Revision-Date: 2015-04-26 09:24+0000\n"
+"Last-Translator: pyler <pyler@azet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-04-19 05:40+0000\n"
+"X-Launchpad-Export-Date: 2015-04-27 05:16+0000\n"
 "X-Generator: Launchpad (build 17430)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr "O programe Terminal"
+msgstr "O programe Terminál"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
@@ -53,7 +53,7 @@ msgstr "Na tejto karte prebieha aktívny proces."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "Keď to zatvoríte, proces bude ukončený."
+msgstr "Ak ju zatvoríte, proces sa ukončí."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -66,15 +66,15 @@ msgstr "Zatvoriť kartu"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Skutočne chcete ukočiť Terminál?"
+msgstr "Skutočne chcete ukončiť Terminál?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr "V termináli je aktívny proces."
+msgstr "V tomto termináli je aktívny proces."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr "Keď ukončíte Terminal, proces bude ukončený."
+msgstr "Ak ukončíte Terminál, proces sa ukončí."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -82,7 +82,7 @@ msgstr "Ukončiť Terminál"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr "Úloha dokončená"
+msgstr "Úloha bola dokončená"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Print version info and exit"
@@ -98,7 +98,7 @@ msgstr "Spustiť program v termináli"
 
 #: ../src/PantheonTerminal.vala:213
 msgid "Set shell working directory"
-msgstr "Nastaviť pracovný adresár pre shell"
+msgstr "Nastaviť pracovný adresár pre konzolu"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
@@ -132,7 +132,7 @@ msgstr "Kopírovať označený text"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr "Vyhľadať zadaný reťazec v terminále"
+msgstr "Vyhľadať zadaný reťazec v termináli"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -156,7 +156,7 @@ msgstr "O programe"
 
 #: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
-msgstr "Zobraziť v okne"
+msgstr "Zobraziť okno O programe"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
@@ -185,7 +185,7 @@ msgstr "Oddialiť"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
-msgstr "Na celú obrazovku"
+msgstr "Celá obrazovka"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
@@ -201,7 +201,7 @@ msgstr "Kopírovanie príkazov z internetu môže byť nebezpečné. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr "Budte si istý, že viete čo každá časť príkazu vykoná."
+msgstr "Budte si istý, že viete, čo každá časť príkazu vykoná."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
@@ -209,7 +209,7 @@ msgstr "Nevkladať"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Určite vložiť"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
