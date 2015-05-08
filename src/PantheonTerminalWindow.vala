@@ -412,13 +412,16 @@ namespace PantheonTerminal {
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
-            var new_window = app.new_window_with_coords (x, y, false);
-            var terminal = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
-            var new_notebook = new_window.notebook;
+            Idle.add (() => {
+                var new_window = app.new_window_with_coords (x, y, false);
+                var terminal = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+                var new_notebook = new_window.notebook;
 
-            notebook.remove_tab (tab);
-            new_notebook.insert_tab (tab, -1);
-            new_window.current_terminal = terminal;
+                notebook.remove_tab (tab);
+                new_notebook.insert_tab (tab, -1);
+                new_window.current_terminal = terminal;
+                return false;
+            });            
         }
 
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
