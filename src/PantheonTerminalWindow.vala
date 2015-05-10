@@ -16,7 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-***/
+ ***/
 
 namespace PantheonTerminal {
 
@@ -208,108 +208,99 @@ namespace PantheonTerminal {
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
-                    case Gdk.Key.Escape:
-                        if (this.search_toolbar.search_entry.has_focus) {
-                            this.search_button.active = !this.search_button.active;
-                            return true;
+                case Gdk.Key.Escape:
+                    if (this.search_toolbar.search_entry.has_focus) {
+                        this.search_button.active = !this.search_button.active;
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.KP_Add:
+                    if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        action_zoom_in_font ();
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.KP_Subtract:
+                    if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        action_zoom_out_font ();
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.Return:
+                    if (this.search_toolbar.search_entry.has_focus) {
+                        if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
+                            this.search_toolbar.previous_search ();
+                        } else {
+                            this.search_toolbar.next_search ();
                         }
-
-                        break;
-                    case Gdk.Key.Return:
-                        if (this.search_toolbar.search_entry.has_focus) {
-                            if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
-                                this.search_toolbar.previous_search ();
-                            } else {
-                                this.search_toolbar.next_search ();
-                            }
-
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.@0:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_default_font ();
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.KP_Add:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_in_font ();
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.KP_Subtract:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_out_font ();
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.@1: //alt+[1-8]
-                    case Gdk.Key.@2:
-                    case Gdk.Key.@3:
-                    case Gdk.Key.@4:
-                    case Gdk.Key.@5:
-                    case Gdk.Key.@6:
-                    case Gdk.Key.@7:
-                    case Gdk.Key.@8:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) && settings.alt_changes_tab) {
-                            var i = e.keyval - 49;
-                            if (i > notebook.n_tabs - 1)
-                                return false;
-
-                            notebook.current = notebook.get_tab_by_index ((int) i);
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.@9:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) && settings.alt_changes_tab) {
-                            notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
-                            return true;
-                        }
-
-                        break;
-                    case Gdk.Key.@C:
-                    case Gdk.Key.@c:
-                        /*  When Ctrl-C is pressed, copy selected text,
-                            if nothing is selected let the widget handle it */
-                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
-                            settings.natural_copy_paste) {
-                            if (current_terminal.get_has_selection ()) {
-                                current_terminal.copy_clipboard ();
-                                return true;
-                            }
-                        }
-                        break;
-                    case Gdk.Key.@V:
-                    case Gdk.Key.@v:
-                        if (this.search_toolbar.search_entry.has_focus) {
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.@0:
+                    if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        action_zoom_default_font ();
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.@1: //alt+[1-8]
+                case Gdk.Key.@2:
+                case Gdk.Key.@3:
+                case Gdk.Key.@4:
+                case Gdk.Key.@5:
+                case Gdk.Key.@6:
+                case Gdk.Key.@7:
+                case Gdk.Key.@8:
+                    if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        settings.alt_changes_tab) {
+                        var i = e.keyval - 49;
+                        if (i > notebook.n_tabs - 1)
                             return false;
-                        }else if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
-                            settings.natural_copy_paste) {
-                            if (clipboard.wait_is_text_available ()) {
-                                action_paste ();
-                                return true;
-                            }
+                        notebook.current = notebook.get_tab_by_index ((int) i);
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.@9:
+                    if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        settings.alt_changes_tab) {
+                        notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+                        return true;
+                    }
+                    break;
+                case Gdk.Key.@C:
+                case Gdk.Key.@c:
+                    /*  When Ctrl-C is pressed, copy selected text,
+                        if nothing is selected let the widget handle it */
+                    if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                        settings.natural_copy_paste) {
+                        if (current_terminal.get_has_selection ()) {
+                            current_terminal.copy_clipboard ();
+                            return true;
                         }
-                        break;
-                    case Gdk.Key.@D:
-                    case Gdk.Key.@d:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            if (!current_terminal.has_foreground_process () && settings.save_exited_tabs) {
-                                action_close_tab ();
-
-                                return true;
-                            }
+                    }
+                    break;
+                case Gdk.Key.@D:
+                case Gdk.Key.@d:
+                    if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                        if (!current_terminal.has_foreground_process () &&
+                            settings.save_exited_tabs) {
+                            action_close_tab ();
+                            return true;
                         }
-
-                        break;
+                    }
+                    break;
+                case Gdk.Key.@V:
+                case Gdk.Key.@v:
+                    if (this.search_toolbar.search_entry.has_focus) {
+                        return false;
+                    } else if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                               settings.natural_copy_paste) {
+                        if (clipboard.wait_is_text_available ()) {
+                            action_paste ();
+                            return true;
+                        }
+                    }
+                    break;
                 }
-
                 return false;
             });
         }
@@ -421,7 +412,7 @@ namespace PantheonTerminal {
                 new_notebook.insert_tab (tab, -1);
                 new_window.current_terminal = terminal;
                 return false;
-            });            
+            });
         }
 
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
@@ -480,7 +471,7 @@ namespace PantheonTerminal {
         }
 
         private void on_switch_page (Granite.Widgets.Tab? old,
-                             Granite.Widgets.Tab new_tab) {
+                                     Granite.Widgets.Tab new_tab) {
             current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
             title = current_terminal.window_title ?? "";
             new_tab.icon = null;
@@ -493,7 +484,7 @@ namespace PantheonTerminal {
                 if (tabs.length == 0) {
                     new_tab ();
                 } else {
-                    
+
                     int null_dirs = 0;
                     for (int i = 0; i < tabs.length; i++) {
                         File file = File.new_for_path (tabs[i]);
@@ -512,8 +503,8 @@ namespace PantheonTerminal {
 
                         if (loc == "")
                             continue;
-                        else 
-                            new_tab (loc);        
+                        else
+                            new_tab (loc);
                     }
                 }
             } else {
