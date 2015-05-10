@@ -300,8 +300,8 @@ namespace PantheonTerminal {
                             }
                         }
                         break;
-                    }
-                    return false;
+                }
+                return false;
             });
         }
 
