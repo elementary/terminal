@@ -16,7 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-***/
+ ***/
 
 namespace PantheonTerminal {
 
@@ -61,7 +61,7 @@ namespace PantheonTerminal {
         public bool natural_copy_paste { get; set; }
         public bool unsafe_paste_alert { get; set; }
 
-        public int opacity {get; set; }
+        public int opacity { get; set; }
         public string foreground { get; set; }
         public string background { get; set; }
         public string cursor_color { get; set; }
@@ -75,7 +75,7 @@ namespace PantheonTerminal {
         public bool save_exited_tabs { get; set; }
         public Granite.Widgets.DynamicNotebook.TabBarBehavior tab_bar_behavior { get; set; }
 
-        public Settings ()  {
+        public Settings () {
             base ("org.pantheon.terminal.settings");
         }
     }
