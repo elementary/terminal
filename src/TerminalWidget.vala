@@ -16,7 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-***/
+ ***/
 
 namespace PantheonTerminal {
 
@@ -72,13 +72,13 @@ namespace PantheonTerminal {
                                  |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
-        const string URLPATH =  "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
+        const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
 
         static const string[] regex_strings = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
             "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
             "(?:callto:|h323:|sip:)" + USERCHARS_CLASS + "[" + USERCHARS + ".]*(?:" + PORT + "/[a-z0-9]+)?\\@" + HOST,
-            "(?:mailto:)?" + USERCHARS_CLASS + "[" + USERCHARS+ ".]*\\@" + HOSTCHARS_CLASS + "+\\." + HOST,
+            "(?:mailto:)?" + USERCHARS_CLASS + "[" + USERCHARS + ".]*\\@" + HOSTCHARS_CLASS + "+\\." + HOST,
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
@@ -129,7 +129,7 @@ namespace PantheonTerminal {
                         }
 
                         return false;
-                    case Gdk.BUTTON_SECONDARY :
+                    case Gdk.BUTTON_SECONDARY:
                         if (uri != null) {
                             window.main_actions.get_action ("Copy").set_sensitive (true);
                         }
@@ -187,10 +187,10 @@ namespace PantheonTerminal {
             Gdk.Color foreground_color;
             Gdk.Color.parse (settings.foreground, out foreground_color);
 
-            string[] hex_palette = {"#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE",
-                                    "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60",
-                                    "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE",
-                                    "#EEEEEE"};
+            string[] hex_palette = { "#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE",
+                                     "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60",
+                                     "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE",
+                                     "#EEEEEE" };
 
             string current_string = "";
             int current_color = 0;
@@ -266,7 +266,7 @@ namespace PantheonTerminal {
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
 
                 // Export callback command a BASH-specific variable, see "man bash" for details
-                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable("PROMPT_COMMAND"),
+                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
 
                 // ZSH callback command will be read from ZSH config file supplied by us, see data/
 
@@ -316,12 +316,12 @@ namespace PantheonTerminal {
         }
 
         public int calculate_width (int column_count) {
-            int width = (int) (this.get_char_width()) * column_count;
+            int width = (int) (this.get_char_width ()) * column_count;
             return width;
         }
 
         public int calculate_height (int row_count) {
-            int height = (int) (this.get_char_height()) * row_count;
+            int height = (int) (this.get_char_height ()) * row_count;
             return height;
         }
 
@@ -405,17 +405,17 @@ namespace PantheonTerminal {
         public void drag_received (Gdk.DragContext context, int x, int y,
                                    Gtk.SelectionData selection_data, uint target_type, uint time_) {
             switch (target_type) {
-               case DropTargets.URILIST:
-                   var uris = selection_data.get_uris ();
-                   string path;
-                   File file;
+                case DropTargets.URILIST:
+                    var uris = selection_data.get_uris ();
+                    string path;
+                    File file;
 
-                   for (var i = 0; i < uris.length; i++) {
-                       file = File.new_for_uri (uris[i]);
-                       if ((path = file.get_path ()) != null) {
-                           uris[i] = Shell.quote (path) + " ";
-                       }
-                   }
+                    for (var i = 0; i < uris.length; i++) {
+                         file = File.new_for_uri (uris[i]);
+                         if ((path = file.get_path ()) != null) {
+                             uris[i] = Shell.quote (path) + " ";
+                        }
+                    }
 
                     string uris_s = string.joinv ("", uris);
                     this.feed_child (uris_s, uris_s.length);
