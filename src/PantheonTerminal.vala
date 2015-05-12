@@ -16,7 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-***/
+ ***/
 
 namespace PantheonTerminal {
 
@@ -57,7 +57,7 @@ namespace PantheonTerminal {
                               "Mario Guerriero <mario@elementaryos.org>",
                               "Akshay Shekher <voldyman666@gmail.com>" };
 
-            //about_documenters = {"",""};
+            // about_documenters = {"",""};
             about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
             about_translators = "Launchpad Translators";
             about_license_type = Gtk.License.GPL_3_0;
@@ -209,7 +209,7 @@ namespace PantheonTerminal {
         static const OptionEntry[] entries = {
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "about", 'a', 0, OptionArg.NONE, out show_about_dialog, N_("Show about dialog"), null },
-            { "execute" , 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
+            { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
             { null }
         };
