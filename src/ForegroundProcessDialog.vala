@@ -27,9 +27,9 @@ namespace PantheonTerminal {
             deletable = false;
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
-                        _("Are you sure you want to close this tab?") + "</span>\n\n" +
-                        _("There is an active process on this tab.") + "\n" +
-                        _("If you close it, the process will end."));
+                      _("Are you sure you want to close this tab?") + "</span>\n\n" +
+                      _("There is an active process on this tab.")+"\n"+
+                      _("If you close it, the process will end."));
             message_area.set_margin_left (0);
             message_area.set_margin_right (0);
 
@@ -52,9 +52,9 @@ namespace PantheonTerminal {
             deletable = false;
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
-                        _("Are you sure you want to quit Terminal?") + "</span>\n\n" +
-                        _("There is an active process on this terminal.") + "\n" +
-                        _("If you quit Terminal, the process will end."));
+                      _("Are you sure you want to quit Terminal?") + "</span>\n\n" +
+                      _("There is an active process on this terminal.")+"\n"+
+                      _("If you quit Terminal, the process will end."));
 
             var button = new Gtk.Button.with_label (_("Cancel"));
             button.show ();
