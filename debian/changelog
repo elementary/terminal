@@ -1,3 +1,9 @@
+pantheon-terminal (0.3.1.2) trusty; urgency=low
+
+  * Fix segfault on moving tabs out of the window (lp:1432578)
+
+ -- Cody Garver <cody@elementaryos.org>  Sat, 16 May 2015 01:30:10 -0500
+
 pantheon-terminal (0.3.1.1) trusty; urgency=low
 
   * Change "Find in text" to "Find…" (lp:1426475)
