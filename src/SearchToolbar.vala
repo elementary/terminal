@@ -16,7 +16,7 @@
     with this program.  If not, see <http://www.gnu.org/licenses/>
 
     END LICENSE
-***/
+ ***/
 
 namespace PantheonTerminal.Widgets {
 
@@ -43,13 +43,13 @@ namespace PantheonTerminal.Widgets {
             this.tool_search_entry.add (search_entry);
 
             var i = new Gtk.Image.from_icon_name ("go-up-symbolic",
-                Gtk.IconSize.SMALL_TOOLBAR);
+                                                  Gtk.IconSize.SMALL_TOOLBAR);
             i.pixel_size = 16;
             var previous_button = new Gtk.ToolButton (i, null);
             previous_button.set_tooltip_text (_("Previous result"));
 
             i = new Gtk.Image.from_icon_name ("go-down-symbolic",
-                Gtk.IconSize.SMALL_TOOLBAR);
+                                              Gtk.IconSize.SMALL_TOOLBAR);
             i.pixel_size = 16;
             var next_button = new Gtk.ToolButton (i, null);
             next_button.set_tooltip_text (_("Next result"));
@@ -60,7 +60,7 @@ namespace PantheonTerminal.Widgets {
 
             this.show_all ();
             this.set_style (Gtk.ToolbarStyle.ICONS);
-            this.get_style_context () .add_class ("search-bar");
+            this.get_style_context ().add_class ("search-bar");
 
             // Signals and callbacks
             this.clear.connect (clear_cb);
@@ -80,12 +80,12 @@ namespace PantheonTerminal.Widgets {
 
         void search_changed_cb () {
             try {
-                //FIXME Have a configuration menu or something.
-                var regex = new Regex (Regex.escape_string(search_entry.text),
-                    RegexCompileFlags.CASELESS);
+                // FIXME Have a configuration menu or something.
+                var regex = new Regex (Regex.escape_string (search_entry.text),
+                                       RegexCompileFlags.CASELESS);
                 this.window.current_terminal.search_set_gregex (regex);
                 this.window.current_terminal.search_set_wrap_around (true);
-            } catch ( RegexError er) {
+            } catch (RegexError er) {
                 warning ("There was an error to compile the regex: %s", er.message);
             }
         }
