@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-04-06 17:37+0000\n"
+"PO-Revision-Date: 2015-05-20 18:12+0000\n"
 "Last-Translator: TcodingT <TcodingT@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:30+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-05-22 04:54+0000\n"
+"X-Generator: Launchpad (build 17514)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -132,7 +132,7 @@ msgstr "Copier le texte sélectionné"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
