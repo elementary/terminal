@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-04-28 21:35+0000\n"
+"PO-Revision-Date: 2015-06-25 18:27+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:30+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-06-26 04:50+0000\n"
+"X-Generator: Launchpad (build 17578)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -132,7 +132,7 @@ msgstr "Kopjo tekstin e përzgjedhur"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Kërko ndonjë varg tekstual në terminal"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
