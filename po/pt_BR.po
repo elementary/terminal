@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-02-18 13:30+0000\n"
-"Last-Translator: Samuelselos <samuelselos@hotmail.com>\n"
+"PO-Revision-Date: 2015-07-21 23:15+0000\n"
+"Last-Translator: Danilo Cominotti Marques <dcominottim@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:30+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-07-22 05:27+0000\n"
+"X-Generator: Launchpad (build 17628)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -103,7 +103,7 @@ msgstr "Definir diretório de trabalho do shell"
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr ""
+msgstr "Buscar..."
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -132,7 +132,7 @@ msgstr "Copiar o texto selecionado"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Procurar por um texto no terminal"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -213,15 +213,15 @@ msgstr "Colar mesmo assim"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Buscar"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Resultado anterior"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Próximo resultado"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Definir interface ao iniciar"
