@@ -1,0 +1,224 @@
+# Kinyarwanda translation for pantheon-terminal
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the pantheon-terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-terminal\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"PO-Revision-Date: 2015-08-05 08:44+0000\n"
+"Last-Translator: Uwonkunda Patrick <patrickuwonkunda@gmail.com>\n"
+"Language-Team: Kinyarwanda <rw@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-08-06 05:33+0000\n"
+"X-Generator: Launchpad (build 17656)\n"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Ibijyanye na terminal"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "koresha uburyo bwamakomande"
+
+#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:553
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
+msgid "New Window"
+msgstr "Idirishya rishya"
+
+#: ../src/Constants.vala:9
+msgid "New Root Window"
+msgstr "Idirishya rishya ryumuyobozi"
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Fungura terminal hano"
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "Ese koko uremeza neza ko ushaka gufunga iri dirishya?"
+
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "Hari porgorame irigukora kuri iri dirishya?"
+
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
+msgstr "Nurifunga , iyi porogaramu irahagarara."
+
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "Hagarika"
+
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "Funga akadirishya"
+
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ese koko urashaka gufunga iyi Terminal?"
+
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "Hari porogarame iri kugendera kuri iyi Terminal"
+
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
+msgstr "Nufunga Terminal, iyi porogarame irahagarara."
+
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "Funga Terminal"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Akazi karangiye"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Printinga verisiyo namakuru hanyuma ufunge"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Erekana ibijyanye na Dialoge"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Fungura porogarame muri terminal"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Shyira aho shell iri bukorere"
+
+#: ../src/PantheonTerminalWindow.vala:172
+#: ../src/PantheonTerminalWindow.vala:777
+msgid "Find…"
+msgstr "Shaka ...."
+
+#: ../src/PantheonTerminalWindow.vala:760
+#: ../src/PantheonTerminalWindow.vala:761
+msgid "Close"
+msgstr "Funga"
+
+#: ../src/PantheonTerminalWindow.vala:765
+msgid "Open a new window"
+msgstr "Fungura idirishya"
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "New Tab"
+msgstr "Akadirishya gashya"
+
+#: ../src/PantheonTerminalWindow.vala:769
+msgid "Create a new tab"
+msgstr "Kora akadirishya gashyashya"
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy"
+msgstr "Kopiya"
+
+#: ../src/PantheonTerminalWindow.vala:773
+msgid "Copy the selected text"
+msgstr "Kopiya amagambo wahisemo"
+
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Search for a given string in the terminal"
+msgstr "Shakisha amagambo muri terminal"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste"
+msgstr "Omeka"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Paste some text"
+msgstr "Omeka amagambo"
+
+#: ../src/PantheonTerminalWindow.vala:785
+msgid "Select All"
+msgstr "Hitamo byose"
+
+#: ../src/PantheonTerminalWindow.vala:786
+msgid "Select all the text in the terminal"
+msgstr "Hitamo amagambo yose ari muri Terminal"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "About"
+msgstr "Amakuru"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Show about window"
+msgstr "Erekana ibijyanye niri dirishya"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "Next Tab"
+msgstr "akadirishya gakurikiyeho"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Go to next tab"
+msgstr "Jya kwidirishya rikurikiyeho"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Previous Tab"
+msgstr "akadirishya ribanziriza"
+
+#: ../src/PantheonTerminalWindow.vala:796
+msgid "Go to previous tab"
+msgstr "Jya kukadirishya kabanziriza"
+
+#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:800
+msgid "Zoom in"
+msgstr "Tubura"
+
+#: ../src/PantheonTerminalWindow.vala:804
+msgid "Zoom out"
+msgstr "Tubya"
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Fullscreen"
+msgstr "Screen Yuzuye"
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Fungura/Funga Screen yuzuye"
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Iyi komande iri gusaba imbaraga zubuyobozi ziyi mudasobwa"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Gukopiya komande kuri murandasi bishobora kugira ingaruka mbi. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Menya neza ko wumva icyo buri gace ka komande gasobanuye"
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Ntiwomeke"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Omeka ntakundi"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Shaka"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Ibisubizo byabanjirije"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Ibisubizo bikurikira"
