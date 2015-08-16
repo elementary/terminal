@@ -27,7 +27,14 @@ fi
 if [[ -n "$PANTHEON_TERMINAL_ID" ]] \
 && builtin hash dbus-send 2> /dev/null
 then
-    pantheon-terminal-process-completion-callback
+    dbus-send \
+        --type=method_call \
+        --session \
+        --dest=net.launchpad.pantheon-terminal \
+        /net/launchpad/pantheon_terminal \
+        org.pantheon.terminal.ProcessFinished \
+        string:$PANTHEON_TERMINAL_ID \
+        string:"You should not have seen this, please report the incident to Pantheon Terminal developers."
 fi
 # Yes, really, and that's terrifying.
 # BASH has no usable post-execution hook, but it has a convenient pre-promt hook
