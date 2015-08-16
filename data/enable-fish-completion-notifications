@@ -14,7 +14,9 @@ function pantheon-terminal-process-completion-callback --on-event fish_postexec 
 end
 
 # Work around Pantheon Terminal's workarounds for how constrained BASH is.
-pantheon-terminal-process-completion-callback "You should not have seen this, please report the incident to Pantheon Terminal developers."
+if status --is-interactive; and set --query PANTHEON_TERMINAL_ID
+    pantheon-terminal-process-completion-callback "You should not have seen this, please report the incident to Pantheon Terminal developers."
+end
 # Yes, really, and that's terrifying.
 # BASH has no usable post-execution hook, but it has a convenient pre-promt hook
 # available from an environment variable, so we use that.

@@ -24,7 +24,11 @@ then
 fi
 
 # Work around Pantheon Terminal's workarounds for how constrained BASH is.
-pantheon-terminal-process-completion-callback
+if [[ -n "$PANTHEON_TERMINAL_ID" ]] \
+&& builtin hash dbus-send 2> /dev/null
+then
+    pantheon-terminal-process-completion-callback
+fi
 # Yes, really, and that's terrifying.
 # BASH has no usable post-execution hook, but it has a convenient pre-promt hook
 # available from an environment variable, so we use that.
