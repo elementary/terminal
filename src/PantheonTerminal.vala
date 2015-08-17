@@ -110,12 +110,12 @@ namespace PantheonTerminal {
             dbus.finished_process.connect ((id, process) => {
                 foreach (var window in windows) {
                     foreach (var terminal in window.terminals) {
-                        if (terminal.terminal_id == id && terminal.ever_had_focus) {
+                        if (terminal.terminal_id == id) {
 
                             if (!terminal.is_init_complete ()) {
                                 terminal.set_init_complete ();
-
                             } else {
+
                                 if (terminal != window.current_terminal) {
                                     terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
                                 }

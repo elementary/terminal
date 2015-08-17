@@ -1,0 +1,29 @@
+# This file should be sourced from either /etc/fish/config.fish
+# or ~/.config/fish/config.fish in order to enable 
+# process completion notifications in Pantheon Terminal.
+# Like this:
+#source /usr/share/pantheon-terminal/enable-fish-completion-notifications 2>/dev/null; or true
+
+# If you come up with a way to inject this without modifying those files,
+# please let me know at <sergey@elementaryos.org>
+
+function pantheon-terminal-process-completion-callback --on-event fish_postexec --description "Notify Pantheon Terminal about task completion"
+    if status --is-interactive; and set --query PANTHEON_TERMINAL_ID
+        dbus-send --type=method_call --session --dest=net.launchpad.pantheon-terminal /net/launchpad/pantheon_terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:"$argv[1]";
+    end
+end
+
+# Work around Pantheon Terminal's workarounds for how constrained BASH is.
+if status --is-interactive; and set --query PANTHEON_TERMINAL_ID
+    pantheon-terminal-process-completion-callback "You should not have seen this, please report the incident to Pantheon Terminal developers."
+end
+# Yes, really, and that's terrifying.
+# BASH has no usable post-execution hook, but it has a convenient pre-promt hook
+# available from an environment variable, so we use that.
+# But that generates an extra notification on startup which has to be suppressed.
+# And so far the only reliable way to do that we came up with
+# was ignoring the first callback in each tab. 
+# Just like that.
+# I've tried some clever focus-based trickery, but it was unreliable:
+# https://bugs.launchpad.net/pantheon-terminal/+bug/1356937
+# Please let us know if you come up with anything better or can patch BASH.
