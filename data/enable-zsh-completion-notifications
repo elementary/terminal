@@ -23,7 +23,14 @@ then
     precmd_functions=(pantheon_terminal_command_competion_callback)
 fi
 
-# Work around Pantheon Terminal's workarounds for how constrained BASH is.
+# Some shells (e.g. BASH) lack the post-execution hook,
+# so we insert a callback into their pre-prompt hook instead.
+# This results in a bogus callback on first prompt, which has to be ignored.
+# I've tried some clever focus-based suppression but it was prone to race conditions.
+# The only reliable way to work that around that we've found
+# is always ignoring the first callback in each tab on the terminal side
+# and deliberately issuing a fake callback from shells with a proper
+# post-execution hook, such zsh and fish.
 if [[ -n "$PANTHEON_TERMINAL_ID" ]] \
 && builtin hash dbus-send 2> /dev/null
 then
@@ -36,13 +43,4 @@ then
         string:$PANTHEON_TERMINAL_ID \
         string:"You should not have seen this, please report the incident to Pantheon Terminal developers."
 fi
-# Yes, really, and that's terrifying.
-# BASH has no usable post-execution hook, but it has a convenient pre-promt hook
-# available from an environment variable, so we use that.
-# But that generates an extra notification on startup which has to be suppressed.
-# And so far the only reliable way to do that we came up with
-# was ignoring the first callback in each tab. 
-# Just like that.
-# I've tried some clever focus-based trickery, but it was unreliable:
-# https://bugs.launchpad.net/pantheon-terminal/+bug/1356937
-# Please let us know if you come up with anything better or can patch BASH.
+
