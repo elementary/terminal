@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2014-09-23 21:56+0000\n"
-"Last-Translator: Laszlo Espadas <kw@kardiweb.org>\n"
+"PO-Revision-Date: 2015-08-19 17:17+0000\n"
+"Last-Translator: Papp Ferenc <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-05-16 05:30+0000\n"
-"X-Generator: Launchpad (build 17493)\n"
+"X-Launchpad-Export-Date: 2015-08-20 05:47+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -103,7 +103,7 @@ msgstr "Shell munkakönyvtár beállítása"
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr ""
+msgstr "Keresés…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -132,7 +132,7 @@ msgstr "A kiválasztott szöveg másolása"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Szöveg keresése a terminálban"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -193,35 +193,35 @@ msgstr "Teljes képernyős nézetváltás"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Ez a parancs adminisztrációs hozzáférést akar a számítógépéhez"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Internetről származó parancs másolása veszélyes lehet. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Ne illessze be"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Beillesztés mindenképpen"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Keresés"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Előző találat"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Következő találat"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Új lap megnyitása"
