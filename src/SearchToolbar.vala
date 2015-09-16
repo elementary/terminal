@@ -83,7 +83,7 @@ namespace PantheonTerminal.Widgets {
                 // FIXME Have a configuration menu or something.
                 var regex = new Regex (Regex.escape_string (search_entry.text),
                                        RegexCompileFlags.CASELESS);
-                this.window.current_terminal.search_set_gregex (regex);
+                this.window.current_terminal.search_set_gregex (regex, 0);
                 this.window.current_terminal.search_set_wrap_around (true);
             } catch (RegexError er) {
                 warning ("There was an error to compile the regex: %s", er.message);

@@ -98,9 +98,6 @@ namespace PantheonTerminal {
 
             init_complete = false;
 
-            /* Sets characters that define word for double click selection */
-            set_word_chars ("-A-Za-z0-9/.,_~#%?:=+@");
-
             restore_settings ();
             settings.changed.connect (restore_settings);
 
@@ -171,14 +168,13 @@ namespace PantheonTerminal {
         public void restore_settings () {
             /* Load configuration */
             int opacity = settings.opacity * 65535;
-            set_background_image (null);
             set_opacity ((uint16) (opacity / 100));
 
-            Gdk.Color background_color;
-            Gdk.Color.parse (settings.background, out background_color);
+            Gdk.RGBA background_color = Gdk.RGBA ();
+            background_color.parse (settings.background);
 
-            Gdk.Color foreground_color;
-            Gdk.Color.parse (settings.foreground, out foreground_color);
+            Gdk.RGBA foreground_color = Gdk.RGBA ();
+            foreground_color.parse (settings.foreground);
 
             string[] hex_palette = { "#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE",
                                      "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60",
@@ -197,19 +193,19 @@ namespace PantheonTerminal {
                 }
             }
 
-            Gdk.Color[] palette = new Gdk.Color[16];
+            Gdk.RGBA[] palette = new Gdk.RGBA[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.Color new_color;
-                Gdk.Color.parse (hex_palette[i], out new_color);
+                Gdk.RGBA new_color= Gdk.RGBA();
+                new_color.parse (hex_palette[i]);
 
                 palette[i] = new_color;
             }
 
             set_colors (foreground_color, background_color, palette);
 
-            Gdk.Color cursor_color;
-            Gdk.Color.parse (settings.cursor_color, out cursor_color);
+            Gdk.RGBA cursor_color = Gdk.RGBA ();
+            cursor_color.parse (settings.cursor_color);
             set_color_cursor (cursor_color);
 
             /* Bold font */
@@ -267,8 +263,8 @@ namespace PantheonTerminal {
             };
 
             try {
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -279,8 +275,8 @@ namespace PantheonTerminal {
                 string[]? program_with_args = null;
                 Shell.parse_argv (program_string, out program_with_args);
 
-                this.fork_command_full (Vte.PtyFlags.DEFAULT, null, program_with_args,
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid);
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
+                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
             }
@@ -292,7 +288,7 @@ namespace PantheonTerminal {
                 return false;
             }
 
-            int pty = this.pty_object.fd;
+            int pty = get_pty().fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
             if (fgpid != this.child_pid && fgpid != -1) {
