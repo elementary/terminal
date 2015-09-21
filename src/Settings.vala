@@ -65,7 +65,7 @@ namespace PantheonTerminal {
         public string foreground { get; set; }
         public string background { get; set; }
         public string cursor_color { get; set; }
-        public Vte.TerminalCursorShape cursor_shape { get; set; }
+        public Vte.CursorShape cursor_shape { get; set; }
         public string palette { get; set; }
 
         public string shell { get; set; }

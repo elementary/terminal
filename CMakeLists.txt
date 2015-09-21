@@ -51,7 +51,7 @@ pkg_check_modules (DEPS REQUIRED
   gthread-2.0
   gtk+-3.0>=3.9.10
   granite>=0.3.0
-  vte-2.90
+  vte-2.91
   libnotify
   gdk-3.0)
 
@@ -81,7 +81,7 @@ vala_precompile (VALA_C
     src/Constants.vala
     src/SearchToolbar.vala
 PACKAGES
-    vte-2.90
+    vte-2.91
     granite
     gtk+-3.0
     libnotify
