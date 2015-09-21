@@ -182,7 +182,6 @@ namespace PantheonTerminal {
 
             /* Set up the Notebook */
             notebook = new Granite.Widgets.DynamicNotebook ();
-            notebook.show_icons = true;
 
             main_actions.get_action ("Copy").set_sensitive (false);
 
