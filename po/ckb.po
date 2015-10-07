@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-10-02 01:58+0000\n"
+"PO-Revision-Date: 2015-10-07 02:16+0000\n"
 "Last-Translator: qezwan <Unknown>\n"
 "Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-10-03 05:26+0000\n"
-"X-Generator: Launchpad (build 17783)\n"
+"X-Launchpad-Export-Date: 2015-10-07 05:44+0000\n"
+"X-Generator: Launchpad (build 17802)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -29,11 +29,11 @@ msgstr "سود وەرگرتن لە فەرمانی ترمیناڵ"
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:553
 msgid "Terminal"
-msgstr ""
+msgstr "تێرمیناڵ"
 
 #: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
 msgid "New Window"
-msgstr ""
+msgstr "پەنجەرەیەکی نوێ"
 
 #: ../src/Constants.vala:9
 msgid "New Root Window"
@@ -58,7 +58,7 @@ msgstr "گر  ئێوە دایخەن ، پرۆسە کۆتایی پێدێت."
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr ""
+msgstr "هەڵوەشاندنەوە"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
@@ -108,11 +108,11 @@ msgstr "پەیداکردن..."
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
 msgid "Close"
-msgstr ""
+msgstr "داخستن"
 
 #: ../src/PantheonTerminalWindow.vala:765
 msgid "Open a new window"
-msgstr ""
+msgstr "پەنجەرەيێكى نوێ بکەرەوە"
 
 #: ../src/PantheonTerminalWindow.vala:769
 msgid "New Tab"
@@ -124,7 +124,7 @@ msgstr "درووستکردنی سەرخشتی نوێ...."
 
 #: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy"
-msgstr ""
+msgstr "ڕوونووس"
 
 #: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy the selected text"
@@ -144,31 +144,31 @@ msgstr "لکاندنی دەقێک"
 
 #: ../src/PantheonTerminalWindow.vala:785
 msgid "Select All"
-msgstr ""
+msgstr "هه‌مووی دیاری بکه‌"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "هەموو فەرمانەکان(دەقەکان) لە ترمیناڵ هەڵبژێرە"
 
 #: ../src/PantheonTerminalWindow.vala:788
 msgid "About"
-msgstr ""
+msgstr "درباره"
 
 #: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
-msgstr ""
+msgstr "نیشاندان لەبارەی پەنجێرە"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
-msgstr ""
+msgstr "داهاتووی دانه‌"
 
 #: ../src/PantheonTerminalWindow.vala:792
 msgid "Go to next tab"
-msgstr ""
+msgstr "بڕۆ  بۆ دوایین سەرخشت"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Previous Tab"
-msgstr ""
+msgstr "گه‌ڕانه‌وه‌ی دانه‌"
 
 #: ../src/PantheonTerminalWindow.vala:796
 msgid "Go to previous tab"
@@ -185,7 +185,7 @@ msgstr "دەرهاتن لە گەورەنوێیی"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
-msgstr ""
+msgstr "ته‌واوی تێکست"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
@@ -213,7 +213,7 @@ msgstr "لکاندن لە هەرشوێن"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "دۆزینه‌وه‌"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
@@ -222,3 +222,15 @@ msgstr "ئاکامی پێشتر"
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
 msgstr "ئاکامی دیکە"
+
+#~ msgid "If you quit Terminal, this process will end."
+#~ msgstr "گر بچیتە دەرەوە لە ترمیناڵ ئەم پرۆسە کۆتایی پێدێت."
+
+#~ msgid "If you close this tab, this process will end."
+#~ msgstr "گەر ئەم سەرخشتە داخەی پرۆسە کۆتایی پێدێت."
+
+#~ msgid "Set shell at launch"
+#~ msgstr "سازدانی سێڵ لە لانچ"
+
+#~ msgid "Open a new tab"
+#~ msgstr "سەرخشتی نوێ بکەرەوە"
