@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2015-09-02 16:47+0000\n"
-"Last-Translator: Igor <igortrefilov@gmail.com>\n"
+"PO-Revision-Date: 2015-10-22 20:56+0000\n"
+"Last-Translator: Maxim Taranov <png2378@protonmail.ch>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
+"X-Launchpad-Export-Date: 2015-10-23 05:35+0000\n"
+"X-Generator: Launchpad (build 17812)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -37,7 +37,7 @@ msgstr "Новое окно"
 
 #: ../src/Constants.vala:9
 msgid "New Root Window"
-msgstr "Новое окно от имени суперпользователя"
+msgstr "Новое окно от имени Администратора"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
@@ -53,7 +53,7 @@ msgstr "Во вкладке выполяется процесс."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "Если вы закроете Терминал, процесс будет остановлен."
+msgstr "Если вы закроете терминал, процесс будет остановлен."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -66,7 +66,7 @@ msgstr "Закрыть вкладку"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Вы уверены, что хотите выйти из Терминала?"
+msgstr "Вы уверены, что хотите выйти из терминала?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
@@ -74,7 +74,7 @@ msgstr "В терминале выполняется процесс."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr "Если вы выйдете из Терминала, процесс будет остановлен."
+msgstr "Если вы выйдете из терминала, процесс будет остановлен."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -103,7 +103,7 @@ msgstr "Установить рабочyю папку для shell"
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr "Найти…"
+msgstr "Поиск..."
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -177,15 +177,15 @@ msgstr "Перейти к предыдущей вкладке"
 #: ../src/PantheonTerminalWindow.vala:799
 #: ../src/PantheonTerminalWindow.vala:800
 msgid "Zoom in"
-msgstr "Увеличить"
+msgstr "Приблизить"
 
 #: ../src/PantheonTerminalWindow.vala:804
 msgid "Zoom out"
-msgstr "Уменьшить"
+msgstr "Отдалить"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
-msgstr "Во весь экран"
+msgstr "Полноэкранный режим"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
@@ -193,12 +193,12 @@ msgstr "Включить/выключить полноэкранный режи�
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Эта команда запрашивает права администратора для выполнения"
+msgstr "Эта команда запрашивает права Администратора для выполнения"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr ""
-"Выполнение команд из Интернета может быть опасным и может повредить вашу "
+"Выполнение команд из интернета может быть опасным и может повредить вашу "
 "систему. "
 
 #: ../src/UnsafePasteDialog.vala:35
