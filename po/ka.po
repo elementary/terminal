@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2014-12-24 13:16+0000\n"
-"Last-Translator: George Gzirishvili <Unknown>\n"
+"PO-Revision-Date: 2015-11-13 23:52+0000\n"
+"Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
+"X-Launchpad-Export-Date: 2015-11-14 04:48+0000\n"
+"X-Generator: Launchpad (build 17845)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -103,7 +103,7 @@ msgstr "გარსის სამუშაო კატალოგის დ
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr ""
+msgstr "პოვნა..."
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -132,7 +132,7 @@ msgstr "მონიშნული ტექსტის კოპირებ�
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "მოცემული სტრიქონის პოვნა ტერმინალში"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -193,35 +193,35 @@ msgstr "სრული ეკრანის რეჟიმის ჩართ
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "ეს ბრძანება მოითხოვს ადმინისტრაცილ წვდომას თქვენს კომპიუტერზე"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "ინტერნეტიდან ბრძანებების დაკოპირება შესაძლოა სახიფათო აღმოჩნდეს. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "კარგად გაარკვიეთ, რას აკეთებს ამ ბრძანების თითოეული ნაწილი."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "არ ჩაისვას"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "მაინც ჩაისვას"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "პოვნა"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "წინა შედეგი"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "მომდევნო შედეგი"
 
 #~ msgid "Open a new tab"
 #~ msgstr "ახალი ჩანართის გახსნა"
