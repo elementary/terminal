@@ -663,7 +663,7 @@ namespace PantheonTerminal {
                 }
                 var text = intext.strip();
 
-                if (text.has_prefix("sudo") && (text.index_of("\n") != 0)) {
+                if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this);
                     if (d.run () == 1) {
                         d.destroy ();
