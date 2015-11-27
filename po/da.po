@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-04-16 02:28-0500\n"
-"PO-Revision-Date: 2012-07-31 19:04+0000\n"
-"Last-Translator: Niclas Moeslund Overby <Unknown>\n"
+"PO-Revision-Date: 2015-11-27 00:33+0000\n"
+"Last-Translator: Jimmy Merrild Krag <jimmy@kragenet.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
+"X-Launchpad-Export-Date: 2015-11-27 05:27+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Om Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
@@ -37,15 +37,15 @@ msgstr "Nyt vindue"
 
 #: ../src/Constants.vala:9
 msgid "New Root Window"
-msgstr "Ny Root Vindue"
+msgstr "Nyt root-vindue"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Åbn terminal her"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "Er du sikker på, at du vil lukke denne fane?"
+msgstr "Er du sikker på at du vil lukke denne fane?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -53,7 +53,7 @@ msgstr "Der er en aktiv proces i denne fane."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Hvis du lukker den, vil denne process blive afsluttet."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -62,7 +62,7 @@ msgstr "Annullér"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr "Luk Fane"
+msgstr "Luk fane"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
@@ -74,7 +74,7 @@ msgstr "Der er en aktiv proces i denne terminal."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -82,19 +82,19 @@ msgstr "Afslut Terminal"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr ""
+msgstr "Opgave afsluttet"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Print version info and exit"
-msgstr ""
+msgstr "Print versionsinformation og afslut"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Show about dialog"
-msgstr ""
+msgstr "Vis dialog med information om denne version Terminal"
 
 #: ../src/PantheonTerminal.vala:212
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Kør et program i terminalen"
 
 #: ../src/PantheonTerminal.vala:213
 msgid "Set shell working directory"
@@ -103,7 +103,7 @@ msgstr ""
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:777
 msgid "Find…"
-msgstr ""
+msgstr "Find…"
 
 #: ../src/PantheonTerminalWindow.vala:760
 #: ../src/PantheonTerminalWindow.vala:761
@@ -120,19 +120,19 @@ msgstr "Ny fane"
 
 #: ../src/PantheonTerminalWindow.vala:769
 msgid "Create a new tab"
-msgstr "Opret en ny fane"
+msgstr "Opret ny fane"
 
 #: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy"
-msgstr "Kopier"
+msgstr "Kopiér"
 
 #: ../src/PantheonTerminalWindow.vala:773
 msgid "Copy the selected text"
-msgstr "Kopier den markerede tekst"
+msgstr "Kopiér den markerede tekst"
 
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Søg efter en vilkårlig streng i terminalen"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste"
@@ -140,7 +140,7 @@ msgstr "Indsæt"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Paste some text"
-msgstr "Indsæt noget tekst"
+msgstr "Indsæt som tekst"
 
 #: ../src/PantheonTerminalWindow.vala:785
 msgid "Select All"
@@ -148,7 +148,7 @@ msgstr "Markér alt"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Select all the text in the terminal"
-msgstr "Vælg alt tekst i terminalen"
+msgstr "Marker al tekst i terminalen"
 
 #: ../src/PantheonTerminalWindow.vala:788
 msgid "About"
@@ -156,23 +156,23 @@ msgstr "Om"
 
 #: ../src/PantheonTerminalWindow.vala:789
 msgid "Show about window"
-msgstr "Vis om vinduet"
+msgstr "Vis vindue med information om denne version Terminal"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "Next Tab"
-msgstr ""
+msgstr "Næste fane"
 
 #: ../src/PantheonTerminalWindow.vala:792
 msgid "Go to next tab"
-msgstr ""
+msgstr "Gå til næste fane"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Previous Tab"
-msgstr ""
+msgstr "Forrige fane"
 
 #: ../src/PantheonTerminalWindow.vala:796
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Gå til forrige fane"
 
 #: ../src/PantheonTerminalWindow.vala:799
 #: ../src/PantheonTerminalWindow.vala:800
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Fullscreen"
-msgstr "Fuldskærm"
+msgstr "Fuld skærm"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Toggle/Untoggle fullscreen"
@@ -193,35 +193,35 @@ msgstr "Slå fuld skærm til/fra"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Denne kommando forespørger administrativ adgang til din computer"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
+msgstr "Kopiering af kommandoer fra internettet kan være farligt. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Indsæt ikke"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Indsæt alligevel"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Find"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Forrige resultat"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Næste resultat"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Åbn et nyt faneblad"
