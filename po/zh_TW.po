@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-04-12 02:10+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "關於《終端機》"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "使用指令列"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "終端機"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "新增視窗"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "新增 root 視窗"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "在此處開啟終端機"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "若您退出終端機，裡面的程序將會終止。"
 msgid "Quit Terminal"
 msgstr "退出終端機"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "工作已完成"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "顯示版本訊息後離開"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "顯示關於對話盒"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "在終端機中執行程式"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "設定 shell 工作目錄"
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "終端機"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "尋找…"
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "關閉"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "新增視窗"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "開啟新視窗"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "新增分頁"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "建立新分頁"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "複製"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "複製所選文字"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "在終端機中搜尋指定的字串"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "貼上"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "貼上一些文字"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "全部選擇"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "選取終端機中的全部文字"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "關於"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "顯示關於視窗"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "下個分頁"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "前往下個分頁"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "上一個分頁"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "前往上一個分頁"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr "拉近"
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr "拉遠"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "全螢幕"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "啟動/關閉全螢幕"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "尋找"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "上個結果"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "下個結果"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,17 +187,41 @@ msgstr "不要貼上"
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "尋找"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "工作已完成"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "上個結果"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "顯示版本訊息後離開"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "下個結果"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "顯示關於對話盒"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "在終端機中執行程式"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "設定 shell 工作目錄"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "關於《終端機》"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "使用指令列"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "在此處開啟終端機"
 
 #~ msgid "Open a new tab"
 #~ msgstr "開啟新分頁"
@@ -234,3 +234,6 @@ msgstr "下個結果"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "若您關閉此分頁，此程序將結束。"
+
+#~ msgid "New Root Window"
+#~ msgstr "新增 root 視窗"

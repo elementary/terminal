@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-03-02 08:27+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Tietoja - Pääte"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Käytä komentoriviä"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "Pääte"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "Uusi ikkuna"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Uusi ylläpitäjän ikkuna"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Avaa pääteikkuna tähän"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "Jos lopetat päätteen, prosessi päättyy."
 msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tehtävä valmistui"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Tulosta versiotiedot ja poistu"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Näytä tietoikkuna"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Suorita ohjelma päätteessä"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Aseta komentotulkin työskentelyhakemisto"
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Pääte"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "Etsi…"
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "Sulje"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Uusi ikkuna"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "Avaa uusi ikkuna"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "Uusi välilehti"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "Avaa uusi välilehti"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "Kopioi"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "Kopioi valittu teksti"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "Etsi merkkijonoa päätteestä"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "Liitä"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "Liitä tekstiä"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "Valitse kaikki teksti päätteestä"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "Tietoja"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "Näytä tietoikkuna"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "Seuraava välilehti"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "Siirry seuraavaan välilehteen"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "Edellinen välilehti"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "Siirry edelliseen välilehteen"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr "Lähennä"
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr "Loitonna"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "Koko näyttö"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Koko näytön tila"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Etsi"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Edellinen tulos"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Seuraava tulos"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,17 +187,41 @@ msgstr "Älä liitä"
 msgid "Paste Anyway"
 msgstr "Liitä silti"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Etsi"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tehtävä valmistui"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Edellinen tulos"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Tulosta versiotiedot ja poistu"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Seuraava tulos"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Näytä tietoikkuna"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Suorita ohjelma päätteessä"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Aseta komentotulkin työskentelyhakemisto"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Tietoja - Pääte"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Käytä komentoriviä"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Avaa pääteikkuna tähän"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Avaa uusi välilehti"
@@ -234,3 +234,6 @@ msgstr "Seuraava tulos"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Aseta shell käynnistäessä"
+
+#~ msgid "New Root Window"
+#~ msgstr "Uusi ylläpitäjän ikkuna"

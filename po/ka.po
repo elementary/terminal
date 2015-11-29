@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-11-13 23:52+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-15 05:19+0000\n"
-"X-Generator: Launchpad (build 17845)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "ტერმინალის შესახებ"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "ბრძანებითი ხაზის გამოყენება"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "ტერმინალი"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "ახალი ფანჯარა"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "ახალი ფანჯარა (root)"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "ტერმინალის გახსნა აქ"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "თუ ტერმინალიდან გამოხვალთ,
 msgid "Quit Terminal"
 msgstr "ტერმინალიდან გამოსვლა"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "ამოცანა დასრულებულია"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "ვერსიის ინფორმაციის გამოტანა და გამოსვლა"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "პროგრამის შესახებ ინფორმაციის დიალოგის ფანჯრის ჩვენება"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "პროგრამის ტერმინალში გაშვება"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "გარსის სამუშაო კატალოგის დაყენება"
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "ტერმინალი"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "პოვნა..."
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "დახურვა"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "ახალი ფანჯარა"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "ახალი ფანჯრის გახსნა"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "ახალი ჩანართი"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "ახალი ჩანართის შექმნა"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "კოპირება"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "მონიშნული ტექსტის კოპირება"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "მოცემული სტრიქონის პოვნა ტერმინალში"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "ტექსტის ჩასმა"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "ტერმინალში არსებული სრული ტექსტის მონიშვნა"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "პროგრამის შესახებ"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "პროგრამის შესახებ ინფორმაციის ნახვა"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "შემდეგი ჩანართი"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "შემდეგ ჩანართზე გადასვლა"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "წინა ჩანართი"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "წინა ჩანართზე გადასვლა"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr "მიახლოება"
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr "დაშორება"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "სრული ეკრანი"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "სრული ეკრანის რეჟიმის ჩართვა/გამორთვა"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "პოვნა"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "წინა შედეგი"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "მომდევნო შედეგი"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,23 +187,50 @@ msgstr "არ ჩაისვას"
 msgid "Paste Anyway"
 msgstr "მაინც ჩაისვას"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "პოვნა"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "ამოცანა დასრულებულია"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "წინა შედეგი"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "ვერსიის ინფორმაციის გამოტანა და გამოსვლა"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "მომდევნო შედეგი"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "პროგრამის შესახებ ინფორმაციის დიალოგის ფანჯრის ჩვენება"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "პროგრამის ტერმინალში გაშვება"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "გარსის სამუშაო კატალოგის დაყენება"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "ტერმინალის შესახებ"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "ბრძანებითი ხაზის გამოყენება"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "ტერმინალის გახსნა აქ"
 
 #~ msgid "Open a new tab"
 #~ msgstr "ახალი ჩანართის გახსნა"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "გარსის დაყენება გაშვებისას"
+
+#~ msgid "New Root Window"
+#~ msgstr "ახალი ფანჯარა (root)"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "თუ ტერმინალიდან გამოხვალთ, მიმდინარე პროცესი დასრულდება."

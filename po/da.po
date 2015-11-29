@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-11-27 00:33+0000\n"
 "Last-Translator: Jimmy Merrild Krag <jimmy@kragenet.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-28 04:47+0000\n"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Om Terminal"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Brug kommandolinjen"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "Nyt vindue"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Nyt root-vindue"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Åbn terminal her"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 msgid "Quit Terminal"
 msgstr "Afslut Terminal"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Opgave afsluttet"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Print versionsinformation og afslut"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Vis dialog med information om denne version Terminal"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Kør et program i terminalen"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr ""
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "Find…"
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "Luk"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Nyt vindue"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "Åbn et nyt vindue"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "Ny fane"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "Opret ny fane"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "Kopiér"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "Kopiér den markerede tekst"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "Søg efter en vilkårlig streng i terminalen"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "Indsæt"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "Indsæt som tekst"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "Markér alt"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "Marker al tekst i terminalen"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "Om"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "Vis vindue med information om denne version Terminal"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "Næste fane"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "Gå til næste fane"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "Forrige fane"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "Gå til forrige fane"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "Fuld skærm"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Slå fuld skærm til/fra"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Find"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Forrige resultat"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Næste resultat"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,17 +187,41 @@ msgstr "Indsæt ikke"
 msgid "Paste Anyway"
 msgstr "Indsæt alligevel"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Find"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Opgave afsluttet"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Forrige resultat"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Print versionsinformation og afslut"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Næste resultat"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Vis dialog med information om denne version Terminal"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Kør et program i terminalen"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr ""
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Om Terminal"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Brug kommandolinjen"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Åbn terminal her"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Åbn et nyt faneblad"
@@ -234,3 +234,6 @@ msgstr "Næste resultat"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Hvis du lukker Terminal, vil processen stoppe."
+
+#~ msgid "New Root Window"
+#~ msgstr "Nyt root-vindue"

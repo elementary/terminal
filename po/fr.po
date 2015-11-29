@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-05-20 18:12+0000\n"
 "Last-Translator: TcodingT <TcodingT@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "À propos du Terminal"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Utiliser la ligne de commande"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "Nouvelle Fenêtre"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Nouvelle fenêtre super-utilisateur"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Ouvrir un Terminal ici"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "Si vous quittez le Terminal, le processus prendra fin."
 msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tâche terminée"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Afficher les informations sur la version et quitter"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Afficher le menu \"A propos\""
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Lancer un programme dans un terminal"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Configurer le répertoire courant du terminal"
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "Rechercher..."
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "Fermer"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Nouvelle Fenêtre"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "Ouvrir une nouvelle fenêtre"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "Nouvel Onglet"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "Créer un nouvel onglet"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "Copier"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "Copier le texte sélectionné"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "Coller"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "Coller du texte"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "Sélectionner tout le texte du terminal"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "À propos"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "Affiche la fenêtre À propos"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "Onglet Suivant"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "Aller à l'onglet suivant"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "Onglet Précédent"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "Aller à l'onglet précédent"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Activer/Désactiver le plein écran"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Rechercher"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Résultat précédent"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Résultat suivant"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,17 +187,41 @@ msgstr "Ne pas coller"
 msgid "Paste Anyway"
 msgstr "Coller quand même"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Rechercher"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tâche terminée"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Résultat précédent"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Afficher les informations sur la version et quitter"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Résultat suivant"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Afficher le menu \"A propos\""
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Lancer un programme dans un terminal"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Configurer le répertoire courant du terminal"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "À propos du Terminal"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Utiliser la ligne de commande"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Ouvrir un Terminal ici"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Ouvrir un nouvel onglet"
@@ -234,3 +234,6 @@ msgstr "Résultat suivant"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Si vous quittez le Terminal, le processus sera terminé."
+
+#~ msgid "New Root Window"
+#~ msgstr "Nouvelle fenêtre super-utilisateur"

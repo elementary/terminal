@@ -7,41 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-04-16 02:28-0500\n"
+"POT-Creation-Date: 2015-11-28 15:25-0200\n"
 "PO-Revision-Date: 2015-03-09 14:52+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-29 05:55+0000\n"
-"X-Generator: Launchpad (build 17768)\n"
-
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Perihal Terminal"
-
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Guna baris perintah"
-
-#: ../src/Constants.vala:7 ../src/PantheonTerminal.vala:46
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:553
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/Constants.vala:8 ../src/PantheonTerminalWindow.vala:765
-msgid "New Window"
-msgstr "Tetingkap Baru"
-
-#: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Tetingkap Root Baru"
-
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Buka Terminal Di Sini"
+"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -80,116 +54,118 @@ msgstr "Jika ditutup Terminal ini, prosesnya juga akan tertutup."
 msgid "Quit Terminal"
 msgstr "Keluar Terminal"
 
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tugas selesai"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Cetak maklumat versi dan keluar"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Tunjuk dialog perihal"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Jalankan program dalam terminal"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Tetapkan direktori kerja shell"
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
 
 #: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:770
 msgid "Find…"
 msgstr "Cari..."
 
-#: ../src/PantheonTerminalWindow.vala:760
-#: ../src/PantheonTerminalWindow.vala:761
+#: ../src/PantheonTerminalWindow.vala:753
+#: ../src/PantheonTerminalWindow.vala:754
 msgid "Close"
 msgstr "Tutup"
 
-#: ../src/PantheonTerminalWindow.vala:765
+#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Tetingkap Baru"
+
+#: ../src/PantheonTerminalWindow.vala:758
 msgid "Open a new window"
 msgstr "Buka tetingkap baru"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "New Tab"
 msgstr "Tab Baru"
 
-#: ../src/PantheonTerminalWindow.vala:769
+#: ../src/PantheonTerminalWindow.vala:762
 msgid "Create a new tab"
 msgstr "Cipta tab baru"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy"
 msgstr "Salin"
 
-#: ../src/PantheonTerminalWindow.vala:773
+#: ../src/PantheonTerminalWindow.vala:766
 msgid "Copy the selected text"
 msgstr "Salin teks terpilih"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:771
 msgid "Search for a given string in the terminal"
 msgstr "Gelintar rentetan diberi dalam terminal"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste"
 msgstr "Tampal"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:774
 msgid "Paste some text"
 msgstr "Tampal beberapa teks"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: ../src/PantheonTerminalWindow.vala:786
+#: ../src/PantheonTerminalWindow.vala:779
 msgid "Select all the text in the terminal"
 msgstr "Pilih semua teks dalam terminal"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "About"
 msgstr "Perihal"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Show about window"
 msgstr "Papar tetingkap perihal"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Next Tab"
 msgstr "Tab Berikutnya"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:785
 msgid "Go to next tab"
 msgstr "Pergi ke tab berikutnya"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Previous Tab"
 msgstr "Tab Terdahulu"
 
-#: ../src/PantheonTerminalWindow.vala:796
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Go to previous tab"
 msgstr "Pergi ke tab terdahulu"
 
-#: ../src/PantheonTerminalWindow.vala:799
-#: ../src/PantheonTerminalWindow.vala:800
+#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:793
 msgid "Zoom in"
 msgstr "Zum masuk"
 
-#: ../src/PantheonTerminalWindow.vala:804
+#: ../src/PantheonTerminalWindow.vala:797
 msgid "Zoom out"
 msgstr "Zum keluar"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Fullscreen"
 msgstr "Skrin Penuh"
 
-#: ../src/PantheonTerminalWindow.vala:808
+#: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Togol/Nyah Togol skrin penuh"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Cari"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Keputusan terdahulu"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Keputusan berikutnya"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -211,17 +187,41 @@ msgstr "Jangan Tampal"
 msgid "Paste Anyway"
 msgstr "Tampal Jua"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Cari"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tugas selesai"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Keputusan terdahulu"
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Cetak maklumat versi dan keluar"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Keputusan berikutnya"
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Tunjuk dialog perihal"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Jalankan program dalam terminal"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Tetapkan direktori kerja shell"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Perihal Terminal"
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr "Guna baris perintah"
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Buka Terminal Di Sini"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Buka tab baru"
@@ -231,6 +231,9 @@ msgstr "Keputusan berikutnya"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Jika anda tutup tab ini, proses ini akan tamat."
+
+#~ msgid "New Root Window"
+#~ msgstr "Tetingkap Root Baru"
 
 #~ msgid "Set shell at launch"
 #~ msgstr "Tetapkan shell semasa lancar"
