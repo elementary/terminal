@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-11-13 23:52+0000\n"
+"PO-Revision-Date: 2015-12-02 23:08+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-03 05:59+0000\n"
+"X-Generator: Launchpad (build 17856)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -217,7 +217,7 @@ msgstr "ბრძანებითი ხაზის გამოყენე�
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "ახალი რუთ ჩანართი"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
