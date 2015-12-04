@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-05-25 10:39+0000\n"
-"Last-Translator: Peachyz <lasmanis.davis@gmail.com>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Meklēt"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Iepriekšējā sakritība"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Nākamā sakritība"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,60 @@ msgstr "Ja aizvērsiet termināli, process tiks apturēts."
 msgid "Quit Terminal"
 msgstr "Iziet no temināla"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Šajai darbībai nepieciešamas Administratora privilēģijas"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Komandu kopēšana no interneta var būt bīstama jūsu datoram. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Pārliecinieties, vai saprotiet komandu pilnībā."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Nekopēt"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Kopēt tāpat"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminālis"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Armands Skolmeisters https://launchpad.net/~arseniuss\n"
+"  Kārlis Lukstiņš https://launchpad.net/~karlis-lukstins\n"
+"  Matiss Treinis https://launchpad.net/~mrtreinis\n"
+"  Peachyz https://launchpad.net/~lasmanis-davis\n"
+"  marhis https://launchpad.net/~marhis"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Uzdevums izpildīts"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Drukāt versijas info un iziet"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Info par programmu"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Palaist programmu terminālī"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Uzstādīt čaulas darbības direktoriju"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +215,6 @@ msgstr "Pilnekrāns"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Ieslēgt/izslēgt pilnekrānu"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Meklēt"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Iepriekšējā sakritība"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Nākamā sakritība"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Šajai darbībai nepieciešamas Administratora privilēģijas"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Komandu kopēšana no interneta var būt bīstama jūsu datoram. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Pārliecinieties, vai saprotiet komandu pilnībā."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Nekopēt"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Kopēt tāpat"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Uzdevums izpildīts"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Drukāt versijas info un iziet"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Info par programmu"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Palaist programmu terminālī"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Uzstādīt čaulas darbības direktoriju"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

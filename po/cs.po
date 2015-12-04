@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-03-04 12:22+0000\n"
-"Last-Translator: Tomo Moto <Unknown>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Hledat"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Předchozí výsledek"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Další výsledek"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,68 @@ msgstr "Pokud ukončíte Příkazovou řádku, proces bude ukončen."
 msgid "Quit Terminal"
 msgstr "Ukončit Terminál"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Pouhé kopírování příkazů z internetu nemusí být zcela bezpečné. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dělá."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Nevkládat"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Přesto vložit"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Příkazová řádka"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Hlobil Vaclav https://launchpad.net/~vaclav-hlobil\n"
+"  Jan Dvořák https://launchpad.net/~dvorakj50\n"
+"  Jiří Šebele https://launchpad.net/~sindriava+launchpad\n"
+"  Long Do Hai https://launchpad.net/~mailbox-b\n"
+"  Marek Doležel https://launchpad.net/~marekdolezel\n"
+"  Marek Suchánek https://launchpad.net/~suchm\n"
+"  Martin Bárta https://launchpad.net/~martin-bartama\n"
+"  Matěj Kocián https://launchpad.net/~matej-kocian\n"
+"  Mirek2 https://launchpad.net/~mazelm-gmail\n"
+"  Ondra Voves https://launchpad.net/~o-voves\n"
+"  Ondřej Brabec https://launchpad.net/~kaktus-ob\n"
+"  Tomo Moto https://launchpad.net/~tomasivanek\n"
+"  thecnology https://launchpad.net/~thecnology"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Úloha byla dokončena"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Zobrazit informace o verzi a ukončit"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Zobrazit dialog o programu"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Spustit program v Příkazové řádce"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Nastavit pracovní adresář shellu"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +223,6 @@ msgstr "Na celou obrazovku"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Zapnout / Vypnout režim celé obrazovky"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Hledat"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Předchozí výsledek"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Další výsledek"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Pouhé kopírování příkazů z internetu nemusí být zcela bezpečné. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dělá."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Nevkládat"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Přesto vložit"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Úloha byla dokončena"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Zobrazit informace o verzi a ukončit"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Zobrazit dialog o programu"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Spustit program v Příkazové řádce"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Nastavit pracovní adresář shellu"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

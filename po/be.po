@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-06-03 17:59+0000\n"
-"Last-Translator: Mikel <mishkasta@gmail.com>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Знайсці"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Папярэдні вынік"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Наступны вынік"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,58 @@ msgstr "Калі закрыеце тэрмінал, працэс скончыц�
 msgid "Quit Terminal"
 msgstr "Зачыніць тэрмінал"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Гэтая каманда патрабуе правоў Адміністратара."
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Капіраванне камандаў з Інтэрнэту мае быць небяспечным. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Будзьце ўпэўнены, што разумееце сэнс кожнай часткі каманды."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Не ўстаўляйце"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Устаўляйце куды хаціце"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Тэрмінал"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Alexander Rosolko https://launchpad.net/~rosolko\n"
+"  Mikel https://launchpad.net/~mishkasta\n"
+"  Viktuk https://launchpad.net/~register885"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Заданне скончана"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Друк інфармацыі аб версіі і выхад"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Паказаць інфармацыю пра дыялог"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Запусціць праграму ў тэрмінале"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Выберыце працоўную папку для абалонкі"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +213,6 @@ msgstr "На ўвесь экран"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Уключыць/Выключыць поўнаэкранны рэжым"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Знайсці"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Папярэдні вынік"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Наступны вынік"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Гэтая каманда патрабуе правоў Адміністратара."
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Капіраванне камандаў з Інтэрнэту мае быць небяспечным. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Будзьце ўпэўнены, што разумееце сэнс кожнай часткі каманды."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Не ўстаўляйце"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Устаўляйце куды хаціце"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Заданне скончана"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Друк інфармацыі аб версіі і выхад"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Паказаць інфармацыю пра дыялог"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Запусціць праграму ў тэрмінале"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Выберыце працоўную папку для абалонкі"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

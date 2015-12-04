@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-11-27 00:33+0000\n"
-"Last-Translator: Jimmy Merrild Krag <jimmy@kragenet.dk>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Find"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Forrige resultat"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Næste resultat"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,63 @@ msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 msgid "Quit Terminal"
 msgstr "Afslut Terminal"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Denne kommando forespørger administrativ adgang til din computer"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Kopiering af kommandoer fra internettet kan være farligt. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Indsæt ikke"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Indsæt alligevel"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Anton Gandrup https://launchpad.net/~anton-gandrup\n"
+"  Brian Bentsen https://launchpad.net/~bimsebasse\n"
+"  Casper Hedegaard https://launchpad.net/~casper-b\n"
+"  Jesper Enderleit https://launchpad.net/~jesper-enderleit-net\n"
+"  Jimmy Merrild Krag https://launchpad.net/~beruic\n"
+"  Kristoffer Andersen https://launchpad.net/~kris24\n"
+"  Niclas Moeslund Overby https://launchpad.net/~nimoov\n"
+"  Simon https://launchpad.net/~sims73"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Opgave afsluttet"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Print versionsinformation og afslut"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Vis dialog med information om denne version Terminal"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Kør et program i terminalen"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +218,6 @@ msgstr "Fuld skærm"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Slå fuld skærm til/fra"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Find"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Forrige resultat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Næste resultat"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Denne kommando forespørger administrativ adgang til din computer"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Kopiering af kommandoer fra internettet kan være farligt. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Indsæt ikke"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Indsæt alligevel"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Opgave afsluttet"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Print versionsinformation og afslut"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Vis dialog med information om denne version Terminal"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Kør et program i terminalen"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr ""
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

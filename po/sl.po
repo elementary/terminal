@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-06-23 18:10+0000\n"
-"Last-Translator: Jernej Virag <Unknown>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Iskanje"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Prejšnji rezultat"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Naslednji rezultat"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,59 @@ msgstr "Če zaprete Terminal, se bo proces končal."
 msgid "Quit Terminal"
 msgstr "Končaj Terminal"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Ta ukaz sprašuje za skrbniški dostop do vašega računalnika"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Kopiranje ukazov z interneta je lahko nevarno. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Ne prilepi"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Vseeno prilepi"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Damir Jerovšek https://launchpad.net/~jierro\n"
+"  Jernej Virag https://launchpad.net/~jernej\n"
+"  MarkoD https://launchpad.net/~markodolar\n"
+"  greg https://launchpad.net/~gorencgregor"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Naloga končana"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Prikaži različico in končaj"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Prikaži okno o programu"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Zaženi program v terminalu"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Nastavi delovno mapo ukazne lupine"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +214,6 @@ msgstr "Celozaslonsko"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Preklopi celozaslonsko"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Iskanje"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Prejšnji rezultat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Naslednji rezultat"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ta ukaz sprašuje za skrbniški dostop do vašega računalnika"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Kopiranje ukazov z interneta je lahko nevarno. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Ne prilepi"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Vseeno prilepi"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Naloga končana"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Prikaži različico in končaj"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Prikaži okno o programu"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Zaženi program v terminalu"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Nastavi delovno mapo ukazne lupine"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

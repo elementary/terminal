@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-12-02 13:04+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-12-03 05:59+0000\n"
-"X-Generator: Launchpad (build 17856)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Etsi"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Edellinen tulos"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Seuraava tulos"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,57 @@ msgstr "Jos lopetat päätteen, prosessi päättyy."
 msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Tämä komento pyytää ylläpito-oikeuksia järjestelmään"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Komentojen kopiointi internetistä voi olla vaarallista. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Älä liitä"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Liitä silti"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Pääte"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jiri Grönroos https://launchpad.net/~jiri-gronroos\n"
+"  Teemu Kielinen https://launchpad.net/~teemu-kielinen"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tehtävä valmistui"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Tulosta versiotiedot ja poistu"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Näytä tietoikkuna"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Suorita ohjelma päätteessä"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Aseta komentotulkin työskentelyhakemisto"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +212,6 @@ msgstr "Koko näyttö"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Koko näytön tila"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Etsi"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Edellinen tulos"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Seuraava tulos"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Tämä komento pyytää ylläpito-oikeuksia järjestelmään"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Komentojen kopiointi internetistä voi olla vaarallista. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Älä liitä"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Liitä silti"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tehtävä valmistui"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Tulosta versiotiedot ja poistu"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Näytä tietoikkuna"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Suorita ohjelma päätteessä"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Aseta komentotulkin työskentelyhakemisto"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-04-08 09:13+0000\n"
-"Last-Translator: ProsjektX <Unknown>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-29 05:16+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Finn"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Forrige resultat"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Neste resultat"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,61 @@ msgstr "Hvis du avslutter Terminalen vil prosessen avsluttes."
 msgid "Quit Terminal"
 msgstr "Avslutt terminalen"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Denne kommandoen spør om administrativ tilgang til din datamaskin"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Kopiering av kommandoer fra Internett kan være farlig. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Vær sikker på at du forstår hva hver del av denne kommandoen gjør."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Ikke lim inn"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Lim inn likevel"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Bariuz https://launchpad.net/~spaceboundprod-deactivatedaccount\n"
+"  Beren https://launchpad.net/~berencamlost\n"
+"  ProsjektX https://launchpad.net/~prosjektx\n"
+"  Skandee https://launchpad.net/~skandee\n"
+"  Thomas Lekanger https://launchpad.net/~datagutt\n"
+"  kingu https://launchpad.net/~comradekingu"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Oppgave gjennomført"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Skriv versjonsinfo og avslutt"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Vis Om dialog"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Kjør program i kommandolinje"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Sett arbeidsmappe for skall"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +216,6 @@ msgstr "Fullskjerm"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Slå på/av fullskjerm"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Finn"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Forrige resultat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Neste resultat"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Denne kommandoen spør om administrativ tilgang til din datamaskin"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Kopiering av kommandoer fra Internett kan være farlig. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Vær sikker på at du forstår hva hver del av denne kommandoen gjør."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Ikke lim inn"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Lim inn likevel"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Oppgave gjennomført"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Skriv versjonsinfo og avslutt"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Vis Om dialog"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Kjør program i kommandolinje"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Sett arbeidsmappe for skall"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

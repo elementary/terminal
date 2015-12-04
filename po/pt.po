@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-11-29 22:52+0000\n"
-"Last-Translator: Pedro Monteiro <Unknown>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-30 05:19+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Procurar"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Resultado anterior"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Resultado seguinte"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,66 @@ msgstr "Se fechar o Terminal, o processo terminará."
 msgid "Quit Terminal"
 msgstr "Sair do terminal"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Este comando está a pedir acesso de administrador ao seu computador"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "A cópia de comandos na Internet pode ser perigosa. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Não colar"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Colar"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Daniel Jorge https://launchpad.net/~daniel-mf-jorge\n"
+"  David Gomes https://launchpad.net/~davidgomes\n"
+"  Ivo Nunes https://launchpad.net/~ivonunes\n"
+"  Laurentino https://launchpad.net/~laurentinolopes\n"
+"  Luis Manuel Oliveira https://launchpad.net/~luisv-moliveira\n"
+"  Luis Neves https://launchpad.net/~luisjneves\n"
+"  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
+"  Sérgio Marques https://launchpad.net/~sergio+marques\n"
+"  Waldir Pimenta https://launchpad.net/~waldyrious\n"
+"  Yan Gabriel Minario https://launchpad.net/~yangm97\n"
+"  yEdubart https://launchpad.net/~vps1992"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tarefa concluída"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Mostrar informação de versão e sair"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Mostrar janela \"Sobre\""
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Executar um programa no terminal"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Definir diretório de trabalho do terminal"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +221,6 @@ msgstr "Ecrã completo"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Alternar ecrã completo"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Procurar"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Resultado anterior"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Resultado seguinte"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Este comando está a pedir acesso de administrador ao seu computador"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "A cópia de comandos na Internet pode ser perigosa. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Não colar"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Colar"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tarefa concluída"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Mostrar informação de versão e sair"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Mostrar janela \"Sobre\""
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Executar um programa no terminal"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Definir diretório de trabalho do terminal"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"

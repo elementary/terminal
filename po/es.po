@@ -7,15 +7,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-11-28 15:25-0200\n"
-"PO-Revision-Date: 2015-12-01 05:26+0000\n"
-"Last-Translator: Alejandro Pastrana <alejandro.pastrana@gmail.com>\n"
+"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"PO-Revision-Date: 2015-12-04 01:37+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-12-02 05:27+0000\n"
-"X-Generator: Launchpad (build 17856)\n"
+"X-Launchpad-Export-Date: 2015-12-04 05:27+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Buscar"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Resultado anterior"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Resultado siguiente"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -54,11 +66,80 @@ msgstr "Si sale del terminal, el proceso finalizará."
 msgid "Quit Terminal"
 msgstr "Salir del terminal"
 
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/PantheonTerminal.vala:46
-#: ../src/Constants.vala:7
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Esta orden solicita acceso administrativo al equipo"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands from the internet can be dangerous. "
+msgstr "Puede ser peligroso copipegar órdenes de sitios de Internet. "
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Asegúrese de que comprende todo lo que esta orden hace."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "No pegar"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Pegar de todos modos"
+
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adolfo Jayme https://launchpad.net/~fitojb\n"
+"  Alejandro Pastrana https://launchpad.net/~alejandro-pastrana\n"
+"  Alfredo Hernández https://launchpad.net/~aldomann\n"
+"  Daniel Doblado https://launchpad.net/~danieldoblado\n"
+"  Daniel H. https://launchpad.net/~dhersan\n"
+"  David Vilela https://launchpad.net/~david-vilela\n"
+"  Dionny Prensa https://launchpad.net/~dprensa\n"
+"  Elhackandy https://launchpad.net/~hackandyeha\n"
+"  Francisco Gómez https://launchpad.net/~espectalll123\n"
+"  Félix Brezo https://launchpad.net/~febrezo\n"
+"  Hector Jimenez https://launchpad.net/~jilh6783\n"
+"  Jorge Boscan https://launchpad.net/~jorgeboscan\n"
+"  Jorge Kalmbach https://launchpad.net/~kalmbach\n"
+"  Julián Unrrein https://launchpad.net/~junrrein\n"
+"  Kern Goldstein https://launchpad.net/~kern-goldstein\n"
+"  Marcelo https://launchpad.net/~poxirran-plus\n"
+"  Mario Menjivar https://launchpad.net/~mariomenjr\n"
+"  Mario Nachbaur https://launchpad.net/~marionauta\n"
+"  Raymundo https://launchpad.net/~yotihuanatili\n"
+"  Rodrigo Díaz https://launchpad.net/~rodrigodsct\n"
+"  Warlon A. https://launchpad.net/~algarramarlon\n"
+"  cristianhcd https://launchpad.net/~cristianhcd\n"
+"  davilo1996 https://launchpad.net/~davilo1996\n"
+"  jramosp85 https://launchpad.net/~jramosp85-9\n"
+"  juanrios https://launchpad.net/~juanrios"
+
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tarea finalizada"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Print version info and exit"
+msgstr "Imprimir información de la versión y salir"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Show about dialog"
+msgstr "Mostrar diálogo «Acerca de»"
+
+#: ../src/PantheonTerminal.vala:212
+msgid "Run a program in terminal"
+msgstr "Ejecutar un programa en un terminal"
+
+#: ../src/PantheonTerminal.vala:213
+msgid "Set shell working directory"
+msgstr "Configurar directorio de trabajo del intérprete de órdenes"
 
 #: ../src/PantheonTerminalWindow.vala:172
 #: ../src/PantheonTerminalWindow.vala:770
@@ -154,58 +235,6 @@ msgstr "Pantalla completa"
 #: ../src/PantheonTerminalWindow.vala:801
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Activar/deactivar pantalla completa"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Buscar"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Resultado anterior"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Resultado siguiente"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Esta orden solicita acceso administrativo al equipo"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Puede ser peligroso copipegar órdenes de sitios de Internet. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Asegúrese de que comprende todo lo que esta orden hace."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "No pegar"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Pegar de todos modos"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tarea finalizada"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Imprimir información de la versión y salir"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Mostrar diálogo «Acerca de»"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en un terminal"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Configurar directorio de trabajo del intérprete de órdenes"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
