@@ -59,7 +59,7 @@ namespace PantheonTerminal {
 
             // about_documenters = {"",""};
             about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
-            about_translators = _("translator-credits");
+            about_translators = "Launchpad Translators";
             about_license_type = Gtk.License.GPL_3_0;
         }
 
