@@ -1,3 +1,9 @@
+pantheon-terminal (0.3.2) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Sat, 05 Dec 2015 11:09:32 -0600
+
 pantheon-terminal (0.3.1.3) trusty; urgency=medium
 
   * Update Help URL (lp:1456733)
