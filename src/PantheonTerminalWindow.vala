@@ -161,14 +161,14 @@ namespace PantheonTerminal {
             /* Use CSD */
             var header = new Gtk.HeaderBar ();
             header.set_show_close_button (true);
-            header.get_style_context ().remove_class ("header-bar");
+            header.get_style_context ().add_class ("compact");
 
             this.set_titlebar (header);
 
             search_button = new Gtk.ToggleButton ();
             var img = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.set_image (img);
-            search_button.get_style_context ().add_class ("flat");
+            search_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             search_button.set_tooltip_text (_("Find…"));
             header.pack_end (search_button);
 
