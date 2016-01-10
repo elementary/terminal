@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-12-03 15:38-0200\n"
-"PO-Revision-Date: 2015-12-05 14:37+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-01-09 19:46+0000\n"
+"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-12-06 05:51+0000\n"
-"X-Generator: Launchpad (build 17862)\n"
+"X-Launchpad-Export-Date: 2016-01-10 05:18+0000\n"
+"X-Generator: Launchpad (build 17881)\n"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
@@ -95,11 +95,13 @@ msgstr "Terminál"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
 "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
 "  Milan Slovák https://launchpad.net/~milboys\n"
 "  jurosh https://launchpad.net/~jurosh\n"
 "  pyler https://launchpad.net/~pyler\n"
-"  smutok https://launchpad.net/~smutok"
+"  smutok https://launchpad.net/~smutok\n"
+"  Ľubomír Hlavko https://launchpad.net/~5lubo555"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
@@ -226,7 +228,7 @@ msgstr "Použiť príkazový riadok"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Nová root záložka"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
