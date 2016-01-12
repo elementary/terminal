@@ -121,14 +121,10 @@ namespace PantheonTerminal {
                                 }
 
                                 if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                    var notification = new Notify.Notification (_("Task finished"), process,
-                                                                                "utilities-terminal");
-
-                                    try {
-                                        notification.show ();
-                                    } catch (Error e) {
-                                        warning (e.message);
-                                    }
+                                    var notification = new Notification (_("Task finished"));
+                                    notification.set_body (process);
+                                    notification.set_icon (new ThemedIcon ("utilities-terminal"));
+                                    send_notification ("finished", notification);
                                 }
                             }
 

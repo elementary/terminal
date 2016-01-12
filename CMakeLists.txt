@@ -51,8 +51,8 @@ pkg_check_modules (DEPS REQUIRED
   gthread-2.0
   gtk+-3.0>=3.9.10
   granite>=0.3.0
+  glib-2.0>=2.39
   vte-2.91
-  libnotify
   gdk-3.0)
 
 add_definitions (${DEPS_CFLAGS})
@@ -84,7 +84,6 @@ PACKAGES
     vte-2.91
     granite
     gtk+-3.0
-    libnotify
     gdk-3.0
     posix
 CUSTOM_VAPIS
