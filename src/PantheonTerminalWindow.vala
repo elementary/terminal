@@ -108,7 +108,6 @@ namespace PantheonTerminal {
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
-            Notify.init (app.program_name);
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = _("Terminal");
@@ -130,9 +129,6 @@ namespace PantheonTerminal {
             } catch (Error e) {
                 error ("Couldn't load the UI: %s", e.message);
             }
-
-            Notify.init ("pantheon-terminal");
-            //new Notify.Notification ("Bye Process", "p finished","utilities-terminal").show ();
 
             Gtk.AccelGroup accel_group = ui.get_accel_group ();
             add_accel_group (accel_group);
