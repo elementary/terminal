@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-12-06 05:51+0000\n"
-"X-Generator: Launchpad (build 17862)\n"
+"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
+"X-Generator: Launchpad (build 17886)\n"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
@@ -96,7 +96,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Beqa Arabuli https://launchpad.net/~arabulibeqa\n"
-"  George Gzirishvili https://launchpad.net/~giogziro95\n"
+"  Giorgi Gzirishvili https://launchpad.net/~giogziro95\n"
 "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
 
 #: ../src/PantheonTerminal.vala:124
