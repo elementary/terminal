@@ -94,26 +94,43 @@
       <description>Enables or disables natural copy paste.</description>
     </key>
 
-    <key name="opacity" type="i">
-      <range min="0" max="100"/>
-      <default>95</default>
-      <summary>The opacity of the terminal background.</summary>
-      <description>The opacity of terminal background [0,100] 0 = complete transparent, 100 = completely opaque.</description>
-    </key>
     <key name="foreground" type="s">
       <default>"#94a3a5"</default>
       <summary>Color of the text.</summary>
-      <description>The color of the text of the terminal.</description>
+      <description>
+          The color of the text of the terminal.
+          
+          The string can be either one of:
+            - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
+            - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
+            - A RGBA color in the form “rgba(r,g,b,a)”
+      </description>
     </key>
     <key name="background" type="s">
-      <default>"#252e32"</default>
+      <default>"rgba(37, 46, 50, 0.95)"</default>
       <summary>Color of the background.</summary>
       <description>The color of the background of the terminal.</description>
+      <description>
+          The color of the background of the terminal.
+          
+          The string can be either one of:
+            - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
+            - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
+            - A RGBA color in the form “rgba(r,g,b,a)”
+      </description>
     </key>
     <key name="cursor-color" type="s">
       <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
       <description>The color of the cursor of the terminal.</description>
+      <description>
+          The color of the cursor of the terminal.
+          
+          The string can be either one of:
+            - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
+            - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
+            - A RGBA color in the form “rgba(r,g,b,a)”
+      </description>
     </key>
     <key name="cursor-shape" enum="terminal-cursor-shapes">
     	<default>"Block"</default>
