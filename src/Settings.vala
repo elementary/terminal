@@ -61,7 +61,6 @@ namespace PantheonTerminal {
         public bool natural_copy_paste { get; set; }
         public bool unsafe_paste_alert { get; set; }
 
-        public int opacity { get; set; }
         public string foreground { get; set; }
         public string background { get; set; }
         public string cursor_color { get; set; }

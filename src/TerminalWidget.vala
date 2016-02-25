@@ -167,9 +167,6 @@ namespace PantheonTerminal {
 
         public void restore_settings () {
             /* Load configuration */
-            int opacity = settings.opacity * 65535;
-            set_opacity ((uint16) (opacity / 100));
-
             Gdk.RGBA background_color = Gdk.RGBA ();
             background_color.parse (settings.background);
 
