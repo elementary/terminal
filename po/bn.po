@@ -8,26 +8,26 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2015-12-03 15:38-0200\n"
-"PO-Revision-Date: 2015-12-05 14:35+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-02-24 17:42+0000\n"
+"Last-Translator: momit rahman <momitrahman@gmail.com>\n"
 "Language-Team: Bengali <bn@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-02-25 05:09+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "খুঁজুন"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "আগের ফলাফল"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "পরের ফলাফল"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -35,44 +35,46 @@ msgstr "আপনি কি এই ট্যাবটি বন্ধ করত�
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr "এই ট্যাবে একটি প্রক্রিয়া সক্রিয় আছে"
+msgstr "এই ট্যাবে একটি প্রক্রিয়া সক্রিয় আছে।"
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "আপনি যদি ইহা বন্ধ করেন, তাহলে প্রক্রিয়াটি বন্ধ হবে"
+msgstr "আপনি যদি ইহা বন্ধ করেন, তাহলে প্রক্রিয়াটি বন্ধ হবে।"
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr ""
+msgstr "বাতিল করুন"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr ""
+msgstr "ট্যাব বন্ধ করুন"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "আপনি কি আসলেই এই টার্মিনাল বন্ধ করতে চাচ্ছেন?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "এই টার্মিনালে একটি প্রক্রিয়া সক্রিয় আছে।"
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
 msgstr ""
+"আপনি যদি এই টার্মিনাল বন্ধ করুন তাহলে সক্রিয় প্রক্রিয়াটি অকার্যকর হয়ে যাবে।"
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
-msgstr ""
+msgstr "টার্মিনাল বন্ধ করুন"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "এই কমান্ড আপনার কম্পিটার ব্যবহার এর সম্পূর্ণ নিয়ন্ত্রণ চাচ্ছে"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands from the internet can be dangerous. "
 msgstr ""
+"ইন্টারনেট থেকে কপি করা কমান্ড ব্যবহার কম্পিউটার এর জন্য ক্ষতিকর হতে পারে। "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -89,7 +91,7 @@ msgstr ""
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
 msgid "Terminal"
-msgstr "টার্মিন্যাল"
+msgstr "টার্মিনাল"
 
 #: ../src/PantheonTerminal.vala:62
 msgid "translator-credits"
@@ -97,7 +99,8 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
 "  Nazir Ahmed Sabbir https://launchpad.net/~na-sabbir\n"
-"  Porimol Chandro https://launchpad.net/~p-c-roy"
+"  Porimol Chandro https://launchpad.net/~p-c-roy\n"
+"  momit rahman https://launchpad.net/~momitrahman"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
