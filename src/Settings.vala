@@ -51,8 +51,6 @@ namespace PantheonTerminal {
 
     public class Settings : Granite.Services.Settings {
 
-        public int window_width { get; set; }
-        public int window_height { get; set; }
         public int scrollback_lines { get; set; }
         public bool follow_last_tab { get; set; }
         public bool remember_tabs { get; set; }
