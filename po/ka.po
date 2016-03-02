@@ -71,7 +71,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "ეს ბრძანება მოითხოვს ადმინისტრაცილ წვდომას თქვენს კომპიუტერზე"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr "ინტერნეტიდან ბრძანებების დაკოპირება შესაძლოა სახიფათო აღმოჩნდეს. "
 
 #: ../src/UnsafePasteDialog.vala:35

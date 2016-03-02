@@ -71,7 +71,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "运行此命令需要管理员权限。"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr "从网络复制的命令可能不安全。 "
 
 #: ../src/UnsafePasteDialog.vala:35

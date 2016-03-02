@@ -71,7 +71,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "Deze opdracht vereist administratieve toegang tot uw computer."
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Het kopiëren van commando's van het internet kan tot ongewenst gedrag leiden "
 "en riskant zijn voor het besturingssysteem. "

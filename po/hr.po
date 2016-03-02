@@ -71,7 +71,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Kopiranje naredbi sa interneta može biti opasno. "
 
 #: ../src/UnsafePasteDialog.vala:35

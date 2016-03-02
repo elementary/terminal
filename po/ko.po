@@ -71,7 +71,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "이 명령어는 사용자의 컴퓨터에 관리자로 접속할 것을 요구하게 됩니다"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr "인터넷에서 명령어를 복사하는 일은 위험할 수 있습니다. "
 
 #: ../src/UnsafePasteDialog.vala:35

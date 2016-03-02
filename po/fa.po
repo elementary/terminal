@@ -72,7 +72,7 @@ msgid "This command is asking for Administrative access to your computer"
 msgstr "این دستور درخواست بالاترین دسترسی به رایانه شما را دارد"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "
 
 #: ../src/UnsafePasteDialog.vala:35

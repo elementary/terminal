@@ -31,7 +31,7 @@ namespace PantheonTerminal {
             use_markup = true;
             set_markup ("<span weight='bold' size='larger'>" +
                         _("This command is asking for Administrative access to your computer") + "</span>\n\n" +
-                        _("Copying commands from the internet can be dangerous. ") + "\n" +
+                        _("Copying commands into the Terminal can be dangerous.") + "\n" +
                         _("Be sure you understand what each part of this command does."));
 
             message_area.set_margin_left (0);
