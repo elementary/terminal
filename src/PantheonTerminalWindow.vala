@@ -149,6 +149,7 @@ namespace PantheonTerminal {
 
             search_button.toggled.connect (on_toggle_search);
 
+            configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
@@ -376,7 +377,6 @@ namespace PantheonTerminal {
             }
 
             if (notebook.n_tabs - 1 == 0) {
-                update_saved_window_state ();
                 reset_saved_tabs ();
             }
 
@@ -436,29 +436,44 @@ namespace PantheonTerminal {
             main_actions.get_action ("Paste").set_sensitive (can_paste);
         }
 
-        private void update_saved_window_state () {
-            /* Save window state */
-            if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
-                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-            } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
-            } else {
-                PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-            }
+        uint timer_window_state_change = 0;
 
-            /* Save window size */
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
-                int width, height;
-                get_size (out width, out height);
-                PantheonTerminal.saved_state.window_width = width;
-                PantheonTerminal.saved_state.window_height = height;
-            }
+        private bool on_window_state_change (Gdk.EventConfigure event) {
+            // triggered when the size, position or stacking of the window has changed 
+            // it is delayed 400ms to prevent spamming gsettings
+            if (timer_window_state_change > 0)
+                GLib.Source.remove (timer_window_state_change);
 
-            /* Save window position */
-            int root_x, root_y;
-            get_position (out root_x, out root_y);
-            saved_state.opening_x = root_x;
-            saved_state.opening_y = root_y;
+            timer_window_state_change = GLib.Timeout.add (400, () => {
+                timer_window_state_change = 0; 
+                if (get_window () == null)
+                    return false;
+
+                /* Save window state */
+                if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
+                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
+                } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
+                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+                } else {
+                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+                }
+        
+                /* Save window size */
+                if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
+                    int width, height;
+                    get_size (out width, out height);
+                    PantheonTerminal.saved_state.window_width = width;
+                    PantheonTerminal.saved_state.window_height = height;
+                }
+        
+                /* Save window position */
+                int root_x, root_y;
+                get_position (out root_x, out root_y);
+                saved_state.opening_x = root_x;
+                saved_state.opening_y = root_y;
+                return false;
+            });
+            return false; 
         }
 
         private void reset_saved_tabs () {
@@ -611,7 +626,6 @@ namespace PantheonTerminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            update_saved_window_state ();
             action_quit ();
             string[] tabs = {};
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
