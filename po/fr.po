@@ -7,27 +7,69 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-13 15:43+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:54+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Rechercher"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Résultat précédent"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adrien Touminet https://launchpad.net/~pardaigle\n"
+"  Alban CLERGEOT https://launchpad.net/~g33ky\n"
+"  André Fernandes https://launchpad.net/~mkody97\n"
+"  Benoît LAMY https://launchpad.net/~ben-lamy\n"
+"  Corentin Noël https://launchpad.net/~tintou\n"
+"  Damien Horn https://launchpad.net/~horn-damien\n"
+"  David Gomes https://launchpad.net/~davidgomes\n"
+"  Florent (LSc) https://launchpad.net/~lorkscorguar\n"
+"  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
+"  Guyot-Reeb https://launchpad.net/~aguyotr\n"
+"  Jean-Marc https://launchpad.net/~m-balthazar\n"
+"  Julien F/ https://launchpad.net/~julien-fersing\n"
+"  Julien Rochette https://launchpad.net/~jpmrochette\n"
+"  Marvin Roger https://launchpad.net/~nivramdu94\n"
+"  Maxence MOHR https://launchpad.net/~contaht\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Nikos https://launchpad.net/~nicolas-jovanovic\n"
+"  REDOULES https://launchpad.net/~redoules-guillaume\n"
+"  RM https://launchpad.net/~l4rt1st-1nc0nnu\n"
+"  Simon https://launchpad.net/~nowis74\n"
+"  TcodingT https://launchpad.net/~tcodingt\n"
+"  Thomas Moraine https://launchpad.net/~th-moraine\n"
+"  XIA https://launchpad.net/~xia-lady-3d\n"
+"  qperroit https://launchpad.net/~quentin-perroit"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Résultat suivant"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Tâche terminée"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "Afficher les informations sur la version et quitter"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "Afficher le menu \"A propos\""
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "Lancer un programme dans un terminal"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "Configurer le répertoire courant du terminal"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,13 +108,120 @@ msgstr "Si vous quittez le Terminal, le processus prendra fin."
 msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Rechercher"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Résultat précédent"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Résultat suivant"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "Rechercher..."
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "Fermer"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Nouvelle Fenêtre"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "Ouvrir une nouvelle fenêtre"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "Nouvel Onglet"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "Créer un nouvel onglet"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "Copier"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "Copier le texte sélectionné"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "Coller"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "Coller du texte"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "Tout Sélectionner"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "Sélectionner tout le texte du terminal"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "À propos"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "Affiche la fenêtre À propos"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "Onglet Suivant"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "Aller à l'onglet suivant"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "Onglet Précédent"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "Aller à l'onglet précédent"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "Zoom avant"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "Zoom arrière"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Activer/Désactiver le plein écran"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Cette commande demande l'accès Administrateur à votre ordinateur."
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Copier des commandes depuis internet peut être dangereux. "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -85,155 +234,6 @@ msgstr "Ne pas coller"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Coller quand même"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Adrien Touminet https://launchpad.net/~pardaigle\n"
-"  Alban CLERGEOT https://launchpad.net/~g33ky\n"
-"  André Fernandes https://launchpad.net/~mkody97\n"
-"  Benoît LAMY https://launchpad.net/~ben-lamy\n"
-"  Corentin Noël https://launchpad.net/~tintou\n"
-"  Damien Horn https://launchpad.net/~horn-damien\n"
-"  David Gomes https://launchpad.net/~davidgomes\n"
-"  Florent (LSc) https://launchpad.net/~lorkscorguar\n"
-"  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
-"  Guyot-Reeb https://launchpad.net/~aguyotr\n"
-"  Jean-Marc https://launchpad.net/~m-balthazar\n"
-"  Julien F/ https://launchpad.net/~julien-fersing\n"
-"  Julien Rochette https://launchpad.net/~jpmrochette\n"
-"  Marvin Roger https://launchpad.net/~nivramdu94\n"
-"  Maxence MOHR https://launchpad.net/~contaht\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Nikos https://launchpad.net/~nicolas-jovanovic\n"
-"  REDOULES https://launchpad.net/~redoules-guillaume\n"
-"  RM https://launchpad.net/~l4rt1st-1nc0nnu\n"
-"  Simon https://launchpad.net/~nowis74\n"
-"  TcodingT https://launchpad.net/~tcodingt\n"
-"  Thomas Moraine https://launchpad.net/~th-moraine\n"
-"  XIA https://launchpad.net/~xia-lady-3d\n"
-"  qperroit https://launchpad.net/~quentin-perroit"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tâche terminée"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Afficher les informations sur la version et quitter"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Afficher le menu \"A propos\""
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Lancer un programme dans un terminal"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Configurer le répertoire courant du terminal"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "Rechercher..."
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "Fermer"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nouvelle Fenêtre"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "Ouvrir une nouvelle fenêtre"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "Nouvel Onglet"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "Créer un nouvel onglet"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "Copier"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "Copier le texte sélectionné"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "Coller"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "Coller du texte"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "Tout Sélectionner"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "Sélectionner tout le texte du terminal"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "À propos"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "Affiche la fenêtre À propos"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "Onglet Suivant"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "Aller à l'onglet suivant"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "Onglet Précédent"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "Aller à l'onglet précédent"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "Zoom avant"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "Zoom arrière"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "Plein écran"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Activer/Désactiver le plein écran"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -265,3 +265,6 @@ msgstr "Ouvrir un Terminal ici"
 
 #~ msgid "New Root Window"
 #~ msgstr "Nouvelle fenêtre super-utilisateur"
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "Copier des commandes depuis internet peut être dangereux. "

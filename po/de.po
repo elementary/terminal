@@ -7,27 +7,65 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-15 12:42+0000\n"
 "Last-Translator: Noah Mehling <noahmehling@outlook.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:54+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Suchen"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Vorheriges Ergebnis"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Batch10s https://launchpad.net/~batch10s-deactivatedaccount\n"
+"  Daniel https://launchpad.net/~daniel-87\n"
+"  Eduard Gotwig https://launchpad.net/~gotwig\n"
+"  Edward Lancaster https://launchpad.net/~elancaster4\n"
+"  Manuel Wassermann https://launchpad.net/~manuel-wassermann\n"
+"  Marijo Mustac https://launchpad.net/~mustacmarijo\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Noah Mehling https://launchpad.net/~noahmehling\n"
+"  Phillip Sz https://launchpad.net/~phillip-sz\n"
+"  Rebekka Riedlinger https://launchpad.net/~r-riedlinger-deactivatedaccount\n"
+"  Simeon https://launchpad.net/~simeon5\n"
+"  Stefan Geidel https://launchpad.net/~t-launchpad-d\n"
+"  Thomas Meesters https://launchpad.net/~th-meesters\n"
+"  Thomas Pitlik https://launchpad.net/~thomaspitlik\n"
+"  Tobias Bannert https://launchpad.net/~toba\n"
+"  Toni https://launchpad.net/~jony-sun\n"
+"  Tuete https://launchpad.net/~tuete\n"
+"  UweS https://launchpad.net/~uwes\n"
+"  alexxx24887 https://launchpad.net/~alexxx24887\n"
+"  dremox https://launchpad.net/~niclas-simmler"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Nächstes Ergebnis"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Auftrag erledigt"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "Versionsinformation anzeigen und beenden"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "Info-Dialog anzeigen"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "Ein Programm im Terminal ausführen"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "Arbeitsordner des Terminals festlegen"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,16 +104,121 @@ msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
 msgid "Quit Terminal"
 msgstr "Terminal schließen"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Suchen"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Vorheriges Ergebnis"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Nächstes Ergebnis"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "Suchen …"
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "Beenden"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Neues Fenster"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "Ein neues Fenster öffnen"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "Neuer Tab"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "Neuen Tab erstellen"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "Kopieren"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "Ausgewählten Text kopieren"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "Nach einer gegebenen Zeichenfolge im Terminal suchen"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "Einfügen"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "Text einfügen"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "Alles auswählen"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "Gesamten Text im Terminal auswählen"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "Info"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "Info-Fenster anzeigen"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "Nächster Tab"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "Zum nächsten Tab wechseln"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "Vorheriger Tab"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "Zum vorherigen Tab wechseln"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "Vergrößern"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "Verkleinern"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Vollbild aktivieren/deaktivieren"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
 "Dieser Befehl will mit Administratorrechten auf den Rechner zugreifen."
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
-"Es besteht ein Sicherheitsrisiko beim Kopieren von Befehlen aus dem "
-"Internet. "
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -89,151 +232,6 @@ msgstr "Nicht einfügen"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Trotzdem einfügen"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Batch10s https://launchpad.net/~batch10s-deactivatedaccount\n"
-"  Daniel https://launchpad.net/~daniel-87\n"
-"  Eduard Gotwig https://launchpad.net/~gotwig\n"
-"  Edward Lancaster https://launchpad.net/~elancaster4\n"
-"  Manuel Wassermann https://launchpad.net/~manuel-wassermann\n"
-"  Marijo Mustac https://launchpad.net/~mustacmarijo\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Noah Mehling https://launchpad.net/~noahmehling\n"
-"  Phillip Sz https://launchpad.net/~phillip-sz\n"
-"  Rebekka Riedlinger https://launchpad.net/~r-riedlinger-deactivatedaccount\n"
-"  Simeon https://launchpad.net/~simeon5\n"
-"  Stefan Geidel https://launchpad.net/~t-launchpad-d\n"
-"  Thomas Meesters https://launchpad.net/~th-meesters\n"
-"  Thomas Pitlik https://launchpad.net/~thomaspitlik\n"
-"  Tobias Bannert https://launchpad.net/~toba\n"
-"  Toni https://launchpad.net/~jony-sun\n"
-"  Tuete https://launchpad.net/~tuete\n"
-"  UweS https://launchpad.net/~uwes\n"
-"  alexxx24887 https://launchpad.net/~alexxx24887\n"
-"  dremox https://launchpad.net/~niclas-simmler"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Auftrag erledigt"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Versionsinformation anzeigen und beenden"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Info-Dialog anzeigen"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Ein Programm im Terminal ausführen"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Arbeitsordner des Terminals festlegen"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "Suchen …"
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "Beenden"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Neues Fenster"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "Ein neues Fenster öffnen"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "Neuer Tab"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "Neuen Tab erstellen"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "Kopieren"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "Ausgewählten Text kopieren"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "Nach einer gegebenen Zeichenfolge im Terminal suchen"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "Einfügen"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "Text einfügen"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "Alles auswählen"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "Gesamten Text im Terminal auswählen"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "Info"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "Info-Fenster anzeigen"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "Nächster Tab"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "Zum nächsten Tab wechseln"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "Vorheriger Tab"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "Zum vorherigen Tab wechseln"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "Vergrößern"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "Verkleinern"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "Vollbild"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Vollbild aktivieren/deaktivieren"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -265,3 +263,8 @@ msgstr "Terminal hier öffnen"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Einen neuen Tab öffnen"
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr ""
+#~ "Es besteht ein Sicherheitsrisiko beim Kopieren von Befehlen aus dem "
+#~ "Internet. "

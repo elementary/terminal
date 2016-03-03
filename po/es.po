@@ -7,87 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2016-01-21 14:51+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-22 05:42+0000\n"
-"X-Generator: Launchpad (build 17902)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Buscar"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Resultado anterior"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Resultado siguiente"
-
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Hay un proceso activo en esta pestaña."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Si la cierra, el proceso finalizará."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Cerrar pestaña"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "¿Está seguro de que quiere salir del terminal?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Hay un proceso activo en este terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Si sale del terminal, el proceso finalizará."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Salir del terminal"
-
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Esta orden solicita acceso administrativo al equipo"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Puede ser peligroso copipegar órdenes de sitios de Internet. "
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Asegúrese de que comprende todo lo que esta orden hace."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "No pegar"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Pegar de todos modos"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -127,116 +58,185 @@ msgstr ""
 msgid "Task finished"
 msgstr "Tarea finalizada"
 
-#: ../src/PantheonTerminal.vala:210
+#: ../src/PantheonTerminal.vala:206
 msgid "Print version info and exit"
 msgstr "Imprimir información de la versión y salir"
 
-#: ../src/PantheonTerminal.vala:211
+#: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
 msgstr "Mostrar diálogo «Acerca de»"
 
-#: ../src/PantheonTerminal.vala:212
+#: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en un terminal"
 
-#: ../src/PantheonTerminal.vala:213
+#: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
 msgstr "Configurar directorio de trabajo del intérprete de órdenes"
 
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
+
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "Hay un proceso activo en esta pestaña."
+
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
+msgstr "Si la cierra, el proceso finalizará."
+
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "Cerrar pestaña"
+
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "¿Está seguro de que quiere salir del terminal?"
+
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "Hay un proceso activo en este terminal."
+
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
+msgstr "Si sale del terminal, el proceso finalizará."
+
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "Salir del terminal"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Buscar"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Resultado anterior"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Resultado siguiente"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
 msgid "Find…"
 msgstr "Buscar…"
 
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
 msgid "Close"
 msgstr "Cerrar"
 
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Ventana nueva"
 
-#: ../src/PantheonTerminalWindow.vala:758
+#: ../src/PantheonTerminalWindow.vala:768
 msgid "Open a new window"
 msgstr "Abrir una ventana nueva"
 
-#: ../src/PantheonTerminalWindow.vala:762
+#: ../src/PantheonTerminalWindow.vala:772
 msgid "New Tab"
 msgstr "Pestaña nueva"
 
-#: ../src/PantheonTerminalWindow.vala:762
+#: ../src/PantheonTerminalWindow.vala:772
 msgid "Create a new tab"
 msgstr "Crear una pestaña nueva"
 
-#: ../src/PantheonTerminalWindow.vala:766
+#: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy"
 msgstr "Copiar"
 
-#: ../src/PantheonTerminalWindow.vala:766
+#: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy the selected text"
 msgstr "Copiar el texto seleccionado"
 
-#: ../src/PantheonTerminalWindow.vala:771
+#: ../src/PantheonTerminalWindow.vala:781
 msgid "Search for a given string in the terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:774
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
 msgstr "Pegar"
 
-#: ../src/PantheonTerminalWindow.vala:774
+#: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste some text"
 msgstr "Pegar texto"
 
-#: ../src/PantheonTerminalWindow.vala:778
+#: ../src/PantheonTerminalWindow.vala:788
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: ../src/PantheonTerminalWindow.vala:779
+#: ../src/PantheonTerminalWindow.vala:789
 msgid "Select all the text in the terminal"
 msgstr "Selecciona todo el texto del terminal"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:791
 msgid "About"
 msgstr "Acerca de"
 
-#: ../src/PantheonTerminalWindow.vala:782
+#: ../src/PantheonTerminalWindow.vala:792
 msgid "Show about window"
 msgstr "Mostrar la ventana «Acerca de»"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Next Tab"
 msgstr "Pestaña siguiente"
 
-#: ../src/PantheonTerminalWindow.vala:785
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Go to next tab"
 msgstr "Ir a la pestaña siguiente"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Previous Tab"
 msgstr "Pestaña anterior"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:799
 msgid "Go to previous tab"
 msgstr "Ir a la pestaña anterior"
 
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: ../src/PantheonTerminalWindow.vala:797
+#: ../src/PantheonTerminalWindow.vala:807
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:811
 msgid "Fullscreen"
 msgstr "Pantalla completa"
 
-#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:811
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Activar/deactivar pantalla completa"
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Esta orden solicita acceso administrativo al equipo"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Asegúrese de que comprende todo lo que esta orden hace."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "No pegar"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Pegar de todos modos"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -268,3 +268,6 @@ msgstr "Abrir un terminal aquí"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Si sale del terminal, el proceso finalizará."
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "Puede ser peligroso copipegar órdenes de sitios de Internet. "

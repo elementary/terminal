@@ -7,28 +7,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 "Language: \n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "یافتن"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "پایانه"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "نتیجه قبلی"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Amir Masoud https://launchpad.net/~amirmasoudabdol\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Mohammad Zali https://launchpad.net/~mohamadzali-gmail\n"
+"  awat https://launchpad.net/~awat\n"
+"  saeed https://launchpad.net/~s-zohrabi-fa"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "نتیجه بعدی"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "پایان عملیات"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "چاپ اطلاعات نسخه و خارج شدن"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr ""
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "اجرای برنامه در ترمینال"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "تنظیم کارکردن مستقیم شل"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -67,13 +90,120 @@ msgstr "بررسی پایان می یابد اگر ترمینال را ببند�
 msgid "Quit Terminal"
 msgstr "خروج از پایانه"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "یافتن"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "نتیجه قبلی"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "نتیجه بعدی"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "پیدا کردن..."
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "بستن"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "پنجره جدید"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "باز کردن پنجره جدید"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "برگه جدید"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "ساختن یک برگه جدید"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "رونویسی"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "رونویسی متن انتخاب شده"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "جست‌و‌جوی کلمات داده شده در ترمینال"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "چسباندن"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "انتقال یک متن"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "انتخاب همه"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "انتخاب همه نوشته‌های روی پایانه"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "درباره"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "نمایش پنجره درباره"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "برگه بعدی"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "رفتن به برگه بعدی"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "برگه قبلی"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "رفتن به برگه قبلی"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "بزرگ‌نمایی"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "کوچک‌نمایی"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "تمام‌صفحه"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "این دستور درخواست بالاترین دسترسی به رایانه شما را دارد"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -86,136 +216,6 @@ msgstr ""
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr ""
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "پایانه"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Amir Masoud https://launchpad.net/~amirmasoudabdol\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Mohammad Zali https://launchpad.net/~mohamadzali-gmail\n"
-"  awat https://launchpad.net/~awat\n"
-"  saeed https://launchpad.net/~s-zohrabi-fa"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "پایان عملیات"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "چاپ اطلاعات نسخه و خارج شدن"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr ""
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "اجرای برنامه در ترمینال"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "تنظیم کارکردن مستقیم شل"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "پیدا کردن..."
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "بستن"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "پنجره جدید"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "باز کردن پنجره جدید"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "برگه جدید"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "ساختن یک برگه جدید"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "رونویسی"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "رونویسی متن انتخاب شده"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "جست‌و‌جوی کلمات داده شده در ترمینال"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "چسباندن"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "انتقال یک متن"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "انتخاب همه"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "انتخاب همه نوشته‌های روی پایانه"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "درباره"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "نمایش پنجره درباره"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "برگه بعدی"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "رفتن به برگه بعدی"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "برگه قبلی"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "رفتن به برگه قبلی"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "بزرگ‌نمایی"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "کوچک‌نمایی"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "تمام‌صفحه"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "فعال و یا غیر فعال کردن نمایش تمام‌صفحه"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -247,3 +247,6 @@ msgstr "باز کردن ترمینال در اینجا"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "با خارج شدن از پایانه، آن فرآیند نیز بسته خواهد شد."
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "نسخه برداری از دستورات اینترنتی می توانند خطرناک باشند. "

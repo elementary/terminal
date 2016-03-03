@@ -7,27 +7,47 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "دۆزینه‌وه‌"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "تێرمیناڵ"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "ئاکامی پێشتر"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  qezwan https://launchpad.net/~qezwan"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "ئاکامی دیکە"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "کۆتایی کردار"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "چاپی زانیاری ڤەسان و چوونەدەرەڤە."
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "نیشاندنی دەربارەی دیالۆگ"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "بەکارهێنانی پرۆگرامێک لە ترمیناڵ"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "رێکخستنی ڕاسەوخۆی شێڵ"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,13 +86,120 @@ msgstr "گەر بچیتە دەرەوە لە ترمیناڵ،پرۆسە کۆتا�
 msgid "Quit Terminal"
 msgstr "چونەدەرەڤە لە ترمیناڵ."
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "دۆزینه‌وه‌"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "ئاکامی پێشتر"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "ئاکامی دیکە"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "پەیداکردن..."
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "داخستن"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "پەنجەرەیەکی نوێ"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "پەنجەرەيێكى نوێ بکەرەوە"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "سەرخشتی نوێ"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "درووستکردنی سەرخشتی نوێ...."
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "ڕوونووس"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "ڕونوسیک لەم دەقە"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "گەڕان بۆ وەشەکانی  دراوە بە ترمیناڵ"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "لكاندن"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "لکاندنی دەقێک"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "هه‌مووی دیاری بکه‌"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "هەموو فەرمانەکان(دەقەکان) لە ترمیناڵ هەڵبژێرە"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "درباره"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "نیشاندان لەبارەی پەنجێرە"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "داهاتووی دانه‌"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "بڕۆ  بۆ دوایین سەرخشت"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "گه‌ڕانه‌وه‌ی دانه‌"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "گەڕانەوە بۆ سەرخشتی پێشتر"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "گەورەنویێی"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "دەرهاتن لە گەورەنوێیی"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "ته‌واوی تێکست"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "چالاک و ناچالاک کردنی شاسەیگەورە"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "ئەم خوازە دەستپێگەیستنی تەواوی هەیە بە  کۆمپیۆترەکەت."
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "ڕونوسی لە فەرمانەکانی ئینتەرنیت دەتوانێت مترسیدار بێت. "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -85,133 +212,6 @@ msgstr "نەلکاندن"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "لکاندن لە هەرشوێن"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "تێرمیناڵ"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  qezwan https://launchpad.net/~qezwan"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "کۆتایی کردار"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "چاپی زانیاری ڤەسان و چوونەدەرەڤە."
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "نیشاندنی دەربارەی دیالۆگ"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "بەکارهێنانی پرۆگرامێک لە ترمیناڵ"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "رێکخستنی ڕاسەوخۆی شێڵ"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "پەیداکردن..."
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "داخستن"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "پەنجەرەیەکی نوێ"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "پەنجەرەيێكى نوێ بکەرەوە"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "سەرخشتی نوێ"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "درووستکردنی سەرخشتی نوێ...."
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "ڕوونووس"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "ڕونوسیک لەم دەقە"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "گەڕان بۆ وەشەکانی  دراوە بە ترمیناڵ"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "لكاندن"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "لکاندنی دەقێک"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "هه‌مووی دیاری بکه‌"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "هەموو فەرمانەکان(دەقەکان) لە ترمیناڵ هەڵبژێرە"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "درباره"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "نیشاندان لەبارەی پەنجێرە"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "داهاتووی دانه‌"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "بڕۆ  بۆ دوایین سەرخشت"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "گه‌ڕانه‌وه‌ی دانه‌"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "گەڕانەوە بۆ سەرخشتی پێشتر"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "گەورەنویێی"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "دەرهاتن لە گەورەنوێیی"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "ته‌واوی تێکست"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "چالاک و ناچالاک کردنی شاسەیگەورە"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -231,6 +231,9 @@ msgstr "کردنەوەی ترمیناڵ لێرە"
 
 #~ msgid "New Root Window"
 #~ msgstr "ڕیشە لە پەنجێرەی نوێ"
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "ڕونوسی لە فەرمانەکانی ئینتەرنیت دەتوانێت مترسیدار بێت. "
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "گر بچیتە دەرەوە لە ترمیناڵ ئەم پرۆسە کۆتایی پێدێت."

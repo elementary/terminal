@@ -7,27 +7,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-05 14:36+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Hindi <hi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "खोजें"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "टर्मिनल"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "पिछला परिणाम"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Akshay Shekher https://launchpad.net/~voldyman\n"
+"  Anand Kumar https://launchpad.net/~anandkumar\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Sandeep Pinge https://launchpad.net/~spinge"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "अगला परिणाम"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "कार्य समाप्त हुआ"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "प्रिन्ट संस्करण जानकारी और बाहर"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "डायलॉग के बारें में बताएं"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "टर्मिनल में एक प्रोग्राम रन करें"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,13 +88,120 @@ msgstr "अगर आप टर्मिनल बंद करेंगे त�
 msgid "Quit Terminal"
 msgstr "टर्मिनल बंद करें"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "खोजें"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "पिछला परिणाम"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "अगला परिणाम"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "ढूंढें..."
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "बंद करें"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "नई विंडो"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "नया विंडो खोलें"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "नया टैब"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "एक नया टैब बनाएँ"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "नकल"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "चयनित शबदौ की कापी"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "दिए गए स्ट्रिंग को टर्मिनल में खोजें"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "चिपकाएँ(पेस्ट )"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "कुछ पाठ पेस्ट करें"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "सभी चुनें"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "टर्मिनल में सभी शब्दों का चयन"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "परिचय"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "खिड़की के के बारे में दिखाऍ"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "अगला टैब"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "अगला टैब"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "पिछला टैब"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "पिछले टैब पर जाएँ"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "बडे रूप में दिखाएँ"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "छोटे रूप में दिखाएँ"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "पूर्णस्‍क्रीन"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "टॉगल / अनटॉगल पूर्णस्क्रीन"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "यह कमांड कंप्यूटर पर प्रशासकीय पहुंच चाहता है"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "इंटरनेट से कमांड कॉपी करना खतरनाक हो सकता है। "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -86,135 +215,6 @@ msgstr "पेस्ट न करें"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "चाहे जैसे पेस्ट करें"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "टर्मिनल"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Akshay Shekher https://launchpad.net/~voldyman\n"
-"  Anand Kumar https://launchpad.net/~anandkumar\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Sandeep Pinge https://launchpad.net/~spinge"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "कार्य समाप्त हुआ"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "प्रिन्ट संस्करण जानकारी और बाहर"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "डायलॉग के बारें में बताएं"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "टर्मिनल में एक प्रोग्राम रन करें"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "शेल वर्किंग डिरेकटरी नियत करें"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "ढूंढें..."
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "बंद करें"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "नई विंडो"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "नया विंडो खोलें"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "नया टैब"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "एक नया टैब बनाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "नकल"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "चयनित शबदौ की कापी"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "दिए गए स्ट्रिंग को टर्मिनल में खोजें"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "चिपकाएँ(पेस्ट )"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "कुछ पाठ पेस्ट करें"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "सभी चुनें"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "टर्मिनल में सभी शब्दों का चयन"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "परिचय"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "खिड़की के के बारे में दिखाऍ"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "अगला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "अगला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "पिछला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "पिछले टैब पर जाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "बडे रूप में दिखाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "छोटे रूप में दिखाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "पूर्णस्‍क्रीन"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "टॉगल / अनटॉगल पूर्णस्क्रीन"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -246,3 +246,6 @@ msgstr "टर्मिनल यहाँ खोलें"
 
 #~ msgid "New Root Window"
 #~ msgstr "नए रूट विंडो"
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "इंटरनेट से कमांड कॉपी करना खतरनाक हो सकता है। "

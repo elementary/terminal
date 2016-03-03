@@ -7,27 +7,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2016-01-10 13:45+0000\n"
 "Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Hľadanie"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminál"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Predchádzajúci výsledok"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Milan Slovák https://launchpad.net/~milboys\n"
+"  jurosh https://launchpad.net/~jurosh\n"
+"  pyler https://launchpad.net/~pyler\n"
+"  smutok https://launchpad.net/~smutok\n"
+"  Ľubomír Hlavko https://launchpad.net/~5lubo555"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Ďalší výsledok"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Úloha bola dokončená"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "Vytlačiť informácie o verzii a ukončiť"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "Zobraziť informácie o programe"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "Spustiť program v termináli"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "Nastaviť pracovný adresár pre konzolu"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,13 +91,120 @@ msgstr "Ak ukončíte Terminál, proces sa ukončí."
 msgid "Quit Terminal"
 msgstr "Ukončiť Terminál"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Hľadanie"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Predchádzajúci výsledok"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Ďalší výsledok"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "Nájsť…"
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "Zatvoriť"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Nové okno"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "Otvoriť nové okno"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "Nová karta"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "Vytvor novú záložku."
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "Kopírovať"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "Kopírovať označený text"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "Vyhľadať zadaný reťazec v termináli"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "Vložiť"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "Vložiť text"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "Vybrať všetko"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "Vybrať celý text v termináli"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "O programe"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "Zobraziť okno O programe"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "Ďalšia záložka"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "Prejsť na daľšiu kartu"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "Predchádzajúca karta"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "Prejsť na predchádzajúcu kartu"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "Priblížiť"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "Oddialiť"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "Celá obrazovka"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Prepínanie na celú obrazovku"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Tento príkaz vyžaduje administrátorský prístup do počítača"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr "Kopírovanie príkazov z internetu môže byť nebezpečné. "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -85,138 +217,6 @@ msgstr "Nevkladať"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Určite vložiť"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminál"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Lukáš Papík https://launchpad.net/~stereo839\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Milan Slovák https://launchpad.net/~milboys\n"
-"  jurosh https://launchpad.net/~jurosh\n"
-"  pyler https://launchpad.net/~pyler\n"
-"  smutok https://launchpad.net/~smutok\n"
-"  Ľubomír Hlavko https://launchpad.net/~5lubo555"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Úloha bola dokončená"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Vytlačiť informácie o verzii a ukončiť"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Zobraziť informácie o programe"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Spustiť program v termináli"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Nastaviť pracovný adresár pre konzolu"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "Nájsť…"
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "Zatvoriť"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nové okno"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "Otvoriť nové okno"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "Nová karta"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "Vytvor novú záložku."
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "Kopírovať"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "Kopírovať označený text"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "Vyhľadať zadaný reťazec v termináli"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "Vložiť"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "Vložiť text"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "Vybrať všetko"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "Vybrať celý text v termináli"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "O programe"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "Zobraziť okno O programe"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "Ďalšia záložka"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "Prejsť na daľšiu kartu"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "Predchádzajúca karta"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "Prejsť na predchádzajúcu kartu"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "Priblížiť"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "Oddialiť"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "Celá obrazovka"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Prepínanie na celú obrazovku"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -248,3 +248,6 @@ msgstr "Otvoriť Terminál tu"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Ak zatvoríte túto kartu, proces bude ukončený."
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr "Kopírovanie príkazov z internetu môže byť nebezpečné. "

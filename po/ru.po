@@ -7,27 +7,64 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
-"PO-Revision-Date: 2015-12-05 14:35+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"PO-Revision-Date: 2016-03-03 05:47+0000\n"
+"Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:35+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Найти"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Терминал"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Предыдущий результат"
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Anton Shilov https://launchpad.net/~vaccum121\n"
+"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
+"  Djaler https://launchpad.net/~djaler1\n"
+"  DonCHEG https://launchpad.net/~doncheg\n"
+"  Eugene Marshal https://launchpad.net/~lowrider\n"
+"  Igor https://launchpad.net/~igortrefilov\n"
+"  Igor Lopatkin https://launchpad.net/~sevenfrogz\n"
+"  Ilya Bizyaev https://launchpad.net/~bizyaev-game\n"
+"  Kirill Ivaha https://launchpad.net/~kirill-ivaha\n"
+"  Leonid https://launchpad.net/~logvinov-leon\n"
+"  Leopotam https://launchpad.net/~leopotam\n"
+"  Maxim Taranov https://launchpad.net/~png2378\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Michael Moukhin https://launchpad.net/~siomi\n"
+"  Mukusev Vladimir https://launchpad.net/~damon95\n"
+"  Nikita Putko https://launchpad.net/~ktototam98\n"
+"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
+"  Zoi https://launchpad.net/~zoi-kun\n"
+"  iTayson https://launchpad.net/~itaysonlab"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Следующий результат"
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Задание завершено"
+
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "Распечатать информацию о версии и выйти"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "О программе"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "Запустить программу в терминале"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
+msgstr "Установить рабочyю папку для shell"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,15 +103,120 @@ msgstr "Если вы выйдете из терминала, процесс б�
 msgid "Quit Terminal"
 msgstr "Закрыть терминал"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Найти"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Предыдущий результат"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Следующий результат"
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr "Поиск..."
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Новое окно"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "Открыть новое окно"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "Новая вкладка"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "Создать новую вкладку"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "Копировать выделенный текст"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr "Искать выбранную строку в Терминале"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "Вставить"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "Вставить текст"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "Выделить всё"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "Выделить весь текст в терминале"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "О программе"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "Показать окно со сведениями о программе"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "Следующая вкладка"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "Перейти к следующей вкладке"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "Предыдущая вкладка"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "Перейти к предыдущей вкладке"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "Приблизить"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "Отдалить"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "Полноэкранный режим"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Включить/выключить полноэкранный режим"
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Эта команда запрашивает права Администратора для выполнения"
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
-msgstr ""
-"Выполнение команд из интернета может быть опасным и может повредить вашу "
-"систему. "
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Копирование команд в Терминал может быть опасным."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -88,149 +230,6 @@ msgstr "Не вставлять"
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Вставить"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Терминал"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Anton Shilov https://launchpad.net/~vaccum121\n"
-"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
-"  Djaler https://launchpad.net/~djaler1\n"
-"  DonCHEG https://launchpad.net/~doncheg\n"
-"  Eugene Marshal https://launchpad.net/~lowrider\n"
-"  Igor https://launchpad.net/~igortrefilov\n"
-"  Igor Lopatkin https://launchpad.net/~sevenfrogz\n"
-"  Ilya Bizyaev https://launchpad.net/~bizyaev-game\n"
-"  Kirill Ivaha https://launchpad.net/~kirill-ivaha\n"
-"  Leonid https://launchpad.net/~logvinov-leon\n"
-"  Leopotam https://launchpad.net/~leopotam\n"
-"  Maxim Taranov https://launchpad.net/~png2378\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Michael Moukhin https://launchpad.net/~siomi\n"
-"  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Nikita Putko https://launchpad.net/~ktototam98\n"
-"  Zoi https://launchpad.net/~zoi-kun\n"
-"  iTayson https://launchpad.net/~itaysonlab"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Задание завершено"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Распечатать информацию о версии и выйти"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "О программе"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Запустить программу в терминале"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr "Установить рабочyю папку для shell"
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr "Поиск..."
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "Закрыть"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Новое окно"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "Открыть новое окно"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "Новая вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "Создать новую вкладку"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "Копировать"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "Копировать выделенный текст"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr "Искать выбранную строку в Терминале"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "Вставить"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "Вставить текст"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "Выделить всё"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "Выделить весь текст в терминале"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "О программе"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "Показать окно со сведениями о программе"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "Следующая вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "Перейти к следующей вкладке"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "Предыдущая вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "Перейти к предыдущей вкладке"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "Приблизить"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "Отдалить"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "Полноэкранный режим"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Включить/выключить полноэкранный режим"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -262,3 +261,8 @@ msgstr "Открыть терминал здесь"
 
 #~ msgid "New Root Window"
 #~ msgstr "Новое окно от имени Администратора"
+
+#~ msgid "Copying commands from the internet can be dangerous. "
+#~ msgstr ""
+#~ "Выполнение команд из интернета может быть опасным и может повредить вашу "
+#~ "систему. "

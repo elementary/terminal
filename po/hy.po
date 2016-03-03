@@ -7,26 +7,46 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-12-03 15:38-0200\n"
+"POT-Creation-Date: 2016-03-02 23:26-0600\n"
 "PO-Revision-Date: 2015-12-05 14:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-01-21 05:34+0000\n"
-"X-Generator: Launchpad (build 17886)\n"
+"X-Launchpad-Export-Date: 2016-03-03 05:54+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
+#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
+#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Տերմինալ"
+
+#: ../src/PantheonTerminal.vala:62
+msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Vahan Harutyunyan https://launchpad.net/~v-harutyunyan"
 
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr ""
+#: ../src/PantheonTerminal.vala:124
+msgid "Task finished"
+msgstr "Առաջադրանքն ավարտված է"
 
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
+#: ../src/PantheonTerminal.vala:206
+msgid "Print version info and exit"
+msgstr "Տպել տարբերակի վերաբերյալ տեղեկատվությունը և դուրս գալ"
+
+#: ../src/PantheonTerminal.vala:207
+msgid "Show about dialog"
+msgstr "Ցույց տալ դիալոգի մասին"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Run a program in terminal"
+msgstr "Գործարկել ծրագիրը տերմինալում"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Set shell working directory"
 msgstr ""
 
 #: ../src/ForegroundProcessDialog.vala:30
@@ -66,12 +86,119 @@ msgstr "Եթե Դուք փակեք Տերմինալը, գարծընթացը կա
 msgid "Quit Terminal"
 msgstr "Դուրս գալ Տերմինալից"
 
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr ""
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:169
+#: ../src/PantheonTerminalWindow.vala:780
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:763
+#: ../src/PantheonTerminalWindow.vala:764
+msgid "Close"
+msgstr "Փակել"
+
+#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Նոր պատուհան"
+
+#: ../src/PantheonTerminalWindow.vala:768
+msgid "Open a new window"
+msgstr "Բացել նոր պատուհան"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "New Tab"
+msgstr "Նոր ներդիր"
+
+#: ../src/PantheonTerminalWindow.vala:772
+msgid "Create a new tab"
+msgstr "Ստեղծել նոր ներդիր"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy"
+msgstr "Պատճենել"
+
+#: ../src/PantheonTerminalWindow.vala:776
+msgid "Copy the selected text"
+msgstr "Պատճենել ընտրված տեքստը"
+
+#: ../src/PantheonTerminalWindow.vala:781
+msgid "Search for a given string in the terminal"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste"
+msgstr "Տեղադրել"
+
+#: ../src/PantheonTerminalWindow.vala:784
+msgid "Paste some text"
+msgstr "Տեղադրել տեքստ"
+
+#: ../src/PantheonTerminalWindow.vala:788
+msgid "Select All"
+msgstr "Ընտրել բոլորը"
+
+#: ../src/PantheonTerminalWindow.vala:789
+msgid "Select all the text in the terminal"
+msgstr "Տերմինալում ընտրել ամբողջ տեքստը"
+
+#: ../src/PantheonTerminalWindow.vala:791
+msgid "About"
+msgstr "Մասին"
+
+#: ../src/PantheonTerminalWindow.vala:792
+msgid "Show about window"
+msgstr "Ցույց տալ պատուհանի մասին"
+
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Next Tab"
+msgstr "Հաջորդ ներդիրը"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Go to next tab"
+msgstr "Գնալ դեպի հաջորդ ներդիրը"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Previous Tab"
+msgstr "Նախորդ ներդիրը"
+
+#: ../src/PantheonTerminalWindow.vala:799
+msgid "Go to previous tab"
+msgstr "Գնալ դեպի հաջորդ ներդիրը"
+
+#: ../src/PantheonTerminalWindow.vala:802
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Zoom in"
+msgstr "Խոշորացնել"
+
+#: ../src/PantheonTerminalWindow.vala:807
+msgid "Zoom out"
+msgstr "Փոքրացնել"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Fullscreen"
+msgstr "Ամբողջ էկրանով"
+
+#: ../src/PantheonTerminalWindow.vala:811
+msgid "Toggle/Untoggle fullscreen"
+msgstr ""
+
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands from the internet can be dangerous. "
+msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
@@ -84,133 +211,6 @@ msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:546 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Տերմինալ"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Vahan Harutyunyan https://launchpad.net/~v-harutyunyan"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Առաջադրանքն ավարտված է"
-
-#: ../src/PantheonTerminal.vala:210
-msgid "Print version info and exit"
-msgstr "Տպել տարբերակի վերաբերյալ տեղեկատվությունը և դուրս գալ"
-
-#: ../src/PantheonTerminal.vala:211
-msgid "Show about dialog"
-msgstr "Ցույց տալ դիալոգի մասին"
-
-#: ../src/PantheonTerminal.vala:212
-msgid "Run a program in terminal"
-msgstr "Գործարկել ծրագիրը տերմինալում"
-
-#: ../src/PantheonTerminal.vala:213
-msgid "Set shell working directory"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:172
-#: ../src/PantheonTerminalWindow.vala:770
-msgid "Find…"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:753
-#: ../src/PantheonTerminalWindow.vala:754
-msgid "Close"
-msgstr "Փակել"
-
-#: ../src/PantheonTerminalWindow.vala:758 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Նոր պատուհան"
-
-#: ../src/PantheonTerminalWindow.vala:758
-msgid "Open a new window"
-msgstr "Բացել նոր պատուհան"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "New Tab"
-msgstr "Նոր ներդիր"
-
-#: ../src/PantheonTerminalWindow.vala:762
-msgid "Create a new tab"
-msgstr "Ստեղծել նոր ներդիր"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy"
-msgstr "Պատճենել"
-
-#: ../src/PantheonTerminalWindow.vala:766
-msgid "Copy the selected text"
-msgstr "Պատճենել ընտրված տեքստը"
-
-#: ../src/PantheonTerminalWindow.vala:771
-msgid "Search for a given string in the terminal"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste"
-msgstr "Տեղադրել"
-
-#: ../src/PantheonTerminalWindow.vala:774
-msgid "Paste some text"
-msgstr "Տեղադրել տեքստ"
-
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Select All"
-msgstr "Ընտրել բոլորը"
-
-#: ../src/PantheonTerminalWindow.vala:779
-msgid "Select all the text in the terminal"
-msgstr "Տերմինալում ընտրել ամբողջ տեքստը"
-
-#: ../src/PantheonTerminalWindow.vala:781
-msgid "About"
-msgstr "Մասին"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Show about window"
-msgstr "Ցույց տալ պատուհանի մասին"
-
-#: ../src/PantheonTerminalWindow.vala:784
-msgid "Next Tab"
-msgstr "Հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:785
-msgid "Go to next tab"
-msgstr "Գնալ դեպի հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:788
-msgid "Previous Tab"
-msgstr "Նախորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:789
-msgid "Go to previous tab"
-msgstr "Գնալ դեպի հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
-msgid "Zoom in"
-msgstr "Խոշորացնել"
-
-#: ../src/PantheonTerminalWindow.vala:797
-msgid "Zoom out"
-msgstr "Փոքրացնել"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Fullscreen"
-msgstr "Ամբողջ էկրանով"
-
-#: ../src/PantheonTerminalWindow.vala:801
-msgid "Toggle/Untoggle fullscreen"
 msgstr ""
 
 #: ../src/Constants.vala:5
