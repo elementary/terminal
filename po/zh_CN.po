@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-01-02 16:02+0000\n"
+"PO-Revision-Date: 2016-03-03 14:27+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-03 05:55+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-04 05:53+0000\n"
+"X-Generator: Launchpad (build 17936)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -50,15 +50,15 @@ msgstr "在终端运行程序"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
-msgstr "设置Shell工作目录"
+msgstr "设置 Shell 工作目录"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "您确定要关闭该标签吗？"
+msgstr "您确定要关闭此标签吗？"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr "该标签中有一个运行的进程。"
+msgstr "此标签中有一个运行的进程。"
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
@@ -202,7 +202,7 @@ msgstr "运行此命令需要管理员权限。"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "复制命令到终端中可能会有安全隐患"
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -246,6 +246,3 @@ msgstr "在此处打开终端"
 
 #~ msgid "New Root Window"
 #~ msgstr "新建管理员窗口"
-
-#~ msgid "Copying commands from the internet can be dangerous. "
-#~ msgstr "从网络复制的命令可能不安全。 "
