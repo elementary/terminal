@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2015-12-15 12:42+0000\n"
-"Last-Translator: Noah Mehling <noahmehling@outlook.de>\n"
+"PO-Revision-Date: 2016-03-04 16:05+0000\n"
+"Last-Translator: Artem Anufrij <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-03-05 06:05+0000\n"
 "X-Generator: Launchpad (build 17936)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
@@ -26,6 +26,7 @@ msgstr "Terminal"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
 "  Batch10s https://launchpad.net/~batch10s-deactivatedaccount\n"
 "  Daniel https://launchpad.net/~daniel-87\n"
 "  Eduard Gotwig https://launchpad.net/~gotwig\n"
@@ -218,7 +219,7 @@ msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Das Kopieren von Befehlen in das Terminal kann gefährlich sein."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
