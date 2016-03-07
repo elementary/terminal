@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2015-12-05 14:39+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-03-06 19:18+0000\n"
+"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
+"X-Launchpad-Export-Date: 2016-03-07 05:46+0000\n"
 "X-Generator: Launchpad (build 17936)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
@@ -207,7 +207,7 @@ msgstr "Questo comando chiede l'accesso amministrativo al computer"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copiare i comandi nel terminale può essere pericoloso."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
