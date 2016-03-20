@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2015-12-05 14:38+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-03-19 23:57+0000\n"
+"Last-Translator: chilledfrogs <Unknown>\n"
 "Language-Team: English (Canada) <en_CA@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:53+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
+"X-Launchpad-Export-Date: 2016-03-20 05:28+0000\n"
+"X-Generator: Launchpad (build 17947)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -27,11 +27,12 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Ismael Cormier https://launchpad.net/~ismael-cormier\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  chilledfrogs https://launchpad.net/~chilledfrogs"
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr ""
+msgstr "Task finished"
 
 #: ../src/PantheonTerminal.vala:206
 msgid "Print version info and exit"
@@ -39,7 +40,7 @@ msgstr "Print version info and exit"
 
 #: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
-msgstr ""
+msgstr "Show about dialog"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
@@ -47,61 +48,61 @@ msgstr "Run a program in terminal"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Set shell working directory"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Are you sure you want to close this tab?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "There is an active process on this tab."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "If you close it, the process will end."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr ""
+msgstr "Close Tab"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Are you sure you want to quit Terminal?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "There is an active process on this terminal."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "If you quit Terminal, the process will end."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Quit Terminal"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Find"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Previous result"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Next result"
 
 #: ../src/PantheonTerminalWindow.vala:169
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Find…"
-msgstr ""
+msgstr "Find…"
 
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
@@ -114,120 +115,120 @@ msgstr "New Window"
 
 #: ../src/PantheonTerminalWindow.vala:768
 msgid "Open a new window"
-msgstr ""
+msgstr "Open a new window"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "New Tab"
-msgstr ""
+msgstr "New Tab"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "Create a new tab"
-msgstr ""
+msgstr "Create a new tab"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy"
-msgstr ""
+msgstr "Copy"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy the selected text"
-msgstr ""
+msgstr "Copy the selected text"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Search for a given string in the terminal"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
-msgstr ""
+msgstr "Paste"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste some text"
-msgstr ""
+msgstr "Paste some text"
 
 #: ../src/PantheonTerminalWindow.vala:788
 msgid "Select All"
-msgstr ""
+msgstr "Select All"
 
 #: ../src/PantheonTerminalWindow.vala:789
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Select all the text in the terminal"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "About"
-msgstr ""
+msgstr "About"
 
 #: ../src/PantheonTerminalWindow.vala:792
 msgid "Show about window"
-msgstr ""
+msgstr "Show about window"
 
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Next Tab"
-msgstr ""
+msgstr "Next Tab"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Go to next tab"
-msgstr ""
+msgstr "Go to next tab"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Previous Tab"
-msgstr ""
+msgstr "Previous Tab"
 
 #: ../src/PantheonTerminalWindow.vala:799
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Go to previous tab"
 
 #: ../src/PantheonTerminalWindow.vala:802
 #: ../src/PantheonTerminalWindow.vala:803
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom in"
 
 #: ../src/PantheonTerminalWindow.vala:807
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom out"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Fullscreen"
-msgstr ""
+msgstr "Fullscreen"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Toggle/Untoggle fullscreen"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "This command is asking for administrative access to your computer"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copying commands into the Terminal can be dangerous."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Be sure you understand what each part of this command does."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Don't Paste"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Paste Anyway"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "About Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr ""
+msgstr "Use the command line"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "New Root Tab"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Open Terminal Here"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Open a new tab"
