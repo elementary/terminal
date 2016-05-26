@@ -755,8 +755,8 @@ namespace PantheonTerminal {
             }
         }
 
-        TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
-            return (tab.page as Gtk.Bin).get_child () as TerminalWidget;
+        private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
+            return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
         static const Gtk.ActionEntry[] main_entries = {
