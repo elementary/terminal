@@ -340,13 +340,13 @@ namespace PantheonTerminal {
         }
 
         private void on_tab_added (Granite.Widgets.Tab tab) {
-            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            var t = get_term_widget (tab);
             terminals.append (t);
             t.window = this;
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
-            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            var t = get_term_widget (tab);
             terminals.remove (t);
 
             if (notebook.n_tabs == 0)
@@ -354,7 +354,7 @@ namespace PantheonTerminal {
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
-            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            var t = get_term_widget (tab);
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog ();
@@ -400,18 +400,18 @@ namespace PantheonTerminal {
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
             Idle.add (() => {
                 var new_window = app.new_window_with_coords (x, y, false);
-                var terminal = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+                var t = get_term_widget (tab);
                 var new_notebook = new_window.notebook;
 
                 notebook.remove_tab (tab);
                 new_notebook.insert_tab (tab, -1);
-                new_window.current_terminal = terminal;
+                new_window.current_terminal = t;
                 return false;
             });
         }
 
         private void on_tab_duplicated (Granite.Widgets.Tab tab) {
-            var t = (tab.page as Gtk.Grid).get_child_at (0, 0) as TerminalWidget;
+            var t = get_term_widget (tab);
             new_tab (t.get_shell_location ());
         }
 
@@ -482,7 +482,7 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-            current_terminal = ((Gtk.Grid) new_tab.page).get_child_at (0, 0) as TerminalWidget;
+            current_terminal = get_term_widget (new_tab);
             title = current_terminal.window_title ?? "";
             new_tab.icon = null;
             new_tab.page.grab_focus ();
@@ -573,19 +573,18 @@ namespace PantheonTerminal {
             Gdk.Geometry hints = Gdk.Geometry();
             hints.width_inc = (int) t.get_char_width ();
             hints.height_inc = (int) t.get_char_height ();
-            set_geometry_hints (t, hints, Gdk.WindowHints.RESIZE_INC);
+            set_geometry_hints (tab, hints, Gdk.WindowHints.RESIZE_INC);
 
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             t.grab_focus ();
+
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
-            var g = new Gtk.Grid ();
-            var sb = new Gtk.Scrollbar (Gtk.Orientation.VERTICAL, term.vadjustment);
-            g.attach (term, 0, 0, 1, 1);
-            g.attach (sb, 1, 0, 1, 1);
-            var tab = new Granite.Widgets.Tab (label, icon, g);
+            var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
+            sw.add (term);
+            var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
@@ -593,11 +592,8 @@ namespace PantheonTerminal {
         }
 
         private void make_restorable (Granite.Widgets.Tab tab) {
-            var page = tab.page as Gtk.Grid;
-            var term = page.get_child_at (0, 0) as TerminalWidget;
-
+            var term = get_term_widget (tab);
             terminals.remove (term);
-            page.remove (term);
             restorable_terminals.insert (term.terminal_id, term);
             tab.restore_data = term.terminal_id;
 
@@ -757,6 +753,10 @@ namespace PantheonTerminal {
                 fullscreen ();
                 is_fullscreen = true;
             }
+        }
+
+        private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
+            return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
         static const Gtk.ActionEntry[] main_entries = {
