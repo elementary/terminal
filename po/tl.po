@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-05-25 13:25+0000\n"
+"PO-Revision-Date: 2016-06-02 17:54+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:36+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-03 06:07+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -30,15 +30,15 @@ msgstr ""
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr ""
+msgstr "Tapos na ang gawain"
 
 #: ../src/PantheonTerminal.vala:206
 msgid "Print version info and exit"
-msgstr ""
+msgstr "I-print ang bersyon at lumabas"
 
 #: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
-msgstr ""
+msgstr "Ipakita ang about dialog"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
@@ -46,11 +46,11 @@ msgstr "Magpatakbo ng progama sa terminal"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
-msgstr ""
+msgstr "I-set ang working directory ng shell"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Sigurado ka bang gusto mong isara ang tab na ito?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "May aktibong proseso pa sa terminal na ito"
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Lumabas ng Terminal"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
@@ -91,11 +91,11 @@ msgstr "Hanapin"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Nakaraang resulta"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Susunot na resulta"
 
 #: ../src/PantheonTerminalWindow.vala:169
 #: ../src/PantheonTerminalWindow.vala:780
@@ -105,31 +105,31 @@ msgstr "Hanapin..."
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
 msgid "Close"
-msgstr ""
+msgstr "Isara"
 
 #: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
 msgid "New Window"
-msgstr ""
+msgstr "Bagong Window"
 
 #: ../src/PantheonTerminalWindow.vala:768
 msgid "Open a new window"
-msgstr ""
+msgstr "Magbukas ng bagong window"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "New Tab"
-msgstr ""
+msgstr "Bagong Tab"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "Create a new tab"
-msgstr ""
+msgstr "Gumawa ng bagong tab"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy"
-msgstr ""
+msgstr "Kopyahin"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy the selected text"
-msgstr ""
+msgstr "Kopyahin ang napiling teksto"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Search for a given string in the terminal"
@@ -137,23 +137,23 @@ msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
-msgstr ""
+msgstr "Idikit"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste some text"
-msgstr ""
+msgstr "Magdikit ng teksto"
 
 #: ../src/PantheonTerminalWindow.vala:788
 msgid "Select All"
-msgstr ""
+msgstr "Piliin Lahat"
 
 #: ../src/PantheonTerminalWindow.vala:789
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "Piliin ang lahat ng teksto na nasa terminal"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "About"
-msgstr ""
+msgstr "Tungkol dito"
 
 #: ../src/PantheonTerminalWindow.vala:792
 msgid "Show about window"
@@ -161,69 +161,72 @@ msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Next Tab"
-msgstr ""
+msgstr "Susunod na Tab"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Go to next tab"
-msgstr ""
+msgstr "Pumunta sa susunod na tab"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Previous Tab"
-msgstr ""
+msgstr "Nakaraang tab"
 
 #: ../src/PantheonTerminalWindow.vala:799
 msgid "Go to previous tab"
-msgstr ""
+msgstr "Pumunta sa nakaraang tab"
 
 #: ../src/PantheonTerminalWindow.vala:802
 #: ../src/PantheonTerminalWindow.vala:803
 msgid "Zoom in"
-msgstr ""
+msgstr "Mag-zoom in"
 
 #: ../src/PantheonTerminalWindow.vala:807
 msgid "Zoom out"
-msgstr ""
+msgstr "Mag-zoom out"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Fullscreen"
-msgstr ""
+msgstr "Buong screen"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "Buksan/patayin ang mode na pangbuong screen"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
+"Humihingi ng Administrative access ang command na ito sa kompyuter mo"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
+"Maaaring maging mapanganib ang pagkopya ng mga command papunta sa terminal."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
+"Siguraduhing naiintindihan mo ang ginagawa ng bawat parte ng command na ito"
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Huwag Idikit"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Idikit Pa Rin"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "Tungkol sa Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr ""
+msgstr "Gamitin ang command line"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Bagong Tab na naka-root"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Buksan ang Terminal Dito"
