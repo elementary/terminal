@@ -209,8 +209,13 @@ namespace PantheonTerminal {
             this.allow_bold = settings.allow_bold;
 
             /* Load encoding */
-            if (settings.encoding != "")
-                set_encoding (settings.encoding);
+            if (settings.encoding != "") {
+                try {
+                    set_encoding (settings.encoding);
+                } catch (Error e) {
+                    warning ("Failed to set encoding - %s", e.message);
+                }
+            }
 
             /* Disable bell if necessary */
             audible_bell = settings.audible_bell;
@@ -259,12 +264,16 @@ namespace PantheonTerminal {
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
-            try {
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-            } catch (Error e) {
-                warning (e.message);
-            }
+            /* Putting this in an Idle loop helps avoid corruption of the prompt on startup with multiple tabs */
+            Idle.add_full (GLib.Priority.LOW, () => {
+                try {
+                    this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                            envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
+                } catch (Error e) {
+                    warning (e.message);
+                }
+                return false;
+            });
         }
 
         public void run_program (string program_string) {

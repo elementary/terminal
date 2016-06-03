@@ -106,12 +106,16 @@ namespace PantheonTerminal {
             icon_name = "utilities-terminal";
             set_application (app);
 
+
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = _("Terminal");
             restore_saved_state (restore_pos);
+            if (recreate_tabs) {
+                open_tabs ();
+            }
 
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
@@ -142,15 +146,12 @@ namespace PantheonTerminal {
             this.search_revealer.set_reveal_child (false);
             term_font = Pango.FontDescription.from_string (get_term_font ());
 
-            if (recreate_tabs)
-                open_tabs ();
-
             set_size_request (app.minimum_width, app.minimum_height);
 
             search_button.toggled.connect (on_toggle_search);
-
             configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
+
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
@@ -510,11 +511,16 @@ namespace PantheonTerminal {
                     }
 
                     foreach (string loc in tabs) {
-
-                        if (loc == "")
+                        if (loc == "") {
                             continue;
-                        else
-                            new_tab (loc);
+                        } else {
+                            /* Schedule tab to be added when idle (helps to avoid corruption of
+                             * prompt on startup with multiple tabs) */
+                            Idle.add_full (GLib.Priority.LOW, () => {
+                                new_tab (loc);
+                                return false;
+                            });
+                        }
                     }
                 }
             } else {
@@ -544,15 +550,6 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
-            if (program == null) {
-                /* Set up the virtual terminal */
-                if (location == "")
-                    t.active_shell ();
-                else
-                    t.active_shell (location);
-            } else {
-                t.run_program (program);
-            }
 
             var tab = create_tab (_("Terminal"), null, t);
 
@@ -579,6 +576,15 @@ namespace PantheonTerminal {
             notebook.current = tab;
             t.grab_focus ();
 
+            if (program == null) {
+                /* Set up the virtual terminal */
+                if (location == "")
+                    t.active_shell ();
+                else
+                    t.active_shell (location);
+            } else {
+                t.run_program (program);
+            }
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
