@@ -578,10 +578,11 @@ namespace PantheonTerminal {
 
             if (program == null) {
                 /* Set up the virtual terminal */
-                if (location == "")
+                if (location == "") {
                     t.active_shell ();
-                else
+                } else {
                     t.active_shell (location);
+                }
             } else {
                 t.run_program (program);
             }
