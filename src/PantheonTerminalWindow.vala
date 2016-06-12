@@ -420,7 +420,7 @@ namespace PantheonTerminal {
             if (settings.follow_last_tab)
                 new_tab (current_terminal.get_shell_location ());
             else
-                new_tab ();
+                new_tab (Environment.get_home_dir ());
         }
 
         private void update_context_menu () {
@@ -490,46 +490,45 @@ namespace PantheonTerminal {
         }
 
         private void open_tabs () {
-            string[] tabs = saved_tabs;
+            string[] tabs = {};
             if (settings.remember_tabs) {
+                tabs = saved_tabs;
                 if (tabs.length == 0) {
-                    new_tab ();
-                } else {
-
-                    int null_dirs = 0;
-                    for (int i = 0; i < tabs.length; i++) {
-                        File file = File.new_for_path (tabs[i]);
-
-                        if (file.query_exists () == false) {
-                            null_dirs++;
-                            tabs[i] = "";
-                        }
-
-                        if (null_dirs == tabs.length) {
-                            tabs[0] = "~";
-                        }
-                    }
-
-                    foreach (string loc in tabs) {
-                        if (loc == "") {
-                            continue;
-                        } else {
-                            /* Schedule tab to be added when idle (helps to avoid corruption of
-                             * prompt on startup with multiple tabs) */
-                            Idle.add_full (GLib.Priority.LOW, () => {
-                                new_tab (loc);
-                                return false;
-                            });
-                        }
-                    }
+                    tabs += Environment.get_home_dir ();
                 }
             } else {
-                new_tab ("");
+                tabs += PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
             }
 
+            int null_dirs = 0;
+            for (int i = 0; i < tabs.length; i++) {
+                File file = File.new_for_path (tabs[i]);
+
+                if (file.query_exists () == false) {
+                    null_dirs++;
+                    tabs[i] = "";
+                }
+
+                if (null_dirs == tabs.length) {
+                    tabs[0] = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                }
+            }
+
+            foreach (string loc in tabs) {
+                if (loc == "") {
+                    continue;
+                } else {
+                    /* Schedule tab to be added when idle (helps to avoid corruption of
+                     * prompt on startup with multiple tabs) */
+                    Idle.add_full (GLib.Priority.LOW, () => {
+                        new_tab (loc);
+                        return false;
+                    });
+                }
+            }
         }
 
-        private void new_tab (string directory="", string? program=null) {
+        private void new_tab (string directory, string? program = null) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -537,7 +536,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = PantheonTerminalApp.working_directory ?? "";
+                location = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }
@@ -721,7 +720,7 @@ namespace PantheonTerminal {
             if (settings.follow_last_tab)
                 new_tab (current_terminal.get_shell_location ());
             else
-                new_tab ();
+                new_tab (Environment.get_home_dir ());
         }
 
         void action_about () {
