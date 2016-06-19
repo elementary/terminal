@@ -155,6 +155,28 @@ namespace PantheonTerminal {
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
+        private uint get_i18n_keyval (uint keycode, uint keyval) {
+            uint [] keyvals;
+            Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+            keymap.get_entries_for_keycode (keycode, null, out keyvals);
+
+            if (keyvals.length == 0) {
+                return keyval;
+            } else if (keyvals.length % 2 == 1) {
+                return keyvals[0];
+            }
+            
+            foreach(var key in keyvals) {
+                if (key < Gdk.Key.@A || key > Gdk.Key.@z) {
+                    continue;
+                }
+
+                return key;
+            }
+
+            return keyval;
+        }
+
         private void setup_ui () {
             /* Use CSD */
             var header = new Gtk.HeaderBar ();
@@ -204,7 +226,9 @@ namespace PantheonTerminal {
             add (grid);
 
             key_press_event.connect ((e) => {
-                switch (e.keyval) {
+                uint keyval = get_i18n_keyval (e.hardware_keycode, e.keyval);
+
+                switch (keyval) {
                     case Gdk.Key.Escape:
                         if (this.search_toolbar.search_entry.has_focus) {
                             this.search_button.active = !this.search_button.active;
