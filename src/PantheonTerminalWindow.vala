@@ -155,6 +155,21 @@ namespace PantheonTerminal {
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
+        /** Returns true if the code parameter matches the keycode of the keyval parameter for
+          * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
+        protected bool match_keycode (int keyval, uint code) {
+            Gdk.KeymapKey [] keys;
+            Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+            if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                foreach (var key in keys) {
+                    if (code == key.keycode)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
         private void setup_ui () {
             /* Use CSD */
             var header = new Gtk.HeaderBar ();
@@ -263,41 +278,34 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
-                    case Gdk.Key.@C:
-                    case Gdk.Key.@c:
-                        /*  When Ctrl-C is pressed, copy selected text,
-                            if nothing is selected let the widget handle it */
-                        if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
-                            settings.natural_copy_paste) {
-                            if (current_terminal.get_has_selection ()) {
-                                current_terminal.copy_clipboard ();
-                                return true;
-                            }
+                }
+
+                /* Use hardware keycodes so the key used
+                 * is unaffected by internationalized layout */  
+                if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                                            settings.natural_copy_paste) {
+                    uint keycode = e.hardware_keycode;
+                    if (match_keycode (Gdk.Key.c, keycode)) {
+                        if (current_terminal.get_has_selection ()) {
+                            current_terminal.copy_clipboard ();
+                            return true;
                         }
-                        break;
-                    case Gdk.Key.@D:
-                    case Gdk.Key.@d:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            if (!current_terminal.has_foreground_process () &&
-                                settings.save_exited_tabs) {
-                                action_close_tab ();
-                                return true;
-                            }
-                        }
-                        break;
-                    case Gdk.Key.@V:
-                    case Gdk.Key.@v:
+                    } else if (match_keycode (Gdk.Key.v, keycode)) {
                         if (this.search_toolbar.search_entry.has_focus) {
                             return false;
-                        } else if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
-                                   settings.natural_copy_paste) {
-                            if (clipboard.wait_is_text_available ()) {
-                                action_paste ();
-                                return true;
-                            }
+                        } else if (clipboard.wait_is_text_available ()) {
+                            action_paste ();
+                            return true;
                         }
-                        break;
+                    } else if (match_keycode (Gdk.Key.d, keycode)) {
+                        if (!current_terminal.has_foreground_process () &&
+                            settings.save_exited_tabs) {
+                            action_close_tab ();
+                            return true;
+                        }
+                    }
                 }
+
                 return false;
             });
         }
