@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-03-28 17:58+0000\n"
+"PO-Revision-Date: 2016-06-25 18:06+0000\n"
 "Last-Translator: laberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-29 05:28+0000\n"
-"X-Generator: Launchpad (build 17967)\n"
+"X-Launchpad-Export-Date: 2016-06-26 05:49+0000\n"
+"X-Generator: Launchpad (build 18111)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: ../src/PantheonTerminal.vala:62
 msgid "translator-credits"
@@ -38,7 +38,7 @@ msgstr "Printe version no na tumu"
 
 #: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
-msgstr "Hwe ɛho nsɛm"
+msgstr "Hwɛ ɛho nsɛm"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
@@ -50,7 +50,7 @@ msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "Wo gyedi sɛ wo pɛ sɛ wo yi?"
+msgstr "Wo gyedi sɛ wo pɛ sɛ wo yi tab wei?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -58,70 +58,70 @@ msgstr "Dwumadi foforɔ bi de tab no reyɛ aduma."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "Sɛ wo yi a, dwumadi no bɛ gyae."
+msgstr "Sɛ wo yi a, dwumadi no bɛgyae."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr ""
+msgstr "Gyae"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr ""
+msgstr "Yi Tab No"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Wo gyidi sɛ wopɛ sɛ woyi terminal no?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Dwumadie foforo de terminal no reyɛ adwuma."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Sɛ  woyi terminal no a, dwumadi no begyae."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Yi terminal no"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Hwehwɛ"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Nea wohuu no kane no"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Nea edi hɔ"
 
 #: ../src/PantheonTerminalWindow.vala:169
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Find…"
-msgstr ""
+msgstr "Hwehwɛ ..."
 
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
 msgid "Close"
-msgstr ""
+msgstr "Yi"
 
 #: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
 msgid "New Window"
-msgstr ""
+msgstr "Window Foforɔ"
 
 #: ../src/PantheonTerminalWindow.vala:768
 msgid "Open a new window"
-msgstr ""
+msgstr "Bue window foforɔ"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "New Tab"
-msgstr ""
+msgstr "Tab Foforɔ"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "Create a new tab"
-msgstr ""
+msgstr "Bue tab foforɔ"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy"
