@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2015-12-05 14:36+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-06-30 16:26+0000\n"
+"Last-Translator: Pedro Monteiro <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
+"X-Launchpad-Export-Date: 2016-07-01 05:49+0000\n"
+"X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -69,7 +69,7 @@ msgstr "Ainda existe um processo ativo neste separador."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "Se fechar, o processo terminará."
+msgstr "Fechar irá terminar o processo em execução"
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -90,7 +90,7 @@ msgstr "Ainda existe um processo ativo neste terminal."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr "Se fechar o Terminal, o processo terminará."
+msgstr "Se fechar o Terminal, o processo vai terminar."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -209,7 +209,7 @@ msgstr "Este comando está a pedir acesso de administrador ao seu computador"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copiar comandos para o Terminal pode ser perigoso."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
