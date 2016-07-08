@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-07-06 00:49+0000\n"
-"Last-Translator: Matija <vatroslavbudgie@gmail.com>\n"
+"PO-Revision-Date: 2016-07-07 19:14+0000\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-07-07 05:29+0000\n"
+"X-Launchpad-Export-Date: 2016-07-08 05:29+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
@@ -51,7 +51,7 @@ msgstr "Pokreni program u terminalu"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
-msgstr "Postavite radnu mapu ljuske"
+msgstr "Postavite radni direktorij ljuske"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -68,7 +68,7 @@ msgstr "Ako zatvorite, proces će završiti."
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Odustani"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
@@ -92,11 +92,11 @@ msgstr "Zatvori Terminal"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr "Pronađi"
+msgstr "Pretraži"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr "Prethodni rezultat"
+msgstr "Prijašnji rezultat"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
@@ -105,7 +105,7 @@ msgstr "Sljedeći rezultat"
 #: ../src/PantheonTerminalWindow.vala:169
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Find…"
-msgstr "Pronađi..."
+msgstr "Pretraži..."
 
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
@@ -138,7 +138,7 @@ msgstr "Kopiraj odabrani tekst"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Search for a given string in the terminal"
-msgstr "Nađi zadani tekst u terminalu"
+msgstr "Pretraži zadani tekst u terminalu"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
@@ -187,7 +187,7 @@ msgstr "Uvećaj"
 
 #: ../src/PantheonTerminalWindow.vala:807
 msgid "Zoom out"
-msgstr "Umanji"
+msgstr "Smanji"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Fullscreen"
@@ -195,7 +195,7 @@ msgstr "Cijeli zaslon"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Uključi/Isključi Cijeli zaslon"
+msgstr "Cijelozaslonski prikaz"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
@@ -207,7 +207,7 @@ msgstr "Kopiranje naredbi u Terminal može biti opasno."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr "Provjerite razumijete li što čini svaki dio ove naredbe."
+msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
@@ -227,11 +227,11 @@ msgstr "Koristiti naredbeni redak"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr "Nova Root kartica"
+msgstr "Nova korijenska kartica"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr "Ovdje otvori terminal"
+msgstr "Otvori terminal ovdje"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Ako zatvorite ovu karticu, ovaj proces će završiti."
