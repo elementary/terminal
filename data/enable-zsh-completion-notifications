@@ -14,8 +14,8 @@ then
         dbus-send \
             --type=method_call \
             --session \
-            --dest=net.launchpad.pantheon-terminal \
-            /net/launchpad/pantheon_terminal \
+            --dest=org.pantheon.terminal \
+            /org/pantheon/terminal \
             org.pantheon.terminal.ProcessFinished \
             string:$PANTHEON_TERMINAL_ID \
             string:"$(fc -ln -1)"
@@ -37,8 +37,8 @@ then
     dbus-send \
         --type=method_call \
         --session \
-        --dest=net.launchpad.pantheon-terminal \
-        /net/launchpad/pantheon_terminal \
+        --dest=org.pantheon.terminal \
+        /org/pantheon/terminal \
         org.pantheon.terminal.ProcessFinished \
         string:$PANTHEON_TERMINAL_ID \
         string:"You should not have seen this, please report the incident to Pantheon Terminal developers."

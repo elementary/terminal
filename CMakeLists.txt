@@ -104,7 +104,7 @@ find_library (M_LIB m)
 target_link_libraries (pantheon-terminal ${M_LIB})
 
 install (TARGETS pantheon-terminal RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/net.launchpad.pantheon-terminal.desktop DESTINATION share/applications)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/org.pantheon.terminal.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/pantheon-terminal.appdata.xml DESTINATION share/appdata)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/enable-zsh-completion-notifications DESTINATION share/pantheon-terminal)
