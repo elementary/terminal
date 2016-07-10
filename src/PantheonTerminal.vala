@@ -47,8 +47,8 @@ namespace PantheonTerminal {
             exec_name = "pantheon-terminal";
             app_years = "2011-2015";
             app_icon = "utilities-terminal";
-            app_launcher = "pantheon-terminal.desktop";
-            application_id = "net.launchpad.pantheon-terminal";
+            app_launcher = "org.pantheon.terminal.desktop";
+            application_id = "org.pantheon.terminal";
             main_url = "https://launchpad.net/pantheon-terminal";
             bug_url = "https://bugs.launchpad.net/pantheon-terminal";
             help_url = "https://elementary.io/help/terminal";
@@ -105,7 +105,7 @@ namespace PantheonTerminal {
             base.dbus_register (connection, object_path);
 
             var dbus = new DBus ();
-            connection.register_object ("/net/launchpad/pantheon_terminal", dbus);
+            connection.register_object ("/org/pantheon/terminal", dbus);
 
             dbus.finished_process.connect ((id, process) => {
                 foreach (var window in windows) {
