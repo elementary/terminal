@@ -43,9 +43,11 @@ namespace PantheonTerminal {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
+            Intl.setlocale (LocaleCategory.ALL, "");
+
             program_name = _("Terminal");
             exec_name = "pantheon-terminal";
-            app_years = "2011-2015";
+            app_years = "2011-2016";
             app_icon = "utilities-terminal";
             app_launcher = "org.pantheon.terminal.desktop";
             application_id = "org.pantheon.terminal";
