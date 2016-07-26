@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-03-03 15:35+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-07-25 15:01+0000\n"
+"Last-Translator: Admiral AnimE <aeternus.arcis@gmail.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
+"X-Launchpad-Export-Date: 2016-07-26 05:25+0000\n"
+"X-Generator: Launchpad (build 18153)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -26,6 +26,7 @@ msgstr "Терминал"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Admiral AnimE https://launchpad.net/~aeternus-arcis\n"
 "  Dimitar Dimitrov https://launchpad.net/~dimitrov\n"
 "  Emil Avramov https://launchpad.net/~avramov-emil\n"
 "  ITPROJECTS https://launchpad.net/~itprojects\n"
@@ -35,15 +36,15 @@ msgstr ""
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr "Задачата завършена"
+msgstr "Задачата е завършена"
 
 #: ../src/PantheonTerminal.vala:206
 msgid "Print version info and exit"
-msgstr "Принтиране на информация за версията и затваряне"
+msgstr "Отпечатване на сведения за версията и затваряне"
 
 #: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
-msgstr "Показвне на относната информация за приложението"
+msgstr "Показване на сведения за програмата"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
@@ -92,7 +93,7 @@ msgstr "Затваряне на Терминал"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr "Търси"
+msgstr "Търсене"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
@@ -110,7 +111,7 @@ msgstr "Търси…"
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
 msgid "Close"
-msgstr "Затвори"
+msgstr "Затваряне"
 
 #: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
 msgid "New Window"
@@ -130,7 +131,7 @@ msgstr "Създаване на нов подпрозорец"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy"
-msgstr "Копирай"
+msgstr "Копиране"
 
 #: ../src/PantheonTerminalWindow.vala:776
 msgid "Copy the selected text"
@@ -142,7 +143,7 @@ msgstr "Търси за определен текс в терминала"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
-msgstr "Постави"
+msgstr "Поставяне"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste some text"
@@ -227,7 +228,7 @@ msgstr "Използване на команден ред"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Нов подпрозорец (като администратор)"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
