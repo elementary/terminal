@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-01-21 14:50+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-08-02 00:48+0000\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <Unknown>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
+"X-Launchpad-Export-Date: 2016-08-02 05:48+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
 #: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
@@ -27,7 +27,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Archibald Platypus https://launchpad.net/~idi0tf0wl\n"
-"  BALLOON a.k.a. Fu-sen. https://launchpad.net/~balloon\n"
+"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
 "  Eric Johnson https://launchpad.net/~ecj\n"
 "  Joji Bronner https://launchpad.net/~jojiinchrist\n"
 "  Jun Takeda https://launchpad.net/~takeda-jun\n"
@@ -38,23 +38,23 @@ msgstr ""
 
 #: ../src/PantheonTerminal.vala:124
 msgid "Task finished"
-msgstr ""
+msgstr "タスクが終了しました"
 
 #: ../src/PantheonTerminal.vala:206
 msgid "Print version info and exit"
-msgstr ""
+msgstr "バージョン情報を表示して終了する"
 
 #: ../src/PantheonTerminal.vala:207
 msgid "Show about dialog"
-msgstr ""
+msgstr "アプリについてのダイアログを表示"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "ターミナルでプログラムを実行する"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Set shell working directory"
-msgstr ""
+msgstr "シェルの処理ディレクトリを設定"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -66,12 +66,12 @@ msgstr "このタブにアクティブなプロセスがあります。"
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "タブを閉じた場合、プロセスは終了します。"
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr "取消"
+msgstr "キャンセル"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
@@ -79,15 +79,15 @@ msgstr "タブを閉じる"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "ターミナルを終了してもよろしいですか？"
+msgstr "ターミナルを終了してよろしいですか？"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr "ターミナルにアクティブなプロセスが有ります。"
+msgstr "このターミナルは作業中です。"
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "ターミナルを終了した場合、プロセスは終了します。"
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -95,20 +95,20 @@ msgstr "ターミナルを終了する"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "検索"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "前の検索結果"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "次の検索結果"
 
 #: ../src/PantheonTerminalWindow.vala:169
 #: ../src/PantheonTerminalWindow.vala:780
 msgid "Find…"
-msgstr ""
+msgstr "検索..."
 
 #: ../src/PantheonTerminalWindow.vala:763
 #: ../src/PantheonTerminalWindow.vala:764
@@ -117,7 +117,7 @@ msgstr "閉じる"
 
 #: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
 msgid "New Window"
-msgstr "新規ウィンドウ"
+msgstr "新しいウィンドウ"
 
 #: ../src/PantheonTerminalWindow.vala:768
 msgid "Open a new window"
@@ -125,7 +125,7 @@ msgstr "新しいウインドウを開く"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "New Tab"
-msgstr "新規タブ"
+msgstr "新しいタブ"
 
 #: ../src/PantheonTerminalWindow.vala:772
 msgid "Create a new tab"
@@ -141,7 +141,7 @@ msgstr "選択したテキストをコピー"
 
 #: ../src/PantheonTerminalWindow.vala:781
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "この文字列でターミナルを検索"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste"
@@ -149,7 +149,7 @@ msgstr "貼り付け"
 
 #: ../src/PantheonTerminalWindow.vala:784
 msgid "Paste some text"
-msgstr "テキストを貼り付ける"
+msgstr "テキストを貼り付けする"
 
 #: ../src/PantheonTerminalWindow.vala:788
 msgid "Select All"
@@ -161,7 +161,7 @@ msgstr "ターミナル内のテキストをすべて選択"
 
 #: ../src/PantheonTerminalWindow.vala:791
 msgid "About"
-msgstr "このアプリケーションについて"
+msgstr "情報"
 
 #: ../src/PantheonTerminalWindow.vala:792
 msgid "Show about window"
@@ -169,40 +169,40 @@ msgstr "このアプリケーションについての情報を表示"
 
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Next Tab"
-msgstr "次のタブへ"
+msgstr "次のタブ"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Go to next tab"
-msgstr ""
+msgstr "次のタブへ"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Previous Tab"
-msgstr ""
+msgstr "前のタブ"
 
 #: ../src/PantheonTerminalWindow.vala:799
 msgid "Go to previous tab"
-msgstr ""
+msgstr "前のタブへ"
 
 #: ../src/PantheonTerminalWindow.vala:802
 #: ../src/PantheonTerminalWindow.vala:803
 msgid "Zoom in"
-msgstr "ズームインする"
+msgstr "拡大する"
 
 #: ../src/PantheonTerminalWindow.vala:807
 msgid "Zoom out"
-msgstr "ズームアウトする"
+msgstr "縮小する"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Fullscreen"
-msgstr "フルスクリーン"
+msgstr "全画面表示"
 
 #: ../src/PantheonTerminalWindow.vala:811
 msgid "Toggle/Untoggle fullscreen"
-msgstr "フルスクリーンに変える/平常に戻る"
+msgstr "全画面表示を切り替えます"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "このコマンドは管理者権限を必要とします"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
@@ -210,31 +210,31 @@ msgstr ""
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "コマンドの内容を確認してください。"
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "貼り付けしない"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "貼り付けする"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "ターミナルについて"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "コマンドラインを利用する"
+msgstr "コマンドラインを使用する"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "新しい root タブ"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "ここでターミナルを開く"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "ターミナルを終了したら、このプロセスも終了します。"
