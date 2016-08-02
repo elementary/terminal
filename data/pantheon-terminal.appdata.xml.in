@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
-<application>
-  <id type="desktop">org.pantheon.terminal.desktop</id>
+<component type="desktop">
+  <id>org.pantheon.terminal.desktop</id>
   <metadata_license>CC0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
   <_name>Terminal</_name>
-  <icon type="stock">utilities-terminal</icon>
   <_summary>Use the command line</_summary>
   <description>
     <_p>
@@ -16,5 +15,8 @@
     </_p>
   </description>
   <url type="homepage">http://elementary.io/</url>
-  <updatecontact>contact_at_elementary.io</updatecontact>
-</application>
+  <url type="bugtracker">https://bugs.launchpad.net/pantheon-terminal</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/terminal</url>
+  <update_contact>contact_AT_elementary.io</update_contact>
+</component>
