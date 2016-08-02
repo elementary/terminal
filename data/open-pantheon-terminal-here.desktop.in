@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Terminal
+_Name=Terminal
 TryExec=pantheon-terminal
 Exec=pantheon-terminal -w %u
 Icon=utilities-terminal
