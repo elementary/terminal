@@ -7,56 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
-"PO-Revision-Date: 2016-07-17 16:03+0000\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2016-08-02 10:04+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-07-18 05:26+0000\n"
-"X-Generator: Launchpad (build 18140)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Alexander Håkansson https://launchpad.net/~al3xand3r-h\n"
-"  Alexander Nordahl https://launchpad.net/~couchquid\n"
-"  Benjamin Bultman https://launchpad.net/~bultman-ben\n"
-"  Joachim Johansson https://launchpad.net/~joachim-j\n"
-"  Larsson https://launchpad.net/~larsson\n"
-"  Marcus Lundgren https://launchpad.net/~marcus-lundgren\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Mikael Nyberg https://launchpad.net/~miknyb\n"
-"  Oscar Kraemer https://launchpad.net/~carloscarkraemer\n"
-"  Zahirovic Mensur https://launchpad.net/~nookienoq\n"
-"  komekjr https://launchpad.net/~komekjr"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Uppgift slutförd"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Skriv ut versionsinformation och avsluta"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Visa Om dialogrutan"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Kör ett program i terminalen"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Använd som terminalens arbetsmapp"
+"X-Launchpad-Export-Date: 2016-08-03 05:38+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -107,100 +66,142 @@ msgstr "Föregående resultat"
 msgid "Next result"
 msgstr "Nästa resultat"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Sök…"
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Stäng"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Nytt fönster"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Öppna ett nytt fönster"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Ny flik"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Skapa en ny flik"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Kopiera"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Kopiera den valda texten"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Sök efter en specifik sträng i terminalen"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Klistra in"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Klistra in någon text"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Markera allt"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Markera all text i terminalen"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "Om"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Visa Om-fönstret"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Nästa flik"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Gå till nästa flik"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Föregående flik"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Gå till föregående flik"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Förstora"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Förminska"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Helskärm"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Växla helskärmsläge"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Alexander Håkansson https://launchpad.net/~al3xand3r-h\n"
+"  Alexander Nordahl https://launchpad.net/~couchquid\n"
+"  Benjamin Bultman https://launchpad.net/~bultman-ben\n"
+"  Joachim Johansson https://launchpad.net/~joachim-j\n"
+"  Larsson https://launchpad.net/~larsson\n"
+"  Marcus Lundgren https://launchpad.net/~marcus-lundgren\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Mikael Nyberg https://launchpad.net/~miknyb\n"
+"  Oscar Kraemer https://launchpad.net/~carloscarkraemer\n"
+"  Zahirovic Mensur https://launchpad.net/~nookienoq\n"
+"  komekjr https://launchpad.net/~komekjr"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Uppgift slutförd"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Skriv ut versionsinformation och avsluta"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Visa Om-dialogrutan"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Kör ett program i terminalen"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Använd som terminalens arbetsmapp"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"

@@ -7,60 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
 "PO-Revision-Date: 2016-01-21 14:43+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-04 05:52+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Příkazová řádka"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Hlobil Vaclav https://launchpad.net/~vaclav-hlobil\n"
-"  Jan Dvořák https://launchpad.net/~dvorakj50\n"
-"  Jiří Šebele https://launchpad.net/~sindriava+launchpad\n"
-"  Long Do Hai https://launchpad.net/~mailbox-b\n"
-"  Lukáš Papík https://launchpad.net/~stereo839\n"
-"  Marek Doležel https://launchpad.net/~marekdolezel\n"
-"  Marek Suchánek https://launchpad.net/~suchm\n"
-"  Martin Bárta https://launchpad.net/~martin-bartama\n"
-"  Matěj Kocián https://launchpad.net/~matej-kocian\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Mirek2 https://launchpad.net/~mazelm-gmail\n"
-"  Ondra Voves https://launchpad.net/~o-voves\n"
-"  Ondřej Brabec https://launchpad.net/~kaktus-ob\n"
-"  Tomo Moto https://launchpad.net/~tomasivanek\n"
-"  thecnology https://launchpad.net/~thecnology"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Úloha byla dokončena"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Zobrazit informace o verzi a ukončit"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Zobrazit dialog o programu"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Spustit program v Příkazové řádce"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Nastavit pracovní adresář shellu"
+"X-Launchpad-Export-Date: 2016-08-03 05:37+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -111,100 +66,149 @@ msgstr "Předchozí výsledek"
 msgid "Next result"
 msgstr "Další výsledek"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Příkazová řádka"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Hledat…"
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Zavřít"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Nové okno"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Otevřít nové okno"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Nová karta"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Vytvořit novou záložku"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Kopírovat vybraný text"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Hledat daný řetězec v terminálu"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Vložit"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Vložit text"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Vybrat všechen text v terminálu"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "O aplikaci"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Zobrazit okno s informacemi o programu"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Další karta"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Přejít na další kartu"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Předchozí karta"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Přejít na předchozí kartu"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Oddálit"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Na celou obrazovku"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Zapnout / Vypnout režim celé obrazovky"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Hlobil Vaclav https://launchpad.net/~vaclav-hlobil\n"
+"  Jan Dvořák https://launchpad.net/~dvorakj50\n"
+"  Jiří Šebele https://launchpad.net/~sindriava+launchpad\n"
+"  Long Do Hai https://launchpad.net/~mailbox-b\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
+"  Marek Doležel https://launchpad.net/~marekdolezel\n"
+"  Marek Suchánek https://launchpad.net/~suchm\n"
+"  Martin Bárta https://launchpad.net/~martin-bartama\n"
+"  Matěj Kocián https://launchpad.net/~matej-kocian\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Mirek2 https://launchpad.net/~mazelm-gmail\n"
+"  Ondra Voves https://launchpad.net/~o-voves\n"
+"  Ondřej Brabec https://launchpad.net/~kaktus-ob\n"
+"  Strihtrs https://launchpad.net/~filip-kalous\n"
+"  Tomo Moto https://launchpad.net/~tomasivanek\n"
+"  Yury Nudga https://launchpad.net/~yelmuf\n"
+"  thecnology https://launchpad.net/~thecnology\n"
+"  Šimon Šustek https://launchpad.net/~sijisu"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Úloha byla dokončena"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Zobrazit informace o verzi a ukončit"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Zobrazit dialog o programu"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Spustit program v Příkazové řádce"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Nastavit pracovní adresář shellu"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"

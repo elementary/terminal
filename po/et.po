@@ -7,48 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
 "PO-Revision-Date: 2016-06-13 16:57+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-06-14 06:12+0000\n"
-"X-Generator: Launchpad (build 18097)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Aaron Uurman https://launchpad.net/~aaronuurman\n"
-"  Kristjan Vool https://launchpad.net/~tictac7x\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Toiming lõpetati edukalt"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Prindi versiooni teave ja välju"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Teabe dialoog"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Käivita rakendus terminalis"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Töötamise kausta määramine"
+"X-Launchpad-Export-Date: 2016-08-03 05:37+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -99,100 +66,134 @@ msgstr "Eelmine"
 msgid "Next result"
 msgstr "Järgmine"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Otsi…"
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Sulge"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Uus aken"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Ava uus aken"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Uus kaart"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Loo uus kaart"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Kopeeri"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Kopeeri valitud tekst"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Terminalist antud teksti otsimine"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Aseta"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Aseta tekst"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Vali terminali kogu tekst"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "Rakendusest..."
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Näita rakenduse teavet"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Järgmine kaart"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Mine järgmisele kaardile"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Eelmine kaart"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Mine eelmisele kaardile"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Suurenda"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Vähenda"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Täisekraan"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Täisekraani sisse/välja lülitamine"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Aaron Uurman https://launchpad.net/~aaronuurman\n"
+"  Kristjan Vool https://launchpad.net/~tictac7x\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Toiming lõpetati edukalt"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Prindi versiooni teave ja välju"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Teabe dialoog"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Käivita rakendus terminalis"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Töötamise kausta määramine"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"

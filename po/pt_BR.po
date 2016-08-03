@@ -7,63 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
 "PO-Revision-Date: 2016-03-22 17:45+0000\n"
 "Last-Translator: Leonardo Lemos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-23 05:51+0000\n"
-"X-Generator: Launchpad (build 17958)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
-"  Danilo Cominotti Marques https://launchpad.net/~dcominottim\n"
-"  DavyS https://launchpad.net/~davysson\n"
-"  Douglas Moura https://launchpad.net/~araujodemoura\n"
-"  Douglas Rodrigues https://launchpad.net/~douglasralmeida\n"
-"  Eudardo https://launchpad.net/~easilva91\n"
-"  Fábio Nogueira https://launchpad.net/~fnogueira\n"
-"  João Sombrio https://launchpad.net/~chrisparkerrr\n"
-"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Otto Robba https://launchpad.net/~otto-ottorobba\n"
-"  Paulo Roberto de Oliveira Castro https://launchpad.net/~p-oliveira-castro\n"
-"  Rafael Belenos Govannon https://launchpad.net/~belenos\n"
-"  Rafael da Silva Lima https://launchpad.net/~rafael-liverpool\n"
-"  Rhuan Lopes https://launchpad.net/~rhuan-lopes\n"
-"  Roberto Luiz Debarba https://launchpad.net/~roberto-debarba\n"
-"  Samuelselos https://launchpad.net/~samuelselos\n"
-"  Átila Camurça https://launchpad.net/~atilacamurca"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Tarefa concluída"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Imprimir informações de versão e sair"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Mostrar diálogo de créditos"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Executar um programa no terminal"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Definir diretório de trabalho do shell"
+"X-Launchpad-Export-Date: 2016-08-03 05:38+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -114,100 +66,149 @@ msgstr "Resultado anterior"
 msgid "Next result"
 msgstr "Próximo resultado"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Buscar..."
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Fechar"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Nova janela"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Abrir nova janela"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Nova aba"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Criar uma nova aba"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Copiar"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Copiar o texto selecionado"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Procurar por um texto no terminal"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Colar"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Colar algum texto"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Selecionar todo texto no terminal"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "Sobre"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Mostrar a janela sobre"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Próxima Aba"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Ir para próxima aba"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Aba Anterior"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Ir para aba anterior"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Reduzir"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Habilitar/Desabilitar tela cheia"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
+"  Danilo Cominotti Marques https://launchpad.net/~dcominottim\n"
+"  DavyS https://launchpad.net/~davysson\n"
+"  Douglas Moura https://launchpad.net/~araujodemoura\n"
+"  Douglas Rodrigues https://launchpad.net/~douglasralmeida\n"
+"  Eudardo https://launchpad.net/~easilva91\n"
+"  Fábio Nogueira https://launchpad.net/~fnogueira\n"
+"  João Sombrio https://launchpad.net/~chrisparkerrr\n"
+"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Otto Robba https://launchpad.net/~otto-ottorobba\n"
+"  Paulo Roberto de Oliveira Castro https://launchpad.net/~p-oliveira-castro\n"
+"  Rafael Belenos Govannon https://launchpad.net/~belenos\n"
+"  Rafael da Silva Lima https://launchpad.net/~rafael-liverpool\n"
+"  Rhuan Lopes https://launchpad.net/~rhuan-lopes\n"
+"  Roberto Luiz Debarba https://launchpad.net/~roberto-debarba\n"
+"  Samuelselos https://launchpad.net/~samuelselos\n"
+"  Átila Camurça https://launchpad.net/~atilacamurca"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Tarefa concluída"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Imprimir informações de versão e sair"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Mostrar diálogo de créditos"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Executar um programa no terminal"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Definir diretório de trabalho do shell"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"

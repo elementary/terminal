@@ -7,67 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
 "PO-Revision-Date: 2016-04-09 15:42+0000\n"
 "Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-04-10 05:29+0000\n"
-"X-Generator: Launchpad (build 17990)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Komut istemci"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Ahmet Onur YILDIRIM https://launchpad.net/~aonurry\n"
-"  Ayhan Kuru https://launchpad.net/~ayhankuru\n"
-"  Baris Ata https://launchpad.net/~brsata\n"
-"  Emre Kucukarpaci https://launchpad.net/~ekkucukarpaci\n"
-"  Ferhat TUNÇTAN https://launchpad.net/~ferhattnctn66\n"
-"  Gökberk Konuralp https://launchpad.net/~g-knrlp\n"
-"  Halil https://launchpad.net/~halil--erz\n"
-"  Hamza https://launchpad.net/~ckr-hamza\n"
-"  Huseyin Erdem https://launchpad.net/~herdem09\n"
-"  Kamil Tolga Atam https://launchpad.net/~atam\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Melih Güçlü https://launchpad.net/~melihguclu\n"
-"  Mesut Yaver https://launchpad.net/~afg-mesut\n"
-"  Muhammet Kara https://launchpad.net/~muhammet-k\n"
-"  Murat PINAR https://launchpad.net/~muratpnr\n"
-"  Ramazan Buğdaycı https://launchpad.net/~rbugdayci-g\n"
-"  Sadık Poyraz https://launchpad.net/~sadikpoyraz01\n"
-"  Salih https://launchpad.net/~hernandomtoto\n"
-"  Tolga Okur https://launchpad.net/~ahmettolgaokur\n"
-"  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-"
-"deactivatedaccount\n"
-"  Özcan ESEN https://launchpad.net/~ozcanesen"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "İşlem tamamlandı"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Sürüm bilgisini yazdır ve çık"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Hakkında iletisini göster"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Uçbirimde bir program çalıştır"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Kabuk çalışma dizinini ayarla"
+"X-Launchpad-Export-Date: 2016-08-03 05:38+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -118,100 +66,153 @@ msgstr "Önceki sonuç"
 msgid "Next result"
 msgstr "Sonraki sonuç"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Komut istemci"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Bul…"
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Kapat"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Yeni Pencere"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Yeni bir pencere aç"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Yeni Sekme"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Yeni sekme oluştur"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Kopyala"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Seçili metni kopyala"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Terminal'de verilen söz dizisini ara"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Metin yapıştır"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Terminal'deki tüm metni seç"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "Hakkında"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Hakkında penceresini göster"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Sonraki Sekme"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Sonraki sekmeye git"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Önceki Sekme"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Önceki sekmeye git"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Tam Ekran"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Tam ekran görüntüle/kapat"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Ahmet Onur YILDIRIM https://launchpad.net/~aonurry\n"
+"  Ayhan Kuru https://launchpad.net/~ayhankuru\n"
+"  Baris Ata https://launchpad.net/~brsata\n"
+"  Emre Kucukarpaci https://launchpad.net/~ekkucukarpaci\n"
+"  Ferhat TUNÇTAN https://launchpad.net/~ferhattnctn66\n"
+"  Gökberk Konuralp https://launchpad.net/~g-knrlp\n"
+"  Halil https://launchpad.net/~halil--erz\n"
+"  Hamza https://launchpad.net/~ckr-hamza\n"
+"  Huseyin Erdem https://launchpad.net/~herdem09\n"
+"  Kamil Tolga Atam https://launchpad.net/~atam\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Melih Güçlü https://launchpad.net/~melihguclu\n"
+"  Mesut Yaver https://launchpad.net/~afg-mesut\n"
+"  Muhammet Kara https://launchpad.net/~muhammet-k\n"
+"  Murat PINAR https://launchpad.net/~muratpnr\n"
+"  Ramazan Buğdaycı https://launchpad.net/~rbugdayci-g\n"
+"  Sadık Poyraz https://launchpad.net/~sadikpoyraz01\n"
+"  Salih https://launchpad.net/~hernandomtoto\n"
+"  Tolga Okur https://launchpad.net/~ahmettolgaokur\n"
+"  asdasdqwdq qwd qwq https://launchpad.net/~onlycodetr-deactivatedaccount-"
+"deactivatedaccount\n"
+"  Özcan ESEN https://launchpad.net/~ozcanesen"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "İşlem tamamlandı"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Sürüm bilgisini yazdır ve çık"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Hakkında iletisini göster"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Uçbirimde bir program çalıştır"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Kabuk çalışma dizinini ayarla"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"

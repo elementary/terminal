@@ -7,69 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-02 23:26-0600\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
 "PO-Revision-Date: 2016-03-07 20:18+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-08 05:36+0000\n"
-"X-Generator: Launchpad (build 17936)\n"
-
-#: ../src/PantheonTerminal.vala:46 ../src/PantheonTerminalWindow.vala:113
-#: ../src/PantheonTerminalWindow.vala:557 ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminal.vala:62
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Adrian Widerski https://launchpad.net/~adrian-widerski\n"
-"  Arkadiusz https://launchpad.net/~elementary\n"
-"  Bartłomiej Zieliński https://launchpad.net/~fasolens\n"
-"  Damian Dygulski https://launchpad.net/~dygulski13\n"
-"  Damian Woźniak https://launchpad.net/~fisz\n"
-"  Daniel https://launchpad.net/~sokoolx\n"
-"  Ignacy Rusz https://launchpad.net/~lopogo59\n"
-"  Lu https://launchpad.net/~zarok\n"
-"  Marcel https://launchpad.net/~mguzik555\n"
-"  Marcin Kozłowski https://launchpad.net/~kozlowsky-marcin\n"
-"  Marcin Wierzbicki https://launchpad.net/~marcin-wierzb\n"
-"  Mateusz Flasiński https://launchpad.net/~syri16\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Michał Ziętara https://launchpad.net/~mr.matryc\n"
-"  Nicofisi https://launchpad.net/~m-lomiak\n"
-"  Piotr Sokół https://launchpad.net/~psokol\n"
-"  Piotr Strębski https://launchpad.net/~strebski\n"
-"  Puciek https://launchpad.net/~puciek\n"
-"  TheDead4Fun https://launchpad.net/~matizochol\n"
-"  WuPe https://launchpad.net/~wojtek2s\n"
-"  jaja https://launchpad.net/~launcherfan\n"
-"  porzadny https://launchpad.net/~porzadny\n"
-"  werd https://launchpad.net/~werd\n"
-"  Łukasz Serafinowski https://launchpad.net/~lukasz-serafinowski"
-
-#: ../src/PantheonTerminal.vala:124
-msgid "Task finished"
-msgstr "Zadanie zakończone"
-
-#: ../src/PantheonTerminal.vala:206
-msgid "Print version info and exit"
-msgstr "Wypisuje informacje o wersji i kończy działanie"
-
-#: ../src/PantheonTerminal.vala:207
-msgid "Show about dialog"
-msgstr "Pokaż okno o programie"
-
-#: ../src/PantheonTerminal.vala:208
-msgid "Run a program in terminal"
-msgstr "Uruchom program w terminalu"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Set shell working directory"
-msgstr "Ustaw aktualną ścieżkę powłoki"
+"X-Launchpad-Export-Date: 2016-08-03 05:38+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -120,100 +66,155 @@ msgstr "Poprzedni wynik"
 msgid "Next result"
 msgstr "Następny wynik"
 
-#: ../src/PantheonTerminalWindow.vala:169
-#: ../src/PantheonTerminalWindow.vala:780
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
 msgstr "Znajdź..."
 
-#: ../src/PantheonTerminalWindow.vala:763
-#: ../src/PantheonTerminalWindow.vala:764
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
 msgstr "Zamknij"
 
-#: ../src/PantheonTerminalWindow.vala:768 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
 msgstr "Nowe okno"
 
-#: ../src/PantheonTerminalWindow.vala:768
+#: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
 msgstr "Otwiera nowe okno programu"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
 msgstr "Nowa karta"
 
-#: ../src/PantheonTerminalWindow.vala:772
+#: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
 msgstr "Tworzy nową kartę"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: ../src/PantheonTerminalWindow.vala:776
+#: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Kopiuje zaznaczony tekst"
 
-#: ../src/PantheonTerminalWindow.vala:781
+#: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
 msgstr "Znajdź w terminalu podany ciąg znaków"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
 msgstr "Wklej"
 
-#: ../src/PantheonTerminalWindow.vala:784
+#: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
 msgstr "Wkleja tekst ze schowka"
 
-#: ../src/PantheonTerminalWindow.vala:788
+#: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: ../src/PantheonTerminalWindow.vala:789
+#: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
 msgstr "Zaznacz całą zawartość terminala"
 
-#: ../src/PantheonTerminalWindow.vala:791
+#: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
 msgstr "O programie"
 
-#: ../src/PantheonTerminalWindow.vala:792
+#: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
 msgstr "Wyświetla informacje o programie"
 
-#: ../src/PantheonTerminalWindow.vala:794
+#: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
 msgstr "Następna karta"
 
-#: ../src/PantheonTerminalWindow.vala:795
+#: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
 msgstr "Przechodzi do następnej karty"
 
-#: ../src/PantheonTerminalWindow.vala:798
+#: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
 msgstr "Poprzednia karta"
 
-#: ../src/PantheonTerminalWindow.vala:799
+#: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
 msgstr "Przechodzi do poprzedniej karty"
 
-#: ../src/PantheonTerminalWindow.vala:802
-#: ../src/PantheonTerminalWindow.vala:803
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
 msgstr "Powiększ"
 
-#: ../src/PantheonTerminalWindow.vala:807
+#: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
 msgstr "Pomniejsz"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
 msgstr "Pełny ekran"
 
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Włącza/Wyłącza tryb pełnego ekranu"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adrian Widerski https://launchpad.net/~adrian-widerski\n"
+"  Arkadiusz https://launchpad.net/~elementary\n"
+"  Bartłomiej Zieliński https://launchpad.net/~fasolens\n"
+"  Damian Dygulski https://launchpad.net/~dygulski13\n"
+"  Damian Woźniak https://launchpad.net/~fisz\n"
+"  Daniel https://launchpad.net/~sokoolx\n"
+"  Ignacy Rusz https://launchpad.net/~lopogo59\n"
+"  Lu https://launchpad.net/~zarok\n"
+"  Marcel https://launchpad.net/~mguzik555\n"
+"  Marcin Kozłowski https://launchpad.net/~kozlowsky-marcin\n"
+"  Marcin Wierzbicki https://launchpad.net/~marcin-wierzb\n"
+"  Mateusz Flasiński https://launchpad.net/~syri16\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Michał Ziętara https://launchpad.net/~mr.matryc\n"
+"  Nicofisi https://launchpad.net/~m-lomiak\n"
+"  Piotr Sokół https://launchpad.net/~psokol\n"
+"  Piotr Strębski https://launchpad.net/~strebski\n"
+"  Puciek https://launchpad.net/~puciek\n"
+"  TheDead4Fun https://launchpad.net/~matizochol\n"
+"  WuPe https://launchpad.net/~wojtek2s\n"
+"  jaja https://launchpad.net/~launcherfan\n"
+"  porzadny https://launchpad.net/~porzadny\n"
+"  werd https://launchpad.net/~werd\n"
+"  Łukasz Serafinowski https://launchpad.net/~lukasz-serafinowski"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Zadanie zakończone"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Wypisuje informacje o wersji i kończy działanie"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Pokaż okno o programie"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Uruchom program w terminalu"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Ustaw aktualną ścieżkę powłoki"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
