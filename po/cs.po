@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-03 21:55+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-08-06 22:15+0000\n"
+"Last-Translator: Marek Suchánek <suchm@seznam.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-08-04 05:33+0000\n"
+"X-Launchpad-Export-Date: 2016-08-07 05:24+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
@@ -44,7 +44,7 @@ msgstr "Opravdu chcete ukončit Terminál?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr "V tomto terminálu běží aktivní proces."
+msgstr "V této příkazové řádce běží aktivní proces"
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
@@ -192,7 +192,7 @@ msgstr ""
 
 #: ../src/PantheonTerminal.vala:126
 msgid "Task finished"
-msgstr "Úloha byla dokončena"
+msgstr "Úloha dokončena"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Print version info and exit"
@@ -216,7 +216,7 @@ msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Kopírování příkazů do terminálu může být nebezpečné."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -236,11 +236,11 @@ msgstr "O Příkazové řádce"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "Použít příkazový řádek"
+msgstr "Použít příkazovou řádku"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Nová karta s administrátorskými právy"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
