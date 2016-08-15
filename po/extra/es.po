@@ -1,4 +1,4 @@
-# Polish translation for pantheon-terminal
+# Spanish translation for pantheon-terminal
 # Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
 # This file is distributed under the same license as the pantheon-terminal package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-14 20:07+0000\n"
-"Last-Translator: Damian Woźniak <fiszet@gmail.com>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"PO-Revision-Date: 2016-08-15 05:09+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,26 +18,24 @@ msgstr ""
 "X-Generator: Launchpad (build 18169)\n"
 
 msgid "Terminal"
-msgstr "Terminal"
+msgstr ""
 
 msgid "Use the command line"
-msgstr "Użyj wiersza poleceń"
+msgstr ""
 
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "polecenie;podpowiedź;cmd;wiersz_poleceń;uruchom;"
+msgstr ""
 
 msgid "New Window"
-msgstr "Nowe okno"
+msgstr ""
 
 msgid "New Root Tab"
-msgstr "Nowa karta root"
+msgstr ""
 
 msgid "About Terminal"
-msgstr "O programie Terminal"
+msgstr ""
 
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"Terminal jest programem emulującym dostęp do powłoki środowiska UNIX, który "
-"może być używany do uruchamiania programów dostępnych w systemie."
