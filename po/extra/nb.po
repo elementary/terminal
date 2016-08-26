@@ -1,0 +1,43 @@
+# Norwegian Bokmal translation for pantheon-terminal
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the pantheon-terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-terminal\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2016-08-25 15:04+0000\n"
+"Last-Translator: Karim <Unknown>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-08-26 05:44+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
+
+msgid "Terminal"
+msgstr "Terminal"
+
+msgid "Use the command line"
+msgstr "Bruk kommandolinjen"
+
+msgid "command;prompt;cmd;commandline;run;"
+msgstr ""
+
+msgid "New Window"
+msgstr "Nytt Vindu"
+
+msgid "New Root Tab"
+msgstr "Ny fane som Root"
+
+msgid "About Terminal"
+msgstr "Om Terminal"
+
+msgid ""
+"Terminal is a terminal emulator application for accessing a UNIX shell "
+"environment which can be used to run programs available on your system."
+msgstr ""
+"Terminal er en terminal emulator for tilgang til et UNIX shell, som kan "
+"brukes til å kjøre programmer på ditt system."
