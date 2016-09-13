@@ -1,0 +1,230 @@
+# Mongolian translation for pantheon-terminal
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the pantheon-terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-terminal\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2016-09-12 14:39+0000\n"
+"Last-Translator: zorig ganbold <zorig.ganbold@gmail.com>\n"
+"Language-Team: Mongolian <mn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-13 06:04+0000\n"
+"X-Generator: Launchpad (build 18186)\n"
+
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "Энэ табийг хаах уу?"
+
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "Энэ таб дээр идэвхитэй процесс байна."
+
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
+msgstr "Хааснаар процесс дуусна."
+
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "Цуцлах"
+
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "ТАВ-г хаах"
+
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Терминалаас гарахдаа итгэлтэй байна уу?"
+
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "Энэ терминал дээр идэвхитэй процесс байна."
+
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
+msgstr "Терминал хаагдснаар процесс зогсоно."
+
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "Терминал хаах"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Хайх"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Өмнөх үр дүн"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Дараагын үр дүн"
+
+#: ../src/PantheonTerminalWindow.vala:114
+#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
+#: ../src/Constants.vala:7
+msgid "Terminal"
+msgstr "Терминал"
+
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Find…"
+msgstr "Хайх"
+
+#: ../src/PantheonTerminalWindow.vala:777
+#: ../src/PantheonTerminalWindow.vala:778
+msgid "Close"
+msgstr "Хаах"
+
+#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
+msgid "New Window"
+msgstr "Шинэ цонх"
+
+#: ../src/PantheonTerminalWindow.vala:782
+msgid "Open a new window"
+msgstr "Шинэ цонх нээх"
+
+#: ../src/PantheonTerminalWindow.vala:786
+msgid "New Tab"
+msgstr "Шинэ ТАВ"
+
+#: ../src/PantheonTerminalWindow.vala:786
+msgid "Create a new tab"
+msgstr "Шинэ таб үүсгэх"
+
+#: ../src/PantheonTerminalWindow.vala:790
+msgid "Copy"
+msgstr "Хуулах"
+
+#: ../src/PantheonTerminalWindow.vala:790
+msgid "Copy the selected text"
+msgstr "Сонгосон текстийг хуулах"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Search for a given string in the terminal"
+msgstr "Терминалаас өгөгдсөн үгээр хайх"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Paste"
+msgstr "Хувилах"
+
+#: ../src/PantheonTerminalWindow.vala:798
+msgid "Paste some text"
+msgstr "Текст хувилах"
+
+#: ../src/PantheonTerminalWindow.vala:802
+msgid "Select All"
+msgstr "Бүгдийг сонгох"
+
+#: ../src/PantheonTerminalWindow.vala:803
+msgid "Select all the text in the terminal"
+msgstr "Терминалийн бүх текстийг сонгох"
+
+#: ../src/PantheonTerminalWindow.vala:805
+msgid "About"
+msgstr "Тухай"
+
+#: ../src/PantheonTerminalWindow.vala:806
+msgid "Show about window"
+msgstr "тухай цонхыг нээх"
+
+#: ../src/PantheonTerminalWindow.vala:808
+msgid "Next Tab"
+msgstr "Дараагийн таб"
+
+#: ../src/PantheonTerminalWindow.vala:809
+msgid "Go to next tab"
+msgstr "Дараагийн табруу очих"
+
+#: ../src/PantheonTerminalWindow.vala:812
+msgid "Previous Tab"
+msgstr "Өмнөх таб"
+
+#: ../src/PantheonTerminalWindow.vala:813
+msgid "Go to previous tab"
+msgstr "Өмнөх табруу буцах"
+
+#: ../src/PantheonTerminalWindow.vala:816
+#: ../src/PantheonTerminalWindow.vala:817
+msgid "Zoom in"
+msgstr "Томруулах"
+
+#: ../src/PantheonTerminalWindow.vala:821
+msgid "Zoom out"
+msgstr "Жижигрүүлэх"
+
+#: ../src/PantheonTerminalWindow.vala:825
+msgid "Fullscreen"
+msgstr "Дэлгэц дүүрэн харах"
+
+#: ../src/PantheonTerminalWindow.vala:825
+msgid "Toggle/Untoggle fullscreen"
+msgstr "Дэлгэц дүүрэн харах/болих"
+
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  zorig ganbold https://launchpad.net/~zorig-ganbold"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Таск дууслаа"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "хувилбарын талаар хэвлээд гарах"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Тухай харуулах"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Программийг терминалд ажиллуулах"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr ""
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr ""
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr ""
+
+#: ../src/Constants.vala:6
+msgid "Use the command line"
+msgstr ""
+
+#: ../src/Constants.vala:9
+msgid "New Root Tab"
+msgstr ""
+
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr ""
