@@ -183,6 +183,7 @@ namespace PantheonTerminal {
             search_button.set_image (img);
             search_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             search_button.set_tooltip_text (_("Find…"));
+            search_button.valign = Gtk.Align.CENTER;
             header.pack_end (search_button);
 
             var grid = new Gtk.Grid ();
