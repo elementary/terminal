@@ -298,12 +298,6 @@ namespace PantheonTerminal {
                             action_paste ();
                             return true;
                         }
-                    } else if (match_keycode (Gdk.Key.d, keycode)) {
-                        if (!current_terminal.has_foreground_process () &&
-                            settings.save_exited_tabs) {
-                            action_close_tab ();
-                            return true;
-                        }
                     }
                 }
 
