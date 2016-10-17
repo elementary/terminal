@@ -7,27 +7,64 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-05-19 09:01-0500\n"
-"PO-Revision-Date: 2016-08-09 12:58+0000\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2016-08-08 11:15+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-08-10 05:32+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
+"X-Generator: Launchpad (build 18232)\n"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminal.vala:172
-msgid "Set shell at launch"
-msgstr "Paleidus, nustatyti aplvalkalą"
+#: ../src/ForegroundProcessDialog.vala:30
+msgid "Are you sure you want to close this tab?"
+msgstr "Ar tikrai norite užverti šią kortelę?"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Rodyti versijos informaciją ir išeiti"
+#: ../src/ForegroundProcessDialog.vala:31
+msgid "There is an active process on this tab."
+msgstr "Šioje kortelėje yra aktyvus procesas."
 
-#: ../src/PantheonTerminal.vala:210
-msgid "Run a program in terminal"
-msgstr "Vykdyti programą terminale"
+#: ../src/ForegroundProcessDialog.vala:32
+msgid "If you close it, the process will end."
+msgstr "Jeigu ją užversite, procesas užsibaigs."
+
+#: ../src/ForegroundProcessDialog.vala:36
+#: ../src/ForegroundProcessDialog.vala:59
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: ../src/ForegroundProcessDialog.vala:40
+msgid "Close Tab"
+msgstr "Užverti kortelę"
+
+#: ../src/ForegroundProcessDialog.vala:55
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ar tikrai norite išeiti iš Terminalo?"
+
+#: ../src/ForegroundProcessDialog.vala:56
+msgid "There is an active process on this terminal."
+msgstr "Šiame terminale yra aktyvus procesas."
+
+#: ../src/ForegroundProcessDialog.vala:57
+msgid "If you quit Terminal, the process will end."
+msgstr "Jeigu išeisite iš Terminalo, procesas užsibaigs."
+
+#: ../src/ForegroundProcessDialog.vala:63
+msgid "Quit Terminal"
+msgstr "Išeiti iš Terminalo"
+
+#: ../src/SearchToolbar.vala:37
+msgid "Find"
+msgstr "Rasti"
+
+#: ../src/SearchToolbar.vala:49
+msgid "Previous result"
+msgstr "Ankstesnis rezultatas"
+
+#: ../src/SearchToolbar.vala:55
+msgid "Next result"
+msgstr "Kitas rezultatas"
 
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
@@ -35,9 +72,10 @@ msgstr "Vykdyti programą terminale"
 msgid "Terminal"
 msgstr "Terminalas"
 
-#: /home/codygarver/terminal/po/../src/PantheonTerminalWindow.vala:259
-msgid "Open a new tab"
-msgstr "Atverti naują kortelę"
+#: ../src/PantheonTerminalWindow.vala:185
+#: ../src/PantheonTerminalWindow.vala:794
+msgid "Find…"
+msgstr "Rasti…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -67,6 +105,10 @@ msgstr "Kopijuoti"
 #: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
 msgstr "Kopijuoti pažymėtą tekstą"
+
+#: ../src/PantheonTerminalWindow.vala:795
+msgid "Search for a given string in the terminal"
+msgstr "Ieškoti nurodytos eilutės terminale"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
@@ -125,47 +167,83 @@ msgstr "Visas ekranas"
 msgid "Toggle/Untoggle fullscreen"
 msgstr "Perjungti visą ekraną"
 
+#: ../src/PantheonTerminal.vala:64
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Erikas https://launchpad.net/~erikasras\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Moo https://launchpad.net/~mooo\n"
+"  Rolandas Barysas https://launchpad.net/~rb---deactivatedaccount\n"
+"  Simonas Gudjonis https://launchpad.net/~simonas-8"
+
+#: ../src/PantheonTerminal.vala:126
+msgid "Task finished"
+msgstr "Užduotis baigta"
+
+#: ../src/PantheonTerminal.vala:208
+msgid "Print version info and exit"
+msgstr "Rodyti versijos informaciją ir išeiti"
+
+#: ../src/PantheonTerminal.vala:209
+msgid "Show about dialog"
+msgstr "Rodyti langą apie programą"
+
+#: ../src/PantheonTerminal.vala:210
+msgid "Run a program in terminal"
+msgstr "Vykdyti programą terminale"
+
+#: ../src/PantheonTerminal.vala:211
+msgid "Set shell working directory"
+msgstr "Nustatyti apvalkalo darbinį katalogą"
+
+#: ../src/UnsafePasteDialog.vala:33
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Ši komanda prašo administracinės prieigos prie jūsų kompiuterio"
+
+#: ../src/UnsafePasteDialog.vala:34
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Komandų kopijavimas į Terminalą gali būti pavojingas."
+
+#: ../src/UnsafePasteDialog.vala:35
+msgid "Be sure you understand what each part of this command does."
+msgstr "Įsitikinkite, kad žinote, ką kiekviena šios komandos dalis daro."
+
+#: ../src/UnsafePasteDialog.vala:39
+msgid "Don't Paste"
+msgstr "Neįdėti"
+
+#: ../src/UnsafePasteDialog.vala:42
+msgid "Paste Anyway"
+msgstr "Vis tiek įdėti"
+
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "Apie Terminalą"
+
 #: ../src/Constants.vala:6
 msgid "Use the command line"
 msgstr "Naudoti komandų eilutę"
 
 #: ../src/Constants.vala:9
-msgid "New Root Window"
-msgstr "Naujas šaknies langas"
+msgid "New Root Tab"
+msgstr "Nauja šaknies kortelė"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Ar tikrai norite užverti šią kortelę?"
+#: ../src/Constants.vala:10
+msgid "Open Terminal Here"
+msgstr "Atverti čia terminalą"
 
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Šioje kortelėje yra aktyvus procesas."
+#~ msgid "Open a new tab"
+#~ msgstr "Atverti naują kortelę"
 
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:31
-msgid "If you close this tab, this process will end."
-msgstr "Jeigu užversite šią kortelę, tuomet šis procesas bus užbaigtas."
+#~ msgid "Set shell at launch"
+#~ msgstr "Paleidus, nustatyti aplvalkalą"
 
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Atsisakyti"
+#~ msgid "If you quit Terminal, this process will end."
+#~ msgstr "Jeigu išeisite iš terminalo, šis procesas bus užbaigtas."
 
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Užverti kortelę"
+#~ msgid "New Root Window"
+#~ msgstr "Naujas šaknies langas"
 
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Ar tikrai norite išeiti iš Terminalo?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Šiame terminale yra aktyvus procesas."
-
-#: /home/codygarver/terminal/po/../src/ForegroundProcessDialog.vala:51
-msgid "If you quit Terminal, this process will end."
-msgstr "Jeigu išeisite iš terminalo, šis procesas bus užbaigtas."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Išeiti iš Terminalo"
+#~ msgid "If you close this tab, this process will end."
+#~ msgstr "Jeigu užversite šią kortelę, tuomet šis procesas bus užbaigtas."
