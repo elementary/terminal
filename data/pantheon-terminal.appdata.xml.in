@@ -18,7 +18,7 @@
     <binary>pantheon-terminal</binary>
   </provides>
   <releases>
-    <release version="0.4.1" date="" urgency="medium">
+    <release version="0.4.0.1" date="20161030" urgency="medium">
       <description>
         <ul>
           <_li>Minor bug fixes</_li>
