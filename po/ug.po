@@ -8,63 +8,64 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2015-12-05 14:40+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2016-12-18 14:03+0000\n"
+"Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
+"X-Launchpad-Export-Date: 2016-12-19 05:17+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
+"Language: ug\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "راسىتتىنلا بۇ بەتكۈچنى تاقامسىز؟"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "بۇ بەتيۈزىدە بىر ئاكتىپ ئىشتەرتىپى بار."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "ئەگەر تاقىسىڭىز بۇ ئىشتەرتىپى توختايدۇ."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr "بولدىلا"
+msgstr "ئەمەلدىن قالدۇرۇش"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr "بەتكۈچ ياپ"
+msgstr "بەتكۈچنى تاقاش"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "تېرمىنالدىن راسىتتىنلا چىكىنەمسىز؟"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "بۇ تېرمىنالدا بىر ئاكتىپ ئىشتەرتىپى بار."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "ئەگەر تېرمىنالنى تاقىسىڭىز، بۇ ئىشتەرتىپى توختايدۇ."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
-msgstr ""
+msgstr "تېرمىنالنى تاقاش"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr "ئىزدە"
+msgstr "ئىزدەش"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "ئالدىنقى نەتىجە"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "كىيىنكى نەتىجە"
 
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
@@ -75,12 +76,12 @@ msgstr "تېرمىنال"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr "تېپىش…"
+msgstr "ئىزدەش...."
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
 msgid "Close"
-msgstr "ياپ"
+msgstr "تاقاش"
 
 #: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
@@ -88,7 +89,7 @@ msgstr "يېڭى كۆزنەك"
 
 #: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
-msgstr "يېڭى كۆزنەكتىن بىرنى ئاچ"
+msgstr "يېڭى كۆزنەكتىن بىرنى ئىچىش"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
@@ -96,35 +97,35 @@ msgstr "يېڭى بەتكۈچ"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
-msgstr "يېڭى بىر بەتكۈچ قۇر"
+msgstr "يېڭى بىر بەتكۈچ قۇرۇش"
 
 #: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
-msgstr "كۆچۈر"
+msgstr "كۆچۈرۈش"
 
 #: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy the selected text"
-msgstr ""
+msgstr "تاللانغان تېكستنى كۆچۈرۈش"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "بەلگىلەنگەن مەزمۇننى تېرمىنالدا ئىزدەش"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
-msgstr "چاپلا"
+msgstr "چاپلاش"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
-msgstr ""
+msgstr "بەزى تېكستلەرنى چاپلاش"
 
 #: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
-msgstr "ھەممىنى تاللا"
+msgstr "ھەممىنى تاللاش"
 
 #: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
-msgstr ""
+msgstr "تېرمىنالدىكى ھەممە تېكستنى تاللاش"
 
 #: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
@@ -132,7 +133,7 @@ msgstr "ھەققىدە"
 
 #: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
-msgstr ""
+msgstr "كۆزنەك ئۇچۇرىنى كۆرسىتىش"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
@@ -140,7 +141,7 @@ msgstr "كېيىنكى بەتكۈچ"
 
 #: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
-msgstr ""
+msgstr "كىيىنكى بەتكۈچكە بىرىش"
 
 #: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
@@ -148,16 +149,16 @@ msgstr "ئالدىنقى بەتكۈچ"
 
 #: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
-msgstr ""
+msgstr "ئالدىنقى بەتكۈچكە بىرىش"
 
 #: ../src/PantheonTerminalWindow.vala:816
 #: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
-msgstr "چوڭايت"
+msgstr "چوڭايتىش"
 
 #: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
-msgstr "كىچىكلەت"
+msgstr "كىچىكلىتىش"
 
 #: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
@@ -165,67 +166,69 @@ msgstr "پۈتۈن ئېكران"
 
 #: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
-msgstr ""
+msgstr "پۈتۈن ئىكرانغا كىرىش/دىن چىكىنىش"
 
 #: ../src/PantheonTerminal.vala:64
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Eltikin https://launchpad.net/~eltikinuyghur\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  ablimet https://launchpad.net/~ablimet"
 
 #: ../src/PantheonTerminal.vala:126
 msgid "Task finished"
-msgstr "ۋەزىپە ئۇرۇنلىنىپ بولدى"
+msgstr "ۋەزىپە تاماملاندى"
 
 #: ../src/PantheonTerminal.vala:208
 msgid "Print version info and exit"
-msgstr ""
+msgstr "نەشىر ئۇچۇرىنى بىسىپ چىقىرىش ۋە چىكىنىش"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Show about dialog"
-msgstr ""
+msgstr "ئۇچۇر كۆزنىكىنى كۆرسىتىش"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "تېرمىنالدا پروگرامما ئىجرا قىلىش"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Set shell working directory"
-msgstr ""
+msgstr "shell خىزمەت قىلىدىغان مۇندەرىجىنى تەڭشەش"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "بۇ كوماندىنى ئىجرا قىلىش ئۈچۈن باشقۇرغۇچىلىق سالاھىيىتى بولىشى كىرەك"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "بۇ كوماندىنى تېرمىنالغا كۆپەيتىش خەتەرلىك بولىشى مۇمكىن."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
+"بۇ كوماندىنىڭ نىمە ئىش قىلىدىغانلىقىنى چۈشەنگەنلىكىڭىزنى جەزىملەشتۈرۈڭ."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "چاپلىماسلىق"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "يەنىلا چاپلاش"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr ""
+msgstr "تېرمىنال ھەققىدە"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "بۇيرۇق قۇرىنى ئىشلەت"
+msgstr "كوماندا كۆرۈنمە يۈزىنى ئىشلىتىش"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "باشقۇرغۇچى بەتيۈزى قۇرۇش"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr "بۇ يەردە تېرمىنالنى ئاچ"
+msgstr "بۇ يەردە تېرمىنالنى ئىچىش"
