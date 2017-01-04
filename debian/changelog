@@ -1,3 +1,9 @@
+pantheon-terminal (0.4.0.3) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Wed, 04 Jan 2017 05:52:38 -0600
+
 pantheon-terminal (0.4.0.2) xenial; urgency=medium
 
   * New upstream release.
