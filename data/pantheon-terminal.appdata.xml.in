@@ -18,6 +18,14 @@
     <binary>pantheon-terminal</binary>
   </provides>
   <releases>
+    <release version="0.4.0.3" date="2017-01-04" urgency="medium">
+      <description>
+        <ul>
+          <_li>Minor bug fixes</_li>
+          <_li>Translation updates</_li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.0.2" date="2016-10-30" urgency="medium">
       <description>
         <ul>
