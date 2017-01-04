@@ -18,7 +18,6 @@ set (GETTEXT_PACKAGE "pantheon-terminal")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.4.0.2")
 set (VERSION_INFO "Release")
-set (CMAKE_C_FLAGS "-ggdb")
 set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
 
