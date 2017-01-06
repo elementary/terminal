@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-10-17 09:12+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2017-01-05 23:03+0000\n"
+"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
+"X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
+msgstr "¿Estás seguro de que quieres cerrar esta pestaña?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -40,7 +40,7 @@ msgstr "Cerrar pestaña"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "¿Está seguro de que quiere salir del terminal?"
+msgstr "¿Estás seguro de que quieres salir del terminal?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
@@ -64,7 +64,7 @@ msgstr "Resultado anterior"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr "Resultado siguiente"
+msgstr "Siguiente resultado"
 
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
@@ -84,19 +84,19 @@ msgstr "Cerrar"
 
 #: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
-msgstr "Ventana nueva"
+msgstr "Nueva ventana"
 
 #: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
-msgstr "Abrir una ventana nueva"
+msgstr "Abrir una nueva ventana"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
-msgstr "Pestaña nueva"
+msgstr "Nueva pestaña"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
-msgstr "Crear una pestaña nueva"
+msgstr "Crear una nueva pestaña"
 
 #: ../src/PantheonTerminalWindow.vala:790
 msgid "Copy"
@@ -108,7 +108,7 @@ msgstr "Copiar el texto seleccionado"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Buscar una cadena de texto en la terminal"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
@@ -116,7 +116,7 @@ msgstr "Pegar"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
-msgstr "Pegar texto"
+msgstr "Pegar un texto"
 
 #: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
@@ -136,7 +136,7 @@ msgstr "Mostrar la ventana «Acerca de»"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
-msgstr "Pestaña siguiente"
+msgstr "Siguiente pestaña"
 
 #: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
@@ -165,7 +165,7 @@ msgstr "Pantalla completa"
 
 #: ../src/PantheonTerminalWindow.vala:825
 msgid "Toggle/Untoggle fullscreen"
-msgstr "Activar/deactivar pantalla completa"
+msgstr "Activar o desactivar la pantalla completa"
 
 #: ../src/PantheonTerminal.vala:64
 msgid "translator-credits"
@@ -213,27 +213,27 @@ msgstr "Imprimir información de la versión y salir"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Show about dialog"
-msgstr "Mostrar diálogo «Acerca de»"
+msgstr "Mostrar diálogo Acerca de"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en un terminal"
+msgstr "Ejecutar un programa en el terminal"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Set shell working directory"
-msgstr "Configurar directorio de trabajo del intérprete de órdenes"
+msgstr "Configurar el directorio de trabajo del intérprete de comandos"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Esta orden solicita acceso administrativo al equipo"
+msgstr "Este comando solicita acceso como administrador al equipo"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copiar comandos en la terminal puede ser peligroso."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr "Asegúrese de que comprende todo lo que esta orden hace."
+msgstr "Asegúrese de comprender lo que hace cada parte de este comando."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
@@ -249,11 +249,11 @@ msgstr "Acerca de Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "Usar la línea de órdenes"
+msgstr "Usar la línea de comandos"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Nueva pestaña de administrador"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
