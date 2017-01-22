@@ -43,6 +43,12 @@ namespace PantheonTerminal {
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
+        const string BG_STYLE_CSS = """
+            .background {
+                background-color: transparent;
+            }
+        """;
+
         const string ui_string = """
             <ui>
             <popup name="MenuItemTool">
@@ -106,6 +112,13 @@ namespace PantheonTerminal {
             icon_name = "utilities-terminal";
             set_application (app);
 
+            var provider = new Gtk.CssProvider ();
+            try {
+                provider.load_from_data (BG_STYLE_CSS, BG_STYLE_CSS.length);
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (Error e) {
+                critical (e.message);
+            }
 
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
