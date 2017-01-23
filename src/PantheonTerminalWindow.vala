@@ -44,7 +44,7 @@ namespace PantheonTerminal {
         private string[] saved_tabs;
 
         const string BG_STYLE_CSS = """
-            .background {
+            .terminal-window.background {
                 background-color: transparent;
             }
         """;
@@ -112,14 +112,6 @@ namespace PantheonTerminal {
             icon_name = "utilities-terminal";
             set_application (app);
 
-            var provider = new Gtk.CssProvider ();
-            try {
-                provider.load_from_data (BG_STYLE_CSS, BG_STYLE_CSS.length);
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (Error e) {
-                critical (e.message);
-            }
-
             Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
@@ -184,7 +176,16 @@ namespace PantheonTerminal {
         }
 
         private void setup_ui () {
-            /* Use CSD */
+            var provider = new Gtk.CssProvider ();
+            try {
+                provider.load_from_data (BG_STYLE_CSS, BG_STYLE_CSS.length);
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (Error e) {
+                critical (e.message);
+            }
+
+            get_style_context ().add_class ("terminal-window");
+
             var header = new Gtk.HeaderBar ();
             header.set_show_close_button (true);
             header.get_style_context ().add_class ("compact");
