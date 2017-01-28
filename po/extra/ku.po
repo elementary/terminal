@@ -1,0 +1,41 @@
+# Kurdish translation for pantheon-terminal
+# Copyright (c) 2017 Rosetta Contributors and Canonical Ltd 2017
+# This file is distributed under the same license as the pantheon-terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-terminal\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2017-01-27 21:30+0000\n"
+"Last-Translator: Rokar <Unknown>\n"
+"Language-Team: Kurdish <ku@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2017-01-28 05:47+0000\n"
+"X-Generator: Launchpad (build 18315)\n"
+
+msgid "Terminal"
+msgstr "Termînal"
+
+msgid "Use the command line"
+msgstr "Rêzika fermanan bikar bîne"
+
+msgid "command;prompt;cmd;commandline;run;"
+msgstr ""
+
+msgid "New Window"
+msgstr "Paceya nû"
+
+msgid "New Root Tab"
+msgstr ""
+
+msgid "About Terminal"
+msgstr ""
+
+msgid ""
+"Terminal is a terminal emulator application for accessing a UNIX shell "
+"environment which can be used to run programs available on your system."
+msgstr ""
