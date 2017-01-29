@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-03 21:54+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
+"PO-Revision-Date: 2017-01-28 18:19+0000\n"
+"Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
+"X-Launchpad-Export-Date: 2017-01-29 04:52+0000\n"
+"X-Generator: Launchpad (build 18315)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -36,7 +36,7 @@ msgstr "Ακύρωση"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
-msgstr "Κλείσιμο Καρτέλας"
+msgstr "Κλείσιμο καρτέλας"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
@@ -56,15 +56,15 @@ msgstr "Κλείσιμο Τερματικού"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Εύρεση"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Προηγούμενο αποτέλεσμα"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Επόμενο αποτέλεσμα"
 
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
@@ -75,7 +75,7 @@ msgstr "Τερματικό"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr ""
+msgstr "Εύρεση…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -84,7 +84,7 @@ msgstr "Κλείσιμο"
 
 #: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
-msgstr "Νέο Παράθυρο"
+msgstr "Νέο παράθυρο"
 
 #: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
@@ -92,7 +92,7 @@ msgstr "Άνοιγμα ενός νέου παραθύρου"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
-msgstr "Νέα Καρτέλα"
+msgstr "Νέα καρτέλα"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
@@ -116,11 +116,11 @@ msgstr "Επικόλληση"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste some text"
-msgstr "Επικόλληση κειμένου"
+msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:802
 msgid "Select All"
-msgstr "Επιλογή Όλων"
+msgstr "Επιλογή όλων"
 
 #: ../src/PantheonTerminalWindow.vala:803
 msgid "Select all the text in the terminal"
@@ -128,7 +128,7 @@ msgstr "Επιλογή όλου του κειμένου στο τερματικ�
 
 #: ../src/PantheonTerminalWindow.vala:805
 msgid "About"
-msgstr "Περί"
+msgstr "Σχετικά"
 
 #: ../src/PantheonTerminalWindow.vala:806
 msgid "Show about window"
@@ -136,7 +136,7 @@ msgstr "Εμφάνιση παραθύρου πληροφοριών"
 
 #: ../src/PantheonTerminalWindow.vala:808
 msgid "Next Tab"
-msgstr "Επόμενη Καρτέλα"
+msgstr "Επόμενη καρτέλα"
 
 #: ../src/PantheonTerminalWindow.vala:809
 msgid "Go to next tab"
@@ -144,7 +144,7 @@ msgstr "Μετάβαση στην επόμενη καρτέλα"
 
 #: ../src/PantheonTerminalWindow.vala:812
 msgid "Previous Tab"
-msgstr "Προηγούμενη Καρτέλα"
+msgstr "Προηγούμενη καρτέλα"
 
 #: ../src/PantheonTerminalWindow.vala:813
 msgid "Go to previous tab"
@@ -173,9 +173,11 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Antonios Zapantis https://launchpad.net/~antonzapant\n"
 "  AntwnhsBl https://launchpad.net/~antwnhs-bl\n"
+"  Christos Iatropoulos https://launchpad.net/~ci4\n"
 "  Efstathios Iosifidis https://launchpad.net/~diamond-gr\n"
 "  Filippos Kolyvas https://launchpad.net/~fkol-k4\n"
 "  Jim Spentzos https://launchpad.net/~jamesspentzos\n"
+"  Kostas Fragkopoulos https://launchpad.net/~fragkopoulos\n"
 "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
 "  Nick Risvas https://launchpad.net/~lambolighting\n"
 "  Nikos Raptopoulos https://launchpad.net/~nraptopoulos\n"
@@ -241,7 +243,7 @@ msgstr ""
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
-msgstr "Άνοιγμα Τερματικού Εδώ"
+msgstr "Άνοιγμα Τερματικού εδώ"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Άνοιγμα νέας καρτέλας"
