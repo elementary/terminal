@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-02-12 21:14+0000\n"
-"Last-Translator: Thanos Gram <Unknown>\n"
+"PO-Revision-Date: 2017-02-19 12:31+0000\n"
+"Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-02-13 05:47+0000\n"
+"X-Launchpad-Export-Date: 2017-02-20 05:39+0000\n"
 "X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε αυτή την καρτέλα;"
+msgstr "Είστε σίγουρος/-η ότι θέλετε να κλείσετε αυτήν την καρτέλα;"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -27,7 +27,7 @@ msgstr "Υπάρχει μια ενεργή διεργασία σε αυτή τη
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "Αν το κλείσετε, η διεργασία θα τερματιστεί."
+msgstr "Αν την κλείσετε, η διεργασία θα τερματιστεί."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -40,7 +40,7 @@ msgstr "Κλείσιμο καρτέλας"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Είστε σίγουρος ότι θέλετε να κλείσετε το Τερματικό;"
+msgstr "Είστε σίγουρος/-η ότι θέλετε να κλείσετε το Τερματικό;"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
@@ -212,6 +212,7 @@ msgstr "Ορισμός καταλόγου με λειτουργία κελύφο
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
 msgstr ""
+"Αυτή η εντολή ζητάει πρόβαση με δικαιώματα διαχειριστή στον υπολογιστή σας"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
