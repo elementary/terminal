@@ -107,29 +107,34 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
-                uri = get_link ((long) event.x, (long) event.y);
+                if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                    uri = get_link ((long) event.x, (long) event.y);
 
-                switch (event.button) {
-                    case Gdk.BUTTON_PRIMARY:
-                        if (uri != null) {
-                            try {
-                                Gtk.show_uri (null, (!) uri, Gtk.get_current_event_time ());
-                                return true;
-                            } catch (GLib.Error error) {
-                                warning ("Could Not Open link");
-                            }
+                    if (uri != null) {
+                        window.main_actions.get_action ("Copy").set_sensitive (true);
+                    }
+
+                    menu.select_first (false);
+                    menu.popup (null, null, null, event.button, event.time);
+
+                    return true;
+                }
+
+                return false;
+            });
+
+            button_release_event.connect ((event) => {
+                if (event.button == Gdk.BUTTON_PRIMARY) {
+                    uri = get_link ((long) event.x, (long) event.y);
+
+                    if (uri != null && ! get_has_selection ()) {
+                        try {
+                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                            return true;
+                        } catch (GLib.Error error) {
+                            warning ("Could Not Open link");
                         }
-
-                        return false;
-                    case Gdk.BUTTON_SECONDARY:
-                        if (uri != null) {
-                            window.main_actions.get_action ("Copy").set_sensitive (true);
-                        }
-
-                        menu.select_first (false);
-                        menu.popup (null, null, null, event.button, event.time);
-
-                        return true;
+                    }
                 }
 
                 return false;

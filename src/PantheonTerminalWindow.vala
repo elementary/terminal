@@ -709,7 +709,7 @@ namespace PantheonTerminal {
         }
 
         void action_copy () {
-            if (current_terminal.uri != null)
+            if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
                 clipboard.set_text (current_terminal.uri,
                                     current_terminal.uri.length);
             else
