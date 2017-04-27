@@ -51,10 +51,10 @@ namespace PantheonTerminal {
             app_icon = "utilities-terminal";
             app_launcher = "org.pantheon.terminal.desktop";
             application_id = "org.pantheon.terminal";
-            main_url = "https://launchpad.net/pantheon-terminal";
-            bug_url = "https://bugs.launchpad.net/pantheon-terminal";
+            main_url = "https://github.com/elementary/terminal";
+            bug_url = "https://github.com/elementary/terminal/issues";
             help_url = "https://elementary.io/help/terminal";
-            translate_url = "https://translations.launchpad.net/pantheon-terminal";
+            translate_url = "https://l10n.elementary.io/projects/terminal";
             about_authors = { "David Gomes <david@elementaryos.org",
                               "Mario Guerriero <mario@elementaryos.org>",
                               "Akshay Shekher <voldyman666@gmail.com>" };
