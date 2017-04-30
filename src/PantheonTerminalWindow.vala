@@ -296,7 +296,7 @@ namespace PantheonTerminal {
                 }
 
                 /* Use hardware keycodes so the key used
-                 * is unaffected by internationalized layout */  
+                 * is unaffected by internationalized layout */
                 if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
                                             settings.natural_copy_paste) {
                     uint keycode = e.hardware_keycode;
@@ -457,13 +457,13 @@ namespace PantheonTerminal {
         uint timer_window_state_change = 0;
 
         private bool on_window_state_change (Gdk.EventConfigure event) {
-            // triggered when the size, position or stacking of the window has changed 
+            // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
             if (timer_window_state_change > 0)
                 GLib.Source.remove (timer_window_state_change);
 
             timer_window_state_change = GLib.Timeout.add (400, () => {
-                timer_window_state_change = 0; 
+                timer_window_state_change = 0;
                 if (get_window () == null)
                     return false;
 
@@ -475,7 +475,7 @@ namespace PantheonTerminal {
                 } else {
                     PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
                 }
-        
+
                 /* Save window size */
                 if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
                     int width, height;
@@ -483,7 +483,7 @@ namespace PantheonTerminal {
                     PantheonTerminal.saved_state.window_width = width;
                     PantheonTerminal.saved_state.window_height = height;
                 }
-        
+
                 /* Save window position */
                 int root_x, root_y;
                 get_position (out root_x, out root_y);
@@ -491,7 +491,7 @@ namespace PantheonTerminal {
                 saved_state.opening_y = root_y;
                 return false;
             });
-            return false; 
+            return false;
         }
 
         private void reset_saved_tabs () {
@@ -571,7 +571,13 @@ namespace PantheonTerminal {
 
             t.child_exited.connect (() => {
                 if (!t.killed) {
-                    t.tab.close ();
+                    if (program != null) {
+                        /* If a program was running, do not close the tab so that output of program
+                         * remains visible */
+                        t.active_shell (location);
+                    } else {
+                        t.tab.close ();
+                    }
                 }
             });
 
