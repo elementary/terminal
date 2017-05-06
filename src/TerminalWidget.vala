@@ -52,6 +52,17 @@ namespace PantheonTerminal {
         public Granite.Widgets.Tab tab;
         public string? uri;
 
+        private bool _duplicates_exist = false;
+        public bool duplicates_exist {
+            get {
+                return _duplicates_exist;
+            }
+
+            set {
+                _duplicates_exist = value;
+                update_tab_label ();
+            }
+        }
         private int _copy_number = 0;
         public int copy_number {
             get {
@@ -64,7 +75,7 @@ namespace PantheonTerminal {
             }
         }
 
-        private string _tab_name;
+        private string _tab_name = "";
         public string tab_name {
             get {
                 return _tab_name;
@@ -72,18 +83,22 @@ namespace PantheonTerminal {
 
             set {
                 _tab_name = value;
-
                 update_tab_label ();
             }
         }
 
         private void update_tab_label () {
+            if (tab_name == "" || tab == null) {
+                return;
+            }
+
             string s;
-            if (copy_number > 0) {
-                s = "(%i)".printf (copy_number);
+            if (duplicates_exist) {
+                s = "(%i)".printf (copy_number + 1);
             } else {
                 s = "";
             }
+
             tab.label = "%s%s".printf (tab_name, s);
         }
 
@@ -383,7 +398,8 @@ namespace PantheonTerminal {
             try {
                 return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
             } catch (GLib.FileError error) {
-                warning ("An error occured while fetching the current dir of shell");
+                /* Tab name disambiguation may call this before shell location available. */
+                /* No terminal warning needed */
                 return "";
             }
         }

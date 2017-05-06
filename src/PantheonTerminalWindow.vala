@@ -369,7 +369,7 @@ namespace PantheonTerminal {
             if (notebook.n_tabs == 0) {
                 destroy ();
             } else {
-                check_for_tabs_with_same_name ();
+                schedule_name_check ();
             }
         }
 
@@ -415,7 +415,7 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
-            check_for_tabs_with_same_name ();
+            schedule_name_check ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -586,7 +586,7 @@ namespace PantheonTerminal {
             });
 
             t.window_title_changed.connect (() => {
-                check_for_tabs_with_same_name ();
+                schedule_name_check ();
 
                 if (t == this.current_terminal) {
                     this.title = t.tab.label;
@@ -800,35 +800,71 @@ namespace PantheonTerminal {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
+        uint name_check_timeout_id = 0;
+        private void schedule_name_check () {
+            if (name_check_timeout_id > 0) {
+                Source.remove (name_check_timeout_id);
+            }
+
+            name_check_timeout_id = Timeout.add (50, () => {
+                if (!check_for_tabs_with_same_name ()) {
+                    return true;
+                } else {
+                    name_check_timeout_id = 0;
+                    return false;
+                }
+            });
+        }
+
         /** Compare every tab label with every other and resolve ambiguities **/
-        /* TODO: Check other windows;  implement copy resolution */
-        private void check_for_tabs_with_same_name () {
+        /* TODO: Check other windows*/
+        private bool check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
 
-            foreach (TerminalWidget t in terms) {
-                string t_path = t.get_shell_location ();
-                string name = GLib.Path.get_basename (t_path);
+            terms.reverse ();
+            terms2.reverse ();
 
-                if (name == "") {
-                    continue;
+            uint index = 0;
+            foreach (TerminalWidget t in terms) {
+                index++;
+                string t_path = t.get_shell_location ();
+                string name = t.window_title;
+
+                if (name == "") { /* No point in continuing - tabs not finished updating */
+                    return false; /* Try again later */
                 }
 
                 /* Reset tab name to basename so long name only used when required */
+                /* The order of these lines is critical */
+                t.copy_number = 0;
+                t.duplicates_exist = false;
                 t.tab_name = name;
 
-
+                uint index2 = 0;
                 foreach (TerminalWidget t2 in terms2) {
+                    index2++;
                     string t2_path = t2.get_shell_location ();
-                    string t2_name = GLib.Path.get_basename (t2_path);
+                    string t2_name = t2.window_title;
 
-                    if (t2 != t && t2_name == name && t2_path != t_path) {
-                        t2.tab_name = disambiguate_name (name, t2_path, t_path);
-                        t.tab_name = disambiguate_name (name, t_path, t2_path); /*Also relabel this tab */
+                    if (t2 != t && t2_name == name) {
+                        if (t2_path != t_path) {
+                            t2.tab_name = disambiguate_name (name, t2_path, t_path);
+                            t.tab_name = disambiguate_name (name, t_path, t2_path);
+                        } else  {
+                            /* The order of these lines is critical */
+                            t.duplicates_exist = true;
+
+                            if (index2 > index) { /* duplicate tab found */
+                                t.copy_number++;
+                            }
+                        }
                     }
                 }
             }
+
+            return true;
         }
 
         private string disambiguate_name (string name, string path, string conflict_path) {
