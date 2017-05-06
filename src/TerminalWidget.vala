@@ -157,7 +157,7 @@ namespace PantheonTerminal {
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
-                    uri = get_link ((long) event.x, (long) event.y);
+                    uri = get_link (event);
 
                     if (uri != null) {
                         window.main_actions.get_action ("Copy").set_sensitive (true);
@@ -174,7 +174,7 @@ namespace PantheonTerminal {
 
             button_release_event.connect ((event) => {
                 if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link ((long) event.x, (long) event.y);
+                    uri = get_link (event);
 
                     if (uri != null && ! get_has_selection ()) {
                         try {
@@ -381,15 +381,8 @@ namespace PantheonTerminal {
             }
         }
 
-        private string? get_link (long x, long y) {
-            long col = x / this.get_char_width ();
-            long row = y / this.get_char_height ();
-            int tag;
-
-            // Vte.Terminal.match_check need a non-null tag instead of what is
-            // written in the doc
-            // (see: https://bugzilla.gnome.org/show_bug.cgi?id=676886)
-            return this.match_check (col, row, out tag);
+        private string? get_link (Gdk.Event event) {
+            return this.match_check_event (event, null);
         }
 
         public string get_shell_location () {
