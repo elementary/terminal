@@ -847,7 +847,7 @@ namespace PantheonTerminal {
                 pth2 = parent_pth2;
             }
 
-            return prefix + name;
+            return (prefix + name).replace ("//", "/");
         }
 
         /*** Simplified version of PF.FileUtils function, with fewer checks ***/
