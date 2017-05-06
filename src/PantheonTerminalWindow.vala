@@ -118,9 +118,6 @@ namespace PantheonTerminal {
 
             title = _("Terminal");
             restore_saved_state (restore_pos);
-            if (recreate_tabs) {
-                open_tabs ();
-            }
 
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
@@ -158,6 +155,11 @@ namespace PantheonTerminal {
             destroy.connect (on_destroy);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            /* Must leave this until last to avoid timing issues */
+            if (recreate_tabs) {
+                open_tabs ();
+            }
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -345,10 +347,9 @@ namespace PantheonTerminal {
         }
 
         private void on_toggle_search () {
-
             var is_search = this.search_button.get_active ();
-
             this.search_revealer.set_reveal_child (is_search);
+
             if (is_search) {
                 search_toolbar.grab_focus ();
             } else {
@@ -367,8 +368,11 @@ namespace PantheonTerminal {
             var t = get_term_widget (tab);
             terminals.remove (t);
 
-            if (notebook.n_tabs == 0)
+            if (notebook.n_tabs == 0) {
                 destroy ();
+            } else {
+                check_for_tabs_with_same_name ();
+            }
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
@@ -413,6 +417,7 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
+            check_for_tabs_with_same_name ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -500,8 +505,9 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
+
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.window_title ?? "";
+            title = current_terminal.tab.label ?? "";
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -535,12 +541,7 @@ namespace PantheonTerminal {
                 if (loc == "") {
                     continue;
                 } else {
-                    /* Schedule tab to be added when idle (helps to avoid corruption of
-                     * prompt on startup with multiple tabs) */
-                    Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc);
-                        return false;
-                    });
+                    new_tab (loc);
                 }
             }
         }
@@ -558,7 +559,6 @@ namespace PantheonTerminal {
                 location = directory;
             }
 
-            /* Set up terminal */
             var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
 
@@ -566,18 +566,24 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
-
-            var tab = create_tab (_("Terminal"), null, t);
-
             t.child_exited.connect (() => {
                 if (!t.killed) {
                     if (program != null) {
                         /* If a program was running, do not close the tab so that output of program
                          * remains visible */
                         t.active_shell (location);
+                        return;
                     } else {
                         t.tab.close ();
                     }
+                }
+            });
+
+            t.window_title_changed.connect (() => {
+                check_for_tabs_with_same_name ();
+
+                if (t == this.current_terminal) {
+                    this.title = t.tab.label;
                 }
             });
 
@@ -594,9 +600,6 @@ namespace PantheonTerminal {
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
-            notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            t.grab_focus ();
 
             if (program == null) {
                 /* Set up the virtual terminal */
@@ -608,6 +611,11 @@ namespace PantheonTerminal {
             } else {
                 t.run_program (program);
             }
+
+            var tab = create_tab (_("Terminal"), null, t);
+            notebook.insert_tab (tab, -1);
+
+            t.grab_focus ();
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
@@ -786,6 +794,74 @@ namespace PantheonTerminal {
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
+        }
+
+        /** Compare every tab label with every other and resolve ambiguities **/
+        /* TODO: Check other windows;  implement copy resolution */
+        private void check_for_tabs_with_same_name () {
+            /* Take list copies so foreach clauses can be nested safely*/
+            var terms = terminals.copy ();
+            var term2 = notebook.tabs.copy ();
+
+            foreach (TerminalWidget t in terms) {
+                string? name = t.window_title;
+                if (name == null) {
+                    continue;
+                }
+
+                /* Reset tab name to basename so long name only used when required */
+                t.tab_name = name;
+                string? t_path = t.get_shell_location ();
+
+                foreach (TerminalWidget t2 in terms2) {
+                    if (t2 != t && t2.window_title == name) {
+                        string? t2_path = t2.get_shell_location ();
+                        if (t2_path != t_path) {
+                            t2.tab_name = disambiguate_name (name, t2_path, t_path);
+                            t.tab_name = disambiguate_name (name, t_path, t2_path); /*Also relabel this tab */
+                        }
+                    }
+                }
+            }
+        }
+
+        private string disambiguate_name (string name, string path, string conflict_path) {
+            string prefix = "";
+            string prefix2 = "";
+            string pth = path;
+            string pth2 = conflict_path;
+
+            /* Add parent directories until path and conflict path differ */
+            while (prefix == prefix2) {
+                var parent_pth = get_parent_path_from_path (pth);
+                var parent_pth2 = get_parent_path_from_path (pth2);
+                prefix = Path.get_basename (parent_pth) + Path.DIR_SEPARATOR_S + prefix;
+                prefix2 = Path.get_basename (parent_pth2) + Path.DIR_SEPARATOR_S + prefix2;
+                pth = parent_pth;
+                pth2 = parent_pth2;
+            }
+
+            return prefix + name;
+        }
+
+        /*** Simplified version of PF.FileUtils function, with fewer checks ***/
+        private string get_parent_path_from_path (string path) {
+            if (path.length < 2) {
+                return Path.DIR_SEPARATOR_S;
+            }
+
+            StringBuilder sb = new StringBuilder (path);
+            if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
+                sb.erase (sb.str.length - 1,-1);
+            }
+
+            int last_separator = sb.str.last_index_of (Path.DIR_SEPARATOR_S);
+            if (last_separator < 0) {
+                last_separator = 0;
+            }
+
+            sb.erase (last_separator, -1);
+            return sb.str + Path.DIR_SEPARATOR_S;
         }
 
         static const Gtk.ActionEntry[] main_entries = {

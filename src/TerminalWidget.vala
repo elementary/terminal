@@ -27,7 +27,6 @@ namespace PantheonTerminal {
             TEXT
         }
 
-
         public PantheonTerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
@@ -52,6 +51,41 @@ namespace PantheonTerminal {
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
         public string? uri;
+
+        private int _copy_number = 0;
+        public int copy_number {
+            get {
+                return _copy_number;
+            }
+
+            set {
+                _copy_number = value;
+                update_tab_label ();
+            }
+        }
+
+        private string _tab_name;
+        public string tab_name {
+            get {
+                return _tab_name;
+            }
+
+            set {
+                _tab_name = value;
+
+                update_tab_label ();
+            }
+        }
+
+        private void update_tab_label () {
+            string s;
+            if (copy_number > 0) {
+                s = "(%i)".printf (copy_number);
+            } else {
+                s = "";
+            }
+            tab.label = "%s%s".printf (tab_name, s);
+        }
 
         public int default_size;
         public double zoom_factor = 1.0;
@@ -144,12 +178,6 @@ namespace PantheonTerminal {
                 window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
             });
 
-            window_title_changed.connect ((event) => {
-                if (this == window.current_terminal)
-                    window.title = window_title;
-
-                tab.label = window_title;
-            });
 
             child_exited.connect (on_child_exited);
 
