@@ -118,6 +118,9 @@ namespace PantheonTerminal {
 
             title = _("Terminal");
             restore_saved_state (restore_pos);
+            if (recreate_tabs) {
+                open_tabs ();
+            }
 
             /* Actions and UIManager */
             main_actions = new Gtk.ActionGroup ("MainActionGroup");
@@ -155,11 +158,6 @@ namespace PantheonTerminal {
             destroy.connect (on_destroy);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
-
-            /* Must leave this until last to avoid timing issues */
-            if (recreate_tabs) {
-                open_tabs ();
-            }
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -541,7 +539,12 @@ namespace PantheonTerminal {
                 if (loc == "") {
                     continue;
                 } else {
-                    new_tab (loc);
+                    /* Schedule tab to be added when idle (helps to avoid corruption of
+                     * prompt on startup with multiple tabs) */
+                    Idle.add_full (GLib.Priority.LOW, () => {
+                        new_tab (loc);
+                        return false;
+                    });
                 }
             }
         }
@@ -559,6 +562,7 @@ namespace PantheonTerminal {
                 location = directory;
             }
 
+            /* Set up terminal */
             var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
 
@@ -566,13 +570,15 @@ namespace PantheonTerminal {
             t.vexpand = true;
             t.hexpand = true;
 
+
+            var tab = create_tab (_("Terminal"), null, t);
+
             t.child_exited.connect (() => {
                 if (!t.killed) {
                     if (program != null) {
                         /* If a program was running, do not close the tab so that output of program
                          * remains visible */
                         t.active_shell (location);
-                        return;
                     } else {
                         t.tab.close ();
                     }
@@ -600,6 +606,9 @@ namespace PantheonTerminal {
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
+            notebook.insert_tab (tab, -1);
+            notebook.current = tab;
+            t.grab_focus ();
 
             if (program == null) {
                 /* Set up the virtual terminal */
@@ -611,11 +620,6 @@ namespace PantheonTerminal {
             } else {
                 t.run_program (program);
             }
-
-            var tab = create_tab (_("Terminal"), null, t);
-            notebook.insert_tab (tab, -1);
-
-            t.grab_focus ();
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
@@ -801,25 +805,27 @@ namespace PantheonTerminal {
         private void check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
-            var term2 = notebook.tabs.copy ();
+            var terms2 = terminals.copy ();
 
             foreach (TerminalWidget t in terms) {
-                string? name = t.window_title;
-                if (name == null) {
+                string t_path = t.get_shell_location ();
+                string name = GLib.Path.get_basename (t_path);
+
+                if (name == "") {
                     continue;
                 }
 
                 /* Reset tab name to basename so long name only used when required */
                 t.tab_name = name;
-                string? t_path = t.get_shell_location ();
+
 
                 foreach (TerminalWidget t2 in terms2) {
-                    if (t2 != t && t2.window_title == name) {
-                        string? t2_path = t2.get_shell_location ();
-                        if (t2_path != t_path) {
-                            t2.tab_name = disambiguate_name (name, t2_path, t_path);
-                            t.tab_name = disambiguate_name (name, t_path, t2_path); /*Also relabel this tab */
-                        }
+                    string t2_path = t2.get_shell_location ();
+                    string t2_name = GLib.Path.get_basename (t2_path);
+
+                    if (t2 != t && t2_name == name && t2_path != t_path) {
+                        t2.tab_name = disambiguate_name (name, t2_path, t_path);
+                        t.tab_name = disambiguate_name (name, t_path, t2_path); /*Also relabel this tab */
                     }
                 }
             }
