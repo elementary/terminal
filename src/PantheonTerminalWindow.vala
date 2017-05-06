@@ -505,7 +505,7 @@ namespace PantheonTerminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab.label ?? "";
+            title = current_terminal.tab_name ?? "";
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -581,16 +581,18 @@ namespace PantheonTerminal {
                         t.active_shell (location);
                     } else {
                         t.tab.close ();
+                        return;
                     }
                 }
+
+                schedule_name_check ();
             });
 
             t.window_title_changed.connect (() => {
-                schedule_name_check ();
-
                 if (t == this.current_terminal) {
-                    this.title = t.tab.label;
+                    this.title = t.window_title;
                 }
+                schedule_name_check ();
             });
 
             t.set_font (term_font);
@@ -822,12 +824,7 @@ namespace PantheonTerminal {
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
 
-            terms.reverse ();
-            terms2.reverse ();
-
-            uint index = 0;
             foreach (TerminalWidget t in terms) {
-                index++;
                 string t_path = t.get_shell_location ();
                 string name = t.window_title;
 
@@ -836,14 +833,9 @@ namespace PantheonTerminal {
                 }
 
                 /* Reset tab name to basename so long name only used when required */
-                /* The order of these lines is critical */
-                t.copy_number = 0;
-                t.duplicates_exist = false;
                 t.tab_name = name;
 
-                uint index2 = 0;
                 foreach (TerminalWidget t2 in terms2) {
-                    index2++;
                     string t2_path = t2.get_shell_location ();
                     string t2_name = t2.window_title;
 
@@ -851,12 +843,8 @@ namespace PantheonTerminal {
                         if (t2_path != t_path) {
                             t2.tab_name = disambiguate_name (name, t2_path, t_path);
                             t.tab_name = disambiguate_name (name, t_path, t2_path);
-                        } else  {
-                            /* The order of these lines is critical */
-                            t.duplicates_exist = true;
-
-                            if (index2 > index) { /* duplicate tab found */
-                                t.copy_number++;
+                            if (t == this.current_terminal) {
+                                this.title = t.tab_name;
                             }
                         }
                     }

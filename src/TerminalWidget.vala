@@ -52,29 +52,6 @@ namespace PantheonTerminal {
         public Granite.Widgets.Tab tab;
         public string? uri;
 
-        private bool _duplicates_exist = false;
-        public bool duplicates_exist {
-            get {
-                return _duplicates_exist;
-            }
-
-            set {
-                _duplicates_exist = value;
-                update_tab_label ();
-            }
-        }
-        private int _copy_number = 0;
-        public int copy_number {
-            get {
-                return _copy_number;
-            }
-
-            set {
-                _copy_number = value;
-                update_tab_label ();
-            }
-        }
-
         private string _tab_name = "";
         public string tab_name {
             get {
@@ -83,23 +60,8 @@ namespace PantheonTerminal {
 
             set {
                 _tab_name = value;
-                update_tab_label ();
+                tab.label = tab_name;
             }
-        }
-
-        private void update_tab_label () {
-            if (tab_name == "" || tab == null) {
-                return;
-            }
-
-            string s;
-            if (duplicates_exist) {
-                s = "(%i)".printf (copy_number + 1);
-            } else {
-                s = "";
-            }
-
-            tab.label = "%s%s".printf (tab_name, s);
         }
 
         public int default_size;
