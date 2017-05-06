@@ -817,7 +817,6 @@ namespace PantheonTerminal {
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
-        /* TODO: Check other windows*/
         private bool check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
