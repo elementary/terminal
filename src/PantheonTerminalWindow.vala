@@ -505,7 +505,7 @@ namespace PantheonTerminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_name ?? "";
+            title = current_terminal.tab_label ?? "";
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -824,27 +824,28 @@ namespace PantheonTerminal {
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
 
-            foreach (TerminalWidget t in terms) {
-                string t_path = t.get_shell_location ();
-                string name = t.window_title;
+            foreach (TerminalWidget terminal in terms) {
+                string term_path = terminal.get_shell_location ();
+                string term_label = terminal.window_title;
 
-                if (name == "") { /* No point in continuing - tabs not finished updating */
+                if (term_label == "") { /* No point in continuing - tabs not finished updating */
                     return false; /* Try again later */
                 }
 
-                /* Reset tab name to basename so long name only used when required */
-                t.tab_name = name;
+                /* Reset tab_name to basename so long name only used when required */
+                terminal.tab_label = term_label;
 
-                foreach (TerminalWidget t2 in terms2) {
-                    string t2_path = t2.get_shell_location ();
-                    string t2_name = t2.window_title;
+                foreach (TerminalWidget terminal2 in terms2) {
+                    string term2_path = terminal2.get_shell_location ();
+                    string term2_name = terminal2.window_title;
 
-                    if (t2 != t && t2_name == name) {
-                        if (t2_path != t_path) {
-                            t2.tab_name = disambiguate_name (name, t2_path, t_path);
-                            t.tab_name = disambiguate_name (name, t_path, t2_path);
-                            if (t == this.current_terminal) {
-                                this.title = t.tab_name;
+                    if (terminal2 != terminal && term2_name == term_label) {
+                        if (term2_path != term_path) {
+                            terminal2.tab_label = disambiguate_label (term2_path, term_path);
+                            terminal.tab_label = disambiguate_label (term_path, term2_path);
+
+                            if (terminal == this.current_terminal) {
+                                this.title = terminal.tab_label;
                             }
                         }
                     }
@@ -854,23 +855,29 @@ namespace PantheonTerminal {
             return true;
         }
 
-        private string disambiguate_name (string name, string path, string conflict_path) {
+        /** Return enough of @path to distinguish it from @conflict_path **/
+        private string disambiguate_label (string path, string conflict_path) {
             string prefix = "";
-            string prefix2 = "";
-            string pth = path;
-            string pth2 = conflict_path;
+            string conflict_prefix = "";
+            string temp_path = path;
+            string temp_conflict_path = conflict_path;
+            string basename =  Path.get_basename (path);
 
-            /* Add parent directories until path and conflict path differ */
-            while (prefix == prefix2) {
-                var parent_pth = get_parent_path_from_path (pth);
-                var parent_pth2 = get_parent_path_from_path (pth2);
-                prefix = Path.get_basename (parent_pth) + Path.DIR_SEPARATOR_S + prefix;
-                prefix2 = Path.get_basename (parent_pth2) + Path.DIR_SEPARATOR_S + prefix2;
-                pth = parent_pth;
-                pth2 = parent_pth2;
+            if (basename != Path.get_basename (conflict_path)) {
+                return basename;
             }
 
-            return (prefix + name).replace ("//", "/");
+            /* Add parent directories until path and conflict path differ */
+            while (prefix == conflict_prefix) {
+                var parent_temp_path = get_parent_path_from_path (temp_path);
+                var parent_temp_confict_path = get_parent_path_from_path (temp_conflict_path);
+                prefix = Path.get_basename (parent_temp_path) + Path.DIR_SEPARATOR_S + prefix;
+                conflict_prefix = Path.get_basename (parent_temp_confict_path) + Path.DIR_SEPARATOR_S + conflict_prefix;
+                temp_path = parent_temp_path;
+                temp_conflict_path = parent_temp_confict_path;
+            }
+
+            return (prefix + basename).replace ("//", "/");
         }
 
         /*** Simplified version of PF.FileUtils function, with fewer checks ***/
@@ -879,18 +886,18 @@ namespace PantheonTerminal {
                 return Path.DIR_SEPARATOR_S;
             }
 
-            StringBuilder sb = new StringBuilder (path);
+            StringBuilder string_builder = new StringBuilder (path);
             if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                sb.erase (sb.str.length - 1,-1);
+                string_builder.erase (string_builder.str.length - 1,-1);
             }
 
-            int last_separator = sb.str.last_index_of (Path.DIR_SEPARATOR_S);
+            int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
             if (last_separator < 0) {
                 last_separator = 0;
             }
 
-            sb.erase (last_separator, -1);
-            return sb.str + Path.DIR_SEPARATOR_S;
+            string_builder.erase (last_separator, -1);
+            return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
         static const Gtk.ActionEntry[] main_entries = {

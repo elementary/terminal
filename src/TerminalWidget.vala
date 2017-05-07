@@ -52,15 +52,15 @@ namespace PantheonTerminal {
         public Granite.Widgets.Tab tab;
         public string? uri;
 
-        private string _tab_name = "";
-        public string tab_name {
+        private string _tab_label = "";
+        public string tab_label {
             get {
-                return _tab_name;
+                return _tab_label;
             }
 
             set {
-                _tab_name = value;
-                tab.label = tab_name;
+                _tab_label = value;
+                tab.label = tab_label;
             }
         }
 
