@@ -130,7 +130,6 @@ namespace PantheonTerminal {
                     if (uri != null && ! get_has_selection ()) {
                         try {
                             Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                            return true;
                         } catch (GLib.Error error) {
                             warning ("Could Not Open link");
                         }
