@@ -575,6 +575,8 @@ namespace PantheonTerminal {
                         /* If a program was running, do not close the tab so that output of program
                          * remains visible */
                         t.active_shell (location);
+                        /* Allow closing tab with "exit" */
+                        program = null;
                     } else {
                         t.tab.close ();
                     }
