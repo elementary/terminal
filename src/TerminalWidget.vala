@@ -30,6 +30,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalApp app;
         public string terminal_id;
+        public string? program = null;
         static int terminal_id_counter = 0;
         private bool init_complete;
 
@@ -50,7 +51,7 @@ namespace PantheonTerminal {
         }
 
         private Gtk.Menu menu;
-        public Granite.Widgets.Tab tab;
+        public Granite.Widgets.Tab? tab = null;
         public string? uri;
 
         public int default_size;
@@ -92,6 +93,8 @@ namespace PantheonTerminal {
             private set;
         }
 
+        public signal void exited_child ();
+
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             terminal_id = "%i".printf (terminal_id_counter++);
@@ -99,58 +102,13 @@ namespace PantheonTerminal {
             init_complete = false;
 
             restore_settings ();
-            settings.changed.connect (restore_settings);
 
             window = parent_window;
             child_has_exited = false;
             killed = false;
 
-            /* Connect to necessary signals */
-            button_press_event.connect ((event) => {
-                if (event.button ==  Gdk.BUTTON_SECONDARY) {
-                    uri = get_link (event);
 
-                    if (uri != null) {
-                        window.main_actions.get_action ("Copy").set_sensitive (true);
-                    }
-
-                    menu.select_first (false);
-                    menu.popup (null, null, null, event.button, event.time);
-
-                    return true;
-                }
-
-                return false;
-            });
-
-            button_release_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link (event);
-
-                    if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
-                        }
-                    }
-                }
-
-                return false;
-            });
-
-            selection_changed.connect (() => {
-                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
-            });
-
-            window_title_changed.connect ((event) => {
-                if (this == window.current_terminal)
-                    window.title = window_title;
-
-                tab.label = window_title;
-            });
-
-            child_exited.connect (on_child_exited);
+            connect_signals ();
 
             /* target entries specify what kind of data the terminal widget accepts */
             Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
@@ -167,6 +125,69 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
+        }
+
+        public void connect_signals () {
+            /* Connect to necessary signals */
+            settings.changed.connect (restore_settings);
+            child_exited.connect (on_child_exited);
+            button_press_event.connect (on_button_press);
+            button_release_event.connect (on_button_release);
+            selection_changed.connect (on_selection_changed);
+            window_title_changed.connect (on_title_changed);
+        }
+
+        public void disconnect_signals () {
+            settings.changed.disconnect (restore_settings);
+            child_exited.disconnect (on_child_exited);
+            button_press_event.disconnect (on_button_press);
+            button_release_event.disconnect (on_button_release);
+            selection_changed.disconnect (on_selection_changed);
+            window_title_changed.disconnect (on_title_changed);
+        }
+
+        private bool on_button_press (Gdk.EventButton event) {
+            if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                uri = get_link (event);
+
+                if (uri != null) {
+                    window.main_actions.get_action ("Copy").set_sensitive (true);
+                }
+
+                menu.select_first (false);
+                menu.popup (null, null, null, event.button, event.time);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool on_button_release (Gdk.EventButton event) {
+            if (event.button == Gdk.BUTTON_PRIMARY) {
+                uri = get_link (event);
+
+                if (uri != null && ! get_has_selection ()) {
+                    try {
+                        Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                    } catch (GLib.Error error) {
+                        warning ("Could Not Open link");
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private void on_selection_changed () {
+            window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+        }
+
+        private void on_title_changed () {
+            if (tab != null && this == window.current_terminal) {
+                window.title = window_title;
+                tab.label = window_title;
+            }
         }
 
         public void restore_settings () {
@@ -230,6 +251,7 @@ namespace PantheonTerminal {
 
         void on_child_exited () {
             child_has_exited = true;
+            exited_child ();
         }
 
         public void kill_fg () {
@@ -273,6 +295,7 @@ namespace PantheonTerminal {
                 try {
                     this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
                                             envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
+
                 } catch (Error e) {
                     warning (e.message);
                 }
@@ -287,6 +310,8 @@ namespace PantheonTerminal {
 
                 this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
                                         null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
+
+                program = program_string;
             } catch (Error e) {
                 warning (e.message);
             }
@@ -298,8 +323,13 @@ namespace PantheonTerminal {
                 return false;
             }
 
-            int pty = get_pty().fd;
-            int fgpid = Posix.tcgetpgrp (pty);
+            var pty = get_pty ();
+            if (pty == null) {
+                return false;
+            }
+
+            int ptyfd = get_pty().fd;
+            int fgpid = Posix.tcgetpgrp (ptyfd);
 
             if (fgpid != this.child_pid && fgpid != -1) {
                 pid = (int) fgpid;
@@ -418,6 +448,16 @@ namespace PantheonTerminal {
 
                     break;
             }
+        }
+
+        public void hibernate () {
+            disconnect_signals ();
+            tab = null;
+        }
+
+        public void restore () {
+            connect_signals ();
+            restore_settings ();
         }
     }
 }

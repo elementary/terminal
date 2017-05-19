@@ -407,12 +407,9 @@ namespace PantheonTerminal {
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
             TerminalWidget term = restorable_terminals.get (restore_key);
-            var tab = create_tab (label, icon, term);
-
+            term.restore ();
+            create_and_insert_tab (label, icon, term);
             restorable_terminals.remove (restore_key);
-            notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            term.grab_focus ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -561,29 +558,12 @@ namespace PantheonTerminal {
             /* Set up terminal */
             var t = new TerminalWidget (this);
             t.scrollback_lines = settings.scrollback_lines;
-
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
             t.hexpand = true;
-
-
-            var tab = create_tab (_("Terminal"), null, t);
-
-            t.child_exited.connect (() => {
-                if (!t.killed) {
-                    if (program != null) {
-                        /* If a program was running, do not close the tab so that output of program
-                         * remains visible */
-                        t.active_shell (location);
-                        /* Allow closing tab with "exit" */
-                        program = null;
-                    } else {
-                        t.tab.close ();
-                    }
-                }
-            });
-
             t.set_font (term_font);
+
+            create_and_insert_tab (_("Terminal"), null, t); /* Also connects signal(s) */
 
             int minimum_width = t.calculate_width (80) / 2;
             int minimum_height = t.calculate_height (24) / 2;
@@ -595,10 +575,6 @@ namespace PantheonTerminal {
             hints.width_inc = (int) t.get_char_width ();
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
-
-            notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            t.grab_focus ();
 
             if (program == null) {
                 /* Set up the virtual terminal */
@@ -612,20 +588,51 @@ namespace PantheonTerminal {
             }
         }
 
-        private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
+        private void connect_terminal_signals (TerminalWidget t) {
+            t.exited_child.connect (on_terminal_child_exited);
+        }
+
+        private void disconnect_terminal_signals (TerminalWidget t) {
+            t.exited_child.disconnect (on_terminal_child_exited);
+        }
+
+        private void on_terminal_child_exited (TerminalWidget term) {
+            if (!term.killed) {
+                if (term.program != null) {
+                    /* If a program was running, do not close the tab so that output of program
+                     * remains visible */
+                    term.active_shell ();
+                    /* Allow closing tab with "exit" */
+                    term.program = null;
+                } else {
+                    term.tab.close ();
+                }
+            }
+        }
+
+        private Granite.Widgets.Tab create_and_insert_tab (string label, GLib.Icon? icon, TerminalWidget term) {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
             var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
+            notebook.insert_tab (tab, -1);
+            notebook.current = tab;
+
+            connect_terminal_signals (term);
+            term.grab_focus ();
+
             return tab;
         }
 
         private void make_restorable (Granite.Widgets.Tab tab) {
             var term = get_term_widget (tab);
-            terminals.remove (term);
+            disconnect_terminal_signals (term);
+            term.hibernate ();
+
             restorable_terminals.insert (term.terminal_id, term);
+            /* Terminal will be removed from terminals when tab is closed */
             tab.restore_data = term.terminal_id;
 
             tab.dropped_callback = (() => {
@@ -674,8 +681,9 @@ namespace PantheonTerminal {
                 tabs_to_terminate.append (t);
             }
 
-            foreach (var t in tabs_to_terminate)
+            foreach (var t in tabs_to_terminate) {
                 t.term_ps ();
+            }
 
             saved_state.tabs = tabs;
             return false;
