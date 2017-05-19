@@ -18,6 +18,15 @@
     <binary>pantheon-terminal</binary>
   </provides>
   <releases>
+    <release version="0.4.2" date="2017-05-15" urgency="medium">
+      <description>
+        <ul>
+          <_li>Allow tab to close after typing exit at the commandline</_li>
+          <_li>Minor bug fixes</_li>
+          <_li>Translation updates</_li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.1" date="2017-05-06" urgency="medium">
       <description>
         <ul>
