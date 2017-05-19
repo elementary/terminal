@@ -1,6 +1,12 @@
 # Terminal
 [![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/projects/terminal/?utm_source=widget)
 
+## The terminal of the 21st century.
+
+A super lightweight, beautiful, and simple terminal. Comes with sane defaults, browser-class tabs, sudo paste protection, smart copy/paste, and little to no configuration.
+
+![Terminal Screenshot](data/screenshot.png?raw=true)
+
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
@@ -14,12 +20,12 @@ It's recommended to create a clean build environment
 
     mkdir build
     cd build/
-    
+
 Run `cmake` to configure the build environment and then `make` to build
 
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make
-    
+
 To install, use `make install`, then execute with `pantheon-terminal`
 
     sudo make install
