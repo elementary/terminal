@@ -75,6 +75,7 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Search" action="Search"/>
+                <menuitem name="Open in Files" action="Open in Files"/>
             </popup>
             </ui>
         """;
@@ -732,6 +733,10 @@ namespace PantheonTerminal {
             current_terminal.select_all ();
         }
 
+        void action_open_in_files () {
+            Gtk.show_uri (null, "file:///" + current_terminal.get_shell_location (), 0);
+        }
+
         void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
@@ -818,6 +823,10 @@ namespace PantheonTerminal {
             { "Select All", "gtk-select-all",
               N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
+
+            { "Open in Files", "gtk-directory",
+              N_("Open in Files"), "<Control><Shift>e",
+              N_("Open current location in Files"), action_open_in_files },
 
             { "About", "gtk-about", N_("About"),
               null, N_("Show about window"), action_about },
