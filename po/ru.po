@@ -1,21 +1,20 @@
-# Russian translation for pantheon-terminal
-# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
-# This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-03 21:53+0000\n"
-"Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"Project-Id-Version: Russian (Terminal)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-27 12:08+0000\n"
+"PO-Revision-Date: 2017-05-27 15:58+0300\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Language-Team: Russian "
+"<https://l10n.elementary.io/projects/terminal/terminal/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -32,7 +31,7 @@ msgstr "Если вы закроете терминал, процесс буде
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "Отменить"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
@@ -40,7 +39,7 @@ msgstr "Закрыть вкладку"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Вы уверены, что хотите выйти из терминала?"
+msgstr "Выйти из терминала?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
@@ -75,7 +74,7 @@ msgstr "Терминал"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr "Поиск..."
+msgstr "Поиск…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -84,7 +83,7 @@ msgstr "Закрыть"
 
 #: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
 msgid "New Window"
-msgstr "Новое окно"
+msgstr "Создать окно"
 
 #: ../src/PantheonTerminalWindow.vala:782
 msgid "Open a new window"
@@ -92,7 +91,7 @@ msgstr "Открыть новое окно"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "New Tab"
-msgstr "Новая вкладка"
+msgstr "Создать вкладку"
 
 #: ../src/PantheonTerminalWindow.vala:786
 msgid "Create a new tab"
@@ -108,7 +107,7 @@ msgstr "Копировать выделенный текст"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
-msgstr "Искать выбранную строку в Терминале"
+msgstr "Искать выбранную строку в терминале"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
@@ -169,26 +168,7 @@ msgstr "Включить/выключить полноэкранный режи�
 
 #: ../src/PantheonTerminal.vala:64
 msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Anton Shilov https://launchpad.net/~vaccum121\n"
-"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
-"  DonCHEG https://launchpad.net/~doncheg\n"
-"  Eugene Marshal https://launchpad.net/~lowrider\n"
-"  Igor https://launchpad.net/~igortrefilov\n"
-"  Igor Lopatkin https://launchpad.net/~sevenfrogz\n"
-"  Ilya Bizyaev https://launchpad.net/~bizyaev-game\n"
-"  Kirill Ivaha https://launchpad.net/~kirill-ivaha\n"
-"  Kirill Romanov https://launchpad.net/~djaler1\n"
-"  Leopotam https://launchpad.net/~leopotam\n"
-"  Maxim Taranov https://launchpad.net/~png2378\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Michael Moukhin https://launchpad.net/~siomi\n"
-"  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Nikita Putko https://launchpad.net/~ktototam98\n"
-"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
-"  Zoi https://launchpad.net/~zoi-kun\n"
-"  iTayson https://launchpad.net/~itaysonlab"
+msgstr "Максим Таранов <png2378@gmail.com>, 2016-2017."
 
 #: ../src/PantheonTerminal.vala:126
 msgid "Task finished"
@@ -208,20 +188,21 @@ msgstr "Запустить программу в терминале"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Set shell working directory"
-msgstr "Установить рабочyю папку для shell"
+msgstr "Установить рабочyю директорию для shell"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Эта команда запрашивает права Администратора для выполнения"
+msgstr "Эта команда запрашивает права администратора"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Копирование команд в Терминал может быть опасным."
+msgstr "Копирование команд в терминал может быть опасным."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
-"Удостоверьтесь в том, что вы понимаете, что это за команда и что она значит."
+"Удостоверьтесь в том, что вы понимаете, что это за команда и что она "
+"означает."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
@@ -229,7 +210,7 @@ msgstr "Не вставлять"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Вставить"
+msgstr "Вставить всё равно"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -241,7 +222,7 @@ msgstr "Использовать командную строку"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr "Новая вкладка от имени Администратора"
+msgstr "Создать вкладку от имени администратора"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
