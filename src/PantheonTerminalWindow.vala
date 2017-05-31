@@ -734,7 +734,18 @@ namespace PantheonTerminal {
         }
 
         void action_open_in_files () {
-            Gtk.show_uri (null, "file:///" + current_terminal.get_shell_location (), 0);
+            try {
+                string uri = Filename.to_uri (current_terminal.get_shell_location ());
+
+                try {
+                     Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                } catch (Error e) {
+                     warning (e.message);
+                }
+
+            } catch (ConvertError e) {
+                warning (e.message);
+            }
         }
 
         void action_close_tab () {
