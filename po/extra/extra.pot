@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-06 22:16-0500\n"
+"POT-Creation-Date: 2017-06-01 18:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,13 +40,16 @@ msgid ""
 "environment which can be used to run programs available on your system."
 msgstr ""
 
-msgid "Fix copying URLs to clipboard"
+msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 
 msgid "Minor bug fixes"
 msgstr ""
 
 msgid "Translation updates"
+msgstr ""
+
+msgid "Fix copying URLs to clipboard"
 msgstr ""
 
 msgid "Fix appstream date format"
