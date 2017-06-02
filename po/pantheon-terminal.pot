@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-06 22:16-0500\n"
+"POT-Creation-Date: 2017-06-01 18:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/PantheonTerminal.vala:48 ../src/PantheonTerminalWindow.vala:119
-#: ../src/PantheonTerminalWindow.vala:570 ../src/Constants.vala:7
+#: ../src/PantheonTerminal.vala:48 ../src/PantheonTerminalWindow.vala:120
+#: ../src/PantheonTerminalWindow.vala:571 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr ""
 
@@ -95,98 +95,106 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:199
-#: ../src/PantheonTerminalWindow.vala:809
+#: ../src/PantheonTerminalWindow.vala:200
+#: ../src/PantheonTerminalWindow.vala:827
 msgid "Find…"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:792
-#: ../src/PantheonTerminalWindow.vala:793
+#: ../src/PantheonTerminalWindow.vala:810
+#: ../src/PantheonTerminalWindow.vala:811
 msgid "Close"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:797 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:815 ../src/Constants.vala:8
 msgid "New Window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:797
+#: ../src/PantheonTerminalWindow.vala:815
 msgid "Open a new window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:819
 msgid "New Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:801
+#: ../src/PantheonTerminalWindow.vala:819
 msgid "Create a new tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:805
+#: ../src/PantheonTerminalWindow.vala:823
 msgid "Copy"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:805
+#: ../src/PantheonTerminalWindow.vala:823
 msgid "Copy the selected text"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:810
+#: ../src/PantheonTerminalWindow.vala:828
 msgid "Search for a given string in the terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:813
+#: ../src/PantheonTerminalWindow.vala:831
 msgid "Paste"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:813
+#: ../src/PantheonTerminalWindow.vala:831
 msgid "Paste some text"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:817
+#: ../src/PantheonTerminalWindow.vala:835
 msgid "Select All"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:818
+#: ../src/PantheonTerminalWindow.vala:836
 msgid "Select all the text in the terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:820
+#: ../src/PantheonTerminalWindow.vala:839
+msgid "Open in Files"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:840
+msgid "Open current location in Files"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:842
 msgid "About"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:821
+#: ../src/PantheonTerminalWindow.vala:843
 msgid "Show about window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:823
+#: ../src/PantheonTerminalWindow.vala:845
 msgid "Next Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:824
+#: ../src/PantheonTerminalWindow.vala:846
 msgid "Go to next tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:827
+#: ../src/PantheonTerminalWindow.vala:849
 msgid "Previous Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:828
+#: ../src/PantheonTerminalWindow.vala:850
 msgid "Go to previous tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:831
-#: ../src/PantheonTerminalWindow.vala:832
+#: ../src/PantheonTerminalWindow.vala:853
+#: ../src/PantheonTerminalWindow.vala:854
 msgid "Zoom in"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:836
+#: ../src/PantheonTerminalWindow.vala:858
 msgid "Zoom out"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:840
+#: ../src/PantheonTerminalWindow.vala:862
 msgid "Fullscreen"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:840
+#: ../src/PantheonTerminalWindow.vala:862
 msgid "Toggle/Untoggle fullscreen"
 msgstr ""
 
