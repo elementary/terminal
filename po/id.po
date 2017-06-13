@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-03 21:40+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Indonesian <id@li.org>\n"
+"PO-Revision-Date: 2017-05-30 15:20+0000\n"
+"Last-Translator: Cecep Khaerudin <ckhaerudin@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://l10n.elementary.io/projects/terminal/terminal/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -27,7 +30,7 @@ msgstr "Ada proses aktif di tab ini."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -48,7 +51,7 @@ msgstr "Ada proses aktif di terminal ini."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -56,15 +59,15 @@ msgstr "Keluar Terminal"
 
 #: ../src/SearchToolbar.vala:37
 msgid "Find"
-msgstr ""
+msgstr "Cari"
 
 #: ../src/SearchToolbar.vala:49
 msgid "Previous result"
-msgstr ""
+msgstr "Hasil sebelumnya"
 
 #: ../src/SearchToolbar.vala:55
 msgid "Next result"
-msgstr ""
+msgstr "Hasil berikutnya"
 
 #: ../src/PantheonTerminalWindow.vala:114
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
@@ -75,7 +78,7 @@ msgstr "Terminal"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr ""
+msgstr "Cari…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -108,7 +111,7 @@ msgstr "Salin teks terpilih"
 
 #: ../src/PantheonTerminalWindow.vala:795
 msgid "Search for a given string in the terminal"
-msgstr ""
+msgstr "Cari string yang diberikan di terminal"
 
 #: ../src/PantheonTerminalWindow.vala:798
 msgid "Paste"
@@ -196,7 +199,7 @@ msgstr "Cetak info versi dan keluar"
 
 #: ../src/PantheonTerminal.vala:209
 msgid "Show about dialog"
-msgstr ""
+msgstr "Tampilkan tentang dialog"
 
 #: ../src/PantheonTerminal.vala:210
 msgid "Run a program in terminal"
@@ -204,27 +207,27 @@ msgstr "Jalankan program dalam terminal"
 
 #: ../src/PantheonTerminal.vala:211
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Setel direktori kerja shell"
 
 #: ../src/UnsafePasteDialog.vala:33
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Perintah ini meminta akses Administratif ke komputer Anda"
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Menyalin perintah ke Terminal bisa berbahaya."
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Pastikan Anda memahami apa yang masing-masing bagian dari perintah ini."
 
 #: ../src/UnsafePasteDialog.vala:39
 msgid "Don't Paste"
-msgstr ""
+msgstr "Jangan Tempel"
 
 #: ../src/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Tempelkan saja"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
@@ -236,7 +239,7 @@ msgstr "Gunakan baris perintah"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr ""
+msgstr "Tab Root baru"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
