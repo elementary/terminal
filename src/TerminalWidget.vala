@@ -27,7 +27,6 @@ namespace PantheonTerminal {
             TEXT
         }
 
-
         public PantheonTerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
@@ -52,6 +51,18 @@ namespace PantheonTerminal {
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
         public string? uri;
+
+        private string _tab_label = "";
+        public string tab_label {
+            get {
+                return _tab_label;
+            }
+
+            set {
+                _tab_label = value;
+                tab.label = tab_label;
+            }
+        }
 
         public int default_size;
         public double zoom_factor = 1.0;
@@ -143,12 +154,6 @@ namespace PantheonTerminal {
                 window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
             });
 
-            window_title_changed.connect ((event) => {
-                if (this == window.current_terminal)
-                    window.title = window_title;
-
-                tab.label = window_title;
-            });
 
             child_exited.connect (on_child_exited);
 
@@ -347,7 +352,8 @@ namespace PantheonTerminal {
             try {
                 return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
             } catch (GLib.FileError error) {
-                warning ("An error occured while fetching the current dir of shell");
+                /* Tab name disambiguation may call this before shell location available. */
+                /* No terminal warning needed */
                 return "";
             }
         }
