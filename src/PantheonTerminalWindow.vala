@@ -346,10 +346,9 @@ namespace PantheonTerminal {
         }
 
         private void on_toggle_search () {
-
             var is_search = this.search_button.get_active ();
-
             this.search_revealer.set_reveal_child (is_search);
+
             if (is_search) {
                 search_toolbar.grab_focus ();
             } else {
@@ -368,8 +367,11 @@ namespace PantheonTerminal {
             var t = get_term_widget (tab);
             terminals.remove (t);
 
-            if (notebook.n_tabs == 0)
+            if (notebook.n_tabs == 0) {
                 destroy ();
+            } else {
+                schedule_name_check ();
+            }
         }
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
@@ -414,6 +416,7 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
+            schedule_name_check ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -501,8 +504,9 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
+
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.window_title ?? "";
+            title = current_terminal.tab_label ?? "";
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -580,8 +584,18 @@ namespace PantheonTerminal {
                         program = null;
                     } else {
                         t.tab.close ();
+                        return;
                     }
                 }
+
+                schedule_name_check ();
+            });
+
+            t.window_title_changed.connect (() => {
+                if (t == this.current_terminal) {
+                    this.title = t.window_title;
+                }
+                schedule_name_check ();
             });
 
             t.set_font (term_font);
@@ -804,6 +818,104 @@ namespace PantheonTerminal {
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
+        }
+
+        uint name_check_timeout_id = 0;
+        private void schedule_name_check () {
+            if (name_check_timeout_id > 0) {
+                Source.remove (name_check_timeout_id);
+            }
+
+            name_check_timeout_id = Timeout.add (50, () => {
+                if (!check_for_tabs_with_same_name ()) {
+                    return true;
+                } else {
+                    name_check_timeout_id = 0;
+                    return false;
+                }
+            });
+        }
+
+        /** Compare every tab label with every other and resolve ambiguities **/
+        private bool check_for_tabs_with_same_name () {
+            /* Take list copies so foreach clauses can be nested safely*/
+            var terms = terminals.copy ();
+            var terms2 = terminals.copy ();
+
+            foreach (TerminalWidget terminal in terms) {
+                string term_path = terminal.get_shell_location ();
+                string term_label = terminal.window_title;
+
+                if (term_label == "") { /* No point in continuing - tabs not finished updating */
+                    return false; /* Try again later */
+                }
+
+                /* Reset tab_name to basename so long name only used when required */
+                terminal.tab_label = term_label;
+
+                foreach (TerminalWidget terminal2 in terms2) {
+                    string term2_path = terminal2.get_shell_location ();
+                    string term2_name = terminal2.window_title;
+
+                    if (terminal2 != terminal && term2_name == term_label) {
+                        if (term2_path != term_path) {
+                            terminal2.tab_label = disambiguate_label (term2_path, term_path);
+                            terminal.tab_label = disambiguate_label (term_path, term2_path);
+
+                            if (terminal == this.current_terminal) {
+                                this.title = terminal.tab_label;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /** Return enough of @path to distinguish it from @conflict_path **/
+        private string disambiguate_label (string path, string conflict_path) {
+            string prefix = "";
+            string conflict_prefix = "";
+            string temp_path = path;
+            string temp_conflict_path = conflict_path;
+            string basename =  Path.get_basename (path);
+
+            if (basename != Path.get_basename (conflict_path)) {
+                return basename;
+            }
+
+            /* Add parent directories until path and conflict path differ */
+            while (prefix == conflict_prefix) {
+                var parent_temp_path = get_parent_path_from_path (temp_path);
+                var parent_temp_confict_path = get_parent_path_from_path (temp_conflict_path);
+                prefix = Path.get_basename (parent_temp_path) + Path.DIR_SEPARATOR_S + prefix;
+                conflict_prefix = Path.get_basename (parent_temp_confict_path) + Path.DIR_SEPARATOR_S + conflict_prefix;
+                temp_path = parent_temp_path;
+                temp_conflict_path = parent_temp_confict_path;
+            }
+
+            return (prefix + basename).replace ("//", "/");
+        }
+
+        /*** Simplified version of PF.FileUtils function, with fewer checks ***/
+        private string get_parent_path_from_path (string path) {
+            if (path.length < 2) {
+                return Path.DIR_SEPARATOR_S;
+            }
+
+            StringBuilder string_builder = new StringBuilder (path);
+            if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
+                string_builder.erase (string_builder.str.length - 1,-1);
+            }
+
+            int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
+            if (last_separator < 0) {
+                last_separator = 0;
+            }
+
+            string_builder.erase (last_separator, -1);
+            return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
         static const Gtk.ActionEntry[] main_entries = {
