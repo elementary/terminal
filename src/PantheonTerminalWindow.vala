@@ -294,6 +294,25 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
+
+                    case Gdk.Key.F1:
+                    case Gdk.Key.F2:
+                    case Gdk.Key.F3:
+                    case Gdk.Key.F4:
+                    case Gdk.Key.F5:
+                    case Gdk.Key.F6:
+                    case Gdk.Key.F7:
+                    case Gdk.Key.F8:
+                    case Gdk.Key.F9:
+                    case Gdk.Key.F10:
+                        /* Ensure unmodified function keys are passed to current terminal
+                         * foreground process first (https://github.com/elementary/terminal/issues/98)
+                         */
+                        if ((e.state & Gdk.ModifierType.MOD1_MASK) == 0) {
+                            return current_terminal.key_press_event (e);
+                        }
+
+                        break;
                 }
 
                 /* Use hardware keycodes so the key used
@@ -504,7 +523,6 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? "";
             new_tab.icon = null;
