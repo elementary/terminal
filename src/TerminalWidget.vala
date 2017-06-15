@@ -27,7 +27,6 @@ namespace PantheonTerminal {
             TEXT
         }
 
-
         public PantheonTerminalApp app;
         public string terminal_id;
         public string? program = null;
@@ -53,6 +52,18 @@ namespace PantheonTerminal {
         private Gtk.Menu menu;
         public Granite.Widgets.Tab? tab = null;
         public string? uri;
+
+        private string _tab_label = "";
+        public string tab_label {
+            get {
+                return _tab_label;
+            }
+
+            set {
+                _tab_label = value;
+                tab.label = tab_label;
+            }
+        }
 
         public int default_size;
         public double zoom_factor = 1.0;
@@ -106,8 +117,7 @@ namespace PantheonTerminal {
             window = parent_window;
             child_has_exited = false;
             killed = false;
-
-
+            
             connect_signals ();
 
             /* target entries specify what kind of data the terminal widget accepts */
@@ -134,7 +144,6 @@ namespace PantheonTerminal {
             button_press_event.connect (on_button_press);
             button_release_event.connect (on_button_release);
             selection_changed.connect (on_selection_changed);
-            window_title_changed.connect (on_title_changed);
         }
 
         public void disconnect_signals () {
@@ -143,7 +152,6 @@ namespace PantheonTerminal {
             button_press_event.disconnect (on_button_press);
             button_release_event.disconnect (on_button_release);
             selection_changed.disconnect (on_selection_changed);
-            window_title_changed.disconnect (on_title_changed);
         }
 
         private bool on_button_press (Gdk.EventButton event) {
@@ -377,7 +385,8 @@ namespace PantheonTerminal {
             try {
                 return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
             } catch (GLib.FileError error) {
-                warning ("An error occured while fetching the current dir of shell");
+                /* Tab name disambiguation may call this before shell location available. */
+                /* No terminal warning needed */
                 return "";
             }
         }
