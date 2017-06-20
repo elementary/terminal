@@ -17,6 +17,11 @@
   <provides>
     <binary>pantheon-terminal</binary>
   </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
   <releases>
     <release version="0.4.2" date="2017-05-15" urgency="medium">
       <description>
