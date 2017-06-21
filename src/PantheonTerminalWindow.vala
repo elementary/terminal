@@ -75,7 +75,7 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Search" action="Search"/>
-                <menuitem name="Open in Files" action="Open in Files"/>
+                <menuitem name="Show in File Browser" action="Show in File Browser"/>
             </popup>
             </ui>
         """;
@@ -947,8 +947,8 @@ namespace PantheonTerminal {
               N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
 
-            { "Open in Files", "gtk-directory",
-              N_("Open in Files"), "<Control><Shift>e",
+            { "Show in File Browser", "gtk-directory",
+              N_("Show in File Browser"), "<Control><Shift>e",
               N_("Open current location in Files"), action_open_in_files },
 
             { "About", "gtk-about", N_("About"),
