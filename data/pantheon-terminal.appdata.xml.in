@@ -70,5 +70,6 @@
   <url type="bugtracker">https://bugs.launchpad.net/pantheon-terminal</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
   <url type="help">https://elementaryos.stackexchange.com/questions/tagged/terminal</url>
+  <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
   <update_contact>contact_AT_elementary.io</update_contact>
 </component>
