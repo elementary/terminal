@@ -11,7 +11,7 @@ StartupNotify=true
 X-GNOME-Gettext-Domain=pantheon-terminal
 _Keywords=command;prompt;cmd;commandline;run;
 X-GNOME-UsesNotifications=true
-Actions=NewWindow;NewRootWindow;AboutDialog;
+Actions=NewWindow;NewRootWindow;
 
 [Desktop Action NewWindow]
 _Name=New Window
@@ -22,7 +22,3 @@ Exec=pantheon-terminal
 _Name=New Root Tab
 Icon=utilities-terminal
 Exec=pantheon-terminal -e "sudo -s"
-
-[Desktop Action AboutDialog]
-_Name=About Terminal
-Exec=pantheon-terminal --about
