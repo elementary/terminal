@@ -325,12 +325,15 @@ namespace PantheonTerminal {
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
+            Gdk.Rectangle geometry;
+            get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+
             if (default_width == -1) {
-                default_width = Gdk.Screen.width () * 2 / 3;
+                default_width = geometry.width * 2 / 3;
             }
 
             if (default_height == -1) {
-                default_height = Gdk.Screen.height () * 3 / 4;
+                default_height = geometry.height * 3 / 4;
             }
 
             if (restore_pos) {
@@ -340,8 +343,8 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (Gdk.Screen.width ()  - default_width)  / 2;
-                    y = (Gdk.Screen.height () - default_height) / 2;
+                    x = (geometry.width - default_width)  / 2;
+                    y = (geometry.height - default_height) / 2;
                     move (x, y);
                 }
             }
