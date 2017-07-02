@@ -326,11 +326,11 @@ namespace PantheonTerminal {
             default_height = PantheonTerminal.saved_state.window_height;
 
             if (default_width == -1) {
-                default_width = get_screen ().get_width () * 2 / 3;
+                default_width = Gdk.Screen.width () * 2 / 3;
             }
 
             if (default_height == -1) {
-                default_height = get_screen ().get_height () * 3 / 4;
+                default_height = Gdk.Screen.height () * 3 / 4;
             }
 
             if (restore_pos) {
