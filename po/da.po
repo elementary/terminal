@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-05-23 21:39+0000\n"
+"PO-Revision-Date: 2017-07-01 22:11+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish "
 "<https://l10n.elementary.io/projects/terminal/terminal/da/>\n"
@@ -35,7 +35,7 @@ msgstr "Hvis du lukker den, vil denne process blive afsluttet."
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
 msgid "Cancel"
-msgstr "Annullér"
+msgstr "Annuller"
 
 #: ../src/ForegroundProcessDialog.vala:40
 msgid "Close Tab"
