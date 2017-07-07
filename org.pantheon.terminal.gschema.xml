@@ -20,14 +20,14 @@
   id="org.pantheon.terminal.saved-state"
   gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
-      <default>640</default>
+      <default>-1</default>
       <summary>The saved width of the window.</summary>
-      <description>The saved width of the window. Must be greater than 700, or it will not take effect.</description>
+      <description>The saved width of the window.</description>
     </key>
     <key name="window-height" type="i">
-      <default>476</default>
+      <default>-1</default>
       <summary>The saved height of the window.</summary>
-      <description>The saved height of the window. Must be greater than 400, or it will not take effect.</description>
+      <description>The saved height of the window.</description>
     </key>
     <key name="window-state" enum="pantheon-terminal-window-states">
       <default>"Normal"</default>
