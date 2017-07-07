@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-01 18:10-0500\n"
+"POT-Creation-Date: 2017-06-21 11:20-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/PantheonTerminal.vala:48 ../src/PantheonTerminalWindow.vala:120
-#: ../src/PantheonTerminalWindow.vala:571 ../src/Constants.vala:7
+#: ../src/PantheonTerminalWindow.vala:575 ../src/Constants.vala:7
 msgid "Terminal"
 msgstr ""
 
@@ -96,105 +96,105 @@ msgid "Next result"
 msgstr ""
 
 #: ../src/PantheonTerminalWindow.vala:200
-#: ../src/PantheonTerminalWindow.vala:827
+#: ../src/PantheonTerminalWindow.vala:939
 msgid "Find…"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:810
-#: ../src/PantheonTerminalWindow.vala:811
+#: ../src/PantheonTerminalWindow.vala:922
+#: ../src/PantheonTerminalWindow.vala:923
 msgid "Close"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:815 ../src/Constants.vala:8
+#: ../src/PantheonTerminalWindow.vala:927 ../src/Constants.vala:8
 msgid "New Window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:815
+#: ../src/PantheonTerminalWindow.vala:927
 msgid "Open a new window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:819
+#: ../src/PantheonTerminalWindow.vala:931
 msgid "New Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:819
+#: ../src/PantheonTerminalWindow.vala:931
 msgid "Create a new tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:823
+#: ../src/PantheonTerminalWindow.vala:935
 msgid "Copy"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:823
+#: ../src/PantheonTerminalWindow.vala:935
 msgid "Copy the selected text"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:828
+#: ../src/PantheonTerminalWindow.vala:940
 msgid "Search for a given string in the terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:831
+#: ../src/PantheonTerminalWindow.vala:943
 msgid "Paste"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:831
+#: ../src/PantheonTerminalWindow.vala:943
 msgid "Paste some text"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:835
+#: ../src/PantheonTerminalWindow.vala:947
 msgid "Select All"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:836
+#: ../src/PantheonTerminalWindow.vala:948
 msgid "Select all the text in the terminal"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:839
-msgid "Open in Files"
+#: ../src/PantheonTerminalWindow.vala:951
+msgid "Show in File Browser"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:840
+#: ../src/PantheonTerminalWindow.vala:952
 msgid "Open current location in Files"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:842
+#: ../src/PantheonTerminalWindow.vala:954
 msgid "About"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:843
+#: ../src/PantheonTerminalWindow.vala:955
 msgid "Show about window"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:845
+#: ../src/PantheonTerminalWindow.vala:957
 msgid "Next Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:846
+#: ../src/PantheonTerminalWindow.vala:958
 msgid "Go to next tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:849
+#: ../src/PantheonTerminalWindow.vala:961
 msgid "Previous Tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:850
+#: ../src/PantheonTerminalWindow.vala:962
 msgid "Go to previous tab"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:853
-#: ../src/PantheonTerminalWindow.vala:854
+#: ../src/PantheonTerminalWindow.vala:965
+#: ../src/PantheonTerminalWindow.vala:966
 msgid "Zoom in"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:858
+#: ../src/PantheonTerminalWindow.vala:970
 msgid "Zoom out"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:862
+#: ../src/PantheonTerminalWindow.vala:974
 msgid "Fullscreen"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:862
+#: ../src/PantheonTerminalWindow.vala:974
 msgid "Toggle/Untoggle fullscreen"
 msgstr ""
 

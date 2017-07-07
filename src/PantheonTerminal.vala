@@ -30,7 +30,6 @@ namespace PantheonTerminal {
         private static string[]? command_e = null;
 
         private static bool print_version = false;
-        private static bool show_about_dialog = false;
 
         public int minimum_width;
         public int minimum_height;
@@ -47,22 +46,8 @@ namespace PantheonTerminal {
 
             program_name = _("Terminal");
             exec_name = "pantheon-terminal";
-            app_years = "2011-2016";
-            app_icon = "utilities-terminal";
             app_launcher = "org.pantheon.terminal.desktop";
             application_id = "org.pantheon.terminal";
-            main_url = "https://github.com/elementary/terminal";
-            bug_url = "https://github.com/elementary/terminal/issues";
-            help_url = "https://elementary.io/help/terminal";
-            translate_url = "https://l10n.elementary.io/projects/terminal";
-            about_authors = { "David Gomes <david@elementaryos.org",
-                              "Mario Guerriero <mario@elementaryos.org>",
-                              "Akshay Shekher <voldyman666@gmail.com>" };
-
-            // about_documenters = {"",""};
-            about_artists = { "Daniel Foré <daniel@elementaryos.org>" };
-            about_translators = _("translator-credits");
-            about_license_type = Gtk.License.GPL_3_0;
         }
 
         public PantheonTerminalApp () {
@@ -206,7 +191,6 @@ namespace PantheonTerminal {
 
         static const OptionEntry[] entries = {
             { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
-            { "about", 'a', 0, OptionArg.NONE, out show_about_dialog, N_("Show about dialog"), null },
             { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
             { null }
