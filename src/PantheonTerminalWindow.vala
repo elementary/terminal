@@ -75,7 +75,7 @@ namespace PantheonTerminal {
                 <menuitem name="Paste" action="Paste"/>
                 <menuitem name="Select All" action="Select All"/>
                 <menuitem name="Search" action="Search"/>
-                <menuitem name="Open in Files" action="Open in Files"/>
+                <menuitem name="Show in File Browser" action="Show in File Browser"/>
             </popup>
             </ui>
         """;
@@ -325,6 +325,17 @@ namespace PantheonTerminal {
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
+            Gdk.Rectangle geometry;
+            get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+
+            if (default_width == -1) {
+                default_width = geometry.width * 2 / 3;
+            }
+
+            if (default_height == -1) {
+                default_height = geometry.height * 3 / 4;
+            }
+
             if (restore_pos) {
                 int x = saved_state.opening_x;
                 int y = saved_state.opening_y;
@@ -332,8 +343,8 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (Gdk.Screen.width ()  - default_width)  / 2;
-                    y = (Gdk.Screen.height () - default_height) / 2;
+                    x = (geometry.width - default_width)  / 2;
+                    y = (geometry.height - default_height) / 2;
                     move (x, y);
                 }
             }
@@ -958,8 +969,8 @@ namespace PantheonTerminal {
               N_("Select All"), "<Control><Shift>a",
               N_("Select all the text in the terminal"), action_select_all },
 
-            { "Open in Files", "gtk-directory",
-              N_("Open in Files"), "<Control><Shift>e",
+            { "Show in File Browser", "gtk-directory",
+              N_("Show in File Browser"), "<Control><Shift>e",
               N_("Open current location in Files"), action_open_in_files },
 
             { "About", "gtk-about", N_("About"),

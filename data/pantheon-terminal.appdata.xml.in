@@ -17,6 +17,11 @@
   <provides>
     <binary>pantheon-terminal</binary>
   </provides>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
   <releases>
     <release version="0.4.2" date="2017-05-15" urgency="medium">
       <description>
@@ -65,5 +70,6 @@
   <url type="bugtracker">https://bugs.launchpad.net/pantheon-terminal</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
   <url type="help">https://elementaryos.stackexchange.com/questions/tagged/terminal</url>
+  <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
   <update_contact>contact_AT_elementary.io</update_contact>
 </component>
