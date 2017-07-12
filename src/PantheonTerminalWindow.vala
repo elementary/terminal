@@ -235,6 +235,7 @@ namespace PantheonTerminal {
             add (grid);
 
             key_press_event.connect ((e) => {
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (this.search_toolbar.search_entry.has_focus) {
@@ -243,12 +244,14 @@ namespace PantheonTerminal {
                         }
                         break;
                     case Gdk.Key.KP_Add:
+                    case Gdk.Key.plus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_in_font ();
                             return true;
                         }
                         break;
                     case Gdk.Key.KP_Subtract:
+                    case Gdk.Key.minus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_out_font ();
                             return true;
@@ -314,6 +317,10 @@ namespace PantheonTerminal {
                             return true;
                         }
                     }
+                }
+
+                if (current_terminal.has_foreground_process ()) {
+                    current_terminal.key_press_event (e);
                 }
 
                 return false;
@@ -515,7 +522,6 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? "";
             new_tab.icon = null;
