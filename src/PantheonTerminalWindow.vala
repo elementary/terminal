@@ -235,6 +235,7 @@ namespace PantheonTerminal {
             add (grid);
 
             key_press_event.connect ((e) => {
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (this.search_toolbar.search_entry.has_focus) {
@@ -243,12 +244,14 @@ namespace PantheonTerminal {
                         }
                         break;
                     case Gdk.Key.KP_Add:
+                    case Gdk.Key.plus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_in_font ();
                             return true;
                         }
                         break;
                     case Gdk.Key.KP_Subtract:
+                    case Gdk.Key.minus:
                         if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
                             action_zoom_out_font ();
                             return true;
@@ -294,25 +297,6 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
-
-                    case Gdk.Key.F1:
-                    case Gdk.Key.F2:
-                    case Gdk.Key.F3:
-                    case Gdk.Key.F4:
-                    case Gdk.Key.F5:
-                    case Gdk.Key.F6:
-                    case Gdk.Key.F7:
-                    case Gdk.Key.F8:
-                    case Gdk.Key.F9:
-                    case Gdk.Key.F10:
-                        /* Ensure unmodified function keys are passed to current terminal
-                         * foreground process first (https://github.com/elementary/terminal/issues/98)
-                         */
-                        if ((e.state & Gdk.ModifierType.MOD1_MASK) == 0) {
-                            return current_terminal.key_press_event (e);
-                        }
-
-                        break;
                 }
 
                 /* Use hardware keycodes so the key used
@@ -333,6 +317,10 @@ namespace PantheonTerminal {
                             return true;
                         }
                     }
+                }
+
+                if (current_terminal.has_foreground_process ()) {
+                    current_terminal.key_press_event (e);
                 }
 
                 return false;
