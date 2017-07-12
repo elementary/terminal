@@ -66,8 +66,8 @@
     </release>
   </releases>
   <developer_name>elementary LLC.</developer_name>
-  <url type="homepage">http://elementary.io/</url>
-  <url type="bugtracker">https://bugs.launchpad.net/pantheon-terminal</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
   <url type="help">https://elementaryos.stackexchange.com/questions/tagged/terminal</url>
   <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
