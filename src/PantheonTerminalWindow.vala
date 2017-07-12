@@ -113,7 +113,11 @@ namespace PantheonTerminal {
             icon_name = "utilities-terminal";
             set_application (app);
 
-            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
+            var settings = Gtk.Settings.get_default ();
+            settings.gtk_application_prefer_dark_theme = true;
+
+            /* Make GTK+ CSD not steal F10 from the terminal */
+            settings.gtk_menu_bar_accel = null;
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
