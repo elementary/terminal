@@ -117,7 +117,7 @@ namespace PantheonTerminal {
             window = parent_window;
             child_has_exited = false;
             killed = false;
-            
+
             connect_signals ();
 
             /* target entries specify what kind of data the terminal widget accepts */
@@ -138,23 +138,10 @@ namespace PantheonTerminal {
         }
 
         public void connect_signals () {
-            /* Connect to necessary signals */
             settings.changed.connect (restore_settings);
-            child_exited.connect (on_child_exited);
-            button_press_event.connect (on_button_press);
-            button_release_event.connect (on_button_release);
-            selection_changed.connect (on_selection_changed);
         }
 
-        public void disconnect_signals () {
-            settings.changed.disconnect (restore_settings);
-            child_exited.disconnect (on_child_exited);
-            button_press_event.disconnect (on_button_press);
-            button_release_event.disconnect (on_button_release);
-            selection_changed.disconnect (on_selection_changed);
-        }
-
-        private bool on_button_press (Gdk.EventButton event) {
+        public override bool button_press_event (Gdk.EventButton event) {
             if (event.button ==  Gdk.BUTTON_SECONDARY) {
                 uri = get_link (event);
 
@@ -171,7 +158,7 @@ namespace PantheonTerminal {
             return false;
         }
 
-        private bool on_button_release (Gdk.EventButton event) {
+        public override bool button_release_event (Gdk.EventButton event) {
             if (event.button == Gdk.BUTTON_PRIMARY) {
                 uri = get_link (event);
 
@@ -187,15 +174,8 @@ namespace PantheonTerminal {
             return false;
         }
 
-        private void on_selection_changed () {
+        public override void selection_changed () {
             window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
-        }
-
-        private void on_title_changed () {
-            if (tab != null && this == window.current_terminal) {
-                window.title = window_title;
-                tab.label = window_title;
-            }
         }
 
         public void restore_settings () {
@@ -257,7 +237,7 @@ namespace PantheonTerminal {
             set_cursor_shape (settings.cursor_shape);
         }
 
-        void on_child_exited () {
+        public override void child_exited (int status) { /* NOTE vte-2.90.vapi file incorrect signature? */
             child_has_exited = true;
             exited_child ();
         }
@@ -460,12 +440,10 @@ namespace PantheonTerminal {
         }
 
         public void hibernate () {
-            disconnect_signals ();
             tab = null;
         }
 
         public void restore () {
-            connect_signals ();
             restore_settings ();
         }
     }
