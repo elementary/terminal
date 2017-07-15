@@ -306,8 +306,9 @@ namespace PantheonTerminal {
         }
 
         public bool try_get_foreground_pid (out int pid) {
+            pid = -1;
+
             if (child_has_exited) {
-                pid = -1;
                 return false;
             }
 
@@ -323,7 +324,6 @@ namespace PantheonTerminal {
                 pid = (int) fgpid;
                 return true;
             } else {
-                pid = -1;
                 return false;
             }
         }
