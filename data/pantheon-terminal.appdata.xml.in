@@ -23,6 +23,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.4.3" date="2017-07-22" urgency="medium">
+      <description>
+        <ul>
+          <_li>Minor bug fixes</_li>
+          <_li>Translation updates</_li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.2" date="2017-05-15" urgency="medium">
       <description>
         <ul>
