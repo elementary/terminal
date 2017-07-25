@@ -671,8 +671,6 @@ namespace PantheonTerminal {
             restorable_terminals.insert (term.terminal_id, term);
             tab.restore_data = term.terminal_id;
 
-            ((Gtk.Container)tab.page).remove(term);
-
             tab.dropped_callback = (() => {
                 unowned TerminalWidget t = restorable_terminals.get (tab.restore_data);
                 t.term_ps ();
