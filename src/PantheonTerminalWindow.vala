@@ -622,6 +622,7 @@ namespace PantheonTerminal {
                         return true;
                     }
                 }
+
                 return false;
             });
 
