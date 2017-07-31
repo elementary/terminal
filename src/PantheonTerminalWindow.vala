@@ -324,6 +324,17 @@ namespace PantheonTerminal {
             });
         }
 
+        public bool handle_paste_event () {
+            if (this.search_toolbar.search_entry.has_focus) {
+                return false;
+            } else if (clipboard.wait_is_text_available ()) {
+                action_paste ();
+                return true;
+            }
+
+            return false;
+        }
+
         private void restore_saved_state (bool restore_pos = true) {
             saved_tabs = saved_state.tabs;
             default_width = PantheonTerminal.saved_state.window_width;
@@ -611,19 +622,6 @@ namespace PantheonTerminal {
                     this.title = t.window_title;
                 }
                 schedule_name_check ();
-            });
-
-            t.button_press_event.connect ((e) => {
-                if (e.button == Gdk.BUTTON_MIDDLE) {
-                    if (this.search_toolbar.search_entry.has_focus) {
-                        return false;
-                    } else if (clipboard.wait_is_text_available ()) {
-                        action_paste ();
-                        return true;
-                    }
-                }
-
-                return false;
             });
 
             t.set_font (term_font);
