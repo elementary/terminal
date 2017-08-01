@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-21 11:20-0500\n"
+"POT-Creation-Date: 2017-08-01 11:28-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,21 +32,18 @@ msgstr ""
 msgid "New Root Tab"
 msgstr ""
 
-msgid "About Terminal"
-msgstr ""
-
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
-msgstr ""
-
-msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 
 msgid "Minor bug fixes"
 msgstr ""
 
 msgid "Translation updates"
+msgstr ""
+
+msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 
 msgid "Fix copying URLs to clipboard"

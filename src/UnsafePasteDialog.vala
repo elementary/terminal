@@ -50,8 +50,13 @@ namespace PantheonTerminal {
             add_action_widget (cancel_button, 1);
             add_action_widget (ignore_button, 0);
 
+            var do_not_show_check = new Gtk.CheckButton.with_label (_("Do not show this dialog again"));
+            settings.schema.bind ("unsafe-paste-alert", do_not_show_check, "active", SettingsBindFlags.DEFAULT | SettingsBindFlags.INVERT_BOOLEAN);
+            ((Gtk.Box)message_area).add (do_not_show_check);
+
             set_image (warning_image);
             warning_image.show ();
+            do_not_show_check.show ();
         }
 
         private void on_ignore () {
