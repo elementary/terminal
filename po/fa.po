@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2015-12-05 14:35+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Persian <fa@li.org>\n"
+"PO-Revision-Date: 2017-07-31 10:55+0000\n"
+"Last-Translator: mohamad12121 <mohamadij2@gmail.com>\n"
+"Language-Team: Persian "
+"<https://weblate.elementary.io/projects/terminal/terminal/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
-"Language: \n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -28,7 +30,7 @@ msgstr "فرآیندی در این برگه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "بررسی پایان می باد اگر شما ببندیدش"
+msgstr "فرآیند پایان می یابد ,اگر ببندید"
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -49,7 +51,7 @@ msgstr "فرآیندی در این پایانه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr "بررسی پایان می یابد اگر ترمینال را ببندید"
+msgstr "فرآیند پایان می یابد اگر ترمینال را ببندید"
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
@@ -76,7 +78,7 @@ msgstr "پایانه"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr "پیدا کردن..."
+msgstr "پیدا کردن…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
