@@ -6,5 +6,5 @@ add_translations_catalog ("pantheon-terminal"
         ${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in
         ${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in
     APPDATA_FILES
-        ${CMAKE_SOURCE_DIR}/data/pantheon-terminal.appdata.xml.in
+        ${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.appdata.xml.in
 )
