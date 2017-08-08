@@ -27,15 +27,15 @@ Run `cmake` to configure the build environment and then `make` to build
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make
 
-To install, use `make install`, then execute with `pantheon-terminal`
+To install, use `make install`, then execute with `io.elementary.terminal`
 
     sudo make install
-    pantheon-terminal
+    io.elementary.terminal
 
 ## Notifications
 
 Terminal implements process completion notifications. They are enabled for BASH automatically. To enable them for ZSH, add the following line to .zshrc:
 
-    builtin . /usr/share/pantheon-terminal/enable-zsh-completion-notifications || builtin true
+    builtin . /usr/share/io.elementary.terminal/enable-zsh-completion-notifications || builtin true
 
 DISTRIBUTORS: depending on the policy of your distribution, either inform the user about this via the default mechanism for your distribution (for DIY distros like Arch), or add that line to `/etc/zshrc` automatically on installation (for preconfigured distros like Ubuntu).
