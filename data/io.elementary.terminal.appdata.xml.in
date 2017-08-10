@@ -15,7 +15,7 @@
     </_p>
   </description>
   <provides>
-    <binary>pantheon-terminal</binary>
+    <binary>io.elementary.terminal</binary>
   </provides>
   <screenshots>
     <screenshot type="default">

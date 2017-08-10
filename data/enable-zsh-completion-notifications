@@ -1,7 +1,7 @@
 # This file should be sourced  from /etc/zshrc or $ZDOTDIR/.zshrc in order to
 # enable process completion notifications in Pantheon Terminal. 
 # Like this:
-#builtin . /usr/share/pantheon-terminal/enable-zsh-completion-notifications || builtin true
+#builtin . /usr/share/io.elementary.terminal/enable-zsh-completion-notifications || builtin true
 
 # If you come up with a way to inject this without modifying those files,
 # please let me know at <sergey@elementaryos.org>
@@ -15,7 +15,7 @@ then
             --type=method_call \
             --session \
             --dest=org.pantheon.terminal \
-            /org/pantheon/terminal \
+            /io/elementary/terminal \
             org.pantheon.terminal.ProcessFinished \
             string:$PANTHEON_TERMINAL_ID \
             string:"$(fc -ln -1)"
@@ -38,7 +38,7 @@ then
         --type=method_call \
         --session \
         --dest=org.pantheon.terminal \
-        /org/pantheon/terminal \
+        /io/elementary/terminal \
         org.pantheon.terminal.ProcessFinished \
         string:$PANTHEON_TERMINAL_ID \
         string:"You should not have seen this, please report the incident to Pantheon Terminal developers."
