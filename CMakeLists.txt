@@ -71,14 +71,14 @@ ensure_vala_version ("0.22.0" MINIMUM)
 include (ValaPrecompile)
 vala_precompile (VALA_C
     src/Application.vala
+    src/Constants.vala
     src/DBus.vala
     src/Settings.vala
     src/PantheonTerminalWindow.vala
-    src/TerminalWidget.vala
-    src/ForegroundProcessDialog.vala
-    src/UnsafePasteDialog.vala
-    src/Constants.vala
-    src/SearchToolbar.vala
+    src/Dialogs/ForegroundProcessDialog.vala
+    src/Dialogs/UnsafePasteDialog.vala
+    src/Widgets/SearchToolbar.vala
+    src/Widgets/TerminalWidget.vala
 PACKAGES
     vte-2.91
     granite
