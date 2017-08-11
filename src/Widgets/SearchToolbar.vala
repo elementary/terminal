@@ -23,10 +23,11 @@ namespace PantheonTerminal.Widgets {
         public weak PantheonTerminalWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
-        private Gtk.ToolItem tool_search_entry;
-
         public SearchToolbar (PantheonTerminalWindow window) {
-            Object (window: window);
+            Object (
+                icon_size: Gtk.IconSize.SMALL_TOOLBAR,
+                window: window
+            );
         }
 
         construct {
@@ -35,19 +36,13 @@ namespace PantheonTerminal.Widgets {
             search_entry.width_request = 250;
             search_entry.margin_left = 6;
 
-            tool_search_entry = new Gtk.ToolItem ();
+            var tool_search_entry = new Gtk.ToolItem ();
             tool_search_entry.add (search_entry);
 
-            var previous_image = new Gtk.Image.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            previous_image.pixel_size = 16;
-
-            var previous_button = new Gtk.ToolButton (previous_image, null);
+            var previous_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
             previous_button.tooltip_text = _("Previous result");
 
-            var next_image = new Gtk.Image.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            next_image.pixel_size = 16;
-
-            var next_button = new Gtk.ToolButton (next_image, null);
+            var next_button = new Gtk.ToolButton (new Gtk.Image.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR), null);
             next_button.tooltip_text = _("Next result");
 
             add (tool_search_entry);
