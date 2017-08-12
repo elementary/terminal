@@ -1,6 +1,6 @@
 # Check http://elementaryos.org/docs/code/the-build-system for documentation
 
-project (pantheon-terminal C)
+project (io.elementary.terminal C)
 cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.6)
 
@@ -13,8 +13,8 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 enable_testing ()
 
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/pantheon-terminal")
-set (GETTEXT_PACKAGE "pantheon-terminal")
+set (PKGDATADIR "${DATADIR}/io.elementary.terminal")
+set (GETTEXT_PACKAGE "io.elementary.terminal")
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.4.3")
 set (VERSION_INFO "Release")
@@ -70,9 +70,9 @@ ensure_vala_version ("0.22.0" MINIMUM)
 
 include (ValaPrecompile)
 vala_precompile (VALA_C
+    src/Application.vala
     src/DBus.vala
     src/Settings.vala
-    src/PantheonTerminal.vala
     src/PantheonTerminalWindow.vala
     src/TerminalWidget.vala
     src/ForegroundProcessDialog.vala
@@ -98,18 +98,18 @@ add_schema ("org.pantheon.terminal.gschema.xml")
 #link_libraries (m)
 add_subdirectory (po)
 
-add_executable (pantheon-terminal ${VALA_C})
+add_executable (io.elementary.terminal ${VALA_C})
 find_library (M_LIB m)
-target_link_libraries (pantheon-terminal ${M_LIB})
+target_link_libraries (io.elementary.terminal ${M_LIB})
 
 include (Translations)
 configure_file_translation(${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
 configure_file_translation(${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
-configure_file_translation(${CMAKE_SOURCE_DIR}/data/pantheon-terminal.appdata.xml.in ${CMAKE_BINARY_DIR}/data/pantheon-terminal.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
+configure_file_translation(${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.appdata.xml.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
-install (TARGETS pantheon-terminal RUNTIME DESTINATION bin)
+install (TARGETS io.elementary.terminal RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop DESTINATION share/applications)
-install (FILES ${CMAKE_BINARY_DIR}/data/pantheon-terminal.appdata.xml DESTINATION share/appdata)
+install (FILES ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml DESTINATION share/metainfo)
 install (FILES ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop DESTINATION share/applications)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/enable-zsh-completion-notifications DESTINATION share/pantheon-terminal)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/enable-fish-completion-notifications DESTINATION share/pantheon-terminal)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/enable-zsh-completion-notifications DESTINATION share/io.elementary.terminal)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/enable-fish-completion-notifications DESTINATION share/io.elementary.terminal)

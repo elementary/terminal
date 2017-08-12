@@ -9,7 +9,7 @@
 
 function pantheon-terminal-process-completion-callback --on-event fish_postexec --description "Notify Pantheon Terminal about task completion"
     if status --is-interactive; and set --query PANTHEON_TERMINAL_ID
-        dbus-send --type=method_call --session --dest=org.pantheon.terminal /org/pantheon/terminal org.pantheon.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:"$argv[1]";
+        dbus-send --type=method_call --session --dest=io.elementary.terminal /io/elementary/terminal io.elementary.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:"$argv[1]";
     end
 end
 
