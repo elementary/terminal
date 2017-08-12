@@ -16,8 +16,8 @@
     <value value="2" nick="Never Show Tabs"/>
   </enum>
 
-  <schema path="/org/pantheon/terminal/saved-state/"
-  id="org.pantheon.terminal.saved-state"
+  <schema path="/io/elementary/terminal/saved-state/"
+  id="io.elementary.terminal.saved-state"
   gettext-domain="pantheon-terminal">
     <key name="window-width" type="i">
       <default>-1</default>
@@ -51,7 +51,7 @@
     </key>
   </schema>
 
-  <schema path="/org/pantheon/terminal/settings/" id="org.pantheon.terminal.settings"
+  <schema path="/io/elementary/terminal/settings/" id="io.elementary.terminal.settings"
   gettext-domain="pantheon-terminal">
     <key name="scrollback-lines" type="i">
       <default>-1</default>
