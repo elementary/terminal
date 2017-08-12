@@ -45,7 +45,7 @@ namespace PantheonTerminal {
         public int opening_y { get; set; }
 
         public SavedState () {
-            base ("org.pantheon.terminal.saved-state");
+            base ("io.elementary.terminal.saved-state");
         }
     }
 
@@ -73,7 +73,7 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook.TabBarBehavior tab_bar_behavior { get; set; }
 
         public Settings () {
-            base ("org.pantheon.terminal.settings");
+            base ("io.elementary.terminal.settings");
         }
     }
 }

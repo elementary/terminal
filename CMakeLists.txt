@@ -93,7 +93,7 @@ OPTIONS
 )
 
 include (GSettings)
-add_schema ("org.pantheon.terminal.gschema.xml")
+add_schema ("data/io.elementary.terminal.gschema.xml")
 
 #link_libraries (m)
 add_subdirectory (po)
