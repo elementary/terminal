@@ -153,7 +153,7 @@ namespace PantheonTerminal {
             setup_ui ();
             show_all ();
 
-            this.search_revealer.set_reveal_child (false);
+            search_revealer.set_reveal_child (false);
             term_font = Pango.FontDescription.from_string (get_term_font ());
 
             set_size_request (app.minimum_width, app.minimum_height);
@@ -189,35 +189,25 @@ namespace PantheonTerminal {
                 critical (e.message);
             }
 
-            get_style_context ().add_class ("terminal-window");
+            search_button = new Gtk.ToggleButton ();
+            search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            search_button.tooltip_text = _("Find…");
+            search_button.valign = Gtk.Align.CENTER;
 
             var header = new Gtk.HeaderBar ();
-            header.set_show_close_button (true);
+            header.show_close_button = true;
             header.get_style_context ().add_class ("default-decoration");
-
-            this.set_titlebar (header);
-
-            search_button = new Gtk.ToggleButton ();
-            var img = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            search_button.set_image (img);
-            search_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            search_button.set_tooltip_text (_("Find…"));
-            search_button.valign = Gtk.Align.CENTER;
             header.pack_end (search_button);
 
-            var grid = new Gtk.Grid ();
-            this.search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
-            this.search_revealer = new Gtk.Revealer ();
-            this.search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
-            this.search_revealer.add (this.search_toolbar);
+            search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
 
-            grid.attach (this.search_revealer, 0, 0, 1, 1);
-
-            /* Set up the Notebook */
-            notebook = new Granite.Widgets.DynamicNotebook ();
+            search_revealer = new Gtk.Revealer ();
+            search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
+            search_revealer.add (search_toolbar);
 
             main_actions.get_action ("Copy").set_sensitive (false);
 
+            notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
@@ -235,14 +225,19 @@ namespace PantheonTerminal {
             notebook.can_focus = false;
             notebook.tab_bar_behavior = settings.tab_bar_behavior;
 
+            var grid = new Gtk.Grid ();
+            grid.attach (search_revealer, 0, 0, 1, 1);
             grid.attach (notebook, 0, 1, 1, 1);
+
+            get_style_context ().add_class ("terminal-window");
+            set_titlebar (header);
             add (grid);
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
-                        if (this.search_toolbar.search_entry.has_focus) {
-                            this.search_button.active = !this.search_button.active;
+                        if (search_toolbar.search_entry.has_focus) {
+                            search_button.active = !search_button.active;
                             return true;
                         }
                         break;
@@ -259,11 +254,11 @@ namespace PantheonTerminal {
                         }
                         break;
                     case Gdk.Key.Return:
-                        if (this.search_toolbar.search_entry.has_focus) {
+                        if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
-                                this.search_toolbar.previous_search ();
+                                search_toolbar.previous_search ();
                             } else {
-                                this.search_toolbar.next_search ();
+                                search_toolbar.next_search ();
                             }
                             return true;
                         }
@@ -311,7 +306,7 @@ namespace PantheonTerminal {
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        if (this.search_toolbar.search_entry.has_focus) {
+                        if (search_toolbar.search_entry.has_focus) {
                             return false;
                         } else if (clipboard.wait_is_text_available ()) {
                             action_paste ();
@@ -361,14 +356,14 @@ namespace PantheonTerminal {
         }
 
         private void on_toggle_search () {
-            var is_search = this.search_button.get_active ();
-            this.search_revealer.set_reveal_child (is_search);
+            var is_search = search_button.get_active ();
+            search_revealer.set_reveal_child (is_search);
 
             if (is_search) {
                 search_toolbar.grab_focus ();
             } else {
-                this.search_toolbar.clear ();
-                this.current_terminal.grab_focus ();
+                search_toolbar.clear ();
+                current_terminal.grab_focus ();
             }
         }
 
@@ -607,8 +602,8 @@ namespace PantheonTerminal {
             });
 
             t.window_title_changed.connect (() => {
-                if (t == this.current_terminal) {
-                    this.title = t.window_title;
+                if (t == current_terminal) {
+                    title = t.window_title;
                 }
                 schedule_name_check ();
             });
@@ -820,7 +815,7 @@ namespace PantheonTerminal {
         }
 
         void action_search () {
-            this.search_button.active = !this.search_button.active;
+            search_button.active = !search_button.active;
         }
 
         void action_fullscreen () {
@@ -879,8 +874,8 @@ namespace PantheonTerminal {
                             terminal2.tab_label = disambiguate_label (term2_path, term_path);
                             terminal.tab_label = disambiguate_label (term_path, term2_path);
 
-                            if (terminal == this.current_terminal) {
-                                this.title = terminal.tab_label;
+                            if (terminal == current_terminal) {
+                                title = terminal.tab_label;
                             }
                         }
                     }
