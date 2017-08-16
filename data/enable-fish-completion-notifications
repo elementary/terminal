@@ -2,7 +2,7 @@
 # or ~/.config/fish/config.fish in order to enable 
 # process completion notifications in Pantheon Terminal.
 # Like this:
-#source /usr/share/pantheon-terminal/enable-fish-completion-notifications 2>/dev/null; or true
+#source /usr/share/io.elementary.terminal/enable-fish-completion-notifications 2>/dev/null; or true
 
 # If you come up with a way to inject this without modifying those files,
 # please let me know at <sergey@elementaryos.org>
