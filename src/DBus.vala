@@ -19,7 +19,7 @@
 ***/
 
 namespace PantheonTerminal {
-    [DBus (name="org.pantheon.terminal")]
+    [DBus (name="io.elementary.terminal")]
     public class DBus {
         [DBus (visible = false)]
         public signal void finished_process (string terminal_id, string process);
