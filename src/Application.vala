@@ -90,7 +90,7 @@ namespace PantheonTerminal {
             base.dbus_register (connection, object_path);
 
             var dbus = new DBus ();
-            connection.register_object ("/org/pantheon/terminal", dbus);
+            connection.register_object (object_path, dbus);
 
             dbus.finished_process.connect ((id, process) => {
                 foreach (var window in windows) {
