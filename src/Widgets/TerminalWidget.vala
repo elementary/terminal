@@ -129,9 +129,8 @@ namespace PantheonTerminal {
                     menu.popup (null, null, null, event.button, event.time);
 
                     return true;
-                }
-                else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_paste_event();
+                } else if (event.button == Gdk.BUTTON_MIDDLE) {
+                    return window.handle_paste_event ();
                 }
 
                 return false;
