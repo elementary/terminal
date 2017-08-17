@@ -74,8 +74,9 @@ public class PantheonTerminal.ForegroundProcessDialog : Gtk.Dialog {
         grid.attach (warning_image, 0, 0, 1, 2);
         grid.attach (primary_label, 1, 0, 1, 1);
         grid.attach (secondary_label, 1, 1, 1, 1);
+        grid.show_all ();
 
-        ((Gtk.Box) get_content_area ()).add (grid);
+        get_content_area ().add (grid);
 
         var cancel_button = new Gtk.Button.with_label (_("Cancel"));
 
@@ -84,7 +85,6 @@ public class PantheonTerminal.ForegroundProcessDialog : Gtk.Dialog {
 
         add_action_widget (cancel_button, 0);
         add_action_widget (close_button, 1);
-
-        show_all ();
+        get_action_area ().show_all ();
     }
 }
