@@ -2,14 +2,13 @@
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
 # This file is distributed under the same license as the pantheon-terminal package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-08-22 11:17+0000\n"
-"Last-Translator: Aprianto Nursetiawan <noersetiawan@gmail.com>\n"
+"PO-Revision-Date: 2017-08-31 15:17+0700\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/terminal/terminal/id/>\n"
 "Language: id\n"
@@ -17,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
@@ -73,7 +72,7 @@ msgstr "Hasil berikutnya"
 #: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
 #: ../src/Constants.vala:7
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794

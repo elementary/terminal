@@ -394,7 +394,7 @@ namespace PantheonTerminal {
             var t = get_term_widget (tab);
 
             if (t.has_foreground_process ()) {
-                var d = new ForegroundProcessDialog ();
+                var d = new ForegroundProcessDialog (this);
                 if (d.run () == 1) {
                     d.destroy ();
                     t.kill_fg ();
@@ -694,7 +694,7 @@ namespace PantheonTerminal {
                 t = (TerminalWidget) t;
                 tabs += t.get_shell_location ();
                 if (t.has_foreground_process ()) {
-                    var d = new ForegroundProcessDialog.before_close ();
+                    var d = new ForegroundProcessDialog.before_close (this);
                     if (d.run () == 1) {
                         t.kill_fg ();
                         d.destroy ();
