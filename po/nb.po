@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-09-24 09:24+0000\n"
+"PO-Revision-Date: 2017-09-25 11:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/terminal/terminal/nb/>\n"
@@ -78,7 +78,7 @@ msgstr "Terminal"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr "Finn..."
+msgstr "Finn…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -234,7 +234,7 @@ msgstr "Bruk kommandolinjen"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr "Ny fane med root tilgang"
+msgstr "Ny fane med root-tilgang"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
