@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-09-26 22:53+0000\n"
+"PO-Revision-Date: 2017-09-26 22:54+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/terminal/extra/nb/>\n"
@@ -26,6 +26,7 @@ msgstr "Terminal"
 msgid "Use the command line"
 msgstr "Bruk kommandolinjen"
 
+#, fuzzy
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "kommando;ledetekst;cmd;kommandolinje;kjør;"
 
