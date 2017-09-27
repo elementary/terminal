@@ -194,10 +194,41 @@ namespace PantheonTerminal {
             search_button.tooltip_text = _("Find…");
             search_button.valign = Gtk.Align.CENTER;
 
+            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
+            zoom_out_button.tooltip_text = _("Zoom Out");
+
+            var zoom_default_button = new Gtk.Button.with_label ("100%");
+            zoom_default_button.tooltip_text = _("Default zoom level");
+
+            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
+            zoom_in_button.tooltip_text = _("Zoom In");
+
+            var font_size_grid = new Gtk.Grid ();
+            font_size_grid.column_homogeneous = true;
+            font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            font_size_grid.add (zoom_out_button);
+            font_size_grid.add (zoom_default_button);
+            font_size_grid.add (zoom_in_button);
+
+            var style_popover_grid = new Gtk.Grid ();
+            style_popover_grid.margin = 6;
+            style_popover_grid.add (font_size_grid);
+            style_popover_grid.show_all ();
+
+            var style_popover = new Gtk.Popover (null);
+            style_popover.add (style_popover_grid);
+
+            var style_button = new Gtk.MenuButton ();
+            style_button.image = new Gtk.Image.from_icon_name ("font-select-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            style_button.popover = style_popover;
+            style_button.tooltip_text = _("Style");
+            style_button.valign = Gtk.Align.CENTER;
+
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (search_button);
+            header.pack_end (style_button);
 
             search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
 
@@ -232,6 +263,10 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            zoom_in_button.clicked.connect (() => action_zoom_in_font ());
+            zoom_default_button.clicked.connect (() => action_zoom_default_font ());
+            zoom_out_button.clicked.connect (() => action_zoom_out_font ());
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
