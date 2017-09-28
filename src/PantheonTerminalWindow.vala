@@ -306,17 +306,23 @@ namespace PantheonTerminal {
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        if (search_toolbar.search_entry.has_focus) {
-                            return false;
-                        } else if (clipboard.wait_is_text_available ()) {
-                            action_paste ();
-                            return true;
-                        }
+                        handle_paste_event ();
                     }
                 }
 
                 return false;
             });
+        }
+
+        public bool handle_paste_event () {
+            if (search_toolbar.search_entry.has_focus) {
+                return false;
+            } else if (clipboard.wait_is_text_available ()) {
+                action_paste ();
+                return true;
+            }
+
+            return false;
         }
 
         private void restore_saved_state (bool restore_pos = true) {
