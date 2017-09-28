@@ -58,7 +58,7 @@ namespace PantheonTerminal {
         public const string ACTION_NEW_TAB = "action_new_tab";
         public const string ACTION_NEW_WINDOW = "action_new_window";
         public const string ACTION_NEXT_TAB = "action_next_tab";
-        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
+        public const string ACTION_SHOW_IN_BROWSER = "action_open_in_files";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
         public const string ACTION_QUIT = "action_quit";
@@ -76,7 +76,7 @@ namespace PantheonTerminal {
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
-            { ACTION_OPEN_IN_FILES, action_open_in_files },
+            { ACTION_SHOW_IN_BROWSER, action_open_in_files },
             { ACTION_PASTE, action_paste },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_QUIT, action_quit },
@@ -93,7 +93,7 @@ namespace PantheonTerminal {
             action_accelerators.set (ACTION_NEW_TAB, "<Control><Shift>t");
             action_accelerators.set (ACTION_NEW_WINDOW, "<Control><Shift>n");
             action_accelerators.set (ACTION_NEXT_TAB, "<Control><Shift>Right");
-            action_accelerators.set (ACTION_OPEN_IN_FILES, "<Control><Shift>e");
+            action_accelerators.set (ACTION_SHOW_IN_BROWSER, "<Control><Shift>e");
             action_accelerators.set (ACTION_PASTE, "<Control><Shift>v");
             action_accelerators.set (ACTION_PREVIOUS_TAB, "<Control><Shift>Left");
             action_accelerators.set (ACTION_QUIT, "<Control>q");
