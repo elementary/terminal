@@ -87,20 +87,20 @@ namespace PantheonTerminal {
         };
 
         static construct {
-            action_accelerators.set (ACTION_CLOSE_TAB, "<Control><Shift>w");
-            action_accelerators.set (ACTION_COPY, "<Control><Shift>c");
-            action_accelerators.set (ACTION_FULLSCREEN, "F11");
-            action_accelerators.set (ACTION_NEW_TAB, "<Control><Shift>t");
-            action_accelerators.set (ACTION_NEW_WINDOW, "<Control><Shift>n");
-            action_accelerators.set (ACTION_NEXT_TAB, "<Control><Shift>Right");
-            action_accelerators.set (ACTION_SHOW_IN_BROWSER, "<Control><Shift>e");
-            action_accelerators.set (ACTION_PASTE, "<Control><Shift>v");
-            action_accelerators.set (ACTION_PREVIOUS_TAB, "<Control><Shift>Left");
-            action_accelerators.set (ACTION_QUIT, "<Control>q");
-            action_accelerators.set (ACTION_SEARCH, "<Control><Shift>f");
-            action_accelerators.set (ACTION_SELECT_ALL, "Control><Shift>a");
-            action_accelerators.set (ACTION_ZOOM_IN_FONT, "Control>plus");
-            action_accelerators.set (ACTION_ZOOM_OUT_FONT, "<Control>minus");
+            action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
+            action_accelerators[ACTION_COPY] = "<Control><Shift>c";
+            action_accelerators[ACTION_FULLSCREEN] = "F11";
+            action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
+            action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_SHOW_IN_BROWSER] = "<Control><Shift>e";
+            action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_QUIT] = "<Control><Shift>q";
+            action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
+            action_accelerators[ACTION_SELECT_ALL] = "Control><Shift>a";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "Control>plus";
+            action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
         }
 
         construct {
