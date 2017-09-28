@@ -49,39 +49,69 @@ namespace PantheonTerminal {
             }
         """;
 
-        const string ui_string = """
-            <ui>
-            <popup name="MenuItemTool">
-                <menuitem name="New window" action="New window"/>
-                <menuitem name="New tab" action="New tab"/>
-                <menuitem name="CloseTab" action="CloseTab"/>
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="About" action="About"/>
+        public SimpleActionGroup actions { get; construct; }
 
-                <menuitem name="NextTab" action="NextTab"/>
-                <menuitem name="PreviousTab" action="PreviousTab"/>
+        public const string ACTION_PREFIX = "win.";
+        public const string ACTION_CLOSE_TAB = "action_close_tab";
+        public const string ACTION_COPY = "action_copy";
+        public const string ACTION_FULLSCREEN = "action_fullscreen";
+        public const string ACTION_NEW_TAB = "action_new_tab";
+        public const string ACTION_NEW_WINDOW = "action_new_window";
+        public const string ACTION_NEXT_TAB = "action_next_tab";
+        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
+        public const string ACTION_PASTE = "action_paste";
+        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
+        public const string ACTION_QUIT = "action_quit";
+        public const string ACTION_SEARCH = "action_search";
+        public const string ACTION_SELECT_ALL = "action_select_all";
+        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
+        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
 
-                <menuitem name="ZoomIn" action="ZoomIn"/>
-                <menuitem name="ZoomOut" action="ZoomOut"/>
+        public static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-                <menuitem name="Fullscreen" action="Fullscreen"/>
-            </popup>
+        private const ActionEntry[] action_entries = {
+            { ACTION_CLOSE_TAB, action_close_tab },
+            { ACTION_COPY, action_copy },
+            { ACTION_FULLSCREEN, action_fullscreen },
+            { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_NEW_WINDOW, action_new_window },
+            { ACTION_NEXT_TAB, action_next_tab },
+            { ACTION_OPEN_IN_FILES, action_open_in_files },
+            { ACTION_PASTE, action_paste },
+            { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_QUIT, action_quit },
+            { ACTION_SEARCH, action_search },
+            { ACTION_SELECT_ALL, action_select_all },
+            { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
+            { ACTION_ZOOM_IN_FONT, action_zoom_out_font }
+        };
 
-            <popup name="AppMenu">
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="Show in File Browser" action="Show in File Browser"/>
-            </popup>
-            </ui>
-        """;
+        static construct {
+            action_accelerators.set (ACTION_CLOSE_TAB, "<Control><Shift>w");
+            action_accelerators.set (ACTION_COPY, "<Control><Shift>c");
+            action_accelerators.set (ACTION_FULLSCREEN, "F11");
+            action_accelerators.set (ACTION_NEW_TAB, "<Control><Shift>t");
+            action_accelerators.set (ACTION_NEW_WINDOW, "<Control><Shift>n");
+            action_accelerators.set (ACTION_NEXT_TAB, "<Control><Shift>Right");
+            action_accelerators.set (ACTION_OPEN_IN_FILES, "<Control><Shift>e");
+            action_accelerators.set (ACTION_PASTE, "<Control><Shift>v");
+            action_accelerators.set (ACTION_PREVIOUS_TAB, "<Control><Shift>Left");
+            action_accelerators.set (ACTION_QUIT, "<Control>q");
+            action_accelerators.set (ACTION_SEARCH, "<Control><Shift>f");
+            action_accelerators.set (ACTION_SELECT_ALL, "Control><Shift>a");
+            action_accelerators.set (ACTION_ZOOM_IN_FONT, "Control>plus");
+            action_accelerators.set (ACTION_ZOOM_OUT_FONT, "<Control>minus");
+        }
 
-        public Gtk.ActionGroup main_actions;
-        public Gtk.UIManager ui;
+        construct {
+            actions = new SimpleActionGroup ();
+            actions.add_action_entries (action_entries, this);
+            insert_action_group ("win", actions);
+
+            foreach (var action in action_accelerators.get_keys ()) {
+                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+            }
+        }
 
         public bool unsafe_ignored;
 
@@ -127,28 +157,9 @@ namespace PantheonTerminal {
                 open_tabs ();
             }
 
-            /* Actions and UIManager */
-            main_actions = new Gtk.ActionGroup ("MainActionGroup");
-            main_actions.set_translation_domain ("pantheon-terminal");
-            main_actions.add_actions (main_entries, this);
-
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
-
-            ui = new Gtk.UIManager ();
-
-            try {
-                ui.add_ui_from_string (ui_string, -1);
-            } catch (Error e) {
-                error ("Couldn't load the UI: %s", e.message);
-            }
-
-            Gtk.AccelGroup accel_group = ui.get_accel_group ();
-            add_accel_group (accel_group);
-
-            ui.insert_action_group (main_actions, 0);
-            ui.ensure_update ();
 
             setup_ui ();
             show_all ();
@@ -935,62 +946,5 @@ namespace PantheonTerminal {
             string_builder.erase (last_separator, -1);
             return string_builder.str + Path.DIR_SEPARATOR_S;
         }
-
-        static const Gtk.ActionEntry[] main_entries = {
-            { "CloseTab", "gtk-close", N_("Close"),
-              "<Control><Shift>w", N_("Close"),
-              action_close_tab },
-
-            { "New window", "window-new",
-              N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
-              action_new_window },
-
-            { "New tab", "gtk-new",
-              N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
-              action_new_tab },
-
-            { "Copy", "gtk-copy",
-              N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
-              action_copy },
-
-            { "Search", "edit-find",
-              N_("Find…"), "<Control><Shift>f",
-              N_("Search for a given string in the terminal"), action_search },
-
-            { "Paste", "gtk-paste",
-              N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
-              action_paste },
-
-            { "Select All", "gtk-select-all",
-              N_("Select All"), "<Control><Shift>a",
-              N_("Select all the text in the terminal"), action_select_all },
-
-            { "Show in File Browser", "gtk-directory",
-              N_("Show in File Browser"), "<Control><Shift>e",
-              N_("Open current location in Files"), action_open_in_files },
-
-            { "About", "gtk-about", N_("About"),
-              null, N_("Show about window"), action_about },
-
-            { "NextTab", null, N_("Next Tab"),
-              "<Control><Shift>Right", N_("Go to next tab"),
-              action_next_tab },
-
-            { "PreviousTab", null, N_("Previous Tab"),
-              "<Control><Shift>Left", N_("Go to previous tab"),
-              action_previous_tab },
-
-            { "ZoomIn", "gtk-zoom-in", N_("Zoom in"),
-              "<Control>plus", N_("Zoom in"),
-              action_zoom_in_font },
-
-            { "ZoomOut", "gtk-zoom-out",
-              N_("Zoom out"), "<Control>minus", N_("Zoom out"),
-              action_zoom_out_font },
-
-            { "Fullscreen", "gtk-fullscreen",
-              N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
-              action_fullscreen }
-        };
     }
 }
