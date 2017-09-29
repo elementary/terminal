@@ -143,7 +143,7 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null) {
-                        window.main_actions.get_action ("Copy").set_sensitive (true);
+                        window.action_from_group (PantheonTerminalWindow.ACTION_COPY, window.actions).set_enabled (true);
                     }
 
                     menu.select_first (false);
@@ -174,7 +174,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+                window.action_from_group (PantheonTerminalWindow.ACTION_COPY, window.actions).set_enabled (get_has_selection ());
             });
 
 

@@ -86,6 +86,24 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_IN_FONT, action_zoom_out_font }
         };
 
+        public bool unsafe_ignored;
+
+        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
+            init (app, should_recreate_tabs);
+        }
+
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+                                                   bool should_recreate_tabs = true) {
+            move (x, y);
+            init (app, should_recreate_tabs, false);
+        }
+
+        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
+                                                              bool should_recreate_tabs = true) {
+            init (app, should_recreate_tabs);
+            new_tab (location);
+        }
+
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
@@ -111,24 +129,6 @@ namespace PantheonTerminal {
             foreach (var action in action_accelerators.get_keys ()) {
                 app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
             }
-        }
-
-        public bool unsafe_ignored;
-
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
-            init (app, should_recreate_tabs);
-        }
-
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
-                                                   bool should_recreate_tabs = true) {
-            move (x, y);
-            init (app, should_recreate_tabs, false);
-        }
-
-        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool should_recreate_tabs = true) {
-            init (app, should_recreate_tabs);
-            new_tab (location);
         }
 
         public void add_tab_with_command (string command) {
@@ -216,7 +216,7 @@ namespace PantheonTerminal {
             search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
             search_revealer.add (search_toolbar);
 
-            main_actions.get_action ("Copy").set_sensitive (false);
+            action_from_group (ACTION_COPY, actions).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -482,7 +482,7 @@ namespace PantheonTerminal {
             if (atoms != null && atoms.length > 0)
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
 
-            main_actions.get_action ("Paste").set_sensitive (can_paste);
+            action_from_group (ACTION_PASTE, actions).set_enabled (can_paste);
         }
 
         uint timer_window_state_change = 0;
@@ -807,10 +807,6 @@ namespace PantheonTerminal {
                 new_tab (Environment.get_home_dir ());
         }
 
-        void action_about () {
-            app.show_about (this);
-        }
-
         void action_zoom_in_font () {
             current_terminal.increment_size ();
         }
@@ -945,6 +941,10 @@ namespace PantheonTerminal {
 
             string_builder.erase (last_separator, -1);
             return string_builder.str + Path.DIR_SEPARATOR_S;
+        }
+
+        public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
+            return ((SimpleAction) action_group.lookup_action (action_name));
         }
     }
 }
