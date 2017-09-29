@@ -49,7 +49,7 @@ namespace PantheonTerminal {
             }
         """;
 
-        public SimpleActionGroup actions { get; construct; }
+        public SimpleActionGroup actions { get; set; }
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action_close_tab";
@@ -61,7 +61,6 @@ namespace PantheonTerminal {
         public const string ACTION_SHOW_IN_BROWSER = "action_open_in_files";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
-        public const string ACTION_QUIT = "action_quit";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
@@ -79,11 +78,10 @@ namespace PantheonTerminal {
             { ACTION_SHOW_IN_BROWSER, action_open_in_files },
             { ACTION_PASTE, action_paste },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
-            { ACTION_QUIT, action_quit },
             { ACTION_SEARCH, action_search },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
-            { ACTION_ZOOM_IN_FONT, action_zoom_out_font }
+            { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
 
         public bool unsafe_ignored;
@@ -114,21 +112,10 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_SHOW_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
-            action_accelerators[ACTION_QUIT] = "<Control><Shift>q";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SELECT_ALL] = "Control><Shift>a";
-            action_accelerators[ACTION_ZOOM_IN_FONT] = "Control>plus";
+            action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
-        }
-
-        construct {
-            actions = new SimpleActionGroup ();
-            actions.add_action_entries (action_entries, this);
-            insert_action_group ("win", actions);
-
-            foreach (var action in action_accelerators.get_keys ()) {
-                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
-            }
         }
 
         public void add_tab_with_command (string command) {
@@ -142,6 +129,14 @@ namespace PantheonTerminal {
         private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
             set_application (app);
+
+            actions = new SimpleActionGroup ();
+            actions.add_action_entries (action_entries, this);
+            insert_action_group ("win", actions);
+
+            foreach (var action in action_accelerators.get_keys ()) {
+                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+            }
 
             var settings = Gtk.Settings.get_default ();
             settings.gtk_application_prefer_dark_theme = true;
