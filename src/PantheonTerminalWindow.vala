@@ -558,9 +558,10 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-
+            
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? "";
+            set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
