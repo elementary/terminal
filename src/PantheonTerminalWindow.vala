@@ -306,7 +306,7 @@ namespace PantheonTerminal {
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        handle_paste_event ();
+                        return handle_paste_event ();
                     }
                 }
 
