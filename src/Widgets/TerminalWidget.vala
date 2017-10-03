@@ -130,7 +130,9 @@ namespace PantheonTerminal {
 
                     return true;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_paste_event ();
+                    if(!get_has_selection ()) {
+                        return window.handle_paste_event ();
+                    }
                 }
 
                 return false;
