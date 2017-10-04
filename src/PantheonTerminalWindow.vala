@@ -33,6 +33,7 @@ namespace PantheonTerminal {
         private Gtk.Clipboard clipboard;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
+        private Gtk.Button zoom_default_button;
         public Gtk.ToggleButton search_button;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
@@ -200,10 +201,43 @@ namespace PantheonTerminal {
             search_button.tooltip_text = _("Find…");
             search_button.valign = Gtk.Align.CENTER;
 
+            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
+            zoom_out_button.tooltip_text = _("Zoom Out");
+
+            zoom_default_button = new Gtk.Button.with_label ("100%");
+            zoom_default_button.tooltip_text = _("Default zoom level");
+
+            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
+            zoom_in_button.tooltip_text = _("Zoom In");
+
+            var font_size_grid = new Gtk.Grid ();
+            font_size_grid.column_homogeneous = true;
+            font_size_grid.hexpand = true;
+            font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            font_size_grid.add (zoom_out_button);
+            font_size_grid.add (zoom_default_button);
+            font_size_grid.add (zoom_in_button);
+
+            var style_popover_grid = new Gtk.Grid ();
+            style_popover_grid.margin = 6;
+            style_popover_grid.width_request = 200;
+            style_popover_grid.add (font_size_grid);
+            style_popover_grid.show_all ();
+
+            var style_popover = new Gtk.Popover (null);
+            style_popover.add (style_popover_grid);
+
+            var style_button = new Gtk.MenuButton ();
+            style_button.image = new Gtk.Image.from_icon_name ("font-select-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            style_button.popover = style_popover;
+            style_button.tooltip_text = _("Style");
+            style_button.valign = Gtk.Align.CENTER;
+
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (search_button);
+            header.pack_end (style_button);
 
             search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
 
@@ -238,6 +272,10 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            zoom_in_button.clicked.connect (() => action_zoom_in_font ());
+            zoom_default_button.clicked.connect (() => action_zoom_default_font ());
+            zoom_out_button.clicked.connect (() => action_zoom_out_font ());
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
@@ -312,7 +350,7 @@ namespace PantheonTerminal {
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        handle_paste_event ();
+                        return handle_paste_event ();
                     }
                 }
 
@@ -526,9 +564,10 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-
+            
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? "";
+            set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -804,14 +843,21 @@ namespace PantheonTerminal {
 
         void action_zoom_in_font () {
             current_terminal.increment_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
         }
 
         void action_zoom_out_font () {
             current_terminal.decrement_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
         }
 
         void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
+        }
+
+        private void set_zoom_default_label (double zoom_factor) {
+            zoom_default_button.label = "%.0f%%".printf (current_terminal.zoom_factor * 100);
         }
 
         void action_next_tab () {
