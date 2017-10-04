@@ -49,9 +49,9 @@ namespace PantheonTerminal {
                 background-color: transparent;
             }
 
-			.terminal-window.background.maximized {
-				background-color: #000;
-			}
+            .terminal-window.background.maximized {
+                background-color: #000;
+            }
         """;
 
         const string ui_string = """
