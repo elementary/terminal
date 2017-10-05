@@ -43,8 +43,29 @@ namespace PantheonTerminal {
             set {
                 this._window = value;
                 this.app = value.app;
-                this.menu = value.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
-                this.menu.show_all ();
+
+                var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
+                copy_menuitem.action_name = PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_COPY;
+
+                var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
+                paste_menuitem.action_name = PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_PASTE;
+
+                var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
+                select_all_menuitem.action_name = PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SELECT_ALL;
+
+                var find_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
+                find_menuitem.action_name = PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH;
+
+                var show_in_browser_menuitem = new Gtk.MenuItem.with_label (_("Show in File Browser…"));
+                show_in_browser_menuitem.action_name = PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SHOW_IN_BROWSER;
+
+                menu = new Gtk.Menu ();
+                menu.add (copy_menuitem);
+                menu.add (paste_menuitem);
+                menu.add (select_all_menuitem);
+                menu.add (find_menuitem);
+                menu.add (show_in_browser_menuitem);
+                menu.show_all ();
             }
         }
 
@@ -122,7 +143,7 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null) {
-                        window.main_actions.get_action ("Copy").set_sensitive (true);
+                        window.action_from_group (PantheonTerminalWindow.ACTION_COPY, window.actions).set_enabled (true);
                     }
 
                     menu.select_first (false);
@@ -153,7 +174,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+                window.action_from_group (PantheonTerminalWindow.ACTION_COPY, window.actions).set_enabled (get_has_selection ());
             });
 
 
