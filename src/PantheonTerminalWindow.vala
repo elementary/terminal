@@ -31,6 +31,7 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
+        private Gtk.Clipboard primary_selection;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
         private Gtk.Button zoom_default_button;
@@ -136,6 +137,8 @@ namespace PantheonTerminal {
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
+
+            primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
             ui = new Gtk.UIManager ();
 
@@ -357,6 +360,18 @@ namespace PantheonTerminal {
                 return false;
             } else if (clipboard.wait_is_text_available ()) {
                 action_paste ();
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool handle_primary_selection_copy_event () {
+            if (search_toolbar.search_entry.has_focus) {
+                return false;
+            } else if (current_terminal.get_has_selection ()) {
+                current_terminal.copy_primary ();
+                primary_selection.request_text (on_get_text);
                 return true;
             }
 
@@ -781,7 +796,11 @@ namespace PantheonTerminal {
                     d.destroy ();
                 }
             }
-            current_terminal.paste_clipboard();
+            if (board == primary_selection) {
+                current_terminal.paste_primary ();
+            } else {
+                current_terminal.paste_clipboard ();
+            }
         }
 
         void action_quit () {
