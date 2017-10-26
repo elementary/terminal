@@ -65,7 +65,8 @@ namespace PantheonTerminal {
         }
 
         public int default_size;
-        public double zoom_factor = 1.0;
+        private double _zoom_factor = 1.0;
+        private SavedState saved_state = new SavedState ();
 
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=io.elementary.terminal /io/elementary/terminal io.elementary.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1; ";
 
@@ -101,6 +102,17 @@ namespace PantheonTerminal {
         public bool killed {
             get;
             private set;
+        }
+
+        public double zoom_factor {
+            get {
+                return _zoom_factor;
+            }
+
+            set {
+                _zoom_factor = value;
+                saved_state.zoom = value;
+            }
         }
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
@@ -386,6 +398,17 @@ namespace PantheonTerminal {
 
             zoom_factor = 1.0;
             current_font.set_size (default_size);
+            this.set_font (current_font);
+        }
+
+        public void load_saved_font_size () {
+            zoom_factor = saved_state.zoom;
+            Pango.FontDescription current_font = this.get_font ();
+            if (default_size == 0) {
+                default_size = current_font.get_size ();
+            }
+
+            current_font.set_size ((int) Math.floor (default_size * zoom_factor));
             this.set_font (current_font);
         }
 

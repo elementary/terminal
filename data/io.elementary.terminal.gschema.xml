@@ -49,6 +49,11 @@
       <summary>Most recent y position of terminal</summary>
       <description>Most recent y position of terminal</description>
     </key>
+    <key name="zoom" type="d">
+      <default>1.0</default>
+      <summary>Most recent zoom level of terminal</summary>
+      <description>Most recent zoom level of terminal</description>
+    </key>
   </schema>
 
   <schema path="/io/elementary/terminal/settings/" id="io.elementary.terminal.settings"

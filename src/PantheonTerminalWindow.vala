@@ -673,6 +673,7 @@ namespace PantheonTerminal {
             });
 
             t.set_font (term_font);
+            t.load_saved_font_size ();
 
             int minimum_width = t.calculate_width (80) / 2;
             int minimum_height = t.calculate_height (24) / 2;
