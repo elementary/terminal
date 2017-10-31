@@ -27,6 +27,7 @@ namespace PantheonTerminal {
             TEXT
         }
 
+        internal const string DEFAULT_LABEL = _("Terminal");
         public PantheonTerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
@@ -52,15 +53,17 @@ namespace PantheonTerminal {
         public Granite.Widgets.Tab tab;
         public string? uri;
 
-        private string _tab_label = "";
+        private string _tab_label;
         public string tab_label {
             get {
                 return _tab_label;
             }
 
             set {
-                _tab_label = value;
-                tab.label = tab_label;
+                if (value != null) {
+                    _tab_label = value;
+                    tab.label = tab_label;
+                }
             }
         }
 
