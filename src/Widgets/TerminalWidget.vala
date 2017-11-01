@@ -65,8 +65,6 @@ namespace PantheonTerminal {
         }
 
         public int default_size;
-        private double _zoom_factor = 1.0;
-        private SavedState saved_state = new SavedState ();
 
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=io.elementary.terminal /io/elementary/terminal io.elementary.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1; ";
 
@@ -104,16 +102,7 @@ namespace PantheonTerminal {
             private set;
         }
 
-        public double zoom_factor {
-            get {
-                return _zoom_factor;
-            }
-
-            set {
-                _zoom_factor = value;
-                saved_state.zoom = value;
-            }
-        }
+        public double zoom_factor;
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
@@ -186,6 +175,9 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
+
+            GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+            saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
