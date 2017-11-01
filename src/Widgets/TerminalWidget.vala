@@ -102,7 +102,15 @@ namespace PantheonTerminal {
             private set;
         }
 
-        public double zoom_factor;
+        public double _zoom_factor = 1.0;
+        public double zoom_factor {
+            get {
+                return _zoom_factor;
+            }
+            set {
+                _zoom_factor = value;
+            }
+        }
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
@@ -178,6 +186,12 @@ namespace PantheonTerminal {
 
             GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
             saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
+            saved_state.changed["zoom"].connect (update_font_size);
+
+            Idle.add (() => {
+                update_font_size ();
+                return false;
+            });
         }
 
         public void restore_settings () {
@@ -393,8 +407,7 @@ namespace PantheonTerminal {
             this.set_font (current_font);
         }
 
-        public void load_saved_font_size () {
-            zoom_factor = saved_state.zoom;
+        public void update_font_size () {
             Pango.FontDescription current_font = this.get_font ();
             if (default_size == 0) {
                 default_size = current_font.get_size ();
