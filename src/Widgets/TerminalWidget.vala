@@ -196,9 +196,8 @@ namespace PantheonTerminal {
             GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
             saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
 
-            Idle.add (() => {
+            realize.connect (() => {
                 zoom_factor = zoom_factor;
-                return false;
             });
         }
 
