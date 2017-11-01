@@ -109,6 +109,15 @@ namespace PantheonTerminal {
             }
             set {
                 _zoom_factor = value;
+                Pango.FontDescription current_font = this.get_font ();
+                if (current_font != null) {
+                    if (default_size == 0) {
+                        default_size = current_font.get_size ();
+                    }
+
+                    current_font.set_size ((int) Math.floor (default_size * zoom_factor));
+                    this.set_font (current_font);
+                }
             }
         }
 
@@ -186,10 +195,9 @@ namespace PantheonTerminal {
 
             GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
             saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
-            saved_state.changed["zoom"].connect (update_font_size);
 
             Idle.add (() => {
-                update_font_size ();
+                zoom_factor = zoom_factor;
                 return false;
             });
         }
@@ -404,16 +412,6 @@ namespace PantheonTerminal {
 
             zoom_factor = 1.0;
             current_font.set_size (default_size);
-            this.set_font (current_font);
-        }
-
-        public void update_font_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) {
-                default_size = current_font.get_size ();
-            }
-
-            current_font.set_size ((int) Math.floor (default_size * zoom_factor));
             this.set_font (current_font);
         }
 
