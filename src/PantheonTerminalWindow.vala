@@ -885,10 +885,6 @@ namespace PantheonTerminal {
                 new_tab (Environment.get_home_dir ());
         }
 
-        void action_about () {
-            app.show_about (this);
-        }
-
         void action_zoom_in_font () {
             current_terminal.increment_size ();
             set_zoom_default_label (current_terminal.zoom_factor);
