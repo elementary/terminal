@@ -386,32 +386,23 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-            if (current_font.get_size () > 60000) return;
+            if (zoom_factor > 5.8) {
+                return;
+            }
 
             zoom_factor += 0.1;
-            current_font.set_size ((int) Math.floor (default_size * zoom_factor));
-            this.set_font (current_font);
         }
 
         public void decrement_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-            if (current_font.get_size () < 2048) return;
+            if (zoom_factor < 0.2) {
+                return;
+            }
 
             zoom_factor -= 0.1;
-            current_font.set_size ((int) Math.ceil (default_size * zoom_factor));
-            this.set_font (current_font);
         }
 
         public void set_default_font_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-
-            zoom_factor = 1.0;
-            current_font.set_size (default_size);
-            this.set_font (current_font);
+            zoom_factor = default_size;
         }
 
         public bool is_init_complete () {
