@@ -402,7 +402,7 @@ namespace PantheonTerminal {
         }
 
         public void set_default_font_size () {
-            zoom_factor = default_size;
+            zoom_factor = 1.0;
         }
 
         public bool is_init_complete () {
