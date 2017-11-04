@@ -109,6 +109,13 @@ namespace PantheonTerminal {
             }
             set {
                 _zoom_factor = value;
+
+                if (_zoom_factor < 0.19) {
+                    _zoom_factor = 0.2;
+                } else if (_zoom_factor > 5.01) {
+                    _zoom_factor = 5;
+                }
+
                 Pango.FontDescription current_font = this.get_font ();
                 if (current_font != null) {
                     if (default_size == 0) {
@@ -386,18 +393,10 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            if (zoom_factor > 5.8) {
-                return;
-            }
-
             zoom_factor += 0.1;
         }
 
         public void decrement_size () {
-            if (zoom_factor < 0.2) {
-                return;
-            }
-
             zoom_factor -= 0.1;
         }
 
