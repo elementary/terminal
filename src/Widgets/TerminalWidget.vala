@@ -102,18 +102,19 @@ namespace PantheonTerminal {
             private set;
         }
 
-        public double _zoom_factor = 1.0;
+        private double _zoom_factor = 1.0;
         public double zoom_factor {
             get {
                 return _zoom_factor;
             }
-            set {
-                _zoom_factor = value;
 
-                if (_zoom_factor < 0.19) {
+            set {
+                if (value < 0.19) {
                     _zoom_factor = 0.2;
-                } else if (_zoom_factor > 5.01) {
+                } else if (value > 5.01) {
                     _zoom_factor = 5;
+                } else {
+                    _zoom_factor = value;
                 }
 
                 Pango.FontDescription current_font = this.get_font ();
