@@ -31,8 +31,10 @@ namespace PantheonTerminal {
         public Granite.Widgets.DynamicNotebook notebook;
         Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
+        private Gtk.Clipboard primary_selection;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
+        private Gtk.Button zoom_default_button;
         public Gtk.ToggleButton search_button;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
@@ -47,29 +49,39 @@ namespace PantheonTerminal {
             .terminal-window.background {
                 background-color: transparent;
             }
+
+            .terminal-window.background.maximized {
+                background-color: #000;
+            }
         """;
+
+        public SimpleActionGroup actions { get; construct; }
+
+        public const string ACTION_PREFIX = "win.";
+        public const string ACTION_CLOSE_TAB = "action_close_tab";
+        public const string ACTION_FULLSCREEN = "action_fullscreen";
+        public const string ACTION_NEW_TAB = "action_new_tab";
+        public const string ACTION_NEW_WINDOW = "action_new_window";
+        public const string ACTION_NEXT_TAB = "action_next_tab";
+        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
+        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
+        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
+
+        private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
+
+        private const ActionEntry[] action_entries = {
+            { ACTION_CLOSE_TAB, action_close_tab },
+            { ACTION_FULLSCREEN, action_fullscreen },
+            { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_NEW_WINDOW, action_new_window },
+            { ACTION_NEXT_TAB, action_next_tab },
+            { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
+            { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
+        };
 
         const string ui_string = """
             <ui>
-            <popup name="MenuItemTool">
-                <menuitem name="New window" action="New window"/>
-                <menuitem name="New tab" action="New tab"/>
-                <menuitem name="CloseTab" action="CloseTab"/>
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="About" action="About"/>
-
-                <menuitem name="NextTab" action="NextTab"/>
-                <menuitem name="PreviousTab" action="PreviousTab"/>
-
-                <menuitem name="ZoomIn" action="ZoomIn"/>
-                <menuitem name="ZoomOut" action="ZoomOut"/>
-
-                <menuitem name="Fullscreen" action="Fullscreen"/>
-            </popup>
-
             <popup name="AppMenu">
                 <menuitem name="Copy" action="Copy"/>
                 <menuitem name="Paste" action="Paste"/>
@@ -101,6 +113,23 @@ namespace PantheonTerminal {
             new_tab (location);
         }
 
+        static construct {
+            action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
+            action_accelerators[ACTION_FULLSCREEN] = "F11";
+            action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
+            action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
+        }
+
+        construct {
+            actions = new SimpleActionGroup ();
+            actions.add_action_entries (action_entries, this);
+            insert_action_group ("win", actions);
+        }
+
         public void add_tab_with_command (string command) {
             new_tab ("", command);
         }
@@ -112,6 +141,10 @@ namespace PantheonTerminal {
         private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
             set_application (app);
+
+            foreach (var action in action_accelerators.get_keys ()) {
+                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+            }
 
             var settings = Gtk.Settings.get_default ();
             settings.gtk_application_prefer_dark_theme = true;
@@ -135,6 +168,8 @@ namespace PantheonTerminal {
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
+
+            primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
             ui = new Gtk.UIManager ();
 
@@ -194,10 +229,43 @@ namespace PantheonTerminal {
             search_button.tooltip_text = _("Find…");
             search_button.valign = Gtk.Align.CENTER;
 
+            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
+            zoom_out_button.tooltip_text = _("Zoom Out");
+
+            zoom_default_button = new Gtk.Button.with_label ("100%");
+            zoom_default_button.tooltip_text = _("Default zoom level");
+
+            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
+            zoom_in_button.tooltip_text = _("Zoom In");
+
+            var font_size_grid = new Gtk.Grid ();
+            font_size_grid.column_homogeneous = true;
+            font_size_grid.hexpand = true;
+            font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            font_size_grid.add (zoom_out_button);
+            font_size_grid.add (zoom_default_button);
+            font_size_grid.add (zoom_in_button);
+
+            var style_popover_grid = new Gtk.Grid ();
+            style_popover_grid.margin = 6;
+            style_popover_grid.width_request = 200;
+            style_popover_grid.add (font_size_grid);
+            style_popover_grid.show_all ();
+
+            var style_popover = new Gtk.Popover (null);
+            style_popover.add (style_popover_grid);
+
+            var style_button = new Gtk.MenuButton ();
+            style_button.image = new Gtk.Image.from_icon_name ("font-select-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            style_button.popover = style_popover;
+            style_button.tooltip_text = _("Style");
+            style_button.valign = Gtk.Align.CENTER;
+
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (search_button);
+            header.pack_end (style_button);
 
             search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
 
@@ -232,6 +300,10 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            zoom_in_button.clicked.connect (() => action_zoom_in_font ());
+            zoom_default_button.clicked.connect (() => action_zoom_default_font ());
+            zoom_out_button.clicked.connect (() => action_zoom_out_font ());
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
@@ -306,17 +378,35 @@ namespace PantheonTerminal {
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        if (search_toolbar.search_entry.has_focus) {
-                            return false;
-                        } else if (clipboard.wait_is_text_available ()) {
-                            action_paste ();
-                            return true;
-                        }
+                        return handle_paste_event ();
                     }
                 }
 
                 return false;
             });
+        }
+
+        public bool handle_paste_event () {
+            if (search_toolbar.search_entry.has_focus) {
+                return false;
+            } else if (clipboard.wait_is_text_available ()) {
+                action_paste ();
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool handle_primary_selection_copy_event () {
+            if (search_toolbar.search_entry.has_focus) {
+                return false;
+            } else if (current_terminal.get_has_selection ()) {
+                current_terminal.copy_primary ();
+                primary_selection.request_text (on_get_text);
+                return true;
+            }
+
+            return false;
         }
 
         private void restore_saved_state (bool restore_pos = true) {
@@ -388,7 +478,7 @@ namespace PantheonTerminal {
             var t = get_term_widget (tab);
 
             if (t.has_foreground_process ()) {
-                var d = new ForegroundProcessDialog ();
+                var d = new ForegroundProcessDialog (this);
                 if (d.run () == 1) {
                     d.destroy ();
                     t.kill_fg ();
@@ -514,9 +604,10 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-
+            
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? "";
+            set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
         }
@@ -688,7 +779,7 @@ namespace PantheonTerminal {
                 t = (TerminalWidget) t;
                 tabs += t.get_shell_location ();
                 if (t.has_foreground_process ()) {
-                    var d = new ForegroundProcessDialog.before_close ();
+                    var d = new ForegroundProcessDialog.before_close (this);
                     if (d.run () == 1) {
                         t.kill_fg ();
                         d.destroy ();
@@ -736,7 +827,11 @@ namespace PantheonTerminal {
                     d.destroy ();
                 }
             }
-            current_terminal.paste_clipboard();
+            if (board == primary_selection) {
+                current_terminal.paste_primary ();
+            } else {
+                current_terminal.paste_clipboard ();
+            }
         }
 
         void action_quit () {
@@ -790,20 +885,23 @@ namespace PantheonTerminal {
                 new_tab (Environment.get_home_dir ());
         }
 
-        void action_about () {
-            app.show_about (this);
-        }
-
         void action_zoom_in_font () {
             current_terminal.increment_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
         }
 
         void action_zoom_out_font () {
             current_terminal.decrement_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
         }
 
         void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
+            set_zoom_default_label (current_terminal.zoom_factor);
+        }
+
+        private void set_zoom_default_label (double zoom_factor) {
+            zoom_default_button.label = "%.0f%%".printf (current_terminal.zoom_factor * 100);
         }
 
         void action_next_tab () {
@@ -930,61 +1028,12 @@ namespace PantheonTerminal {
             return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
-        static const Gtk.ActionEntry[] main_entries = {
-            { "CloseTab", "gtk-close", N_("Close"),
-              "<Control><Shift>w", N_("Close"),
-              action_close_tab },
-
-            { "New window", "window-new",
-              N_("New Window"), "<Control><Shift>n", N_("Open a new window"),
-              action_new_window },
-
-            { "New tab", "gtk-new",
-              N_("New Tab"), "<Control><Shift>t", N_("Create a new tab"),
-              action_new_tab },
-
-            { "Copy", "gtk-copy",
-              N_("Copy"), "<Control><Shift>c", N_("Copy the selected text"),
-              action_copy },
-
-            { "Search", "edit-find",
-              N_("Find…"), "<Control><Shift>f",
-              N_("Search for a given string in the terminal"), action_search },
-
-            { "Paste", "gtk-paste",
-              N_("Paste"), "<Control><Shift>v", N_("Paste some text"),
-              action_paste },
-
-            { "Select All", "gtk-select-all",
-              N_("Select All"), "<Control><Shift>a",
-              N_("Select all the text in the terminal"), action_select_all },
-
-            { "Show in File Browser", "gtk-directory",
-              N_("Show in File Browser"), "<Control><Shift>e",
-              N_("Open current location in Files"), action_open_in_files },
-
-            { "About", "gtk-about", N_("About"),
-              null, N_("Show about window"), action_about },
-
-            { "NextTab", null, N_("Next Tab"),
-              "<Control><Shift>Right", N_("Go to next tab"),
-              action_next_tab },
-
-            { "PreviousTab", null, N_("Previous Tab"),
-              "<Control><Shift>Left", N_("Go to previous tab"),
-              action_previous_tab },
-
-            { "ZoomIn", "gtk-zoom-in", N_("Zoom in"),
-              "<Control>plus", N_("Zoom in"),
-              action_zoom_in_font },
-
-            { "ZoomOut", "gtk-zoom-out",
-              N_("Zoom out"), "<Control>minus", N_("Zoom out"),
-              action_zoom_out_font },
-
-            { "Fullscreen", "gtk-fullscreen",
-              N_("Fullscreen"), "F11", N_("Toggle/Untoggle fullscreen"),
-              action_fullscreen }
+        const Gtk.ActionEntry[] main_entries = {
+            { "Copy", null, N_("Copy"), "<Control><Shift>c", null, action_copy },
+            { "Search", null, N_("Find…"), "<Control><Shift>f", null, action_search },
+            { "Paste", null, N_("Paste"), "<Control><Shift>v", null, action_paste },
+            { "Select All", null, N_("Select All"), "<Control><Shift>a", null, action_select_all },
+            { "Show in File Browser", null, N_("Show in File Browser"), "<Control><Shift>e", null, action_open_in_files }
         };
     }
 }
