@@ -43,6 +43,7 @@ namespace PantheonTerminal {
         public string[] tabs { get; set; }
         public int opening_x { get; set; }
         public int opening_y { get; set; }
+        public double zoom { get; set; }
 
         public SavedState () {
             base ("io.elementary.terminal.saved-state");

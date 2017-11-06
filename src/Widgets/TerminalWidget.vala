@@ -65,7 +65,6 @@ namespace PantheonTerminal {
         }
 
         public int default_size;
-        public double zoom_factor = 1.0;
 
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=io.elementary.terminal /io/elementary/terminal io.elementary.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" >/dev/null 2>&1; ";
 
@@ -101,6 +100,33 @@ namespace PantheonTerminal {
         public bool killed {
             get;
             private set;
+        }
+
+        private double _zoom_factor = 1.0;
+        public double zoom_factor {
+            get {
+                return _zoom_factor;
+            }
+
+            set {
+                if (value < 0.19) {
+                    _zoom_factor = 0.2;
+                } else if (value > 5.01) {
+                    _zoom_factor = 5;
+                } else {
+                    _zoom_factor = value;
+                }
+
+                Pango.FontDescription current_font = this.get_font ();
+                if (current_font != null) {
+                    if (default_size == 0) {
+                        default_size = current_font.get_size ();
+                    }
+
+                    current_font.set_size ((int) Math.floor (default_size * zoom_factor));
+                    this.set_font (current_font);
+                }
+            }
         }
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
@@ -174,6 +200,13 @@ namespace PantheonTerminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
+
+            GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+            saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
+
+            realize.connect (() => {
+                zoom_factor = zoom_factor;
+            });
         }
 
         public void restore_settings () {
@@ -361,32 +394,15 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-            if (current_font.get_size () > 60000) return;
-
             zoom_factor += 0.1;
-            current_font.set_size ((int) Math.floor (default_size * zoom_factor));
-            this.set_font (current_font);
         }
 
         public void decrement_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-            if (current_font.get_size () < 2048) return;
-
             zoom_factor -= 0.1;
-            current_font.set_size ((int) Math.ceil (default_size * zoom_factor));
-            this.set_font (current_font);
         }
 
         public void set_default_font_size () {
-            Pango.FontDescription current_font = this.get_font ();
-            if (default_size == 0) default_size = current_font.get_size ();
-
             zoom_factor = 1.0;
-            current_font.set_size (default_size);
-            this.set_font (current_font);
         }
 
         public bool is_init_complete () {
