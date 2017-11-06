@@ -44,7 +44,7 @@ namespace PantheonTerminal {
 
             program_name = _("Terminal");
             exec_name = "io.elementary.terminal";
-            app_launcher = "org.pantheon.terminal.desktop";
+            app_launcher = "io.elementary.terminal.desktop";
             application_id = "io.elementary.terminal";
         }
 
