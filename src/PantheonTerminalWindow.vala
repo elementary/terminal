@@ -1054,7 +1054,7 @@ namespace PantheonTerminal {
             return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
-        static const Gtk.ActionEntry[] main_entries = {
+        const Gtk.ActionEntry[] main_entries = {
             { "Copy", null, N_("Copy"), "<Control><Shift>c", null, action_copy },
             { "Search", null, N_("Find…"), "<Control><Shift>f", null, action_search },
             { "Paste", null, N_("Paste"), "<Control><Shift>v", null, action_paste },
