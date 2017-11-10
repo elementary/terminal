@@ -146,11 +146,9 @@ namespace PantheonTerminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
             }
 
-            var settings = Gtk.Settings.get_default ();
-            settings.gtk_application_prefer_dark_theme = true;
-
             /* Make GTK+ CSD not steal F10 from the terminal */
-            settings.gtk_menu_bar_accel = null;
+            var gtk_settings = Gtk.Settings.get_default ();
+            gtk_settings.gtk_menu_bar_accel = null;
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
@@ -246,10 +244,17 @@ namespace PantheonTerminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
+            var color_button = new Granite.Widgets.ModeButton ();
+            color_button.append_text (_("Light"));
+            color_button.append_text (_("Dark"));
+
             var style_popover_grid = new Gtk.Grid ();
-            style_popover_grid.margin = 6;
+            style_popover_grid.margin = 12;
+            style_popover_grid.orientation = Gtk.Orientation.VERTICAL;
+            style_popover_grid.row_spacing = 6;
             style_popover_grid.width_request = 200;
             style_popover_grid.add (font_size_grid);
+            style_popover_grid.add (color_button);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -304,6 +309,21 @@ namespace PantheonTerminal {
             zoom_in_button.clicked.connect (() => action_zoom_in_font ());
             zoom_default_button.clicked.connect (() => action_zoom_default_font ());
             zoom_out_button.clicked.connect (() => action_zoom_out_font ());
+
+            color_button.mode_changed.connect (() => {
+                switch (color_button.selected) {
+                    case 0:
+                        settings.prefer_dark_style = false;
+                        settings.background = "rgba(253, 246, 227, 0.95)";
+                        settings.foreground = "#586e75";
+                        break;
+                    case 1:
+                        settings.prefer_dark_style = true;
+                        settings.background = "rgba(37, 46, 50, 0.95)";
+                        settings.foreground = "#94a3a5";
+                        break;
+                }
+            });
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {

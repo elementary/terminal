@@ -178,16 +178,21 @@ namespace PantheonTerminal {
 
         public void restore_settings () {
             /* Load configuration */
+            var  gtk_settings = Gtk.Settings.get_default ();
+            gtk_settings.gtk_application_prefer_dark_theme = settings.prefer_dark_style;
+
             Gdk.RGBA background_color = Gdk.RGBA ();
             background_color.parse (settings.background);
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
             foreground_color.parse (settings.foreground);
 
-            string[] hex_palette = { "#000000", "#FF6C60", "#A8FF60", "#FFFFCC", "#96CBFE",
-                                     "#FF73FE", "#C6C5FE", "#EEEEEE", "#000000", "#FF6C60",
-                                     "#A8FF60", "#FFFFB6", "#96CBFE", "#FF73FE", "#C6C5FE",
-                                     "#EEEEEE" };
+            string[] hex_palette = {
+                "#073642", "#dc322f", "#859900", "#b58900",
+                "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
+                "#586e75", "#cb4b16", "#859900", "#b58900",
+                "#268bd2", "#d33682", "#2aa198", "#6c71c4"
+            };
 
             string current_string = "";
             int current_color = 0;
