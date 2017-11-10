@@ -178,7 +178,7 @@ namespace PantheonTerminal {
 
         public void restore_settings () {
             /* Load configuration */
-            var  gtk_settings = Gtk.Settings.get_default ();
+            var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = settings.prefer_dark_style;
 
             Gdk.RGBA background_color = Gdk.RGBA ();

@@ -248,6 +248,12 @@ namespace PantheonTerminal {
             color_button.append_text (_("Light"));
             color_button.append_text (_("Dark"));
 
+            if (settings.prefer_dark_style) {
+                color_button.selected = 1;
+            } else {
+                color_button.selected = 0;
+            }
+
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
             style_popover_grid.orientation = Gtk.Orientation.VERTICAL;
