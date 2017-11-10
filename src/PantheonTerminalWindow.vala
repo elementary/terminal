@@ -53,6 +53,31 @@ namespace PantheonTerminal {
             .terminal-window.background.maximized {
                 background-color: #000;
             }
+
+            .color-button {
+                border-radius: 50%;
+                box-shadow:
+                    inset 0 1px 0 0 alpha (@inset_dark_color, 0.7),
+                    inset 0 0 0 1px alpha (@inset_dark_color, 0.3),
+                    0 1px 0 0 alpha (@bg_highlight_color, 0.3);
+            }
+
+            .color-button:focus {
+                border-color: @colorAccent;
+            }
+
+            .color-dark {
+                background-color: #252E32;
+                border-color: #151B1C;
+            }
+
+            .color-light {
+                background-color: #fdf6e3;
+            }
+
+            .color-white {
+                background-color: #fff;
+            }
         """;
 
         public SimpleActionGroup actions { get; construct; }
@@ -244,23 +269,45 @@ namespace PantheonTerminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button = new Granite.Widgets.ModeButton ();
-            color_button.append_text (_("Light"));
-            color_button.append_text (_("Dark"));
+            var color_button_light = new Gtk.Button ();
+            color_button_light.halign = Gtk.Align.CENTER;
+            color_button_light.height_request = 32;
+            color_button_light.width_request = 32;
+            color_button_light.tooltip_text = _("Solarized Light");
 
-            if (settings.prefer_dark_style) {
-                color_button.selected = 1;
-            } else {
-                color_button.selected = 0;
-            }
+            var color_button_light_context = color_button_light.get_style_context ();
+            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class ("color-light");
+
+            var color_button_dark = new Gtk.Button ();
+            color_button_dark.halign = Gtk.Align.CENTER;
+            color_button_dark.height_request = 32;
+            color_button_dark.width_request = 32;
+            color_button_dark.tooltip_text = _("Solarized Dark");
+
+            var color_button_dark_context = color_button_dark.get_style_context ();
+            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class ("color-dark");
+
+            var color_button_white = new Gtk.Button ();
+            color_button_white.halign = Gtk.Align.CENTER;
+            color_button_white.height_request = 32;
+            color_button_white.width_request = 32;
+            color_button_white.tooltip_text = _("High Contrast");
+
+            var color_button_white_context = color_button_white.get_style_context ();
+            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class ("color-white");
 
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
-            style_popover_grid.orientation = Gtk.Orientation.VERTICAL;
-            style_popover_grid.row_spacing = 6;
+            style_popover_grid.column_spacing = 6;
+            style_popover_grid.row_spacing = 12;
             style_popover_grid.width_request = 200;
-            style_popover_grid.add (font_size_grid);
-            style_popover_grid.add (color_button);
+            style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
+            style_popover_grid.attach (color_button_light, 0, 1, 1, 1);
+            style_popover_grid.attach (color_button_dark, 1, 1, 1, 1);
+            style_popover_grid.attach (color_button_white, 2, 1, 1, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -316,19 +363,22 @@ namespace PantheonTerminal {
             zoom_default_button.clicked.connect (() => action_zoom_default_font ());
             zoom_out_button.clicked.connect (() => action_zoom_out_font ());
 
-            color_button.mode_changed.connect (() => {
-                switch (color_button.selected) {
-                    case 0:
-                        settings.prefer_dark_style = false;
-                        settings.background = "rgba(253, 246, 227, 0.95)";
-                        settings.foreground = "#586e75";
-                        break;
-                    case 1:
-                        settings.prefer_dark_style = true;
-                        settings.background = "rgba(37, 46, 50, 0.95)";
-                        settings.foreground = "#94a3a5";
-                        break;
-                }
+            color_button_dark.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = "rgba(37, 46, 50, 0.95)";
+                settings.foreground = "#94a3a5";
+            });
+
+            color_button_light.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = "rgba(253, 246, 227, 0.95)";
+                settings.foreground = "#586e75";
+            });
+
+            color_button_white.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = "#fff";
+                settings.foreground = "#333";
             });
 
             key_press_event.connect ((e) => {
