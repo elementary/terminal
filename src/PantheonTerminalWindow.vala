@@ -45,6 +45,13 @@ namespace PantheonTerminal {
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
+        private const string HIGH_CONTRAST_BG = "#fff";
+        private const string HIGH_CONTRAST_FG = "#333";
+        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
+        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
+        private const string SOLARIZED_LIGHT_FG = "#586e75";
+
         const string BG_STYLE_CSS = """
             .terminal-window.background {
                 background-color: transparent;
@@ -52,6 +59,31 @@ namespace PantheonTerminal {
 
             .terminal-window.background.maximized {
                 background-color: #000;
+            }
+
+            .color-button {
+                border-radius: 50%;
+                box-shadow:
+                    inset 0 1px 0 0 alpha (@inset_dark_color, 0.7),
+                    inset 0 0 0 1px alpha (@inset_dark_color, 0.3),
+                    0 1px 0 0 alpha (@bg_highlight_color, 0.3);
+            }
+
+            .color-button:focus {
+                border-color: @colorAccent;
+            }
+
+            .color-dark {
+                background-color: #252E32;
+                border-color: #151B1C;
+            }
+
+            .color-light {
+                background-color: #fdf6e3;
+            }
+
+            .color-white {
+                background-color: #fff;
             }
         """;
 
@@ -147,11 +179,9 @@ namespace PantheonTerminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
             }
 
-            var settings = Gtk.Settings.get_default ();
-            settings.gtk_application_prefer_dark_theme = true;
-
             /* Make GTK+ CSD not steal F10 from the terminal */
-            settings.gtk_menu_bar_accel = null;
+            var gtk_settings = Gtk.Settings.get_default ();
+            gtk_settings.gtk_menu_bar_accel = null;
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
@@ -247,10 +277,45 @@ namespace PantheonTerminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
+            var color_button_white = new Gtk.Button ();
+            color_button_white.halign = Gtk.Align.CENTER;
+            color_button_white.height_request = 32;
+            color_button_white.width_request = 32;
+            color_button_white.tooltip_text = _("High Contrast");
+
+            var color_button_white_context = color_button_white.get_style_context ();
+            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class ("color-white");
+
+            var color_button_light = new Gtk.Button ();
+            color_button_light.halign = Gtk.Align.CENTER;
+            color_button_light.height_request = 32;
+            color_button_light.width_request = 32;
+            color_button_light.tooltip_text = _("Solarized Light");
+
+            var color_button_light_context = color_button_light.get_style_context ();
+            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class ("color-light");
+
+            var color_button_dark = new Gtk.Button ();
+            color_button_dark.halign = Gtk.Align.CENTER;
+            color_button_dark.height_request = 32;
+            color_button_dark.width_request = 32;
+            color_button_dark.tooltip_text = _("Solarized Dark");
+
+            var color_button_dark_context = color_button_dark.get_style_context ();
+            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class ("color-dark");
+
             var style_popover_grid = new Gtk.Grid ();
-            style_popover_grid.margin = 6;
+            style_popover_grid.margin = 12;
+            style_popover_grid.column_spacing = 6;
+            style_popover_grid.row_spacing = 12;
             style_popover_grid.width_request = 200;
-            style_popover_grid.add (font_size_grid);
+            style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
+            style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
+            style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
+            style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -305,6 +370,24 @@ namespace PantheonTerminal {
             zoom_in_button.clicked.connect (() => action_zoom_in_font ());
             zoom_default_button.clicked.connect (() => action_zoom_default_font ());
             zoom_out_button.clicked.connect (() => action_zoom_out_font ());
+
+            color_button_dark.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = SOLARIZED_DARK_BG;
+                settings.foreground = SOLARIZED_DARK_FG;
+            });
+
+            color_button_light.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = SOLARIZED_LIGHT_BG;
+                settings.foreground = SOLARIZED_LIGHT_FG;
+            });
+
+            color_button_white.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = HIGH_CONTRAST_BG;
+                settings.foreground = HIGH_CONTRAST_FG;
+            });
 
             key_press_event.connect ((e) => {
                 switch (e.keyval) {
