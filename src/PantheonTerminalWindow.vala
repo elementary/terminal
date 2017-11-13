@@ -45,6 +45,13 @@ namespace PantheonTerminal {
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
+        private const string HIGH_CONTRAST_BG = "#fff";
+        private const string HIGH_CONTRAST_FG = "#333";
+        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
+        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
+        private const string SOLARIZED_LIGHT_FG = "#586e75";
+
         const string BG_STYLE_CSS = """
             .terminal-window.background {
                 background-color: transparent;
@@ -365,20 +372,20 @@ namespace PantheonTerminal {
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
-                settings.background = "rgba(37, 46, 50, 0.95)";
-                settings.foreground = "#94a3a5";
+                settings.background = SOLARIZED_DARK_BG;
+                settings.foreground = SOLARIZED_DARK_FG;
             });
 
             color_button_light.clicked.connect (() => {
                 settings.prefer_dark_style = false;
-                settings.background = "rgba(253, 246, 227, 0.95)";
-                settings.foreground = "#586e75";
+                settings.background = SOLARIZED_LIGHT_BG;
+                settings.foreground = SOLARIZED_LIGHT_FG;
             });
 
             color_button_white.clicked.connect (() => {
                 settings.prefer_dark_style = false;
-                settings.background = "#fff";
-                settings.foreground = "#333";
+                settings.background = HIGH_CONTRAST_BG;
+                settings.foreground = HIGH_CONTRAST_FG;
             });
 
             key_press_event.connect ((e) => {
