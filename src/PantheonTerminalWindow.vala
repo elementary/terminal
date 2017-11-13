@@ -140,6 +140,7 @@ namespace PantheonTerminal {
 
         private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
+
             set_application (app);
 
             foreach (var action in action_accelerators.get_keys ()) {
@@ -154,7 +155,7 @@ namespace PantheonTerminal {
 
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
-            title = _("Terminal");
+            title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
             if (recreate_tabs) {
                 open_tabs ();
@@ -461,6 +462,7 @@ namespace PantheonTerminal {
             var t = get_term_widget (tab);
             terminals.append (t);
             t.window = this;
+            schedule_name_check ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
@@ -604,9 +606,9 @@ namespace PantheonTerminal {
 
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
-            
+
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ?? "";
+            title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
@@ -673,7 +675,7 @@ namespace PantheonTerminal {
             t.hexpand = true;
 
 
-            var tab = create_tab (_("Terminal"), null, t);
+            var tab = create_tab (TerminalWidget.DEFAULT_LABEL, null, t);
 
             t.child_exited.connect (() => {
                 if (!t.killed) {
@@ -692,6 +694,9 @@ namespace PantheonTerminal {
                 schedule_name_check ();
             });
 
+            /* This signal is not emitted when the .bashrc is missing or does not force terminal to
+             * set its title. So we cannot detect path changes in the shell. Tab name remains "Terminal".
+             */
             t.window_title_changed.connect (() => {
                 if (t == current_terminal) {
                     title = t.window_title;
@@ -958,6 +963,10 @@ namespace PantheonTerminal {
 
                 if (term_label == "") { /* No point in continuing - tabs not finished updating */
                     return false; /* Try again later */
+                }
+
+                if (terminal.tab_label == TerminalWidget.DEFAULT_LABEL) { /* Absent or incorrect .bashrc */
+                    return true;
                 }
 
                 /* Reset tab_name to basename so long name only used when required */
