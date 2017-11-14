@@ -88,6 +88,11 @@
       <summary>Defined whether to use ctrl-c or ctrl-shift-c for copy</summary>
       <description>Enables or disables natural copy paste.</description>
     </key>
+    <key name="prefer-dark-style" type="b">
+      <default>true</default>
+      <summary>Defined whether to use dark stylesheet from Gtk</summary>
+      <description>Switches between dark and light style</description>
+    </key>
 
     <key name="foreground" type="s">
       <default>"#94a3a5"</default>
