@@ -309,8 +309,7 @@ namespace PantheonTerminal {
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
 
                 // Export callback command a BASH-specific variable, see "man bash" for details
-                //"EXIT_STATUS=$?",
-                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH //+ Environment.get_variable ("PROMPT_COMMAND"),
+                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
 
                 // ZSH callback command will be read from ZSH config file supplied by us, see data/
 
