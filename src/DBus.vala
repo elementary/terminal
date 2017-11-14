@@ -22,13 +22,13 @@ namespace PantheonTerminal {
     [DBus (name="io.elementary.terminal")]
     public class DBus {
         [DBus (visible = false)]
-        public signal void finished_process (string terminal_id, string process);
+        public signal void finished_process (string terminal_id, string process, int exit_status);
 
         public DBus () {
         }
 
-        public void process_finished (string terminal_id, string process) {
-            finished_process (terminal_id, process);
+        public void process_finished (string terminal_id, string process, int exit_status) {
+            finished_process (terminal_id, process, exit_status);
         }
     }
 }
