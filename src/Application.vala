@@ -34,11 +34,6 @@ namespace PantheonTerminal {
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-            build_data_dir = Build.DATADIR;
-            build_pkg_data_dir = Build.PKGDATADIR;
-            build_release_name = Build.RELEASE_NAME;
-            build_version = Build.VERSION;
-            build_version_info = Build.VERSION_INFO;
 
             Intl.setlocale (LocaleCategory.ALL, "");
 
@@ -143,8 +138,8 @@ namespace PantheonTerminal {
                 start_terminal_with_working_directory (working_directory);
 
             } else if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
-                stdout.printf ("Copyright 2011-2015 Pantheon Terminal Developers.\n");
+                stdout.printf ("elementary Terminal\n");
+                stdout.printf ("Copyright 2011-2017 elementary LLC.\n");
 
             } else {
                 new_window ();
