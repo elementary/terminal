@@ -98,7 +98,11 @@ add_schema ("data/io.elementary.terminal.gschema.xml")
 #link_libraries (m)
 add_subdirectory (po)
 
-add_executable (io.elementary.terminal ${VALA_C})
+
+include (GResource)
+glib_compile_resources (GLIB_RESOURCES_CSS SOURCE data/io.elementary.terminal.gresource.xml)
+
+add_executable (io.elementary.terminal ${VALA_C} ${GLIB_RESOURCES_CSS})
 find_library (M_LIB m)
 target_link_libraries (io.elementary.terminal ${M_LIB})
 
