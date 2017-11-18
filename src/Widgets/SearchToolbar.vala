@@ -20,6 +20,7 @@
 namespace PantheonTerminal.Widgets {
 
     public class SearchToolbar : Gtk.Grid {
+        private Gtk.ToggleButton cycle_button;
         public weak PantheonTerminalWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
@@ -40,12 +41,18 @@ namespace PantheonTerminal.Widgets {
             next_button.sensitive = false;
             next_button.tooltip_text = _("Next result");
 
+            cycle_button = new Gtk.ToggleButton ();
+            cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            cycle_button.sensitive = false;
+            cycle_button.tooltip_text = _("Cyclic search");
+
             var search_grid = new Gtk.Grid ();
             search_grid.margin = 3;
             search_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
             search_grid.add (search_entry);
             search_grid.add (next_button);
             search_grid.add (previous_button);
+            search_grid.add (cycle_button);
 
             add (search_grid);
             get_style_context ().add_class ("search-bar");
@@ -59,16 +66,17 @@ namespace PantheonTerminal.Widgets {
                 if (search_entry.text != "") {
                     previous_button.sensitive = true;
                     next_button.sensitive = true;
+                    cycle_button.sensitive = true;
                 } else {
                     previous_button.sensitive = false;
                     next_button.sensitive = false;
+                    cycle_button.sensitive = false;
                 }
 
                 try {
                     // FIXME Have a configuration menu or something.
                     var regex = new Regex (Regex.escape_string (search_entry.text), RegexCompileFlags.CASELESS);
                     window.current_terminal.search_set_gregex (regex, 0);
-                    window.current_terminal.search_set_wrap_around (true);
                 } catch (RegexError er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
@@ -83,10 +91,12 @@ namespace PantheonTerminal.Widgets {
         }
 
         public void previous_search () {
+            window.current_terminal.search_set_wrap_around (cycle_button.active);
             window.current_terminal.search_find_previous ();
         }
 
         public void next_search () {
+            window.current_terminal.search_set_wrap_around (cycle_button.active);
             window.current_terminal.search_find_next ();
         }
     }
