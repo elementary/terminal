@@ -52,40 +52,7 @@ namespace PantheonTerminal {
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
-        const string BG_STYLE_CSS = """
-            .terminal-window.background {
-                background-color: transparent;
-            }
 
-            .terminal-window.background.maximized {
-                background-color: #000;
-            }
-
-            .color-button {
-                border-radius: 50%;
-                box-shadow:
-                    inset 0 1px 0 0 alpha (@inset_dark_color, 0.7),
-                    inset 0 0 0 1px alpha (@inset_dark_color, 0.3),
-                    0 1px 0 0 alpha (@bg_highlight_color, 0.3);
-            }
-
-            .color-button:focus {
-                border-color: @colorAccent;
-            }
-
-            .color-dark {
-                background-color: #252E32;
-                border-color: #151B1C;
-            }
-
-            .color-light {
-                background-color: #fdf6e3;
-            }
-
-            .color-white {
-                background-color: #fff;
-            }
-        """;
 
         public SimpleActionGroup actions { get; construct; }
 
@@ -248,12 +215,8 @@ namespace PantheonTerminal {
 
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
-            try {
-                provider.load_from_data (BG_STYLE_CSS, BG_STYLE_CSS.length);
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (Error e) {
-                critical (e.message);
-            }
+            provider.load_from_resource ("io/elementary/terminal/Application.css");
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             search_button = new Gtk.ToggleButton ();
             search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
