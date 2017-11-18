@@ -32,11 +32,11 @@ namespace PantheonTerminal.Widgets {
             search_entry.hexpand = true;
             search_entry.placeholder_text = _("Find");
 
-            var previous_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             previous_button.sensitive = false;
             previous_button.tooltip_text = _("Previous result");
 
-            var next_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             next_button.sensitive = false;
             next_button.tooltip_text = _("Next result");
 
@@ -44,8 +44,8 @@ namespace PantheonTerminal.Widgets {
             search_grid.margin = 3;
             search_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
             search_grid.add (search_entry);
-            search_grid.add (previous_button);
             search_grid.add (next_button);
+            search_grid.add (previous_button);
 
             add (search_grid);
             get_style_context ().add_class ("search-bar");
