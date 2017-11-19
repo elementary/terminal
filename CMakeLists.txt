@@ -13,8 +13,8 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 enable_testing ()
 
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/io.elementary.terminal")
-set (GETTEXT_PACKAGE "io.elementary.terminal")
+set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.4.3")
 set (VERSION_INFO "Release")
@@ -26,15 +26,6 @@ add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
-
-# Add 'make dist' command for creating release tarball
-set (CPACK_PACKAGE_VERSION ${VERSION})
-set (CPACK_SOURCE_GENERATOR "TGZ")
-set (CPACK_SOURCE_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}")
-set (CPACK_SOURCE_IGNORE_FILES "/build/;/.bzr/;/.bzrignore;~$;${CPACK_SOURCE_IGNORE_FILES}")
-
-include (CPack)
-add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 
 # Add 'make uninstall' command to remove installed files
 configure_file(
@@ -98,7 +89,11 @@ add_schema ("data/io.elementary.terminal.gschema.xml")
 #link_libraries (m)
 add_subdirectory (po)
 
-add_executable (io.elementary.terminal ${VALA_C})
+
+include (GResource)
+glib_compile_resources (GLIB_RESOURCES_CSS SOURCE data/io.elementary.terminal.gresource.xml)
+
+add_executable (io.elementary.terminal ${VALA_C} ${GLIB_RESOURCES_CSS})
 find_library (M_LIB m)
 target_link_libraries (io.elementary.terminal ${M_LIB})
 
