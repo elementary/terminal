@@ -13,8 +13,9 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 enable_testing ()
 
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/io.elementary.terminal")
-set (GETTEXT_PACKAGE "io.elementary.terminal")
+set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
+set (EXEC_NAME ${CMAKE_PROJECT_NAME})
 set (RELEASE_NAME "Fast and connected.")
 set (VERSION "0.4.3")
 set (VERSION_INFO "Release")
@@ -26,15 +27,6 @@ add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 # Comment this out to enable C compiler warnings
 add_definitions (-w)
-
-# Add 'make dist' command for creating release tarball
-set (CPACK_PACKAGE_VERSION ${VERSION})
-set (CPACK_SOURCE_GENERATOR "TGZ")
-set (CPACK_SOURCE_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}")
-set (CPACK_SOURCE_IGNORE_FILES "/build/;/.bzr/;/.bzrignore;~$;${CPACK_SOURCE_IGNORE_FILES}")
-
-include (CPack)
-add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 
 # Add 'make uninstall' command to remove installed files
 configure_file(
@@ -102,16 +94,18 @@ add_subdirectory (po)
 include (GResource)
 glib_compile_resources (GLIB_RESOURCES_CSS SOURCE data/io.elementary.terminal.gresource.xml)
 
-add_executable (io.elementary.terminal ${VALA_C} ${GLIB_RESOURCES_CSS})
+add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CSS})
 find_library (M_LIB m)
-target_link_libraries (io.elementary.terminal ${M_LIB})
+target_link_libraries (${EXEC_NAME} ${M_LIB})
 
 include (Translations)
-configure_file_translation(${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
-configure_file_translation(${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
+configure_file (${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in)
+configure_file_translation (${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
+configure_file (${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop.in)
+configure_file_translation (${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
 configure_file_translation(${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.appdata.xml.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
-install (TARGETS io.elementary.terminal RUNTIME DESTINATION bin)
+install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml DESTINATION share/metainfo)
 install (FILES ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop DESTINATION share/applications)

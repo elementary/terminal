@@ -1,10 +1,10 @@
 [Desktop Entry]
 _Name=Terminal
-TryExec=io.elementary.terminal
-Exec=io.elementary.terminal -w %u
+TryExec=@EXEC_NAME@
+Exec=@EXEC_NAME@ -w %u
 Icon=utilities-terminal
 Type=Application
 StartupNotify=true
-X-GNOME-Gettext-Domain=io.elementary.terminal
+X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
 NoDisplay=true
 MimeType=inode/directory;
