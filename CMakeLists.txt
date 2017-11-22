@@ -99,8 +99,10 @@ find_library (M_LIB m)
 target_link_libraries (${EXEC_NAME} ${M_LIB})
 
 include (Translations)
-configure_file_translation(${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
-configure_file_translation(${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
+configure_file (${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in)
+configure_file_translation (${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
+configure_file (${CMAKE_SOURCE_DIR}/data/org.pantheon.terminal.desktop.in.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop.in)
+configure_file_translation (${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/org.pantheon.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
 configure_file_translation(${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.appdata.xml.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
