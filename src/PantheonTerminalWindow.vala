@@ -489,6 +489,7 @@ namespace PantheonTerminal {
                 maximize ();
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
+                is_fullscreen = true;
             }
         }
 
