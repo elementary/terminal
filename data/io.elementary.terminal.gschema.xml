@@ -16,9 +16,7 @@
     <value value="2" nick="Never Show Tabs"/>
   </enum>
 
-  <schema path="/io/elementary/terminal/saved-state/"
-  id="io.elementary.terminal.saved-state"
-  gettext-domain="pantheon-terminal">
+  <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
     <key name="window-width" type="i">
       <default>-1</default>
       <summary>The saved width of the window.</summary>
@@ -56,8 +54,7 @@
     </key>
   </schema>
 
-  <schema path="/io/elementary/terminal/settings/" id="io.elementary.terminal.settings"
-  gettext-domain="pantheon-terminal">
+  <schema path="/io/elementary/terminal/settings/" id="io.elementary.terminal.settings">
     <key name="scrollback-lines" type="i">
       <default>-1</default>
       <summary>Number of scrollback lines</summary>

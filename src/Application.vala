@@ -43,9 +43,9 @@ namespace PantheonTerminal {
             Intl.setlocale (LocaleCategory.ALL, "");
 
             program_name = _("Terminal");
-            exec_name = "io.elementary.terminal";
+            exec_name = Build.EXEC_NAME;
             app_launcher = "org.pantheon.terminal.desktop";
-            application_id = "io.elementary.terminal";
+            application_id = Build.EXEC_NAME;
         }
 
         public PantheonTerminalApp () {
