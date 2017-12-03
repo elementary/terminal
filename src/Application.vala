@@ -92,7 +92,7 @@ namespace PantheonTerminal {
             var dbus = new DBus ();
             connection.register_object (object_path, dbus);
 
-            dbus.finished_process.connect ((id, process) => {
+            dbus.finished_process.connect ((id, process, exit_status) => {
                 foreach (var window in windows) {
                     foreach (var terminal in window.terminals) {
                         if (terminal.terminal_id == id) {
@@ -102,7 +102,11 @@ namespace PantheonTerminal {
                             } else {
 
                                 if (terminal != window.current_terminal) {
-                                    terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
+                                    if (exit_status == 0) {
+                                        terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
+                                    } else {
+                                        terminal.tab.icon = new ThemedIcon ("process-error-symbolic");
+                                    }
                                 }
 
                                 if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
