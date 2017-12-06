@@ -315,10 +315,6 @@ namespace PantheonTerminal {
                 spawn_in_idle (GLib.Environment.get_current_dir (), program_with_args);
             } catch (Error e) {
                 warning (e.message);
-                var notification = new Notification (_("Run program"));
-                notification.set_body (_("Unable to parse command %s \n %s").printf (program_string, e.message));
-                notification.set_icon (new ThemedIcon ("utilities-terminal"));
-                app.send_notification ("spawn-error", notification);
             }
         }
 
@@ -351,10 +347,6 @@ namespace PantheonTerminal {
                                             envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
                 } catch (Error e) {
                     warning (e.message);
-                    var notification = new Notification (_("Run program"));
-                    notification.set_body (_("Unable to spawn process\n %s").printf (e.message));
-                    notification.set_icon (new ThemedIcon ("utilities-terminal"));
-                    app.send_notification ("spawn-error", notification);
                 }
                 return false;
             });
