@@ -299,10 +299,31 @@ namespace PantheonTerminal {
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             string shell = settings.shell;
-            string?[] envv = null;
 
-            if (shell == "")
+            if (shell == "") {
                 shell = Vte.get_user_shell ();
+            }
+
+            spawn_in_idle (dir, { shell });
+        }
+
+        public void run_program (string program_string) {
+            try {
+                string[]? program_with_args = null;
+                Shell.parse_argv (program_string, out program_with_args);
+
+                spawn_in_idle (GLib.Environment.get_current_dir (), program_with_args);
+            } catch (Error e) {
+                warning (e.message);
+                var notification = new Notification (_("Run program"));
+                notification.set_body (_("Unable to parse command %s \n %s").printf (program_string, e.message));
+                notification.set_icon (new ThemedIcon ("utilities-terminal"));
+                app.send_notification ("spawn-error", notification);
+            }
+        }
+
+        public void spawn_in_idle (string dir, string[] argv){
+            string?[] envv;
 
             envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
@@ -316,28 +337,27 @@ namespace PantheonTerminal {
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
+            /* Ensure args captured in closure */
+            string[] argv_copy = {};
+
+            foreach (string s in argv) {
+                argv_copy += s;
+            }
+
             /* Putting this in an Idle loop helps avoid corruption of the prompt on startup with multiple tabs */
             Idle.add_full (GLib.Priority.LOW, () => {
                 try {
-                    this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
+                    this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, argv_copy,
                                             envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
                 } catch (Error e) {
                     warning (e.message);
+                    var notification = new Notification (_("Run program"));
+                    notification.set_body (_("Unable to spawn process\n %s").printf (e.message));
+                    notification.set_icon (new ThemedIcon ("utilities-terminal"));
+                    app.send_notification ("spawn-error", notification);
                 }
                 return false;
             });
-        }
-
-        public void run_program (string program_string) {
-            try {
-                string[]? program_with_args = null;
-                Shell.parse_argv (program_string, out program_with_args);
-
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-            } catch (Error e) {
-                warning (e.message);
-            }
         }
 
         public bool try_get_foreground_pid (out int pid) {
