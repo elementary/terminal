@@ -597,8 +597,7 @@ namespace PantheonTerminal {
             clipboard.request_targets (update_context_menu_cb);
         }
 
-        private void update_context_menu_cb (Gtk.Clipboard clipboard_,
-                                             Gdk.Atom[] atoms) {
+        private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
             bool can_paste = false;
 
             if (atoms != null && atoms.length > 0)
