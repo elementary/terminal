@@ -21,21 +21,15 @@
 namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
-
-        public PantheonTerminalApp app {
-            get {
-                return application as PantheonTerminalApp;
-            }
-        }
-
         public Granite.Widgets.DynamicNotebook notebook;
-        Pango.FontDescription term_font;
+        public Gtk.ToggleButton search_button;
+
+        private Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
         private Gtk.Button zoom_default_button;
-        public Gtk.ToggleButton search_button;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
@@ -52,8 +46,9 @@ namespace PantheonTerminal {
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
-
-
+        public bool recreate_tabs { get; construct; default = true; }
+        public bool restore_pos { get; construct; default = true; }
+        public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
 
         public const string ACTION_PREFIX = "win.";
@@ -79,7 +74,7 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
 
-        const string ui_string = """
+        private const string ui_string = """
             <ui>
             <popup name="AppMenu">
                 <menuitem name="Copy" action="Copy"/>
@@ -96,19 +91,30 @@ namespace PantheonTerminal {
 
         public bool unsafe_ignored;
 
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
-            init (app, should_recreate_tabs);
+        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+            Object (
+                app: app,
+                recreate_tabs: recreate_tabs
+            );
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
-                                                   bool should_recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
+            Object (
+                app: app,
+                restore_pos: false,
+                recreate_tabs: recreate_tabs
+            );
+
             move (x, y);
-            init (app, should_recreate_tabs, false);
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool should_recreate_tabs = true) {
-            init (app, should_recreate_tabs);
+                                                              bool recreate_tabs = true) {
+            Object (
+                app: app,
+                recreate_tabs: recreate_tabs
+            );
+
             new_tab (location);
         }
 
@@ -127,17 +133,7 @@ namespace PantheonTerminal {
             actions = new SimpleActionGroup ();
             actions.add_action_entries (action_entries, this);
             insert_action_group ("win", actions);
-        }
 
-        public void add_tab_with_command (string command) {
-            new_tab ("", command);
-        }
-
-        public void add_tab_with_working_directory (string location) {
-            new_tab (location);
-        }
-
-        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -196,6 +192,14 @@ namespace PantheonTerminal {
             destroy.connect (on_destroy);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+        }
+
+        public void add_tab_with_command (string command) {
+            new_tab ("", command);
+        }
+
+        public void add_tab_with_working_directory (string location) {
+            new_tab (location);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
