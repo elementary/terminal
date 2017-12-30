@@ -108,7 +108,7 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
                                                               bool should_recreate_tabs = true) {
-            init (app, should_recreate_tabs);
+            init (app, should_recreate_tabs, true, false);
             new_tab (location);
         }
 
@@ -137,7 +137,7 @@ namespace PantheonTerminal {
             new_tab (location);
         }
 
-        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
+        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true, bool focus_tabs = true) {
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -155,7 +155,7 @@ namespace PantheonTerminal {
             title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
             if (recreate_tabs) {
-                open_tabs ();
+                open_tabs (focus_tabs);
             }
 
             /* Actions and UIManager */
@@ -660,7 +660,7 @@ namespace PantheonTerminal {
             new_tab.page.grab_focus ();
         }
 
-        private void open_tabs () {
+        private void open_tabs (bool focus = true) {
             string[] tabs = {};
             if (settings.remember_tabs) {
                 tabs = saved_tabs;
@@ -692,14 +692,14 @@ namespace PantheonTerminal {
                     /* Schedule tab to be added when idle (helps to avoid corruption of
                      * prompt on startup with multiple tabs) */
                     Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc);
+                        new_tab (loc, null, focus);
                         return false;
                     });
                 }
             }
         }
 
-        private void new_tab (string directory, string? program = null) {
+        private void new_tab (string directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -764,8 +764,11 @@ namespace PantheonTerminal {
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
             notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            t.grab_focus ();
+
+            if (focus) {
+                notebook.current = tab;
+                t.grab_focus ();
+            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
