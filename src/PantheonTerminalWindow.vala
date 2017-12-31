@@ -42,6 +42,7 @@ namespace PantheonTerminal {
 
         public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
+        public bool focus_restored_tabs { get; construct; default = true; }
         private string[] saved_tabs;
 
         private const string HIGH_CONTRAST_BG = "#fff";
@@ -107,6 +108,10 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
                                                               bool should_recreate_tabs = true) {
+            Object (
+                focus_restored_tabs: false
+            );
+
             init (app, should_recreate_tabs);
             new_tab (location);
         }
@@ -691,14 +696,14 @@ namespace PantheonTerminal {
                     /* Schedule tab to be added when idle (helps to avoid corruption of
                      * prompt on startup with multiple tabs) */
                     Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc);
+                        new_tab (loc, null, focus_restored_tabs);
                         return false;
                     });
                 }
             }
         }
 
-        private void new_tab (string directory, string? program = null) {
+        private void new_tab (string directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -763,8 +768,11 @@ namespace PantheonTerminal {
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
             notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            t.grab_focus ();
+
+            if (focus) {
+                notebook.current = tab;
+                t.grab_focus ();
+            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
