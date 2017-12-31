@@ -21,9 +21,6 @@
 namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
-        public Granite.Widgets.DynamicNotebook notebook;
-        public Gtk.ToggleButton search_button;
-
         private Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
@@ -31,11 +28,7 @@ namespace PantheonTerminal {
         private Gtk.Revealer search_revealer;
         private Gtk.Button zoom_default_button;
 
-        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
-
         private HashTable<string, TerminalWidget> restorable_terminals;
-
-        public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
@@ -46,10 +39,19 @@ namespace PantheonTerminal {
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
+        public bool unsafe_ignored;
+        public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
+        
+        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        public Granite.Widgets.DynamicNotebook notebook;
+        public Gtk.ActionGroup main_actions;
+        public Gtk.ToggleButton search_button;
+        public Gtk.UIManager ui;
+        public TerminalWidget current_terminal = null;
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action_close_tab";
@@ -86,11 +88,6 @@ namespace PantheonTerminal {
             </ui>
         """;
 
-        public Gtk.ActionGroup main_actions;
-        public Gtk.UIManager ui;
-
-        public bool unsafe_ignored;
-
         public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -112,6 +109,7 @@ namespace PantheonTerminal {
                                                               bool recreate_tabs = true) {
             Object (
                 app: app,
+                focus_restored_tabs: false,
                 recreate_tabs: recreate_tabs
             );
 
@@ -696,14 +694,14 @@ namespace PantheonTerminal {
                     /* Schedule tab to be added when idle (helps to avoid corruption of
                      * prompt on startup with multiple tabs) */
                     Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc);
+                        new_tab (loc, null, focus_restored_tabs);
                         return false;
                     });
                 }
             }
         }
 
-        private void new_tab (string directory, string? program = null) {
+        private void new_tab (string directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -768,8 +766,11 @@ namespace PantheonTerminal {
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
             notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            t.grab_focus ();
+
+            if (focus) {
+                notebook.current = tab;
+                t.grab_focus ();
+            }
 
             if (program == null) {
                 /* Set up the virtual terminal */
