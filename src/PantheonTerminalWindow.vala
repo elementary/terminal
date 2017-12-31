@@ -43,6 +43,7 @@ namespace PantheonTerminal {
 
         public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
+        public bool focus_restored_tabs { get; construct; default = true; }
         private string[] saved_tabs;
 
         private const string HIGH_CONTRAST_BG = "#fff";
@@ -108,7 +109,11 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
                                                               bool should_recreate_tabs = true) {
-            init (app, should_recreate_tabs, true, false);
+            Object (
+                focus_restored_tabs: false
+            );
+
+            init (app, should_recreate_tabs);
             new_tab (location);
         }
 
@@ -137,7 +142,7 @@ namespace PantheonTerminal {
             new_tab (location);
         }
 
-        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true, bool focus_tabs = true) {
+        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -155,7 +160,7 @@ namespace PantheonTerminal {
             title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
             if (recreate_tabs) {
-                open_tabs (focus_tabs);
+                open_tabs ();
             }
 
             /* Actions and UIManager */
@@ -660,7 +665,7 @@ namespace PantheonTerminal {
             new_tab.page.grab_focus ();
         }
 
-        private void open_tabs (bool focus = true) {
+        private void open_tabs () {
             string[] tabs = {};
             if (settings.remember_tabs) {
                 tabs = saved_tabs;
@@ -692,7 +697,7 @@ namespace PantheonTerminal {
                     /* Schedule tab to be added when idle (helps to avoid corruption of
                      * prompt on startup with multiple tabs) */
                     Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc, null, focus);
+                        new_tab (loc, null, focus_restored_tabs);
                         return false;
                     });
                 }
