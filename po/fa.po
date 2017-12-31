@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-12-31 17:25+0000\n"
+"PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian "
 "<https://weblate.elementary.io/projects/terminal/terminal/fa/>\n"
@@ -30,7 +30,7 @@ msgstr "فرآیندی در این برگه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
-msgstr "اگر  این را ببندید، فرآیند پایان می یابد"
+msgstr "اگر  این را ببندید، فرآیند پایان می یابد."
 
 #: ../src/ForegroundProcessDialog.vala:36
 #: ../src/ForegroundProcessDialog.vala:59
@@ -51,7 +51,7 @@ msgstr "فرآیندی در این پایانه در حال اجراء است."
 
 #: ../src/ForegroundProcessDialog.vala:57
 msgid "If you quit Terminal, the process will end."
-msgstr "فرآیند پایان می یابد اگر ترمینال را ببندید"
+msgstr "اگر ترمینال را ببندید، فرآیند پایان می یابد."
 
 #: ../src/ForegroundProcessDialog.vala:63
 msgid "Quit Terminal"
