@@ -569,7 +569,6 @@ namespace PantheonTerminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
-            save_opened_terminals ();
             schedule_name_check ();
         }
 
@@ -995,6 +994,8 @@ namespace PantheonTerminal {
             }
 
             name_check_timeout_id = Timeout.add (50, () => {
+                save_opened_terminals ();
+
                 if (!check_for_tabs_with_same_name ()) {
                     return true;
                 } else {
@@ -1049,7 +1050,12 @@ namespace PantheonTerminal {
             string[] opened_tabs = {};
 
             notebook.tabs.foreach ((tab) => {
-                var location = get_term_widget (tab).get_shell_location ();
+                var term = get_term_widget (tab);
+                if (term == null) {
+                    return;
+                }
+
+                var location = term.get_shell_location ();
                 if (location != null && location != "") {
                     opened_tabs += location;
                 }
