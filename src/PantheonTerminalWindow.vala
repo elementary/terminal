@@ -99,12 +99,18 @@ namespace PantheonTerminal {
 
         public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
             init (app, should_recreate_tabs);
+            if (!should_recreate_tabs) {
+                new_tab ("");
+            }
         }
 
         public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
                                                    bool should_recreate_tabs = true) {
             move (x, y);
             init (app, should_recreate_tabs, false);
+            if (!should_recreate_tabs) {
+                new_tab ("");
+            }
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
