@@ -690,18 +690,16 @@ namespace PantheonTerminal {
                 }
             }
 
-            foreach (string loc in tabs) {
-                if (loc == "") {
-                    continue;
-                } else {
-                    /* Schedule tab to be added when idle (helps to avoid corruption of
-                     * prompt on startup with multiple tabs) */
-                    Idle.add_full (GLib.Priority.LOW, () => {
+            Idle.add_full (GLib.Priority.LOW, () => {
+                foreach (string loc in tabs) {
+                    if (loc == "") {
+                        continue;
+                    } else {
                         new_tab (loc, null, focus_restored_tabs);
-                        return false;
-                    });
+                    }
                 }
-            }
+                return false;
+            });
         }
 
         private void new_tab (string directory, string? program = null, bool focus = true) {
