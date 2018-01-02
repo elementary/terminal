@@ -21,10 +21,12 @@ namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
         private Pango.FontDescription term_font;
+        private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
+        private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
@@ -42,15 +44,13 @@ namespace PantheonTerminal {
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
+        public Gtk.UIManager ui { get; private set; }
         public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
+        public TerminalWidget current_terminal { get; private set; default = null; }
         
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
-        public Granite.Widgets.DynamicNotebook notebook;
         public Gtk.ActionGroup main_actions;
-        public Gtk.ToggleButton search_button;
-        public Gtk.UIManager ui;
-        public TerminalWidget current_terminal = null;
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action_close_tab";
