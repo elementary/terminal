@@ -1,49 +1,36 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/***
-    BEGIN LICENSE
-
-    Copyright (C) 2011-2014 Pantheon Terminal Developers
-    This program is free software: you can redistribute it and/or modify it
-    under the terms of the GNU Lesser General Public License version 3, as published
-    by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranties of
-    MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
-    PURPOSE.  See the GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program.  If not, see <http://www.gnu.org/licenses/>
-
-    END LICENSE
- ***/
+/*
+* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* License version 3, as published by the Free Software Foundation.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*/
 
 namespace PantheonTerminal {
 
     public class PantheonTerminalWindow : Gtk.Window {
-
-        public PantheonTerminalApp app {
-            get {
-                return application as PantheonTerminalApp;
-            }
-        }
-
-        public Granite.Widgets.DynamicNotebook notebook;
-        Pango.FontDescription term_font;
+        private Pango.FontDescription term_font;
+        private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
+        private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        public Gtk.ToggleButton search_button;
-
-        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
         private HashTable<string, TerminalWidget> restorable_terminals;
-
-        public TerminalWidget current_terminal = null;
         private bool is_fullscreen = false;
-        public bool focus_restored_tabs { get; construct; default = true; }
         private string[] saved_tabs;
 
         private const string HIGH_CONTRAST_BG = "#fff";
@@ -53,9 +40,17 @@ namespace PantheonTerminal {
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
-
-
+        public bool unsafe_ignored;
+        public bool focus_restored_tabs { get; construct; default = true; }
+        public bool recreate_tabs { get; construct; default = true; }
+        public bool restore_pos { get; construct; default = true; }
+        public Gtk.UIManager ui { get; private set; }
+        public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
+        public TerminalWidget current_terminal { get; private set; default = null; }
+        
+        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        public Gtk.ActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action_close_tab";
@@ -80,7 +75,7 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
 
-        const string ui_string = """
+        private const string ui_string = """
             <ui>
             <popup name="AppMenu">
                 <menuitem name="Copy" action="Copy"/>
@@ -92,28 +87,31 @@ namespace PantheonTerminal {
             </ui>
         """;
 
-        public Gtk.ActionGroup main_actions;
-        public Gtk.UIManager ui;
-
-        public bool unsafe_ignored;
-
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool should_recreate_tabs=true) {
-            init (app, should_recreate_tabs);
+        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+            Object (
+                app: app,
+                recreate_tabs: recreate_tabs
+            );
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
-                                                   bool should_recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
+            Object (
+                app: app,
+                restore_pos: false,
+                recreate_tabs: recreate_tabs
+            );
+
             move (x, y);
-            init (app, should_recreate_tabs, false);
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool should_recreate_tabs = true) {
+                                                              bool recreate_tabs = true) {
             Object (
-                focus_restored_tabs: false
+                app: app,
+                focus_restored_tabs: false,
+                recreate_tabs: recreate_tabs
             );
 
-            init (app, should_recreate_tabs);
             new_tab (location);
         }
 
@@ -132,17 +130,7 @@ namespace PantheonTerminal {
             actions = new SimpleActionGroup ();
             actions.add_action_entries (action_entries, this);
             insert_action_group ("win", actions);
-        }
 
-        public void add_tab_with_command (string command) {
-            new_tab ("", command);
-        }
-
-        public void add_tab_with_working_directory (string location) {
-            new_tab (location);
-        }
-
-        private void init (PantheonTerminalApp app, bool recreate_tabs = true, bool restore_pos = true) {
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -201,6 +189,14 @@ namespace PantheonTerminal {
             destroy.connect (on_destroy);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+        }
+
+        public void add_tab_with_command (string command) {
+            new_tab ("", command);
+        }
+
+        public void add_tab_with_working_directory (string location) {
+            new_tab (location);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
