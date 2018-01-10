@@ -34,18 +34,13 @@ namespace PantheonTerminal {
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-            build_data_dir = Build.DATADIR;
-            build_pkg_data_dir = Build.PKGDATADIR;
-            build_release_name = Build.RELEASE_NAME;
-            build_version = Build.VERSION;
-            build_version_info = Build.VERSION_INFO;
 
             Intl.setlocale (LocaleCategory.ALL, "");
 
             program_name = _("Terminal");
-            exec_name = Build.EXEC_NAME;
-            app_launcher = "org.pantheon.terminal.desktop";
-            application_id = Build.EXEC_NAME;
+            exec_name = "io.elementary.terminal";
+            app_launcher = "io.elementary.terminal.desktop";
+            application_id = "io.elementary.terminal";
         }
 
         public PantheonTerminalApp () {
@@ -153,8 +148,8 @@ namespace PantheonTerminal {
                 start_terminal_with_working_directory (working_directory);
 
             } else if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
-                stdout.printf ("Copyright 2011-2015 Pantheon Terminal Developers.\n");
+                stdout.printf ("elementary Terminal\n");
+                stdout.printf ("Copyright 2011-2018 elementary LLC.\n");
 
             } else {
                 new_window ();

@@ -22,7 +22,6 @@ set (VERSION_INFO "Release")
 set (PREFIX ${CMAKE_INSTALL_PREFIX})
 set (DOLLAR "$")
 
-configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 
 # Comment this out to enable C compiler warnings
@@ -77,8 +76,6 @@ PACKAGES
     gtk+-3.0
     gdk-3.0
     posix
-CUSTOM_VAPIS
-    vapi/config.vapi
 OPTIONS
     --thread
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
@@ -99,9 +96,7 @@ find_library (M_LIB m)
 target_link_libraries (${EXEC_NAME} ${M_LIB})
 
 include (Translations)
-configure_file (${CMAKE_SOURCE_DIR}/data/open-pantheon-terminal-here.desktop.in.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in)
 configure_file_translation (${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop.in ${CMAKE_BINARY_DIR}/data/open-pantheon-terminal-here.desktop ${CMAKE_SOURCE_DIR}/po/)
-configure_file (${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.desktop.in.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.desktop.in)
 configure_file_translation (${CMAKE_BINARY_DIR}/data/io.elementary.terminal.desktop.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.desktop ${CMAKE_SOURCE_DIR}/po/)
 configure_file_translation(${CMAKE_SOURCE_DIR}/data/io.elementary.terminal.appdata.xml.in ${CMAKE_BINARY_DIR}/data/io.elementary.terminal.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
