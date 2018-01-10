@@ -92,6 +92,10 @@ namespace PantheonTerminal {
                 app: app,
                 recreate_tabs: recreate_tabs
             );
+
+            if (!recreate_tabs) {
+                new_tab ("");
+            }
         }
 
         public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
@@ -102,6 +106,10 @@ namespace PantheonTerminal {
             );
 
             move (x, y);
+
+            if (!recreate_tabs) {
+                new_tab ("");
+            }
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
