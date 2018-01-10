@@ -59,7 +59,13 @@ namespace PantheonTerminal {
         }
 
         public void new_window () {
-            new PantheonTerminalWindow (this).present ();
+            var window = get_last_window ();
+
+            if (window == null) {
+                new PantheonTerminalWindow (this).present ();
+            } else {
+                new PantheonTerminalWindow (this, false).present ();
+            }
         }
 
         public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true) {
