@@ -129,9 +129,9 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
-            action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
