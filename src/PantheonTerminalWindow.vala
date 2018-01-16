@@ -62,6 +62,7 @@ namespace PantheonTerminal {
         public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SELECT_ALL = "action_select_all";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
 
@@ -79,6 +80,7 @@ namespace PantheonTerminal {
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_SEARCH, action_search },
             { ACTION_SELECT_ALL, action_select_all },
+            { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
@@ -134,8 +136,12 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
+            action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
+            action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
+            action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
         }
 
         construct {
@@ -217,12 +223,15 @@ namespace PantheonTerminal {
 
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
             zoom_out_button.tooltip_text = _("Zoom Out");
+            zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
 
             zoom_default_button = new Gtk.Button.with_label ("100%");
             zoom_default_button.tooltip_text = _("Default zoom level");
+            zoom_default_button.action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT;
 
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.tooltip_text = _("Zoom In");
+            zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
 
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
@@ -322,10 +331,6 @@ namespace PantheonTerminal {
             set_titlebar (header);
             add (grid);
 
-            zoom_in_button.clicked.connect (() => action_zoom_in_font ());
-            zoom_default_button.clicked.connect (() => action_zoom_default_font ());
-            zoom_out_button.clicked.connect (() => action_zoom_out_font ());
-
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
@@ -352,18 +357,6 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
-                    case Gdk.Key.KP_Add:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_in_font ();
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.KP_Subtract:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_out_font ();
-                            return true;
-                        }
-                        break;
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
@@ -371,12 +364,6 @@ namespace PantheonTerminal {
                             } else {
                                 search_toolbar.next_search ();
                             }
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.@0:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_default_font ();
                             return true;
                         }
                         break;
