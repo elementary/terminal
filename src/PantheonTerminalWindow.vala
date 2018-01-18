@@ -695,7 +695,7 @@ namespace PantheonTerminal {
                     }
                 }
 
-                if (focus_restored_tabs && focus == i) {
+                if (focus_restored_tabs && focus == tabs.length) {
                     var t = notebook.get_tab_by_index (notebook.n_tabs - 1);
                     notebook.current = t;
                     t.grab_focus ();
