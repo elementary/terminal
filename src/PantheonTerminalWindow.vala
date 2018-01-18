@@ -555,8 +555,6 @@ namespace PantheonTerminal {
                 }
             }
 
-            save_opened_terminals ();
-
             return true;
         }
 
@@ -784,10 +782,6 @@ namespace PantheonTerminal {
             } else {
                 t.run_program (program);
             }
-
-            Gee.List<string> saved_tabs = new Gee.ArrayList<string>.wrap (PantheonTerminal.saved_state.tabs);
-            saved_tabs.add (location);
-            PantheonTerminal.saved_state.tabs = saved_tabs.to_array ();
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
@@ -834,7 +828,6 @@ namespace PantheonTerminal {
 
         protected override bool delete_event (Gdk.EventAny event) {
             action_quit ();
-            save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var t in terminals) {
