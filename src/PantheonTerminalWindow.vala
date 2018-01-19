@@ -542,15 +542,12 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (notebook.n_tabs - 1 == 0) {
-                reset_saved_tabs ();
-            }
-
             return true;
         }
 
         private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
             current_terminal.grab_focus ();
+            save_opened_terminals ();
         }
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
@@ -642,10 +639,6 @@ namespace PantheonTerminal {
             return false;
         }
 
-        private void reset_saved_tabs () {
-            saved_state.tabs = {};
-        }
-
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
 
@@ -681,18 +674,18 @@ namespace PantheonTerminal {
                 }
             }
 
-            foreach (string loc in tabs) {
-                if (loc == "") {
-                    continue;
-                } else {
-                    /* Schedule tab to be added when idle (helps to avoid corruption of
-                     * prompt on startup with multiple tabs) */
-                    Idle.add_full (GLib.Priority.LOW, () => {
+            PantheonTerminal.saved_state.tabs = {};
+
+            Idle.add_full (GLib.Priority.LOW, () => {
+                foreach (string loc in tabs) {
+                    if (loc == "") {
+                        continue;
+                    } else {
                         new_tab (loc, null, focus_restored_tabs);
-                        return false;
-                    });
+                    }
                 }
-            }
+                return false;
+            });
         }
 
         private void new_tab (string directory, string? program = null, bool focus = true) {
@@ -822,12 +815,10 @@ namespace PantheonTerminal {
 
         protected override bool delete_event (Gdk.EventAny event) {
             action_quit ();
-            string[] tabs = {};
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
-                tabs += t.get_shell_location ();
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close (this);
                     if (d.run () == 1) {
@@ -842,10 +833,10 @@ namespace PantheonTerminal {
                 tabs_to_terminate.append (t);
             }
 
-            foreach (var t in tabs_to_terminate)
+            foreach (var t in tabs_to_terminate) {
                 t.term_ps ();
+            }
 
-            saved_state.tabs = tabs;
             return false;
         }
 
@@ -987,6 +978,8 @@ namespace PantheonTerminal {
             }
 
             name_check_timeout_id = Timeout.add (50, () => {
+                save_opened_terminals ();
+
                 if (!check_for_tabs_with_same_name ()) {
                     return true;
                 } else {
@@ -1035,6 +1028,24 @@ namespace PantheonTerminal {
             }
 
             return true;
+        }
+
+        private void save_opened_terminals () {
+            string[] opened_tabs = {};
+
+            notebook.tabs.foreach ((tab) => {
+                var term = get_term_widget (tab);
+                if (term == null) {
+                    return;
+                }
+
+                var location = term.get_shell_location ();
+                if (location != null && location != "") {
+                    opened_tabs += location;
+                }
+            });
+
+            PantheonTerminal.saved_state.tabs = opened_tabs;
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
