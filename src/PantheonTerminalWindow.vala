@@ -648,7 +648,7 @@ namespace PantheonTerminal {
             new_tab.icon = null;
             new_tab.page.grab_focus ();
 
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position(new_tab);
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
         }
 
         private void open_tabs () {
@@ -678,25 +678,20 @@ namespace PantheonTerminal {
 
             PantheonTerminal.saved_state.tabs = {};
 
-            int focus = 0 <= PantheonTerminal.saved_state.focused_tab < tabs.length
-                            ? PantheonTerminal.saved_state.focused_tab : tabs.length - 1;
+            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
             Idle.add_full (GLib.Priority.LOW, () => {
-                int i;
-                for (i = 0; i < tabs.length; i++) {
-                    if (tabs[i] == "") {
-                        if (i == focus) {
-                            focus++;
-                        }
+                focus += notebook.n_tabs;
+                foreach (string loc in tabs) {
+                    if (loc == "") {
+                        focus--;
                         continue;
-                    } else if (focus == i) {
-                        new_tab (tabs[i], null, focus_restored_tabs);
                     } else {
-                        new_tab (tabs[i], null, false);
+                        new_tab (loc, null, false);
                     }
                 }
 
-                if (focus_restored_tabs && focus == tabs.length) {
-                    var t = notebook.get_tab_by_index (notebook.n_tabs - 1);
+                if (focus_restored_tabs) {
+                    var t = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
                     notebook.current = t;
                     t.grab_focus ();
                 }
@@ -1063,7 +1058,7 @@ namespace PantheonTerminal {
             });
 
             PantheonTerminal.saved_state.tabs = opened_tabs;
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position(notebook.current);
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
