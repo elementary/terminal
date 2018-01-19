@@ -163,6 +163,7 @@ namespace PantheonTerminal {
             // Do not save the value until the next instance of
             // Pantheon Terminal is started
             command_e = null;
+            working_directory = null;
 
             return 0;
         }
