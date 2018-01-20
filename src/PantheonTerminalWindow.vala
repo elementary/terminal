@@ -59,6 +59,7 @@ namespace PantheonTerminal {
         public const string ACTION_NEW_WINDOW = "action_new_window";
         public const string ACTION_NEXT_TAB = "action_next_tab";
         public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
 
@@ -71,6 +72,7 @@ namespace PantheonTerminal {
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
@@ -98,7 +100,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+                                                   bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -107,7 +110,7 @@ namespace PantheonTerminal {
 
             move (x, y);
 
-            if (!recreate_tabs) {
+            if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
             }
         }
@@ -130,8 +133,12 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
+            action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
+            action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
         }
 
         construct {
@@ -234,12 +241,15 @@ namespace PantheonTerminal {
 
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
             zoom_out_button.tooltip_text = _("Zoom Out");
+            zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
 
             zoom_default_button = new Gtk.Button.with_label ("100%");
             zoom_default_button.tooltip_text = _("Default zoom level");
+            zoom_default_button.action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT;
 
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.tooltip_text = _("Zoom In");
+            zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
 
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
@@ -339,10 +349,6 @@ namespace PantheonTerminal {
             set_titlebar (header);
             add (grid);
 
-            zoom_in_button.clicked.connect (() => action_zoom_in_font ());
-            zoom_default_button.clicked.connect (() => action_zoom_default_font ());
-            zoom_out_button.clicked.connect (() => action_zoom_out_font ());
-
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
@@ -369,18 +375,6 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
-                    case Gdk.Key.KP_Add:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_in_font ();
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.KP_Subtract:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_out_font ();
-                            return true;
-                        }
-                        break;
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
@@ -388,12 +382,6 @@ namespace PantheonTerminal {
                             } else {
                                 search_toolbar.next_search ();
                             }
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.@0:
-                        if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                            action_zoom_default_font ();
                             return true;
                         }
                         break;
@@ -555,15 +543,12 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (notebook.n_tabs - 1 == 0) {
-                reset_saved_tabs ();
-            }
-
             return true;
         }
 
         private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
             current_terminal.grab_focus ();
+            save_opened_terminals ();
         }
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
@@ -655,10 +640,6 @@ namespace PantheonTerminal {
             return false;
         }
 
-        private void reset_saved_tabs () {
-            saved_state.tabs = {};
-        }
-
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
 
@@ -667,6 +648,8 @@ namespace PantheonTerminal {
             set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
+
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
         }
 
         private void open_tabs () {
@@ -694,18 +677,28 @@ namespace PantheonTerminal {
                 }
             }
 
-            foreach (string loc in tabs) {
-                if (loc == "") {
-                    continue;
-                } else {
-                    /* Schedule tab to be added when idle (helps to avoid corruption of
-                     * prompt on startup with multiple tabs) */
-                    Idle.add_full (GLib.Priority.LOW, () => {
-                        new_tab (loc, null, focus_restored_tabs);
-                        return false;
-                    });
+            PantheonTerminal.saved_state.tabs = {};
+
+            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
+            Idle.add_full (GLib.Priority.LOW, () => {
+                focus += notebook.n_tabs;
+                foreach (string loc in tabs) {
+                    if (loc == "") {
+                        focus--;
+                        continue;
+                    } else {
+                        new_tab (loc, null, false);
+                    }
                 }
-            }
+
+                if (focus_restored_tabs) {
+                    var t = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                    notebook.current = t;
+                    t.grab_focus ();
+                }
+
+                return false;
+            });
         }
 
         private void new_tab (string directory, string? program = null, bool focus = true) {
@@ -835,12 +828,11 @@ namespace PantheonTerminal {
 
         protected override bool delete_event (Gdk.EventAny event) {
             action_quit ();
-            string[] tabs = {};
+            save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var t in terminals) {
                 t = (TerminalWidget) t;
-                tabs += t.get_shell_location ();
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close (this);
                     if (d.run () == 1) {
@@ -855,10 +847,10 @@ namespace PantheonTerminal {
                 tabs_to_terminate.append (t);
             }
 
-            foreach (var t in tabs_to_terminate)
+            foreach (var t in tabs_to_terminate) {
                 t.term_ps ();
+            }
 
-            saved_state.tabs = tabs;
             return false;
         }
 
@@ -1000,6 +992,8 @@ namespace PantheonTerminal {
             }
 
             name_check_timeout_id = Timeout.add (50, () => {
+                save_opened_terminals ();
+
                 if (!check_for_tabs_with_same_name ()) {
                     return true;
                 } else {
@@ -1048,6 +1042,25 @@ namespace PantheonTerminal {
             }
 
             return true;
+        }
+
+        private void save_opened_terminals () {
+            string[] opened_tabs = {};
+
+            notebook.tabs.foreach ((tab) => {
+                var term = get_term_widget (tab);
+                if (term == null) {
+                    return;
+                }
+
+                var location = term.get_shell_location ();
+                if (location != null && location != "") {
+                    opened_tabs += location;
+                }
+            });
+
+            PantheonTerminal.saved_state.tabs = opened_tabs;
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
