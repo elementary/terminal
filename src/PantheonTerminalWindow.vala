@@ -647,6 +647,8 @@ namespace PantheonTerminal {
             set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
             new_tab.page.grab_focus ();
+
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
         }
 
         private void open_tabs () {
@@ -676,14 +678,24 @@ namespace PantheonTerminal {
 
             PantheonTerminal.saved_state.tabs = {};
 
+            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
             Idle.add_full (GLib.Priority.LOW, () => {
+                focus += notebook.n_tabs;
                 foreach (string loc in tabs) {
                     if (loc == "") {
+                        focus--;
                         continue;
                     } else {
-                        new_tab (loc, null, focus_restored_tabs);
+                        new_tab (loc, null, false);
                     }
                 }
+
+                if (focus_restored_tabs) {
+                    var t = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                    notebook.current = t;
+                    t.grab_focus ();
+                }
+
                 return false;
             });
         }
@@ -1046,6 +1058,7 @@ namespace PantheonTerminal {
             });
 
             PantheonTerminal.saved_state.tabs = opened_tabs;
+            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
