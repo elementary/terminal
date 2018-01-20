@@ -100,7 +100,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+                                                   bool recreate_tabs = true, bool ensure_tab = true) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -109,7 +110,7 @@ namespace PantheonTerminal {
 
             move (x, y);
 
-            if (!recreate_tabs) {
+            if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
             }
         }
@@ -563,7 +564,7 @@ namespace PantheonTerminal {
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
             Idle.add (() => {
-                var new_window = app.new_window_with_coords (x, y, false);
+                var new_window = app.new_window_with_coords (x, y, false, false);
                 var t = get_term_widget (tab);
                 var new_notebook = new_window.notebook;
 
