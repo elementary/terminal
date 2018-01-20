@@ -100,7 +100,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y, bool recreate_tabs = true) {
+        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+                                                   bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -109,7 +110,7 @@ namespace PantheonTerminal {
 
             move (x, y);
 
-            if (!recreate_tabs) {
+            if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
             }
         }
