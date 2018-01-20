@@ -34,8 +34,13 @@
     </key>
     <key name="tabs" type="as">
       <default>[]</default>
-      <summary>List of tabs which were active when the window was closed</summary>
-      <description>List of tabs which were active when the window was closed</description>
+      <summary>List of tabs from the last active window.</summary>
+      <description>List of tabs from the last active window.</description>
+    </key>
+    <key name="focused-tab" type="i">
+        <default>-1</default>
+        <summary>The index of the tab that is focused.</summary>
+        <description>The index of the tab from the saved tabs that is currently focused.</description>
     </key>
     <key name="opening-x" type="i">
       <default>-1</default>
