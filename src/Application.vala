@@ -68,7 +68,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs=true, bool ensure_tab=true) {
+        public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
             var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
 
             return window;
