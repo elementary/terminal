@@ -647,7 +647,10 @@ namespace PantheonTerminal {
             title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
-            get_term_widget (new_tab).grab_focus ();
+            Idle.add (() => {
+                get_term_widget (new_tab).grab_focus ();
+                return false;
+            });
 
             PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
         }
