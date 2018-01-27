@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-11-16 11:02+0000\n"
+"PO-Revision-Date: 2018-01-22 00:10+0000\n"
 "Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/terminal/terminal/pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
@@ -246,7 +246,7 @@ msgstr "O Terminalu"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "Umożliwia korzystanie z wiersza poleceń"
+msgstr "Użyj wiersza poleceń"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
