@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2018-01-27 00:07+0000\n"
+"PO-Revision-Date: 2018-01-29 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
-msgstr "このタブを閉じますか？"
+msgstr "このタブを閉じてもよろしいですか？"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
@@ -43,7 +43,7 @@ msgstr "タブを閉じる"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "ターミナルを終了しますか？"
+msgstr "ターミナルを終了してもよろしいですか？"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
