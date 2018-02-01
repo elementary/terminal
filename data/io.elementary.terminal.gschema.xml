@@ -111,7 +111,6 @@
     <key name="background" type="s">
       <default>"rgba(37, 46, 50, 0.95)"</default>
       <summary>Color of the background.</summary>
-      <description>The color of the background of the terminal.</description>
       <description>
           The color of the background of the terminal.
           
@@ -124,7 +123,6 @@
     <key name="cursor-color" type="s">
       <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
-      <description>The color of the cursor of the terminal.</description>
       <description>
           The color of the cursor of the terminal.
           
