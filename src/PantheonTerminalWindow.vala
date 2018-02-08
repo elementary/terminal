@@ -647,7 +647,10 @@ namespace PantheonTerminal {
             title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.zoom_factor);
             new_tab.icon = null;
-            new_tab.page.grab_focus ();
+            Idle.add (() => {
+                get_term_widget (new_tab).grab_focus ();
+                return false;
+            });
 
             PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
         }
@@ -692,9 +695,9 @@ namespace PantheonTerminal {
                 }
 
                 if (focus_restored_tabs) {
-                    var t = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
-                    notebook.current = t;
-                    t.grab_focus ();
+                    var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                    notebook.current = tab;
+                    get_term_widget (tab).grab_focus ();
                 }
 
                 return false;
