@@ -317,7 +317,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public void spawn_in_idle (string dir, string[] argv){
+        public void spawn_in_idle (string dir, string[] argv) {
             string?[] envv;
 
             envv = {
