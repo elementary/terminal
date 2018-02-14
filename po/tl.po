@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-06-02 17:54+0000\n"
-"Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
-"Language-Team: Tagalog <tl@li.org>\n"
+"PO-Revision-Date: 2018-02-14 02:28+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Tagalog "
+"<https://weblate.elementary.io/projects/terminal/terminal/tl/>\n"
+"Language: tl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -23,7 +26,7 @@ msgstr "Sigurado ka bang gusto mong isara ang tab na ito?"
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr "Walang mga aktibong proseso sa tab na ito"
+msgstr "May aktibong proseso sa tab na ito"
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
