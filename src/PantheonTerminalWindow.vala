@@ -304,7 +304,7 @@ namespace PantheonTerminal {
             style_popover.add (style_popover_grid);
 
             var style_button = new Gtk.MenuButton ();
-            style_button.image = new Gtk.Image.from_icon_name ("font-select-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
             style_button.tooltip_text = _("Style");
             style_button.valign = Gtk.Align.CENTER;
@@ -312,8 +312,8 @@ namespace PantheonTerminal {
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.get_style_context ().add_class ("default-decoration");
-            header.pack_end (search_button);
             header.pack_end (style_button);
+            header.pack_end (search_button);
 
             search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
 
