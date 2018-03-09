@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-06-24 10:12+0000\n"
+"PO-Revision-Date: 2018-03-10 00:01+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
-"<https://l10n.elementary.io/projects/terminal/terminal/it/>\n"
+"<https://weblate.elementary.io/projects/terminal/terminal/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-02-02 05:56+0000\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
@@ -156,11 +156,11 @@ msgstr "Vai alla scheda precedente"
 #: ../src/PantheonTerminalWindow.vala:816
 #: ../src/PantheonTerminalWindow.vala:817
 msgid "Zoom in"
-msgstr "Ingrandire"
+msgstr "Aumenta ingrandimento"
 
 #: ../src/PantheonTerminalWindow.vala:821
 msgid "Zoom out"
-msgstr "Rimpicciolire"
+msgstr "Riduci ingrandimento"
 
 #: ../src/PantheonTerminalWindow.vala:825
 msgid "Fullscreen"
@@ -235,7 +235,7 @@ msgstr "Usa la riga di comando"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
-msgstr "Nuova finestra come Amministratore"
+msgstr "Nuova finestra come amministratore"
 
 #: ../src/Constants.vala:10
 msgid "Open Terminal Here"
