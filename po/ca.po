@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2018-03-09 00:06+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan "
-"<https://weblate.elementary.io/projects/terminal/terminal/ca/>\n"
+"Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
+"terminal/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,223 +20,231 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Esteu segur que voleu tancar aquesta pestanya?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Hi ha un procés actiu en aquesta pestanya."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Si tanqueu la pestanya, s'acabarà el procés."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Canceŀla"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Tanca la pestanya"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Esteu segur que voleu sortir del terminal?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Hi ha un procés actiu en aquest terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Si sortiu del terminal, s'acabarà el procés."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Surt del terminal"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Cerca"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Resultat previ"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Resultat següent"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Cerca…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Tanca"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Finestra nova"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Obre una finestra nova"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Pestanya nova"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Crea una pestanya nova"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Copia"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Copia el text seleccionat"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Busca una cadena de text al terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Enganxa"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Enganxa text"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Selecciona-ho tot"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Selecciona tot el text del terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Quant a"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Mostra la finestra «Quant a»"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Pestanya següent"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Vés a la pestanya següent"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Pestanya anterior"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Vés a la pestanya anterior"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Amplia"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Redueix"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Pantalla completa"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Activa/desactiva la pantalla completa"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Adolfo Jayme https://launchpad.net/~fitojb\n"
-"  Alfredo Hernández https://launchpad.net/~aldomann\n"
-"  Arniroig https://launchpad.net/~arniroig\n"
-"  Davidmp https://launchpad.net/~davidmp\n"
-"  Mario Rodrigo https://launchpad.net/~capitantrueno\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Tasca acabada"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Imprimeix informació de la versió i surt"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Mostra el diàleg «Quant a»"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Executa un programa al terminal"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr ""
-"Aquesta ordre vol accedir amb privilegis administratius a l’ordinador"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copiar ordres al Terminal pot ser perillós."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "No enganxis"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Enganxa igualment"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Quant al Terminal"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Utilitzeu la línia d'ordres"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Finestra nova"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Nova pestanya d'Administrador"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Obre un terminal aquí"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Cerca…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Redueix"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Amplia"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Copia"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Enganxa"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Selecciona-ho tot"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Esteu segur que voleu tancar aquesta pestanya?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Hi ha un procés actiu en aquesta pestanya."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Si tanqueu la pestanya, s'acabarà el procés."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Tanca la pestanya"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Esteu segur que voleu sortir del terminal?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Hi ha un procés actiu en aquest terminal."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Si sortiu del terminal, s'acabarà el procés."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Surt del terminal"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Canceŀla"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Aquesta ordre vol accedir amb privilegis administratius a l’ordinador"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Copiar ordres al Terminal pot ser perillós."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "No enganxis"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Enganxa igualment"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Cerca"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Resultat previ"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Resultat següent"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Tanca"
+
+#~ msgid "Open a new window"
+#~ msgstr "Obre una finestra nova"
+
+#~ msgid "New Tab"
+#~ msgstr "Pestanya nova"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Crea una pestanya nova"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Copia el text seleccionat"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Busca una cadena de text al terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Enganxa text"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Selecciona tot el text del terminal"
+
+#~ msgid "About"
+#~ msgstr "Quant a"
+
+#~ msgid "Show about window"
+#~ msgstr "Mostra la finestra «Quant a»"
+
+#~ msgid "Next Tab"
+#~ msgstr "Pestanya següent"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Vés a la pestanya següent"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Pestanya anterior"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Vés a la pestanya anterior"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Pantalla completa"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Activa/desactiva la pantalla completa"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Adolfo Jayme https://launchpad.net/~fitojb\n"
+#~ "  Alfredo Hernández https://launchpad.net/~aldomann\n"
+#~ "  Arniroig https://launchpad.net/~arniroig\n"
+#~ "  Davidmp https://launchpad.net/~davidmp\n"
+#~ "  Mario Rodrigo https://launchpad.net/~capitantrueno\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Imprimeix informació de la versió i surt"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Mostra el diàleg «Quant a»"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Obre una pestanya nova"

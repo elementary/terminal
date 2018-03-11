@@ -6,232 +6,241 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2016-06-24 12:55+0000\n"
 "Last-Translator: Anand Kumar <Unknown>\n"
 "Language-Team: Hindi <hi@li.org>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "रद्द करें"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "टैब बंद करें"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "अगर आप टर्मिनल बंद करेंगे तो प्रक्रिया समाप्त हो जाएगी।"
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "टर्मिनल बंद करें"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "खोजें"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "पिछला परिणाम"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "अगला परिणाम"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "टर्मिनल"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "ढूंढें..."
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "बंद करें"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "नई विंडो"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "नया विंडो खोलें"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "नया टैब"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "एक नया टैब बनाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "नकल"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "चयनित शबदौ की कापी"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "दिए गए स्ट्रिंग को टर्मिनल में खोजें"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "चिपकाएँ(पेस्ट )"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "कुछ पाठ पेस्ट करें"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "सभी चुनें"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "टर्मिनल में सभी शब्दों का चयन"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "परिचय"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "खिड़की के के बारे में दिखाऍ"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "अगला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "अगला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "पिछला टैब"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "पिछले टैब पर जाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "बडे रूप में दिखाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "छोटे रूप में दिखाएँ"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "पूर्णस्‍क्रीन"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "टॉगल / अनटॉगल पूर्णस्क्रीन"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Akshay Shekher https://launchpad.net/~voldyman\n"
-"  Anand Kumar https://launchpad.net/~anandkumar\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Sandeep Pinge https://launchpad.net/~spinge"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "कार्य समाप्त हुआ"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "प्रिन्ट संस्करण जानकारी और बाहर"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "डायलॉग के बारें में बताएं"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "टर्मिनल में एक प्रोग्राम रन करें"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "यह कमांड कंप्यूटर पर प्रशासकीय पहुंच चाहता है"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है"
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"यह सुनिश्चित कर लें कि यह कमांड जो करेगा उसके हरेक हिस्से से आप भिज्ञ हैं।"
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "पेस्ट न करें"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "चाहे जैसे पेस्ट करें"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "टर्मिनल के बारे मे"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "आदेश पंक्ति का उपयोग करें"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "टर्मिनल"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "नई विंडो"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "नया रुट टैब"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "टर्मिनल यहाँ खोलें"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "ढूंढें..."
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "छोटे रूप में दिखाएँ"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "बडे रूप में दिखाएँ"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "नकल"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "चिपकाएँ(पेस्ट )"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "सभी चुनें"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "टैब बंद करें"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "अगर आप टर्मिनल बंद करेंगे तो प्रक्रिया समाप्त हो जाएगी।"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "टर्मिनल बंद करें"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "यह कमांड कंप्यूटर पर प्रशासकीय पहुंच चाहता है"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है"
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "यह सुनिश्चित कर लें कि यह कमांड जो करेगा उसके हरेक हिस्से से आप भिज्ञ हैं।"
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "पेस्ट न करें"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "चाहे जैसे पेस्ट करें"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "खोजें"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "पिछला परिणाम"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "अगला परिणाम"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "बंद करें"
+
+#~ msgid "Open a new window"
+#~ msgstr "नया विंडो खोलें"
+
+#~ msgid "New Tab"
+#~ msgstr "नया टैब"
+
+#~ msgid "Create a new tab"
+#~ msgstr "एक नया टैब बनाएँ"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "चयनित शबदौ की कापी"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "दिए गए स्ट्रिंग को टर्मिनल में खोजें"
+
+#~ msgid "Paste some text"
+#~ msgstr "कुछ पाठ पेस्ट करें"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "टर्मिनल में सभी शब्दों का चयन"
+
+#~ msgid "About"
+#~ msgstr "परिचय"
+
+#~ msgid "Show about window"
+#~ msgstr "खिड़की के के बारे में दिखाऍ"
+
+#~ msgid "Next Tab"
+#~ msgstr "अगला टैब"
+
+#~ msgid "Go to next tab"
+#~ msgstr "अगला टैब"
+
+#~ msgid "Previous Tab"
+#~ msgstr "पिछला टैब"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "पिछले टैब पर जाएँ"
+
+#~ msgid "Fullscreen"
+#~ msgstr "पूर्णस्‍क्रीन"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "टॉगल / अनटॉगल पूर्णस्क्रीन"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Akshay Shekher https://launchpad.net/~voldyman\n"
+#~ "  Anand Kumar https://launchpad.net/~anandkumar\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Sandeep Pinge https://launchpad.net/~spinge"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "प्रिन्ट संस्करण जानकारी और बाहर"
+
+#~ msgid "Show about dialog"
+#~ msgstr "डायलॉग के बारें में बताएं"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "अगर आप इस टैब को बंद करते हैं, तो प्रक्रिया बंद कर दिया जाएगा"

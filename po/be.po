@@ -6,235 +6,244 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2017-07-14 10:28+0000\n"
 "Last-Translator: Vladislav Glebovich <lightsunrider@live.ru>\n"
-"Language-Team: Belarusian "
-"<https://l10n.elementary.io/projects/terminal/terminal/be/>\n"
+"Language-Team: Belarusian <https://l10n.elementary.io/projects/terminal/"
+"terminal/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Вы ўпэўнены, што жадаеце зачыніць гэтую ўкладку?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Ёсць актыўны працэс на гэтай ўкладцы"
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Калі гэта закрыць, працэс скончыцца."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Адмяніць"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Зачыніць укладку"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Вы ўпэўнены, што хочаце выйсці з тэрміналу?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Ёсць актыўны працэс на гэтай ўкладцы"
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Калі закрыеце тэрмінал, працэс скончыцца."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Зачыніць тэрмінал"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Знайсці"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Папярэдні вынік"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Наступны вынік"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Тэрмінал"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Шукаем..."
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Закрыць"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Новае акно"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Адкрыць новае акно"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Новая ўкладка"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Стварыць новую ўкладка"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Скапіяваць"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Скапіяваць і ўставіць тэкст"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Шукаем гэты радок ў тэрмінале"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Уставіць"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Уставіць некаторы тэкст"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Вылучыць усё"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Вылучыць ўвесь тэкст у тэрмінале"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Аб праграме"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Паказаць акно звестак"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Наступная ўкладка"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Перайсці да наступнай ўкладцы"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Папярэдняя ўкладка"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Перайсці да папярэдняй ўкладцы"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Павялічыць"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Паменшыць"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "На ўвесь экран"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Уключыць/Выключыць поўнаэкранны рэжым"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Alexander Rosolko https://launchpad.net/~rosolko\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Mikel https://launchpad.net/~mishkasta\n"
-"  Viktuk https://launchpad.net/~register885"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Заданне скончана"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Друк інфармацыі аб версіі і выхад"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Паказаць інфармацыю пра дыялог"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Запусціць праграму ў тэрмінале"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Выберыце працоўную папку для абалонкі"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Гэтая каманда патрабуе правоў Адміністратара."
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Капіраванне каманд у тэрмінал можа быць небяспечным."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Будзьце ўпэўнены, што разумееце сэнс кожнай часткі каманды."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Не ўстаўляйце"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Устаўляйце куды хаціце"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Даведка"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Выкарыстоўваць загадны радок"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Тэрмінал"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Новае акно"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Стварыць ўкладку ад імя адміністратара"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Адкрыць тэрмінал тут"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Шукаем..."
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Паменшыць"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Павялічыць"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Скапіяваць"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Уставіць"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Вылучыць усё"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Вы ўпэўнены, што жадаеце зачыніць гэтую ўкладку?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Ёсць актыўны працэс на гэтай ўкладцы"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Калі гэта закрыць, працэс скончыцца."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Зачыніць укладку"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Вы ўпэўнены, што хочаце выйсці з тэрміналу?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Ёсць актыўны працэс на гэтай ўкладцы"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Калі закрыеце тэрмінал, працэс скончыцца."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Зачыніць тэрмінал"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Адмяніць"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Гэтая каманда патрабуе правоў Адміністратара."
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Капіраванне каманд у тэрмінал можа быць небяспечным."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Будзьце ўпэўнены, што разумееце сэнс кожнай часткі каманды."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Не ўстаўляйце"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Устаўляйце куды хаціце"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Знайсці"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Папярэдні вынік"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Наступны вынік"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Закрыць"
+
+#~ msgid "Open a new window"
+#~ msgstr "Адкрыць новае акно"
+
+#~ msgid "New Tab"
+#~ msgstr "Новая ўкладка"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Стварыць новую ўкладка"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Скапіяваць і ўставіць тэкст"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Шукаем гэты радок ў тэрмінале"
+
+#~ msgid "Paste some text"
+#~ msgstr "Уставіць некаторы тэкст"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Вылучыць ўвесь тэкст у тэрмінале"
+
+#~ msgid "About"
+#~ msgstr "Аб праграме"
+
+#~ msgid "Show about window"
+#~ msgstr "Паказаць акно звестак"
+
+#~ msgid "Next Tab"
+#~ msgstr "Наступная ўкладка"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Перайсці да наступнай ўкладцы"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Папярэдняя ўкладка"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Перайсці да папярэдняй ўкладцы"
+
+#~ msgid "Fullscreen"
+#~ msgstr "На ўвесь экран"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Уключыць/Выключыць поўнаэкранны рэжым"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Alexander Rosolko https://launchpad.net/~rosolko\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Mikel https://launchpad.net/~mishkasta\n"
+#~ "  Viktuk https://launchpad.net/~register885"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Друк інфармацыі аб версіі і выхад"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Паказаць інфармацыю пра дыялог"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Адкрыць новую ўкладку"
