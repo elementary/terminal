@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2017-08-11 19:09+0000\n"
 "Last-Translator: Rónyai Dániel <danironyai@gmail.com>\n"
-"Language-Team: Hungarian "
-"<https://weblate.elementary.io/projects/terminal/terminal/hu/>\n"
+"Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
+"terminal/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,224 +20,233 @@ msgstr ""
 "X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Biztos, hogy beakarja zárni ezt a lapot?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Ezen a lapon aktív folyamat van."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Ha bezárja, a folyamat befejeződik."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Lap bezárása"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Biztos, hogy ki akar lépni terminálból?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Ebben a terminálban aktív folyamat van."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Ha bezárja a terminált, a folyamat befejeződik."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Kilépés a terminálból"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Keresés"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Előző találat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Következő találat"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminál"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Keresés…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Bezárás"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Új ablak"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Új ablak megnyitása"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Új lap"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Új lap létrehozása"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Másolás"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "A kiválasztott szöveg másolása"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Szöveg keresése a terminálban"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Beillesztés"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Szöveg beillesztése"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Összes kijelölése"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Az összes szöveg kijelölése a terminálban"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Névjegy"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Névjegy megjelenítése"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Következő lap"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Ugrás a következő lapra"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Előző lap"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Ugrás az előző lapra"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Nagyítás"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Kicsinyítés"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Teljes képernyő"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Teljes képernyős nézetváltás"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  András Bognár https://launchpad.net/~bognarandras-deactivatedaccount1\n"
-"  Bence Lukács https://launchpad.net/~lukacs-bence1\n"
-"  Dono https://launchpad.net/~laszlo-bence-27\n"
-"  Laszlo Espadas https://launchpad.net/~kardi-web\n"
-"  Mark Lutring https://launchpad.net/~marcus-elitemail\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Papp Ferenc https://launchpad.net/~pappfer\n"
-"  Szentiványi András https://launchpad.net/~szentivanyi-andras92"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Feladat kész"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Verzióinformáció kiírása és kilépés"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Névjegy megjelenítése"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Program futtatása terminálban"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Shell munkakönyvtár beállítása"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ez a parancs adminisztrációs hozzáférést akar a számítógépéhez"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Parancsok másolása a Terminálba veszélyes lehet."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Ne illessze be"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Beillesztés mindenképpen"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Terminal névjegy"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Parancssor használata"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminál"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Új ablak"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Új Root Ablak"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Terminál megnyitása itt"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Keresés…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Kicsinyítés"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Nagyítás"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Másolás"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Beillesztés"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Összes kijelölése"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Biztos, hogy beakarja zárni ezt a lapot?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Ezen a lapon aktív folyamat van."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Ha bezárja, a folyamat befejeződik."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Lap bezárása"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Biztos, hogy ki akar lépni terminálból?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Ebben a terminálban aktív folyamat van."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Ha bezárja a terminált, a folyamat befejeződik."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Kilépés a terminálból"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Ez a parancs adminisztrációs hozzáférést akar a számítógépéhez"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Parancsok másolása a Terminálba veszélyes lehet."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Ne illessze be"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Beillesztés mindenképpen"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Keresés"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Előző találat"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Következő találat"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Open a new window"
+#~ msgstr "Új ablak megnyitása"
+
+#~ msgid "New Tab"
+#~ msgstr "Új lap"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Új lap létrehozása"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "A kiválasztott szöveg másolása"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Szöveg keresése a terminálban"
+
+#~ msgid "Paste some text"
+#~ msgstr "Szöveg beillesztése"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Az összes szöveg kijelölése a terminálban"
+
+#~ msgid "About"
+#~ msgstr "Névjegy"
+
+#~ msgid "Show about window"
+#~ msgstr "Névjegy megjelenítése"
+
+#~ msgid "Next Tab"
+#~ msgstr "Következő lap"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Ugrás a következő lapra"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Előző lap"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Ugrás az előző lapra"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Teljes képernyő"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Teljes képernyős nézetváltás"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  András Bognár https://launchpad.net/~bognarandras-deactivatedaccount1\n"
+#~ "  Bence Lukács https://launchpad.net/~lukacs-bence1\n"
+#~ "  Dono https://launchpad.net/~laszlo-bence-27\n"
+#~ "  Laszlo Espadas https://launchpad.net/~kardi-web\n"
+#~ "  Mark Lutring https://launchpad.net/~marcus-elitemail\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Papp Ferenc https://launchpad.net/~pappfer\n"
+#~ "  Szentiványi András https://launchpad.net/~szentivanyi-andras92"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Verzióinformáció kiírása és kilépés"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Névjegy megjelenítése"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Új lap megnyitása"

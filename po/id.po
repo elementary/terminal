@@ -5,12 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2017-08-31 15:17+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
-"Language-Team: Indonesian "
-"<https://weblate.elementary.io/projects/terminal/terminal/id/>\n"
+"Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
+"terminal/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,230 +19,240 @@ msgstr ""
 "X-Generator: Poedit 2.0.3\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Yakin ingin menutup tab ini?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Ada proses aktif di tab ini."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Batal"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Tutup Tab"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Apa Anda yakin ingin keluar dari Terminal?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Ada proses aktif di terminal ini."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Keluar Terminal"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Cari"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Hasil sebelumnya"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Hasil berikutnya"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Cari…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Tutup"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Jendela Baru"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Buka jendela baru"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Tab Baru"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Buat tab baru"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Salin"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Salin teks terpilih"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Cari string yang diberikan di terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Tempel"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Tempel suatu teks"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Pilih Semua"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Pilih semua teks di terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Tentang"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Tampilkan jendela Tentang"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Tab selanjutnya"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Pindah ke tab selanjutnya"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Tab sebelum"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Pindah ke tab sebelumnya"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Perbesar"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Perkecil"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Layar penuh"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "On/Off layar penuh"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Affif Mukhlashin https://launchpad.net/~bluemeda\n"
-"  Dani Pratomo https://launchpad.net/~daneepee\n"
-"  Erieck Saputra https://launchpad.net/~erick-1383\n"
-"  Ficky Ichsan Hendrawan https://launchpad.net/~fickyichsan\n"
-"  Jeffrey Ferrari https://launchpad.net/~jeffreyflukman\n"
-"  Jeffry https://launchpad.net/~jeffry-a\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Ngalim Siregar https://launchpad.net/~ngalim-siregar-4\n"
-"  Reynaldi Riva https://launchpad.net/~boyfe98\n"
-"  Risman Rangga Pratama https://launchpad.net/~imanrp\n"
-"  Viko Adi Rahmawan https://launchpad.net/~vikoadi\n"
-"  Yudha Yudhistira https://launchpad.net/~yudhayudhistira94\n"
-"  dadanhrn https://launchpad.net/~dadanhrn\n"
-"  yulandi https://launchpad.net/~yulandi80"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Proses selesai"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Cetak info versi dan keluar"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Tampilkan tentang dialog"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Jalankan program dalam terminal"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Setel direktori kerja shell"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Perintah ini meminta akses Administratif ke komputer Anda"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Menyalin perintah ke Terminal bisa berbahaya."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Pastikan Anda memahami apa yang masing-masing bagian dari perintah ini."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Jangan Tempel"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Tempelkan saja"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Tentang Terminal"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Gunakan baris perintah"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Jendela Baru"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Tab Root baru"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Buka Terminal Di Sini"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Cari…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Perkecil"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Perbesar"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Salin"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Tempel"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Pilih Semua"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Yakin ingin menutup tab ini?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Ada proses aktif di tab ini."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Tutup Tab"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Apa Anda yakin ingin keluar dari Terminal?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Ada proses aktif di terminal ini."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Keluar Terminal"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Batal"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Perintah ini meminta akses Administratif ke komputer Anda"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Menyalin perintah ke Terminal bisa berbahaya."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+"Pastikan Anda memahami apa yang masing-masing bagian dari perintah ini."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Jangan Tempel"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Tempelkan saja"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Cari"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Hasil sebelumnya"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Hasil berikutnya"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
+
+#~ msgid "Open a new window"
+#~ msgstr "Buka jendela baru"
+
+#~ msgid "New Tab"
+#~ msgstr "Tab Baru"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Buat tab baru"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Salin teks terpilih"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Cari string yang diberikan di terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Tempel suatu teks"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Pilih semua teks di terminal"
+
+#~ msgid "About"
+#~ msgstr "Tentang"
+
+#~ msgid "Show about window"
+#~ msgstr "Tampilkan jendela Tentang"
+
+#~ msgid "Next Tab"
+#~ msgstr "Tab selanjutnya"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Pindah ke tab selanjutnya"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Tab sebelum"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Pindah ke tab sebelumnya"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Layar penuh"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "On/Off layar penuh"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Affif Mukhlashin https://launchpad.net/~bluemeda\n"
+#~ "  Dani Pratomo https://launchpad.net/~daneepee\n"
+#~ "  Erieck Saputra https://launchpad.net/~erick-1383\n"
+#~ "  Ficky Ichsan Hendrawan https://launchpad.net/~fickyichsan\n"
+#~ "  Jeffrey Ferrari https://launchpad.net/~jeffreyflukman\n"
+#~ "  Jeffry https://launchpad.net/~jeffry-a\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Ngalim Siregar https://launchpad.net/~ngalim-siregar-4\n"
+#~ "  Reynaldi Riva https://launchpad.net/~boyfe98\n"
+#~ "  Risman Rangga Pratama https://launchpad.net/~imanrp\n"
+#~ "  Viko Adi Rahmawan https://launchpad.net/~vikoadi\n"
+#~ "  Yudha Yudhistira https://launchpad.net/~yudhayudhistira94\n"
+#~ "  dadanhrn https://launchpad.net/~dadanhrn\n"
+#~ "  yulandi https://launchpad.net/~yulandi80"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Cetak info versi dan keluar"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Tampilkan tentang dialog"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Buka tab baru"

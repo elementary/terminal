@@ -1,4 +1,166 @@
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+
+#: src/Application.vala:107
+msgid "Task finished"
+msgstr ""
+
+#: src/Application.vala:186
+msgid "Run a program in terminal"
+msgstr ""
+
+#: src/Application.vala:187
+msgid "Set shell working directory"
+msgstr ""
+
+#: src/Constants.vala:24
+msgid "About Terminal"
+msgstr ""
+
+#: src/Constants.vala:25
+msgid "Use the command line"
+msgstr ""
+
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr ""
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr ""
+
+#: src/Constants.vala:28
+msgid "New Root Tab"
+msgstr ""
+
+#: src/Constants.vala:29
+msgid "Open Terminal Here"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:243
+msgid "Zoom Out"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+msgid "Zoom In"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
