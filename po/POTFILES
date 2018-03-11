@@ -1,0 +1,9 @@
+src/Application.vala
+src/Constants.vala
+src/DBus.vala
+src/Settings.vala
+src/PantheonTerminalWindow.vala
+src/Dialogs/ForegroundProcessDialog.vala
+src/Dialogs/UnsafePasteDialog.vala
+src/Widgets/SearchToolbar.vala
+src/Widgets/TerminalWidget.vala
