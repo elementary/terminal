@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 17:28-0600\n"
+"POT-Creation-Date: 2018-03-11 12:50-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,110 +17,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/Application.vala:45 ../src/Constants.vala:7
-#: ../src/Widgets/TerminalWidget.vala:30
+#: ../src/Application.vala:45 ../src/Constants.vala:26
+#: ../src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr ""
 
-#: ../src/Application.vala:109
+#: ../src/Application.vala:119
 msgid "Task finished"
 msgstr ""
 
-#: ../src/Application.vala:191
+#: ../src/Application.vala:203
 msgid "Print version info and exit"
 msgstr ""
 
-#: ../src/Application.vala:192
+#: ../src/Application.vala:204
 msgid "Run a program in terminal"
 msgstr ""
 
-#: ../src/Application.vala:193
+#: ../src/Application.vala:205
 msgid "Set shell working directory"
 msgstr ""
 
-#: ../src/PantheonTerminalWindow.vala:223
-#: ../src/PantheonTerminalWindow.vala:1088
-msgid "Find…"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:227
-msgid "Zoom Out"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:230
-msgid "Default zoom level"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:233
-msgid "Zoom In"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:247
-msgid "High Contrast"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:257
-msgid "Solarized Light"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:267
-msgid "Solarized Dark"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:290
-msgid "Style"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:1087
-msgid "Copy"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:1089
-msgid "Paste"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:1090
-msgid "Select All"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:1091
-msgid "Show in File Browser"
-msgstr ""
-
-#: ../src/Constants.vala:5
+#: ../src/Constants.vala:24
 msgid "About Terminal"
 msgstr ""
 
-#: ../src/Constants.vala:6
+#: ../src/Constants.vala:25
 msgid "Use the command line"
 msgstr ""
 
-#: ../src/Constants.vala:8
+#: ../src/Constants.vala:27
 msgid "New Window"
 msgstr ""
 
-#: ../src/Constants.vala:9
+#: ../src/Constants.vala:28
 msgid "New Root Tab"
 msgstr ""
 
-#: ../src/Constants.vala:10
+#: ../src/Constants.vala:29
 msgid "Open Terminal Here"
-msgstr ""
-
-#: ../src/Widgets/SearchToolbar.vala:34
-msgid "Find"
-msgstr ""
-
-#: ../src/Widgets/SearchToolbar.vala:38
-msgid "Previous result"
-msgstr ""
-
-#: ../src/Widgets/SearchToolbar.vala:42
-msgid "Next result"
-msgstr ""
-
-#: ../src/Widgets/SearchToolbar.vala:47
-msgid "Cyclic search"
 msgstr ""
 
 #: ../src/Dialogs/ForegroundProcessDialog.vala:31
@@ -181,4 +116,69 @@ msgstr ""
 
 #: ../src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:239
+#: ../src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:243
+msgid "Zoom Out"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:251
+msgid "Zoom In"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr ""
+
+#: ../src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: ../src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr ""
+
+#: ../src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr ""
+
+#: ../src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr ""
+
+#: ../src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
 msgstr ""
