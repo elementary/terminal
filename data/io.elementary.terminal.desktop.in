@@ -8,7 +8,6 @@ Icon=utilities-terminal
 Type=Application
 Categories=GNOME;GTK;System;TerminalEmulator;
 StartupNotify=true
-X-GNOME-Gettext-Domain=io.elementary.terminal
 Keywords=command;prompt;cmd;commandline;run;
 X-GNOME-UsesNotifications=true
 Actions=NewWindow;NewRootWindow;
