@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2018-01-22 00:10+0000\n"
+"PO-Revision-Date: 2018-03-18 00:08+0000\n"
 "Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/terminal/terminal/pl/>\n"
@@ -242,7 +242,7 @@ msgstr "Wklej mimo wszystko"
 
 #: ../src/Constants.vala:5
 msgid "About Terminal"
-msgstr "O Terminalu"
+msgstr "O programie Terminal"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
