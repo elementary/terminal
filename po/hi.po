@@ -8,14 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-06-24 12:55+0000\n"
-"Last-Translator: Anand Kumar <Unknown>\n"
-"Language-Team: Hindi <hi@li.org>\n"
+"PO-Revision-Date: 2018-03-20 00:12+0000\n"
+"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
+"Language-Team: Hindi "
+"<https://weblate.elementary.io/projects/terminal/terminal/hi/>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: ../src/ForegroundProcessDialog.vala:30
 msgid "Are you sure you want to close this tab?"
@@ -23,7 +26,7 @@ msgstr "क्या आप यक़ीनन इस टैब को बंद �
 
 #: ../src/ForegroundProcessDialog.vala:31
 msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
+msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
 
 #: ../src/ForegroundProcessDialog.vala:32
 msgid "If you close it, the process will end."
@@ -40,7 +43,7 @@ msgstr "टैब बंद करें"
 
 #: ../src/ForegroundProcessDialog.vala:55
 msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
 
 #: ../src/ForegroundProcessDialog.vala:56
 msgid "There is an active process on this terminal."
@@ -75,7 +78,7 @@ msgstr "टर्मिनल"
 #: ../src/PantheonTerminalWindow.vala:185
 #: ../src/PantheonTerminalWindow.vala:794
 msgid "Find…"
-msgstr "ढूंढें..."
+msgstr "ढूंढें…"
 
 #: ../src/PantheonTerminalWindow.vala:777
 #: ../src/PantheonTerminalWindow.vala:778
@@ -202,7 +205,7 @@ msgstr "यह कमांड कंप्यूटर पर प्रशा�
 
 #: ../src/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है"
+msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है।"
 
 #: ../src/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
@@ -223,7 +226,7 @@ msgstr "टर्मिनल के बारे मे"
 
 #: ../src/Constants.vala:6
 msgid "Use the command line"
-msgstr "आदेश पंक्ति का उपयोग करें"
+msgstr "आदेश पंक्ति (कमांड लाइन) का उपयोग करें"
 
 #: ../src/Constants.vala:9
 msgid "New Root Tab"
