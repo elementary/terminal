@@ -5,13 +5,10 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ 
+	dh $@ --buildsystem=meson
 
 override_dh_strip:
-	dh_strip --dbg-package=pantheon-terminal-dbg
+	dh_strip --dbgsym-migration='pantheon-terminal-dbg (<< 0.4.3)'
 
-override_dh_auto_install:
-	dh_auto_install --destdir=debian/pantheon-terminal
-
-override_dh_builddeb:
-	dh_builddeb -- -Zxz
+override_dh_missing:
+	dh_missing --fail-missing
