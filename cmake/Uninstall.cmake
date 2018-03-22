@@ -1,3 +1,5 @@
+# Taken from CMake FAQ http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
+# TODO: that should probably be improved, do we really need to configure a file to read something in the current binary directory?
 if (NOT EXISTS "@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt")
     message(FATAL_ERROR "Cannot find install manifest: \"@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt\"")
 endif(NOT EXISTS "@CMAKE_CURRENT_BINARY_DIR@/install_manifest.txt")
