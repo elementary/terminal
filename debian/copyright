@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pantheon-terminal
-Source: https://launchpad.net/pantheon-terminal
+Source: https://github.com/elementary/terminal
 
 Files: *
 Copyright: 2011-2013 Mario Guerriero <mario@elementaryos.org>
@@ -15,34 +15,12 @@ Copyright: 2011-2013 Mario Guerriero <mario@elementaryos.org>
            2014 Daniel Fore <daniel@elementaryos.org>
            2014 Richard B. <richardbp85@gmail.com>
            2014 Rico Tzschichholz <ricotz@ubuntu.com>
+           2018 elementary LLC (https://elementary.io)
 License: GPL-3.0+
-
-Files: cmake/ParseArguments.cmake
-Copyright: 2000-2009 Kitware, Inc., Insight Software Consortium
-           2011 Mario Guerriero <mario@elementaryos.org>
-License: 2-clause BSD
-
-Files: cmake/FindVala.cmake
-       cmake/ValaPrecompile.cmake
-       cmake/ValaVersion.cmake
-       cmake/README.Vala.rst
-Copyright: 2009-2010 Jakob Westhoff
-           2011 Mario Guerriero <mario@elementaryos.org>
-License: 2-clause BSD
-
-Files: cmake/GSettings.cmake
-       Tests.cmake
-       Translations.cmake
-Copyright: 2011 ammonkey <am.monkeyd@gmail.com>
-License: 2-clause BSD
 
 Files: debian/*
 Copyright: 2011-2014 Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
            2011-2013 Cody Garver <cody@elementaryos.org>
-License: GPL-3.0+
-
-Files: debian/watch
-Copyright: Bart Martens <bartm@debian.org>
 License: GPL-3.0+
 
 License: GPL-3.0+

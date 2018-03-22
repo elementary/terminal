@@ -15,7 +15,6 @@ Homepage: https://github.com/elementary/terminal
 Package: pantheon-terminal
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Pre-Depends: dpkg (>= 1.15.6)
 Provides: x-terminal-emulator
 Description: Modern terminal from elementary project
  Pantheon Terminal is a beautiful and simple terminal emulator.
