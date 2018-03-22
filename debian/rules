@@ -8,7 +8,10 @@
 	dh $@ 
 
 override_dh_strip:
-	dh_strip --dbg-package=pantheon-terminal-dbg
+	dh_strip --dbgsym-migration='pantheon-terminal-dbg (<< 0.4.3)'
+
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/pantheon-terminal

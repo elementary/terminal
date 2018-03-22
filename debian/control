@@ -1,16 +1,16 @@
 Source: pantheon-terminal
 Section: x11
 Priority: optional
-Maintainer: Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>
-Build-Depends: cmake (>= 2.8),
-               debhelper (>= 9),
-               intltool,
+Maintainer: elementary LLC <builds@elementary.io>
+Build-Depends: debhelper (>= 10.5.1),
+               gettext,
                libgranite-dev (>= 0.3.0~),
                libgtk-3-dev (>= 3.9.10),
                libvte-2.91-dev,
+               meson,
                valac (>= 0.16)
-Standards-Version: 3.9.5
-Homepage: https://launchpad.net/pantheon-terminal
+Standards-Version: 4.1.1
+Homepage: https://github.com/elementary/terminal
 
 Package: pantheon-terminal
 Architecture: any
@@ -21,17 +21,3 @@ Description: Modern terminal from elementary project
  Pantheon Terminal is a beautiful and simple terminal emulator.
  It's designed to be set up with sane defaults and little to no configuration
  and follows the elementary OS Human Interface Guidelines.
-
-Package: pantheon-terminal-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends: pantheon-terminal (= ${binary:Version}), ${misc:Depends}
-Pre-Depends: dpkg (>= 1.15.6)
-Enhances: pantheon-terminal
-Description: Modern terminal from elementary project (debugging symbols)
- Pantheon Terminal is a beautiful and simple terminal emulator.
- It's designed to be set up with sane defaults and little to no configuration
- and follows the elementary OS Human Interface Guidelines.
- .
- This package contains debugging symbols for pantheon-terminal.
