@@ -6,232 +6,242 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:28-0700\n"
 "PO-Revision-Date: 2016-08-08 11:15+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Ar tikrai norite užverti šią kortelę?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Šioje kortelėje yra aktyvus procesas."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Jeigu ją užversite, procesas užsibaigs."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Užverti kortelę"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Ar tikrai norite išeiti iš Terminalo?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Šiame terminale yra aktyvus procesas."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Jeigu išeisite iš Terminalo, procesas užsibaigs."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Išeiti iš Terminalo"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Rasti"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Ankstesnis rezultatas"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Kitas rezultatas"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminalas"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Rasti…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Užverti"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Naujas langas"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Atverti naują langą"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Nauja kortelė"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Sukurti naują kortelę"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Kopijuoti"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Kopijuoti pažymėtą tekstą"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Ieškoti nurodytos eilutės terminale"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Įdėti"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Įdėti kažkokį tekstą"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Pažymėti viską"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Pažymėti visą terminale esantį tekstą"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Apie"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Rodyti Apie langą"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Kita kortelė"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Pereiti į kitą kortelę"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Ankstesnė kortelė"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Pereiti į ankstesnę kortelę"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Didinti"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Mažinti"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Visas ekranas"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Perjungti visą ekraną"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Erikas https://launchpad.net/~erikasras\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Moo https://launchpad.net/~mooo\n"
-"  Rolandas Barysas https://launchpad.net/~rb---deactivatedaccount\n"
-"  Simonas Gudjonis https://launchpad.net/~simonas-8"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Užduotis baigta"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Rodyti versijos informaciją ir išeiti"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Rodyti langą apie programą"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Vykdyti programą terminale"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Nustatyti apvalkalo darbinį katalogą"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ši komanda prašo administracinės prieigos prie jūsų kompiuterio"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komandų kopijavimas į Terminalą gali būti pavojingas."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Įsitikinkite, kad žinote, ką kiekviena šios komandos dalis daro."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Neįdėti"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Vis tiek įdėti"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Apie Terminalą"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Naudoti komandų eilutę"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminalas"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Naujas langas"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Nauja šaknies kortelė"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Atverti čia terminalą"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Rasti…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Mažinti"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Didinti"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Įdėti"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Pažymėti viską"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Ar tikrai norite užverti šią kortelę?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Šioje kortelėje yra aktyvus procesas."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Jeigu ją užversite, procesas užsibaigs."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Užverti kortelę"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ar tikrai norite išeiti iš Terminalo?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Šiame terminale yra aktyvus procesas."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Jeigu išeisite iš Terminalo, procesas užsibaigs."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Išeiti iš Terminalo"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Ši komanda prašo administracinės prieigos prie jūsų kompiuterio"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Komandų kopijavimas į Terminalą gali būti pavojingas."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Įsitikinkite, kad žinote, ką kiekviena šios komandos dalis daro."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Neįdėti"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Vis tiek įdėti"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Rasti"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Ankstesnis rezultatas"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Kitas rezultatas"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
+
+#~ msgid "Open a new window"
+#~ msgstr "Atverti naują langą"
+
+#~ msgid "New Tab"
+#~ msgstr "Nauja kortelė"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Sukurti naują kortelę"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Kopijuoti pažymėtą tekstą"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Ieškoti nurodytos eilutės terminale"
+
+#~ msgid "Paste some text"
+#~ msgstr "Įdėti kažkokį tekstą"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Pažymėti visą terminale esantį tekstą"
+
+#~ msgid "About"
+#~ msgstr "Apie"
+
+#~ msgid "Show about window"
+#~ msgstr "Rodyti Apie langą"
+
+#~ msgid "Next Tab"
+#~ msgstr "Kita kortelė"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Pereiti į kitą kortelę"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Ankstesnė kortelė"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Pereiti į ankstesnę kortelę"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Visas ekranas"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Perjungti visą ekraną"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Erikas https://launchpad.net/~erikasras\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Moo https://launchpad.net/~mooo\n"
+#~ "  Rolandas Barysas https://launchpad.net/~rb---deactivatedaccount\n"
+#~ "  Simonas Gudjonis https://launchpad.net/~simonas-8"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Rodyti versijos informaciją ir išeiti"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Rodyti langą apie programą"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Atverti naują kortelę"

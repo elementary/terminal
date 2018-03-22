@@ -6,35 +6,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 14:30-0700\n"
 "PO-Revision-Date: 2017-02-26 19:13+0000\n"
 "Last-Translator: Martin Heralecký <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2017-02-27 05:41+0000\n"
 "X-Generator: Launchpad (build 18328)\n"
 
+#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "Terminál"
 
+#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "Použít příkazovou řádku"
 
-msgid "command;prompt;cmd;commandline;run;"
-msgstr "příkaz;řadek;cmd;příkazová řádka;spustit;"
-
-msgid "New Window"
-msgstr "Nové okno"
-
-msgid "New Root Tab"
-msgstr "Nová karta s právy root"
-
-msgid "About Terminal"
-msgstr "O aplikaci Terminál"
-
+#: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -42,3 +37,28 @@ msgstr ""
 "Terminál je aplikace emulující terminál. Umožňuje přístup k rozhrání "
 "Unixového shellu, které můžete použít ke spouštění programů obsažených ve "
 "vašem systému."
+
+#: data/io.elementary.terminal.appdata.xml.in:76
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:8
+#: data/io.elementary.terminal.desktop.in:19
+#: data/io.elementary.terminal.desktop.in:24
+msgid "utilities-terminal"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:13
+msgid "command;prompt;cmd;commandline;run;"
+msgstr "příkaz;řadek;cmd;příkazová řádka;spustit;"
+
+#: data/io.elementary.terminal.desktop.in:18
+msgid "New Window"
+msgstr "Nové okno"
+
+#: data/io.elementary.terminal.desktop.in:23
+msgid "New Root Tab"
+msgstr "Nová karta s právy root"
+
+#~ msgid "About Terminal"
+#~ msgstr "O aplikaci Terminál"
