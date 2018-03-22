@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2018-03-20 00:12+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
-"Language-Team: Hindi "
-"<https://weblate.elementary.io/projects/terminal/terminal/hi/>\n"
+"Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/"
+"terminal/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,30 +20,13 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
+#: src/Application.vala:107
+msgid "Task finished"
+msgstr "कार्य समाप्त हुआ"
 
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "रद्द करें"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "टैब बंद करें"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
+#: src/Application.vala:186
+msgid "Run a program in terminal"
+msgstr "टर्मिनल में एक प्रोग्राम रन करें"
 
 #: src/Application.vala:187
 msgid "Set shell working directory"
@@ -55,7 +38,7 @@ msgstr "टर्मिनल के बारे मे"
 
 #: src/Constants.vala:25
 msgid "Use the command line"
-msgstr "आदेश पंक्ति का उपयोग करें"
+msgstr "आदेश पंक्ति (कमांड लाइन) का उपयोग करें"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
@@ -187,9 +170,9 @@ msgstr "चाहे जैसे पेस्ट करें"
 msgid "Find"
 msgstr "खोजें"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "आदेश पंक्ति (कमांड लाइन) का उपयोग करें"
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "पिछला परिणाम"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Next result"

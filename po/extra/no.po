@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-11 14:30-0700\n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2018-03-11 14:30-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -39,19 +39,19 @@ msgid "elementary LLC."
 msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:19
-#: data/io.elementary.terminal.desktop.in:24
+#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:13
+#: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:23
+#: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr ""
