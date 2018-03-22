@@ -107,7 +107,7 @@ namespace PantheonTerminal {
                                     var notification = new Notification (_("Task finished"));
                                     notification.set_body (process);
                                     notification.set_icon (new ThemedIcon ("utilities-terminal"));
-                                    send_notification ("finished", notification);
+                                    send_notification (null, notification);
                                 }
                             }
 

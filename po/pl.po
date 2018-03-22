@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-11 14:28-0700\n"
-"PO-Revision-Date: 2018-01-22 00:10+0000\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"PO-Revision-Date: 2018-03-18 00:08+0000\n"
 "Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
@@ -167,9 +167,9 @@ msgstr "Nie wklejaj"
 msgid "Paste Anyway"
 msgstr "Wklej mimo wszystko"
 
-#: src/Widgets/SearchToolbar.vala:34
-msgid "Find"
-msgstr "Znajdź"
+#: ../src/Constants.vala:5
+msgid "About Terminal"
+msgstr "O programie Terminal"
 
 #: src/Widgets/SearchToolbar.vala:38
 msgid "Previous result"
