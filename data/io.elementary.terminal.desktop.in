@@ -14,10 +14,8 @@ Actions=NewWindow;NewRootWindow;
 
 [Desktop Action NewWindow]
 Name=New Window
-Icon=utilities-terminal
 Exec=io.elementary.terminal
 
 [Desktop Action NewRootWindow]
 Name=New Root Tab
-Icon=utilities-terminal
 Exec=io.elementary.terminal -e "sudo -s"
