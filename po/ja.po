@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-01-29 00:02+0000\n"
+"PO-Revision-Date: 2018-03-23 01:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
-"terminal/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,34 +61,32 @@ msgid "Find…"
 msgstr "検索…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
-msgstr "縮小する"
+msgstr "ズームアウト"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "デフォルトの拡大レベル"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
-msgstr "拡大する"
+msgstr "ズームイン"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "ハイコントラスト"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Dark"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "スタイル"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -104,7 +102,7 @@ msgstr "すべて選択"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "ファイルブラウザーで表示"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +154,7 @@ msgstr "コマンドの内容を確認してください。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "今後このダイアログを表示しない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +178,7 @@ msgstr "次の結果"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "循環検索"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"
