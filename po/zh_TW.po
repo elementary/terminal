@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2016-08-06 09:49+0000\n"
+"PO-Revision-Date: 2018-03-23 10:16+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
-"Language: \n"
+"Language-Team: Chinese (Traditional) "
+"<https://weblate.elementary.io/projects/terminal/terminal/zh_TW/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
@@ -59,34 +61,32 @@ msgid "Find…"
 msgstr "尋找…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
 msgstr "拉遠"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "預設遠近層級"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
 msgstr "拉近"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "高對比"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized 亮色"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized 暗色"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "樣式"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -102,7 +102,7 @@ msgstr "全部選擇"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "顯示在檔案瀏覽器中"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -154,7 +154,7 @@ msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "不要再顯示這個對話視窗"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -178,7 +178,7 @@ msgstr "下個結果"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "循環搜尋"
 
 #~ msgid "Close"
 #~ msgstr "關閉"
