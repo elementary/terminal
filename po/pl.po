@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-18 00:08+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
-"terminal/pl/>\n"
+"PO-Revision-Date: 2018-03-23 16:22+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"Language-Team: Polish "
+"<https://weblate.elementary.io/projects/terminal/terminal/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,34 +62,32 @@ msgid "Find…"
 msgstr "Znajdź..."
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
-msgstr "Pomniejsz"
+msgstr "Oddal"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "Domyślny poziom powiększenia"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
-msgstr "Powiększ"
+msgstr "Przybliż"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "Wysoki kontrast"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarna jasność"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarna ciemność"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -105,7 +103,7 @@ msgstr "Zaznacz wszystko"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Wyświetl w przeglądarce plików"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -157,7 +155,7 @@ msgstr "Upewnij się, że rozumiesz co robi dana komenda."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Nie pokazuj ponownie tego okna"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -181,7 +179,7 @@ msgstr "Następny wynik"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Wyszukiwanie cykliczne"
 
 #~ msgid "Close"
 #~ msgstr "Zamknij"
