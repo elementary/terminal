@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2017-07-01 22:11+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://l10n.elementary.io/projects/terminal/terminal/"
-"da/>\n"
+"PO-Revision-Date: 2018-03-23 23:00+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"Language-Team: Danish "
+"<https://weblate.elementary.io/projects/terminal/terminal/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
 #: src/Application.vala:107
@@ -61,34 +61,32 @@ msgid "Find…"
 msgstr "Find…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
-msgstr "Zoom ud"
+msgstr "Zoom Ud"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "Standard zoomniveau"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
-msgstr "Zoom ind"
+msgstr "Zoom Ind"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "Høj Kontrast"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Dark"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "Udseende"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -104,7 +102,7 @@ msgstr "Markér alt"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Vis i Filbrowser"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +154,7 @@ msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Vis ikke denne dialog igen"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +178,7 @@ msgstr "Næste resultat"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Cyklisk søgning"
 
 #~ msgid "Close"
 #~ msgstr "Luk"
