@@ -2,7 +2,9 @@ Source: pantheon-terminal
 Section: x11
 Priority: optional
 Maintainer: elementary LLC <builds@elementary.io>
-Build-Depends: debhelper (>= 10.5.1),
+Build-Depends: appstream,
+               debhelper (>= 10.5.1),
+               desktop-file-utils,
                gettext,
                libgranite-dev (>= 0.3.0~),
                libgtk-3-dev (>= 3.9.10),
