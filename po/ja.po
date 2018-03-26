@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-23 01:04+0000\n"
+"PO-Revision-Date: 2018-03-27 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
@@ -94,7 +94,7 @@ msgstr "コピー"
 
 #: src/PantheonTerminalWindow.vala:1117
 msgid "Paste"
-msgstr "貼り付け"
+msgstr "ペースト"
 
 #: src/PantheonTerminalWindow.vala:1118
 msgid "Select All"
@@ -158,11 +158,11 @@ msgstr "今後このダイアログを表示しない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr "貼り付けしない"
+msgstr "ペーストしない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr "貼り付けする"
+msgstr "とにかくペーストする"
 
 #: src/Widgets/SearchToolbar.vala:34
 msgid "Find"
