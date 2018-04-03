@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-23 16:22+0000\n"
+"PO-Revision-Date: 2018-04-04 00:07+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/terminal/terminal/pl/>\n"
@@ -51,7 +51,7 @@ msgstr "Nowe okno"
 
 #: src/Constants.vala:28
 msgid "New Root Tab"
-msgstr "Nowa karta root"
+msgstr "Nowa karta z uprawnieniami root"
 
 #: src/Constants.vala:29
 msgid "Open Terminal Here"
