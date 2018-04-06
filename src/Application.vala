@@ -18,7 +18,7 @@
 */
 
 namespace PantheonTerminal {
-    public class PantheonTerminalApp : Granite.Application {
+    public class PantheonTerminalApp : Gtk.Application {
 
         private GLib.List <PantheonTerminalWindow> windows;
 
