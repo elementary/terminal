@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-04-19 18:58+0000\n"
+"PO-Revision-Date: 2018-04-20 00:09+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/terminal/terminal/cs/>\n"
@@ -126,7 +126,7 @@ msgstr "Opravdu chcete ukončit Terminál?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
-msgstr "V této příkazové řádce běží aktivní proces"
+msgstr "V této příkazové řádce běží aktivní proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
