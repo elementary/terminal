@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2017-02-27 11:44+0000\n"
-"Last-Translator: Long Do Hai <mailbox@thinky.cz>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"PO-Revision-Date: 2018-04-19 18:58+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"Language-Team: Czech "
+"<https://weblate.elementary.io/projects/terminal/terminal/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
-"X-Generator: Launchpad (build 18329)\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
@@ -59,34 +61,32 @@ msgid "Find…"
 msgstr "Hledat…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
 msgstr "Oddálit"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "Výchozí úroveň přiblížení"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
 msgstr "Přiblížit"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "Vysoký kontrast"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarizovaný světlý"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarizovaný tmavý"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -102,7 +102,7 @@ msgstr "Vybrat vše"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Zobrazit v prohlížeči souborů"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -154,7 +154,7 @@ msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dě
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Znovu nezobrazovat tento dialog"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -178,7 +178,7 @@ msgstr "Další výsledek"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Opakované hledání"
 
 #~ msgid "Close"
 #~ msgstr "Zavřít"
