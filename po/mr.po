@@ -2,16 +2,24 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-04-23 00:10+0000\n"
+"Last-Translator: girish joshi <girish946@gmail.com>\n"
+"Language-Team: Marathi "
+"<https://weblate.elementary.io/projects/terminal/terminal/mr/>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
-msgstr ""
+msgstr "कार्य पूर्ण झाले"
 
 #: src/Application.vala:186
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "टर्मिनल मध्ये चालवा"
 
 #: src/Application.vala:187
 msgid "Set shell working directory"
@@ -19,31 +27,31 @@ msgstr ""
 
 #: src/Constants.vala:24
 msgid "About Terminal"
-msgstr ""
+msgstr "टर्मिनल बद्दल"
 
 #: src/Constants.vala:25
 msgid "Use the command line"
-msgstr ""
+msgstr "कमांड लाइन वापरा"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr ""
+msgstr "टर्मिनल"
 
 #: src/Constants.vala:27
 msgid "New Window"
-msgstr ""
+msgstr "नवीन विंडो"
 
 #: src/Constants.vala:28
 msgid "New Root Tab"
-msgstr ""
+msgstr "नवीन रूट टॅब"
 
 #: src/Constants.vala:29
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "येथे टर्मिनल उघडा"
 
 #: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
 msgid "Find…"
-msgstr ""
+msgstr "शोधा…"
 
 #: src/PantheonTerminalWindow.vala:243
 msgid "Zoom Out"
