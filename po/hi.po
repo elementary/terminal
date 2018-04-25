@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-20 00:12+0000\n"
+"PO-Revision-Date: 2018-04-25 17:11+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
-"Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/"
-"terminal/hi/>\n"
+"Language-Team: Hindi "
+"<https://weblate.elementary.io/projects/terminal/terminal/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,34 +61,32 @@ msgid "Find…"
 msgstr "ढूंढें…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
-msgstr "छोटे रूप में दिखाएँ"
+msgstr "ज़ूम आउट"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
-msgstr "बडे रूप में दिखाएँ"
+msgstr "ज़ूम इन"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "उच्च कॉन्ट्रास्ट"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "सौरकृत प्रकाश"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "सौरकृत डार्क"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "शैली"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -104,7 +102,7 @@ msgstr "सभी चुनें"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +154,7 @@ msgstr "यह सुनिश्चित कर लें कि यह कम
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "इस संवाद को दुबारा से न दिखाएं"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +178,7 @@ msgstr "अगला परिणाम"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "चक्रीय खोज"
 
 #~ msgid "Close"
 #~ msgstr "बंद करें"
