@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-04-25 17:02+0000\n"
+"PO-Revision-Date: 2018-04-26 00:04+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi "
 "<https://weblate.elementary.io/projects/terminal/extra/hi/>\n"
@@ -52,7 +52,7 @@ msgstr "यूटिलिटीज-टर्मिनल"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;prompt;cmd;commandline;run;"
+msgstr "कमांड;प्रांप्ट;सीएमडी;कमांडलाइन;रन;"
 
 #: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
