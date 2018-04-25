@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-04-25 17:11+0000\n"
+"PO-Revision-Date: 2018-04-26 00:04+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi "
 "<https://weblate.elementary.io/projects/terminal/terminal/hi/>\n"
@@ -122,7 +122,7 @@ msgstr "टैब बंद करें"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:45
 msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं"
+msgstr "क्या आप यकीनन इस टैब को बंद करना चाहते हैं?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
