@@ -43,6 +43,7 @@ namespace PantheonTerminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
+        public bool save_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.UIManager ui { get; private set; }
         public PantheonTerminalApp app { get; construct; }
@@ -120,7 +121,8 @@ namespace PantheonTerminal {
             Object (
                 app: app,
                 focus_restored_tabs: false,
-                recreate_tabs: recreate_tabs
+                recreate_tabs: recreate_tabs,
+                save_tabs: recreate_tabs
             );
 
             new_tab (location);
@@ -1048,6 +1050,10 @@ namespace PantheonTerminal {
         }
 
         private void save_opened_terminals () {
+            if (!save_tabs) {
+                return;
+            }
+
             string[] opened_tabs = {};
 
             notebook.tabs.foreach ((tab) => {
