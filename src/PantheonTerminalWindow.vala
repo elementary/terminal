@@ -48,7 +48,7 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
-        
+
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
         public Gtk.ActionGroup main_actions;
 
@@ -116,7 +116,7 @@ namespace PantheonTerminal {
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+                                                              bool recreate_tabs = false) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
