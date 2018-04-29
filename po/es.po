@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-26 07:37+0000\n"
-"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"PO-Revision-Date: 2018-04-29 00:12+0000\n"
+"Last-Translator: Iuninefrendor <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/terminal/terminal/es/>\n"
 "Language: es\n"
@@ -42,7 +42,7 @@ msgstr "Usar la línea de comandos"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "Consola"
+msgstr "Terminal"
 
 #: src/Constants.vala:27
 msgid "New Window"
