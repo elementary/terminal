@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-26 00:09+0000\n"
+"PO-Revision-Date: 2018-05-01 17:06+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
 "<https://weblate.elementary.io/projects/terminal/terminal/fi/>\n"
@@ -178,7 +178,7 @@ msgstr "Seuraava tulos"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Kierteinen haku"
 
 #~ msgid "Close"
 #~ msgstr "Sulje"

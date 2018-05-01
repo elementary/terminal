@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-04-25 00:04+0000\n"
-"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
+"PO-Revision-Date: 2018-04-29 00:11+0000\n"
+"Last-Translator: Iuninefrendor <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/terminal/extra/es/>\n"
 "Language: es\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
-msgstr "Consola"
+msgstr "Terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
