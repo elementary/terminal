@@ -34,6 +34,8 @@ namespace PantheonTerminal {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
 
             Intl.setlocale (LocaleCategory.ALL, "");
+
+            application_id = "io.elementary.terminal";
         }
 
         public PantheonTerminalApp () {
