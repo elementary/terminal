@@ -34,6 +34,8 @@ namespace PantheonTerminal {
             application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
             Intl.setlocale (LocaleCategory.ALL, "");
+
+            application_id = "io.elementary.terminal";
         }
 
         public PantheonTerminalApp () {
