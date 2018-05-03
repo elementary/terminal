@@ -20,7 +20,8 @@
     background-color: transparent;
 }
 
-.terminal-window.background.maximized {
+.terminal-window.background.maximized,
+.terminal-window.background.tiled {
     background-color: #000;
 }
 
