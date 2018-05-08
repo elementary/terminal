@@ -6,230 +6,240 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Je i sigurt që do të mbyllësh këtë skedë?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Ka një proces aktiv në këtë skedë."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Nëse e mbyll, procesi do të përfundojë."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Anulo"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Mbyll skedën"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Je i sigurt që do të mbyllësh terminalin?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Ka një proces aktiv në këtë terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Nëse mbyll terminalin, procesi do të përfundojë."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Mbyll terminalin"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Gjej"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Rezultati i mëparshëm"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Rezultati tjetër"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminali"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Gjej…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Mbyll"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Dritare e re"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Hap një dritare të re"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Skedë e re"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Krijo një skedë të re"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Kopjo"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Kopjo tekstin e përzgjedhur"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Kërko ndonjë varg tekstual në terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Ngjit"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Ngjit ca tekst"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Përzgjidh gjithçka"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Përzgjidh të gjithë tekstin në terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Rreth"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Shfaq dritaren e informacioneve"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Skeda pasuese"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Shko tek skeda pasuese"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Skeda e mëparshme"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Shko tek skeda e mëparshme"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Zmadho"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Zvogëlo"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Ekran të plotë"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Hyr/dil nga ekrani i plotë"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Gim  https://launchpad.net/~g1m\n"
-"  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Detyra përfundoi"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Shtyp informacione mbi versionin dhe dil"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Shfaq dritaren e informacioneve"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Ekzekuto një program në terminal"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr ""
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Sigurohu të kesh kuptuar ç'bën ç'do pjesë e kësaj komande."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Mos ngjit"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Ngjite sidoqoftë"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Rreth Terminalit"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr ""
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminali"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Dritare e re"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr ""
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Hap terminalin këtu"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Gjej…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Zvogëlo"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Zmadho"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Kopjo"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Ngjit"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Përzgjidh gjithçka"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Je i sigurt që do të mbyllësh këtë skedë?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Ka një proces aktiv në këtë skedë."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Nëse e mbyll, procesi do të përfundojë."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Mbyll skedën"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Je i sigurt që do të mbyllësh terminalin?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Ka një proces aktiv në këtë terminal."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Nëse mbyll terminalin, procesi do të përfundojë."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Mbyll terminalin"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Anulo"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Sigurohu të kesh kuptuar ç'bën ç'do pjesë e kësaj komande."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Mos ngjit"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Ngjite sidoqoftë"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Gjej"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Rezultati i mëparshëm"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Rezultati tjetër"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Mbyll"
+
+#~ msgid "Open a new window"
+#~ msgstr "Hap një dritare të re"
+
+#~ msgid "New Tab"
+#~ msgstr "Skedë e re"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Krijo një skedë të re"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Kopjo tekstin e përzgjedhur"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Kërko ndonjë varg tekstual në terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Ngjit ca tekst"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Përzgjidh të gjithë tekstin në terminal"
+
+#~ msgid "About"
+#~ msgstr "Rreth"
+
+#~ msgid "Show about window"
+#~ msgstr "Shfaq dritaren e informacioneve"
+
+#~ msgid "Next Tab"
+#~ msgstr "Skeda pasuese"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Shko tek skeda pasuese"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Skeda e mëparshme"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Shko tek skeda e mëparshme"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Ekran të plotë"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Hyr/dil nga ekrani i plotë"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Gim  https://launchpad.net/~g1m\n"
+#~ "  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Shtyp informacione mbi versionin dhe dil"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Shfaq dritaren e informacioneve"
 
 #~ msgid "New Root Window"
 #~ msgstr "Dritare e re root"

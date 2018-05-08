@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-09-28 14:07+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-03-24 00:08+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/terminal/extra/da/>\n"
 "Language: da\n"
@@ -17,27 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:37+0000\n"
 
+#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "Terminal"
 
+#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "Brug kommandolinjen"
 
-msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;kommando;prompt;cmd;commandline;kommandolinje;run;kør;"
-
-msgid "New Window"
-msgstr "Nyt vindue"
-
-msgid "New Root Tab"
-msgstr "Nyt \"root\"-faneblad"
-
-msgid "About Terminal"
-msgstr "Om Terminal"
-
+#: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -45,3 +39,28 @@ msgstr ""
 "Terminal er et terminalemulatorprogram som bruges til at få adgang til et "
 "UNIX-skalmiljø, som kan bruges til at køre programmer som findes på dit "
 "system."
+
+#: data/io.elementary.terminal.appdata.xml.in:76
+msgid "elementary LLC."
+msgstr "elementary LLC."
+
+#: data/io.elementary.terminal.desktop.in:8
+#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:23
+msgid "utilities-terminal"
+msgstr "utilities-terminal"
+
+#: data/io.elementary.terminal.desktop.in:12
+msgid "command;prompt;cmd;commandline;run;"
+msgstr "command;kommando;prompt;cmd;commandline;kommandolinje;run;kør;"
+
+#: data/io.elementary.terminal.desktop.in:17
+msgid "New Window"
+msgstr "Nyt vindue"
+
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
+msgstr "Nyt \"root\"-faneblad"
+
+#~ msgid "About Terminal"
+#~ msgstr "Om Terminal"

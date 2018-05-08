@@ -6,230 +6,240 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2016-12-29 08:27+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Azerbaijani <az@li.org>\n"
+"Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-12-30 04:44+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Bu vərəqəni bağlamaq istədiyinizdən əminsiniz?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Bu vərəqədə gedən bir proses var."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Əgər bunu bağlasanız, proses sonlandırılacaq."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "İmtina"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Vərəqəni Bağla"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Terminaldan çıxmaq istədiyinizdən əminsiniz?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Bu terminalda gedən bir proses var."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Əgər Terminaldan çıxsanız, proses sonlanacaq."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Terminaldan çıx"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Tap"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Əvvəlki nəticə"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Növbəti nəticə"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Tap..."
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Bağla"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Yeni Pəncərə"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Yeni pəncərə aç"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Yeni Vərəqə"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Yeni vərəqə yarat"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Kopyala"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Seçilmiş mətni kopyala"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Terminalda verilən sətri axtar"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Yapışdır"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Mətn yapışdır"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Hamısını Seç"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Terminalda olan bütün mətni seç"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Haqqında"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "\"Haqqında\" pəncərəsini göstər"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Növbəti Vərəqə"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Növbəti vərəqəyə get"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Əvvəlki Vərəqə"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Əvvəlki vərəqəyə get"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Yaxınlaşdır"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Uzaqlaşdır"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Tam ekran"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Tam ekranı Aç/Bağla"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Nicat Məmmədov https://launchpad.net/~nicat455\n"
-"  Ramiz Demiurge https://launchpad.net/~ramiz.demiurge"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Tapşırıq tamamlandı"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Versiya məlumatlarını çap et və çıx"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "\"Haqqında\" qutusunu göstər"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Terminalda bir proqram işlət"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Qabıq işləmə kataloqunu quraşdır"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Bu komanda kompüterin idarəçi səlahiyyətlərinə sahib olmaq istəyir"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komandaları terminala kopyalamaq təhlükəli ola bilər."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Komandanın hər bir parçasının edə biləcəklərindən əmin olun."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Yapışdırma"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Məhəl qoyma, yapışdır"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Terminal Haqqında"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Əmr sətrindən istifadə et"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Yeni Pəncərə"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Yeni Root Vərəqəsi"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Terminalı Burda Aç"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Tap..."
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Uzaqlaşdır"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Yaxınlaşdır"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Yapışdır"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Hamısını Seç"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Bu vərəqəni bağlamaq istədiyinizdən əminsiniz?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Bu vərəqədə gedən bir proses var."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Əgər bunu bağlasanız, proses sonlandırılacaq."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Vərəqəni Bağla"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Terminaldan çıxmaq istədiyinizdən əminsiniz?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Bu terminalda gedən bir proses var."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Əgər Terminaldan çıxsanız, proses sonlanacaq."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Terminaldan çıx"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "İmtina"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Bu komanda kompüterin idarəçi səlahiyyətlərinə sahib olmaq istəyir"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Komandaları terminala kopyalamaq təhlükəli ola bilər."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Komandanın hər bir parçasının edə biləcəklərindən əmin olun."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Yapışdırma"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Məhəl qoyma, yapışdır"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Tap"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Əvvəlki nəticə"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Növbəti nəticə"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Bağla"
+
+#~ msgid "Open a new window"
+#~ msgstr "Yeni pəncərə aç"
+
+#~ msgid "New Tab"
+#~ msgstr "Yeni Vərəqə"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Yeni vərəqə yarat"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Seçilmiş mətni kopyala"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Terminalda verilən sətri axtar"
+
+#~ msgid "Paste some text"
+#~ msgstr "Mətn yapışdır"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Terminalda olan bütün mətni seç"
+
+#~ msgid "About"
+#~ msgstr "Haqqında"
+
+#~ msgid "Show about window"
+#~ msgstr "\"Haqqında\" pəncərəsini göstər"
+
+#~ msgid "Next Tab"
+#~ msgstr "Növbəti Vərəqə"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Növbəti vərəqəyə get"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Əvvəlki Vərəqə"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Əvvəlki vərəqəyə get"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Tam ekran"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Tam ekranı Aç/Bağla"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Nicat Məmmədov https://launchpad.net/~nicat455\n"
+#~ "  Ramiz Demiurge https://launchpad.net/~ramiz.demiurge"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Versiya məlumatlarını çap et və çıx"
+
+#~ msgid "Show about dialog"
+#~ msgstr "\"Haqqında\" qutusunu göstər"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Əgər Terminaldan çıxsanız, proses sonlanacaq."

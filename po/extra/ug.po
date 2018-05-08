@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2017-09-28 14:08+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Uighur "
-"<https://weblate.elementary.io/projects/terminal/extra/ug/>\n"
+"Language-Team: Uighur <https://weblate.elementary.io/projects/terminal/extra/"
+"ug/>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,24 +20,18 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-12-19 05:17+0000\n"
 
+#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "تېرمىنال"
 
+#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "كوماندا كۆرۈنمە يۈزىنى ئىشلىتىش"
 
-msgid "command;prompt;cmd;commandline;run;"
-msgstr "كوماندا، ئەسكەرتىش بەلگىسى، cmd, كوماندا كۆرۈنمە يۈزى، ئىجرا قىلىش;"
-
-msgid "New Window"
-msgstr "يېڭى كۆزنەك"
-
-msgid "New Root Tab"
-msgstr "يىڭى باشقۇرغۇچى بەتيۈزى قۇرۇش"
-
-msgid "About Terminal"
-msgstr "تېرمىنال ھەققىدە"
-
+#: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -45,3 +39,28 @@ msgstr ""
 "بۇ تېرمىنال UNIX shell مۇھىتىنى زىيارەت قىلىش تەقلىدىي ئەپى بولۇپ، بۇ "
 "تېرمىنال ئارقىلىق سىستېمىڭىزدا ئىجرا قىلغىلى بولىدىغان ئەپلەرنى ئىجرا "
 "قىلالايسىز."
+
+#: data/io.elementary.terminal.appdata.xml.in:76
+msgid "elementary LLC."
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:8
+#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:23
+msgid "utilities-terminal"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:12
+msgid "command;prompt;cmd;commandline;run;"
+msgstr "كوماندا، ئەسكەرتىش بەلگىسى، cmd, كوماندا كۆرۈنمە يۈزى، ئىجرا قىلىش;"
+
+#: data/io.elementary.terminal.desktop.in:17
+msgid "New Window"
+msgstr "يېڭى كۆزنەك"
+
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
+msgstr "يىڭى باشقۇرغۇچى بەتيۈزى قۇرۇش"
+
+#~ msgid "About Terminal"
+#~ msgstr "تېرمىنال ھەققىدە"

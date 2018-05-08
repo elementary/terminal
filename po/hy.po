@@ -6,226 +6,230 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2015-12-05 14:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Armenian <hy@li.org>\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել այս ներդիրը:"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Այս ներդիրում առկա է ակտիվ գործընթաց:"
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Եթե Դուք փակեք այն, գործընթացը կավարտվի:"
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Չեղյալ համարել"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Փակել ներդիրը"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք դուրս գալ Տերմինալից:"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Տերմինալում առկա է ակտիվ գարծընթաց;"
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Եթե Դուք փակեք Տերմինալը, գարծընթացը կավարտվի:"
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Դուրս գալ Տերմինալից"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr ""
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr ""
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Տերմինալ"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Փակել"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Նոր պատուհան"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Բացել նոր պատուհան"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Նոր ներդիր"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Ստեղծել նոր ներդիր"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Պատճենել"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Պատճենել ընտրված տեքստը"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr ""
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Տեղադրել"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Տեղադրել տեքստ"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Ընտրել բոլորը"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Տերմինալում ընտրել ամբողջ տեքստը"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Մասին"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Ցույց տալ պատուհանի մասին"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Գնալ դեպի հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Նախորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Գնալ դեպի հաջորդ ներդիրը"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Խոշորացնել"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Փոքրացնել"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Ամբողջ էկրանով"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr ""
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Vahan Harutyunyan https://launchpad.net/~v-harutyunyan"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Առաջադրանքն ավարտված է"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Տպել տարբերակի վերաբերյալ տեղեկատվությունը և դուրս գալ"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Ցույց տալ դիալոգի մասին"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Գործարկել ծրագիրը տերմինալում"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr ""
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr ""
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr ""
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Տերմինալի մասին"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Օգտագործել հրամանների տողը"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Տերմինալ"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Նոր պատուհան"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr ""
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Բացել Տերմինալն այստեղ"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Փոքրացնել"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Խոշորացնել"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Պատճենել"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Տեղադրել"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Ընտրել բոլորը"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել այս ներդիրը:"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Այս ներդիրում առկա է ակտիվ գործընթաց:"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Եթե Դուք փակեք այն, գործընթացը կավարտվի:"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Փակել ներդիրը"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք դուրս գալ Տերմինալից:"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Տերմինալում առկա է ակտիվ գարծընթաց;"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Եթե Դուք փակեք Տերմինալը, գարծընթացը կավարտվի:"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Դուրս գալ Տերմինալից"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Չեղյալ համարել"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Փակել"
+
+#~ msgid "Open a new window"
+#~ msgstr "Բացել նոր պատուհան"
+
+#~ msgid "New Tab"
+#~ msgstr "Նոր ներդիր"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Ստեղծել նոր ներդիր"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Պատճենել ընտրված տեքստը"
+
+#~ msgid "Paste some text"
+#~ msgstr "Տեղադրել տեքստ"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Տերմինալում ընտրել ամբողջ տեքստը"
+
+#~ msgid "About"
+#~ msgstr "Մասին"
+
+#~ msgid "Show about window"
+#~ msgstr "Ցույց տալ պատուհանի մասին"
+
+#~ msgid "Next Tab"
+#~ msgstr "Հաջորդ ներդիրը"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Գնալ դեպի հաջորդ ներդիրը"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Նախորդ ներդիրը"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Գնալ դեպի հաջորդ ներդիրը"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Ամբողջ էկրանով"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Vahan Harutyunyan https://launchpad.net/~v-harutyunyan"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Տպել տարբերակի վերաբերյալ տեղեկատվությունը և դուրս գալ"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Ցույց տալ դիալոգի մասին"

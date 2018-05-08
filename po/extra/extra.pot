@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the extra package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 17:28-0600\n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,41 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr ""
 
+#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr ""
 
-msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
-
-msgid "New Window"
-msgstr ""
-
-msgid "New Root Tab"
-msgstr ""
-
+#: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
 
-msgid "Minor bug fixes"
+#: data/io.elementary.terminal.appdata.xml.in:76
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Translation updates"
+#: data/io.elementary.terminal.desktop.in:8
+#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:23
+msgid "utilities-terminal"
 msgstr ""
 
-msgid "Allow tab to close after typing exit at the commandline"
+#: data/io.elementary.terminal.desktop.in:12
+msgid "command;prompt;cmd;commandline;run;"
 msgstr ""
 
-msgid "Fix copying URLs to clipboard"
+#: data/io.elementary.terminal.desktop.in:17
+msgid "New Window"
 msgstr ""
 
-msgid "Fix appstream date format"
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
 msgstr ""

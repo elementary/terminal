@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2017-06-03 12:26+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean "
-"<https://l10n.elementary.io/projects/terminal/terminal/ko/>\n"
+"Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
+"ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,220 +20,229 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "정말로 이 탭을 닫으시겠습니까?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "이 탭에 현재 실행 중인 프로세스가 있습니다."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "탭을 닫으시면, 실행 중인 프로세스도 함께 종료됩니다."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "취소"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "탭 닫기"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "정말로 터미널을 닫으시겠습니까?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "터미널에 현재 실행 중인 프로세스가 있습니다."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "터미널을 닫으시면, 실행 중인 프로세스도 함께 종료됩니다."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "터미널 종료"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "찾기"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "이전 결과"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "다음 결과"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "터미널"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "찾기…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "닫기"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "새 창"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "새 창 열기"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "새 탭"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "새 탭을 엽니다"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "복사"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "선택한 텍스트를 복사합니다"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "터미널에서 주어진 문자열 검색"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "붙여넣기"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "텍스트를 붙여넣습니다"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "전체 선택"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "터미널에 있는 모든 텍스트를 선택합니다"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "소개"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "창 정보를 소개합니다"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "다음 탭"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "다음 탭으로 가기"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "이전 탭"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "이전 탭으로 가기"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "확대"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "축소"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "전체화면"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "전체 화면으로 보기/안 보기 설정"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jung-Kyu Park https://launchpad.net/~bagjunggyu\n"
-"  LeeHoseok https://launchpad.net/~neochain\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  MinSik CHO https://launchpad.net/~mscho527"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "작업 종료"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "버전 정보를 프린트하고 나가기"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "대화록 보기"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "터미널로 열기"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "작업 중인 셸의 디렉터리 보기"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "이 명령어는 사용자의 컴퓨터에 관리자로 접속할 것을 요구하게 됩니다"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "터미널에 명령어를 복사하는 일은 위험할 수 있습니다."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "이 명령어가 각각 어떤 일을 하게 되는지 분명히 이해하고 있어야 합니다."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "붙여 넣지 마세요"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "그래도 붙여넣기"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "터미널 소개"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "명령문을 사용합니다"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "터미널"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "새 창"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "새 Root 탭"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "이 위치로 터미널 열기"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "찾기…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "축소"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "확대"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "복사"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "붙여넣기"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "전체 선택"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "정말로 이 탭을 닫으시겠습니까?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "이 탭에 현재 실행 중인 프로세스가 있습니다."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "탭을 닫으시면, 실행 중인 프로세스도 함께 종료됩니다."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "탭 닫기"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "정말로 터미널을 닫으시겠습니까?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "터미널에 현재 실행 중인 프로세스가 있습니다."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "터미널을 닫으시면, 실행 중인 프로세스도 함께 종료됩니다."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "터미널 종료"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "취소"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "이 명령어는 사용자의 컴퓨터에 관리자로 접속할 것을 요구하게 됩니다"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "터미널에 명령어를 복사하는 일은 위험할 수 있습니다."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "이 명령어가 각각 어떤 일을 하게 되는지 분명히 이해하고 있어야 합니다."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "붙여 넣지 마세요"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "그래도 붙여넣기"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "찾기"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "이전 결과"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "다음 결과"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "닫기"
+
+#~ msgid "Open a new window"
+#~ msgstr "새 창 열기"
+
+#~ msgid "New Tab"
+#~ msgstr "새 탭"
+
+#~ msgid "Create a new tab"
+#~ msgstr "새 탭을 엽니다"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "선택한 텍스트를 복사합니다"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "터미널에서 주어진 문자열 검색"
+
+#~ msgid "Paste some text"
+#~ msgstr "텍스트를 붙여넣습니다"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "터미널에 있는 모든 텍스트를 선택합니다"
+
+#~ msgid "About"
+#~ msgstr "소개"
+
+#~ msgid "Show about window"
+#~ msgstr "창 정보를 소개합니다"
+
+#~ msgid "Next Tab"
+#~ msgstr "다음 탭"
+
+#~ msgid "Go to next tab"
+#~ msgstr "다음 탭으로 가기"
+
+#~ msgid "Previous Tab"
+#~ msgstr "이전 탭"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "이전 탭으로 가기"
+
+#~ msgid "Fullscreen"
+#~ msgstr "전체화면"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "전체 화면으로 보기/안 보기 설정"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Jung-Kyu Park https://launchpad.net/~bagjunggyu\n"
+#~ "  LeeHoseok https://launchpad.net/~neochain\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  MinSik CHO https://launchpad.net/~mscho527"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "버전 정보를 프린트하고 나가기"
+
+#~ msgid "Show about dialog"
+#~ msgstr "대화록 보기"
 
 #~ msgid "Open a new tab"
 #~ msgstr "새 탭 열기"

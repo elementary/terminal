@@ -6,238 +6,248 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2016-08-02 10:04+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Är du säker på att du vill stänga den här fliken?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Fliken innehåller en aktiv process."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Om du stänger den kommer processen avslutas."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Stäng flik"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Är du säker på att du vill avsluta Terminalen?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Terminalen innehåller en aktiv process."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Om du avslutar Terminalen så kommer processen att avslutas"
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Avsluta terminalen"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Sök"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Föregående resultat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Nästa resultat"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Sök…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Stäng"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nytt fönster"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Öppna ett nytt fönster"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Ny flik"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Skapa en ny flik"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Kopiera"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Kopiera den valda texten"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Sök efter en specifik sträng i terminalen"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Klistra in"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Klistra in någon text"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Markera allt"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Markera all text i terminalen"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Om"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Visa Om-fönstret"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Nästa flik"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Gå till nästa flik"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Föregående flik"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Gå till föregående flik"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Förstora"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Förminska"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Helskärm"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Växla helskärmsläge"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Alexander Håkansson https://launchpad.net/~al3xand3r-h\n"
-"  Alexander Nordahl https://launchpad.net/~couchquid\n"
-"  Benjamin Bultman https://launchpad.net/~bultman-ben\n"
-"  Joachim Johansson https://launchpad.net/~joachim-j\n"
-"  Larsson https://launchpad.net/~larsson\n"
-"  Marcus Lundgren https://launchpad.net/~marcus-lundgren\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Mikael Nyberg https://launchpad.net/~miknyb\n"
-"  Oscar Kraemer https://launchpad.net/~carloscarkraemer\n"
-"  Zahirovic Mensur https://launchpad.net/~nookienoq\n"
-"  komekjr https://launchpad.net/~komekjr"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Uppgift slutförd"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Skriv ut versionsinformation och avsluta"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Visa Om-dialogrutan"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Kör ett program i terminalen"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Använd som terminalens arbetsmapp"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Det här kommandot begär administratörsrättigheter till din dator"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Att klistra in kommandon i terminalen kan vara farligt."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Var säker på att du förstår vad varje del av kommandot gör."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Klistra inte in"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Klistra in ändå"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Om Terminal"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Använd kommandoraden"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Nytt fönster"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Ny rotflik"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Öppna terminal här"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Sök…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Förminska"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Förstora"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Kopiera"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Klistra in"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Markera allt"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Är du säker på att du vill stänga den här fliken?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Fliken innehåller en aktiv process."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Om du stänger den kommer processen avslutas."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Stäng flik"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Är du säker på att du vill avsluta Terminalen?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Terminalen innehåller en aktiv process."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Om du avslutar Terminalen så kommer processen att avslutas"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Avsluta terminalen"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Det här kommandot begär administratörsrättigheter till din dator"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Att klistra in kommandon i terminalen kan vara farligt."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Var säker på att du förstår vad varje del av kommandot gör."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Klistra inte in"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Klistra in ändå"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Sök"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Föregående resultat"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Nästa resultat"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Stäng"
+
+#~ msgid "Open a new window"
+#~ msgstr "Öppna ett nytt fönster"
+
+#~ msgid "New Tab"
+#~ msgstr "Ny flik"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Skapa en ny flik"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Kopiera den valda texten"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Sök efter en specifik sträng i terminalen"
+
+#~ msgid "Paste some text"
+#~ msgstr "Klistra in någon text"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Markera all text i terminalen"
+
+#~ msgid "About"
+#~ msgstr "Om"
+
+#~ msgid "Show about window"
+#~ msgstr "Visa Om-fönstret"
+
+#~ msgid "Next Tab"
+#~ msgstr "Nästa flik"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Gå till nästa flik"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Föregående flik"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Gå till föregående flik"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Helskärm"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Växla helskärmsläge"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Alexander Håkansson https://launchpad.net/~al3xand3r-h\n"
+#~ "  Alexander Nordahl https://launchpad.net/~couchquid\n"
+#~ "  Benjamin Bultman https://launchpad.net/~bultman-ben\n"
+#~ "  Joachim Johansson https://launchpad.net/~joachim-j\n"
+#~ "  Larsson https://launchpad.net/~larsson\n"
+#~ "  Marcus Lundgren https://launchpad.net/~marcus-lundgren\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Mikael Nyberg https://launchpad.net/~miknyb\n"
+#~ "  Oscar Kraemer https://launchpad.net/~carloscarkraemer\n"
+#~ "  Zahirovic Mensur https://launchpad.net/~nookienoq\n"
+#~ "  komekjr https://launchpad.net/~komekjr"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Skriv ut versionsinformation och avsluta"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Visa Om-dialogrutan"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "Om du stänger fliken så kommer processen att avslutas."

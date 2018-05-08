@@ -6,241 +6,251 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2016-04-30 16:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "У вкладці є активний процес."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Якщо ви закриєте цю вкладку, то процес буде завершено."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Закрити вкладку"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "У терміналі є активний процес."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Якщо ви закриєте Термінал , то процес завершиться."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Вийти з Терміналу"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Пошук"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Попередній результат"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Наступний результат"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Термінал"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Пошук…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Закрити"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Нове вікно"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Відкрити нове вікно"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Нова вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Створити нову вкладку"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Копіювати"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Копіювати виділений текст"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Пошук даного рядка в терміналі"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Вставити"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Вставити деякий текст"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Виділити все"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Виділити весь текст в терміналі"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Про програму"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Показати інформацію про програму"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Наступна вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Перейти до наступної вкладки"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Попередня вкладка"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Перейти до попередньої вкладки"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Збільшити"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Зменшити"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Повноекранний режим"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Ввімкнути/вимкнути повноекранний режим"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
-"  Max_ym https://launchpad.net/~kontact-cat\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  NetForHack https://launchpad.net/~netforhack\n"
-"  Roman https://launchpad.net/~iimperatorr\n"
-"  Senpos https://launchpad.net/~kovalchuk-evgeny\n"
-"  Sergey Kornienko https://launchpad.net/~b0nzo-deb\n"
-"  Sergii Cynailo https://launchpad.net/~funeral20\n"
-"  Serhiy Vinichuk https://launchpad.net/~serhiyvinichuk\n"
-"  lord https://launchpad.net/~byshovetc\n"
-"  neiron13 https://launchpad.net/~heneral\n"
-"  shyn https://launchpad.net/~shyn\n"
-"  sunsays https://launchpad.net/~sunsays"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Завдання завершено"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Показати інформацію про версію та вийти"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Показати діалог інформації про програму"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Запустити програму в терміналі"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Встановити робочу теку для оболонки"
 
-#: ../src/UnsafePasteDialog.vala:33
+#: src/Constants.vala:24
+msgid "About Terminal"
+msgstr "Про Термінал"
+
+#: src/Constants.vala:25
+msgid "Use the command line"
+msgstr "Використати командний рядок"
+
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Термінал"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Нове вікно"
+
+#: src/Constants.vala:28
+msgid "New Root Tab"
+msgstr "Нова вкладка від імені Адміністратора"
+
+#: src/Constants.vala:29
+msgid "Open Terminal Here"
+msgstr "Відкрити термінал тут"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Пошук…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Зменшити"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Збільшити"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Копіювати"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Виділити все"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "У вкладці є активний процес."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Якщо ви закриєте цю вкладку, то процес буде завершено."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Закрити вкладку"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "У терміналі є активний процес."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Якщо ви закриєте Термінал , то процес завершиться."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Вийти з Терміналу"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ця команда запитує права доступу адміністратора до вашого комп’ютера"
 
-#: ../src/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Копіювання команд в термінал може бути небезпечним."
 
-#: ../src/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Будьте впевненими у розумінні того, що робить кожна частина цієї команди"
 
-#: ../src/UnsafePasteDialog.vala:39
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
 msgstr "Не вставляти"
 
-#: ../src/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
 msgstr "Всеріно вставити"
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Про Термінал"
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Пошук"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Використати командний рядок"
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Попередній результат"
 
-#: ../src/Constants.vala:9
-msgid "New Root Tab"
-msgstr "Нова вкладка від імені Адміністратора"
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Наступний результат"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Відкрити термінал тут"
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Open a new window"
+#~ msgstr "Відкрити нове вікно"
+
+#~ msgid "New Tab"
+#~ msgstr "Нова вкладка"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Створити нову вкладку"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Копіювати виділений текст"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Пошук даного рядка в терміналі"
+
+#~ msgid "Paste some text"
+#~ msgstr "Вставити деякий текст"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Виділити весь текст в терміналі"
+
+#~ msgid "About"
+#~ msgstr "Про програму"
+
+#~ msgid "Show about window"
+#~ msgstr "Показати інформацію про програму"
+
+#~ msgid "Next Tab"
+#~ msgstr "Наступна вкладка"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Перейти до наступної вкладки"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Попередня вкладка"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Перейти до попередньої вкладки"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Повноекранний режим"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Ввімкнути/вимкнути повноекранний режим"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
+#~ "  Max_ym https://launchpad.net/~kontact-cat\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  NetForHack https://launchpad.net/~netforhack\n"
+#~ "  Roman https://launchpad.net/~iimperatorr\n"
+#~ "  Senpos https://launchpad.net/~kovalchuk-evgeny\n"
+#~ "  Sergey Kornienko https://launchpad.net/~b0nzo-deb\n"
+#~ "  Sergii Cynailo https://launchpad.net/~funeral20\n"
+#~ "  Serhiy Vinichuk https://launchpad.net/~serhiyvinichuk\n"
+#~ "  lord https://launchpad.net/~byshovetc\n"
+#~ "  neiron13 https://launchpad.net/~heneral\n"
+#~ "  shyn https://launchpad.net/~shyn\n"
+#~ "  sunsays https://launchpad.net/~sunsays"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Показати інформацію про версію та вийти"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Показати діалог інформації про програму"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Відкрити нову вкладку"

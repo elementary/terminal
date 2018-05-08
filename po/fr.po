@@ -6,257 +6,264 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-06-01 21:18+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-03-23 23:58+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
-"<https://l10n.elementary.io/projects/terminal/terminal/fr/>\n"
+"<https://weblate.elementary.io/projects/terminal/terminal/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Il y a un processus actif dans cet onglet."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Si vous fermez, le processus prendra fin."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Annuler"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Fermer l'onglet"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Êtes-vous certain de vouloir quitter le Terminal ?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Il y a un processus actif dans ce terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Si vous quittez le Terminal, le processus prendra fin."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Quitter le Terminal"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Rechercher"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Résultat précédent"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Résultat suivant"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Rechercher…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Fermer"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nouvelle Fenêtre"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Ouvrir une nouvelle fenêtre"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Nouvel Onglet"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Créer un nouvel onglet"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Copier"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Copier le texte sélectionné"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Coller"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Coller du texte"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Tout Sélectionner"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Sélectionner tout le texte du terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "À propos"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Affiche la fenêtre À propos"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Onglet Suivant"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Aller à l'onglet suivant"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Onglet Précédent"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Aller à l'onglet précédent"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Zoom avant"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Zoom arrière"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Plein écran"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Activer/Désactiver le plein écran"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Adrien Touminet https://launchpad.net/~pardaigle\n"
-"  Alban CLERGEOT https://launchpad.net/~g33ky\n"
-"  André Fernandes https://launchpad.net/~mkody97\n"
-"  Benoît LAMY https://launchpad.net/~ben-lamy\n"
-"  Corentin Noël https://launchpad.net/~tintou\n"
-"  Dabou https://launchpad.net/~dbouthier\n"
-"  Damien Horn https://launchpad.net/~horn-damien\n"
-"  David Gomes https://launchpad.net/~davidgomes\n"
-"  Florent (LSc) https://launchpad.net/~lorkscorguar\n"
-"  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
-"  Gilles-Philippe https://launchpad.net/~gphmorin\n"
-"  Guyot-Reeb https://launchpad.net/~aguyotr\n"
-"  Jean-Marc https://launchpad.net/~m-balthazar\n"
-"  Julien F/ https://launchpad.net/~julien-fersing\n"
-"  Julien Rochette https://launchpad.net/~jpmrochette\n"
-"  Marvin Roger https://launchpad.net/~nivramdu94\n"
-"  Maxence MOHR https://launchpad.net/~contaht\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Nikos https://launchpad.net/~nicolas-jovanovic\n"
-"  REDOULES https://launchpad.net/~redoules-guillaume\n"
-"  RM https://launchpad.net/~l4rt1st-1nc0nnu\n"
-"  Simon https://launchpad.net/~nowis74\n"
-"  TcodingT https://launchpad.net/~tcodingt\n"
-"  Thomas Moraine https://launchpad.net/~th-moraine\n"
-"  XIA https://launchpad.net/~xia-lady-3d-deactivatedaccount\n"
-"  qperroit https://launchpad.net/~quentin-perroit"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Tâche terminée"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Afficher les informations sur la version et quitter"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Afficher le menu \"A propos\""
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Lancer un programme dans un terminal"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Configurer le répertoire courant du terminal"
 
-#: ../src/UnsafePasteDialog.vala:33
+#: src/Constants.vala:24
+msgid "About Terminal"
+msgstr "À propos du Terminal"
+
+#: src/Constants.vala:25
+msgid "Use the command line"
+msgstr "Utiliser la ligne de commande"
+
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Nouvelle Fenêtre"
+
+#: src/Constants.vala:28
+msgid "New Root Tab"
+msgstr "Nouvel onglet en tant qu'administrateur"
+
+#: src/Constants.vala:29
+msgid "Open Terminal Here"
+msgstr "Ouvrir un Terminal ici"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Rechercher…"
+
+#: src/PantheonTerminalWindow.vala:243
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr "Zoom par défaut"
+
+#: src/PantheonTerminalWindow.vala:251
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr "Contrastes élevés"
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr "Solarisé clair"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr "Solarisé foncé"
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr "Style"
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Copier"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Coller"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Tout Sélectionner"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr "Afficher dans l'explorateur de fichiers"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Il y a un processus actif dans cet onglet."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Si vous fermez, le processus prendra fin."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Fermer l'onglet"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Êtes-vous certain de vouloir quitter le Terminal ?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Il y a un processus actif dans ce terminal."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Si vous quittez le Terminal, le processus prendra fin."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Quitter le Terminal"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Cette commande demande un accès administrateur sur votre ordinateur"
 
-#: ../src/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Coller des commandes dans le Terminal peut être dangereux."
 
-#: ../src/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Soyez certain de comprendre ce que fait chaque partie de cette commande."
 
-#: ../src/UnsafePasteDialog.vala:39
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr "Ne plus afficher ce message"
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
 msgstr "Ne pas coller"
 
-#: ../src/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
 msgstr "Coller quand même"
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "À propos du Terminal"
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Rechercher"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Utiliser la ligne de commande"
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Résultat précédent"
 
-#: ../src/Constants.vala:9
-msgid "New Root Tab"
-msgstr "Nouvel onglet en tant qu'administrateur"
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Résultat suivant"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Ouvrir un Terminal ici"
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr "Recherche cyclique"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Open a new window"
+#~ msgstr "Ouvrir une nouvelle fenêtre"
+
+#~ msgid "New Tab"
+#~ msgstr "Nouvel Onglet"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Créer un nouvel onglet"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Copier le texte sélectionné"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Rechercher une chaîne de caractères donnée dans le terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Coller du texte"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Sélectionner tout le texte du terminal"
+
+#~ msgid "About"
+#~ msgstr "À propos"
+
+#~ msgid "Show about window"
+#~ msgstr "Affiche la fenêtre À propos"
+
+#~ msgid "Next Tab"
+#~ msgstr "Onglet Suivant"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Aller à l'onglet suivant"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Onglet Précédent"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Aller à l'onglet précédent"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Plein écran"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Activer/Désactiver le plein écran"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Adrien Touminet https://launchpad.net/~pardaigle\n"
+#~ "  Alban CLERGEOT https://launchpad.net/~g33ky\n"
+#~ "  André Fernandes https://launchpad.net/~mkody97\n"
+#~ "  Benoît LAMY https://launchpad.net/~ben-lamy\n"
+#~ "  Corentin Noël https://launchpad.net/~tintou\n"
+#~ "  Dabou https://launchpad.net/~dbouthier\n"
+#~ "  Damien Horn https://launchpad.net/~horn-damien\n"
+#~ "  David Gomes https://launchpad.net/~davidgomes\n"
+#~ "  Florent (LSc) https://launchpad.net/~lorkscorguar\n"
+#~ "  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
+#~ "  Gilles-Philippe https://launchpad.net/~gphmorin\n"
+#~ "  Guyot-Reeb https://launchpad.net/~aguyotr\n"
+#~ "  Jean-Marc https://launchpad.net/~m-balthazar\n"
+#~ "  Julien F/ https://launchpad.net/~julien-fersing\n"
+#~ "  Julien Rochette https://launchpad.net/~jpmrochette\n"
+#~ "  Marvin Roger https://launchpad.net/~nivramdu94\n"
+#~ "  Maxence MOHR https://launchpad.net/~contaht\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Nikos https://launchpad.net/~nicolas-jovanovic\n"
+#~ "  REDOULES https://launchpad.net/~redoules-guillaume\n"
+#~ "  RM https://launchpad.net/~l4rt1st-1nc0nnu\n"
+#~ "  Simon https://launchpad.net/~nowis74\n"
+#~ "  TcodingT https://launchpad.net/~tcodingt\n"
+#~ "  Thomas Moraine https://launchpad.net/~th-moraine\n"
+#~ "  XIA https://launchpad.net/~xia-lady-3d-deactivatedaccount\n"
+#~ "  qperroit https://launchpad.net/~quentin-perroit"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Afficher les informations sur la version et quitter"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Afficher le menu \"A propos\""
 
 #~ msgid "Open a new tab"
 #~ msgstr "Ouvrir un nouvel onglet"

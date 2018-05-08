@@ -6,233 +6,242 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2017-01-08 07:33+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2017-01-09 05:33+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
-"Language: sr\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Да ли сигурно желите да затворите овај језичак?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "На овом језичку се одвија активан процес."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Ако га затворите, процес ће бити прекинут."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Откажи"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Затвори језичак"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Да ли сигурно желите да напустите Терминал?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "У овом терминалу се одвија активан процес."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Ако напустите Терминал, процес ће бити прекинут."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Напусти Терминал"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Нађи"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Претходни резултат"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Следећи резултат"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Терминал"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Нађи…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Затвори"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Нови прозор"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Отворите нови прозор"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Нови језичак"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Направите нови језичак"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Умножи"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Умножите изабрани текст"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Потражите дату ниску у терминалу"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Убаци"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Убаците неки текст"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Изабери све"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Изаберите сав текст у терминалу"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "О програму"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Прикажите прозор са информацијама"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Следећи језичак"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Идите на следећи језичак"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Претходни језичак"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Идите на претходни језичак"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Увећај"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Умањи"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Преко целог екрана"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Укључите/искључите цео екран"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Igor https://launchpad.net/~mazezamte\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  belli https://launchpad.net/~belli-nis\n"
-"  Иван Благојевић https://launchpad.net/~ivanblago\n"
-"  Мирослав Николић https://launchpad.net/~lipek"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Задатак је завршен"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Исписује информације о издању и излази"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Приказује прозорче са информацијама"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Покреће програм у терминалу"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Подешава радни директоријум шкољке"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ова наредба тражи администраторски приступ вашем рачунару"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Умножавање наредби у Терминал може бити опасно."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Будите сигурни да разумете шта сваки део ове наредбе ради."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Не убацуј"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Ипак убаци"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "О Терминалу"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Користите линију наредби"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Терминал"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Нови прозор"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Нови корени језичак"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Отвори терминал овде"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Нађи…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Умањи"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Увећај"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Умножи"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Убаци"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Изабери све"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Да ли сигурно желите да затворите овај језичак?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "На овом језичку се одвија активан процес."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Ако га затворите, процес ће бити прекинут."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Затвори језичак"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Да ли сигурно желите да напустите Терминал?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "У овом терминалу се одвија активан процес."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Ако напустите Терминал, процес ће бити прекинут."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Напусти Терминал"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Откажи"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Ова наредба тражи администраторски приступ вашем рачунару"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Умножавање наредби у Терминал може бити опасно."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Будите сигурни да разумете шта сваки део ове наредбе ради."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Не убацуј"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Ипак убаци"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Нађи"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Претходни резултат"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Следећи резултат"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Затвори"
+
+#~ msgid "Open a new window"
+#~ msgstr "Отворите нови прозор"
+
+#~ msgid "New Tab"
+#~ msgstr "Нови језичак"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Направите нови језичак"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Умножите изабрани текст"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Потражите дату ниску у терминалу"
+
+#~ msgid "Paste some text"
+#~ msgstr "Убаците неки текст"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Изаберите сав текст у терминалу"
+
+#~ msgid "About"
+#~ msgstr "О програму"
+
+#~ msgid "Show about window"
+#~ msgstr "Прикажите прозор са информацијама"
+
+#~ msgid "Next Tab"
+#~ msgstr "Следећи језичак"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Идите на следећи језичак"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Претходни језичак"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Идите на претходни језичак"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Преко целог екрана"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Укључите/искључите цео екран"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Igor https://launchpad.net/~mazezamte\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  belli https://launchpad.net/~belli-nis\n"
+#~ "  Иван Благојевић https://launchpad.net/~ivanblago\n"
+#~ "  Мирослав Николић https://launchpad.net/~lipek"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Исписује информације о издању и излази"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Приказује прозорче са информацијама"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Уколико напустите Терминал, процес ће се завршити."

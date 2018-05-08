@@ -6,12 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2017-05-22 08:28+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
-"Language-Team: Portuguese "
-"<https://l10n.elementary.io/projects/terminal/terminal/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
+"terminal/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,228 +20,237 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Tem a certeza que quer fechar este separador?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Ainda existe um processo ativo neste separador."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Fechar irá terminar o processo em execução"
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Fechar separador"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Tem a certeza de que quer sair do terminal?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Ainda existe um processo ativo neste terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Se fechar o Terminal, o processo vai terminar."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Sair do terminal"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Procurar"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Resultado anterior"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Resultado seguinte"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Procurar…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Fechar"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nova Janela"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Abrir uma nova janela"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Novo separador"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Criar um novo separador"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Copiar"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Copiar o texto selecionado"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Procurar por um dado texto no terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Colar"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Colar algum texto"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Selecionar tudo"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Selecionar todo o texto do terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Sobre"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Mostrar a janela Sobre"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Separador seguinte"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Ir para o separador seguinte"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Separador anterior"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Ir para o separador anterior"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Ampliar"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Reduzir"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Ecrã completo"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Alternar ecrã completo"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Daniel Jorge https://launchpad.net/~daniel-mf-jorge\n"
-"  David Gomes https://launchpad.net/~davidgomes\n"
-"  Ivo Nunes https://launchpad.net/~ivonunes\n"
-"  Laurentino https://launchpad.net/~laurentinolopes\n"
-"  Luis Manuel Oliveira https://launchpad.net/~luisv-moliveira\n"
-"  Luis Neves https://launchpad.net/~luisjneves\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
-"  Sérgio Marques https://launchpad.net/~sergio+marques\n"
-"  Waldir Pimenta https://launchpad.net/~waldyrious\n"
-"  Yan Gabriel Minario https://launchpad.net/~yangm97\n"
-"  yEdubart https://launchpad.net/~vps1992"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Mostrar informação de versão e sair"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Mostrar janela \"Sobre\""
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Definir diretório de trabalho do terminal"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Este comando está a pedir acesso de administrador ao seu computador"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copiar comandos para o Terminal pode ser perigoso."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "Não colar"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "Colar"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "Sobre Terminal"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "Utilizar a linha de comando"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Nova Janela"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "Novo Separador como Root"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "Abrir terminal aqui"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Procurar…"
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Reduzir"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Ampliar"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Copiar"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Colar"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Selecionar tudo"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Tem a certeza que quer fechar este separador?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Ainda existe um processo ativo neste separador."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Fechar irá terminar o processo em execução"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Fechar separador"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Tem a certeza de que quer sair do terminal?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Ainda existe um processo ativo neste terminal."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Se fechar o Terminal, o processo vai terminar."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Sair do terminal"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "Este comando está a pedir acesso de administrador ao seu computador"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "Copiar comandos para o Terminal pode ser perigoso."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "Não colar"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "Colar"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Procurar"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Resultado anterior"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Resultado seguinte"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "Open a new window"
+#~ msgstr "Abrir uma nova janela"
+
+#~ msgid "New Tab"
+#~ msgstr "Novo separador"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Criar um novo separador"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Copiar o texto selecionado"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Procurar por um dado texto no terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Colar algum texto"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Selecionar todo o texto do terminal"
+
+#~ msgid "About"
+#~ msgstr "Sobre"
+
+#~ msgid "Show about window"
+#~ msgstr "Mostrar a janela Sobre"
+
+#~ msgid "Next Tab"
+#~ msgstr "Separador seguinte"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Ir para o separador seguinte"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Separador anterior"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Ir para o separador anterior"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Ecrã completo"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Alternar ecrã completo"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Daniel Jorge https://launchpad.net/~daniel-mf-jorge\n"
+#~ "  David Gomes https://launchpad.net/~davidgomes\n"
+#~ "  Ivo Nunes https://launchpad.net/~ivonunes\n"
+#~ "  Laurentino https://launchpad.net/~laurentinolopes\n"
+#~ "  Luis Manuel Oliveira https://launchpad.net/~luisv-moliveira\n"
+#~ "  Luis Neves https://launchpad.net/~luisjneves\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
+#~ "  Sérgio Marques https://launchpad.net/~sergio+marques\n"
+#~ "  Waldir Pimenta https://launchpad.net/~waldyrious\n"
+#~ "  Yan Gabriel Minario https://launchpad.net/~yangm97\n"
+#~ "  yEdubart https://launchpad.net/~vps1992"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Mostrar informação de versão e sair"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Mostrar janela \"Sobre\""
 
 #~ msgid "Open a new tab"
 #~ msgstr "Abrir um novo separador"

@@ -6,229 +6,239 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
+"Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Wo gyedi sɛ wo pɛ sɛ wo yi tab wei?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Dwumadi foforɔ bi de tab no reyɛ aduma."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Sɛ wo yi a, dwumadi no bɛgyae."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Gyae"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Yi Tab No"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Wo gyidi sɛ wopɛ sɛ woyi terminal no?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Dwumadie foforo de terminal no reyɛ adwuma."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Sɛ  woyi terminal no a, dwumadi no begyae."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Yi terminal no"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Hwehwɛ"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Nea wohuu no kane no"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Nea edi hɔ"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Hwehwɛ ..."
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Yi"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Window Foforɔ"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Bue window foforɔ"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Tab Foforɔ"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Bue tab foforɔ"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Fa"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Copy ntwerodeɛ no"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Hwehwɛ biribi fi wo terminal no mu."
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Fa to ha"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Fa ntwerodeɛ a wafa no to ha"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Selecte ne nyinaa"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Selecte ntwerodeɛ a ɛwo terminal no mu no nyina"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Ɛho Nsɛm"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Hwɛ ɛho nsɛm"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Tab nea ɛdi hɔ"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Kɔ tab nea edi hɔ"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Tab nea edi akyire"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Kɔ tab nea edi akyire"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Twe bɛn"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Twe kɔ akyire"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Ma ɛnkata anim nyinaa"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Sesa ne keseɛ"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  aberba https://launchpad.net/~aberba"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Dwumadi no awie"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Printe version no na tumu"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Hwɛ ɛho nsɛm"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Yi dwumadi no wɔ terminal no mu"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
 
-#: ../src/UnsafePasteDialog.vala:33
+#: src/Constants.vala:24
+msgid "About Terminal"
+msgstr "Terminal no ho nsɛm"
+
+#: src/Constants.vala:25
+msgid "Use the command line"
+msgstr "Fa command line no yɛ"
+
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Window Foforɔ"
+
+#: src/Constants.vala:28
+msgid "New Root Tab"
+msgstr "Root tab fofor"
+
+#: src/Constants.vala:29
+msgid "Open Terminal Here"
+msgstr "Bue Terminal No Wɔ Ha"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Hwehwɛ ..."
+
+#: src/PantheonTerminalWindow.vala:243
+#, fuzzy
+msgid "Zoom Out"
+msgstr "Twe kɔ akyire"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+#, fuzzy
+msgid "Zoom In"
+msgstr "Twe bɛn"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Fa"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Fa to ha"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Selecte ne nyinaa"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Wo gyedi sɛ wo pɛ sɛ wo yi tab wei?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Dwumadi foforɔ bi de tab no reyɛ aduma."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Sɛ wo yi a, dwumadi no bɛgyae."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Yi Tab No"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Wo gyidi sɛ wopɛ sɛ woyi terminal no?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Dwumadie foforo de terminal no reyɛ adwuma."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Sɛ  woyi terminal no a, dwumadi no begyae."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Yi terminal no"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Gyae"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Dwumadi yi pɛ ho kwan adi dwuma bi a ehia sɛ wo pene so"
 
-#: ../src/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Ehia sɛ woyɛ ahwɛyie mmerɛ a worefa ntwerodeɛ bi ato terminal no mu no."
 
-#: ../src/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
 msgstr "Hwɛ sɛ wonim nea wopɛ sɛ woyɛ no anaa."
 
-#: ../src/UnsafePasteDialog.vala:39
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
 msgstr "Mmfa nto ha."
 
-#: ../src/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
 msgstr "Fa to ha saa ara."
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Terminal no ho nsɛm"
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Hwehwɛ"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Fa command line no yɛ"
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Nea wohuu no kane no"
 
-#: ../src/Constants.vala:9
-msgid "New Root Tab"
-msgstr "Root tab fofor"
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Nea edi hɔ"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Bue Terminal No Wɔ Ha"
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Yi"
+
+#~ msgid "Open a new window"
+#~ msgstr "Bue window foforɔ"
+
+#~ msgid "New Tab"
+#~ msgstr "Tab Foforɔ"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Bue tab foforɔ"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Copy ntwerodeɛ no"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Hwehwɛ biribi fi wo terminal no mu."
+
+#~ msgid "Paste some text"
+#~ msgstr "Fa ntwerodeɛ a wafa no to ha"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Selecte ntwerodeɛ a ɛwo terminal no mu no nyina"
+
+#~ msgid "About"
+#~ msgstr "Ɛho Nsɛm"
+
+#~ msgid "Show about window"
+#~ msgstr "Hwɛ ɛho nsɛm"
+
+#~ msgid "Next Tab"
+#~ msgstr "Tab nea ɛdi hɔ"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Kɔ tab nea edi hɔ"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Tab nea edi akyire"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Kɔ tab nea edi akyire"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Ma ɛnkata anim nyinaa"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Sesa ne keseɛ"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  aberba https://launchpad.net/~aberba"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Printe version no na tumu"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Hwɛ ɛho nsɛm"
 
 #~ msgid "If you quit Terminal, this process will end."
 #~ msgstr "Sɛ woyi Terminal no a, dwumadie yi bɛgyae"

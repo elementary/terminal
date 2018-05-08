@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2016 elementary, LLC <contact@elementary.io> -->
-<component type="desktop">
-  <id>org.pantheon.terminal.desktop</id>
+<!-- Copyright 2015-2018 elementary, LLC <contact@elementary.io> -->
+<component type="desktop-application">
+  <id>io.elementary.terminal.desktop</id>
   <metadata_license>CC0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
-  <_name>Terminal</_name>
-  <_summary>Use the command line</_summary>
+  <name>Terminal</name>
+  <summary>Use the command line</summary>
   <description>
-    <_p>
+    <p>
       Terminal is a terminal emulator application for accessing
       a UNIX shell environment which can be used to run programs
       available on your system.
-    </_p>
+    </p>
   </description>
   <provides>
     <binary>io.elementary.terminal</binary>
@@ -26,49 +26,49 @@
     <release version="0.4.3" date="2017-07-22" urgency="medium">
       <description>
         <ul>
-          <_li>Minor bug fixes</_li>
-          <_li>Translation updates</_li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>
     <release version="0.4.2" date="2017-05-15" urgency="medium">
       <description>
         <ul>
-          <_li>Allow tab to close after typing exit at the commandline</_li>
-          <_li>Minor bug fixes</_li>
-          <_li>Translation updates</_li>
+          <li>Allow tab to close after typing exit at the commandline</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>
     <release version="0.4.1" date="2017-05-06" urgency="medium">
       <description>
         <ul>
-          <_li>Fix copying URLs to clipboard</_li>
-          <_li>Minor bug fixes</_li>
-          <_li>Translation updates</_li>
+          <li>Fix copying URLs to clipboard</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>
     <release version="0.4.0.3" date="2017-01-04" urgency="medium">
       <description>
         <ul>
-          <_li>Minor bug fixes</_li>
-          <_li>Translation updates</_li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>
     <release version="0.4.0.2" date="2016-10-30" urgency="medium">
       <description>
         <ul>
-          <_li>Fix appstream date format</_li>
+          <li>Fix appstream date format</li>
         </ul>
       </description>
     </release>
     <release version="0.4.0.1" date="2016-10-30" urgency="medium">
       <description>
         <ul>
-          <_li>Minor bug fixes</_li>
-          <_li>Translation updates</_li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>

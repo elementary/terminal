@@ -6,36 +6,61 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2016-08-06 09:48+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-03-23 12:18+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://weblate.elementary.io/projects/terminal/extra/zh_TW/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
+#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "終端機"
 
+#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "使用指令列"
 
-msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;prompt;cmd;commandline;run;指令;命令;提示;指令列;命列列;執行;跑;"
-
-msgid "New Window"
-msgstr "新視窗"
-
-msgid "New Root Tab"
-msgstr "新 Root 分頁"
-
-msgid "About Terminal"
-msgstr "關於《終端機》"
-
+#: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
-msgstr "《終端機》是終端機模擬器程式，提供 UNIX shell 殼層環境，可用來執行系統上的程式。"
+msgstr ""
+"《終端機》是終端機模擬器程式，提供 UNIX shell 殼層環境，可用來執行系統上的程"
+"式。"
+
+#: data/io.elementary.terminal.appdata.xml.in:76
+msgid "elementary LLC."
+msgstr "elementary LLC."
+
+#: data/io.elementary.terminal.desktop.in:8
+#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:23
+msgid "utilities-terminal"
+msgstr "utilities-terminal"
+
+#: data/io.elementary.terminal.desktop.in:12
+msgid "command;prompt;cmd;commandline;run;"
+msgstr ""
+"command;prompt;cmd;commandline;run;指令;命令;提示;指令列;命列列;執行;跑;"
+
+#: data/io.elementary.terminal.desktop.in:17
+msgid "New Window"
+msgstr "新視窗"
+
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
+msgstr "新 Root 分頁"
+
+#~ msgid "About Terminal"
+#~ msgstr "關於《終端機》"

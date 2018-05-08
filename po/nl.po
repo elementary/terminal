@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-10-31 23:59+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-04-02 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/terminal/terminal/nl/>\n"
@@ -17,242 +17,249 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "Weet u zeker dat u dit tabblad wil sluiten?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "Er is een actief proces in dit tabblad."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "Als u dit sluit, zal het proces beëindigen."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "Tabblad sluiten"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Weet u zeker dat u Terminal wilt afsluiten?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "Er is een actief proces in deze terminal."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "Als u Terminal sluit, zal het proces stoppen."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "Terminal afsluiten"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "Zoek"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "Vorige resultaat"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "Volgende resultaat"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "Zoeken…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "Sluiten"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "Nieuw venster"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "Nieuw venster openen"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "Nieuwe tab"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "Nieuw tabblad aanmaken"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "Kopiëer"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "Kopiëer de geselecteerde tekst"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "Zoek naar tekens in venster van Terminal"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "Plakken"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "Plak wat tekst"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "Alles Selecteren"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "Selecteer alle tekst in de terminal"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "Info"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "Toon het infovenster"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "Volgende tabblad"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "Ga naar het volgende tabblad"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "Vorige tabblad"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "Ga naar het vorige tabblad"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "Inzoomen"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "Uitzoomen"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "Volledig scherm"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "Volledig scherm aan/uit"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Arnout https://launchpad.net/~arnout-van-eerde\n"
-"  Barend https://launchpad.net/~b-vanrijn\n"
-"  Bas Dalenoord https://launchpad.net/~bdalenoord\n"
-"  Emiel Beinema https://launchpad.net/~emiel\n"
-"  Guy Spronck https://launchpad.net/~guy-spronck-n\n"
-"  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
-"  Jelle Licht https://launchpad.net/~wordempire\n"
-"  Joris Pelgröm https://launchpad.net/~joris-pelgrom-deactivatedaccount\n"
-"  Lucas https://launchpad.net/~lucascrijns\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Michel https://launchpad.net/~michel-s\n"
-"  OrangeTux https://launchpad.net/~orangetux\n"
-"  Peter https://launchpad.net/~peterbin30\n"
-"  Peter Nijssen https://launchpad.net/~ptnijssen\n"
-"  Quinten Schelfhout https://launchpad.net/~quintenschelfhout\n"
-"  Ramon Meffert https://launchpad.net/~ramon-meffert\n"
-"  René https://launchpad.net/~r-groothedde\n"
-"  Thomas Berends https://launchpad.net/~thomasberends\n"
-"  Tuur Dutoit https://launchpad.net/~tuur-dutoit-f\n"
-"  Yanik Ceulemans https://launchpad.net/~cyanik90\n"
-"  lise blok https://launchpad.net/~liseblok73\n"
-"  needhelp007 https://launchpad.net/~iempie3"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "Taak voltooid"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "Toon versie informatie en verlaat de terminal"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "Toon info-dialoogvenster"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "Voer programma in de terminal uit"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "Stel werkmap van Terminal in"
 
-#: ../src/UnsafePasteDialog.vala:33
+#: src/Constants.vala:24
+msgid "About Terminal"
+msgstr "Over Terminal"
+
+#: src/Constants.vala:25
+msgid "Use the command line"
+msgstr "Gebruik de opdrachtregel"
+
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "Nieuw venster"
+
+#: src/Constants.vala:28
+msgid "New Root Tab"
+msgstr "Nieuw hoofdtabblad"
+
+#: src/Constants.vala:29
+msgid "Open Terminal Here"
+msgstr "Open Terminal hier"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "Zoeken…"
+
+#: src/PantheonTerminalWindow.vala:243
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:251
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "Kopiëer"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "Plakken"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "Alles Selecteren"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "Weet u zeker dat u dit tabblad wil sluiten?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "Er is een actief proces in dit tabblad."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "Als u dit sluit, zal het proces beëindigen."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "Tabblad sluiten"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Weet u zeker dat u Terminal wilt afsluiten?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "Er is een actief proces in deze terminal."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "Als u Terminal sluit, zal het proces stoppen."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "Terminal afsluiten"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Deze opdracht vereist administratieve toegang tot uw computer"
 
-#: ../src/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Opdrachten kopiëren naar het terminalvenster kan gevaarlijk zijn."
 
-#: ../src/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Zorg ervoor dat u de werking van elk onderdeel van deze opdracht begrijpt."
 
-#: ../src/UnsafePasteDialog.vala:39
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
 msgstr "Niet plakken"
 
-#: ../src/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
 msgstr "Toch plakken"
 
-#: ../src/Constants.vala:5
-msgid "About Terminal"
-msgstr "Over Terminal"
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "Zoek"
 
-#: ../src/Constants.vala:6
-msgid "Use the command line"
-msgstr "Gebruik de opdrachtregel"
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "Vorige resultaat"
 
-#: ../src/Constants.vala:9
-msgid "New Root Tab"
-msgstr "Nieuw hoofdtabblad"
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "Volgende resultaat"
 
-#: ../src/Constants.vala:10
-msgid "Open Terminal Here"
-msgstr "Open Terminal hier"
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Sluiten"
+
+#~ msgid "Open a new window"
+#~ msgstr "Nieuw venster openen"
+
+#~ msgid "New Tab"
+#~ msgstr "Nieuwe tab"
+
+#~ msgid "Create a new tab"
+#~ msgstr "Nieuw tabblad aanmaken"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "Kopiëer de geselecteerde tekst"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "Zoek naar tekens in venster van Terminal"
+
+#~ msgid "Paste some text"
+#~ msgstr "Plak wat tekst"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "Selecteer alle tekst in de terminal"
+
+#~ msgid "About"
+#~ msgstr "Info"
+
+#~ msgid "Show about window"
+#~ msgstr "Toon het infovenster"
+
+#~ msgid "Next Tab"
+#~ msgstr "Volgende tabblad"
+
+#~ msgid "Go to next tab"
+#~ msgstr "Ga naar het volgende tabblad"
+
+#~ msgid "Previous Tab"
+#~ msgstr "Vorige tabblad"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "Ga naar het vorige tabblad"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Volledig scherm"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "Volledig scherm aan/uit"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Arnout https://launchpad.net/~arnout-van-eerde\n"
+#~ "  Barend https://launchpad.net/~b-vanrijn\n"
+#~ "  Bas Dalenoord https://launchpad.net/~bdalenoord\n"
+#~ "  Emiel Beinema https://launchpad.net/~emiel\n"
+#~ "  Guy Spronck https://launchpad.net/~guy-spronck-n\n"
+#~ "  Jaap Broekhuizen https://launchpad.net/~jaapz-b\n"
+#~ "  Jelle Licht https://launchpad.net/~wordempire\n"
+#~ "  Joris Pelgröm https://launchpad.net/~joris-pelgrom-deactivatedaccount\n"
+#~ "  Lucas https://launchpad.net/~lucascrijns\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Michel https://launchpad.net/~michel-s\n"
+#~ "  OrangeTux https://launchpad.net/~orangetux\n"
+#~ "  Peter https://launchpad.net/~peterbin30\n"
+#~ "  Peter Nijssen https://launchpad.net/~ptnijssen\n"
+#~ "  Quinten Schelfhout https://launchpad.net/~quintenschelfhout\n"
+#~ "  Ramon Meffert https://launchpad.net/~ramon-meffert\n"
+#~ "  René https://launchpad.net/~r-groothedde\n"
+#~ "  Thomas Berends https://launchpad.net/~thomasberends\n"
+#~ "  Tuur Dutoit https://launchpad.net/~tuur-dutoit-f\n"
+#~ "  Yanik Ceulemans https://launchpad.net/~cyanik90\n"
+#~ "  lise blok https://launchpad.net/~liseblok73\n"
+#~ "  needhelp007 https://launchpad.net/~iempie3"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "Toon versie informatie en verlaat de terminal"
+
+#~ msgid "Show about dialog"
+#~ msgstr "Toon info-dialoogvenster"
 
 #~ msgid "Open a new tab"
 #~ msgstr "Nieuw tabblad openen"

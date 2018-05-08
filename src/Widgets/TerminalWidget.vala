@@ -226,7 +226,7 @@ namespace PantheonTerminal {
                 "#073642", "#dc322f", "#859900", "#b58900",
                 "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
                 "#586e75", "#cb4b16", "#859900", "#b58900",
-                "#268bd2", "#d33682", "#2aa198", "#6c71c4"
+                "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
             };
 
             string current_string = "";
@@ -282,7 +282,7 @@ namespace PantheonTerminal {
         public void kill_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, Posix.SIGKILL);
+                Posix.kill (fg_pid, Posix.Signal.KILL);
         }
 
         public void term_ps () {
@@ -290,8 +290,8 @@ namespace PantheonTerminal {
 
             /* Check if the shell process is still alive by sending 0 signals */
             while (Posix.kill (this.child_pid, 0) == 0) {
-                Posix.kill (this.child_pid, Posix.SIGHUP);
-                Posix.kill (this.child_pid, Posix.SIGTERM);
+                Posix.kill (this.child_pid, Posix.Signal.HUP);
+                Posix.kill (this.child_pid, Posix.Signal.TERM);
                 Thread.usleep (100);
             }
         }

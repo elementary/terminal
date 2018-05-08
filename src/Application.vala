@@ -18,8 +18,7 @@
 */
 
 namespace PantheonTerminal {
-    public class PantheonTerminalApp : Granite.Application {
-
+    public class PantheonTerminalApp : Gtk.Application {
         private GLib.List <PantheonTerminalWindow> windows;
 
         public static string? working_directory = null;
@@ -27,25 +26,14 @@ namespace PantheonTerminal {
         [CCode (array_length = false, array_null_terminated = true)]
         private static string[]? command_e = null;
 
-        private static bool print_version = false;
-
         public int minimum_width;
         public int minimum_height;
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-            build_data_dir = Build.DATADIR;
-            build_pkg_data_dir = Build.PKGDATADIR;
-            build_release_name = Build.RELEASE_NAME;
-            build_version = Build.VERSION;
-            build_version_info = Build.VERSION_INFO;
+            application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
             Intl.setlocale (LocaleCategory.ALL, "");
-
-            program_name = _("Terminal");
-            exec_name = Build.EXEC_NAME;
-            app_launcher = "org.pantheon.terminal.desktop";
-            application_id = Build.EXEC_NAME;
         }
 
         public PantheonTerminalApp () {
@@ -119,7 +107,7 @@ namespace PantheonTerminal {
                                     var notification = new Notification (_("Task finished"));
                                     notification.set_body (process);
                                     notification.set_icon (new ThemedIcon ("utilities-terminal"));
-                                    send_notification ("finished", notification);
+                                    send_notification (null, notification);
                                 }
                             }
 
@@ -152,10 +140,6 @@ namespace PantheonTerminal {
             } else if (working_directory != null) {
                 start_terminal_with_working_directory (working_directory);
 
-            } else if (print_version) {
-                stdout.printf ("Pantheon Terminal %s\n", Build.VERSION);
-                stdout.printf ("Copyright 2011-2015 Pantheon Terminal Developers.\n");
-
             } else {
                 new_window ();
             }
@@ -164,7 +148,6 @@ namespace PantheonTerminal {
             // Pantheon Terminal is started
             command_e = null;
             working_directory = null;
-            print_version = false;
 
             return 0;
         }
@@ -200,7 +183,6 @@ namespace PantheonTerminal {
         }
 
         private const OptionEntry[] entries = {
-            { "version", 'v', 0, OptionArg.NONE, out print_version, N_("Print version info and exit"), null },
             { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
             { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
             { null }

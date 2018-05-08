@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Terminal
+GenericName=Terminal
+Comment=Use the command line
+TryExec=io.elementary.terminal
+Exec=io.elementary.terminal
+Icon=utilities-terminal
+Type=Application
+Categories=GNOME;GTK;System;TerminalEmulator;
+StartupNotify=true
+Keywords=command;prompt;cmd;commandline;run;
+X-GNOME-UsesNotifications=true
+Actions=NewWindow;NewRootWindow;
+
+[Desktop Action NewWindow]
+Name=New Window
+Exec=io.elementary.terminal
+
+[Desktop Action NewRootWindow]
+Name=New Root Tab
+Exec=io.elementary.terminal -e "sudo -s"

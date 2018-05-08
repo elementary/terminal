@@ -6,237 +6,244 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 11:52-0700\n"
-"PO-Revision-Date: 2017-06-11 09:57+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-03-23 07:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew "
-"<https://l10n.elementary.io/projects/terminal/terminal/he/>\n"
+"<https://weblate.elementary.io/projects/terminal/terminal/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: ../src/ForegroundProcessDialog.vala:30
-msgid "Are you sure you want to close this tab?"
-msgstr "האם לסגור לשונית זו?"
-
-#: ../src/ForegroundProcessDialog.vala:31
-msgid "There is an active process on this tab."
-msgstr "קיים תהליך פעיל בלשונית זו."
-
-#: ../src/ForegroundProcessDialog.vala:32
-msgid "If you close it, the process will end."
-msgstr "סגירה תסיים את התהליך."
-
-#: ../src/ForegroundProcessDialog.vala:36
-#: ../src/ForegroundProcessDialog.vala:59
-msgid "Cancel"
-msgstr "ביטול"
-
-#: ../src/ForegroundProcessDialog.vala:40
-msgid "Close Tab"
-msgstr "סגירת הלשונית"
-
-#: ../src/ForegroundProcessDialog.vala:55
-msgid "Are you sure you want to quit Terminal?"
-msgstr "האם לצאת מהמסוף?"
-
-#: ../src/ForegroundProcessDialog.vala:56
-msgid "There is an active process on this terminal."
-msgstr "יש תהליך פעיל במסוף זה."
-
-#: ../src/ForegroundProcessDialog.vala:57
-msgid "If you quit Terminal, the process will end."
-msgstr "ביציאה מהמסוף, התהליך יסתיים."
-
-#: ../src/ForegroundProcessDialog.vala:63
-msgid "Quit Terminal"
-msgstr "יציאה מהמסוף"
-
-#: ../src/SearchToolbar.vala:37
-msgid "Find"
-msgstr "חיפוש"
-
-#: ../src/SearchToolbar.vala:49
-msgid "Previous result"
-msgstr "התוצאה הקודמת"
-
-#: ../src/SearchToolbar.vala:55
-msgid "Next result"
-msgstr "התוצאה הבאה"
-
-#: ../src/PantheonTerminalWindow.vala:114
-#: ../src/PantheonTerminalWindow.vala:561 ../src/PantheonTerminal.vala:48
-#: ../src/Constants.vala:7
-msgid "Terminal"
-msgstr "מסוף"
-
-#: ../src/PantheonTerminalWindow.vala:185
-#: ../src/PantheonTerminalWindow.vala:794
-msgid "Find…"
-msgstr "חיפוש…"
-
-#: ../src/PantheonTerminalWindow.vala:777
-#: ../src/PantheonTerminalWindow.vala:778
-msgid "Close"
-msgstr "סגירה"
-
-#: ../src/PantheonTerminalWindow.vala:782 ../src/Constants.vala:8
-msgid "New Window"
-msgstr "חלון חדש"
-
-#: ../src/PantheonTerminalWindow.vala:782
-msgid "Open a new window"
-msgstr "פתיחת חלון חדש"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "New Tab"
-msgstr "לשונית חדשה"
-
-#: ../src/PantheonTerminalWindow.vala:786
-msgid "Create a new tab"
-msgstr "יצירת לשונית חדשה"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy"
-msgstr "העתקה"
-
-#: ../src/PantheonTerminalWindow.vala:790
-msgid "Copy the selected text"
-msgstr "העתקת הטקסט שנבחר"
-
-#: ../src/PantheonTerminalWindow.vala:795
-msgid "Search for a given string in the terminal"
-msgstr "חיפוש אחר מחרוזת נתונה במסוף"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste"
-msgstr "הדבקה"
-
-#: ../src/PantheonTerminalWindow.vala:798
-msgid "Paste some text"
-msgstr "הדבקת טקסט כלשהו"
-
-#: ../src/PantheonTerminalWindow.vala:802
-msgid "Select All"
-msgstr "בחירת הכל"
-
-#: ../src/PantheonTerminalWindow.vala:803
-msgid "Select all the text in the terminal"
-msgstr "בחירת כל הטקסט בחלון המסוף"
-
-#: ../src/PantheonTerminalWindow.vala:805
-msgid "About"
-msgstr "על אודות"
-
-#: ../src/PantheonTerminalWindow.vala:806
-msgid "Show about window"
-msgstr "הצגת החלון על אודות"
-
-#: ../src/PantheonTerminalWindow.vala:808
-msgid "Next Tab"
-msgstr "לשונית הבאה"
-
-#: ../src/PantheonTerminalWindow.vala:809
-msgid "Go to next tab"
-msgstr "מעבר ללשונית הבאה"
-
-#: ../src/PantheonTerminalWindow.vala:812
-msgid "Previous Tab"
-msgstr "לשונית קודמת"
-
-#: ../src/PantheonTerminalWindow.vala:813
-msgid "Go to previous tab"
-msgstr "מעבר ללשונית קודמת"
-
-#: ../src/PantheonTerminalWindow.vala:816
-#: ../src/PantheonTerminalWindow.vala:817
-msgid "Zoom in"
-msgstr "התקרבות"
-
-#: ../src/PantheonTerminalWindow.vala:821
-msgid "Zoom out"
-msgstr "התרחקות"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Fullscreen"
-msgstr "מסך מלא"
-
-#: ../src/PantheonTerminalWindow.vala:825
-msgid "Toggle/Untoggle fullscreen"
-msgstr "הגדר מסך מלא"
-
-#: ../src/PantheonTerminal.vala:64
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Danny Damsky https://launchpad.net/~dannydamsky99\n"
-"  Dor https://launchpad.net/~dor-gallego\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Niv Baehr https://launchpad.net/~rzil\n"
-"  Oded Arbel https://launchpad.net/~oded-geek\n"
-"  Oren Drobitsky https://launchpad.net/~orendr750000\n"
-"  Yaron https://launchpad.net/~sh-yaron"
-
-#: ../src/PantheonTerminal.vala:126
+#: src/Application.vala:107
 msgid "Task finished"
 msgstr "פעולה הסתיימה"
 
-#: ../src/PantheonTerminal.vala:208
-msgid "Print version info and exit"
-msgstr "הדפסת מידע גרסה ויציאה"
-
-#: ../src/PantheonTerminal.vala:209
-msgid "Show about dialog"
-msgstr "הצג תיבת דו־שיח על אודות"
-
-#: ../src/PantheonTerminal.vala:210
+#: src/Application.vala:186
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: ../src/PantheonTerminal.vala:211
+#: src/Application.vala:187
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
-#: ../src/UnsafePasteDialog.vala:33
-msgid "This command is asking for Administrative access to your computer"
-msgstr "פקודה זו מבקשת גישת מנהל למחשב"
-
-#: ../src/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "העתקת פקודות למסוף עלולה להיות מסוכנת."
-
-#: ../src/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "נא לוודא הבנה של כל חלק בפקודה זו."
-
-#: ../src/UnsafePasteDialog.vala:39
-msgid "Don't Paste"
-msgstr "לא להדביק"
-
-#: ../src/UnsafePasteDialog.vala:42
-msgid "Paste Anyway"
-msgstr "להדביק בכל זאת"
-
-#: ../src/Constants.vala:5
+#: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "על אודות מסוף"
 
-#: ../src/Constants.vala:6
+#: src/Constants.vala:25
 msgid "Use the command line"
 msgstr "שימוש בשורת הפקודה"
 
-#: ../src/Constants.vala:9
+#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "מסוף"
+
+#: src/Constants.vala:27
+msgid "New Window"
+msgstr "חלון חדש"
+
+#: src/Constants.vala:28
 msgid "New Root Tab"
 msgstr "לשונית חדשה כמנהל"
 
-#: ../src/Constants.vala:10
+#: src/Constants.vala:29
 msgid "Open Terminal Here"
 msgstr "פתיחת מסוף כאן"
+
+#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+msgid "Find…"
+msgstr "חיפוש…"
+
+#: src/PantheonTerminalWindow.vala:243
+msgid "Zoom Out"
+msgstr "התרחקות"
+
+#: src/PantheonTerminalWindow.vala:247
+msgid "Default zoom level"
+msgstr "רמת התקריב כבררת מחדל"
+
+#: src/PantheonTerminalWindow.vala:251
+msgid "Zoom In"
+msgstr "התקרבות"
+
+#: src/PantheonTerminalWindow.vala:266
+msgid "High Contrast"
+msgstr "ניגודיות גבוהה"
+
+#: src/PantheonTerminalWindow.vala:276
+msgid "Solarized Light"
+msgstr "זריחה בהירה"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Solarized Dark"
+msgstr "זריחה כהה"
+
+#: src/PantheonTerminalWindow.vala:309
+msgid "Style"
+msgstr "סגנון"
+
+#: src/PantheonTerminalWindow.vala:1115
+msgid "Copy"
+msgstr "העתקה"
+
+#: src/PantheonTerminalWindow.vala:1117
+msgid "Paste"
+msgstr "הדבקה"
+
+#: src/PantheonTerminalWindow.vala:1118
+msgid "Select All"
+msgstr "בחירת הכל"
+
+#: src/PantheonTerminalWindow.vala:1119
+msgid "Show in File Browser"
+msgstr "הצגה בדפדפן הקבצים"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Are you sure you want to close this tab?"
+msgstr "האם לסגור לשונית זו?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:33
+msgid "There is an active process on this tab."
+msgstr "קיים תהליך פעיל בלשונית זו."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:34
+msgid "If you close it, the process will end."
+msgstr "סגירה תסיים את התהליך."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:35
+msgid "Close Tab"
+msgstr "סגירת הלשונית"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:45
+msgid "Are you sure you want to quit Terminal?"
+msgstr "האם לצאת מהמסוף?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:47
+msgid "There is an active process on this terminal."
+msgstr "יש תהליך פעיל במסוף זה."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:48
+msgid "If you quit Terminal, the process will end."
+msgstr "ביציאה מהמסוף, התהליך יסתיים."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:49
+msgid "Quit Terminal"
+msgstr "יציאה מהמסוף"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:81
+msgid "Cancel"
+msgstr "ביטול"
+
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "This command is asking for Administrative access to your computer"
+msgstr "פקודה זו מבקשת גישת מנהל למחשב"
+
+#: src/Dialogs/UnsafePasteDialog.vala:42
+msgid "Copying commands into the Terminal can be dangerous."
+msgstr "העתקת פקודות למסוף עלולה להיות מסוכנת."
+
+#: src/Dialogs/UnsafePasteDialog.vala:43
+msgid "Be sure you understand what each part of this command does."
+msgstr "נא לוודא הבנה של כל חלק בפקודה זו."
+
+#: src/Dialogs/UnsafePasteDialog.vala:47
+msgid "Do not show this dialog again"
+msgstr "לא להציג את תיבת הדו־שיח הזאת יותר"
+
+#: src/Dialogs/UnsafePasteDialog.vala:64
+msgid "Don't Paste"
+msgstr "לא להדביק"
+
+#: src/Dialogs/UnsafePasteDialog.vala:66
+msgid "Paste Anyway"
+msgstr "להדביק בכל זאת"
+
+#: src/Widgets/SearchToolbar.vala:34
+msgid "Find"
+msgstr "חיפוש"
+
+#: src/Widgets/SearchToolbar.vala:38
+msgid "Previous result"
+msgstr "התוצאה הקודמת"
+
+#: src/Widgets/SearchToolbar.vala:42
+msgid "Next result"
+msgstr "התוצאה הבאה"
+
+#: src/Widgets/SearchToolbar.vala:47
+msgid "Cyclic search"
+msgstr "חיפוש מעגלי"
+
+#~ msgid "Close"
+#~ msgstr "סגירה"
+
+#~ msgid "Open a new window"
+#~ msgstr "פתיחת חלון חדש"
+
+#~ msgid "New Tab"
+#~ msgstr "לשונית חדשה"
+
+#~ msgid "Create a new tab"
+#~ msgstr "יצירת לשונית חדשה"
+
+#~ msgid "Copy the selected text"
+#~ msgstr "העתקת הטקסט שנבחר"
+
+#~ msgid "Search for a given string in the terminal"
+#~ msgstr "חיפוש אחר מחרוזת נתונה במסוף"
+
+#~ msgid "Paste some text"
+#~ msgstr "הדבקת טקסט כלשהו"
+
+#~ msgid "Select all the text in the terminal"
+#~ msgstr "בחירת כל הטקסט בחלון המסוף"
+
+#~ msgid "About"
+#~ msgstr "על אודות"
+
+#~ msgid "Show about window"
+#~ msgstr "הצגת החלון על אודות"
+
+#~ msgid "Next Tab"
+#~ msgstr "לשונית הבאה"
+
+#~ msgid "Go to next tab"
+#~ msgstr "מעבר ללשונית הבאה"
+
+#~ msgid "Previous Tab"
+#~ msgstr "לשונית קודמת"
+
+#~ msgid "Go to previous tab"
+#~ msgstr "מעבר ללשונית קודמת"
+
+#~ msgid "Fullscreen"
+#~ msgstr "מסך מלא"
+
+#~ msgid "Toggle/Untoggle fullscreen"
+#~ msgstr "הגדר מסך מלא"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Danny Damsky https://launchpad.net/~dannydamsky99\n"
+#~ "  Dor https://launchpad.net/~dor-gallego\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  Niv Baehr https://launchpad.net/~rzil\n"
+#~ "  Oded Arbel https://launchpad.net/~oded-geek\n"
+#~ "  Oren Drobitsky https://launchpad.net/~orendr750000\n"
+#~ "  Yaron https://launchpad.net/~sh-yaron"
+
+#~ msgid "Print version info and exit"
+#~ msgstr "הדפסת מידע גרסה ויציאה"
+
+#~ msgid "Show about dialog"
+#~ msgstr "הצג תיבת דו־שיח על אודות"
 
 #~ msgid "If you close this tab, this process will end."
 #~ msgstr "אם אתם רוצים לסגור את הכרטיסייה, תהליך זה יגמר."
