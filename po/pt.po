@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-05-11 12:04+0000\n"
+"PO-Revision-Date: 2018-05-12 00:02+0000\n"
 "Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/terminal/terminal/pt/>\n"
@@ -114,7 +114,7 @@ msgstr "Ainda existe um processo ativo neste separador."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:34
 msgid "If you close it, the process will end."
-msgstr "Fechar irá terminar o processo em execução"
+msgstr "Se fechar, o processo em execução irá terminar."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:35
 msgid "Close Tab"
