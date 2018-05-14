@@ -28,7 +28,7 @@ To install, use `ninja install`, then execute with `io.elementary.terminal`
 
 ## Notifications
 
-Terminal implements process completion notifications. They are enabled for BASH automatically. To enable them for ZSH, add the following line to .zshrc:
+Terminal implements process completion notifications. They are enabled for BASH and FISH automatically. To enable them for ZSH, add the following line to .zshrc:
 
     builtin . /usr/share/io.elementary.terminal/enable-zsh-completion-notifications || builtin true
 
