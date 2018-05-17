@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-04-29 00:11+0000\n"
+"PO-Revision-Date: 2018-05-03 00:06+0000\n"
 "Last-Translator: Iuninefrendor <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/terminal/extra/es/>\n"
@@ -48,7 +48,7 @@ msgstr "elementary LLC."
 #: data/io.elementary.terminal.desktop.in:18
 #: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
-msgstr "utilidades-terminal"
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"

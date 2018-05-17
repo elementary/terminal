@@ -51,8 +51,8 @@ test (
 )
 
 install_data(
-    'enable-fish-completion-notifications',
-    install_dir: join_paths(get_option('datadir'), meson.project_name())
+    'pantheon_terminal_process_completion_notifications.fish',
+    install_dir: join_paths(get_option('datadir'), 'fish', 'vendor_conf.d')
 )
 
 install_data(

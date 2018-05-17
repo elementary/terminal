@@ -19,7 +19,6 @@
 
 namespace PantheonTerminal {
     public class PantheonTerminalApp : Gtk.Application {
-
         private GLib.List <PantheonTerminalWindow> windows;
 
         public static string? working_directory = null;
@@ -32,6 +31,7 @@ namespace PantheonTerminal {
 
         construct {
             flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
+            application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
             Intl.setlocale (LocaleCategory.ALL, "");
         }
