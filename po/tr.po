@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-05-25 21:06+0000\n"
+"PO-Revision-Date: 2018-05-26 00:02+0000\n"
 "Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
 "Language-Team: Turkish "
 "<https://weblate.elementary.io/projects/terminal/terminal/tr/>\n"
@@ -42,7 +42,7 @@ msgstr "Komut satırını kullan"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "Komut istemci"
+msgstr "Uçbirim"
 
 #: src/Constants.vala:27
 msgid "New Window"
