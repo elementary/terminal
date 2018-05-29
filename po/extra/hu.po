@@ -8,23 +8,23 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2017-08-11 19:09+0000\n"
-"Last-Translator: Rónyai Dániel <danironyai@gmail.com>\n"
-"Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
-"extra/hu/>\n"
+"PO-Revision-Date: 2018-05-29 12:22+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"Language-Team: Hungarian "
+"<https://weblate.elementary.io/projects/terminal/extra/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
@@ -36,28 +36,30 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
+"A Terminál egy terminál emulátor alkalmazás, amivel elérheti a UNIX shell "
+"környezetet, amely a rendszeren elérhető programok futtatására használható."
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
 #: data/io.elementary.terminal.desktop.in:18
 #: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
-msgstr ""
+msgstr "segédprogramok-terminál"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
+msgstr "command;prompt;cmd;commandline;run;parancs;parancssor;futtatás;"
 
 #: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
-msgstr ""
+msgstr "Új ablak"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Új Root Ablak"
+msgstr "Új adminisztrátori ablak"
 
 #~ msgid "About Terminal"
 #~ msgstr "Terminál névjegye"
