@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-05-29 12:26+0000\n"
+"PO-Revision-Date: 2018-06-02 00:07+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/terminal/terminal/hu/>\n"
@@ -50,7 +50,7 @@ msgstr "Új ablak"
 
 #: src/Constants.vala:28
 msgid "New Root Tab"
-msgstr "Új adminisztrátori ablak"
+msgstr "Új ablak rendszergazdaként"
 
 #: src/Constants.vala:29
 msgid "Open Terminal Here"
@@ -142,7 +142,7 @@ msgstr "Mégsem"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Ez a parancs adminisztrációs hozzáférést akar a számítógépéhez"
+msgstr "Ez a parancs rendszergazdai hozzáférést igényel a számítógépéhez"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
