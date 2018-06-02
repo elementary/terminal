@@ -2,165 +2,173 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"PO-Revision-Date: 2018-05-31 07:40+0000\n"
+"Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
+"Language-Team: Moldovan "
+"<https://weblate.elementary.io/projects/terminal/terminal/mo/>\n"
+"Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
-msgstr ""
+msgstr "Sarcină terminată"
 
 #: src/Application.vala:186
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Rulați program în terminal"
 
 #: src/Application.vala:187
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Setați directorul de lucru pentru shell"
 
 #: src/Constants.vala:24
 msgid "About Terminal"
-msgstr ""
+msgstr "Despre Terminal"
 
 #: src/Constants.vala:25
 msgid "Use the command line"
-msgstr ""
+msgstr "Utilizați linia de comandă"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr ""
+msgstr "Terminalul"
 
 #: src/Constants.vala:27
 msgid "New Window"
-msgstr ""
+msgstr "Fereastră nouă"
 
 #: src/Constants.vala:28
 msgid "New Root Tab"
-msgstr ""
+msgstr "Nouă filă rădăcină"
 
 #: src/Constants.vala:29
 msgid "Open Terminal Here"
-msgstr ""
+msgstr "Deschideți terminalul aici"
 
 #: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
 msgid "Find…"
-msgstr ""
+msgstr "Căutare…"
 
 #: src/PantheonTerminalWindow.vala:243
 msgid "Zoom Out"
-msgstr ""
+msgstr "Micșorează"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "Nivel prestabilit"
 
 #: src/PantheonTerminalWindow.vala:251
 msgid "Zoom In"
-msgstr ""
+msgstr "Mărește"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "Contrast mare"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Lumină solarizată"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Polarizat închis"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "Stilul"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
-msgstr ""
+msgstr "Copie"
 
 #: src/PantheonTerminalWindow.vala:1117
 msgid "Paste"
-msgstr ""
+msgstr "Lipește"
 
 #: src/PantheonTerminalWindow.vala:1118
 msgid "Select All"
-msgstr ""
+msgstr "Selectează tot"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Afișați Fișierul în Browser"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Sigur doriți să închideți această filă?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:33
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "Există un proces activ în această filă."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:34
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Dacă îl închideți, procesul se va termina."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:35
 msgid "Close Tab"
-msgstr ""
+msgstr "Închideți fila"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:45
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Sunteți sigur că doriți să închideți terminalul?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "Există un proces activ pe acest terminal."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Dacă închideți Terminalul, procesul se va termina."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Închide Terminalulul"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:81
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Această comandă solicită acces administrativ la computer"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copierea comenzilor în Terminal poate fi periculoasă."
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Asigurați-vă că înțelegeți ce face fiecare parte a acestei comenzi."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Nu mai arăta acest dialog din nou"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr ""
+msgstr "Nu lipi"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Lipiște oricum"
 
 #: src/Widgets/SearchToolbar.vala:34
 msgid "Find"
-msgstr ""
+msgstr "Caută"
 
 #: src/Widgets/SearchToolbar.vala:38
 msgid "Previous result"
-msgstr ""
+msgstr "Pre vizualizează rezultatul"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Next result"
-msgstr ""
+msgstr "Rezultatul următor"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Clic în caută"

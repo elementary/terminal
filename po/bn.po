@@ -8,27 +8,29 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2016-02-25 14:28+0000\n"
-"Last-Translator: momit rahman <momitrahman@gmail.com>\n"
-"Language-Team: Bengali <bn@li.org>\n"
+"PO-Revision-Date: 2018-05-29 12:26+0000\n"
+"Last-Translator: Ibraheem Moosa <ibraheemmoosa1347@gmail.com>\n"
+"Language-Team: Bengali "
+"<https://weblate.elementary.io/projects/terminal/terminal/bn/>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
-msgstr ""
+msgstr "কাজ সমাপ্ত"
 
 #: src/Application.vala:186
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "টার্মিনালে প্রোগ্রাম চালান"
 
 #: src/Application.vala:187
 msgid "Set shell working directory"
-msgstr ""
+msgstr "শেলের ওয়ার্কিং ডিরেক্টরি সেট করুন"
 
 #: src/Constants.vala:24
 msgid "About Terminal"
@@ -56,7 +58,7 @@ msgstr "এখানে টার্মিনাল খুলুন"
 
 #: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
 msgid "Find…"
-msgstr ""
+msgstr "খুঁজুন…"
 
 #: src/PantheonTerminalWindow.vala:243
 msgid "Zoom Out"

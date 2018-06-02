@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-05-19 00:11+0000\n"
+"PO-Revision-Date: 2018-06-01 00:02+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/terminal/extra/cs/>\n"
@@ -29,7 +29,7 @@ msgstr "Terminál"
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Použít příkazovou řádku"
+msgstr "Použijte příkazovou řádku"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
