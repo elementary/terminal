@@ -310,7 +310,6 @@ namespace PantheonTerminal {
             search_revealer.add (search_toolbar);
 
             enable_main_action ("copy", false);
-            enable_main_action ("open-in-files", true);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -1118,7 +1117,7 @@ namespace PantheonTerminal {
 
         private void set_main_accelerators () {
             application.set_accels_for_action ("main.copy", {"<Control><Shift>c"});
-            application.set_accels_for_action ("main.search", {"Control><Shift>f"});
+            application.set_accels_for_action ("main.search", {"<Control><Shift>f"});
             application.set_accels_for_action ("main.paste", {"<Control><Shift>v"});
             application.set_accels_for_action ("main.select-all", {"<Control><Shift>a"});
             application.set_accels_for_action ("main.open-in-files", {"<Control><Shift>e"});
