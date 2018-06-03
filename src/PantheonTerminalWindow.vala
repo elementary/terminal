@@ -48,7 +48,7 @@ namespace PantheonTerminal {
         public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
-        
+
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
         public Gtk.ActionGroup main_actions;
 
@@ -348,6 +348,10 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            style_popover.closed.connect_after (() => {
+                current_terminal.grab_focus ();
+            });
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
