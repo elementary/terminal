@@ -28,6 +28,7 @@ namespace PantheonTerminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Gtk.MenuButton style_button;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -290,7 +291,7 @@ namespace PantheonTerminal {
             var style_popover = new Gtk.Popover (null);
             style_popover.add (style_popover_grid);
 
-            var style_button = new Gtk.MenuButton ();
+            style_button = new Gtk.MenuButton ();
             style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
             style_button.tooltip_text = _("Style");
@@ -917,6 +918,11 @@ namespace PantheonTerminal {
             }
         }
 
+        void action_open_appmenu () {
+            var open = style_button.get_active ();
+            style_button.set_active (!open);
+        }
+
         void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
@@ -1106,7 +1112,8 @@ namespace PantheonTerminal {
             { "search", action_search },
             { "paste", action_paste },
             { "select-all", action_select_all },
-            { "open-in-files", action_open_in_files }
+            { "open-in-files", action_open_in_files },
+            { "open-appmenu", action_open_appmenu }
         };
 
         private void set_main_accelerators () {
@@ -1115,6 +1122,7 @@ namespace PantheonTerminal {
             application.set_accels_for_action ("main.paste", {"<Control><Shift>v"});
             application.set_accels_for_action ("main.select-all", {"<Control><Shift>a"});
             application.set_accels_for_action ("main.open-in-files", {"<Control><Shift>e"});
+            application.set_accels_for_action ("main.open-appmenu", {"<Super>F10"});
         }
 
         public void enable_main_action (string detailed_action, bool enabled) {
