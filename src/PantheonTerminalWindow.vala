@@ -969,6 +969,18 @@ namespace PantheonTerminal {
             search_button.active = !search_button.active;
         }
 
+        void action_search_next () {
+            if (search_button.active) {
+                search_toolbar.next_search ();
+            }
+        }
+
+        void action_search_previous () {
+            if (search_button.active) {
+                search_toolbar.previous_search ();
+            }
+        }
+
         void action_fullscreen () {
             if (is_fullscreen) {
                 unfullscreen ();
@@ -1109,6 +1121,8 @@ namespace PantheonTerminal {
         const GLib.ActionEntry[] main_entries = {
             { "copy", action_copy },
             { "search", action_search },
+            { "search-next", action_search_next },
+            { "search-previous", action_search_previous },
             { "paste", action_paste },
             { "select-all", action_select_all },
             { "open-in-files", action_open_in_files },
@@ -1118,6 +1132,8 @@ namespace PantheonTerminal {
         private void set_main_accelerators () {
             application.set_accels_for_action ("main.copy", {"<Control><Shift>c"});
             application.set_accels_for_action ("main.search", {"<Control><Shift>f"});
+            application.set_accels_for_action ("main.search-next", {"<Control>g", "<Control>Down"});
+            application.set_accels_for_action ("main.search-previous", {"<Control><Shift>g", "<Control>Up"});
             application.set_accels_for_action ("main.paste", {"<Control><Shift>v"});
             application.set_accels_for_action ("main.select-all", {"<Control><Shift>a"});
             application.set_accels_for_action ("main.open-in-files", {"<Control><Shift>e"});
