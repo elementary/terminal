@@ -35,15 +35,18 @@ namespace PantheonTerminal.Widgets {
 
             var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             previous_button.sensitive = false;
+            previous_button.set_can_focus (false);
             previous_button.tooltip_text = _("Previous result");
 
             var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             next_button.sensitive = false;
+            next_button.set_can_focus (false);
             next_button.tooltip_text = _("Next result");
 
             cycle_button = new Gtk.ToggleButton ();
             cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             cycle_button.sensitive = false;
+            cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
 
             var search_grid = new Gtk.Grid ();
