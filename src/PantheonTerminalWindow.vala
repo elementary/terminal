@@ -419,6 +419,7 @@ namespace PantheonTerminal {
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
+                            current_terminal.unselect_all();
                             return true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
