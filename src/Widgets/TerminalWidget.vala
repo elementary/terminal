@@ -43,7 +43,7 @@ namespace PantheonTerminal {
             set {
                 this._window = value;
                 this.app = value.app;
-                this.menu = value.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+                this.menu = value.app_menu;
                 this.menu.show_all ();
             }
         }
@@ -150,12 +150,10 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null) {
-                        window.main_actions.get_action ("Copy").set_sensitive (true);
+                        window.enable_main_action ("copy", true);
                     }
 
-                    menu.select_first (false);
                     menu.popup (null, null, null, event.button, event.time);
-
                     return true;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
                     return window.handle_primary_selection_copy_event ();
@@ -181,7 +179,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+                window.enable_main_action ("copy", get_has_selection ());
             });
 
 

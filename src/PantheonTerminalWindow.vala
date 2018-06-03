@@ -44,13 +44,12 @@ namespace PantheonTerminal {
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
-        public Gtk.UIManager ui { get; private set; }
         public PantheonTerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
-        
+
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
-        public Gtk.ActionGroup main_actions;
+        public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action_close_tab";
@@ -77,17 +76,7 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font }
         };
 
-        private const string ui_string = """
-            <ui>
-            <popup name="AppMenu">
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="Show in File Browser" action="Show in File Browser"/>
-            </popup>
-            </ui>
-        """;
+        public Gtk.Menu app_menu {get; construct;}
 
         public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
             Object (
@@ -166,10 +155,10 @@ namespace PantheonTerminal {
                 open_tabs ();
             }
 
-            /* Actions and UIManager */
-            main_actions = new Gtk.ActionGroup ("MainActionGroup");
-            main_actions.set_translation_domain ("pantheon-terminal");
-            main_actions.add_actions (main_entries, this);
+            main_actions = new GLib.SimpleActionGroup ();
+            main_actions.add_action_entries (main_entries, this);
+            insert_action_group ("main", main_actions);
+            set_main_accelerators ();
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
@@ -177,19 +166,17 @@ namespace PantheonTerminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            ui = new Gtk.UIManager ();
+            var app_menu_model = new GLib.Menu ();
+            app_menu_model.append ("Copy", "main.copy");
+            app_menu_model.append ("Paste", "main.paste");
+            app_menu_model.append ("Select All", "main.select-all");
+            app_menu_model.append ("Search", "main.search");
+            app_menu_model.append ("Show in File Browser", "main.open-in-files");
 
-            try {
-                ui.add_ui_from_string (ui_string, -1);
-            } catch (Error e) {
-                error ("Couldn't load the UI: %s", e.message);
-            }
-
-            Gtk.AccelGroup accel_group = ui.get_accel_group ();
-            add_accel_group (accel_group);
-
-            ui.insert_action_group (main_actions, 0);
-            ui.ensure_update ();
+            app_menu = new Gtk.Menu.from_model (app_menu_model);
+            app_menu.set_screen (null);
+            app_menu.attach_to_widget (this, null);
+            app_menu.get_style_context ().add_class (Gtk.STYLE_CLASS_CONTEXT_MENU);
 
             setup_ui ();
             show_all ();
@@ -321,7 +308,8 @@ namespace PantheonTerminal {
             search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
             search_revealer.add (search_toolbar);
 
-            main_actions.get_action ("Copy").set_sensitive (false);
+            enable_main_action ("copy", false);
+            enable_main_action ("open-in-files", true);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -594,10 +582,11 @@ namespace PantheonTerminal {
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
             bool can_paste = false;
 
-            if (atoms != null && atoms.length > 0)
+            if (atoms != null && atoms.length > 0) {
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            }
 
-            main_actions.get_action ("Paste").set_sensitive (can_paste);
+            enable_main_action ("paste", can_paste);
         }
 
         uint timer_window_state_change = 0;
@@ -897,11 +886,12 @@ namespace PantheonTerminal {
         }
 
         void action_copy () {
-            if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
+            if (current_terminal.uri != null && ! current_terminal.get_has_selection ()) {
                 clipboard.set_text (current_terminal.uri,
                                     current_terminal.uri.length);
-            else
+            } else {
                 current_terminal.copy_clipboard ();
+            }
         }
 
         void action_paste () {
@@ -912,7 +902,7 @@ namespace PantheonTerminal {
             current_terminal.select_all ();
         }
 
-        void action_open_in_files () {
+        void action_open_in_files (){
             try {
                 string uri = Filename.to_uri (current_terminal.get_shell_location ());
 
@@ -1111,12 +1101,27 @@ namespace PantheonTerminal {
             return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
-        const Gtk.ActionEntry[] main_entries = {
-            { "Copy", null, N_("Copy"), "<Control><Shift>c", null, action_copy },
-            { "Search", null, N_("Find…"), "<Control><Shift>f", null, action_search },
-            { "Paste", null, N_("Paste"), "<Control><Shift>v", null, action_paste },
-            { "Select All", null, N_("Select All"), "<Control><Shift>a", null, action_select_all },
-            { "Show in File Browser", null, N_("Show in File Browser"), "<Control><Shift>e", null, action_open_in_files }
+        const GLib.ActionEntry[] main_entries = {
+            { "copy", action_copy },
+            { "search", action_search },
+            { "paste", action_paste },
+            { "select-all", action_select_all },
+            { "open-in-files", action_open_in_files }
         };
+
+        private void set_main_accelerators () {
+            application.set_accels_for_action ("main.copy", {"<Control><Shift>c"});
+            application.set_accels_for_action ("main.search", {"Control><Shift>f"});
+            application.set_accels_for_action ("main.paste", {"<Control><Shift>v"});
+            application.set_accels_for_action ("main.select-all", {"<Control><Shift>a"});
+            application.set_accels_for_action ("main.open-in-files", {"<Control><Shift>e"});
+        }
+
+        public void enable_main_action (string detailed_action, bool enabled) {
+            var action = main_actions.lookup_action (detailed_action);
+            if (action != null) {
+                ((SimpleAction)action).set_enabled (enabled);
+            }
+        }
     }
 }
