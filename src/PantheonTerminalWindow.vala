@@ -155,7 +155,6 @@ namespace PantheonTerminal {
             }
 
             main_actions = new GLib.SimpleActionGroup ();
-            //main_actions.set_translation_domain ("pantheon-terminal");
             main_actions.add_action_entries (main_entries, this);
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
