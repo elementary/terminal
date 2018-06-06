@@ -80,11 +80,11 @@ namespace PantheonTerminal {
         private const string ui_string = """
             <ui>
             <popup name="AppMenu">
-                <menuitem name="Copy" action="Copy"/>
-                <menuitem name="Paste" action="Paste"/>
-                <menuitem name="Select All" action="Select All"/>
-                <menuitem name="Search" action="Search"/>
-                <menuitem name="Show in File Browser" action="Show in File Browser"/>
+                <menuitem translatable="yes" name="Copy" action="Copy"/>
+                <menuitem translatable="yes" name="Paste" action="Paste"/>
+                <menuitem translatable="yes" name="Select All" action="Select All"/>
+                <menuitem translatable="yes" name="Search" action="Search"/>
+                <menuitem translatable="yes" name="Show in File Browser" action="Show in File Browser"/>
             </popup>
             </ui>
         """;
