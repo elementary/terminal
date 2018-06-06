@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2016-04-09 15:42+0000\n"
-"Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2018-05-26 00:02+0000\n"
+"Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
+"Language-Team: Turkish "
+"<https://weblate.elementary.io/projects/terminal/terminal/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
@@ -40,7 +42,7 @@ msgstr "Komut satırını kullan"
 
 #: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "Komut istemci"
+msgstr "Uçbirim"
 
 #: src/Constants.vala:27
 msgid "New Window"
@@ -59,34 +61,32 @@ msgid "Find…"
 msgstr "Bul…"
 
 #: src/PantheonTerminalWindow.vala:243
-#, fuzzy
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
 #: src/PantheonTerminalWindow.vala:247
 msgid "Default zoom level"
-msgstr ""
+msgstr "Varsayılan yakınlaştırma seviyesi"
 
 #: src/PantheonTerminalWindow.vala:251
-#, fuzzy
 msgid "Zoom In"
 msgstr "Yakınlaştır"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "High Contrast"
-msgstr ""
+msgstr "Yüksek Kontrast"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarize Işık"
 
 #: src/PantheonTerminalWindow.vala:286
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarize Karanlık"
 
 #: src/PantheonTerminalWindow.vala:309
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: src/PantheonTerminalWindow.vala:1115
 msgid "Copy"
@@ -102,7 +102,7 @@ msgstr "Tümünü Seç"
 
 #: src/PantheonTerminalWindow.vala:1119
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Dosya Tarayıcısında Göster"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -154,7 +154,7 @@ msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin ol
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Bu diyaloğu tekrar gösterme"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -178,7 +178,7 @@ msgstr "Sonraki sonuç"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Döngüsel arama"
 
 #~ msgid "Close"
 #~ msgstr "Kapat"
