@@ -21,6 +21,8 @@ namespace PantheonTerminal.Widgets {
 
     public class SearchToolbar : Gtk.Grid {
         private Gtk.ToggleButton cycle_button;
+        private uint last_search_term_length = 0;
+
         public weak PantheonTerminalWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
@@ -36,10 +38,12 @@ namespace PantheonTerminal.Widgets {
             var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             previous_button.sensitive = false;
             previous_button.tooltip_text = _("Previous result");
+            previous_button.set_action_name ("win.action_search_previous");
 
             var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             next_button.sensitive = false;
             next_button.tooltip_text = _("Next result");
+            next_button.set_action_name ("win.action_search_next");
 
             cycle_button = new Gtk.ToggleButton ();
             cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
@@ -73,21 +77,32 @@ namespace PantheonTerminal.Widgets {
                     cycle_button.sensitive = false;
                 }
 
+                var term = (Vte.Terminal)(window.current_terminal);
+                var search_term = search_entry.text;
+                if (last_search_term_length > search_term.length) {
+                    term.match_remove_all ();
+                    term.unselect_all ();  /* Ensure revised search finds first occurrence first*/
+                }
+
+                last_search_term_length = search_term.length;
+
                 try {
                     // FIXME Have a configuration menu or something.
-                    var regex = new Regex (Regex.escape_string (search_entry.text), RegexCompileFlags.CASELESS);
-                    window.current_terminal.search_set_gregex (regex, 0);
+                    /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
+                     * a "PCRE2 not supported" error.
+                     */
+                    var regex = new Regex (Regex.escape_string (search_term), RegexCompileFlags.CASELESS);
+                    term.search_set_gregex (regex, 0);
+                    next_search (); /* Search immediately - not after ENTER pressed */
                 } catch (RegexError er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
             });
-
-            previous_button.clicked.connect (previous_search);
-            next_button.clicked.connect (next_search);
         }
 
         public void clear () {
             search_entry.text = "";
+            last_search_term_length = 0;
         }
 
         public void previous_search () {
