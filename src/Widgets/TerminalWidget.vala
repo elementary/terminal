@@ -150,7 +150,7 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null) {
-                        ((GLib.SimpleAction) window.main_actions.lookup_action ("Copy")).set_enabled (true);
+                        window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (true);
                     }
 
                     menu.select_first (false);
@@ -181,7 +181,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                ((GLib.SimpleAction) window.main_actions.lookup_action ("Copy")).set_enabled (get_has_selection ());
+                window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (get_has_selection ());
             });
 
 
