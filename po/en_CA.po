@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-06 08:42-0700\n"
 "PO-Revision-Date: 2018-04-05 12:13+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
-"Language-Team: English (Canada) "
-"<https://weblate.elementary.io/projects/terminal/terminal/en_CA/>\n"
+"Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
+"terminal/terminal/en_CA/>\n"
 "Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,53 +56,53 @@ msgstr "New Root Tab"
 msgid "Open Terminal Here"
 msgstr "Open Terminal Here"
 
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Find…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "Zoom Out"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "Default zoom level"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "Zoom In"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "High Contrast"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Solarized Light"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Solarized Dark"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "Style"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:178
 msgid "Copy"
 msgstr "Copy"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:181
 msgid "Paste"
 msgstr "Paste"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:184
 msgid "Select All"
 msgstr "Select All"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+msgid "Find…"
+msgstr "Find…"
+
+#: src/PantheonTerminalWindow.vala:190
 msgid "Show in File Browser"
 msgstr "Show in File Browser"
+
+#: src/PantheonTerminalWindow.vala:250
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#: src/PantheonTerminalWindow.vala:254
+msgid "Default zoom level"
+msgstr "Default zoom level"
+
+#: src/PantheonTerminalWindow.vala:258
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#: src/PantheonTerminalWindow.vala:273
+msgid "High Contrast"
+msgstr "High Contrast"
+
+#: src/PantheonTerminalWindow.vala:283
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Solarized Dark"
+msgstr "Solarized Dark"
+
+#: src/PantheonTerminalWindow.vala:316
+msgid "Style"
+msgstr "Style"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
