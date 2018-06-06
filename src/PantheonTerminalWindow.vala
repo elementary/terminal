@@ -175,26 +175,27 @@ namespace PantheonTerminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            menu = new Gtk.Menu ();
-
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
-            var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
-            var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
-            var search_menuitem = new Gtk.MenuItem.with_label (_("Search"));
-            var show_in_file_browser_menuitem = new Gtk.MenuItem.with_label (_("Show in File Browser"));
-
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
+
+            var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
+
+            var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
+
+            var search_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
+
+            var show_in_file_browser_menuitem = new Gtk.MenuItem.with_label (_("Show in File Browser"));
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
 
+            menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
-
             menu.insert_action_group ("win", actions);
 
             setup_ui ();
