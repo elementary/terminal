@@ -168,11 +168,11 @@ namespace PantheonTerminal {
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
             var app_menu_model = new GLib.Menu ();
-            app_menu_model.append ("Copy", "main.copy");
-            app_menu_model.append ("Paste", "main.paste");
-            app_menu_model.append ("Select All", "main.select-all");
-            app_menu_model.append ("Search", "main.search");
-            app_menu_model.append ("Show in File Browser", "main.open-in-files");
+            app_menu_model.append (_("Copy"), "main.copy");
+            app_menu_model.append (_("Paste"), "main.paste");
+            app_menu_model.append (_("Select All"), "main.select-all");
+            app_menu_model.append (_("Search"), "main.search");
+            app_menu_model.append (_("Show in File Browser"), "main.open-in-files");
 
             app_menu = new Gtk.Menu.from_model (app_menu_model);
             app_menu.set_screen (null);
