@@ -21,6 +21,8 @@ namespace PantheonTerminal.Widgets {
 
     public class SearchToolbar : Gtk.Grid {
         private Gtk.ToggleButton cycle_button;
+        private uint last_search_term_length = 0;
+
         public weak PantheonTerminalWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
@@ -73,10 +75,22 @@ namespace PantheonTerminal.Widgets {
                     cycle_button.sensitive = false;
                 }
 
+                var term = (Vte.Terminal)(window.current_terminal);
+                var search_term = search_entry.text;
+                if (last_search_term_length > search_term.length) {
+                    term.match_remove_all ();
+                    term.unselect_all ();  /* Ensure revised search finds first occurrence first*/
+                }
+
+                last_search_term_length = search_term.length;
                 try {
                     // FIXME Have a configuration menu or something.
-                    var regex = new Regex (Regex.escape_string (search_entry.text), RegexCompileFlags.CASELESS);
-                    window.current_terminal.search_set_gregex (regex, 0);
+                    /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
+                     * a "PCRE2 not supported" error.
+                     */
+                    var regex = new Regex (Regex.escape_string (search_term), RegexCompileFlags.CASELESS);
+                    term.search_set_gregex (regex, 0);
+                    next_search (); /* Search immediately - not after ENTER pressed */
                 } catch (RegexError er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
@@ -88,6 +102,7 @@ namespace PantheonTerminal.Widgets {
 
         public void clear () {
             search_entry.text = "";
+            last_search_term_length = 0;
         }
 
         public void previous_search () {
