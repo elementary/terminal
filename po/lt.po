@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-06 08:42-0700\n"
 "PO-Revision-Date: 2018-03-23 10:33+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian "
-"<https://weblate.elementary.io/projects/terminal/terminal/lt/>\n"
+"Language-Team: Lithuanian <https://weblate.elementary.io/projects/terminal/"
+"terminal/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
-"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
@@ -57,53 +57,53 @@ msgstr "Nauja šaknies kortelė"
 msgid "Open Terminal Here"
 msgstr "Atverti čia terminalą"
 
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Rasti…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "Mažinti"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "Numatytasis mastelio lygis"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "Didinti"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "Didelis kontrastas"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Apšviesta šviesi"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Apšviesta tamsi"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "Stilius"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:178
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:181
 msgid "Paste"
 msgstr "Įdėti"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:184
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+msgid "Find…"
+msgstr "Rasti…"
+
+#: src/PantheonTerminalWindow.vala:190
 msgid "Show in File Browser"
 msgstr "Rodyti failų naršyklėje"
+
+#: src/PantheonTerminalWindow.vala:250
+msgid "Zoom Out"
+msgstr "Mažinti"
+
+#: src/PantheonTerminalWindow.vala:254
+msgid "Default zoom level"
+msgstr "Numatytasis mastelio lygis"
+
+#: src/PantheonTerminalWindow.vala:258
+msgid "Zoom In"
+msgstr "Didinti"
+
+#: src/PantheonTerminalWindow.vala:273
+msgid "High Contrast"
+msgstr "Didelis kontrastas"
+
+#: src/PantheonTerminalWindow.vala:283
+msgid "Solarized Light"
+msgstr "Apšviesta šviesi"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Solarized Dark"
+msgstr "Apšviesta tamsi"
+
+#: src/PantheonTerminalWindow.vala:316
+msgid "Style"
+msgstr "Stilius"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
