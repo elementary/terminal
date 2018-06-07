@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-06 08:42-0700\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -56,54 +56,54 @@ msgstr "Tab gốc mới"
 msgid "Open Terminal Here"
 msgstr "Mở Terminal tại đây"
 
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
+#: src/PantheonTerminalWindow.vala:178
+msgid "Copy"
+msgstr "Chép"
+
+#: src/PantheonTerminalWindow.vala:181
+msgid "Paste"
+msgstr "Dán"
+
+#: src/PantheonTerminalWindow.vala:184
+msgid "Select All"
+msgstr "Chọn toàn bộ"
+
+#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
-#: src/PantheonTerminalWindow.vala:243
+#: src/PantheonTerminalWindow.vala:190
+msgid "Show in File Browser"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:250
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
 
-#: src/PantheonTerminalWindow.vala:247
+#: src/PantheonTerminalWindow.vala:254
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:251
+#: src/PantheonTerminalWindow.vala:258
 #, fuzzy
 msgid "Zoom In"
 msgstr "Phóng to"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:273
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:276
+#: src/PantheonTerminalWindow.vala:283
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:286
+#: src/PantheonTerminalWindow.vala:293
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:309
+#: src/PantheonTerminalWindow.vala:316
 msgid "Style"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:1115
-msgid "Copy"
-msgstr "Chép"
-
-#: src/PantheonTerminalWindow.vala:1117
-msgid "Paste"
-msgstr "Dán"
-
-#: src/PantheonTerminalWindow.vala:1118
-msgid "Select All"
-msgstr "Chọn toàn bộ"
-
-#: src/PantheonTerminalWindow.vala:1119
-msgid "Show in File Browser"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31

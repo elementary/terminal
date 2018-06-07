@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-06 08:42-0700\n"
 "PO-Revision-Date: 2018-06-03 06:20+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean "
-"<https://weblate.elementary.io/projects/terminal/terminal/ko/>\n"
+"Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
+"terminal/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,53 +56,53 @@ msgstr "새 Root 탭"
 msgid "Open Terminal Here"
 msgstr "이 위치로 터미널 열기"
 
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "찾기…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "축소"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "기본 줌 레벨"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "확대"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "고 대비"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "솔라 라이트"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "솔라 다크"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "스타일"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:178
 msgid "Copy"
 msgstr "복사"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:181
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:184
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+msgid "Find…"
+msgstr "찾기…"
+
+#: src/PantheonTerminalWindow.vala:190
 msgid "Show in File Browser"
 msgstr "파일 브라우저에서 보기"
+
+#: src/PantheonTerminalWindow.vala:250
+msgid "Zoom Out"
+msgstr "축소"
+
+#: src/PantheonTerminalWindow.vala:254
+msgid "Default zoom level"
+msgstr "기본 줌 레벨"
+
+#: src/PantheonTerminalWindow.vala:258
+msgid "Zoom In"
+msgstr "확대"
+
+#: src/PantheonTerminalWindow.vala:273
+msgid "High Contrast"
+msgstr "고 대비"
+
+#: src/PantheonTerminalWindow.vala:283
+msgid "Solarized Light"
+msgstr "솔라 라이트"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Solarized Dark"
+msgstr "솔라 다크"
+
+#: src/PantheonTerminalWindow.vala:316
+msgid "Style"
+msgstr "스타일"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
