@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-05-25 00:08+0000\n"
+"PO-Revision-Date: 2018-06-08 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/terminal/extra/ja/>\n"
@@ -36,7 +36,7 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"ターミナルは、システム上のプログラムを実行するために使用される UNIX のシェル環境にアクセスするための端末エミュレータアプリケーションです。"
+"\"ターミナル\" は、システム上のプログラムを実行するために使用される UNIX のシェル環境にアクセスするための端末エミュレータアプリケーションです。"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "elementary LLC."
@@ -50,7 +50,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;prompt;cmd;commandline;run;"
+msgstr "コマンド;プロンプト;cmd;コマンドライン;実行;"
 
 #: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
