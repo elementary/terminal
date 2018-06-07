@@ -65,6 +65,8 @@ namespace PantheonTerminal {
         public const string ACTION_COPY = "action_copy";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
+        public const string ACTION_SEARCH_NEXT = "action_search_next";
+        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
 
@@ -83,6 +85,8 @@ namespace PantheonTerminal {
             { ACTION_COPY, action_copy },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH_NEXT, action_search_next },
+            { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
@@ -140,6 +144,10 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
@@ -979,6 +987,18 @@ namespace PantheonTerminal {
 
         void action_search () {
             search_button.active = !search_button.active;
+        }
+
+        void action_search_next () {
+            if (search_button.active) {
+                search_toolbar.next_search ();
+            }
+        }
+
+        void action_search_previous () {
+            if (search_button.active) {
+                search_toolbar.previous_search ();
+            }
         }
 
         void action_fullscreen () {
