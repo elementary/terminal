@@ -36,14 +36,12 @@ namespace PantheonTerminal.Widgets {
             search_entry.placeholder_text = _("Find");
 
             var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            previous_button.sensitive = false;
             previous_button.tooltip_text = _("Previous result");
-            previous_button.set_action_name ("win.action_search_previous");
+            previous_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS);
 
             var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            next_button.sensitive = false;
             next_button.tooltip_text = _("Next result");
-            next_button.set_action_name ("win.action_search_next");
+            next_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_NEXT);
 
             cycle_button = new Gtk.ToggleButton ();
             cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
@@ -68,12 +66,12 @@ namespace PantheonTerminal.Widgets {
 
             search_entry.search_changed.connect (() => {
                 if (search_entry.text != "") {
-                    previous_button.sensitive = true;
-                    next_button.sensitive = true;
+                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_NEXT).set_enabled (true);
+                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
                     cycle_button.sensitive = true;
                 } else {
-                    previous_button.sensitive = false;
-                    next_button.sensitive = false;
+                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_NEXT).set_enabled (false);
+                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
                     cycle_button.sensitive = false;
                 }
 
