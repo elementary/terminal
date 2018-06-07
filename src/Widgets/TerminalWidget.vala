@@ -94,6 +94,9 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
+        const double MIN_SCALE = 0.2;
+        const double MAX_SCALE = 5.0;
+
         public bool child_has_exited {
             get;
             private set;
@@ -369,11 +372,11 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            font_scale = (font_scale + 0.1).clamp (0.2, 5.0);
+            font_scale = (font_scale + 0.1).clamp (MIN_SCALE, MAX_SCALE);
         }
 
         public void decrement_size () {
-            font_scale = (font_scale - 0.1).clamp (0.2, 5.0);
+            font_scale = (font_scale - 0.1).clamp (MIN_SCALE, MAX_SCALE);
         }
 
         public void set_default_font_size () {
