@@ -104,33 +104,6 @@ namespace PantheonTerminal {
             private set;
         }
 
-        private double _zoom_factor = 1.0;
-        public double zoom_factor {
-            get {
-                return _zoom_factor;
-            }
-
-            set {
-                if (value < 0.19) {
-                    _zoom_factor = 0.2;
-                } else if (value > 5.01) {
-                    _zoom_factor = 5;
-                } else {
-                    _zoom_factor = value;
-                }
-
-                Pango.FontDescription current_font = this.get_font ();
-                if (current_font != null) {
-                    if (default_size == 0) {
-                        default_size = current_font.get_size ();
-                    }
-
-                    current_font.set_size ((int) Math.floor (default_size * zoom_factor));
-                    this.set_font (current_font);
-                }
-            }
-        }
-
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             terminal_id = "%i".printf (terminal_id_counter++);
@@ -184,7 +157,6 @@ namespace PantheonTerminal {
                 window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (get_has_selection ());
             });
 
-
             child_exited.connect (on_child_exited);
 
             /* target entries specify what kind of data the terminal widget accepts */
@@ -204,11 +176,7 @@ namespace PantheonTerminal {
             this.clickable (regex_strings);
 
             GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-            saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
-
-            realize.connect (() => {
-                zoom_factor = zoom_factor;
-            });
+            saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
@@ -401,15 +369,15 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            zoom_factor += 0.1;
+            font_scale = (font_scale + 0.1).clamp (0.2, 5.0);
         }
 
         public void decrement_size () {
-            zoom_factor -= 0.1;
+            font_scale = (font_scale - 0.1).clamp (0.2, 5.0);
         }
 
         public void set_default_font_size () {
-            zoom_factor = 1.0;
+            font_scale = 1.0;
         }
 
         public bool is_init_complete () {
