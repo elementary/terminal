@@ -144,6 +144,10 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
@@ -160,9 +164,6 @@ namespace PantheonTerminal {
             foreach (var action in action_accelerators.get_keys ()) {
                 app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
             }
-
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT, {"<Control>g", "<Control>Down"});
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS, {"<Control><Shift>g", "<Control>Up"});
 
             /* Make GTK+ CSD not steal F10 from the terminal */
             var gtk_settings = Gtk.Settings.get_default ();
