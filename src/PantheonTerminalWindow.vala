@@ -364,6 +364,10 @@ namespace PantheonTerminal {
             set_titlebar (header);
             add (grid);
 
+            style_popover.closed.connect (() => {
+                current_terminal.grab_focus ();
+            });
+
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
