@@ -65,6 +65,8 @@ namespace PantheonTerminal {
         public const string ACTION_COPY = "action_copy";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
+        public const string ACTION_SEARCH_NEXT = "action_search_next";
+        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
 
@@ -83,6 +85,8 @@ namespace PantheonTerminal {
             { ACTION_COPY, action_copy },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH_NEXT, action_search_next },
+            { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
@@ -138,9 +142,13 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
-            action_accelerators[ACTION_PASTE] = "Control><Shift>v";
+            action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SELECT_ALL] = "<<Control><Shift>a";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
+            action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
 
@@ -652,7 +660,7 @@ namespace PantheonTerminal {
 
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
@@ -952,21 +960,21 @@ namespace PantheonTerminal {
 
         void action_zoom_in_font () {
             current_terminal.increment_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void set_zoom_default_label (double zoom_factor) {
-            zoom_default_button.label = "%.0f%%".printf (current_terminal.zoom_factor * 100);
+            zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
         void action_next_tab () {
@@ -979,6 +987,18 @@ namespace PantheonTerminal {
 
         void action_search () {
             search_button.active = !search_button.active;
+        }
+
+        void action_search_next () {
+            if (search_button.active) {
+                search_toolbar.next_search ();
+            }
+        }
+
+        void action_search_previous () {
+            if (search_button.active) {
+                search_toolbar.previous_search ();
+            }
         }
 
         void action_fullscreen () {
