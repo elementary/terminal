@@ -61,7 +61,19 @@ namespace PantheonTerminal.Widgets {
             show_all ();
 
             grab_focus.connect (() => {
-                search_entry.grab_focus ();
+                search_entry.grab_focus_without_selecting ();
+            });
+
+            next_button.clicked.connect_after (() => {
+                grab_focus ();
+            });
+
+            previous_button.clicked.connect_after (() => {
+                grab_focus ();
+            });
+
+            cycle_button.clicked.connect_after (() => {
+                grab_focus ();
             });
 
             search_entry.search_changed.connect (() => {
