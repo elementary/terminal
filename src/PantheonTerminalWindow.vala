@@ -398,6 +398,8 @@ namespace PantheonTerminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
+                        } else {
+                            current_terminal.remember_position ();
                         }
                         break;
                     case Gdk.Key.@1: //alt+[1-8]

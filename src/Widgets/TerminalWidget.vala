@@ -26,6 +26,11 @@ namespace PantheonTerminal {
             TEXT
         }
 
+        struct CursorPosition {
+            long column;
+            long row;
+        }
+
         internal const string DEFAULT_LABEL = _("Terminal");
         public PantheonTerminalApp app;
         public string terminal_id;
@@ -106,6 +111,8 @@ namespace PantheonTerminal {
             get;
             private set;
         }
+
+        private CursorPosition remembered_position;
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
@@ -420,6 +427,13 @@ namespace PantheonTerminal {
 
                     break;
             }
+        }
+
+        public void remember_position () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_position.column = col;
+            remembered_position.row = row;
         }
     }
 }
