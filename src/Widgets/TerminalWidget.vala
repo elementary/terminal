@@ -27,7 +27,7 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public PantheonTerminalApp app;
+        public TerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
