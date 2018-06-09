@@ -213,6 +213,10 @@ namespace PantheonTerminal {
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
 
+            menu.popped_up.connect (() => {
+                update_copy_output_sensitive ();
+            });
+
             setup_ui ();
             show_all ();
 
@@ -452,15 +456,11 @@ namespace PantheonTerminal {
                     }
                 }
 
-                return false;
-            });
-
-            key_release_event.connect_after ((e) => {
-                if (e.keyval == Gdk.Key.Return && !search_toolbar.search_entry.has_focus) {
-                    Idle.add_full (GLib.Priority.LOW, () => {
+                if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                    uint keycode = e.hardware_keycode;
+                    if (match_keycode (Gdk.Key.c, keycode)) {
                         update_copy_output_sensitive ();
-                        return false;
-                    });
+                    }
                 }
 
                 return false;
