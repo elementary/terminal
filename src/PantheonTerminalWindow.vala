@@ -410,7 +410,8 @@ namespace PantheonTerminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
-                        } else {
+                        } else if (!current_terminal.has_foreground_process ()) {
+                            /* Ignore returns being sent to a foreground process */
                             current_terminal.remember_position ();
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
