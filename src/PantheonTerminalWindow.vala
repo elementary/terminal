@@ -387,9 +387,10 @@ namespace PantheonTerminal {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
                             search_button.active = !search_button.active;
+                            return true;
                         }
-                        /* Do not pass on to terminal (issue #249) */
-                        return true;
+                        /* Do not pass on to terminal if not running a foreground process (issue #249) */
+                        return !current_terminal.has_foreground_process ();
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
@@ -397,7 +398,6 @@ namespace PantheonTerminal {
                             } else {
                                 search_toolbar.next_search ();
                             }
-                            return true;
                         }
                         break;
                     case Gdk.Key.@1: //alt+[1-8]
