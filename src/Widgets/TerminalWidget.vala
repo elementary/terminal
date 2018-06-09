@@ -453,5 +453,12 @@ namespace PantheonTerminal {
         public bool has_output () {
             return get_last_output ().length > 0;
         }
+
+        public void scroll_to_last_command () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            int delta = (int)(remembered_position - row);
+            vadjustment.set_value (vadjustment.get_value () + delta);
+        }
     }
 }

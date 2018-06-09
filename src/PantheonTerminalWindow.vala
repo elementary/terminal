@@ -70,6 +70,7 @@ namespace PantheonTerminal {
         public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -90,7 +91,8 @@ namespace PantheonTerminal {
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_OPEN_IN_FILES, action_open_in_files }
+            { ACTION_OPEN_IN_FILES, action_open_in_files },
+            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
         public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
@@ -153,6 +155,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
+            action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
         construct {
@@ -410,7 +413,8 @@ namespace PantheonTerminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
-                        } else {
+                        } else if (!current_terminal.has_foreground_process ()) {
+                            /* Ignore returns being sent to a foreground process */
                             current_terminal.remember_position ();
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
@@ -972,6 +976,10 @@ namespace PantheonTerminal {
             } catch (ConvertError e) {
                 warning (e.message);
             }
+        }
+
+        void action_scroll_to_last_command () {
+            current_terminal.scroll_to_last_command ();
         }
 
         void action_close_tab () {
