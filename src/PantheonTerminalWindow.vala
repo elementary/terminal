@@ -387,9 +387,9 @@ namespace PantheonTerminal {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
                             search_button.active = !search_button.active;
-                            return true;
                         }
-                        break;
+                        /* Do not pass on to terminal (issue #249) */
+                        return true;
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
