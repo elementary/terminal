@@ -389,8 +389,14 @@ namespace PantheonTerminal {
                             search_button.active = !search_button.active;
                             return true;
                         }
-                        /* Do not pass on to terminal if not running a foreground process (issue #249) */
-                        return !current_terminal.has_foreground_process ();
+
+                        if (current_terminal.has_foreground_process ()) {
+                            break; /* Keep existing behaviour */
+                        } else {
+                            /* Do not pass on to terminal if not running a foreground process (issue #249) */
+                            Gdk.Display.get_default ().beep (); /* Honors org.gnome.desktop.sounds.event-sounds setting */
+                            return true;
+                        }
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
