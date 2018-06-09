@@ -26,11 +26,6 @@ namespace PantheonTerminal {
             TEXT
         }
 
-        struct CursorPosition {
-            long column;
-            long row;
-        }
-
         internal const string DEFAULT_LABEL = _("Terminal");
         public PantheonTerminalApp app;
         public string terminal_id;
@@ -112,7 +107,7 @@ namespace PantheonTerminal {
             private set;
         }
 
-        private CursorPosition remembered_position;
+        private long remembered_position; /* Only need to remember row at the moment */
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
@@ -432,8 +427,24 @@ namespace PantheonTerminal {
         public void remember_position () {
             long col, row;
             get_cursor_position (out col, out row);
-            remembered_position.column = col;
-            remembered_position.row = row;
+            remembered_position = row;
+        }
+
+        public string? get_last_output (bool include_command = true) {
+            long col, end_row, start_row, start_col;
+            get_cursor_position (out col, out end_row);
+            start_row = remembered_position; /* Start on command row */
+            start_col = 0; /* Includes command prompt */
+
+            if (!include_command) {
+                start_row++;
+            }
+
+            /* get text to the beginning of current line (to omit last prompt)
+             * Note that using end_row, 0 for the end parameters results in the first
+             * character of the prompt being selected for some reason. We assume a nominal
+             * maximum line length rather than determine the actual length.  */
+            return get_text_range (start_row, 0, end_row - 1, 1000, null, null) + "\n";
         }
     }
 }

@@ -68,6 +68,7 @@ namespace PantheonTerminal {
         public const string ACTION_SEARCH_NEXT = "action_search_next";
         public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
+        public const string ACTION_SELECT_LAST_OUTPUT = "action_select_last_output";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -88,6 +89,7 @@ namespace PantheonTerminal {
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
+            { ACTION_SELECT_LAST_OUTPUT, action_select_last_output },
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
 
@@ -149,6 +151,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
+            action_accelerators[ACTION_SELECT_LAST_OUTPUT] = "<Alt>s";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
 
@@ -192,6 +195,9 @@ namespace PantheonTerminal {
             var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
 
+            var select_last_output_menuitem = new Gtk.MenuItem.with_label (_("Select Last Output"));
+            select_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_LAST_OUTPUT);
+
             var search_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
 
@@ -202,6 +208,7 @@ namespace PantheonTerminal {
             menu.append (copy_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
+            menu.append (select_last_output_menuitem);
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
@@ -927,6 +934,11 @@ namespace PantheonTerminal {
 
         void action_select_all () {
             current_terminal.select_all ();
+        }
+
+        void action_select_last_output () {
+            string output = current_terminal.get_last_output ();
+            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
         }
 
         void action_open_in_files () {
