@@ -63,12 +63,12 @@ namespace PantheonTerminal {
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
         public const string ACTION_COPY = "action_copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "ACTION_COPY_LAST_OUTPUT";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SEARCH_NEXT = "action_search_next";
         public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
-        public const string ACTION_SELECT_LAST_OUTPUT = "action_select_last_output";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -84,12 +84,12 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
             { ACTION_COPY, action_copy },
+            { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_SELECT_LAST_OUTPUT, action_select_last_output },
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
 
@@ -144,6 +144,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
+            action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
@@ -151,7 +152,6 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
-            action_accelerators[ACTION_SELECT_LAST_OUTPUT] = "<Alt>s";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
 
@@ -189,14 +189,14 @@ namespace PantheonTerminal {
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
 
+            var copy_last_output_menuitem = new Gtk.MenuItem.with_label (_("Copy Last Output"));
+            copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
+
             var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
 
             var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
-
-            var select_last_output_menuitem = new Gtk.MenuItem.with_label (_("Select Last Output"));
-            select_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_LAST_OUTPUT);
 
             var search_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
@@ -206,9 +206,9 @@ namespace PantheonTerminal {
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
+            menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
-            menu.append (select_last_output_menuitem);
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
@@ -344,6 +344,7 @@ namespace PantheonTerminal {
             search_revealer.add (search_toolbar);
 
             get_simple_action (ACTION_COPY).set_enabled (false);
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -407,6 +408,7 @@ namespace PantheonTerminal {
                             return true;
                         } else {
                             current_terminal.remember_position ();
+                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
                         break;
                     case Gdk.Key.@1: //alt+[1-8]
@@ -448,6 +450,17 @@ namespace PantheonTerminal {
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
                         return handle_paste_event ();
                     }
+                }
+
+                return false;
+            });
+
+            key_release_event.connect_after ((e) => {
+                if (e.keyval == Gdk.Key.Return && !search_toolbar.search_entry.has_focus) {
+                    Idle.add_full (GLib.Priority.LOW, () => {
+                        update_copy_output_sensitive ();
+                        return false;
+                    });
                 }
 
                 return false;
@@ -624,6 +637,10 @@ namespace PantheonTerminal {
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
 
+        private void update_copy_output_sensitive () {
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
+        }
+
         uint timer_window_state_change = 0;
 
         private bool on_window_state_change (Gdk.EventConfigure event) {
@@ -673,6 +690,7 @@ namespace PantheonTerminal {
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
+                update_copy_output_sensitive ();
                 return false;
             });
 
@@ -928,17 +946,17 @@ namespace PantheonTerminal {
                 current_terminal.copy_clipboard ();
         }
 
+        void action_copy_last_output () {
+            string output = current_terminal.get_last_output ();
+            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
+        }
+
         void action_paste () {
             clipboard.request_text (on_get_text);
         }
 
         void action_select_all () {
             current_terminal.select_all ();
-        }
-
-        void action_select_last_output () {
-            string output = current_terminal.get_last_output ();
-            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
         }
 
         void action_open_in_files () {

@@ -430,7 +430,7 @@ namespace PantheonTerminal {
             remembered_position = row;
         }
 
-        public string? get_last_output (bool include_command = true) {
+        public string get_last_output (bool include_command = true) {
             long col, end_row, start_row, start_col;
             get_cursor_position (out col, out end_row);
             start_row = remembered_position; /* Start on command row */
@@ -440,11 +440,18 @@ namespace PantheonTerminal {
                 start_row++;
             }
 
+            if (end_row - start_row < (include_command ? 2 : 1)) {
+                return "";
+            }
             /* get text to the beginning of current line (to omit last prompt)
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
              * maximum line length rather than determine the actual length.  */
             return get_text_range (start_row, 0, end_row - 1, 1000, null, null) + "\n";
+        }
+
+        public bool has_output () {
+            return get_last_output ().length > 0;
         }
     }
 }
