@@ -352,6 +352,7 @@ namespace PantheonTerminal {
 
             get_simple_action (ACTION_COPY).set_enabled (false);
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
+            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -417,6 +418,7 @@ namespace PantheonTerminal {
                             /* Ignore returns being sent to a foreground process */
                             current_terminal.remember_position ();
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
+                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
                         }
                         break;
                     case Gdk.Key.@1: //alt+[1-8]
@@ -464,6 +466,10 @@ namespace PantheonTerminal {
                     uint keycode = e.hardware_keycode;
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         update_copy_output_sensitive ();
+                    }
+
+                    if (e.keyval == Gdk.Key.Up) {
+                        return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
                     }
                 }
 
@@ -980,6 +986,8 @@ namespace PantheonTerminal {
 
         void action_scroll_to_last_command () {
             current_terminal.scroll_to_last_command ();
+            /* Repeated presses are ignored */
+            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
         }
 
         void action_close_tab () {

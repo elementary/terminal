@@ -458,7 +458,7 @@ namespace PantheonTerminal {
             long col, row;
             get_cursor_position (out col, out row);
             int delta = (int)(remembered_position - row);
-            vadjustment.set_value (vadjustment.get_value () + delta);
+            vadjustment.set_value (vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1);
         }
     }
 }
