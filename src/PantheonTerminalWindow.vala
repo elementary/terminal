@@ -495,9 +495,7 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (geometry.width - default_width)  / 2;
-                    y = (geometry.height - default_height) / 2;
-                    move (x, y);
+                    window_position = Gtk.WindowPosition.CENTER;
                 }
             }
 
