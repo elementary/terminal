@@ -383,6 +383,11 @@ namespace PantheonTerminal {
             });
 
             key_press_event.connect ((e) => {
+                /* Just pass on if there is a foreground process running */
+                if (current_terminal.has_foreground_process ()) {
+                    return false;
+                }
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
