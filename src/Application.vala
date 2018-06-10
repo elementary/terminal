@@ -173,7 +173,7 @@ namespace PantheonTerminal {
                 window.add_tab_with_working_directory (working_directory);
                 window.present ();
             } else
-                new PantheonTerminalWindow.with_working_directory (this, working_directory, true);
+                new PantheonTerminalWindow.with_working_directory (this, working_directory);
         }
 
         private PantheonTerminalWindow? get_last_window () {

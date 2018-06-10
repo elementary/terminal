@@ -43,6 +43,7 @@ namespace PantheonTerminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
+        public bool save_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
         public PantheonTerminalApp app { get; construct; }
@@ -118,11 +119,13 @@ namespace PantheonTerminal {
         }
 
         public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+                                                              bool recreate_tabs = false) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
-                recreate_tabs: recreate_tabs
+                recreate_tabs: recreate_tabs,
+                save_tabs: recreate_tabs,
+                title: location
             );
 
             new_tab (location);
@@ -172,6 +175,7 @@ namespace PantheonTerminal {
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
+
             restore_saved_state (restore_pos);
             if (recreate_tabs) {
                 open_tabs ();
@@ -762,9 +766,10 @@ namespace PantheonTerminal {
              * set its title. So we cannot detect path changes in the shell. Tab name remains "Terminal".
              */
             t.window_title_changed.connect (() => {
-                if (t == current_terminal) {
+                if (t == current_terminal && t.window_title != "") {
                     title = t.window_title;
                 }
+
                 schedule_name_check ();
             });
 
@@ -1033,6 +1038,17 @@ namespace PantheonTerminal {
 
         /** Compare every tab label with every other and resolve ambiguities **/
         private bool check_for_tabs_with_same_name () {
+            /* Ensure tab has proper label when opened from commandline) */
+            if (terminals.length () == 1) {
+                var terminal = terminals.first ().data;
+                title = terminal.get_shell_location ();
+                if (title != "") {
+                    terminal.tab_label = Path.get_basename (title);
+                }
+
+                return true;
+            }
+
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
@@ -1073,6 +1089,10 @@ namespace PantheonTerminal {
         }
 
         private void save_opened_terminals () {
+            if (!save_tabs) {
+                return;
+            }
+
             string[] opened_tabs = {};
 
             notebook.tabs.foreach ((tab) => {
