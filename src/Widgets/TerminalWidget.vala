@@ -286,16 +286,14 @@ namespace PantheonTerminal {
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
-            /* Putting this in an Idle loop helps avoid corruption of the prompt on startup with multiple tabs */
-            Idle.add_full (GLib.Priority.LOW, () => {
-                try {
-                    this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                            envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-                } catch (Error e) {
-                    warning (e.message);
-                }
-                return false;
-            });
+            /* We need opening uri to be available asap when constructing window with working directory
+             * so remove idle loop, which appears not to be necessary any longer */
+            try {
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         public void run_program (string program_string) {

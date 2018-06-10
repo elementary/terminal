@@ -125,7 +125,7 @@ namespace PantheonTerminal {
                 recreate_tabs: recreate_tabs
             );
 
-            new_tab (location);
+            add_tab_with_working_directory (location);
         }
 
         static construct {
@@ -173,9 +173,6 @@ namespace PantheonTerminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
-            if (recreate_tabs) {
-                open_tabs ();
-            }
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
@@ -219,14 +216,33 @@ namespace PantheonTerminal {
             destroy.connect (on_destroy);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            if (recreate_tabs) {
+                open_tabs ();
+            }
         }
 
         public void add_tab_with_command (string command) {
             new_tab ("", command);
         }
 
-        public void add_tab_with_working_directory (string location) {
-            new_tab (location);
+        public void add_tab_with_working_directory (string location, bool allow_duplicate = false) {
+            /* This requires all restored tabs to be initialized first so that the shell location is available */
+            bool add_tab = true;
+            if (!allow_duplicate) {
+                var f1 = File.new_for_commandline_arg (location);
+                terminals.foreach ((t) => {
+                    var tab_path = t.get_shell_location ();
+                    /* Detect equivalent paths */
+                    if (f1.equal (File.new_for_path (tab_path))) {
+                        add_tab = false;
+                    }
+                });
+            }
+
+            if (add_tab) {
+                new_tab (location);
+            }
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -695,26 +711,23 @@ namespace PantheonTerminal {
 
             PantheonTerminal.saved_state.tabs = {};
 
+            /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
             int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
-            Idle.add_full (GLib.Priority.LOW, () => {
-                focus += notebook.n_tabs;
-                foreach (string loc in tabs) {
-                    if (loc == "") {
-                        focus--;
-                        continue;
-                    } else {
-                        new_tab (loc, null, false);
-                    }
+            focus += notebook.n_tabs;
+            foreach (string loc in tabs) {
+                if (loc == "") {
+                    focus--;
+                    continue;
+                } else {
+                    new_tab (loc, null, false);
                 }
+            }
 
-                if (focus_restored_tabs) {
-                    var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
-                    notebook.current = tab;
-                    get_term_widget (tab).grab_focus ();
-                }
-
-                return false;
-            });
+            if (focus_restored_tabs) {
+                var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                notebook.current = tab;
+                get_term_widget (tab).grab_focus ();
+            }
         }
 
         private void new_tab (string directory, string? program = null, bool focus = true) {

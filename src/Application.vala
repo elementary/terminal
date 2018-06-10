@@ -136,10 +136,8 @@ namespace PantheonTerminal {
 
             if (command_e != null) {
                 run_commands (command_e);
-
             } else if (working_directory != null) {
                 start_terminal_with_working_directory (working_directory);
-
             } else {
                 new_window ();
             }
@@ -159,7 +157,6 @@ namespace PantheonTerminal {
             if (window == null) {
                 window = new PantheonTerminalWindow (this, false);
             }
-
             foreach (string command in commands) {
                 window.add_tab_with_command (command);
             }
@@ -172,8 +169,9 @@ namespace PantheonTerminal {
             if (window != null) {
                 window.add_tab_with_working_directory (working_directory);
                 window.present ();
-            } else
+            } else {
                 new PantheonTerminalWindow.with_working_directory (this, working_directory, true);
+            }
         }
 
         private PantheonTerminalWindow? get_last_window () {
