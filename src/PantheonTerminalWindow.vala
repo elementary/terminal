@@ -492,9 +492,7 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (geometry.width - default_width)  / 2;
-                    y = (geometry.height - default_height) / 2;
-                    move (x, y);
+                    window_position = Gtk.WindowPosition.CENTER;
                 }
             }
 
@@ -661,7 +659,7 @@ namespace PantheonTerminal {
 
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
@@ -961,21 +959,21 @@ namespace PantheonTerminal {
 
         void action_zoom_in_font () {
             current_terminal.increment_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void set_zoom_default_label (double zoom_factor) {
-            zoom_default_button.label = "%.0f%%".printf (current_terminal.zoom_factor * 100);
+            zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
         void action_next_tab () {
