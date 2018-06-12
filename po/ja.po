@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-06-08 00:04+0000\n"
+"PO-Revision-Date: 2018-06-13 00:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
@@ -82,7 +82,7 @@ msgstr "ズームアウト"
 
 #: src/PantheonTerminalWindow.vala:254
 msgid "Default zoom level"
-msgstr "デフォルトの拡大レベル"
+msgstr "デフォルトのズームレベル"
 
 #: src/PantheonTerminalWindow.vala:258
 msgid "Zoom In"
