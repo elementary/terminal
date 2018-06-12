@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2016-08-02 10:04+0000\n"
-"Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"PO-Revision-Date: 2018-06-11 19:19+0000\n"
+"Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
+"Language-Team: Swedish "
+"<https://weblate.elementary.io/projects/terminal/terminal/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Task finished"
@@ -72,37 +74,35 @@ msgstr "Sök…"
 
 #: src/PantheonTerminalWindow.vala:190
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Visa i Filer"
 
 #: src/PantheonTerminalWindow.vala:250
-#, fuzzy
 msgid "Zoom Out"
 msgstr "Förminska"
 
 #: src/PantheonTerminalWindow.vala:254
 msgid "Default zoom level"
-msgstr ""
+msgstr "Normalstorlek"
 
 #: src/PantheonTerminalWindow.vala:258
-#, fuzzy
 msgid "Zoom In"
 msgstr "Förstora"
 
 #: src/PantheonTerminalWindow.vala:273
 msgid "High Contrast"
-msgstr ""
+msgstr "Hög Kontrast"
 
 #: src/PantheonTerminalWindow.vala:283
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Ljus"
 
 #: src/PantheonTerminalWindow.vala:293
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Mörk"
 
 #: src/PantheonTerminalWindow.vala:316
 msgid "Style"
-msgstr ""
+msgstr "Tema"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -154,7 +154,7 @@ msgstr "Var säker på att du förstår vad varje del av kommandot gör."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Visa inte detta igen"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -178,7 +178,7 @@ msgstr "Nästa resultat"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Starta om sökning från toppen"
 
 #~ msgid "Close"
 #~ msgstr "Stäng"
