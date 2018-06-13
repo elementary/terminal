@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2017-08-31 15:17+0700\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
-"terminal/id/>\n"
+"PO-Revision-Date: 2018-06-13 16:47+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://weblate.elementary.io/projects/terminal/terminal/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:107
@@ -73,37 +73,35 @@ msgstr "Cari…"
 
 #: src/PantheonTerminalWindow.vala:190
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Tampilkan pada Penelusur Berkas"
 
 #: src/PantheonTerminalWindow.vala:250
-#, fuzzy
 msgid "Zoom Out"
 msgstr "Perkecil"
 
 #: src/PantheonTerminalWindow.vala:254
 msgid "Default zoom level"
-msgstr ""
+msgstr "Tingkat zoom bawaan"
 
 #: src/PantheonTerminalWindow.vala:258
-#, fuzzy
 msgid "Zoom In"
 msgstr "Perbesar"
 
 #: src/PantheonTerminalWindow.vala:273
 msgid "High Contrast"
-msgstr ""
+msgstr "Kontras Tinggi"
 
 #: src/PantheonTerminalWindow.vala:283
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Terang"
 
 #: src/PantheonTerminalWindow.vala:293
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Gelap"
 
 #: src/PantheonTerminalWindow.vala:316
 msgid "Style"
-msgstr ""
+msgstr "Gaya"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +154,7 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Jangan tampilkan dialog ini lagi"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +178,7 @@ msgstr "Hasil berikutnya"
 
 #: src/Widgets/SearchToolbar.vala:47
 msgid "Cyclic search"
-msgstr ""
+msgstr "Pencarian siklik"
 
 #~ msgid "Close"
 #~ msgstr "Tutup"
