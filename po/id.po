@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-06-13 16:47+0000\n"
+"PO-Revision-Date: 2018-06-14 00:07+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/terminal/terminal/id/>\n"
@@ -49,7 +49,7 @@ msgstr "Jendela Baru"
 
 #: src/Constants.vala:28
 msgid "New Root Tab"
-msgstr "Tab Root baru"
+msgstr "Tab Root Baru"
 
 #: src/Constants.vala:29
 msgid "Open Terminal Here"
