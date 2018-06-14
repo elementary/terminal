@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-06-11 19:19+0000\n"
+"PO-Revision-Date: 2018-06-13 00:08+0000\n"
 "Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/terminal/terminal/sv/>\n"
@@ -130,7 +130,7 @@ msgstr "Terminalen innehåller en aktiv process."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
-msgstr "Om du avslutar Terminalen så kommer processen att avslutas"
+msgstr "Om du stänger terminalen kommer processen att avslutas."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
