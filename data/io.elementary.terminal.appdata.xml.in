@@ -23,6 +23,17 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.5.0" date="2018-06-19" urgency="medium">
+      <description>
+        <ul>
+          <li>FISH integration fixes</li>
+          <li>Theme preference menu</li>
+          <li>Zoom level controls</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.3" date="2017-07-22" urgency="medium">
       <description>
         <ul>

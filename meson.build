@@ -1,4 +1,8 @@
-project('io.elementary.terminal', 'vala', 'c')
+project(
+    'io.elementary.terminal',
+    'vala', 'c',
+    version: '0.5.0'
+)
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
     error('Missing required dependency: valac >= 0.40')
