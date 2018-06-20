@@ -1,8 +1,8 @@
-pantheon-terminal (0.4.4) UNRELEASED; urgency=medium
+pantheon-terminal (0.5) bionic; urgency=medium
 
-  * Pre-release version bump.
+  * New upstream release..
 
- -- Daniel Foré <daniel@elementary.io>  Thu, 22 Mar 2018 10:32:54 -0700
+ -- Cody Garver <cody@elementary.io>  Thu, 22 Mar 2018 10:32:54 -0700
 
 pantheon-terminal (0.4.3) xenial; urgency=medium
 
