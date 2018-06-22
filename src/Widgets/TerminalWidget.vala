@@ -406,16 +406,16 @@ namespace PantheonTerminal {
                         }
                     }
 
-                    var uris_s = (char []) string.joinv ("", uris);
-                    this.feed_child (uris_s);
+                    var uris_s = string.joinv ("", uris);
+                    this.feed_child (uris_s.to_utf8 ());
 
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
-                    var data = (char []) selection_data.get_text ();
+                    var data = selection_data.get_text ();
 
                     if (data != null) {
-                        this.feed_child (data);
+                        this.feed_child (data.to_utf8 ());
                     }
 
                     break;
