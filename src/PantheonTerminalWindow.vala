@@ -45,7 +45,7 @@ namespace PantheonTerminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
-        public PantheonTerminalApp app { get; construct; }
+        public TerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
 
@@ -65,6 +65,8 @@ namespace PantheonTerminal {
         public const string ACTION_COPY = "action_copy";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
+        public const string ACTION_SEARCH_NEXT = "action_search_next";
+        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
 
@@ -83,11 +85,13 @@ namespace PantheonTerminal {
             { ACTION_COPY, action_copy },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH_NEXT, action_search_next },
+            { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
 
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+        public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -98,7 +102,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+        public PantheonTerminalWindow.with_coords (TerminalApp app, int x, int y,
                                                    bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
@@ -113,7 +117,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
+        public PantheonTerminalWindow.with_working_directory (TerminalApp app, string location,
                                                               bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -138,9 +142,13 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
-            action_accelerators[ACTION_PASTE] = "Control><Shift>v";
+            action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SELECT_ALL] = "<<Control><Shift>a";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
+            action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
 
@@ -483,9 +491,7 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (geometry.width - default_width)  / 2;
-                    y = (geometry.height - default_height) / 2;
-                    move (x, y);
+                    window_position = Gtk.WindowPosition.CENTER;
                 }
             }
 
@@ -652,7 +658,7 @@ namespace PantheonTerminal {
 
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
@@ -670,7 +676,7 @@ namespace PantheonTerminal {
                     tabs += Environment.get_home_dir ();
                 }
             } else {
-                tabs += PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
 
             int null_dirs = 0;
@@ -683,7 +689,7 @@ namespace PantheonTerminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = TerminalApp.working_directory ?? Environment.get_current_dir ();
                 }
             }
 
@@ -719,7 +725,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                location = TerminalApp.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }
@@ -952,21 +958,21 @@ namespace PantheonTerminal {
 
         void action_zoom_in_font () {
             current_terminal.increment_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            set_zoom_default_label (current_terminal.zoom_factor);
+            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void set_zoom_default_label (double zoom_factor) {
-            zoom_default_button.label = "%.0f%%".printf (current_terminal.zoom_factor * 100);
+            zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
         void action_next_tab () {
@@ -979,6 +985,18 @@ namespace PantheonTerminal {
 
         void action_search () {
             search_button.active = !search_button.active;
+        }
+
+        void action_search_next () {
+            if (search_button.active) {
+                search_toolbar.next_search ();
+            }
+        }
+
+        void action_search_previous () {
+            if (search_button.active) {
+                search_toolbar.previous_search ();
+            }
         }
 
         void action_fullscreen () {

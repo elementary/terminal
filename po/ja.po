@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-03-27 00:02+0000\n"
+"PO-Revision-Date: 2018-06-13 00:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
-"terminal/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,11 +30,11 @@ msgstr "ターミナルでプログラムを実行する"
 
 #: src/Application.vala:187
 msgid "Set shell working directory"
-msgstr "シェルの処理ディレクトリを設定"
+msgstr "シェルのカレントディレクトリを設定"
 
 #: src/Constants.vala:24
 msgid "About Terminal"
-msgstr "ターミナルについて"
+msgstr "\"ターミナル\" について"
 
 #: src/Constants.vala:25
 msgid "Use the command line"
@@ -82,7 +82,7 @@ msgstr "ズームアウト"
 
 #: src/PantheonTerminalWindow.vala:254
 msgid "Default zoom level"
-msgstr "デフォルトの拡大レベル"
+msgstr "デフォルトのズームレベル"
 
 #: src/PantheonTerminalWindow.vala:258
 msgid "Zoom In"
@@ -110,7 +110,7 @@ msgstr "このタブを閉じてもよろしいですか？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:33
 msgid "There is an active process on this tab."
-msgstr "このタブに動作しているプロセスがあります。"
+msgstr "このタブにはアクティブなプロセスがあります。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:34
 msgid "If you close it, the process will end."
@@ -122,19 +122,19 @@ msgstr "タブを閉じる"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:45
 msgid "Are you sure you want to quit Terminal?"
-msgstr "ターミナルを終了してもよろしいですか？"
+msgstr "\"ターミナル\" を終了してもよろしいですか？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
-msgstr "このターミナルは作業中です。"
+msgstr "このターミナルにはアクティブなプロセスがあります。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
-msgstr "ターミナルを終了した場合、プロセスは終了します。"
+msgstr "\"ターミナル\" を終了した場合、プロセスは終了します。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
-msgstr "ターミナルを終了する"
+msgstr "\"ターミナル\" を終了する"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:81
 msgid "Cancel"
@@ -146,7 +146,7 @@ msgstr "このコマンドは管理者権限を必要とします"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "ターミナルにコマンドをコピーするのは危険です。"
+msgstr "\"ターミナル\" にコマンドをコピーすると危険なときがあります。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
