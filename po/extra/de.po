@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-04-02 00:05+0000\n"
 "Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
-"Language-Team: German "
-"<https://weblate.elementary.io/projects/terminal/extra/de/>\n"
+"Language-Team: German <https://weblate.elementary.io/projects/terminal/extra/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,13 +40,11 @@ msgstr ""
 "eine UNIX-Shell-Umgebung ermöglicht; damit können im System installierte "
 "Programme ausgeführt werden."
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:116
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:18
-#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr "utilities-terminal"
 
@@ -58,7 +56,7 @@ msgstr "befehl;prompt;befehlszeile;ausführen;"
 msgid "New Window"
 msgstr "Neues Fenster"
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr "Neuen Tab mit Root-Rechten öffnen"
 
