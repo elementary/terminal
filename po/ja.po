@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-06-13 00:08+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
+"PO-Revision-Date: 2018-07-02 00:07+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -62,7 +62,7 @@ msgstr "コピー"
 
 #: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
-msgstr "ペースト"
+msgstr "貼り付け"
 
 #: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
@@ -150,7 +150,7 @@ msgstr "\"ターミナル\" にコマンドをコピーすると危険なとき�
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr "コマンドの内容を確認してください。"
+msgstr "このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてください。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
@@ -158,11 +158,11 @@ msgstr "今後このダイアログを表示しない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr "ペーストしない"
+msgstr "貼り付けしない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr "とにかくペーストする"
+msgstr "とにかく貼り付け"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
