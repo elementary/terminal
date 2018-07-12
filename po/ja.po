@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-07-02 00:07+0000\n"
+"PO-Revision-Date: 2018-07-13 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -26,11 +26,11 @@ msgstr "タスクが終了しました"
 
 #: src/Application.vala:185
 msgid "Run a program in terminal"
-msgstr "ターミナルでプログラムを実行する"
+msgstr "ターミナルでプログラムを実行します"
 
 #: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "シェルのカレントディレクトリを設定"
+msgstr "シェルのカレントディレクトリを設定します"
 
 #: src/Constants.vala:24
 msgid "About Terminal"
@@ -134,7 +134,7 @@ msgstr "\"ターミナル\" を終了した場合、プロセスは終了しま�
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
-msgstr "\"ターミナル\" を終了する"
+msgstr "\"ターミナル\" を終了"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:81
 msgid "Cancel"
