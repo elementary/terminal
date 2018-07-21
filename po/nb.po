@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-07-21 22:12+0000\n"
-"Last-Translator: Thomas Bekkenes <thomas.bekkenes@outlook.com>\n"
+"PO-Revision-Date: 2018-07-22 00:04+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
 "Language: nb\n"
@@ -86,7 +86,7 @@ msgstr "Forvalgt forstørrelsesnivå"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
-msgstr "Forstørre"
+msgstr "Forstørr"
 
 #: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
