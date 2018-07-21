@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-05-31 00:03+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-07-21 22:12+0000\n"
+"Last-Translator: Thomas Bekkenes <thomas.bekkenes@outlook.com>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
 "Language: nb\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -77,18 +77,16 @@ msgid "Show in File Browser"
 msgstr "Vis i filutforsker"
 
 #: src/PantheonTerminalWindow.vala:258
-#, fuzzy
 msgid "Zoom Out"
-msgstr "Forminsk"
+msgstr "Forminske"
 
 #: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "Forvalgt forstørrelsesnivå"
 
 #: src/PantheonTerminalWindow.vala:266
-#, fuzzy
 msgid "Zoom In"
-msgstr "Forstørr"
+msgstr "Forstørre"
 
 #: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
