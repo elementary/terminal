@@ -49,9 +49,9 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         var window = get_last_window ();
 
         if (window == null) {
-            new PantheonTerminalWindow (this).present ();
+            new PantheonTerminalWindow (this);
         } else {
-            new PantheonTerminalWindow (this, false).present ();
+            new PantheonTerminalWindow (this, false);
         }
     }
 
