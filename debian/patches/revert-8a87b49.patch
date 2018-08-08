@@ -1,0 +1,22 @@
+--- a/src/Widgets/TerminalWidget.vala
++++ b/src/Widgets/TerminalWidget.vala
+@@ -406,8 +406,8 @@ namespace PantheonTerminal {
+                         }
+                     }
+ 
+-                    var uris_s = string.joinv ("", uris);
+-                    this.feed_child (uris_s.to_utf8 ());
++                    string uris_s = string.joinv ("", uris);
++                    this.feed_child (uris_s, uris_s.length);
+ 
+                     break;
+                 case DropTargets.STRING:
+@@ -415,7 +415,7 @@ namespace PantheonTerminal {
+                     var data = selection_data.get_text ();
+ 
+                     if (data != null) {
+-                        this.feed_child (data.to_utf8 ());
++                        this.feed_child (data, data.length);
+                     }
+ 
+                     break;
