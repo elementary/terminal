@@ -129,10 +129,10 @@ namespace PantheonTerminal {
         }
 
         static construct {
-            action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
+            action_accelerators[ACTION_CLOSE_TAB] = "<Control>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
-            action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
-            action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
+            action_accelerators[ACTION_NEW_TAB] = "<Control>t";
+            action_accelerators[ACTION_NEW_WINDOW] = "<Control>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
@@ -141,14 +141,14 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
-            action_accelerators[ACTION_COPY] = "<Control><Shift>c";
-            action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
-            action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
+            action_accelerators[ACTION_COPY] = "<Control>c";
+            action_accelerators[ACTION_PASTE] = "<Control>v";
+            action_accelerators[ACTION_SEARCH] = "<Control>f";
             action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
             action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
-            action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
+            action_accelerators[ACTION_SELECT_ALL] = "<Control>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
         }
 
