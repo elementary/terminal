@@ -326,6 +326,7 @@ namespace PantheonTerminal {
 
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
+            header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (style_button);
             header.pack_end (search_button);
