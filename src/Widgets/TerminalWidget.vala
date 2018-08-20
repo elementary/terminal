@@ -27,7 +27,7 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public PantheonTerminalApp app;
+        public TerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
@@ -406,8 +406,8 @@ namespace PantheonTerminal {
                         }
                     }
 
-                    string uris_s = string.joinv ("", uris);
-                    this.feed_child (uris_s, uris_s.length);
+                    var uris_s = string.joinv ("", uris);
+                    this.feed_child (uris_s.to_utf8 ());
 
                     break;
                 case DropTargets.STRING:
@@ -415,7 +415,7 @@ namespace PantheonTerminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-                        this.feed_child (data, data.length);
+                        this.feed_child (data.to_utf8 ());
                     }
 
                     break;

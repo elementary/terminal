@@ -45,7 +45,7 @@ namespace PantheonTerminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
-        public PantheonTerminalApp app { get; construct; }
+        public TerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
 
@@ -91,7 +91,7 @@ namespace PantheonTerminal {
             { ACTION_OPEN_IN_FILES, action_open_in_files }
         };
 
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+        public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -102,7 +102,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+        public PantheonTerminalWindow.with_coords (TerminalApp app, int x, int y,
                                                    bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
@@ -117,7 +117,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
+        public PantheonTerminalWindow.with_working_directory (TerminalApp app, string location,
                                                               bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -681,7 +681,7 @@ namespace PantheonTerminal {
                     tabs += Environment.get_home_dir ();
                 }
             } else {
-                tabs += PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
 
             int null_dirs = 0;
@@ -694,7 +694,7 @@ namespace PantheonTerminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = TerminalApp.working_directory ?? Environment.get_current_dir ();
                 }
             }
 
@@ -730,7 +730,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                location = TerminalApp.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }

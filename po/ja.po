@@ -7,30 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-06-08 00:04+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"PO-Revision-Date: 2018-07-13 00:04+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
+"terminal/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "タスクが終了しました"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
-msgstr "ターミナルでプログラムを実行する"
+msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "シェルのカレントディレクトリを設定"
+msgstr "シェルのカレントディレクトリを設定します"
 
 #: src/Constants.vala:24
 msgid "About Terminal"
@@ -56,51 +56,51 @@ msgstr "新しい root タブ"
 msgid "Open Terminal Here"
 msgstr "ここでターミナルを開く"
 
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "コピー"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
-msgstr "ペースト"
+msgstr "貼り付け"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "検索…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "ズームアウト"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
-msgstr "デフォルトの拡大レベル"
+msgstr "デフォルトのズームレベル"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "ズームイン"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "スタイル"
 
@@ -134,7 +134,7 @@ msgstr "\"ターミナル\" を終了した場合、プロセスは終了しま�
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
-msgstr "\"ターミナル\" を終了する"
+msgstr "\"ターミナル\" を終了"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:81
 msgid "Cancel"
@@ -150,7 +150,7 @@ msgstr "\"ターミナル\" にコマンドをコピーすると危険なとき�
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr "コマンドの内容を確認してください。"
+msgstr "このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてください。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
@@ -158,25 +158,25 @@ msgstr "今後このダイアログを表示しない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr "ペーストしない"
+msgstr "貼り付けしない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr "とにかくペーストする"
+msgstr "とにかく貼り付け"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "検索"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "前の結果"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "次の結果"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "循環検索"
 
