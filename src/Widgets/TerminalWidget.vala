@@ -407,15 +407,22 @@ namespace PantheonTerminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
+#if NON_UBUNTU_PATCHED_VTE
                     this.feed_child (uris_s.to_utf8 ());
-
+#else
+                    this.feed_child (uris_s, uris_s.length);
+#endif
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
+#if NON_UBUNTU_PATCHED_VTE
                         this.feed_child (data.to_utf8 ());
+#else
+                        this.feed_child (data, data.length);
+#endif
                     }
 
                     break;
