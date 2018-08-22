@@ -1,3 +1,9 @@
+pantheon-terminal (0.5.2) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Wed, 22 Aug 2018 17:34:00 -0500
+
 pantheon-terminal (0.5.1) bionic; urgency=medium
 
   * New upstream release.
