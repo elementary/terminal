@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-08-29 07:16+0000\n"
-"Last-Translator: Mihailov Vasilievic Filho <mihailov.vf@gmail.com>\n"
+"PO-Revision-Date: 2018-08-29 16:48+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -70,25 +70,23 @@ msgstr "Selecionar tudo"
 
 #: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
 #: src/PantheonTerminalWindow.vala:258
-#, fuzzy
 msgid "Zoom Out"
-msgstr "Reduzir"
+msgstr "Reduzir Zoom"
 
 #: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
 #: src/PantheonTerminalWindow.vala:266
-#, fuzzy
 msgid "Zoom In"
-msgstr "Ampliar"
+msgstr "Ampliar Zoom"
 
 #: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
@@ -100,7 +98,7 @@ msgstr "Luz Solarizada"
 
 #: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
-msgstr "Solarized Dark"
+msgstr "Escuro Solarizado"
 
 #: src/PantheonTerminalWindow.vala:324
 msgid "Style"
