@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-08-30 00:03+0000\n"
-"Last-Translator: Mihailov Vasilievic Filho <mihailov.vf@gmail.com>\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "terminal/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -46,7 +46,7 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
 msgid "utilities-terminal"
-msgstr ""
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
