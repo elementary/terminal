@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-08-29 07:16+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Last-Translator: Mihailov Vasilievic Filho <mihailov.vf@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -96,7 +96,7 @@ msgstr "Alto Contraste"
 
 #: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
 #: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
@@ -104,7 +104,7 @@ msgstr "Escuro Solarizado"
 
 #: src/PantheonTerminalWindow.vala:324
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +156,7 @@ msgstr "Certifique-se que você entende o que cada parte desse comando faz."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Não exiba esta mensagem novamente"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +180,7 @@ msgstr "Próximo resultado"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
-msgstr ""
+msgstr "Busca cíclica"
 
 #~ msgid "Close"
 #~ msgstr "Fechar"
