@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-09-06 04:08+0000\n"
+"PO-Revision-Date: 2018-09-07 00:01+0000\n"
 "Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/terminal/"
 "terminal/it/>\n"
@@ -78,15 +78,15 @@ msgstr "Mostra nel file manager"
 
 #: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
-msgstr "Riduci zoom"
+msgstr "Riduci ingrandimento"
 
 #: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
-msgstr "Livello di zoom predeterminato"
+msgstr "Livello di ingrandimento predefinito"
 
 #: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
-msgstr "Aumenta zoom"
+msgstr "Aumenta ingrandimento"
 
 #: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
