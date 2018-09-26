@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-07-24 00:05+0000\n"
+"PO-Revision-Date: 2018-09-26 21:06+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -44,7 +44,6 @@ msgid "elementary LLC."
 msgstr "elementary LLC. (forretning med begrenset ansvar)"
 
 #: data/io.elementary.terminal.desktop.in:8
-#, fuzzy
 msgid "utilities-terminal"
 msgstr "utilities-terminal"
 
