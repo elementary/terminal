@@ -70,8 +70,6 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
         add_action_widget (cancel_button, 1);
         add_action_widget (ignore_button, 0);
 
-        show_protection_warnings.set_active (true);
-
         show_all ();
     }
 
