@@ -44,7 +44,7 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
         );
         secondary_label.xalign = 0;
 
-        var do_not_show_check = new Gtk.CheckButton.with_label (_("Do not show this dialog again"));
+        var do_not_show_check = new Gtk.CheckButton.with_label (_("Show paste protection warning"));
         do_not_show_check.margin_bottom = 12;
         do_not_show_check.margin_top = 12;
         settings.schema.bind ("unsafe-paste-alert", do_not_show_check, "active", SettingsBindFlags.DEFAULT | SettingsBindFlags.INVERT_BOOLEAN);
