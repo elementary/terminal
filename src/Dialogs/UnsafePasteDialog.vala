@@ -44,10 +44,10 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
         );
         secondary_label.xalign = 0;
 
-        var do_not_show_check = new Gtk.CheckButton.with_label (_("Do not show this dialog again"));
-        do_not_show_check.margin_bottom = 12;
-        do_not_show_check.margin_top = 12;
-        settings.schema.bind ("unsafe-paste-alert", do_not_show_check, "active", SettingsBindFlags.DEFAULT | SettingsBindFlags.INVERT_BOOLEAN);
+        var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
+        show_protection_warnings.margin_bottom = 12;
+        show_protection_warnings.margin_top = 12;
+        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT | SettingsBindFlags.INVERT_BOOLEAN);
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
@@ -57,7 +57,7 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
         grid.attach (warning_image, 0, 0, 1, 2);
         grid.attach (primary_label, 1, 0, 1, 1);
         grid.attach (secondary_label, 1, 1, 1, 1);
-        grid.attach (do_not_show_check, 1, 2, 1, 1);
+        grid.attach (show_protection_warnings, 1, 2, 1, 1);
 
         ((Gtk.Box) get_content_area ()).add (grid);
 
@@ -69,6 +69,8 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
 
         add_action_widget (cancel_button, 1);
         add_action_widget (ignore_button, 0);
+
+        show_protection_warnings.set_active (true);
 
         show_all ();
     }
