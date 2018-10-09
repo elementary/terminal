@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr ""
 
@@ -62,31 +62,31 @@ msgstr ""
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgid "Be sure you understand what each part of this command does."
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
+msgid "Do not show this dialog again"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64

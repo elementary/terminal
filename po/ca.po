@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-03-23 12:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
@@ -68,7 +68,7 @@ msgstr "Enganxa"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "Cerca…"
 
@@ -76,31 +76,31 @@ msgstr "Cerca…"
 msgid "Show in File Browser"
 msgstr "Mostra-ho al navegador de fitxers"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "Allunya"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "Apropa"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "Contrast alt"
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "Llum de dia fosca"
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "Estil"
 
@@ -153,8 +153,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
-msgstr ""
+msgid "Do not show this dialog again"
+msgstr "No tornis a mostrar aquest missatge"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -179,9 +179,6 @@ msgstr "Resultat següent"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Cerca cíclica"
-
-#~ msgid "Do not show this dialog again"
-#~ msgstr "No tornis a mostrar aquest missatge"
 
 #~ msgid "Close"
 #~ msgstr "Tanca"

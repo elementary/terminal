@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-06-19 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
@@ -68,7 +68,7 @@ msgstr "Beillesztés"
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "Keresés…"
 
@@ -76,31 +76,31 @@ msgstr "Keresés…"
 msgid "Show in File Browser"
 msgstr "Megjelenítés a Fájlkezelőben"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "Kicsinyítés"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "Nagyítás"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Világos solarizált"
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "Sötét solarizált"
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "Stílus"
 
@@ -153,8 +153,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
-msgstr ""
+msgid "Do not show this dialog again"
+msgstr "Ne jelenítse meg újra ezt a párbeszédablakot"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -179,9 +179,6 @@ msgstr "Következő találat"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Ciklikus keresés"
-
-#~ msgid "Do not show this dialog again"
-#~ msgstr "Ne jelenítse meg újra ezt a párbeszédablakot"
 
 #~ msgid "Close"
 #~ msgstr "Bezárás"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-09-25 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
@@ -68,7 +68,7 @@ msgstr "貼り付け"
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "検索…"
 
@@ -76,31 +76,31 @@ msgstr "検索…"
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "ズームアウト"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "ズームイン"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "スタイル"
 
@@ -150,13 +150,11 @@ msgstr "\"ターミナル\" にコマンドをコピーすると危険なとき�
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてくださ"
-"い。"
+msgstr "このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてください。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
-msgstr ""
+msgid "Do not show this dialog again"
+msgstr "今後このダイアログを表示しない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -181,9 +179,6 @@ msgstr "次の結果"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "循環検索"
-
-#~ msgid "Do not show this dialog again"
-#~ msgstr "今後このダイアログを表示しない"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"

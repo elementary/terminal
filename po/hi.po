@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-04-26 00:04+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/"
@@ -68,7 +68,7 @@ msgstr "चिपकाएँ(पेस्ट )"
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "ढूंढें…"
 
@@ -76,31 +76,31 @@ msgstr "ढूंढें…"
 msgid "Show in File Browser"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "ज़ूम आउट"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "सौरकृत डार्क"
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "शैली"
 
@@ -153,8 +153,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "यह सुनिश्चित कर लें कि यह कमांड जो करेगा उसके हरेक हिस्से से आप भिज्ञ हैं।"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
-msgstr ""
+msgid "Do not show this dialog again"
+msgstr "इस संवाद को दुबारा से न दिखाएं"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -179,9 +179,6 @@ msgstr "अगला परिणाम"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "चक्रीय खोज"
-
-#~ msgid "Do not show this dialog again"
-#~ msgstr "इस संवाद को दुबारा से न दिखाएं"
 
 #~ msgid "Close"
 #~ msgstr "बंद करें"

@@ -47,7 +47,7 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
         show_protection_warnings.margin_bottom = 12;
         show_protection_warnings.margin_top = 12;
-        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
+        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT | SettingsBindFlags.INVERT_BOOLEAN);
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-03-23 07:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
@@ -68,7 +68,7 @@ msgstr "הדבקה"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "חיפוש…"
 
@@ -76,31 +76,31 @@ msgstr "חיפוש…"
 msgid "Show in File Browser"
 msgstr "הצגה בדפדפן הקבצים"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "זריחה כהה"
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "סגנון"
 
@@ -153,8 +153,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "נא לוודא הבנה של כל חלק בפקודה זו."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
-msgstr ""
+msgid "Do not show this dialog again"
+msgstr "לא להציג את תיבת הדו־שיח הזאת יותר"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -179,9 +179,6 @@ msgstr "התוצאה הבאה"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "חיפוש מעגלי"
-
-#~ msgid "Do not show this dialog again"
-#~ msgstr "לא להציג את תיבת הדו־שיח הזאת יותר"
 
 #~ msgid "Close"
 #~ msgstr "סגירה"

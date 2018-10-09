@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 22:21+0200\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2017-07-14 10:28+0000\n"
 "Last-Translator: Vladislav Glebovich <lightsunrider@live.ru>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/terminal/"
@@ -69,7 +69,7 @@ msgstr "Уставіць"
 msgid "Select All"
 msgstr "Вылучыць усё"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "Шукаем..."
 
@@ -77,33 +77,33 @@ msgstr "Шукаем..."
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:258
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Паменшыць"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:266
 #, fuzzy
 msgid "Zoom In"
 msgstr "Павялічыць"
 
-#: src/PantheonTerminalWindow.vala:285
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:295
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:305
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:328
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Будзьце ўпэўнены, што разумееце сэнс кожнай часткі каманды."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Show paste protection warnings"
+msgid "Do not show this dialog again"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
