@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-03-10 00:01+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2018-09-07 00:01+0000\n"
+"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/terminal/"
 "terminal/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-02-02 05:56+0000\n"
 
 #: src/Application.vala:106
@@ -74,37 +74,35 @@ msgstr "Trova…"
 
 #: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Mostra nel file manager"
 
 #: src/PantheonTerminalWindow.vala:258
-#, fuzzy
 msgid "Zoom Out"
 msgstr "Riduci ingrandimento"
 
 #: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
-msgstr ""
+msgstr "Livello di ingrandimento predefinito"
 
 #: src/PantheonTerminalWindow.vala:266
-#, fuzzy
 msgid "Zoom In"
 msgstr "Aumenta ingrandimento"
 
 #: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
-msgstr ""
+msgstr "Alto contrasto"
 
 #: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarizzato chiaro"
 
 #: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarizzato scuro"
 
 #: src/PantheonTerminalWindow.vala:324
 msgid "Style"
-msgstr ""
+msgstr "Stile"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -156,7 +154,7 @@ msgstr "Assicurati di aver capito ciò che ogni parte di questo comando fa."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Non mostrare più questo messaggio"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -180,7 +178,7 @@ msgstr "Risultato successivo"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
-msgstr ""
+msgstr "Ricerca ciclica"
 
 #~ msgid "Close"
 #~ msgstr "Chiudi"
