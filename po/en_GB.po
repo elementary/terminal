@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-04-29 14:52+0000\n"
 "Last-Translator: Ciaran Ainsworth <cda@whistlingkappa.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Task finished"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Run a program in terminal"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Set shell working directory"
 
@@ -56,51 +56,51 @@ msgstr "New Root Tab"
 msgid "Open Terminal Here"
 msgstr "Open Terminal Here"
 
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Copy"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "Paste"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "Select All"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "Find…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "Show in File Browser"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "Default zoom level"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "Solzarized Dark"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "Style"
 
@@ -164,19 +164,19 @@ msgstr "Don't Paste"
 msgid "Paste Anyway"
 msgstr "Paste Anyway"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Find"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "Previous result"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "Next result"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Cyclic search"
 

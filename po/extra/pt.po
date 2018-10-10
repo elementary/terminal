@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-05-12 00:02+0000\n"
 "Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
-"Language-Team: Portuguese "
-"<https://weblate.elementary.io/projects/terminal/extra/pt/>\n"
+"Language-Team: Portuguese <https://weblate.elementary.io/projects/terminal/"
+"extra/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,13 +39,11 @@ msgstr ""
 "Terminal é uma aplicação de linha de comandos para aceder a um ambiente UNIX "
 "shell que pode ser usado para executar programas do seu sistema."
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:116
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:18
-#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr "utilities-terminal"
 
@@ -57,7 +55,7 @@ msgstr "comando;cmd;terminal;linhacomandos;executar;"
 msgid "New Window"
 msgstr "Nova Janela"
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr "Novo Separador como Root"
 
