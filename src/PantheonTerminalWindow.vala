@@ -45,7 +45,7 @@ namespace PantheonTerminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
-        public PantheonTerminalApp app { get; construct; }
+        public TerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
 
@@ -95,7 +95,7 @@ namespace PantheonTerminal {
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+        public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -106,7 +106,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
+        public PantheonTerminalWindow.with_coords (TerminalApp app, int x, int y,
                                                    bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
@@ -121,7 +121,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
+        public PantheonTerminalWindow.with_working_directory (TerminalApp app, string location,
                                                               bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -245,7 +245,11 @@ namespace PantheonTerminal {
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
           * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
+#if VALA_0_42
+        protected bool match_keycode (uint keyval, uint code) {
+#else
         protected bool match_keycode (int keyval, uint code) {
+#endif
             Gdk.KeymapKey [] keys;
             Gdk.Keymap keymap = Gdk.Keymap.get_default ();
             if (keymap.get_entries_for_keyval (keyval, out keys)) {
@@ -288,30 +292,24 @@ namespace PantheonTerminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.Button ();
+            var color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
-            color_button_white.height_request = 32;
-            color_button_white.width_request = 32;
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
             color_button_white_context.add_class ("color-button");
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.Button ();
+            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
-            color_button_light.height_request = 32;
-            color_button_light.width_request = 32;
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class ("color-button");
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.Button ();
+            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.height_request = 32;
-            color_button_dark.width_request = 32;
             color_button_dark.tooltip_text = _("Solarized Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
@@ -340,6 +338,7 @@ namespace PantheonTerminal {
 
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
+            header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (style_button);
             header.pack_end (search_button);
@@ -379,6 +378,18 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            switch (settings.background) {
+                case HIGH_CONTRAST_BG:
+                    color_button_white.active = true;
+                    break;
+                case SOLARIZED_LIGHT_BG:
+                    color_button_light.active = true;
+                    break;
+                case SOLARIZED_DARK_BG:
+                    color_button_dark.active = true;
+                    break;
+            }
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
@@ -523,9 +534,7 @@ namespace PantheonTerminal {
                 if (x != -1 && y != -1) {
                     move (x, y);
                 } else {
-                    x = (geometry.width - default_width)  / 2;
-                    y = (geometry.height - default_height) / 2;
-                    move (x, y);
+                    window_position = Gtk.WindowPosition.CENTER;
                 }
             }
 
@@ -715,7 +724,7 @@ namespace PantheonTerminal {
                     tabs += Environment.get_home_dir ();
                 }
             } else {
-                tabs += PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
 
             int null_dirs = 0;
@@ -728,7 +737,7 @@ namespace PantheonTerminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = TerminalApp.working_directory ?? Environment.get_current_dir ();
                 }
             }
 
@@ -764,7 +773,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                location = TerminalApp.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }

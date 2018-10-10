@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2016-08-04 19:47+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -38,13 +38,11 @@ msgstr ""
 "ljuske koja se može koristiti za pokretanje programa dostupnih na vašem "
 "sustavu."
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:116
 msgid "elementary LLC."
 msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:18
-#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr ""
 
@@ -56,7 +54,7 @@ msgstr "naredba;upit;cmd;naredbeni redak;pokreni;"
 msgid "New Window"
 msgstr "Novi prozor"
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr "Nova korijenska kartica"
 

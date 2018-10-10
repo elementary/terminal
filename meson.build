@@ -1,4 +1,8 @@
-project('io.elementary.terminal', 'vala', 'c')
+project(
+    'io.elementary.terminal',
+    'vala', 'c',
+    version: '0.5.3'
+)
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
     error('Missing required dependency: valac >= 0.40')
@@ -8,6 +12,10 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language:'c')
+
+if get_option('ubuntu-bionic-patched-vte')
+    add_project_arguments(['--define', 'UBUNTU_BIONIC_PATCHED_VTE'], language : 'vala')
+endif
 
 terminal_resources = gnome.compile_resources(
     'terminal-resources', 'data/' + meson.project_name() + '.gresource.xml',

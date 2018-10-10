@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2016-08-26 14:38+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -35,13 +35,11 @@ msgid ""
 "environment which can be used to run programs available on your system."
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:116
 msgid "elementary LLC."
 msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:18
-#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr ""
 
@@ -53,7 +51,7 @@ msgstr ""
 msgid "New Window"
 msgstr "Nouvelle Fenêtre"
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-06-27 09:59-0700\n"
 "PO-Revision-Date: 2018-03-23 07:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "פעולה הסתיימה"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
@@ -56,51 +56,51 @@ msgstr "לשונית חדשה כמנהל"
 msgid "Open Terminal Here"
 msgstr "פתיחת מסוף כאן"
 
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "הצגה בדפדפן הקבצים"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:258
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:262
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:266
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:281
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:301
 msgid "Solarized Dark"
 msgstr "זריחה כהה"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:324
 msgid "Style"
 msgstr "סגנון"
 
@@ -164,19 +164,19 @@ msgstr "לא להדביק"
 msgid "Paste Anyway"
 msgstr "להדביק בכל זאת"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "חיפוש"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "התוצאה הקודמת"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "התוצאה הבאה"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "חיפוש מעגלי"
 

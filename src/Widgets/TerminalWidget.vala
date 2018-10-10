@@ -27,7 +27,7 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public PantheonTerminalApp app;
+        public TerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
@@ -408,16 +408,23 @@ namespace PantheonTerminal {
                         }
                     }
 
-                    string uris_s = string.joinv ("", uris);
+                    var uris_s = string.joinv ("", uris);
+#if UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
-
+#else
+                    this.feed_child (uris_s.to_utf8 ());
+#endif
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
+#if UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
+#else
+                        this.feed_child (data.to_utf8 ());
+#endif
                     }
 
                     break;
