@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-10-11 11:00+0000\n"
+"PO-Revision-Date: 2018-10-14 00:04+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "extra/mr/>\n"
@@ -45,7 +45,7 @@ msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
 msgid "utilities-terminal"
-msgstr "सोयी सुविधा-टर्मिनल"
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
