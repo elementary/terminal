@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-03-23 07:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
@@ -32,6 +32,9 @@ msgstr "הפעלת תכנית במסוף"
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
+#. Translatable launcher (.desktop) strings to be added to
+#. template (.pot) file. These strings should reflect any
+#. changes in these launcher keys in .desktop file.
 #: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "על אודות מסוף"
@@ -68,7 +71,7 @@ msgstr "הדבקה"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "חיפוש…"
 
@@ -76,19 +79,19 @@ msgstr "חיפוש…"
 msgid "Show in File Browser"
 msgstr "הצגה בדפדפן הקבצים"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "התרחקות"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
@@ -96,11 +99,11 @@ msgstr "ניגודיות גבוהה"
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "זריחה כהה"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "סגנון"
 

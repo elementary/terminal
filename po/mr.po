@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-10-09 07:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
@@ -25,6 +25,9 @@ msgstr "टर्मिनल मध्ये चालवा"
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
+#. Translatable launcher (.desktop) strings to be added to
+#. template (.pot) file. These strings should reflect any
+#. changes in these launcher keys in .desktop file.
 #: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "टर्मिनल बद्दल"
@@ -61,7 +64,7 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "शोधा…"
 
@@ -69,19 +72,19 @@ msgstr "शोधा…"
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "झूम आऊट"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "झूम इन"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
@@ -89,11 +92,11 @@ msgstr "उच्च तीव्रता"
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "सौरकृत गडद"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "शैली"
 
@@ -143,8 +146,7 @@ msgstr "टर्मिनलमध्ये कमांड कॉपी कर
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"कमांडचा प्रत्येक भाग काय करतो हे आपणांस समजले असल्याची खात्री करून घ्या."
+msgstr "कमांडचा प्रत्येक भाग काय करतो हे आपणांस समजले असल्याची खात्री करून घ्या."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"

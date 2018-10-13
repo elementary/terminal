@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -32,6 +32,9 @@ msgstr "Spustit program v terminálu"
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
+#. Translatable launcher (.desktop) strings to be added to
+#. template (.pot) file. These strings should reflect any
+#. changes in these launcher keys in .desktop file.
 #: src/Constants.vala:24
 msgid "About Terminal"
 msgstr "O aplikaci Terminál"
@@ -68,7 +71,7 @@ msgstr "Vložit"
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Hledat…"
 
@@ -76,19 +79,19 @@ msgstr "Hledat…"
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "Oddálit"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "Přiblížit"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
@@ -96,11 +99,11 @@ msgstr "Vysoký kontrast"
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Solarizovaný tmavý"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "Styl"
 

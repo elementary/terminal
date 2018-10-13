@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-09-26 21:06+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
@@ -39,7 +39,7 @@ msgstr ""
 "Terminal er en terminal emulator for tilgang til et UNIX shell, som kan "
 "brukes til å kjøre programmer på ditt system."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "elementary LLC. (forretning med begrenset ansvar)"
 

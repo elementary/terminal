@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-08-24 00:01+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/extra/"
@@ -40,7 +40,7 @@ msgstr ""
 "टर्मिनल एक यूनिक्स शेल परिवेश का उपयोग करने के लिए टर्मिनल एम्यूलेटर प्रयोग है जिसका "
 "प्रयोग आपके सिस्टम में उपलब्ध प्रयोगों को चलाने के लिए किया जा सकता है."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "एलीमेंट्री एलएलसी."
 

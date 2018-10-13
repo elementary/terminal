@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-10-11 11:00+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
@@ -35,11 +35,10 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"टर्मिनल हा आपल्या सिस्टमवर उपलब्ध प्रोग्राम चालविण्यासाठी वापरला जाऊ शकणाऱ्या"
-" युनिक्स शैल पर्यावरणास प्रवेश करण्यासाठी वापरला जाणारा एक टर्मिनल एमुलेटर "
-"अप्लिकेशन आहे."
+"टर्मिनल हा आपल्या सिस्टमवर उपलब्ध प्रोग्राम चालविण्यासाठी वापरला जाऊ शकणाऱ्या युनिक्स "
+"शैल पर्यावरणास प्रवेश करण्यासाठी वापरला जाणारा एक टर्मिनल एमुलेटर अप्लिकेशन आहे."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "एलिमेंटरी LLC."
 
