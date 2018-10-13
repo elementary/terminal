@@ -25,7 +25,6 @@ terminal_resources = gnome.compile_resources(
 executable(
     meson.project_name(),
     'src/Application.vala',
-    'src/Constants.vala',
     'src/DBus.vala',
     'src/Settings.vala',
     'src/PantheonTerminalWindow.vala',
