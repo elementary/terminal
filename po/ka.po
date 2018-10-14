@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-01-21 14:40+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Georgian <ka@li.org>\n"
@@ -29,33 +29,6 @@ msgstr "პროგრამის ტერმინალში გაშვ�
 #: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "გარსის სამუშაო კატალოგის დაყენება"
-
-#. Translatable launcher (.desktop) strings to be added to
-#. template (.pot) file. These strings should reflect any
-#. changes in these launcher keys in .desktop file.
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "ტერმინალის შესახებ"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "ბრძანებითი ხაზის გამოყენება"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "ტერმინალი"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "ახალი ფანჯარა"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "ახალი რუთ ჩანართი"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "ტერმინალის გახსნა აქ"
 
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
@@ -182,6 +155,25 @@ msgstr "მომდევნო შედეგი"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#~ msgid "About Terminal"
+#~ msgstr "ტერმინალის შესახებ"
+
+#~ msgid "Use the command line"
+#~ msgstr "ბრძანებითი ხაზის გამოყენება"
+
+#~ msgid "New Window"
+#~ msgstr "ახალი ფანჯარა"
+
+#~ msgid "New Root Tab"
+#~ msgstr "ახალი რუთ ჩანართი"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "ტერმინალის გახსნა აქ"
 
 #~ msgid "Close"
 #~ msgstr "დახურვა"

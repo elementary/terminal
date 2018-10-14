@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -29,33 +29,6 @@ msgstr "Yi dwumadi no wɔ terminal no mu"
 #: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
-
-#. Translatable launcher (.desktop) strings to be added to
-#. template (.pot) file. These strings should reflect any
-#. changes in these launcher keys in .desktop file.
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Terminal no ho nsɛm"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Fa command line no yɛ"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Window Foforɔ"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Root tab fofor"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Bue Terminal No Wɔ Ha"
 
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
@@ -183,6 +156,25 @@ msgstr "Nea edi hɔ"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Terminal no ho nsɛm"
+
+#~ msgid "Use the command line"
+#~ msgstr "Fa command line no yɛ"
+
+#~ msgid "New Window"
+#~ msgstr "Window Foforɔ"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Root tab fofor"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Bue Terminal No Wɔ Ha"
 
 #~ msgid "Close"
 #~ msgstr "Yi"

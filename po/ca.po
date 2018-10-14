@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-03-23 12:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
@@ -31,33 +31,6 @@ msgstr "Executa un programa al terminal"
 #: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
-
-#. Translatable launcher (.desktop) strings to be added to
-#. template (.pot) file. These strings should reflect any
-#. changes in these launcher keys in .desktop file.
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Quant al Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Utilitzeu la línia d'ordres"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Finestra nova"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nova pestanya d'Administrador"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Obre un terminal aquí"
 
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
@@ -182,6 +155,25 @@ msgstr "Resultat següent"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Cerca cíclica"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Quant al Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Utilitzeu la línia d'ordres"
+
+#~ msgid "New Window"
+#~ msgstr "Finestra nova"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nova pestanya d'Administrador"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Obre un terminal aquí"
 
 #~ msgid "Close"
 #~ msgstr "Tanca"

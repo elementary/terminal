@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-08-03 21:50+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -29,33 +29,6 @@ msgstr "Jalankan program dalam terminal"
 #: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Tetapkan direktori kerja shell"
-
-#. Translatable launcher (.desktop) strings to be added to
-#. template (.pot) file. These strings should reflect any
-#. changes in these launcher keys in .desktop file.
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Perihal Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Guna baris perintah"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Tetingkap Baru"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Buka Terminal Di Sini"
 
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
@@ -182,6 +155,22 @@ msgstr "Keputusan berikutnya"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Perihal Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Guna baris perintah"
+
+#~ msgid "New Window"
+#~ msgstr "Tetingkap Baru"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Buka Terminal Di Sini"
 
 #~ msgid "Close"
 #~ msgstr "Tutup"
