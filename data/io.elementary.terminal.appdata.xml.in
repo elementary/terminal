@@ -35,6 +35,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.1" date="2018-10-16" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.3" date="2018-09-06" urgency="medium">
       <description>
         <ul>
