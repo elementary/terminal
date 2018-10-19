@@ -144,9 +144,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
             action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
-            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
             action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
