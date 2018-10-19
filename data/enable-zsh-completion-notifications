@@ -21,7 +21,7 @@ then
             string:"$(fc -ln -1)" \
             int32:$?
     }
-    precmd_functions=(pantheon_terminal_command_competion_callback)
+    precmd_functions+=(pantheon_terminal_command_competion_callback)
 fi
 
 # Some shells (e.g. BASH) lack the post-execution hook,
