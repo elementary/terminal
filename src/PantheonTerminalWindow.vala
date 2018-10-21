@@ -1001,8 +1001,10 @@ namespace PantheonTerminal {
                 action_accelerators.remove_all(ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
             }
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT, action_accelerators[ACTION_SEARCH_NEXT].to_array ());
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS, action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
         }
 
         void action_search_next () {
