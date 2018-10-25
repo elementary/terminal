@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-06-14 00:09+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/extra/"
@@ -39,7 +39,7 @@ msgstr ""
 "터미널은 여러분 시스템의 프로그램 실행에 사용할 수 있는 UNIX셸 환경에 접근하"
 "는 터미널 에뮬레이터 애플리케이션입니다."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "elementary LLC."
 

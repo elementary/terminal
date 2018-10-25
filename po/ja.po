@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-09-25 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
@@ -32,30 +32,6 @@ msgstr "ターミナルでプログラムを実行します"
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "\"ターミナル\" について"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "コマンドラインを使用します"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "ターミナル"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "新しいウィンドウ"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "新しい root タブ"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "ここでターミナルを開く"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "コピー"
@@ -68,7 +44,7 @@ msgstr "貼り付け"
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "検索…"
 
@@ -76,19 +52,19 @@ msgstr "検索…"
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "ズームアウト"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "ズームイン"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
@@ -96,11 +72,11 @@ msgstr "ハイコントラスト"
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "スタイル"
 
@@ -150,7 +126,9 @@ msgstr "\"ターミナル\" にコマンドをコピーすると危険なとき�
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr "このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてください。"
+msgstr ""
+"このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてくださ"
+"い。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
@@ -179,6 +157,25 @@ msgstr "次の結果"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "循環検索"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "ターミナル"
+
+#~ msgid "About Terminal"
+#~ msgstr "\"ターミナル\" について"
+
+#~ msgid "Use the command line"
+#~ msgstr "コマンドラインを使用します"
+
+#~ msgid "New Window"
+#~ msgstr "新しいウィンドウ"
+
+#~ msgid "New Root Tab"
+#~ msgstr "新しい root タブ"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "ここでターミナルを開く"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -25,30 +25,6 @@ msgstr "Rulați program în terminal"
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Despre Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Utilizați linia de comandă"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminalul"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Fereastră nouă"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nouă filă rădăcină"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Deschideți terminalul aici"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Copie"
@@ -61,7 +37,7 @@ msgstr "Lipește"
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Căutare…"
 
@@ -69,19 +45,19 @@ msgstr "Căutare…"
 msgid "Show in File Browser"
 msgstr "Afișați Fișierul în Browser"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "Micșorează"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "Nivel prestabilit"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "Mărește"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "Contrast mare"
 
@@ -89,11 +65,11 @@ msgstr "Contrast mare"
 msgid "Solarized Light"
 msgstr "Lumină solarizată"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Polarizat închis"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "Stilul"
 
@@ -172,3 +148,22 @@ msgstr "Rezultatul următor"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Clic în caută"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminalul"
+
+#~ msgid "About Terminal"
+#~ msgstr "Despre Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Utilizați linia de comandă"
+
+#~ msgid "New Window"
+#~ msgstr "Fereastră nouă"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nouă filă rădăcină"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Deschideți terminalul aici"

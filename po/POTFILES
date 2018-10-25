@@ -1,5 +1,4 @@
 src/Application.vala
-src/Constants.vala
 src/DBus.vala
 src/Settings.vala
 src/PantheonTerminalWindow.vala

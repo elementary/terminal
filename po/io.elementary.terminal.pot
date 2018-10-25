@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,30 +29,6 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr ""
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr ""
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr ""
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr ""
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr ""
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr ""
@@ -65,7 +41,7 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr ""
 
@@ -73,19 +49,19 @@ msgstr ""
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -93,11 +69,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -175,4 +151,8 @@ msgstr ""
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
 msgstr ""

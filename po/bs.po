@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2015-12-05 14:36+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -30,30 +30,6 @@ msgstr "Pokreni program iz terminala"
 msgid "Set shell working directory"
 msgstr "Podesi radnu direktoriju za shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Infromacije o Terminalu"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Koristite komandnu liniju"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Novi prozor"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Otvori terminal ovdje"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Kopiraj"
@@ -66,7 +42,7 @@ msgstr "Zalijepi"
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr ""
 
@@ -74,21 +50,21 @@ msgstr ""
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Smanji"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "Povećaj"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -96,11 +72,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -179,6 +155,22 @@ msgstr ""
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Infromacije o Terminalu"
+
+#~ msgid "Use the command line"
+#~ msgstr "Koristite komandnu liniju"
+
+#~ msgid "New Window"
+#~ msgstr "Novi prozor"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Otvori terminal ovdje"
 
 #~ msgid "Close"
 #~ msgstr "Zatvori"

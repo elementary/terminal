@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -32,30 +32,6 @@ msgstr "اجرای برنامه در ترمینال"
 msgid "Set shell working directory"
 msgstr "تنظیم کارکردن مستقیم شل"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "درباره ترمینال"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "استفاده از خط فرمان"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "ترمینال"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "پنجره جدید"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "برگه جدید root"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "باز کردن ترمینال در اینجا"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "رونویسی"
@@ -68,7 +44,7 @@ msgstr "چسباندن"
 msgid "Select All"
 msgstr "انتخاب همه"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "پیدا کردن…"
 
@@ -76,21 +52,21 @@ msgstr "پیدا کردن…"
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "کوچک‌نمایی"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "بزرگ‌نمایی"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -98,11 +74,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -181,6 +157,25 @@ msgstr "نتیجه بعدی"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "ترمینال"
+
+#~ msgid "About Terminal"
+#~ msgstr "درباره ترمینال"
+
+#~ msgid "Use the command line"
+#~ msgstr "استفاده از خط فرمان"
+
+#~ msgid "New Window"
+#~ msgstr "پنجره جدید"
+
+#~ msgid "New Root Tab"
+#~ msgstr "برگه جدید root"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "باز کردن ترمینال در اینجا"
 
 #~ msgid "Close"
 #~ msgstr "بستن"
