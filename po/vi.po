@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -20,89 +20,65 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Tác vụ đã hoàn thành"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Chạy một chương trình trong terminal"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Thiết lập thư mục làm việc shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Thông tin về Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Sử dụng dòng lệnh"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Cửa sổ dòng lệnh"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Cửa sổ mới"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Tab gốc mới"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Mở Terminal tại đây"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Chép"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "Dán"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "Chọn toàn bộ"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "Phóng to"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -166,21 +142,40 @@ msgstr "Đừng dán"
 msgid "Paste Anyway"
 msgstr "Dán mọi cách"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Tìm"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "Kết quả trước đó"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "Kết quả kế tiếp"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Cửa sổ dòng lệnh"
+
+#~ msgid "About Terminal"
+#~ msgstr "Thông tin về Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Sử dụng dòng lệnh"
+
+#~ msgid "New Window"
+#~ msgstr "Cửa sổ mới"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Tab gốc mới"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Mở Terminal tại đây"
 
 #~ msgid "Close"
 #~ msgstr "Đóng"

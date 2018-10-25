@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-03-23 23:58+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/terminal/"
@@ -20,87 +20,63 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Tâche terminée"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Lancer un programme dans un terminal"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Configurer le répertoire courant du terminal"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "À propos du Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Utiliser la ligne de commande"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nouvelle Fenêtre"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nouvel onglet en tant qu'administrateur"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Ouvrir un Terminal ici"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Copier"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "Coller"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Rechercher…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "Afficher dans l'explorateur de fichiers"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "Zoom arrière"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "Zoom par défaut"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "Zoom avant"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "Contrastes élevés"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Solarisé clair"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Solarisé foncé"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "Style"
 
@@ -165,21 +141,40 @@ msgstr "Ne pas coller"
 msgid "Paste Anyway"
 msgstr "Coller quand même"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Rechercher"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "Résultat précédent"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "Résultat suivant"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Recherche cyclique"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "À propos du Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Utiliser la ligne de commande"
+
+#~ msgid "New Window"
+#~ msgstr "Nouvelle Fenêtre"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nouvel onglet en tant qu'administrateur"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Ouvrir un Terminal ici"
 
 #~ msgid "Close"
 #~ msgstr "Fermer"

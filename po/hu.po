@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-06-02 00:07+0000\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
+"PO-Revision-Date: 2018-06-19 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -20,87 +20,63 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Feladat kész"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Program futtatása terminálban"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Shell munkakönyvtár beállítása"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "A Terminál névjegye"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Parancssor használata"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminál"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Új ablak"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Új ablak rendszergazdaként"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Terminál megnyitása itt"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr "Megjelenítés a Fájlkezelőben"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "Kicsinyítés"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "Nagyítás"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr "Világos solarizált"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Sötét solarizált"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "Stílus"
 
@@ -126,7 +102,7 @@ msgstr "Biztos, hogy ki akar lépni terminálból?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
-msgstr "Ebben a terminálban aktív folyamat van."
+msgstr "Egy aktív folyamat fut ebben a terminálban."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
@@ -164,21 +140,40 @@ msgstr "Ne illessze be"
 msgid "Paste Anyway"
 msgstr "Beillesztés mindenképpen"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Keresés"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "Előző találat"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "Következő találat"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Ciklikus keresés"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminál"
+
+#~ msgid "About Terminal"
+#~ msgstr "A Terminál névjegye"
+
+#~ msgid "Use the command line"
+#~ msgstr "Parancssor használata"
+
+#~ msgid "New Window"
+#~ msgstr "Új ablak"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Új ablak rendszergazdaként"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Terminál megnyitása itt"
 
 #~ msgid "Close"
 #~ msgstr "Bezárás"

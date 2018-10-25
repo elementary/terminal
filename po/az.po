@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-12-29 08:27+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Azerbaijani <az@li.org>\n"
@@ -18,89 +18,65 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-12-30 04:44+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Tapşırıq tamamlandı"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Terminalda bir proqram işlət"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Qabıq işləmə kataloqunu quraşdır"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Terminal Haqqında"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Əmr sətrindən istifadə et"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Yeni Pəncərə"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Yeni Root Vərəqəsi"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Terminalı Burda Aç"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/PantheonTerminalWindow.vala:189
 msgid "Paste"
 msgstr "Yapışdır"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/PantheonTerminalWindow.vala:192
 msgid "Select All"
 msgstr "Hamısını Seç"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Tap..."
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/PantheonTerminalWindow.vala:198
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Uzaqlaşdır"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "Yaxınlaşdır"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:291
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -164,21 +140,40 @@ msgstr "Yapışdırma"
 msgid "Paste Anyway"
 msgstr "Məhəl qoyma, yapışdır"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Tap"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:39
 msgid "Previous result"
 msgstr "Əvvəlki nəticə"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:43
 msgid "Next result"
 msgstr "Növbəti nəticə"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Terminal Haqqında"
+
+#~ msgid "Use the command line"
+#~ msgstr "Əmr sətrindən istifadə et"
+
+#~ msgid "New Window"
+#~ msgstr "Yeni Pəncərə"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Yeni Root Vərəqəsi"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Terminalı Burda Aç"
 
 #~ msgid "Close"
 #~ msgstr "Bağla"
