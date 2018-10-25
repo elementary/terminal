@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-06-13 16:57+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -30,30 +30,6 @@ msgstr "Käivita rakendus terminalis"
 msgid "Set shell working directory"
 msgstr "Töötamise kausta määramine"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Rakendusest..."
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Käsurea kasutamine"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Uus aken"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Uus juurkasutaja kaart"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Ava terminal siin"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Kopeeri"
@@ -66,7 +42,7 @@ msgstr "Aseta"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Otsi…"
 
@@ -74,21 +50,21 @@ msgstr "Otsi…"
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Vähenda"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "Suurenda"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -96,11 +72,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -179,6 +155,25 @@ msgstr "Järgmine"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Rakendusest..."
+
+#~ msgid "Use the command line"
+#~ msgstr "Käsurea kasutamine"
+
+#~ msgid "New Window"
+#~ msgstr "Uus aken"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Uus juurkasutaja kaart"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Ava terminal siin"
 
 #~ msgid "Close"
 #~ msgstr "Sulge"

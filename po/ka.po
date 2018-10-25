@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2016-01-21 14:40+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Georgian <ka@li.org>\n"
@@ -30,30 +30,6 @@ msgstr "პროგრამის ტერმინალში გაშვ�
 msgid "Set shell working directory"
 msgstr "გარსის სამუშაო კატალოგის დაყენება"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "ტერმინალის შესახებ"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "ბრძანებითი ხაზის გამოყენება"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "ტერმინალი"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "ახალი ფანჯარა"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "ახალი რუთ ჩანართი"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "ტერმინალის გახსნა აქ"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "კოპირება"
@@ -66,7 +42,7 @@ msgstr "ჩასმა"
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "პოვნა..."
 
@@ -74,21 +50,21 @@ msgstr "პოვნა..."
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "დაშორება"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "მიახლოება"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -96,11 +72,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -179,6 +155,25 @@ msgstr "მომდევნო შედეგი"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "ტერმინალი"
+
+#~ msgid "About Terminal"
+#~ msgstr "ტერმინალის შესახებ"
+
+#~ msgid "Use the command line"
+#~ msgstr "ბრძანებითი ხაზის გამოყენება"
+
+#~ msgid "New Window"
+#~ msgstr "ახალი ფანჯარა"
+
+#~ msgid "New Root Tab"
+#~ msgstr "ახალი რუთ ჩანართი"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "ტერმინალის გახსნა აქ"
 
 #~ msgid "Close"
 #~ msgstr "დახურვა"

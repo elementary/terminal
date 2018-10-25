@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2018-03-23 12:18+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/extra/"
@@ -39,7 +39,7 @@ msgstr ""
 "מסוף הוא יישום מדמה מסוף לגישה לסביבת מעטפת UNIX המשמשת להרצת התכניות "
 "הזמינות במערכת."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "elementary LLC.‎"
 

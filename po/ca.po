@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-03-23 12:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
@@ -32,30 +32,6 @@ msgstr "Executa un programa al terminal"
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Quant al Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Utilitzeu la línia d'ordres"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Finestra nova"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nova pestanya d'Administrador"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Obre un terminal aquí"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Copia"
@@ -68,7 +44,7 @@ msgstr "Enganxa"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Cerca…"
 
@@ -76,19 +52,19 @@ msgstr "Cerca…"
 msgid "Show in File Browser"
 msgstr "Mostra-ho al navegador de fitxers"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 msgid "Zoom Out"
 msgstr "Allunya"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 msgid "Zoom In"
 msgstr "Apropa"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr "Contrast alt"
 
@@ -96,11 +72,11 @@ msgstr "Contrast alt"
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr "Llum de dia fosca"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr "Estil"
 
@@ -179,6 +155,25 @@ msgstr "Resultat següent"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr "Cerca cíclica"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Quant al Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Utilitzeu la línia d'ordres"
+
+#~ msgid "New Window"
+#~ msgstr "Finestra nova"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nova pestanya d'Administrador"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Obre un terminal aquí"
 
 #~ msgid "Close"
 #~ msgstr "Tanca"

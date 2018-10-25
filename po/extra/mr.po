@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-04-23 00:09+0000\n"
-"Last-Translator: girish joshi <girish946@gmail.com>\n"
+"PO-Revision-Date: 2018-10-14 00:04+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "extra/mr/>\n"
 "Language: mr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
@@ -35,18 +35,20 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
+"टर्मिनल हा आपल्या सिस्टमवर उपलब्ध प्रोग्राम चालविण्यासाठी वापरला जाऊ शकणाऱ्या युनिक्स "
+"शैल पर्यावरणास प्रवेश करण्यासाठी वापरला जाणारा एक टर्मिनल एमुलेटर अप्लिकेशन आहे."
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
-msgstr ""
+msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.terminal.desktop.in:8
 msgid "utilities-terminal"
-msgstr ""
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
+msgstr "कमांड;प्रांप्ट;सीएमडी;कमांडलाइन;रन;"
 
 #: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"

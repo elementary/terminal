@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '0.5.3'
+    version: '5.3.1'
 )
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
@@ -25,7 +25,6 @@ terminal_resources = gnome.compile_resources(
 executable(
     meson.project_name(),
     'src/Application.vala',
-    'src/Constants.vala',
     'src/DBus.vala',
     'src/Settings.vala',
     'src/PantheonTerminalWindow.vala',

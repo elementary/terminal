@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-10-14 11:18-0700\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -32,30 +32,6 @@ msgstr "Magpatakbo ng progama sa terminal"
 msgid "Set shell working directory"
 msgstr "I-set ang working directory ng shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Tungkol sa Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Gamitin ang command line"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Bagong Window"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Bagong Tab na naka-root"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Buksan ang Terminal Dito"
-
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
 msgstr "Kopyahin"
@@ -68,7 +44,7 @@ msgstr "Idikit"
 msgid "Select All"
 msgstr "Piliin Lahat"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
 msgid "Find…"
 msgstr "Hanapin..."
 
@@ -76,21 +52,21 @@ msgstr "Hanapin..."
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:262
 #, fuzzy
 msgid "Zoom Out"
 msgstr "Mag-zoom out"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:266
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:270
 #, fuzzy
 msgid "Zoom In"
 msgstr "Mag-zoom in"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:283
 msgid "High Contrast"
 msgstr ""
 
@@ -98,11 +74,11 @@ msgstr ""
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:299
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:322
 msgid "Style"
 msgstr ""
 
@@ -183,6 +159,25 @@ msgstr "Susunot na resulta"
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Tungkol sa Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Gamitin ang command line"
+
+#~ msgid "New Window"
+#~ msgstr "Bagong Window"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Bagong Tab na naka-root"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Buksan ang Terminal Dito"
 
 #~ msgid "Close"
 #~ msgstr "Isara"
