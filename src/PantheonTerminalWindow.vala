@@ -63,7 +63,7 @@ namespace PantheonTerminal {
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
         public const string ACTION_COPY = "action_copy";
-        public const string ACTION_COPY_LAST_OUTPUT = "ACTION_COPY_LAST_OUTPUT";
+        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SEARCH_NEXT = "action_search_next";
