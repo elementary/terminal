@@ -353,10 +353,6 @@ namespace PantheonTerminal {
         }
 
         private void clickable (string[] str) {
-//            if (!get_realized ()) {
-//                return;
-//            }
-
             foreach (string exp in str) {
                 try {
                     var regex = new GLib.Regex (exp);
