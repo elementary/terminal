@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 11:18-0700\n"
-"PO-Revision-Date: 2018-10-10 00:02+0000\n"
+"PO-Revision-Date: 2018-10-29 10:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/"
 "terminal/hi/>\n"
@@ -86,7 +86,7 @@ msgstr "क्या आप यक़ीनन इस टैब को बंद �
 
 #: src/Dialogs/ForegroundProcessDialog.vala:33
 msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है"
+msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:34
 msgid "If you close it, the process will end."
