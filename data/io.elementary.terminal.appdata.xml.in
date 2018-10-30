@@ -35,6 +35,16 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.2" date="2018-10-30" urgency="medium">
+      <description>
+        <ul>
+          <li>Fix zsh notifications</li>
+          <li>Conditional ctrl+g shortcut to deconflict with emacs</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.3.1" date="2018-10-16" urgency="medium">
       <description>
         <ul>
