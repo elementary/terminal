@@ -25,6 +25,9 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
 
+    /* option_help will be true if help flag was given. */
+    private static bool option_help = false;
+
     public int minimum_width;
     public int minimum_height;
 
@@ -119,9 +122,12 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     private int _command_line (ApplicationCommandLine command_line) {
-        var context = new OptionContext ("File");
+        var context = new OptionContext (null);
         context.add_main_entries (entries, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
+
+        // Disable automatic help to prevent default `exit(0)` behaviour.
+        context.set_help_enabled (false);
 
         string[] args = command_line.get_arguments ();
 
@@ -133,7 +139,9 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
             return 0;
         }
 
-        if (command_e != null) {
+        if (option_help) {
+            show_help (context.get_help (true, null));
+        } else if (command_e != null) {
             run_commands (command_e);
 
         } else if (working_directory != null) {
@@ -146,9 +154,23 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
         command_e = null;
+        option_help = false;
         working_directory = null;
 
         return 0;
+    }
+
+    private void show_help (string help) {
+        var window = get_last_window ();
+
+        if (window == null) {
+            stdout.printf (help);
+        } else {
+            window.current_terminal.feed (
+                // add return to newline for terminal output.
+                help.replace ("\n", "\r\n").data
+            );
+        }
     }
 
     private void run_commands (string[] commands) {
@@ -182,8 +204,9 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     private const OptionEntry[] entries = {
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
+        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
         { null }
     };
 
