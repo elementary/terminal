@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 11:18-0700\n"
-"PO-Revision-Date: 2018-11-03 22:01+0000\n"
+"PO-Revision-Date: 2018-11-07 23:04+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/terminal/"
 "terminal/bs/>\n"
@@ -31,7 +31,7 @@ msgstr "Pokreni program iz terminala"
 
 #: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "Podesi radnu direktoriju za shell"
+msgstr "Podesi radni direktorij ljuske"
 
 #: src/PantheonTerminalWindow.vala:186
 msgid "Copy"
@@ -83,39 +83,39 @@ msgstr "Stil"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
-msgstr "Da li ste sigurni da želite da zatvorite ovaj tab?"
+msgstr "Jeste li sigurni da želite zatvoriti ovu karticu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:33
 msgid "There is an active process on this tab."
-msgstr "U ovom tabu se trenutno izvršava proces."
+msgstr "Aktivan je proces u ovoj kartici."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:34
 msgid "If you close it, the process will end."
-msgstr "Ukoliko zatvorite tab, proces će biti prekinut."
+msgstr "Ako je zatvorite, proces će biti prekinut."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:35
 msgid "Close Tab"
-msgstr "Zatvori tab"
+msgstr "Zatvori karticu"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:45
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Da li ste sigurni da želite da zatvorite Terminal?"
+msgstr "Jeste li sigurni da želite napustiti Terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
-msgstr "U ovom tabu se trenutno izvršava proces."
+msgstr "Aktivan je proces u ovom terminalu."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:48
 msgid "If you quit Terminal, the process will end."
-msgstr "Ukoliko zatvorite tab, proces će biti prekinut."
+msgstr "Ako napustite Terminal, proces će biti prekinut."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:49
 msgid "Quit Terminal"
-msgstr "Zatvori Terminal"
+msgstr "Napusti Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:81
 msgid "Cancel"
-msgstr "Odustani"
+msgstr "Otkaži"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
