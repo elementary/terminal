@@ -262,7 +262,7 @@ namespace PantheonTerminal {
             zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
             zoom_out_button.tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (zoom_out_button.action_name),
-                _("Zoom Out")
+                _("Zoom out")
             );
 
             zoom_default_button = new Gtk.Button.with_label ("100%");
@@ -276,7 +276,7 @@ namespace PantheonTerminal {
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
             zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
                 application.get_accels_for_action (zoom_in_button.action_name),
-                _("Zoom In")
+                _("Zoom in")
             );
 
             var font_size_grid = new Gtk.Grid ();
