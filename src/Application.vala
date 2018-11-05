@@ -25,7 +25,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
 
-    /* option_help will be true if help flag was given. */
+    // option_help will be true if help flag was given.
     private static bool option_help = false;
 
     public int minimum_width;
