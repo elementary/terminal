@@ -36,12 +36,18 @@ namespace PantheonTerminal.Widgets {
             search_entry.placeholder_text = _("Find");
 
             var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            previous_button.tooltip_text = _("Previous result");
             previous_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS);
+            previous_button.tooltip_markup = Granite.markup_accel_tooltip (
+                {"<Control>Up", "<Control><Shift>g"},
+                _("Previous result")
+            );
 
             var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            next_button.tooltip_text = _("Next result");
             next_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_NEXT);
+            next_button.tooltip_markup = Granite.markup_accel_tooltip (
+                {"<Control>Down", "<Control>g"},
+                _("Next result")
+            );
 
             cycle_button = new Gtk.ToggleButton ();
             cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
