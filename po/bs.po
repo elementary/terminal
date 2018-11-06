@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 11:18-0700\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
 "PO-Revision-Date: 2018-11-03 22:01+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/terminal/"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
@@ -33,53 +33,60 @@ msgstr "Pokreni program iz terminala"
 msgid "Set shell working directory"
 msgstr "Podesi radnu direktoriju za shell"
 
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Zalijepi"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Pretraži…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Prikaži u pregledniku datoteka"
 
-#: src/PantheonTerminalWindow.vala:262
-msgid "Zoom Out"
+#: src/PantheonTerminalWindow.vala:265
+#, fuzzy
+msgid "Zoom out"
 msgstr "Umanji"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Zadani nivo uvećanja"
 
-#: src/PantheonTerminalWindow.vala:270
-msgid "Zoom In"
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom in"
 msgstr "Uvećaj"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr "Visoki kontrast"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr "Solarizirano svijetlo"
 
-#: src/PantheonTerminalWindow.vala:299
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr "Solarizirano tamno"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Stil"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -145,15 +152,15 @@ msgstr "Ipak zalijepi"
 msgid "Find"
 msgstr "Pronađi"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Prethodni rezultat"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Sljedeći rezultat"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Ciklična pretraga"
 
