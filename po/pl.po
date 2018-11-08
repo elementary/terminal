@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-09-20 00:05+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"PO-Revision-Date: 2018-11-08 07:24+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
 "Language: pl\n"
@@ -55,18 +55,16 @@ msgid "Show in File Browser"
 msgstr "Wyświetl w przeglądarce plików"
 
 #: src/PantheonTerminalWindow.vala:265
-#, fuzzy
 msgid "Zoom out"
-msgstr "Oddal"
+msgstr "Oddalenie"
 
 #: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Domyślny poziom powiększenia"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
-msgstr "Przybliż"
+msgstr "Przybliżenie"
 
 #: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
@@ -86,7 +84,7 @@ msgstr "Styl"
 
 #: src/PantheonTerminalWindow.vala:1015
 msgid "Hide find bar"
-msgstr ""
+msgstr "Ukryj pasek wyszukiwania"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
