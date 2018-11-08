@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-07-22 00:04+0000\n"
+"PO-Revision-Date: 2018-11-12 01:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -54,16 +54,14 @@ msgid "Show in File Browser"
 msgstr "Vis i filutforsker"
 
 #: src/PantheonTerminalWindow.vala:265
-#, fuzzy
 msgid "Zoom out"
-msgstr "Forminske"
+msgstr "Forminsk"
 
 #: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Forvalgt forstørrelsesnivå"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
 msgstr "Forstørr"
 
@@ -84,8 +82,9 @@ msgid "Style"
 msgstr "Stil"
 
 #: src/PantheonTerminalWindow.vala:1015
+#, fuzzy
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skjul søkelinje"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
