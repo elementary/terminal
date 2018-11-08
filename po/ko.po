@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-06-03 06:20+0000\n"
+"PO-Revision-Date: 2018-11-08 07:21+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
 "terminal/ko/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -54,7 +54,6 @@ msgid "Show in File Browser"
 msgstr "파일 브라우저에서 보기"
 
 #: src/PantheonTerminalWindow.vala:265
-#, fuzzy
 msgid "Zoom out"
 msgstr "축소"
 
@@ -63,7 +62,6 @@ msgid "Default zoom level"
 msgstr "기본 줌 레벨"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
 msgstr "확대"
 
@@ -85,7 +83,7 @@ msgstr "스타일"
 
 #: src/PantheonTerminalWindow.vala:1015
 msgid "Hide find bar"
-msgstr ""
+msgstr "검색창 숨기기"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
