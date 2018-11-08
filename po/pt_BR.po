@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-08-29 16:48+0000\n"
+"PO-Revision-Date: 2018-11-08 03:16+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -54,18 +54,16 @@ msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
 #: src/PantheonTerminalWindow.vala:265
-#, fuzzy
 msgid "Zoom out"
-msgstr "Reduzir Zoom"
+msgstr "Reduzir o Zoom"
 
 #: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
-msgstr "Ampliar Zoom"
+msgstr "Ampliar o Zoom"
 
 #: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
@@ -85,7 +83,7 @@ msgstr "Estilo"
 
 #: src/PantheonTerminalWindow.vala:1015
 msgid "Hide find bar"
-msgstr ""
+msgstr "Ocultar barra de localização"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
