@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-03-23 23:58+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2018-11-09 16:51+0000\n"
+"Last-Translator: Alexandre LPC <lagalaxiedesgamers@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/terminal/"
 "terminal/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -63,7 +63,6 @@ msgid "Default zoom level"
 msgstr "Zoom par défaut"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
 msgstr "Zoom avant"
 
@@ -85,7 +84,7 @@ msgstr "Style"
 
 #: src/PantheonTerminalWindow.vala:1015
 msgid "Hide find bar"
-msgstr ""
+msgstr "Masquer la barre de recherche"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
