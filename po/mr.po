@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-10-09 07:28+0000\n"
+"PO-Revision-Date: 2018-11-10 18:47+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -47,7 +47,6 @@ msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
 #: src/PantheonTerminalWindow.vala:265
-#, fuzzy
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
@@ -56,7 +55,6 @@ msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
 #: src/PantheonTerminalWindow.vala:279
-#, fuzzy
 msgid "Zoom in"
 msgstr "झूम इन"
 
@@ -78,7 +76,7 @@ msgstr "शैली"
 
 #: src/PantheonTerminalWindow.vala:1015
 msgid "Hide find bar"
-msgstr ""
+msgstr "शोध बार लपवा"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
