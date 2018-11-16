@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -30,78 +30,59 @@ msgstr "Yi dwumadi no wɔ terminal no mu"
 msgid "Set shell working directory"
 msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Terminal no ho nsɛm"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Fa command line no yɛ"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Window Foforɔ"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Root tab fofor"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Bue Terminal No Wɔ Ha"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Fa"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Fa to ha"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Selecte ne nyinaa"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Hwehwɛ ..."
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:265
 #, fuzzy
-msgid "Zoom Out"
+msgid "Zoom out"
 msgstr "Twe kɔ akyire"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
-msgid "Zoom In"
+msgid "Zoom in"
 msgstr "Twe bɛn"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
@@ -169,17 +150,36 @@ msgstr "Fa to ha saa ara."
 msgid "Find"
 msgstr "Hwehwɛ"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Nea wohuu no kane no"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Nea edi hɔ"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Terminal no ho nsɛm"
+
+#~ msgid "Use the command line"
+#~ msgstr "Fa command line no yɛ"
+
+#~ msgid "New Window"
+#~ msgstr "Window Foforɔ"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Root tab fofor"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Bue Terminal No Wɔ Ha"
 
 #~ msgid "Close"
 #~ msgstr "Yi"

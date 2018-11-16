@@ -7,16 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2015-12-05 14:40+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Galician <gl@li.org>\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"PO-Revision-Date: 2018-10-22 15:24+0000\n"
+"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
+"Language-Team: Galician <https://weblate.elementary.io/projects/terminal/"
+"terminal/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:106
 msgid "Task finished"
@@ -30,78 +32,59 @@ msgstr "Executar un programa no terminal"
 msgid "Set shell working directory"
 msgstr "Configurar directorio de traballo do terminal"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Sobre o Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Usar a liña de ordes"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nova xanela"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Abrir un terminal aquí"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
-msgstr ""
+msgstr "Atopar…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Mostrar no Navegador de Ficheiros"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:265
 #, fuzzy
-msgid "Zoom Out"
+msgid "Zoom out"
 msgstr "Reducir"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
-msgstr ""
+msgstr "Zoom por defecto"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
-msgid "Zoom In"
+msgid "Zoom in"
 msgstr "Ampliar"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
-msgstr ""
+msgstr "Alto Contraste"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
+msgstr "Estilo"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
@@ -142,43 +125,59 @@ msgstr "Carcelar"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Este comando está a pedir acceso de Administrador á tua computadora"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Copiar comandos no Terminal pode ser perigoso."
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Asegúrese de entender o que fai cada parte de este comando."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Do not show this dialog again"
-msgstr ""
+msgstr "Non mostre este aviso de novo"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr ""
+msgstr "Non pegue"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Pegue de todos modos"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
+msgstr "Atopar"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr ""
-
-#: src/Widgets/SearchToolbar.vala:43
-msgid "Next result"
-msgstr ""
+msgstr "Resultado anterior"
 
 #: src/Widgets/SearchToolbar.vala:49
+msgid "Next result"
+msgstr "Resultado seguinte"
+
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
-msgstr ""
+msgstr "Búsqueda cíclica"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Sobre o Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Usar a liña de ordes"
+
+#~ msgid "New Window"
+#~ msgstr "Nova xanela"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Abrir un terminal aquí"
 
 #~ msgid "Close"
 #~ msgstr "Pechar"

@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-06-13 00:08+0000\n"
-"Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"PO-Revision-Date: 2018-10-22 15:24+0000\n"
+"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
 "terminal/sv/>\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -30,79 +30,62 @@ msgstr "Kör ett program i terminalen"
 
 #: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "Använd som terminalens arbetsmapp"
+msgstr "Ställ in terminalens arbetsmapp"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Om Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Använd kommandoraden"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nytt fönster"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Ny rotflik"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Öppna terminal här"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Visa i Filer"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom Out"
+#: src/PantheonTerminalWindow.vala:265
+#, fuzzy
+msgid "Zoom out"
 msgstr "Förminska"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Normalstorlek"
 
-#: src/PantheonTerminalWindow.vala:266
-msgid "Zoom In"
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom in"
 msgstr "Förstora"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
-msgstr "Hög Kontrast"
+msgstr "Hög kontrast"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
-msgstr "Solarized Ljus"
+msgstr "Solariserat ljus"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
-msgstr "Solarized Mörk"
+msgstr "Solariserat mörker"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Tema"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -122,7 +105,7 @@ msgstr "Stäng flik"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:45
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Är du säker på att du vill avsluta Terminalen?"
+msgstr "Är du säker på att du vill stänga Terminalen?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:47
 msgid "There is an active process on this terminal."
@@ -168,17 +151,36 @@ msgstr "Klistra in ändå"
 msgid "Find"
 msgstr "Sök"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Föregående resultat"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Nästa resultat"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Starta om sökning från toppen"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Om Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Använd kommandoraden"
+
+#~ msgid "New Window"
+#~ msgstr "Nytt fönster"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Ny rotflik"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Öppna terminal här"
 
 #~ msgid "Close"
 #~ msgstr "Stäng"

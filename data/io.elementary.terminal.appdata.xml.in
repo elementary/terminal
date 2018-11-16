@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015-2018 elementary, LLC <contact@elementary.io> -->
 <component type="desktop-application">
-  <id>io.elementary.terminal.desktop</id>
+  <id>io.elementary.terminal</id>
   <metadata_license>CC0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
@@ -35,6 +35,24 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.2" date="2018-10-30" urgency="medium">
+      <description>
+        <ul>
+          <li>Fix zsh notifications</li>
+          <li>Conditional ctrl+g shortcut to deconflict with emacs</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.3.1" date="2018-10-16" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.3" date="2018-09-06" urgency="medium">
       <description>
         <ul>

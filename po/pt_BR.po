@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-08-29 16:48+0000\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"PO-Revision-Date: 2018-11-08 03:16+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -32,77 +32,58 @@ msgstr "Executar um programa no terminal"
 msgid "Set shell working directory"
 msgstr "Definir diretório de trabalho do shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Sobre o Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Usar a linha de comando"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nova janela"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nova aba root"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Abrir Terminal aqui"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Colar"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom Out"
-msgstr "Reduzir Zoom"
+#: src/PantheonTerminalWindow.vala:265
+msgid "Zoom out"
+msgstr "Reduzir o Zoom"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
-#: src/PantheonTerminalWindow.vala:266
-msgid "Zoom In"
-msgstr "Ampliar Zoom"
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom in"
+msgstr "Ampliar o Zoom"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr "Luz Solarizada"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr "Escuro Solarizado"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Estilo"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr "Ocultar barra de localização"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -168,17 +149,36 @@ msgstr "Colar mesmo assim"
 msgid "Find"
 msgstr "Buscar"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Resultado anterior"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Próximo resultado"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Busca cíclica"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "About Terminal"
+#~ msgstr "Sobre o Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Usar a linha de comando"
+
+#~ msgid "New Window"
+#~ msgstr "Nova janela"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nova aba root"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Abrir Terminal aqui"
 
 #~ msgid "Close"
 #~ msgstr "Fechar"

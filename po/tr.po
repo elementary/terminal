@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-05-26 00:02+0000\n"
-"Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"PO-Revision-Date: 2018-11-09 15:20+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -32,77 +32,58 @@ msgstr "Uçbirimde bir program çalıştır"
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Terminal Hakkında"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Komut satırını kullan"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Uçbirim"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Yeni Pencere"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Yeni Kök Sekmesi"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Terminali Burada Aç"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom Out"
+#: src/PantheonTerminalWindow.vala:265
+msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/PantheonTerminalWindow.vala:266
-msgid "Zoom In"
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr "Yüksek Kontrast"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr "Solarize Işık"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr "Solarize Karanlık"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Stil"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr "Bul çubuğunu gizle"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -168,17 +149,36 @@ msgstr "Yine de Yapıştır"
 msgid "Find"
 msgstr "Bul"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Önceki sonuç"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Sonraki sonuç"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Döngüsel arama"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Uçbirim"
+
+#~ msgid "About Terminal"
+#~ msgstr "Terminal Hakkında"
+
+#~ msgid "Use the command line"
+#~ msgstr "Komut satırını kullan"
+
+#~ msgid "New Window"
+#~ msgstr "Yeni Pencere"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Yeni Kök Sekmesi"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Terminali Burada Aç"
 
 #~ msgid "Close"
 #~ msgstr "Kapat"

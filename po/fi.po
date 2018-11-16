@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
-"PO-Revision-Date: 2018-05-01 17:06+0000\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"PO-Revision-Date: 2018-11-15 18:27+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:106
@@ -32,77 +32,58 @@ msgstr "Suorita ohjelma päätteessä"
 msgid "Set shell working directory"
 msgstr "Aseta komentotulkin työskentelyhakemisto"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Tietoja - Pääte"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Käytä komentoriviä"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Pääte"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Uusi ikkuna"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Uusi pääkäyttäjän välilehti"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Avaa pääteikkuna tähän"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Näytä tiedostoselaimessa"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom Out"
+#: src/PantheonTerminalWindow.vala:265
+msgid "Zoom out"
 msgstr "Loitonna"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Oletusmittakaava"
 
-#: src/PantheonTerminalWindow.vala:266
-msgid "Zoom In"
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom in"
 msgstr "Lähennä"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr "Suuri kontrasti"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr "Solarized, vaalea"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr "Solarized, tumma"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Tyyli"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr "Piilota hakupalkki"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -168,17 +149,36 @@ msgstr "Liitä silti"
 msgid "Find"
 msgstr "Etsi"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Edellinen tulos"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Seuraava tulos"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Kierteinen haku"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Pääte"
+
+#~ msgid "About Terminal"
+#~ msgstr "Tietoja - Pääte"
+
+#~ msgid "Use the command line"
+#~ msgstr "Käytä komentoriviä"
+
+#~ msgid "New Window"
+#~ msgstr "Uusi ikkuna"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Uusi pääkäyttäjän välilehti"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Avaa pääteikkuna tähän"
 
 #~ msgid "Close"
 #~ msgstr "Sulje"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 09:59-0700\n"
+"POT-Creation-Date: 2018-11-05 13:14-0800\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -32,77 +32,60 @@ msgstr "Spustit program v terminálu"
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "O aplikaci Terminál"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Použijte příkazovou řádku"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminál"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nové okno"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nová karta s právy root"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Otevřít terminál zde"
-
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:182
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:185
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:188
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:254
+#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
+#: src/PantheonTerminalWindow.vala:1022
 msgid "Find…"
 msgstr "Hledat…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:194
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom Out"
+#: src/PantheonTerminalWindow.vala:265
+#, fuzzy
+msgid "Zoom out"
 msgstr "Oddálit"
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:272
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/PantheonTerminalWindow.vala:266
-msgid "Zoom In"
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: src/PantheonTerminalWindow.vala:281
+#: src/PantheonTerminalWindow.vala:292
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:300
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/PantheonTerminalWindow.vala:301
+#: src/PantheonTerminalWindow.vala:308
 msgid "Solarized Dark"
 msgstr "Solarizovaný tmavý"
 
-#: src/PantheonTerminalWindow.vala:324
+#: src/PantheonTerminalWindow.vala:331
 msgid "Style"
 msgstr "Styl"
+
+#: src/PantheonTerminalWindow.vala:1015
+msgid "Hide find bar"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -168,17 +151,36 @@ msgstr "Přesto vložit"
 msgid "Find"
 msgstr "Hledat"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Předchozí výsledek"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Další výsledek"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Opakované hledání"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminál"
+
+#~ msgid "About Terminal"
+#~ msgstr "O aplikaci Terminál"
+
+#~ msgid "Use the command line"
+#~ msgstr "Použijte příkazovou řádku"
+
+#~ msgid "New Window"
+#~ msgstr "Nové okno"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nová karta s právy root"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Otevřít terminál zde"
 
 #~ msgid "Close"
 #~ msgstr "Zavřít"

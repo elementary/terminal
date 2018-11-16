@@ -149,10 +149,6 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
-            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
-            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
-            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
@@ -269,20 +265,33 @@ namespace PantheonTerminal {
 
             search_button = new Gtk.ToggleButton ();
             search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            search_button.tooltip_text = _("Find…");
             search_button.valign = Gtk.Align.CENTER;
+            search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                {"<Ctrl><Shift>f"},
+                _("Find…")
+            );
+
 
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
-            zoom_out_button.tooltip_text = _("Zoom Out");
             zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
+            zoom_out_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_out_button.action_name),
+                _("Zoom out")
+            );
 
             zoom_default_button = new Gtk.Button.with_label ("100%");
-            zoom_default_button.tooltip_text = _("Default zoom level");
             zoom_default_button.action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT;
+            zoom_default_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_default_button.action_name),
+                _("Default zoom level")
+            );
 
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
-            zoom_in_button.tooltip_text = _("Zoom In");
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
+            zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_in_button.action_name),
+                _("Zoom in")
+            );
 
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
@@ -1044,6 +1053,27 @@ namespace PantheonTerminal {
 
         void action_search () {
             search_button.active = !search_button.active;
+            if (search_button.active) {
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"Escape", "<Ctrl><Shift>f"},
+                    _("Hide find bar")
+                );
+            } else {
+                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"<Ctrl><Shift>f"},
+                    _("Find…")
+                );
+            }
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
         }
 
         void action_search_next () {
