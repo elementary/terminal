@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
 "PO-Revision-Date: 2018-11-08 14:52+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
@@ -32,56 +32,60 @@ msgstr "Executa un programa al terminal"
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "Copia"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "Enganxa"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "Cerca…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "Mostra-ho al navegador de fitxers"
 
-#: src/PantheonTerminalWindow.vala:265
+#: src/PantheonTerminalWindow.vala:276
 msgid "Zoom out"
 msgstr "Allunya"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/PantheonTerminalWindow.vala:290
 msgid "Zoom in"
 msgstr "Apropa"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "Contrast alt"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Llum de dia fosca"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "Estil"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
 
@@ -134,8 +138,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "No tornis a mostrar aquest missatge"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -164,6 +168,9 @@ msgstr "Cerca cíclica"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "No tornis a mostrar aquest missatge"
 
 #~ msgid "About Terminal"
 #~ msgstr "Quant al Terminal"

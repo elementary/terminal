@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
 "PO-Revision-Date: 2018-11-09 15:20+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/terminal/"
@@ -32,56 +32,60 @@ msgstr "Uçbirimde bir program çalıştır"
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/PantheonTerminalWindow.vala:265
+#: src/PantheonTerminalWindow.vala:276
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/PantheonTerminalWindow.vala:290
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "Yüksek Kontrast"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Solarize Işık"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Solarize Karanlık"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "Stil"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -134,8 +138,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin olun."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Bu diyaloğu tekrar gösterme"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -164,6 +168,9 @@ msgstr "Döngüsel arama"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Uçbirim"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Bu diyaloğu tekrar gösterme"
 
 #~ msgid "About Terminal"
 #~ msgstr "Terminal Hakkında"

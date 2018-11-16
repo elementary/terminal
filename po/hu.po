@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
 "PO-Revision-Date: 2018-06-19 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
@@ -32,58 +32,62 @@ msgstr "Program futtatása terminálban"
 msgid "Set shell working directory"
 msgstr "Shell munkakönyvtár beállítása"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "Megjelenítés a Fájlkezelőben"
 
-#: src/PantheonTerminalWindow.vala:265
+#: src/PantheonTerminalWindow.vala:276
 #, fuzzy
 msgid "Zoom out"
 msgstr "Kicsinyítés"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/PantheonTerminalWindow.vala:290
 #, fuzzy
 msgid "Zoom in"
 msgstr "Nagyítás"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Világos solarizált"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Sötét solarizált"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "Stílus"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
 msgstr ""
 
@@ -136,8 +140,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Ne jelenítse meg újra ezt a párbeszédablakot"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -166,6 +170,9 @@ msgstr "Ciklikus keresés"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminál"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Ne jelenítse meg újra ezt a párbeszédablakot"
 
 #~ msgid "About Terminal"
 #~ msgstr "A Terminál névjegye"
