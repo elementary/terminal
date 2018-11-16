@@ -63,6 +63,7 @@ namespace PantheonTerminal {
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
         public const string ACTION_COPY = "action_copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SEARCH_NEXT = "action_search_next";
@@ -83,6 +84,7 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
             { ACTION_COPY, action_copy },
+            { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search },
             { ACTION_SEARCH_NEXT, action_search_next },
@@ -142,6 +144,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
+            action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
@@ -182,6 +185,9 @@ namespace PantheonTerminal {
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
 
+            var copy_last_output_menuitem = new Gtk.MenuItem.with_label (_("Copy Last Output"));
+            copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
+
             var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
 
@@ -196,11 +202,16 @@ namespace PantheonTerminal {
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
+            menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
+
+            menu.popped_up.connect (() => {
+                update_copy_output_sensitive ();
+            });
 
             setup_ui ();
             show_all ();
@@ -345,6 +356,7 @@ namespace PantheonTerminal {
             search_revealer.add (search_toolbar);
 
             get_simple_action (ACTION_COPY).set_enabled (false);
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -403,6 +415,10 @@ namespace PantheonTerminal {
             });
 
             key_press_event.connect ((e) => {
+                if (e.is_modifier == 1) {
+                    return false;
+                }
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
@@ -418,8 +434,13 @@ namespace PantheonTerminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
+                        } else if (!current_terminal.has_foreground_process ()) {
+                            /* Ignore returns being sent to a foreground process */
+                            current_terminal.remember_command_end_position ();
+                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
                         break;
+
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
@@ -444,6 +465,18 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
+
+                    case Gdk.Key.Up:
+                    case Gdk.Key.Down:
+                        current_terminal.remember_command_start_position ();
+                        break;
+
+                    default:
+                        if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
+                            current_terminal.remember_command_start_position ();
+                        }
+
+                        break;
                 }
 
                 /* Use hardware keycodes so the key used
@@ -455,9 +488,18 @@ namespace PantheonTerminal {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
                             return true;
+                        } else { /* Ctrl-c: Command cancelled */
+                            current_terminal.last_key_was_return = true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
                         return handle_paste_event ();
+                    }
+                }
+
+                if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                    uint keycode = e.hardware_keycode;
+                    if (match_keycode (Gdk.Key.c, keycode)) { /* Alt-c */
+                        update_copy_output_sensitive ();
                     }
                 }
 
@@ -633,6 +675,10 @@ namespace PantheonTerminal {
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
 
+        private void update_copy_output_sensitive () {
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
+        }
+
         uint timer_window_state_change = 0;
 
         private bool on_window_state_change (Gdk.EventConfigure event) {
@@ -682,6 +728,7 @@ namespace PantheonTerminal {
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
+                update_copy_output_sensitive ();
                 return false;
             });
 
@@ -918,6 +965,9 @@ namespace PantheonTerminal {
                     d.destroy ();
                 }
             }
+
+            current_terminal.remember_command_start_position ();
+
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
             } else {
@@ -935,6 +985,11 @@ namespace PantheonTerminal {
                                     current_terminal.uri.length);
             else
                 current_terminal.copy_clipboard ();
+        }
+
+        void action_copy_last_output () {
+            string output = current_terminal.get_last_output ();
+            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
         }
 
         void action_paste () {
