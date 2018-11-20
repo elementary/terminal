@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
 "PO-Revision-Date: 2018-08-13 00:04+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -32,58 +32,62 @@ msgstr "在终端运行程序"
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "复制"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "全选"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "查找…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "在 文件管理器 中打开"
 
-#: src/PantheonTerminalWindow.vala:265
+#: src/PantheonTerminalWindow.vala:276
 #, fuzzy
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "默认缩放等级"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/PantheonTerminalWindow.vala:290
 #, fuzzy
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Solarized 暗色"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "风格"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
 msgstr ""
 
@@ -136,8 +140,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "请确定您理解指令各部分的作用。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "不再显示此对话框"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -166,6 +170,9 @@ msgstr "循环搜索"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "终端"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "不再显示此对话框"
 
 #~ msgid "About Terminal"
 #~ msgstr "关于终端"

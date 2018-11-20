@@ -63,7 +63,7 @@ namespace PantheonTerminal {
         public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
         public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
         public const string ACTION_COPY = "action_copy";
-        public const string ACTION_COPY_LAST_OUTPUT = "ACTION_COPY_LAST_OUTPUT";
+        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
         public const string ACTION_PASTE = "action_paste";
         public const string ACTION_SEARCH = "action_search";
         public const string ACTION_SEARCH_NEXT = "action_search_next";
@@ -419,6 +419,10 @@ namespace PantheonTerminal {
             });
 
             key_press_event.connect ((e) => {
+                if (e.is_modifier == 1) {
+                    return false;
+                }
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
@@ -437,10 +441,12 @@ namespace PantheonTerminal {
                         } else if (!current_terminal.has_foreground_process ()) {
                             /* Ignore returns being sent to a foreground process */
                             current_terminal.remember_position ();
-                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
+                            current_terminal.remember_command_end_position ();
+                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
                         break;
+
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
@@ -465,6 +471,18 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
+
+                    case Gdk.Key.Up:
+                    case Gdk.Key.Down:
+                        current_terminal.remember_command_start_position ();
+                        break;
+
+                    default:
+                        if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
+                            current_terminal.remember_command_start_position ();
+                        }
+
+                        break;
                 }
 
                 /* Use hardware keycodes so the key used
@@ -476,6 +494,8 @@ namespace PantheonTerminal {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
                             return true;
+                        } else { /* Ctrl-c: Command cancelled */
+                            current_terminal.last_key_was_return = true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
                         return handle_paste_event ();
@@ -484,12 +504,13 @@ namespace PantheonTerminal {
 
                 if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
                     uint keycode = e.hardware_keycode;
-                    if (match_keycode (Gdk.Key.c, keycode)) {
-                        update_copy_output_sensitive ();
-                    }
 
                     if (e.keyval == Gdk.Key.Up) {
                         return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
+                    }
+
+                    if (match_keycode (Gdk.Key.c, keycode)) { /* Alt-c */
+                        update_copy_output_sensitive ();
                     }
                 }
 
@@ -955,6 +976,9 @@ namespace PantheonTerminal {
                     d.destroy ();
                 }
             }
+
+            current_terminal.remember_command_start_position ();
+
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
             } else {

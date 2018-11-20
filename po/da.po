@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
 "PO-Revision-Date: 2018-03-23 23:00+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/terminal/"
@@ -32,58 +32,62 @@ msgstr "Kør et program i terminalen"
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "Find…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "Vis i Filbrowser"
 
-#: src/PantheonTerminalWindow.vala:265
+#: src/PantheonTerminalWindow.vala:276
 #, fuzzy
 msgid "Zoom out"
 msgstr "Zoom Ud"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/PantheonTerminalWindow.vala:290
 #, fuzzy
 msgid "Zoom in"
 msgstr "Zoom Ind"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "Høj Kontrast"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "Udseende"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
 msgstr ""
 
@@ -136,8 +140,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Vis ikke denne dialog igen"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -166,6 +170,9 @@ msgstr "Cyklisk søgning"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Vis ikke denne dialog igen"
 
 #~ msgid "About Terminal"
 #~ msgstr "Om Terminal"
