@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-09-20 00:05+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"PO-Revision-Date: 2018-11-08 07:24+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
 "Language: pl\n"
@@ -33,60 +33,62 @@ msgstr "Uruchom program w terminalu"
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "Wklej"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "Wyświetl w przeglądarce plików"
 
-#: src/PantheonTerminalWindow.vala:265
-#, fuzzy
+#: src/PantheonTerminalWindow.vala:276
 msgid "Zoom out"
-msgstr "Oddal"
+msgstr "Oddalenie"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "Domyślny poziom powiększenia"
 
-#: src/PantheonTerminalWindow.vala:279
-#, fuzzy
+#: src/PantheonTerminalWindow.vala:290
 msgid "Zoom in"
-msgstr "Przybliż"
+msgstr "Przybliżenie"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "Solarna jasność"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "Solarna ciemność"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "Styl"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
-msgstr ""
+msgstr "Ukryj pasek wyszukiwania"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -137,8 +139,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Upewnij się, że rozumiesz co robi dana komenda."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Nie pokazuj ponownie tego okna"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -167,6 +169,9 @@ msgstr "Wyszukiwanie cykliczne"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Nie pokazuj ponownie tego okna"
 
 #~ msgid "About Terminal"
 #~ msgstr "O programie Terminal"

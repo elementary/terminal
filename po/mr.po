@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 13:14-0800\n"
-"PO-Revision-Date: 2018-10-09 07:28+0000\n"
+"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"PO-Revision-Date: 2018-11-10 18:47+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -25,60 +25,62 @@ msgstr "टर्मिनल मध्ये चालवा"
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
-#: src/PantheonTerminalWindow.vala:182
+#: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
 msgstr "प्रतिकृती"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
 msgstr "चिकटवा(पेस्ट)"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:194
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/PantheonTerminalWindow.vala:191 src/PantheonTerminalWindow.vala:257
-#: src/PantheonTerminalWindow.vala:1022
+#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
+#: src/PantheonTerminalWindow.vala:1077
 msgid "Find…"
 msgstr "शोधा…"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/PantheonTerminalWindow.vala:265
-#, fuzzy
+#: src/PantheonTerminalWindow.vala:276
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/PantheonTerminalWindow.vala:272
+#: src/PantheonTerminalWindow.vala:283
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/PantheonTerminalWindow.vala:279
-#, fuzzy
+#: src/PantheonTerminalWindow.vala:290
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/PantheonTerminalWindow.vala:292
+#: src/PantheonTerminalWindow.vala:303
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/PantheonTerminalWindow.vala:300
+#: src/PantheonTerminalWindow.vala:311
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/PantheonTerminalWindow.vala:308
+#: src/PantheonTerminalWindow.vala:319
 msgid "Solarized Dark"
 msgstr "सौरकृत गडद"
 
-#: src/PantheonTerminalWindow.vala:331
+#: src/PantheonTerminalWindow.vala:342
 msgid "Style"
 msgstr "शैली"
 
-#: src/PantheonTerminalWindow.vala:1015
+#: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
-msgstr ""
+msgstr "शोध बार लपवा"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -129,8 +131,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "कमांडचा प्रत्येक भाग काय करतो हे आपणांस समजले असल्याची खात्री करून घ्या."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "पुन्हा हा संवाद दाखवू नये"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -159,6 +161,9 @@ msgstr "चक्रीय शोध"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "पुन्हा हा संवाद दाखवू नये"
 
 #~ msgid "About Terminal"
 #~ msgstr "टर्मिनल बद्दल"
