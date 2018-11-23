@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-08 14:52+0000\n"
+"PO-Revision-Date: 2018-11-23 10:03+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -38,7 +38,7 @@ msgstr "Copia"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Copia l'última sortida"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -139,7 +139,7 @@ msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Mostra els avisos de protecció en enganxar"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
