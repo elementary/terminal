@@ -87,7 +87,7 @@ namespace PantheonTerminal {
             { ACTION_COPY, action_copy },
             { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
-            { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
@@ -224,7 +224,6 @@ namespace PantheonTerminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            search_button.toggled.connect (on_toggle_search);
             configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
 
@@ -264,6 +263,7 @@ namespace PantheonTerminal {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             search_button = new Gtk.ToggleButton ();
+            search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
             search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.valign = Gtk.Align.CENTER;
             search_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -573,18 +573,6 @@ namespace PantheonTerminal {
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
-            }
-        }
-
-        private void on_toggle_search () {
-            var is_search = search_button.get_active ();
-            search_revealer.set_reveal_child (is_search);
-
-            if (is_search) {
-                search_toolbar.grab_focus ();
-            } else {
-                search_toolbar.clear ();
-                current_terminal.grab_focus ();
             }
         }
 
@@ -1076,7 +1064,12 @@ namespace PantheonTerminal {
         }
 
         void action_search () {
-            search_button.active = !search_button.active;
+            var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
+            var search_state = search_action.get_state ().get_boolean ();
+
+            search_action.set_state (!search_state);
+            search_revealer.set_reveal_child (search_button.active);
+
             if (search_button.active) {
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
@@ -1086,6 +1079,7 @@ namespace PantheonTerminal {
                     {"Escape", "<Ctrl><Shift>f"},
                     _("Hide find bar")
                 );
+                search_toolbar.grab_focus ();
             } else {
                 action_accelerators.remove_all(ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
@@ -1093,6 +1087,8 @@ namespace PantheonTerminal {
                     {"<Ctrl><Shift>f"},
                     _("Find…")
                 );
+                search_toolbar.clear ();
+                current_terminal.grab_focus ();
             }
             app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
                                        action_accelerators[ACTION_SEARCH_NEXT].to_array ());
