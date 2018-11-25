@@ -1090,10 +1090,25 @@ namespace PantheonTerminal {
                 search_toolbar.clear ();
                 current_terminal.grab_focus ();
             }
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
-                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
-                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
+
+            string [] next_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                next_accels = action_accelerators[ACTION_SEARCH_NEXT].to_array ();
+            }
+
+            string [] prev_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                prev_accels = action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ();
+            }
+
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                next_accels
+            );
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                prev_accels
+            );
         }
 
         void action_search_next () {
