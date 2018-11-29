@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-10 18:47+0000\n"
+"PO-Revision-Date: 2018-11-28 05:46+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -31,7 +31,7 @@ msgstr "प्रतिकृती"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr ""
+msgstr "अंतिम आउटपुट कॉपी करा"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -132,7 +132,7 @@ msgstr "कमांडचा प्रत्येक भाग काय क�
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "पेस्ट संरक्षण चेतावणी दर्शवा"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"

@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-05-06 00:10+0000\n"
-"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
+"PO-Revision-Date: 2018-11-26 21:08+0000\n"
+"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:106
@@ -26,11 +26,11 @@ msgstr "Tarea finalizada"
 
 #: src/Application.vala:185
 msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en el terminal"
+msgstr "Ejecutar un programa en la terminal"
 
 #: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "Configurar el directorio de trabajo del intérprete de comandos"
+msgstr "Establecer el directorio de trabajo de shell"
 
 #: src/PantheonTerminalWindow.vala:185
 msgid "Copy"
@@ -38,7 +38,7 @@ msgstr "Copiar"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Copiar última salida"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -58,7 +58,6 @@ msgid "Show in File Browser"
 msgstr "Mostrar en el explorador de archivos"
 
 #: src/PantheonTerminalWindow.vala:276
-#, fuzzy
 msgid "Zoom out"
 msgstr "Alejar"
 
@@ -67,7 +66,6 @@ msgid "Default zoom level"
 msgstr "Nivel de zum predeterminado"
 
 #: src/PantheonTerminalWindow.vala:290
-#, fuzzy
 msgid "Zoom in"
 msgstr "Acercar"
 
@@ -89,7 +87,7 @@ msgstr "Estilo"
 
 #: src/PantheonTerminalWindow.vala:1070
 msgid "Hide find bar"
-msgstr ""
+msgstr "Ocultar barra de búsqueda"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Are you sure you want to close this tab?"
@@ -141,7 +139,7 @@ msgstr "Asegúrese de comprender lo que hace cada parte de este comando."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Mostrar alertas de protección al pegar texto"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"

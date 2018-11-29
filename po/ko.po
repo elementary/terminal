@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-08 07:21+0000\n"
+"PO-Revision-Date: 2018-11-23 06:04+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
 "terminal/ko/>\n"
@@ -38,7 +38,7 @@ msgstr "복사"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr ""
+msgstr "마지막 출력물 복사하기"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -139,11 +139,11 @@ msgstr "이 명령어가 각각 어떤 일을 하게 되는지 분명히 이해�
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "붙여넣기 위험 알림 보이기"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr "붙여 넣지 마세요"
+msgstr "붙여넣지 마세요"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
