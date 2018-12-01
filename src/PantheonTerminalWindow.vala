@@ -590,6 +590,10 @@ namespace PantheonTerminal {
                     _("Hide find bar")
                 );
                 search_toolbar.grab_focus ();
+                app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
+                app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                                        action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
             } else {
                 action_accelerators.remove_all(ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
@@ -600,10 +604,6 @@ namespace PantheonTerminal {
                 search_toolbar.clear ();
                 current_terminal.grab_focus ();
             }
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
-                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
-                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
         }
 
         private void on_tab_added (Granite.Widgets.Tab tab) {
