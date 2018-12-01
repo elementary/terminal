@@ -46,6 +46,7 @@ namespace PantheonTerminal {
                 this.app = value.app;
                 this.menu = value.menu;
                 this.menu.show_all ();
+                this.menu.get_children ().nth_data (0).set_visible (false);
             }
         }
 
@@ -129,10 +130,17 @@ namespace PantheonTerminal {
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                    // Reset the state of buttons when we lunch the context menu again, and we have a uri
+                    if (uri != null) {
+                        window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (false);
+                        this.menu.get_children ().nth_data (0).set_visible (false);
+                    }
+
                     uri = get_link (event);
 
                     if (uri != null) {
                         window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (true);
+                        this.menu.get_children ().nth_data (0).set_visible (true);
                     }
 
                     menu.select_first (false);

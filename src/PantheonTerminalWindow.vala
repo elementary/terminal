@@ -71,6 +71,7 @@ namespace PantheonTerminal {
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
+        public const string ACTION_OPEN_IN_BROWSER = "action_open_in_browser";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -92,7 +93,8 @@ namespace PantheonTerminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_OPEN_IN_FILES, action_open_in_files },
-            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
+            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
         };
 
         public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
@@ -185,6 +187,9 @@ namespace PantheonTerminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
+            var open_in_browser_menuitem = new Gtk.MenuItem.with_label (_("Open in Browser"));
+            open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
+
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
 
@@ -204,6 +209,7 @@ namespace PantheonTerminal {
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
 
             menu = new Gtk.Menu ();
+            menu.append (open_in_browser_menuitem);
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
@@ -1023,6 +1029,20 @@ namespace PantheonTerminal {
 
             } catch (ConvertError e) {
                 warning (e.message);
+            }
+        }
+
+        void action_open_in_browser () {
+            if (current_terminal.uri != null) {
+                var uri = current_terminal.uri;
+
+                if (uri != null) {
+                    try {
+                        Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                    } catch (GLib.Error error) {
+                        warning ("Could Not Open link");
+                    }
+                }
             }
         }
 
