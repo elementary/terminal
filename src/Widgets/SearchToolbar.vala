@@ -83,7 +83,7 @@ namespace PantheonTerminal.Widgets {
 
                 var term = (Vte.Terminal)(window.current_terminal);
                 var search_term = search_entry.text;
-                previous_search ();  /* Ensure that we still at the same highlighted occurrence */
+                previous_search ();  /* Ensure that we still at the highlighted occurrence */
 
                 if (last_search_term_length > search_term.length) {
                     term.match_remove_all ();
