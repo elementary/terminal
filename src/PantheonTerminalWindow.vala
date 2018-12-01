@@ -581,11 +581,29 @@ namespace PantheonTerminal {
             search_revealer.set_reveal_child (is_search);
 
             if (is_search) {
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"Escape", "<Ctrl><Shift>f"},
+                    _("Hide find bar")
+                );
                 search_toolbar.grab_focus ();
             } else {
+                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"<Ctrl><Shift>f"},
+                    _("Find…")
+                );
                 search_toolbar.clear ();
                 current_terminal.grab_focus ();
             }
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
         }
 
         private void on_tab_added (Granite.Widgets.Tab tab) {
@@ -1077,27 +1095,6 @@ namespace PantheonTerminal {
 
         void action_search () {
             search_button.active = !search_button.active;
-            if (search_button.active) {
-                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
-                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
-                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
-                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
-                search_button.tooltip_markup = Granite.markup_accel_tooltip (
-                    {"Escape", "<Ctrl><Shift>f"},
-                    _("Hide find bar")
-                );
-            } else {
-                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
-                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
-                search_button.tooltip_markup = Granite.markup_accel_tooltip (
-                    {"<Ctrl><Shift>f"},
-                    _("Find…")
-                );
-            }
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
-                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
-                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
         }
 
         void action_search_next () {
