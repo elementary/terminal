@@ -71,7 +71,7 @@ namespace PantheonTerminal {
         public const string ACTION_SELECT_ALL = "action_select_all";
         public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
-        public const string ACTION_OPEN_IN_BROWSER = "action_open_in_browser";
+        public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -1033,15 +1033,13 @@ namespace PantheonTerminal {
         }
 
         void action_open_in_browser () {
-            if (current_terminal.uri != null) {
-                var uri = current_terminal.uri;
+            var uri = current_terminal.uri;
 
-                if (uri != null) {
-                    try {
-                        Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                    } catch (GLib.Error error) {
-                        warning ("Could Not Open link");
-                    }
+            if (uri != null) {
+                try {
+                    Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
+                } catch (GLib.Error error) {
+                    warning ("Could Not Open link");
                 }
             }
         }
