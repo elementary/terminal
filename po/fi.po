@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-15 18:27+0000\n"
+"PO-Revision-Date: 2018-12-02 20:13+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -38,7 +38,7 @@ msgstr "Kopioi"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopioi viimeisin tuloste"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -139,7 +139,7 @@ msgstr "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa.
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Näytä liittämisen suojausvaroitukset"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
