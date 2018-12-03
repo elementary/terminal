@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2018-10-22 15:24+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
@@ -32,100 +32,96 @@ msgstr "Kör ett program i terminalen"
 msgid "Set shell working directory"
 msgstr "Ställ in terminalens arbetsmapp"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:191
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
-#: src/PantheonTerminalWindow.vala:1077
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/PantheonTerminalWindow.vala:200
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Visa i Filer"
 
-#: src/PantheonTerminalWindow.vala:276
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
 msgid "Zoom out"
 msgstr "Förminska"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr "Normalstorlek"
 
-#: src/PantheonTerminalWindow.vala:290
+#: src/PantheonTerminalWindow.vala:293
 #, fuzzy
 msgid "Zoom in"
 msgstr "Förstora"
 
-#: src/PantheonTerminalWindow.vala:303
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr "Hög kontrast"
 
-#: src/PantheonTerminalWindow.vala:311
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solariserat ljus"
 
-#: src/PantheonTerminalWindow.vala:319
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solariserat mörker"
 
-#: src/PantheonTerminalWindow.vala:342
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr "Tema"
 
-#: src/PantheonTerminalWindow.vala:1070
+#: src/PantheonTerminalWindow.vala:1080
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Är du säker på att du vill stänga den här fliken?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Fliken innehåller en aktiv process."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Om du stänger den kommer processen avslutas."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Stäng flik"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Är du säker på att du vill stänga Terminalen?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Terminalen innehåller en aktiv process."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Om du stänger terminalen kommer processen att avslutas."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Avsluta terminalen"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -170,6 +166,9 @@ msgstr "Starta om sökning från toppen"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
 #~ msgid "Do not show this dialog again"
 #~ msgstr "Visa inte detta igen"

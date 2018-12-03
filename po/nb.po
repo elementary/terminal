@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2018-11-27 17:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
@@ -32,99 +32,95 @@ msgstr "Kjør program i kommandolinje"
 msgid "Set shell working directory"
 msgstr "Sett arbeidsmappe for skall"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:191
 msgid "Copy Last Output"
 msgstr "Kopier siste utdata"
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Lim inn"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Merk alt"
 
-#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
-#: src/PantheonTerminalWindow.vala:1077
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr "Finn…"
 
-#: src/PantheonTerminalWindow.vala:200
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Vis i filutforsker"
 
-#: src/PantheonTerminalWindow.vala:276
+#: src/PantheonTerminalWindow.vala:279
 msgid "Zoom out"
 msgstr "Forminsk"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr "Forvalgt forstørrelsesnivå"
 
-#: src/PantheonTerminalWindow.vala:290
+#: src/PantheonTerminalWindow.vala:293
 msgid "Zoom in"
 msgstr "Forstørr"
 
-#: src/PantheonTerminalWindow.vala:303
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr "Høy kontrast"
 
-#: src/PantheonTerminalWindow.vala:311
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarisert lys"
 
-#: src/PantheonTerminalWindow.vala:319
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarisert mørke"
 
-#: src/PantheonTerminalWindow.vala:342
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr "Stil"
 
-#: src/PantheonTerminalWindow.vala:1070
+#: src/PantheonTerminalWindow.vala:1080
 #, fuzzy
 msgid "Hide find bar"
 msgstr "Skjul søkelinje"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Er du sikker på at du vil lukke denne fanen?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Det kjøres en aktiv prosess i denne fanen."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Hvis du lukker den, vil prosessen avsluttes."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Lukk Fane"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Er du sikker på at du vil lukke Terminalen?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Det er en aktiv prosess i denne terminalen ."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Hvis du avslutter Terminalen vil prosessen avsluttes."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Avslutt terminalen"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -172,6 +168,9 @@ msgstr "Syklisk søk"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
 #~ msgid "Do not show this dialog again"
 #~ msgstr "Ikke vis dette dialogvinduet igjen"
