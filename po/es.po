@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-22 21:03+0000\n"
+"PO-Revision-Date: 2018-11-26 21:08+0000\n"
 "Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -26,11 +26,11 @@ msgstr "Tarea finalizada"
 
 #: src/Application.vala:185
 msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en el terminal"
+msgstr "Ejecutar un programa en la terminal"
 
 #: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "Configurar el directorio de trabajo del intérprete de comandos"
+msgstr "Establecer el directorio de trabajo de shell"
 
 #: src/PantheonTerminalWindow.vala:185
 msgid "Copy"

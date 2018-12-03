@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-23 00:34+0000\n"
+"PO-Revision-Date: 2018-11-27 01:01+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/terminal/"
 "terminal/it/>\n"
@@ -139,7 +139,7 @@ msgstr "Assicurati di aver capito ciò che ogni parte di questo comando fa."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
 msgid "Show paste protection warnings"
-msgstr "Mostra le avvertenze per proteggere le operazioni di \"incolla\""
+msgstr "Mostra gli avvisi di protezione quando incolli"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
