@@ -53,24 +53,24 @@ namespace PantheonTerminal {
         public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
-        public const string ACTION_CLOSE_TAB = "action_close_tab";
-        public const string ACTION_FULLSCREEN = "action_fullscreen";
-        public const string ACTION_NEW_TAB = "action_new_tab";
-        public const string ACTION_NEW_WINDOW = "action_new_window";
-        public const string ACTION_NEXT_TAB = "action_next_tab";
-        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
-        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
-        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
-        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
-        public const string ACTION_COPY = "action_copy";
-        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
-        public const string ACTION_PASTE = "action_paste";
-        public const string ACTION_SEARCH = "action_search";
-        public const string ACTION_SEARCH_NEXT = "action_search_next";
-        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
-        public const string ACTION_SELECT_ALL = "action_select_all";
-        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
-        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
+        public const string ACTION_CLOSE_TAB = "action-close-tab";
+        public const string ACTION_FULLSCREEN = "action-fullscreen";
+        public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_NEW_WINDOW = "action-new-window";
+        public const string ACTION_NEXT_TAB = "action-next-tab";
+        public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
+        public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
+        public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
+        public const string ACTION_COPY = "action-copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "action-copy-last-output";
+        public const string ACTION_PASTE = "action-paste";
+        public const string ACTION_SEARCH = "action-search";
+        public const string ACTION_SEARCH_NEXT = "action-search-next";
+        public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
+        public const string ACTION_SELECT_ALL = "action-select-all";
+        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -87,7 +87,7 @@ namespace PantheonTerminal {
             { ACTION_COPY, action_copy },
             { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
-            { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
@@ -224,7 +224,6 @@ namespace PantheonTerminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            search_button.toggled.connect (on_toggle_search);
             configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
 
@@ -264,6 +263,7 @@ namespace PantheonTerminal {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             search_button = new Gtk.ToggleButton ();
+            search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
             search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             search_button.valign = Gtk.Align.CENTER;
             search_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -573,18 +573,6 @@ namespace PantheonTerminal {
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
-            }
-        }
-
-        private void on_toggle_search () {
-            var is_search = search_button.get_active ();
-            search_revealer.set_reveal_child (is_search);
-
-            if (is_search) {
-                search_toolbar.grab_focus ();
-            } else {
-                search_toolbar.clear ();
-                current_terminal.grab_focus ();
             }
         }
 
@@ -1076,7 +1064,12 @@ namespace PantheonTerminal {
         }
 
         void action_search () {
-            search_button.active = !search_button.active;
+            var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
+            var search_state = search_action.get_state ().get_boolean ();
+
+            search_action.set_state (!search_state);
+            search_revealer.set_reveal_child (search_button.active);
+
             if (search_button.active) {
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
@@ -1086,6 +1079,7 @@ namespace PantheonTerminal {
                     {"Escape", "<Ctrl><Shift>f"},
                     _("Hide find bar")
                 );
+                search_toolbar.grab_focus ();
             } else {
                 action_accelerators.remove_all(ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
@@ -1093,11 +1087,28 @@ namespace PantheonTerminal {
                     {"<Ctrl><Shift>f"},
                     _("Find…")
                 );
+                search_toolbar.clear ();
+                current_terminal.grab_focus ();
             }
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_NEXT,
-                                       action_accelerators[ACTION_SEARCH_NEXT].to_array ());
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
-                                       action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ());
+
+            string [] next_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                next_accels = action_accelerators[ACTION_SEARCH_NEXT].to_array ();
+            }
+
+            string [] prev_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                prev_accels = action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ();
+            }
+
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                next_accels
+            );
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                prev_accels
+            );
         }
 
         void action_search_next () {

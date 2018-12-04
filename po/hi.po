@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2018-10-29 10:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/terminal/"
@@ -32,100 +32,96 @@ msgstr "टर्मिनल में एक प्रोग्राम र�
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "नकल"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:191
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
-#: src/PantheonTerminalWindow.vala:1077
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/PantheonTerminalWindow.vala:200
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/PantheonTerminalWindow.vala:276
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/PantheonTerminalWindow.vala:290
+#: src/PantheonTerminalWindow.vala:293
 #, fuzzy
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
-#: src/PantheonTerminalWindow.vala:303
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/PantheonTerminalWindow.vala:311
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/PantheonTerminalWindow.vala:319
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr "सौरकृत डार्क"
 
-#: src/PantheonTerminalWindow.vala:342
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr "शैली"
 
-#: src/PantheonTerminalWindow.vala:1070
+#: src/PantheonTerminalWindow.vala:1080
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "टैब बंद करें"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "क्या आप वाकई टर्मिनल बंद करना चाहते हैं?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "अगर आप टर्मिनल बंद करेंगे तो प्रक्रिया समाप्त हो जाएगी।"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "टर्मिनल बंद करें"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "रद्द करें"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -170,6 +166,9 @@ msgstr "चक्रीय खोज"
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#~ msgid "Cancel"
+#~ msgstr "रद्द करें"
 
 #~ msgid "Do not show this dialog again"
 #~ msgstr "इस संवाद को दुबारा से न दिखाएं"

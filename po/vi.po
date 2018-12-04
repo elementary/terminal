@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-16 13:26-0800\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -32,100 +32,96 @@ msgstr "Chạy một chương trình trong terminal"
 msgid "Set shell working directory"
 msgstr "Thiết lập thư mục làm việc shell"
 
-#: src/PantheonTerminalWindow.vala:185
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Chép"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/PantheonTerminalWindow.vala:191
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Dán"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Chọn toàn bộ"
 
-#: src/PantheonTerminalWindow.vala:197 src/PantheonTerminalWindow.vala:268
-#: src/PantheonTerminalWindow.vala:1077
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
-#: src/PantheonTerminalWindow.vala:200
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:276
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
 msgid "Zoom out"
 msgstr "Thu nhỏ"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:290
+#: src/PantheonTerminalWindow.vala:293
 #, fuzzy
 msgid "Zoom in"
 msgstr "Phóng to"
 
-#: src/PantheonTerminalWindow.vala:303
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:311
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:319
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:342
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:1070
+#: src/PantheonTerminalWindow.vala:1080
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Bạn có chắc bạn muốn đóng tab này không?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Có tiến trình đang hoạt động trong tab này."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Nếu bạn đóng nó, tiến trình sẽ kết thúc."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Đóng tab"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Bạn có chắc bạn muốn đóng Cửa sổ dòng lệnh không?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Có tiến trình đang hoạt động trong cửa sổ lệnh này."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Nếu bạn thoát khỏi Terminal, tiến trình sẽ kết thúc."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Đóng Cửa sổ dòng lệnh"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Thôi"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -170,6 +166,9 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Cửa sổ dòng lệnh"
+
+#~ msgid "Cancel"
+#~ msgstr "Thôi"
 
 #~ msgid "About Terminal"
 #~ msgstr "Thông tin về Terminal"
