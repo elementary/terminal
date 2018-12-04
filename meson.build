@@ -27,7 +27,7 @@ executable(
     'src/Application.vala',
     'src/DBus.vala',
     'src/Settings.vala',
-    'src/PantheonTerminalWindow.vala',
+    'src/MainWindow.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',

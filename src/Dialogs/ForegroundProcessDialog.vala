@@ -20,7 +20,7 @@
 public class PantheonTerminal.ForegroundProcessDialog : Granite.MessageDialog {
     public string button_label { get; construct; }
 
-    public ForegroundProcessDialog (PantheonTerminalWindow parent) {
+    public ForegroundProcessDialog (MainWindow parent) {
         Object (
             transient_for: parent,
             primary_text: _("Are you sure you want to close this tab?"),
@@ -32,7 +32,7 @@ public class PantheonTerminal.ForegroundProcessDialog : Granite.MessageDialog {
         );
     }
 
-    public ForegroundProcessDialog.before_close (PantheonTerminalWindow parent) {
+    public ForegroundProcessDialog.before_close (MainWindow parent) {
         Object (
             transient_for: parent,
             primary_text: _("Are you sure you want to quit Terminal?"),

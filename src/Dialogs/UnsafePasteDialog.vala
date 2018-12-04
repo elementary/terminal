@@ -19,7 +19,7 @@
 
 public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
 
-    public UnsafePasteDialog (PantheonTerminalWindow parent) {
+    public UnsafePasteDialog (MainWindow parent) {
         Object (
             border_width: 5,
             deletable: false,
@@ -75,8 +75,8 @@ public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
 
     private void on_ignore () {
         var terminal_window = get_transient_for ();
-        if (terminal_window is PantheonTerminalWindow) {
-            (terminal_window as PantheonTerminalWindow).unsafe_ignored = true;
+        if (terminal_window is MainWindow) {
+            (terminal_window as MainWindow).unsafe_ignored = true;
         }
     }
 }
