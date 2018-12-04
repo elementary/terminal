@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+* Copyright 2011-2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -17,60 +16,34 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.UnsafePasteDialog : Gtk.Dialog {
-
+public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
     public UnsafePasteDialog (MainWindow parent) {
         Object (
-            border_width: 5,
-            deletable: false,
-            resizable: false,
+            buttons: Gtk.ButtonsType.NONE,
             transient_for: parent
         );
     }
 
     construct {
-        var warning_image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG);
-        warning_image.valign = Gtk.Align.START;
+        image_icon = new ThemedIcon ("dialog-warning");
+        primary_text = _("This command is asking for Administrative access to your computer");
 
-        var primary_label = new Gtk.Label (_("This command is asking for Administrative access to your computer"));
-        primary_label.max_width_chars = 50;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class ("primary");
-
-        var secondary_label = new Gtk.Label (
-            _("Copying commands into the Terminal can be dangerous.") + "\n" +
-            _("Be sure you understand what each part of this command does.")
-        );
-        secondary_label.xalign = 0;
+        secondary_text =
+            _("Copying commands into the Terminal can be dangerous.") + " " +
+            _("Be sure you understand what each part of this command does.");
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
-        show_protection_warnings.margin_bottom = 12;
-        show_protection_warnings.margin_top = 12;
-        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 12;
-        grid.row_spacing = 12;
-        grid.margin = 5;
-        grid.margin_top = 0;
-        grid.attach (warning_image, 0, 0, 1, 2);
-        grid.attach (primary_label, 1, 0, 1, 1);
-        grid.attach (secondary_label, 1, 1, 1, 1);
-        grid.attach (show_protection_warnings, 1, 2, 1, 1);
+        custom_bin.add (show_protection_warnings);
+        custom_bin.show_all ();
 
-        ((Gtk.Box) get_content_area ()).add (grid);
+        add_button (_("Don't Paste"), 1);
 
-        var cancel_button = new Gtk.Button.with_label (_("Don't Paste"));
-
-        var ignore_button = new Gtk.Button.with_label (_("Paste Anyway"));
+        var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), 0);
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (on_ignore);
 
-        add_action_widget (cancel_button, 1);
-        add_action_widget (ignore_button, 0);
-
-        show_all ();
+        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
     }
 
     private void on_ignore () {
