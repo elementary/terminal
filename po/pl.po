@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 11:18-0700\n"
-"PO-Revision-Date: 2018-09-20 00:05+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"PO-Revision-Date: 2018-11-08 07:24+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
 "Language: pl\n"
@@ -33,89 +33,94 @@ msgstr "Uruchom program w terminalu"
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Wklej"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Wyświetl w przeglądarce plików"
 
-#: src/PantheonTerminalWindow.vala:262
-msgid "Zoom Out"
-msgstr "Oddal"
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom out"
+msgstr "Oddalenie"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr "Domyślny poziom powiększenia"
 
-#: src/PantheonTerminalWindow.vala:270
-msgid "Zoom In"
-msgstr "Przybliż"
+#: src/PantheonTerminalWindow.vala:293
+msgid "Zoom in"
+msgstr "Przybliżenie"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarna jasność"
 
-#: src/PantheonTerminalWindow.vala:299
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarna ciemność"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr "Styl"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr "Ukryj pasek wyszukiwania"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Jesteś pewien, że chcesz zamknąć tę kartę?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "W tej karcie działa proces."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Po zamknięciu proces zostanie zakończony."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zamyka kartę"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Zakończyć działanie programu?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "W oknie terminala znajduje się aktywny proces."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Jeżeli wyłączysz terminal, proces zostanie zakończony."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Zakończ Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Anuluj"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -130,8 +135,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Upewnij się, że rozumiesz co robi dana komenda."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Nie pokazuj ponownie tego okna"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -145,21 +150,27 @@ msgstr "Wklej mimo wszystko"
 msgid "Find"
 msgstr "Znajdź"
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Poprzedni wynik"
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Następny wynik"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Wyszukiwanie cykliczne"
 
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Nie pokazuj ponownie tego okna"
 
 #~ msgid "About Terminal"
 #~ msgstr "O programie Terminal"

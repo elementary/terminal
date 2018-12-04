@@ -31,6 +31,7 @@ namespace PantheonTerminal {
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
+        public bool resized {get; set;}
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -107,6 +108,11 @@ namespace PantheonTerminal {
             private set;
         }
 
+        private long remembered_position; /* Only need to remember row at the moment */
+        private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
+        private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
+        public bool last_key_was_return = true;
+
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
             terminal_id = "%i".printf (terminal_id_counter++);
@@ -158,6 +164,10 @@ namespace PantheonTerminal {
 
             selection_changed.connect (() => {
                 window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (get_has_selection ());
+            });
+
+            size_allocate.connect (() => {
+                resized = true;
             });
 
             child_exited.connect (on_child_exited);
@@ -248,6 +258,7 @@ namespace PantheonTerminal {
 
         void on_child_exited () {
             child_has_exited = true;
+            last_key_was_return = true;
         }
 
         public void kill_fg () {
@@ -427,6 +438,68 @@ namespace PantheonTerminal {
 
                     break;
             }
+        }
+
+        public void remember_position () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_position = row;
+        }
+
+        public void remember_command_start_position () {
+            if (!last_key_was_return) {
+                return;
+            }
+
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_command_start_row = row;
+            last_key_was_return = false;
+            resized = false;
+        }
+
+        public void remember_command_end_position () {
+            if (last_key_was_return) {
+                return;
+            }
+
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_command_end_row = row;
+            last_key_was_return = true;
+        }
+
+        public string get_last_output (bool include_command = true) {
+            long output_end_col, output_end_row, start_row;
+            get_cursor_position (out output_end_col, out output_end_row);
+
+            var command_lines = remembered_command_end_row - remembered_command_start_row;
+
+            if (!include_command) {
+                start_row = remembered_command_end_row + 1;
+            } else {
+                start_row = remembered_command_start_row;
+            }
+
+            if (output_end_row - start_row < (include_command ? command_lines + 1 : 1)) {
+                return "";
+            }
+            /* get text to the beginning of current line (to omit last prompt)
+             * Note that using end_row, 0 for the end parameters results in the first
+             * character of the prompt being selected for some reason. We assume a nominal
+             * maximum line length rather than determine the actual length.  */
+            return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
+        }
+
+        public void scroll_to_last_command () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            int delta = (int)(remembered_position - row);
+            vadjustment.set_value (vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1);
+        }
+
+        public bool has_output () {
+            return !resized && get_last_output ().length > 0;
         }
     }
 }

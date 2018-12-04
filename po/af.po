@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 11:18-0700\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2016-10-17 09:13+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
@@ -30,91 +30,96 @@ msgstr "Maak program in terminaal oop"
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:186
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Kopieër"
 
-#: src/PantheonTerminalWindow.vala:189
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Plak"
 
-#: src/PantheonTerminalWindow.vala:192
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Selekteer als"
 
-#: src/PantheonTerminalWindow.vala:195 src/PantheonTerminalWindow.vala:258
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
 msgid "Find…"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:198
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:262
+#: src/PantheonTerminalWindow.vala:279
 #, fuzzy
-msgid "Zoom Out"
+msgid "Zoom out"
 msgstr "Zoem uit"
 
-#: src/PantheonTerminalWindow.vala:266
+#: src/PantheonTerminalWindow.vala:286
 msgid "Default zoom level"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:270
+#: src/PantheonTerminalWindow.vala:293
 #, fuzzy
-msgid "Zoom In"
+msgid "Zoom in"
 msgstr "Zoem in"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/PantheonTerminalWindow.vala:306
 msgid "High Contrast"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:291
+#: src/PantheonTerminalWindow.vala:314
 msgid "Solarized Light"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:299
+#: src/PantheonTerminalWindow.vala:322
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/PantheonTerminalWindow.vala:345
 msgid "Style"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Is jy seker jy wil hierdie blad toemaak?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Daar is 'n aktiewe proses in hierdie blad."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "As jy dit toemaak sal die proses beëindig word."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Sluit blad"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Is jy seker jy wil die Terminaal toemaak?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Die terminaal bevat 'n aktiewe proses."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "As jy die Terminaal toemaak, sal die proses eindig."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Sluit Terminaal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Kanselleer"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -129,7 +134,7 @@ msgid "Be sure you understand what each part of this command does."
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
+msgid "Show paste protection warnings"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
@@ -144,21 +149,24 @@ msgstr ""
 msgid "Find"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:39
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:43
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
 msgstr "Terminaal"
+
+#~ msgid "Cancel"
+#~ msgstr "Kanselleer"
 
 #~ msgid "Use the command line"
 #~ msgstr "Gebruik die bevellyn"
