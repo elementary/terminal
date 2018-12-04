@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-04 10:03-0800\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -123,29 +123,29 @@ msgstr ""
 msgid "Quit Terminal"
 msgstr "Lumabas ng Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Humihingi ng Administrative access ang command na ito sa kompyuter mo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Maaaring maging mapanganib ang pagkopya ng mga command papunta sa terminal."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Siguraduhing naiintindihan mo ang ginagawa ng bawat parte ng command na ito"
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Huwag Idikit"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Idikit Pa Rin"
 

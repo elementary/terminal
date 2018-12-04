@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-04 10:03-0800\n"
 "PO-Revision-Date: 2018-08-13 00:04+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -123,27 +123,27 @@ msgstr "如果您退出终端，进程将会中断。"
 msgid "Quit Terminal"
 msgstr "退出终端"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "运行此命令需要管理员权限"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "复制命令到终端可能会有安全隐患。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "请确定您理解指令各部分的作用。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "取消粘贴"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "仍然粘贴"
 

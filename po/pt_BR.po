@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-04 10:03-0800\n"
 "PO-Revision-Date: 2018-11-22 21:10+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
@@ -121,27 +121,27 @@ msgstr "Se você fechar o Terminal, o processo irá terminar."
 msgid "Quit Terminal"
 msgstr "Sair do Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Este comando está pedindo acesso administrativo ao seu computador"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Colar comandos no Terminal pode ser perigoso."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Certifique-se que você entende o que cada parte desse comando faz."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr "Exibir avisos de proteção de colar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Não colar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Colar mesmo assim"
 

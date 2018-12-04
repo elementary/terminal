@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-04 10:03-0800\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -121,28 +121,28 @@ msgstr "Sɛ  woyi terminal no a, dwumadi no begyae."
 msgid "Quit Terminal"
 msgstr "Yi terminal no"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Dwumadi yi pɛ ho kwan adi dwuma bi a ehia sɛ wo pene so"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Ehia sɛ woyɛ ahwɛyie mmerɛ a worefa ntwerodeɛ bi ato terminal no mu no."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Hwɛ sɛ wonim nea wopɛ sɛ woyɛ no anaa."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Mmfa nto ha."
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Fa to ha saa ara."
 

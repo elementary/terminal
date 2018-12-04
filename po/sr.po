@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-04 10:03-0800\n"
 "PO-Revision-Date: 2017-01-08 07:33+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
@@ -121,27 +121,27 @@ msgstr "Ако напустите Терминал, процес ће бити �
 msgid "Quit Terminal"
 msgstr "Напусти Терминал"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ова наредба тражи администраторски приступ вашем рачунару"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Умножавање наредби у Терминал може бити опасно."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Будите сигурни да разумете шта сваки део ове наредбе ради."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Не убацуј"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Ипак убаци"
 
