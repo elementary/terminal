@@ -107,7 +107,7 @@ namespace PantheonTerminal {
         }
 
         public MainWindow.with_coords (TerminalApp app, int x, int y,
-                                                   bool recreate_tabs, bool ensure_tab) {
+                                       bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -122,7 +122,7 @@ namespace PantheonTerminal {
         }
 
         public MainWindow.with_working_directory (TerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+                                                  bool recreate_tabs = true) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
