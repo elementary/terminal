@@ -17,7 +17,7 @@
 */
 
 public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
-    public UnsafePasteDialog (PantheonTerminalWindow parent) {
+    public UnsafePasteDialog (MainWindow parent) {
         Object (
             buttons: Gtk.ButtonsType.NONE,
             transient_for: parent
@@ -48,8 +48,8 @@ public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
 
     private void on_ignore () {
         var terminal_window = get_transient_for ();
-        if (terminal_window is PantheonTerminalWindow) {
-            (terminal_window as PantheonTerminalWindow).unsafe_ignored = true;
+        if (terminal_window is MainWindow) {
+            (terminal_window as MainWindow).unsafe_ignored = true;
         }
     }
 }
