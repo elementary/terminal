@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-11-27 01:01+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2018-12-11 11:03+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/terminal/"
 "terminal/it/>\n"
 "Language: it\n"
@@ -38,7 +38,7 @@ msgstr "Copia"
 
 #: src/PantheonTerminalWindow.vala:188
 msgid "Copy Last Output"
-msgstr "Copia l'ultimo output"
+msgstr "Copia l'ultimo risultato"
 
 #: src/PantheonTerminalWindow.vala:191
 msgid "Paste"
@@ -55,7 +55,7 @@ msgstr "Trova…"
 
 #: src/PantheonTerminalWindow.vala:200
 msgid "Show in File Browser"
-msgstr "Mostra nel file manager"
+msgstr "Mostra nel gestore di file"
 
 #: src/PantheonTerminalWindow.vala:276
 msgid "Zoom out"
