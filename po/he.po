@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-23 13:06+0000\n"
+"PO-Revision-Date: 2018-12-11 12:15+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
 "terminal/he/>\n"
@@ -30,7 +30,7 @@ msgstr "הפעלת תכנית במסוף"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "הצגת עזרה"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
