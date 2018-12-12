@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-23 06:04+0000\n"
+"PO-Revision-Date: 2018-12-12 00:11+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
 "terminal/ko/>\n"
@@ -30,7 +30,7 @@ msgstr "터미널로 열기"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "도움말 보기"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
