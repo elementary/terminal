@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-28 05:46+0000\n"
+"PO-Revision-Date: 2018-12-16 19:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -23,7 +23,7 @@ msgstr "टर्मिनल मध्ये चालवा"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "मदत दाखवा"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
