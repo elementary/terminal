@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16 13:26-0800\n"
-"PO-Revision-Date: 2018-12-11 11:03+0000\n"
+"PO-Revision-Date: 2018-12-21 00:01+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/terminal/"
 "terminal/it/>\n"
@@ -74,7 +74,7 @@ msgstr "Aumenta ingrandimento"
 
 #: src/MainWindow.vala:306
 msgid "High Contrast"
-msgstr "Alto contrasto"
+msgstr "Contrasto elevato"
 
 #: src/MainWindow.vala:314
 msgid "Solarized Light"
