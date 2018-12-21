@@ -17,7 +17,8 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.TerminalApp : Gtk.Application {
+namespace PantheonTerminal {
+public class TerminalApp : Gtk.Application {
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
@@ -36,16 +37,27 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
         Intl.setlocale (LocaleCategory.ALL, "");
+
+        windows = new GLib.List <MainWindow> ();
+
+        /* Settings classes are defined in Settings.vala */
+        PantheonTerminal.saved_state = new PantheonTerminal.SavedState ();
+        PantheonTerminal.settings = new PantheonTerminal.Settings ();
+        PantheonTerminal.privacy_settings = new PantheonTerminal.PrivacySettings ();
+        privacy_settings.changed.connect (() => {
+            /* Clear info from settings when history is turned off */
+            if (!privacy_settings.remember_recent_files) {
+                saved_state.tabs = {};
+                saved_state.focused_tab = 0;
+            }
+        });
     }
 
     public TerminalApp () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
-        windows = new GLib.List <MainWindow> ();
 
-        saved_state = new SavedState ();
-        settings = new Settings ();
     }
 
     public void new_window () {
@@ -214,4 +226,5 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         var app = new TerminalApp ();
         return app.run (args);
     }
+}
 }

@@ -21,6 +21,7 @@ namespace PantheonTerminal {
 
     public SavedState saved_state;
     public Settings settings;
+    public PrivacySettings privacy_settings;
 
     public enum PantheonTerminalWindowState {
         NORMAL = 0,
@@ -76,6 +77,14 @@ namespace PantheonTerminal {
 
         public Settings () {
             base ("io.elementary.terminal.settings");
+        }
+    }
+
+    public class PrivacySettings : Granite.Services.Settings {
+        public bool remember_recent_files { get; set; }
+
+        public PrivacySettings () {
+            base ("org.gnome.desktop.privacy");
         }
     }
 }

@@ -542,7 +542,10 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            saved_tabs = saved_state.tabs;
+            if (PantheonTerminal.privacy_settings.remember_recent_files) {
+                saved_tabs = PantheonTerminal.saved_state.tabs;
+            }
+
             default_width = PantheonTerminal.saved_state.window_width;
             default_height = PantheonTerminal.saved_state.window_height;
 
@@ -558,8 +561,8 @@ namespace PantheonTerminal {
             }
 
             if (restore_pos) {
-                int x = saved_state.opening_x;
-                int y = saved_state.opening_y;
+                int x = PantheonTerminal.saved_state.opening_x;
+                int y = PantheonTerminal.saved_state.opening_y;
 
                 if (x != -1 && y != -1) {
                     move (x, y);
@@ -711,8 +714,8 @@ namespace PantheonTerminal {
                 /* Save window position */
                 int root_x, root_y;
                 get_position (out root_x, out root_y);
-                saved_state.opening_x = root_x;
-                saved_state.opening_y = root_y;
+                PantheonTerminal.saved_state.opening_x = root_x;
+                PantheonTerminal.saved_state.opening_y = root_y;
                 return false;
             });
             return false;
@@ -731,12 +734,14 @@ namespace PantheonTerminal {
                 return false;
             });
 
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
+            if (PantheonTerminal.privacy_settings.remember_recent_files) {
+                PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
+            }
         }
 
         private void open_tabs () {
             string[] tabs = {};
-            if (settings.remember_tabs) {
+            if (privacy_settings.remember_recent_files) {
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
@@ -1199,17 +1204,19 @@ namespace PantheonTerminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
 
-            notebook.tabs.foreach ((tab) => {
-                var term = get_term_widget (tab);
-                if (term == null) {
-                    return;
-                }
+            if (privacy_settings.remember_recent_files) {
+                notebook.tabs.foreach ((tab) => {
+                    var term = get_term_widget (tab);
+                    if (term == null) {
+                        return;
+                    }
 
-                var location = term.get_shell_location ();
-                if (location != null && location != "") {
-                    opened_tabs += location;
-                }
-            });
+                    var location = term.get_shell_location ();
+                    if (location != null && location != "") {
+                        opened_tabs += location;
+                    }
+                });
+            }
 
             PantheonTerminal.saved_state.tabs = opened_tabs;
             PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
