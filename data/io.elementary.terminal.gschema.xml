@@ -70,11 +70,6 @@
       <summary>Open last active tab path on new tab.</summary>
       <description>Defines whether a new tab should have the path of the last active tab.</description>
     </key>
-    <key name="remember-tabs" type="b">
-      <default>true</default>
-      <summary>Defines whether the terminal should remember tabs.</summary>
-      <description>Defines whether the terminal should remember the last open tabs.</description>
-    </key>
     <key name="alt-changes-tab" type="b">
       <default>true</default>
       <summary>Defines whether Alt+N goes to nth tab.</summary>
@@ -133,9 +128,9 @@
       </description>
     </key>
     <key name="cursor-shape" enum="terminal-cursor-shapes">
-    	<default>"Block"</default>
-    	<summary>Shape of the cursor.</summary>
-    	<description>The shape of the cursor of the terminal.</description>
+      <default>"Block"</default>
+      <summary>Shape of the cursor.</summary>
+      <description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
       <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
