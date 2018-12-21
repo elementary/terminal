@@ -544,6 +544,8 @@ namespace PantheonTerminal {
         private void restore_saved_state (bool restore_pos = true) {
             if (PantheonTerminal.privacy_settings.remember_recent_files) {
                 saved_tabs = PantheonTerminal.saved_state.tabs;
+            } else {
+                saved_tabs = {};
             }
 
             default_width = PantheonTerminal.saved_state.window_width;
@@ -731,21 +733,24 @@ namespace PantheonTerminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
+                if (PantheonTerminal.privacy_settings.remember_recent_files) {
+                    PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
+                }
+
                 return false;
             });
-
-            if (PantheonTerminal.privacy_settings.remember_recent_files) {
-                PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
-            }
         }
 
         private void open_tabs () {
             string[] tabs = {};
+            int focus = 0;
             if (privacy_settings.remember_recent_files) {
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
                 }
+
+                focus = PantheonTerminal.saved_state.focused_tab;
             } else {
                 tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
@@ -765,8 +770,8 @@ namespace PantheonTerminal {
             }
 
             PantheonTerminal.saved_state.tabs = {};
+            focus = focus.clamp (0, tabs.length - 1);
 
-            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
             Idle.add_full (GLib.Priority.LOW, () => {
                 focus += notebook.n_tabs;
                 foreach (string loc in tabs) {
@@ -1207,19 +1212,18 @@ namespace PantheonTerminal {
             if (privacy_settings.remember_recent_files) {
                 notebook.tabs.foreach ((tab) => {
                     var term = get_term_widget (tab);
-                    if (term == null) {
-                        return;
+                    if (term != null) {
+                        var location = term.get_shell_location ();
+                        if (location != null && location != "") {
+                            opened_tabs += location;
+                        }
                     }
 
-                    var location = term.get_shell_location ();
-                    if (location != null && location != "") {
-                        opened_tabs += location;
-                    }
                 });
-            }
 
-            PantheonTerminal.saved_state.tabs = opened_tabs;
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
+                PantheonTerminal.saved_state.tabs = opened_tabs;
+                PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
+            }
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/

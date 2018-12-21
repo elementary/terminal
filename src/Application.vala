@@ -44,13 +44,6 @@ public class TerminalApp : Gtk.Application {
         PantheonTerminal.saved_state = new PantheonTerminal.SavedState ();
         PantheonTerminal.settings = new PantheonTerminal.Settings ();
         PantheonTerminal.privacy_settings = new PantheonTerminal.PrivacySettings ();
-        privacy_settings.changed.connect (() => {
-            /* Clear info from settings when history is turned off */
-            if (!privacy_settings.remember_recent_files) {
-                saved_state.tabs = {};
-                saved_state.focused_tab = 0;
-            }
-        });
     }
 
     public TerminalApp () {
