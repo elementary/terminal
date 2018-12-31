@@ -19,7 +19,7 @@
 
 namespace PantheonTerminal {
 
-    public class PantheonTerminalWindow : Gtk.Window {
+    public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -45,7 +45,7 @@ namespace PantheonTerminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
-        public PantheonTerminalApp app { get; construct; }
+        public TerminalApp app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
 
@@ -53,22 +53,24 @@ namespace PantheonTerminal {
         public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
-        public const string ACTION_CLOSE_TAB = "action_close_tab";
-        public const string ACTION_FULLSCREEN = "action_fullscreen";
-        public const string ACTION_NEW_TAB = "action_new_tab";
-        public const string ACTION_NEW_WINDOW = "action_new_window";
-        public const string ACTION_NEXT_TAB = "action_next_tab";
-        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
-        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
-        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
-        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
-        public const string ACTION_COPY = "action_copy";
-        public const string ACTION_PASTE = "action_paste";
-        public const string ACTION_SEARCH = "action_search";
-        public const string ACTION_SEARCH_NEXT = "action_search_next";
-        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
-        public const string ACTION_SELECT_ALL = "action_select_all";
-        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
+        public const string ACTION_CLOSE_TAB = "action-close-tab";
+        public const string ACTION_FULLSCREEN = "action-fullscreen";
+        public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_NEW_WINDOW = "action-new-window";
+        public const string ACTION_NEXT_TAB = "action-next-tab";
+        public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
+        public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
+        public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
+        public const string ACTION_COPY = "action-copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "action-copy-last-output";
+        public const string ACTION_PASTE = "action-paste";
+        public const string ACTION_SEARCH = "action-search";
+        public const string ACTION_SEARCH_NEXT = "action-search-next";
+        public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
+        public const string ACTION_SELECT_ALL = "action-select-all";
+        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -83,15 +85,17 @@ namespace PantheonTerminal {
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
             { ACTION_COPY, action_copy },
+            { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
-            { ACTION_SEARCH, action_search },
+            { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_OPEN_IN_FILES, action_open_in_files }
+            { ACTION_OPEN_IN_FILES, action_open_in_files },
+            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
-        public PantheonTerminalWindow (PantheonTerminalApp app, bool recreate_tabs = true) {
+        public MainWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -102,8 +106,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (PantheonTerminalApp app, int x, int y,
-                                                   bool recreate_tabs, bool ensure_tab) {
+        public MainWindow.with_coords (TerminalApp app, int x, int y,
+                                       bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -117,8 +121,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (PantheonTerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+        public MainWindow.with_working_directory (TerminalApp app, string location,
+                                                  bool recreate_tabs = true) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
@@ -142,14 +146,12 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
+            action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
-            action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
-            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
-            action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
+            action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
         construct {
@@ -183,6 +185,9 @@ namespace PantheonTerminal {
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
 
+            var copy_last_output_menuitem = new Gtk.MenuItem.with_label (_("Copy Last Output"));
+            copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
+
             var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
 
@@ -197,11 +202,16 @@ namespace PantheonTerminal {
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
+            menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
+
+            menu.popped_up.connect (() => {
+                update_copy_output_sensitive ();
+            });
 
             setup_ui ();
             show_all ();
@@ -211,7 +221,6 @@ namespace PantheonTerminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            search_button.toggled.connect (on_toggle_search);
             configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
 
@@ -247,7 +256,11 @@ namespace PantheonTerminal {
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
           * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
+#if VALA_0_42
+        protected bool match_keycode (uint keyval, uint code) {
+#else
         protected bool match_keycode (int keyval, uint code) {
+#endif
             Gdk.KeymapKey [] keys;
             Gdk.Keymap keymap = Gdk.Keymap.get_default ();
             if (keymap.get_entries_for_keyval (keyval, out keys)) {
@@ -266,21 +279,35 @@ namespace PantheonTerminal {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             search_button = new Gtk.ToggleButton ();
+            search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
             search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            search_button.tooltip_text = _("Find…");
             search_button.valign = Gtk.Align.CENTER;
+            search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                {"<Ctrl><Shift>f"},
+                _("Find…")
+            );
+
 
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
-            zoom_out_button.tooltip_text = _("Zoom Out");
             zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
+            zoom_out_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_out_button.action_name),
+                _("Zoom out")
+            );
 
             zoom_default_button = new Gtk.Button.with_label ("100%");
-            zoom_default_button.tooltip_text = _("Default zoom level");
             zoom_default_button.action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT;
+            zoom_default_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_default_button.action_name),
+                _("Default zoom level")
+            );
 
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
-            zoom_in_button.tooltip_text = _("Zoom In");
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
+            zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
+                application.get_accels_for_action (zoom_in_button.action_name),
+                _("Zoom in")
+            );
 
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
@@ -290,30 +317,24 @@ namespace PantheonTerminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.Button ();
+            var color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
-            color_button_white.height_request = 32;
-            color_button_white.width_request = 32;
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
             color_button_white_context.add_class ("color-button");
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.Button ();
+            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
-            color_button_light.height_request = 32;
-            color_button_light.width_request = 32;
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class ("color-button");
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.Button ();
+            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.height_request = 32;
-            color_button_dark.width_request = 32;
             color_button_dark.tooltip_text = _("Solarized Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
@@ -342,6 +363,7 @@ namespace PantheonTerminal {
 
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
+            header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
             header.pack_end (style_button);
             header.pack_end (search_button);
@@ -353,6 +375,8 @@ namespace PantheonTerminal {
             search_revealer.add (search_toolbar);
 
             get_simple_action (ACTION_COPY).set_enabled (false);
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
+            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook ();
             notebook.tab_added.connect (on_tab_added);
@@ -380,6 +404,18 @@ namespace PantheonTerminal {
             set_titlebar (header);
             add (grid);
 
+            switch (settings.background) {
+                case HIGH_CONTRAST_BG:
+                    color_button_white.active = true;
+                    break;
+                case SOLARIZED_LIGHT_BG:
+                    color_button_light.active = true;
+                    break;
+                case SOLARIZED_DARK_BG:
+                    color_button_dark.active = true;
+                    break;
+            }
+
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
@@ -399,6 +435,10 @@ namespace PantheonTerminal {
             });
 
             key_press_event.connect ((e) => {
+                if (e.is_modifier == 1) {
+                    return false;
+                }
+
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
                         if (search_toolbar.search_entry.has_focus) {
@@ -414,8 +454,15 @@ namespace PantheonTerminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
+                        } else if (!current_terminal.has_foreground_process ()) {
+                            /* Ignore returns being sent to a foreground process */
+                            current_terminal.remember_position ();
+                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
+                            current_terminal.remember_command_end_position ();
+                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
                         break;
+
                     case Gdk.Key.@1: //alt+[1-8]
                     case Gdk.Key.@2:
                     case Gdk.Key.@3:
@@ -440,6 +487,18 @@ namespace PantheonTerminal {
                             return true;
                         }
                         break;
+
+                    case Gdk.Key.Up:
+                    case Gdk.Key.Down:
+                        current_terminal.remember_command_start_position ();
+                        break;
+
+                    default:
+                        if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
+                            current_terminal.remember_command_start_position ();
+                        }
+
+                        break;
                 }
 
                 /* Use hardware keycodes so the key used
@@ -451,9 +510,23 @@ namespace PantheonTerminal {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
                             return true;
+                        } else { /* Ctrl-c: Command cancelled */
+                            current_terminal.last_key_was_return = true;
                         }
                     } else if (match_keycode (Gdk.Key.v, keycode)) {
                         return handle_paste_event ();
+                    }
+                }
+
+                if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                    uint keycode = e.hardware_keycode;
+
+                    if (e.keyval == Gdk.Key.Up) {
+                        return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
+                    }
+
+                    if (match_keycode (Gdk.Key.c, keycode)) { /* Alt-c */
+                        update_copy_output_sensitive ();
                     }
                 }
 
@@ -516,18 +589,6 @@ namespace PantheonTerminal {
             } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
-            }
-        }
-
-        private void on_toggle_search () {
-            var is_search = search_button.get_active ();
-            search_revealer.set_reveal_child (is_search);
-
-            if (is_search) {
-                search_toolbar.grab_focus ();
-            } else {
-                search_toolbar.clear ();
-                current_terminal.grab_focus ();
             }
         }
 
@@ -629,6 +690,10 @@ namespace PantheonTerminal {
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
 
+        private void update_copy_output_sensitive () {
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
+        }
+
         uint timer_window_state_change = 0;
 
         private bool on_window_state_change (Gdk.EventConfigure event) {
@@ -678,6 +743,7 @@ namespace PantheonTerminal {
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
+                update_copy_output_sensitive ();
                 return false;
             });
 
@@ -692,7 +758,7 @@ namespace PantheonTerminal {
                     tabs += Environment.get_home_dir ();
                 }
             } else {
-                tabs += PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
 
             int null_dirs = 0;
@@ -705,7 +771,7 @@ namespace PantheonTerminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = TerminalApp.working_directory ?? Environment.get_current_dir ();
                 }
             }
 
@@ -738,7 +804,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = PantheonTerminalApp.working_directory ?? Environment.get_current_dir ();
+                location = TerminalApp.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }
@@ -911,6 +977,9 @@ namespace PantheonTerminal {
                     d.destroy ();
                 }
             }
+
+            current_terminal.remember_command_start_position ();
+
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
             } else {
@@ -928,6 +997,11 @@ namespace PantheonTerminal {
                                     current_terminal.uri.length);
             else
                 current_terminal.copy_clipboard ();
+        }
+
+        void action_copy_last_output () {
+            string output = current_terminal.get_last_output ();
+            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
         }
 
         void action_paste () {
@@ -951,6 +1025,12 @@ namespace PantheonTerminal {
             } catch (ConvertError e) {
                 warning (e.message);
             }
+        }
+
+        void action_scroll_to_last_command () {
+            current_terminal.scroll_to_last_command ();
+            /* Repeated presses are ignored */
+            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
         }
 
         void action_close_tab () {
@@ -997,7 +1077,51 @@ namespace PantheonTerminal {
         }
 
         void action_search () {
-            search_button.active = !search_button.active;
+            var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
+            var search_state = search_action.get_state ().get_boolean ();
+
+            search_action.set_state (!search_state);
+            search_revealer.set_reveal_child (search_button.active);
+
+            if (search_button.active) {
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
+                action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
+                action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"Escape", "<Ctrl><Shift>f"},
+                    _("Hide find bar")
+                );
+                search_toolbar.grab_focus ();
+            } else {
+                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                search_button.tooltip_markup = Granite.markup_accel_tooltip (
+                    {"<Ctrl><Shift>f"},
+                    _("Find…")
+                );
+                search_toolbar.clear ();
+                current_terminal.grab_focus ();
+            }
+
+            string [] next_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                next_accels = action_accelerators[ACTION_SEARCH_NEXT].to_array ();
+            }
+
+            string [] prev_accels = new string [] {};
+            if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
+                prev_accels = action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ();
+            }
+
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_NEXT,
+                next_accels
+            );
+            app.set_accels_for_action (
+                ACTION_PREFIX + ACTION_SEARCH_PREVIOUS,
+                prev_accels
+            );
         }
 
         void action_search_next () {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
 "PO-Revision-Date: 2018-04-02 10:46+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/terminal/"
@@ -21,165 +21,176 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Naloga končana"
 
-#: src/Application.vala:186
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "Zaženi program v terminalu"
 
-#: src/Application.vala:187
+#: src/Application.vala:208
+msgid "Show help"
+msgstr ""
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "O terminalu"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Uporabite ukazno vrstico"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Novo okno"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nov zavihek z root dostopom"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Tu odpri terminal"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/MainWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
-#: src/PantheonTerminalWindow.vala:250
-msgid "Zoom Out"
+#: src/MainWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom In"
+#: src/MainWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "Stil"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Ali ste prepričani, da želite zapreti ta zavihek?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "V tem zavihku obstaja dejavno opravilo."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Če ga zaprete, se bo proces končal."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zapri zavihek"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ali ste prepričani, da želite končati Terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "V tem terminalu obstaja dejaven proces."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Če zaprete Terminal, se bo proces končal."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Končaj Terminal"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Preklic"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ta ukaz sprašuje za skrbniški dostop do vašega računalnika"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Kopiranje ukazov v Terminal je lahko nevarno."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Ne pokaži več tega dialoga"
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "Show paste protection warnings"
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Ne prilepi"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Vseeno prilepi"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Iskanje"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Prejšnji rezultat"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Naslednji rezultat"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Ciklično iskanje"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Preklic"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Ne pokaži več tega dialoga"
+
+#~ msgid "About Terminal"
+#~ msgstr "O terminalu"
+
+#~ msgid "Use the command line"
+#~ msgstr "Uporabite ukazno vrstico"
+
+#~ msgid "New Window"
+#~ msgstr "Novo okno"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nov zavihek z root dostopom"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Tu odpri terminal"
 
 #~ msgid "Close"
 #~ msgstr "Zapri"

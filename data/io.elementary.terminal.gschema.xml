@@ -82,8 +82,8 @@
     </key>
     <key name="audible-bell" type="b">
       <default>false</default>
-      <summary>Defines whether the terminal has a bell or not.</summary>
-      <description>Enables or disables the terminal bell.</description>
+      <summary>Whether or not to use an audible bell event alert</summary>
+      <description>Used when hitting the end of a line like in GTK entries, but also for tab-completion when there are either no or multiple possible completions.</description>
     </key>
     <key name="natural-copy-paste" type="b">
       <default>true</default>
@@ -101,7 +101,7 @@
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
-          
+
           The string can be either one of:
             - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
             - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
@@ -113,7 +113,7 @@
       <summary>Color of the background.</summary>
       <description>
           The color of the background of the terminal.
-          
+
           The string can be either one of:
             - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
             - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
@@ -125,7 +125,7 @@
       <summary>Color of the cursor.</summary>
       <description>
           The color of the cursor of the terminal.
-          
+
           The string can be either one of:
             - A hexadecimal value in the form “#rgb”, “#rrggbb”, “#rrrgggbbb” or ”#rrrrggggbbbb”
             - A RGB color in the form “rgb(r,g,b)” (In this case the color will have full opacity)
