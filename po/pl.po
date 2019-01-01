@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-08 07:24+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"PO-Revision-Date: 2019-01-01 00:36+0000\n"
+"Last-Translator: Damian Duży <damianduzy02@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
 "Language: pl\n"
@@ -147,7 +147,7 @@ msgstr "Nie wklejaj"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Wklej mimo wszystko"
+msgstr "Wklej mimo to"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
