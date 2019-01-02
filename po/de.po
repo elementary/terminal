@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-04-01 07:09+0000\n"
-"Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
+"PO-Revision-Date: 2019-01-02 22:08+0000\n"
+"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/terminal/"
 "terminal/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:109
@@ -30,7 +30,7 @@ msgstr "Ein Programm im Terminal ausführen"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "Hilfe anzeigen"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
@@ -42,7 +42,7 @@ msgstr "Kopieren"
 
 #: src/MainWindow.vala:191
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Letzte Ausgabe kopieren"
 
 #: src/MainWindow.vala:194
 msgid "Paste"
@@ -61,7 +61,6 @@ msgid "Show in File Browser"
 msgstr "Im Dateimanager anzeigen"
 
 #: src/MainWindow.vala:279
-#, fuzzy
 msgid "Zoom out"
 msgstr "Verkleinern"
 
@@ -70,7 +69,6 @@ msgid "Default zoom level"
 msgstr "Standard Zoomfaktor"
 
 #: src/MainWindow.vala:293
-#, fuzzy
 msgid "Zoom in"
 msgstr "Vergrößern"
 
@@ -92,7 +90,7 @@ msgstr "Stil"
 
 #: src/MainWindow.vala:1080
 msgid "Hide find bar"
-msgstr ""
+msgstr "Suchleiste ausblenden"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -140,7 +138,7 @@ msgstr "Vergewissern Sie sich, dass Sie verstehen, was dieser Befehl bewirkt."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Warnhinweise beim Einfügen anzeigen"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
