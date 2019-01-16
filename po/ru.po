@@ -2,139 +2,120 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-23 15:35+0000\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"PO-Revision-Date: 2018-11-22 20:24+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian "
-"<https://weblate.elementary.io/projects/terminal/terminal/ru/>\n"
+"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
+"terminal/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Задание завершено"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "О программе"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Использовать командную строку"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Терминал"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Создать окно"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Создать вкладку от имени администратора"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Открыть терминал здесь"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Поиск…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "Отдалить"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "Масштаб по умолчанию"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "Приблизить"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "High Contrast"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Solarized Light"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Solarized Dark"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "Стиль"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr "Копировать последний вывод"
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "Поиск…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Открыть в файловом менеджере"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom out"
+msgstr "Уменьшить"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr "Масштаб по умолчанию"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Zoom in"
+msgstr "Увеличить"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr "High Contrast"
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr "Solarized Dark"
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr "Стиль"
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr "Скрыть строку поиска"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Закрыть эту вкладку?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Во вкладке выполняется процесс."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Если вы закроете терминал, процесс будет остановлен."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Выйти из терминала?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "В терминале выполняется процесс."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Если вы выйдете из терминала, процесс будет остановлен."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Закрыть терминал"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Отменить"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -151,8 +132,8 @@ msgstr ""
 "означает."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Не показывать этот диалог снова"
+msgid "Show paste protection warnings"
+msgstr "Показывать предупреждения о вставках"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -162,21 +143,46 @@ msgstr "Не вставлять"
 msgid "Paste Anyway"
 msgstr "Вставить всё равно"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Найти"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Предыдущий результат"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Следующий результат"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Циклический поиск"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Терминал"
+
+#~ msgid "Cancel"
+#~ msgstr "Отменить"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Не показывать этот диалог снова"
+
+#~ msgid "About Terminal"
+#~ msgstr "О программе"
+
+#~ msgid "Use the command line"
+#~ msgstr "Использовать командную строку"
+
+#~ msgid "New Window"
+#~ msgstr "Создать окно"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Создать вкладку от имени администратора"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Открыть терминал здесь"
 
 #~ msgid "Close"
 #~ msgstr "Закрыть"

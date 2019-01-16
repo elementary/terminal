@@ -7,178 +7,182 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2015-12-05 14:36+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Bosnian <bs@li.org>\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"PO-Revision-Date: 2018-11-09 07:36+0000\n"
+"Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
+"Language-Team: Bosnian <https://weblate.elementary.io/projects/terminal/"
+"terminal/bs/>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Zadatak izvršen"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Pokreni program iz terminala"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "Podesi radnu direktoriju za shell"
+msgstr "Podesi radni direktorij ljuske"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Infromacije o Terminalu"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Koristite komandnu liniju"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Novi prozor"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Otvori terminal ovdje"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:243
-#, fuzzy
-msgid "Zoom Out"
-msgstr "Smanji"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:251
-#, fuzzy
-msgid "Zoom In"
-msgstr "Povećaj"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Zalijepi"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "Pretraži…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Prikaži u pregledniku datoteka"
+
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom out"
+msgstr "Umanji"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr "Zadani nivo uvećanja"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Zoom in"
+msgstr "Uvećaj"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr "Visoki kontrast"
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr "Solarizirano svijetlo"
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr "Solarizirano tamno"
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr "Stil"
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr "Sakrij traku pretrage"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
+msgid "Are you sure you want to close this tab?"
+msgstr "Jeste li sigurni da želite zatvoriti ovu karticu?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:28
+msgid "There is an active process on this tab."
+msgstr "Aktivan je proces u ovoj kartici."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:29
+msgid "If you close it, the process will end."
+msgstr "Ako je zatvorite, proces će biti prekinut."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Are you sure you want to close this tab?"
-msgstr "Da li ste sigurni da želite da zatvorite ovaj tab?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:33
-msgid "There is an active process on this tab."
-msgstr "U ovom tabu se trenutno izvršava proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:34
-msgid "If you close it, the process will end."
-msgstr "Ukoliko zatvorite tab, proces će biti prekinut."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:35
 msgid "Close Tab"
-msgstr "Zatvori tab"
+msgstr "Zatvori karticu"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Da li ste sigurni da želite da zatvorite Terminal?"
+msgstr "Jeste li sigurni da želite napustiti Terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "U ovom tabu se trenutno izvršava proces."
+msgstr "Aktivan je proces u ovom terminalu."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Ukoliko zatvorite tab, proces će biti prekinut."
+msgstr "Ako napustite Terminal, proces će biti prekinut."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "Zatvori Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Odustani"
+msgstr "Napusti Terminal"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "Ova naredba zahtijeva administratorski pristup Vašem računaru"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Kopiranje naredbi u Terminal može biti opasno."
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Budite sigurni da razmijete kako djeluje svaki dio ove naredbe."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
+msgid "Show paste protection warnings"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr ""
+msgstr "Nemoj zalijepiti"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Ipak zalijepi"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
-
-#: src/Widgets/SearchToolbar.vala:38
-msgid "Previous result"
-msgstr ""
+msgstr "Pronađi"
 
 #: src/Widgets/SearchToolbar.vala:42
-msgid "Next result"
-msgstr ""
+msgid "Previous result"
+msgstr "Prethodni rezultat"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:49
+msgid "Next result"
+msgstr "Sljedeći rezultat"
+
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
-msgstr ""
+msgstr "Ciklična pretraga"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Otkaži"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Ne prikazuj više ovaj dijalog"
+
+#~ msgid "About Terminal"
+#~ msgstr "Infromacije o Terminalu"
+
+#~ msgid "Use the command line"
+#~ msgstr "Koristite komandnu liniju"
+
+#~ msgid "New Window"
+#~ msgstr "Novi prozor"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Otvori terminal ovdje"
 
 #~ msgid "Close"
 #~ msgstr "Zatvori"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2017-02-19 12:31+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -18,127 +18,108 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-02-20 05:39+0000\n"
 "X-Generator: Launchpad (build 18326)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Η διεργασία ολοκληρώθηκε"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Εκτέλεση ενός προγράμματος στο τερματικό"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Ορισμός καταλόγου με λειτουργία κελύφους"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Σχετικά με το Τερματικό"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Χρήση γραμμής εντολών"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Τερματικό"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Νέο παράθυρο"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Νέα καρτέλα ως διαχειριστής"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Άνοιγμα Τερματικού εδώ"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Εύρεση…"
-
-#: src/PantheonTerminalWindow.vala:243
-#, fuzzy
-msgid "Zoom Out"
-msgstr "Σμίκρυνση"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:251
-#, fuzzy
-msgid "Zoom In"
-msgstr "Μεγέθυνση"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "Εύρεση…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
+msgstr "Σμίκρυνση"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
+msgstr "Μεγέθυνση"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Είστε σίγουρος/-η ότι θέλετε να κλείσετε αυτήν την καρτέλα;"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Υπάρχει μια ενεργή διεργασία σε αυτή την καρτέλα."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Αν την κλείσετε, η διεργασία θα τερματιστεί."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Είστε σίγουρος/-η ότι θέλετε να κλείσετε το Τερματικό;"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Υπάρχει μια ενεργή διεργασία σε αυτό το τερματικό."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Αν κλείσετε το Τερματικό, η διεργασία θα τερματιστεί."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Κλείσιμο Τερματικού"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Ακύρωση"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -154,7 +135,7 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Σιγουρευτείτε ότι κατανοείτε τι κάνει κάθε τμήμα αυτής της εντολής."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
+msgid "Show paste protection warnings"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
@@ -165,21 +146,43 @@ msgstr "Να μη γίνει επικόλληση"
 msgid "Paste Anyway"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Εύρεση"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Προηγούμενο αποτέλεσμα"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Επόμενο αποτέλεσμα"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Τερματικό"
+
+#~ msgid "Cancel"
+#~ msgstr "Ακύρωση"
+
+#~ msgid "About Terminal"
+#~ msgstr "Σχετικά με το Τερματικό"
+
+#~ msgid "Use the command line"
+#~ msgstr "Χρήση γραμμής εντολών"
+
+#~ msgid "New Window"
+#~ msgstr "Νέο παράθυρο"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Νέα καρτέλα ως διαχειριστής"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Άνοιγμα Τερματικού εδώ"
 
 #~ msgid "Close"
 #~ msgstr "Κλείσιμο"

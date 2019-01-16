@@ -27,10 +27,11 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public PantheonTerminalApp app;
+        public TerminalApp app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
+        public bool resized {get; set;}
 
         GLib.Pid child_pid;
         private PantheonTerminalWindow _window;
@@ -43,7 +44,7 @@ namespace PantheonTerminal {
             set {
                 this._window = value;
                 this.app = value.app;
-                this.menu = value.ui.get_widget ("ui/AppMenu") as Gtk.Menu;
+                this.menu = value.menu;
                 this.menu.show_all ();
             }
         }
@@ -94,6 +95,9 @@ namespace PantheonTerminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
+        const double MIN_SCALE = 0.2;
+        const double MAX_SCALE = 5.0;
+
         public bool child_has_exited {
             get;
             private set;
@@ -104,32 +108,10 @@ namespace PantheonTerminal {
             private set;
         }
 
-        private double _zoom_factor = 1.0;
-        public double zoom_factor {
-            get {
-                return _zoom_factor;
-            }
-
-            set {
-                if (value < 0.19) {
-                    _zoom_factor = 0.2;
-                } else if (value > 5.01) {
-                    _zoom_factor = 5;
-                } else {
-                    _zoom_factor = value;
-                }
-
-                Pango.FontDescription current_font = this.get_font ();
-                if (current_font != null) {
-                    if (default_size == 0) {
-                        default_size = current_font.get_size ();
-                    }
-
-                    current_font.set_size ((int) Math.floor (default_size * zoom_factor));
-                    this.set_font (current_font);
-                }
-            }
-        }
+        private long remembered_position; /* Only need to remember row at the moment */
+        private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
+        private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
+        public bool last_key_was_return = true;
 
         public TerminalWidget (PantheonTerminalWindow parent_window) {
 
@@ -150,11 +132,11 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null) {
-                        window.main_actions.get_action ("Copy").set_sensitive (true);
+                        window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (true);
                     }
 
                     menu.select_first (false);
-                    menu.popup (null, null, null, event.button, event.time);
+                    menu.popup_at_pointer (event);
 
                     return true;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
@@ -181,9 +163,12 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.main_actions.get_action ("Copy").set_sensitive (get_has_selection ());
+                window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (get_has_selection ());
             });
 
+            size_allocate.connect (() => {
+                resized = true;
+            });
 
             child_exited.connect (on_child_exited);
 
@@ -204,11 +189,7 @@ namespace PantheonTerminal {
             this.clickable (regex_strings);
 
             GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-            saved_state.bind ("zoom", this, "zoom_factor", GLib.SettingsBindFlags.DEFAULT);
-
-            realize.connect (() => {
-                zoom_factor = zoom_factor;
-            });
+            saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
@@ -277,6 +258,7 @@ namespace PantheonTerminal {
 
         void on_child_exited () {
             child_has_exited = true;
+            last_key_was_return = true;
         }
 
         public void kill_fg () {
@@ -401,15 +383,15 @@ namespace PantheonTerminal {
         }
 
         public void increment_size () {
-            zoom_factor += 0.1;
+            font_scale = (font_scale + 0.1).clamp (MIN_SCALE, MAX_SCALE);
         }
 
         public void decrement_size () {
-            zoom_factor -= 0.1;
+            font_scale = (font_scale - 0.1).clamp (MIN_SCALE, MAX_SCALE);
         }
 
         public void set_default_font_size () {
-            zoom_factor = 1.0;
+            font_scale = 1.0;
         }
 
         public bool is_init_complete () {
@@ -435,20 +417,89 @@ namespace PantheonTerminal {
                         }
                     }
 
-                    string uris_s = string.joinv ("", uris);
+                    var uris_s = string.joinv ("", uris);
+#if UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
-
+#else
+                    this.feed_child (uris_s.to_utf8 ());
+#endif
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
+#if UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
+#else
+                        this.feed_child (data.to_utf8 ());
+#endif
                     }
 
                     break;
             }
+        }
+
+        public void remember_position () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_position = row;
+        }
+
+        public void remember_command_start_position () {
+            if (!last_key_was_return) {
+                return;
+            }
+
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_command_start_row = row;
+            last_key_was_return = false;
+            resized = false;
+        }
+
+        public void remember_command_end_position () {
+            if (last_key_was_return) {
+                return;
+            }
+
+            long col, row;
+            get_cursor_position (out col, out row);
+            remembered_command_end_row = row;
+            last_key_was_return = true;
+        }
+
+        public string get_last_output (bool include_command = true) {
+            long output_end_col, output_end_row, start_row;
+            get_cursor_position (out output_end_col, out output_end_row);
+
+            var command_lines = remembered_command_end_row - remembered_command_start_row;
+
+            if (!include_command) {
+                start_row = remembered_command_end_row + 1;
+            } else {
+                start_row = remembered_command_start_row;
+            }
+
+            if (output_end_row - start_row < (include_command ? command_lines + 1 : 1)) {
+                return "";
+            }
+            /* get text to the beginning of current line (to omit last prompt)
+             * Note that using end_row, 0 for the end parameters results in the first
+             * character of the prompt being selected for some reason. We assume a nominal
+             * maximum line length rather than determine the actual length.  */
+            return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
+        }
+
+        public void scroll_to_last_command () {
+            long col, row;
+            get_cursor_position (out col, out row);
+            int delta = (int)(remembered_position - row);
+            vadjustment.set_value (vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1);
+        }
+
+        public bool has_output () {
+            return !resized && get_last_output ().length > 0;
         }
     }
 }

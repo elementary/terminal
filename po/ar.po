@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2015-12-05 14:37+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -18,127 +18,108 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr ""
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr ""
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "استعمل سطرالأوامر"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "نافذة الآوامر"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "نافذة جديدة"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr ""
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:243
-#, fuzzy
-msgid "Zoom Out"
-msgstr "تصغير"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:251
-#, fuzzy
-msgid "Zoom In"
-msgstr "تكبير"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "إنسخ"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "إلصاق"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "حدّد الكل"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
+msgstr "تصغير"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
+msgstr "تكبير"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "إغلاق تبويب"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "إلغاء"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -153,7 +134,7 @@ msgid "Be sure you understand what each part of this command does."
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
+msgid "Show paste protection warnings"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
@@ -164,21 +145,34 @@ msgstr ""
 msgid "Paste Anyway"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "نافذة الآوامر"
+
+#~ msgid "Cancel"
+#~ msgstr "إلغاء"
+
+#~ msgid "Use the command line"
+#~ msgstr "استعمل سطرالأوامر"
+
+#~ msgid "New Window"
+#~ msgstr "نافذة جديدة"
 
 #~ msgid "Close"
 #~ msgstr "إغلاق"

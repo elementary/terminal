@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
-"Language-Team: Moldovan "
-"<https://weblate.elementary.io/projects/terminal/terminal/mo/>\n"
+"Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
+"terminal/mo/>\n"
 "Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,125 +13,108 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Sarcină terminată"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Rulați program în terminal"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Despre Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Utilizați linia de comandă"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminalul"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Fereastră nouă"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nouă filă rădăcină"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Deschideți terminalul aici"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Căutare…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "Micșorează"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "Nivel prestabilit"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "Mărește"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "Contrast mare"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Lumină solarizată"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Polarizat închis"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "Stilul"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Copie"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Lipește"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "Căutare…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Afișați Fișierul în Browser"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
+msgstr "Micșorează"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr "Nivel prestabilit"
+
+#: src/PantheonTerminalWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
+msgstr "Mărește"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr "Contrast mare"
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr "Lumină solarizată"
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr "Polarizat închis"
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr "Stilul"
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Sigur doriți să închideți această filă?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Există un proces activ în această filă."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Dacă îl închideți, procesul se va termina."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Închideți fila"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sunteți sigur că doriți să închideți terminalul?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Există un proces activ pe acest terminal."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Dacă închideți Terminalul, procesul se va termina."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Închide Terminalulul"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Anulare"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -146,8 +129,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Asigurați-vă că înțelegeți ce face fiecare parte a acestei comenzi."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Nu mai arăta acest dialog din nou"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -157,18 +140,43 @@ msgstr "Nu lipi"
 msgid "Paste Anyway"
 msgstr "Lipiște oricum"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Caută"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Pre vizualizează rezultatul"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Rezultatul următor"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Clic în caută"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminalul"
+
+#~ msgid "Cancel"
+#~ msgstr "Anulare"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Nu mai arăta acest dialog din nou"
+
+#~ msgid "About Terminal"
+#~ msgstr "Despre Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Utilizați linia de comandă"
+
+#~ msgid "New Window"
+#~ msgstr "Fereastră nouă"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nouă filă rădăcină"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Deschideți terminalul aici"

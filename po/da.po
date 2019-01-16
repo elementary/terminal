@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
 "PO-Revision-Date: 2018-03-23 23:00+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish "
-"<https://weblate.elementary.io/projects/terminal/terminal/da/>\n"
+"Language-Team: Danish <https://weblate.elementary.io/projects/terminal/"
+"terminal/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,125 +20,108 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "Opgave afsluttet"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
 msgstr "Kør et program i terminalen"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Om Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Brug kommandolinjen"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nyt vindue"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nyt \"root\"-faneblad"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Åbn terminal her"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "Find…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "Zoom Ud"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "Standard zoomniveau"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "Zoom Ind"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "Høj Kontrast"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Solarized Light"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Solarized Dark"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "Udseende"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/PantheonTerminalWindow.vala:1117
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/PantheonTerminalWindow.vala:194
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "Find…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Vis i Filbrowser"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
+msgstr "Zoom Ud"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr "Standard zoomniveau"
+
+#: src/PantheonTerminalWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
+msgstr "Zoom Ind"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr "Høj Kontrast"
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr "Solarized Dark"
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr "Udseende"
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Er du sikker på, at du vil lukke dette faneblad?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Der er en aktiv proces i dette faneblad."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Hvis du lukker den, vil denne process blive afsluttet."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Luk faneblad"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Er du sikker på, at du vil afslutte Terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Der er en aktiv proces i denne terminal."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Afslut Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Annuller"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -153,8 +136,8 @@ msgid "Be sure you understand what each part of this command does."
 msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "Vis ikke denne dialog igen"
+msgid "Show paste protection warnings"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
@@ -164,21 +147,46 @@ msgstr "Indsæt ikke"
 msgid "Paste Anyway"
 msgstr "Indsæt alligevel"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Find"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Forrige resultat"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Næste resultat"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Cyklisk søgning"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuller"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Vis ikke denne dialog igen"
+
+#~ msgid "About Terminal"
+#~ msgstr "Om Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Brug kommandolinjen"
+
+#~ msgid "New Window"
+#~ msgstr "Nyt vindue"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nyt \"root\"-faneblad"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Åbn terminal her"
 
 #~ msgid "Close"
 #~ msgstr "Luk"

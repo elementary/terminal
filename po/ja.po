@@ -7,138 +7,119 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
-"PO-Revision-Date: 2018-03-27 00:02+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/terminal/terminal/ja/>\n"
+"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"PO-Revision-Date: 2018-11-23 00:29+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
+"terminal/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:106
 msgid "Task finished"
 msgstr "タスクが終了しました"
 
-#: src/Application.vala:186
+#: src/Application.vala:185
 msgid "Run a program in terminal"
-msgstr "ターミナルでプログラムを実行する"
+msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:187
+#: src/Application.vala:186
 msgid "Set shell working directory"
-msgstr "シェルの処理ディレクトリを設定"
+msgstr "シェルのカレントディレクトリを設定します"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "ターミナルについて"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "コマンドラインを使用します"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "ターミナル"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "新しいウィンドウ"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "新しい root タブ"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "ここでターミナルを開く"
-
-#: src/PantheonTerminalWindow.vala:239 src/PantheonTerminalWindow.vala:1116
-msgid "Find…"
-msgstr "検索…"
-
-#: src/PantheonTerminalWindow.vala:243
-msgid "Zoom Out"
-msgstr "ズームアウト"
-
-#: src/PantheonTerminalWindow.vala:247
-msgid "Default zoom level"
-msgstr "デフォルトの拡大レベル"
-
-#: src/PantheonTerminalWindow.vala:251
-msgid "Zoom In"
-msgstr "ズームイン"
-
-#: src/PantheonTerminalWindow.vala:266
-msgid "High Contrast"
-msgstr "ハイコントラスト"
-
-#: src/PantheonTerminalWindow.vala:276
-msgid "Solarized Light"
-msgstr "Solarized Light"
-
-#: src/PantheonTerminalWindow.vala:286
-msgid "Solarized Dark"
-msgstr "Solarized Dark"
-
-#: src/PantheonTerminalWindow.vala:309
-msgid "Style"
-msgstr "スタイル"
-
-#: src/PantheonTerminalWindow.vala:1115
+#: src/PantheonTerminalWindow.vala:188
 msgid "Copy"
 msgstr "コピー"
 
-#: src/PantheonTerminalWindow.vala:1117
-msgid "Paste"
-msgstr "ペースト"
+#: src/PantheonTerminalWindow.vala:191
+msgid "Copy Last Output"
+msgstr "最後の出力をコピー"
 
-#: src/PantheonTerminalWindow.vala:1118
+#: src/PantheonTerminalWindow.vala:194
+msgid "Paste"
+msgstr "貼り付け"
+
+#: src/PantheonTerminalWindow.vala:197
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/PantheonTerminalWindow.vala:1119
+#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
+#: src/PantheonTerminalWindow.vala:1088
+msgid "Find…"
+msgstr "検索…"
+
+#: src/PantheonTerminalWindow.vala:203
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/PantheonTerminalWindow.vala:279
+msgid "Zoom out"
+msgstr "ズームアウト"
+
+#: src/PantheonTerminalWindow.vala:286
+msgid "Default zoom level"
+msgstr "デフォルトのズームレベル"
+
+#: src/PantheonTerminalWindow.vala:293
+msgid "Zoom in"
+msgstr "ズームイン"
+
+#: src/PantheonTerminalWindow.vala:306
+msgid "High Contrast"
+msgstr "ハイコントラスト"
+
+#: src/PantheonTerminalWindow.vala:314
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/PantheonTerminalWindow.vala:322
+msgid "Solarized Dark"
+msgstr "Solarized Dark"
+
+#: src/PantheonTerminalWindow.vala:345
+msgid "Style"
+msgstr "スタイル"
+
+#: src/PantheonTerminalWindow.vala:1080
+msgid "Hide find bar"
+msgstr "検索バーを隠します"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "このタブを閉じてもよろしいですか？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "このタブに動作しているプロセスがあります。"
+msgstr "このタブにはアクティブなプロセスがあります。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "タブを閉じた場合、プロセスは終了します。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "ターミナルを終了してもよろしいですか？"
+msgstr "\"ターミナル\" を終了してもよろしいですか？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "このターミナルは作業中です。"
+msgstr "このターミナルにはアクティブなプロセスがあります。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "ターミナルを終了した場合、プロセスは終了します。"
+msgstr "\"ターミナル\" を終了した場合、プロセスは終了します。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "ターミナルを終了する"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "キャンセル"
+msgstr "\"ターミナル\" を終了"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "This command is asking for Administrative access to your computer"
@@ -146,39 +127,66 @@ msgstr "このコマンドは管理者権限を必要とします"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "ターミナルにコマンドをコピーするのは危険です。"
+msgstr "\"ターミナル\" にコマンドをコピーすると危険なときがあります。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Be sure you understand what each part of this command does."
-msgstr "コマンドの内容を確認してください。"
+msgstr ""
+"このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてくださ"
+"い。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "今後このダイアログを表示しない"
+msgid "Show paste protection warnings"
+msgstr "貼り付け時に保護警告を表示"
 
 #: src/Dialogs/UnsafePasteDialog.vala:64
 msgid "Don't Paste"
-msgstr "ペーストしない"
+msgstr "貼り付けしない"
 
 #: src/Dialogs/UnsafePasteDialog.vala:66
 msgid "Paste Anyway"
-msgstr "とにかくペーストする"
+msgstr "了解して貼り付け"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "検索"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "前の結果"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "次の結果"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "循環検索"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "ターミナル"
+
+#~ msgid "Cancel"
+#~ msgstr "キャンセル"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "今後このダイアログを表示しない"
+
+#~ msgid "About Terminal"
+#~ msgstr "\"ターミナル\" について"
+
+#~ msgid "Use the command line"
+#~ msgstr "コマンドラインを使用します"
+
+#~ msgid "New Window"
+#~ msgstr "新しいウィンドウ"
+
+#~ msgid "New Root Tab"
+#~ msgstr "新しい root タブ"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "ここでターミナルを開く"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"
