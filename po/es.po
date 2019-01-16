@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-05-06 00:10+0000\n"
-"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"PO-Revision-Date: 2018-12-11 19:09+0000\n"
+"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -17,168 +17,177 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Tarea finalizada"
 
-#: src/Application.vala:186
+#: src/Application.vala:207
 msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en el terminal"
+msgstr "Ejecutar un programa en la terminal"
 
-#: src/Application.vala:187
+#: src/Application.vala:208
+msgid "Show help"
+msgstr "Mostrar ayuda"
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
-msgstr "Configurar el directorio de trabajo del intérprete de comandos"
+msgstr "Establecer el directorio de trabajo de shell"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Acerca de Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Usar la línea de comandos"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nueva ventana"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Nueva pestaña como administrador"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Abrir un terminal aquí"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/MainWindow.vala:191
+msgid "Copy Last Output"
+msgstr "Copiar última salida"
+
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Mostrar en el explorador de archivos"
 
-#: src/PantheonTerminalWindow.vala:250
-msgid "Zoom Out"
+#: src/MainWindow.vala:279
+msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Nivel de zum predeterminado"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom In"
+#: src/MainWindow.vala:293
+msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solar claro"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solar oscuro"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "Estilo"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1080
+msgid "Hide find bar"
+msgstr "Ocultar barra de búsqueda"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Hay un proceso activo en esta pestaña."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Si la cierra, el proceso finalizará."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "¿Está seguro de que quiere salir del terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Hay un proceso activo en este terminal."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "Si sale del terminal, el proceso finalizará."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Salir de Terminal"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Este comando solicita acceso al equipo como administrador"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Copiar comandos en la terminal puede ser peligroso."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Asegúrese de comprender lo que hace cada parte de este comando."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "No volver a mostrar este diálogo"
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "Show paste protection warnings"
+msgstr "Mostrar alertas de protección al pegar texto"
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "No pegar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Pegar de todos modos"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Buscar"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Resultado anterior"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Siguiente resultado"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "Búsqueda cíclica"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "No volver a mostrar este diálogo"
+
+#~ msgid "About Terminal"
+#~ msgstr "Acerca de Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Usar la línea de comandos"
+
+#~ msgid "New Window"
+#~ msgstr "Nueva ventana"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Nueva pestaña como administrador"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Abrir un terminal aquí"
 
 #~ msgid "Close"
 #~ msgstr "Cerrar"

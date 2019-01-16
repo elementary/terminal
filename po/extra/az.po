@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 20:54-0700\n"
+"POT-Creation-Date: 2018-10-13 15:17-0700\n"
 "PO-Revision-Date: 2017-01-05 15:35+0000\n"
 "Last-Translator: Ramiz Demiurge <Unknown>\n"
 "Language-Team: Azerbaijani <az@li.org>\n"
@@ -38,13 +38,11 @@ msgstr ""
 "proraqmdır. Sisteminizdə mövcud olan proqramları çalışdırmaq üçün istifadə "
 "oluna bilər."
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:8
-#: data/io.elementary.terminal.desktop.in:18
-#: data/io.elementary.terminal.desktop.in:23
 msgid "utilities-terminal"
 msgstr ""
 
@@ -56,7 +54,7 @@ msgstr "əmr;əmr sətiri;yerinə yetirmək;"
 msgid "New Window"
 msgstr "Yeni Pəncərə"
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr "Yeni Root Vərəqəsi"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
 "PO-Revision-Date: 2018-03-23 10:16+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -20,165 +20,176 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "工作已完成"
 
-#: src/Application.vala:186
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
-#: src/Application.vala:187
+#: src/Application.vala:208
+msgid "Show help"
+msgstr ""
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "設定 shell 工作目錄"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "關於《終端機》"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "使用指令列"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "終端機"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "新增視窗"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "新 Root 分頁"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "在此處開啟終端機"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "複製"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/MainWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "貼上"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "顯示在檔案瀏覽器中"
 
-#: src/PantheonTerminalWindow.vala:250
-msgid "Zoom Out"
+#: src/MainWindow.vala:279
+#, fuzzy
+msgid "Zoom out"
 msgstr "拉遠"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
-#: src/PantheonTerminalWindow.vala:258
-msgid "Zoom In"
+#: src/MainWindow.vala:293
+#, fuzzy
+msgid "Zoom in"
 msgstr "拉近"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "高對比"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarized 暗色"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "樣式"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1080
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "您確定您想要關閉此分頁嗎？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "此分頁中有個活動中程序。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "如果您將它關閉，裡面的程序將會終止。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "關閉分頁"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "您確定想退出終端機？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "此終端機中有個活動中程序。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "若您退出終端機，裡面的程序將會終止。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "退出終端機"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "取消"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "此指令要求您電腦的管理權限"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "把指令複製到《終端機》中可能造成危險。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr "不要再顯示這個對話視窗"
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "Show paste protection warnings"
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "不要貼上"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "尋找"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "上個結果"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "下個結果"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
 msgstr "循環搜尋"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "終端機"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "不要再顯示這個對話視窗"
+
+#~ msgid "About Terminal"
+#~ msgstr "關於《終端機》"
+
+#~ msgid "Use the command line"
+#~ msgstr "使用指令列"
+
+#~ msgid "New Window"
+#~ msgstr "新增視窗"
+
+#~ msgid "New Root Tab"
+#~ msgstr "新 Root 分頁"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "在此處開啟終端機"
 
 #~ msgid "Close"
 #~ msgstr "關閉"

@@ -7,178 +7,189 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2016-08-02 10:04+0000\n"
-"Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"PO-Revision-Date: 2018-10-22 15:24+0000\n"
+"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
+"Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
+"terminal/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Uppgift slutförd"
 
-#: src/Application.vala:186
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "Kör ett program i terminalen"
 
-#: src/Application.vala:187
+#: src/Application.vala:208
+msgid "Show help"
+msgstr ""
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
-msgstr "Använd som terminalens arbetsmapp"
+msgstr "Ställ in terminalens arbetsmapp"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "Om Terminal"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "Använd kommandoraden"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "Terminal"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "Nytt fönster"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "Ny rotflik"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "Öppna terminal här"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/MainWindow.vala:191
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Visa i Filer"
 
-#: src/PantheonTerminalWindow.vala:250
+#: src/MainWindow.vala:279
 #, fuzzy
-msgid "Zoom Out"
+msgid "Zoom out"
 msgstr "Förminska"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
-msgstr ""
+msgstr "Normalstorlek"
 
-#: src/PantheonTerminalWindow.vala:258
+#: src/MainWindow.vala:293
 #, fuzzy
-msgid "Zoom In"
+msgid "Zoom in"
 msgstr "Förstora"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/MainWindow.vala:306
 msgid "High Contrast"
-msgstr ""
+msgstr "Hög kontrast"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solariserat ljus"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solariserat mörker"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/MainWindow.vala:345
 msgid "Style"
+msgstr "Tema"
+
+#: src/MainWindow.vala:1080
+msgid "Hide find bar"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Är du säker på att du vill stänga den här fliken?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "Fliken innehåller en aktiv process."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Om du stänger den kommer processen avslutas."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Stäng flik"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Är du säker på att du vill avsluta Terminalen?"
+msgstr "Är du säker på att du vill stänga Terminalen?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "Terminalen innehåller en aktiv process."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Om du avslutar Terminalen så kommer processen att avslutas"
+msgstr "Om du stänger terminalen kommer processen att avslutas."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Avsluta terminalen"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Det här kommandot begär administratörsrättigheter till din dator"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Att klistra in kommandon i terminalen kan vara farligt."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Var säker på att du förstår vad varje del av kommandot gör."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Klistra inte in"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Klistra in ändå"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "Sök"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "Föregående resultat"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "Nästa resultat"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
-msgstr ""
+msgstr "Starta om sökning från toppen"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "Terminal"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "Visa inte detta igen"
+
+#~ msgid "About Terminal"
+#~ msgstr "Om Terminal"
+
+#~ msgid "Use the command line"
+#~ msgstr "Använd kommandoraden"
+
+#~ msgid "New Window"
+#~ msgstr "Nytt fönster"
+
+#~ msgid "New Root Tab"
+#~ msgstr "Ny rotflik"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "Öppna terminal här"
 
 #~ msgid "Close"
 #~ msgstr "Stäng"

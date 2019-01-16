@@ -7,180 +7,187 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-06 08:42-0700\n"
-"PO-Revision-Date: 2018-01-06 00:20+0000\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"PO-Revision-Date: 2019-01-15 12:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
-"terminal/terminal/zh_CN/>\n"
+"terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "任务已完成"
 
-#: src/Application.vala:186
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "在终端运行程序"
 
-#: src/Application.vala:187
+#: src/Application.vala:208
+msgid "Show help"
+msgstr "显示帮助"
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/Constants.vala:24
-msgid "About Terminal"
-msgstr "关于终端"
-
-#: src/Constants.vala:25
-msgid "Use the command line"
-msgstr "使用命令行"
-
-#: src/Constants.vala:26 src/Widgets/TerminalWidget.vala:29
-msgid "Terminal"
-msgstr "终端"
-
-#: src/Constants.vala:27
-msgid "New Window"
-msgstr "新建窗口"
-
-#: src/Constants.vala:28
-msgid "New Root Tab"
-msgstr "新建管理员标签"
-
-#: src/Constants.vala:29
-msgid "Open Terminal Here"
-msgstr "在此处打开终端"
-
-#: src/PantheonTerminalWindow.vala:178
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "复制"
 
-#: src/PantheonTerminalWindow.vala:181
+#: src/MainWindow.vala:191
+msgid "Copy Last Output"
+msgstr "复制上次输出"
+
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/PantheonTerminalWindow.vala:184
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "全选"
 
-#: src/PantheonTerminalWindow.vala:187 src/PantheonTerminalWindow.vala:246
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "查找…"
 
-#: src/PantheonTerminalWindow.vala:190
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
-msgstr ""
+msgstr "在 文件管理器 中打开"
 
-#: src/PantheonTerminalWindow.vala:250
-#, fuzzy
-msgid "Zoom Out"
+#: src/MainWindow.vala:279
+msgid "Zoom out"
 msgstr "缩小"
 
-#: src/PantheonTerminalWindow.vala:254
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
-msgstr ""
+msgstr "默认缩放等级"
 
-#: src/PantheonTerminalWindow.vala:258
-#, fuzzy
-msgid "Zoom In"
+#: src/MainWindow.vala:293
+msgid "Zoom in"
 msgstr "放大"
 
-#: src/PantheonTerminalWindow.vala:273
+#: src/MainWindow.vala:306
 msgid "High Contrast"
-msgstr ""
+msgstr "高对比度"
 
-#: src/PantheonTerminalWindow.vala:283
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized 亮色"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
-msgstr ""
+msgstr "Solarized 暗色"
 
-#: src/PantheonTerminalWindow.vala:316
+#: src/MainWindow.vala:345
 msgid "Style"
-msgstr ""
+msgstr "风格"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1080
+msgid "Hide find bar"
+msgstr "隐藏查找"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "您确定要关闭此标签吗？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:33
+#: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
 msgstr "此标签中有正在运行的进程。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:34
+#: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "如果您关闭它，进程将会中断。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "关闭标签"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:45
+#: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "您确定要退出终端吗？"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:47
+#: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
 msgstr "此终端中有一个进程正在运行。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:48
+#: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
 msgstr "如果您退出终端，进程将会中断。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:49
+#: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "退出终端"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:81
-msgid "Cancel"
-msgstr "取消"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "运行此命令需要管理员权限"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "复制命令到终端可能会有安全隐患。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "请确定您理解指令各部分的作用。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
-msgid "Do not show this dialog again"
-msgstr ""
+#: src/Dialogs/UnsafePasteDialog.vala:35
+msgid "Show paste protection warnings"
+msgstr "显示粘贴警告"
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "取消粘贴"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "仍然粘贴"
 
-#: src/Widgets/SearchToolbar.vala:34
+#: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
 msgstr "查找"
 
-#: src/Widgets/SearchToolbar.vala:38
+#: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
 msgstr "上一个结果"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
 msgstr "下一个结果"
 
-#: src/Widgets/SearchToolbar.vala:47
+#: src/Widgets/SearchToolbar.vala:55
 msgid "Cyclic search"
-msgstr ""
+msgstr "循环搜索"
+
+#: src/Widgets/TerminalWidget.vala:29
+msgid "Terminal"
+msgstr "终端"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Do not show this dialog again"
+#~ msgstr "不再显示此对话框"
+
+#~ msgid "About Terminal"
+#~ msgstr "关于终端"
+
+#~ msgid "Use the command line"
+#~ msgstr "使用命令行"
+
+#~ msgid "New Window"
+#~ msgstr "新建窗口"
+
+#~ msgid "New Root Tab"
+#~ msgstr "新建管理员标签"
+
+#~ msgid "Open Terminal Here"
+#~ msgstr "在此处打开终端"
 
 #~ msgid "Close"
 #~ msgstr "关闭"
