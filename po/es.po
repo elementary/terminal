@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
-"PO-Revision-Date: 2018-11-26 21:08+0000\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"PO-Revision-Date: 2018-12-11 19:09+0000\n"
 "Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -20,72 +20,75 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:106
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Tarea finalizada"
 
-#: src/Application.vala:185
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en la terminal"
 
-#: src/Application.vala:186
+#: src/Application.vala:208
+msgid "Show help"
+msgstr "Mostrar ayuda"
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo de shell"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/MainWindow.vala:191
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/PantheonTerminalWindow.vala:197
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
-#: src/PantheonTerminalWindow.vala:1088
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/PantheonTerminalWindow.vala:203
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Mostrar en el explorador de archivos"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/MainWindow.vala:279
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/PantheonTerminalWindow.vala:286
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Nivel de zum predeterminado"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:293
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/PantheonTerminalWindow.vala:306
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: src/PantheonTerminalWindow.vala:314
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solar claro"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solar oscuro"
 
-#: src/PantheonTerminalWindow.vala:345
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "Estilo"
 
-#: src/PantheonTerminalWindow.vala:1080
+#: src/MainWindow.vala:1080
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -121,27 +124,27 @@ msgstr "Si sale del terminal, el proceso finalizará."
 msgid "Quit Terminal"
 msgstr "Salir de Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Este comando solicita acceso al equipo como administrador"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Copiar comandos en la terminal puede ser peligroso."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Asegúrese de comprender lo que hace cada parte de este comando."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr "Mostrar alertas de protección al pegar texto"
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "No pegar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Pegar de todos modos"
 

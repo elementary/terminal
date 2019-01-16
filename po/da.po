@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
 "PO-Revision-Date: 2018-03-23 23:00+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/terminal/"
@@ -20,74 +20,77 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
-#: src/Application.vala:106
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Opgave afsluttet"
 
-#: src/Application.vala:185
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "Kør et program i terminalen"
 
-#: src/Application.vala:186
+#: src/Application.vala:208
+msgid "Show help"
+msgstr ""
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/MainWindow.vala:191
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/PantheonTerminalWindow.vala:197
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
-#: src/PantheonTerminalWindow.vala:1088
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Find…"
 
-#: src/PantheonTerminalWindow.vala:203
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Vis i Filbrowser"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/MainWindow.vala:279
 #, fuzzy
 msgid "Zoom out"
 msgstr "Zoom Ud"
 
-#: src/PantheonTerminalWindow.vala:286
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:293
 #, fuzzy
 msgid "Zoom in"
 msgstr "Zoom Ind"
 
-#: src/PantheonTerminalWindow.vala:306
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "Høj Kontrast"
 
-#: src/PantheonTerminalWindow.vala:314
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:345
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "Udseende"
 
-#: src/PantheonTerminalWindow.vala:1080
+#: src/MainWindow.vala:1080
 msgid "Hide find bar"
 msgstr ""
 
@@ -123,27 +126,27 @@ msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 msgid "Quit Terminal"
 msgstr "Afslut Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Denne kommando forespørger administrativ adgang til din computer"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Det kan være farligt at kopiere kommandoer ind i terminalen."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Indsæt ikke"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Indsæt alligevel"
 

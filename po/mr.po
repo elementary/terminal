@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
-"PO-Revision-Date: 2018-11-28 05:46+0000\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"PO-Revision-Date: 2018-12-16 19:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -13,72 +13,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: src/Application.vala:106
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
-#: src/Application.vala:185
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:186
+#: src/Application.vala:208
+msgid "Show help"
+msgstr "मदत दाखवा"
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "प्रतिकृती"
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/MainWindow.vala:191
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करा"
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "चिकटवा(पेस्ट)"
 
-#: src/PantheonTerminalWindow.vala:197
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
-#: src/PantheonTerminalWindow.vala:1088
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "शोधा…"
 
-#: src/PantheonTerminalWindow.vala:203
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/MainWindow.vala:279
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/PantheonTerminalWindow.vala:286
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:293
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/PantheonTerminalWindow.vala:306
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/PantheonTerminalWindow.vala:314
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "सौरकृत गडद"
 
-#: src/PantheonTerminalWindow.vala:345
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "शैली"
 
-#: src/PantheonTerminalWindow.vala:1080
+#: src/MainWindow.vala:1080
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 
@@ -114,27 +117,27 @@ msgstr "आपण टर्मिनल बंद केल्यास प्�
 msgid "Quit Terminal"
 msgstr "टर्मिनल बंद करा"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "ही कमांड  आपल्या संगणकावर प्रशासकीय प्रवेशासाठी परवानगी मागत आहे"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "टर्मिनलमध्ये कमांड कॉपी करणे धोकादायक असू शकते."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "कमांडचा प्रत्येक भाग काय करतो हे आपणांस समजले असल्याची खात्री करून घ्या."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr "पेस्ट संरक्षण चेतावणी दर्शवा"
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "चिकटवू (पेस्ट करू) नका"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "तरीही चिकटवा (पेस्ट करा)"
 

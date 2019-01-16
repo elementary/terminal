@@ -19,7 +19,7 @@
 
 namespace PantheonTerminal {
 
-    public class PantheonTerminalWindow : Gtk.Window {
+    public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -95,7 +95,7 @@ namespace PantheonTerminal {
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
-        public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
+        public MainWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -106,8 +106,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (TerminalApp app, int x, int y,
-                                                   bool recreate_tabs, bool ensure_tab) {
+        public MainWindow.with_coords (TerminalApp app, int x, int y,
+                                       bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -121,8 +121,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (TerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+        public MainWindow.with_working_directory (TerminalApp app, string location,
+                                                  bool recreate_tabs = true) {
             Object (
                 app: app,
                 focus_restored_tabs: false,

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-03 13:01-0800\n"
+"POT-Creation-Date: 2018-12-10 09:15-0800\n"
 "PO-Revision-Date: 2018-04-02 10:46+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/terminal/"
@@ -21,74 +21,77 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:106
+#: src/Application.vala:109
 msgid "Task finished"
 msgstr "Naloga končana"
 
-#: src/Application.vala:185
+#: src/Application.vala:207
 msgid "Run a program in terminal"
 msgstr "Zaženi program v terminalu"
 
-#: src/Application.vala:186
+#: src/Application.vala:208
+msgid "Show help"
+msgstr ""
+
+#: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
-#: src/PantheonTerminalWindow.vala:188
+#: src/MainWindow.vala:188
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/PantheonTerminalWindow.vala:191
+#: src/MainWindow.vala:191
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/PantheonTerminalWindow.vala:194
+#: src/MainWindow.vala:194
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/PantheonTerminalWindow.vala:197
+#: src/MainWindow.vala:197
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/PantheonTerminalWindow.vala:200 src/PantheonTerminalWindow.vala:271
-#: src/PantheonTerminalWindow.vala:1088
+#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/PantheonTerminalWindow.vala:203
+#: src/MainWindow.vala:203
 msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
-#: src/PantheonTerminalWindow.vala:279
+#: src/MainWindow.vala:279
 #, fuzzy
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/PantheonTerminalWindow.vala:286
+#: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/PantheonTerminalWindow.vala:293
+#: src/MainWindow.vala:293
 #, fuzzy
 msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/PantheonTerminalWindow.vala:306
+#: src/MainWindow.vala:306
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/PantheonTerminalWindow.vala:314
+#: src/MainWindow.vala:314
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/PantheonTerminalWindow.vala:322
+#: src/MainWindow.vala:322
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/PantheonTerminalWindow.vala:345
+#: src/MainWindow.vala:345
 msgid "Style"
 msgstr "Stil"
 
-#: src/PantheonTerminalWindow.vala:1080
+#: src/MainWindow.vala:1080
 msgid "Hide find bar"
 msgstr ""
 
@@ -124,27 +127,27 @@ msgstr "Če zaprete Terminal, se bo proces končal."
 msgid "Quit Terminal"
 msgstr "Končaj Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ta ukaz sprašuje za skrbniški dostop do vašega računalnika"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Kopiranje ukazov v Terminal je lahko nevarno."
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
 msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
 
-#: src/Dialogs/UnsafePasteDialog.vala:47
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:64
+#: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
 msgstr "Ne prilepi"
 
-#: src/Dialogs/UnsafePasteDialog.vala:66
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
 msgstr "Vseeno prilepi"
 

@@ -23,10 +23,10 @@ namespace PantheonTerminal.Widgets {
         private Gtk.ToggleButton cycle_button;
         private uint last_search_term_length = 0;
 
-        public weak PantheonTerminalWindow window { get; construct; }
+        public weak MainWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
-        public SearchToolbar (PantheonTerminalWindow window) {
+        public SearchToolbar (MainWindow window) {
             Object (window: window);
         }
 
@@ -36,14 +36,14 @@ namespace PantheonTerminal.Widgets {
             search_entry.placeholder_text = _("Find");
 
             var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            previous_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS);
+            previous_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS);
             previous_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Up", "<Control><Shift>g"},
                 _("Previous result")
             );
 
             var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            next_button.set_action_name (PantheonTerminalWindow.ACTION_PREFIX + PantheonTerminalWindow.ACTION_SEARCH_NEXT);
+            next_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT);
             next_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Down", "<Control>g"},
                 _("Next result")
@@ -85,12 +85,12 @@ namespace PantheonTerminal.Widgets {
 
             search_entry.search_changed.connect (() => {
                 if (search_entry.text != "") {
-                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_NEXT).set_enabled (true);
-                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
+                    window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (true);
+                    window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
                     cycle_button.sensitive = true;
                 } else {
-                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_NEXT).set_enabled (false);
-                    window.get_simple_action (PantheonTerminalWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
+                    window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (false);
+                    window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
                     cycle_button.sensitive = false;
                 }
 
