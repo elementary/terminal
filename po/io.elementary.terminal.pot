@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 12:48+0000\n"
+"POT-Creation-Date: 2019-01-16 13:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,18 +35,6 @@ msgstr ""
 
 #: src/MainWindow.vala:188
 msgid "Copy"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:186
-msgid "Copy"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:189
-msgid "Paste"
-msgstr ""
-
-#: src/PantheonTerminalWindow.vala:192
-msgid "Select All"
 msgstr ""
 
 #: src/MainWindow.vala:191
