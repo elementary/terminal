@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015-2018 elementary, LLC <contact@elementary.io> -->
 <component type="desktop-application">
-  <id>io.elementary.terminal.desktop</id>
+  <id>io.elementary.terminal</id>
   <metadata_license>CC0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
@@ -21,8 +21,75 @@
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot.png</image>
     </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-light.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-high-contrast.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-find.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-paste-protection.png</image>
+    </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.3" date="2018-12-06" urgency="medium">
+      <description>
+        <ul>
+          <li>Fix erratic search text highlightning behavior</li>
+          <li>Support -h flag for help</li>
+          <li>Disable audible bell</li>
+          <li>Add Alt+↑ action to scroll to last command</li>
+          <li>Add Alt+c action to copy last output</li>
+          <li>Add accels to tooltips</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.3.2" date="2018-10-30" urgency="medium">
+      <description>
+        <ul>
+          <li>Fix zsh notifications</li>
+          <li>Conditional ctrl+g shortcut to deconflict with emacs</li>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.3.1" date="2018-10-16" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.3" date="2018-09-06" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.2" date="2018-08-22" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.5.1" date="2018-07-23" urgency="medium">
+      <description>
+        <ul>
+          <li>Minor bug fixes</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.0" date="2018-06-19" urgency="medium">
       <description>
         <ul>

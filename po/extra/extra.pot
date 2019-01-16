@@ -8,6 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
+
 "POT-Creation-Date: 2019-01-16 12:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -51,6 +52,6 @@ msgstr ""
 msgid "New Window"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:22
+#: data/io.elementary.terminal.desktop.in:21
 msgid "New Root Tab"
 msgstr ""

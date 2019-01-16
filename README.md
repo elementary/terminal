@@ -11,7 +11,7 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
-* libgranite-dev
+* libgranite-dev >= 5.2.0
 * libvte-2.91-dev
 * meson
 * valac
@@ -19,6 +19,7 @@ You'll need the following dependencies:
 Run `meson` to configure the build environment and then `ninja test` to build and run tests
 
     meson build --prefix=/usr
+    cd build
     ninja test
 
 To install, use `ninja install`, then execute with `io.elementary.terminal`
