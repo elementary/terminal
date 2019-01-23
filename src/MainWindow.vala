@@ -547,7 +547,7 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+            if (Granite.Services.System.history_is_enabled () &&
                 PantheonTerminal.settings.remember_tabs) {
 
                 saved_tabs = PantheonTerminal.saved_state.tabs;
@@ -740,7 +740,7 @@ namespace PantheonTerminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
-                if (PantheonTerminal.privacy_settings.remember_recent_files &&
+                if (Granite.Services.System.history_is_enabled () &&
                     PantheonTerminal.settings.remember_tabs) {
 
                     PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
@@ -753,7 +753,7 @@ namespace PantheonTerminal {
         private void open_tabs () {
             string[] tabs = {};
             int focus = 0;
-            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+            if (Granite.Services.System.history_is_enabled () &&
                 PantheonTerminal.settings.remember_tabs) {
 
                 tabs = saved_tabs;
@@ -1220,7 +1220,7 @@ namespace PantheonTerminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
 
-            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+            if (Granite.Services.System.history_is_enabled () &&
                 PantheonTerminal.settings.remember_tabs) {
 
                 notebook.tabs.foreach ((tab) => {

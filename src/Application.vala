@@ -42,7 +42,6 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         /* Settings classes are defined in Settings.vala */
         PantheonTerminal.saved_state = new PantheonTerminal.SavedState ();
         PantheonTerminal.settings = new PantheonTerminal.Settings ();
-        PantheonTerminal.privacy_settings = new PantheonTerminal.PrivacySettings ();
     }
 
     public TerminalApp () {
