@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-12-11 11:05+0000\n"
+"PO-Revision-Date: 2018-12-30 00:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -130,13 +130,11 @@ msgstr "このコマンドは管理者権限を必要とします"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "\"ターミナル\" にコマンドをコピーすると危険なときがあります。"
+msgstr "\"ターミナル\" にコマンドをコピーすると危険な場合があります。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"このコマンドのそれぞれの部分が何を実行するのか必ず理解するようにしてくださ"
-"い。"
+msgstr "このコマンドの各部分が実行することを、必ず理解するようにしてください。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"

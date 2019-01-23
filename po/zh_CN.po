@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-08-13 00:04+0000\n"
+"PO-Revision-Date: 2019-01-15 12:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
@@ -30,7 +30,7 @@ msgstr "在终端运行程序"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "显示帮助"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
@@ -42,7 +42,7 @@ msgstr "复制"
 
 #: src/MainWindow.vala:191
 msgid "Copy Last Output"
-msgstr ""
+msgstr "复制上次输出"
 
 #: src/MainWindow.vala:194
 msgid "Paste"
@@ -61,7 +61,6 @@ msgid "Show in File Browser"
 msgstr "在 文件管理器 中打开"
 
 #: src/MainWindow.vala:279
-#, fuzzy
 msgid "Zoom out"
 msgstr "缩小"
 
@@ -70,7 +69,6 @@ msgid "Default zoom level"
 msgstr "默认缩放等级"
 
 #: src/MainWindow.vala:293
-#, fuzzy
 msgid "Zoom in"
 msgstr "放大"
 
@@ -92,7 +90,7 @@ msgstr "风格"
 
 #: src/MainWindow.vala:1080
 msgid "Hide find bar"
-msgstr ""
+msgstr "隐藏查找"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -140,7 +138,7 @@ msgstr "请确定您理解指令各部分的作用。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "显示粘贴警告"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
