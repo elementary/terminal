@@ -392,7 +392,7 @@ namespace PantheonTerminal {
             style_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
-            
+
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
@@ -547,7 +547,9 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            if (PantheonTerminal.privacy_settings.remember_recent_files) {
+            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+                PantheonTerminal.settings.remember_tabs) {
+
                 saved_tabs = PantheonTerminal.saved_state.tabs;
             } else {
                 saved_tabs = {};
@@ -738,7 +740,9 @@ namespace PantheonTerminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
-                if (PantheonTerminal.privacy_settings.remember_recent_files) {
+                if (PantheonTerminal.privacy_settings.remember_recent_files &&
+                    PantheonTerminal.settings.remember_tabs) {
+
                     PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
                 }
 
@@ -749,7 +753,9 @@ namespace PantheonTerminal {
         private void open_tabs () {
             string[] tabs = {};
             int focus = 0;
-            if (privacy_settings.remember_recent_files) {
+            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+                PantheonTerminal.settings.remember_tabs) {
+
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
@@ -1214,7 +1220,9 @@ namespace PantheonTerminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
 
-            if (privacy_settings.remember_recent_files) {
+            if (PantheonTerminal.privacy_settings.remember_recent_files &&
+                PantheonTerminal.settings.remember_tabs) {
+
                 notebook.tabs.foreach ((tab) => {
                     var term = get_term_widget (tab);
                     if (term != null) {

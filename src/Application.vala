@@ -17,8 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
-public class TerminalApp : Gtk.Application {
+public class PantheonTerminal.TerminalApp : Gtk.Application {
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
@@ -219,5 +218,4 @@ public class TerminalApp : Gtk.Application {
         var app = new TerminalApp ();
         return app.run (args);
     }
-}
 }

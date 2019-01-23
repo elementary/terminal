@@ -70,6 +70,15 @@
       <summary>Open last active tab path on new tab.</summary>
       <description>Defines whether a new tab should have the path of the last active tab.</description>
     </key>
+    <key name="remember-tabs" type="b">
+      <default>true</default>
+      <summary>Whether open tabs should be remembered on closing (subject to privacy setting).</summary>
+      <description>
+          Defines whether the terminal should remember the last open tabs and restore
+          them when the terminal is reopened. If the global privacy setting is on, the tabs
+          will not be restored or remembered even if this setting is true.
+      </description>
+    </key>
     <key name="alt-changes-tab" type="b">
       <default>true</default>
       <summary>Defines whether Alt+N goes to nth tab.</summary>
