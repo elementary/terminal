@@ -52,6 +52,7 @@ namespace PantheonTerminal.Widgets {
             cycle_button = new Gtk.ToggleButton ();
             cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             cycle_button.sensitive = false;
+            cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
 
             var search_grid = new Gtk.Grid ();
@@ -67,7 +68,19 @@ namespace PantheonTerminal.Widgets {
             show_all ();
 
             grab_focus.connect (() => {
-                search_entry.grab_focus ();
+                search_entry.grab_focus_without_selecting ();
+            });
+
+            next_button.clicked.connect_after (() => {
+                grab_focus ();
+            });
+
+            previous_button.clicked.connect_after (() => {
+                grab_focus ();
+            });
+
+            cycle_button.clicked.connect_after (() => {
+                grab_focus ();
             });
 
             search_entry.search_changed.connect (() => {

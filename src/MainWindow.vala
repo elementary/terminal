@@ -340,6 +340,7 @@ namespace PantheonTerminal {
             style_popover.add (style_popover_grid);
 
             var style_button = new Gtk.MenuButton ();
+            style_button.set_can_focus (false);
             style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
             style_button.tooltip_text = _("Style");
@@ -388,6 +389,10 @@ namespace PantheonTerminal {
             set_titlebar (header);
             add (grid);
 
+            style_popover.closed.connect (() => {
+                current_terminal.grab_focus ();
+            });
+            
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
