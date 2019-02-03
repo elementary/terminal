@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-03-23 23:00+0000\n"
+"PO-Revision-Date: 2019-01-31 21:59+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/terminal/"
 "terminal/da/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
 #: src/Application.vala:109
@@ -30,7 +30,7 @@ msgstr "Kør et program i terminalen"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "Vis hjælp"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
@@ -42,7 +42,7 @@ msgstr "Kopiér"
 
 #: src/MainWindow.vala:191
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopier Forrige Resultat"
 
 #: src/MainWindow.vala:194
 msgid "Paste"
@@ -61,18 +61,16 @@ msgid "Show in File Browser"
 msgstr "Vis i Filbrowser"
 
 #: src/MainWindow.vala:279
-#, fuzzy
 msgid "Zoom out"
-msgstr "Zoom Ud"
+msgstr "Zoom ud"
 
 #: src/MainWindow.vala:286
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
 #: src/MainWindow.vala:293
-#, fuzzy
 msgid "Zoom in"
-msgstr "Zoom Ind"
+msgstr "Zoom ind"
 
 #: src/MainWindow.vala:306
 msgid "High Contrast"
@@ -92,7 +90,7 @@ msgstr "Udseende"
 
 #: src/MainWindow.vala:1080
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skjul søgebar"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -140,7 +138,7 @@ msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Vis advarsler om indsætningsbeskyttelse"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
