@@ -237,21 +237,18 @@ namespace PantheonTerminal {
 
         public void add_tab_with_working_directory (string location, bool allow_duplicate = false) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
-            bool add_tab = true;
             if (!allow_duplicate) {
                 var f1 = File.new_for_commandline_arg (location);
-                terminals.foreach ((t) => {
+                foreach (TerminalWidget t in terminals)  {
                     var tab_path = t.get_shell_location ();
                     /* Detect equivalent paths */
                     if (f1.equal (File.new_for_path (tab_path))) {
-                        add_tab = false;
+                        return; /* Duplicate found, abandon adding tab */
                     }
-                });
+                }
             }
 
-            if (add_tab) {
-                new_tab (location);
-            }
+            new_tab (location);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -408,7 +405,7 @@ namespace PantheonTerminal {
             style_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
-            
+
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
