@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2019-02-11 13:21+0000\n"
+"PO-Revision-Date: 2019-02-12 00:07+0000\n"
 "Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Galician <https://weblate.elementary.io/projects/terminal/"
 "terminal/gl/>\n"
@@ -114,11 +114,11 @@ msgstr "Seguro que quere saír do terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "Hai un proceso activo neste terminal"
+msgstr "Hai un proceso activo neste terminal."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Se sae do terminal, rematará o proceso"
+msgstr "Se sae do terminal, rematará o proceso."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
