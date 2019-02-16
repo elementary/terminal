@@ -53,6 +53,7 @@ namespace PantheonTerminal {
         public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
+<<<<<<< HEAD:src/MainWindow.vala
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-new-tab";
@@ -71,6 +72,28 @@ namespace PantheonTerminal {
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
+=======
+        public const string ACTION_CLOSE_TAB = "action_close_tab";
+        public const string ACTION_FULLSCREEN = "action_fullscreen";
+        public const string ACTION_NEW_TAB = "action_new_tab";
+        public const string ACTION_NEW_WINDOW = "action_new_window";
+        public const string ACTION_NEXT_TAB = "action_next_tab";
+        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
+        public const string ACTION_MOVE_TAB_RIGHT = "action_move_tab_right";
+        public const string ACTION_MOVE_TAB_LEFT = "action_move_tab_left";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
+        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
+        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
+        public const string ACTION_COPY = "action_copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
+        public const string ACTION_PASTE = "action_paste";
+        public const string ACTION_SEARCH = "action_search";
+        public const string ACTION_SEARCH_NEXT = "action_search_next";
+        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
+        public const string ACTION_SELECT_ALL = "action_select_all";
+        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
+>>>>>>> Add moving current tab shortcuts:src/PantheonTerminalWindow.vala
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -81,6 +104,8 @@ namespace PantheonTerminal {
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
+            { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
             { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
@@ -139,6 +164,8 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><alt>Right";
+            action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
@@ -1066,6 +1093,14 @@ namespace PantheonTerminal {
 
         void action_previous_tab () {
             notebook.previous_page ();
+        }
+
+        void action_move_tab_right () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) + 1) % notebook.n_tabs);
+        }
+
+        void action_move_tab_left () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) - 1) % notebook.n_tabs);
         }
 
         void action_search () {
