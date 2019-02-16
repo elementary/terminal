@@ -60,6 +60,8 @@ namespace PantheonTerminal {
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
+        public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
         public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
         public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
