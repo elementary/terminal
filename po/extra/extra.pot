@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2019-01-16 13:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,22 +34,23 @@ msgid ""
 "environment which can be used to run programs available on your system."
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:152
+#: data/io.elementary.terminal.appdata.xml.in:183
 msgid "elementary LLC."
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:8
+#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/io.elementary.terminal.desktop.in:9
 msgid "utilities-terminal"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:12
+#: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:17
+#: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:21
+#: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr ""

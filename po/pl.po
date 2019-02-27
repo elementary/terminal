@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-08 07:24+0000\n"
+"PO-Revision-Date: 2019-01-01 00:36+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
 "terminal/pl/>\n"
@@ -31,7 +31,7 @@ msgstr "Uruchom program w terminalu"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "Wyświetl pomoc"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
@@ -43,7 +43,7 @@ msgstr "Skopiuj"
 
 #: src/MainWindow.vala:191
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopiuj ostatnie wyjście"
 
 #: src/MainWindow.vala:194
 msgid "Paste"
@@ -139,7 +139,7 @@ msgstr "Upewnij się, że rozumiesz co robi dana komenda."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Wyświetl ostrzeżenia o ochronie wklejania"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -147,7 +147,7 @@ msgstr "Nie wklejaj"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Wklej mimo wszystko"
+msgstr "Wklej mimo to"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
