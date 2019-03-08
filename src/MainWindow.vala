@@ -610,7 +610,7 @@ namespace PantheonTerminal {
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog (this);
-                if (d.run () == 1) {
+                if (d.run () == Gtk.ResponseType.ACCEPT) {
                     d.destroy ();
                     t.kill_fg ();
                 } else {
