@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2019-03-11 14:47+0000\n"
-"Last-Translator: mohammadA <mohammadAbdulhadi1@gmail.com>\n"
+"PO-Revision-Date: 2019-03-12 15:27+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
 "ar/>\n"
 "Language: ar\n"
@@ -47,7 +47,7 @@ msgstr "انسخ آخر مخرج"
 
 #: src/MainWindow.vala:194
 msgid "Paste"
-msgstr "ألصق"
+msgstr "لصق"
 
 #: src/MainWindow.vala:197
 msgid "Select All"
@@ -169,7 +169,7 @@ msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "نافذة الآوامر"
+msgstr "الطرفية"
 
 #~ msgid "Cancel"
 #~ msgstr "إلغاء"
