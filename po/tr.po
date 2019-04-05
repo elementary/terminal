@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2019-03-30 22:52+0000\n"
+"PO-Revision-Date: 2019-04-05 20:03+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
@@ -26,7 +26,7 @@ msgstr "İşlem tamamlandı"
 
 #: src/Application.vala:207
 msgid "Run a program in terminal"
-msgstr "Uçbirimde bir program çalıştır"
+msgstr "Terminalde bir program çalıştır"
 
 #: src/Application.vala:208
 msgid "Show help"
@@ -130,7 +130,7 @@ msgstr "Bu komut bilgisayarınızın yönetici izinlerine erişmek istiyor"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komut İstemine komut kopyalamak tehlikeli olabilir."
+msgstr "Terminal'e komut kopyalayıp yapıştırmak tehlikeli olabilir."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
@@ -166,7 +166,7 @@ msgstr "Döngüsel arama"
 
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "Uçbirim"
+msgstr "Terminal"
 
 #~ msgid "Cancel"
 #~ msgstr "İptal"
