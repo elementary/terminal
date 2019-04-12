@@ -142,6 +142,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>equal";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
@@ -392,7 +393,7 @@ namespace PantheonTerminal {
             style_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
-            
+
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
