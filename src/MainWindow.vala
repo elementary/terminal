@@ -165,7 +165,10 @@ namespace PantheonTerminal {
             set_application (app);
 
             foreach (var action in action_accelerators.get_keys ()) {
-                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+                var accels_array = action_accelerators[action].to_array ();
+                accels_array += null;
+
+                app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
             /* Make GTK+ CSD not steal F10 from the terminal */
