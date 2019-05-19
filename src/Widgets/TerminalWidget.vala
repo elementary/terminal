@@ -189,8 +189,7 @@ namespace PantheonTerminal {
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
 
-            GLib.Settings saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-            saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
+            PantheonTerminal.TerminalApp.gsaved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
