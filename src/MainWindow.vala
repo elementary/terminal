@@ -578,7 +578,7 @@ namespace PantheonTerminal {
 
             if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 1) {
                 maximize ();
-            } else if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 1) {
+            } else if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 2) {
                 fullscreen ();
                 is_fullscreen = true;
             }
