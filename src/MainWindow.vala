@@ -735,7 +735,10 @@ namespace PantheonTerminal {
                 return false;
             });
 
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
+            PantheonTerminal.TerminalApp.gsaved_state.set_int (
+                "focused-tab",
+                notebook.get_tab_position (new_tab)
+            );
         }
 
         private void open_tabs () {
@@ -765,7 +768,9 @@ namespace PantheonTerminal {
 
             PantheonTerminal.saved_state.tabs = {};
 
-            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
+            int focus = PantheonTerminal.TerminalApp.gsaved_state.get_int ("focused-tab");
+            focus.clamp (0, tabs.length - 1);
+
             Idle.add_full (GLib.Priority.LOW, () => {
                 focus += notebook.n_tabs;
                 foreach (string loc in tabs) {
@@ -1216,7 +1221,10 @@ namespace PantheonTerminal {
             });
 
             PantheonTerminal.saved_state.tabs = opened_tabs;
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
+            PantheonTerminal.TerminalApp.gsaved_state.set_int (
+                "focused-tab",
+                notebook.get_tab_position (notebook.current)
+            );
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/

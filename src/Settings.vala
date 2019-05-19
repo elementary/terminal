@@ -27,9 +27,6 @@ namespace PantheonTerminal {
     }
 
     public class SavedState : Granite.Services.Settings {
-        public string[] tabs { get; set; }
-        public int focused_tab { get; set; }
-
         public SavedState () {
             base ("io.elementary.terminal.saved-state");
         }
