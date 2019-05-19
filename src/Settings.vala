@@ -22,12 +22,6 @@ namespace PantheonTerminal {
     public SavedState saved_state;
     public Settings settings;
 
-    public enum PantheonTerminalWindowState {
-        NORMAL = 0,
-        MAXIMIZED = 1,
-        FULLSCREEN = 2
-    }
-
     public enum cursor_shape {
         BLOCK = 0,
         IBEAM = 1,
@@ -35,10 +29,8 @@ namespace PantheonTerminal {
     }
 
     public class SavedState : Granite.Services.Settings {
-
         public int window_width { get; set; }
         public int window_height { get; set; }
-        public PantheonTerminalWindowState window_state { get; set; }
         public string[] tabs { get; set; }
         public int focused_tab { get; set; }
         public int opening_x { get; set; }

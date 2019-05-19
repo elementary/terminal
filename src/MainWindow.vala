@@ -577,9 +577,9 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
+            if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 1) {
                 maximize ();
-            } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
+            } else if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 1) {
                 fullscreen ();
                 is_fullscreen = true;
             }
@@ -701,30 +701,29 @@ namespace PantheonTerminal {
                     return false;
 
                 /* Save window state */
-                if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
+                if (is_maximized) {
+                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 1);
                 } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 2);
                 } else {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
-                }
+                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 0);
 
-                /* Save window size */
-                if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
                     int width, height;
                     get_size (out width, out height);
                     PantheonTerminal.saved_state.window_width = width;
                     PantheonTerminal.saved_state.window_height = height;
+
+                    /* Save window position */
+                    int root_x, root_y;
+                    get_position (out root_x, out root_y);
+                    saved_state.opening_x = root_x;
+                    saved_state.opening_y = root_y;
                 }
 
-                /* Save window position */
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                saved_state.opening_x = root_x;
-                saved_state.opening_y = root_y;
                 return false;
             });
-            return false;
+
+            return base.configure_event (event);
         }
 
         private void on_switch_page (Granite.Widgets.Tab? old,

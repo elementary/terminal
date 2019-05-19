@@ -18,6 +18,8 @@
 */
 
 public class PantheonTerminal.TerminalApp : Gtk.Application {
+    public static GLib.Settings gsaved_state;
+
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
@@ -30,6 +32,10 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
     public int minimum_width;
     public int minimum_height;
+
+    static construct {
+        gsaved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+    }
 
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
