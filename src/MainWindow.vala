@@ -766,10 +766,7 @@ namespace PantheonTerminal {
                 }
             }
 
-            PantheonTerminal.TerminalApp.saved_state.set_strv (
-                "tabs",
-                {}
-            );
+            PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
 
             int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             focus.clamp (0, tabs.length - 1);
