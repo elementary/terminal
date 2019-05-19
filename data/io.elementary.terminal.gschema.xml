@@ -17,15 +17,15 @@
   </enum>
 
   <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
-    <key name="window-width" type="i">
-      <default>-1</default>
-      <summary>The saved width of the window.</summary>
-      <description>The saved width of the window.</description>
+    <key name="window-position" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Window position</summary>
+      <description>Most recent window position (x, y)</description>
     </key>
-    <key name="window-height" type="i">
-      <default>-1</default>
-      <summary>The saved height of the window.</summary>
-      <description>The saved height of the window.</description>
+    <key name="window-size" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Most recent window size</summary>
+      <description>Most recent window size (width, height)</description>
     </key>
     <key name="window-state" enum="pantheon-terminal-window-states">
       <default>"Normal"</default>
@@ -41,16 +41,6 @@
         <default>-1</default>
         <summary>The index of the tab that is focused.</summary>
         <description>The index of the tab from the saved tabs that is currently focused.</description>
-    </key>
-    <key name="opening-x" type="i">
-      <default>-1</default>
-      <summary>Most recent x position of terminal</summary>
-      <description>Most recent x position of terminal</description>
-    </key>
-    <key name="opening-y" type="i">
-      <default>-1</default>
-      <summary>Most recent y position of terminal</summary>
-      <description>Most recent y position of terminal</description>
     </key>
     <key name="zoom" type="d">
       <default>1.0</default>

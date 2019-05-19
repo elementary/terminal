@@ -552,28 +552,27 @@ namespace PantheonTerminal {
 
         private void restore_saved_state (bool restore_pos = true) {
             saved_tabs = saved_state.tabs;
-            default_width = PantheonTerminal.saved_state.window_width;
-            default_height = PantheonTerminal.saved_state.window_height;
 
-            Gdk.Rectangle geometry;
-            get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+            var rect = Gdk.Rectangle ();
+            PantheonTerminal.TerminalApp.gsaved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            if (default_width == -1) {
+            default_width = rect.width;
+            default_height = rect.height;
+
+            if (default_width == -1 || default_height == -1) {
+                Gdk.Rectangle geometry;
+                get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+
                 default_width = geometry.width * 2 / 3;
-            }
-
-            if (default_height == -1) {
                 default_height = geometry.height * 3 / 4;
             }
 
             if (restore_pos) {
-                int x = saved_state.opening_x;
-                int y = saved_state.opening_y;
+                int window_x, window_y;
+                PantheonTerminal.TerminalApp.gsaved_state.get ("window-position", "(ii)", out window_x, out window_y);
 
-                if (x != -1 && y != -1) {
-                    move (x, y);
-                } else {
-                    window_position = Gtk.WindowPosition.CENTER;
+                if (window_x != -1 ||  window_y != -1) {
+                    move (window_x, window_y);
                 }
             }
 
@@ -708,16 +707,13 @@ namespace PantheonTerminal {
                 } else {
                     PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 0);
 
-                    int width, height;
-                    get_size (out width, out height);
-                    PantheonTerminal.saved_state.window_width = width;
-                    PantheonTerminal.saved_state.window_height = height;
+                    var rect = Gdk.Rectangle ();
+                    get_size (out rect.width, out rect.height);
+                    PantheonTerminal.TerminalApp.gsaved_state.set ("window-size", "(ii)", rect.width, rect.height);
 
-                    /* Save window position */
                     int root_x, root_y;
                     get_position (out root_x, out root_y);
-                    saved_state.opening_x = root_x;
-                    saved_state.opening_y = root_y;
+                    PantheonTerminal.TerminalApp.gsaved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return false;
