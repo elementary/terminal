@@ -18,7 +18,7 @@
 */
 
 public class PantheonTerminal.TerminalApp : Gtk.Application {
-    public static GLib.Settings gsaved_state;
+    public static GLib.Settings saved_state;
 
     private GLib.List <MainWindow> windows;
 
@@ -34,7 +34,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     public int minimum_height;
 
     static construct {
-        gsaved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
     }
 
     construct {
@@ -50,7 +50,6 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
         windows = new GLib.List <MainWindow> ();
 
-        saved_state = new SavedState ();
         settings = new Settings ();
     }
 

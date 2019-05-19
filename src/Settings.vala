@@ -17,19 +17,12 @@
 */
 
 namespace PantheonTerminal {
-    public SavedState saved_state;
     public Settings settings;
 
     public enum cursor_shape {
         BLOCK = 0,
         IBEAM = 1,
         UNDERLINE = 2
-    }
-
-    public class SavedState : Granite.Services.Settings {
-        public SavedState () {
-            base ("io.elementary.terminal.saved-state");
-        }
     }
 
     public class Settings : Granite.Services.Settings {

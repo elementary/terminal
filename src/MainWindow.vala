@@ -551,10 +551,10 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            saved_tabs = saved_state.tabs;
+            saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
 
             var rect = Gdk.Rectangle ();
-            PantheonTerminal.TerminalApp.gsaved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
+            PantheonTerminal.TerminalApp.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
             default_width = rect.width;
             default_height = rect.height;
@@ -569,16 +569,16 @@ namespace PantheonTerminal {
 
             if (restore_pos) {
                 int window_x, window_y;
-                PantheonTerminal.TerminalApp.gsaved_state.get ("window-position", "(ii)", out window_x, out window_y);
+                PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out window_x, out window_y);
 
                 if (window_x != -1 ||  window_y != -1) {
                     move (window_x, window_y);
                 }
             }
 
-            if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 1) {
+            if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == 1) {
                 maximize ();
-            } else if (PantheonTerminal.TerminalApp.gsaved_state.get_enum ("window-state") == 2) {
+            } else if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == 2) {
                 fullscreen ();
                 is_fullscreen = true;
             }
@@ -701,19 +701,19 @@ namespace PantheonTerminal {
 
                 /* Save window state */
                 if (is_maximized) {
-                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 1);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 1);
                 } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 2);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 2);
                 } else {
-                    PantheonTerminal.TerminalApp.gsaved_state.set_enum ("window-state", 0);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 0);
 
                     var rect = Gdk.Rectangle ();
                     get_size (out rect.width, out rect.height);
-                    PantheonTerminal.TerminalApp.gsaved_state.set ("window-size", "(ii)", rect.width, rect.height);
+                    PantheonTerminal.TerminalApp.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
 
                     int root_x, root_y;
                     get_position (out root_x, out root_y);
-                    PantheonTerminal.TerminalApp.gsaved_state.set ("window-position", "(ii)", root_x, root_y);
+                    PantheonTerminal.TerminalApp.saved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return false;
@@ -735,7 +735,7 @@ namespace PantheonTerminal {
                 return false;
             });
 
-            PantheonTerminal.TerminalApp.gsaved_state.set_int (
+            PantheonTerminal.TerminalApp.saved_state.set_int (
                 "focused-tab",
                 notebook.get_tab_position (new_tab)
             );
@@ -766,9 +766,12 @@ namespace PantheonTerminal {
                 }
             }
 
-            PantheonTerminal.saved_state.tabs = {};
+            PantheonTerminal.TerminalApp.saved_state.set_strv (
+                "tabs",
+                {}
+            );
 
-            int focus = PantheonTerminal.TerminalApp.gsaved_state.get_int ("focused-tab");
+            int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             focus.clamp (0, tabs.length - 1);
 
             Idle.add_full (GLib.Priority.LOW, () => {
@@ -1220,8 +1223,12 @@ namespace PantheonTerminal {
                 }
             });
 
-            PantheonTerminal.saved_state.tabs = opened_tabs;
-            PantheonTerminal.TerminalApp.gsaved_state.set_int (
+            PantheonTerminal.TerminalApp.saved_state.set_strv (
+                "tabs",
+                opened_tabs
+            );
+
+            PantheonTerminal.TerminalApp.saved_state.set_int (
                 "focused-tab",
                 notebook.get_tab_position (notebook.current)
             );
