@@ -35,7 +35,7 @@ namespace PantheonTerminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
+        private const string SOLARIZED_DARK_BG = "rgba(33, 33, 33, 0.95)";
         private const string SOLARIZED_DARK_FG = "#94a3a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
