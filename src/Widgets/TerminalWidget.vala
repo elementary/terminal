@@ -114,6 +114,7 @@ namespace PantheonTerminal {
         public bool last_key_was_return = true;
 
         public TerminalWidget (MainWindow parent_window) {
+            pointer_autohide = true;
 
             terminal_id = "%i".printf (terminal_id_counter++);
 
