@@ -35,6 +35,15 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.5" date="2019-06-04" urgency="medium">
+      <description>
+        <ul>
+          <li>Support Ctrl+Equal key combo to zoom in</li>
+          <li>Fix a wrong foreground process response code</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.3.4" date="2019-03-29" urgency="medium">
       <description>
         <ul>
