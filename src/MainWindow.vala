@@ -698,11 +698,11 @@ namespace PantheonTerminal {
                 if (get_window () == null)
                     return false;
 
-                /* Save window state */
-                if (is_maximized) {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 1);
-                } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
+                /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
+                if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
                     PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 2);
+                } else if (is_maximized) {
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 1);
                 } else {
                     PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 0);
 
