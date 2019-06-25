@@ -485,7 +485,12 @@ namespace PantheonTerminal {
                     case Gdk.Key.Down:
                         current_terminal.remember_command_start_position ();
                         break;
-
+                    case Gdk.Key.Menu:
+                        if (!search_toolbar.search_entry.has_focus && !style_popover.visible) {
+                            menu.popup_at_widget(current_terminal, Gdk.Gravity.NORTH_EAST,
+                                            Gdk.Gravity.NORTH_EAST, e);
+                        }
+                        break;
                     default:
                         if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
                             current_terminal.remember_command_start_position ();
