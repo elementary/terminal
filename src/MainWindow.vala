@@ -486,10 +486,23 @@ namespace PantheonTerminal {
                         current_terminal.remember_command_start_position ();
                         break;
                     case Gdk.Key.Menu:
-                        if (!search_toolbar.search_entry.has_focus && !style_popover.visible) {
-                            menu.popup_at_widget(current_terminal, Gdk.Gravity.NORTH_EAST,
-                                            Gdk.Gravity.NORTH_EAST, e);
-                        }
+                        /* Popup context menu below cursor position */
+                        long col, row;
+                        current_terminal.get_cursor_position (out col, out row);
+                        var cell_width = current_terminal.get_char_width ();
+                        var cell_height = current_terminal.get_char_height ();
+                        var rect_window = current_terminal.get_window ();
+
+                        Gdk.Rectangle rect = {(int)(col * cell_width),
+                                              (int)(row * cell_height),
+                                              (int)cell_width,
+                                              (int)cell_height};
+
+                        menu.popup_at_rect (rect_window,
+                                            rect,
+                                            Gdk.Gravity.SOUTH_WEST,
+                                            Gdk.Gravity.NORTH_WEST,
+                                            e);
                         break;
                     default:
                         if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
