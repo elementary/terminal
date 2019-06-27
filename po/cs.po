@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2018-12-13 14:07+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -36,59 +36,59 @@ msgstr "Zobrazit nápovědu"
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr "Hledat…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 msgid "Zoom out"
 msgstr "Oddálit"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
 msgstr "Solarizovaný tmavý"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr "Styl"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr "Skrýt vyhledávací panel"
 
@@ -160,7 +160,7 @@ msgstr "Předchozí výsledek"
 msgid "Next result"
 msgstr "Další výsledek"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Opakované hledání"
 

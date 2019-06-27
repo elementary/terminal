@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2019-01-15 12:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -36,59 +36,59 @@ msgstr "显示帮助"
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "复制"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
 msgstr "复制上次输出"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr "在 文件管理器 中打开"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr "默认缩放等级"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
 msgstr "Solarized 暗色"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr "风格"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -160,7 +160,7 @@ msgstr "上一个结果"
 msgid "Next result"
 msgstr "下一个结果"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "循环搜索"
 

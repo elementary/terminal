@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2015-12-05 14:38+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Welsh <cy@li.org>\n"
@@ -34,59 +34,59 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "Copïo"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "Dewis Popeth"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 msgid "Zoom out"
 msgstr ""
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 msgid "Zoom in"
 msgstr ""
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
 msgstr ""
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr ""
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 
