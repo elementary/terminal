@@ -492,9 +492,10 @@ namespace PantheonTerminal {
                         var cell_width = current_terminal.get_char_width ();
                         var cell_height = current_terminal.get_char_height ();
                         var rect_window = current_terminal.get_window ();
+                        var vadj_val = current_terminal.get_vadjustment ().get_value ();
 
                         Gdk.Rectangle rect = {(int)(col * cell_width),
-                                              (int)(row * cell_height),
+                                              (int)((row - vadj_val) * cell_height),
                                               (int)cell_width,
                                               (int)cell_height};
 
