@@ -142,6 +142,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>equal";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
@@ -164,7 +165,10 @@ namespace PantheonTerminal {
             set_application (app);
 
             foreach (var action in action_accelerators.get_keys ()) {
-                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+                var accels_array = action_accelerators[action].to_array ();
+                accels_array += null;
+
+                app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
             /* Make GTK+ CSD not steal F10 from the terminal */
@@ -611,7 +615,7 @@ namespace PantheonTerminal {
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog (this);
-                if (d.run () == 1) {
+                if (d.run () == Gtk.ResponseType.ACCEPT) {
                     d.destroy ();
                     t.kill_fg ();
                 } else {
@@ -938,7 +942,7 @@ namespace PantheonTerminal {
                 t = (TerminalWidget) t;
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close (this);
-                    if (d.run () == 1) {
+                    if (d.run () == Gtk.ResponseType.ACCEPT) {
                         t.kill_fg ();
                         d.destroy ();
                     } else {
