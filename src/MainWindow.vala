@@ -484,7 +484,26 @@ namespace PantheonTerminal {
                     case Gdk.Key.Down:
                         current_terminal.remember_command_start_position ();
                         break;
+                    case Gdk.Key.Menu:
+                        /* Popup context menu below cursor position */
+                        long col, row;
+                        current_terminal.get_cursor_position (out col, out row);
+                        var cell_width = current_terminal.get_char_width ();
+                        var cell_height = current_terminal.get_char_height ();
+                        var rect_window = current_terminal.get_window ();
+                        var vadj_val = current_terminal.get_vadjustment ().get_value ();
 
+                        Gdk.Rectangle rect = {(int)(col * cell_width),
+                                              (int)((row - vadj_val) * cell_height),
+                                              (int)cell_width,
+                                              (int)cell_height};
+
+                        menu.popup_at_rect (rect_window,
+                                            rect,
+                                            Gdk.Gravity.SOUTH_WEST,
+                                            Gdk.Gravity.NORTH_WEST,
+                                            e);
+                        break;
                     default:
                         if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
                             current_terminal.remember_command_start_position ();
