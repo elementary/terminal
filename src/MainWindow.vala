@@ -32,6 +32,10 @@ namespace PantheonTerminal {
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
+        private const int NORMAL = 1;
+        private const int MAXIMIZED = 1;
+        private const int FULLSCREEN = 2;
+
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
         private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
@@ -594,9 +598,9 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == 1) {
+            if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == MainWindow.MAXIMIZED) {
                 maximize ();
-            } else if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == 2) {
+            } else if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == MainWindow.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
             }
@@ -719,11 +723,11 @@ namespace PantheonTerminal {
 
                 /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
                 if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 2);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
                 } else if (is_maximized) {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 1);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
                 } else {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", 0);
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.NORMAL);
 
                     var rect = Gdk.Rectangle ();
                     get_size (out rect.width, out rect.height);
