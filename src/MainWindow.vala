@@ -590,11 +590,10 @@ namespace PantheonTerminal {
             }
 
             if (restore_pos) {
-                int window_x, window_y;
                 PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
-                if (window_x != -1 ||  window_y != -1) {
-                    move (window_x, window_y);
+                if (rect.x != -1 ||  rect.y != -1) {
+                    move (rect.x, rect.y);
                 }
             }
 
