@@ -597,9 +597,10 @@ namespace PantheonTerminal {
                 }
             }
 
-            if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == MainWindow.MAXIMIZED) {
+            var window_state = PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state");
+            if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
-            } else if (PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state") == MainWindow.FULLSCREEN) {
+            } else if (window_state == MainWindow.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
             }
