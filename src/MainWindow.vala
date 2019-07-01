@@ -32,7 +32,7 @@ namespace PantheonTerminal {
         private bool is_fullscreen = false;
         private string[] saved_tabs;
 
-        private const int NORMAL = 1;
+        private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
 
