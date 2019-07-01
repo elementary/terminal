@@ -591,7 +591,7 @@ namespace PantheonTerminal {
 
             if (restore_pos) {
                 int window_x, window_y;
-                PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out window_x, out window_y);
+                PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
                 if (window_x != -1 ||  window_y != -1) {
                     move (window_x, window_y);
@@ -791,7 +791,7 @@ namespace PantheonTerminal {
             PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
 
             int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
-            focus.clamp (0, tabs.length - 1);
+            focus = focus.clamp (0, tabs.length - 1);
 
             Idle.add_full (GLib.Priority.LOW, () => {
                 focus += notebook.n_tabs;
