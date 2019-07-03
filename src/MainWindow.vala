@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -32,6 +31,10 @@ namespace PantheonTerminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private string[] saved_tabs;
+
+        private const int NORMAL = 0;
+        private const int MAXIMIZED = 1;
+        private const int FULLSCREEN = 2;
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
@@ -142,6 +145,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
+            action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>equal";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>KP_Add";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>minus";
             action_accelerators[ACTION_ZOOM_OUT_FONT] = "<Control>KP_Subtract";
@@ -164,7 +168,10 @@ namespace PantheonTerminal {
             set_application (app);
 
             foreach (var action in action_accelerators.get_keys ()) {
-                app.set_accels_for_action (ACTION_PREFIX + action, action_accelerators[action].to_array ());
+                var accels_array = action_accelerators[action].to_array ();
+                accels_array += null;
+
+                app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
             /* Make GTK+ CSD not steal F10 from the terminal */
@@ -494,7 +501,26 @@ namespace PantheonTerminal {
                     case Gdk.Key.Down:
                         current_terminal.remember_command_start_position ();
                         break;
+                    case Gdk.Key.Menu:
+                        /* Popup context menu below cursor position */
+                        long col, row;
+                        current_terminal.get_cursor_position (out col, out row);
+                        var cell_width = current_terminal.get_char_width ();
+                        var cell_height = current_terminal.get_char_height ();
+                        var rect_window = current_terminal.get_window ();
+                        var vadj_val = current_terminal.get_vadjustment ().get_value ();
 
+                        Gdk.Rectangle rect = {(int)(col * cell_width),
+                                              (int)((row - vadj_val) * cell_height),
+                                              (int)cell_width,
+                                              (int)cell_height};
+
+                        menu.popup_at_rect (rect_window,
+                                            rect,
+                                            Gdk.Gravity.SOUTH_WEST,
+                                            Gdk.Gravity.NORTH_WEST,
+                                            e);
+                        break;
                     default:
                         if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
                             current_terminal.remember_command_start_position ();
@@ -560,35 +586,34 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            saved_tabs = saved_state.tabs;
-            default_width = PantheonTerminal.saved_state.window_width;
-            default_height = PantheonTerminal.saved_state.window_height;
+            saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
 
-            Gdk.Rectangle geometry;
-            get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+            var rect = Gdk.Rectangle ();
+            PantheonTerminal.TerminalApp.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            if (default_width == -1) {
+            default_width = rect.width;
+            default_height = rect.height;
+
+            if (default_width == -1 || default_height == -1) {
+                Gdk.Rectangle geometry;
+                get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+
                 default_width = geometry.width * 2 / 3;
-            }
-
-            if (default_height == -1) {
                 default_height = geometry.height * 3 / 4;
             }
 
             if (restore_pos) {
-                int x = saved_state.opening_x;
-                int y = saved_state.opening_y;
+                PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
-                if (x != -1 && y != -1) {
-                    move (x, y);
-                } else {
-                    window_position = Gtk.WindowPosition.CENTER;
+                if (rect.x != -1 ||  rect.y != -1) {
+                    move (rect.x, rect.y);
                 }
             }
 
-            if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.MAXIMIZED) {
+            var window_state = PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state");
+            if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
-            } else if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.FULLSCREEN) {
+            } else if (window_state == MainWindow.FULLSCREEN) {
                 fullscreen ();
                 is_fullscreen = true;
             }
@@ -617,7 +642,7 @@ namespace PantheonTerminal {
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog (this);
-                if (d.run () == 1) {
+                if (d.run () == Gtk.ResponseType.ACCEPT) {
                     d.destroy ();
                     t.kill_fg ();
                 } else {
@@ -709,31 +734,27 @@ namespace PantheonTerminal {
                 if (get_window () == null)
                     return false;
 
-                /* Save window state */
-                if ((get_window ().get_state () & Gdk.WindowState.MAXIMIZED) != 0) {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.MAXIMIZED;
-                } else if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.FULLSCREEN;
+                /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
+                if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
+                } else if (is_maximized) {
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
                 } else {
-                    PantheonTerminal.saved_state.window_state = PantheonTerminalWindowState.NORMAL;
+                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.NORMAL);
+
+                    var rect = Gdk.Rectangle ();
+                    get_size (out rect.width, out rect.height);
+                    PantheonTerminal.TerminalApp.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
+
+                    int root_x, root_y;
+                    get_position (out root_x, out root_y);
+                    PantheonTerminal.TerminalApp.saved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
-                /* Save window size */
-                if (PantheonTerminal.saved_state.window_state == PantheonTerminalWindowState.NORMAL) {
-                    int width, height;
-                    get_size (out width, out height);
-                    PantheonTerminal.saved_state.window_width = width;
-                    PantheonTerminal.saved_state.window_height = height;
-                }
-
-                /* Save window position */
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                saved_state.opening_x = root_x;
-                saved_state.opening_y = root_y;
                 return false;
             });
-            return false;
+
+            return base.configure_event (event);
         }
 
         private void on_switch_page (Granite.Widgets.Tab? old,
@@ -749,7 +770,10 @@ namespace PantheonTerminal {
                 return false;
             });
 
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (new_tab);
+            PantheonTerminal.TerminalApp.saved_state.set_int (
+                "focused-tab",
+                notebook.get_tab_position (new_tab)
+            );
         }
 
         private void open_tabs () {
@@ -777,10 +801,12 @@ namespace PantheonTerminal {
                 }
             }
 
-            PantheonTerminal.saved_state.tabs = {};
+            PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
+
+            int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
+            focus = focus.clamp (0, tabs.length - 1);
 
             /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
-            int focus = PantheonTerminal.saved_state.focused_tab.clamp(0, tabs.length - 1);
             focus += notebook.n_tabs;
             foreach (string loc in tabs) {
                 if (loc == "") {
@@ -932,7 +958,7 @@ namespace PantheonTerminal {
                 t = (TerminalWidget) t;
                 if (t.has_foreground_process ()) {
                     var d = new ForegroundProcessDialog.before_close (this);
-                    if (d.run () == 1) {
+                    if (d.run () == Gtk.ResponseType.ACCEPT) {
                         t.kill_fg ();
                         d.destroy ();
                     } else {
@@ -1226,8 +1252,15 @@ namespace PantheonTerminal {
                 }
             });
 
-            PantheonTerminal.saved_state.tabs = opened_tabs;
-            PantheonTerminal.saved_state.focused_tab = notebook.get_tab_position (notebook.current);
+            PantheonTerminal.TerminalApp.saved_state.set_strv (
+                "tabs",
+                opened_tabs
+            );
+
+            PantheonTerminal.TerminalApp.saved_state.set_int (
+                "focused-tab",
+                notebook.get_tab_position (notebook.current)
+            );
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/

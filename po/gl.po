@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-26 16:21+0000\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"PO-Revision-Date: 2019-02-12 00:07+0000\n"
 "Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Galician <https://weblate.elementary.io/projects/terminal/"
 "terminal/gl/>\n"
@@ -30,65 +30,65 @@ msgstr "Executar un programa no terminal"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "Mostrar axuda"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Configurar directorio de traballo do terminal"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
 msgstr "Copiar a Última Saída"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr "Atopar…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Ficheiros"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr "Zoom por defecto"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
 msgstr "Solarized Dark"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr "Estilo"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -114,11 +114,11 @@ msgstr "Seguro que quere saír do terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "Hai un proceso activo neste terminal"
+msgstr "Hai un proceso activo neste terminal."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Se sae do terminal, rematará o proceso"
+msgstr "Se sae do terminal, rematará o proceso."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
@@ -160,7 +160,7 @@ msgstr "Resultado anterior"
 msgid "Next result"
 msgstr "Resultado seguinte"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Búsqueda cíclica"
 

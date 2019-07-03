@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2018-06-19 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
@@ -36,61 +36,61 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr "Shell munkakönyvtár beállítása"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr "Megjelenítés a Fájlkezelőben"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 #, fuzzy
 msgid "Zoom out"
 msgstr "Kicsinyítés"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 #, fuzzy
 msgid "Zoom in"
 msgstr "Nagyítás"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
 msgstr "Világos solarizált"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
 msgstr "Sötét solarizált"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr "Stílus"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr "Előző találat"
 msgid "Next result"
 msgstr "Következő találat"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Ciklikus keresés"
 
