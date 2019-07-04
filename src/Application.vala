@@ -197,8 +197,13 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         if (window != null) {
             window.add_tab_with_working_directory (working_directory);
             window.present ();
-        } else
+        } else {
+            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
+             * Currently they are set to restore (subject to the restore-tabs setting).
+             * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
+             * below. */
             new MainWindow.with_working_directory (this, working_directory, true);
+        }
     }
 
     private MainWindow? get_last_window () {
