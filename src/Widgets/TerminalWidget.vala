@@ -149,13 +149,42 @@ namespace PantheonTerminal {
 
             button_release_event.connect ((event) => {
                 if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link (event);
+                    if (!get_has_selection ()) {
+                        uri = get_link (event);
+                        if (uri != null) {
+                            try {
+                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
+                        } else {
+                            int p_row, p_col;
+                            get_cell_clicked (event, out p_row, out p_col);
+                            long ccol, crow;
+                            get_cursor_position (out ccol, out crow);
+                            int c_col = (int)ccol;
+                            int c_row = (int)crow;
 
-                    if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
+                            int n_events = ((c_col - p_col) + (c_row - p_row) * (int)get_column_count ()).abs ();
+
+                            /* Synthesise a cursor press - is there a better way? */
+                            Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
+                            key_event.send_event = 1;
+                            key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
+                            key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
+                            key_event.is_modifier = 0;
+
+                            int last_row = c_row;
+                            int last_col = c_col;
+                            Idle.add (() => { /* wait for button press event to be processed */
+                                /* Cursor will move as close as possible to pointer */
+                                for (int i = 0; i < n_events; i++) {
+                                    key_event.time = (uint32)(get_monotonic_time ());
+                                    key_press_event (key_event);
+                                }
+
+                                return false;
+                            });
                         }
                     }
                 }
@@ -489,6 +518,16 @@ namespace PantheonTerminal {
              * character of the prompt being selected for some reason. We assume a nominal
              * maximum line length rather than determine the actual length.  */
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
+        }
+
+        private void get_cell_clicked (Gdk.EventButton event, out int row, out int col) {
+            int cell_width = (int)(get_char_width ());
+            int cell_height = (int)(get_char_height ());
+            int px = (int)(event.x);
+            int py = (int)(event.y);
+
+            row = py / cell_height;
+            col = px / cell_width;
         }
 
         public void scroll_to_last_command () {
