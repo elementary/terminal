@@ -59,6 +59,7 @@ namespace PantheonTerminal {
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
@@ -81,6 +82,7 @@ namespace PantheonTerminal {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
@@ -139,6 +141,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
+            action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
@@ -1065,6 +1068,10 @@ namespace PantheonTerminal {
                 new_tab (current_terminal.get_shell_location ());
             else
                 new_tab (Environment.get_home_dir ());
+        }
+
+        void action_duplicate_tab () {
+            new_tab (current_terminal.get_shell_location ());
         }
 
         void action_zoom_in_font () {
