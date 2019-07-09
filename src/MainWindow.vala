@@ -194,27 +194,27 @@ namespace PantheonTerminal {
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
-            copy_menuitem.add (new AccelMenuLabel (_("Copy"), copy_menuitem.action_name));
+            copy_menuitem.add (new Granite.AccelLabel.from_action (_("Copy"), copy_menuitem.action_name));
 
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
-            copy_last_output_menuitem.add (new AccelMenuLabel (_("Copy Last Output"), copy_last_output_menuitem.action_name));
+            copy_last_output_menuitem.add (new Granite.AccelLabel.from_action (_("Copy Last Output"), copy_last_output_menuitem.action_name));
 
             var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
-            paste_menuitem.add (new AccelMenuLabel (_("Paste"), paste_menuitem.action_name));
+            paste_menuitem.add (new Granite.AccelLabel.from_action (_("Paste"), paste_menuitem.action_name));
 
             var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
-            select_all_menuitem.add (new AccelMenuLabel (_("Select All"), select_all_menuitem.action_name));
+            select_all_menuitem.add (new Granite.AccelLabel.from_action (_("Select All"), select_all_menuitem.action_name));
 
             var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
-            search_menuitem.add (new AccelMenuLabel (_("Find…"), search_menuitem.action_name));
+            search_menuitem.add (new Granite.AccelLabel.from_action (_("Find…"), search_menuitem.action_name));
 
             var show_in_file_browser_menuitem = new Gtk.MenuItem ();
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (new AccelMenuLabel (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
+            show_in_file_browser_menuitem.add (new Granite.AccelLabel.from_action (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
@@ -1306,35 +1306,6 @@ namespace PantheonTerminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
-        }
-
-        private class AccelMenuLabel : Gtk.Grid {
-            public string action_name { get; construct; }
-            public string label { get; construct; }
-
-            public AccelMenuLabel (string label, string action_name) {
-                Object (
-                    label: label,
-                    action_name: action_name
-                );
-            }
-
-            construct {
-                var label = new Gtk.Label (label);
-                label.hexpand = true;
-                label.xalign = 0;
-
-                var accel_label = new Gtk.Label (
-                    Granite.accel_to_string (
-                        ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
-                    )
-                );
-                accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
-
-                column_spacing = 3;
-                add (label);
-                add (accel_label);
-            }
         }
     }
 }
