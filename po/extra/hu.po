@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 15:17-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2018-06-15 00:00+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
@@ -39,23 +39,131 @@ msgstr ""
 "A Terminál egy terminál emulátor alkalmazás, amellyel elérheti a UNIX shell "
 "környezetet, amit a rendszeren elérhető programok futtatására használhat."
 
+#: data/io.elementary.terminal.appdata.xml.in:41
+msgid "Support Ctrl+Equal key combo to zoom in"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:42
+msgid "Fix a wrong foreground process response code"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:43
+#: data/io.elementary.terminal.appdata.xml.in:53
+#: data/io.elementary.terminal.appdata.xml.in:66
+#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:108
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:127
+#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:145
+#: data/io.elementary.terminal.appdata.xml.in:153
+#: data/io.elementary.terminal.appdata.xml.in:168
+msgid "Translation updates"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:50
+msgid "Return focus after popover menu closes"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:51
+msgid "Prevent search and style buttons from receiving focus"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:52
+msgid "Hide the cursor while typing"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Fix erratic search text highlightning behavior"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Support -h flag for help"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:62
+msgid "Disable audible bell"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:63
+msgid "Add Alt+↑ action to scroll to last command"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:64
+msgid "Add Alt+c action to copy last output"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:65
+msgid "Add accels to tooltips"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:73
+msgid "Fix zsh notifications"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:74
+msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:91
+#: data/io.elementary.terminal.appdata.xml.in:99
+#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:118
+#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:135
+#: data/io.elementary.terminal.appdata.xml.in:144
 #: data/io.elementary.terminal.appdata.xml.in:152
+#: data/io.elementary.terminal.appdata.xml.in:167
+msgid "Minor bug fixes"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:115
+msgid "FISH integration fixes"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:116
+msgid "Theme preference menu"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:117
+msgid "Zoom level controls"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:134
+msgid "Allow tab to close after typing exit at the commandline"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:143
+msgid "Fix copying URLs to clipboard"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:160
+msgid "Fix appstream date format"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:202
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
-#: data/io.elementary.terminal.desktop.in:8
+#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/io.elementary.terminal.desktop.in:9
 msgid "utilities-terminal"
 msgstr "utilities-terminal"
 
-#: data/io.elementary.terminal.desktop.in:12
+#: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "command;prompt;cmd;commandline;run;parancs;parancssor;futtatás;"
 
-#: data/io.elementary.terminal.desktop.in:17
+#: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
 msgstr "Új ablak"
 
-#: data/io.elementary.terminal.desktop.in:21
+#: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Új ablak rendszergazdaként"
 
