@@ -18,6 +18,8 @@
 */
 
 public class PantheonTerminal.TerminalApp : Gtk.Application {
+    public static GLib.Settings saved_state;
+
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
@@ -31,24 +33,24 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
 
+    static construct {
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+    }
+
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
         application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
         Intl.setlocale (LocaleCategory.ALL, "");
-
-        windows = new GLib.List <MainWindow> ();
-
-        /* Settings classes are defined in Settings.vala */
-        PantheonTerminal.saved_state = new PantheonTerminal.SavedState ();
-        PantheonTerminal.settings = new PantheonTerminal.Settings ();
     }
 
     public TerminalApp () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
+        windows = new GLib.List <MainWindow> ();
 
+        settings = new Settings ();
     }
 
     public void new_window () {
