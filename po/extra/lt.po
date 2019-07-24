@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-07-22 02:24+0000\n"
+"PO-Revision-Date: 2019-07-24 21:25+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/terminal/"
 "extra/lt/>\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Palaikoma Vald(Ctrl)+Lygu klavišų kombinacija, skirta didinti"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Fix a wrong foreground process response code"
@@ -80,35 +80,35 @@ msgstr "Renkant tekstą, slėpti žymeklį"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Pataisyta nepastovi paieškos teksto paryškinimo elgsena"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Palaikoma -h vėliavėlė, skirta pagalbai"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Išjungtas garsinis skambutis"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Pridėtas Alt+↑ veiksmas, skirtas slinkti į paskutinę komandą"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Pridėtas Alt+c veiksmas, skirtas kopijuoti paskutinę išvestį"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Į paaiškinimus pridėti susiejimai"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Pataisyti zsh pranešimai"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Sąlyginis Vald(Ctrl)+g susiejimas, skirtas išvengti konfliktų su emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 #: data/io.elementary.terminal.appdata.xml.in:83
@@ -122,31 +122,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:152
 #: data/io.elementary.terminal.appdata.xml.in:167
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Nežymių klaidų pataisymai"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "FISH integracijos pataisymai"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Temos nuostatos meniu"
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Mastelio lygio valdikliai"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Leisti užverti kortelę, įrašius komandų eilutėje exit"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Pataisytas URL kopijavimas į iškarpinę"
 
 #: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Pataisytas appstream datos formatas"
 
 #: data/io.elementary.terminal.appdata.xml.in:202
 msgid "elementary LLC."
