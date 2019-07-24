@@ -1246,7 +1246,6 @@ namespace PantheonTerminal {
             string[] opened_tabs = {};
 
             if (Granite.Services.System.history_is_enabled () &&
-//                PantheonTerminal.settings.remember_tabs) {
                 settings.remember_tabs) {
 
                 notebook.tabs.foreach ((tab) => {
