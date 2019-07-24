@@ -62,8 +62,12 @@
     </key>
     <key name="remember-tabs" type="b">
       <default>true</default>
-      <summary>Defines whether the terminal should remember tabs.</summary>
-      <description>Defines whether the terminal should remember the last open tabs.</description>
+      <summary>Whether open tabs should be remembered on closing (subject to privacy setting).</summary>
+      <description>
+          Defines whether the terminal should remember the last open tabs and restore
+          them when the terminal is reopened. If the global privacy setting is on, the tabs
+          will not be restored or remembered even if this setting is true.
+      </description>
     </key>
     <key name="alt-changes-tab" type="b">
       <default>true</default>
@@ -123,9 +127,9 @@
       </description>
     </key>
     <key name="cursor-shape" enum="terminal-cursor-shapes">
-    	<default>"Block"</default>
-    	<summary>Shape of the cursor.</summary>
-    	<description>The shape of the cursor of the terminal.</description>
+      <default>"Block"</default>
+      <summary>Shape of the cursor.</summary>
+      <description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
       <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
