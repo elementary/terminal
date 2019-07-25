@@ -587,7 +587,13 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
+
+                saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
+            } else {
+                saved_tabs = {};
+            }
 
             var rect = Gdk.Rectangle ();
             PantheonTerminal.TerminalApp.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -768,22 +774,31 @@ namespace PantheonTerminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
+                if (Granite.Services.System.history_is_enabled () &&
+                    settings.remember_tabs) {
+
+                    PantheonTerminal.TerminalApp.saved_state.set_int (
+                        "focused-tab",
+                        notebook.get_tab_position (new_tab)
+                    );
+                }
+
                 return false;
             });
-
-            PantheonTerminal.TerminalApp.saved_state.set_int (
-                "focused-tab",
-                notebook.get_tab_position (new_tab)
-            );
         }
 
         private void open_tabs () {
             string[] tabs = {};
-            if (settings.remember_tabs) {
+            int focus = 0;
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
+
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
                 }
+
+                focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             } else {
                 tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
@@ -804,7 +819,6 @@ namespace PantheonTerminal {
 
             PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
 
-            int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             focus = focus.clamp (0, tabs.length - 1);
 
             /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
@@ -1241,18 +1255,19 @@ namespace PantheonTerminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
 
-            notebook.tabs.foreach ((tab) => {
-                var term = get_term_widget (tab);
-                if (term == null) {
-                    return;
-                }
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
 
-                var location = term.get_shell_location ();
-                if (location != null && location != "") {
-                    opened_tabs += location;
-                }
-            });
-
+                notebook.tabs.foreach ((tab) => {
+                    var term = get_term_widget (tab);
+                    if (term != null) {
+                        var location = term.get_shell_location ();
+                        if (location != null && location != "") {
+                            opened_tabs += location;
+                        }
+                    }
+                });
+            }
             PantheonTerminal.TerminalApp.saved_state.set_strv (
                 "tabs",
                 opened_tabs

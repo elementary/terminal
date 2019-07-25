@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2018-10-14 00:04+0000\n"
+"PO-Revision-Date: 2019-07-22 02:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
-"extra/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
+"mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
@@ -40,11 +40,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "झूम इन करण्यासाठी Ctrl + Equal की कॉम्बो समर्थन"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "चुकीचे फोरग्राउंड प्रक्रिया प्रतिसाद कोड निश्चित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:53
@@ -61,43 +61,43 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:153
 #: data/io.elementary.terminal.appdata.xml.in:168
 msgid "Translation updates"
-msgstr ""
+msgstr "भाषांतर अपडेट्स"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "पॉपओवर मेनू बंद केल्यानंतर फोकस परत करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "फोकस प्राप्त करण्यापासून शोध आणि शैली बटणे प्रतिबंधित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "टाइप करताना कर्सर लपवा"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "अनैतिक शोध मजकूर हायलाइटिंग वर्तन निराकरण करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "मदतीसाठी फ्लॅग \"-h\"  समर्थन"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Disable audible bell"
-msgstr ""
+msgstr "ऐकण्यायोग्य घंटा अक्षम करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "अंतिम आदेश स्क्रोल करण्यासाठी Alt + ↑ अॅक्शन जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "अंतिम आउटपुट कॉपी करण्यासाठी Alt + c क्रिया जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "टूलटिप्समध्ये अॅक्सल जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
