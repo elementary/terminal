@@ -38,8 +38,8 @@ namespace PantheonTerminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
-        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string DARK_BG = "rgba(51, 51, 51, 0.95)";
+        private const string DARK_FG = "#d5d5d5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
@@ -327,7 +327,7 @@ namespace PantheonTerminal {
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.tooltip_text = _("Solarized Dark");
+            color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class ("color-button");
@@ -408,15 +408,15 @@ namespace PantheonTerminal {
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
                     break;
-                case SOLARIZED_DARK_BG:
+                case DARK_BG:
                     color_button_dark.active = true;
                     break;
             }
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
-                settings.background = SOLARIZED_DARK_BG;
-                settings.foreground = SOLARIZED_DARK_FG;
+                settings.background = DARK_BG;
+                settings.foreground = DARK_FG;
             });
 
             color_button_light.clicked.connect (() => {
