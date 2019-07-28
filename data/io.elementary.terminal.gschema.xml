@@ -91,7 +91,8 @@
     </key>
 
     <key name="foreground" type="s">
-      <default>"#94a3a5"</default>
+      <!-- Solarized Dark Base1 (#93a1a1) with the Value increased to be WCAG AAA contrast-compliant (7:1) -->
+      <default>"#a5B5B5"</default>
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
@@ -103,7 +104,8 @@
       </description>
     </key>
     <key name="background" type="s">
-      <default>"rgba(37, 46, 50, 0.95)"</default>
+      <!-- Solarized Dark Base03 with 95% opacity -->
+      <default>"rgba(0, 43, 54, 0.95)"</default>
       <summary>Color of the background.</summary>
       <description>
           The color of the background of the terminal.
@@ -115,6 +117,7 @@
       </description>
     </key>
     <key name="cursor-color" type="s">
+      <!-- Solarized Dark Base0 -->
       <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
       <description>

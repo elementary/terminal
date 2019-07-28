@@ -47,8 +47,8 @@
 }
 
 .color-dark radio {
-    background: #252E32;
-    border-color: #151B1C;
+    background: #002b36; /* Solarized Dark Base03 */
+    border-color: #000;
     color: #fff;
 }
 

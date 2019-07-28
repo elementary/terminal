@@ -27,6 +27,7 @@ namespace PantheonTerminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Gtk.StyleContext style_context;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -38,8 +39,8 @@ namespace PantheonTerminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
-        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string SOLARIZED_DARK_BG = "rgba(0, 43, 54, 0.95)";
+        private const string SOLARIZED_DARK_FG = "#a5B5B5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
@@ -76,6 +77,7 @@ namespace PantheonTerminal {
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
+        private static Gtk.CssProvider dark_provider;
 
         private const ActionEntry[] action_entries = {
             { ACTION_CLOSE_TAB, action_close_tab },
@@ -156,6 +158,9 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
+
+            dark_provider = new Gtk.CssProvider ();
+            dark_provider.load_from_resource ("io/elementary/terminal/dark.css");
         }
 
         construct {
@@ -393,7 +398,8 @@ namespace PantheonTerminal {
             grid.attach (search_revealer, 0, 0, 1, 1);
             grid.attach (notebook, 0, 1, 1, 1);
 
-            get_style_context ().add_class ("terminal-window");
+            style_context = get_style_context ();
+            style_context.add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
 
@@ -404,12 +410,18 @@ namespace PantheonTerminal {
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
+                    style_context.remove_provider (dark_provider);
                     break;
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
+                    style_context.remove_provider (dark_provider);
                     break;
                 case SOLARIZED_DARK_BG:
                     color_button_dark.active = true;
+                    style_context.add_provider (dark_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    break;
+                default:
+                    style_context.remove_provider (dark_provider);
                     break;
             }
 
@@ -417,18 +429,21 @@ namespace PantheonTerminal {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
                 settings.foreground = SOLARIZED_DARK_FG;
+                style_context.add_provider (dark_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             });
 
             color_button_light.clicked.connect (() => {
                 settings.prefer_dark_style = false;
                 settings.background = SOLARIZED_LIGHT_BG;
                 settings.foreground = SOLARIZED_LIGHT_FG;
+                style_context.remove_provider (dark_provider);
             });
 
             color_button_white.clicked.connect (() => {
                 settings.prefer_dark_style = false;
                 settings.background = HIGH_CONTRAST_BG;
                 settings.foreground = HIGH_CONTRAST_FG;
+                style_context.remove_provider (dark_provider);
             });
 
             key_press_event.connect ((e) => {
