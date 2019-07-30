@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 15:17-0700\n"
-"PO-Revision-Date: 2019-07-03 10:28+0000\n"
+"PO-Revision-Date: 2019-07-22 02:24+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/terminal/extra/"
 "eo/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
@@ -28,7 +28,7 @@ msgstr "Terminalo"
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Uzi la komandlinion"
+msgstr "Uzi la komandan linion"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
@@ -40,11 +40,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Subteni Stir.+Egala klavkombinaĵo por zomi"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "Ripari malpravan malfonan procezan respondan kodon"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:53
@@ -61,51 +61,51 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:153
 #: data/io.elementary.terminal.appdata.xml.in:168
 msgid "Translation updates"
-msgstr ""
+msgstr "Tradukaj ĝisdatigoj"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Refokusi post la ŝpruca menuo fermiĝas"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Antaŭmalhelpi serĉajn kaj stilajn butonojn ricevi fokuson"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Kaŝi la musmontrilon dum tajpado"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Ripari eraran konduton de la serĉteksta emfazigo"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Subteni la flagon „-h“ por helpo"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Malebligi aŭdeblan sonorilon"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Aldoni Alt.+↑ por revenigi la lastan komandon"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Aldoni Alt.+c komandon por kopii la lastan eligon"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Aldoni plirapidigilon por ŝpruchelpilo"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Ripari zsh-avertojn"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Kondiĉa fulmklavo Stir.+g por ne konflikti kun emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 #: data/io.elementary.terminal.appdata.xml.in:83
@@ -119,31 +119,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:152
 #: data/io.elementary.terminal.appdata.xml.in:167
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Malgravaj sencimigoj"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Riparoj pri FISH-integriĝo"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Temagorda menuo"
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Zomnivelaj stiriloj"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Permesi al langeto fermiĝi post tajpi „exit“ ĉe terminalo"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Ripari entondujigon de URL-adresoj"
 
 #: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Ripari la datformaton de appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:202
 msgid "elementary LLC."
@@ -156,7 +156,7 @@ msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "komando;invito;cmd;roli;"
+msgstr "komando;invito;cmd;roli;lanĉi;terminalo;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
