@@ -192,29 +192,36 @@ namespace PantheonTerminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
+            var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
+            copy_menuitem.add (new AccelMenuLabel (_("Copy"), copy_menuitem.action_name));
 
-            var copy_last_output_menuitem = new Gtk.MenuItem.with_label (_("Copy Last Output"));
+            var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
+            copy_last_output_menuitem.add (new AccelMenuLabel (_("Copy Last Output"), copy_last_output_menuitem.action_name));
 
-            var paste_menuitem = new Gtk.MenuItem.with_label (_("Paste"));
+            var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
+            paste_menuitem.add (new AccelMenuLabel (_("Paste"), paste_menuitem.action_name));
 
-            var select_all_menuitem = new Gtk.MenuItem.with_label (_("Select All"));
+            var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
+            select_all_menuitem.add (new AccelMenuLabel (_("Select All"), select_all_menuitem.action_name));
 
-            var search_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
+            var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
+            search_menuitem.add (new AccelMenuLabel (_("Find…"), search_menuitem.action_name));
 
-            var show_in_file_browser_menuitem = new Gtk.MenuItem.with_label (_("Show in File Browser"));
+            var show_in_file_browser_menuitem = new Gtk.MenuItem ();
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
+            show_in_file_browser_menuitem.add (new AccelMenuLabel (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
+            menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
@@ -573,7 +580,13 @@ namespace PantheonTerminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
+
+                saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
+            } else {
+                saved_tabs = {};
+            }
 
             var rect = Gdk.Rectangle ();
             PantheonTerminal.TerminalApp.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -754,22 +767,31 @@ namespace PantheonTerminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
+                if (Granite.Services.System.history_is_enabled () &&
+                    settings.remember_tabs) {
+
+                    PantheonTerminal.TerminalApp.saved_state.set_int (
+                        "focused-tab",
+                        notebook.get_tab_position (new_tab)
+                    );
+                }
+
                 return false;
             });
-
-            PantheonTerminal.TerminalApp.saved_state.set_int (
-                "focused-tab",
-                notebook.get_tab_position (new_tab)
-            );
         }
 
         private void open_tabs () {
             string[] tabs = {};
-            if (settings.remember_tabs) {
+            int focus = 0;
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
+
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
                 }
+
+                focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             } else {
                 tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
             }
@@ -790,7 +812,6 @@ namespace PantheonTerminal {
 
             PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
 
-            int focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
             focus = focus.clamp (0, tabs.length - 1);
 
             Idle.add_full (GLib.Priority.LOW, () => {
@@ -1230,18 +1251,19 @@ namespace PantheonTerminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
 
-            notebook.tabs.foreach ((tab) => {
-                var term = get_term_widget (tab);
-                if (term == null) {
-                    return;
-                }
+            if (Granite.Services.System.history_is_enabled () &&
+                settings.remember_tabs) {
 
-                var location = term.get_shell_location ();
-                if (location != null && location != "") {
-                    opened_tabs += location;
-                }
-            });
-
+                notebook.tabs.foreach ((tab) => {
+                    var term = get_term_widget (tab);
+                    if (term != null) {
+                        var location = term.get_shell_location ();
+                        if (location != null && location != "") {
+                            opened_tabs += location;
+                        }
+                    }
+                });
+            }
             PantheonTerminal.TerminalApp.saved_state.set_strv (
                 "tabs",
                 opened_tabs
@@ -1300,6 +1322,35 @@ namespace PantheonTerminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
+        }
+
+        private class AccelMenuLabel : Gtk.Grid {
+            public string action_name { get; construct; }
+            public string label { get; construct; }
+
+            public AccelMenuLabel (string label, string action_name) {
+                Object (
+                    label: label,
+                    action_name: action_name
+                );
+            }
+
+            construct {
+                var label = new Gtk.Label (label);
+                label.hexpand = true;
+                label.xalign = 0;
+
+                var accel_label = new Gtk.Label (
+                    Granite.accel_to_string (
+                        ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
+                    )
+                );
+                accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
+
+                column_spacing = 3;
+                add (label);
+                add (accel_label);
+            }
         }
     }
 }
