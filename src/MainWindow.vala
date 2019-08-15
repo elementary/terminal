@@ -16,14 +16,14 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
 
     public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
-        private PantheonTerminal.Widgets.SearchToolbar search_toolbar;
+        private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
@@ -48,7 +48,7 @@ namespace PantheonTerminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
-        public TerminalApp app { get; construct; }
+        public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
 
@@ -98,7 +98,7 @@ namespace PantheonTerminal {
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
-        public MainWindow (TerminalApp app, bool recreate_tabs = true) {
+        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -109,7 +109,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public MainWindow.with_coords (TerminalApp app, int x, int y,
+        public MainWindow.with_coords (Terminal.Application app, int x, int y,
                                        bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
@@ -124,7 +124,7 @@ namespace PantheonTerminal {
             }
         }
 
-        public MainWindow.with_working_directory (TerminalApp app, string location,
+        public MainWindow.with_working_directory (Terminal.Application app, string location,
                                                   bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -367,7 +367,7 @@ namespace PantheonTerminal {
             header.pack_end (style_button);
             header.pack_end (search_button);
 
-            search_toolbar = new PantheonTerminal.Widgets.SearchToolbar (this);
+            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             search_revealer = new Gtk.Revealer ();
             search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
@@ -583,13 +583,13 @@ namespace PantheonTerminal {
             if (Granite.Services.System.history_is_enabled () &&
                 settings.remember_tabs) {
 
-                saved_tabs = PantheonTerminal.TerminalApp.saved_state.get_strv ("tabs");
+                saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
             } else {
                 saved_tabs = {};
             }
 
             var rect = Gdk.Rectangle ();
-            PantheonTerminal.TerminalApp.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
+            Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
             default_width = rect.width;
             default_height = rect.height;
@@ -603,14 +603,14 @@ namespace PantheonTerminal {
             }
 
             if (restore_pos) {
-                PantheonTerminal.TerminalApp.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
+                Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
                 if (rect.x != -1 ||  rect.y != -1) {
                     move (rect.x, rect.y);
                 }
             }
 
-            var window_state = PantheonTerminal.TerminalApp.saved_state.get_enum ("window-state");
+            var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
             } else if (window_state == MainWindow.FULLSCREEN) {
@@ -736,19 +736,19 @@ namespace PantheonTerminal {
 
                 /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
                 if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
+                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
                 } else if (is_maximized) {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
+                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
                 } else {
-                    PantheonTerminal.TerminalApp.saved_state.set_enum ("window-state", MainWindow.NORMAL);
+                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.NORMAL);
 
                     var rect = Gdk.Rectangle ();
                     get_size (out rect.width, out rect.height);
-                    PantheonTerminal.TerminalApp.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
+                    Terminal.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
 
                     int root_x, root_y;
                     get_position (out root_x, out root_y);
-                    PantheonTerminal.TerminalApp.saved_state.set ("window-position", "(ii)", root_x, root_y);
+                    Terminal.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return false;
@@ -770,7 +770,7 @@ namespace PantheonTerminal {
                 if (Granite.Services.System.history_is_enabled () &&
                     settings.remember_tabs) {
 
-                    PantheonTerminal.TerminalApp.saved_state.set_int (
+                    Terminal.Application.saved_state.set_int (
                         "focused-tab",
                         notebook.get_tab_position (new_tab)
                     );
@@ -791,9 +791,9 @@ namespace PantheonTerminal {
                     tabs += Environment.get_home_dir ();
                 }
 
-                focus = PantheonTerminal.TerminalApp.saved_state.get_int ("focused-tab");
+                focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
-                tabs += TerminalApp.working_directory ?? Environment.get_current_dir ();
+                tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
             }
 
             int null_dirs = 0;
@@ -806,11 +806,11 @@ namespace PantheonTerminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = TerminalApp.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = Terminal.Application.working_directory ?? Environment.get_current_dir ();
                 }
             }
 
-            PantheonTerminal.TerminalApp.saved_state.set_strv ("tabs", {});
+            Terminal.Application.saved_state.set_strv ("tabs", {});
 
             focus = focus.clamp (0, tabs.length - 1);
 
@@ -843,7 +843,7 @@ namespace PantheonTerminal {
              */
             string location;
             if (directory == "") {
-                location = TerminalApp.working_directory ?? Environment.get_current_dir ();
+                location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
             }
@@ -1264,12 +1264,12 @@ namespace PantheonTerminal {
                     }
                 });
             }
-            PantheonTerminal.TerminalApp.saved_state.set_strv (
+            Terminal.Application.saved_state.set_strv (
                 "tabs",
                 opened_tabs
             );
 
-            PantheonTerminal.TerminalApp.saved_state.set_int (
+            Terminal.Application.saved_state.set_int (
                 "focused-tab",
                 notebook.get_tab_position (notebook.current)
             );
