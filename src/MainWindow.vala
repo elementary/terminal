@@ -53,7 +53,6 @@ namespace Terminal {
         public TerminalWidget current_terminal { get; private set; default = null; }
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
-        public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action-close-tab";
@@ -556,7 +555,7 @@ namespace Terminal {
             });
         }
 
-        public bool handle_paste_event () {
+        private bool handle_paste_event () {
             if (search_toolbar.search_entry.has_focus) {
                 return false;
             } else if (clipboard.wait_is_text_available ()) {
@@ -721,8 +720,7 @@ namespace Terminal {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
         }
 
-        uint timer_window_state_change = 0;
-
+        private uint timer_window_state_change = 0;
         private bool on_window_state_change (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
@@ -943,11 +941,7 @@ namespace Terminal {
             });
         }
 
-        public void run_program_term (string program) {
-            new_tab ("", program);
-        }
-
-        static string get_term_font () {
+        private static string get_term_font () {
             string font_name;
 
             if (settings.font == "") {
@@ -994,7 +988,7 @@ namespace Terminal {
             }
         }
 
-        void on_get_text (Gtk.Clipboard board, string? intext) {
+        private void on_get_text (Gtk.Clipboard board, string? intext) {
             /* if unsafe paste alert is enabled, show dialog */
             if (settings.unsafe_paste_alert && !unsafe_ignored ) {
 
@@ -1026,11 +1020,11 @@ namespace Terminal {
             }
         }
 
-        void action_quit () {
+        private void action_quit () {
 
         }
 
-        void action_copy () {
+        private void action_copy () {
             if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
                 clipboard.set_text (current_terminal.uri,
                                     current_terminal.uri.length);
@@ -1038,20 +1032,20 @@ namespace Terminal {
                 current_terminal.copy_clipboard ();
         }
 
-        void action_copy_last_output () {
+        private void action_copy_last_output () {
             string output = current_terminal.get_last_output ();
             Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
         }
 
-        void action_paste () {
+        private void action_paste () {
             clipboard.request_text (on_get_text);
         }
 
-        void action_select_all () {
+        private void action_select_all () {
             current_terminal.select_all ();
         }
 
-        void action_open_in_files () {
+        private void action_open_in_files () {
             try {
                 string uri = Filename.to_uri (current_terminal.get_shell_location ());
 
@@ -1066,39 +1060,39 @@ namespace Terminal {
             }
         }
 
-        void action_scroll_to_last_command () {
+        private void action_scroll_to_last_command () {
             current_terminal.scroll_to_last_command ();
             /* Repeated presses are ignored */
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
         }
 
-        void action_close_tab () {
+        private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
         }
 
-        void action_new_window () {
+        private void action_new_window () {
             app.new_window ();
         }
 
-        void action_new_tab () {
+        private void action_new_tab () {
             if (settings.follow_last_tab)
                 new_tab (current_terminal.get_shell_location ());
             else
                 new_tab (Environment.get_home_dir ());
         }
 
-        void action_zoom_in_font () {
+        private void action_zoom_in_font () {
             current_terminal.increment_size ();
             set_zoom_default_label (current_terminal.font_scale);
         }
 
-        void action_zoom_out_font () {
+        private void action_zoom_out_font () {
             current_terminal.decrement_size ();
             set_zoom_default_label (current_terminal.font_scale);
         }
 
-        void action_zoom_default_font () {
+        private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
             set_zoom_default_label (current_terminal.font_scale);
         }
@@ -1107,15 +1101,15 @@ namespace Terminal {
             zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
-        void action_next_tab () {
+        private void action_next_tab () {
             notebook.next_page ();
         }
 
-        void action_previous_tab () {
+        private void action_previous_tab () {
             notebook.previous_page ();
         }
 
-        void action_search () {
+        private void action_search () {
             var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
             var search_state = search_action.get_state ().get_boolean ();
 
@@ -1163,19 +1157,19 @@ namespace Terminal {
             );
         }
 
-        void action_search_next () {
+        private void action_search_next () {
             if (search_button.active) {
                 search_toolbar.next_search ();
             }
         }
 
-        void action_search_previous () {
+        private void action_search_previous () {
             if (search_button.active) {
                 search_toolbar.previous_search ();
             }
         }
 
-        void action_fullscreen () {
+        private void action_fullscreen () {
             if (is_fullscreen) {
                 unfullscreen ();
                 is_fullscreen = false;
@@ -1189,7 +1183,7 @@ namespace Terminal {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
-        uint name_check_timeout_id = 0;
+        private uint name_check_timeout_id = 0;
         private void schedule_name_check () {
             if (name_check_timeout_id > 0) {
                 Source.remove (name_check_timeout_id);
