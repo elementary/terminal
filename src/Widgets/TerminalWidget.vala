@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
 
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
@@ -27,7 +27,7 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public TerminalApp app;
+        public Terminal.Application app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
@@ -189,7 +189,7 @@ namespace PantheonTerminal {
             this.drag_data_received.connect (drag_received);
             this.clickable (regex_strings);
 
-            PantheonTerminal.TerminalApp.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
+            Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
