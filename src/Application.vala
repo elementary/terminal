@@ -23,7 +23,6 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
-    /* command_e (-e) is used for running commands independently (not inside a shell) */
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
 
@@ -135,9 +134,29 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         context.set_help_enabled (false);
 
         string[] args = command_line.get_arguments ();
+        string commandline = "";
+        string[] arg_opt = {};
+        string[] arg_cmd = {};
+        bool build_cmdline = false;
+
+        /* Everything after "--" or "-x is to be  treated as a single command to be executed (maybe with its own options)
+         * so it is not passed to the parser. It will be passed as is to a new tab/shell. */
+        foreach (string s in args) {
+            if (s == "--" || s == "-x") {
+                build_cmdline = true;
+            } else {
+                if (build_cmdline) {
+                    arg_cmd += s;
+                } else {
+                    arg_opt += s;
+                }
+            }
+        }
+
+        commandline = string.joinv (" ", arg_cmd);
 
         try {
-            unowned string[] tmp = args;
+            unowned string[] tmp = arg_opt;
             context.parse (ref tmp);
         } catch (Error e) {
             stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
@@ -146,14 +165,14 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
         if (option_help) {
             show_help (context.get_help (true, null));
-        } else if (command_e != null) {
-            run_commands (command_e);
-
-        } else if (working_directory != null) {
-            start_terminal_with_working_directory (working_directory);
-
         } else {
-            new_window ();
+            if (command_e != null) {
+                run_commands (command_e, working_directory);
+            } else if (commandline.length > 0) {
+                run_command_line (commandline, working_directory);
+            } else {
+                start_terminal_with_working_directory (working_directory);
+            }
         }
 
         // Do not save the value until the next instance of
@@ -178,7 +197,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         }
     }
 
-    private void run_commands (string[] commands) {
+    private void run_commands (string[] commands, string? working_directory = null) {
         MainWindow? window;
         window = get_last_window ();
 
@@ -187,11 +206,22 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         }
 
         foreach (string command in commands) {
-            window.add_tab_with_command (command);
+            window.add_tab_with_command (command, working_directory);
         }
     }
 
-    private void start_terminal_with_working_directory (string working_directory) {
+    private void run_command_line (string command_line, string? working_directory = null) {
+        MainWindow? window;
+        window = get_last_window ();
+
+        if (window == null) {
+            window = new MainWindow (this, false);
+        }
+
+        window.add_tab_with_command (command_line, working_directory);
+    }
+
+    private void start_terminal_with_working_directory (string? working_directory) {
         MainWindow? window;
         window = get_last_window ();
 
@@ -209,7 +239,8 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     private const OptionEntry[] entries = {
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
+        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "PROGRAM_NAME" },
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
         { null }
