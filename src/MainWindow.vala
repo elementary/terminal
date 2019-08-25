@@ -912,7 +912,7 @@ namespace Terminal {
                     t.active_shell (location);
                 }
             } else {
-                t.run_program (program);
+                t.run_program (program, location);
             }
         }
 
