@@ -142,11 +142,11 @@ public class Terminal.Application : Gtk.Application {
         /* Everything after "--" or "-x is to be  treated as a single command to be executed (maybe with its own options)
          * so it is not passed to the parser. It will be passed as is to a new tab/shell. */
         foreach (string s in args) {
-            if (s == "--" || s == "-x") {
-                build_cmdline = true;
+            if (build_cmdline) {
+                arg_cmd += s;
             } else {
-                if (build_cmdline) {
-                    arg_cmd += s;
+                if (s == "--" || s == "-x") {
+                    build_cmdline = true;
                 } else {
                     arg_opt += s;
                 }
