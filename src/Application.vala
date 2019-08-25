@@ -240,6 +240,7 @@ public class Terminal.Application : Gtk.Application {
 
     private const OptionEntry[] entries = {
         /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
+        /* Use -x flag to treat the rest of the line as a single command (removed before OptionContext parser applied) */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "PROGRAM_NAME" },
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
