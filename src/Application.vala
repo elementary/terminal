@@ -17,7 +17,9 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.TerminalApp : Gtk.Application {
+public class Terminal.Application : Gtk.Application {
+    public static GLib.Settings saved_state;
+
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
@@ -31,6 +33,10 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
 
+    static construct {
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+    }
+
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
         application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
@@ -38,13 +44,12 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
     }
 
-    public TerminalApp () {
+    public Application () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
         windows = new GLib.List <MainWindow> ();
 
-        saved_state = new SavedState ();
         settings = new Settings ();
     }
 
@@ -211,7 +216,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     };
 
     public static int main (string[] args) {
-        var app = new TerminalApp ();
+        var app = new Terminal.Application ();
         return app.run (args);
     }
 }

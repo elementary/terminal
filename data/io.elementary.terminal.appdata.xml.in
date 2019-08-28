@@ -35,6 +35,34 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.3.6" date="2019-07-15" urgency="medium">
+      <description>
+        <ul>
+          <li>Pressing the Menu key now opens the context menu</li>
+          <li>Store state with GSettings</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+     <release version="5.3.5" date="2019-06-04" urgency="medium">
+      <description>
+        <ul>
+          <li>Support Ctrl+Equal key combo to zoom in</li>
+          <li>Fix a wrong foreground process response code</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.3.4" date="2019-03-29" urgency="medium">
+      <description>
+        <ul>
+          <li>Return focus after popover menu closes</li>
+          <li>Prevent search and style buttons from receiving focus</li>
+          <li>Hide the cursor while typing</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.3.3" date="2018-12-06" urgency="medium">
       <description>
         <ul>

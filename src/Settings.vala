@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
+* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -17,16 +16,8 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
-
-    public SavedState saved_state;
+namespace Terminal {
     public Settings settings;
-
-    public enum PantheonTerminalWindowState {
-        NORMAL = 0,
-        MAXIMIZED = 1,
-        FULLSCREEN = 2
-    }
 
     public enum cursor_shape {
         BLOCK = 0,
@@ -34,24 +25,7 @@ namespace PantheonTerminal {
         UNDERLINE = 2
     }
 
-    public class SavedState : Granite.Services.Settings {
-
-        public int window_width { get; set; }
-        public int window_height { get; set; }
-        public PantheonTerminalWindowState window_state { get; set; }
-        public string[] tabs { get; set; }
-        public int focused_tab { get; set; }
-        public int opening_x { get; set; }
-        public int opening_y { get; set; }
-        public double zoom { get; set; }
-
-        public SavedState () {
-            base ("io.elementary.terminal.saved-state");
-        }
-    }
-
     public class Settings : Granite.Services.Settings {
-
         public int scrollback_lines { get; set; }
         public bool follow_last_tab { get; set; }
         public bool remember_tabs { get; set; }

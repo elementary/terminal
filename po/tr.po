@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-09 15:20+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2019-08-22 11:22+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:109
@@ -26,69 +26,69 @@ msgstr "İşlem tamamlandı"
 
 #: src/Application.vala:207
 msgid "Run a program in terminal"
-msgstr "Uçbirimde bir program çalıştır"
+msgstr "Terminalde bir program çalıştır"
 
 #: src/Application.vala:208
 msgid "Show help"
-msgstr ""
+msgstr "Yardımı göster"
 
 #: src/Application.vala:209
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:192
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:195
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Son Çıktıyı Kopyala"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:201
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:207
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:283
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:290
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:297
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:310
 msgid "High Contrast"
-msgstr "Yüksek Kontrast"
+msgstr "Yüksek Karşıtlık"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:318
 msgid "Solarized Light"
-msgstr "Solarize Işık"
+msgstr "Açık Renk Tema"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:326
 msgid "Solarized Dark"
-msgstr "Solarize Karanlık"
+msgstr "Koyu Renk Tema"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:350
 msgid "Style"
 msgstr "Stil"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1089
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -130,7 +130,7 @@ msgstr "Bu komut bilgisayarınızın yönetici izinlerine erişmek istiyor"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komut İstemine komut kopyalamak tehlikeli olabilir."
+msgstr "Terminal'e komut kopyalayıp yapıştırmak tehlikeli olabilir."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
@@ -138,7 +138,7 @@ msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin ol
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Yapıştırma koruması uyarılarını göster"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -160,13 +160,13 @@ msgstr "Önceki sonuç"
 msgid "Next result"
 msgstr "Sonraki sonuç"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Döngüsel arama"
 
 #: src/Widgets/TerminalWidget.vala:29
 msgid "Terminal"
-msgstr "Uçbirim"
+msgstr "Terminal"
 
 #~ msgid "Cancel"
 #~ msgstr "İptal"
