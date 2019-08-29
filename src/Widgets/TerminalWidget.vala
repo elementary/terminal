@@ -447,7 +447,7 @@ namespace Terminal {
         }
 
         public void remember_command_start_position () {
-            if (!last_key_was_return) {
+            if (!last_key_was_return || has_foreground_process ()) {
                 return;
             }
 
@@ -459,7 +459,7 @@ namespace Terminal {
         }
 
         public void remember_command_end_position () {
-            if (last_key_was_return) {
+            if (last_key_was_return && !has_foreground_process ()) {
                 return;
             }
 
@@ -488,6 +488,7 @@ namespace Terminal {
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
              * maximum line length rather than determine the actual length.  */
+            last_key_was_return = true;
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
         }
 
