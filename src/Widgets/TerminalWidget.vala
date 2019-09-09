@@ -112,6 +112,7 @@ namespace Terminal {
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
+        private Vte.CursorBlinkMode blink_mode;
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -129,6 +130,9 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
+                blink_mode = cursor_blink_mode;
+                cursor_blink_mode = Vte.CursorBlinkMode.OFF;
+
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
@@ -187,6 +191,7 @@ namespace Terminal {
                     }
                 }
 
+                cursor_blink_mode = blink_mode;
                 return false;
             });
 
