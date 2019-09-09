@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.TerminalApp : Gtk.Application {
+public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
 
     private GLib.List <MainWindow> windows;
@@ -44,7 +44,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
     }
 
-    public TerminalApp () {
+    public Application () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
@@ -216,7 +216,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     };
 
     public static int main (string[] args) {
-        var app = new TerminalApp ();
+        var app = new Terminal.Application ();
         return app.run (args);
     }
 }
