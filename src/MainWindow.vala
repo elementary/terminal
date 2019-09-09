@@ -38,6 +38,8 @@ namespace Terminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
+        private const string SOLARIZED_BLACK_BG = "rgba(51, 51, 51, 0.95)";
+        private const string SOLARIZED_BLACK_FG = "#d4d4d4";
         private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
         private const string SOLARIZED_DARK_FG = "#94a3a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
@@ -338,15 +340,24 @@ namespace Terminal {
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
 
+            var color_button_black = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_black.halign = Gtk.Align.CENTER;
+            color_button_black.tooltip_text = _("Solarized Black");
+
+            var color_button_black_context = color_button_black.get_style_context ();
+            color_button_black_context.add_class ("color-button");
+            color_button_black_context.add_class ("color-black");
+
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
-            style_popover_grid.column_spacing = 6;
+            style_popover_grid.column_spacing = 8;  //6
             style_popover_grid.row_spacing = 12;
             style_popover_grid.width_request = 200;
             style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
             style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
             style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
             style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
+            style_popover_grid.attach (color_button_black, 3, 1, 1, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -416,7 +427,16 @@ namespace Terminal {
                 case SOLARIZED_DARK_BG:
                     color_button_dark.active = true;
                     break;
+                case SOLARIZED_BLACK_BG:
+                    color_button_black.active = true;
+                    break;
             }
+
+            color_button_black.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = SOLARIZED_BLACK_BG;
+                settings.foreground = SOLARIZED_BLACK_FG;
+            });
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
