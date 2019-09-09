@@ -157,7 +157,7 @@ namespace Terminal {
                             } catch (GLib.Error error) {
                                 warning ("Could Not Open link");
                             }
-                        } else {
+                        } else if (!has_foreground_process ()) {
                             int p_row, p_col;
                             get_cell_clicked (event, out p_row, out p_col);
                             long ccol, crow;
@@ -174,8 +174,6 @@ namespace Terminal {
                             key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
                             key_event.is_modifier = 0;
 
-                            int last_row = c_row;
-                            int last_col = c_col;
                             Idle.add (() => { /* wait for button press event to be processed */
                                 /* Cursor will move as close as possible to pointer */
                                 for (int i = 0; i < n_events; i++) {
