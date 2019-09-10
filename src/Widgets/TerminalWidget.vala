@@ -148,7 +148,8 @@ namespace Terminal {
             });
 
             button_release_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_PRIMARY) {
+                /* Do not activate hyperlinks just after focusing in */
+                if (event.button == Gdk.BUTTON_PRIMARY && window.focus_timeout == 0) {
                     uri = get_link (event);
 
                     if (uri != null && ! get_has_selection ()) {
