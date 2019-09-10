@@ -148,10 +148,10 @@ namespace Terminal {
             });
 
             button_release_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_PRIMARY) {
+                if (event.button == Gdk.BUTTON_PRIMARY && (event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
                     uri = get_link (event);
 
-                    if (uri != null && ! get_has_selection ()) {
+                    if (uri != null && !get_has_selection ()) {
                         try {
                             Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
                         } catch (GLib.Error error) {
