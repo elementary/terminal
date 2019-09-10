@@ -148,6 +148,10 @@ namespace Terminal {
                 } else if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
                     int p_row, p_col;
                     get_cell_clicked (event, out p_row, out p_col);
+
+                    if (p_row < remembered_command_start_row) {
+                        return false;
+                    }
                     long ccol, crow;
                     get_cursor_position (out ccol, out crow);
                     int c_col = (int)ccol;
