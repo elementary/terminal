@@ -131,7 +131,6 @@ namespace Terminal {
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
                 blink_mode = cursor_blink_mode;
-                cursor_blink_mode = Vte.CursorBlinkMode.OFF;
 
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
@@ -163,12 +162,18 @@ namespace Terminal {
                     key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
                     key_event.is_modifier = 0;
 
+                    set_color_cursor (background_color);
                     Idle.add (() => { /* wait for button press event to be processed */
                         /* Cursor will move as close as possible to pointer */
                         for (int i = 0; i < n_events; i++) {
                             key_event.time = (uint32)(get_monotonic_time ());
                             key_press_event (key_event);
                         }
+
+                        Timeout.add (100, () => {
+                            set_color_cursor (cursor_color);
+                            return Source.REMOVE;
+                        });
 
                         return false;
                     });
@@ -191,7 +196,6 @@ namespace Terminal {
                     }
                 }
 
-                cursor_blink_mode = blink_mode;
                 return false;
             });
 
@@ -224,12 +228,14 @@ namespace Terminal {
             Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
+        Gdk.RGBA background_color;
+        Gdk.RGBA cursor_color;
         public void restore_settings () {
             /* Load configuration */
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = settings.prefer_dark_style;
 
-            Gdk.RGBA background_color = Gdk.RGBA ();
+            background_color = Gdk.RGBA ();
             background_color.parse (settings.background);
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
@@ -265,7 +271,7 @@ namespace Terminal {
 
             set_colors (foreground_color, background_color, palette);
 
-            Gdk.RGBA cursor_color = Gdk.RGBA ();
+            cursor_color = Gdk.RGBA ();
             cursor_color.parse (settings.cursor_color);
             set_color_cursor (cursor_color);
 
