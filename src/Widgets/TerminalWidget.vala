@@ -146,7 +146,7 @@ namespace Terminal {
                     return true;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
                     return window.handle_primary_selection_copy_event ();
-                } else if (event.button == Gdk.BUTTON_PRIMARY && !get_has_selection () && !has_foreground_process ()) {
+                } else if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
                     int p_row, p_col;
                     get_cell_clicked (event, out p_row, out p_col);
                     long ccol, crow;
