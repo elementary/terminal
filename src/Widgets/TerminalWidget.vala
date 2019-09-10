@@ -157,13 +157,13 @@ namespace Terminal {
                     int c_col = (int)ccol;
                     int c_row = (int)crow;
 
-                    int n_events = ((c_col - p_col) + (c_row - p_row) * (int)get_column_count ()).abs ();
+                    int n_events = (c_col - p_col).abs ();
 
                     /* Synthesise a cursor press - is there a better way? */
                     Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
                     key_event.send_event = 1;
                     key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
-                    key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
+                    key_event.keyval = p_col < c_col ? Gdk.Key.Left : Gdk.Key.Right;
                     key_event.is_modifier = 0;
 
                     set_color_cursor (background_color);
