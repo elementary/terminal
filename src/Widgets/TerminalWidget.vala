@@ -146,6 +146,32 @@ namespace Terminal {
                     return true;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
                     return window.handle_primary_selection_copy_event ();
+                } else if (event.button == Gdk.BUTTON_PRIMARY && !get_has_selection () && !has_foreground_process ()) {
+                    int p_row, p_col;
+                    get_cell_clicked (event, out p_row, out p_col);
+                    long ccol, crow;
+                    get_cursor_position (out ccol, out crow);
+                    int c_col = (int)ccol;
+                    int c_row = (int)crow;
+
+                    int n_events = ((c_col - p_col) + (c_row - p_row) * (int)get_column_count ()).abs ();
+
+                    /* Synthesise a cursor press - is there a better way? */
+                    Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
+                    key_event.send_event = 1;
+                    key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
+                    key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
+                    key_event.is_modifier = 0;
+
+                    Idle.add (() => { /* wait for button press event to be processed */
+                        /* Cursor will move as close as possible to pointer */
+                        for (int i = 0; i < n_events; i++) {
+                            key_event.time = (uint32)(get_monotonic_time ());
+                            key_press_event (key_event);
+                        }
+
+                        return false;
+                    });
                 }
 
                 return false;
@@ -161,32 +187,6 @@ namespace Terminal {
                             } catch (GLib.Error error) {
                                 warning ("Could Not Open link");
                             }
-                        } else if (!has_foreground_process ()) {
-                            int p_row, p_col;
-                            get_cell_clicked (event, out p_row, out p_col);
-                            long ccol, crow;
-                            get_cursor_position (out ccol, out crow);
-                            int c_col = (int)ccol;
-                            int c_row = (int)crow;
-
-                            int n_events = ((c_col - p_col) + (c_row - p_row) * (int)get_column_count ()).abs ();
-
-                            /* Synthesise a cursor press - is there a better way? */
-                            Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
-                            key_event.send_event = 1;
-                            key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
-                            key_event.keyval = (p_row < c_row || (p_row == c_row && p_col < c_col)) ? Gdk.Key.Left : Gdk.Key.Right;
-                            key_event.is_modifier = 0;
-
-                            Idle.add (() => { /* wait for button press event to be processed */
-                                /* Cursor will move as close as possible to pointer */
-                                for (int i = 0; i < n_events; i++) {
-                                    key_event.time = (uint32)(get_monotonic_time ());
-                                    key_press_event (key_event);
-                                }
-
-                                return false;
-                            });
                         }
                     }
                 }
