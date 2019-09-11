@@ -46,6 +46,12 @@
         0 0 0 1px alpha (@colorAccent, 0.25);
 }
 
+.color-pink radio {
+    background: #FFC3EF;
+    border-color: #FF9EE5;
+    color: #fff;
+}
+
 .color-black radio {
     background: #1a1a1a;
     border-color: #151B1C;
