@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal.Widgets {
+namespace Terminal.Widgets {
 
     public class SearchToolbar : Gtk.Grid {
         private Gtk.ToggleButton cycle_button;
