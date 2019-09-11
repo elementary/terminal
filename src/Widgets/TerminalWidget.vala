@@ -111,8 +111,10 @@ namespace Terminal {
         private long remembered_position; /* Only need to remember row at the moment */
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
+        private Gdk.RGBA background_color = Gdk.RGBA ();
+        private Gdk.RGBA cursor_color = Gdk.RGBA ();
+        private Vte.CursorBlinkMode remembered_cursor_blink_mode;
         public bool last_key_was_return = true;
-        private Vte.CursorBlinkMode blink_mode;
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -130,45 +132,34 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
-                blink_mode = cursor_blink_mode;
+                remembered_cursor_blink_mode = cursor_blink_mode;
+                cursor_blink_mode = Vte.CursorBlinkMode.OFF;
 
-                if (event.button ==  Gdk.BUTTON_SECONDARY) {
-                    uri = get_link (event);
-
-                    if (uri != null) {
-                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
-                    }
-
-                    menu.select_first (false);
-                    menu.popup_at_pointer (event);
-
-                    return true;
-                } else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_primary_selection_copy_event ();
-                } else if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
-                    int p_row, p_col;
-                    get_cell_clicked (event, out p_row, out p_col);
-
-                    if (p_row < remembered_command_start_row) {
+                if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
+                    long current_col, current_row, clicked_row, clicked_col;
+                    get_cursor_position (out current_col, out current_row);
+                    get_cell_clicked (event, out clicked_row, out clicked_col);
+                    if (clicked_row < remembered_command_start_row) {
                         return false;
                     }
-                    long ccol, crow;
-                    get_cursor_position (out ccol, out crow);
-                    int c_col = (int)ccol;
-                    int c_row = (int)crow;
 
-                    int n_events = (c_col - p_col).abs ();
+                    long delta_cells = clicked_col - current_col;
+                    var clicked_symbol = get_text_range (clicked_row, clicked_col, clicked_row, clicked_col, null, null).get_char ();
+                    if (clicked_symbol != 0U) {
+                        delta_cells += (clicked_row - current_row) * get_column_count ();
+                    }
 
                     /* Synthesise a cursor press - is there a better way? */
                     Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
                     key_event.send_event = 1;
                     key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
-                    key_event.keyval = p_col < c_col ? Gdk.Key.Left : Gdk.Key.Right;
+                    key_event.keyval = delta_cells > 0U ? Gdk.Key.Right : Gdk.Key.Left;
                     key_event.is_modifier = 0;
 
                     set_color_cursor (background_color);
                     Idle.add (() => { /* wait for button press event to be processed */
                         /* Cursor will move as close as possible to pointer */
+                        var n_events = (int) delta_cells.abs ();
                         for (int i = 0; i < n_events; i++) {
                             key_event.time = (uint32)(get_monotonic_time ());
                             key_press_event (key_event);
@@ -181,21 +172,35 @@ namespace Terminal {
 
                         return false;
                     });
+                } else if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                    uri = get_link (event);
+
+                    if (uri != null) {
+                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
+                    }
+
+                    menu.select_first (false);
+                    menu.popup_at_pointer (event);
+
+                    return true;
+                } else if (event.button == Gdk.BUTTON_MIDDLE) {
+                    return window.handle_primary_selection_copy_event ();
                 }
 
                 return false;
             });
 
             button_release_event.connect ((event) => {
+                cursor_blink_mode = remembered_cursor_blink_mode;
+
                 if (event.button == Gdk.BUTTON_PRIMARY) {
-                    if (!get_has_selection ()) {
-                        uri = get_link (event);
-                        if (uri != null) {
-                            try {
-                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                            } catch (GLib.Error error) {
-                                warning ("Could Not Open link");
-                            }
+                    uri = get_link (event);
+
+                    if (uri != null && ! get_has_selection ()) {
+                        try {
+                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                        } catch (GLib.Error error) {
+                            warning ("Could Not Open link");
                         }
                     }
                 }
@@ -232,14 +237,11 @@ namespace Terminal {
             Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
-        Gdk.RGBA background_color;
-        Gdk.RGBA cursor_color;
         public void restore_settings () {
             /* Load configuration */
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = settings.prefer_dark_style;
 
-            background_color = Gdk.RGBA ();
             background_color.parse (settings.background);
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
@@ -275,7 +277,6 @@ namespace Terminal {
 
             set_colors (foreground_color, background_color, palette);
 
-            cursor_color = Gdk.RGBA ();
             cursor_color.parse (settings.cursor_color);
             set_color_cursor (cursor_color);
 
@@ -533,14 +534,9 @@ namespace Terminal {
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
         }
 
-        private void get_cell_clicked (Gdk.EventButton event, out int row, out int col) {
-            int cell_width = (int)(get_char_width ());
-            int cell_height = (int)(get_char_height ());
-            int px = (int)(event.x);
-            int py = (int)(event.y);
-
-            row = py / cell_height;
-            col = px / cell_width;
+        private void get_cell_clicked (Gdk.EventButton event, out long row, out long col) {
+            row = (long)(event.y / get_char_height ());
+            col = (long)(event.x / get_char_width ());
         }
 
         public void scroll_to_last_command () {
