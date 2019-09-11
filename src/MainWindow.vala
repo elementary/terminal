@@ -27,7 +27,6 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        private Gtk.StyleContext style_context;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -427,8 +426,7 @@ namespace Terminal {
             grid.attach (search_revealer, 0, 0, 1, 1);
             grid.attach (notebook, 0, 1, 1, 1);
 
-            style_context = get_style_context ();
-            style_context.add_class ("terminal-window");
+            get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
 
