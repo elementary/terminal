@@ -144,7 +144,9 @@ namespace Terminal {
                     }
 
                     long delta_cells = clicked_col - current_col;
-                    var clicked_symbol = get_text_range (clicked_row, clicked_col, clicked_row, clicked_col, null, null).get_char ();
+                    var clicked_symbol = get_text_range (clicked_row, clicked_col,
+                                                         clicked_row, clicked_col,
+                                                         null, null).get_char ();
                     if (clicked_symbol != 0U) {
                         delta_cells += (clicked_row - current_row) * get_column_count ();
                     }
@@ -152,7 +154,8 @@ namespace Terminal {
                     /* Synthesise a cursor press - is there a better way? */
                     Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
                     key_event.send_event = 1;
-                    key_event.window = (Gdk.Window)(this.get_window ().ref ()); /* Need to add a ref else crash on second key press - vapi error? */
+                    /* Need to add a ref else crash on second key press - vapi error? */
+                    key_event.window = (Gdk.Window)(this.get_window ().ref ());
                     key_event.keyval = delta_cells > 0U ? Gdk.Key.Right : Gdk.Key.Left;
                     key_event.is_modifier = 0;
 
@@ -172,7 +175,7 @@ namespace Terminal {
 
                         return false;
                     });
-                } else if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                } else if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -269,7 +272,7 @@ namespace Terminal {
             Gdk.RGBA[] palette = new Gdk.RGBA[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color= Gdk.RGBA();
+                Gdk.RGBA new_color= Gdk.RGBA ();
                 new_color.parse (hex_palette[i]);
 
                 palette[i] = new_color;
@@ -370,7 +373,7 @@ namespace Terminal {
                 return false;
             }
 
-            int pty = get_pty().fd;
+            int pty = get_pty ().fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
             if (fgpid != this.child_pid && fgpid != -1) {
