@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-07-22 02:24+0000\n"
+"PO-Revision-Date: 2019-09-08 19:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -101,11 +101,11 @@ msgstr "टूलटिप्समध्ये अॅक्सल जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "zsh सूचना निराकरण करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "सशर्त ctrl + g शॉर्टकट इमॅक्सला डीकॉन्फ्लिक्ट करण्यासाठी"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 #: data/io.elementary.terminal.appdata.xml.in:83
@@ -119,31 +119,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:152
 #: data/io.elementary.terminal.appdata.xml.in:167
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "किरकोळ दोष निराकरणे"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "FISH एकत्रीकरण निराकरणे"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Theme preference menu"
-msgstr ""
+msgstr "थीम प्राधान्य मेनू"
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid "Zoom level controls"
-msgstr ""
+msgstr "झूम पातळी नियंत्रणे"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "कमांडलाइनवर एग्जिट टाइप केल्यावर टॅब बंद करण्यास परवानगी द्या"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "क्लिपबोर्डवर URL कॉपी करणे निश्चित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "अ‍ॅपस्ट्रीम तारीख स्वरूप निश्चित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:202
 msgid "elementary LLC."

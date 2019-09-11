@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-07-27 22:58+0000\n"
+"PO-Revision-Date: 2019-08-22 11:22+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -66,47 +66,47 @@ msgstr "Atualizações de tradução"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Retornar o foco após o menu popover fechar"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Impedir que os botões de pesquisa e estilo recebam o foco"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Oculta o cursor enquanto escreve"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Corrigir comportamento errático de realce de texto de pesquisa"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Suporta o sinalizador -h para a ajuda"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Desativar campainha audível"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Adiciona a ação Alt+↑ para rolar para o último comando"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Adicionar ação Alt+c para copiar a última saída"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Adicionar níveis às dicas de ferramentas"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Corrigir notificações zsh"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Atalho ctrl+g condicional para descongestionar com o emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 #: data/io.elementary.terminal.appdata.xml.in:83
@@ -120,31 +120,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:152
 #: data/io.elementary.terminal.appdata.xml.in:167
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Pequenas correções de erros"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Correções de integração FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Menu de preferências de tema"
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Controlos de nível de zoom"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Permitir que o separador feche após escrever exit na linha de comando"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Corrigir a cópia de URLs para a área de transferência"
 
 #: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Corrigir formato de data do appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:202
 msgid "elementary LLC."

@@ -16,7 +16,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
     public Settings settings;
 
     public enum cursor_shape {
