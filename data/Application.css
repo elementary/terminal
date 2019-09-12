@@ -46,6 +46,23 @@
         0 0 0 1px alpha (@colorAccent, 0.25);
 }
 
+.color-nep radio {
+    background: #758480;
+    color: #fff;
+}
+
+.color-dracula radio {
+    background: #282A36;
+    border-color: #1A1E2D;
+    color: #fff;
+}
+
+.color-monokai_dark radio {
+    background: #272822;
+    border-color: #1C1C1C;
+    color: #fff;
+}
+
 .color-pink radio {
     background: #FFC3EF;
     border-color: #FF9EE5;

@@ -27,6 +27,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Gtk.StyleContext style_context;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -38,20 +39,37 @@ namespace Terminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string PINK_BG = "rgb(255,217,245)";
-        private const string PINK_FG = "#586e75";
+        private const string DRACULA_BG = "rgb(40,42,54)";
+        private const string DRACULA_FG = "#94A3A5";
         private const string SOLARIZED_BLACK_BG = "rgba(51, 51, 51, 0.95)";
         private const string SOLARIZED_BLACK_FG = "#d4d4d4";
         private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
         private const string SOLARIZED_DARK_FG = "#94a3a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
+        private const string MONOKAI_DARK_BG = "rgb(39,40,34)";
+        private const string MONOKAI_DARK_FG = "#F8F8F2";
+        private const string PINK_BG = "rgb(255,217,245)";
+        private const string PINK_FG = "#586e75";
+        private const string NEP_BG = "rgb(117,132,128)";
+        private const string NEP_FG = "#23476A";
+
         private const string PALETTE_DEFAULT = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:
                                                 #2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:
                                                 #268bd2:#d33682:#2aa198:#6c71c4";
+
         private const string PALETTE_DRACULA = "#44475a:#ff5555:#50fa7b:#ffb86c:#8be9fd:#bd93f9:
                                                 #ff79c6:#94A3A5:#000000:#ff5555:#50fa7b:#ffb86c:
                                                 #8be9fd:#bd93f9:#ff79c6:#ffffff";
+
+        private const string PALETTE_MONOKAI_DARK = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:
+                                                     #2AA198:#f9f8f5:#55574A:#f92672:#a6e22e:#f4bf75:
+                                                     #66d9ef:#ae81ff:#2AA198:#f8f8f2";
+
+        private const string PALETTE_NEP = "#000000000000:#dddd6f6f0000:#0000dddd6f6f:#6f6fdddd0000:
+                                            #6f6f0000dddd:#dddd00006f6f:#00006f6fdddd:#f2f2f2f2f2f2:
+                                            #7d7d7d7d7d7d:#ffffb9b97474:#7474ffffb9b9:#b9b9ffff7474:
+                                            #b9b97474ffff:#ffff7474b9b9:#7474b9b9ffff:#ffffffffffff";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -364,6 +382,30 @@ namespace Terminal {
             color_button_pink_context.add_class ("color-button");
             color_button_pink_context.add_class ("color-pink");
 
+            var color_button_monokai_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_monokai_dark.halign = Gtk.Align.CENTER;
+            color_button_monokai_dark.tooltip_text = _("Monokai Dark");
+
+            var color_button_monokai_dark_context = color_button_monokai_dark.get_style_context ();
+            color_button_monokai_dark_context.add_class ("color-button");
+            color_button_monokai_dark_context.add_class ("color-monokai_dark");
+
+            var color_button_dracula = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_dracula.halign = Gtk.Align.CENTER;
+            color_button_dracula.tooltip_text = _("Dracula");
+
+            var color_button_dracula_context = color_button_dracula.get_style_context ();
+            color_button_dracula_context.add_class ("color-button");
+            color_button_dracula_context.add_class ("color-dracula");
+
+            var color_button_nep = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_nep.halign = Gtk.Align.CENTER;
+            color_button_nep.tooltip_text = _("Nep");
+
+            var color_button_nep_context = color_button_nep.get_style_context ();
+            color_button_nep_context.add_class ("color-button");
+            color_button_nep_context.add_class ("color-nep");
+
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
             style_popover_grid.column_spacing = 6;
@@ -375,6 +417,9 @@ namespace Terminal {
             style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
             style_popover_grid.attach (color_button_black, 3, 1, 1, 1);
             style_popover_grid.attach (color_button_pink, 0, 2, 1, 1);
+            style_popover_grid.attach (color_button_nep, 1, 2, 1, 1);
+            style_popover_grid.attach (color_button_monokai_dark, 2, 2, 1, 1);
+            style_popover_grid.attach (color_button_dracula, 3, 2, 1, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -426,7 +471,8 @@ namespace Terminal {
             grid.attach (search_revealer, 0, 0, 1, 1);
             grid.attach (notebook, 0, 1, 1, 1);
 
-            get_style_context ().add_class ("terminal-window");
+            style_context = get_style_context ();
+            style_context.add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
 
@@ -450,7 +496,37 @@ namespace Terminal {
                 case PINK_BG:
                     color_button_pink.active = true;
                     break;
+                case MONOKAI_DARK_BG:
+                    color_button_monokai_dark.active = true;
+                    break;
+                case DRACULA_BG:
+                    color_button_dracula.active = true;
+                    break;
+                case NEP_BG:
+                    color_button_dracula.active = true;
+                    break;
             }
+
+            color_button_nep.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = NEP_BG;
+                settings.foreground = NEP_FG;
+                settings.palette = PALETTE_NEP;
+            });
+
+            color_button_dracula.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = DRACULA_BG;
+                settings.foreground = DRACULA_FG;
+                settings.palette = PALETTE_DRACULA;
+            });
+
+            color_button_monokai_dark.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = MONOKAI_DARK_BG;
+                settings.foreground = MONOKAI_DARK_FG;
+                settings.palette = PALETTE_MONOKAI_DARK;
+            });
 
             color_button_pink.clicked.connect (() => {
                 settings.prefer_dark_style = false;
@@ -470,8 +546,7 @@ namespace Terminal {
                 settings.prefer_dark_style = true;
                 settings.background = SOLARIZED_DARK_BG;
                 settings.foreground = SOLARIZED_DARK_FG;
-                settings.palette = PALETTE_DRACULA;
-                //settings.palette = PALETTE_DEFAULT; //reserve
+                settings.palette = PALETTE_DEFAULT;
             });
 
             color_button_light.clicked.connect (() => {
