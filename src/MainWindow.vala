@@ -51,7 +51,7 @@ namespace Terminal {
         private const string MONOKAI_DARK_FG = "#F8F8F2";
         private const string PINK_BG = "rgb(255,217,245)";
         private const string PINK_FG = "#586e75";
-        private const string NEP_BG = "rgb(117,132,128)";
+        private const string NEP_BG = "rgb(194,194,194)";
         private const string NEP_FG = "#23476A";
 
         private const string PALETTE_DEFAULT = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:
@@ -66,10 +66,9 @@ namespace Terminal {
                                                      #2AA198:#f9f8f5:#55574A:#f92672:#a6e22e:#f4bf75:
                                                      #66d9ef:#ae81ff:#2AA198:#f8f8f2";
 
-        private const string PALETTE_NEP = "#000000000000:#dddd6f6f0000:#0000dddd6f6f:#6f6fdddd0000:
-                                            #6f6f0000dddd:#dddd00006f6f:#00006f6fdddd:#f2f2f2f2f2f2:
-                                            #7d7d7d7d7d7d:#ffffb9b97474:#7474ffffb9b9:#b9b9ffff7474:
-                                            #b9b97474ffff:#ffff7474b9b9:#7474b9b9ffff:#ffffffffffff";
+        private const string PALETTE_NEP = "#000000:#DD6F00:#00964B:#6FDD00:#6F00DD:#DD006F:
+                                            #006FDD:#F2F2F2:#7D7D7D:#FFB974:#74FFB9:#B9FF74:
+                                            #B974FF:#FF74B9:#74B9FF:#FFFFFF";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -503,7 +502,7 @@ namespace Terminal {
                     color_button_dracula.active = true;
                     break;
                 case NEP_BG:
-                    color_button_dracula.active = true;
+                    color_button_nep.active = true;
                     break;
             }
 
