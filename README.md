@@ -6,7 +6,7 @@
 
 A super lightweight, beautiful, and simple terminal. Comes with sane defaults, browser-class tabs, sudo paste protection, smart copy/paste, and little to no configuration.
 
-![Terminal Screenshot](data/screenshot.png?raw=true)
+![Terminal Screenshot](data/screenshot-themes.png?raw=true)
 
 ## Building, Testing, and Installation
 
