@@ -140,7 +140,7 @@ namespace Terminal {
                     get_cursor_position (out current_col, out current_row);
                     get_cell_clicked (event, out clicked_row, out clicked_col);
                     if (clicked_row < remembered_command_start_row) {
-                        return false;
+                        return Gdk.EVENT_STOP;
                     }
 
                     long delta_cells = clicked_col - current_col;
@@ -149,6 +149,8 @@ namespace Terminal {
                                                          null, null).get_char ();
                     if (clicked_symbol != 0U) {
                         delta_cells += (clicked_row - current_row) * get_column_count ();
+                    } else {
+                        return Gdk.EVENT_STOP;
                     }
 
                     /* Synthesise a cursor press - is there a better way? */
@@ -173,7 +175,7 @@ namespace Terminal {
                             return Source.REMOVE;
                         });
 
-                        return false;
+                        return Source.REMOVE;
                     });
                 } else if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
@@ -185,12 +187,12 @@ namespace Terminal {
                     menu.select_first (false);
                     menu.popup_at_pointer (event);
 
-                    return true;
+                    return Gdk.EVENT_PROPAGATE;
                 } else if (event.button == Gdk.BUTTON_MIDDLE) {
                     return window.handle_primary_selection_copy_event ();
                 }
 
-                return false;
+                return Gdk.EVENT_STOP;
             });
 
             button_release_event.connect ((event) => {
