@@ -168,7 +168,7 @@ namespace Terminal {
                             key_press_event (key_event);
                         }
 
-                        Timeout.add (100, () => {
+                        Gdk.threads_add_idle_full (GLib.Priority.LOW, () => {
                             set_color_cursor (cursor_color);
                             return Source.REMOVE;
                         });
