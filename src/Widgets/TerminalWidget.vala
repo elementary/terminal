@@ -147,11 +147,12 @@ namespace Terminal {
                     var clicked_symbol = get_text_range (clicked_row, clicked_col,
                                                          clicked_row, clicked_col,
                                                          null, null).get_char ();
-                    if (clicked_symbol != 0U) {
-                        delta_cells += (clicked_row - current_row) * get_column_count ();
-                    } else {
+
+                    if (clicked_symbol == 0U) { // Clicked on empty space -ignore
                         return Gdk.EVENT_STOP;
                     }
+
+                    delta_cells += (clicked_row - current_row) * get_column_count ();
 
                     /* Synthesise a cursor press - is there a better way? */
                     Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
