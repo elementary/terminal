@@ -143,7 +143,6 @@ namespace Terminal {
                         return Gdk.EVENT_STOP;
                     }
 
-                    long delta_cells = clicked_col - current_col;
                     var clicked_symbol = get_text_range (clicked_row, clicked_col,
                                                          clicked_row, clicked_col,
                                                          null, null).get_char ();
@@ -152,7 +151,7 @@ namespace Terminal {
                         return Gdk.EVENT_STOP;
                     }
 
-                    delta_cells += (clicked_row - current_row) * get_column_count ();
+                    long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
                     /* Synthesise a cursor press - is there a better way? */
                     Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
