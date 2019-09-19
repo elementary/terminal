@@ -147,9 +147,6 @@ namespace Terminal {
                                                          clicked_row, clicked_col,
                                                          null, null).get_char ();
 
-                    if (clicked_symbol == 0U) { // Clicked on empty space -ignore
-                        return Gdk.EVENT_STOP;
-                    }
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
