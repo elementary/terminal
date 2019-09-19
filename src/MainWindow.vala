@@ -569,18 +569,6 @@ namespace Terminal {
             return false;
         }
 
-        public bool handle_primary_selection_copy_event () {
-            if (search_toolbar.search_entry.has_focus) {
-                return false;
-            } else if (current_terminal.get_has_selection ()) {
-                current_terminal.copy_primary ();
-                primary_selection.request_text (on_get_text);
-                return true;
-            }
-
-            return false;
-        }
-
         private void restore_saved_state (bool restore_pos = true) {
             if (Granite.Services.System.history_is_enabled () &&
                 settings.remember_tabs) {
