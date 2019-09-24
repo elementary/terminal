@@ -1073,7 +1073,7 @@ namespace Terminal {
                 new_tab (Environment.get_home_dir ());
         }
 
-        void action_duplicate_tab () {
+        private void action_duplicate_tab () {
             new_tab (current_terminal.get_shell_location ());
         }
 
