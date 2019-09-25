@@ -51,8 +51,8 @@ namespace Terminal {
         private const string MONOKAI_DARK_FG = "#F8F8F2";
         private const string PINK_BG = "rgb(255,217,245)";
         private const string PINK_FG = "#586e75";
-        private const string NEP_BG = "rgb(194,194,194)";
-        private const string NEP_FG = "#23476A";
+        private const string SILVER_BG = "rgb(194,194,194)";
+        private const string SILVER_FG = "#23476A";
 
         private const string PALETTE_DEFAULT = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:
                                                 #2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:
@@ -66,9 +66,9 @@ namespace Terminal {
                                                      #2AA198:#f9f8f5:#55574A:#f92672:#a6e22e:#f4bf75:
                                                      #66d9ef:#ae81ff:#2AA198:#f8f8f2";
 
-        private const string PALETTE_NEP = "#000000:#DD6F00:#00964B:#6FDD00:#6F00DD:#DD006F:
-                                            #006FDD:#F2F2F2:#7D7D7D:#FFB974:#74FFB9:#B9FF74:
-                                            #B974FF:#FF74B9:#74B9FF:#FFFFFF";
+        private const string PALETTE_SILVER = "#000000:#DD6F00:#00964B:#54990F:#6F00DD:#DD006F:
+                                            #0061C0:#F2F2F2:#575757:#CC843D:#2DB36F:#80BF42:
+                                            #8E52CC:#CC518E:#499DF3:#FFFFFF";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -400,13 +400,13 @@ namespace Terminal {
             color_button_dracula_context.add_class ("color-button");
             color_button_dracula_context.add_class ("color-dracula");
 
-            var color_button_nep = new Gtk.RadioButton.from_widget (color_button_white);
-            color_button_nep.halign = Gtk.Align.CENTER;
-            color_button_nep.tooltip_text = _("Nep");
+            var color_button_silver = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_silver.halign = Gtk.Align.CENTER;
+            color_button_silver.tooltip_text = _("Silver");
 
-            var color_button_nep_context = color_button_nep.get_style_context ();
-            color_button_nep_context.add_class ("color-button");
-            color_button_nep_context.add_class ("color-nep");
+            var color_button_silver_context = color_button_silver.get_style_context ();
+            color_button_silver_context.add_class ("color-button");
+            color_button_silver_context.add_class ("color-silver");
 
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
@@ -419,7 +419,7 @@ namespace Terminal {
             style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
             style_popover_grid.attach (color_button_black, 3, 1, 1, 1);
             style_popover_grid.attach (color_button_pink, 0, 2, 1, 1);
-            style_popover_grid.attach (color_button_nep, 1, 2, 1, 1);
+            style_popover_grid.attach (color_button_silver, 1, 2, 1, 1);
             style_popover_grid.attach (color_button_monokai_dark, 2, 2, 1, 1);
             style_popover_grid.attach (color_button_dracula, 3, 2, 1, 1);
             style_popover_grid.show_all ();
@@ -504,16 +504,16 @@ namespace Terminal {
                 case DRACULA_BG:
                     color_button_dracula.active = true;
                     break;
-                case NEP_BG:
-                    color_button_nep.active = true;
+                case SILVER_BG:
+                    color_button_silver.active = true;
                     break;
             }
 
-            color_button_nep.clicked.connect (() => {
+            color_button_silver.clicked.connect (() => {
                 settings.prefer_dark_style = false;
-                settings.background = NEP_BG;
-                settings.foreground = NEP_FG;
-                settings.palette = PALETTE_NEP;
+                settings.background = SILVER_BG;
+                settings.foreground = SILVER_FG;
+                settings.palette = PALETTE_SILVER;
             });
 
             color_button_dracula.clicked.connect (() => {
