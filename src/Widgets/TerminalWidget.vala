@@ -140,8 +140,6 @@ namespace Terminal {
                     menu.popup_at_pointer (event);
 
                     return true;
-                } else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_primary_selection_copy_event ();
                 }
 
                 return false;
