@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2018-10-07 02:40+0000\n"
+"PO-Revision-Date: 2019-09-14 12:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/terminal/"
-"extra/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
+"ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-02-11 05:36+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -62,7 +62,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:153
 #: data/io.elementary.terminal.appdata.xml.in:168
 msgid "Translation updates"
-msgstr ""
+msgstr "翻訳の更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid "Return focus after popover menu closes"
@@ -98,7 +98,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "ツールチップにアクセラレーターを追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Fix zsh notifications"
