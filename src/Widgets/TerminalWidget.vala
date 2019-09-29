@@ -140,13 +140,8 @@ namespace Terminal {
                     get_cursor_position (out current_col, out current_row);
                     get_cell_clicked (event, out clicked_row, out clicked_col);
                     if (clicked_row < remembered_command_start_row) {
-                        return Gdk.EVENT_STOP;
+                        return Gdk.EVENT_PROPAGATE;
                     }
-
-                    var clicked_symbol = get_text_range (clicked_row, clicked_col,
-                                                         clicked_row, clicked_col,
-                                                         null, null).get_char ();
-
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
@@ -184,10 +179,10 @@ namespace Terminal {
                     menu.select_first (false);
                     menu.popup_at_pointer (event);
 
-                    return Gdk.EVENT_PROPAGATE;
+                    return Gdk.EVENT_STOP;
                 }
 
-                return Gdk.EVENT_STOP;
+                return Gdk.EVENT_PROPAGATE;
             });
 
             button_release_event.connect ((event) => {
