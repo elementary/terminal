@@ -108,7 +108,7 @@ namespace Terminal {
             private set;
         }
 
-        private long remembered_position; /* Only need to remember row at the moment */
+        private long remembered_cursor_row; /* Only need to remember row at the moment */
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         private Gdk.RGBA background_color = Gdk.RGBA ();
@@ -186,6 +186,11 @@ namespace Terminal {
                 return Gdk.EVENT_PROPAGATE;
             });
 
+            key_release_event.connect (() => {
+                remember_position ();
+                return Gdk.EVENT_PROPAGATE;
+            });
+
             button_release_event.connect ((event) => {
                 cursor_blink_mode = remembered_cursor_blink_mode;
 
@@ -210,6 +215,14 @@ namespace Terminal {
 
             size_allocate.connect (() => {
                 resized = true;
+                long new_cursor_row, new_cursor_col;
+                get_cursor_position (out new_cursor_col, out new_cursor_row);
+                if (remembered_cursor_row != new_cursor_row) {
+                    var delta = new_cursor_row - remembered_cursor_row;
+                    remembered_cursor_row = new_cursor_row;
+                    remembered_command_end_row += delta;
+                    remembered_command_start_row += delta;
+                }
             });
 
             child_exited.connect (on_child_exited);
@@ -482,7 +495,7 @@ namespace Terminal {
         public void remember_position () {
             long col, row;
             get_cursor_position (out col, out row);
-            remembered_position = row;
+            remembered_cursor_row = row;
         }
 
         public void remember_command_start_position () {
@@ -538,7 +551,7 @@ namespace Terminal {
         public void scroll_to_last_command () {
             long col, row;
             get_cursor_position (out col, out row);
-            int delta = (int)(remembered_position - row);
+            int delta = (int)(remembered_command_end_row - row);
             vadjustment.set_value (vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1);
         }
 

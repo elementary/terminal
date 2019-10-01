@@ -461,9 +461,8 @@ namespace Terminal {
                             return true;
                         } else if (!current_terminal.has_foreground_process ()) {
                             /* Ignore returns being sent to a foreground process */
-                            current_terminal.remember_position ();
-                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
                             current_terminal.remember_command_end_position ();
+                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
                         break;
