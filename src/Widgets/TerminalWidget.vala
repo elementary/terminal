@@ -138,8 +138,8 @@ namespace Terminal {
                 if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
                     long current_col, current_row, clicked_row, clicked_col;
                     get_cursor_position (out current_col, out current_row);
-                    get_cell_clicked (event, out clicked_row, out clicked_col);
-                    clicked_row += (long) (get_vadjustment ().get_value ());
+                    get_clicked_cell_position (event, out clicked_row, out clicked_col);
+
                     if (clicked_row < remembered_command_start_row) {
                         return Gdk.EVENT_PROPAGATE;
                     }
@@ -530,8 +530,8 @@ namespace Terminal {
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
         }
 
-        private void get_cell_clicked (Gdk.EventButton event, out long row, out long col) {
-            row = (long)(event.y / get_char_height ());
+        private void get_clicked_cell_position (Gdk.EventButton event, out long row, out long col) {
+            row = (long)(event.y / get_char_height ()) + (long)(get_vadjustment ().get_value ());;
             col = (long)(event.x / get_char_width ());
         }
 
