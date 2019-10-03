@@ -17,7 +17,6 @@
 */
 
 namespace Terminal {
-
     public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
@@ -77,7 +76,7 @@ namespace Terminal {
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-        private const ActionEntry[] action_entries = {
+        private const ActionEntry[] ACTION_ENTRIES = {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
@@ -162,7 +161,7 @@ namespace Terminal {
 
         construct {
             actions = new SimpleActionGroup ();
-            actions.add_action_entries (action_entries, this);
+            actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
 
             icon_name = "utilities-terminal";
@@ -595,7 +594,7 @@ namespace Terminal {
             if (restore_pos) {
                 Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
-                if (rect.x != -1 ||  rect.y != -1) {
+                if (rect.x != -1 || rect.y != -1) {
                     move (rect.x, rect.y);
                 }
             }
@@ -750,7 +749,7 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
+            title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
@@ -883,7 +882,7 @@ namespace Terminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
-            Gdk.Geometry hints = Gdk.Geometry();
+            Gdk.Geometry hints = Gdk.Geometry ();
             hints.width_inc = (int) t.get_char_width ();
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
@@ -986,11 +985,11 @@ namespace Terminal {
                 if (intext == null) {
                     return;
                 }
-                if (!intext.validate()) {
-                    warning("Dropping invalid UTF-8 paste");
+                if (!intext.validate ()) {
+                    warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
-                var text = intext.strip();
+                var text = intext.strip ();
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this);
@@ -1122,8 +1121,8 @@ namespace Terminal {
                 );
                 search_toolbar.grab_focus ();
             } else {
-                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
-                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                action_accelerators.remove_all (ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
                 search_button.tooltip_markup = Granite.markup_accel_tooltip (
                     {"<Ctrl><Shift>f"},
                     _("Find…")
@@ -1270,7 +1269,7 @@ namespace Terminal {
             string conflict_prefix = "";
             string temp_path = path;
             string temp_conflict_path = conflict_path;
-            string basename =  Path.get_basename (path);
+            string basename = Path.get_basename (path);
 
             if (basename != Path.get_basename (conflict_path)) {
                 return basename;
@@ -1297,7 +1296,7 @@ namespace Terminal {
 
             StringBuilder string_builder = new StringBuilder (path);
             if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                string_builder.erase (string_builder.str.length - 1,-1);
+                string_builder.erase (string_builder.str.length - 1, -1);
             }
 
             int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
