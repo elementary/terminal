@@ -19,12 +19,6 @@
 namespace Terminal {
     public Settings settings;
 
-    public enum cursor_shape {
-        BLOCK = 0,
-        IBEAM = 1,
-        UNDERLINE = 2
-    }
-
     public class Settings : Granite.Services.Settings {
         public int scrollback_lines { get; set; }
         public bool follow_last_tab { get; set; }
