@@ -47,8 +47,8 @@
 }
 
 .color-dark radio {
-    background: #252E32;
-    border-color: #151B1C;
+    background: mix(@BLACK_500, @BLACK_300, 0.5);
+    border-color: @BLACK_700;
     color: #fff;
 }
 
