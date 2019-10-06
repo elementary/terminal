@@ -275,7 +275,10 @@ namespace Terminal {
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("io/elementary/terminal/Application.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            // Vte.Terminal itself registers its default styling with the APPLICATION priority:
+            // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
+            // To be able to overwrite their styles, we need to use +1.
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
