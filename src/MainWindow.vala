@@ -51,24 +51,17 @@ namespace Terminal {
         private const string MONOKAI_DARK_FG = "#F8F8F2";
         private const string PINK_BG = "rgb(255,217,245)";
         private const string PINK_FG = "#586e75";
-        private const string SILVER_BG = "rgb(194,194,194)";
+        private const string SILVER_BG = "rgb(204,204,204)";
         private const string SILVER_FG = "#23476A";
 
-        private const string PALETTE_DEFAULT = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:
-                                                #2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:
-                                                #268bd2:#d33682:#2aa198:#6c71c4";
-
-        private const string PALETTE_DRACULA = "#44475a:#ff5555:#50fa7b:#ffb86c:#8be9fd:#bd93f9:
-                                                #ff79c6:#94A3A5:#000000:#ff5555:#50fa7b:#ffb86c:
-                                                #8be9fd:#bd93f9:#ff79c6:#ffffff";
-
-        private const string PALETTE_MONOKAI_DARK = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:
-                                                     #2AA198:#f9f8f5:#55574A:#f92672:#a6e22e:#f4bf75:
-                                                     #66d9ef:#ae81ff:#2AA198:#f8f8f2";
-
-        private const string PALETTE_SILVER = "#000000:#DD6F00:#00964B:#54990F:#6F00DD:#DD006F:
-                                            #0061C0:#F2F2F2:#575757:#CC843D:#2DB36F:#80BF42:
-                                            #8E52CC:#CC518E:#499DF3:#FFFFFF";
+        private const string PALETTE_DEFAULT = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:
+                                                #586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4";
+        private const string PALETTE_DRACULA = "#44475a:#ff5555:#50fa7b:#ffb86c:#8be9fd:#bd93f9:#ff79c6:#94A3A5:
+                                                #000000:#ff5555:#50fa7b:#ffb86c:#8be9fd:#bd93f9:#ff79c6:#ffffff";
+        private const string PALETTE_MONOKAI_DARK = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2AA198:#f9f8f5:
+                                                    #55574A:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2AA198:#f8f8f2";
+        private const string PALETTE_SILVER = "#000000:#DD6F00:#00964B:#54990F:#6F00DD:#DD006F:#0061C0:#F2F2F2:
+                                              #575757:#CC843D:#2DB36F:#80BF42:#8E52CC:#CC518E:#499DF3:#FFFFFF";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
