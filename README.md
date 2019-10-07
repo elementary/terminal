@@ -8,19 +8,19 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 
 ## Themes:
 
-#### High Contrast
+### High Contrast
 ![High Contrast](data/screenshot-high-contrast.png?raw=true)
-#### White
+### White
 ![White](data/screenshot-white.png?raw=true)
-#### Solized dark
+### Solized dark
 ![Solized dark](data/screenshot-standard.png?raw=true)
-#### Solized black
+### Solized black
 ![Pink](data/screenshot-sol-black.png?raw=true)
-#### Pink
+### Pink
 ![Silver](data/screenshot-silver.png?raw=true)
-#### Monokai Dark
+### Monokai Dark
 ![Monokai Dark](data/screenshot-mon-dark.png?raw=true)
-#### Dracula
+### Dracula
 ![Dracula](data/screenshot-dracula.png?raw=true)
 
 ## Building, Testing, and Installation
