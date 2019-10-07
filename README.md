@@ -6,7 +6,22 @@
 
 A super lightweight, beautiful, and simple terminal. Comes with sane defaults, browser-class tabs, sudo paste protection, smart copy/paste, and little to no configuration.
 
-![Terminal Screenshot](data/screenshot-themes.png?raw=true)
+## Themes:
+
+#### High Contrast
+![High Contrast](data/screenshot-high-contrast.png?raw=true)
+#### White
+![White](data/screenshot-white.png?raw=true)
+#### Solized dark
+![Solized dark](data/screenshot-standard.png?raw=true)
+#### Solized black
+![Pink](data/screenshot-sol-black.png?raw=true)
+#### Pink
+![Silver](data/screenshot-silver.png?raw=true)
+#### Monokai Dark
+![Monokai Dark](data/screenshot-mon-dark.png?raw=true)
+#### Dracula
+![Dracula](data/screenshot-dracula.png?raw=true)
 
 ## Building, Testing, and Installation
 
