@@ -52,7 +52,7 @@ vte-terminal {
 }
 
 .color-dark radio {
-    background: mix(@BLACK_500, @BLACK_300, 0.5);
+    background: rgb(46, 46, 46);
     border-color: @BLACK_700;
     color: #fff;
 }
