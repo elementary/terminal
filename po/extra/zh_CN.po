@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-04-08 05:53+0000\n"
+"PO-Revision-Date: 2019-10-05 10:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "支持 Ctrl + 等号键 组合来放大"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Fix a wrong foreground process response code"

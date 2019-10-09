@@ -18,7 +18,6 @@
 */
 
 namespace Terminal {
-
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
             URILIST,
@@ -87,7 +86,7 @@ namespace Terminal {
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
 
-        const string[] regex_strings = {
+        const string[] REGEX_STRINGS = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
             "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
             "(?:callto:|h323:|sip:)" + USERCHARS_CLASS + "[" + USERCHARS + ".]*(?:" + PORT + "/[a-z0-9]+)?\\@" + HOST,
@@ -135,7 +134,7 @@ namespace Terminal {
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
 
-                if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -146,8 +145,6 @@ namespace Terminal {
                     menu.popup_at_pointer (event);
 
                     return true;
-                } else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_primary_selection_copy_event ();
                 }
 
                 return false;
@@ -198,7 +195,7 @@ namespace Terminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable (regex_strings);
+            this.clickable (REGEX_STRINGS);
 
             Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
@@ -236,7 +233,7 @@ namespace Terminal {
             Gdk.RGBA[] palette = new Gdk.RGBA[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color= Gdk.RGBA();
+                Gdk.RGBA new_color = Gdk.RGBA ();
                 new_color.parse (hex_palette[i]);
 
                 palette[i] = new_color;
@@ -338,7 +335,7 @@ namespace Terminal {
                 return false;
             }
 
-            int pty = get_pty().fd;
+            int pty = get_pty ().fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
             if (fgpid != this.child_pid && fgpid != -1) {
