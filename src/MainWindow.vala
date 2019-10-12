@@ -17,7 +17,6 @@
 */
 
 namespace Terminal {
-
     public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
@@ -38,8 +37,8 @@ namespace Terminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
-        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
+        private const string DARK_FG = "#a5a5a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
@@ -77,7 +76,7 @@ namespace Terminal {
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-        private const ActionEntry[] action_entries = {
+        private const ActionEntry[] ACTION_ENTRIES = {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
@@ -162,7 +161,7 @@ namespace Terminal {
 
         construct {
             actions = new SimpleActionGroup ();
-            actions.add_action_entries (action_entries, this);
+            actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
 
             icon_name = "utilities-terminal";
@@ -276,7 +275,10 @@ namespace Terminal {
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("io/elementary/terminal/Application.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            // Vte.Terminal itself registers its default styling with the APPLICATION priority:
+            // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
+            // To be able to overwrite their styles, we need to use +1.
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
@@ -335,7 +337,7 @@ namespace Terminal {
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.tooltip_text = _("Solarized Dark");
+            color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class ("color-button");
@@ -416,15 +418,15 @@ namespace Terminal {
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
                     break;
-                case SOLARIZED_DARK_BG:
+                case DARK_BG:
                     color_button_dark.active = true;
                     break;
             }
 
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
-                settings.background = SOLARIZED_DARK_BG;
-                settings.foreground = SOLARIZED_DARK_FG;
+                settings.background = DARK_BG;
+                settings.foreground = DARK_FG;
             });
 
             color_button_light.clicked.connect (() => {
@@ -594,7 +596,7 @@ namespace Terminal {
             if (restore_pos) {
                 Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
-                if (rect.x != -1 ||  rect.y != -1) {
+                if (rect.x != -1 || rect.y != -1) {
                     move (rect.x, rect.y);
                 }
             }
@@ -749,7 +751,7 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
+            title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
@@ -882,7 +884,7 @@ namespace Terminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
-            Gdk.Geometry hints = Gdk.Geometry();
+            Gdk.Geometry hints = Gdk.Geometry ();
             hints.width_inc = (int) t.get_char_width ();
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
@@ -985,11 +987,11 @@ namespace Terminal {
                 if (intext == null) {
                     return;
                 }
-                if (!intext.validate()) {
-                    warning("Dropping invalid UTF-8 paste");
+                if (!intext.validate ()) {
+                    warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
-                var text = intext.strip();
+                var text = intext.strip ();
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this);
@@ -1121,8 +1123,8 @@ namespace Terminal {
                 );
                 search_toolbar.grab_focus ();
             } else {
-                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
-                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                action_accelerators.remove_all (ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
                 search_button.tooltip_markup = Granite.markup_accel_tooltip (
                     {"<Ctrl><Shift>f"},
                     _("Find…")
@@ -1269,7 +1271,7 @@ namespace Terminal {
             string conflict_prefix = "";
             string temp_path = path;
             string temp_conflict_path = conflict_path;
-            string basename =  Path.get_basename (path);
+            string basename = Path.get_basename (path);
 
             if (basename != Path.get_basename (conflict_path)) {
                 return basename;
@@ -1296,7 +1298,7 @@ namespace Terminal {
 
             StringBuilder string_builder = new StringBuilder (path);
             if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                string_builder.erase (string_builder.str.length - 1,-1);
+                string_builder.erase (string_builder.str.length - 1, -1);
             }
 
             int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
