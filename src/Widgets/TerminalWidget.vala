@@ -543,7 +543,7 @@ namespace Terminal {
         }
 
         private void get_clicked_cell_position (Gdk.EventButton event, out long row, out long col) {
-            row = (long)(event.y / get_char_height ()) + (long)(get_vadjustment ().get_value ());;
+            row = (long)(event.y / get_char_height ()) + (long)(get_vadjustment ().get_value ());
             col = (long)(event.x / get_char_width ());
         }
 
