@@ -66,3 +66,18 @@ vte-terminal {
     background: #fff;
     color: #000;
 }
+
+.color-dracula radio {
+    background: #2C2E38;
+    color: #fff;
+}
+
+.color-papercolor radio {
+    background: #EEEEEE;
+    color: #3E3F47;
+}
+
+.color-papercolor-dark radio {
+    background: #121212;
+    color: #C6C6C6;
+}

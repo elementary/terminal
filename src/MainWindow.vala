@@ -41,6 +41,12 @@ namespace Terminal {
         private const string DARK_FG = "#a5a5a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
+        private const string DRACULA_BG = "rgba(40, 41, 54, 0.95)";
+        private const string DRACULA_FG = "#e9e9f4";
+        private const string PAPER_COLOR_BG = "#EEEEEE";
+        private const string PAPER_COLOR_FG = "#3E3F47";
+        private const string PAPER_COLOR_DARK_BG = "#121212";
+        private const string PAPER_COLOR_DARK_FG = "#C6C6C6";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -343,6 +349,30 @@ namespace Terminal {
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
 
+            var color_button_dracula = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_dracula.halign = Gtk.Align.CENTER;
+            color_button_dracula.tooltip_text = _("Dracula");
+
+            var color_button_dracula_context = color_button_dracula.get_style_context ();
+            color_button_dracula_context.add_class ("color-button");
+            color_button_dracula_context.add_class ("color-dracula");
+
+            var color_button_papercolor = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_papercolor.halign = Gtk.Align.CENTER;
+            color_button_papercolor.tooltip_text = _("PaperColor");
+
+            var color_button_papercolor_context = color_button_papercolor.get_style_context ();
+            color_button_papercolor_context.add_class ("color-button");
+            color_button_papercolor_context.add_class ("color-papercolor");
+
+            var color_button_papercolor_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_papercolor_dark.halign = Gtk.Align.CENTER;
+            color_button_papercolor_dark.tooltip_text = _("PaperColor Dark");
+
+            var color_button_papercolor_dark_context = color_button_papercolor_dark.get_style_context ();
+            color_button_papercolor_dark_context.add_class ("color-button");
+            color_button_papercolor_dark_context.add_class ("color-papercolor-dark");
+
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
             style_popover_grid.column_spacing = 6;
@@ -352,6 +382,9 @@ namespace Terminal {
             style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
             style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
             style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
+            style_popover_grid.attach (color_button_dracula, 0, 2, 1, 1);
+            style_popover_grid.attach (color_button_papercolor, 1, 2, 1, 1);
+            style_popover_grid.attach (color_button_papercolor_dark, 2, 2, 1, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -421,6 +454,15 @@ namespace Terminal {
                 case DARK_BG:
                     color_button_dark.active = true;
                     break;
+                case DRACULA_BG:
+                    color_button_dracula.active = true;
+                    break;
+                case PAPER_COLOR_BG:
+                    color_button_papercolor.active = true;
+                    break;
+                case PAPER_COLOR_DARK_BG:
+                    color_button_papercolor_dark.active = true;
+                    break;
             }
 
             color_button_dark.clicked.connect (() => {
@@ -439,6 +481,24 @@ namespace Terminal {
                 settings.prefer_dark_style = false;
                 settings.background = HIGH_CONTRAST_BG;
                 settings.foreground = HIGH_CONTRAST_FG;
+            });
+
+            color_button_dracula.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = DRACULA_BG;
+                settings.foreground = DRACULA_FG;
+            });
+
+            color_button_papercolor.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = PAPER_COLOR_BG;
+                settings.foreground = PAPER_COLOR_FG;
+            });
+
+            color_button_papercolor_dark.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = PAPER_COLOR_DARK_BG;
+                settings.foreground = PAPER_COLOR_DARK_FG;
             });
 
             key_press_event.connect ((e) => {
