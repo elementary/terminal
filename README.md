@@ -1,33 +1,12 @@
 # Terminal
 [![Packaging status](https://repology.org/badge/tiny-repos/pantheon-terminal.svg)](https://repology.org/metapackage/pantheon-terminal)
-[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/projects/terminal/?utm_source=widget)
+[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/engage/terminal/?utm_source=widget)
 
 ## The terminal of the 21st century.
 
 A super lightweight, beautiful, and simple terminal. Comes with sane defaults, browser-class tabs, sudo paste protection, smart copy/paste, and little to no configuration.
 
-## Themes:
-
-<<<<<<< HEAD
-#### High Contrast
-![High Contrast](data/screenshot-hc.png?raw=true)
-#### White
-=======
-### High Contrast
-![High Contrast](data/screenshot-hc.png?raw=true)
-### White
->>>>>>> d2a15498df769d00e9e7794101516347d9c48179
-![White](data/screenshot-white.png?raw=true)
-### Solized dark
-![Solized dark](data/screenshot-standard.png?raw=true)
-### Solized black
-![Pink](data/screenshot-sol-black.png?raw=true)
-### Pink
-![Silver](data/screenshot-silver.png?raw=true)
-### Monokai Dark
-![Monokai Dark](data/screenshot-mon-dark.png?raw=true)
-### Dracula
-![Dracula](data/screenshot-dracula.png?raw=true)
+![Terminal Screenshot](data/screenshot.png?raw=true)
 
 ## Building, Testing, and Installation
 

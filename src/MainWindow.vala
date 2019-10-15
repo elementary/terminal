@@ -436,7 +436,7 @@ namespace Terminal {
             style_button.set_can_focus (false);
             style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
-            style_button.tooltip_text = _("Setting");
+            style_button.tooltip_text = _("Style");
             style_button.valign = Gtk.Align.CENTER;
 
             var header = new Gtk.HeaderBar ();
