@@ -296,7 +296,7 @@ namespace Terminal {
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("io/elementary/terminal/Application.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
@@ -401,20 +401,32 @@ namespace Terminal {
             color_button_silver_context.add_class ("color-button");
             color_button_silver_context.add_class ("color-silver");
 
+            var style_themes_grid = new Gtk.Grid ();
+            style_themes_grid.margin = 10;
+            style_themes_grid.column_spacing = 14;
+            style_themes_grid.row_spacing = 10;
+            style_themes_grid.width_request = 100;
+            style_themes_grid.attach (color_button_white, 0, 1, 1, 1);
+            style_themes_grid.attach (color_button_light, 1, 1, 1, 1);
+            style_themes_grid.attach (color_button_dark, 2, 1, 1, 1);
+            style_themes_grid.attach (color_button_black, 3, 1, 1, 1);
+            style_themes_grid.attach (color_button_pink, 0, 2, 1, 1);
+            style_themes_grid.attach (color_button_silver, 1, 2, 1, 1);
+            style_themes_grid.attach (color_button_monokai_dark, 2, 2, 1, 1);
+            style_themes_grid.attach (color_button_dracula, 3, 2, 1, 1);
+            
+            var select_themes_expander = new Gtk.Expander (_("Spoiler for themes"));
+            select_themes_expander.add (style_themes_grid);
+            select_themes_expander.set_label("Themes");
+            select_themes_expander.expanded = false;
+
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
             style_popover_grid.column_spacing = 6;
             style_popover_grid.row_spacing = 12;
             style_popover_grid.width_request = 200;
             style_popover_grid.attach (font_size_grid, 0, 0, 4, 1);
-            style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
-            style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
-            style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
-            style_popover_grid.attach (color_button_black, 3, 1, 1, 1);
-            style_popover_grid.attach (color_button_pink, 0, 2, 1, 1);
-            style_popover_grid.attach (color_button_silver, 1, 2, 1, 1);
-            style_popover_grid.attach (color_button_monokai_dark, 2, 2, 1, 1);
-            style_popover_grid.attach (color_button_dracula, 3, 2, 1, 1);
+            style_popover_grid.attach (select_themes_expander, 0, 1, 4, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -424,7 +436,7 @@ namespace Terminal {
             style_button.set_can_focus (false);
             style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
-            style_button.tooltip_text = _("Style");
+            style_button.tooltip_text = _("Setting");
             style_button.valign = Gtk.Align.CENTER;
 
             var header = new Gtk.HeaderBar ();

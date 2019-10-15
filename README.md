@@ -9,7 +9,7 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 ## Themes:
 
 #### High Contrast
-![High Contrast](data/screenshot-high-contrast.png?raw=true)
+![High Contrast](data/screenshot-hc.png?raw=true)
 #### White
 ![White](data/screenshot-white.png?raw=true)
 #### Solized dark
