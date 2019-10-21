@@ -25,6 +25,11 @@
     background-color: #000;
 }
 
+vte-terminal {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 .color-button radio,
 .color-button radio:checked {
     border-color: alpha (#000, 0.3);
