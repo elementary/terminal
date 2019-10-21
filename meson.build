@@ -28,6 +28,7 @@ executable(
     'src/DBus.vala',
     'src/Settings.vala',
     'src/MainWindow.vala',
+    'src/Themes.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',

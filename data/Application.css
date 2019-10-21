@@ -25,11 +25,6 @@
     background-color: #000;
 }
 
-vte-terminal {
-    padding-left: 4px;
-    padding-right: 4px;
-}
-
 .color-button radio,
 .color-button radio:checked {
     border-color: alpha (#000, 0.3);
@@ -51,15 +46,50 @@ vte-terminal {
         0 0 0 1px alpha (@colorAccent, 0.25);
 }
 
+
+.color-out_run radio {
+    background: linear-gradient(0deg, rgba(170,7,166,1) 0%, rgba(0,60,138,1) 100%);
+    color: #fff;
+}
+
+.color-silver radio {
+    background: #C2C2C2;
+    color: #fff;
+}
+
+.color-dracula radio {
+    background: #282A36;
+    border-color: #1A1E2D;
+    color: #fff;
+}
+
+.color-monokai_dark radio {
+    background: #272822;
+    border-color: #1C1C1C;
+    color: #fff;
+}
+
+.color-pink radio {
+    background: #FFC3EF;
+    border-color: #FF9EE5;
+    color: #fff;
+}
+
+.color-black radio {
+    background: #1a1a1a;
+    border-color: #151B1C;
+    color: #fff;
+}
+
 .color-dark radio {
-    background: rgb(46, 46, 46);
-    border-color: @BLACK_700;
-    color: #a5a5a5;
+    background: #252E32;
+    border-color: #151B1C;
+    color: #fff;
 }
 
 .color-light radio {
     background: #fdf6e3;
-    color: #586e75;
+    color: #4d4d4d;
 }
 
 .color-white radio {

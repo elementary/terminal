@@ -15,7 +15,7 @@
 * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-
+using Terminal.Themes;
 namespace Terminal {
     public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
@@ -34,13 +34,6 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
-
-        private const string HIGH_CONTRAST_BG = "#fff";
-        private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
-        private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
-        private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -348,21 +341,87 @@ namespace Terminal {
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.tooltip_text = _("Dark");
+            color_button_dark.tooltip_text = _("Solarized Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
+
+            var color_button_black = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_black.halign = Gtk.Align.CENTER;
+            color_button_black.tooltip_text = _("Solarized Black");
+
+            var color_button_black_context = color_button_black.get_style_context ();
+            color_button_black_context.add_class ("color-button");
+            color_button_black_context.add_class ("color-black");
+
+            var color_button_pink = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_pink.halign = Gtk.Align.CENTER;
+            color_button_pink.tooltip_text = _("Pink");
+
+            var color_button_pink_context = color_button_pink.get_style_context ();
+            color_button_pink_context.add_class ("color-button");
+            color_button_pink_context.add_class ("color-pink");
+
+            var color_button_monokai_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_monokai_dark.halign = Gtk.Align.CENTER;
+            color_button_monokai_dark.tooltip_text = _("Monokai Dark");
+
+            var color_button_monokai_dark_context = color_button_monokai_dark.get_style_context ();
+            color_button_monokai_dark_context.add_class ("color-button");
+            color_button_monokai_dark_context.add_class ("color-monokai_dark");
+
+            var color_button_dracula = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_dracula.halign = Gtk.Align.CENTER;
+            color_button_dracula.tooltip_text = _("Dracula");
+
+            var color_button_dracula_context = color_button_dracula.get_style_context ();
+            color_button_dracula_context.add_class ("color-button");
+            color_button_dracula_context.add_class ("color-dracula");
+
+            var color_button_silver = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_silver.halign = Gtk.Align.CENTER;
+            color_button_silver.tooltip_text = _("Silver");
+
+            var color_button_silver_context = color_button_silver.get_style_context ();
+            color_button_silver_context.add_class ("color-button");
+            color_button_silver_context.add_class ("color-silver");
+
+            var color_button_out_run = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_out_run.halign = Gtk.Align.CENTER;
+            color_button_out_run.tooltip_text = _("Out Run");
+
+            var color_button_out_run_context = color_button_out_run.get_style_context ();
+            color_button_out_run_context.add_class ("color-button");
+            color_button_out_run_context.add_class ("color-out_run");
+
+            var style_themes_grid = new Gtk.Grid ();
+            style_themes_grid.margin = 10;
+            style_themes_grid.column_spacing = 14;
+            style_themes_grid.row_spacing = 10;
+            style_themes_grid.width_request = 100;
+            style_themes_grid.attach (color_button_white, 0, 1, 1, 1);
+            style_themes_grid.attach (color_button_light, 1, 1, 1, 1);
+            style_themes_grid.attach (color_button_dark, 2, 1, 1, 1);
+            style_themes_grid.attach (color_button_black, 3, 1, 1, 1);
+            style_themes_grid.attach (color_button_pink, 0, 2, 1, 1);
+            style_themes_grid.attach (color_button_silver, 1, 2, 1, 1);
+            style_themes_grid.attach (color_button_monokai_dark, 2, 2, 1, 1);
+            style_themes_grid.attach (color_button_dracula, 3, 2, 1, 1);
+            style_themes_grid.attach (color_button_out_run, 0, 3, 1, 1);
+
+            var select_themes_expander = new Gtk.Expander (_("Spoiler for themes"));
+            select_themes_expander.add (style_themes_grid);
+            select_themes_expander.set_label("Themes");
+            select_themes_expander.expanded = false;
 
             var style_popover_grid = new Gtk.Grid ();
             style_popover_grid.margin = 12;
             style_popover_grid.column_spacing = 6;
             style_popover_grid.row_spacing = 12;
             style_popover_grid.width_request = 200;
-            style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
-            style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
-            style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
-            style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
+            style_popover_grid.attach (font_size_grid, 0, 0, 4, 1);
+            style_popover_grid.attach (select_themes_expander, 0, 1, 4, 1);
             style_popover_grid.show_all ();
 
             var style_popover = new Gtk.Popover (null);
@@ -429,28 +488,92 @@ namespace Terminal {
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
                     break;
-                case DARK_BG:
+                case SOLARIZED_DARK_BG:
                     color_button_dark.active = true;
+                    break;
+                case SOLARIZED_BLACK_BG:
+                    color_button_black.active = true;
+                    break;
+                case PINK_BG:
+                    color_button_pink.active = true;
+                    break;
+                case MONOKAI_DARK_BG:
+                    color_button_monokai_dark.active = true;
+                    break;
+                case DRACULA_BG:
+                    color_button_dracula.active = true;
+                    break;
+                case SILVER_BG:
+                    color_button_silver.active = true;
+                    break;
+                case OUT_RUN_BG:
+                    color_button_out_run.active = true;
                     break;
             }
 
+            color_button_out_run.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = OUT_RUN_BG;
+                settings.foreground = OUT_RUN_FG;
+                settings.palette = PALETTE_OUT_RUN;
+            });
+
+            color_button_silver.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = SILVER_BG;
+                settings.foreground = SILVER_FG;
+                settings.palette = PALETTE_SILVER;
+            });
+
+            color_button_dracula.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = DRACULA_BG;
+                settings.foreground = DRACULA_FG;
+                settings.palette = PALETTE_DRACULA;
+            });
+
+            color_button_monokai_dark.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = MONOKAI_DARK_BG;
+                settings.foreground = MONOKAI_DARK_FG;
+                settings.palette = PALETTE_MONOKAI_DARK;
+            });
+
+            color_button_pink.clicked.connect (() => {
+                settings.prefer_dark_style = false;
+                settings.background = PINK_BG;
+                settings.foreground = PINK_FG;
+                settings.palette = PALETTE_DEFAULT;
+            });
+
+            color_button_black.clicked.connect (() => {
+                settings.prefer_dark_style = true;
+                settings.background = SOLARIZED_BLACK_BG;
+                settings.foreground = SOLARIZED_BLACK_FG;
+                settings.palette = PALETTE_DRACULA;
+            });
+
             color_button_dark.clicked.connect (() => {
                 settings.prefer_dark_style = true;
-                settings.background = DARK_BG;
-                settings.foreground = DARK_FG;
+                settings.background = SOLARIZED_DARK_BG;
+                settings.foreground = SOLARIZED_DARK_FG;
+                settings.palette = PALETTE_DEFAULT;
             });
 
             color_button_light.clicked.connect (() => {
                 settings.prefer_dark_style = false;
                 settings.background = SOLARIZED_LIGHT_BG;
                 settings.foreground = SOLARIZED_LIGHT_FG;
+                settings.palette = PALETTE_DEFAULT;
             });
 
             color_button_white.clicked.connect (() => {
                 settings.prefer_dark_style = false;
                 settings.background = HIGH_CONTRAST_BG;
                 settings.foreground = HIGH_CONTRAST_FG;
+                settings.palette = PALETTE_DEFAULT;
             });
+
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
