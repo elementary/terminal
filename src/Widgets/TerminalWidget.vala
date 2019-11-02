@@ -136,7 +136,7 @@ namespace Terminal {
                  * If focus-in was caused by keyboard then the focus_timeout will have
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
-                
+
                 remembered_cursor_blink_mode = cursor_blink_mode;
                 cursor_blink_mode = Vte.CursorBlinkMode.OFF;
 
@@ -175,7 +175,7 @@ namespace Terminal {
 
                         return Source.REMOVE;
                     });
-                } else if (event.button == Gdk.BUTTON_SECONDARY)
+                } else if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
