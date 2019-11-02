@@ -131,6 +131,12 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
+                /* If this event caused focus-in then window.focus_timeout is > 0
+                 * and we need to suppress following hyperlinks on button release.
+                 * If focus-in was caused by keyboard then the focus_timeout will have
+                 * expired and we can follow hyperlinks */
+                allow_hyperlink = window.focus_timeout == 0;
+                
                 remembered_cursor_blink_mode = cursor_blink_mode;
                 cursor_blink_mode = Vte.CursorBlinkMode.OFF;
 
@@ -169,7 +175,7 @@ namespace Terminal {
 
                         return Source.REMOVE;
                     });
-                } else if (event.button == Gdk.BUTTON_SECONDARY) {
+                } else if (event.button == Gdk.BUTTON_SECONDARY)
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -194,14 +200,18 @@ namespace Terminal {
                 cursor_blink_mode = remembered_cursor_blink_mode;
 
                 if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link (event);
+                    if (allow_hyperlink) {
+                        uri = get_link (event);
 
-                    if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
+                        if (uri != null && !get_has_selection ()) {
+                            try {
+                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
                         }
+                    } else {
+                        allow_hyperlink = true;
                     }
                 }
 
