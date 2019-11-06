@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-06 16:18+0000\n"
 "PO-Revision-Date: 2015-12-31 14:21+0000\n"
 "Last-Translator: Mika Beckerich <beckerichmika@gmail.com>\n"
 "Language-Team: Luxembourgish <lb@li.org>\n"
@@ -18,77 +18,77 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:114
 msgid "Task finished"
 msgstr ""
 
-#: src/Application.vala:207
+#: src/Application.vala:212
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:208
+#: src/Application.vala:213
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:214
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:199
 msgid "Copy"
 msgstr "Kopéieren"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:207
 msgid "Paste"
 msgstr "Afügen"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Alles auswielen"
 
-#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
 msgid "Find…"
 msgstr "Sichen..."
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:219
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:308
 #, fuzzy
 msgid "Zoom out"
 msgstr "Raus Zoomen"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:315
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:322
 #, fuzzy
 msgid "Zoom in"
 msgstr "Eran Zoomen"
 
-#: src/MainWindow.vala:310
+#: src/MainWindow.vala:335
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:343
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:326
-msgid "Solarized Dark"
+#: src/MainWindow.vala:351
+msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:350
+#: src/MainWindow.vala:375
 msgid "Style"
 msgstr ""
 
-#: src/MainWindow.vala:1089
+#: src/MainWindow.vala:1134
 msgid "Hide find bar"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr "Nächst Resultat"
 msgid "Cyclic search"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 

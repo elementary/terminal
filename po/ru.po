@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-06 16:18+0000\n"
 "PO-Revision-Date: 2018-11-22 20:24+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
@@ -16,75 +16,75 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:114
 msgid "Task finished"
 msgstr "Задание завершено"
 
-#: src/Application.vala:207
+#: src/Application.vala:212
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
-#: src/Application.vala:208
+#: src/Application.vala:213
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:214
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:199
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Copy Last Output"
 msgstr "Копировать последний вывод"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:207
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
 msgid "Find…"
 msgstr "Поиск…"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:219
 msgid "Show in File Browser"
 msgstr "Открыть в файловом менеджере"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:308
 msgid "Zoom out"
 msgstr "Уменьшить"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:315
 msgid "Default zoom level"
 msgstr "Масштаб по умолчанию"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:322
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: src/MainWindow.vala:310
+#: src/MainWindow.vala:335
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:343
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:326
-msgid "Solarized Dark"
-msgstr "Solarized Dark"
+#: src/MainWindow.vala:351
+msgid "Dark"
+msgstr ""
 
-#: src/MainWindow.vala:350
+#: src/MainWindow.vala:375
 msgid "Style"
 msgstr "Стиль"
 
-#: src/MainWindow.vala:1089
+#: src/MainWindow.vala:1134
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
@@ -162,9 +162,12 @@ msgstr "Следующий результат"
 msgid "Cyclic search"
 msgstr "Циклический поиск"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Solarized Dark"
 
 #~ msgid "Cancel"
 #~ msgstr "Отменить"

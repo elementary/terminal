@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-06 16:18+0000\n"
 "PO-Revision-Date: 2019-07-22 02:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/extra/ko/"
@@ -40,113 +40,122 @@ msgstr ""
 "는 터미널 에뮬레이터 애플리케이션입니다."
 
 #: data/io.elementary.terminal.appdata.xml.in:41
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Ctrl+Equal 키 조합으로 화면 확대 지원"
+msgid "Pressing the Menu key now opens the context menu"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Fix a wrong foreground process response code"
-msgstr "잘못된 전경 프로세스 응답 코드 수정"
+msgid "Store state with GSettings"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:43
-#: data/io.elementary.terminal.appdata.xml.in:53
-#: data/io.elementary.terminal.appdata.xml.in:66
-#: data/io.elementary.terminal.appdata.xml.in:76
-#: data/io.elementary.terminal.appdata.xml.in:84
-#: data/io.elementary.terminal.appdata.xml.in:92
-#: data/io.elementary.terminal.appdata.xml.in:100
-#: data/io.elementary.terminal.appdata.xml.in:108
-#: data/io.elementary.terminal.appdata.xml.in:119
-#: data/io.elementary.terminal.appdata.xml.in:127
+#: data/io.elementary.terminal.appdata.xml.in:52
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:93
+#: data/io.elementary.terminal.appdata.xml.in:101
+#: data/io.elementary.terminal.appdata.xml.in:109
+#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:128
 #: data/io.elementary.terminal.appdata.xml.in:136
 #: data/io.elementary.terminal.appdata.xml.in:145
-#: data/io.elementary.terminal.appdata.xml.in:153
-#: data/io.elementary.terminal.appdata.xml.in:168
+#: data/io.elementary.terminal.appdata.xml.in:154
+#: data/io.elementary.terminal.appdata.xml.in:162
+#: data/io.elementary.terminal.appdata.xml.in:177
 msgid "Translation updates"
 msgstr "번역 업데이트"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
+msgid "Support Ctrl+Equal key combo to zoom in"
+msgstr "Ctrl+Equal 키 조합으로 화면 확대 지원"
+
+#: data/io.elementary.terminal.appdata.xml.in:51
+msgid "Fix a wrong foreground process response code"
+msgstr "잘못된 전경 프로세스 응답 코드 수정"
+
+#: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Return focus after popover menu closes"
 msgstr "팝오버 메뉴가 닫힌 후에 포커스 되돌리기"
 
-#: data/io.elementary.terminal.appdata.xml.in:51
+#: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Prevent search and style buttons from receiving focus"
 msgstr "검색 및 스타일 버튼이 포커스를 받지 못하게 함"
 
-#: data/io.elementary.terminal.appdata.xml.in:52
+#: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Hide the cursor while typing"
 msgstr "입력 중에는 커서 숨김"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Fix erratic search text highlightning behavior"
 msgstr "불규칙한 검색어 강조 동작 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Support -h flag for help"
 msgstr "도움말용 -h 플래그 지원"
 
-#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Disable audible bell"
 msgstr "벨 소리 비활성화"
 
-#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:72
 msgid "Add Alt+↑ action to scroll to last command"
 msgstr "마지막 명령어로 스크롤하는 Alt+↑ 동작 추가"
 
-#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Add Alt+c action to copy last output"
 msgstr "마지막 출력물을 복사하는 Alt+c 동작 추가"
 
-#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Add accels to tooltips"
 msgstr "툴팁에 가속 기능 추가"
 
-#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:82
 msgid "Fix zsh notifications"
 msgstr "zsh 알림 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:74
+#: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
 msgstr "조건부 ctrl + g 바로 가기로 emacs 와의 충돌 방지"
 
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:83
-#: data/io.elementary.terminal.appdata.xml.in:91
-#: data/io.elementary.terminal.appdata.xml.in:99
-#: data/io.elementary.terminal.appdata.xml.in:107
-#: data/io.elementary.terminal.appdata.xml.in:118
-#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:108
+#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:127
 #: data/io.elementary.terminal.appdata.xml.in:135
 #: data/io.elementary.terminal.appdata.xml.in:144
-#: data/io.elementary.terminal.appdata.xml.in:152
-#: data/io.elementary.terminal.appdata.xml.in:167
+#: data/io.elementary.terminal.appdata.xml.in:153
+#: data/io.elementary.terminal.appdata.xml.in:161
+#: data/io.elementary.terminal.appdata.xml.in:176
 msgid "Minor bug fixes"
 msgstr "자잘한 버그 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:124
 msgid "FISH integration fixes"
 msgstr "FISH 통합 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Theme preference menu"
 msgstr "테마 설정 메뉴"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Zoom level controls"
 msgstr "줌 레벨 조절"
 
-#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr "명령줄에서 exit 입력 후 탭 닫기 허용"
 
-#: data/io.elementary.terminal.appdata.xml.in:143
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "Fix copying URLs to clipboard"
 msgstr "클립보드로 URL 복사하기 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:160
+#: data/io.elementary.terminal.appdata.xml.in:169
 msgid "Fix appstream date format"
 msgstr "appstream 날짜 형식 수정"
 
-#: data/io.elementary.terminal.appdata.xml.in:202
+#: data/io.elementary.terminal.appdata.xml.in:211
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
