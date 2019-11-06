@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-09-08 19:22+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -40,27 +40,27 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "इतिहास सिस्टम सेटिंग्जमध्ये अक्षम केलेला असताना टॅब लक्षात ठेवू नये"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "दुय्यम-क्लिक मेनूमध्ये कीबोर्ड शॉर्टकट दर्शवा"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Middle-click paste now properly follows System Settings"
-msgstr ""
+msgstr "मध्य-क्लिक पेस्ट आता सिस्टम सेटिंग्जचे योग्यरित्या अनुसरण करते"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "टॅब डुप्लिकेट करण्यासाठी Shift + Control + D"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "गडद शैली योजनेसाठी तटस्थ रंग वापरा"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "विंडोच्या काठावरुन मजकूर किंचित पॅड करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -83,11 +83,11 @@ msgstr "भाषांतर अपडेट्स"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "मेनू की दाबल्याने आता संदर्भ मेनू उघडेल"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "जीसेटिंगसह स्टेट स्टोअर"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Support Ctrl+Equal key combo to zoom in"
