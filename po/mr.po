@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2018-12-16 19:29+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: src/Application.vala:114
 msgid "Task finished"
@@ -75,7 +75,7 @@ msgstr "सौरकृत फिका"
 
 #: src/MainWindow.vala:351
 msgid "Dark"
-msgstr ""
+msgstr "गडद"
 
 #: src/MainWindow.vala:375
 msgid "Style"
