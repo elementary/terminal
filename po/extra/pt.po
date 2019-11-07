@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-08-22 11:22+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -42,26 +42,29 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
+"Não lembrar separadores quando o Histórico está desativado nas Definições do "
+"Sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Mostrar atalhos de teclado no menu de clique secundário"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Colar com o botão do meio agora segue corretamente as Definições do sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D para duplicar separadores"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Utilize cores neutras para o esquema de estilo escuro"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Coloque levemente o texto do limite da janela"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -84,11 +87,11 @@ msgstr "Atualizações de tradução"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Pressionar a tecla Menu agora abre o menu de contexto"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Armazenar estado com GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Support Ctrl+Equal key combo to zoom in"
