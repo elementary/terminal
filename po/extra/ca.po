@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-07-22 02:24+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -42,26 +42,30 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
+"No es recorden les pestanyes quan l'historial està desactivat a la "
+"configuració del sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Es mostren les dreceres del teclat al menú del clic secundari."
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Ara enganxar amb clic del mig segueix adequadament la configuració del "
+"sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Maj. + Control + D per duplicar pestanyes"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Ús de colors neutres per a l'esquema d'estil fosc"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Text una mica cobert des de la vora de la finestra"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -84,11 +88,11 @@ msgstr "Actualitzacions de les traduccions"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Prémer la tecla de menú ara obre un menú contextual."
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Estat de l'emmagatzematge amb GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Support Ctrl+Equal key combo to zoom in"
