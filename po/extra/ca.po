@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-07-22 02:24+0000\n"
+"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -40,114 +40,152 @@ msgstr ""
 "d'UNIX que es pot utilitzar per executar programes disponibles al sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:41
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Suport de zoom per a Ctrl + Combo de tecles iguals"
+msgid "Don't remember tabs when History is disabled in System Settings"
+msgstr ""
+"No es recorden les pestanyes quan l'historial està desactivat a la "
+"configuració del sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Fix a wrong foreground process response code"
-msgstr "Correcció d'un codi de resposta incorrecte del procés de primer pla"
+msgid "Show keyboard shortcuts in the secondary-click menu"
+msgstr "Es mostren les dreceres del teclat al menú del clic secundari."
 
 #: data/io.elementary.terminal.appdata.xml.in:43
-#: data/io.elementary.terminal.appdata.xml.in:53
-#: data/io.elementary.terminal.appdata.xml.in:66
-#: data/io.elementary.terminal.appdata.xml.in:76
-#: data/io.elementary.terminal.appdata.xml.in:84
-#: data/io.elementary.terminal.appdata.xml.in:92
-#: data/io.elementary.terminal.appdata.xml.in:100
-#: data/io.elementary.terminal.appdata.xml.in:108
-#: data/io.elementary.terminal.appdata.xml.in:119
-#: data/io.elementary.terminal.appdata.xml.in:127
-#: data/io.elementary.terminal.appdata.xml.in:136
-#: data/io.elementary.terminal.appdata.xml.in:145
-#: data/io.elementary.terminal.appdata.xml.in:153
-#: data/io.elementary.terminal.appdata.xml.in:168
+msgid "Middle-click paste now properly follows System Settings"
+msgstr ""
+"Ara enganxar amb clic del mig segueix adequadament la configuració del "
+"sistema."
+
+#: data/io.elementary.terminal.appdata.xml.in:44
+msgid "Shift + Control + D to duplicate tabs"
+msgstr "Maj. + Control + D per duplicar pestanyes"
+
+#: data/io.elementary.terminal.appdata.xml.in:45
+msgid "Use neutral colors for the dark style scheme"
+msgstr "Ús de colors neutres per a l'esquema d'estil fosc"
+
+#: data/io.elementary.terminal.appdata.xml.in:46
+msgid "Slightly pad text from the edge of the window"
+msgstr "Text una mica cobert des de la vora de la finestra"
+
+#: data/io.elementary.terminal.appdata.xml.in:47
+#: data/io.elementary.terminal.appdata.xml.in:56
+#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:106
+#: data/io.elementary.terminal.appdata.xml.in:114
+#: data/io.elementary.terminal.appdata.xml.in:122
+#: data/io.elementary.terminal.appdata.xml.in:130
+#: data/io.elementary.terminal.appdata.xml.in:141
+#: data/io.elementary.terminal.appdata.xml.in:149
+#: data/io.elementary.terminal.appdata.xml.in:158
+#: data/io.elementary.terminal.appdata.xml.in:167
+#: data/io.elementary.terminal.appdata.xml.in:175
+#: data/io.elementary.terminal.appdata.xml.in:190
 msgid "Translation updates"
 msgstr "Actualitzacions de les traduccions"
 
-#: data/io.elementary.terminal.appdata.xml.in:50
+#: data/io.elementary.terminal.appdata.xml.in:54
+msgid "Pressing the Menu key now opens the context menu"
+msgstr "Prémer la tecla de menú ara obre un menú contextual."
+
+#: data/io.elementary.terminal.appdata.xml.in:55
+msgid "Store state with GSettings"
+msgstr "Estat de l'emmagatzematge amb GSettings"
+
+#: data/io.elementary.terminal.appdata.xml.in:63
+msgid "Support Ctrl+Equal key combo to zoom in"
+msgstr "Suport de zoom per a Ctrl + Combo de tecles iguals"
+
+#: data/io.elementary.terminal.appdata.xml.in:64
+msgid "Fix a wrong foreground process response code"
+msgstr "Correcció d'un codi de resposta incorrecte del procés de primer pla"
+
+#: data/io.elementary.terminal.appdata.xml.in:72
 msgid "Return focus after popover menu closes"
 msgstr "Retorn del focus després de tancar el menú emergent"
 
-#: data/io.elementary.terminal.appdata.xml.in:51
+#: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Prevent search and style buttons from receiving focus"
 msgstr "S'evita que els botons d’estil i de cerca rebin el focus"
 
-#: data/io.elementary.terminal.appdata.xml.in:52
+#: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Hide the cursor while typing"
 msgstr "S'amaga el cursor mentre s'escriu"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:82
 msgid "Fix erratic search text highlightning behavior"
 msgstr "Correcció del comportament de ressaltat erràtic del text de cerca"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Support -h flag for help"
 msgstr "Suport de la bandera -h per a l'ajuda"
 
-#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Disable audible bell"
 msgstr "Inhabilitació de la campana sonora"
 
-#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Add Alt+↑ action to scroll to last command"
 msgstr "Addició d'Alt + ↑ per desplaçar-vos a l'última ordre"
 
-#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Add Alt+c action to copy last output"
 msgstr "Addició d'Alt + c per copiar la darrera sortida"
 
-#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Add accels to tooltips"
 msgstr "Addició d'accels als consells"
 
-#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Fix zsh notifications"
 msgstr "Correcció de les notificacions de zsh"
 
-#: data/io.elementary.terminal.appdata.xml.in:74
+#: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
 msgstr "Drecera de Ctrl + g condicional per evitar el conflicte amb emacs"
 
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:83
-#: data/io.elementary.terminal.appdata.xml.in:91
-#: data/io.elementary.terminal.appdata.xml.in:99
-#: data/io.elementary.terminal.appdata.xml.in:107
-#: data/io.elementary.terminal.appdata.xml.in:118
-#: data/io.elementary.terminal.appdata.xml.in:126
-#: data/io.elementary.terminal.appdata.xml.in:135
-#: data/io.elementary.terminal.appdata.xml.in:144
-#: data/io.elementary.terminal.appdata.xml.in:152
-#: data/io.elementary.terminal.appdata.xml.in:167
+#: data/io.elementary.terminal.appdata.xml.in:97
+#: data/io.elementary.terminal.appdata.xml.in:105
+#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:121
+#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:140
+#: data/io.elementary.terminal.appdata.xml.in:148
+#: data/io.elementary.terminal.appdata.xml.in:157
+#: data/io.elementary.terminal.appdata.xml.in:166
+#: data/io.elementary.terminal.appdata.xml.in:174
+#: data/io.elementary.terminal.appdata.xml.in:189
 msgid "Minor bug fixes"
 msgstr "Correccions d'errors menors"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:137
 msgid "FISH integration fixes"
 msgstr "Correccions d'integració de FISH"
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Theme preference menu"
 msgstr "Menú de preferències de temes"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Zoom level controls"
 msgstr "Controls de nivell de zoom"
 
-#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:156
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 "Es permet tancar la pestanya després d’escriure \"exit\" a la línia d’ordres"
 
-#: data/io.elementary.terminal.appdata.xml.in:143
+#: data/io.elementary.terminal.appdata.xml.in:165
 msgid "Fix copying URLs to clipboard"
 msgstr "Correcció de la còpia d’URL al porta-retalls"
 
-#: data/io.elementary.terminal.appdata.xml.in:160
+#: data/io.elementary.terminal.appdata.xml.in:182
 msgid "Fix appstream date format"
 msgstr "Correcció d'origen del format de la data"
 
-#: data/io.elementary.terminal.appdata.xml.in:202
+#: data/io.elementary.terminal.appdata.xml.in:224
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
