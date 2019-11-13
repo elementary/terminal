@@ -16,14 +16,8 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
     public Settings settings;
-
-    public enum cursor_shape {
-        BLOCK = 0,
-        IBEAM = 1,
-        UNDERLINE = 2
-    }
 
     public class Settings : Granite.Services.Settings {
         public int scrollback_lines { get; set; }

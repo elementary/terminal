@@ -16,7 +16,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
+public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
     public UnsafePasteDialog (MainWindow parent) {
         Object (
             buttons: Gtk.ButtonsType.NONE,

@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
     [DBus (name="io.elementary.terminal")]
     public class DBus {
         [DBus (visible = false)]

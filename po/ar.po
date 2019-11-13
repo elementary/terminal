@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2019-03-13 16:27+0000\n"
+"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"PO-Revision-Date: 2019-08-26 04:22+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
 "ar/>\n"
@@ -18,86 +18,84 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:114
 msgid "Task finished"
 msgstr "انتهت المهمة"
 
-#: src/Application.vala:207
+#: src/Application.vala:212
 msgid "Run a program in terminal"
 msgstr "شغِّل البرنامج في الطرفية"
 
-#: src/Application.vala:208
+#: src/Application.vala:213
 msgid "Show help"
 msgstr "أظهر المساعدة"
 
-#: src/Application.vala:209
+#: src/Application.vala:214
 msgid "Set shell working directory"
 msgstr "عيِّن دليل عمل الطرفية"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:199
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:207
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
 msgid "Find…"
 msgstr "ابحث…"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:219
 msgid "Show in File Browser"
 msgstr "أظهر في متصفح الملفات"
 
-#: src/MainWindow.vala:283
-#, fuzzy
+#: src/MainWindow.vala:308
 msgid "Zoom out"
 msgstr "تصغير"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:315
 msgid "Default zoom level"
 msgstr "مستوى التقريب المبدئي"
 
-#: src/MainWindow.vala:297
-#, fuzzy
+#: src/MainWindow.vala:322
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: src/MainWindow.vala:310
+#: src/MainWindow.vala:335
 msgid "High Contrast"
-msgstr ""
+msgstr "تباين عالي"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:343
 msgid "Solarized Light"
+msgstr "ضوء شمسي"
+
+#: src/MainWindow.vala:351
+msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:326
-msgid "Solarized Dark"
-msgstr ""
-
-#: src/MainWindow.vala:350
+#: src/MainWindow.vala:375
 msgid "Style"
 msgstr ""
 
-#: src/MainWindow.vala:1089
+#: src/MainWindow.vala:1134
 msgid "Hide find bar"
-msgstr ""
+msgstr "اخفاء شريط البحث"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "هل أنت متأكد من أنك تريد اغلاق هذا اللسان؟"
+msgstr "هل أنت متأكد من أنك تريد اغلاق هذا التبويب؟"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -125,7 +123,7 @@ msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr ""
+msgstr "اغلاق الطرفية"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
@@ -133,41 +131,41 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "نسخ الأوامر إلى الطرفية يمكن أن يكون خطيرًا."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "تأكد من أنك تفهم ما يفعله كل جزء من هذا الأمر."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "إظهار تحذيرات حماية اللصق"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
-msgstr ""
+msgstr "لا تلصق"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "الصق على أي حال"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
+msgstr "ابحث"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr ""
+msgstr "النتيجة السابقة"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr ""
+msgstr "النتيجة التالية"
 
 #: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "الطرفية"
 

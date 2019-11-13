@@ -17,8 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
-
+namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
             URILIST,
@@ -27,7 +26,7 @@ namespace PantheonTerminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public TerminalApp app;
+        public Terminal.Application app;
         public string terminal_id;
         static int terminal_id_counter = 0;
         private bool init_complete;
@@ -87,7 +86,7 @@ namespace PantheonTerminal {
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
 
-        const string[] regex_strings = {
+        const string[] REGEX_STRINGS = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
             "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
             "(?:callto:|h323:|sip:)" + USERCHARS_CLASS + "[" + USERCHARS + ".]*(?:" + PORT + "/[a-z0-9]+)?\\@" + HOST,
@@ -129,7 +128,13 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
-                if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                /* If this event caused focus-in then window.focus_timeout is > 0
+                 * and we need to suppress following hyperlinks on button release.
+                 * If focus-in was caused by keyboard then the focus_timeout will have
+                 * expired and we can follow hyperlinks */
+                allow_hyperlink = window.focus_timeout == 0;
+
+                if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -140,23 +145,26 @@ namespace PantheonTerminal {
                     menu.popup_at_pointer (event);
 
                     return true;
-                } else if (event.button == Gdk.BUTTON_MIDDLE) {
-                    return window.handle_primary_selection_copy_event ();
                 }
 
                 return false;
             });
 
             button_release_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link (event);
 
-                    if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
+                if (event.button == Gdk.BUTTON_PRIMARY) {
+                    if (allow_hyperlink) {
+                        uri = get_link (event);
+
+                        if (uri != null && !get_has_selection ()) {
+                            try {
+                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
                         }
+                    } else {
+                        allow_hyperlink = true;
                     }
                 }
 
@@ -187,9 +195,9 @@ namespace PantheonTerminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable (regex_strings);
+            this.clickable (REGEX_STRINGS);
 
-            PantheonTerminal.TerminalApp.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
+            Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {
@@ -225,7 +233,7 @@ namespace PantheonTerminal {
             Gdk.RGBA[] palette = new Gdk.RGBA[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color= Gdk.RGBA();
+                Gdk.RGBA new_color = Gdk.RGBA ();
                 new_color.parse (hex_palette[i]);
 
                 palette[i] = new_color;
@@ -325,7 +333,7 @@ namespace PantheonTerminal {
                 return false;
             }
 
-            int pty = get_pty().fd;
+            int pty = get_pty ().fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
             if (fgpid != this.child_pid && fgpid != -1) {

@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.TerminalApp : Gtk.Application {
+public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
 
     private GLib.List <MainWindow> windows;
@@ -44,7 +44,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
     }
 
-    public TerminalApp () {
+    public Application () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
@@ -128,7 +128,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
     private int _command_line (ApplicationCommandLine command_line) {
         var context = new OptionContext (null);
-        context.add_main_entries (entries, "pantheon-terminal");
+        context.add_main_entries (ENTRIES, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
 
         // Disable automatic help to prevent default `exit(0)` behaviour.
@@ -212,7 +212,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         return length > 0 ? windows.nth_data (length - 1) : null;
     }
 
-    private const OptionEntry[] entries = {
+    private const OptionEntry[] ENTRIES = {
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
@@ -220,7 +220,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     };
 
     public static int main (string[] args) {
-        var app = new TerminalApp ();
+        var app = new Terminal.Application ();
         return app.run (args);
     }
 }
