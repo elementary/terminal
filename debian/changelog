@@ -1,3 +1,30 @@
+pantheon-terminal (5.4.0) bionic; urgency=medium
+
+  * Release 5.4.0 (#425)
+  * Travis: downgrade Node to 10
+  * Update translation template
+  * Appdata: Add 5.4.0 release data
+  * Add Release to Actions
+  * Update translation template
+  * Add Gettext Updates to Actions
+  * Ignore hyperlink clicks just after focus in event. (#404)
+  * Darker dark colors (#412)
+  * Add horizontal padding (#411)
+  * Use palette colors for default bg/fg (#390)
+  * Add Lint to CI (#409)
+  * Fix code style issues
+  * Delete AUTHORS
+  * Add duplicate tab shortcut. (#385)
+  * Delete CODE_OF_CONDUCT.md
+  * Delete FUNDING.yml
+  * Remove unnecessary handling of middle-click. (#401)
+  * MainWindow: Reduce method scope and remove unused methods (#394)
+  * Change PantheonTerminal.TerminalApp to Terminal.Application (#384)
+  * MainWindow: Add accels to menuitem labels (#387)
+  * Honor privacy setting (#349)
+
+ -- elementary LLC <builds@elementary.io>  Fri, 15 Nov 2019 23:12:59 +0000
+
 pantheon-terminal (5.3.6) bionic; urgency=medium
 
   * New upstream release.
