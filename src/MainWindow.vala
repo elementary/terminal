@@ -701,7 +701,7 @@ namespace Terminal {
         }
 
         private void on_new_tab_requested () {
-            if (Application.settings.get_boolean ("follow_last_tab")) {
+            if (Application.settings.get_boolean ("follow-last-tab")) {
                 new_tab (current_terminal.get_shell_location ());
             } else {
                 new_tab (Environment.get_home_dir ());
