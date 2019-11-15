@@ -35,7 +35,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="5.4.0" date="2019-11-05" urgency="medium">
+    <release version="5.4.0" date="2019-11-15" urgency="medium">
       <description>
         <ul>
           <li>Don't remember tabs when History is disabled in System Settings</li>
