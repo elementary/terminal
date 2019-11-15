@@ -685,7 +685,7 @@ namespace Terminal {
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
             Idle.add (() => {
                 var new_window = new MainWindow.with_coords (
-                    (Terminal.Application) GLib.Application.get_default (),
+                    app,
                     x,
                     y,
                     false,
