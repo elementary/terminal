@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-06 18:26+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -13,77 +13,77 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:114
 msgid "Task finished"
 msgstr "Sarcină terminată"
 
-#: src/Application.vala:207
+#: src/Application.vala:212
 msgid "Run a program in terminal"
 msgstr "Rulați program în terminal"
 
-#: src/Application.vala:208
+#: src/Application.vala:213
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:214
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:199
 msgid "Copy"
 msgstr "Copie"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:207
 msgid "Paste"
 msgstr "Lipește"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
 msgid "Find…"
 msgstr "Căutare…"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:219
 msgid "Show in File Browser"
 msgstr "Afișați Fișierul în Browser"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:308
 #, fuzzy
 msgid "Zoom out"
 msgstr "Micșorează"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:315
 msgid "Default zoom level"
 msgstr "Nivel prestabilit"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:322
 #, fuzzy
 msgid "Zoom in"
 msgstr "Mărește"
 
-#: src/MainWindow.vala:310
+#: src/MainWindow.vala:335
 msgid "High Contrast"
 msgstr "Contrast mare"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:343
 msgid "Solarized Light"
 msgstr "Lumină solarizată"
 
-#: src/MainWindow.vala:326
-msgid "Solarized Dark"
-msgstr "Polarizat închis"
+#: src/MainWindow.vala:351
+msgid "Dark"
+msgstr ""
 
-#: src/MainWindow.vala:350
+#: src/MainWindow.vala:375
 msgid "Style"
 msgstr "Stilul"
 
-#: src/MainWindow.vala:1089
+#: src/MainWindow.vala:1134
 msgid "Hide find bar"
 msgstr ""
 
@@ -159,9 +159,12 @@ msgstr "Rezultatul următor"
 msgid "Cyclic search"
 msgstr "Clic în caută"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalul"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Polarizat închis"
 
 #~ msgid "Cancel"
 #~ msgstr "Anulare"

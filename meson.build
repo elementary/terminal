@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '5.3.6'
+    version: '5.4.0'
 )
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
@@ -26,7 +26,6 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/DBus.vala',
-    'src/Settings.vala',
     'src/MainWindow.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
