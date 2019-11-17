@@ -19,6 +19,7 @@
 
 public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
+    public static GLib.Settings settings;
 
     private GLib.List <MainWindow> windows;
 
@@ -35,6 +36,7 @@ public class Terminal.Application : Gtk.Application {
 
     static construct {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        settings = new GLib.Settings ("io.elementary.terminal.settings");
     }
 
     construct {
@@ -49,8 +51,6 @@ public class Terminal.Application : Gtk.Application {
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
         windows = new GLib.List <MainWindow> ();
-
-        settings = new Settings ();
     }
 
     public void new_window () {
@@ -128,7 +128,7 @@ public class Terminal.Application : Gtk.Application {
 
     private int _command_line (ApplicationCommandLine command_line) {
         var context = new OptionContext (null);
-        context.add_main_entries (entries, "pantheon-terminal");
+        context.add_main_entries (ENTRIES, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
 
         // Disable automatic help to prevent default `exit(0)` behaviour.
@@ -251,14 +251,19 @@ public class Terminal.Application : Gtk.Application {
         return length > 0 ? windows.nth_data (length - 1) : null;
     }
 
-    private const OptionEntry[] entries = {
+    private const OptionEntry[] ENTRIES = {
         /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "PROGRAM_NAME" },
+        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+
         /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
          *  to  the --help flag */
-        { "commandline", 'x', 0, OptionArg.STRING, ref command_x, N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
+          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
+          N_("Set shell working directory"), "DIR" },
+
         { null }
     };
 

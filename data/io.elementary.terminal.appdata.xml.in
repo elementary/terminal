@@ -35,6 +35,19 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.4.0" date="2019-11-15" urgency="medium">
+      <description>
+        <ul>
+          <li>Don't remember tabs when History is disabled in System Settings</li>
+          <li>Show keyboard shortcuts in the secondary-click menu</li>
+          <li>Middle-click paste now properly follows System Settings</li>
+          <li>Shift + Control + D to duplicate tabs</li>
+          <li>Use neutral colors for the dark style scheme</li>
+          <li>Slightly pad text from the edge of the window</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.3.6" date="2019-07-15" urgency="medium">
       <description>
         <ul>

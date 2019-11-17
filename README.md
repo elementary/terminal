@@ -1,6 +1,6 @@
 # Terminal
 [![Packaging status](https://repology.org/badge/tiny-repos/pantheon-terminal.svg)](https://repology.org/metapackage/pantheon-terminal)
-[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/projects/terminal/?utm_source=widget)
+[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/engage/terminal/?utm_source=widget)
 
 ## The terminal of the 21st century.
 

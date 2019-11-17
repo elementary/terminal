@@ -17,7 +17,6 @@
 */
 
 namespace Terminal {
-
     public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
@@ -38,8 +37,8 @@ namespace Terminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string SOLARIZED_DARK_BG = "rgba(37, 46, 50, 0.95)";
-        private const string SOLARIZED_DARK_FG = "#94a3a5";
+        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
+        private const string DARK_FG = "#a5a5a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
@@ -47,6 +46,7 @@ namespace Terminal {
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
+        public uint focus_timeout { get; private set; default = 0;}
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
@@ -58,6 +58,7 @@ namespace Terminal {
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
@@ -76,10 +77,11 @@ namespace Terminal {
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
-        private const ActionEntry[] action_entries = {
+        private const ActionEntry[] ACTION_ENTRIES = {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
@@ -138,6 +140,7 @@ namespace Terminal {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
+            action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
@@ -159,7 +162,7 @@ namespace Terminal {
 
         construct {
             actions = new SimpleActionGroup ();
-            actions.add_action_entries (action_entries, this);
+            actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
 
             icon_name = "utilities-terminal";
@@ -239,6 +242,16 @@ namespace Terminal {
 
             configure_event.connect (on_window_state_change);
             destroy.connect (on_destroy);
+            focus_in_event.connect (() => {
+                if (focus_timeout == 0) {
+                    focus_timeout = Timeout.add (20, () => {
+                        focus_timeout = 0;
+                        return Source.REMOVE;
+                    });
+                }
+
+                return false;
+            });
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
@@ -273,7 +286,10 @@ namespace Terminal {
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("io/elementary/terminal/Application.css");
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            // Vte.Terminal itself registers its default styling with the APPLICATION priority:
+            // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
+            // To be able to overwrite their styles, we need to use +1.
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
@@ -332,7 +348,7 @@ namespace Terminal {
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.tooltip_text = _("Solarized Dark");
+            color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class ("color-button");
@@ -388,11 +404,11 @@ namespace Terminal {
             notebook.new_tab_requested.connect (on_new_tab_requested);
             notebook.allow_new_window = true;
             notebook.allow_duplication = true;
-            notebook.allow_restoring = settings.save_exited_tabs;
+            notebook.allow_restoring = Application.settings.get_boolean ("save-exited-tabs");
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
-            notebook.tab_bar_behavior = settings.tab_bar_behavior;
+            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior) Application.settings.get_enum ("tab-bar-behavior");
 
             var grid = new Gtk.Grid ();
             grid.attach (search_revealer, 0, 0, 1, 1);
@@ -406,34 +422,34 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             });
 
-            switch (settings.background) {
+            switch (Application.settings.get_string ("background")) {
                 case HIGH_CONTRAST_BG:
                     color_button_white.active = true;
                     break;
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
                     break;
-                case SOLARIZED_DARK_BG:
+                case DARK_BG:
                     color_button_dark.active = true;
                     break;
             }
 
             color_button_dark.clicked.connect (() => {
-                settings.prefer_dark_style = true;
-                settings.background = SOLARIZED_DARK_BG;
-                settings.foreground = SOLARIZED_DARK_FG;
+                Application.settings.set_boolean ("prefer-dark-style", true);
+                Application.settings.set_string ("background", DARK_BG);
+                Application.settings.set_string ("foreground", DARK_FG);
             });
 
             color_button_light.clicked.connect (() => {
-                settings.prefer_dark_style = false;
-                settings.background = SOLARIZED_LIGHT_BG;
-                settings.foreground = SOLARIZED_LIGHT_FG;
+                Application.settings.set_boolean ("prefer-dark-style", false);
+                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
+                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
             });
 
             color_button_white.clicked.connect (() => {
-                settings.prefer_dark_style = false;
-                settings.background = HIGH_CONTRAST_BG;
-                settings.foreground = HIGH_CONTRAST_FG;
+                Application.settings.set_boolean ("prefer-dark-style", false);
+                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
+                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
             });
 
             key_press_event.connect ((e) => {
@@ -474,7 +490,7 @@ namespace Terminal {
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
                         if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
-                            settings.alt_changes_tab) {
+                            Application.settings.get_boolean ("alt-changes-tab")) {
                             var i = e.keyval - 49;
                             if (i > notebook.n_tabs - 1)
                                 return false;
@@ -484,7 +500,7 @@ namespace Terminal {
                         break;
                     case Gdk.Key.@9:
                         if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
-                            settings.alt_changes_tab) {
+                            Application.settings.get_boolean ("alt-changes-tab")) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
                         }
@@ -525,7 +541,7 @@ namespace Terminal {
                 /* Use hardware keycodes so the key used
                  * is unaffected by internationalized layout */
                 if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
-                                            settings.natural_copy_paste) {
+                    Application.settings.get_boolean ("natural-copy-paste")) {
                     uint keycode = e.hardware_keycode;
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
@@ -566,21 +582,9 @@ namespace Terminal {
             return false;
         }
 
-        public bool handle_primary_selection_copy_event () {
-            if (search_toolbar.search_entry.has_focus) {
-                return false;
-            } else if (current_terminal.get_has_selection ()) {
-                current_terminal.copy_primary ();
-                primary_selection.request_text (on_get_text);
-                return true;
-            }
-
-            return false;
-        }
-
         private void restore_saved_state (bool restore_pos = true) {
             if (Granite.Services.System.history_is_enabled () &&
-                settings.remember_tabs) {
+                Application.settings.get_boolean ("remember-tabs")) {
 
                 saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
             } else {
@@ -604,7 +608,7 @@ namespace Terminal {
             if (restore_pos) {
                 Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
 
-                if (rect.x != -1 ||  rect.y != -1) {
+                if (rect.x != -1 || rect.y != -1) {
                     move (rect.x, rect.y);
                 }
             }
@@ -652,7 +656,7 @@ namespace Terminal {
             }
 
             if (!t.child_has_exited) {
-                if (notebook.n_tabs >= 2 && settings.save_exited_tabs) {
+                if (notebook.n_tabs >= 2 && Application.settings.get_boolean ("save-exited-tabs")) {
                     make_restorable (tab);
                 } else {
                     t.term_ps ();
@@ -697,10 +701,11 @@ namespace Terminal {
         }
 
         private void on_new_tab_requested () {
-            if (settings.follow_last_tab)
+            if (Application.settings.get_boolean ("follow-last-tab")) {
                 new_tab (current_terminal.get_shell_location ());
-            else
+            } else {
                 new_tab (Environment.get_home_dir ());
+            }
         }
 
         private void update_context_menu () {
@@ -759,14 +764,14 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ??  TerminalWidget.DEFAULT_LABEL;
+            title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
             set_zoom_default_label (current_terminal.font_scale);
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
                 if (Granite.Services.System.history_is_enabled () &&
-                    settings.remember_tabs) {
+                    Application.settings.get_boolean ("remember-tabs")) {
 
                     Terminal.Application.saved_state.set_int (
                         "focused-tab",
@@ -782,7 +787,7 @@ namespace Terminal {
             string[] tabs = {};
             int focus = 0;
             if (Granite.Services.System.history_is_enabled () &&
-                settings.remember_tabs) {
+                Application.settings.get_boolean ("remember-tabs")) {
 
                 tabs = saved_tabs;
                 if (tabs.length == 0) {
@@ -848,7 +853,7 @@ namespace Terminal {
 
             /* Set up terminal */
             var t = new TerminalWidget (this);
-            t.scrollback_lines = settings.scrollback_lines;
+            t.scrollback_lines = Application.settings.get_int ("scrollback-lines");
 
             /* Make the terminal occupy the whole GUI */
             t.vexpand = true;
@@ -892,7 +897,7 @@ namespace Terminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
-            Gdk.Geometry hints = Gdk.Geometry();
+            Gdk.Geometry hints = Gdk.Geometry ();
             hints.width_inc = (int) t.get_char_width ();
             hints.height_inc = (int) t.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
@@ -942,13 +947,11 @@ namespace Terminal {
         }
 
         private static string get_term_font () {
-            string font_name;
+            var font_name = Application.settings.get_string ("font");
 
-            if (settings.font == "") {
+            if (font_name == "") {
                 var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
                 font_name = settings_sys.get_string ("monospace-font-name");
-            } else {
-                font_name = settings.font;
             }
 
             return font_name;
@@ -990,16 +993,16 @@ namespace Terminal {
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
             /* if unsafe paste alert is enabled, show dialog */
-            if (settings.unsafe_paste_alert && !unsafe_ignored ) {
+            if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
                 if (intext == null) {
                     return;
                 }
-                if (!intext.validate()) {
-                    warning("Dropping invalid UTF-8 paste");
+                if (!intext.validate ()) {
+                    warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
-                var text = intext.strip();
+                var text = intext.strip ();
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this);
@@ -1076,10 +1079,15 @@ namespace Terminal {
         }
 
         private void action_new_tab () {
-            if (settings.follow_last_tab)
+            if (Application.settings.get_boolean ("follow-last-tab")) {
                 new_tab (current_terminal.get_shell_location ());
-            else
+            } else {
                 new_tab (Environment.get_home_dir ());
+            }
+        }
+
+        private void action_duplicate_tab () {
+            new_tab (current_terminal.get_shell_location ());
         }
 
         private void action_zoom_in_font () {
@@ -1127,8 +1135,8 @@ namespace Terminal {
                 );
                 search_toolbar.grab_focus ();
             } else {
-                action_accelerators.remove_all(ACTION_SEARCH_NEXT);
-                action_accelerators.remove_all(ACTION_SEARCH_PREVIOUS);
+                action_accelerators.remove_all (ACTION_SEARCH_NEXT);
+                action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
                 search_button.tooltip_markup = Granite.markup_accel_tooltip (
                     {"<Ctrl><Shift>f"},
                     _("Find…")
@@ -1246,7 +1254,7 @@ namespace Terminal {
             string[] opened_tabs = {};
 
             if (Granite.Services.System.history_is_enabled () &&
-                settings.remember_tabs) {
+                Application.settings.get_boolean ("remember-tabs")) {
 
                 notebook.tabs.foreach ((tab) => {
                     var term = get_term_widget (tab);
@@ -1275,7 +1283,7 @@ namespace Terminal {
             string conflict_prefix = "";
             string temp_path = path;
             string temp_conflict_path = conflict_path;
-            string basename =  Path.get_basename (path);
+            string basename = Path.get_basename (path);
 
             if (basename != Path.get_basename (conflict_path)) {
                 return basename;
@@ -1302,7 +1310,7 @@ namespace Terminal {
 
             StringBuilder string_builder = new StringBuilder (path);
             if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                string_builder.erase (string_builder.str.length - 1,-1);
+                string_builder.erase (string_builder.str.length - 1, -1);
             }
 
             int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
