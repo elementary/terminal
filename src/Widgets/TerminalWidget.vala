@@ -260,7 +260,6 @@ namespace Terminal {
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
 
-            Gdk.RGBA background_color = Gdk.RGBA ();
             background_color.parse (Application.settings.get_string ("background"));
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
@@ -296,9 +295,7 @@ namespace Terminal {
 
             set_colors (foreground_color, background_color, palette);
 
-            Gdk.RGBA cursor_color = Gdk.RGBA ();
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
-
             set_color_cursor (cursor_color);
 
             /* Bold font */
