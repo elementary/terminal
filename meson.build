@@ -26,7 +26,6 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/DBus.vala',
-    'src/Settings.vala',
     'src/MainWindow.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
