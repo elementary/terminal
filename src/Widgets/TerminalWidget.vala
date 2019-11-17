@@ -18,7 +18,6 @@
 */
 
 namespace Terminal {
-
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
             URILIST,
@@ -87,7 +86,7 @@ namespace Terminal {
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
 
-        const string[] regex_strings = {
+        const string[] REGEX_STRINGS = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
             "(?:www|ftp)" + HOSTCHARS_CLASS + "*\\." + HOST + PORT + URLPATH,
             "(?:callto:|h323:|sip:)" + USERCHARS_CLASS + "[" + USERCHARS + ".]*(?:" + PORT + "/[a-z0-9]+)?\\@" + HOST,
@@ -121,7 +120,7 @@ namespace Terminal {
             init_complete = false;
 
             restore_settings ();
-            settings.changed.connect (restore_settings);
+            Application.settings.changed.connect (restore_settings);
 
             window = parent_window;
             child_has_exited = false;
@@ -129,7 +128,13 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
-                if (event.button ==  Gdk.BUTTON_SECONDARY) {
+                /* If this event caused focus-in then window.focus_timeout is > 0
+                 * and we need to suppress following hyperlinks on button release.
+                 * If focus-in was caused by keyboard then the focus_timeout will have
+                 * expired and we can follow hyperlinks */
+                allow_hyperlink = window.focus_timeout == 0;
+
+                if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -146,15 +151,20 @@ namespace Terminal {
             });
 
             button_release_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_PRIMARY) {
-                    uri = get_link (event);
 
-                    if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
+                if (event.button == Gdk.BUTTON_PRIMARY) {
+                    if (allow_hyperlink) {
+                        uri = get_link (event);
+
+                        if (uri != null && !get_has_selection ()) {
+                            try {
+                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
+                            } catch (GLib.Error error) {
+                                warning ("Could Not Open link");
+                            }
                         }
+                    } else {
+                        allow_hyperlink = true;
                     }
                 }
 
@@ -185,7 +195,7 @@ namespace Terminal {
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
-            this.clickable (regex_strings);
+            this.clickable (REGEX_STRINGS);
 
             Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
@@ -193,13 +203,13 @@ namespace Terminal {
         public void restore_settings () {
             /* Load configuration */
             var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_application_prefer_dark_theme = settings.prefer_dark_style;
+            gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
 
             Gdk.RGBA background_color = Gdk.RGBA ();
-            background_color.parse (settings.background);
+            background_color.parse (Application.settings.get_string ("background"));
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
-            foreground_color.parse (settings.foreground);
+            foreground_color.parse (Application.settings.get_string ("foreground"));
 
             string[] hex_palette = {
                 "#073642", "#dc322f", "#859900", "#b58900",
@@ -210,20 +220,20 @@ namespace Terminal {
 
             string current_string = "";
             int current_color = 0;
-            for (var i = 0; i < settings.palette.length; i++) {
-                if (settings.palette[i] == ':') {
+            for (var i = 0; i < Application.settings.get_string ("palette").length; i++) {
+                if (Application.settings.get_string ("palette")[i] == ':') {
                     hex_palette[current_color] = current_string;
                     current_string = "";
                     current_color++;
                 } else {
-                    current_string += settings.palette[i].to_string ();
+                    current_string += Application.settings.get_string ("palette")[i].to_string ();
                 }
             }
 
             Gdk.RGBA[] palette = new Gdk.RGBA[16];
 
             for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color= Gdk.RGBA();
+                Gdk.RGBA new_color = Gdk.RGBA ();
                 new_color.parse (hex_palette[i]);
 
                 palette[i] = new_color;
@@ -232,26 +242,27 @@ namespace Terminal {
             set_colors (foreground_color, background_color, palette);
 
             Gdk.RGBA cursor_color = Gdk.RGBA ();
-            cursor_color.parse (settings.cursor_color);
+            cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
             /* Bold font */
-            this.allow_bold = settings.allow_bold;
+            allow_bold = Application.settings.get_boolean ("allow-bold");
 
             /* Load encoding */
-            if (settings.encoding != "") {
+            var encoding = Application.settings.get_string ("encoding");
+            if (encoding != "") {
                 try {
-                    set_encoding (settings.encoding);
+                    set_encoding (encoding);
                 } catch (Error e) {
                     warning ("Failed to set encoding - %s", e.message);
                 }
             }
 
             /* Disable bell if necessary */
-            audible_bell = settings.audible_bell;
+            audible_bell = Application.settings.get_boolean ("audible-bell");
 
             /* Cursor shape */
-            set_cursor_shape (settings.cursor_shape);
+            set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
         }
 
         void on_child_exited () {
@@ -277,7 +288,7 @@ namespace Terminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-            string shell = settings.shell;
+            string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
             if (shell == "")
@@ -325,7 +336,7 @@ namespace Terminal {
                 return false;
             }
 
-            int pty = get_pty().fd;
+            int pty = get_pty ().fd;
             int fgpid = Posix.tcgetpgrp (pty);
 
             if (fgpid != this.child_pid && fgpid != -1) {
