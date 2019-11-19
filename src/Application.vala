@@ -63,12 +63,6 @@ public class Terminal.Application : Gtk.Application {
         }
     }
 
-    public MainWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
-        var window = new MainWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
-
-        return window;
-    }
-
     public override int command_line (ApplicationCommandLine command_line) {
         // keep the application running until we are done with this commandline
         hold ();
