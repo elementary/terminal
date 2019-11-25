@@ -265,7 +265,7 @@ namespace Terminal {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
             var f1 = File.new_for_commandline_arg (location);
-            foreach (TerminalWidget t in terminals)  {
+            foreach (TerminalWidget t in terminals) {
                 var tab_path = t.get_shell_location ();
                 /* Detect equivalent paths */
                 if (f1.equal (File.new_for_path (tab_path))) {
