@@ -19,6 +19,7 @@
 
 public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
+    public static GLib.Settings settings;
 
     private GLib.List <MainWindow> windows;
 
@@ -35,6 +36,7 @@ public class Terminal.Application : Gtk.Application {
 
     static construct {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        settings = new GLib.Settings ("io.elementary.terminal.settings");
     }
 
     construct {
@@ -49,8 +51,6 @@ public class Terminal.Application : Gtk.Application {
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
         windows = new GLib.List <MainWindow> ();
-
-        settings = new Settings ();
     }
 
     public void new_window () {
@@ -61,12 +61,6 @@ public class Terminal.Application : Gtk.Application {
         } else {
             new MainWindow (this, false);
         }
-    }
-
-    public MainWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
-        var window = new MainWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
-
-        return window;
     }
 
     public override int command_line (ApplicationCommandLine command_line) {

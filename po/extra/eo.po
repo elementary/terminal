@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-11-11 12:24+0000\n"
+"PO-Revision-Date: 2019-11-19 21:24+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/terminal/extra/"
 "eo/>\n"
@@ -61,7 +61,7 @@ msgstr "Uzi neŭtralajn kolorojn por la malhel-stila temo"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Aldonu etan marĝenon inter la teksto kaj la fenestra rando"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -84,11 +84,11 @@ msgstr "Tradukaj ĝisdatigoj"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Premo de la menua klavo nun malfermas la kuntekstan menuon"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Registri la staton per GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 msgid "Support Ctrl+Equal key combo to zoom in"
