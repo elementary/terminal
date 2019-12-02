@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.ForegroundProcessDialog : Granite.MessageDialog {
+public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
     public string button_label { get; construct; }
 
     public ForegroundProcessDialog (MainWindow parent) {

@@ -1,87 +1,87 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2018-12-16 19:29+0000\n"
+"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://weblate.elementary.io/projects/terminal/"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:114
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
-#: src/Application.vala:207
+#: src/Application.vala:212
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:208
+#: src/Application.vala:213
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:209
+#: src/Application.vala:214
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:199
 msgid "Copy"
 msgstr "प्रतिकृती"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करा"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:207
 msgid "Paste"
 msgstr "चिकटवा(पेस्ट)"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:204 src/MainWindow.vala:275 src/MainWindow.vala:1097
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
 msgid "Find…"
 msgstr "शोधा…"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:219
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:308
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:315
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:322
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/MainWindow.vala:310
+#: src/MainWindow.vala:335
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:343
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/MainWindow.vala:326
-msgid "Solarized Dark"
-msgstr "सौरकृत गडद"
+#: src/MainWindow.vala:351
+msgid "Dark"
+msgstr "गडद"
 
-#: src/MainWindow.vala:350
+#: src/MainWindow.vala:375
 msgid "Style"
 msgstr "शैली"
 
-#: src/MainWindow.vala:1089
+#: src/MainWindow.vala:1134
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 
@@ -157,9 +157,12 @@ msgstr "पुढील निप्पत्ती"
 msgid "Cyclic search"
 msgstr "चक्रीय शोध"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "सौरकृत गडद"
 
 #~ msgid "Cancel"
 #~ msgstr "रद्द करा"
