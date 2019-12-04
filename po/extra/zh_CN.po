@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
 "PO-Revision-Date: 2019-12-04 04:56+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: contemplator <mistylinux@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -162,15 +162,15 @@ msgstr "FISH 集成修复"
 
 #: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Theme preference menu"
-msgstr ""
+msgstr "主题首选项菜单"
 
 #: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Zoom level controls"
-msgstr ""
+msgstr "缩放等级控制"
 
 #: data/io.elementary.terminal.appdata.xml.in:156
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "在命令行输入退出后，允许选项卡关闭"
 
 #: data/io.elementary.terminal.appdata.xml.in:165
 msgid "Fix copying URLs to clipboard"
