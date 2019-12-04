@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
 "PO-Revision-Date: 2019-12-04 04:52+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: contemplator <mistylinux@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -136,7 +136,7 @@ msgstr "将加速添加到工具提示"
 
 #: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "修复zsh通知"
 
 #: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
