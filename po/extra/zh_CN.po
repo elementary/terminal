@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-10-05 10:23+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2019-12-04 04:50+0000\n"
+"Last-Translator: contemplator <mistylinux@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -80,7 +80,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:175
 #: data/io.elementary.terminal.appdata.xml.in:190
 msgid "Translation updates"
-msgstr ""
+msgstr "翻译更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Pressing the Menu key now opens the context menu"
@@ -96,27 +96,27 @@ msgstr "支持 Ctrl + 等号键 组合来放大"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "修复错误的前台进程响应代码"
 
 #: data/io.elementary.terminal.appdata.xml.in:72
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "弹出菜单关闭后返回焦点"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "阻止搜索和样式按钮获得焦点"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "键入时隐藏光标"
 
 #: data/io.elementary.terminal.appdata.xml.in:82
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "修复不稳定的搜索文本突出显示行为"
 
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "支持-h标志以获取帮助"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Disable audible bell"
