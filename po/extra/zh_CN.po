@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-12-04 04:50+0000\n"
-"Last-Translator: contemplator <mistylinux@qq.com>\n"
+"PO-Revision-Date: 2019-12-04 04:51+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -128,7 +128,7 @@ msgstr "添加 Alt +↑ 操作以滚动到最后一个命令"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Add Alt+c action to copy last output"
-msgstr "添加Alt + c操作以复制最后一个输出"
+msgstr "添加 Alt + C 操作以复制最后一个输出"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Add accels to tooltips"
