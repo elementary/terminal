@@ -300,7 +300,6 @@ namespace Terminal {
                 _("Find…")
             );
 
-
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
             zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
             zoom_out_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -326,6 +325,7 @@ namespace Terminal {
             font_size_grid.column_homogeneous = true;
             font_size_grid.hexpand = true;
             font_size_grid.margin_start = font_size_grid.margin_end = 12;
+            font_size_grid.margin_bottom = 6;
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
             font_size_grid.add (zoom_out_button);
@@ -355,6 +355,15 @@ namespace Terminal {
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
+
+            var color_grid = new Gtk.Grid ();
+            color_grid.column_homogeneous = true;
+            color_grid.margin_start = color_grid.margin_end = 12;
+            color_grid.margin_bottom = 6;
+
+            color_grid.add (color_button_white);
+            color_grid.add (color_button_light);
+            color_grid.add (color_button_dark);
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
@@ -390,17 +399,16 @@ namespace Terminal {
 
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
-            menu_popover_grid.margin_bottom = 3;
+            menu_popover_grid.margin_bottom = 6;
             menu_popover_grid.margin_top = 12;
-            menu_popover_grid.row_spacing = 12;
+            menu_popover_grid.orientation = Gtk.Orientation.VERTICAL;
+            menu_popover_grid.row_spacing = 6;
             menu_popover_grid.width_request = 200;
 
-            menu_popover_grid.attach (font_size_grid, 0, 0, 3);
-            menu_popover_grid.attach (color_button_white, 0, 1);
-            menu_popover_grid.attach (color_button_light, 1, 1);
-            menu_popover_grid.attach (color_button_dark, 2, 1);
-            menu_popover_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 2, 3);
-            menu_popover_grid.attach (natural_copy_paste_button, 0, 3, 3);
+            menu_popover_grid.add (font_size_grid);
+            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            menu_popover_grid.add (natural_copy_paste_button);
 
             menu_popover_grid.show_all ();
 
