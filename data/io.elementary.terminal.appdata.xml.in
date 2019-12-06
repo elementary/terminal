@@ -39,7 +39,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
-          <li>Strip whitespace from clipboard when pasting, preventing accidental executing of commands on paste</li>
+          <li>Strip whitespace from clipboard when pasting, preventing accidental executing of commands</li>
         </ul>
       </description>
     </release>
