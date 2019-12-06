@@ -325,7 +325,9 @@ namespace Terminal {
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
             font_size_grid.hexpand = true;
+            font_size_grid.margin_start = font_size_grid.margin_end = 12;
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+
             font_size_grid.add (zoom_out_button);
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
@@ -354,32 +356,56 @@ namespace Terminal {
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
 
-            var style_popover_grid = new Gtk.Grid ();
-            style_popover_grid.margin = 12;
-            style_popover_grid.column_spacing = 6;
-            style_popover_grid.row_spacing = 12;
-            style_popover_grid.width_request = 200;
-            style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
-            style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
-            style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
-            style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
-            style_popover_grid.show_all ();
+            var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
+            natural_copy_paste_label.halign = Gtk.Align.START;
+            natural_copy_paste_label.hexpand = true;
 
-            var style_popover = new Gtk.Popover (null);
-            style_popover.add (style_popover_grid);
+            var natural_copy_paste_switch = new Gtk.Switch ();
+            natural_copy_paste_switch.halign = Gtk.Align.END;
 
-            var style_button = new Gtk.MenuButton ();
-            style_button.set_can_focus (false);
-            style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            style_button.popover = style_popover;
-            style_button.tooltip_text = _("Style");
-            style_button.valign = Gtk.Align.CENTER;
+            var natural_copy_paste_description = new Gtk.Label (_("Copy and paste shortcuts don’t require an added Shift modifier, but are less compatible with legacy Terminal apps"));
+            natural_copy_paste_description.max_width_chars = 30;
+            natural_copy_paste_description.wrap = true;
+            natural_copy_paste_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var settings_grid = new Gtk.Grid ();
+            settings_grid.margin_start = settings_grid.margin_end = 12;
+            settings_grid.row_spacing = 6;
+
+            settings_grid.attach (natural_copy_paste_label, 0, 0);
+            settings_grid.attach (natural_copy_paste_switch, 1, 0);
+            settings_grid.attach (natural_copy_paste_description, 0, 1, 2);
+
+            var menu_popover_grid = new Gtk.Grid ();
+            menu_popover_grid.column_spacing = 6;
+            menu_popover_grid.margin_top = menu_popover_grid.margin_bottom = 12;
+            menu_popover_grid.row_spacing = 12;
+            menu_popover_grid.width_request = 200;
+
+            menu_popover_grid.attach (font_size_grid, 0, 0, 3);
+            menu_popover_grid.attach (color_button_white, 0, 1);
+            menu_popover_grid.attach (color_button_light, 1, 1);
+            menu_popover_grid.attach (color_button_dark, 2, 1);
+            menu_popover_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 2, 3);
+            menu_popover_grid.attach (settings_grid, 0, 3, 3);
+
+            menu_popover_grid.show_all ();
+
+            var menu_popover = new Gtk.Popover (null);
+            menu_popover.add (menu_popover_grid);
+
+            var menu_button = new Gtk.MenuButton ();
+            menu_button.set_can_focus (false);
+            menu_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            menu_button.popover = menu_popover;
+            menu_button.tooltip_text = _("Settings");
+            menu_button.valign = Gtk.Align.CENTER;
 
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
-            header.pack_end (style_button);
+            header.pack_end (menu_button);
             header.pack_end (search_button);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
@@ -418,7 +444,7 @@ namespace Terminal {
             set_titlebar (header);
             add (grid);
 
-            style_popover.closed.connect (() => {
+            menu_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
 
