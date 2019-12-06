@@ -35,6 +35,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.4.1" date="2019-12-06" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Strip whitespace from clipboard when pasting, preventing accidental executing of commands on paste</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.4.0" date="2019-11-15" urgency="medium">
       <description>
         <ul>
