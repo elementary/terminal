@@ -998,18 +998,18 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
-            /* if unsafe paste alert is enabled, show dialog */
+            if (intext == null) {
+                return;
+            }
+
+            if (!intext.validate ()) {
+                debug ("Dropping invalid UTF-8 paste");
+                return;
+            }
+
+            var text = intext.strip ();
+
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
-
-                if (intext == null) {
-                    return;
-                }
-                if (!intext.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-                var text = intext.strip ();
-
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this);
                     if (d.run () == 1) {
@@ -1025,6 +1025,9 @@ namespace Terminal {
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
             } else {
+                // Override clipboard with stripped version
+                Gtk.Clipboard.get_default (this.get_display ()).set_text (text, -1);
+
                 current_terminal.paste_clipboard ();
             }
         }
