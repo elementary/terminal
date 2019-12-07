@@ -1007,7 +1007,7 @@ namespace Terminal {
                 return;
             }
 
-            var text = intext.strip ();
+            unowned string text = intext._strip ();
 
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
