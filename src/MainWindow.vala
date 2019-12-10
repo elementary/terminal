@@ -373,9 +373,9 @@ namespace Terminal {
             natural_copy_paste_switch.valign = Gtk.Align.START;
 
             var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
-                _("Shortcuts don’t require Shift, but may interfere with some interactive CLI apps")
+                _("Shortcuts don’t require Shift; may interfere with CLI apps")
             ));
-            natural_copy_paste_description.max_width_chars = 30;
+            natural_copy_paste_description.max_width_chars = 25;
             natural_copy_paste_description.use_markup = true;
             natural_copy_paste_description.wrap = true;
             natural_copy_paste_description.xalign = 0;
