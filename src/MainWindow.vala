@@ -367,9 +367,10 @@ namespace Terminal {
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
-            natural_copy_paste_label.hexpand = true;
+            natural_copy_paste_label.vexpand = true;
 
             var natural_copy_paste_switch = new Gtk.Switch ();
+            natural_copy_paste_switch.valign = Gtk.Align.START;
 
             var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
                 _("Shortcuts don’t require Shift, but may interfere with some interactive CLI apps")
@@ -382,21 +383,16 @@ namespace Terminal {
 
             var natural_copy_paste_revealer = new Gtk.Revealer ();
             natural_copy_paste_revealer.add (natural_copy_paste_description);
-            natural_copy_paste_revealer.reveal_child = Application.settings.get_boolean ("natural-copy-paste");
 
             var natural_copy_paste_grid = new Gtk.Grid ();
-            natural_copy_paste_grid.margin_start = natural_copy_paste_grid.margin_end = 12;
-
+            natural_copy_paste_grid.column_spacing = 12;
             natural_copy_paste_grid.attach (natural_copy_paste_label, 0, 0);
-            natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0);
-            natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1, 2);
+            natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1);
+            natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0, 1, 2);
 
-            var natural_copy_paste_button = new Gtk.Button ();
+            var natural_copy_paste_button = new Gtk.ModelButton ();
+            natural_copy_paste_button.get_child ().destroy ();
             natural_copy_paste_button.add (natural_copy_paste_grid);
-
-            var natural_copy_paste_button_context = natural_copy_paste_button.get_style_context ();
-            natural_copy_paste_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            natural_copy_paste_button_context.add_class (Gtk.STYLE_CLASS_MENUITEM);
 
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
@@ -404,7 +400,6 @@ namespace Terminal {
             menu_popover_grid.margin_top = 12;
             menu_popover_grid.orientation = Gtk.Orientation.VERTICAL;
             menu_popover_grid.row_spacing = 6;
-            menu_popover_grid.width_request = 200;
 
             menu_popover_grid.add (font_size_grid);
             menu_popover_grid.add (color_grid);
@@ -500,8 +495,9 @@ namespace Terminal {
                 Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
             });
 
-            natural_copy_paste_button.clicked.connect (() => {
+            natural_copy_paste_button.button_release_event.connect (() => {
                 natural_copy_paste_switch.activate ();
+                return Gdk.EVENT_STOP;
             });
 
             Application.settings.bind (
@@ -515,7 +511,7 @@ namespace Terminal {
                 "active",
                 natural_copy_paste_revealer,
                 "reveal-child",
-                BindingFlags.DEFAULT
+                GLib.BindingFlags.SYNC_CREATE
             );
 
             key_press_event.connect ((e) => {
