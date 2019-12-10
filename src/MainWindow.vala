@@ -370,7 +370,7 @@ namespace Terminal {
             natural_copy_paste_label.vexpand = true;
 
             var natural_copy_paste_switch = new Gtk.Switch ();
-            natural_copy_paste_switch.valign = Gtk.Align.CENTER;
+            natural_copy_paste_switch.valign = Gtk.Align.START;
 
             var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
                 _("Shortcuts don’t require Shift, but may interfere with some interactive CLI apps")
