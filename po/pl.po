@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-10 20:59+0000\n"
 "PO-Revision-Date: 2019-01-01 00:36+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr "Zadanie zakończone"
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr "Uruchom program w terminalu"
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr "Wyświetl pomoc"
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
@@ -53,7 +53,7 @@ msgstr "Wklej"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
 msgid "Find…"
 msgstr "Znajdź…"
 
@@ -61,35 +61,43 @@ msgstr "Znajdź…"
 msgid "Show in File Browser"
 msgstr "Wyświetl w przeglądarce plików"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 msgid "Zoom out"
 msgstr "Oddalenie"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr "Domyślny poziom powiększenia"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:321
 msgid "Zoom in"
 msgstr "Przybliżenie"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:337
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:345
 msgid "Solarized Light"
 msgstr "Solarna jasność"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:353
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Styl"
+#: src/MainWindow.vala:368
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:376
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:418
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1202
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
@@ -168,6 +176,9 @@ msgstr "Wyszukiwanie cykliczne"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Styl"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Solarna ciemność"

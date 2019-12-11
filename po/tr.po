@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-10 20:59+0000\n"
 "PO-Revision-Date: 2019-11-11 12:24+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -20,19 +20,19 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr "İşlem tamamlandı"
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr "Terminalde bir program çalıştır"
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr "Yardımı göster"
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
@@ -52,7 +52,7 @@ msgstr "Yapıştır"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
 msgid "Find…"
 msgstr "Bul…"
 
@@ -60,35 +60,43 @@ msgstr "Bul…"
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:321
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:337
 msgid "High Contrast"
 msgstr "Yüksek Karşıtlık"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:345
 msgid "Solarized Light"
 msgstr "Açık Renk Tema"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:353
 msgid "Dark"
 msgstr "Koyu Renk Tema"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Stil"
+#: src/MainWindow.vala:368
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:376
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:418
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1202
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -167,6 +175,9 @@ msgstr "Döngüsel arama"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Stil"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Koyu Renk Tema"

@@ -454,7 +454,7 @@ namespace Terminal {
         }
 
         public void remember_command_start_position () {
-            if (!last_key_was_return) {
+            if (!last_key_was_return || has_foreground_process ()) {
                 return;
             }
 
@@ -466,13 +466,18 @@ namespace Terminal {
         }
 
         public void remember_command_end_position () {
-            if (last_key_was_return) {
+            if (last_key_was_return && !has_foreground_process ()) {
                 return;
             }
 
             long col, row;
             get_cursor_position (out col, out row);
-            remembered_command_end_row = row;
+            /* Password entry will be on next line, or, if an incorrect password is given, two lines ahead */
+            /* This restriction is required for `include_command = false to work` (although not currently used) */
+            if (row - remembered_command_end_row <= 2) {
+                remembered_command_end_row = row;
+            }
+
             last_key_was_return = true;
         }
 
@@ -491,6 +496,9 @@ namespace Terminal {
             if (output_end_row - start_row < (include_command ? command_lines + 1 : 1)) {
                 return "";
             }
+
+            last_key_was_return = true;
+
             /* get text to the beginning of current line (to omit last prompt)
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
