@@ -1393,34 +1393,5 @@ namespace Terminal {
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
         }
-
-        private class AccelMenuLabel : Gtk.Grid {
-            public string action_name { get; construct; }
-            public string label { get; construct; }
-
-            public AccelMenuLabel (string label, string action_name) {
-                Object (
-                    label: label,
-                    action_name: action_name
-                );
-            }
-
-            construct {
-                var label = new Gtk.Label (label);
-                label.hexpand = true;
-                label.xalign = 0;
-
-                var accel_label = new Gtk.Label (
-                    Granite.accel_to_string (
-                        ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
-                    )
-                );
-                accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
-
-                column_spacing = 3;
-                add (label);
-                add (accel_label);
-            }
-        }
     }
 }
