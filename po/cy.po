@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-10 20:59+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr "Tasg wedi dod i ben"
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr "Rhedeg rhaglen mewn terfynell"
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr "Dangos cymorth"
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr "Gosod cyfeiriadur cragen gweithredol"
 
@@ -53,7 +53,7 @@ msgstr "Gludo"
 msgid "Select All"
 msgstr "Dewis Popeth"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
 msgid "Find…"
 msgstr "Chwilio…"
 
@@ -61,36 +61,44 @@ msgstr "Chwilio…"
 msgid "Show in File Browser"
 msgstr "Dangos ym Mhorwr Ffeiliau"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 msgid "Zoom out"
 msgstr "Chwyddo allan"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr "Lefel chwyddo rhagosodedig"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:321
 msgid "Zoom in"
 msgstr "Chwyddo i mewn"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:337
 msgid "High Contrast"
 msgstr "Cyferbynnedd Uchel"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:345
 #, fuzzy
 msgid "Solarized Light"
 msgstr "Golau wedi'i Heulo"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:353
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Arddull"
+#: src/MainWindow.vala:368
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:376
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:418
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1202
 msgid "Hide find bar"
 msgstr "Cuddio'r bar chwilio"
 
@@ -171,6 +179,9 @@ msgstr "Chwilio cylchol"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terfynell"
+
+#~ msgid "Style"
+#~ msgstr "Arddull"
 
 #, fuzzy
 #~ msgid "Solarized Dark"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-10 20:59+0000\n"
 "PO-Revision-Date: 2018-06-14 00:07+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
@@ -19,19 +19,19 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr "Proses selesai"
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr "Jalankan program dalam terminal"
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr "Setel direktori kerja shell"
 
@@ -51,7 +51,7 @@ msgstr "Tempel"
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
 msgid "Find…"
 msgstr "Cari…"
 
@@ -59,37 +59,45 @@ msgstr "Cari…"
 msgid "Show in File Browser"
 msgstr "Tampilkan pada Penelusur Berkas"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 #, fuzzy
 msgid "Zoom out"
 msgstr "Perkecil"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr "Tingkat zoom bawaan"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:321
 #, fuzzy
 msgid "Zoom in"
 msgstr "Perbesar"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:337
 msgid "High Contrast"
 msgstr "Kontras Tinggi"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:345
 msgid "Solarized Light"
 msgstr "Solarized Terang"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:353
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Gaya"
+#: src/MainWindow.vala:368
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:376
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:418
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1202
 msgid "Hide find bar"
 msgstr ""
 
@@ -169,6 +177,9 @@ msgstr "Pencarian siklik"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Gaya"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Solarized Gelap"

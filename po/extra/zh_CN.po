@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-10 20:59+0000\n"
 "PO-Revision-Date: 2019-12-04 21:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -39,148 +39,165 @@ msgstr ""
 "Terminal 是一款 UNIX Shell 环境下的终端模拟器，用以运行系统中的应用程序和指令"
 "代码。"
 
-#: data/io.elementary.terminal.appdata.xml.in:41
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr "系统设置中历史记录功能关闭时不记忆标签页"
+#: data/io.elementary.terminal.appdata.xml.in:40
+msgid "New features:"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "在二级菜单中显示键盘快捷键"
-
-#: data/io.elementary.terminal.appdata.xml.in:43
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "滚轮点击粘贴现已跟随系统设置"
+msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "Shift + Control + D 复制标签页"
-
-#: data/io.elementary.terminal.appdata.xml.in:45
-msgid "Use neutral colors for the dark style scheme"
-msgstr "暗色主题下使用非彩色颜色"
+msgid "Other updates:"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-msgid "Slightly pad text from the edge of the window"
+msgid "Include sudo password prompt when copying last output"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:47
-#: data/io.elementary.terminal.appdata.xml.in:56
-#: data/io.elementary.terminal.appdata.xml.in:65
-#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:69
+#: data/io.elementary.terminal.appdata.xml.in:78
 #: data/io.elementary.terminal.appdata.xml.in:88
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:106
-#: data/io.elementary.terminal.appdata.xml.in:114
-#: data/io.elementary.terminal.appdata.xml.in:122
-#: data/io.elementary.terminal.appdata.xml.in:130
-#: data/io.elementary.terminal.appdata.xml.in:141
-#: data/io.elementary.terminal.appdata.xml.in:149
-#: data/io.elementary.terminal.appdata.xml.in:158
-#: data/io.elementary.terminal.appdata.xml.in:167
-#: data/io.elementary.terminal.appdata.xml.in:175
-#: data/io.elementary.terminal.appdata.xml.in:190
+#: data/io.elementary.terminal.appdata.xml.in:101
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:127
+#: data/io.elementary.terminal.appdata.xml.in:135
+#: data/io.elementary.terminal.appdata.xml.in:143
+#: data/io.elementary.terminal.appdata.xml.in:154
+#: data/io.elementary.terminal.appdata.xml.in:162
+#: data/io.elementary.terminal.appdata.xml.in:171
+#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:188
+#: data/io.elementary.terminal.appdata.xml.in:203
 msgid "Translation updates"
 msgstr "翻译更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
+msgid "Don't remember tabs when History is disabled in System Settings"
+msgstr "系统设置中历史记录功能关闭时不记忆标签页"
+
+#: data/io.elementary.terminal.appdata.xml.in:55
+msgid "Show keyboard shortcuts in the secondary-click menu"
+msgstr "在二级菜单中显示键盘快捷键"
+
+#: data/io.elementary.terminal.appdata.xml.in:56
+msgid "Middle-click paste now properly follows System Settings"
+msgstr "滚轮点击粘贴现已跟随系统设置"
+
+#: data/io.elementary.terminal.appdata.xml.in:57
+msgid "Shift + Control + D to duplicate tabs"
+msgstr "Shift + Control + D 复制标签页"
+
+#: data/io.elementary.terminal.appdata.xml.in:58
+msgid "Use neutral colors for the dark style scheme"
+msgstr "暗色主题下使用非彩色颜色"
+
+#: data/io.elementary.terminal.appdata.xml.in:59
+msgid "Slightly pad text from the edge of the window"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Pressing the Menu key now opens the context menu"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:55
+#: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Store state with GSettings"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Support Ctrl+Equal key combo to zoom in"
 msgstr "支持 Ctrl + 等号键 组合来放大"
 
-#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:77
 msgid "Fix a wrong foreground process response code"
 msgstr "修复错误的前台进程响应代码"
 
-#: data/io.elementary.terminal.appdata.xml.in:72
+#: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Return focus after popover menu closes"
 msgstr "弹出菜单关闭后返回焦点"
 
-#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Prevent search and style buttons from receiving focus"
 msgstr "阻止搜索和样式按钮获得焦点"
 
-#: data/io.elementary.terminal.appdata.xml.in:74
+#: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Hide the cursor while typing"
 msgstr "键入时隐藏光标"
 
-#: data/io.elementary.terminal.appdata.xml.in:82
+#: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Fix erratic search text highlightning behavior"
 msgstr "修复不稳定的搜索文本突出显示行为"
 
-#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Support -h flag for help"
 msgstr "支持 -h 标志以获取帮助"
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Disable audible bell"
 msgstr "禁用铃声"
 
-#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:98
 msgid "Add Alt+↑ action to scroll to last command"
 msgstr "添加 Alt +↑ 操作以滚动到最后一个命令"
 
-#: data/io.elementary.terminal.appdata.xml.in:86
+#: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Add Alt+c action to copy last output"
 msgstr "添加 Alt + C 操作以复制最后一个输出"
 
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Add accels to tooltips"
 msgstr "将加速添加到工具提示"
 
-#: data/io.elementary.terminal.appdata.xml.in:95
+#: data/io.elementary.terminal.appdata.xml.in:108
 msgid "Fix zsh notifications"
 msgstr "修复 zsh 通知"
 
-#: data/io.elementary.terminal.appdata.xml.in:96
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
 msgstr "限制 Ctrl+G 快捷键以解除其与 emacs 的冲突"
 
-#: data/io.elementary.terminal.appdata.xml.in:97
-#: data/io.elementary.terminal.appdata.xml.in:105
-#: data/io.elementary.terminal.appdata.xml.in:113
-#: data/io.elementary.terminal.appdata.xml.in:121
-#: data/io.elementary.terminal.appdata.xml.in:129
-#: data/io.elementary.terminal.appdata.xml.in:140
-#: data/io.elementary.terminal.appdata.xml.in:148
-#: data/io.elementary.terminal.appdata.xml.in:157
-#: data/io.elementary.terminal.appdata.xml.in:166
-#: data/io.elementary.terminal.appdata.xml.in:174
-#: data/io.elementary.terminal.appdata.xml.in:189
+#: data/io.elementary.terminal.appdata.xml.in:110
+#: data/io.elementary.terminal.appdata.xml.in:118
+#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:142
+#: data/io.elementary.terminal.appdata.xml.in:153
+#: data/io.elementary.terminal.appdata.xml.in:161
+#: data/io.elementary.terminal.appdata.xml.in:170
+#: data/io.elementary.terminal.appdata.xml.in:179
+#: data/io.elementary.terminal.appdata.xml.in:187
+#: data/io.elementary.terminal.appdata.xml.in:202
 msgid "Minor bug fixes"
 msgstr "修正了一些小错误"
 
-#: data/io.elementary.terminal.appdata.xml.in:137
+#: data/io.elementary.terminal.appdata.xml.in:150
 msgid "FISH integration fixes"
 msgstr "FISH 集成修复"
 
-#: data/io.elementary.terminal.appdata.xml.in:138
+#: data/io.elementary.terminal.appdata.xml.in:151
 msgid "Theme preference menu"
 msgstr "主题首选项菜单"
 
-#: data/io.elementary.terminal.appdata.xml.in:139
+#: data/io.elementary.terminal.appdata.xml.in:152
 msgid "Zoom level controls"
 msgstr "缩放等级控制"
 
-#: data/io.elementary.terminal.appdata.xml.in:156
+#: data/io.elementary.terminal.appdata.xml.in:169
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr "允许键入 exit 命令行关闭选项卡"
 
-#: data/io.elementary.terminal.appdata.xml.in:165
+#: data/io.elementary.terminal.appdata.xml.in:178
 msgid "Fix copying URLs to clipboard"
 msgstr "修复 URL 复制问题"
 
-#: data/io.elementary.terminal.appdata.xml.in:182
+#: data/io.elementary.terminal.appdata.xml.in:195
 msgid "Fix appstream date format"
 msgstr "修正 Appstream 日期格式"
 
-#: data/io.elementary.terminal.appdata.xml.in:224
+#: data/io.elementary.terminal.appdata.xml.in:237
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
