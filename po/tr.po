@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2019-11-11 12:24+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -52,7 +52,7 @@ msgstr "Yapıştır"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr "Bul…"
 
@@ -68,35 +68,35 @@ msgstr "Uzaklaştır"
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr "Yüksek Karşıtlık"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr "Açık Renk Tema"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr "Koyu Renk Tema"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:430
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 

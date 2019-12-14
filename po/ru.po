@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2018-11-22 20:24+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
@@ -48,7 +48,7 @@ msgstr "Вставить"
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr "Поиск…"
 
@@ -64,35 +64,35 @@ msgstr "Уменьшить"
 msgid "Default zoom level"
 msgstr "Масштаб по умолчанию"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:430
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
