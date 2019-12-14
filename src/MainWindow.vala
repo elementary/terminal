@@ -314,6 +314,18 @@ namespace Terminal {
                 _("Default zoom level")
             );
 
+            Application.saved_state.bind_with_mapping (
+                "zoom",
+                zoom_default_button, "label",
+                SettingsBindFlags.GET,
+                (property, setting, data) => {
+                    double zoom = setting.get_double ();
+                    property.set_string ("%.0f%%".printf (zoom * 100));
+                    return true;
+                },
+                null, null, null
+            );
+
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
             zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -833,7 +845,7 @@ namespace Terminal {
 
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
-            set_zoom_default_label (current_terminal.font_scale);
+            /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
@@ -1160,21 +1172,14 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
-            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            set_zoom_default_label (current_terminal.font_scale);
-        }
-
-        private void set_zoom_default_label (double zoom_factor) {
-            zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
         private void action_next_tab () {
