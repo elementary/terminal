@@ -200,7 +200,9 @@ namespace Terminal {
 
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
-            copy_last_output_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name));
+            copy_last_output_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name)
+            );
 
             var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
@@ -208,7 +210,9 @@ namespace Terminal {
 
             var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
-            select_all_menuitem.add (new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name));
+            select_all_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name)
+            );
 
             var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
@@ -216,7 +220,12 @@ namespace Terminal {
 
             var show_in_file_browser_menuitem = new Gtk.MenuItem ();
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (new Granite.AccelLabel.from_action_name (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
+            show_in_file_browser_menuitem.add (
+                new Granite.AccelLabel.from_action_name (
+                    _("Show in File Browser"),
+                    show_in_file_browser_menuitem.action_name
+                )
+            );
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
@@ -289,7 +298,11 @@ namespace Terminal {
             // Vte.Terminal itself registers its default styling with the APPLICATION priority:
             // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
             // To be able to overwrite their styles, we need to use +1.
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
