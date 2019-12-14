@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2018-12-12 00:11+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
@@ -52,7 +52,7 @@ msgstr "붙여넣기"
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr "찾기…"
 
@@ -68,35 +68,35 @@ msgstr "축소"
 msgid "Default zoom level"
 msgstr "기본 줌 레벨"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr "확대"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr "고 대비"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr "솔라 라이트"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:430
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 

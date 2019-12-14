@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2019-01-15 12:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -52,7 +52,7 @@ msgstr "粘贴"
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr "查找…"
 
@@ -68,35 +68,35 @@ msgstr "缩小"
 msgid "Default zoom level"
 msgstr "默认缩放等级"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:430
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
