@@ -185,11 +185,9 @@ namespace Terminal {
                             return Gdk.EVENT_STOP;
 
                         case Gdk.ScrollDirection.SMOOTH:
-                            double delta_x, delta_y;
-                            event.get_scroll_deltas (out delta_x, out delta_y);
                             /* try to emulate a normal scrolling event by summing deltas.
                              * step size of 0.5 chosen to match sensitivity */
-                            total_delta_y += delta_y;
+                            total_delta_y += event.delta_y;
 
                             if (total_delta_y >= 0.5) {
                                 total_delta_y = 0;
