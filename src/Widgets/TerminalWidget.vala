@@ -112,6 +112,8 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
+        private double total_delta_y = 0.0;
+
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -169,6 +171,40 @@ namespace Terminal {
                 }
 
                 return false;
+            });
+
+            scroll_event.connect ((event) => {
+                if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
+                    switch (event.direction) {
+                        case Gdk.ScrollDirection.UP:
+                            increment_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.DOWN:
+                            decrement_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.SMOOTH:
+                            /* try to emulate a normal scrolling event by summing deltas.
+                             * step size of 0.5 chosen to match sensitivity */
+                            total_delta_y += event.delta_y;
+
+                            if (total_delta_y >= 0.5) {
+                                total_delta_y = 0;
+                                decrement_size ();
+                            } else if (total_delta_y <= -0.5) {
+                                total_delta_y = 0;
+                                increment_size ();
+                            }
+
+                            return Gdk.EVENT_STOP;
+
+                        default:
+                            break;
+                    }
+                }
+
+                return Gdk.EVENT_PROPAGATE;
             });
 
             selection_changed.connect (() => {
