@@ -18,6 +18,7 @@
 */
 
 public class Terminal.Application : Gtk.Application {
+    public const string VERSION = "5.4.0";
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
 
@@ -30,6 +31,7 @@ public class Terminal.Application : Gtk.Application {
 
     // option_help will be true if help flag was given.
     private static bool option_help = false;
+    private static bool option_version = false;
 
     public int minimum_width;
     public int minimum_height;
@@ -164,7 +166,9 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (option_help) {
-            show_help (context.get_help (true, null));
+            command_line.print (context.get_help (true, null));
+        } else if (option_version) {
+            command_line.print ("io.elementary.terminal %s", VERSION + "\n\n");
         } else {
             if (command_e != null) {
                 run_commands (command_e, working_directory);
@@ -187,19 +191,6 @@ public class Terminal.Application : Gtk.Application {
         working_directory = null;
 
         return 0;
-    }
-
-    private void show_help (string help) {
-        var window = get_last_window ();
-
-        if (window == null) {
-            stdout.printf (help);
-        } else {
-            window.current_terminal.feed (
-                // add return to newline for terminal output.
-                help.replace ("\n", "\r\n").data
-            );
-        }
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
@@ -244,6 +235,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private const OptionEntry[] ENTRIES = {
+        { "version", 'h', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
         /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
 
