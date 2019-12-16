@@ -363,6 +363,8 @@ namespace Terminal {
                                         null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
+                feed ((e.message + "\r\n\r\n").data);
+                active_shell (working_directory);
             }
         }
 
