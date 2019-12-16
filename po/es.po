@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 18:16+0000\n"
-"PO-Revision-Date: 2019-11-11 12:24+0000\n"
-"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
+"PO-Revision-Date: 2019-12-16 18:16+0000\n"
+"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:108
@@ -92,15 +92,16 @@ msgstr "Oscuro"
 
 #: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Copiado/Pegado Natural"
 
 #: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Los atajos no requieren Shift; pueden interferir con las aplicaciones CLI"
 
 #: src/MainWindow.vala:430
 msgid "Settings"
-msgstr ""
+msgstr "Configuración"
 
 #: src/MainWindow.vala:1207
 msgid "Hide find bar"
