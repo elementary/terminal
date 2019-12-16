@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2019-11-11 12:24+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/terminal/"
@@ -20,19 +20,19 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr "Tasko finiĝis"
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr "Lanĉi programon en la terminalo"
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr "Montri helpon"
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr "Difini aktivan terminalan dosierujon"
 
@@ -52,7 +52,7 @@ msgstr "Alglui"
 msgid "Select All"
 msgstr "Elekti ĉion"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr "Trovi…"
 
@@ -60,35 +60,43 @@ msgstr "Trovi…"
 msgid "Show in File Browser"
 msgstr "Montri en la dosieresplorilo"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 msgid "Zoom out"
 msgstr "Malzomi"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr "Apriora zomo"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr "Zomi"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr "Alta kontrasto"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr "Sunlumigo"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr "Malhela"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Stilo"
+#: src/MainWindow.vala:380
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:388
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:430
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr "Kaŝi trovbreton"
 
@@ -167,6 +175,9 @@ msgstr "Trovi finkomence"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalo"
+
+#~ msgid "Style"
+#~ msgstr "Stilo"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Malhela sunlumigo"

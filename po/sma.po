@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2019-12-14 17:41+0000\n"
 "PO-Revision-Date: 2015-12-05 14:37+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Southern Sami <sma@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:108
 msgid "Task finished"
 msgstr ""
 
-#: src/Application.vala:212
+#: src/Application.vala:206
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:213
+#: src/Application.vala:207
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:208
 msgid "Set shell working directory"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgstr "Njimkehtidh"
 msgid "Select All"
 msgstr "Gaajhke veeljedh"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
 msgid "Find…"
 msgstr ""
 
@@ -58,35 +58,43 @@ msgstr ""
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:307
 msgid "Zoom out"
 msgstr ""
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:314
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:333
 msgid "Zoom in"
 msgstr ""
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:349
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:357
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:365
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
+#: src/MainWindow.vala:380
+msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:388
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:430
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1207
 msgid "Hide find bar"
 msgstr ""
 
