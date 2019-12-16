@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:40+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"POT-Creation-Date: 2019-12-16 18:20+0000\n"
+"PO-Revision-Date: 2019-12-16 18:16+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -41,23 +41,23 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "New features:"
-msgstr ""
+msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Activez ou désactivez le copier-coller naturel dans le menu Paramètres"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Zoom avant avec Ctrl + Molette"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Other updates:"
-msgstr ""
+msgstr "Autres mises à jour :"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Inclusion du mot de passe sudo lors de la copie de la dernière sortie"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:61

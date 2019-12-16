@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:41+0000\n"
+"POT-Creation-Date: 2019-12-16 18:20+0000\n"
 "PO-Revision-Date: 2019-01-06 11:59+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -24,15 +24,20 @@ msgstr ""
 msgid "Task finished"
 msgstr "Oppgåve fullført"
 
-#: src/Application.vala:206
+#: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "Køyr program i kommandolinje"
 
-#: src/Application.vala:207
+#: src/Application.vala:253
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:255
 msgid "Show help"
 msgstr "Vis hjelp"
 
-#: src/Application.vala:208
+#: src/Application.vala:257
 msgid "Set shell working directory"
 msgstr "Sett arbeidsmappa til skalet"
 
