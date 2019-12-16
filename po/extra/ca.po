@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:40+0000\n"
+"POT-Creation-Date: 2019-12-16 18:18+0000\n"
 "PO-Revision-Date: 2019-12-16 18:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
@@ -59,7 +59,8 @@ msgstr "Altres actualitzacions:"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Include sudo password prompt when copying last output"
-msgstr "S'inclou la sol·licitud de contrasenya sudo en copiar l'última sortida."
+msgstr ""
+"S'inclou la sol·licitud de contrasenya sudo en copiar l'última sortida."
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:61
