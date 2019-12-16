@@ -18,7 +18,6 @@
 */
 
 public class Terminal.Application : Gtk.Application {
-    public const string VERSION = "5.4.0";
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
 
@@ -168,7 +167,7 @@ public class Terminal.Application : Gtk.Application {
         if (option_help) {
             command_line.print (context.get_help (true, null));
         } else if (option_version) {
-            command_line.print ("io.elementary.terminal %s", VERSION + "\n\n");
+            command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
             if (command_e != null) {
                 run_commands (command_e, working_directory);
