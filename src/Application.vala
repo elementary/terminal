@@ -234,7 +234,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private const OptionEntry[] ENTRIES = {
-        { "version", 'h', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
+        { "version", 'v', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
         /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
 
