@@ -134,9 +134,10 @@ public class Terminal.Application : Gtk.Application {
         string[] arg_cmd = {};
         bool build_cmdline = false;
 
-        /* Everything after "--" or "-x or "--commandline=" is to be  treated as a single command to be executed (maybe with its own options)
-         * so it is not passed to the parser. It will be passed as is to a new tab/shell. */
-        foreach (string s in args) {
+        /* Everything after "--" or "-x" or "--commandline=" is to be treated as a single command to be executed
+         * (maybe with its own options) so it is not passed to the parser.  It will be passed as is to a new tab/shell.
+         */
+        foreach (unowned string s in args) {
             if (build_cmdline) {
                 arg_cmd += s;
             } else {
@@ -170,12 +171,9 @@ public class Terminal.Application : Gtk.Application {
             } else if (commandline.length > 0) {
                 run_command_line (commandline, working_directory);
             } else if (command_x != null) {
-                string warning = "Usage: --commandline=[COMMANDLINE] without spaces around '='\n\n";
+                const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
-                get_last_window ().current_terminal.feed (
-                    // add return to newline for terminal output.
-                    warning.replace ("\n", "\r\n").data
-                );
+                get_last_window ().current_terminal.feed (WARNING.data);
             } else {
                 start_terminal_with_working_directory (working_directory);
             }
