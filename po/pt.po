@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:41+0000\n"
+"POT-Creation-Date: 2019-12-16 18:20+0000\n"
 "PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
@@ -24,15 +24,20 @@ msgstr ""
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
-#: src/Application.vala:206
+#: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
 
-#: src/Application.vala:207
+#: src/Application.vala:253
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:255
 msgid "Show help"
 msgstr "Mostrar ajuda"
 
-#: src/Application.vala:208
+#: src/Application.vala:257
 msgid "Set shell working directory"
 msgstr "Definir diretório de trabalho do terminal"
 

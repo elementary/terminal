@@ -125,7 +125,7 @@ namespace Terminal {
             }
         }
 
-        public MainWindow.with_working_directory (Terminal.Application app, string location,
+        public MainWindow.with_working_directory (Terminal.Application app, string? location,
                                                   bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -265,11 +265,11 @@ namespace Terminal {
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
-        public void add_tab_with_command (string command) {
-            new_tab ("", command);
+        public void add_tab_with_command (string command, string? working_directory = null) {
+            new_tab (working_directory, command);
         }
 
-        public void add_tab_with_working_directory (string location) {
+        public void add_tab_with_working_directory (string? location) {
             new_tab (location);
         }
 
@@ -931,14 +931,14 @@ namespace Terminal {
             });
         }
 
-        private void new_tab (string directory, string? program = null, bool focus = true) {
+        private void new_tab (string? directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
             string location;
-            if (directory == "") {
+            if (directory == null || directory == "") {
                 location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
@@ -1010,7 +1010,7 @@ namespace Terminal {
                     t.active_shell (location);
                 }
             } else {
-                t.run_program (program);
+                t.run_program (program, location);
             }
         }
 

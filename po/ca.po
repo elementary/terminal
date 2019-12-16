@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:41+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2019-12-16 18:20+0000\n"
+"PO-Revision-Date: 2019-12-16 18:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -17,22 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
 #: src/Application.vala:108
 msgid "Task finished"
 msgstr "Tasca acabada"
 
-#: src/Application.vala:206
+#: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "Executa un programa al terminal"
 
-#: src/Application.vala:207
+#: src/Application.vala:253
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:255
 msgid "Show help"
 msgstr "Mostra'n l'ajuda"
 
-#: src/Application.vala:208
+#: src/Application.vala:257
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
@@ -86,15 +91,16 @@ msgstr "Fosc"
 
 #: src/MainWindow.vala:380
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Copiar i enganxar naturals"
 
 #: src/MainWindow.vala:388
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Les dreceres no necessiten Maj.; pot interferir en les aplicacions CLI."
 
 #: src/MainWindow.vala:430
 msgid "Settings"
-msgstr ""
+msgstr "Paràmetres"
 
 #: src/MainWindow.vala:1207
 msgid "Hide find bar"
