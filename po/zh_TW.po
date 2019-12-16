@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 18:20+0000\n"
+"POT-Creation-Date: 2019-12-16 19:02+0000\n"
 "PO-Revision-Date: 2018-03-23 10:16+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -24,6 +24,7 @@ msgstr ""
 msgid "Task finished"
 msgstr "工作已完成"
 
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
@@ -45,65 +46,65 @@ msgstr "設定 shell 工作目錄"
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1215
+#: src/MainWindow.vala:219 src/MainWindow.vala:313 src/MainWindow.vala:1228
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "顯示在檔案瀏覽器中"
 
-#: src/MainWindow.vala:307
+#: src/MainWindow.vala:320
 #, fuzzy
 msgid "Zoom out"
 msgstr "拉遠"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:327
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:346
 #, fuzzy
 msgid "Zoom in"
 msgstr "拉近"
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:362
 msgid "High Contrast"
 msgstr "高對比"
 
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:370
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:378
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:393
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:388
+#: src/MainWindow.vala:401
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:430
+#: src/MainWindow.vala:443
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1207
+#: src/MainWindow.vala:1220
 msgid "Hide find bar"
 msgstr ""
 
