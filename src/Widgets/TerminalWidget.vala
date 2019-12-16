@@ -354,15 +354,17 @@ namespace Terminal {
             });
         }
 
-        public void run_program (string program_string) {
+        public void run_program (string program_string, string? working_directory) {
             try {
                 string[]? program_with_args = null;
                 Shell.parse_argv (program_string, out program_with_args);
 
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
                                         null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
+                feed ((e.message + "\r\n\r\n").data);
+                active_shell (working_directory);
             }
         }
 
