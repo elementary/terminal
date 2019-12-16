@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:41+0000\n"
+"POT-Creation-Date: 2019-12-16 18:16+0000\n"
 "PO-Revision-Date: 2019-11-11 12:24+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -24,15 +24,21 @@ msgstr ""
 msgid "Task finished"
 msgstr "İşlem tamamlandı"
 
-#: src/Application.vala:206
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "Terminalde bir program çalıştır"
 
-#: src/Application.vala:207
+#: src/Application.vala:253
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:255
 msgid "Show help"
 msgstr "Yardımı göster"
 
-#: src/Application.vala:208
+#: src/Application.vala:257
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 

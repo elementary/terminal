@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-14 17:41+0000\n"
+"POT-Creation-Date: 2019-12-16 18:16+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -17,15 +17,21 @@ msgstr ""
 msgid "Task finished"
 msgstr "Sarcină terminată"
 
-#: src/Application.vala:206
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:248
 msgid "Run a program in terminal"
 msgstr "Rulați program în terminal"
 
-#: src/Application.vala:207
+#: src/Application.vala:253
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:255
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:208
+#: src/Application.vala:257
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 
