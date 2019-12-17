@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-16 19:02+0000\n"
-"PO-Revision-Date: 2019-12-01 11:24+0000\n"
+"PO-Revision-Date: 2019-12-18 10:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-11 05:36+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -41,23 +41,23 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "New features:"
-msgstr ""
+msgstr "新機能:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "設定メニューでナチュラルコピー／貼り付けの設定を変更できるように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Ctrl + スクロールでの拡大・縮小に対応"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Other updates:"
-msgstr ""
+msgstr "その他のアップデート:"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "最後の出力のコピーに sudo パスワードの確認が含まれるように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:61
