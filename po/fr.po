@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-18 10:08+0000\n"
+"POT-Creation-Date: 2019-12-19 19:53+0000\n"
 "PO-Revision-Date: 2019-12-18 10:07+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,26 +20,26 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:108
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "Tâche terminée"
 
-#: src/Application.vala:248
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Lancer un programme dans un terminal"
 
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 "Exécutez la fin de la ligne comme commande dans le terminal. Vous pouvez "
 "également utiliser le drapeau « -- »"
 
-#: src/Application.vala:255
+#: src/Application.vala:257
 msgid "Show help"
 msgstr "Afficher l'aide"
 
-#: src/Application.vala:257
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "Configurer le répertoire courant du terminal"
 
@@ -59,7 +59,7 @@ msgstr "Coller"
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:313 src/MainWindow.vala:1228
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "Rechercher…"
 
@@ -67,45 +67,45 @@ msgstr "Rechercher…"
 msgid "Show in File Browser"
 msgstr "Afficher dans l'explorateur de fichiers"
 
-#: src/MainWindow.vala:320
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: src/MainWindow.vala:327
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "Zoom par défaut"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "Contrastes élevés"
 
-#: src/MainWindow.vala:370
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:381
 msgid "Dark"
 msgstr "Foncé"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
 msgstr "Copier-coller naturel"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Les raccourcis ne nécessitent pas d'appuyer sur Maj, ils pourraient "
 "interférer avec les applications en ligne de commande"
 
-#: src/MainWindow.vala:443
+#: src/MainWindow.vala:446
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:1220
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 

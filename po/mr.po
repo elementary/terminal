@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-18 10:08+0000\n"
+"POT-Creation-Date: 2019-12-19 19:53+0000\n"
 "PO-Revision-Date: 2019-11-09 15:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -13,24 +13,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.7.1\n"
 
-#: src/Application.vala:108
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
-#: src/Application.vala:248
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:255
+#: src/Application.vala:257
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:257
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
@@ -50,7 +50,7 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:313 src/MainWindow.vala:1228
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "शोधा…"
 
@@ -58,43 +58,43 @@ msgstr "शोधा…"
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/MainWindow.vala:320
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/MainWindow.vala:327
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/MainWindow.vala:370
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:381
 msgid "Dark"
 msgstr "गडद"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:443
+#: src/MainWindow.vala:446
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1220
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 
