@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-18 10:08+0000\n"
-"PO-Revision-Date: 2018-04-02 10:46+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2019-12-19 19:51+0000\n"
+"Last-Translator: Marko <marko.dolar@gmail.com>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
 "terminal/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:108
@@ -36,7 +36,7 @@ msgstr ""
 
 #: src/Application.vala:255
 msgid "Show help"
-msgstr ""
+msgstr "Prikaži pomoč"
 
 #: src/Application.vala:257
 msgid "Set shell working directory"
@@ -48,7 +48,7 @@ msgstr "Kopiraj"
 
 #: src/MainWindow.vala:204
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopiraj zadnji izpis"
 
 #: src/MainWindow.vala:209
 msgid "Paste"
@@ -102,11 +102,11 @@ msgstr ""
 
 #: src/MainWindow.vala:443
 msgid "Settings"
-msgstr ""
+msgstr "Nastavitve"
 
 #: src/MainWindow.vala:1220
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skrij iskalno vrstico"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
