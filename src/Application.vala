@@ -20,6 +20,7 @@
 public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
+    public static GLib.Settings settings_sys;
 
     private GLib.List <MainWindow> windows;
 
@@ -37,6 +38,7 @@ public class Terminal.Application : Gtk.Application {
     static construct {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
     }
 
     construct {

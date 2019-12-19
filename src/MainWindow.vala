@@ -245,7 +245,10 @@ namespace Terminal {
             show_all ();
 
             search_revealer.set_reveal_child (false);
-            term_font = Pango.FontDescription.from_string (get_term_font ());
+
+            update_font ();
+            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+            Application.settings.changed["font"].connect (update_font);
 
             set_size_request (app.minimum_width, app.minimum_height);
 
@@ -1039,15 +1042,21 @@ namespace Terminal {
             });
         }
 
-        private static string get_term_font () {
-            var font_name = Application.settings.get_string ("font");
+        private void update_font () {
+            // We have to fetch both values at least once, otherwise
+            // GLib.Settings won't notify on their changes
+            var app_font_name = Application.settings.get_string ("font");
+            var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
 
-            if (font_name == "") {
-                var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-                font_name = settings_sys.get_string ("monospace-font-name");
+            if (app_font_name != "") {
+                term_font = Pango.FontDescription.from_string (app_font_name);
+            } else {
+                term_font = Pango.FontDescription.from_string (sys_font_name);
             }
 
-            return font_name;
+            foreach (var t in terminals) {
+                t.set_font (term_font);
+            }
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
