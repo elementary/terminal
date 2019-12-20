@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-19 19:53+0000\n"
-"PO-Revision-Date: 2019-12-16 18:16+0000\n"
+"PO-Revision-Date: 2019-12-21 08:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "S'apliquen els canvis de lletra sense reiniciar."
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
