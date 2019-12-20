@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-19 19:53+0000\n"
-"PO-Revision-Date: 2019-04-05 19:52+0000\n"
+"PO-Revision-Date: 2019-12-21 08:16+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -81,7 +81,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:190
 #: data/io.elementary.terminal.appdata.xml.in:205
 msgid "Translation updates"
-msgstr ""
+msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Don't remember tabs when History is disabled in System Settings"
