@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2019-12-21 08:22+0000\n"
+"PO-Revision-Date: 2019-12-18 10:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,22 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "タスクが終了しました"
 
-#: src/Application.vala:212
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:213
+#: src/Application.vala:255
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+"行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
+"用できます"
+
+#: src/Application.vala:257
 msgid "Show help"
 msgstr "ヘルプを表示します"
 
-#: src/Application.vala:214
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
@@ -40,55 +48,65 @@ msgstr "シェルのカレントディレクトリを設定します"
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "ズームアウト"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:381
 msgid "Dark"
 msgstr "ダーク"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "スタイル"
+#: src/MainWindow.vala:396
+msgid "Natural Copy/Paste"
+msgstr "ナチュラルコピー／貼り付け"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:404
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
+"ります"
+
+#: src/MainWindow.vala:446
+msgid "Settings"
+msgstr "設定"
+
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr "検索バーを隠します"
 
@@ -167,6 +185,9 @@ msgstr "循環検索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#~ msgid "Style"
+#~ msgstr "スタイル"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Solarized Dark"

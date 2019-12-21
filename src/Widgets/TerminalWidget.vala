@@ -115,6 +115,8 @@ namespace Terminal {
         private Vte.CursorBlinkMode remembered_cursor_blink_mode;
         public bool last_key_was_return = true;
 
+        private double total_delta_y = 0.0;
+
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -216,6 +218,40 @@ namespace Terminal {
                 }
 
                 return false;
+            });
+
+            scroll_event.connect ((event) => {
+                if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
+                    switch (event.direction) {
+                        case Gdk.ScrollDirection.UP:
+                            increment_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.DOWN:
+                            decrement_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.SMOOTH:
+                            /* try to emulate a normal scrolling event by summing deltas.
+                             * step size of 0.5 chosen to match sensitivity */
+                            total_delta_y += event.delta_y;
+
+                            if (total_delta_y >= 0.5) {
+                                total_delta_y = 0;
+                                decrement_size ();
+                            } else if (total_delta_y <= -0.5) {
+                                total_delta_y = 0;
+                                increment_size ();
+                            }
+
+                            return Gdk.EVENT_STOP;
+
+                        default:
+                            break;
+                    }
+                }
+
+                return Gdk.EVENT_PROPAGATE;
             });
 
             selection_changed.connect (() => {
@@ -371,15 +407,17 @@ namespace Terminal {
             });
         }
 
-        public void run_program (string program_string) {
+        public void run_program (string program_string, string? working_directory) {
             try {
                 string[]? program_with_args = null;
                 Shell.parse_argv (program_string, out program_with_args);
 
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
                                         null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
+                feed ((e.message + "\r\n\r\n").data);
+                active_shell (working_directory);
             }
         }
 
@@ -509,7 +547,7 @@ namespace Terminal {
         }
 
         public void remember_command_start_position () {
-            if (!last_key_was_return) {
+            if (!last_key_was_return || has_foreground_process ()) {
                 return;
             }
 
@@ -521,13 +559,18 @@ namespace Terminal {
         }
 
         public void remember_command_end_position () {
-            if (last_key_was_return) {
+            if (last_key_was_return && !has_foreground_process ()) {
                 return;
             }
 
             long col, row;
             get_cursor_position (out col, out row);
-            remembered_command_end_row = row;
+            /* Password entry will be on next line, or, if an incorrect password is given, two lines ahead */
+            /* This restriction is required for `include_command = false to work` (although not currently used) */
+            if (row - remembered_command_end_row <= 2) {
+                remembered_command_end_row = row;
+            }
+
             last_key_was_return = true;
         }
 
@@ -546,6 +589,9 @@ namespace Terminal {
             if (output_end_row - start_row < (include_command ? command_lines + 1 : 1)) {
                 return "";
             }
+
+            last_key_was_return = true;
+
             /* get text to the beginning of current line (to omit last prompt)
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
