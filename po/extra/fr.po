@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-19 19:53+0000\n"
-"PO-Revision-Date: 2019-12-16 18:16+0000\n"
+"PO-Revision-Date: 2019-12-27 13:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -61,7 +61,7 @@ msgstr "Inclusion du mot de passe sudo lors de la copie de la dernière sortie"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Mise à jour de la police sans redémarrage"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
