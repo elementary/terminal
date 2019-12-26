@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-21 08:22+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"PO-Revision-Date: 2019-12-27 13:55+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Application.vala:110
 msgid "Task finished"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/MainWindow.vala:446
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्ज"
 
 #: src/MainWindow.vala:1229
 msgid "Hide find bar"
