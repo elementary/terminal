@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-21 08:22+0000\n"
-"PO-Revision-Date: 2019-12-27 13:55+0000\n"
+"PO-Revision-Date: 2019-12-28 13:13+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -26,6 +26,7 @@ msgstr "टर्मिनल मध्ये चालवा"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
 
 #: src/Application.vala:257
 msgid "Show help"
@@ -85,7 +86,7 @@ msgstr "गडद"
 
 #: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "नैसर्गिक कॉपी / पेस्ट"
 
 #: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
