@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-21 08:22+0000\n"
-"PO-Revision-Date: 2019-12-28 13:13+0000\n"
+"PO-Revision-Date: 2019-12-30 20:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -90,7 +90,7 @@ msgstr "नैसर्गिक कॉपी / पेस्ट"
 
 #: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "शॉर्टकट्सना शिफ्टची आवश्यकता नसते; सीएलआय अॅप्समध्ये हस्तक्षेप करू शकते"
 
 #: src/MainWindow.vala:446
 msgid "Settings"
