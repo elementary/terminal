@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 13:34+0000\n"
-"PO-Revision-Date: 2019-12-31 13:27+0000\n"
+"PO-Revision-Date: 2019-12-31 19:58+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
 "nl/>\n"
@@ -119,7 +119,7 @@ msgstr "Er is een actief proces in dit tabblad."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr "Als u dit sluit, zal het proces beëindigen."
+msgstr "Als u dit tabblad sluit, zal het proces beëindigen."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
