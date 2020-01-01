@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
+"POT-Creation-Date: 2019-12-31 13:34+0000\n"
 "PO-Revision-Date: 2018-12-13 14:07+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -20,19 +20,25 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
-#: src/Application.vala:108
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "Úloha dokončena"
 
-#: src/Application.vala:206
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Spustit program v terminálu"
 
-#: src/Application.vala:207
+#: src/Application.vala:255
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:257
 msgid "Show help"
 msgstr "Zobrazit nápovědu"
 
-#: src/Application.vala:208
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
@@ -40,63 +46,63 @@ msgstr "Nastavit pracovní adresář shellu"
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "Hledat…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/MainWindow.vala:307
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "Oddálit"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:381
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:446
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr "Skrýt vyhledávací panel"
 

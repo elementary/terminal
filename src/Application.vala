@@ -20,13 +20,14 @@
 public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
+    public static GLib.Settings settings_sys;
 
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
-    /* command_e (-e) is used for running commands independently (not inside a shell) */
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
+    private static string? command_x = null;
 
     // option_help will be true if help flag was given.
     private static bool option_help = false;
@@ -37,6 +38,7 @@ public class Terminal.Application : Gtk.Application {
     static construct {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
     }
 
     construct {
@@ -129,9 +131,34 @@ public class Terminal.Application : Gtk.Application {
         context.set_help_enabled (false);
 
         string[] args = command_line.get_arguments ();
+        string commandline = "";
+        string[] arg_opt = {};
+        string[] arg_cmd = {};
+        bool build_cmdline = false;
+
+        /* Everything after "--" or "-x" or "--commandline=" is to be treated as a single command to be executed
+         * (maybe with its own options) so it is not passed to the parser.  It will be passed as is to a new tab/shell.
+         */
+        foreach (unowned string s in args) {
+            if (build_cmdline) {
+                arg_cmd += s;
+            } else {
+                if (s == "--" || s == "-x" || s.has_prefix ("--commandline=")) {
+                    if (s.has_prefix ("--commandline=") && s.length > 14) {
+                        arg_cmd += s.substring (14);
+                    }
+
+                    build_cmdline = true;
+                } else {
+                    arg_opt += s;
+                }
+            }
+        }
+
+        commandline = string.joinv (" ", arg_cmd);
 
         try {
-            unowned string[] tmp = args;
+            unowned string[] tmp = arg_opt;
             context.parse (ref tmp);
         } catch (Error e) {
             stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
@@ -140,18 +167,24 @@ public class Terminal.Application : Gtk.Application {
 
         if (option_help) {
             show_help (context.get_help (true, null));
-        } else if (command_e != null) {
-            run_commands (command_e);
-        } else if (working_directory != null) {
-            start_terminal_with_working_directory (working_directory);
-
         } else {
-            new_window ();
+            if (command_e != null) {
+                run_commands (command_e, working_directory);
+            } else if (commandline.length > 0) {
+                run_command_line (commandline, working_directory);
+            } else if (command_x != null) {
+                const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
+                start_terminal_with_working_directory (working_directory);
+                get_last_window ().current_terminal.feed (WARNING.data);
+            } else {
+                start_terminal_with_working_directory (working_directory);
+            }
         }
 
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
         command_e = null;
+        command_x = null;
         option_help = false;
         working_directory = null;
 
@@ -171,7 +204,7 @@ public class Terminal.Application : Gtk.Application {
         }
     }
 
-    private void run_commands (string[] commands) {
+    private void run_commands (string[] commands, string? working_directory = null) {
         MainWindow? window;
         window = get_last_window ();
 
@@ -180,11 +213,22 @@ public class Terminal.Application : Gtk.Application {
         }
 
         foreach (string command in commands) {
-            window.add_tab_with_command (command);
+            window.add_tab_with_command (command, working_directory);
         }
     }
 
-    private void start_terminal_with_working_directory (string working_directory) {
+    private void run_command_line (string command_line, string? working_directory = null) {
+        MainWindow? window;
+        window = get_last_window ();
+
+        if (window == null) {
+            window = new MainWindow (this, false);
+        }
+
+        window.add_tab_with_command (command_line, working_directory);
+    }
+
+    private void start_terminal_with_working_directory (string? working_directory) {
         MainWindow? window;
         window = get_last_window ();
 
@@ -207,9 +251,18 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private const OptionEntry[] ENTRIES = {
+        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+
+        /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
+         *  to  the --help flag */
+        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
+          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
+          N_("Set shell working directory"), "DIR" },
+
         { null }
     };
 

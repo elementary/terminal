@@ -7,32 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-10 20:59+0000\n"
-"PO-Revision-Date: 2019-01-02 22:08+0000\n"
+"POT-Creation-Date: 2019-12-31 13:34+0000\n"
+"PO-Revision-Date: 2019-12-25 21:35+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/terminal/"
-"terminal/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:108
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "Auftrag erledigt"
 
-#: src/Application.vala:206
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Ein Programm im Terminal ausführen"
 
-#: src/Application.vala:207
+#: src/Application.vala:255
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+"Den restlichen Teil der Zeile als Befehl im Terminal ausführen. Kann auch "
+"'--' als Option verwenden"
+
+#: src/Application.vala:257
 msgid "Show help"
 msgstr "Hilfe anzeigen"
 
-#: src/Application.vala:208
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "Arbeitsordner des Terminals festlegen"
 
@@ -40,63 +48,64 @@ msgstr "Arbeitsordner des Terminals festlegen"
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
 msgstr "Letzte Ausgabe kopieren"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1210
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "Suchen…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "Im Dateimanager anzeigen"
 
-#: src/MainWindow.vala:307
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "Verkleinern"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "Standard Zoomfaktor"
 
-#: src/MainWindow.vala:321
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: src/MainWindow.vala:337
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "Hoher Kontrast"
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Solarisiert hell"
 
-#: src/MainWindow.vala:353
+#: src/MainWindow.vala:381
 msgid "Dark"
-msgstr ""
+msgstr "Dunkel"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Natürliches Kopieren/Einfügen"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Tastaturkürzel erfordern keine Umschalttaste; könnte CLI-Anwendungen stören"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:446
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
-#: src/MainWindow.vala:1202
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
