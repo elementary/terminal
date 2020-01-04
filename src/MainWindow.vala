@@ -290,10 +290,14 @@ namespace Terminal {
             }
 
             var f1 = File.new_for_commandline_arg (location);
-            foreach (TerminalWidget t in terminals) {
+            foreach (Granite.Widgets.Tab tab in notebook.tabs) {
+                var t = get_term_widget (tab);
                 var tab_path = t.get_shell_location ();
-                /* Detect equivalent paths */
+                /* Detect equialent paths */
                 if (f1.equal (File.new_for_path (tab_path))) {
+                    /* Just focus the duplicate tab instead */
+                    notebook.current = tab;
+                    t.grab_focus ();
                     return; /* Duplicate found, abandon adding tab */
                 }
             }
