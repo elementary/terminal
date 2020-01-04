@@ -1,3 +1,57 @@
+pantheon-terminal (5.5.0) bionic; urgency=medium
+
+  * Release 5.5.0 (#439)
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * MainWindow: Apply font changes on the fly (#423)
+  * Update translation files
+  * Update translation template
+  * Update translation files
+  * Update translation template
+  * MainWindow: Use Granite.AccelLabel (#388)
+  * Update translation template
+  * Update translation template
+  * Update translation template
+  * Update translation template
+  * Implement gnome-terminal style -x (--) flag. (#397)
+  * Update translation template
+  * Ctrl scroll zoom (#435)
+  * Update translation template
+  * MainWindow: Natural Copy/Paste in menu (#432)
+  * Fix POTFILES (#429)
+  * Copy sudo command (#398)
+  * Application: Remove new_window_with_coords (#416)
+  * Granite.Services.Settings → GLib.Settings (#415)
+
+ -- elementary LLC <builds@elementary.io>  Sat, 04 Jan 2020 02:30:42 +0000
+
 pantheon-terminal (5.4.0) bionic; urgency=medium
 
   * Release 5.4.0 (#425)
