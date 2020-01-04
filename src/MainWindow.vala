@@ -270,12 +270,25 @@ namespace Terminal {
         }
 
         public void add_tab_with_command (string command, string? working_directory = null) {
-            new_tab (working_directory, command);
+            add_tab_with_working_directory (working_directory, command);
         }
 
-        public void add_tab_with_working_directory (string? location) {
+        public void add_tab_with_working_directory (string? directory, string? command = null) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
+            string location = null;
+
+            if (directory == null || directory == "") {
+                if (command != null) {
+                    location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                } else {
+                    /* Do not add spurious new tab */
+                    return;
+                }
+            } else {
+                location = directory;
+            }
+
             var f1 = File.new_for_commandline_arg (location);
             foreach (TerminalWidget t in terminals) {
                 var tab_path = t.get_shell_location ();
@@ -285,7 +298,7 @@ namespace Terminal {
                 }
             }
 
-            new_tab (location);
+            new_tab (location, command);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -943,18 +956,12 @@ namespace Terminal {
             }
         }
 
-        private void new_tab (string? directory, string? program = null, bool focus = true) {
+        private void new_tab (string location, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
-            string location;
-            if (directory == null || directory == "") {
-                location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
-            } else {
-                location = directory;
-            }
 
             /* Set up terminal */
             var t = new TerminalWidget (this);
