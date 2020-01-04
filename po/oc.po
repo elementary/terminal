@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 02:30+0000\n"
+"POT-Creation-Date: 2020-01-04 02:32+0000\n"
 "PO-Revision-Date: 2016-10-20 08:13+0000\n"
 "Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -22,6 +22,7 @@ msgstr ""
 msgid "Task finished"
 msgstr "Prètzfait acabat"
 
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Aviar un programa dins un terminal"
