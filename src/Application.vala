@@ -32,6 +32,9 @@ public class Terminal.Application : Gtk.Application {
     // option_help will be true if help flag was given.
     private static bool option_help = false;
 
+    // option_new_window will be true if the new-window flag was given.
+    private static bool option_new_window = false;
+
     public int minimum_width;
     public int minimum_height;
 
@@ -186,6 +189,7 @@ public class Terminal.Application : Gtk.Application {
         command_e = null;
         command_x = null;
         option_help = false;
+        option_new_window = false;
         working_directory = null;
 
         return 0;
@@ -240,6 +244,11 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private MainWindow? get_last_window () {
+        if (option_new_window) {
+            option_new_window = false;
+            return null;
+        }
+
         uint length = windows.length ();
 
         return length > 0 ? windows.nth_data (length - 1) : null;
@@ -253,6 +262,9 @@ public class Terminal.Application : Gtk.Application {
          *  to  the --help flag */
         { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
           N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+
+        /* -n flag forces a new window, instead of a new tab */
+        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
 
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
