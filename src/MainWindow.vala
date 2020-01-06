@@ -125,7 +125,7 @@ namespace Terminal {
             }
         }
 
-        public MainWindow.with_working_directory (Terminal.Application app, string location,
+        public MainWindow.with_working_directory (Terminal.Application app, string? location,
                                                   bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -196,27 +196,36 @@ namespace Terminal {
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
-            copy_menuitem.add (new AccelMenuLabel (_("Copy"), copy_menuitem.action_name));
+            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
 
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
-            copy_last_output_menuitem.add (new AccelMenuLabel (_("Copy Last Output"), copy_last_output_menuitem.action_name));
+            copy_last_output_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name)
+            );
 
             var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
-            paste_menuitem.add (new AccelMenuLabel (_("Paste"), paste_menuitem.action_name));
+            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), paste_menuitem.action_name));
 
             var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
-            select_all_menuitem.add (new AccelMenuLabel (_("Select All"), select_all_menuitem.action_name));
+            select_all_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name)
+            );
 
             var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
-            search_menuitem.add (new AccelMenuLabel (_("Find…"), search_menuitem.action_name));
+            search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
             var show_in_file_browser_menuitem = new Gtk.MenuItem ();
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (new AccelMenuLabel (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
+            show_in_file_browser_menuitem.add (
+                new Granite.AccelLabel.from_action_name (
+                    _("Show in File Browser"),
+                    show_in_file_browser_menuitem.action_name
+                )
+            );
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
@@ -236,7 +245,10 @@ namespace Terminal {
             show_all ();
 
             search_revealer.set_reveal_child (false);
-            term_font = Pango.FontDescription.from_string (get_term_font ());
+
+            update_font ();
+            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+            Application.settings.changed["font"].connect (update_font);
 
             set_size_request (app.minimum_width, app.minimum_height);
 
@@ -256,11 +268,11 @@ namespace Terminal {
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
         }
 
-        public void add_tab_with_command (string command) {
-            new_tab ("", command);
+        public void add_tab_with_command (string command, string? working_directory = null) {
+            new_tab (working_directory, command);
         }
 
-        public void add_tab_with_working_directory (string location) {
+        public void add_tab_with_working_directory (string? location) {
             new_tab (location);
         }
 
@@ -289,7 +301,11 @@ namespace Terminal {
             // Vte.Terminal itself registers its default styling with the APPLICATION priority:
             // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
             // To be able to overwrite their styles, we need to use +1.
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
@@ -299,7 +315,6 @@ namespace Terminal {
                 {"<Ctrl><Shift>f"},
                 _("Find…")
             );
-
 
             var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
             zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
@@ -315,6 +330,18 @@ namespace Terminal {
                 _("Default zoom level")
             );
 
+            Application.saved_state.bind_with_mapping (
+                "zoom",
+                zoom_default_button, "label",
+                SettingsBindFlags.GET,
+                (property, setting, data) => {
+                    double zoom = setting.get_double ();
+                    property.set_string ("%.0f%%".printf (zoom * 100));
+                    return true;
+                },
+                null, null, null
+            );
+
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
             zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -325,7 +352,10 @@ namespace Terminal {
             var font_size_grid = new Gtk.Grid ();
             font_size_grid.column_homogeneous = true;
             font_size_grid.hexpand = true;
+            font_size_grid.margin_start = font_size_grid.margin_end = 12;
+            font_size_grid.margin_bottom = 6;
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+
             font_size_grid.add (zoom_out_button);
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
@@ -354,32 +384,73 @@ namespace Terminal {
             color_button_dark_context.add_class ("color-button");
             color_button_dark_context.add_class ("color-dark");
 
-            var style_popover_grid = new Gtk.Grid ();
-            style_popover_grid.margin = 12;
-            style_popover_grid.column_spacing = 6;
-            style_popover_grid.row_spacing = 12;
-            style_popover_grid.width_request = 200;
-            style_popover_grid.attach (font_size_grid, 0, 0, 3, 1);
-            style_popover_grid.attach (color_button_white, 0, 1, 1, 1);
-            style_popover_grid.attach (color_button_light, 1, 1, 1, 1);
-            style_popover_grid.attach (color_button_dark, 2, 1, 1, 1);
-            style_popover_grid.show_all ();
+            var color_grid = new Gtk.Grid ();
+            color_grid.column_homogeneous = true;
+            color_grid.margin_start = color_grid.margin_end = 12;
+            color_grid.margin_bottom = 6;
 
-            var style_popover = new Gtk.Popover (null);
-            style_popover.add (style_popover_grid);
+            color_grid.add (color_button_white);
+            color_grid.add (color_button_light);
+            color_grid.add (color_button_dark);
 
-            var style_button = new Gtk.MenuButton ();
-            style_button.set_can_focus (false);
-            style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            style_button.popover = style_popover;
-            style_button.tooltip_text = _("Style");
-            style_button.valign = Gtk.Align.CENTER;
+            var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
+            natural_copy_paste_label.halign = Gtk.Align.START;
+            natural_copy_paste_label.vexpand = true;
+
+            var natural_copy_paste_switch = new Gtk.Switch ();
+            natural_copy_paste_switch.valign = Gtk.Align.START;
+
+            var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
+                _("Shortcuts don’t require Shift; may interfere with CLI apps")
+            ));
+            natural_copy_paste_description.max_width_chars = 25;
+            natural_copy_paste_description.use_markup = true;
+            natural_copy_paste_description.wrap = true;
+            natural_copy_paste_description.xalign = 0;
+            natural_copy_paste_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            var natural_copy_paste_revealer = new Gtk.Revealer ();
+            natural_copy_paste_revealer.add (natural_copy_paste_description);
+
+            var natural_copy_paste_grid = new Gtk.Grid ();
+            natural_copy_paste_grid.column_spacing = 12;
+            natural_copy_paste_grid.attach (natural_copy_paste_label, 0, 0);
+            natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1);
+            natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0, 1, 2);
+
+            var natural_copy_paste_button = new Gtk.ModelButton ();
+            natural_copy_paste_button.get_child ().destroy ();
+            natural_copy_paste_button.add (natural_copy_paste_grid);
+
+            var menu_popover_grid = new Gtk.Grid ();
+            menu_popover_grid.column_spacing = 6;
+            menu_popover_grid.margin_bottom = 6;
+            menu_popover_grid.margin_top = 12;
+            menu_popover_grid.orientation = Gtk.Orientation.VERTICAL;
+            menu_popover_grid.row_spacing = 6;
+
+            menu_popover_grid.add (font_size_grid);
+            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            menu_popover_grid.add (natural_copy_paste_button);
+
+            menu_popover_grid.show_all ();
+
+            var menu_popover = new Gtk.Popover (null);
+            menu_popover.add (menu_popover_grid);
+
+            var menu_button = new Gtk.MenuButton ();
+            menu_button.set_can_focus (false);
+            menu_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            menu_button.popover = menu_popover;
+            menu_button.tooltip_text = _("Settings");
+            menu_button.valign = Gtk.Align.CENTER;
 
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
-            header.pack_end (style_button);
+            header.pack_end (menu_button);
             header.pack_end (search_button);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
@@ -418,7 +489,7 @@ namespace Terminal {
             set_titlebar (header);
             add (grid);
 
-            style_popover.closed.connect (() => {
+            menu_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
 
@@ -452,6 +523,25 @@ namespace Terminal {
                 Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
             });
 
+            natural_copy_paste_button.button_release_event.connect (() => {
+                natural_copy_paste_switch.activate ();
+                return Gdk.EVENT_STOP;
+            });
+
+            Application.settings.bind (
+                "natural-copy-paste",
+                natural_copy_paste_switch,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
+
+            natural_copy_paste_switch.bind_property (
+                "active",
+                natural_copy_paste_revealer,
+                "reveal-child",
+                GLib.BindingFlags.SYNC_CREATE
+            );
+
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
                     return false;
@@ -472,8 +562,7 @@ namespace Terminal {
                                 search_toolbar.next_search ();
                             }
                             return true;
-                        } else if (!current_terminal.has_foreground_process ()) {
-                            /* Ignore returns being sent to a foreground process */
+                        } else {
                             current_terminal.remember_position ();
                             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
                             current_terminal.remember_command_end_position ();
@@ -687,7 +776,14 @@ namespace Terminal {
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
             Idle.add (() => {
-                var new_window = app.new_window_with_coords (x, y, false);
+                var new_window = new MainWindow.with_coords (
+                    app,
+                    x,
+                    y,
+                    false,
+                    false
+                );
+
                 var t = get_term_widget (tab);
                 var new_notebook = new_window.notebook;
 
@@ -768,7 +864,7 @@ namespace Terminal {
 
             current_terminal = get_term_widget (new_tab);
             title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
-            set_zoom_default_label (current_terminal.font_scale);
+            /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
@@ -841,14 +937,14 @@ namespace Terminal {
             });
         }
 
-        private void new_tab (string directory, string? program = null, bool focus = true) {
+        private void new_tab (string? directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
             string location;
-            if (directory == "") {
+            if (directory == null || directory == "") {
                 location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
             } else {
                 location = directory;
@@ -920,7 +1016,7 @@ namespace Terminal {
                     t.active_shell (location);
                 }
             } else {
-                t.run_program (program);
+                t.run_program (program, location);
             }
         }
 
@@ -949,15 +1045,21 @@ namespace Terminal {
             });
         }
 
-        private static string get_term_font () {
-            var font_name = Application.settings.get_string ("font");
+        private void update_font () {
+            // We have to fetch both values at least once, otherwise
+            // GLib.Settings won't notify on their changes
+            var app_font_name = Application.settings.get_string ("font");
+            var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
 
-            if (font_name == "") {
-                var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-                font_name = settings_sys.get_string ("monospace-font-name");
+            if (app_font_name != "") {
+                term_font = Pango.FontDescription.from_string (app_font_name);
+            } else {
+                term_font = Pango.FontDescription.from_string (sys_font_name);
             }
 
-            return font_name;
+            foreach (var t in terminals) {
+                t.set_font (term_font);
+            }
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
@@ -1095,21 +1197,14 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
-            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            set_zoom_default_label (current_terminal.font_scale);
         }
 
         private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            set_zoom_default_label (current_terminal.font_scale);
-        }
-
-        private void set_zoom_default_label (double zoom_factor) {
-            zoom_default_button.label = "%.0f%%".printf (current_terminal.font_scale * 100);
         }
 
         private void action_next_tab () {
@@ -1327,35 +1422,6 @@ namespace Terminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
-        }
-
-        private class AccelMenuLabel : Gtk.Grid {
-            public string action_name { get; construct; }
-            public string label { get; construct; }
-
-            public AccelMenuLabel (string label, string action_name) {
-                Object (
-                    label: label,
-                    action_name: action_name
-                );
-            }
-
-            construct {
-                var label = new Gtk.Label (label);
-                label.hexpand = true;
-                label.xalign = 0;
-
-                var accel_label = new Gtk.Label (
-                    Granite.accel_to_string (
-                        ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
-                    )
-                );
-                accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
-
-                column_spacing = 3;
-                add (label);
-                add (accel_label);
-            }
         }
     }
 }

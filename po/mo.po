@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2020-01-06 18:09+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -13,19 +13,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "Sarcină terminată"
 
-#: src/Application.vala:212
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Rulați program în terminal"
 
-#: src/Application.vala:213
+#: src/Application.vala:255
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#: src/Application.vala:257
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 
@@ -33,57 +39,65 @@ msgstr "Setați directorul de lucru pentru shell"
 msgid "Copy"
 msgstr "Copie"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "Lipește"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "Căutare…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "Afișați Fișierul în Browser"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:323
 #, fuzzy
 msgid "Zoom out"
 msgstr "Micșorează"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "Nivel prestabilit"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:349
 #, fuzzy
 msgid "Zoom in"
 msgstr "Mărește"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "Contrast mare"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Lumină solarizată"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:381
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Stilul"
+#: src/MainWindow.vala:396
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:404
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:446
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
 msgstr ""
 
@@ -162,6 +176,9 @@ msgstr "Clic în caută"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalul"
+
+#~ msgid "Style"
+#~ msgstr "Stilul"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Polarizat închis"

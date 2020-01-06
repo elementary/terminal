@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2018-04-02 10:46+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"PO-Revision-Date: 2020-01-06 18:07+0000\n"
+"Last-Translator: Marko <marko.dolar@gmail.com>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
 "terminal/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -18,22 +18,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:110
 msgid "Task finished"
 msgstr "Naloga končana"
 
-#: src/Application.vala:212
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Zaženi program v terminalu"
 
-#: src/Application.vala:213
-msgid "Show help"
+#: src/Application.vala:255
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:214
+#: src/Application.vala:257
+msgid "Show help"
+msgstr "Prikaži pomoč"
+
+#: src/Application.vala:259
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
@@ -41,59 +47,65 @@ msgstr "Nastavi delovno mapo ukazne lupine"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopiraj zadnji izpis"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:209
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:225
 msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
-#: src/MainWindow.vala:308
-#, fuzzy
+#: src/MainWindow.vala:323
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:330
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/MainWindow.vala:322
-#, fuzzy
+#: src/MainWindow.vala:349
 msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:365
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:373
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:381
 msgid "Dark"
+msgstr "Temno"
+
+#: src/MainWindow.vala:396
+msgid "Natural Copy/Paste"
+msgstr "Naravno kopiranje in lepljenje"
+
+#: src/MainWindow.vala:404
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Stil"
+#: src/MainWindow.vala:446
+msgid "Settings"
+msgstr "Nastavitve"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:1229
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skrij iskalno vrstico"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -141,7 +153,7 @@ msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Prikaži opozorila za zaščito pri lepljenju"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -170,6 +182,9 @@ msgstr "Ciklično iskanje"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Stil"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "Solarized Dark"

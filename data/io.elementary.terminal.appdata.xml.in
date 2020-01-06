@@ -35,6 +35,21 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.5.0" date="2020-01-02" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Turn Natural Copy/Paste on or off in the Settings menu</li>
+          <li>Zoom with Ctrl + Scroll</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Include sudo password prompt when copying last output</li>
+          <li>Apply font changes without restarting</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.4.0" date="2019-11-15" urgency="medium">
       <description>
         <ul>
