@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-19 19:53+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"PO-Revision-Date: 2019-12-30 20:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
@@ -40,27 +40,27 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "New features:"
-msgstr ""
+msgstr "नवीन वैशिष्ट्य:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "सेटिंग्ज मेनूमध्ये नैसर्गिक कॉपी / पेस्ट चालू किंवा बंद करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Ctrl + Scroll सह झूम करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Other updates:"
-msgstr ""
+msgstr "इतर अद्यतने:"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "अंतिम आउटपुट कॉपी करताना sudo संकेतशब्द प्रॉम्प्ट समाविष्ट करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "रीस्टार्ट न करता फॉन्ट बदल लागू करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62

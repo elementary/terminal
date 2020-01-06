@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 08:22+0000\n"
-"PO-Revision-Date: 2019-11-22 03:24+0000\n"
+"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"PO-Revision-Date: 2019-12-21 17:52+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: src/Application.vala:110
@@ -33,6 +33,8 @@ msgstr "Executar um programa no terminal"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Execute o restante da linha como um comando no terminal. Também pode usar "
+"'-' como sinalizador"
 
 #: src/Application.vala:257
 msgid "Show help"
@@ -92,15 +94,15 @@ msgstr "Escuro"
 
 #: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Copiar/colar natural"
 
 #: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
 
 #: src/MainWindow.vala:446
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #: src/MainWindow.vala:1229
 msgid "Hide find bar"

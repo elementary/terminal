@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-21 08:22+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"PO-Revision-Date: 2019-12-30 20:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: src/Application.vala:110
 msgid "Task finished"
@@ -25,7 +25,7 @@ msgstr "टर्मिनल मध्ये चालवा"
 #: src/Application.vala:255
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
+msgstr "टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
 
 #: src/Application.vala:257
 msgid "Show help"
@@ -85,15 +85,15 @@ msgstr "गडद"
 
 #: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "नैसर्गिक कॉपी / पेस्ट"
 
 #: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "शॉर्टकट्सना शिफ्टची आवश्यकता नसते; सीएलआय अॅप्समध्ये हस्तक्षेप करू शकते"
 
 #: src/MainWindow.vala:446
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्ज"
 
 #: src/MainWindow.vala:1229
 msgid "Hide find bar"
