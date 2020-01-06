@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 02:37+0000\n"
-"PO-Revision-Date: 2019-12-19 19:51+0000\n"
+"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"PO-Revision-Date: 2020-01-06 18:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
 "terminal/sl/>\n"
@@ -25,6 +25,7 @@ msgstr ""
 msgid "Task finished"
 msgstr "Naloga končana"
 
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Zaženi program v terminalu"
@@ -67,7 +68,6 @@ msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
 #: src/MainWindow.vala:323
-#, fuzzy
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
@@ -76,7 +76,6 @@ msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
 #: src/MainWindow.vala:349
-#, fuzzy
 msgid "Zoom in"
 msgstr "Povečaj"
 
@@ -90,11 +89,11 @@ msgstr "Solarized Light"
 
 #: src/MainWindow.vala:381
 msgid "Dark"
-msgstr ""
+msgstr "Temno"
 
 #: src/MainWindow.vala:396
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Naravno kopiranje in lepljenje"
 
 #: src/MainWindow.vala:404
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
@@ -154,7 +153,7 @@ msgstr "Prepričajte se, da razumete kaj dela vsak ukaz."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Prikaži opozorila za zaščito pri lepljenju"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
