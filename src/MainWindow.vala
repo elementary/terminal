@@ -635,6 +635,9 @@ namespace Terminal {
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
+                            if (((e.state & Gdk.ModifierType.SHIFT_MASK) == 0)) { /* Shift not pressed */
+                                current_terminal.unselect_all ();
+                            }
                             return true;
                         } else { /* Ctrl-c: Command cancelled */
                             current_terminal.last_key_was_return = true;
