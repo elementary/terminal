@@ -46,6 +46,7 @@
           <li>Prevent duplicate tab on startup</li>
           <li>Prevent unnecessary Home tab on startup</li>
           <li>Translation updates</li>
+          <li>Fix help output</li>
         </ul>
       </description>
     </release>

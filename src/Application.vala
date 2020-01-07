@@ -29,9 +29,6 @@ public class Terminal.Application : Gtk.Application {
     private static string[]? command_e = null;
     private static string? command_x = null;
 
-    // option_help will be true if help flag was given.
-    private static bool option_help = false;
-
     // option_new_window will be true if the new-window flag was given.
     private static bool option_new_window = false;
 
@@ -125,13 +122,19 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    private int _command_line (ApplicationCommandLine command_line) {
+    private static OptionContext get_options_context () {
         var context = new OptionContext (null);
         context.add_main_entries (ENTRIES, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
 
         // Disable automatic help to prevent default `exit(0)` behaviour.
         context.set_help_enabled (false);
+
+        return context;
+    }
+
+    private int _command_line (ApplicationCommandLine command_line) {
+        var context = get_options_context ();
 
         string[] args = command_line.get_arguments ();
         string commandline = "";
@@ -168,44 +171,26 @@ public class Terminal.Application : Gtk.Application {
             return 0;
         }
 
-        if (option_help) {
-            show_help (context.get_help (true, null));
+        if (command_e != null) {
+            run_commands (command_e, working_directory);
+        } else if (commandline.length > 0) {
+            run_command_line (commandline, working_directory);
+        } else if (command_x != null) {
+            const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
+            start_terminal_with_working_directory (working_directory);
+            get_last_window ().current_terminal.feed (WARNING.data);
         } else {
-            if (command_e != null) {
-                run_commands (command_e, working_directory);
-            } else if (commandline.length > 0) {
-                run_command_line (commandline, working_directory);
-            } else if (command_x != null) {
-                const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
-                start_terminal_with_working_directory (working_directory);
-                get_last_window ().current_terminal.feed (WARNING.data);
-            } else {
-                start_terminal_with_working_directory (working_directory);
-            }
+            start_terminal_with_working_directory (working_directory);
         }
 
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
         command_e = null;
         command_x = null;
-        option_help = false;
         option_new_window = false;
         working_directory = null;
 
         return 0;
-    }
-
-    private void show_help (string help) {
-        var window = get_last_window ();
-
-        if (window == null) {
-            stdout.printf (help);
-        } else {
-            window.current_terminal.feed (
-                // add return to newline for terminal output.
-                help.replace ("\n", "\r\n").data
-            );
-        }
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
@@ -265,7 +250,7 @@ public class Terminal.Application : Gtk.Application {
         /* -n flag forces a new window, instead of a new tab */
         { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
 
-        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
+        { "help", 'h', 0, OptionArg.NONE, null, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
           N_("Set shell working directory"), "DIR" },
 
@@ -273,6 +258,22 @@ public class Terminal.Application : Gtk.Application {
     };
 
     public static int main (string[] args) {
+
+        // Handle help directly in main, because we want output to go to the
+        // calling terminal, not one of our own windows.
+        foreach (unowned string s in args) {
+            if (s == "-h" || s == "--help") {
+                var context = get_options_context ();
+
+                // sets the program name in the usage statement
+                Environment.set_prgname (args[0]);
+
+                var help = context.get_help (true, null);
+                stdout.printf (help);
+                return 0;
+            }
+        }
+
         var app = new Terminal.Application ();
         return app.run (args);
     }
