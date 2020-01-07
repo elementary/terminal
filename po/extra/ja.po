@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-19 19:53+0000\n"
-"PO-Revision-Date: 2019-12-18 10:07+0000\n"
+"PO-Revision-Date: 2020-01-07 16:45+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -61,7 +61,7 @@ msgstr "最後の出力のコピーに sudo パスワードの確認が含まれ
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "再起動しなくてもフォントの変更が反映されるように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -121,7 +121,7 @@ msgstr "Ctrl+イコールキーでの拡大に対応"
 
 #: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "フォアグラウンド処理のレスポンスに関するコードが間違っていた問題を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Return focus after popover menu closes"
