@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"POT-Creation-Date: 2020-01-07 16:46+0000\n"
 "PO-Revision-Date: 2016-10-20 08:13+0000\n"
 "Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -22,7 +22,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Prètzfait acabat"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Aviar un programa dins un terminal"
@@ -56,7 +55,7 @@ msgstr "Pegar"
 msgid "Select All"
 msgstr "Seleccionar tot"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
 msgid "Find…"
 msgstr "Recercar…"
 
@@ -102,7 +101,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1232
 msgid "Hide find bar"
 msgstr ""
 

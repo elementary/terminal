@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"POT-Creation-Date: 2020-01-07 16:46+0000\n"
 "PO-Revision-Date: 2019-12-21 17:52+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:250
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
@@ -60,7 +59,7 @@ msgstr "Colar"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
 msgid "Find…"
 msgstr "Buscar…"
 
@@ -104,7 +103,7 @@ msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1232
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 
