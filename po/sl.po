@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"POT-Creation-Date: 2020-01-07 16:48+0000\n"
 "PO-Revision-Date: 2020-01-06 18:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
@@ -59,7 +59,7 @@ msgstr "Prilepi"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
 msgid "Find…"
 msgstr "Najdi…"
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1232
 msgid "Hide find bar"
 msgstr "Skrij iskalno vrstico"
 

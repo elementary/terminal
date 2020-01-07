@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"POT-Creation-Date: 2020-01-07 16:48+0000\n"
 "PO-Revision-Date: 2016-01-10 13:45+0000\n"
 "Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "Vložiť"
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
 msgid "Find…"
 msgstr "Nájsť…"
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1232
 msgid "Hide find bar"
 msgstr ""
 
