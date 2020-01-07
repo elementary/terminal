@@ -276,7 +276,7 @@ namespace Terminal {
         public void add_tab_with_working_directory (string? directory, string? command = null) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
-            string location = null;
+            string? location = null;
 
             if (directory == null || directory == "") {
                 if (command != null) {
