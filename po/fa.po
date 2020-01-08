@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:02+0000\n"
+"POT-Creation-Date: 2020-01-08 16:04+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "عملیات پایان یافت"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "اجرای برنامه در ترمینال"
