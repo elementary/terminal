@@ -39,6 +39,7 @@
       <description>
         <p>New features:</p>
         <ul>
+          <li>Move cursor within current command by pointing and clicking</li>
         </ul>
         <p>Other updates:</p>
         <ul>
