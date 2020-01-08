@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2020-01-08 17:23+0000\n"
 "PO-Revision-Date: 2015-12-05 14:34+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -18,77 +18,98 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr ""
 
-#: src/Application.vala:207
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:208
+#: src/Application.vala:263
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "เปิดหน้าต่างใหม่"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "คัดลอก"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "วาง"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "เลือกทั้งหมด"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "ค้นหา..."
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:352
 #, fuzzy
 msgid "Zoom out"
 msgstr "ย่อ"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "ขยาย"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
+#: src/MainWindow.vala:410
+msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:345
-msgid "Style"
+#: src/MainWindow.vala:425
+msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:433
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:475
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr ""
 
@@ -160,11 +181,11 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "เทอร์มินัล"
 
@@ -179,9 +200,6 @@ msgstr "เทอร์มินัล"
 
 #~ msgid "Close"
 #~ msgstr "ปิด"
-
-#~ msgid "Open a new window"
-#~ msgstr "เปิดหน้าต่างใหม่"
 
 #~ msgid "New Tab"
 #~ msgstr "เปิดแท็บใหม่"

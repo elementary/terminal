@@ -17,19 +17,32 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.TerminalApp : Gtk.Application {
+public class Terminal.Application : Gtk.Application {
+    public static GLib.Settings saved_state;
+    public static GLib.Settings settings;
+    public static GLib.Settings settings_sys;
+
     private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
-    /* command_e (-e) is used for running commands independently (not inside a shell) */
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
+    private static string? command_x = null;
 
     // option_help will be true if help flag was given.
     private static bool option_help = false;
 
+    // option_new_window will be true if the new-window flag was given.
+    private static bool option_new_window = false;
+
     public int minimum_width;
     public int minimum_height;
+
+    static construct {
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+    }
 
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
@@ -38,14 +51,11 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
     }
 
-    public TerminalApp () {
+    public Application () {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
         windows = new GLib.List <MainWindow> ();
-
-        saved_state = new SavedState ();
-        settings = new Settings ();
     }
 
     public void new_window () {
@@ -56,12 +66,6 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         } else {
             new MainWindow (this, false);
         }
-    }
-
-    public MainWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
-        var window = new MainWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
-
-        return window;
     }
 
     public override int command_line (ApplicationCommandLine command_line) {
@@ -123,16 +127,41 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
     private int _command_line (ApplicationCommandLine command_line) {
         var context = new OptionContext (null);
-        context.add_main_entries (entries, "pantheon-terminal");
+        context.add_main_entries (ENTRIES, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
 
         // Disable automatic help to prevent default `exit(0)` behaviour.
         context.set_help_enabled (false);
 
         string[] args = command_line.get_arguments ();
+        string commandline = "";
+        string[] arg_opt = {};
+        string[] arg_cmd = {};
+        bool build_cmdline = false;
+
+        /* Everything after "--" or "-x" or "--commandline=" is to be treated as a single command to be executed
+         * (maybe with its own options) so it is not passed to the parser.  It will be passed as is to a new tab/shell.
+         */
+        foreach (unowned string s in args) {
+            if (build_cmdline) {
+                arg_cmd += s;
+            } else {
+                if (s == "--" || s == "-x" || s.has_prefix ("--commandline=")) {
+                    if (s.has_prefix ("--commandline=") && s.length > 14) {
+                        arg_cmd += s.substring (14);
+                    }
+
+                    build_cmdline = true;
+                } else {
+                    arg_opt += s;
+                }
+            }
+        }
+
+        commandline = string.joinv (" ", arg_cmd);
 
         try {
-            unowned string[] tmp = args;
+            unowned string[] tmp = arg_opt;
             context.parse (ref tmp);
         } catch (Error e) {
             stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
@@ -141,20 +170,26 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
 
         if (option_help) {
             show_help (context.get_help (true, null));
-        } else if (command_e != null) {
-            run_commands (command_e);
-
-        } else if (working_directory != null) {
-            start_terminal_with_working_directory (working_directory);
-
         } else {
-            new_window ();
+            if (command_e != null) {
+                run_commands (command_e, working_directory);
+            } else if (commandline.length > 0) {
+                run_command_line (commandline, working_directory);
+            } else if (command_x != null) {
+                const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
+                start_terminal_with_working_directory (working_directory);
+                get_last_window ().current_terminal.feed (WARNING.data);
+            } else {
+                start_terminal_with_working_directory (working_directory);
+            }
         }
 
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
         command_e = null;
+        command_x = null;
         option_help = false;
+        option_new_window = false;
         working_directory = null;
 
         return 0;
@@ -173,28 +208,43 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         }
     }
 
-    private void run_commands (string[] commands) {
+    private void run_commands (string[] commands, string? working_directory = null) {
         MainWindow? window;
         window = get_last_window ();
 
-        if (window == null) {
+        if (window == null || option_new_window) {
             window = new MainWindow (this, false);
         }
 
         foreach (string command in commands) {
-            window.add_tab_with_command (command);
+            window.add_tab_with_command (command, working_directory);
         }
     }
 
-    private void start_terminal_with_working_directory (string working_directory) {
+    private void run_command_line (string command_line, string? working_directory = null) {
         MainWindow? window;
         window = get_last_window ();
 
-        if (window != null) {
+        if (window == null || option_new_window) {
+            window = new MainWindow (this, false);
+        }
+
+        window.add_tab_with_command (command_line, working_directory);
+    }
+
+    private void start_terminal_with_working_directory (string? working_directory) {
+        MainWindow? window;
+        window = get_last_window ();
+
+        if (window != null && !option_new_window) {
             window.add_tab_with_working_directory (working_directory);
             window.present ();
         } else
-            new MainWindow.with_working_directory (this, working_directory, true);
+            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
+             * Currently they are set to restore (subject to the restore-tabs setting).
+             * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
+             * below. */
+            new MainWindow.with_working_directory (this, working_directory, window == null);
     }
 
     private MainWindow? get_last_window () {
@@ -203,15 +253,27 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         return length > 0 ? windows.nth_data (length - 1) : null;
     }
 
-    private const OptionEntry[] entries = {
+    private const OptionEntry[] ENTRIES = {
+        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+
+        /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
+         *  to  the --help flag */
+        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
+          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+
+        /* -n flag forces a new window, instead of a new tab */
+        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
+
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
+          N_("Set shell working directory"), "DIR" },
+
         { null }
     };
 
     public static int main (string[] args) {
-        var app = new TerminalApp ();
+        var app = new Terminal.Application ();
         return app.run (args);
     }
 }

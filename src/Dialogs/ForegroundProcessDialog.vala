@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.ForegroundProcessDialog : Granite.MessageDialog {
+public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
     public string button_label { get; construct; }
 
     public ForegroundProcessDialog (MainWindow parent) {
@@ -47,10 +47,7 @@ public class PantheonTerminal.ForegroundProcessDialog : Granite.MessageDialog {
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
 
-        var close_button = new Gtk.Button.with_label (button_label);
+        var close_button = add_button (button_label, Gtk.ResponseType.ACCEPT);
         close_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-
-        add_action_widget (close_button, 1);
-        get_action_area ().show_all ();
     }
 }

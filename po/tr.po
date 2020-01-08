@@ -7,88 +7,109 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-11-09 15:20+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2020-01-08 17:23+0000\n"
+"PO-Revision-Date: 2019-12-17 00:24+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "İşlem tamamlandı"
 
-#: src/Application.vala:207
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
-msgstr "Uçbirimde bir program çalıştır"
+msgstr "Terminalde bir program çalıştır"
 
-#: src/Application.vala:208
-msgid "Show help"
+#: src/Application.vala:263
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:209
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Yeni bir pencere aç"
+
+#: src/Application.vala:268
+msgid "Show help"
+msgstr "Yardımı göster"
+
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Son Çıktıyı Kopyala"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:352
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:394
 msgid "High Contrast"
-msgstr "Yüksek Kontrast"
+msgstr "Yüksek Karşıtlık"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
-msgstr "Solarize Işık"
+msgstr "Açık Renk Tema"
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
-msgstr "Solarize Karanlık"
+#: src/MainWindow.vala:410
+msgid "Dark"
+msgstr "Koyu Renk Tema"
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr "Stil"
+#: src/MainWindow.vala:425
+msgid "Natural Copy/Paste"
+msgstr "Doğal Kopyala/Yapıştır"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:433
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Kısayollar Shift gerektirmez; bazı CLI uygulamalarını engelleyebilir"
+
+#: src/MainWindow.vala:475
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -130,7 +151,7 @@ msgstr "Bu komut bilgisayarınızın yönetici izinlerine erişmek istiyor"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komut İstemine komut kopyalamak tehlikeli olabilir."
+msgstr "Terminal'e komut kopyalayıp yapıştırmak tehlikeli olabilir."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
@@ -138,7 +159,7 @@ msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin ol
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Yapıştırma koruması uyarılarını göster"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -160,13 +181,19 @@ msgstr "Önceki sonuç"
 msgid "Next result"
 msgstr "Sonraki sonuç"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Döngüsel arama"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
-msgstr "Uçbirim"
+msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Koyu Renk Tema"
 
 #~ msgid "Cancel"
 #~ msgstr "İptal"
@@ -191,9 +218,6 @@ msgstr "Uçbirim"
 
 #~ msgid "Close"
 #~ msgstr "Kapat"
-
-#~ msgid "Open a new window"
-#~ msgstr "Yeni bir pencere aç"
 
 #~ msgid "New Tab"
 #~ msgstr "Yeni Sekme"

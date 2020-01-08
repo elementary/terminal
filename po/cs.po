@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2020-01-08 17:23+0000\n"
 "PO-Revision-Date: 2018-12-13 14:07+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -20,75 +20,96 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "Úloha dokončena"
 
-#: src/Application.vala:207
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Spustit program v terminálu"
 
-#: src/Application.vala:208
+#: src/Application.vala:263
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Otevřít nové okno"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Zobrazit nápovědu"
 
-#: src/Application.vala:209
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "Hledat…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:352
 msgid "Zoom out"
 msgstr "Oddálit"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
-msgstr "Solarizovaný tmavý"
+#: src/MainWindow.vala:410
+msgid "Dark"
+msgstr ""
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr "Styl"
+#: src/MainWindow.vala:425
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:433
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:475
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr "Skrýt vyhledávací panel"
 
@@ -160,13 +181,19 @@ msgstr "Předchozí výsledek"
 msgid "Next result"
 msgstr "Další výsledek"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Opakované hledání"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
+
+#~ msgid "Style"
+#~ msgstr "Styl"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Solarizovaný tmavý"
 
 #~ msgid "Cancel"
 #~ msgstr "Zrušit"
@@ -191,9 +218,6 @@ msgstr "Terminál"
 
 #~ msgid "Close"
 #~ msgstr "Zavřít"
-
-#~ msgid "Open a new window"
-#~ msgstr "Otevřít nové okno"
 
 #~ msgid "New Tab"
 #~ msgstr "Nová karta"

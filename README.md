@@ -1,6 +1,6 @@
 # Terminal
 [![Packaging status](https://repology.org/badge/tiny-repos/pantheon-terminal.svg)](https://repology.org/metapackage/pantheon-terminal)
-[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/projects/terminal/?utm_source=widget)
+[![Translation status](https://l10n.elementary.io/widgets/terminal/-/svg-badge.svg)](https://l10n.elementary.io/engage/terminal/?utm_source=widget)
 
 ## The terminal of the 21st century.
 
@@ -11,7 +11,7 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
-* libgranite-dev >= 5.2.0
+* libgranite-dev >= 5.3.0
 * libvte-2.91-dev
 * meson
 * valac

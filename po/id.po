@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2020-01-08 17:23+0000\n"
 "PO-Revision-Date: 2018-06-14 00:07+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
@@ -19,77 +19,98 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "Proses selesai"
 
-#: src/Application.vala:207
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Jalankan program dalam terminal"
 
-#: src/Application.vala:208
+#: src/Application.vala:263
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Buka jendela baru"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:209
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Setel direktori kerja shell"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Salin"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Tempel"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "Cari…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Tampilkan pada Penelusur Berkas"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:352
 #, fuzzy
 msgid "Zoom out"
 msgstr "Perkecil"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr "Tingkat zoom bawaan"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "Perbesar"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Kontras Tinggi"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarized Terang"
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
-msgstr "Solarized Gelap"
+#: src/MainWindow.vala:410
+msgid "Dark"
+msgstr ""
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr "Gaya"
+#: src/MainWindow.vala:425
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:433
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:475
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr ""
 
@@ -162,13 +183,19 @@ msgstr "Hasil sebelumnya"
 msgid "Next result"
 msgstr "Hasil berikutnya"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "Pencarian siklik"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Style"
+#~ msgstr "Gaya"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Solarized Gelap"
 
 #~ msgid "Cancel"
 #~ msgstr "Batal"
@@ -193,9 +220,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Tutup"
-
-#~ msgid "Open a new window"
-#~ msgstr "Buka jendela baru"
 
 #~ msgid "New Tab"
 #~ msgstr "Tab Baru"
