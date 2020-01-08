@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-06 18:09+0000\n"
+"POT-Creation-Date: 2020-01-08 16:08+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -24,85 +24,84 @@ msgstr ""
 msgid "Task finished"
 msgstr "कार्य समाप्त हुआ"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:250
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "टर्मिनल में एक प्रोग्राम रन करें"
 
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:257
+#: src/Application.vala:262
 msgid "Show help"
 msgstr "मदद दिखाएँ"
 
-#: src/Application.vala:259
+#: src/Application.vala:264
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:352
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 
-#: src/MainWindow.vala:330
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/MainWindow.vala:373
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 

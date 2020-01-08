@@ -133,7 +133,7 @@ namespace Terminal {
                 recreate_tabs: recreate_tabs
             );
 
-            new_tab (location);
+            add_tab_with_working_directory (location);
         }
 
         static construct {
@@ -184,9 +184,6 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
-            if (recreate_tabs) {
-                open_tabs ();
-            }
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
@@ -266,14 +263,46 @@ namespace Terminal {
             });
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            if (recreate_tabs) {
+                open_tabs ();
+            }
         }
 
         public void add_tab_with_command (string command, string? working_directory = null) {
-            new_tab (working_directory, command);
+            add_tab_with_working_directory (working_directory, command);
         }
 
-        public void add_tab_with_working_directory (string? location) {
-            new_tab (location);
+        public void add_tab_with_working_directory (string? directory, string? command = null) {
+            /* This requires all restored tabs to be initialized first so that the shell location is available */
+            /* Do not add a new tab if location is already open in existing tab */
+            string? location = null;
+
+            if (directory == null || directory == "") {
+                if (command != null) {
+                    location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                } else {
+                    /* Do not add spurious new tab */
+                    return;
+                }
+            } else {
+                location = directory;
+            }
+
+            var f1 = File.new_for_commandline_arg (location);
+            foreach (Granite.Widgets.Tab tab in notebook.tabs) {
+                var t = get_term_widget (tab);
+                var tab_path = t.get_shell_location ();
+                /* Detect equialent paths */
+                if (f1.equal (File.new_for_path (tab_path))) {
+                    /* Just focus the duplicate tab instead */
+                    notebook.current = tab;
+                    t.grab_focus ();
+                    return; /* Duplicate found, abandon adding tab */
+                }
+            }
+
+            new_tab (location, command);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -639,6 +668,9 @@ namespace Terminal {
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
+                            if (((e.state & Gdk.ModifierType.SHIFT_MASK) == 0)) { /* Shift not pressed */
+                                current_terminal.unselect_all ();
+                            }
                             return true;
                         } else { /* Ctrl-c: Command cancelled */
                             current_terminal.last_key_was_return = true;
@@ -917,39 +949,30 @@ namespace Terminal {
 
             focus = focus.clamp (0, tabs.length - 1);
 
-            Idle.add_full (GLib.Priority.LOW, () => {
-                focus += notebook.n_tabs;
-                foreach (string loc in tabs) {
-                    if (loc == "") {
-                        focus--;
-                        continue;
-                    } else {
-                        new_tab (loc, null, false);
-                    }
+            /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
+            focus += notebook.n_tabs;
+            foreach (string loc in tabs) {
+                if (loc == "") {
+                    focus--;
+                    continue;
+                } else {
+                    new_tab (loc, null, false);
                 }
+            }
 
-                if (focus_restored_tabs) {
-                    var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
-                    notebook.current = tab;
-                    get_term_widget (tab).grab_focus ();
-                }
-
-                return false;
-            });
+            if (focus_restored_tabs) {
+                var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                notebook.current = tab;
+                get_term_widget (tab).grab_focus ();
+            }
         }
 
-        private void new_tab (string? directory, string? program = null, bool focus = true) {
+        private void new_tab (string location, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
-            string location;
-            if (directory == null || directory == "") {
-                location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
-            } else {
-                location = directory;
-            }
 
             /* Set up terminal */
             var t = new TerminalWidget (this);
@@ -1064,7 +1087,6 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            action_quit ();
             save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
@@ -1127,10 +1149,6 @@ namespace Terminal {
             } else {
                 current_terminal.paste_clipboard ();
             }
-        }
-
-        private void action_quit () {
-
         }
 
         private void action_copy () {
