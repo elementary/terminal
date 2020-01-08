@@ -39,6 +39,7 @@
       <description>
         <p>New features:</p>
         <ul>
+            Add commandline option for "Show version" (-v, --version)
         </ul>
         <p>Other updates:</p>
         <ul>
