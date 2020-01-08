@@ -1083,7 +1083,6 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            action_quit ();
             save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
@@ -1146,10 +1145,6 @@ namespace Terminal {
             } else {
                 current_terminal.paste_clipboard ();
             }
-        }
-
-        private void action_quit () {
-
         }
 
         private void action_copy () {
