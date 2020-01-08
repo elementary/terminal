@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:34+0000\n"
+"POT-Creation-Date: 2020-01-08 17:18+0000\n"
 "PO-Revision-Date: 2019-06-26 18:53+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,7 +16,6 @@ msgstr ""
 msgid "Task finished"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr ""
@@ -26,7 +25,6 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr ""
