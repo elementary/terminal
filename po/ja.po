@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 16:48+0000\n"
+"POT-Creation-Date: 2020-01-08 15:57+0000\n"
 "PO-Revision-Date: 2019-12-18 10:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -25,88 +25,88 @@ msgid "Task finished"
 msgstr "タスクが終了しました"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:250
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 "行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
 "用できます"
 
-#: src/Application.vala:257
+#: src/Application.vala:262
 msgid "Show help"
 msgstr "ヘルプを表示します"
 
-#: src/Application.vala:259
+#: src/Application.vala:264
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "ファイルブラウザーで表示"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:352
 msgid "Zoom out"
 msgstr "ズームアウト"
 
-#: src/MainWindow.vala:330
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/MainWindow.vala:373
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "ダーク"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "ナチュラルコピー／貼り付け"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
 "ります"
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:1232
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr "検索バーを隠します"
 
