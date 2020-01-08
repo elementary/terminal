@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-07 16:48+0000\n"
+"POT-Creation-Date: 2020-01-08 16:06+0000\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -25,86 +25,86 @@ msgid "Task finished"
 msgstr "Tapos na ang gawain"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:250
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Magpatakbo ng progama sa terminal"
 
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:257
+#: src/Application.vala:262
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:259
+#: src/Application.vala:264
 msgid "Set shell working directory"
 msgstr "I-set ang working directory ng shell"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Kopyahin"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Idikit"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Piliin Lahat"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1240
+#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
 msgid "Find…"
 msgstr "Hanapin..."
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:352
 #, fuzzy
 msgid "Zoom out"
 msgstr "Mag-zoom out"
 
-#: src/MainWindow.vala:330
+#: src/MainWindow.vala:359
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "Mag-zoom in"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:373
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1232
+#: src/MainWindow.vala:1247
 msgid "Hide find bar"
 msgstr ""
 
