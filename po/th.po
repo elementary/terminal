@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:12+0000\n"
+"POT-Creation-Date: 2020-01-08 16:34+0000\n"
 "PO-Revision-Date: 2015-12-05 14:34+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -18,24 +18,32 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr ""
 
-#: src/Application.vala:255
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:262
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "เปิดหน้าต่างใหม่"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr ""
 
@@ -192,9 +200,6 @@ msgstr "เทอร์มินัล"
 
 #~ msgid "Close"
 #~ msgstr "ปิด"
-
-#~ msgid "Open a new window"
-#~ msgstr "เปิดหน้าต่างใหม่"
 
 #~ msgid "New Tab"
 #~ msgstr "เปิดแท็บใหม่"

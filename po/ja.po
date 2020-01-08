@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:12+0000\n"
+"POT-Creation-Date: 2020-01-08 16:34+0000\n"
 "PO-Revision-Date: 2019-12-18 10:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -20,26 +20,34 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "タスクが終了しました"
 
-#: src/Application.vala:255
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 "行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
 "用できます"
 
-#: src/Application.vala:262
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "新しいウインドウを開く"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "ヘルプを表示します"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
@@ -214,9 +222,6 @@ msgstr "ターミナル"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"
-
-#~ msgid "Open a new window"
-#~ msgstr "新しいウインドウを開く"
 
 #~ msgid "New Tab"
 #~ msgstr "新しいタブ"
