@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '5.3.2'
+    version: '5.3.3'
 )
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
@@ -27,13 +27,14 @@ executable(
     'src/Application.vala',
     'src/DBus.vala',
     'src/Settings.vala',
-    'src/PantheonTerminalWindow.vala',
+    'src/MainWindow.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',
     'src/Widgets/TerminalWidget.vala',
     terminal_resources,
     dependencies: [
+        dependency('gee-0.8'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),

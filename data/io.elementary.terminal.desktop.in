@@ -4,6 +4,7 @@ GenericName=Terminal
 Comment=Use the command line
 TryExec=io.elementary.terminal
 Exec=io.elementary.terminal
+# TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=utilities-terminal
 Type=Application
 Categories=GNOME;GTK;System;TerminalEmulator;

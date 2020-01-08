@@ -18,12 +18,15 @@
 */
 
 public class PantheonTerminal.TerminalApp : Gtk.Application {
-    private GLib.List <PantheonTerminalWindow> windows;
+    private GLib.List <MainWindow> windows;
 
     public static string? working_directory = null;
     /* command_e (-e) is used for running commands independently (not inside a shell) */
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
+
+    // option_help will be true if help flag was given.
+    private static bool option_help = false;
 
     public int minimum_width;
     public int minimum_height;
@@ -39,7 +42,7 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         Granite.Services.Logger.initialize ("PantheonTerminal");
         Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
 
-        windows = new GLib.List <PantheonTerminalWindow> ();
+        windows = new GLib.List <MainWindow> ();
 
         saved_state = new SavedState ();
         settings = new Settings ();
@@ -49,14 +52,14 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         var window = get_last_window ();
 
         if (window == null) {
-            new PantheonTerminalWindow (this);
+            new MainWindow (this);
         } else {
-            new PantheonTerminalWindow (this, false);
+            new MainWindow (this, false);
         }
     }
 
-    public PantheonTerminalWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
-        var window = new PantheonTerminalWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
+    public MainWindow new_window_with_coords (int x, int y, bool should_recreate_tabs = true, bool ensure_tab = false) {
+        var window = new MainWindow.with_coords (this, x, y, should_recreate_tabs, ensure_tab);
 
         return window;
     }
@@ -70,12 +73,12 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     public override void window_added (Gtk.Window window) {
-        windows.append (window as PantheonTerminalWindow);
+        windows.append (window as MainWindow);
         base.window_added (window);
     }
 
     public override void window_removed (Gtk.Window window) {
-        windows.remove (window as PantheonTerminalWindow);
+        windows.remove (window as MainWindow);
         base.window_removed (window);
     }
 
@@ -119,9 +122,12 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     private int _command_line (ApplicationCommandLine command_line) {
-        var context = new OptionContext ("File");
+        var context = new OptionContext (null);
         context.add_main_entries (entries, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
+
+        // Disable automatic help to prevent default `exit(0)` behaviour.
+        context.set_help_enabled (false);
 
         string[] args = command_line.get_arguments ();
 
@@ -133,7 +139,9 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
             return 0;
         }
 
-        if (command_e != null) {
+        if (option_help) {
+            show_help (context.get_help (true, null));
+        } else if (command_e != null) {
             run_commands (command_e);
 
         } else if (working_directory != null) {
@@ -146,17 +154,31 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
         command_e = null;
+        option_help = false;
         working_directory = null;
 
         return 0;
     }
 
+    private void show_help (string help) {
+        var window = get_last_window ();
+
+        if (window == null) {
+            stdout.printf (help);
+        } else {
+            window.current_terminal.feed (
+                // add return to newline for terminal output.
+                help.replace ("\n", "\r\n").data
+            );
+        }
+    }
+
     private void run_commands (string[] commands) {
-        PantheonTerminalWindow? window;
+        MainWindow? window;
         window = get_last_window ();
 
         if (window == null) {
-            window = new PantheonTerminalWindow (this, false);
+            window = new MainWindow (this, false);
         }
 
         foreach (string command in commands) {
@@ -165,25 +187,26 @@ public class PantheonTerminal.TerminalApp : Gtk.Application {
     }
 
     private void start_terminal_with_working_directory (string working_directory) {
-        PantheonTerminalWindow? window;
+        MainWindow? window;
         window = get_last_window ();
 
         if (window != null) {
             window.add_tab_with_working_directory (working_directory);
             window.present ();
         } else
-            new PantheonTerminalWindow.with_working_directory (this, working_directory, true);
+            new MainWindow.with_working_directory (this, working_directory, true);
     }
 
-    private PantheonTerminalWindow? get_last_window () {
+    private MainWindow? get_last_window () {
         uint length = windows.length ();
 
         return length > 0 ? windows.nth_data (length - 1) : null;
     }
 
     private const OptionEntry[] entries = {
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "" },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "" },
+        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
+        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory, N_("Set shell working directory"), "DIR" },
         { null }
     };
 

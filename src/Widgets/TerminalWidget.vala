@@ -34,9 +34,9 @@ namespace PantheonTerminal {
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
-        private PantheonTerminalWindow _window;
+        private MainWindow _window;
 
-        public PantheonTerminalWindow window {
+        public MainWindow window {
             get {
                 return _window;
             }
@@ -114,7 +114,8 @@ namespace PantheonTerminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
-        public TerminalWidget (PantheonTerminalWindow parent_window) {
+        public TerminalWidget (MainWindow parent_window) {
+            pointer_autohide = true;
 
             terminal_id = "%i".printf (terminal_id_counter++);
 
@@ -132,15 +133,16 @@ namespace PantheonTerminal {
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
                     // Reset the state of buttons when we launch the context menu again, and we have a uri
                     if (uri != null) {
-                        window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (false);
+                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (false);
                         this.menu.get_children ().nth_data (0).set_visible (false);
                     }
 
                     uri = get_link (event);
 
                     if (uri != null) {
-                        window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (true);
                         this.menu.get_children ().nth_data (0).set_visible (true);
+
+                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
                     }
 
                     menu.select_first (false);
@@ -171,7 +173,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.get_simple_action (PantheonTerminalWindow.ACTION_COPY).set_enabled (get_has_selection ());
+                window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
             });
 
             size_allocate.connect (() => {

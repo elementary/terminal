@@ -19,7 +19,7 @@
 
 namespace PantheonTerminal {
 
-    public class PantheonTerminalWindow : Gtk.Window {
+    public class MainWindow : Gtk.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -53,24 +53,24 @@ namespace PantheonTerminal {
         public GLib.SimpleActionGroup main_actions;
 
         public const string ACTION_PREFIX = "win.";
-        public const string ACTION_CLOSE_TAB = "action_close_tab";
-        public const string ACTION_FULLSCREEN = "action_fullscreen";
-        public const string ACTION_NEW_TAB = "action_new_tab";
-        public const string ACTION_NEW_WINDOW = "action_new_window";
-        public const string ACTION_NEXT_TAB = "action_next_tab";
-        public const string ACTION_PREVIOUS_TAB = "action_previous_tab";
-        public const string ACTION_ZOOM_DEFAULT_FONT = "action_zoom_default_font";
-        public const string ACTION_ZOOM_IN_FONT = "action_zoom_in_font";
-        public const string ACTION_ZOOM_OUT_FONT = "action_zoom_out_font";
-        public const string ACTION_COPY = "action_copy";
-        public const string ACTION_COPY_LAST_OUTPUT = "action_copy_last_output";
-        public const string ACTION_PASTE = "action_paste";
-        public const string ACTION_SEARCH = "action_search";
-        public const string ACTION_SEARCH_NEXT = "action_search_next";
-        public const string ACTION_SEARCH_PREVIOUS = "action_search_previous";
-        public const string ACTION_SELECT_ALL = "action_select_all";
-        public const string ACTION_OPEN_IN_FILES = "action_open_in_files";
-        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action_scroll_to_last_command";
+        public const string ACTION_CLOSE_TAB = "action-close-tab";
+        public const string ACTION_FULLSCREEN = "action-fullscreen";
+        public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_NEW_WINDOW = "action-new-window";
+        public const string ACTION_NEXT_TAB = "action-next-tab";
+        public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
+        public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
+        public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
+        public const string ACTION_COPY = "action-copy";
+        public const string ACTION_COPY_LAST_OUTPUT = "action-copy-last-output";
+        public const string ACTION_PASTE = "action-paste";
+        public const string ACTION_SEARCH = "action-search";
+        public const string ACTION_SEARCH_NEXT = "action-search-next";
+        public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
+        public const string ACTION_SELECT_ALL = "action-select-all";
+        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -97,7 +97,7 @@ namespace PantheonTerminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
         };
 
-        public PantheonTerminalWindow (TerminalApp app, bool recreate_tabs = true) {
+        public MainWindow (TerminalApp app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
@@ -108,8 +108,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_coords (TerminalApp app, int x, int y,
-                                                   bool recreate_tabs, bool ensure_tab) {
+        public MainWindow.with_coords (TerminalApp app, int x, int y,
+                                       bool recreate_tabs, bool ensure_tab) {
             Object (
                 app: app,
                 restore_pos: false,
@@ -123,8 +123,8 @@ namespace PantheonTerminal {
             }
         }
 
-        public PantheonTerminalWindow.with_working_directory (TerminalApp app, string location,
-                                                              bool recreate_tabs = true) {
+        public MainWindow.with_working_directory (TerminalApp app, string location,
+                                                  bool recreate_tabs = true) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
@@ -346,6 +346,7 @@ namespace PantheonTerminal {
             style_popover.add (style_popover_grid);
 
             var style_button = new Gtk.MenuButton ();
+            style_button.set_can_focus (false);
             style_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             style_button.popover = style_popover;
             style_button.tooltip_text = _("Style");
@@ -393,6 +394,10 @@ namespace PantheonTerminal {
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
             add (grid);
+
+            style_popover.closed.connect (() => {
+                current_terminal.grab_focus ();
+            });
 
             switch (settings.background) {
                 case HIGH_CONTRAST_BG:
@@ -1022,12 +1027,12 @@ namespace PantheonTerminal {
 
         void action_open_in_browser () {
             var uri = current_terminal.uri;
-
+            //TODO Validate form of uri
             if (uri != null) {
                 try {
                     Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
                 } catch (GLib.Error error) {
-                    warning ("Could Not Open link");
+                    warning ("Could Not Open link - %s", error.message);
                 }
             }
         }
