@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:08+0000\n"
+"POT-Creation-Date: 2020-01-08 16:34+0000\n"
 "PO-Revision-Date: 2018-03-23 10:16+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -20,24 +20,32 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "工作已完成"
 
-#: src/Application.vala:255
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:262
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "開啟新視窗"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "設定 shell 工作目錄"
 
@@ -212,9 +220,6 @@ msgstr "終端機"
 
 #~ msgid "Close"
 #~ msgstr "關閉"
-
-#~ msgid "Open a new window"
-#~ msgstr "開啟新視窗"
 
 #~ msgid "New Tab"
 #~ msgstr "新增分頁"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:08+0000\n"
+"POT-Creation-Date: 2020-01-08 16:34+0000\n"
 "PO-Revision-Date: 2018-06-14 00:07+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
@@ -19,24 +19,32 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "Proses selesai"
 
-#: src/Application.vala:255
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Jalankan program dalam terminal"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:262
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Buka jendela baru"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Setel direktori kerja shell"
 
@@ -212,9 +220,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Tutup"
-
-#~ msgid "Open a new window"
-#~ msgstr "Buka jendela baru"
 
 #~ msgid "New Tab"
 #~ msgstr "Tab Baru"

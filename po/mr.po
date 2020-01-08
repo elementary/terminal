@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 16:08+0000\n"
+"POT-Creation-Date: 2020-01-08 16:34+0000\n"
 "PO-Revision-Date: 2019-12-30 20:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -13,24 +13,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
-#: src/Application.vala:255
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
 
-#: src/Application.vala:262
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:266
+msgid "Open a new terminal window"
+msgstr ""
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
