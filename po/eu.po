@@ -22,6 +22,7 @@ msgstr ""
 msgid "Task finished"
 msgstr ""
 
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Exekutatu programa bat terminalean"

@@ -17,6 +17,7 @@ msgstr ""
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
