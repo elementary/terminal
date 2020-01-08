@@ -26,7 +26,6 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        private Gtk.MenuItem open_in_browser_menuitem;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -191,8 +190,13 @@ namespace Terminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            open_in_browser_menuitem = new Gtk.MenuItem.with_label (""); // Label will be set on the fly
+            var open_in_browser_menuitem = new Gtk.MenuItem ();
             open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
+            open_in_browser_menuitem.add (
+                new Granite.AccelLabel.from_action_name (
+                    _("Open in Browser"), open_in_browser_menuitem.action_name
+                )
+            );
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
@@ -217,16 +221,6 @@ namespace Terminal {
             var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
             search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
-
-
-//TODO Incorporate variable AccelLabels into menuitem
-//            show_in_file_browser_menuitem.add (
-//                new Granite.AccelLabel.from_action_name (
-//                    _("Show in File Browser"),
-//                    show_in_file_browser_menuitem.action_name
-//                )
-//            );
-
 
             menu = new Gtk.Menu ();
             menu.append (open_in_browser_menuitem);
@@ -842,16 +836,7 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
-warning ("update context menu");
             unowned string uri = current_terminal.uri;
-            string label;
-            if ((uri == null) || uri.has_prefix ("file://")) {
-                label = _("Open in File Browser");
-            } else {
-                label = _("Open in Web Browser");
-            }
-
-            open_in_browser_menuitem.set_label (label);
 
             get_simple_action (MainWindow.ACTION_COPY).set_enabled (
                 uri != null || current_terminal.get_has_selection ()
