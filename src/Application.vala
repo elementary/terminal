@@ -20,6 +20,7 @@
 public class Terminal.Application : Gtk.Application {
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
+    public static GLib.Settings settings_sys;
 
     private GLib.List <MainWindow> windows;
 
@@ -32,12 +33,16 @@ public class Terminal.Application : Gtk.Application {
     private static bool option_help = false;
     private static bool option_version = false;
 
+    // option_new_window will be true if the new-window flag was given.
+    private static bool option_new_window = false;
+
     public int minimum_width;
     public int minimum_height;
 
     static construct {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
     }
 
     construct {
@@ -187,6 +192,7 @@ public class Terminal.Application : Gtk.Application {
         command_e = null;
         command_x = null;
         option_help = false;
+        option_new_window = false;
         working_directory = null;
 
         return 0;
@@ -196,7 +202,7 @@ public class Terminal.Application : Gtk.Application {
         MainWindow? window;
         window = get_last_window ();
 
-        if (window == null) {
+        if (window == null || option_new_window) {
             window = new MainWindow (this, false);
         }
 
@@ -209,7 +215,7 @@ public class Terminal.Application : Gtk.Application {
         MainWindow? window;
         window = get_last_window ();
 
-        if (window == null) {
+        if (window == null || option_new_window) {
             window = new MainWindow (this, false);
         }
 
@@ -220,11 +226,15 @@ public class Terminal.Application : Gtk.Application {
         MainWindow? window;
         window = get_last_window ();
 
-        if (window != null) {
+        if (window != null && !option_new_window) {
             window.add_tab_with_working_directory (working_directory);
             window.present ();
         } else
-            new MainWindow.with_working_directory (this, working_directory, true);
+            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
+             * Currently they are set to restore (subject to the restore-tabs setting).
+             * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
+             * below. */
+            new MainWindow.with_working_directory (this, working_directory, window == null);
     }
 
     private MainWindow? get_last_window () {
@@ -242,6 +252,9 @@ public class Terminal.Application : Gtk.Application {
          *  to  the --help flag */
         { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
           N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
+
+        /* -n flag forces a new window, instead of a new tab */
+        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
 
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,

@@ -133,7 +133,7 @@ namespace Terminal {
                 recreate_tabs: recreate_tabs
             );
 
-            new_tab (location);
+            add_tab_with_working_directory (location);
         }
 
         static construct {
@@ -184,9 +184,6 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
             restore_saved_state (restore_pos);
-            if (recreate_tabs) {
-                open_tabs ();
-            }
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             update_context_menu ();
@@ -196,27 +193,36 @@ namespace Terminal {
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
-            copy_menuitem.add (new AccelMenuLabel (_("Copy"), copy_menuitem.action_name));
+            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
 
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
-            copy_last_output_menuitem.add (new AccelMenuLabel (_("Copy Last Output"), copy_last_output_menuitem.action_name));
+            copy_last_output_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name)
+            );
 
             var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
-            paste_menuitem.add (new AccelMenuLabel (_("Paste"), paste_menuitem.action_name));
+            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), paste_menuitem.action_name));
 
             var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
-            select_all_menuitem.add (new AccelMenuLabel (_("Select All"), select_all_menuitem.action_name));
+            select_all_menuitem.add (
+                new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name)
+            );
 
             var search_menuitem = new Gtk.MenuItem ();
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
-            search_menuitem.add (new AccelMenuLabel (_("Find…"), search_menuitem.action_name));
+            search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
             var show_in_file_browser_menuitem = new Gtk.MenuItem ();
             show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (new AccelMenuLabel (_("Show in File Browser"), show_in_file_browser_menuitem.action_name));
+            show_in_file_browser_menuitem.add (
+                new Granite.AccelLabel.from_action_name (
+                    _("Show in File Browser"),
+                    show_in_file_browser_menuitem.action_name
+                )
+            );
 
             menu = new Gtk.Menu ();
             menu.append (copy_menuitem);
@@ -236,7 +242,10 @@ namespace Terminal {
             show_all ();
 
             search_revealer.set_reveal_child (false);
-            term_font = Pango.FontDescription.from_string (get_term_font ());
+
+            update_font ();
+            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+            Application.settings.changed["font"].connect (update_font);
 
             set_size_request (app.minimum_width, app.minimum_height);
 
@@ -254,14 +263,46 @@ namespace Terminal {
             });
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            if (recreate_tabs) {
+                open_tabs ();
+            }
         }
 
         public void add_tab_with_command (string command, string? working_directory = null) {
-            new_tab (working_directory, command);
+            add_tab_with_working_directory (working_directory, command);
         }
 
-        public void add_tab_with_working_directory (string? location) {
-            new_tab (location);
+        public void add_tab_with_working_directory (string? directory, string? command = null) {
+            /* This requires all restored tabs to be initialized first so that the shell location is available */
+            /* Do not add a new tab if location is already open in existing tab */
+            string? location = null;
+
+            if (directory == null || directory == "") {
+                if (command != null) {
+                    location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                } else {
+                    /* Do not add spurious new tab */
+                    return;
+                }
+            } else {
+                location = directory;
+            }
+
+            var f1 = File.new_for_commandline_arg (location);
+            foreach (Granite.Widgets.Tab tab in notebook.tabs) {
+                var t = get_term_widget (tab);
+                var tab_path = t.get_shell_location ();
+                /* Detect equialent paths */
+                if (f1.equal (File.new_for_path (tab_path))) {
+                    /* Just focus the duplicate tab instead */
+                    notebook.current = tab;
+                    t.grab_focus ();
+                    return; /* Duplicate found, abandon adding tab */
+                }
+            }
+
+            new_tab (location, command);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -289,7 +330,11 @@ namespace Terminal {
             // Vte.Terminal itself registers its default styling with the APPLICATION priority:
             // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
             // To be able to overwrite their styles, we need to use +1.
-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
 
             search_button = new Gtk.ToggleButton ();
             search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
@@ -619,6 +664,9 @@ namespace Terminal {
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
+                            if (((e.state & Gdk.ModifierType.SHIFT_MASK) == 0)) { /* Shift not pressed */
+                                current_terminal.unselect_all ();
+                            }
                             return true;
                         } else { /* Ctrl-c: Command cancelled */
                             current_terminal.last_key_was_return = true;
@@ -897,39 +945,30 @@ namespace Terminal {
 
             focus = focus.clamp (0, tabs.length - 1);
 
-            Idle.add_full (GLib.Priority.LOW, () => {
-                focus += notebook.n_tabs;
-                foreach (string loc in tabs) {
-                    if (loc == "") {
-                        focus--;
-                        continue;
-                    } else {
-                        new_tab (loc, null, false);
-                    }
+            /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
+            focus += notebook.n_tabs;
+            foreach (string loc in tabs) {
+                if (loc == "") {
+                    focus--;
+                    continue;
+                } else {
+                    new_tab (loc, null, false);
                 }
+            }
 
-                if (focus_restored_tabs) {
-                    var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
-                    notebook.current = tab;
-                    get_term_widget (tab).grab_focus ();
-                }
-
-                return false;
-            });
+            if (focus_restored_tabs) {
+                var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
+                notebook.current = tab;
+                get_term_widget (tab).grab_focus ();
+            }
         }
 
-        private void new_tab (string? directory, string? program = null, bool focus = true) {
+        private void new_tab (string location, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
-            string location;
-            if (directory == null || directory == "") {
-                location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
-            } else {
-                location = directory;
-            }
 
             /* Set up terminal */
             var t = new TerminalWidget (this);
@@ -1026,19 +1065,24 @@ namespace Terminal {
             });
         }
 
-        private static string get_term_font () {
-            var font_name = Application.settings.get_string ("font");
+        private void update_font () {
+            // We have to fetch both values at least once, otherwise
+            // GLib.Settings won't notify on their changes
+            var app_font_name = Application.settings.get_string ("font");
+            var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
 
-            if (font_name == "") {
-                var settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-                font_name = settings_sys.get_string ("monospace-font-name");
+            if (app_font_name != "") {
+                term_font = Pango.FontDescription.from_string (app_font_name);
+            } else {
+                term_font = Pango.FontDescription.from_string (sys_font_name);
             }
 
-            return font_name;
+            foreach (var t in terminals) {
+                t.set_font (term_font);
+            }
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            action_quit ();
             save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
@@ -1101,10 +1145,6 @@ namespace Terminal {
             } else {
                 current_terminal.paste_clipboard ();
             }
-        }
-
-        private void action_quit () {
-
         }
 
         private void action_copy () {
@@ -1397,35 +1437,6 @@ namespace Terminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
-        }
-
-        private class AccelMenuLabel : Gtk.Grid {
-            public string action_name { get; construct; }
-            public string label { get; construct; }
-
-            public AccelMenuLabel (string label, string action_name) {
-                Object (
-                    label: label,
-                    action_name: action_name
-                );
-            }
-
-            construct {
-                var label = new Gtk.Label (label);
-                label.hexpand = true;
-                label.xalign = 0;
-
-                var accel_label = new Gtk.Label (
-                    Granite.accel_to_string (
-                        ((Gtk.Application) GLib.Application.get_default ()).get_accels_for_action (action_name)[0]
-                    )
-                );
-                accel_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ACCELERATOR);
-
-                column_spacing = 3;
-                add (label);
-                add (accel_label);
-            }
         }
     }
 }

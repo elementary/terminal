@@ -35,7 +35,20 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="5.5.0" date="2019-12-13" urgency="medium">
+    <release version="5.5.1" date="2020-01-07" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Prevent duplicate tab on startup</li>
+          <li>Prevent unnecessary Home tab on startup</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.0" date="2020-01-02" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
@@ -45,6 +58,7 @@
         <p>Other updates:</p>
         <ul>
           <li>Include sudo password prompt when copying last output</li>
+          <li>Apply font changes without restarting</li>
           <li>Translation updates</li>
         </ul>
       </description>

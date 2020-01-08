@@ -15,7 +15,7 @@ Actions=NewWindow;NewRootWindow;
 
 [Desktop Action NewWindow]
 Name=New Window
-Exec=io.elementary.terminal
+Exec=io.elementary.terminal -n
 
 [Desktop Action NewRootWindow]
 Name=New Root Tab
