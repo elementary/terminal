@@ -1028,6 +1028,10 @@ namespace PantheonTerminal {
         void action_open_in_browser () {
             var uri = current_terminal.uri;
             //TODO Validate form of uri
+            if (!uri.contains ("://")) {
+                uri = "http://" + uri;
+            }
+
             if (uri != null) {
                 try {
                     Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
