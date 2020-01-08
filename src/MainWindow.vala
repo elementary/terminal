@@ -28,6 +28,7 @@ namespace PantheonTerminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Gtk.MenuItem open_in_browser_menuitem;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -69,7 +70,6 @@ namespace PantheonTerminal {
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_SELECT_ALL = "action-select-all";
-        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
@@ -92,7 +92,6 @@ namespace PantheonTerminal {
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_OPEN_IN_FILES, action_open_in_files },
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
         };
@@ -152,7 +151,7 @@ namespace PantheonTerminal {
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
-            action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
+            action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
@@ -182,12 +181,11 @@ namespace PantheonTerminal {
             }
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            var open_in_browser_menuitem = new Gtk.MenuItem.with_label (_("Open in Browser"));
+            open_in_browser_menuitem = new Gtk.MenuItem.with_label (""); // Label will be set on the fly
             open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
 
             var copy_menuitem = new Gtk.MenuItem.with_label (_("Copy"));
@@ -205,9 +203,6 @@ namespace PantheonTerminal {
             var search_menuitem = new Gtk.MenuItem.with_label (_("Find…"));
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
 
-            var show_in_file_browser_menuitem = new Gtk.MenuItem.with_label (_("Show in File Browser"));
-            show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-
             menu = new Gtk.Menu ();
             menu.append (open_in_browser_menuitem);
             menu.append (copy_menuitem);
@@ -215,7 +210,6 @@ namespace PantheonTerminal {
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (search_menuitem);
-            menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
 
             menu.popped_up.connect (() => {
@@ -672,15 +666,33 @@ namespace PantheonTerminal {
                 new_tab (Environment.get_home_dir ());
         }
 
-        private void update_context_menu () {
-            clipboard.request_targets (update_context_menu_cb);
+        public void update_context_menu () {
+warning ("update context menu");
+            unowned string uri = current_terminal.uri;
+            string label;
+            if ((uri == null) || uri.has_prefix ("file://")) {
+                label = _("Open in File Browser");
+            } else {
+                label = _("Open in Web Browser");
+            }
+
+            open_in_browser_menuitem.set_label (label);
+
+            get_simple_action (MainWindow.ACTION_COPY).set_enabled (
+                uri != null || current_terminal.get_has_selection ()
+            );
+
+            if (uri == null) { // Cannot paste into a link
+                clipboard.request_targets (update_context_menu_cb);
+            }
         }
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
             bool can_paste = false;
 
-            if (atoms != null && atoms.length > 0)
+            if (atoms != null && atoms.length > 0) {
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            }
 
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
@@ -1010,34 +1022,21 @@ namespace PantheonTerminal {
             current_terminal.select_all ();
         }
 
-        void action_open_in_files () {
-            try {
-                string uri = Filename.to_uri (current_terminal.get_shell_location ());
-
-                try {
-                     Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                } catch (Error e) {
-                     warning (e.message);
-                }
-
-            } catch (ConvertError e) {
-                warning (e.message);
-            }
-        }
-
         void action_open_in_browser () {
             var uri = current_terminal.uri;
-            //TODO Validate form of uri
-            if (!uri.contains ("://")) {
-                uri = "http://" + uri;
-            }
-
-            if (uri != null) {
-                try {
-                    Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
-                } catch (GLib.Error error) {
-                    warning ("Could Not Open link - %s", error.message);
+            try {
+                if (uri == null) {
+                    uri = Filename.to_uri (current_terminal.get_shell_location ());
+                } else {
+                //TODO Validate form of uri
+                    if (!uri.contains ("://")) {
+                        uri = "http://" + uri;
+                    }
                 }
+
+                Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
+            } catch (GLib.Error error) {
+                warning ("Could not show %s - %s", uri, error.message);
             }
         }
 

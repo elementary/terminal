@@ -46,7 +46,6 @@ namespace PantheonTerminal {
                 this.app = value.app;
                 this.menu = value.menu;
                 this.menu.show_all ();
-                this.menu.get_children ().nth_data (0).set_visible (false);
             }
         }
 
@@ -130,21 +129,11 @@ namespace PantheonTerminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
+                uri = null;
                 if (event.button ==  Gdk.BUTTON_SECONDARY) {
                     // Reset the state of buttons when we launch the context menu again, and we have a uri
-                    if (uri != null) {
-                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (false);
-                        this.menu.get_children ().nth_data (0).set_visible (false);
-                    }
-
                     uri = get_link (event);
-
-                    if (uri != null) {
-                        this.menu.get_children ().nth_data (0).set_visible (true);
-
-                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
-                    }
-
+                    window.update_context_menu ();
                     menu.select_first (false);
                     menu.popup_at_pointer (event);
 
@@ -161,11 +150,7 @@ namespace PantheonTerminal {
                     uri = get_link (event);
 
                     if (uri != null && ! get_has_selection ()) {
-                        try {
-                            Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                        } catch (GLib.Error error) {
-                            warning ("Could Not Open link");
-                        }
+                        window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                     }
                 }
 
@@ -173,7 +158,7 @@ namespace PantheonTerminal {
             });
 
             selection_changed.connect (() => {
-                window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
+                window.update_context_menu ();
             });
 
             size_allocate.connect (() => {
