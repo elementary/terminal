@@ -279,12 +279,11 @@ namespace Terminal {
             string? location = null;
 
             if (directory == null || directory == "") {
-                if (command != null) {
-                    location = Terminal.Application.working_directory ?? Environment.get_current_dir ();
-                } else {
-                    /* Do not add spurious new tab */
-                    return;
+                if (notebook.tabs.first () == null) { //Ensure at least one tab.
+                    new_tab ("", command);
                 }
+
+                return;
             } else {
                 location = directory;
             }
@@ -979,7 +978,9 @@ namespace Terminal {
             t.hexpand = true;
 
 
-            var tab = create_tab (TerminalWidget.DEFAULT_LABEL, null, t);
+            var tab = create_tab (
+                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
+                null, t); //Set correct label now to avoid race when spawning shell
 
             t.child_exited.connect (() => {
                 if (!t.killed) {
@@ -1005,6 +1006,7 @@ namespace Terminal {
                 if (t == current_terminal) {
                     title = t.window_title;
                 }
+
                 schedule_name_check ();
             });
 
