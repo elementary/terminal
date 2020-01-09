@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2019-12-27 13:55+0000\n"
+"PO-Revision-Date: 2020-01-10 18:32+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -47,6 +47,7 @@ msgstr "Nouvelles fonctionnalités :"
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
 msgstr ""
+"Ajout d'une option en ligne de commande pour ouvrir une nouvelle fenêtre (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -55,11 +56,11 @@ msgstr "Autres mises à jour :"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Correction des onglets en double au démarrage"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Correction de l'onglet « Home » inutile au démarrage"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
