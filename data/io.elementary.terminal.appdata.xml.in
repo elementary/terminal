@@ -40,6 +40,7 @@
         <p>New features:</p>
         <ul>
           <li>Move cursor within current command by pointing and clicking</li>
+          <li>Add commandline option for New Window (-n)</li>
         </ul>
         <p>Other updates:</p>
         <ul>
