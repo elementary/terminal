@@ -1,3 +1,15 @@
+pantheon-terminal (5.5.1) bionic; urgency=medium
+
+  * Release 5.5.1
+  * Update translation files
+  * Ensure at least one tab in new window; ensure correct tab label (#456)
+  * commandline option to open a new window instead of a new tab (#447)
+  * Check for equivalent existing tab when opening with working directory. (#265)
+  * MainWindow: Remove empty action_quit (#449)
+  * Deselect after natural copy (#347)
+
+ -- Daniel Fore <daniel@yoga>  Fri, 10 Jan 2020 16:42:10 -0800
+
 pantheon-terminal (5.5.0) bionic; urgency=medium
 
   * Release 5.5.0 (#439)
