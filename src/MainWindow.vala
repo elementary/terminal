@@ -99,13 +99,14 @@ namespace Terminal {
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
+        public MainWindow (Terminal.Application app, bool recreate_tabs = true, bool ensure_tab = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
             );
 
-            if (!recreate_tabs) {
+            /* Caller is not going to add a tab, ensure there is at least on */
+            if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
             }
         }
@@ -120,6 +121,7 @@ namespace Terminal {
 
             move (x, y);
 
+            /* Caller is not going to add a tab, ensure there is at least on */
             if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
             }
@@ -276,7 +278,6 @@ namespace Terminal {
         public void add_tab_with_working_directory (string? directory, string? command = null) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
-            string? location = null;
 
             if (directory == null || directory == "") {
                 if (notebook.tabs.first () == null) { //Ensure at least one tab.
@@ -284,11 +285,9 @@ namespace Terminal {
                 }
 
                 return;
-            } else {
-                location = directory;
             }
 
-            var f1 = File.new_for_commandline_arg (location);
+            var f1 = File.new_for_commandline_arg (directory);
             foreach (Granite.Widgets.Tab tab in notebook.tabs) {
                 var t = get_term_widget (tab);
                 var tab_path = t.get_shell_location ();
@@ -301,7 +300,7 @@ namespace Terminal {
                 }
             }
 
-            new_tab (location, command);
+            new_tab (directory, command);
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -962,13 +961,12 @@ namespace Terminal {
             }
         }
 
-        private void new_tab (string location, string? program = null, bool focus = true) {
+        private void new_tab (string? directory, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
-
             /* Set up terminal */
             var t = new TerminalWidget (this);
             t.scrollback_lines = Application.settings.get_int ("scrollback-lines");
@@ -977,9 +975,19 @@ namespace Terminal {
             t.vexpand = true;
             t.hexpand = true;
 
+            string location = "";
+            if (directory == null || directory == "") {
+                if (program != null) {
+                    location = Environment.get_current_dir ();
+                } else {
+                    location = Environment.get_home_dir ();
+                }
+            } else {
+                location = directory;
+            }
 
             var tab = create_tab (
-                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
+                location != "" ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
                 null, t); //Set correct label now to avoid race when spawning shell
 
             t.child_exited.connect (() => {

@@ -213,7 +213,7 @@ public class Terminal.Application : Gtk.Application {
         window = get_last_window ();
 
         if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
+            window = new MainWindow (this, false, false);
         }
 
         foreach (string command in commands) {
@@ -226,7 +226,8 @@ public class Terminal.Application : Gtk.Application {
         window = get_last_window ();
 
         if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
+            /* We do not need a tab in this new window as we are adding one later */
+            window = new MainWindow (this, false, false);
         }
 
         window.add_tab_with_command (command_line, working_directory);
