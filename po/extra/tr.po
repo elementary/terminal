@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2019-12-21 08:16+0000\n"
+"PO-Revision-Date: 2020-01-12 15:07+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -42,24 +42,24 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "New features:"
-msgstr ""
+msgstr "Yeni özellikler:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Yeni pencerede açmak için (-n) komut satırı seçeneği eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Other updates:"
-msgstr ""
+msgstr "Diğer güncellemeler:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Başlangıçta çift sekme açılması düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Başlangıçta gereksiz Ev sekmesinin açılması düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -85,102 +85,106 @@ msgstr "Çeviriler güncellendi"
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
 msgstr ""
+"Ayarlar menüsüne Doğal Kopyala/Yapıştır özelliğini açma veya kapatma "
+"özelliği eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Ctrl + Kaydırma ile yakınlaştır"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Son çıktıyı kopyalarken sudo parola isteminide dahil et"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Yazı tipi tercihlerini yeniden başlatmadan uygula"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "Sistem ayarlarında Geçmiş devre dışı bırakıldıysa sekmeleri hatırlama"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "İkincil tıklatma menüsünde klavye kısayollarını göster"
 
 #: data/io.elementary.terminal.appdata.xml.in:72
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Orta tıklatma ile yapıştırma özelliği artık Sistem Ayarlarını düzgün olarak "
+"izliyor"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Ctrl + D ile sekmeyi çoğalt"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Karanlık tema seçimlerinde doğal renkler kullan"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Pencere kenarları ve metin arasında çok hafif boşluk bırakıldı"
 
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Menü tuşuna basmak artık içerik menüsünü açar"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Durumu GSettings ayarlarında sakla"
 
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Ctrl+Eşittir tuş kombinasyonu ile yakınlaştırma desteği"
 
 #: data/io.elementary.terminal.appdata.xml.in:93
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "Yanlış ön plan işlem yanıt kodları düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Açılır pencere menüsü kapandığında odaklanmaya geri dön"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Arama ve stil butonlarının odaklanmayı almasını önle"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Yazı yazarken imleci gizle"
 
 #: data/io.elementary.terminal.appdata.xml.in:111
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Düzensiz arama metni vurgulama davranışı düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Yardım metni için -h seçeneği desteği eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Zil sesi devre dışı bırakıldı"
 
 #: data/io.elementary.terminal.appdata.xml.in:114
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Son komuta geçmek için Alt+↑ eylemi eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Son çıktıyı kopyalamak için Alt+c eylemi eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Araç ipuçlarına accels eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "zsh bildirimleri düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "ctrl+g kısayolunun emacs ile çakışması düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 #: data/io.elementary.terminal.appdata.xml.in:134
@@ -194,31 +198,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:203
 #: data/io.elementary.terminal.appdata.xml.in:218
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Küçük hata düzeltmeleri"
 
 #: data/io.elementary.terminal.appdata.xml.in:166
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "FISH tümleştirmesi düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:167
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Tema tercih menüsü"
 
 #: data/io.elementary.terminal.appdata.xml.in:168
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Yakınlaştırma düzeyi kontrolleri"
 
 #: data/io.elementary.terminal.appdata.xml.in:185
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Komut satırına exit yazdıktan sonra sekmenin kapanmasına izin ver"
 
 #: data/io.elementary.terminal.appdata.xml.in:194
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "URL'lerin panoya kopyalanması düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:211
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "appstream uygulamasının tarih biçimi düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:253
 msgid "elementary LLC."
