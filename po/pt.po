@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-17 19:14+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"PO-Revision-Date: 2020-01-21 16:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:113
@@ -33,13 +33,13 @@ msgstr "Executar um programa no terminal"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Execute o restante da linha como um comando no terminal. Também pode usar '--"
+"' como flag"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Abrir uma nova janela"
+msgstr "Abrir uma nova janela de terminal"
 
 #: src/Application.vala:268
 msgid "Show help"
@@ -99,15 +99,16 @@ msgstr "Escuro"
 
 #: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Copiar/Colar natural"
 
 #: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Os atalhos não necessitam de Shift; podem interferir com as aplicações da CLI"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
-msgstr ""
+msgstr "Definições"
 
 #: src/MainWindow.vala:1249
 msgid "Hide find bar"
