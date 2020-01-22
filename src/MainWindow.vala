@@ -26,6 +26,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -192,11 +193,11 @@ namespace Terminal {
 
             var open_in_browser_menuitem = new Gtk.MenuItem ();
             open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
-            open_in_browser_menuitem.add (
-                new Granite.AccelLabel.from_action_name (
-                    _("Open in Browser"), open_in_browser_menuitem.action_name
-                )
-            );
+            open_in_browser_menuitem_label = (new Granite.AccelLabel.from_action_name (
+                                                      "", open_in_browser_menuitem.action_name
+                                                  )
+                                             );
+            open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
@@ -842,7 +843,10 @@ namespace Terminal {
             );
 
             if (uri == null) { // Cannot paste into a link
+                open_in_browser_menuitem_label.label = _("Open in File Manager");
                 clipboard.request_targets (update_context_menu_cb);
+            } else {
+                open_in_browser_menuitem_label.label = _("Open in Web Browser");
             }
         }
 
