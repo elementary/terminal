@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
+"POT-Creation-Date: 2020-01-21 16:17+0000\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Tapos na ang gawain"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Magpatakbo ng progama sa terminal"
@@ -34,7 +33,6 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
@@ -65,7 +63,7 @@ msgstr "Idikit"
 msgid "Select All"
 msgstr "Piliin Lahat"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Hanapin..."
 
@@ -73,45 +71,45 @@ msgstr "Hanapin..."
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:351
 #, fuzzy
 msgid "Zoom out"
 msgstr "Mag-zoom out"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:377
 #, fuzzy
 msgid "Zoom in"
 msgstr "Mag-zoom in"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr ""
 

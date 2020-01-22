@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2019-12-31 13:27+0000\n"
+"PO-Revision-Date: 2020-01-10 18:32+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/extra/nl/"
-">\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/extra/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgstr "Nieuwe functies:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Een commando optie (-n) toegevoegd om een nieuw venster te openen"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -55,11 +55,11 @@ msgstr "Andere updates:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Voorkom een identiek tabblad bij het opstarten"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Voorkom een onnodig Thuis tabblad bij het opstarten"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
