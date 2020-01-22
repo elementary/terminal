@@ -155,7 +155,11 @@ namespace Terminal {
             button_release_event.connect ((event) => {
 
                 if (event.button == Gdk.BUTTON_PRIMARY) {
-                    if (allow_hyperlink) {
+                    var required_control = Application.settings.get_boolean ("control-click-open-url");
+                    var openable = required_control
+                        ? (event.state & Gdk.ModifierType.CONTROL_MASK) > 0
+                        : allow_hyperlink;
+                    if (openable) {
                         uri = get_link (event);
 
                         if (uri != null && !get_has_selection ()) {
@@ -166,7 +170,7 @@ namespace Terminal {
                             }
                         }
                     } else {
-                        allow_hyperlink = true;
+                        allow_hyperlink = !required_control;
                     }
                 }
 

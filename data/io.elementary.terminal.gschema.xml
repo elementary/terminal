@@ -173,5 +173,10 @@
       <summary>Alert the user about unsafe paste.</summary>
       <description>If the user paste's a command into the terminal that might be considered unsafe, warn them.</description>
     </key>
+    <key name="control-click-open-url" type="b">
+      <default>false</default>
+      <summary>Defined whether to hold ctrl for opening URLs</summary>
+      <description>Enables or disables holding Ctrl to open URLs.</description>
+    </key>
   </schema>
 </schemalist>
