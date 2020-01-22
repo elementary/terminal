@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-21 16:17+0000\n"
-"PO-Revision-Date: 2019-12-30 20:05+0000\n"
+"PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -28,7 +28,7 @@ msgstr "टर्मिनलवर कमांड म्हणून उर्
 
 #: src/Application.vala:266
 msgid "Open a new terminal window"
-msgstr ""
+msgstr "नवीन टर्मिनल विंडो उघडा"
 
 #: src/Application.vala:268
 msgid "Show help"
