@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 02:37+0000\n"
-"PO-Revision-Date: 2019-12-16 18:16+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
+"PO-Revision-Date: 2020-01-17 19:07+0000\n"
+"Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -20,89 +20,95 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "Tarea finalizada"
 
-#: src/Application.vala:250
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en la terminal"
 
-#: src/Application.vala:255
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Ejecutar el resto de la línea como un comando en la terminal. También puede "
+"usar '--' como bandera"
 
-#: src/Application.vala:257
+#: src/Application.vala:266
+msgid "Open a new terminal window"
+msgstr "Abrir una nueva ventana"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: src/Application.vala:259
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo de shell"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Mostrar en el explorador de archivos"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:351
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/MainWindow.vala:330
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr "Nivel de zum predeterminado"
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:377
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: src/MainWindow.vala:373
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr "Solar claro"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr "Copiado/Pegado Natural"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Los atajos no requieren Shift; pueden interferir con las aplicaciones CLI"
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -211,9 +217,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Cerrar"
-
-#~ msgid "Open a new window"
-#~ msgstr "Abrir una nueva ventana"
 
 #~ msgid "New Tab"
 #~ msgstr "Nueva pestaña"

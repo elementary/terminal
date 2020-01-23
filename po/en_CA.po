@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-04 02:37+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
 "PO-Revision-Date: 2018-04-05 12:13+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -20,90 +20,96 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Task finished"
 msgstr "Task finished"
 
-#: src/Application.vala:250
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Run a program in terminal"
 
-#: src/Application.vala:255
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#: src/Application.vala:257
+#: src/Application.vala:266
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Open a new window"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:259
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Set shell working directory"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:209
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:219 src/MainWindow.vala:316 src/MainWindow.vala:1237
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Show in File Browser"
 
-#: src/MainWindow.vala:323
+#: src/MainWindow.vala:351
 #, fuzzy
 msgid "Zoom out"
 msgstr "Zoom Out"
 
-#: src/MainWindow.vala:330
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr "Default zoom level"
 
-#: src/MainWindow.vala:349
+#: src/MainWindow.vala:377
 #, fuzzy
 msgid "Zoom in"
 msgstr "Zoom In"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/MainWindow.vala:373
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr ""
 
@@ -212,9 +218,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Close"
-
-#~ msgid "Open a new window"
-#~ msgstr "Open a new window"
 
 #~ msgid "New Tab"
 #~ msgstr "New Tab"
