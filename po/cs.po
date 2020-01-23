@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
 "PO-Revision-Date: 2018-12-13 14:07+0000\n"
 "Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Úloha dokončena"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Spustit program v terminálu"
@@ -34,7 +33,6 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
@@ -65,7 +63,7 @@ msgstr "Vložit"
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Hledat…"
 
@@ -73,43 +71,43 @@ msgstr "Hledat…"
 msgid "Show in File Browser"
 msgstr "Zobrazit v prohlížeči souborů"
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:351
 msgid "Zoom out"
 msgstr "Oddálit"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr "Výchozí úroveň přiblížení"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:377
 msgid "Zoom in"
 msgstr "Přiblížit"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr "Solarizovaný světlý"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr "Skrýt vyhledávací panel"
 
