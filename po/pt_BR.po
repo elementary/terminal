@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
-"PO-Revision-Date: 2019-12-21 17:52+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
+"PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
@@ -36,12 +35,9 @@ msgstr ""
 "Execute o restante da linha como um comando no terminal. Também pode usar "
 "'-' como sinalizador"
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Abrir nova janela"
+msgstr "Abra uma nova janela do terminal"
 
 #: src/Application.vala:268
 msgid "Show help"
@@ -67,7 +63,7 @@ msgstr "Colar"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Buscar…"
 
@@ -75,43 +71,43 @@ msgstr "Buscar…"
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:351
 msgid "Zoom out"
 msgstr "Reduzir o Zoom"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:377
 msgid "Zoom in"
 msgstr "Ampliar o Zoom"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr "Luz Solarizada"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr "Escuro"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr "Copiar/colar natural"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 

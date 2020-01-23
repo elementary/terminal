@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
 "PO-Revision-Date: 2019-12-25 21:35+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Auftrag erledigt"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Ein Programm im Terminal ausführen"
@@ -36,7 +35,6 @@ msgstr ""
 "Den restlichen Teil der Zeile als Befehl im Terminal ausführen. Kann auch "
 "'--' als Option verwenden"
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
@@ -67,7 +65,7 @@ msgstr "Einfügen"
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
 msgid "Find…"
 msgstr "Suchen…"
 
@@ -75,44 +73,44 @@ msgstr "Suchen…"
 msgid "Show in File Browser"
 msgstr "Im Dateimanager anzeigen"
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:351
 msgid "Zoom out"
 msgstr "Verkleinern"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:358
 msgid "Default zoom level"
 msgstr "Standard Zoomfaktor"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:377
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "Hoher Kontrast"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:401
 msgid "Solarized Light"
 msgstr "Solarisiert hell"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:409
 msgid "Dark"
 msgstr "Dunkel"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:424
 msgid "Natural Copy/Paste"
 msgstr "Natürliches Kopieren/Einfügen"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:432
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Tastaturkürzel erfordern keine Umschalttaste; könnte CLI-Anwendungen stören"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1249
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
