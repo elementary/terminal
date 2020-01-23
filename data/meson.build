@@ -44,12 +44,6 @@ test (
     args: join_paths(meson.current_build_dir (), 'open-pantheon-terminal-here.desktop')
 )
 
-test (
-    'Validate appdata file',
-    find_program('appstreamcli'),
-    args: ['validate', join_paths(meson.current_build_dir (), meson.project_name() + '.appdata.xml')]
-)
-
 install_data(
     'pantheon_terminal_process_completion_notifications.fish',
     install_dir: join_paths(get_option('datadir'), 'fish', 'vendor_conf.d')

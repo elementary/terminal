@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2019-11-22 03:24+0000\n"
+"PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/extra/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -43,24 +43,24 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "New features:"
-msgstr ""
+msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Adicionar opção de linha de comando para Nova Janela (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Other updates:"
-msgstr ""
+msgstr "Outras atualizações:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Impedir guia duplicada na inicialização"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Impedir a guia Início desnecessária na inicialização"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -85,19 +85,19 @@ msgstr "Atualizações de tradução"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Ative ou desative a Copiar/Colar Natural no menu Configurações"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Zoom com Ctrl + Scroll"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Incluir prompt de senha sudo ao copiar a última saída"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Aplicar alterações de fonte sem reiniciar"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Don't remember tabs when History is disabled in System Settings"
