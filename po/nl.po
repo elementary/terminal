@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 15:10+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
 "PO-Revision-Date: 2020-01-10 18:32+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Taak voltooid"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Voer programma in de terminal uit"
@@ -36,7 +35,6 @@ msgstr ""
 "Voer de rest van de regel uit als commando in de terminal. U kunt ook ‘--‘ "
 "als vlag gebruiken"
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "Nieuw terminal venster openen"

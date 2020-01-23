@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2020-01-06 18:07+0000\n"
+"PO-Revision-Date: 2020-01-17 19:07+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -47,7 +47,7 @@ msgstr "Nuevas características:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Añadir opción de línea de comando para Nueva Ventana (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -56,11 +56,11 @@ msgstr "Otras actualizaciones:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Prevenir pestaña duplicada al iniciar"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Evitar la pestaña de Inicio innecesaria al iniciar"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -93,7 +93,7 @@ msgstr "«Zoom» con Ctrl + Scroll"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Incluir la solicitud de contraseña de sudo al copiar la última salida"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Apply font changes without restarting"

@@ -91,7 +91,7 @@
     </key>
 
     <key name="foreground" type="s">
-      <default>"#d4d4d4"</default>
+      <default>"#a5a5a5"</default>
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
