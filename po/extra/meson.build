@@ -1,5 +1,5 @@
 i18n.gettext('extra',
-    args: ['--directory='+meson.source_root(), '--add-comments=TRANSLATORS'],
+    args: '--directory=' + meson.source_root(),
     preset: 'glib',
     install: false,
 )
