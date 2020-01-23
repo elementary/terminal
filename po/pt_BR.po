@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-21 16:17+0000\n"
-"PO-Revision-Date: 2019-12-21 17:52+0000\n"
+"PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -36,10 +36,8 @@ msgstr ""
 "'-' como sinalizador"
 
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Abrir nova janela"
+msgstr "Abra uma nova janela do terminal"
 
 #: src/Application.vala:268
 msgid "Show help"
