@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2019-12-30 20:05+0000\n"
+"PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -45,7 +45,7 @@ msgstr "नवीन वैशिष्ट्य:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -54,11 +54,11 @@ msgstr "इतर अद्यतने:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "स्टार्टअप वर डुप्लिकेट टॅब प्रतिबंधित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "स्टार्टअप वर अनावश्यक होम टॅब प्रतिबंधित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
