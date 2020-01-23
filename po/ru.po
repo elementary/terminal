@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-10 23:32+0000\n"
+"POT-Creation-Date: 2020-01-23 03:56+0000\n"
 "PO-Revision-Date: 2018-11-22 20:24+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
@@ -20,7 +20,6 @@ msgstr ""
 msgid "Task finished"
 msgstr "Задание завершено"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
@@ -30,7 +29,6 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
-#. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
