@@ -73,7 +73,7 @@ namespace Terminal {
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
-        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
+        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
