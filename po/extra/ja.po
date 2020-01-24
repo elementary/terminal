@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2020-01-10 18:32+0000\n"
+"PO-Revision-Date: 2020-01-25 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -51,7 +51,7 @@ msgstr "新しいウィンドウを開くコマンドラインオプション (-
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Other updates:"
-msgstr "その他のアップデート:"
+msgstr "そのほかのアップデート:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
