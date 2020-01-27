@@ -280,7 +280,7 @@ namespace Terminal {
             /* Do not add a new tab if location is already open in existing tab */
 
             if (directory == null || directory == "") {
-                if (notebook.tabs.first () == null) { //Ensure at least one tab.
+                if (notebook.tabs.first () == null || command != null) { //Ensure at least one tab.
                     new_tab ("", command);
                 }
 
@@ -971,6 +971,7 @@ namespace Terminal {
              * leads to free'd memory being read.
              */
             /* Set up terminal */
+
             var t = new TerminalWidget (this);
             t.scrollback_lines = Application.settings.get_int ("scrollback-lines");
 
