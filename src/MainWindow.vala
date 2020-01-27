@@ -289,7 +289,7 @@ namespace Terminal {
 
             /* Only empty commands can select existing tabs/paths */
             if (command == null) {
-                var f1 = File.new_for_commandline_arg (location);
+                var f1 = File.new_for_commandline_arg (directory);
                 foreach (Granite.Widgets.Tab tab in notebook.tabs) {
                     var t = get_term_widget (tab);
                     var tab_path = t.get_shell_location ();
