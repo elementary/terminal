@@ -46,6 +46,8 @@ public class Terminal.Application : Gtk.Application {
 
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
+        flags |= ApplicationFlags.SEND_ENVIRONMENT; /* Need pwd of commandline if -w flag not given */
+
         application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
         Intl.setlocale (LocaleCategory.ALL, "");
@@ -166,6 +168,11 @@ public class Terminal.Application : Gtk.Application {
         } catch (Error e) {
             stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
             return 0;
+        }
+
+        if (working_directory == null) {
+            /* Try to get pwd from commandline (may still be null) */
+            working_directory = command_line.getenv ("PWD");
         }
 
         if (option_help) {
