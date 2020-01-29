@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-23 16:28+0000\n"
+"POT-Creation-Date: 2020-01-29 10:05+0000\n"
 "PO-Revision-Date: 2020-01-23 03:53+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -20,16 +20,16 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:116
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:262
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
 
-#: src/Application.vala:263
+#: src/Application.vala:267
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -37,15 +37,22 @@ msgstr ""
 "'-' como sinalizador"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#: src/Application.vala:270
 msgid "Open a new terminal window"
 msgstr "Abra uma nova janela do terminal"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:273
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab"
+msgstr "Abra uma nova janela do terminal"
+
+#: src/Application.vala:275
 msgid "Show help"
 msgstr "Exibir ajuda"
 
-#: src/Application.vala:270
+#: src/Application.vala:277
 msgid "Set shell working directory"
 msgstr "Definir diretório de trabalho do shell"
 
@@ -65,7 +72,7 @@ msgstr "Colar"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Buscar…"
 
@@ -73,43 +80,43 @@ msgstr "Buscar…"
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Reduzir o Zoom"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
-#: src/MainWindow.vala:377
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Ampliar o Zoom"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Luz Solarizada"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr "Escuro"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
 msgstr "Copiar/colar natural"
 
-#: src/MainWindow.vala:432
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:477
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/MainWindow.vala:1249
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 

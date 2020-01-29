@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-23 16:28+0000\n"
+"POT-Creation-Date: 2020-01-29 10:05+0000\n"
 "PO-Revision-Date: 2019-01-01 00:36+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
@@ -21,32 +21,39 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:116
 msgid "Task finished"
 msgstr "Zadanie zakończone"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:262
 msgid "Run a program in terminal"
 msgstr "Uruchom program w terminalu"
 
-#: src/Application.vala:263
+#: src/Application.vala:267
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#: src/Application.vala:270
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Otwiera nowe okno programu"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:273
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal tab"
+msgstr "Otwiera nowe okno programu"
+
+#: src/Application.vala:275
 msgid "Show help"
 msgstr "Wyświetl pomoc"
 
-#: src/Application.vala:270
+#: src/Application.vala:277
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
@@ -66,7 +73,7 @@ msgstr "Wklej"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Znajdź…"
 
@@ -74,43 +81,43 @@ msgstr "Znajdź…"
 msgid "Show in File Browser"
 msgstr "Wyświetl w przeglądarce plików"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Oddalenie"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Domyślny poziom powiększenia"
 
-#: src/MainWindow.vala:377
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Przybliżenie"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Solarna jasność"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:432
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:477
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1249
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
