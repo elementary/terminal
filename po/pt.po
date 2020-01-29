@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-29 10:05+0000\n"
-"PO-Revision-Date: 2020-01-21 16:08+0000\n"
+"PO-Revision-Date: 2020-02-01 13:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -43,10 +43,8 @@ msgstr "Abrir uma nova janela de terminal"
 
 #. -t flag forces a new tab
 #: src/Application.vala:273
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab"
-msgstr "Abrir uma nova janela de terminal"
+msgstr "Abrir um novo separador de terminal"
 
 #: src/Application.vala:275
 msgid "Show help"
