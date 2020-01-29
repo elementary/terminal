@@ -79,9 +79,9 @@ namespace Terminal {
         const string PORT = "(?:\\:[[:digit:]]{1,5})?";
         const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;:@&=?/~#%\\E]";
         const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
-        const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
-                                 |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
-                                 |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
+        const string SCHEME = "(?:news:|telnet:|nntp:|file:\\/|https?:|ftps?:|sftp:|webcal:" +
+                              "|irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:" +
+                              "|git\\+ssh:|bzr:|bzr\\+ssh:|svn:|svn\\+ssh:|hg:|mailto:|magnet:)";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
@@ -399,9 +399,9 @@ namespace Terminal {
         }
 
         private void clickable (string[] str) {
-            foreach (string exp in str) {
+            foreach (unowned string exp in str) {
                 try {
-                    var regex = new GLib.Regex (exp);
+                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
                     int id = this.match_add_gregex (regex, 0);
 
                     this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
