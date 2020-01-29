@@ -279,7 +279,7 @@ namespace Terminal {
             string? location = null;
 
             if (directory == null || directory == "") {
-                if (notebook.tabs.first () == null) { //Ensure at least one tab.
+                if (notebook.tabs.first () == null || command!=null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
                 }
 
