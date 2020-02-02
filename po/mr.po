@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-29 10:05+0000\n"
-"PO-Revision-Date: 2020-01-23 03:53+0000\n"
+"PO-Revision-Date: 2020-02-03 08:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -34,10 +34,8 @@ msgstr "नवीन टर्मिनल विंडो उघडा"
 
 #. -t flag forces a new tab
 #: src/Application.vala:273
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab"
-msgstr "नवीन टर्मिनल विंडो उघडा"
+msgstr "नवीन टर्मिनल टॅब उघडा"
 
 #: src/Application.vala:275
 msgid "Show help"
