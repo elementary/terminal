@@ -71,6 +71,7 @@ namespace Terminal {
         public const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
+        public const string ACTION_TERMINATE = "action-terminate";
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
@@ -92,6 +93,7 @@ namespace Terminal {
             { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search, null, "false" },
+            { ACTION_TERMINATE, action_terminate},
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
@@ -139,6 +141,7 @@ namespace Terminal {
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
+            action_accelerators[ACTION_TERMINATE] = "<Control><Shift>x";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
@@ -1296,6 +1299,17 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
+            if (is_fullscreen) {
+                unfullscreen ();
+                is_fullscreen = false;
+            } else {
+                fullscreen ();
+                is_fullscreen = true;
+            }
+        }
+
+
+        private void action_terminate () {
             if (is_fullscreen) {
                 unfullscreen ();
                 is_fullscreen = false;
