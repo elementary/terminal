@@ -44,6 +44,20 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
         );
     }
 
+    public ForegroundProcessDialog.kill_process (MainWindow parent) {
+        Object (
+            transient_for: parent,
+            primary_text: _("Are you sure you kill this process?"),
+            secondary_text:
+                _("There is an active process on this terminal.") + " " +
+                _("Are you sure you want to kill it?"),
+            buttons: Gtk.ButtonsType.CANCEL,
+            button_label: _("Kill Process")
+        );
+    }
+
+
+
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
 

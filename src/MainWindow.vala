@@ -198,6 +198,10 @@ namespace Terminal {
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
             copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
 
+            var terminate_menuitem = new Gtk.MenuItem ();
+            terminate_menuitem.set_action_name (ACTION_PREFIX + ACTION_TERMINATE);
+            terminate_menuitem.add (new Granite.AccelLabel.from_action_name (_("Terminate"), terminate_menuitem.action_name));
+
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
             copy_last_output_menuitem.add (
@@ -235,6 +239,7 @@ namespace Terminal {
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
+            menu.append (terminate_menuitem);
             menu.insert_action_group ("win", actions);
 
             menu.popped_up.connect (() => {
@@ -1310,12 +1315,16 @@ namespace Terminal {
 
 
         private void action_terminate () {
-            if (is_fullscreen) {
-                unfullscreen ();
-                is_fullscreen = false;
-            } else {
-                fullscreen ();
-                is_fullscreen = true;
+            if(current_terminal.has_foreground_process()){
+                var d = new ForegroundProcessDialog.kill_process (this);
+
+                if (d.run () == Gtk.ResponseType.ACCEPT) {
+                    current_terminal.kill_fg ();
+                    d.destroy();
+                } 
+                else{
+                    d.destroy ();
+                }
             }
         }
 
