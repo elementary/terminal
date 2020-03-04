@@ -1315,14 +1315,14 @@ namespace Terminal {
 
 
         private void action_terminate () {
-            if(current_terminal.has_foreground_process()){
+            if (current_terminal.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog.kill_process (this);
 
                 if (d.run () == Gtk.ResponseType.ACCEPT) {
                     current_terminal.kill_fg ();
-                    d.destroy();
-                } 
-                else{
+                    d.destroy ();
+                }
+                else {
                     d.destroy ();
                 }
             }
