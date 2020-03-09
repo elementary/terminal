@@ -47,7 +47,7 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
     public ForegroundProcessDialog.kill_process (MainWindow parent) {
         Object (
             transient_for: parent,
-            primary_text: _("Are you sure you kill this process?"),
+            primary_text: _("Are you sure you want to kill this process?"),
             secondary_text:
                 _("There is an active process on this terminal.") + " " +
                 _("Are you sure you want to kill it?"),

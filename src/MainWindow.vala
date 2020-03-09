@@ -71,7 +71,6 @@ namespace Terminal {
         public const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
-        public const string ACTION_TERMINATE = "action-terminate";
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
@@ -93,7 +92,6 @@ namespace Terminal {
             { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search, null, "false" },
-            { ACTION_TERMINATE, action_terminate},
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
@@ -141,7 +139,6 @@ namespace Terminal {
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
-            action_accelerators[ACTION_TERMINATE] = "<Control><Shift>x";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
@@ -198,10 +195,6 @@ namespace Terminal {
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
             copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
 
-            var terminate_menuitem = new Gtk.MenuItem ();
-            terminate_menuitem.set_action_name (ACTION_PREFIX + ACTION_TERMINATE);
-            terminate_menuitem.add (new Granite.AccelLabel.from_action_name (_("Terminate"), terminate_menuitem.action_name));
-
             var copy_last_output_menuitem = new Gtk.MenuItem ();
             copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
             copy_last_output_menuitem.add (
@@ -239,7 +232,6 @@ namespace Terminal {
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
             menu.append (show_in_file_browser_menuitem);
-            menu.append (terminate_menuitem);
             menu.insert_action_group ("win", actions);
 
             menu.popped_up.connect (() => {
@@ -461,6 +453,9 @@ namespace Terminal {
             natural_copy_paste_button.get_child ().destroy ();
             natural_copy_paste_button.add (natural_copy_paste_grid);
 
+            var terminate_process_button = new Gtk.Button ();
+            terminate_process_button.set_label ("Terminate Process");
+
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
             menu_popover_grid.margin_bottom = 6;
@@ -472,6 +467,7 @@ namespace Terminal {
             menu_popover_grid.add (color_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
+            menu_popover_grid.add (terminate_process_button);
 
             menu_popover_grid.show_all ();
 
@@ -564,6 +560,11 @@ namespace Terminal {
 
             natural_copy_paste_button.button_release_event.connect (() => {
                 natural_copy_paste_switch.activate ();
+                return Gdk.EVENT_STOP;
+            });
+
+            terminate_process_button.button_release_event.connect (() => {
+                action_terminate ();
                 return Gdk.EVENT_STOP;
             });
 
@@ -1313,18 +1314,17 @@ namespace Terminal {
             }
         }
 
-
         private void action_terminate () {
             if (current_terminal.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog.kill_process (this);
 
                 if (d.run () == Gtk.ResponseType.ACCEPT) {
                     current_terminal.kill_fg ();
-                    d.destroy ();
                 }
                 else {
-                    d.destroy ();
+
                 }
+                d.destroy ();
             }
         }
 
