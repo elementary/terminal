@@ -463,7 +463,9 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                    this.feed_child (uris_s.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
 #else
                     this.feed_child (uris_s.to_utf8 ());
@@ -474,7 +476,9 @@ namespace Terminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                        this.feed_child (data.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
 #else
                         this.feed_child (data.to_utf8 ());
