@@ -13,7 +13,11 @@ i18n = import('i18n')
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language:'c')
 
-if get_option('ubuntu-bionic-patched-vte')
+vte_dep = dependency('vte-2.91')
+
+if vte_dep.version().version_compare('>=0.59')
+    add_project_arguments(['--define', 'VTE_0_60'], language : 'vala')
+elif get_option('ubuntu-bionic-patched-vte')
     add_project_arguments(['--define', 'UBUNTU_BIONIC_PATCHED_VTE'], language : 'vala')
 endif
 
@@ -38,7 +42,7 @@ executable(
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
         dependency('granite', version: '>=5.3.0'),
-        dependency('vte-2.91'),
+        vte_dep,
         meson.get_compiler('vala').find_library('posix'),
         meson.get_compiler('c').find_library('m', required : false)
     ],
