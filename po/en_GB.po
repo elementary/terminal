@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-29 10:05+0000\n"
-"PO-Revision-Date: 2018-12-17 10:53+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
-"Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
-"projects/terminal/terminal/en_GB/>\n"
+"PO-Revision-Date: 2020-03-19 20:09+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"terminal/terminal/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:116
@@ -33,20 +33,17 @@ msgstr "Run a program in terminal"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:270
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Open a new window"
+msgstr "Open a new terminal window"
 
 #. -t flag forces a new tab
 #: src/Application.vala:273
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Open a new window"
+msgstr "Open a new terminal tab"
 
 #: src/Application.vala:275
 msgid "Show help"
@@ -102,19 +99,19 @@ msgstr "Solarised Light"
 
 #: src/MainWindow.vala:412
 msgid "Dark"
-msgstr ""
+msgstr "Dark"
 
 #: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Natural Copy/Paste"
 
 #: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
 
 #: src/MainWindow.vala:477
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
 #: src/MainWindow.vala:1252
 msgid "Hide find bar"
