@@ -281,9 +281,13 @@ namespace Terminal {
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
+#if !VTE_0_60
             /* Bold font */
             allow_bold = Application.settings.get_boolean ("allow-bold");
+#endif
 
+// Support for non-UTF-8 encoding is deprecated
+#if !VTE_0_60
             /* Load encoding */
             var encoding = Application.settings.get_string ("encoding");
             if (encoding != "") {
@@ -293,6 +297,7 @@ namespace Terminal {
                     warning ("Failed to set encoding - %s", e.message);
                 }
             }
+#endif
 
             /* Disable bell if necessary */
             audible_bell = Application.settings.get_boolean ("audible-bell");
@@ -401,11 +406,16 @@ namespace Terminal {
         private void clickable (string[] str) {
             foreach (unowned string exp in str) {
                 try {
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
+                    int id = this.match_add_regex (regex, 0);
+                    this.match_set_cursor_name (id, "pointer");
+#else
                     var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
                     int id = this.match_add_gregex (regex, 0);
-
                     this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-                } catch (GLib.RegexError error) {
+#endif
+                } catch (GLib.Error error) {
                     warning (error.message);
                 }
             }
