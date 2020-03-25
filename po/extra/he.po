@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-08 17:16+0000\n"
-"PO-Revision-Date: 2018-03-23 12:18+0000\n"
+"PO-Revision-Date: 2020-03-26 23:09+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/extra/"
-"he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
+">\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -42,24 +42,24 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "New features:"
-msgstr ""
+msgstr "תכונות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "הוספת אפשרות בשורת הפקודה לחלון חדש (‎-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Other updates:"
-msgstr ""
+msgstr "עדכונים נוספים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "מניעת לשוניות כפולות בהתחלה"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "מניעת לשונית בית בלתי נחוצה עם ההפעלה"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -80,31 +80,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:204
 #: data/io.elementary.terminal.appdata.xml.in:219
 msgid "Translation updates"
-msgstr ""
+msgstr "תרגומים עודכנו"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "הפעלה/כיבוי של העתקה/הדבקה טבעיים בתפריט ההגדרות"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "התקרבות עם Ctrl + גלילה"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "לכלול את בקשת הססמה ל־sudo בעת העתקת הפלט הקודם"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "שינויי הגופנים ייכנסו לתוקף מבלי להפעיל את המערכת מחדש"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "לא לזכור את הלשוניות כאשר ההיסטוריה מושבתת בהגדרות המערכת"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "הצגת קיצורי מקלדת בתפריט כפתור הלחיצה המשנית"
 
 #: data/io.elementary.terminal.appdata.xml.in:72
 msgid "Middle-click paste now properly follows System Settings"
