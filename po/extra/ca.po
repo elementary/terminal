@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-01 22:41+0000\n"
-"PO-Revision-Date: 2020-01-10 18:32+0000\n"
+"PO-Revision-Date: 2020-04-03 12:09+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -46,10 +46,8 @@ msgid "New features:"
 msgstr "Funcions noves:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for New Tab (-t)"
-msgstr "Addició d'una opció de línia d'ordres per a una finestra nova (-n)"
+msgstr "Addició d'una opció de línia d'ordres per a la pestanya nova (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:57
@@ -59,7 +57,7 @@ msgstr "Altres actualitzacions:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Correcció de la selecció d'URL"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:61
