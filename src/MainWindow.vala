@@ -75,6 +75,7 @@ namespace Terminal {
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
+        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -127,14 +128,14 @@ namespace Terminal {
         }
 
         public MainWindow.with_working_directory (Terminal.Application app, string? location,
-                                                  bool recreate_tabs = true) {
+                                                  bool recreate_tabs = true, bool create_new_tab = false) {
             Object (
                 app: app,
                 focus_restored_tabs: false,
                 recreate_tabs: recreate_tabs
             );
 
-            add_tab_with_working_directory (location);
+            add_tab_with_working_directory (location, null, create_new_tab);
         }
 
         static construct {
@@ -268,17 +269,17 @@ namespace Terminal {
             }
         }
 
-        public void add_tab_with_command (string command, string? working_directory = null) {
-            add_tab_with_working_directory (working_directory, command);
+        public void add_tab_with_command (string command, string? working_directory = null, bool create_new_tab = false) {
+            add_tab_with_working_directory (working_directory, command, create_new_tab);
         }
 
-        public void add_tab_with_working_directory (string? directory, string? command = null) {
+        public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
             string? location = null;
 
             if (directory == null || directory == "") {
-                if (notebook.tabs.first () == null) { //Ensure at least one tab.
+                if (notebook.tabs.first () == null || command != null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
                 }
 
@@ -287,16 +288,19 @@ namespace Terminal {
                 location = directory;
             }
 
-            var f1 = File.new_for_commandline_arg (location);
-            foreach (Granite.Widgets.Tab tab in notebook.tabs) {
-                var t = get_term_widget (tab);
-                var tab_path = t.get_shell_location ();
-                /* Detect equialent paths */
-                if (f1.equal (File.new_for_path (tab_path))) {
-                    /* Just focus the duplicate tab instead */
-                    notebook.current = tab;
-                    t.grab_focus ();
-                    return; /* Duplicate found, abandon adding tab */
+            /* We can match existing tabs only if there is no command and create_new_tab == false */
+            if (command == null && !create_new_tab) {
+                var f1 = File.new_for_commandline_arg (location);
+                foreach (Granite.Widgets.Tab tab in notebook.tabs) {
+                    var t = get_term_widget (tab);
+                    var tab_path = t.get_shell_location ();
+                    /* Detect equialent paths */
+                    if (f1.equal (File.new_for_path (tab_path))) {
+                        /* Just focus the duplicate tab instead */
+                        notebook.current = tab;
+                        t.grab_focus ();
+                        return; /* Duplicate found, abandon adding tab */
+                    }
                 }
             }
 
