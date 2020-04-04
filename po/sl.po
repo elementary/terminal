@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-29 10:05+0000\n"
-"PO-Revision-Date: 2020-01-06 18:07+0000\n"
-"Last-Translator: Marko <marko.dolar@gmail.com>\n"
+"PO-Revision-Date: 2020-04-05 13:10+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
 "terminal/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
@@ -34,20 +34,18 @@ msgstr "Zaženi program v terminalu"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Zaženi preostanek vrstice kot ukay v terminalu. Lahko tudi uporablja '--' "
+"kot zastavico"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:270
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Odpri novo okno"
 
 #. -t flag forces a new tab
 #: src/Application.vala:273
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Odpri novo okno"
+msgstr "Odpri nov zavihek"
 
 #: src/Application.vala:275
 msgid "Show help"
@@ -111,7 +109,7 @@ msgstr "Naravno kopiranje in lepljenje"
 
 #: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Bližnjice ne rabijo pritisnjene tipke Shift"
 
 #: src/MainWindow.vala:477
 msgid "Settings"
