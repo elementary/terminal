@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-01 22:41+0000\n"
-"PO-Revision-Date: 2020-01-23 03:53+0000\n"
+"PO-Revision-Date: 2020-04-05 13:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -45,10 +45,8 @@ msgid "New features:"
 msgstr "नवीन वैशिष्ट्य:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for New Tab (-t)"
-msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
+msgstr "नवीन टॅबसाठी कमांडलाइन पर्याय जोडा (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:57
@@ -58,7 +56,7 @@ msgstr "इतर अद्यतने:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Fix URL selection"
-msgstr ""
+msgstr "URL निवडीशी संबंधित समस्यांचे निराकरण करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:61
