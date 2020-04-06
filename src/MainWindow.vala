@@ -42,6 +42,7 @@ namespace Terminal {
         private const string DARK_FG = "#a5a5a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
+        private const string OPEN_IN_FILE_MANAGER_SCHEMES = "file|trash|network|recent|afp|dav|davs|ftp|sftp|smb|mtp";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -846,7 +847,8 @@ namespace Terminal {
                 uri != null || current_terminal.get_has_selection ()
             );
 
-            if (uri == null) { // Cannot paste into a link
+            var scheme = uri != null ? Uri.parse_scheme (uri) : "";
+            if (scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) { // Cannot paste into a link
                 open_in_browser_menuitem_label.label = _("Open in File Manager");
                 clipboard.request_targets (update_context_menu_cb);
             } else {
