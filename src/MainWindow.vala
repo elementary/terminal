@@ -841,14 +841,24 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
-            unowned string uri = current_terminal.uri;
-
+            string uri = current_terminal.uri;
             get_simple_action (MainWindow.ACTION_COPY).set_enabled (
                 uri != null || current_terminal.get_has_selection ()
             );
 
-            var scheme = uri != null ? Uri.parse_scheme (uri) : "";
-            if (scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) { // Cannot paste into a link
+            string scheme;
+
+            if (uri != null) {
+                scheme = Uri.parse_scheme (uri);
+                if (scheme == null) {
+                    scheme = "file";
+                    uri = "file://" + uri;
+                }
+            } else {
+                scheme = "";
+            }
+
+            if (scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) {
                 open_in_browser_menuitem_label.label = _("Open in File Manager");
                 clipboard.request_targets (update_context_menu_cb);
             } else {
@@ -1191,19 +1201,38 @@ namespace Terminal {
         void action_open_in_browser () {
             var uri = current_terminal.uri;
 
+            if (uri == null) {
+                current_terminal.copy_clipboard ();
+                clipboard.request_text (on_get_uri);
+            } else {
+                open_in_browser (uri);
+            }
+        }
+
+        private void on_get_uri (Gtk.Clipboard board, string? uri) {
+            open_in_browser (uri);
+        }
+
+        private void open_in_browser (string uri) {
+            string to_open = uri;
+
             try {
                 if (uri == null) {
-                    uri = Filename.to_uri (current_terminal.get_shell_location ());
+                    to_open = Filename.to_uri (current_terminal.get_shell_location ());
                 } else {
                 //TODO Validate form of uri
                     if (!uri.contains ("://")) {
-                        uri = "http://" + uri;
+                        to_open = "http://" + uri;
                     }
                 }
 
-                Gtk.show_uri_on_window (null, uri, Gtk.get_current_event_time ());
+                if (uri != null && Uri.parse_scheme (uri) == null) {
+                    to_open = "file://" + uri;
+                }
+
+                Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
             } catch (GLib.Error error) {
-                warning ("Could not show %s - %s", uri, error.message);
+                warning ("Could not show %s - %s", to_open, error.message);
             }
         }
 
