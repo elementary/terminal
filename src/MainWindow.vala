@@ -76,7 +76,6 @@ namespace Terminal {
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-las-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
-        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -841,26 +840,32 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
-            string uri = current_terminal.uri;
-            get_simple_action (MainWindow.ACTION_COPY).set_enabled (
-                uri != null || current_terminal.get_has_selection ()
-            );
+            var uri = current_terminal.uri;
 
-            string scheme;
-
-            if (uri != null) {
-                scheme = Uri.parse_scheme (uri);
-                if (scheme == null) {
-                    scheme = "file";
-                    uri = "file://" + uri;
-                }
+            if (uri == null) {
+                current_terminal.copy_primary ();
+                primary_selection.request_text ((clipboard, uri) => {
+                    update_menu_label (uri);
+                });
             } else {
-                scheme = "";
+                if (!uri.contains ("://")) {
+                    uri = "http://" + uri;
+                }
+
+                update_menu_label (Uri.parse_scheme (uri));
+            }
+        }
+
+        private void update_menu_label (string? uri) {
+            var scheme = uri != null ? Uri.parse_scheme (uri) : "";
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (true);
+
+            if (scheme == null || scheme == "") {
+                get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (uri.contains (Path.DIR_SEPARATOR_S));
             }
 
-            if (scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) {
+            if (scheme == null || scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) {
                 open_in_browser_menuitem_label.label = _("Open in File Manager");
-                clipboard.request_targets (update_context_menu_cb);
             } else {
                 open_in_browser_menuitem_label.label = _("Open in Web Browser");
             }
@@ -1202,9 +1207,13 @@ namespace Terminal {
             var uri = current_terminal.uri;
 
             if (uri == null) {
-                current_terminal.copy_clipboard ();
-                clipboard.request_text (on_get_uri);
+                current_terminal.copy_primary ();
+                primary_selection.request_text (on_get_uri);
             } else {
+                if (!uri.contains ("://")) {
+                    uri = "http://" + uri;
+                }
+
                 open_in_browser (uri);
             }
         }
@@ -1219,11 +1228,6 @@ namespace Terminal {
             try {
                 if (uri == null) {
                     to_open = Filename.to_uri (current_terminal.get_shell_location ());
-                } else {
-                //TODO Validate form of uri
-                    if (!uri.contains ("://")) {
-                        to_open = "http://" + uri;
-                    }
                 }
 
                 if (uri != null && Uri.parse_scheme (uri) == null) {

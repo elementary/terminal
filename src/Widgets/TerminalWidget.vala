@@ -139,6 +139,10 @@ namespace Terminal {
 
                 if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
+                    if (uri != null) {
+                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
+                    }
+
                     window.update_context_menu ();
                     menu.select_first (false);
                     menu.popup_at_pointer (event);
@@ -201,6 +205,7 @@ namespace Terminal {
             });
 
             selection_changed.connect (() => {
+                window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
                 window.update_context_menu ();
             });
 
