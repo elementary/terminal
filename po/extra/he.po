@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-01 22:41+0000\n"
-"PO-Revision-Date: 2020-03-26 23:09+0000\n"
+"PO-Revision-Date: 2020-04-09 07:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -46,10 +46,8 @@ msgid "New features:"
 msgstr "תכונות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for New Tab (-t)"
-msgstr "הוספת אפשרות בשורת הפקודה לחלון חדש (‎-n)"
+msgstr "הוספת אפשרות בשורת הפקודה ללשונית חדשה (‎-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:57
@@ -59,7 +57,7 @@ msgstr "עדכונים נוספים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Fix URL selection"
-msgstr ""
+msgstr "תיקון בחירת כתובות"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:61
@@ -121,79 +119,79 @@ msgstr "הצגת קיצורי מקלדת בתפריט כפתור הלחיצה ה
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Middle-click paste now properly follows System Settings"
-msgstr ""
+msgstr "הדבקה עם כפתור אמצעי מתנהגת כמו הגדרות המערכת"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D לשכפול לשוניות"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "שימוש בצבעים ניטרליים עבור ערכת הצבעים הכהה"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "הרחקת הטקסט מעט מקצוות החלון"
 
 #: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "לחיצה על כפתור התפריט פותחת מעתה את תפריט ההקשר"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "שחזור המצב עם GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:105
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "תמיכה בצירוף המקשים Ctrl+Equal כדי להתקרב"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "תיקון קוד תגובה שגוי של תהליך שרץ בחזית"
 
 #: data/io.elementary.terminal.appdata.xml.in:114
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "החזרת המיקוד לאחר סגירת תפריט צף"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "מניעת קבלת מיקוד על כפתורי חיפוש וסגנון"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "הסתרת הסמן בזמן הקלדה"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "תיקון התנהגות בלתי יציבה של הדגשת טקסט חיפוש"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "תמיכה בדגלון ‎-h לעזרה"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Disable audible bell"
-msgstr ""
+msgstr "השבתת צלצול"
 
 #: data/io.elementary.terminal.appdata.xml.in:127
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "הוספת הפעולה Alt+↑ כדי לגלול לפקודה האחרונה"
 
 #: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "הוספת הפקודה Alt+c כדי להעתיק את הפלט האחרון"
 
 #: data/io.elementary.terminal.appdata.xml.in:129
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "הוספת מקשי האצה לחלוניות עצה"
 
 #: data/io.elementary.terminal.appdata.xml.in:137
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "תיקון התראות zsh"
 
 #: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "קיצור מקשים מותנה ctrl+g כדי לא לסתור את emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:139
 #: data/io.elementary.terminal.appdata.xml.in:147
@@ -207,31 +205,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:216
 #: data/io.elementary.terminal.appdata.xml.in:231
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "תיקוני תקלות משניות"
 
 #: data/io.elementary.terminal.appdata.xml.in:179
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "תיקוני שילוב עם FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:180
 msgid "Theme preference menu"
-msgstr ""
+msgstr "תפריט העדפת ערכת עיצוב"
 
 #: data/io.elementary.terminal.appdata.xml.in:181
 msgid "Zoom level controls"
-msgstr ""
+msgstr "פקדי רמת תקריב"
 
 #: data/io.elementary.terminal.appdata.xml.in:198
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "לאפשר סגירה של לשונית לאחר הקלדת exit בשורת הפקודה"
 
 #: data/io.elementary.terminal.appdata.xml.in:207
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "תיקון העתקת כתובות ללוח הגזירים"
 
 #: data/io.elementary.terminal.appdata.xml.in:224
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "תיקון תבנית תאריך של appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:266
 msgid "elementary LLC."
