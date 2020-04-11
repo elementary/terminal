@@ -52,6 +52,7 @@
       <description>
         <p>New features:</p>
         <ul>
+          <li>Add commandline option for "Show version" (-v, --version)</li>
           <li>Add commandline option for New Window (-n)</li>
         </ul>
         <p>Other updates:</p>

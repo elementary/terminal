@@ -31,8 +31,18 @@ terminal_resources = gnome.compile_resources(
     source_dir: 'data'
 )
 
+conf_data = configuration_data()
+conf_data.set_quoted('PROJECT_NAME', meson.project_name())
+conf_data.set_quoted('VERSION', meson.project_version())
+config_header = configure_file(
+    input : 'config.vala.in',
+    output : 'config.vala',
+    configuration : conf_data
+)
+
 executable(
     meson.project_name(),
+    config_header,
     'src/Application.vala',
     'src/DBus.vala',
     'src/MainWindow.vala',
