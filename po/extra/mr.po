@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-01 22:41+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2020-04-05 13:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:53
-#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:68
 msgid "New features:"
 msgstr "नवीन वैशिष्ट्य:"
 
@@ -49,8 +49,8 @@ msgid "Add commandline option for New Tab (-t)"
 msgstr "नवीन टॅबसाठी कमांडलाइन पर्याय जोडा (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#: data/io.elementary.terminal.appdata.xml.in:57
-#: data/io.elementary.terminal.appdata.xml.in:72
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Other updates:"
 msgstr "इतर अद्यतने:"
 
@@ -59,13 +59,145 @@ msgid "Fix URL selection"
 msgstr "URL निवडीशी संबंधित समस्यांचे निराकरण करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:90
+#: data/io.elementary.terminal.appdata.xml.in:99
+#: data/io.elementary.terminal.appdata.xml.in:108
+#: data/io.elementary.terminal.appdata.xml.in:118
+#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:141
+#: data/io.elementary.terminal.appdata.xml.in:149
+#: data/io.elementary.terminal.appdata.xml.in:157
+#: data/io.elementary.terminal.appdata.xml.in:165
+#: data/io.elementary.terminal.appdata.xml.in:173
+#: data/io.elementary.terminal.appdata.xml.in:184
+#: data/io.elementary.terminal.appdata.xml.in:192
+#: data/io.elementary.terminal.appdata.xml.in:201
+#: data/io.elementary.terminal.appdata.xml.in:210
+#: data/io.elementary.terminal.appdata.xml.in:218
+#: data/io.elementary.terminal.appdata.xml.in:233
+msgid "Translation updates"
+msgstr "भाषांतर अपडेट्स"
+
+#: data/io.elementary.terminal.appdata.xml.in:55
+#, fuzzy
+#| msgid "Add commandline option for New Window (-n)"
+msgid "Add commandline option for \"Show version\" (-v, --version)"
+msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
+
+#: data/io.elementary.terminal.appdata.xml.in:56
+msgid "Add commandline option for New Window (-n)"
+msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Prevent duplicate tab on startup"
+msgstr "स्टार्टअप वर डुप्लिकेट टॅब प्रतिबंधित करा"
+
 #: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Prevent unnecessary Home tab on startup"
+msgstr "स्टार्टअप वर अनावश्यक होम टॅब प्रतिबंधित करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:70
+msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+msgstr "सेटिंग्ज मेनूमध्ये नैसर्गिक कॉपी / पेस्ट चालू किंवा बंद करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:71
+msgid "Zoom with Ctrl + Scroll"
+msgstr "Ctrl + Scroll सह झूम करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:75
+msgid "Include sudo password prompt when copying last output"
+msgstr "अंतिम आउटपुट कॉपी करताना sudo संकेतशब्द प्रॉम्प्ट समाविष्ट करा"
+
 #: data/io.elementary.terminal.appdata.xml.in:76
+msgid "Apply font changes without restarting"
+msgstr "रीस्टार्ट न करता फॉन्ट बदल लागू करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:84
+msgid "Don't remember tabs when History is disabled in System Settings"
+msgstr "इतिहास सिस्टम सेटिंग्जमध्ये अक्षम केलेला असताना टॅब लक्षात ठेवू नये"
+
+#: data/io.elementary.terminal.appdata.xml.in:85
+msgid "Show keyboard shortcuts in the secondary-click menu"
+msgstr "दुय्यम-क्लिक मेनूमध्ये कीबोर्ड शॉर्टकट दर्शवा"
+
+#: data/io.elementary.terminal.appdata.xml.in:86
+msgid "Middle-click paste now properly follows System Settings"
+msgstr "मध्य-क्लिक पेस्ट आता सिस्टम सेटिंग्जचे योग्यरित्या अनुसरण करते"
+
+#: data/io.elementary.terminal.appdata.xml.in:87
+msgid "Shift + Control + D to duplicate tabs"
+msgstr "टॅब डुप्लिकेट करण्यासाठी Shift + Control + D"
+
+#: data/io.elementary.terminal.appdata.xml.in:88
+msgid "Use neutral colors for the dark style scheme"
+msgstr "गडद शैली योजनेसाठी तटस्थ रंग वापरा"
+
 #: data/io.elementary.terminal.appdata.xml.in:89
+msgid "Slightly pad text from the edge of the window"
+msgstr "विंडोच्या काठावरुन मजकूर किंचित पॅड करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:97
+msgid "Pressing the Menu key now opens the context menu"
+msgstr "मेनू की दाबल्याने आता संदर्भ मेनू उघडेल"
+
 #: data/io.elementary.terminal.appdata.xml.in:98
+msgid "Store state with GSettings"
+msgstr "जीसेटिंगसह स्टेट स्टोअर"
+
+#: data/io.elementary.terminal.appdata.xml.in:106
+msgid "Support Ctrl+Equal key combo to zoom in"
+msgstr "झूम इन करण्यासाठी Ctrl + Equal की कॉम्बो समर्थन"
+
 #: data/io.elementary.terminal.appdata.xml.in:107
+msgid "Fix a wrong foreground process response code"
+msgstr "चुकीचे फोरग्राउंड प्रक्रिया प्रतिसाद कोड निश्चित करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:115
+msgid "Return focus after popover menu closes"
+msgstr "पॉपओवर मेनू बंद केल्यानंतर फोकस परत करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:116
+msgid "Prevent search and style buttons from receiving focus"
+msgstr "फोकस प्राप्त करण्यापासून शोध आणि शैली बटणे प्रतिबंधित करा"
+
 #: data/io.elementary.terminal.appdata.xml.in:117
+msgid "Hide the cursor while typing"
+msgstr "टाइप करताना कर्सर लपवा"
+
+#: data/io.elementary.terminal.appdata.xml.in:125
+msgid "Fix erratic search text highlightning behavior"
+msgstr "अनैतिक शोध मजकूर हायलाइटिंग वर्तन निराकरण करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:126
+msgid "Support -h flag for help"
+msgstr "मदतीसाठी फ्लॅग \"-h\"  समर्थन"
+
+#: data/io.elementary.terminal.appdata.xml.in:127
+msgid "Disable audible bell"
+msgstr "ऐकण्यायोग्य घंटा अक्षम करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:128
+msgid "Add Alt+↑ action to scroll to last command"
+msgstr "अंतिम आदेश स्क्रोल करण्यासाठी Alt + ↑ अॅक्शन जोडा"
+
+#: data/io.elementary.terminal.appdata.xml.in:129
+msgid "Add Alt+c action to copy last output"
+msgstr "अंतिम आउटपुट कॉपी करण्यासाठी Alt + c क्रिया जोडा"
+
 #: data/io.elementary.terminal.appdata.xml.in:130
+msgid "Add accels to tooltips"
+msgstr "टूलटिप्समध्ये अॅक्सल जोडा"
+
+#: data/io.elementary.terminal.appdata.xml.in:138
+msgid "Fix zsh notifications"
+msgstr "zsh सूचना निराकरण करा"
+
+#: data/io.elementary.terminal.appdata.xml.in:139
+msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+msgstr "सशर्त ctrl + g शॉर्टकट इमॅक्सला डीकॉन्फ्लिक्ट करण्यासाठी"
+
 #: data/io.elementary.terminal.appdata.xml.in:140
 #: data/io.elementary.terminal.appdata.xml.in:148
 #: data/io.elementary.terminal.appdata.xml.in:156
@@ -77,160 +209,34 @@ msgstr "URL निवडीशी संबंधित समस्यांच
 #: data/io.elementary.terminal.appdata.xml.in:209
 #: data/io.elementary.terminal.appdata.xml.in:217
 #: data/io.elementary.terminal.appdata.xml.in:232
-msgid "Translation updates"
-msgstr "भाषांतर अपडेट्स"
-
-#: data/io.elementary.terminal.appdata.xml.in:55
-msgid "Add commandline option for New Window (-n)"
-msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
-
-#: data/io.elementary.terminal.appdata.xml.in:59
-msgid "Prevent duplicate tab on startup"
-msgstr "स्टार्टअप वर डुप्लिकेट टॅब प्रतिबंधित करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:60
-msgid "Prevent unnecessary Home tab on startup"
-msgstr "स्टार्टअप वर अनावश्यक होम टॅब प्रतिबंधित करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:69
-msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "सेटिंग्ज मेनूमध्ये नैसर्गिक कॉपी / पेस्ट चालू किंवा बंद करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:70
-msgid "Zoom with Ctrl + Scroll"
-msgstr "Ctrl + Scroll सह झूम करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:74
-msgid "Include sudo password prompt when copying last output"
-msgstr "अंतिम आउटपुट कॉपी करताना sudo संकेतशब्द प्रॉम्प्ट समाविष्ट करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:75
-msgid "Apply font changes without restarting"
-msgstr "रीस्टार्ट न करता फॉन्ट बदल लागू करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:83
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr "इतिहास सिस्टम सेटिंग्जमध्ये अक्षम केलेला असताना टॅब लक्षात ठेवू नये"
-
-#: data/io.elementary.terminal.appdata.xml.in:84
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "दुय्यम-क्लिक मेनूमध्ये कीबोर्ड शॉर्टकट दर्शवा"
-
-#: data/io.elementary.terminal.appdata.xml.in:85
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "मध्य-क्लिक पेस्ट आता सिस्टम सेटिंग्जचे योग्यरित्या अनुसरण करते"
-
-#: data/io.elementary.terminal.appdata.xml.in:86
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "टॅब डुप्लिकेट करण्यासाठी Shift + Control + D"
-
-#: data/io.elementary.terminal.appdata.xml.in:87
-msgid "Use neutral colors for the dark style scheme"
-msgstr "गडद शैली योजनेसाठी तटस्थ रंग वापरा"
-
-#: data/io.elementary.terminal.appdata.xml.in:88
-msgid "Slightly pad text from the edge of the window"
-msgstr "विंडोच्या काठावरुन मजकूर किंचित पॅड करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:96
-msgid "Pressing the Menu key now opens the context menu"
-msgstr "मेनू की दाबल्याने आता संदर्भ मेनू उघडेल"
-
-#: data/io.elementary.terminal.appdata.xml.in:97
-msgid "Store state with GSettings"
-msgstr "जीसेटिंगसह स्टेट स्टोअर"
-
-#: data/io.elementary.terminal.appdata.xml.in:105
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "झूम इन करण्यासाठी Ctrl + Equal की कॉम्बो समर्थन"
-
-#: data/io.elementary.terminal.appdata.xml.in:106
-msgid "Fix a wrong foreground process response code"
-msgstr "चुकीचे फोरग्राउंड प्रक्रिया प्रतिसाद कोड निश्चित करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:114
-msgid "Return focus after popover menu closes"
-msgstr "पॉपओवर मेनू बंद केल्यानंतर फोकस परत करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:115
-msgid "Prevent search and style buttons from receiving focus"
-msgstr "फोकस प्राप्त करण्यापासून शोध आणि शैली बटणे प्रतिबंधित करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:116
-msgid "Hide the cursor while typing"
-msgstr "टाइप करताना कर्सर लपवा"
-
-#: data/io.elementary.terminal.appdata.xml.in:124
-msgid "Fix erratic search text highlightning behavior"
-msgstr "अनैतिक शोध मजकूर हायलाइटिंग वर्तन निराकरण करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:125
-msgid "Support -h flag for help"
-msgstr "मदतीसाठी फ्लॅग \"-h\"  समर्थन"
-
-#: data/io.elementary.terminal.appdata.xml.in:126
-msgid "Disable audible bell"
-msgstr "ऐकण्यायोग्य घंटा अक्षम करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:127
-msgid "Add Alt+↑ action to scroll to last command"
-msgstr "अंतिम आदेश स्क्रोल करण्यासाठी Alt + ↑ अॅक्शन जोडा"
-
-#: data/io.elementary.terminal.appdata.xml.in:128
-msgid "Add Alt+c action to copy last output"
-msgstr "अंतिम आउटपुट कॉपी करण्यासाठी Alt + c क्रिया जोडा"
-
-#: data/io.elementary.terminal.appdata.xml.in:129
-msgid "Add accels to tooltips"
-msgstr "टूलटिप्समध्ये अॅक्सल जोडा"
-
-#: data/io.elementary.terminal.appdata.xml.in:137
-msgid "Fix zsh notifications"
-msgstr "zsh सूचना निराकरण करा"
-
-#: data/io.elementary.terminal.appdata.xml.in:138
-msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr "सशर्त ctrl + g शॉर्टकट इमॅक्सला डीकॉन्फ्लिक्ट करण्यासाठी"
-
-#: data/io.elementary.terminal.appdata.xml.in:139
-#: data/io.elementary.terminal.appdata.xml.in:147
-#: data/io.elementary.terminal.appdata.xml.in:155
-#: data/io.elementary.terminal.appdata.xml.in:163
-#: data/io.elementary.terminal.appdata.xml.in:171
-#: data/io.elementary.terminal.appdata.xml.in:182
-#: data/io.elementary.terminal.appdata.xml.in:190
-#: data/io.elementary.terminal.appdata.xml.in:199
-#: data/io.elementary.terminal.appdata.xml.in:208
-#: data/io.elementary.terminal.appdata.xml.in:216
-#: data/io.elementary.terminal.appdata.xml.in:231
 msgid "Minor bug fixes"
 msgstr "किरकोळ दोष निराकरणे"
 
-#: data/io.elementary.terminal.appdata.xml.in:179
+#: data/io.elementary.terminal.appdata.xml.in:180
 msgid "FISH integration fixes"
 msgstr "FISH एकत्रीकरण निराकरणे"
 
-#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:181
 msgid "Theme preference menu"
 msgstr "थीम प्राधान्य मेनू"
 
-#: data/io.elementary.terminal.appdata.xml.in:181
+#: data/io.elementary.terminal.appdata.xml.in:182
 msgid "Zoom level controls"
 msgstr "झूम पातळी नियंत्रणे"
 
-#: data/io.elementary.terminal.appdata.xml.in:198
+#: data/io.elementary.terminal.appdata.xml.in:199
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr "कमांडलाइनवर एग्जिट टाइप केल्यावर टॅब बंद करण्यास परवानगी द्या"
 
-#: data/io.elementary.terminal.appdata.xml.in:207
+#: data/io.elementary.terminal.appdata.xml.in:208
 msgid "Fix copying URLs to clipboard"
 msgstr "क्लिपबोर्डवर URL कॉपी करणे निश्चित करा"
 
-#: data/io.elementary.terminal.appdata.xml.in:224
+#: data/io.elementary.terminal.appdata.xml.in:225
 msgid "Fix appstream date format"
 msgstr "अ‍ॅपस्ट्रीम तारीख स्वरूप निश्चित करा"
 
-#: data/io.elementary.terminal.appdata.xml.in:266
+#: data/io.elementary.terminal.appdata.xml.in:267
 msgid "elementary LLC."
 msgstr "एलिमेंटरी LLC."
 
