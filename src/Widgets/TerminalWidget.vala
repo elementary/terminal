@@ -79,9 +79,9 @@ namespace Terminal {
         const string PORT = "(?:\\:[[:digit:]]{1,5})?";
         const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;:@&=?/~#%\\E]";
         const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
-        const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
-                                 |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
-                                 |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
+        const string SCHEME = "(?:news:|telnet:|nntp:|file:\\/|https?:|ftps?:|sftp:|webcal:" +
+                              "|irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:" +
+                              "|git\\+ssh:|bzr:|bzr\\+ssh:|svn:|svn\\+ssh:|hg:|mailto:|magnet:)";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
@@ -281,9 +281,13 @@ namespace Terminal {
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
+#if !VTE_0_60
             /* Bold font */
             allow_bold = Application.settings.get_boolean ("allow-bold");
+#endif
 
+// Support for non-UTF-8 encoding is deprecated
+#if !VTE_0_60
             /* Load encoding */
             var encoding = Application.settings.get_string ("encoding");
             if (encoding != "") {
@@ -293,6 +297,7 @@ namespace Terminal {
                     warning ("Failed to set encoding - %s", e.message);
                 }
             }
+#endif
 
             /* Disable bell if necessary */
             audible_bell = Application.settings.get_boolean ("audible-bell");
@@ -399,13 +404,18 @@ namespace Terminal {
         }
 
         private void clickable (string[] str) {
-            foreach (string exp in str) {
+            foreach (unowned string exp in str) {
                 try {
-                    var regex = new GLib.Regex (exp);
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
+                    int id = this.match_add_regex (regex, 0);
+                    this.match_set_cursor_name (id, "pointer");
+#else
+                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
                     int id = this.match_add_gregex (regex, 0);
-
                     this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-                } catch (GLib.RegexError error) {
+#endif
+                } catch (GLib.Error error) {
                     warning (error.message);
                 }
             }
@@ -463,7 +473,9 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                    this.feed_child (uris_s.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
 #else
                     this.feed_child (uris_s.to_utf8 ());
@@ -474,7 +486,9 @@ namespace Terminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                        this.feed_child (data.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
 #else
                         this.feed_child (data.to_utf8 ());

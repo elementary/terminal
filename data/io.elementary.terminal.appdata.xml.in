@@ -35,6 +35,19 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.5.2" date="2020-04-01" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Add commandline option for New Tab (-t)</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Fix URL selection</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.5.1" date="2020-01-11" urgency="medium">
       <description>
         <p>New features:</p>
