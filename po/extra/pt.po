@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-04-09 07:10+0000\n"
+"PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -82,14 +82,13 @@ msgid "Translation updates"
 msgstr "Atualizações de tradução"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "Adiciona opção de linha de comando para Nova Janela (-n)"
+msgstr ""
+"Adiciona opção de linha de comando para \"Mostrar versão\" (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
-msgstr "Adiciona opção de linha de comando para Nova Janela (-n)"
+msgstr "Adiciona opção de linha de comando para Nova janela (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Prevent duplicate tab on startup"
