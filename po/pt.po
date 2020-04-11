@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-02-01 13:08+0000\n"
+"PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -26,7 +26,7 @@ msgstr "Tarefa concluída"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Mostrar versão"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -64,7 +64,7 @@ msgstr "Copiar"
 
 #: src/MainWindow.vala:201
 msgid "Copy Last Output"
-msgstr "Copiar a Última Saída"
+msgstr "Copiar a última saída"
 
 #: src/MainWindow.vala:206
 msgid "Paste"
@@ -177,7 +177,7 @@ msgstr "Não colar"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Colar"
+msgstr "Colar mesmo assim"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
