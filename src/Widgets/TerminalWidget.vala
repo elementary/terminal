@@ -146,6 +146,7 @@ namespace Terminal {
                     long current_col, current_row, clicked_row, clicked_col;
                     get_cursor_position (out current_col, out current_row);
                     get_clicked_cell_position (event, out clicked_row, out clicked_col);
+                    remember_command_start_position ();
 
                     if (clicked_row < remembered_command_start_row) {
                         return Gdk.EVENT_PROPAGATE;
