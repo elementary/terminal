@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-04-03 12:09+0000\n"
+"PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -82,10 +82,10 @@ msgid "Translation updates"
 msgstr "Actualitzacions de les traduccions"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "Addició d'una opció de línia d'ordres per a una finestra nova (-n)"
+msgstr ""
+"Addició d'una opció de línia d'ordres per mostrar-ne la versió (-v, "
+"--version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
