@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-01-10 18:32+0000\n"
+"PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/extra/nl/"
-">\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/extra/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,10 +46,8 @@ msgid "New features:"
 msgstr "Nieuwe functies:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for New Tab (-t)"
-msgstr "Een commando optie (-n) toegevoegd om een nieuw venster te openen"
+msgstr "Een commando optie (-t) toegevoegd om een nieuw tabblad te openen"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:58
@@ -59,7 +57,7 @@ msgstr "Andere updates:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Een probleem opgelost met het selecteren van een URL"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -84,10 +82,8 @@ msgid "Translation updates"
 msgstr "Bijgewerkte vertalingen"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "Een commando optie (-n) toegevoegd om een nieuw venster te openen"
+msgstr "Een commando optie (-v of --version) toegevoegd om de versie te tonen"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
