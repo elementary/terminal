@@ -154,10 +154,8 @@ namespace Terminal {
                         || (clicked_row == remembered_command_start_row
                         && clicked_col < remembered_command_start_col)
                     ) {
-                        debug("ignore");
                         return Gdk.EVENT_PROPAGATE;
                     }
-                    debug("handle!");
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
