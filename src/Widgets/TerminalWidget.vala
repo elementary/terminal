@@ -163,8 +163,9 @@ namespace Terminal {
                     Idle.add (() => { /* wait for button press event to be processed */
                         /* Cursor will move as close as possible to pointer */
                         var n_events = (int) delta_cells.abs ();
+                        var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
                         for (int i = 0; i < n_events; i++) {
-                            feed_child (delta_cells > 0U ? "\033[C" : "\033[D", 3);
+                            feed_child (sequence, 3);
                         }
 
                         Gdk.threads_add_idle_full (GLib.Priority.LOW, () => {
