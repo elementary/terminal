@@ -139,7 +139,7 @@ namespace Terminal {
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
 
-                if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
+                if (event.button == Gdk.BUTTON_PRIMARY && allow_hyperlink && !has_foreground_process ()) {
                     long current_col, current_row, clicked_row, clicked_col;
                     get_cursor_position (out current_col, out current_row);
                     get_clicked_cell_position (event, out clicked_row, out clicked_col);
