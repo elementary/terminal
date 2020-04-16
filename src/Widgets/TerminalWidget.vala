@@ -554,7 +554,6 @@ namespace Terminal {
             if (!last_key_was_return || has_foreground_process ()) {
                 return;
             }
-            debug("remember_command_start_position");
 
             long col, row;
             get_cursor_position (out col, out row);
