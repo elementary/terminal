@@ -159,6 +159,7 @@ namespace Terminal {
                     Idle.add (() => { /* wait for button press event to be processed */
                         /* Cursor will move as close as possible to pointer */
                         var n_events = (int) delta_cells.abs ();
+                        // use escape sequence to move cursor: http://ascii-table.com/ansi-escape-sequences.php
                         var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
                         for (int i = 0; i < n_events; i++) {
                             feed_child (sequence, 3);
