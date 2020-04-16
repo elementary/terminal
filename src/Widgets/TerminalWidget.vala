@@ -113,7 +113,6 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         private Gdk.RGBA background_color = Gdk.RGBA ();
         private Gdk.RGBA cursor_color = Gdk.RGBA ();
-        private Vte.CursorBlinkMode remembered_cursor_blink_mode;
         public bool last_key_was_return = true;
 
         private double total_delta_y = 0.0;
@@ -140,9 +139,6 @@ namespace Terminal {
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
 
-                remembered_cursor_blink_mode = cursor_blink_mode;
-                cursor_blink_mode = Vte.CursorBlinkMode.OFF;
-
                 if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
                     long current_col, current_row, clicked_row, clicked_col;
                     get_cursor_position (out current_col, out current_row);
@@ -157,6 +153,8 @@ namespace Terminal {
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
+                    var previous_cursor_blink_mode = cursor_blink_mode;
+                    cursor_blink_mode = Vte.CursorBlinkMode.OFF;
                     set_color_cursor (background_color);
                     Idle.add (() => { /* wait for button press event to be processed */
                         /* Cursor will move as close as possible to pointer */
@@ -166,7 +164,9 @@ namespace Terminal {
                             feed_child (sequence, 3);
                         }
 
-                        Gdk.threads_add_idle_full (GLib.Priority.LOW, () => {
+                        // wait for shell to move cursor to avoid flickering
+                        Timeout.add (50, () => {
+                            cursor_blink_mode = previous_cursor_blink_mode;
                             set_color_cursor (cursor_color);
                             return Source.REMOVE;
                         });
@@ -195,8 +195,6 @@ namespace Terminal {
             });
 
             button_release_event.connect ((event) => {
-                cursor_blink_mode = remembered_cursor_blink_mode;
-
                 if (event.button == Gdk.BUTTON_PRIMARY) {
                     if (allow_hyperlink) {
                         uri = get_link (event);
