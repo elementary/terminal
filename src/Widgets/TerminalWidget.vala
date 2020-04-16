@@ -165,7 +165,7 @@ namespace Terminal {
                         this.feed_child (sequence, 3);
                     }
 
-                    // wait for shell to move cursor, the restore cursor visibility
+                    // wait for shell to move cursor, then restore cursor visibility
                     Timeout.add (50, () => {
                         cursor_blink_mode = previous_cursor_blink_mode;
                         set_color_cursor (cursor_color);
