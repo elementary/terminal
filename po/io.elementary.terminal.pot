@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-01 22:41+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Application.vala:116
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr ""
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:262
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:267
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:270
+#: src/Application.vala:261
 msgid "Open a new terminal window"
 msgstr ""
 
 #. -t flag forces a new tab
-#: src/Application.vala:273
+#: src/Application.vala:264
 msgid "Open a new terminal tab"
 msgstr ""
 
-#: src/Application.vala:275
+#: src/Application.vala:266
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:277
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr ""
 

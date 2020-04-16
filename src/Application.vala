@@ -31,6 +31,7 @@ public class Terminal.Application : Gtk.Application {
 
     // option_help will be true if help flag was given.
     private static bool option_help = false;
+    private static bool option_version = false;
 
     // option_new_window will be true if the new-window flag was given.
     private static bool option_new_window = false;
@@ -172,7 +173,9 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (option_help) {
-            show_help (context.get_help (true, null));
+            command_line.print (context.get_help (true, null));
+        } else if (option_version) {
+            command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
             if (command_e != null) {
                 run_commands (command_e, working_directory);
@@ -197,19 +200,6 @@ public class Terminal.Application : Gtk.Application {
         working_directory = null;
 
         return 0;
-    }
-
-    private void show_help (string help) {
-        var window = get_last_window ();
-
-        if (window == null) {
-            stdout.printf (help);
-        } else {
-            window.current_terminal.feed (
-                // add return to newline for terminal output.
-                help.replace ("\n", "\r\n").data
-            );
-        }
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
@@ -258,6 +248,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private const OptionEntry[] ENTRIES = {
+        { "version", 'v', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
         /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
         { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
 

@@ -39,6 +39,7 @@
       <description>
         <p>New features:</p>
         <ul>
+          <li>Move cursor within current command by pointing and clicking</li>
           <li>Add commandline option for New Tab (-t)</li>
         </ul>
         <p>Other updates:</p>
@@ -52,7 +53,7 @@
       <description>
         <p>New features:</p>
         <ul>
-          <li>Move cursor within current command by pointing and clicking</li>
+          <li>Add commandline option for "Show version" (-v, --version)</li>
           <li>Add commandline option for New Window (-n)</li>
         </ul>
         <p>Other updates:</p>
