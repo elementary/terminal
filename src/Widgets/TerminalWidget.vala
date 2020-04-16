@@ -153,25 +153,22 @@ namespace Terminal {
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
+                    // make cursor invisible to avoid flickering
                     var previous_cursor_blink_mode = cursor_blink_mode;
                     cursor_blink_mode = Vte.CursorBlinkMode.OFF;
                     set_color_cursor (background_color);
-                    Idle.add (() => { /* wait for button press event to be processed */
-                        /* Cursor will move as close as possible to pointer */
-                        var n_events = (int) delta_cells.abs ();
-                        // use escape sequence to move cursor: http://ascii-table.com/ansi-escape-sequences.php
-                        var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
-                        for (int i = 0; i < n_events; i++) {
-                            feed_child (sequence, 3);
-                        }
 
-                        // wait for shell to move cursor to avoid flickering
-                        Timeout.add (50, () => {
-                            cursor_blink_mode = previous_cursor_blink_mode;
-                            set_color_cursor (cursor_color);
-                            return Source.REMOVE;
-                        });
+                    // use escape sequence to move cursor: http://ascii-table.com/ansi-escape-sequences.php
+                    var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
+                    var n_events = (int) delta_cells.abs ();
+                    for (int i = 0; i < n_events; i++) {
+                        this.feed_child (sequence, 3);
+                    }
 
+                    // wait for shell to move cursor, the restore cursor visibility
+                    Timeout.add (50, () => {
+                        cursor_blink_mode = previous_cursor_blink_mode;
+                        set_color_cursor (cursor_color);
                         return Source.REMOVE;
                     });
                 } else if (event.button == Gdk.BUTTON_SECONDARY) {
@@ -557,6 +554,7 @@ namespace Terminal {
             if (!last_key_was_return || has_foreground_process ()) {
                 return;
             }
+            debug("remember_command_start_position");
 
             long col, row;
             get_cursor_position (out col, out row);
