@@ -232,8 +232,6 @@ namespace Terminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
-
-            Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {

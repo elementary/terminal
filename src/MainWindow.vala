@@ -361,18 +361,6 @@ namespace Terminal {
                 _("Default zoom level")
             );
 
-            Application.saved_state.bind_with_mapping (
-                "zoom",
-                zoom_default_button, "label",
-                SettingsBindFlags.GET,
-                (property, setting, data) => {
-                    double zoom = setting.get_double ();
-                    property.set_string ("%.0f%%".printf (zoom * 100));
-                    return true;
-                },
-                null, null, null
-            );
-
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
             zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -521,7 +509,23 @@ namespace Terminal {
             add (grid);
 
             menu_popover.closed.connect (() => {
+                var binding = menu_popover.get_qdata<Binding> (Quark.from_string ("zoom-binding"));
+                binding.unref ();
                 current_terminal.grab_focus ();
+            });
+
+            menu_button.pressed.connect (() => {
+                zoom_default_button.label = ("%.0f%%").printf (current_terminal.font_scale * 100);
+                var binding = current_terminal.bind_property ("font-scale",
+                                                              zoom_default_button,
+                                                              "label",
+                                                              BindingFlags.DEFAULT,
+                                                              (binding, from_val, ref to_val) => {
+                                                to_val.set_string (("%.0f%%").printf (from_val.get_double () * 100));
+                                                return true;
+                                                              });
+
+                menu_popover.set_qdata<Binding> (Quark.from_string ("zoom-binding"), binding);
             });
 
             switch (Application.settings.get_string ("background")) {
