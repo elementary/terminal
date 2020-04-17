@@ -516,13 +516,13 @@ namespace Terminal {
             });
 
             menu_button.pressed.connect (() => {
-                zoom_default_button.label = ("%.0f%%").printf (current_terminal.font_scale * 100);
+                zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
                 var binding = current_terminal.bind_property ("font-scale",
                                                               zoom_default_button,
                                                               "label",
                                                               BindingFlags.DEFAULT,
                                                               (binding, from_val, ref to_val) => {
-                                                to_val.set_string (("%.0f%%").printf (from_val.get_double () * 100));
+                                                to_val.set_string (font_scale_to_zoom (from_val.get_double ()));
                                                 return true;
                                                               });
 
@@ -1029,6 +1029,7 @@ namespace Terminal {
             });
 
             t.set_font (term_font);
+            t.font_scale = Terminal.Application.saved_state.get_double ("zoom");
 
             int minimum_width = t.calculate_width (80) / 2;
             int minimum_height = t.calculate_height (24) / 2;
@@ -1466,6 +1467,10 @@ namespace Terminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
+        }
+
+        private string font_scale_to_zoom (double font_scale) {
+            return ("%.0f%%").printf (font_scale * 100);
         }
     }
 }

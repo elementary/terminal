@@ -444,7 +444,7 @@ namespace Terminal {
         }
 
         public void set_default_font_size () {
-            font_scale = 1.0;
+            font_scale = Terminal.Application.saved_state.get_double ("zoom");
         }
 
         public bool is_init_complete () {
