@@ -30,6 +30,7 @@ namespace Terminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private string[] saved_tabs;
+        private string[] saved_zooms;
 
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
@@ -714,8 +715,10 @@ namespace Terminal {
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
+                saved_zooms = Terminal.Application.saved_state.get_strv ("tab-zooms");
             } else {
                 saved_tabs = {};
+                saved_zooms = {};
             }
 
             var rect = Gdk.Rectangle ();
@@ -919,18 +922,22 @@ namespace Terminal {
 
         private void open_tabs () {
             string[] tabs = {};
+            string[] zooms = {};
             int focus = 0;
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 tabs = saved_tabs;
+                zooms = saved_zooms;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
+                    zooms += "1.0";
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
                 tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                zooms += "1.0";
             }
 
             int null_dirs = 0;
@@ -953,13 +960,17 @@ namespace Terminal {
 
             /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
             focus += notebook.n_tabs;
+            int index = 0;
             foreach (string loc in tabs) {
                 if (loc == "") {
                     focus--;
-                    continue;
                 } else {
-                    new_tab (loc, null, false);
+                    var term = new_tab (loc, null, false);
+                    term.font_scale = double.parse (zooms[index]).clamp (TerminalWidget.MIN_SCALE,
+                                                                         TerminalWidget.MAX_SCALE);
                 }
+
+                index++;
             }
 
             if (focus_restored_tabs) {
@@ -969,7 +980,7 @@ namespace Terminal {
             }
         }
 
-        private void new_tab (string location, string? program = null, bool focus = true) {
+        private TerminalWidget new_tab (string location, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -1047,6 +1058,8 @@ namespace Terminal {
             } else {
                 t.run_program (program, location);
             }
+
+            return t;
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
@@ -1374,6 +1387,7 @@ namespace Terminal {
 
         private void save_opened_terminals () {
             string[] opened_tabs = {};
+            string[] zooms = {};
 
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
@@ -1384,6 +1398,7 @@ namespace Terminal {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
                             opened_tabs += location;
+                            zooms += ("%.1f").printf (term.font_scale);
                         }
                     }
                 });
@@ -1391,6 +1406,11 @@ namespace Terminal {
             Terminal.Application.saved_state.set_strv (
                 "tabs",
                 opened_tabs
+            );
+
+            Terminal.Application.saved_state.set_strv (
+                "tab-zooms",
+                zooms
             );
 
             Terminal.Application.saved_state.set_int (

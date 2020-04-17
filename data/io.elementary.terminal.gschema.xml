@@ -44,8 +44,13 @@
     </key>
     <key name="zoom" type="d">
       <default>1.0</default>
-      <summary>Most recent zoom level of terminal</summary>
-      <description>Most recent zoom level of terminal</description>
+      <summary>Default zoom level of new terminal</summary>
+      <description>Default zoom level of new terminal</description>
+    </key>
+    <key name="tab-zooms" type="as">
+      <default>[]</default>
+      <summary>Zoom level of each open terminal</summary>
+      <description>Zoom level of each open terminal</description>
     </key>
   </schema>
 

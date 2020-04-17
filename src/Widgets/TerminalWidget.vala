@@ -94,8 +94,8 @@ namespace Terminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
-        const double MIN_SCALE = 0.2;
-        const double MAX_SCALE = 5.0;
+        public const double MIN_SCALE = 0.2;
+        public const double MAX_SCALE = 5.0;
 
         public bool child_has_exited {
             get;
