@@ -178,5 +178,10 @@
       <summary>Alert the user about unsafe paste.</summary>
       <description>If the user paste's a command into the terminal that might be considered unsafe, warn them.</description>
     </key>
+    <key name="sync-zoom" type="b">
+      <default>true</default>
+      <summary>Whether all tabs have the same zoom</summary>
+      <description>Whether changes to one tab's zoom level should be applied to all tabs</description>
+    </key>
   </schema>
 </schemalist>
