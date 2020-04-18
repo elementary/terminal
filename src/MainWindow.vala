@@ -538,6 +538,9 @@ namespace Terminal {
                     foreach (TerminalWidget t in terminals) {
                         t.font_scale = scale;
                     }
+
+                    /* Also sync new tab zoom */
+                    Terminal.Application.saved_state.set_double ("zoom", scale);
                 }
 
                 current_terminal.grab_focus ();
