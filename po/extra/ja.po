@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-04-03 12:09+0000\n"
+"PO-Revision-Date: 2020-04-21 01:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -82,10 +82,8 @@ msgid "Translation updates"
 msgstr "翻訳の更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "新しいウィンドウを開くコマンドラインオプション (-n) を追加"
+msgstr "\"バージョンを表示\" コマンドラインオプション (-v, --version) を追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
