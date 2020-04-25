@@ -35,11 +35,58 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="5.4.1" date="2019-12-06" urgency="medium">
+    <release version="5.5.3" date="2020-05-01" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
           <li>Strip whitespace from clipboard when pasting, preventing accidental executing of commands</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.2" date="2020-04-01" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Add commandline option for New Tab (-t)</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Fix URL selection</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.1" date="2020-01-11" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Add commandline option for "Show version" (-v, --version)</li>
+          <li>Add commandline option for New Window (-n)</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Prevent duplicate tab on startup</li>
+          <li>Prevent unnecessary Home tab on startup</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.0" date="2020-01-02" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Turn Natural Copy/Paste on or off in the Settings menu</li>
+          <li>Zoom with Ctrl + Scroll</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Include sudo password prompt when copying last output</li>
+          <li>Apply font changes without restarting</li>
+          <li>Translation updates</li>
         </ul>
       </description>
     </release>

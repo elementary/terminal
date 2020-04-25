@@ -26,7 +26,7 @@ namespace Terminal {
         public DBus () {
         }
 
-        public void process_finished (string terminal_id, string process, int exit_status) {
+        public void process_finished (string terminal_id, string process, int exit_status) throws GLib.Error {
             finished_process (terminal_id, process, exit_status);
         }
     }

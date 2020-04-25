@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -17,34 +17,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Tasca acabada"
 
-#: src/Application.vala:212
+#: src/Application.vala:251
+msgid "Show version"
+msgstr "Mostra'n la versió"
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Executa un programa al terminal"
 
-#: src/Application.vala:213
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+"Executa el recordatori de la línia com a ordre al terminal. També es pot "
+"usar \"--\" com a bandera."
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "Obre una finestra nova del terminal"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "Obre una pestanya nova del terminal"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Mostra'n l'ajuda"
 
-#: src/Application.vala:214
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "Copia l'última sortida"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Enganxa"
 
@@ -52,43 +74,52 @@ msgstr "Enganxa"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Cerca…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Mostra-ho al navegador de fitxers"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Allunya"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Apropa"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Contrast alt"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr "Fosc"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Estil"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr "Copiar i enganxar naturals"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Les dreceres no necessiten Maj.; pot interferir en les aplicacions CLI."
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "Paràmetres"
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
 
@@ -168,6 +199,9 @@ msgstr "Cerca cíclica"
 msgid "Terminal"
 msgstr "Terminal"
 
+#~ msgid "Style"
+#~ msgstr "Estil"
+
 #~ msgid "Solarized Dark"
 #~ msgstr "Llum de dia fosca"
 
@@ -194,9 +228,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Tanca"
-
-#~ msgid "Open a new window"
-#~ msgstr "Obre una finestra nova"
 
 #~ msgid "New Tab"
 #~ msgstr "Pestanya nova"

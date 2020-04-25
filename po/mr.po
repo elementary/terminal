@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-02-03 08:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -11,33 +11,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "कार्य पूर्ण झाले"
 
-#: src/Application.vala:212
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:213
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr "टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "नवीन टर्मिनल विंडो उघडा"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "नवीन टर्मिनल टॅब उघडा"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:214
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "प्रतिकृती"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करा"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "चिकटवा(पेस्ट)"
 
@@ -45,43 +65,51 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "शोधा…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "फाईल ब्राउझर मध्ये दाखवा"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr "गडद"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "शैली"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr "नैसर्गिक कॉपी / पेस्ट"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "शॉर्टकट्सना शिफ्टची आवश्यकता नसते; सीएलआय अॅप्समध्ये हस्तक्षेप करू शकते"
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "सेटिंग्ज"
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 
@@ -160,6 +188,9 @@ msgstr "चक्रीय शोध"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#~ msgid "Style"
+#~ msgstr "शैली"
 
 #~ msgid "Solarized Dark"
 #~ msgstr "सौरकृत गडद"

@@ -79,9 +79,9 @@ namespace Terminal {
         const string PORT = "(?:\\:[[:digit:]]{1,5})?";
         const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;:@&=?/~#%\\E]";
         const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
-        const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
-                                 |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
-                                 |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
+        const string SCHEME = "(?:news:|telnet:|nntp:|file:\\/|https?:|ftps?:|sftp:|webcal:" +
+                              "|irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:" +
+                              "|git\\+ssh:|bzr:|bzr\\+ssh:|svn:|svn\\+ssh:|hg:|mailto:|magnet:)";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
@@ -111,6 +111,8 @@ namespace Terminal {
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
+
+        private double total_delta_y = 0.0;
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -169,6 +171,40 @@ namespace Terminal {
                 }
 
                 return false;
+            });
+
+            scroll_event.connect ((event) => {
+                if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
+                    switch (event.direction) {
+                        case Gdk.ScrollDirection.UP:
+                            increment_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.DOWN:
+                            decrement_size ();
+                            return Gdk.EVENT_STOP;
+
+                        case Gdk.ScrollDirection.SMOOTH:
+                            /* try to emulate a normal scrolling event by summing deltas.
+                             * step size of 0.5 chosen to match sensitivity */
+                            total_delta_y += event.delta_y;
+
+                            if (total_delta_y >= 0.5) {
+                                total_delta_y = 0;
+                                decrement_size ();
+                            } else if (total_delta_y <= -0.5) {
+                                total_delta_y = 0;
+                                increment_size ();
+                            }
+
+                            return Gdk.EVENT_STOP;
+
+                        default:
+                            break;
+                    }
+                }
+
+                return Gdk.EVENT_PROPAGATE;
             });
 
             selection_changed.connect (() => {
@@ -245,9 +281,13 @@ namespace Terminal {
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
+#if !VTE_0_60
             /* Bold font */
             allow_bold = Application.settings.get_boolean ("allow-bold");
+#endif
 
+// Support for non-UTF-8 encoding is deprecated
+#if !VTE_0_60
             /* Load encoding */
             var encoding = Application.settings.get_string ("encoding");
             if (encoding != "") {
@@ -257,6 +297,7 @@ namespace Terminal {
                     warning ("Failed to set encoding - %s", e.message);
                 }
             }
+#endif
 
             /* Disable bell if necessary */
             audible_bell = Application.settings.get_boolean ("audible-bell");
@@ -306,27 +347,27 @@ namespace Terminal {
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
-            /* Putting this in an Idle loop helps avoid corruption of the prompt on startup with multiple tabs */
-            Idle.add_full (GLib.Priority.LOW, () => {
-                try {
-                    this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                            envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-                } catch (Error e) {
-                    warning (e.message);
-                }
-                return false;
-            });
+            /* We need opening uri to be available asap when constructing window with working directory
+             * so remove idle loop, which appears not to be necessary any longer */
+            try {
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
+                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
-        public void run_program (string program_string) {
+        public void run_program (string program_string, string? working_directory) {
             try {
                 string[]? program_with_args = null;
                 Shell.parse_argv (program_string, out program_with_args);
 
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, null, program_with_args,
+                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
                                         null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
+                feed ((e.message + "\r\n\r\n").data);
+                active_shell (working_directory);
             }
         }
 
@@ -363,13 +404,18 @@ namespace Terminal {
         }
 
         private void clickable (string[] str) {
-            foreach (string exp in str) {
+            foreach (unowned string exp in str) {
                 try {
-                    var regex = new GLib.Regex (exp);
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
+                    int id = this.match_add_regex (regex, 0);
+                    this.match_set_cursor_name (id, "pointer");
+#else
+                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
                     int id = this.match_add_gregex (regex, 0);
-
                     this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-                } catch (GLib.RegexError error) {
+#endif
+                } catch (GLib.Error error) {
                     warning (error.message);
                 }
             }
@@ -427,7 +473,9 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                    this.feed_child (uris_s.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
 #else
                     this.feed_child (uris_s.to_utf8 ());
@@ -438,7 +486,9 @@ namespace Terminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                        this.feed_child (data.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
 #else
                         this.feed_child (data.to_utf8 ());

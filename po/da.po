@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2019-01-31 21:59+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/terminal/"
@@ -20,31 +20,55 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Opgave afsluttet"
 
-#: src/Application.vala:212
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Kør et program i terminalen"
 
-#: src/Application.vala:213
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "Åbn et nyt vindue"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal tab"
+msgstr "Åbn et nyt vindue"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Vis hjælp"
 
-#: src/Application.vala:214
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "Kopier Forrige Resultat"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Indsæt"
 
@@ -52,43 +76,51 @@ msgstr "Indsæt"
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Vis i Filbrowser"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Zoom ud"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Zoom ind"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Høj Kontrast"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Udseende"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Skjul søgebar"
 
@@ -168,6 +200,9 @@ msgstr "Cyklisk søgning"
 msgid "Terminal"
 msgstr "Terminal"
 
+#~ msgid "Style"
+#~ msgstr "Udseende"
+
 #~ msgid "Solarized Dark"
 #~ msgstr "Solarized Dark"
 
@@ -194,9 +229,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Luk"
-
-#~ msgid "Open a new window"
-#~ msgstr "Åbn et nyt vindue"
 
 #~ msgid "New Tab"
 #~ msgstr "Nyt faneblad"

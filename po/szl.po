@@ -1,161 +1,193 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-06-26 18:53+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-02-23 13:08+0000\n"
+"Last-Translator: gkkulik <g.kulik@o2.pl>\n"
+"Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
+"terminal/szl/>\n"
 "Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:117
 msgid "Task finished"
+msgstr "Zadanie zakōńczōne"
+
+#: src/Application.vala:251
+msgid "Show version"
 msgstr ""
 
-#: src/Application.vala:212
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "Sztartnij program w terminalu"
 
-#: src/Application.vala:213
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+"Wykōnej reszta linije jako kōmynda we terminalu. Idzie użyć '--' jako fana"
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "Ôtwōrz nowe ôkno terminala"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "Ôtwōrz nowo karta terminala"
+
+#: src/Application.vala:266
 msgid "Show help"
-msgstr ""
+msgstr "Pokoż pōmoc"
 
-#: src/Application.vala:214
+#: src/Application.vala:268
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Szteluj katalog roboczy powłōki"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
-msgstr ""
+msgstr "Skopiuj"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:206
 msgid "Paste"
-msgstr ""
+msgstr "Wraź"
 
 #: src/MainWindow.vala:211
 msgid "Select All"
-msgstr ""
+msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
-msgstr ""
+msgstr "Znojdź…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:354
 msgid "Zoom out"
-msgstr ""
+msgstr "Pōmyńszynie"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
-msgstr ""
+msgstr "Wychodny poziōm powiynkszynio"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:380
 msgid "Zoom in"
-msgstr ""
+msgstr "Powiynkszynie"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:396
 msgid "High Contrast"
-msgstr ""
+msgstr "Wysoki kōntrast"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
-msgstr ""
+msgstr "Jasny Solarized"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:412
 msgid "Dark"
-msgstr ""
+msgstr "Ciymny"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr ""
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr "Naturalne kopiowanie i wrażanie"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza kōmynd"
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "Sztelōnki"
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skryj posek szukanio"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "Je żeś zicher, iże chcesz zawrzić ta karta?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "W tyj karcie je aktywny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "Po zawarciu proces bydzie zakōńczōny."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
-msgstr ""
+msgstr "Zawrzij karta"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "Na zicher chcesz zawrzić Terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "W ôknie terminala je aktywny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "Po zawarciu Terminala proces bydzie zakōńczōny."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr ""
+msgstr "Zawrzij Terminal"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "To kōmynda prosi ô połny dostymp do tego kōmputra"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "Kopiowanie kōmynd do terminala może być niybezpieczne."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "Dej pozōr, żeby rozumieć, co robi kożdy part tyj kōmyndy."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Pokoż ôstrzeżynia ô ôchrōnie wrażanio"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
-msgstr ""
+msgstr "Niy wrażej"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Wraź i tak"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
+msgstr "Znojdź"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr ""
+msgstr "Piyrwyjszy wynik"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr ""
+msgstr "Dalszy wynik"
 
 #: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
-msgstr ""
+msgstr "Wyszukowanie cykliczne"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 18:26+0000\n"
-"PO-Revision-Date: 2019-11-22 03:24+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-02-01 13:08+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -17,34 +17,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
-#: src/Application.vala:114
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Tarefa concluída"
 
-#: src/Application.vala:212
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
 
-#: src/Application.vala:213
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+"Execute o restante da linha como um comando no terminal. Também pode usar "
+"'-' como sinalizador"
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "Abra uma nova janela do terminal"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "Abra uma nova guia do terminal"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Exibir ajuda"
 
-#: src/Application.vala:214
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Definir diretório de trabalho do shell"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "Copiar a Última Saída"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "Colar"
 
@@ -52,43 +74,51 @@ msgstr "Colar"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:215 src/MainWindow.vala:300 src/MainWindow.vala:1142
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "Mostrar no Navegador de Arquivos"
 
-#: src/MainWindow.vala:308
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Reduzir o Zoom"
 
-#: src/MainWindow.vala:315
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Nível de zoom padrão"
 
-#: src/MainWindow.vala:322
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Ampliar o Zoom"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: src/MainWindow.vala:343
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Luz Solarizada"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr "Escuro"
 
-#: src/MainWindow.vala:375
-msgid "Style"
-msgstr "Estilo"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr "Copiar/colar natural"
 
-#: src/MainWindow.vala:1134
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "Configurações"
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 
@@ -168,6 +198,9 @@ msgstr "Busca cíclica"
 msgid "Terminal"
 msgstr "Terminal"
 
+#~ msgid "Style"
+#~ msgstr "Estilo"
+
 #~ msgid "Solarized Dark"
 #~ msgstr "Escuro Solarizado"
 
@@ -194,9 +227,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Fechar"
-
-#~ msgid "Open a new window"
-#~ msgstr "Abrir nova janela"
 
 #~ msgid "New Tab"
 #~ msgstr "Nova aba"
