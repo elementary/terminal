@@ -108,11 +108,11 @@ namespace Terminal {
         }
 
         private long remembered_cursor_row; /* Only need to remember row at the moment */
-        private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
+        private long remembered_command_start_row = 0;
+        private long remembered_command_start_col = 0;
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         private Gdk.RGBA background_color = Gdk.RGBA ();
         private Gdk.RGBA cursor_color = Gdk.RGBA ();
-        private Vte.CursorBlinkMode remembered_cursor_blink_mode;
         public bool last_key_was_return = true;
 
         private double total_delta_y = 0.0;
@@ -139,43 +139,36 @@ namespace Terminal {
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
 
-                remembered_cursor_blink_mode = cursor_blink_mode;
-                cursor_blink_mode = Vte.CursorBlinkMode.OFF;
-
-                if (event.button == Gdk.BUTTON_PRIMARY && !has_foreground_process ()) {
+                if (event.button == Gdk.BUTTON_PRIMARY && allow_hyperlink && !has_foreground_process ()) {
                     long current_col, current_row, clicked_row, clicked_col;
                     get_cursor_position (out current_col, out current_row);
                     get_clicked_cell_position (event, out clicked_row, out clicked_col);
                     remember_command_start_position ();
 
-                    if (clicked_row < remembered_command_start_row) {
+                    if (clicked_row < remembered_command_start_row ||
+                       (clicked_row == remembered_command_start_row &&
+                       clicked_col < remembered_command_start_col)) {
                         return Gdk.EVENT_PROPAGATE;
                     }
 
                     long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
 
-                    /* Synthesise a cursor press - is there a better way? */
-                    Gdk.EventKey key_event = (Gdk.EventKey)(new Gdk.Event (Gdk.EventType.KEY_PRESS));
-                    key_event.send_event = 1;
-                    /* Need to add a ref else crash on second key press - vapi error? */
-                    key_event.window = (Gdk.Window)(this.get_window ().ref ());
-                    key_event.keyval = delta_cells > 0U ? Gdk.Key.Right : Gdk.Key.Left;
-                    key_event.is_modifier = 0;
-
+                    // make cursor invisible to avoid flickering
+                    var previous_cursor_blink_mode = cursor_blink_mode;
+                    cursor_blink_mode = Vte.CursorBlinkMode.OFF;
                     set_color_cursor (background_color);
-                    Idle.add (() => { /* wait for button press event to be processed */
-                        /* Cursor will move as close as possible to pointer */
-                        var n_events = (int) delta_cells.abs ();
-                        for (int i = 0; i < n_events; i++) {
-                            key_event.time = (uint32)(get_monotonic_time ());
-                            key_press_event (key_event);
-                        }
 
-                        Gdk.threads_add_idle_full (GLib.Priority.LOW, () => {
-                            set_color_cursor (cursor_color);
-                            return Source.REMOVE;
-                        });
+                    // use escape sequence to move cursor: http://ascii-table.com/ansi-escape-sequences.php
+                    var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
+                    var n_events = (int) delta_cells.abs ();
+                    for (int i = 0; i < n_events; i++) {
+                        this.feed_child (sequence, 3);
+                    }
 
+                    // wait for shell to move cursor, then restore cursor visibility
+                    Timeout.add (50, () => {
+                        cursor_blink_mode = previous_cursor_blink_mode;
+                        set_color_cursor (cursor_color);
                         return Source.REMOVE;
                     });
                 } else if (event.button == Gdk.BUTTON_SECONDARY) {
@@ -200,8 +193,6 @@ namespace Terminal {
             });
 
             button_release_event.connect ((event) => {
-                cursor_blink_mode = remembered_cursor_blink_mode;
-
                 if (event.button == Gdk.BUTTON_PRIMARY) {
                     if (allow_hyperlink) {
                         uri = get_link (event);
@@ -567,6 +558,7 @@ namespace Terminal {
             long col, row;
             get_cursor_position (out col, out row);
             remembered_command_start_row = row;
+            remembered_command_start_col = col;
             last_key_was_return = false;
             resized = false;
         }
