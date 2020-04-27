@@ -1130,27 +1130,40 @@ namespace Terminal {
                 return;
             }
 
-            unowned string text = intext._strip ();
+            // If there is a foreground process we paste everything else we ensure no command is executed in the shell
+            if (!current_terminal.has_foreground_process ()) {
+                current_terminal.remember_command_start_position ();
 
-            if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
-                if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var d = new UnsafePasteDialog (this);
-                    if (d.run () == 1) {
-                        d.destroy ();
-                        return;
+                // Stripping the string does not prevent command execution - there may be embedded \n characters.
+                // Instead we just paste the first line that is not blank (without the \n)
+                string[] lines = intext.split ("\n");
+                string text = "";
+                foreach (string line in lines) {
+                    if (line != "") {
+                        text = line;
+                        break;
                     }
-                    d.destroy ();
                 }
-            }
 
-            current_terminal.remember_command_start_position ();
+                // This should never run but leave for now.
+                if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
+                    if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
+                        var d = new UnsafePasteDialog (this);
+                        if (d.run () == 1) {
+                            d.destroy ();
+                            return;
+                        }
+                        d.destroy ();
+                    }
+                }
+
+                // Override clipboard with stripped version
+                Gtk.Clipboard.get_default (this.get_display ()).set_text (text, -1);
+            }
 
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
             } else {
-                // Override clipboard with stripped version
-                Gtk.Clipboard.get_default (this.get_display ()).set_text (text, -1);
-
                 current_terminal.paste_clipboard ();
             }
         }
