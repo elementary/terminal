@@ -1134,18 +1134,8 @@ namespace Terminal {
             if (!current_terminal.has_foreground_process ()) {
                 current_terminal.remember_command_start_position ();
 
-                // Stripping the string does not prevent command execution - there may be embedded \n characters.
-                // Instead we just paste the first line that is not blank (without the \n)
-                string[] lines = intext.split ("\n");
-                string text = "";
-                foreach (string line in lines) {
-                    if (line != "") {
-                        text = line;
-                        break;
-                    }
-                }
+                unowned string text = intext._strip ();
 
-                // This should never run but leave for now.
                 if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
                     if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                         var d = new UnsafePasteDialog (this);
