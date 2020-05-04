@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-04-16 00:10+0000\n"
+"PO-Revision-Date: 2020-05-05 07:10+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -82,18 +82,16 @@ msgid "Translation updates"
 msgstr "Traducciones actualizadas"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "Añadir opción de línea de comando para Nueva Ventana (-n)"
+msgstr "Se añadió la opción de consola «Mostrar versión» (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
-msgstr "Añadir opción de línea de comando para Nueva Ventana (-n)"
+msgstr "Se añadió la opción de consola «Ventana nueva» (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Prevent duplicate tab on startup"
-msgstr "Prevenir pestaña duplicada al iniciar"
+msgstr "Se evita duplicar pestañas al arrancar"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Prevent unnecessary Home tab on startup"
@@ -105,7 +103,7 @@ msgstr "Activar o desactivar Copia/Pega natural en el menú Configuración"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Zoom with Ctrl + Scroll"
-msgstr "«Zoom» con Ctrl + Scroll"
+msgstr "Acercamiento con Ctrl + ruedecilla del ratón"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Include sudo password prompt when copying last output"
@@ -113,13 +111,13 @@ msgstr "Incluir la solicitud de contraseña de sudo al copiar la última salida"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Apply font changes without restarting"
-msgstr "Aplicar cambios de fuente sin reiniciar"
+msgstr "Se aplican los cambios de tipo de letra sin necesidad de reiniciar"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
-"No recordar pestañas cuando el historial está desactivado en Ajustes del "
-"Sistema"
+"No se recuerdan las pestañas cuando se desactiva el historial en "
+"Configuración del sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Show keyboard shortcuts in the secondary-click menu"
