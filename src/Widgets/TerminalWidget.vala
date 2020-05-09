@@ -247,32 +247,54 @@ namespace Terminal {
             Gdk.RGBA foreground_color = Gdk.RGBA ();
             foreground_color.parse (Application.settings.get_string ("foreground"));
 
-            string[] hex_palette = {
+            const int PALETTE_SIZE = 16;
+            const string[] HEX_PALETTE = {
                 "#073642", "#dc322f", "#859900", "#b58900",
                 "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
                 "#586e75", "#cb4b16", "#859900", "#b58900",
                 "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
             };
 
-            string current_string = "";
-            int current_color = 0;
-            for (var i = 0; i < Application.settings.get_string ("palette").length; i++) {
-                if (Application.settings.get_string ("palette")[i] == ':') {
-                    hex_palette[current_color] = current_string;
-                    current_string = "";
-                    current_color++;
+            var hex_palette = new string[PALETTE_SIZE];
+            var palette_setting_string = Application.settings.get_string ("palette");
+            var setting_palette = palette_setting_string.split (":", PALETTE_SIZE + 1);
+
+            bool settings_valid = setting_palette.length <= PALETTE_SIZE;
+
+            int i = 0;
+            foreach (string hex in setting_palette) {
+                hex_palette[i] = hex;
+                i++;
+            }
+
+            while (i < PALETTE_SIZE) {
+                hex_palette[i] = HEX_PALETTE[i];
+                i++;
+            }
+
+            Gdk.RGBA[] palette = new Gdk.RGBA[PALETTE_SIZE];
+
+            for (i = 0; i < PALETTE_SIZE; i++) {
+                Gdk.RGBA new_color = Gdk.RGBA ();
+                if (new_color.parse (hex_palette[i])) {
+                    palette[i] = new_color;
                 } else {
-                    current_string += Application.settings.get_string ("palette")[i].to_string ();
+                    // Replace invalid color with corresponding one from default palette
+                    hex_palette[i] = HEX_PALETTE[i];
+                    settings_valid = false;
                 }
             }
 
-            Gdk.RGBA[] palette = new Gdk.RGBA[16];
+            if (!settings_valid) {
+             /* Remove invalid colors from setting */
+                var sb = new StringBuilder ("");
+                foreach (string hex in hex_palette) {
+                    sb.append (hex);
+                    sb.append (":");
+                }
 
-            for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color = Gdk.RGBA ();
-                new_color.parse (hex_palette[i]);
-
-                palette[i] = new_color;
+                sb.truncate (sb.len - 1);
+                Application.settings.set_string ("palette", sb.str);
             }
 
             set_colors (foreground_color, background_color, palette);
