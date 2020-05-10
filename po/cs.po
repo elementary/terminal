@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-05-08 15:10+0000\n"
+"PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
 "cs/>\n"
@@ -26,7 +26,7 @@ msgstr "Úloha dokončena"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Zobrazit verzi"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -37,20 +37,18 @@ msgstr "Spustit program v terminálu"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Spustit zbytek řádky jako příkaz v terminálu. „--“ také můžete použít jako "
+"příznak"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otevřít nové okno"
+msgstr "Otevřít nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Otevřít nové okno"
+msgstr "Otevřít nový panel terminálu"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -110,15 +108,17 @@ msgstr "Tmavý"
 
 #: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Přirozené kopírování/vkládání"
 
 #: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Klávesové zkratky nevyžadují použití Shift; může kolidovat s aplikacemi v "
+"příkazovém řádku"
 
 #: src/MainWindow.vala:477
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: src/MainWindow.vala:1252
 msgid "Hide find bar"
