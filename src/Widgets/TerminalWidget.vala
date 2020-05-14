@@ -255,14 +255,14 @@ namespace Terminal {
                 "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
             };
 
-            var hex_palette = new string[PALETTE_SIZE];
+            var hex_palette = new string[PALETTE_SIZE + 1];
             var palette_setting_string = Application.settings.get_string ("palette");
             var setting_palette = palette_setting_string.split (":", PALETTE_SIZE + 1);
 
-            bool settings_valid = setting_palette.length <= PALETTE_SIZE;
+            bool settings_valid = setting_palette.length == PALETTE_SIZE;
 
             int i = 0;
-            foreach (string hex in setting_palette) {
+            foreach (unowned string hex in setting_palette) {
                 hex_palette[i] = hex;
                 i++;
             }
@@ -279,6 +279,7 @@ namespace Terminal {
                 if (new_color.parse (hex_palette[i])) {
                     palette[i] = new_color;
                 } else {
+                    warning ("Color %s is not valid - replacing with default", hex_palette[i]);
                     // Replace invalid color with corresponding one from default palette
                     hex_palette[i] = HEX_PALETTE[i];
                     settings_valid = false;
@@ -287,14 +288,7 @@ namespace Terminal {
 
             if (!settings_valid) {
              /* Remove invalid colors from setting */
-                var sb = new StringBuilder ("");
-                foreach (string hex in hex_palette) {
-                    sb.append (hex);
-                    sb.append (":");
-                }
-
-                sb.truncate (sb.len - 1);
-                Application.settings.set_string ("palette", sb.str);
+                Application.settings.set_string ("palette", string.joinv (":", hex_palette));
             }
 
             set_colors (foreground_color, background_color, palette);
