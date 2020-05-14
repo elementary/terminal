@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2018-06-01 00:02+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech <https://weblate.elementary.io/projects/terminal/extra/"
-"cs/>\n"
+"PO-Revision-Date: 2020-05-12 15:10+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-27 05:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -44,21 +44,21 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:53
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "New features:"
-msgstr ""
+msgstr "Nové funkce:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Přidání volby pro příkazový řádek pro novou kartu (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:58
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Other updates:"
-msgstr ""
+msgstr "Ostatní aktualizace:"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Oprava výběru URL adresy"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -80,71 +80,73 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:218
 #: data/io.elementary.terminal.appdata.xml.in:233
 msgid "Translation updates"
-msgstr ""
+msgstr "Aktualizace překladů"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr ""
+msgstr "Přidání volby příkazového řádku pro „Zobrazení verze“ (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Přidání volby příkazového řádku pro Nové okno (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Zabránění duplikace karty při spouštění"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Zabránění zbytečné domovské kartě při spuštění"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Vypnutí/zapnutí přirozeného kopírování a vkládání v nabídce nastavení"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Přiblížení pomocí stisku klávesy Ctrl + kolečka myši"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Při kopírování posledního výstupu zahrnout výzvu na heslo k sudo"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Použití změn písma bez restartu aplikace"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "Nepamatovat si karty když je v nastavení systému vypnutá historie"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Zobrazovat klávesové zkratky v nabídce pod pravým tlačítkem myši"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Vkládání prostředním tlačítkem myši nyní funguje tak, jak je určeno v "
+"nastavení systému"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Duplikace karet pomocí klávesové zkratky Shift+Ctrl+D"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Použití neutrálních barev pro schéma tmavého stylu"
 
 #: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Mírné odsazení textu od okraje okna"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Stisk klávesy Menu nyní otevře kontextovou nabídku"
 
 #: data/io.elementary.terminal.appdata.xml.in:98
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Uchovávání nastavení v GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Support Ctrl+Equal key combo to zoom in"
@@ -243,7 +245,7 @@ msgstr "elementary LLC."
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
 msgid "utilities-terminal"
-msgstr "utilities-terminal"
+msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"

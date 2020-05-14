@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-04-30 07:10+0000\n"
+"PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -37,8 +37,8 @@ msgstr "Ejecutar un programa en la terminal"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Ejecutar el resto de la línea como un comando en la terminal. También puede "
-"usar '--' como bandera"
+"Ejecutar el resto del renglón como una orden en el terminal. También puede "
+"usar «--» como conmutador"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -56,7 +56,7 @@ msgstr "Mostrar ayuda"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
-msgstr "Establecer el directorio de trabajo de shell"
+msgstr "Establecer el directorio de trabajo del intérprete"
 
 #: src/MainWindow.vala:196
 msgid "Copy"
@@ -125,7 +125,7 @@ msgstr "Ocultar barra de búsqueda"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "¿Está seguro de que quiere cerrar esta pestaña?"
+msgstr "¿Confirma que quiere cerrar esta pestaña?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -141,7 +141,7 @@ msgstr "Cerrar pestaña"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "¿Está seguro de que quiere salir del terminal?"
+msgstr "¿Confirma que quiere salir del terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -157,15 +157,15 @@ msgstr "Salir de Terminal"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Este comando solicita acceso al equipo como administrador"
+msgstr "Esta orden solicita acceso administrativo al equipo"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copiar comandos en la terminal puede ser peligroso."
+msgstr "Pegar órdenes en la terminal puede ser peligroso."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr "Asegúrese de comprender lo que hace cada parte de este comando."
+msgstr "Asegúrese de comprender lo que hace cada parte de esta orden."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
