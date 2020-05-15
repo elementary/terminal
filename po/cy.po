@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 10:05+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -21,39 +21,43 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:116
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Tasg wedi dod i ben"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:262
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Rhedeg rhaglen mewn terfynell"
 
-#: src/Application.vala:267
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:270
+#: src/Application.vala:261
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Agor ffenestr newydd"
 
 #. -t flag forces a new tab
-#: src/Application.vala:273
+#: src/Application.vala:264
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Agor ffenestr newydd"
 
-#: src/Application.vala:275
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Dangos cymorth"
 
-#: src/Application.vala:277
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Gosod cyfeiriadur cragen gweithredol"
 
