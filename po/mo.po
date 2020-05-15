@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 10:05+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -13,37 +13,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Application.vala:116
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Sarcină terminată"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:262
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Rulați program în terminal"
 
-#: src/Application.vala:267
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:270
+#: src/Application.vala:261
 msgid "Open a new terminal window"
 msgstr ""
 
 #. -t flag forces a new tab
-#: src/Application.vala:273
+#: src/Application.vala:264
 #, fuzzy
 #| msgid "Open Terminal Here"
 msgid "Open a new terminal tab"
 msgstr "Deschideți terminalul aici"
 
-#: src/Application.vala:275
+#: src/Application.vala:266
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:277
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Setați directorul de lucru pentru shell"
 

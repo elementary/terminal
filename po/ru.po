@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-29 10:05+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2018-11-22 20:24+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
@@ -16,39 +16,43 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:116
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Задание завершено"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:262
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
-#: src/Application.vala:267
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:270
+#: src/Application.vala:261
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Открыть новое окно"
 
 #. -t flag forces a new tab
-#: src/Application.vala:273
+#: src/Application.vala:264
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Открыть новое окно"
 
-#: src/Application.vala:275
+#: src/Application.vala:266
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:277
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
