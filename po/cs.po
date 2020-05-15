@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2018-12-13 14:07+0000\n"
-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
-"Language-Team: Czech <https://weblate.elementary.io/projects/terminal/"
-"terminal/cs/>\n"
+"PO-Revision-Date: 2020-05-12 15:10+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
+"cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
 #: src/Application.vala:117
@@ -26,7 +26,7 @@ msgstr "Úloha dokončena"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Zobrazit verzi"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -37,20 +37,18 @@ msgstr "Spustit program v terminálu"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Spustit zbytek řádky jako příkaz v terminálu. „--“ také můžete použít jako "
+"příznak"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otevřít nové okno"
+msgstr "Otevřít nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Otevřít nové okno"
+msgstr "Otevřít nový panel terminálu"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -78,7 +76,7 @@ msgstr "Vybrat vše"
 
 #: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
-msgstr "Hledat…"
+msgstr "Najít…"
 
 #: src/MainWindow.vala:222
 msgid "Show in File Browser"
@@ -106,27 +104,29 @@ msgstr "Solarizovaný světlý"
 
 #: src/MainWindow.vala:412
 msgid "Dark"
-msgstr ""
+msgstr "Tmavý"
 
 #: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Přirozené kopírování/vkládání"
 
 #: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Klávesové zkratky nevyžadují použití Shift; může kolidovat s aplikacemi v "
+"příkazovém řádku"
 
 #: src/MainWindow.vala:477
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: src/MainWindow.vala:1252
 msgid "Hide find bar"
-msgstr "Skrýt vyhledávací panel"
+msgstr "Skrýt panel vyhledávání"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Opravdu zavřít tuto kartu?"
+msgstr "Opravdu chcete zavřít tuto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -146,7 +146,7 @@ msgstr "Opravdu chcete ukončit Terminál?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "V této příkazové řádce běží aktivní proces."
+msgstr "V tomto okně terminálu běží aktivní proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-05-14 17:27+0000\n"
 "PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
@@ -41,211 +41,217 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:53
-#: data/io.elementary.terminal.appdata.xml.in:68
-msgid "New features:"
-msgstr "Funcions noves:"
-
-#: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Add commandline option for New Tab (-t)"
-msgstr "Addició d'una opció de línia d'ordres per a la pestanya nova (-t)"
-
-#: data/io.elementary.terminal.appdata.xml.in:44
-#: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:82
 msgid "Other updates:"
 msgstr "Altres actualitzacions:"
 
-#: data/io.elementary.terminal.appdata.xml.in:46
-msgid "Fix URL selection"
-msgstr "Correcció de la selecció d'URL"
+#: data/io.elementary.terminal.appdata.xml.in:42
+msgid "Validate custom palette"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:47
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:77
-#: data/io.elementary.terminal.appdata.xml.in:90
+#: data/io.elementary.terminal.appdata.xml.in:43
+#: data/io.elementary.terminal.appdata.xml.in:56
+#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:86
 #: data/io.elementary.terminal.appdata.xml.in:99
 #: data/io.elementary.terminal.appdata.xml.in:108
-#: data/io.elementary.terminal.appdata.xml.in:118
-#: data/io.elementary.terminal.appdata.xml.in:131
-#: data/io.elementary.terminal.appdata.xml.in:141
-#: data/io.elementary.terminal.appdata.xml.in:149
-#: data/io.elementary.terminal.appdata.xml.in:157
-#: data/io.elementary.terminal.appdata.xml.in:165
-#: data/io.elementary.terminal.appdata.xml.in:173
-#: data/io.elementary.terminal.appdata.xml.in:184
-#: data/io.elementary.terminal.appdata.xml.in:192
+#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:127
+#: data/io.elementary.terminal.appdata.xml.in:140
+#: data/io.elementary.terminal.appdata.xml.in:150
+#: data/io.elementary.terminal.appdata.xml.in:158
+#: data/io.elementary.terminal.appdata.xml.in:166
+#: data/io.elementary.terminal.appdata.xml.in:174
+#: data/io.elementary.terminal.appdata.xml.in:182
+#: data/io.elementary.terminal.appdata.xml.in:193
 #: data/io.elementary.terminal.appdata.xml.in:201
 #: data/io.elementary.terminal.appdata.xml.in:210
-#: data/io.elementary.terminal.appdata.xml.in:218
-#: data/io.elementary.terminal.appdata.xml.in:233
+#: data/io.elementary.terminal.appdata.xml.in:219
+#: data/io.elementary.terminal.appdata.xml.in:227
+#: data/io.elementary.terminal.appdata.xml.in:242
 msgid "Translation updates"
 msgstr "Actualitzacions de les traduccions"
 
+#: data/io.elementary.terminal.appdata.xml.in:49
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+msgid "New features:"
+msgstr "Funcions noves:"
+
+#: data/io.elementary.terminal.appdata.xml.in:51
+msgid "Add commandline option for New Tab (-t)"
+msgstr "Addició d'una opció de línia d'ordres per a la pestanya nova (-t)"
+
 #: data/io.elementary.terminal.appdata.xml.in:55
+msgid "Fix URL selection"
+msgstr "Correcció de la selecció d'URL"
+
+#: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add commandline option for \"Show version\" (-v, --version)"
 msgstr ""
-"Addició d'una opció de línia d'ordres per mostrar-ne la versió (-v, "
-"--version)"
+"Addició d'una opció de línia d'ordres per mostrar-ne la versió (-v, --"
+"version)"
 
-#: data/io.elementary.terminal.appdata.xml.in:56
+#: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add commandline option for New Window (-n)"
 msgstr "Addició d'una opció de línia d'ordres per a una finestra nova (-n)"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Prevent duplicate tab on startup"
 msgstr "Prevenció de pestanya duplicada a l'inici"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Prevent unnecessary Home tab on startup"
 msgstr "Prevenció de la pestanya d'inici innecessària quan s'obre"
 
-#: data/io.elementary.terminal.appdata.xml.in:70
+#: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
 msgstr ""
 "S'activa o desactiva l'acció de copiar / enganxar natural al menú de "
 "configuració."
 
-#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:80
 msgid "Zoom with Ctrl + Scroll"
 msgstr "Zoom amb Ctrl + desplaçament"
 
-#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Include sudo password prompt when copying last output"
 msgstr ""
 "S'inclou la sol·licitud de contrasenya sudo en copiar l'última sortida."
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Apply font changes without restarting"
 msgstr "S'apliquen els canvis de lletra sense reiniciar."
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:93
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
 "No es recorden les pestanyes quan l'historial està desactivat a la "
 "configuració del sistema."
 
-#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:94
 msgid "Show keyboard shortcuts in the secondary-click menu"
 msgstr "Es mostren les dreceres del teclat al menú del clic secundari."
 
-#: data/io.elementary.terminal.appdata.xml.in:86
+#: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
 "Ara enganxar amb clic del mig segueix adequadament la configuració del "
 "sistema."
 
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Shift + Control + D to duplicate tabs"
 msgstr "Maj. + Control + D per duplicar pestanyes"
 
-#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Use neutral colors for the dark style scheme"
 msgstr "Ús de colors neutres per a l'esquema d'estil fosc"
 
-#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:98
 msgid "Slightly pad text from the edge of the window"
 msgstr "Text una mica cobert des de la vora de la finestra"
 
-#: data/io.elementary.terminal.appdata.xml.in:97
+#: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Pressing the Menu key now opens the context menu"
 msgstr "Prémer la tecla de menú ara obre un menú contextual."
 
-#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Store state with GSettings"
 msgstr "Estat de l'emmagatzematge amb GSettings"
 
-#: data/io.elementary.terminal.appdata.xml.in:106
+#: data/io.elementary.terminal.appdata.xml.in:115
 msgid "Support Ctrl+Equal key combo to zoom in"
 msgstr "Suport de zoom per a Ctrl + Combo de tecles iguals"
 
-#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Fix a wrong foreground process response code"
 msgstr "Correcció d'un codi de resposta incorrecte del procés de primer pla"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Return focus after popover menu closes"
 msgstr "Retorn del focus després de tancar el menú emergent"
 
-#: data/io.elementary.terminal.appdata.xml.in:116
+#: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Prevent search and style buttons from receiving focus"
 msgstr "S'evita que els botons d’estil i de cerca rebin el focus"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Hide the cursor while typing"
 msgstr "S'amaga el cursor mentre s'escriu"
 
-#: data/io.elementary.terminal.appdata.xml.in:125
+#: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fix erratic search text highlightning behavior"
 msgstr "Correcció del comportament de ressaltat erràtic del text de cerca"
 
-#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:135
 msgid "Support -h flag for help"
 msgstr "Suport de la bandera -h per a l'ajuda"
 
-#: data/io.elementary.terminal.appdata.xml.in:127
+#: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Disable audible bell"
 msgstr "Inhabilitació de la campana sonora"
 
-#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:137
 msgid "Add Alt+↑ action to scroll to last command"
 msgstr "Addició d'Alt + ↑ per desplaçar-vos a l'última ordre"
 
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Add Alt+c action to copy last output"
 msgstr "Addició d'Alt + c per copiar la darrera sortida"
 
-#: data/io.elementary.terminal.appdata.xml.in:130
+#: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Add accels to tooltips"
 msgstr "Addició d'accels als consells"
 
-#: data/io.elementary.terminal.appdata.xml.in:138
+#: data/io.elementary.terminal.appdata.xml.in:147
 msgid "Fix zsh notifications"
 msgstr "Correcció de les notificacions de zsh"
 
-#: data/io.elementary.terminal.appdata.xml.in:139
+#: data/io.elementary.terminal.appdata.xml.in:148
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
 msgstr "Drecera de Ctrl + g condicional per evitar el conflicte amb emacs"
 
-#: data/io.elementary.terminal.appdata.xml.in:140
-#: data/io.elementary.terminal.appdata.xml.in:148
-#: data/io.elementary.terminal.appdata.xml.in:156
-#: data/io.elementary.terminal.appdata.xml.in:164
-#: data/io.elementary.terminal.appdata.xml.in:172
-#: data/io.elementary.terminal.appdata.xml.in:183
-#: data/io.elementary.terminal.appdata.xml.in:191
+#: data/io.elementary.terminal.appdata.xml.in:149
+#: data/io.elementary.terminal.appdata.xml.in:157
+#: data/io.elementary.terminal.appdata.xml.in:165
+#: data/io.elementary.terminal.appdata.xml.in:173
+#: data/io.elementary.terminal.appdata.xml.in:181
+#: data/io.elementary.terminal.appdata.xml.in:192
 #: data/io.elementary.terminal.appdata.xml.in:200
 #: data/io.elementary.terminal.appdata.xml.in:209
-#: data/io.elementary.terminal.appdata.xml.in:217
-#: data/io.elementary.terminal.appdata.xml.in:232
+#: data/io.elementary.terminal.appdata.xml.in:218
+#: data/io.elementary.terminal.appdata.xml.in:226
+#: data/io.elementary.terminal.appdata.xml.in:241
 msgid "Minor bug fixes"
 msgstr "Correccions d'errors menors"
 
-#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:189
 msgid "FISH integration fixes"
 msgstr "Correccions d'integració de FISH"
 
-#: data/io.elementary.terminal.appdata.xml.in:181
+#: data/io.elementary.terminal.appdata.xml.in:190
 msgid "Theme preference menu"
 msgstr "Menú de preferències de temes"
 
-#: data/io.elementary.terminal.appdata.xml.in:182
+#: data/io.elementary.terminal.appdata.xml.in:191
 msgid "Zoom level controls"
 msgstr "Controls de nivell de zoom"
 
-#: data/io.elementary.terminal.appdata.xml.in:199
+#: data/io.elementary.terminal.appdata.xml.in:208
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 "Es permet tancar la pestanya després d’escriure \"exit\" a la línia d’ordres"
 
-#: data/io.elementary.terminal.appdata.xml.in:208
+#: data/io.elementary.terminal.appdata.xml.in:217
 msgid "Fix copying URLs to clipboard"
 msgstr "Correcció de la còpia d’URL al porta-retalls"
 
-#: data/io.elementary.terminal.appdata.xml.in:225
+#: data/io.elementary.terminal.appdata.xml.in:234
 msgid "Fix appstream date format"
 msgstr "Correcció d'origen del format de la data"
 
-#: data/io.elementary.terminal.appdata.xml.in:267
+#: data/io.elementary.terminal.appdata.xml.in:276
 msgid "elementary LLC."
 msgstr "elementary LLC."
 

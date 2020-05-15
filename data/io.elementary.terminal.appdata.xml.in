@@ -35,6 +35,15 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.5.3" date="2020-05-09" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Validate custom palette</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.5.2" date="2020-04-01" urgency="medium">
       <description>
         <p>New features:</p>
