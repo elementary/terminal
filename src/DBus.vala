@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal {
+namespace Terminal {
     [DBus (name="io.elementary.terminal")]
     public class DBus {
         [DBus (visible = false)]
@@ -26,7 +26,7 @@ namespace PantheonTerminal {
         public DBus () {
         }
 
-        public void process_finished (string terminal_id, string process, int exit_status) {
+        public void process_finished (string terminal_id, string process, int exit_status) throws GLib.Error {
             finished_process (terminal_id, process, exit_status);
         }
     }

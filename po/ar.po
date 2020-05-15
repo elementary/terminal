@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2019-03-13 16:27+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
 "ar/>\n"
@@ -18,94 +18,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "انتهت المهمة"
 
-#: src/Application.vala:207
+#: src/Application.vala:251
+msgid "Show version"
+msgstr "إظهار الإصدار"
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "شغِّل البرنامج في الطرفية"
 
-#: src/Application.vala:208
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr "شغِّل ما تبقى من السطر كأمر في الطرفية. يمكن استعمال '--' كعلامة"
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "فتح نافذة طرفية جديدة"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "فتح علامة تبويب جديدة"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "أظهر المساعدة"
 
-#: src/Application.vala:209
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "عيِّن دليل عمل الطرفية"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "ابحث…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "أظهر في متصفح الملفات"
 
-#: src/MainWindow.vala:279
-#, fuzzy
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "تصغير"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "مستوى التقريب المبدئي"
 
-#: src/MainWindow.vala:293
-#, fuzzy
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:396
 msgid "High Contrast"
-msgstr ""
+msgstr "تباين عالي"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
+msgstr "ضوء شمسي"
+
+#: src/MainWindow.vala:412
+msgid "Dark"
+msgstr "داكن"
+
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr ""
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "الإعدادات"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
-msgstr ""
+msgstr "اخفاء شريط البحث"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "هل أنت متأكد من أنك تريد اغلاق هذا اللسان؟"
+msgstr "هل أنت متأكد من أنك تريد اغلاق هذا التبويب؟"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "هناك عملية نشطة في علامة التبويب هذه."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "إذا قمت بإغلاقه، ستنهى هذه العملية."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -117,57 +143,57 @@ msgstr "هل أنت متأكد من أنك تريد اغلاق هذه الطرف
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "هناك عملية نشطة في هذه الطرفية."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "إذا قمت بإنهاء الطرفية ، فستنهى العملية."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr ""
+msgstr "اغلاق الطرفية"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "هذا الأمر يسأل عن الوصول الإداري إلى جهاز الحاسب الخاص بك"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr ""
+msgstr "نسخ الأوامر إلى الطرفية يمكن أن يكون خطيرًا."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
+msgstr "تأكد من أنك تفهم ما يفعله كل جزء من هذا الأمر."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "إظهار تحذيرات حماية اللصق"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
-msgstr ""
+msgstr "لا تلصق"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr ""
+msgstr "الصق على أي حال"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
+msgstr "ابحث"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr ""
+msgstr "النتيجة السابقة"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr ""
+msgstr "النتيجة التالية"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "الطرفية"
 
@@ -182,9 +208,6 @@ msgstr "الطرفية"
 
 #~ msgid "Close"
 #~ msgstr "إغلاق"
-
-#~ msgid "Open a new window"
-#~ msgstr "فتح نافذة جديدة"
 
 #~ msgid "New Tab"
 #~ msgstr "تبويب جديد"

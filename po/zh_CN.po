@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2019-01-15 12:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -20,75 +20,107 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "任务已完成"
 
-#: src/Application.vala:207
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "在终端运行程序"
 
-#: src/Application.vala:208
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr ""
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal window"
+msgstr "打开新窗口"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal tab"
+msgstr "打开新窗口"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "显示帮助"
 
-#: src/Application.vala:209
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "复制"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "复制上次输出"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "在 文件管理器 中打开"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "默认缩放等级"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
-msgstr "Solarized 暗色"
+#: src/MainWindow.vala:412
+msgid "Dark"
+msgstr ""
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr "风格"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr ""
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -160,13 +192,19 @@ msgstr "上一个结果"
 msgid "Next result"
 msgstr "下一个结果"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "循环搜索"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "终端"
+
+#~ msgid "Style"
+#~ msgstr "风格"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "Solarized 暗色"
 
 #~ msgid "Cancel"
 #~ msgstr "取消"
@@ -191,9 +229,6 @@ msgstr "终端"
 
 #~ msgid "Close"
 #~ msgstr "关闭"
-
-#~ msgid "Open a new window"
-#~ msgstr "打开新窗口"
 
 #~ msgid "New Tab"
 #~ msgstr "新建标签页"

@@ -7,88 +7,116 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 09:15-0800\n"
-"PO-Revision-Date: 2018-12-11 12:15+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-04-16 00:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
-"terminal/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
+"he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: src/Application.vala:109
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "פעולה הסתיימה"
 
-#: src/Application.vala:207
+#: src/Application.vala:251
+msgid "Show version"
+msgstr "הצגת גרסה"
+
+#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: src/Application.vala:208
+#: src/Application.vala:258
+msgid ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgstr "הרצת שאר השורה כפקודה במסוף. ניתן להשתמש ב־‚--’ כדגלון"
+
+#. -n flag forces a new window, instead of a new tab
+#: src/Application.vala:261
+msgid "Open a new terminal window"
+msgstr "פתיחת חלון מסוף חדש"
+
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "פתיחת לשונית מסוף חדשה"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "הצגת עזרה"
 
-#: src/Application.vala:209
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
-#: src/MainWindow.vala:188
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:201
 msgid "Copy Last Output"
 msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:206
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:211
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:200 src/MainWindow.vala:271 src/MainWindow.vala:1088
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:222
 msgid "Show in File Browser"
 msgstr "הצגה בדפדפן הקבצים"
 
-#: src/MainWindow.vala:279
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: src/MainWindow.vala:286
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/MainWindow.vala:293
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: src/MainWindow.vala:306
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/MainWindow.vala:322
-msgid "Solarized Dark"
-msgstr "זריחה כהה"
+#: src/MainWindow.vala:412
+msgid "Dark"
+msgstr "כהה"
 
-#: src/MainWindow.vala:345
-msgid "Style"
-msgstr "סגנון"
+#: src/MainWindow.vala:427
+msgid "Natural Copy/Paste"
+msgstr "העתקה/הדבקה טבעיים"
 
-#: src/MainWindow.vala:1080
+#: src/MainWindow.vala:435
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
+
+#: src/MainWindow.vala:477
+msgid "Settings"
+msgstr "הגדרות"
+
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -160,13 +188,19 @@ msgstr "התוצאה הקודמת"
 msgid "Next result"
 msgstr "התוצאה הבאה"
 
-#: src/Widgets/SearchToolbar.vala:55
+#: src/Widgets/SearchToolbar.vala:56
 msgid "Cyclic search"
 msgstr "חיפוש מעגלי"
 
-#: src/Widgets/TerminalWidget.vala:29
+#: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "מסוף"
+
+#~ msgid "Style"
+#~ msgstr "סגנון"
+
+#~ msgid "Solarized Dark"
+#~ msgstr "זריחה כהה"
 
 #~ msgid "Cancel"
 #~ msgstr "ביטול"
@@ -191,9 +225,6 @@ msgstr "מסוף"
 
 #~ msgid "Close"
 #~ msgstr "סגירה"
-
-#~ msgid "Open a new window"
-#~ msgstr "פתיחת חלון חדש"
 
 #~ msgid "New Tab"
 #~ msgstr "לשונית חדשה"

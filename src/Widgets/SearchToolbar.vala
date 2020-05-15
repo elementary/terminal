@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace PantheonTerminal.Widgets {
+namespace Terminal.Widgets {
 
     public class SearchToolbar : Gtk.Grid {
         private Gtk.ToggleButton cycle_button;
@@ -50,7 +50,7 @@ namespace PantheonTerminal.Widgets {
             );
 
             cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image =  new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            cycle_button.image = new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             cycle_button.sensitive = false;
             cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
@@ -110,10 +110,15 @@ namespace PantheonTerminal.Widgets {
                     /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
                      * a "PCRE2 not supported" error.
                      */
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS|PCRE2.Flags.MULTILINE);
+                    term.search_set_regex (regex, 0);
+#else
                     var regex = new Regex (Regex.escape_string (search_term), RegexCompileFlags.CASELESS);
                     term.search_set_gregex (regex, 0);
+#endif
                     next_search (); /* Search immediately - not after ENTER pressed */
-                } catch (RegexError er) {
+                } catch (Error er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
             });

@@ -16,7 +16,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
+public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
     public UnsafePasteDialog (MainWindow parent) {
         Object (
             buttons: Gtk.ButtonsType.NONE,
@@ -43,7 +43,7 @@ public class PantheonTerminal.UnsafePasteDialog : Granite.MessageDialog {
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (on_ignore);
 
-        settings.schema.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
+        Terminal.Application.settings.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
     }
 
     private void on_ignore () {

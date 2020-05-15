@@ -17,15 +17,15 @@
   </enum>
 
   <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
-    <key name="window-width" type="i">
-      <default>-1</default>
-      <summary>The saved width of the window.</summary>
-      <description>The saved width of the window.</description>
+    <key name="window-position" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Window position</summary>
+      <description>Most recent window position (x, y)</description>
     </key>
-    <key name="window-height" type="i">
-      <default>-1</default>
-      <summary>The saved height of the window.</summary>
-      <description>The saved height of the window.</description>
+    <key name="window-size" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Most recent window size</summary>
+      <description>Most recent window size (width, height)</description>
     </key>
     <key name="window-state" enum="pantheon-terminal-window-states">
       <default>"Normal"</default>
@@ -41,16 +41,6 @@
         <default>-1</default>
         <summary>The index of the tab that is focused.</summary>
         <description>The index of the tab from the saved tabs that is currently focused.</description>
-    </key>
-    <key name="opening-x" type="i">
-      <default>-1</default>
-      <summary>Most recent x position of terminal</summary>
-      <description>Most recent x position of terminal</description>
-    </key>
-    <key name="opening-y" type="i">
-      <default>-1</default>
-      <summary>Most recent y position of terminal</summary>
-      <description>Most recent y position of terminal</description>
     </key>
     <key name="zoom" type="d">
       <default>1.0</default>
@@ -72,8 +62,12 @@
     </key>
     <key name="remember-tabs" type="b">
       <default>true</default>
-      <summary>Defines whether the terminal should remember tabs.</summary>
-      <description>Defines whether the terminal should remember the last open tabs.</description>
+      <summary>Whether open tabs should be remembered on closing (subject to privacy setting).</summary>
+      <description>
+          Defines whether the terminal should remember the last open tabs and restore
+          them when the terminal is reopened. If the global privacy setting is on, the tabs
+          will not be restored or remembered even if this setting is true.
+      </description>
     </key>
     <key name="alt-changes-tab" type="b">
       <default>true</default>
@@ -97,7 +91,7 @@
     </key>
 
     <key name="foreground" type="s">
-      <default>"#94a3a5"</default>
+      <default>"#a5a5a5"</default>
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
@@ -109,7 +103,7 @@
       </description>
     </key>
     <key name="background" type="s">
-      <default>"rgba(37, 46, 50, 0.95)"</default>
+      <default>"rgba(46, 46, 46, 0.95)"</default>
       <summary>Color of the background.</summary>
       <description>
           The color of the background of the terminal.
@@ -133,9 +127,9 @@
       </description>
     </key>
     <key name="cursor-shape" enum="terminal-cursor-shapes">
-    	<default>"Block"</default>
-    	<summary>Shape of the cursor.</summary>
-    	<description>The shape of the cursor of the terminal.</description>
+      <default>"Block"</default>
+      <summary>Shape of the cursor.</summary>
+      <description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
       <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
