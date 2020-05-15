@@ -7,45 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-23 16:28+0000\n"
-"PO-Revision-Date: 2018-12-17 10:53+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
-"Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
-"projects/terminal/terminal/en_GB/>\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-03-19 20:09+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"terminal/terminal/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Task finished"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Run a program in terminal"
 
-#: src/Application.vala:263
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Run remainder of line as a command in terminal. Can also use '--' as flag"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
+#: src/Application.vala:261
 msgid "Open a new terminal window"
-msgstr "Open a new window"
+msgstr "Open a new terminal window"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "Open a new terminal tab"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Show help"
 
-#: src/Application.vala:270
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Set shell working directory"
 
@@ -65,7 +73,7 @@ msgstr "Paste"
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Find…"
 
@@ -73,43 +81,43 @@ msgstr "Find…"
 msgid "Show in File Browser"
 msgstr "Show in File Browser"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Zoom out"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Default zoom level"
 
-#: src/MainWindow.vala:377
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Solarised Light"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Dark"
-msgstr ""
+msgstr "Dark"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Natural Copy/Paste"
 
-#: src/MainWindow.vala:432
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:477
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
-#: src/MainWindow.vala:1249
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Hide find bar"
 

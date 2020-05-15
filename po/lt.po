@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-23 16:28+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
 "PO-Revision-Date: 2018-12-11 21:13+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/terminal/"
@@ -21,32 +21,43 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "Užduotis baigta"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Vykdyti programą terminale"
 
-#: src/Application.vala:263
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#: src/Application.vala:261
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Atverti naują langą"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:264
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal tab"
+msgstr "Atverti naują langą"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Rodyti žinyną"
 
-#: src/Application.vala:270
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Nustatyti apvalkalo darbinį katalogą"
 
@@ -66,7 +77,7 @@ msgstr "Įdėti"
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Rasti…"
 
@@ -74,43 +85,43 @@ msgstr "Rasti…"
 msgid "Show in File Browser"
 msgstr "Rodyti failų naršyklėje"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Mažinti"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Numatytasis mastelio lygis"
 
-#: src/MainWindow.vala:377
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Didinti"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Didelis kontrastas"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Apšviesta šviesi"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:432
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:477
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1249
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Slėpti paieškos juostą"
 

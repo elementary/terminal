@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-23 16:28+0000\n"
-"PO-Revision-Date: 2020-01-10 18:32+0000\n"
+"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"PO-Revision-Date: 2020-04-16 00:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
@@ -20,16 +20,20 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "İşlem tamamlandı"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr "Sürümü göster"
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "Terminalde bir program çalıştır"
 
-#: src/Application.vala:263
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -37,15 +41,20 @@ msgstr ""
 "olarak '--' seçeneği de kullanılabilir"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#: src/Application.vala:261
 msgid "Open a new terminal window"
 msgstr "Yeni bir terminal penceresi aç"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "Yeni bir terminal sekmesi aç"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "Yardımı göster"
 
-#: src/Application.vala:270
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Kabuk çalışma dizinini ayarla"
 
@@ -65,7 +74,7 @@ msgstr "Yapıştır"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:344 src/MainWindow.vala:1257
+#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
 msgid "Find…"
 msgstr "Bul…"
 
@@ -73,43 +82,43 @@ msgstr "Bul…"
 msgid "Show in File Browser"
 msgstr "Dosya Tarayıcısında Göster"
 
-#: src/MainWindow.vala:351
+#: src/MainWindow.vala:354
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/MainWindow.vala:358
+#: src/MainWindow.vala:361
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/MainWindow.vala:377
+#: src/MainWindow.vala:380
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:396
 msgid "High Contrast"
 msgstr "Yüksek Karşıtlık"
 
-#: src/MainWindow.vala:401
+#: src/MainWindow.vala:404
 msgid "Solarized Light"
 msgstr "Açık Renk Tema"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Dark"
 msgstr "Koyu Renk Tema"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:427
 msgid "Natural Copy/Paste"
 msgstr "Doğal Kopyala/Yapıştır"
 
-#: src/MainWindow.vala:432
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Kısayollar Shift gerektirmez; bazı CLI uygulamalarını engelleyebilir"
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:477
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/MainWindow.vala:1249
+#: src/MainWindow.vala:1252
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
