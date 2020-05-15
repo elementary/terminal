@@ -79,9 +79,9 @@ namespace Terminal {
         const string PORT = "(?:\\:[[:digit:]]{1,5})?";
         const string PATHCHARS_CLASS = "[-[:alnum:]\\Q_$.+!*,;:@&=?/~#%\\E]";
         const string PATHTERM_CLASS = "[^\\Q]'.}>) \t\r\n,\"\\E]";
-        const string SCHEME = """(?:news:|telnet:|nntp:|file:\/|https?:|ftps?:|sftp:|webcal:
-                                 |irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:
-                                 |git\+ssh:|bzr:|bzr\+ssh:|svn:|svn\+ssh:|hg:|mailto:|magnet:)""";
+        const string SCHEME = "(?:news:|telnet:|nntp:|file:\\/|https?:|ftps?:|sftp:|webcal:" +
+                              "|irc:|sftp:|ldaps?:|nfs:|smb:|rsync:|ssh:|rlogin:|telnet:|git:" +
+                              "|git\\+ssh:|bzr:|bzr\\+ssh:|svn:|svn\\+ssh:|hg:|mailto:|magnet:)";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
         const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
@@ -247,32 +247,48 @@ namespace Terminal {
             Gdk.RGBA foreground_color = Gdk.RGBA ();
             foreground_color.parse (Application.settings.get_string ("foreground"));
 
-            string[] hex_palette = {
+            const int PALETTE_SIZE = 16;
+            const string[] HEX_PALETTE = {
                 "#073642", "#dc322f", "#859900", "#b58900",
                 "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
                 "#586e75", "#cb4b16", "#859900", "#b58900",
                 "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
             };
 
-            string current_string = "";
-            int current_color = 0;
-            for (var i = 0; i < Application.settings.get_string ("palette").length; i++) {
-                if (Application.settings.get_string ("palette")[i] == ':') {
-                    hex_palette[current_color] = current_string;
-                    current_string = "";
-                    current_color++;
+            var hex_palette = new string[PALETTE_SIZE + 1];
+            var palette_setting_string = Application.settings.get_string ("palette");
+            var setting_palette = palette_setting_string.split (":", PALETTE_SIZE + 1);
+
+            bool settings_valid = setting_palette.length == PALETTE_SIZE;
+
+            int i = 0;
+            foreach (unowned string hex in setting_palette) {
+                hex_palette[i] = hex;
+                i++;
+            }
+
+            while (i < PALETTE_SIZE) {
+                hex_palette[i] = HEX_PALETTE[i];
+                i++;
+            }
+
+            Gdk.RGBA[] palette = new Gdk.RGBA[PALETTE_SIZE];
+
+            for (i = 0; i < PALETTE_SIZE; i++) {
+                Gdk.RGBA new_color = Gdk.RGBA ();
+                if (new_color.parse (hex_palette[i])) {
+                    palette[i] = new_color;
                 } else {
-                    current_string += Application.settings.get_string ("palette")[i].to_string ();
+                    warning ("Color %s is not valid - replacing with default", hex_palette[i]);
+                    // Replace invalid color with corresponding one from default palette
+                    hex_palette[i] = HEX_PALETTE[i];
+                    settings_valid = false;
                 }
             }
 
-            Gdk.RGBA[] palette = new Gdk.RGBA[16];
-
-            for (int i = 0; i < hex_palette.length; i++) {
-                Gdk.RGBA new_color = Gdk.RGBA ();
-                new_color.parse (hex_palette[i]);
-
-                palette[i] = new_color;
+            if (!settings_valid) {
+             /* Remove invalid colors from setting */
+                Application.settings.set_string ("palette", string.joinv (":", hex_palette));
             }
 
             set_colors (foreground_color, background_color, palette);
@@ -281,9 +297,13 @@ namespace Terminal {
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
+#if !VTE_0_60
             /* Bold font */
             allow_bold = Application.settings.get_boolean ("allow-bold");
+#endif
 
+// Support for non-UTF-8 encoding is deprecated
+#if !VTE_0_60
             /* Load encoding */
             var encoding = Application.settings.get_string ("encoding");
             if (encoding != "") {
@@ -293,6 +313,7 @@ namespace Terminal {
                     warning ("Failed to set encoding - %s", e.message);
                 }
             }
+#endif
 
             /* Disable bell if necessary */
             audible_bell = Application.settings.get_boolean ("audible-bell");
@@ -399,13 +420,18 @@ namespace Terminal {
         }
 
         private void clickable (string[] str) {
-            foreach (string exp in str) {
+            foreach (unowned string exp in str) {
                 try {
-                    var regex = new GLib.Regex (exp);
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
+                    int id = this.match_add_regex (regex, 0);
+                    this.match_set_cursor_name (id, "pointer");
+#else
+                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
                     int id = this.match_add_gregex (regex, 0);
-
                     this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-                } catch (GLib.RegexError error) {
+#endif
+                } catch (GLib.Error error) {
                     warning (error.message);
                 }
             }
@@ -463,7 +489,9 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                    this.feed_child (uris_s.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                     this.feed_child (uris_s, uris_s.length);
 #else
                     this.feed_child (uris_s.to_utf8 ());
@@ -474,7 +502,9 @@ namespace Terminal {
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if UBUNTU_BIONIC_PATCHED_VTE
+#if VTE_0_60
+                        this.feed_child (data.data);
+#elif UBUNTU_BIONIC_PATCHED_VTE
                         this.feed_child (data, data.length);
 #else
                         this.feed_child (data.to_utf8 ());

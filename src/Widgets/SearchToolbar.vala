@@ -110,10 +110,15 @@ namespace Terminal.Widgets {
                     /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
                      * a "PCRE2 not supported" error.
                      */
+#if VTE_0_60
+                    var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS|PCRE2.Flags.MULTILINE);
+                    term.search_set_regex (regex, 0);
+#else
                     var regex = new Regex (Regex.escape_string (search_term), RegexCompileFlags.CASELESS);
                     term.search_set_gregex (regex, 0);
+#endif
                     next_search (); /* Search immediately - not after ENTER pressed */
-                } catch (RegexError er) {
+                } catch (Error er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
             });
