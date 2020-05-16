@@ -37,6 +37,10 @@
   <releases>
     <release version="5.5.3" date="2020-05-09" urgency="medium">
       <description>
+        <p>New features:</p>
+        <ul>
+          <li>Allow different zoom levels per tab</li>
+        </ul>
         <p>Other updates:</p>
         <ul>
           <li>Validate custom palette</li>
