@@ -968,6 +968,7 @@ namespace Terminal {
             string[] tabs = {};
             string[] zooms = {};
             int focus = 0;
+            string default_zoom = Application.saved_state.get_double ("zoom").to_string ();
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
@@ -975,13 +976,13 @@ namespace Terminal {
                 zooms = saved_zooms;
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
-                    zooms += "1.0";
+                    zooms += default_zoom;
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
                 tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
-                zooms += "1.0";
+                zooms += default_zoom;
             }
 
             int null_dirs = 0;
@@ -1073,7 +1074,12 @@ namespace Terminal {
             });
 
             t.set_font (term_font);
-            t.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+
+            if (current_terminal != null) {
+                t.font_scale = current_terminal.font_scale;
+            } else {
+                t.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+            }
 
             int minimum_width = t.calculate_width (80) / 2;
             int minimum_height = t.calculate_height (24) / 2;
@@ -1434,6 +1440,8 @@ namespace Terminal {
             string[] opened_tabs = {};
             string[] zooms = {};
 
+            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
+
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1448,6 +1456,7 @@ namespace Terminal {
                     }
                 });
             }
+
             Terminal.Application.saved_state.set_strv (
                 "tabs",
                 opened_tabs
