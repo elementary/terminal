@@ -531,7 +531,7 @@ namespace Terminal {
             add (grid);
 
             menu_popover.closed.connect (() => {
-                var binding = menu_popover.get_qdata<Binding> (Quark.from_string ("zoom-binding"));
+                var binding = menu_popover.get_data<Binding> ("zoom-binding");
                 binding.unref ();
                 if (sync_zoom_switch.active) {
                     var scale = current_terminal.font_scale;
@@ -557,7 +557,7 @@ namespace Terminal {
                                                 return true;
                                                               });
 
-                menu_popover.set_qdata<Binding> (Quark.from_string ("zoom-binding"), binding);
+                menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
             switch (Application.settings.get_string ("background")) {
