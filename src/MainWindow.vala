@@ -513,16 +513,6 @@ namespace Terminal {
             menu_popover.closed.connect (() => {
                 var binding = menu_popover.get_data<Binding> ("zoom-binding");
                 binding.unref ();
-                if (sync_zoom_switch.active) {
-                    var scale = current_terminal.font_scale;
-                    foreach (TerminalWidget t in terminals) {
-                        t.font_scale = scale;
-                    }
-
-                    /* Also sync new tab zoom */
-                    Terminal.Application.saved_state.set_double ("zoom", scale);
-                }
-
                 current_terminal.grab_focus ();
             });
 
