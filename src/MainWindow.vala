@@ -565,11 +565,6 @@ namespace Terminal {
                 return Gdk.EVENT_STOP;
             });
 
-            sync_zoom_button.button_release_event.connect (() => {
-                sync_zoom_switch.activate ();
-                return Gdk.EVENT_STOP;
-            });
-
             Application.settings.bind (
                 "natural-copy-paste",
                 natural_copy_paste_switch,
