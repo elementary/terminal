@@ -442,26 +442,6 @@ namespace Terminal {
             natural_copy_paste_button.get_child ().destroy ();
             natural_copy_paste_button.add (natural_copy_paste_grid);
 
-            var sync_zoom_switch = new Gtk.Switch ();
-            sync_zoom_switch.valign = Gtk.Align.START;
-            sync_zoom_switch.halign = Gtk.Align.END;
-            sync_zoom_switch.hexpand = true;
-
-            var sync_zoom_label = new Gtk.Label (_("Apply zoom to all tabs"));
-            sync_zoom_label.halign = Gtk.Align.START;
-            sync_zoom_label.vexpand = true;
-
-            var sync_zoom_grid = new Gtk.Grid ();
-            sync_zoom_grid.column_spacing = 12;
-            sync_zoom_grid.hexpand = true;
-
-            sync_zoom_grid.attach (sync_zoom_label, 0, 0);
-            sync_zoom_grid.attach (sync_zoom_switch, 1, 0);
-
-            var sync_zoom_button = new Gtk.ModelButton ();
-            sync_zoom_button.get_child ().destroy ();
-            sync_zoom_button.add (sync_zoom_grid);
-
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
             menu_popover_grid.margin_bottom = 6;
