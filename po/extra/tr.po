@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-04-16 00:10+0000\n"
+"PO-Revision-Date: 2020-05-18 20:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -141,7 +141,7 @@ msgstr "Shift + Ctrl + D ile sekmeyi çoğalt"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Use neutral colors for the dark style scheme"
-msgstr "Karanlık tema seçimlerinde doğal renkler kullan"
+msgstr "Koyu renk tema düzeninde doğal renkleri kullan"
 
 #: data/io.elementary.terminal.appdata.xml.in:98
 msgid "Slightly pad text from the edge of the window"
