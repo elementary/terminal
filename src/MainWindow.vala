@@ -510,7 +510,8 @@ namespace Terminal {
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
-            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior) Application.settings.get_enum ("tab-bar-behavior");
+            var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
+            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
             grid.attach (search_revealer, 0, 0, 1, 1);
