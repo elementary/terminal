@@ -584,14 +584,6 @@ namespace Terminal {
                 GLib.BindingFlags.SYNC_CREATE
             );
 
-            Application.settings.bind (
-                "sync-zoom",
-                sync_zoom_switch,
-                "active",
-                SettingsBindFlags.DEFAULT
-            );
-
-
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
                     return false;
