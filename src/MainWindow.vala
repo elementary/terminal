@@ -453,7 +453,6 @@ namespace Terminal {
             menu_popover_grid.add (color_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
-            menu_popover_grid.add (sync_zoom_button);
 
             menu_popover_grid.show_all ();
 
