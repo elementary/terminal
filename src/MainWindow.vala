@@ -17,7 +17,7 @@
 */
 
 namespace Terminal {
-    public class MainWindow : Gtk.Window {
+    public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -480,9 +480,15 @@ namespace Terminal {
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.has_subtitle = false;
-            header.get_style_context ().add_class ("default-decoration");
             header.pack_end (menu_button);
             header.pack_end (search_button);
+
+            unowned Gtk.StyleContext header_context = header.get_style_context ();
+            header_context.add_class (Gtk.STYLE_CLASS_TITLEBAR);
+            header_context.add_class ("default-decoration");
+
+            var window_handle = new Hdy.WindowHandle ();
+            window_handle.add (header);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
@@ -514,11 +520,11 @@ namespace Terminal {
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
-            grid.attach (search_revealer, 0, 0, 1, 1);
-            grid.attach (notebook, 0, 1, 1, 1);
+            grid.attach (window_handle, 0, 0);
+            grid.attach (search_revealer, 0, 1);
+            grid.attach (notebook, 0, 2);
 
             get_style_context ().add_class ("terminal-window");
-            set_titlebar (header);
             add (grid);
 
             menu_popover.closed.connect (() => {
@@ -573,6 +579,8 @@ namespace Terminal {
                 "reveal-child",
                 GLib.BindingFlags.SYNC_CREATE
             );
+
+            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {

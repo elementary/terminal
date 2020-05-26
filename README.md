@@ -12,6 +12,7 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 
 You'll need the following dependencies:
 * libgranite-dev >= 5.3.0
+* libhandy-1-dev >= 0.80.0
 * libvte-2.91-dev
 * meson
 * valac
