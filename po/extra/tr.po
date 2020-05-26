@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-05-18 20:11+0000\n"
+"PO-Revision-Date: 2020-05-22 14:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -48,7 +48,7 @@ msgstr "Diğer güncellemeler:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Özel renk paletini doğrula"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:56

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-04-27 00:10+0000\n"
+"PO-Revision-Date: 2020-05-21 01:11+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/extra/pt_BR/>\n"
@@ -49,7 +49,7 @@ msgstr "Outras atualizações:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Validar paleta personalizada"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:56
