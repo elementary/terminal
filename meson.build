@@ -11,7 +11,12 @@ endif
 gnome = import('gnome')
 i18n = import('i18n')
 
-add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language:'c')
+add_global_arguments([
+        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
+        '-DHANDY_USE_UNSTABLE_API'
+    ],
+    language:'c'
+)
 
 vte_dep = dependency('vte-2.91')
 
@@ -57,6 +62,7 @@ executable(
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
         dependency('granite', version: '>=5.3.0'),
+        dependency('libhandy-1', version: '>=0.80.0'),
         vte_dep,
         libpcre2_dep,
         meson.get_compiler('vala').find_library('posix'),
