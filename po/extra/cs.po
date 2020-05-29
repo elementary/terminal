@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-05-12 15:10+0000\n"
+"PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/"
-">\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "Terminál"
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Použijte příkazovou řádku"
+msgstr "Použijte příkazový řádek"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
@@ -49,7 +49,7 @@ msgstr "Ostatní aktualizace:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Ověřování správnosti uživatelsky určené palety barev"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -156,55 +156,55 @@ msgstr "Uchovávání nastavení v GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Podpora klávesové zkratky Ctrl+= pro přiblížení"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "Opraven nesprávný kód odpovědi procesu spuštěného v popředí"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Vrácení zaměření po zavření nabídky po najetí ukazatelem myši"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Zabránění tomu aby tlačítka hledaní a stylu byla zaměřena"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Skrytí kurzoru při psaní"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Opraveno chování kdy chybovalo zvýrazňování vyhledávaného textu"
 
 #: data/io.elementary.terminal.appdata.xml.in:135
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Přidána podpora pro parametr -h pro zobrazení nápovědy"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Vypnut zvonek terminálu"
 
 #: data/io.elementary.terminal.appdata.xml.in:137
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Přidána akce Alt+šipka nahoru pro posunutí na poslední příkaz"
 
 #: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Přidána akce Alt+C pro zkopírování posledního výstupu"
 
 #: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Do nástrojových tipů přidány akcelerátory"
 
 #: data/io.elementary.terminal.appdata.xml.in:147
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Opraveny upozorňování ze zsh"
 
 #: data/io.elementary.terminal.appdata.xml.in:148
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Podmíněná zkratka CTRL+G pro odstranění konfliktu s editorem emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:149
 #: data/io.elementary.terminal.appdata.xml.in:157
@@ -218,31 +218,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:226
 #: data/io.elementary.terminal.appdata.xml.in:241
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Opravy drobných chyb"
 
 #: data/io.elementary.terminal.appdata.xml.in:189
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Opravy propojení se shellem FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:190
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Nabídka pro předvolby motivu vzhledu"
 
 #: data/io.elementary.terminal.appdata.xml.in:191
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Ovládací prvky pro změnu úrovně přiblížení"
 
 #: data/io.elementary.terminal.appdata.xml.in:208
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Karty už se zavírají po zadání exit v příkazovém řádku"
 
 #: data/io.elementary.terminal.appdata.xml.in:217
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Opraveno kopírování URL adres do schránky"
 
 #: data/io.elementary.terminal.appdata.xml.in:234
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Opraven formát data v appstream metadatech"
 
 #: data/io.elementary.terminal.appdata.xml.in:276
 msgid "elementary LLC."
@@ -251,7 +251,7 @@ msgstr "elementary LLC."
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
 msgid "utilities-terminal"
-msgstr ""
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -263,7 +263,7 @@ msgstr "Nové okno"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Nová karta s právy root"
+msgstr "Nová karta s právy správce systému"
 
 #~ msgid "About Terminal"
 #~ msgstr "O aplikaci Terminál"
