@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-05-12 15:10+0000\n"
+"PO-Revision-Date: 2020-05-30 13:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
 "cs/>\n"
@@ -37,7 +37,7 @@ msgstr "Spustit program v terminálu"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Spustit zbytek řádky jako příkaz v terminálu. „--“ také můžete použít jako "
+"Spustit zbytek řádku jako příkaz v terminálu. „--“ také můžete použít jako "
 "příznak"
 
 #. -n flag forces a new window, instead of a new tab
@@ -130,7 +130,7 @@ msgstr "Opravdu chcete zavřít tuto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "V této kartě běží aktivní proces."
+msgstr "V této kartě je spuštěný proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
