@@ -225,6 +225,7 @@ namespace Terminal {
 
             menu = new Gtk.Menu ();
             menu.append (open_in_browser_menuitem);
+            menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
