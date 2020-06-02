@@ -848,6 +848,8 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
+            clipboard.request_targets (update_context_menu_cb);
+
             var uri = current_terminal.uri;
             if (uri == null) {
                 current_terminal.copy_primary ();
