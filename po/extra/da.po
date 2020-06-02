@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2018-12-12 23:02+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/terminal/extra/"
-"da/>\n"
+"PO-Revision-Date: 2020-05-28 11:11+0000\n"
+"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
+"Language-Team: Danish <https://l10n.elementary.io/projects/terminal/extra/da/"
+">\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:37+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -45,11 +45,11 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:82
 msgid "Other updates:"
-msgstr ""
+msgstr "Andre opdateringer:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Valider brugerdefineret palette"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -72,49 +72,49 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:227
 #: data/io.elementary.terminal.appdata.xml.in:242
 msgid "Translation updates"
-msgstr ""
+msgstr "Opdaterede oversættelser"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:77
 msgid "New features:"
-msgstr ""
+msgstr "Nye funktioner:"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Tilføj kommandolinje mulighed for Ny Fane (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Ret URL selektion"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr ""
+msgstr "Tilføj kommandolinje valg for \"Vis version\" (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Tilføj kommandolinje mulighed for Nyt Vindue (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Forhindre duplkeret fane ved opstart"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Forhindre unødvendig Hjemme fane ved start"
 
 #: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Tænd eller sluk for Naturlig KopI / Indsæt i Indstillinger"
 
 #: data/io.elementary.terminal.appdata.xml.in:80
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Zoom med Ctrl + Rul"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Inkluder sudo-adgangskodeprompt, når du kopierer sidste output"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Apply font changes without restarting"
