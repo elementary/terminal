@@ -874,7 +874,7 @@ namespace Terminal {
             }
 
             if (scheme == null || scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) {
-                open_in_browser_menuitem_label.label = _("Open in File Manager");
+                open_in_browser_menuitem_label.label = _("Show in File Browser");
             } else {
                 open_in_browser_menuitem_label.label = _("Open in Web Browser");
             }
