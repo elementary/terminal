@@ -194,10 +194,9 @@ namespace Terminal {
 
             var open_in_browser_menuitem = new Gtk.MenuItem ();
             open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
-            open_in_browser_menuitem_label = (new Granite.AccelLabel.from_action_name (
-                                                      "", open_in_browser_menuitem.action_name
-                                                  )
-                                             );
+            open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
+                "", open_in_browser_menuitem.action_name
+            );
             open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
             var copy_menuitem = new Gtk.MenuItem ();
