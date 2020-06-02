@@ -850,7 +850,6 @@ namespace Terminal {
 
         public void update_context_menu () {
             var uri = current_terminal.uri;
-
             if (uri == null) {
                 current_terminal.copy_primary ();
                 primary_selection.request_text ((clipboard, uri) => {
@@ -861,7 +860,7 @@ namespace Terminal {
                     uri = "http://" + uri;
                 }
 
-                update_menu_label (Uri.parse_scheme (uri));
+                update_menu_label (uri);
             }
         }
 
