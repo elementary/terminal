@@ -854,7 +854,7 @@ namespace Terminal {
 
             /* Update the "Show in ..." menu option */
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (uri);
+                update_menu_label (strip_uri (uri));
             });
         }
 
@@ -1231,7 +1231,7 @@ namespace Terminal {
                         to_open = uri;
                     }
 
-                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                    Gtk.show_uri_on_window (null, strip_uri (to_open), Gtk.get_current_event_time ());
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
@@ -1254,6 +1254,15 @@ namespace Terminal {
 
                 uri_handler (primary_selection, link_uri);
             }
+        }
+
+        private string? strip_uri (string? uri) {
+            /* Strip off any trailing spaces, newlines or carriage returns */
+            if (uri != null) {
+                return uri.replace ("\\n", "").replace ("\\r", "").strip ();
+            }
+
+            return uri;
         }
 
         private void action_scroll_to_last_command () {
