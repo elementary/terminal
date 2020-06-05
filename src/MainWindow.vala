@@ -855,7 +855,11 @@ namespace Terminal {
             if (uri == null) {
                 current_terminal.copy_primary ();
                 primary_selection.request_text ((clipboard, uri) => {
-                    update_menu_label (uri);
+                    if (uri == null) {
+                        update_menu_label (current_terminal.get_shell_location ());
+                    } else {
+                        update_menu_label (uri);
+                    }
                 });
             } else {
                 if (!uri.contains ("://")) {
