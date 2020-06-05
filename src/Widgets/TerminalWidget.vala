@@ -50,7 +50,7 @@ namespace Terminal {
 
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
-        public string? uri;
+        public string? link_uri;
 
         private string _tab_label;
         public string tab_label {
@@ -139,7 +139,7 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
-                uri = null;
+                link_uri = null;
                 /* If this event caused focus-in then window.focus_timeout is > 0
                  * and we need to suppress following hyperlinks on button release.
                  * If focus-in was caused by keyboard then the focus_timeout will have
@@ -147,14 +147,14 @@ namespace Terminal {
                 allow_hyperlink = window.focus_timeout == 0;
 
                 if (event.button == Gdk.BUTTON_SECONDARY) {
-                    uri = get_link (event);
-                    if (uri != null) {
+                    link_uri = get_link (event);
+                    if (link_uri != null) {
                         window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
                     }
 
                     window.update_context_menu ();
-                    menu.select_first (false);
                     menu.popup_at_pointer (event);
+                    menu.select_first (false);
 
                     return true;
                 }
@@ -166,9 +166,9 @@ namespace Terminal {
 
                 if (event.button == Gdk.BUTTON_PRIMARY) {
                     if (allow_hyperlink) {
-                        uri = get_link (event);
+                        link_uri = get_link (event);
 
-                        if (uri != null && !get_has_selection ()) {
+                        if (link_uri != null && !get_has_selection ()) {
                            window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                         }
                     } else {

@@ -849,40 +849,30 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
+            /* Update the "Paste" menu option */
             clipboard.request_targets (update_context_menu_cb);
 
-            var uri = current_terminal.uri;
-            if (uri == null) {
-                current_terminal.copy_primary ();
-                primary_selection.request_text ((clipboard, uri) => {
-                    if (uri == null) {
-                        update_menu_label (current_terminal.get_shell_location ());
-                    } else {
-                        update_menu_label (uri);
-                    }
-                });
-            } else {
-                if (!uri.contains ("://")) {
-                    uri = "http://" + uri;
-                }
-
+            /* Update the "Show in ..." menu option */
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
                 update_menu_label (uri);
-            }
+            });
         }
 
         private void update_menu_label (string? uri) {
+            AppInfo? appinfo = null;
             var scheme = uri != null ? Uri.parse_scheme (uri) : "";
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (true);
-
-            if (scheme == null || scheme == "") {
-                get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (uri.contains (Path.DIR_SEPARATOR_S));
+            if (scheme != null) {
+                appinfo = AppInfo.get_default_for_uri_scheme (scheme);
             }
 
-            if (scheme == null || scheme == "" || OPEN_IN_FILE_MANAGER_SCHEMES.contains (scheme)) {
-                open_in_browser_menuitem_label.label = _("Show in File Browser");
-            } else {
-                open_in_browser_menuitem_label.label = _("Open in Web Browser");
+            if (appinfo == null && uri != null && uri.contains (Path.DIR_SEPARATOR_S)) {
+                appinfo = AppInfo.get_default_for_type ("inode/directory", true);
             }
+
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            open_in_browser_menuitem_label.label = _("Show in %s").printf (
+                appinfo != null ? appinfo.get_display_name () : _("Default application")
+            );
         }
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
@@ -1197,9 +1187,9 @@ namespace Terminal {
         }
 
         private void action_copy () {
-            if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
-                clipboard.set_text (current_terminal.uri,
-                                    current_terminal.uri.length);
+            if (current_terminal.link_uri != null && ! current_terminal.get_has_selection ())
+                clipboard.set_text (current_terminal.link_uri,
+                                    current_terminal.link_uri.length);
             else
                 current_terminal.copy_clipboard ();
         }
@@ -1218,39 +1208,40 @@ namespace Terminal {
         }
 
         void action_open_in_browser () {
-            var uri = current_terminal.uri;
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
+                string to_open = "";
 
-            if (uri == null) {
-                current_terminal.copy_primary ();
-                primary_selection.request_text (on_get_uri);
+                try {
+                    if (uri == null) {
+                        to_open = Filename.to_uri (current_terminal.get_shell_location ());
+                    } else if (Uri.parse_scheme (uri) == null) {
+                        to_open = "file://" + uri;
+                    } else {
+                        to_open = uri;
+                    }
+
+                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                } catch (GLib.Error error) {
+                    warning ("Could not show %s - %s", to_open, error.message);
+                }
+            });
+        }
+
+        private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
+            var link_uri = current_terminal.link_uri;
+            if (link_uri == null) {
+                if (current_terminal.get_has_selection ()) {
+                    current_terminal.copy_primary ();
+                    primary_selection.request_text (uri_handler);
+                } else {
+                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                }
             } else {
-                if (!uri.contains ("://")) {
-                    uri = "http://" + uri;
+                if (!link_uri.contains ("://")) {
+                    link_uri = "http://" + link_uri;
                 }
 
-                open_in_browser (uri);
-            }
-        }
-
-        private void on_get_uri (Gtk.Clipboard board, string? uri) {
-            open_in_browser (uri);
-        }
-
-        private void open_in_browser (string uri) {
-            string to_open = uri;
-
-            try {
-                if (uri == null) {
-                    to_open = Filename.to_uri (current_terminal.get_shell_location ());
-                }
-
-                if (uri != null && Uri.parse_scheme (uri) == null) {
-                    to_open = "file://" + uri;
-                }
-
-                Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-            } catch (GLib.Error error) {
-                warning ("Could not show %s - %s", to_open, error.message);
+                uri_handler (primary_selection, link_uri);
             }
         }
 
