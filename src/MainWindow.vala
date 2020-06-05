@@ -866,7 +866,18 @@ namespace Terminal {
             }
 
             if (appinfo == null && uri != null && uri.contains (Path.DIR_SEPARATOR_S)) {
-                appinfo = AppInfo.get_default_for_type ("inode/directory", true);
+                bool uncertain;
+                /* Guess content type from filename if possible */
+                //TODO Get content type from actual file (if exists)
+                var ctype = ContentType.guess (uri, null, out uncertain);
+                if (!uncertain) {
+                    appinfo = AppInfo.get_default_for_type (ctype, true);
+                }
+
+                if (appinfo == null) {
+                    /* Fallback to File Browser */
+                    appinfo = AppInfo.get_default_for_type ("inode/directory", true);
+                }
             }
 
             get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
