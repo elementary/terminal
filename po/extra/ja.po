@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-05-16 09:10+0000\n"
+"PO-Revision-Date: 2020-06-07 13:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -85,7 +85,7 @@ msgstr "新しいタブを開くコマンドラインオプション (-t) を追
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Fix URL selection"
-msgstr "一部の URL がクリックできない問題を修正"
+msgstr "一部の URL がクリックできない不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 msgid "Add commandline option for \"Show version\" (-v, --version)"
@@ -97,11 +97,11 @@ msgstr "新しいウィンドウを開くコマンドラインオプション (-
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Prevent duplicate tab on startup"
-msgstr "起動時に同じタブが複数開く問題を修正"
+msgstr "起動時に同じタブが複数開く不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Prevent unnecessary Home tab on startup"
-msgstr "起動時にホームタブも開かれてしまう問題を修正"
+msgstr "起動時にホームタブも開かれてしまう不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
@@ -157,7 +157,7 @@ msgstr "Ctrl+イコールキーでの拡大に対応"
 
 #: data/io.elementary.terminal.appdata.xml.in:116
 msgid "Fix a wrong foreground process response code"
-msgstr "フォアグラウンド処理のレスポンスに関するコードが間違っていた問題を修正"
+msgstr "フォアグラウンド処理のレスポンスに関するコードが間違っていた不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Return focus after popover menu closes"
