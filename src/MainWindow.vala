@@ -852,18 +852,32 @@ namespace Terminal {
 
             /* Update the "Show in ..." menu option */
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (strip_uri (uri));
+                update_menu_label (sanitize_path (uri));
             });
         }
 
         private void update_menu_label (string? uri) {
+            AppInfo? appinfo = get_default_app_for_uri (uri);
+
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            open_in_browser_menuitem_label.label = _("Show in %s").printf (
+                appinfo != null ? appinfo.get_display_name () : _("Default application")
+            );
+        }
+
+        private AppInfo? get_default_app_for_uri (string? uri) {
+            if (uri == null) {
+                return null;
+            }
+
             AppInfo? appinfo = null;
-            var scheme = uri != null ? Uri.parse_scheme (uri) : "";
+            var scheme = Uri.parse_scheme (uri);
+            string path = uri;
             if (scheme != null) {
                 appinfo = AppInfo.get_default_for_uri_scheme (scheme);
             }
 
-            if (appinfo == null && uri != null) {
+            if (appinfo == null) {
                 bool uncertain;
                 /* Guess content type from filename if possible */
                 //TODO Get content type from actual file (if exists)
@@ -881,10 +895,7 @@ namespace Terminal {
                 }
             }
 
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
-            open_in_browser_menuitem_label.label = _("Show in %s").printf (
-                appinfo != null ? appinfo.get_display_name () : _("Default application")
-            );
+            return appinfo;
         }
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
@@ -1221,23 +1232,70 @@ namespace Terminal {
 
         private void action_open_in_browser () {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string to_open = "";
-
+                string to_open = sanitize_path (uri);
                 try {
-                    if (uri == null) {
-                        to_open = Filename.to_uri (current_terminal.get_shell_location ());
-                    } else if (Uri.parse_scheme (uri) == null) {
-                        to_open = "file://" + uri;
-                    } else {
-                        to_open = uri;
-                    }
-
                     Gtk.show_uri_on_window (null, strip_uri (to_open), Gtk.get_current_event_time ());
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
             });
         }
+
+        private string sanitize_path (string _path) {
+            /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
+            string scheme, path;
+            var parts_scheme = _path.strip ().split ("://", 2);
+            if (parts_scheme.length == 2) {
+                scheme = parts_scheme[0] + "://";
+                path = parts_scheme[1];
+            } else {
+                scheme = "file://";
+                path = _path;
+            }
+
+            do {
+                path = path.replace ("//", "/");
+
+            } while (path.contains ("//"));
+
+            var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
+            var index = 0;
+            while (parts_sep[index] == null && index < parts_sep.length - 1) {
+                index++;
+            }
+
+            if (parts_sep[index] == "~") {
+                parts_sep[index] = Environment.get_home_dir ();
+            } else if (parts_sep[index] == "..") {
+                parts_sep[index] = construct_parent_path (current_terminal.get_shell_location ());
+            }
+
+            var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/");
+            return result;
+        }
+
+    private string construct_parent_path (string path) {
+        if (path.length < 2) {
+            return Path.DIR_SEPARATOR_S;
+        }
+
+        var sb = new StringBuilder (path);
+
+        if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
+            sb.erase (sb.str.length - 1, -1);
+        }
+
+        int last_separator = sb.str.last_index_of (Path.DIR_SEPARATOR_S);
+        if (last_separator < 0) {
+            last_separator = 0;
+        }
+        sb.erase (last_separator, -1);
+
+        string parent_path = sb.str + Path.DIR_SEPARATOR_S;
+
+        return parent_path;
+    }
+
 
         private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
             var link_uri = current_terminal.link_uri;
