@@ -863,7 +863,7 @@ namespace Terminal {
                 appinfo = AppInfo.get_default_for_uri_scheme (scheme);
             }
 
-            if (appinfo == null && uri != null && uri.contains (Path.DIR_SEPARATOR_S)) {
+            if (appinfo == null && uri != null) {
                 bool uncertain;
                 /* Guess content type from filename if possible */
                 //TODO Get content type from actual file (if exists)
@@ -873,8 +873,11 @@ namespace Terminal {
                 }
 
                 if (appinfo == null) {
-                    /* Fallback to File Browser */
-                    appinfo = AppInfo.get_default_for_type ("inode/directory", true);
+                    var file = File.new_for_commandline_arg (uri);
+                    var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+                    if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                        appinfo = AppInfo.get_default_for_type (info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                    }
                 }
             }
 
