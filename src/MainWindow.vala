@@ -887,10 +887,17 @@ namespace Terminal {
                 }
 
                 if (appinfo == null) {
-                    var file = File.new_for_commandline_arg (uri);
-                    var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE, FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
-                    if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
-                        appinfo = AppInfo.get_default_for_type (info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                    var file = File.new_for_uri (uri);
+                    try {
+                        var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
+                                                    FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+
+                        if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                            appinfo = AppInfo.get_default_for_type (
+                                        info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                        }
+                    } catch (Error e) {
+                        warning ("Could not get file info %s", e.message);
                     }
                 }
             }
@@ -1253,6 +1260,8 @@ namespace Terminal {
                 path = _path;
             }
 
+            path = Uri.unescape_string (path);
+
             do {
                 path = path.replace ("//", "/");
 
@@ -1266,13 +1275,26 @@ namespace Terminal {
 
             if (parts_sep[index] == "~") {
                 parts_sep[index] = Environment.get_home_dir ();
+            } else if (parts_sep[index] == ".") {
+                parts_sep[index] = current_terminal.get_shell_location ();
             } else if (parts_sep[index] == "..") {
                 parts_sep[index] = construct_parent_path (current_terminal.get_shell_location ());
             }
 
-            var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/");
-            return result;
+            var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/").replace ("\n", "");
+            return escape_uri (result);
         }
+
+    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
+        string rc = (Uri.RESERVED_CHARS_GENERIC_DELIMITERS +
+                     Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS).replace ("#", "").replace ("*", "").replace ("~", "");
+
+        if (!allow_single_quote) {
+            rc = rc.replace ("'", "");
+        }
+
+        return Uri.escape_string ((Uri.unescape_string (uri) ?? uri), rc , allow_utf8);
+    }
 
     private string construct_parent_path (string path) {
         if (path.length < 2) {
