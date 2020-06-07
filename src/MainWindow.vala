@@ -872,7 +872,6 @@ namespace Terminal {
 
             AppInfo? appinfo = null;
             var scheme = Uri.parse_scheme (uri);
-//            string path = uri;
             if (scheme != null) {
                 appinfo = AppInfo.get_default_for_uri_scheme (scheme);
             }
@@ -1241,7 +1240,7 @@ namespace Terminal {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
                 string to_open = sanitize_path (uri);
                 try {
-                    Gtk.show_uri_on_window (null, strip_uri (to_open), Gtk.get_current_event_time ());
+                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
@@ -1251,7 +1250,8 @@ namespace Terminal {
         private string sanitize_path (string _path) {
             /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
             string scheme, path;
-            var parts_scheme = _path.strip ().split ("://", 2);
+
+            var parts_scheme = _path.split ("://", 2);
             if (parts_scheme.length == 2) {
                 scheme = parts_scheme[0] + "://";
                 path = parts_scheme[1];
@@ -1261,6 +1261,7 @@ namespace Terminal {
             }
 
             path = Uri.unescape_string (path);
+            path = strip_uri (path);
 
             do {
                 path = path.replace ("//", "/");
@@ -1281,8 +1282,8 @@ namespace Terminal {
                 parts_sep[index] = construct_parent_path (current_terminal.get_shell_location ());
             }
 
-            var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/").replace ("\n", "");
-            return escape_uri (result);
+            var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
+            return result;
         }
 
     public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
@@ -1318,7 +1319,6 @@ namespace Terminal {
         return parent_path;
     }
 
-
         private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
@@ -1337,10 +1337,13 @@ namespace Terminal {
             }
         }
 
-        private string? strip_uri (string? uri) {
+        private string? strip_uri (string? _uri) {
+            string uri = _uri;
             /* Strip off any trailing spaces, newlines or carriage returns */
-            if (uri != null) {
-                return uri.replace ("\\n", "").replace ("\\r", "").strip ();
+            if (_uri != null) {
+                uri = uri.strip ();
+                uri = uri.replace ("\n", "");
+                uri = uri.replace ("\r", "");
             }
 
             return uri;
