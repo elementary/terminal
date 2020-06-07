@@ -872,7 +872,7 @@ namespace Terminal {
 
             AppInfo? appinfo = null;
             var scheme = Uri.parse_scheme (uri);
-            string path = uri;
+//            string path = uri;
             if (scheme != null) {
                 appinfo = AppInfo.get_default_for_uri_scheme (scheme);
             }
