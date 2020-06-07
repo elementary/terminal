@@ -42,7 +42,6 @@ namespace Terminal {
         private const string DARK_FG = "#a5a5a5";
         private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
-        private const string OPEN_IN_FILE_MANAGER_SCHEMES = "file|trash|network|recent|afp|dav|davs|ftp|sftp|smb|mtp";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -530,7 +529,6 @@ namespace Terminal {
             menu_popover.closed.connect (() => {
                 current_terminal.grab_focus ();
             });
-
 
             switch (Application.settings.get_string ("background")) {
                 case HIGH_CONTRAST_BG:
@@ -1218,7 +1216,7 @@ namespace Terminal {
             current_terminal.select_all ();
         }
 
-        void action_open_in_browser () {
+        private void action_open_in_browser () {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
                 string to_open = "";
 
