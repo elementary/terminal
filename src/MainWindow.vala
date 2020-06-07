@@ -26,6 +26,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -72,8 +73,8 @@ namespace Terminal {
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_SELECT_ALL = "action-select-all";
-        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
+        public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -95,8 +96,8 @@ namespace Terminal {
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_OPEN_IN_FILES, action_open_in_files },
-            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
+            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -156,7 +157,7 @@ namespace Terminal {
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
-            action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
+            action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
@@ -186,10 +187,16 @@ namespace Terminal {
             restore_saved_state (restore_pos);
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
+
+            var open_in_browser_menuitem = new Gtk.MenuItem ();
+            open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
+            open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
+                "", open_in_browser_menuitem.action_name
+            );
+            open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
@@ -215,23 +222,15 @@ namespace Terminal {
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
             search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
-            var show_in_file_browser_menuitem = new Gtk.MenuItem ();
-            show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (
-                new Granite.AccelLabel.from_action_name (
-                    _("Show in File Browser"),
-                    show_in_file_browser_menuitem.action_name
-                )
-            );
-
             menu = new Gtk.Menu ();
+            menu.append (open_in_browser_menuitem);
+            menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
-            menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
 
             menu.popped_up.connect (() => {
@@ -847,15 +846,70 @@ namespace Terminal {
             }
         }
 
-        private void update_context_menu () {
+        public void update_context_menu () {
+            /* Update the "Paste" menu option */
             clipboard.request_targets (update_context_menu_cb);
+
+            /* Update the "Show in ..." menu option */
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
+                update_menu_label (sanitize_path (uri));
+            });
+        }
+
+        private void update_menu_label (string? uri) {
+            AppInfo? appinfo = get_default_app_for_uri (uri);
+
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            open_in_browser_menuitem_label.label = _("Show in %s").printf (
+                appinfo != null ? appinfo.get_display_name () : _("Default application")
+            );
+        }
+
+        private AppInfo? get_default_app_for_uri (string? uri) {
+            if (uri == null) {
+                return null;
+            }
+
+            AppInfo? appinfo = null;
+            var scheme = Uri.parse_scheme (uri);
+            if (scheme != null) {
+                appinfo = AppInfo.get_default_for_uri_scheme (scheme);
+            }
+
+            if (appinfo == null) {
+                bool uncertain;
+                /* Guess content type from filename if possible */
+                //TODO Get content type from actual file (if exists)
+                var ctype = ContentType.guess (uri, null, out uncertain);
+                if (!uncertain) {
+                    appinfo = AppInfo.get_default_for_type (ctype, true);
+                }
+
+                if (appinfo == null) {
+                    var file = File.new_for_uri (uri);
+                    try {
+                        var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
+                                                    FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+
+                        if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                            appinfo = AppInfo.get_default_for_type (
+                                        info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                        }
+                    } catch (Error e) {
+                        warning ("Could not get file info %s", e.message);
+                    }
+                }
+            }
+
+            return appinfo;
         }
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
             bool can_paste = false;
 
-            if (atoms != null && atoms.length > 0)
+            if (atoms != null && atoms.length > 0) {
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            }
 
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
@@ -1162,9 +1216,9 @@ namespace Terminal {
         }
 
         private void action_copy () {
-            if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
-                clipboard.set_text (current_terminal.uri,
-                                    current_terminal.uri.length);
+            if (current_terminal.link_uri != null && ! current_terminal.get_has_selection ())
+                clipboard.set_text (current_terminal.link_uri,
+                                    current_terminal.link_uri.length);
             else
                 current_terminal.copy_clipboard ();
         }
@@ -1182,19 +1236,117 @@ namespace Terminal {
             current_terminal.select_all ();
         }
 
-        private void action_open_in_files () {
-            try {
-                string uri = Filename.to_uri (current_terminal.get_shell_location ());
-
+        private void action_open_in_browser () {
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
+                string to_open = sanitize_path (uri);
                 try {
-                     Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                } catch (Error e) {
-                     warning (e.message);
+                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                } catch (GLib.Error error) {
+                    warning ("Could not show %s - %s", to_open, error.message);
+                }
+            });
+        }
+
+        private string sanitize_path (string _path) {
+            /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
+            string scheme, path;
+
+            var parts_scheme = _path.split ("://", 2);
+            if (parts_scheme.length == 2) {
+                scheme = parts_scheme[0] + "://";
+                path = parts_scheme[1];
+            } else {
+                scheme = "file://";
+                path = _path;
+            }
+
+            path = Uri.unescape_string (path);
+            path = strip_uri (path);
+
+            do {
+                path = path.replace ("//", "/");
+
+            } while (path.contains ("//"));
+
+            var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
+            var index = 0;
+            while (parts_sep[index] == null && index < parts_sep.length - 1) {
+                index++;
+            }
+
+            if (parts_sep[index] == "~") {
+                parts_sep[index] = Environment.get_home_dir ();
+            } else if (parts_sep[index] == ".") {
+                parts_sep[index] = current_terminal.get_shell_location ();
+            } else if (parts_sep[index] == "..") {
+                parts_sep[index] = construct_parent_path (current_terminal.get_shell_location ());
+            }
+
+            var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
+            return result;
+        }
+
+    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
+        string rc = (Uri.RESERVED_CHARS_GENERIC_DELIMITERS +
+                     Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS).replace ("#", "").replace ("*", "").replace ("~", "");
+
+        if (!allow_single_quote) {
+            rc = rc.replace ("'", "");
+        }
+
+        return Uri.escape_string ((Uri.unescape_string (uri) ?? uri), rc , allow_utf8);
+    }
+
+    private string construct_parent_path (string path) {
+        if (path.length < 2) {
+            return Path.DIR_SEPARATOR_S;
+        }
+
+        var sb = new StringBuilder (path);
+
+        if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
+            sb.erase (sb.str.length - 1, -1);
+        }
+
+        int last_separator = sb.str.last_index_of (Path.DIR_SEPARATOR_S);
+        if (last_separator < 0) {
+            last_separator = 0;
+        }
+        sb.erase (last_separator, -1);
+
+        string parent_path = sb.str + Path.DIR_SEPARATOR_S;
+
+        return parent_path;
+    }
+
+        private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
+            var link_uri = current_terminal.link_uri;
+            if (link_uri == null) {
+                if (current_terminal.get_has_selection ()) {
+                    current_terminal.copy_primary ();
+                    primary_selection.request_text (uri_handler);
+                } else {
+                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                }
+            } else {
+                if (!link_uri.contains ("://")) {
+                    link_uri = "http://" + link_uri;
                 }
 
-            } catch (ConvertError e) {
-                warning (e.message);
+                uri_handler (primary_selection, link_uri);
             }
+        }
+
+        private string? strip_uri (string? _uri) {
+            string uri = _uri;
+            /* Strip off any trailing spaces, newlines or carriage returns */
+            if (_uri != null) {
+                uri = uri.strip ();
+                uri = uri.replace ("\n", "");
+                uri = uri.replace ("\r", "");
+            }
+
+            return uri;
         }
 
         private void action_scroll_to_last_command () {
