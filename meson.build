@@ -18,6 +18,12 @@ add_global_arguments([
     language:'c'
 )
 
+# FIXME Disable --disable-since-check after libhandy 1.0 is released
+add_project_arguments (
+  '--disable-since-check',
+  language: 'vala'
+)
+
 vte_dep = dependency('vte-2.91')
 
 libpcre2_dep = []
