@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-14 17:27+0000\n"
-"PO-Revision-Date: 2020-04-05 13:10+0000\n"
+"PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
 "mr/>\n"
@@ -47,7 +47,7 @@ msgstr "इतर अद्यतने:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Validate custom palette"
-msgstr ""
+msgstr "सानुकूल पॅलेट प्रमाणित करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 #: data/io.elementary.terminal.appdata.xml.in:56
@@ -87,10 +87,8 @@ msgid "Fix URL selection"
 msgstr "URL निवडीशी संबंधित समस्यांचे निराकरण करा"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
-#, fuzzy
-#| msgid "Add commandline option for New Window (-n)"
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "नवीन विंडोसाठी कमांडलाइन (-n) पर्याय जोडा"
+msgstr "\"आवृत्ती दाखवा\" (-v, --version) साठी कमांडलाइन (-n) पर्याय जोडा"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Add commandline option for New Window (-n)"
