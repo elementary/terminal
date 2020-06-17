@@ -396,7 +396,7 @@ namespace Terminal {
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
             var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
@@ -404,7 +404,7 @@ namespace Terminal {
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
@@ -412,7 +412,7 @@ namespace Terminal {
             color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
             var color_grid = new Gtk.Grid ();
