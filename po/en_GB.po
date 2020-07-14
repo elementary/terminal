@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-07-14 17:35+0000\n"
 "PO-Revision-Date: 2020-03-19 20:09+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -57,67 +57,67 @@ msgstr "Show help"
 msgid "Set shell working directory"
 msgstr "Set shell working directory"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:202
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:207
 msgid "Copy Last Output"
 msgstr "Copy Last Output"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:212
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:217
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
+#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:228
 msgid "Show in File Browser"
 msgstr "Show in File Browser"
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:360
 msgid "Zoom out"
 msgstr "Zoom out"
 
-#: src/MainWindow.vala:361
+#: src/MainWindow.vala:367
 msgid "Default zoom level"
 msgstr "Default zoom level"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:386
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "High Contrast"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:410
 msgid "Solarized Light"
 msgstr "Solarised Light"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:418
 msgid "Dark"
 msgstr "Dark"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "Natural Copy/Paste"
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:441
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
 
-#: src/MainWindow.vala:477
+#: src/MainWindow.vala:483
 msgid "Settings"
 msgstr "Settings"
 
-#: src/MainWindow.vala:1252
+#: src/MainWindow.vala:1275
 msgid "Hide find bar"
 msgstr "Hide find bar"
 
@@ -189,7 +189,7 @@ msgstr "Previous result"
 msgid "Next result"
 msgstr "Next result"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr "Cyclic search"
 

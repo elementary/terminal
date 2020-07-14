@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-07-14 17:35+0000\n"
 "PO-Revision-Date: 2020-04-27 00:10+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
@@ -59,67 +59,67 @@ msgstr "Prikaži pomoč"
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:202
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:207
 msgid "Copy Last Output"
 msgstr "Kopiraj zadnji izpis"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:212
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:217
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
+#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:228
 msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:360
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/MainWindow.vala:361
+#: src/MainWindow.vala:367
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:386
 msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:410
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:418
 msgid "Dark"
 msgstr "Temno"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "Naravno kopiranje in lepljenje"
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:441
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Bližnjice ne rabijo pritisnjene tipke Shift"
 
-#: src/MainWindow.vala:477
+#: src/MainWindow.vala:483
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/MainWindow.vala:1252
+#: src/MainWindow.vala:1275
 msgid "Hide find bar"
 msgstr "Skrij iskalno vrstico"
 
@@ -191,7 +191,7 @@ msgstr "Prejšnji rezultat"
 msgid "Next result"
 msgstr "Naslednji rezultat"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr "Ciklično iskanje"
 

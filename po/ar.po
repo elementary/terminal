@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-07-14 17:35+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -57,67 +57,67 @@ msgstr "أظهر المساعدة"
 msgid "Set shell working directory"
 msgstr "عيِّن دليل عمل الطرفية"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:202
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:207
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:212
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:217
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
+#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
 msgid "Find…"
 msgstr "ابحث…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:228
 msgid "Show in File Browser"
 msgstr "أظهر في متصفح الملفات"
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:360
 msgid "Zoom out"
 msgstr "تصغير"
 
-#: src/MainWindow.vala:361
+#: src/MainWindow.vala:367
 msgid "Default zoom level"
 msgstr "مستوى التقريب المبدئي"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:386
 msgid "Zoom in"
 msgstr "تكبير"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "تباين عالي"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:410
 msgid "Solarized Light"
 msgstr "ضوء شمسي"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:418
 msgid "Dark"
 msgstr "داكن"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:441
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:477
+#: src/MainWindow.vala:483
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/MainWindow.vala:1252
+#: src/MainWindow.vala:1275
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 
@@ -189,7 +189,7 @@ msgstr "النتيجة السابقة"
 msgid "Next result"
 msgstr "النتيجة التالية"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr ""
 
