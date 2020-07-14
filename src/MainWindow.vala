@@ -62,6 +62,8 @@ namespace Terminal {
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
+        public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
         public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
         public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
@@ -85,6 +87,8 @@ namespace Terminal {
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
+            { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
             { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
@@ -144,6 +148,8 @@ namespace Terminal {
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
+            action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
@@ -1242,6 +1248,14 @@ namespace Terminal {
 
         private void action_previous_tab () {
             notebook.previous_page ();
+        }
+
+        void action_move_tab_right () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) + 1) % notebook.n_tabs);
+        }
+
+        void action_move_tab_left () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) - 1) % notebook.n_tabs);
         }
 
         private void action_search () {
