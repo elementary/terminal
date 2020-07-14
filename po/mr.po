@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-11 16:52+0000\n"
-"PO-Revision-Date: 2020-02-03 08:08+0000\n"
+"PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -19,7 +19,7 @@ msgstr "कार्य पूर्ण झाले"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "आवृत्ती दाखवा"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253

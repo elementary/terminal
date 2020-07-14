@@ -17,7 +17,7 @@
 */
 
 namespace Terminal {
-    public class MainWindow : Gtk.Window {
+    public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -402,7 +402,7 @@ namespace Terminal {
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
             var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
@@ -410,7 +410,7 @@ namespace Terminal {
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
@@ -418,7 +418,7 @@ namespace Terminal {
             color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
             var color_grid = new Gtk.Grid ();
@@ -486,9 +486,15 @@ namespace Terminal {
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.has_subtitle = false;
-            header.get_style_context ().add_class ("default-decoration");
             header.pack_end (menu_button);
             header.pack_end (search_button);
+
+            unowned Gtk.StyleContext header_context = header.get_style_context ();
+            header_context.add_class (Gtk.STYLE_CLASS_TITLEBAR);
+            header_context.add_class ("default-decoration");
+
+            var window_handle = new Hdy.WindowHandle ();
+            window_handle.add (header);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
@@ -516,14 +522,15 @@ namespace Terminal {
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
-            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior) Application.settings.get_enum ("tab-bar-behavior");
+            var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
+            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
-            grid.attach (search_revealer, 0, 0, 1, 1);
-            grid.attach (notebook, 0, 1, 1, 1);
+            grid.attach (window_handle, 0, 0);
+            grid.attach (search_revealer, 0, 1);
+            grid.attach (notebook, 0, 2);
 
             get_style_context ().add_class ("terminal-window");
-            set_titlebar (header);
             add (grid);
 
             menu_popover.closed.connect (() => {
@@ -578,6 +585,8 @@ namespace Terminal {
                 "reveal-child",
                 GLib.BindingFlags.SYNC_CREATE
             );
+
+            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
