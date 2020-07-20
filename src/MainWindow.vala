@@ -141,6 +141,8 @@ namespace Terminal {
         }
 
         static construct {
+            Hdy.init ();
+
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
@@ -483,18 +485,15 @@ namespace Terminal {
             menu_button.tooltip_text = _("Settings");
             menu_button.valign = Gtk.Align.CENTER;
 
-            var header = new Gtk.HeaderBar ();
-            header.show_close_button = true;
-            header.has_subtitle = false;
+            var header = new Hdy.HeaderBar () {
+                show_close_button = true,
+                has_subtitle = false
+            };
             header.pack_end (menu_button);
             header.pack_end (search_button);
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class (Gtk.STYLE_CLASS_TITLEBAR);
             header_context.add_class ("default-decoration");
-
-            var window_handle = new Hdy.WindowHandle ();
-            window_handle.add (header);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
@@ -526,7 +525,7 @@ namespace Terminal {
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
-            grid.attach (window_handle, 0, 0);
+            grid.attach (header, 0, 0);
             grid.attach (search_revealer, 0, 1);
             grid.attach (notebook, 0, 2);
 

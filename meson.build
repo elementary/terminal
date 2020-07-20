@@ -62,7 +62,7 @@ executable(
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
         dependency('granite', version: '>=5.5.0'),
-        dependency('libhandy-1', version: '>=0.80.0'),
+        dependency('libhandy-1', version: '>=0.83.0'),
         vte_dep,
         libpcre2_dep,
         meson.get_compiler('vala').find_library('posix'),
