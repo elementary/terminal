@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-14 17:35+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"PO-Revision-Date: 2020-07-25 17:12+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -48,7 +48,7 @@ msgstr "Prestaciones nuevas:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Es posible desplazar las pestañas mediante Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:57
@@ -110,15 +110,16 @@ msgstr "Evitar la pestaña de Inicio innecesaria al iniciar"
 
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "Activar o desactivar Copia/Pega natural en el menú Configuración"
+msgstr "Active o desactive el copipegado natural en el menú de configuración"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Zoom with Ctrl + Scroll"
-msgstr "Acercamiento con Ctrl + ruedecilla del ratón"
+msgstr "Escala con Ctrl + ruedecilla del ratón"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Include sudo password prompt when copying last output"
-msgstr "Incluir la solicitud de contraseña de sudo al copiar la última salida"
+msgstr ""
+"Se incluye la solicitud de contraseña de sudo al copiar la última salida"
 
 #: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Apply font changes without restarting"
@@ -137,7 +138,8 @@ msgstr "Mostrar atajos de teclado en el menú secundario"
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
-"Pegar con el botón central ahora sigue correctamente los Ajustes del sistema"
+"La preferencia de pegado con el botón central del ratón se ajusta a la "
+"configuración del sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Shift + Control + D to duplicate tabs"
@@ -145,11 +147,11 @@ msgstr "Mayús + Control + D para duplicar pestañas"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Use neutral colors for the dark style scheme"
-msgstr "Usar colores neutros para el esquema de estilo oscuro"
+msgstr "Se utilizan colores neutros en el tema oscuro"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Slightly pad text from the edge of the window"
-msgstr "Rellenar ligeramente el texto desde el borde de la ventana"
+msgstr "Se añadió un pequeño margen entre el texto y el borde de la ventana"
 
 #: data/io.elementary.terminal.appdata.xml.in:110
 msgid "Pressing the Menu key now opens the context menu"
@@ -185,7 +187,7 @@ msgstr "Arreglar el comportamiento de resaltado de texto de búsqueda errático"
 
 #: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Support -h flag for help"
-msgstr "Soporte de la bandera -h para ayuda"
+msgstr "Se admite el modificador -h para mostrar ayuda"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Disable audible bell"
