@@ -1,7 +1,7 @@
-Source: pantheon-terminal
+Source: io.elementary.terminal
 Section: x11
 Priority: optional
-Maintainer: elementary LLC <builds@elementary.io>
+Maintainer: elementary, Inc. <builds@elementary.io>
 Build-Depends: appstream,
                debhelper (>= 10.5.1),
                desktop-file-utils,
@@ -16,11 +16,20 @@ Build-Depends: appstream,
 Standards-Version: 4.1.1
 Homepage: https://github.com/elementary/terminal
 
-Package: pantheon-terminal
+Package: io.elementary.terminal
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: pantheon-terminal
+Replaces: pantheon-terminal
 Provides: x-terminal-emulator
-Description: Modern terminal from elementary project
- Pantheon Terminal is a beautiful and simple terminal emulator.
- It's designed to be set up with sane defaults and little to no configuration
- and follows the elementary OS Human Interface Guidelines.
+Description: Modern terminal from elementary
+ elementary Terminal is a beautiful and simple terminal emulator.
+ It's designed to be set up with sane defaults and little to no configuration.
+
+Package: pantheon-terminal
+Architecture: any
+Depends: io.elementary.terminal, ${misc:Depends}
+Section: oldlibs
+Priority: optional
+Description: transitional dummy package
+    This is a transitional dummy package. It can safely be removed.
