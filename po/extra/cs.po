@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-14 17:35+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"PO-Revision-Date: 2020-08-25 06:13+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/"
-">\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +49,7 @@ msgstr "Nové funkce:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Přesouvání karet pomocí zkratky Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #: data/io.elementary.terminal.appdata.xml.in:57
