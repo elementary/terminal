@@ -149,8 +149,9 @@ namespace Terminal {
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
-            action_accelerators[ACTION_PREVIOUS_TAB] = "<Ctrl>Tab";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
