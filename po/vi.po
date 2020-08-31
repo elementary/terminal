@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 17:35+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -60,69 +60,69 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr "Thiết lập thư mục làm việc shell"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "Chép"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "Dán"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "Chọn toàn bộ"
 
-#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:360
+#: src/MainWindow.vala:364
 #, fuzzy
 msgid "Zoom out"
 msgstr "Thu nhỏ"
 
-#: src/MainWindow.vala:367
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:386
+#: src/MainWindow.vala:390
 #, fuzzy
 msgid "Zoom in"
 msgstr "Phóng to"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:422
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:441
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:483
+#: src/MainWindow.vala:487
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1275
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr ""
 

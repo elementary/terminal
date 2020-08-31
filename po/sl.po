@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 17:35+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
 "PO-Revision-Date: 2020-04-27 00:10+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
@@ -59,67 +59,67 @@ msgstr "Prikaži pomoč"
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr "Kopiraj zadnji izpis"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr "Prikaži v mapi"
 
-#: src/MainWindow.vala:360
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/MainWindow.vala:367
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/MainWindow.vala:386
+#: src/MainWindow.vala:390
 msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:422
 msgid "Dark"
 msgstr "Temno"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
 msgstr "Naravno kopiranje in lepljenje"
 
-#: src/MainWindow.vala:441
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Bližnjice ne rabijo pritisnjene tipke Shift"
 
-#: src/MainWindow.vala:483
+#: src/MainWindow.vala:487
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/MainWindow.vala:1275
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr "Skrij iskalno vrstico"
 
