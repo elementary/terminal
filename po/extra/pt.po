@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-07-15 23:12+0000\n"
+"PO-Revision-Date: 2020-09-03 18:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -51,10 +51,8 @@ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgstr "Mover separadores com o atalho Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Mover separadores com o atalho Ctrl + Alt + ←/→"
+msgstr "Trocar de separadores com os atalhos Ctrl + Tab e Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:58
