@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-07-25 17:12+0000\n"
+"PO-Revision-Date: 2020-09-01 15:04+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -51,10 +51,8 @@ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgstr "Es posible desplazar las pestañas mediante Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Es posible desplazar las pestañas mediante Ctrl + Alt + ←/→"
+msgstr "Cambie entre pestañas con los atajos Ctrl + Tab y Ctrl + Mayús + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:58
