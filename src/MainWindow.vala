@@ -802,6 +802,7 @@ namespace Terminal {
                 }
             }
 
+            current_terminal.grab_focus ();
             return true;
         }
 
