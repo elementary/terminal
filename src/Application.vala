@@ -185,10 +185,8 @@ public class Terminal.Application : Gtk.Application {
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
                 get_last_window ().current_terminal.feed (WARNING.data);
-            } else if (working_directory != null) {
-                start_terminal_with_working_directory (working_directory);
             } else {
-                new MainWindow (this);
+                start_terminal_with_working_directory (working_directory);
             }
         }
 
