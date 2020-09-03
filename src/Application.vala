@@ -239,6 +239,8 @@ public class Terminal.Application : Gtk.Application {
         if (window != null && !option_new_window) {
             window.add_tab_with_working_directory (working_directory);
             window.present ();
+        } else if (working_directory == null) {
+            new MainWindow (this);
         } else
             /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
              * Currently they are set to restore (subject to the restore-tabs setting).
