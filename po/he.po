@@ -7,109 +7,116 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
-"PO-Revision-Date: 2018-12-11 12:15+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"PO-Revision-Date: 2020-04-16 00:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/terminal/"
-"terminal/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
+"he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr "פעולה הסתיימה"
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr "הצגת גרסה"
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: src/Application.vala:263
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
+msgstr "הרצת שאר השורה כפקודה במסוף. ניתן להשתמש ב־‚--’ כדגלון"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
+#: src/Application.vala:261
 msgid "Open a new terminal window"
-msgstr "פתיחת חלון חדש"
+msgstr "פתיחת חלון מסוף חדש"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:264
+msgid "Open a new terminal tab"
+msgstr "פתיחת לשונית מסוף חדשה"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr "הצגת עזרה"
 
-#: src/Application.vala:270
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr "הצגה בדפדפן הקבצים"
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:390
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:422
 msgid "Dark"
-msgstr ""
+msgstr "כהה"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "העתקה/הדבקה טבעיים"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:487
 msgid "Settings"
-msgstr ""
+msgstr "הגדרות"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -181,7 +188,7 @@ msgstr "התוצאה הקודמת"
 msgid "Next result"
 msgstr "התוצאה הבאה"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr "חיפוש מעגלי"
 

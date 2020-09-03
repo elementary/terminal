@@ -35,10 +35,38 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="5.5.1" date="2020-01-07" urgency="medium">
+    <release version="5.6.0" date="2020-05-09" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
+          <li>Move tabs with the shortcut Ctrl + Alt + ←/→</li>
+          <li>Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Validate custom palette</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.2" date="2020-04-01" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Add commandline option for New Tab (-t)</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Fix URL selection</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="5.5.1" date="2020-01-11" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Add commandline option for "Show version" (-v, --version)</li>
           <li>Add commandline option for New Window (-n)</li>
         </ul>
         <p>Other updates:</p>

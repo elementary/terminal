@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:23+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
 "PO-Revision-Date: 2016-09-21 19:57+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -18,98 +18,109 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:113
+#: src/Application.vala:117
 msgid "Task finished"
 msgstr ""
 
+#: src/Application.vala:251
+msgid "Show version"
+msgstr ""
+
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
+#: src/Application.vala:253
 msgid "Run a program in terminal"
 msgstr ""
 
-#: src/Application.vala:263
+#: src/Application.vala:258
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#: src/Application.vala:261
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "ایک نیا دریچہ کھولیں"
 
-#: src/Application.vala:268
+#. -t flag forces a new tab
+#: src/Application.vala:264
+#, fuzzy
+#| msgid "Open a new window"
+msgid "Open a new terminal tab"
+msgstr "ایک نیا دریچہ کھولیں"
+
+#: src/Application.vala:266
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:270
+#: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "کاپی"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "پیسٹ"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "تمام منتخب کریں"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:345 src/MainWindow.vala:1255
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "تلاش کریں..."
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:352
+#: src/MainWindow.vala:364
 #, fuzzy
 msgid "Zoom out"
 msgstr "زوم آؤٹ"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:390
 #, fuzzy
 msgid "Zoom in"
 msgstr "زوم ان"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:422
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:487
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr ""
 
@@ -181,7 +192,7 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr ""
 
