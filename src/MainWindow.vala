@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2011-2020 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -26,6 +26,12 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Dialogs.ColorPreferences color_preferences_dialog;
+        private Gtk.Popover menu_popover;
+        private Gtk.RadioButton color_button_white;
+        private Gtk.RadioButton color_button_light;
+        private Gtk.RadioButton color_button_dark;
+        private Gtk.RadioButton color_button_custom;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -34,13 +40,6 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
-
-        private const string HIGH_CONTRAST_BG = "#fff";
-        private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
-        private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
-        private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -401,7 +400,7 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.RadioButton (null);
+            color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
             color_button_white.tooltip_text = _("High Contrast");
 
@@ -409,7 +408,7 @@ namespace Terminal {
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
             color_button_light.tooltip_text = _("Solarized Light");
 
@@ -417,13 +416,21 @@ namespace Terminal {
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
             color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
+
+            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_custom.halign = Gtk.Align.CENTER;
+            color_button_custom.tooltip_text = _("Custom");
+
+            var color_button_custom_context = color_button_custom.get_style_context ();
+            color_button_custom_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            color_button_custom_context.add_class ("color-custom");
 
             var color_grid = new Gtk.Grid ();
             color_grid.column_homogeneous = true;
@@ -433,6 +440,9 @@ namespace Terminal {
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
+            color_grid.add (color_button_custom);
+
+            update_color_buttons ();
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
@@ -477,7 +487,7 @@ namespace Terminal {
 
             menu_popover_grid.show_all ();
 
-            var menu_popover = new Gtk.Popover (null);
+            menu_popover = new Gtk.Popover (null);
             menu_popover.add (menu_popover_grid);
 
             var menu_button = new Gtk.MenuButton ();
@@ -538,34 +548,37 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             });
 
-            switch (Application.settings.get_string ("background")) {
-                case HIGH_CONTRAST_BG:
-                    color_button_white.active = true;
-                    break;
-                case SOLARIZED_LIGHT_BG:
-                    color_button_light.active = true;
-                    break;
-                case DARK_BG:
-                    color_button_dark.active = true;
-                    break;
-            }
-
-            color_button_dark.clicked.connect (() => {
+            color_button_dark.button_press_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", true);
-                Application.settings.set_string ("background", DARK_BG);
-                Application.settings.set_string ("foreground", DARK_FG);
+                Terminal.Themes.set_active_name ("Default (Dark)");
+                if (color_preferences_dialog != null) {
+                    color_preferences_dialog.update_widgets_from_settings ();
+                }
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_light.clicked.connect (() => {
+            color_button_light.button_press_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+                Terminal.Themes.set_active_name ("Default (Solarized Light)");
+                if (color_preferences_dialog != null) {
+                    color_preferences_dialog.update_widgets_from_settings ();
+                }
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_white.clicked.connect (() => {
+            color_button_white.button_press_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
+                Terminal.Themes.set_active_name ("Default (High Contrast)");
+                if (color_preferences_dialog != null) {
+                    color_preferences_dialog.update_widgets_from_settings ();
+                }
+                return Gdk.EVENT_PROPAGATE;
+            });
+
+            color_button_custom.button_press_event.connect (() => {
+                open_color_preferences ();
+                menu_popover.popdown ();
+                return Gdk.EVENT_STOP;
             });
 
             natural_copy_paste_button.button_release_event.connect (() => {
@@ -708,6 +721,23 @@ namespace Terminal {
 
                 return false;
             });
+        }
+
+        public void update_color_buttons () {
+            switch (Terminal.Themes.get_active_name ()) {
+                case "Default (High Contrast)":
+                    color_button_white.active = true;
+                    break;
+                case "Default (Solarized Light)":
+                    color_button_light.active = true;
+                    break;
+                case "Default (Dark)":
+                    color_button_dark.active = true;
+                    break;
+                default:
+                    color_button_custom.active = true;
+                    break;
+            }
         }
 
         private bool handle_paste_event () {
@@ -1328,6 +1358,21 @@ namespace Terminal {
                 fullscreen ();
                 is_fullscreen = true;
             }
+        }
+
+        private void open_color_preferences () {
+            if (color_preferences_dialog == null) {
+                color_preferences_dialog = new Dialogs.ColorPreferences (this);
+                color_preferences_dialog.show_all ();
+
+                color_preferences_dialog.theme_changed.connect (update_color_buttons);
+
+                color_preferences_dialog.destroy.connect (() => {
+                    color_preferences_dialog = null;
+                });
+            }
+
+            color_preferences_dialog.present ();
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
