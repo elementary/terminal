@@ -8,15 +8,18 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2016-09-18 08:15+0000\n"
-"Last-Translator: neiron13 <Unknown>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"PO-Revision-Date: 2020-09-14 01:14+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
+"uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
@@ -27,42 +30,44 @@ msgstr "Термінал"
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Використати командний рядок"
+msgstr "Користуйтеся командним рядком"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"Термінал це додаток емулятор терміналу для доступу до навколишнього "
-"середовища оболонки UNIX, яка може використовуватися для запуску програм, "
-"доступних у вашій системі."
+"Термінал — це застосунок емулятора терміналу для доступу до середовища "
+"оболонки UNIX, яка може використовуватися для запуску програм, доступних у "
+"вашій системі."
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:54
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:82
 msgid "New features:"
-msgstr ""
+msgstr "Нові функції:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Переміщуйте вкладки комбінаціями клавіш Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
 msgstr ""
+"Перемикайтеся між вкладками комбінаціями клавіш Ctrl + Tab та Ctrl + Shift + "
+"Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:58
 #: data/io.elementary.terminal.appdata.xml.in:72
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Other updates:"
-msgstr ""
+msgstr "Інші оновлення:"
 
 #: data/io.elementary.terminal.appdata.xml.in:47
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Перевірка власної палітри"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:61
@@ -85,131 +90,136 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:232
 #: data/io.elementary.terminal.appdata.xml.in:247
 msgid "Translation updates"
-msgstr ""
+msgstr "Оновлено переклади"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Додано параметр командного рядка для відкривання нової вкладки (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Виправлено вибір URL-адреси"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Add commandline option for \"Show version\" (-v, --version)"
 msgstr ""
+"Додано параметр командного рядка для \"Показати версію\"  (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Додано параметр командного рядка для відкривання нового вікна (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Запобігання дублюванню вкладки під час запуску"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Запобігання непотрібній відкриванню домашньої вкладки під час запуску"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
 msgstr ""
+"Увімкнення або вимкнення звичайного копіювання/вставлення в меню Параметри"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Зміна масштабу за допомогою Ctrl + прокручування"
 
 #: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Включено запит пароля sudo під час копіювання останнього виводу"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Застосування зміни шрифту без перезапуску"
 
 #: data/io.elementary.terminal.appdata.xml.in:98
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
+"Вкладки не запам'ятовуються, коли історію вимкнено в системних параметрах"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Показувати комбінацій клавіш у контекстному меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Вставлення середньою клавішею тепер належним чином слідує системним "
+"параметрам"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D, щоб дублювати вкладки"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Використання природніх кольорів для темної колірної схеми"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Невеликий відступ тексту від краю вікна"
 
 #: data/io.elementary.terminal.appdata.xml.in:111
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Натискання клавіші меню відкриває контекстне меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Зберігання стану за допомогою GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:120
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Підтримка комбінації клавіш Ctrl+дорівнює для збільшення масштабу"
 
 #: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "Виправлено помилку в коді відповіді процесу на передньому плані"
 
 #: data/io.elementary.terminal.appdata.xml.in:129
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Повернення фокусу після закриття меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Запобігання фокусування на кнопках пошуку та стилю"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Приховування курсора під час введення"
 
 #: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Виправлено непостійну поведінку підсвічування тексту пошуку"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Підтримка прапора -h для відкривання довідки"
 
 #: data/io.elementary.terminal.appdata.xml.in:141
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Вимкнено звуковий дзвінок"
 
 #: data/io.elementary.terminal.appdata.xml.in:142
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Додано дію Alt+↑ для переходу до останньої команди"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Додано дію Alt+c для копіювання останнього виводу"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Додано акценти до підказок"
 
 #: data/io.elementary.terminal.appdata.xml.in:152
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Виправлено сповіщення zsh"
 
 #: data/io.elementary.terminal.appdata.xml.in:153
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Скорочення ctrl+g обумовлене усуненням конфлікту з emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:154
 #: data/io.elementary.terminal.appdata.xml.in:162
@@ -223,44 +233,44 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:231
 #: data/io.elementary.terminal.appdata.xml.in:246
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Незначні оновлення"
 
 #: data/io.elementary.terminal.appdata.xml.in:194
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Поліпшення інтеграції  FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:195
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Меню параметрів теми"
 
 #: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Елементи керування масштабом"
 
 #: data/io.elementary.terminal.appdata.xml.in:213
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Дозволено закривати вкладку введенням exit до командного рядка"
 
 #: data/io.elementary.terminal.appdata.xml.in:222
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Виправлено копіювання URL-адрес до буфера обміну"
 
 #: data/io.elementary.terminal.appdata.xml.in:239
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Виправлено формат дати потоку застосунків"
 
 #: data/io.elementary.terminal.appdata.xml.in:281
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
 msgid "utilities-terminal"
-msgstr ""
+msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
+msgstr "термінал;команда;запуск;command;prompt;cmd;commandline;run;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
