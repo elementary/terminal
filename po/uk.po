@@ -7,16 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 17:35+0000\n"
-"PO-Revision-Date: 2016-04-30 16:39+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"PO-Revision-Date: 2020-09-14 01:14+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
+"terminal/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:117
 msgid "Task finished"
@@ -24,7 +27,7 @@ msgstr "Завдання завершено"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Показати версію"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -35,94 +38,92 @@ msgstr "Запустити програму в терміналі"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Запустити залишок рядка як команду в терміналі. Також можна використати '--"
+"'  як прапор"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Відкрити нове вікно"
+msgstr "Відкрити нове вікно терміналу"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Відкрити нове вікно"
+msgstr "Відкрити нову вкладку терміналу"
 
 #: src/Application.vala:266
 msgid "Show help"
-msgstr ""
+msgstr "Показати довідку"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
 msgstr "Встановити робочу теку для оболонки"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Копіювати останнє виведене"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Показати у файловому переглядачі"
 
-#: src/MainWindow.vala:360
-#, fuzzy
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Зменшити"
 
-#: src/MainWindow.vala:367
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
-msgstr ""
+msgstr "Типовий масштаб"
 
-#: src/MainWindow.vala:386
-#, fuzzy
+#: src/MainWindow.vala:390
 msgid "Zoom in"
 msgstr "Збільшити"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "High Contrast"
-msgstr ""
+msgstr "Високий контраст"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized світла"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:422
 msgid "Dark"
-msgstr ""
+msgstr "Темна"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Звичайне копіювання/вставляння"
 
-#: src/MainWindow.vala:441
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Скорочення не потребують використання клавіші Shift;  може вплинути на "
+"програми CLI"
 
-#: src/MainWindow.vala:483
+#: src/MainWindow.vala:487
 msgid "Settings"
-msgstr ""
+msgstr "Параметри"
 
-#: src/MainWindow.vala:1275
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
-msgstr ""
+msgstr "Сховати панель пошуку"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -162,16 +163,15 @@ msgstr "Ця команда запитує права доступу адмін�
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Копіювання команд в термінал може бути небезпечним."
+msgstr "Копіювання команд до терміналу може бути небезпечним."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"Будьте впевненими у розумінні того, що робить кожна частина цієї команди"
+msgstr "Переконайтеся, що ви розумієте, що робить кожна частина цієї команди."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Показувати попередження безпеку під час вставляння"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -179,7 +179,7 @@ msgstr "Не вставляти"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"
-msgstr "Всеріно вставити"
+msgstr "Все одно вставити"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
@@ -195,7 +195,7 @@ msgstr "Наступний результат"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "Циклічний пошук"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"

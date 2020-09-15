@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 17:35+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -51,68 +51,68 @@ msgstr "Pokoż pōmoc"
 msgid "Set shell working directory"
 msgstr "Szteluj katalog roboczy powłōki"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "Wraź"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:222 src/MainWindow.vala:353 src/MainWindow.vala:1283
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "Znojdź…"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:360
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Pōmyńszynie"
 
-#: src/MainWindow.vala:367
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Wychodny poziōm powiynkszynio"
 
-#: src/MainWindow.vala:386
+#: src/MainWindow.vala:390
 msgid "Zoom in"
 msgstr "Powiynkszynie"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "Wysoki kōntrast"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Jasny Solarized"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:422
 msgid "Dark"
 msgstr "Ciymny"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
 msgstr "Naturalne kopiowanie i wrażanie"
 
-#: src/MainWindow.vala:441
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza kōmynd"
 
-#: src/MainWindow.vala:483
+#: src/MainWindow.vala:487
 msgid "Settings"
 msgstr "Sztelōnki"
 
-#: src/MainWindow.vala:1275
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 
