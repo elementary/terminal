@@ -26,8 +26,7 @@
 }
 
 vte-terminal {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0 9px;
 }
 
 .color-button radio,
