@@ -51,9 +51,7 @@ vte-terminal {
 }
 
 .color-custom radio {
-    background-color: #fff;
-    color: #000;
-    -gtk-icon-source: -gtk-icontheme("list-add");
+    -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
 
 .color-custom radio:checked {
