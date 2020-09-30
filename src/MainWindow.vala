@@ -410,7 +410,7 @@ namespace Terminal {
 
             color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
-            color_button_light.tooltip_text = _("Solarized Light");
+            color_button_light.tooltip_text = _("Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
@@ -559,7 +559,7 @@ namespace Terminal {
 
             color_button_light.button_press_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.set_active_name ("Default (Solarized Light)");
+                Terminal.Themes.set_active_name ("Default (Light)");
                 if (color_preferences_dialog != null) {
                     color_preferences_dialog.update_widgets_from_settings ();
                 }
@@ -728,7 +728,7 @@ namespace Terminal {
                 case "Default (High Contrast)":
                     color_button_white.active = true;
                     break;
-                case "Default (Solarized Light)":
+                case "Default (Light)":
                     color_button_light.active = true;
                     break;
                 case "Default (Dark)":
