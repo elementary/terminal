@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-07-15 23:12+0000\n"
+"PO-Revision-Date: 2020-10-08 14:14+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -51,10 +51,8 @@ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgstr "Ctrl + Alt + ←/→ kısayolları ile sekmeleri taşı"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Ctrl + Alt + ←/→ kısayolları ile sekmeleri taşı"
+msgstr "Ctrl + Tab ve Ctrl + Shift + Tab  ile sekme değiştirin"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:58
