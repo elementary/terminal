@@ -132,6 +132,7 @@ namespace Terminal {
 
             restore_settings ();
             Application.settings.changed.connect (restore_settings);
+            Granite.Settings.get_default ().notify["prefers-color-scheme"].connect (restore_settings);
 
             window = parent_window;
             child_has_exited = false;
@@ -246,9 +247,14 @@ namespace Terminal {
         }
 
         public void restore_settings () {
-            /* Load configuration */
+            var granite_settings = Granite.Settings.get_default ();
             var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+
+            if (Application.settings.get_boolean ("follow-system-style")) {
+                gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+            } else {
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+            }
 
             Gdk.RGBA background_color = Gdk.RGBA ();
             background_color.parse (Application.settings.get_string ("background"));

@@ -602,6 +602,23 @@ namespace Terminal {
                 GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
             );
 
+            var granite_settings = Granite.Settings.get_default ();
+            var gtk_settings = Gtk.Settings.get_default ();
+
+            granite_settings.notify["prefers-color-scheme"].connect (() => {
+                if (Application.settings.get_boolean ("follow-system-style")) {
+                    switch (granite_settings.prefers_color_scheme) {
+                        case Granite.Settings.ColorScheme.DARK:
+                            gtk_settings.gtk_application_prefer_dark_theme = true;
+                            color_button_dark.activate ();
+                            break;
+                        default:
+                            color_button_light.activate ();
+                            break;
+                    }
+                }
+            });
+
             color_button_dark.clicked.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", true);
                 Application.settings.set_string ("background", DARK_BG);
