@@ -588,12 +588,12 @@ namespace Terminal {
                 return Gdk.EVENT_STOP;
             });
 
-            // Application.settings.bind (
-            //     "natural-copy-paste",
-            //     follow_system_switch,
-            //     "active",
-            //     SettingsBindFlags.DEFAULT
-            // );
+            Application.settings.bind (
+                "follow-system-style",
+                follow_system_switch,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
 
             follow_system_switch.bind_property (
                 "active",
