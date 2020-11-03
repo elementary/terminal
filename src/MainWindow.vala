@@ -390,11 +390,12 @@ namespace Terminal {
                 _("Zoom in")
             );
 
-            var font_size_grid = new Gtk.Grid ();
-            font_size_grid.column_homogeneous = true;
-            font_size_grid.hexpand = true;
-            font_size_grid.margin_start = font_size_grid.margin_end = 12;
-            font_size_grid.margin_bottom = 6;
+            var font_size_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                hexpand = true,
+                margin_end = 12,
+                margin_start = 12
+            };
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
             font_size_grid.add (zoom_out_button);
