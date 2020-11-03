@@ -610,32 +610,18 @@ namespace Terminal {
                     switch (granite_settings.prefers_color_scheme) {
                         case Granite.Settings.ColorScheme.DARK:
                             gtk_settings.gtk_application_prefer_dark_theme = true;
-                            color_button_dark.activate ();
+                            set_dark_style ();
                             break;
                         default:
-                            color_button_light.activate ();
+                            set_light_style ();
                             break;
                     }
                 }
             });
 
-            color_button_dark.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", true);
-                Application.settings.set_string ("background", DARK_BG);
-                Application.settings.set_string ("foreground", DARK_FG);
-            });
-
-            color_button_light.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
-            });
-
-            color_button_white.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
-            });
+            color_button_dark.clicked.connect (set_dark_style);
+            color_button_light.clicked.connect (set_light_style);
+            color_button_white.clicked.connect (set_high_contrast_style);
 
             natural_copy_paste_button.button_release_event.connect (() => {
                 natural_copy_paste_switch.activate ();
@@ -777,6 +763,24 @@ namespace Terminal {
 
                 return false;
             });
+        }
+
+        private void set_dark_style () {
+            Application.settings.set_boolean ("prefer-dark-style", true);
+            Application.settings.set_string ("background", DARK_BG);
+            Application.settings.set_string ("foreground", DARK_FG);
+        }
+
+        private void set_light_style () {
+            Application.settings.set_boolean ("prefer-dark-style", false);
+            Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
+            Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+        }
+
+        private void set_high_contrast_style () {
+            Application.settings.set_boolean ("prefer-dark-style", false);
+            Application.settings.set_string ("background", HIGH_CONTRAST_BG);
+            Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
         }
 
         private bool handle_paste_event () {
