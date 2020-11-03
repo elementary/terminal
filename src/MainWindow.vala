@@ -401,17 +401,17 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var follow_system_label = new Gtk.Label (_("Follow System Style")){
+            var follow_system_label = new Gtk.Label (_("Follow System Style")) {
                 halign = Gtk.Align.START,
                 hexpand = true,
                 vexpand = true
             };
 
-            var follow_system_switch = new Gtk.Switch (){
+            var follow_system_switch = new Gtk.Switch () {
                 valign = Gtk.Align.START
             };
 
-            var follow_system_grid = new Gtk.Grid (){
+            var follow_system_grid = new Gtk.Grid () {
                 column_spacing = 12
             };
             follow_system_grid.add (follow_system_label);
