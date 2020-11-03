@@ -411,15 +411,15 @@ namespace Terminal {
                 valign = Gtk.Align.START
             };
 
-            var follow_system_grid = new Gtk.Grid () {
+            var follow_system_button_grid = new Gtk.Grid () {
                 column_spacing = 12
             };
-            follow_system_grid.add (follow_system_label);
-            follow_system_grid.add (follow_system_switch);
+            follow_system_button_grid.add (follow_system_label);
+            follow_system_button_grid.add (follow_system_switch);
 
             var follow_system_button = new Gtk.ModelButton ();
             follow_system_button.get_child ().destroy ();
-            follow_system_button.add (follow_system_grid);
+            follow_system_button.add (follow_system_button_grid);
 
             var color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
@@ -445,7 +445,9 @@ namespace Terminal {
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            var color_grid = new Gtk.Grid ();
+            var color_grid = new Gtk.Grid () {
+                margin_top = 6
+            };
             color_grid.column_homogeneous = true;
             color_grid.margin_start = color_grid.margin_end = 12;
 
@@ -455,6 +457,12 @@ namespace Terminal {
 
             var color_revealer = new Gtk.Revealer ();
             color_revealer.add (color_grid);
+
+            var follow_system_grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL
+            };
+            follow_system_grid.add (follow_system_button);
+            follow_system_grid.add (color_revealer);
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
@@ -493,8 +501,7 @@ namespace Terminal {
             menu_popover_grid.row_spacing = 6;
 
             menu_popover_grid.add (font_size_grid);
-            menu_popover_grid.add (follow_system_button);
-            menu_popover_grid.add (color_revealer);
+            menu_popover_grid.add (follow_system_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
