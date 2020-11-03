@@ -401,6 +401,23 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
+            var follow_system_label = new Gtk.Label (_("Follow System Style"));
+            follow_system_label.halign = Gtk.Align.START;
+            follow_system_label.hexpand = true;
+            follow_system_label.vexpand = true;
+
+            var follow_system_switch = new Gtk.Switch ();
+            follow_system_switch.valign = Gtk.Align.START;
+
+            var follow_system_grid = new Gtk.Grid ();
+            follow_system_grid.column_spacing = 12;
+            follow_system_grid.add (follow_system_label);
+            follow_system_grid.add (follow_system_switch);
+
+            var follow_system_button = new Gtk.ModelButton ();
+            follow_system_button.get_child ().destroy ();
+            follow_system_button.add (follow_system_grid);
+
             var color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
             color_button_white.tooltip_text = _("High Contrast");
@@ -428,11 +445,13 @@ namespace Terminal {
             var color_grid = new Gtk.Grid ();
             color_grid.column_homogeneous = true;
             color_grid.margin_start = color_grid.margin_end = 12;
-            color_grid.margin_bottom = 6;
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
+
+            var color_revealer = new Gtk.Revealer ();
+            color_revealer.add (color_grid);
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
@@ -471,7 +490,8 @@ namespace Terminal {
             menu_popover_grid.row_spacing = 6;
 
             menu_popover_grid.add (font_size_grid);
-            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (follow_system_button);
+            menu_popover_grid.add (color_revealer);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
@@ -549,6 +569,25 @@ namespace Terminal {
                     color_button_dark.active = true;
                     break;
             }
+
+            follow_system_button.button_release_event.connect (() => {
+                follow_system_switch.activate ();
+                return Gdk.EVENT_STOP;
+            });
+
+            // Application.settings.bind (
+            //     "natural-copy-paste",
+            //     follow_system_switch,
+            //     "active",
+            //     SettingsBindFlags.DEFAULT
+            // );
+
+            follow_system_switch.bind_property (
+                "active",
+                color_revealer,
+                "reveal-child",
+                GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
+            );
 
             color_button_dark.clicked.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", true);
