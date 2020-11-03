@@ -447,6 +447,7 @@ namespace Terminal {
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
+                margin_bottom = 6,
                 margin_end = 12,
                 margin_start = 12,
                 margin_top = 6
