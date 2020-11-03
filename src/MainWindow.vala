@@ -446,10 +446,11 @@ namespace Terminal {
             color_button_dark_context.add_class ("color-dark");
 
             var color_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                margin_end = 12,
+                margin_start = 12,
                 margin_top = 6
             };
-            color_grid.column_homogeneous = true;
-            color_grid.margin_start = color_grid.margin_end = 12;
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
