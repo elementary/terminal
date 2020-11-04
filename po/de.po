@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2019-12-25 21:35+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"PO-Revision-Date: 2020-10-28 01:15+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
 "Language: de\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:117
 msgid "Task finished"
-msgstr "Auftrag erledigt"
+msgstr "Aufgabe abgeschlossen"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Version anzeigen"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -42,17 +42,13 @@ msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Ein neues Fenster öffnen"
+msgstr "Neues Terminal-Fenster öffnen"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Ein neues Fenster öffnen"
+msgstr "Neuen Terminal-Tab öffnen"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -60,7 +56,7 @@ msgstr "Hilfe anzeigen"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
-msgstr "Arbeitsordner des Terminals festlegen"
+msgstr "Shell-Arbeitsordner festlegen"
 
 #: src/MainWindow.vala:206
 msgid "Copy"
@@ -80,7 +76,7 @@ msgstr "Alles auswählen"
 
 #: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
-msgstr "Suchen…"
+msgstr "Suchen …"
 
 #: src/MainWindow.vala:232
 msgid "Show in File Browser"
@@ -92,7 +88,7 @@ msgstr "Verkleinern"
 
 #: src/MainWindow.vala:371
 msgid "Default zoom level"
-msgstr "Standard Zoomfaktor"
+msgstr "Standard-Zoomfaktor"
 
 #: src/MainWindow.vala:390
 msgid "Zoom in"
@@ -157,15 +153,15 @@ msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "Terminal schließen"
+msgstr "Terminal beenden"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
-msgstr "Dieser Befehl verlangt Administratorzugriff auf Ihren Computer"
+msgstr "Dieser Befehl erfordert Systemverwalterrechte"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Das Kopieren von Befehlen in das Terminal kann gefährlich sein."
+msgstr "Das Einfügen von Befehlen in das Terminal kann gefährlich sein."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
