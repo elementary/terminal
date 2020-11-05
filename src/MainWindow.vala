@@ -531,14 +531,17 @@ namespace Terminal {
 
             menu_button.pressed.connect (() => {
                 zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
-                var binding = current_terminal.bind_property ("font-scale",
-                                                              zoom_default_button,
-                                                              "label",
-                                                              BindingFlags.DEFAULT,
-                                                              (binding, from_val, ref to_val) => {
-                                                to_val.set_string (font_scale_to_zoom (from_val.get_double ()));
-                                                return true;
-                                                              });
+                var binding = current_terminal.bind_property (
+                    "font-scale",
+                    zoom_default_button,
+                    "label",
+                    BindingFlags.DEFAULT,
+
+                    (binding, from_val, ref to_val) => {
+                        to_val.set_string (font_scale_to_zoom (from_val.get_double ()));
+                        return true;
+                    }
+                );
 
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
@@ -984,8 +987,10 @@ namespace Terminal {
                     focus--;
                 } else {
                     var term = new_tab (loc, null, false);
-                    term.font_scale = double.parse (zooms[index]).clamp (TerminalWidget.MIN_SCALE,
-                                                                         TerminalWidget.MAX_SCALE);
+                    term.font_scale = double.parse (zooms[index]).clamp (
+                        TerminalWidget.MIN_SCALE,
+                        TerminalWidget.MAX_SCALE
+                    );
                 }
 
                 index++;
