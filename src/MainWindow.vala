@@ -17,7 +17,7 @@
 */
 
 namespace Terminal {
-    public class MainWindow : Gtk.Window {
+    public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
@@ -62,6 +62,8 @@ namespace Terminal {
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
+        public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
         public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
         public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
@@ -85,6 +87,8 @@ namespace Terminal {
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
+            { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
             { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
@@ -137,13 +141,19 @@ namespace Terminal {
         }
 
         static construct {
+            Hdy.init ();
+
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
+            action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
+            action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
@@ -396,7 +406,7 @@ namespace Terminal {
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
             var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
@@ -404,7 +414,7 @@ namespace Terminal {
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
@@ -412,7 +422,7 @@ namespace Terminal {
             color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
             var color_grid = new Gtk.Grid ();
@@ -477,12 +487,15 @@ namespace Terminal {
             menu_button.tooltip_text = _("Settings");
             menu_button.valign = Gtk.Align.CENTER;
 
-            var header = new Gtk.HeaderBar ();
-            header.show_close_button = true;
-            header.has_subtitle = false;
-            header.get_style_context ().add_class ("default-decoration");
+            var header = new Hdy.HeaderBar () {
+                show_close_button = true,
+                has_subtitle = false
+            };
             header.pack_end (menu_button);
             header.pack_end (search_button);
+
+            unowned Gtk.StyleContext header_context = header.get_style_context ();
+            header_context.add_class ("default-decoration");
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
@@ -510,14 +523,15 @@ namespace Terminal {
             notebook.max_restorable_tabs = 5;
             notebook.group_name = "pantheon-terminal";
             notebook.can_focus = false;
-            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior) Application.settings.get_enum ("tab-bar-behavior");
+            var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
+            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
-            grid.attach (search_revealer, 0, 0, 1, 1);
-            grid.attach (notebook, 0, 1, 1, 1);
+            grid.attach (header, 0, 0);
+            grid.attach (search_revealer, 0, 1);
+            grid.attach (notebook, 0, 2);
 
             get_style_context ().add_class ("terminal-window");
-            set_titlebar (header);
             add (grid);
 
             menu_popover.closed.connect (() => {
@@ -572,6 +586,8 @@ namespace Terminal {
                 "reveal-child",
                 GLib.BindingFlags.SYNC_CREATE
             );
+
+            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
@@ -786,6 +802,7 @@ namespace Terminal {
                 }
             }
 
+            current_terminal.grab_focus ();
             return true;
         }
 
@@ -1239,6 +1256,14 @@ namespace Terminal {
 
         private void action_previous_tab () {
             notebook.previous_page ();
+        }
+
+        void action_move_tab_right () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) + 1) % notebook.n_tabs);
+        }
+
+        void action_move_tab_left () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) - 1) % notebook.n_tabs);
         }
 
         private void action_search () {

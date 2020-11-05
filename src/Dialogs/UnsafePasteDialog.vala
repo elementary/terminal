@@ -43,7 +43,9 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (on_ignore);
 
-        Terminal.Application.settings.bind ("unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT);
+        Terminal.Application.settings.bind (
+            "unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT
+        );
     }
 
     private void on_ignore () {
