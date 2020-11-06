@@ -942,14 +942,30 @@ namespace Terminal {
 
         private void open_tabs () {
             string[] tabs = {};
-            string[] zooms = {};
+            double[] zooms = {};
             int focus = 0;
-            string default_zoom = Application.saved_state.get_double ("zoom").to_string ();
+            var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
+
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 tabs = saved_tabs;
-                zooms = saved_zooms;
+                var n_tabs = tabs.length;
+
+                foreach (string zoom_s in saved_zooms) {
+                    var zoom = double.parse (zoom_s);
+
+                    if (zooms.length < n_tabs) {
+                        zooms += zoom;
+                    } else {
+                        break;
+                    }
+                }
+
+                while (zooms.length < n_tabs) {
+                    zooms += default_zoom;
+                }
+
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
                     zooms += default_zoom;
@@ -960,6 +976,9 @@ namespace Terminal {
                 tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
                 zooms += default_zoom;
             }
+
+
+            assert (zooms.length == tabs.length);
 
             int null_dirs = 0;
             for (int i = 0; i < tabs.length; i++) {
@@ -987,7 +1006,7 @@ namespace Terminal {
                     focus--;
                 } else {
                     var term = new_tab (loc, null, false);
-                    term.font_scale = double.parse (zooms[index]).clamp (
+                    term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
                     );
