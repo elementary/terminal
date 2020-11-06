@@ -1054,9 +1054,9 @@ namespace Terminal {
                         t.tab.close ();
                         return;
                     }
-                }
 
-                schedule_name_check ();
+                    schedule_name_check ();
+                }
             });
 
             /* This signal is not emitted when the .bashrc is missing or does not force terminal to
