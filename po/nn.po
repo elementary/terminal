@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-08-31 18:27+0000\n"
 "PO-Revision-Date: 2019-01-06 11:59+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -60,67 +60,67 @@ msgstr "Vis hjelp"
 msgid "Set shell working directory"
 msgstr "Sett arbeidsmappa til skalet"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:206
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:211
 msgid "Copy Last Output"
 msgstr "Kopier siste utdata"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:216
 msgid "Paste"
 msgstr "Lim inn"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:221
 msgid "Select All"
 msgstr "Vel alle"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
+#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
 msgid "Find…"
 msgstr "Finn…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:232
 msgid "Show in File Browser"
 msgstr "Vis i filutforskar"
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Forminsk"
 
-#: src/MainWindow.vala:361
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Standard zoom-nivå"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:390
 msgid "Zoom in"
 msgstr "Forstørr"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "Høg kontrast"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarisert lys"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:422
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:437
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:445
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:477
+#: src/MainWindow.vala:487
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1252
+#: src/MainWindow.vala:1276
 msgid "Hide find bar"
 msgstr "Gøym søkemeny"
 
@@ -195,7 +195,7 @@ msgstr "Førre resultat"
 msgid "Next result"
 msgstr "Neste resultat"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr "Syklisk søk"
 
