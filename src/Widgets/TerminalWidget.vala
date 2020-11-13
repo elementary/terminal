@@ -103,8 +103,8 @@ namespace Terminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
-        public const double MIN_SCALE = 0.2;
-        public const double MAX_SCALE = 5.0;
+        public const double MIN_SCALE = 0.25;
+        public const double MAX_SCALE = 4.0;
 
         public bool child_has_exited {
             get;
