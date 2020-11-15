@@ -42,6 +42,10 @@
           <li>Move tabs with the shortcut Ctrl + Alt + ←/→</li>
           <li>Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab</li>
         </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Strip whitespace from clipboard when pasting, preventing accidental executing of commands</li>
+        </ul>
         <p>Other updates:</p>
         <ul>
           <li>Validate custom palette</li>

@@ -1138,29 +1138,35 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
-            /* if unsafe paste alert is enabled, show dialog */
-            if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
-
-                if (intext == null) {
-                    return;
-                }
-                if (!intext.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-                var text = intext.strip ();
-
-                if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var d = new UnsafePasteDialog (this);
-                    if (d.run () == 1) {
-                        d.destroy ();
-                        return;
-                    }
-                    d.destroy ();
-                }
+            if (intext == null) {
+                return;
             }
 
-            current_terminal.remember_command_start_position ();
+            if (!intext.validate ()) {
+                debug ("Dropping invalid UTF-8 paste");
+                return;
+            }
+
+            // If there is a foreground process we paste everything else we ensure no command is executed in the shell
+            if (!current_terminal.has_foreground_process ()) {
+                current_terminal.remember_command_start_position ();
+
+                unowned string text = intext._strip ();
+
+                if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
+                    if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
+                        var d = new UnsafePasteDialog (this);
+                        if (d.run () == 1) {
+                            d.destroy ();
+                            return;
+                        }
+                        d.destroy ();
+                    }
+                }
+
+                // Override clipboard with stripped version
+                Gtk.Clipboard.get_default (this.get_display ()).set_text (text, -1);
+            }
 
             if (board == primary_selection) {
                 current_terminal.paste_primary ();
