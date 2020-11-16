@@ -174,9 +174,25 @@ public class Terminal.Application : Gtk.Application {
             return 0;
         }
 
+        /* If working directory not specified get from any command supplied with a full path */
+        if (working_directory == null) {
+            if (command_e != null) {
+                var command_wd = get_parent_dir (command_e[0]);
+                if (command_wd != null) {
+                    working_directory = command_wd;
+                }
+            } else if (commandline.length > 0) {
+                var command_wd = get_parent_dir (commandline);
+                if (command_wd != null) {
+                    working_directory = command_wd;
+                }
+            }
+        }
+
         if (working_directory == null) {
             /* Try to get pwd from commandline (may still be null) */
             working_directory = command_line.getenv ("PWD");
+
         }
 
         if (option_help) {
@@ -185,8 +201,16 @@ public class Terminal.Application : Gtk.Application {
             command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
             if (command_e != null) {
+                var command_wd = get_parent_dir (command_e[0]);
+                if (command_wd != null) {
+                    working_directory = command_wd;
+                }
                 run_commands (command_e, working_directory);
             } else if (commandline.length > 0) {
+                var command_wd = get_parent_dir (commandline);
+                if (command_wd != null) {
+                    working_directory = command_wd;
+                }
                 run_command_line (commandline, working_directory);
             } else if (command_x != null) {
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
@@ -196,6 +220,8 @@ public class Terminal.Application : Gtk.Application {
                 start_terminal_with_working_directory (working_directory);
             }
         }
+
+
 
         // Do not save the value until the next instance of
         // Pantheon Terminal is started
@@ -207,6 +233,16 @@ public class Terminal.Application : Gtk.Application {
         working_directory = null;
 
         return 0;
+    }
+
+    private string? get_parent_dir (string uri) {
+        var file = File.new_for_commandline_arg (uri);
+        var parent = file.get_parent ();
+        if (parent != null) {
+            return parent.get_path ();
+        } else {
+            return null;
+        }
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
