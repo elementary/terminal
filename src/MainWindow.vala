@@ -603,7 +603,7 @@ namespace Terminal {
                         break;
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
-                            if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
+                            if (Gdk.ModifierType.SHIFT_MASK in e.state) {
                                 search_toolbar.previous_search ();
                             } else {
                                 search_toolbar.next_search ();
@@ -625,7 +625,7 @@ namespace Terminal {
                     case Gdk.Key.@6:
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        if (Gdk.ModifierType.MOD1_MASK in e.state &&
                             Application.settings.get_boolean ("alt-changes-tab")) {
                             var i = e.keyval - 49;
                             if (i > notebook.n_tabs - 1)
@@ -635,7 +635,7 @@ namespace Terminal {
                         }
                         break;
                     case Gdk.Key.@9:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        if (Gdk.ModifierType.MOD1_MASK in e.state &&
                             Application.settings.get_boolean ("alt-changes-tab")) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
@@ -665,9 +665,10 @@ namespace Terminal {
                                             Gdk.Gravity.SOUTH_WEST,
                                             Gdk.Gravity.NORTH_WEST,
                                             e);
+                        menu.select_first (false);
                         break;
                     default:
-                        if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
+                        if (!(Gtk.accelerator_get_default_mod_mask () in e.state)) {
                             current_terminal.remember_command_start_position ();
                         }
 
@@ -676,13 +677,13 @@ namespace Terminal {
 
                 /* Use hardware keycodes so the key used
                  * is unaffected by internationalized layout */
-                if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                if (Gdk.ModifierType.CONTROL_MASK in e.state &&
                     Application.settings.get_boolean ("natural-copy-paste")) {
                     uint keycode = e.hardware_keycode;
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
-                            if (((e.state & Gdk.ModifierType.SHIFT_MASK) == 0)) { /* Shift not pressed */
+                            if (!(Gdk.ModifierType.SHIFT_MASK in e.state)) { /* Shift not pressed */
                                 current_terminal.unselect_all ();
                             }
                             return true;
@@ -694,7 +695,7 @@ namespace Terminal {
                     }
                 }
 
-                if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                if (Gdk.ModifierType.MOD1_MASK in e.state) {
                     uint keycode = e.hardware_keycode;
 
                     if (e.keyval == Gdk.Key.Up) {
