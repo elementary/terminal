@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-09-01 15:04+0000\n"
+"PO-Revision-Date: 2020-11-28 03:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -114,7 +114,7 @@ msgstr "起動時にホームタブも開かれてしまう不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "設定メニューでナチュラルコピー／貼り付けの設定を変更できるように修正"
+msgstr "設定メニューでナチュラルコピー & ペーストの設定を変更できるように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Zoom with Ctrl + Scroll"
