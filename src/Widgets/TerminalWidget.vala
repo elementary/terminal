@@ -152,8 +152,8 @@ namespace Terminal {
                         window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
                     }
 
-                    menu.select_first (false);
                     menu.popup_at_pointer (event);
+                    menu.select_first (false);
 
                     return true;
                 }
