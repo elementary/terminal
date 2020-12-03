@@ -50,7 +50,9 @@ namespace Terminal.Widgets {
             );
 
             cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image = new Gtk.Image.from_icon_name ("media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            cycle_button.image = new Gtk.Image.from_icon_name (
+                "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
+            );
             cycle_button.sensitive = false;
             cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
