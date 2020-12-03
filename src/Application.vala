@@ -174,8 +174,8 @@ public class Terminal.Application : Gtk.Application {
             return 0;
         }
 
-        /* If working directory not specified get from any command supplied with a full path */
         if (working_directory == null) {
+        /* If working directory not specified get from any command supplied with a full path */
             if (command_e != null) {
                 var command_wd = get_parent_dir (command_e[0]);
                 if (command_wd != null) {
