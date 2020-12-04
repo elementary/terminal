@@ -174,49 +174,46 @@ public class Terminal.Application : Gtk.Application {
             return 0;
         }
 
-        if (working_directory == null) {
-        /* If working directory not specified get from any command supplied with a full path */
-            if (command_e != null) {
-                var command_wd = get_parent_dir (command_e[0]);
-                if (command_wd != null) {
-                    working_directory = command_wd;
-                }
-            } else if (commandline.length > 0) {
-                var command_wd = get_parent_dir (commandline);
-                if (command_wd != null) {
-                    working_directory = command_wd;
-                }
-            }
-        }
-
-        if (working_directory == null) {
-            /* Try to get pwd from commandline (may still be null) */
-            working_directory = command_line.getenv ("PWD");
-
-        }
-
         if (option_help) {
             command_line.print (context.get_help (true, null));
         } else if (option_version) {
             command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
             if (command_e != null) {
-                var command_wd = get_parent_dir (command_e[0]);
-                if (command_wd != null) {
-                    working_directory = command_wd;
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    var command_wd = get_parent_dir (command_e[0]);
+                    if (command_wd != null) {
+                        working_directory = command_wd;
+                    } else {
+                        /* Try to get pwd from commandline (may still be null) */
+                        working_directory = Uri.escape_string (command_line.getenv ("PWD"));
+                    }
                 }
+
                 run_commands (command_e, working_directory);
             } else if (commandline.length > 0) {
-                var command_wd = get_parent_dir (commandline);
-                if (command_wd != null) {
-                    working_directory = command_wd;
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    var command_wd = get_parent_dir (commandline);
+                    if (command_wd != null) {
+                        working_directory = command_wd;
+                    } else {
+                        working_directory = command_line.getenv ("PWD");
+                    }
                 }
+
                 run_command_line (commandline, working_directory);
             } else if (command_x != null) {
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    working_directory = command_line.getenv ("PWD");
+                }
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
                 get_last_window ().current_terminal.feed (WARNING.data);
             } else {
+                if (working_directory == null) {
+                    working_directory = command_line.getenv ("PWD");
+                }
+
                 start_terminal_with_working_directory (working_directory);
             }
         }
