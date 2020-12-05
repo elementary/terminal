@@ -41,6 +41,7 @@
         <ul>
           <li>Move tabs with the shortcut Ctrl + Alt + ←/→</li>
           <li>Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab</li>
+          <li>Zoom levels are now remembered per-tab</li>
         </ul>
         <p>Other updates:</p>
         <ul>

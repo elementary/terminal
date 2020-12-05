@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2020-11-06 13:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/terminal/"
@@ -58,69 +58,69 @@ msgstr "Mostra aiuto"
 msgid "Set shell working directory"
 msgstr "Imposta la directory di lavoro della shell"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
 msgstr "Copia l'ultimo risultato"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "Incolla"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr "Trova…"
 
-#: src/MainWindow.vala:232
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
 msgstr "Mostra nel gestore di file"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr "Riduci ingrandimento"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
 msgstr "Livello di ingrandimento predefinito"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr "Aumenta ingrandimento"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:395
 msgid "High Contrast"
 msgstr "Contrasto elevato"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:403
 msgid "Solarized Light"
 msgstr "Solarizzato chiaro"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:411
 msgid "Dark"
 msgstr "Scuro"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
 msgstr "Copia e incolla naturale"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Le scorciatoie non richiedono il tasto Maiusc.\n"
 "Ciò potrebbe interferire con le applicazioni a riga di comando."
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
 msgstr "Nascondi la barra di ricerca"
 

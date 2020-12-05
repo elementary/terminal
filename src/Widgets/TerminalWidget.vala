@@ -103,8 +103,8 @@ namespace Terminal {
             "(?:news:|man:|info:)[[:alnum:]\\Q^_{|}~!\"#$%&'()*+,./;:=?`\\E]+"
         };
 
-        const double MIN_SCALE = 0.2;
-        const double MAX_SCALE = 5.0;
+        public const double MIN_SCALE = 0.25;
+        public const double MAX_SCALE = 4.0;
 
         public bool child_has_exited {
             get;
@@ -241,8 +241,6 @@ namespace Terminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
-
-            Terminal.Application.saved_state.bind ("zoom", this, "font-scale", GLib.SettingsBindFlags.DEFAULT);
         }
 
         public void restore_settings () {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -60,67 +60,67 @@ msgstr "मदद दिखाएँ"
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:232
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:395
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:403
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:411
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 
