@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2011-2020 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -871,7 +871,7 @@ namespace Terminal {
 
             /* Update the "Show in ..." menu option */
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (sanitize_path (uri));
+                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
             });
         }
 
@@ -1295,7 +1295,7 @@ namespace Terminal {
 
         private void action_open_in_browser () {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string to_open = sanitize_path (uri);
+                string to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
                 try {
                     Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
                 } catch (GLib.Error error) {
@@ -1303,78 +1303,6 @@ namespace Terminal {
                 }
             });
         }
-
-        private string sanitize_path (string _path) {
-            /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
-            string scheme, path;
-
-            var parts_scheme = _path.split ("://", 2);
-            if (parts_scheme.length == 2) {
-                scheme = parts_scheme[0] + "://";
-                path = parts_scheme[1];
-            } else {
-                scheme = "file://";
-                path = _path;
-            }
-
-            path = Uri.unescape_string (path);
-            path = strip_uri (path);
-
-            do {
-                path = path.replace ("//", "/");
-
-            } while (path.contains ("//"));
-
-            var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
-            var index = 0;
-            while (parts_sep[index] == null && index < parts_sep.length - 1) {
-                index++;
-            }
-
-            if (parts_sep[index] == "~") {
-                parts_sep[index] = Environment.get_home_dir ();
-            } else if (parts_sep[index] == ".") {
-                parts_sep[index] = current_terminal.get_shell_location ();
-            } else if (parts_sep[index] == "..") {
-                parts_sep[index] = construct_parent_path (current_terminal.get_shell_location ());
-            }
-
-            var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
-            return result;
-        }
-
-    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
-        string rc = (Uri.RESERVED_CHARS_GENERIC_DELIMITERS +
-                     Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS).replace ("#", "").replace ("*", "").replace ("~", "");
-
-        if (!allow_single_quote) {
-            rc = rc.replace ("'", "");
-        }
-
-        return Uri.escape_string ((Uri.unescape_string (uri) ?? uri), rc , allow_utf8);
-    }
-
-    private string construct_parent_path (string path) {
-        if (path.length < 2) {
-            return Path.DIR_SEPARATOR_S;
-        }
-
-        var sb = new StringBuilder (path);
-
-        if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-            sb.erase (sb.str.length - 1, -1);
-        }
-
-        int last_separator = sb.str.last_index_of (Path.DIR_SEPARATOR_S);
-        if (last_separator < 0) {
-            last_separator = 0;
-        }
-        sb.erase (last_separator, -1);
-
-        string parent_path = sb.str + Path.DIR_SEPARATOR_S;
-
-        return parent_path;
-    }
 
         private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
             var link_uri = current_terminal.link_uri;
@@ -1392,18 +1320,6 @@ namespace Terminal {
 
                 uri_handler (primary_selection, link_uri);
             }
-        }
-
-        private string? strip_uri (string? _uri) {
-            string uri = _uri;
-            /* Strip off any trailing spaces, newlines or carriage returns */
-            if (_uri != null) {
-                uri = uri.strip ();
-                uri = uri.replace ("\n", "");
-                uri = uri.replace ("\r", "");
-            }
-
-            return uri;
         }
 
         private void action_scroll_to_last_command () {
@@ -1645,8 +1561,8 @@ namespace Terminal {
 
             /* Add parent directories until path and conflict path differ */
             while (prefix == conflict_prefix) {
-                var parent_temp_path = get_parent_path_from_path (temp_path);
-                var parent_temp_confict_path = get_parent_path_from_path (temp_conflict_path);
+                var parent_temp_path = Utils.get_parent_path_from_path (temp_path);
+                var parent_temp_confict_path = Utils.get_parent_path_from_path (temp_conflict_path);
                 prefix = Path.get_basename (parent_temp_path) + Path.DIR_SEPARATOR_S + prefix;
                 conflict_prefix = Path.get_basename (parent_temp_confict_path) + Path.DIR_SEPARATOR_S + conflict_prefix;
                 temp_path = parent_temp_path;
@@ -1654,26 +1570,6 @@ namespace Terminal {
             }
 
             return (prefix + basename).replace ("//", "/");
-        }
-
-        /*** Simplified version of PF.FileUtils function, with fewer checks ***/
-        private string get_parent_path_from_path (string path) {
-            if (path.length < 2) {
-                return Path.DIR_SEPARATOR_S;
-            }
-
-            StringBuilder string_builder = new StringBuilder (path);
-            if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                string_builder.erase (string_builder.str.length - 1, -1);
-            }
-
-            int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
-            if (last_separator < 0) {
-                last_separator = 0;
-            }
-
-            string_builder.erase (last_separator, -1);
-            return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
         public GLib.SimpleAction? get_simple_action (string action) {
