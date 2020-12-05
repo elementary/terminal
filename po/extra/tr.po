@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-10-08 14:14+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"PO-Revision-Date: 2020-12-08 03:16+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -56,7 +56,7 @@ msgstr "Ctrl + Tab ve Ctrl + Shift + Tab  ile sekme değiştirin"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Yakınlaştırma seviyeleri artık sekme başına hatırlanıyor"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
