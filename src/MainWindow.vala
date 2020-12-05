@@ -31,6 +31,7 @@ namespace Terminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private string[] saved_tabs;
+        private string[] saved_zooms;
 
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
@@ -63,6 +64,8 @@ namespace Terminal {
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
+        public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
         public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
         public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
@@ -86,6 +89,8 @@ namespace Terminal {
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
+            { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
+            { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
             { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
             { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
             { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
@@ -138,13 +143,19 @@ namespace Terminal {
         }
 
         static construct {
+            Hdy.init ();
+
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
+            action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
+            action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>KP_0";
             action_accelerators[ACTION_ZOOM_IN_FONT] = "<Control>plus";
@@ -360,18 +371,6 @@ namespace Terminal {
                 _("Default zoom level")
             );
 
-            Application.saved_state.bind_with_mapping (
-                "zoom",
-                zoom_default_button, "label",
-                SettingsBindFlags.GET,
-                (property, setting, data) => {
-                    double zoom = setting.get_double ();
-                    property.set_string ("%.0f%%".printf (zoom * 100));
-                    return true;
-                },
-                null, null, null
-            );
-
             var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
             zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
             zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -395,7 +394,7 @@ namespace Terminal {
             color_button_white.tooltip_text = _("High Contrast");
 
             var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class ("color-button");
+            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
             var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
@@ -403,7 +402,7 @@ namespace Terminal {
             color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class ("color-button");
+            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
@@ -411,7 +410,7 @@ namespace Terminal {
             color_button_dark.tooltip_text = _("Dark");
 
             var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class ("color-button");
+            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
             var color_grid = new Gtk.Grid ();
@@ -476,18 +475,15 @@ namespace Terminal {
             menu_button.tooltip_text = _("Settings");
             menu_button.valign = Gtk.Align.CENTER;
 
-            var header = new Gtk.HeaderBar ();
-            header.show_close_button = true;
-            header.has_subtitle = false;
+            var header = new Hdy.HeaderBar () {
+                show_close_button = true,
+                has_subtitle = false
+            };
             header.pack_end (menu_button);
             header.pack_end (search_button);
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class (Gtk.STYLE_CLASS_TITLEBAR);
             header_context.add_class ("default-decoration");
-
-            var window_handle = new Hdy.WindowHandle ();
-            window_handle.add (header);
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
@@ -519,7 +515,7 @@ namespace Terminal {
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
             var grid = new Gtk.Grid ();
-            grid.attach (window_handle, 0, 0);
+            grid.attach (header, 0, 0);
             grid.attach (search_revealer, 0, 1);
             grid.attach (notebook, 0, 2);
 
@@ -527,7 +523,26 @@ namespace Terminal {
             add (grid);
 
             menu_popover.closed.connect (() => {
+                var binding = menu_popover.get_data<Binding> ("zoom-binding");
+                binding.unref ();
                 current_terminal.grab_focus ();
+            });
+
+            menu_button.pressed.connect (() => {
+                zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
+                var binding = current_terminal.bind_property (
+                    "font-scale",
+                    zoom_default_button,
+                    "label",
+                    BindingFlags.DEFAULT,
+
+                    (binding, from_val, ref to_val) => {
+                        to_val.set_string (font_scale_to_zoom (from_val.get_double ()));
+                        return true;
+                    }
+                );
+
+                menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
             switch (Application.settings.get_string ("background")) {
@@ -595,7 +610,7 @@ namespace Terminal {
                         break;
                     case Gdk.Key.Return:
                         if (search_toolbar.search_entry.has_focus) {
-                            if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
+                            if (Gdk.ModifierType.SHIFT_MASK in e.state) {
                                 search_toolbar.previous_search ();
                             } else {
                                 search_toolbar.next_search ();
@@ -617,7 +632,7 @@ namespace Terminal {
                     case Gdk.Key.@6:
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        if (Gdk.ModifierType.MOD1_MASK in e.state &&
                             Application.settings.get_boolean ("alt-changes-tab")) {
                             var i = e.keyval - 49;
                             if (i > notebook.n_tabs - 1)
@@ -627,7 +642,7 @@ namespace Terminal {
                         }
                         break;
                     case Gdk.Key.@9:
-                        if (((e.state & Gdk.ModifierType.MOD1_MASK) != 0) &&
+                        if (Gdk.ModifierType.MOD1_MASK in e.state &&
                             Application.settings.get_boolean ("alt-changes-tab")) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
@@ -657,9 +672,10 @@ namespace Terminal {
                                             Gdk.Gravity.SOUTH_WEST,
                                             Gdk.Gravity.NORTH_WEST,
                                             e);
+                        menu.select_first (false);
                         break;
                     default:
-                        if ((e.state & Gtk.accelerator_get_default_mod_mask ()) == 0) {
+                        if (!(Gtk.accelerator_get_default_mod_mask () in e.state)) {
                             current_terminal.remember_command_start_position ();
                         }
 
@@ -668,13 +684,13 @@ namespace Terminal {
 
                 /* Use hardware keycodes so the key used
                  * is unaffected by internationalized layout */
-                if (((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) &&
+                if (Gdk.ModifierType.CONTROL_MASK in e.state &&
                     Application.settings.get_boolean ("natural-copy-paste")) {
                     uint keycode = e.hardware_keycode;
                     if (match_keycode (Gdk.Key.c, keycode)) {
                         if (current_terminal.get_has_selection ()) {
                             current_terminal.copy_clipboard ();
-                            if (((e.state & Gdk.ModifierType.SHIFT_MASK) == 0)) { /* Shift not pressed */
+                            if (!(Gdk.ModifierType.SHIFT_MASK in e.state)) { /* Shift not pressed */
                                 current_terminal.unselect_all ();
                             }
                             return true;
@@ -686,7 +702,7 @@ namespace Terminal {
                     }
                 }
 
-                if ((e.state & Gdk.ModifierType.MOD1_MASK) != 0) {
+                if (Gdk.ModifierType.MOD1_MASK in e.state) {
                     uint keycode = e.hardware_keycode;
 
                     if (e.keyval == Gdk.Key.Up) {
@@ -718,8 +734,10 @@ namespace Terminal {
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
+                saved_zooms = Terminal.Application.saved_state.get_strv ("tab-zooms");
             } else {
                 saved_tabs = {};
+                saved_zooms = {};
             }
 
             var rect = Gdk.Rectangle ();
@@ -794,6 +812,7 @@ namespace Terminal {
                 }
             }
 
+            current_terminal.grab_focus ();
             return true;
         }
 
@@ -978,19 +997,43 @@ namespace Terminal {
 
         private void open_tabs () {
             string[] tabs = {};
+            double[] zooms = {};
             int focus = 0;
+            var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
+
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 tabs = saved_tabs;
+                var n_tabs = tabs.length;
+
+                foreach (string zoom_s in saved_zooms) {
+                    var zoom = double.parse (zoom_s);
+
+                    if (zooms.length < n_tabs) {
+                        zooms += zoom;
+                    } else {
+                        break;
+                    }
+                }
+
+                while (zooms.length < n_tabs) {
+                    zooms += default_zoom;
+                }
+
                 if (tabs.length == 0) {
                     tabs += Environment.get_home_dir ();
+                    zooms += default_zoom;
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
                 tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                zooms += default_zoom;
             }
+
+
+            assert (zooms.length == tabs.length);
 
             int null_dirs = 0;
             for (int i = 0; i < tabs.length; i++) {
@@ -1012,13 +1055,19 @@ namespace Terminal {
 
             /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
             focus += notebook.n_tabs;
+            int index = 0;
             foreach (string loc in tabs) {
                 if (loc == "") {
                     focus--;
-                    continue;
                 } else {
-                    new_tab (loc, null, false);
+                    var term = new_tab (loc, null, false);
+                    term.font_scale = zooms[index].clamp (
+                        TerminalWidget.MIN_SCALE,
+                        TerminalWidget.MAX_SCALE
+                    );
                 }
+
+                index++;
             }
 
             if (focus_restored_tabs) {
@@ -1028,7 +1077,7 @@ namespace Terminal {
             }
         }
 
-        private void new_tab (string location, string? program = null, bool focus = true) {
+        private TerminalWidget new_tab (string location, string? program = null, bool focus = true) {
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -1060,9 +1109,9 @@ namespace Terminal {
                         t.tab.close ();
                         return;
                     }
-                }
 
-                schedule_name_check ();
+                    schedule_name_check ();
+                }
             });
 
             /* This signal is not emitted when the .bashrc is missing or does not force terminal to
@@ -1077,6 +1126,12 @@ namespace Terminal {
             });
 
             t.set_font (term_font);
+
+            if (current_terminal != null) {
+                t.font_scale = current_terminal.font_scale;
+            } else {
+                t.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+            }
 
             int minimum_width = t.calculate_width (80) / 2;
             int minimum_height = t.calculate_height (24) / 2;
@@ -1106,6 +1161,8 @@ namespace Terminal {
             } else {
                 t.run_program (program, location);
             }
+
+            return t;
         }
 
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
@@ -1396,6 +1453,14 @@ namespace Terminal {
             notebook.previous_page ();
         }
 
+        void action_move_tab_right () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) + 1) % notebook.n_tabs);
+        }
+
+        void action_move_tab_left () {
+            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) - 1) % notebook.n_tabs);
+        }
+
         private void action_search () {
             var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
             var search_state = search_action.get_state ().get_boolean ();
@@ -1531,6 +1596,9 @@ namespace Terminal {
 
         private void save_opened_terminals () {
             string[] opened_tabs = {};
+            string[] zooms = {};
+
+            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
 
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
@@ -1541,13 +1609,20 @@ namespace Terminal {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
                             opened_tabs += location;
+                            zooms += ("%.1f").printf (term.font_scale);
                         }
                     }
                 });
             }
+
             Terminal.Application.saved_state.set_strv (
                 "tabs",
                 opened_tabs
+            );
+
+            Terminal.Application.saved_state.set_strv (
+                "tab-zooms",
+                zooms
             );
 
             Terminal.Application.saved_state.set_int (
@@ -1603,6 +1678,10 @@ namespace Terminal {
 
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
+        }
+
+        private string font_scale_to_zoom (double font_scale) {
+            return ("%.0f%%").printf (font_scale * 100);
         }
     }
 }

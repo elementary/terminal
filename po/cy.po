@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 16:52+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -61,68 +61,68 @@ msgstr "Dangos cymorth"
 msgid "Set shell working directory"
 msgstr "Gosod cyfeiriadur cragen gweithredol"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "Copïo"
 
-#: src/MainWindow.vala:201
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
 msgstr "Copïo'r Allbwn Diwethaf"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "Gludo"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "Dewis Popeth"
 
-#: src/MainWindow.vala:216 src/MainWindow.vala:347 src/MainWindow.vala:1260
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr "Chwilio…"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
 msgstr "Dangos ym Mhorwr Ffeiliau"
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr "Chwyddo allan"
 
-#: src/MainWindow.vala:361
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
 msgstr "Lefel chwyddo rhagosodedig"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr "Chwyddo i mewn"
 
-#: src/MainWindow.vala:396
+#: src/MainWindow.vala:395
 msgid "High Contrast"
 msgstr "Cyferbynnedd Uchel"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:403
 #, fuzzy
 msgid "Solarized Light"
 msgstr "Golau wedi'i Heulo"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:411
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:477
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1252
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
 msgstr "Cuddio'r bar chwilio"
 
@@ -196,7 +196,7 @@ msgstr "Canlyniad blaenorol"
 msgid "Next result"
 msgstr "Canlyniad nesaf"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr "Chwilio cylchol"
 
