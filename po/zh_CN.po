@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2020-06-13 07:11+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -56,67 +56,67 @@ msgstr "显示帮助"
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "复制"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
 msgstr "复制上次输出"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:232
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
 msgstr "在 文件管理器 中打开"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
 msgstr "默认缩放等级"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:395
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:403
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:411
 msgid "Dark"
 msgstr "深色"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
 msgstr "自然复制/粘贴"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "快捷键不使用 Shift 键; 可能会和 CLI 应用冲突"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
