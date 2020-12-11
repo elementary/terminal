@@ -56,12 +56,10 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             "display-brightness-symbolic",
             "weather-clear-night-symbolic"
         ) {
-            primary_icon_tooltip_text = _("Light window style"),
-            secondary_icon_tooltip_text = _("Dark window style")
+            primary_icon_tooltip_text = _("Light"),
+            secondary_icon_tooltip_text = _("Dark")
         };
         Application.settings.bind ("prefer-dark-style", window_theme_switch, "active", SettingsBindFlags.DEFAULT);
-
-        var console_theme_label = new SettingsLabel (_("Console style:"));
 
         var black_color_label = new SettingsLabel (_("Black:"));
         var red_color_label = new SettingsLabel (_("Red:"));
@@ -137,10 +135,8 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             margin_end = 12,
             halign = Gtk.Align.CENTER
         };
-        colors_grid.attach (new Granite.HeaderLabel (_("Styles")), 0, 0, 3);
-        colors_grid.attach (window_theme_label, 0, 1, 1);
-        colors_grid.attach (window_theme_switch, 1, 1, 2);
-        colors_grid.attach (console_theme_label, 0, 2, 1);
+        colors_grid.attach (window_theme_label, 0, 0);
+        colors_grid.attach (window_theme_switch, 1, 0, 2);
         colors_grid.attach (new Granite.HeaderLabel (_("Custom Colors")), 0, 3, 3);
         colors_grid.attach (background_label, 0, 4, 1);
         colors_grid.attach (background_button, 1, 4, 1);
