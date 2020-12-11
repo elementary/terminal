@@ -17,7 +17,6 @@
 */
 
 public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
-
     private Gtk.ListStore console_theme_store;
     private Gtk.ComboBox console_theme_combobox;
     private Gtk.Image contrast_image;
@@ -46,7 +45,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
-            border_width: 6,
             deletable: false,
             resizable: false,
             title: _("Color Preferences"),
@@ -55,19 +53,12 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     }
 
     construct {
-        var colors_grid = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 6,
-            margin = 6,
-            margin_bottom = 18,
-            margin_top = 0,
-            halign = Gtk.Align.CENTER
-        };
-
         var window_theme_label = new SettingsLabel (_("Window style:"));
-        var light_theme_icon = "display-brightness-symbolic";
-        var dark_theme_icon = "weather-clear-night-symbolic";
-        var window_theme_switch = new Granite.ModeSwitch.from_icon_name (light_theme_icon, dark_theme_icon) {
+
+        var window_theme_switch = new Granite.ModeSwitch.from_icon_name (
+            "display-brightness-symbolic",
+            "weather-clear-night-symbolic"
+        ) {
             primary_icon_tooltip_text = _("Light window style"),
             secondary_icon_tooltip_text = _("Dark window style")
         };
@@ -81,8 +72,10 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         };
 
         var console_theme_label = new SettingsLabel (_("Console style:"));
-        console_theme_combobox = new Gtk.ComboBox.with_model (console_theme_store);
+
         var console_theme_cell = new Gtk.CellRendererText ();
+
+        console_theme_combobox = new Gtk.ComboBox.with_model (console_theme_store);
         console_theme_combobox.pack_start (console_theme_cell, false);
         console_theme_combobox.set_attributes (console_theme_cell, "text", 0);
         console_theme_combobox.active = 0;
@@ -143,15 +136,25 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         cursor_button.color_set.connect (update_settings_from_buttons);
 
         var contrast_top_label = new Gtk.Label ("┐");
-        contrast_image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.LARGE_TOOLBAR);
-        var contrast_bottom_label = new Gtk.Label ("┘");
-        var contrast_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3) {
-                halign = Gtk.Align.START
-        };
-        contrast_box.pack_start (contrast_top_label);
-        contrast_box.pack_start (contrast_image);
-        contrast_box.pack_start (contrast_bottom_label);
 
+        contrast_image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.LARGE_TOOLBAR);
+
+        var contrast_bottom_label = new Gtk.Label ("┘");
+
+        var contrast_grid = new Gtk.Grid () {
+            row_spacing = 3
+        };
+        contrast_grid.attach (contrast_top_label, 0, 0);
+        contrast_grid.attach (contrast_image, 0, 1);
+        contrast_grid.attach (contrast_bottom_label, 0, 2);
+
+        var colors_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            margin_start = 12,
+            margin_end = 12,
+            halign = Gtk.Align.CENTER
+        };
         colors_grid.attach (new Granite.HeaderLabel (_("Styles")), 0, 0, 3);
         colors_grid.attach (window_theme_label, 0, 1, 1);
         colors_grid.attach (window_theme_switch, 1, 1, 2);
@@ -188,7 +191,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (grey_color_label, 0, 14, 1);
         colors_grid.attach (color08_button, 1, 14, 1);
         colors_grid.attach (color16_button, 2, 14, 1);
-        colors_grid.attach (contrast_box, 2, 4, 1, 2);
+        colors_grid.attach (contrast_grid, 2, 4, 1, 2);
 
         update_widgets_from_settings ();
 
@@ -300,10 +303,10 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             contrast_image.tooltip_text = _("Contrast is low");
         } else if (contrast_ratio < 7) {
             contrast_image.icon_name = "process-completed";
-            contrast_image.tooltip_text = _("Contrast is high");
+            contrast_image.tooltip_text = _("Contrast is good");
         } else {
             contrast_image.icon_name = "process-completed";
-            contrast_image.tooltip_text = _("Contrast is very high");
+            contrast_image.tooltip_text = _("Contrast is high");
         }
     }
 
@@ -375,14 +378,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             label = text;
             halign = Gtk.Align.END;
             margin_start = 12;
-        }
-    }
-
-    private class SettingsSwitch : Gtk.Switch {
-        public SettingsSwitch (string setting) {
-            halign = Gtk.Align.START;
-            valign = Gtk.Align.CENTER;
-            Application.settings.bind (setting, this, "active", SettingsBindFlags.DEFAULT);
         }
     }
 }
