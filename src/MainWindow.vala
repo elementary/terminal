@@ -27,7 +27,6 @@ namespace Terminal {
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
         private Dialogs.ColorPreferences color_preferences_dialog;
-        private Gtk.Popover menu_popover;
         private Gtk.RadioButton color_button_white;
         private Gtk.RadioButton color_button_light;
         private Gtk.RadioButton color_button_dark;
@@ -399,7 +398,7 @@ namespace Terminal {
 
             color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
-            color_button_light.tooltip_text = _("Light");
+            color_button_light.tooltip_text = _("Solarized Light");
 
             var color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
@@ -413,11 +412,12 @@ namespace Terminal {
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white);
-            color_button_custom.halign = Gtk.Align.CENTER;
-            color_button_custom.tooltip_text = _("Custom");
+            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
+                halign = Gtk.Align.CENTER,
+                tooltip_text = _("Custom")
+            };
 
-            var color_button_custom_context = color_button_custom.get_style_context ();
+            unowned Gtk.StyleContext color_button_custom_context = color_button_custom.get_style_context ();
             color_button_custom_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_custom_context.add_class ("color-custom");
 
@@ -476,7 +476,7 @@ namespace Terminal {
 
             menu_popover_grid.show_all ();
 
-            menu_popover = new Gtk.Popover (null);
+            var menu_popover = new Gtk.Popover (null);
             menu_popover.add (menu_popover_grid);
 
             var menu_button = new Gtk.MenuButton ();
@@ -556,34 +556,25 @@ namespace Terminal {
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
-            color_button_dark.button_press_event.connect (() => {
+            color_button_dark.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", true);
-                Terminal.Themes.set_active_name ("Default (Dark)");
-                if (color_preferences_dialog != null) {
-                    color_preferences_dialog.update_widgets_from_settings ();
-                }
+                Terminal.Themes.set_active_name ("Dark");
                 return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_light.button_press_event.connect (() => {
+            color_button_light.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.set_active_name ("Default (Light)");
-                if (color_preferences_dialog != null) {
-                    color_preferences_dialog.update_widgets_from_settings ();
-                }
+                Terminal.Themes.set_active_name ("Solarized Light");
                 return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_white.button_press_event.connect (() => {
+            color_button_white.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.set_active_name ("Default (High Contrast)");
-                if (color_preferences_dialog != null) {
-                    color_preferences_dialog.update_widgets_from_settings ();
-                }
+                Terminal.Themes.set_active_name ("High Contrast");
                 return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_custom.button_press_event.connect (() => {
+            color_button_custom.button_release_event.connect (() => {
                 open_color_preferences ();
                 menu_popover.popdown ();
                 return Gdk.EVENT_STOP;
