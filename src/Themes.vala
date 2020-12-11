@@ -22,6 +22,7 @@ public struct Terminal.Theme {
 }
 
 public class Terminal.Themes {
+    public const int PALETTE_SIZE = 19;
     public const string CUSTOM = "custom";
     public const string DARK = "dark";
     public const string HIGH_CONTRAST = "high-contrast";
@@ -48,8 +49,6 @@ public class Terminal.Themes {
             }
         }
     }
-
-    public const int PALETTE_SIZE = 19;
 
     // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
