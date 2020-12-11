@@ -17,10 +17,6 @@
 */
 
 public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
-    private Gtk.ListStore console_theme_store;
-    private Gtk.ComboBox console_theme_combobox;
-    private Gtk.Image contrast_image;
-
     private Gtk.ColorButton color01_button; // Black
     private Gtk.ColorButton color02_button; // Red
     private Gtk.ColorButton color03_button; // Green
@@ -40,6 +36,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     private Gtk.ColorButton background_button;
     private Gtk.ColorButton foreground_button;
     private Gtk.ColorButton cursor_button;
+    private Gtk.Image contrast_image;
 
     public signal void theme_changed ();
 
@@ -64,22 +61,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         };
         Application.settings.bind ("prefer-dark-style", window_theme_switch, "active", SettingsBindFlags.DEFAULT);
 
-        console_theme_store = new Gtk.ListStore (2, typeof (string), typeof (string));
-
-        foreach (Terminal.Theme theme in Terminal.Themes.themes) {
-            Gtk.TreeIter iter;
-            console_theme_store.insert_with_values (out iter, -1, 0, theme.name, 1, theme.palette, -1);
-        };
-
         var console_theme_label = new SettingsLabel (_("Console style:"));
-
-        var console_theme_cell = new Gtk.CellRendererText ();
-
-        console_theme_combobox = new Gtk.ComboBox.with_model (console_theme_store);
-        console_theme_combobox.pack_start (console_theme_cell, false);
-        console_theme_combobox.set_attributes (console_theme_cell, "text", 0);
-        console_theme_combobox.active = 0;
-        console_theme_combobox.changed.connect (combobox_selection_changed);
 
         var black_color_label = new SettingsLabel (_("Black:"));
         var red_color_label = new SettingsLabel (_("Red:"));
@@ -159,7 +141,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (window_theme_label, 0, 1, 1);
         colors_grid.attach (window_theme_switch, 1, 1, 2);
         colors_grid.attach (console_theme_label, 0, 2, 1);
-        colors_grid.attach (console_theme_combobox, 1, 2, 2);
         colors_grid.attach (new Granite.HeaderLabel (_("Custom Colors")), 0, 3, 3);
         colors_grid.attach (background_label, 0, 4, 1);
         colors_grid.attach (background_button, 1, 4, 1);
@@ -204,7 +185,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     public void update_widgets_from_settings () {
         update_buttons_from_settings ();
         update_contrast_from_settings ();
-        update_combobox_from_settings ();
     }
 
     private void update_settings_from_buttons () {
@@ -231,7 +211,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         };
 
         Terminal.Themes.set_active_palette (string.joinv (":", colors));
-        update_combobox_from_settings ();
         update_contrast_from_settings ();
         theme_changed ();
     }
@@ -307,40 +286,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         } else {
             contrast_image.icon_name = "process-completed";
             contrast_image.tooltip_text = _("Contrast is high");
-        }
-    }
-
-    private void update_combobox_from_settings () {
-        var current_name = Terminal.Themes.get_active_name ();
-
-        Gtk.TreeIter iter;
-        console_theme_store.get_iter_first (out iter);
-
-        while (console_theme_store.iter_next (ref iter)) {
-            GLib.Value name;
-            console_theme_store.get_value (iter, 0, out name);
-
-            if (current_name == (string)name) {
-                console_theme_combobox.set_active_iter (iter);
-                return;
-            }
-        }
-
-        console_theme_combobox.set_active (0);
-    }
-
-    private void combobox_selection_changed (Gtk.ComboBox combobox) {
-        Gtk.TreeIter iter;
-        if (combobox.get_active_iter (out iter)) {
-            GLib.Value name;
-            GLib.Value palette;
-            console_theme_store.get_value (iter, 0, out name);
-            console_theme_store.get_value (iter, 1, out palette);
-
-            Terminal.Themes.set_active_palette ((string)palette);
-            update_buttons_from_settings ();
-            update_contrast_from_settings ();
-            theme_changed ();
         }
     }
 

@@ -22,8 +22,29 @@ public struct Terminal.Theme {
 }
 
 public class Terminal.Themes {
+    private static Gee.ArrayList<Theme?> themes = new Gee.ArrayList<Theme?> ();
+    public static string active_name {
+        get {
+            var palette = get_active_palette ();
+
+            foreach (Terminal.Theme theme in themes) {
+                if (theme.palette == palette) {
+                    return theme.name;
+                }
+            }
+
+            return "Custom";
+        }
+        set {
+            foreach (var theme in themes) {
+                if (theme.name == value) {
+                    set_active_palette (theme.palette);
+                }
+            }
+        }
+    }
+
     public const int PALETTE_SIZE = 19;
-    public static Gee.ArrayList<Theme?> themes = new Gee.ArrayList<Theme?> ();
 
     // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
@@ -59,25 +80,5 @@ public class Terminal.Themes {
         Application.settings.set_string ("background", background);
         Application.settings.set_string ("foreground", foreground);
         Application.settings.set_string ("cursor-color", cursor);
-    }
-
-    public static string get_active_name () {
-        var palette = get_active_palette ();
-
-        foreach (Terminal.Theme theme in themes) {
-            if (theme.palette == palette) {
-                return theme.name;
-            }
-        }
-
-        return "Custom";
-    }
-
-    public static void set_active_name (string name) {
-        foreach (Terminal.Theme theme in themes) {
-            if (theme.name == name) {
-                set_active_palette (theme.palette);
-            }
-        }
     }
 }
