@@ -26,7 +26,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        private Dialogs.ColorPreferences color_preferences_dialog;
+        private Dialogs.ColorPreferences? color_preferences_dialog;
         private Gtk.RadioButton color_button_white;
         private Gtk.RadioButton color_button_light;
         private Gtk.RadioButton color_button_dark;
@@ -723,7 +723,7 @@ namespace Terminal {
             });
         }
 
-        public void update_color_buttons () {
+        private void update_color_buttons () {
             switch (Terminal.Themes.get_active_name ()) {
                 case "Default (High Contrast)":
                     color_button_white.active = true;
