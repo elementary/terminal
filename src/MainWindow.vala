@@ -558,23 +558,24 @@ namespace Terminal {
 
             color_button_dark.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", true);
-                Terminal.Themes.active_name = "Dark";
+                Terminal.Themes.active_name = Themes.DARK;
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_light.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.active_name = "Solarized Light";
+                Terminal.Themes.active_name = Themes.LIGHT;
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_white.button_release_event.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.active_name = "High Contrast";
+                Terminal.Themes.active_name = Themes.HIGH_CONTRAST;
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_custom.button_release_event.connect (() => {
+                Terminal.Themes.active_name = Themes.CUSTOM;
                 open_color_preferences ();
                 menu_popover.popdown ();
                 return Gdk.EVENT_STOP;
@@ -725,13 +726,13 @@ namespace Terminal {
 
         private void update_color_buttons () {
             switch (Terminal.Themes.active_name) {
-                case "High Contrast":
+                case Themes.HIGH_CONTRAST:
                     color_button_white.active = true;
                     break;
-                case "Solarized Light":
+                case Themes.LIGHT:
                     color_button_light.active = true;
                     break;
-                case "Dark":
+                case Themes.DARK:
                     color_button_dark.active = true;
                     break;
                 default:

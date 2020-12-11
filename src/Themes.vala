@@ -22,6 +22,11 @@ public struct Terminal.Theme {
 }
 
 public class Terminal.Themes {
+    public const string CUSTOM = "custom";
+    public const string DARK = "dark";
+    public const string HIGH_CONTRAST = "high-contrast";
+    public const string LIGHT = "solarized-light";
+
     private static Gee.ArrayList<Theme?> themes = new Gee.ArrayList<Theme?> ();
     public static string active_name {
         get {
@@ -48,10 +53,10 @@ public class Terminal.Themes {
 
     // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
-        themes.add ({"Custom", ""});
-        themes.add ({"High Contrast", "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496"});
-        themes.add ({"Solarized Light", "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496"});
-        themes.add ({"Dark", "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496"});
+        themes.add ({CUSTOM, ""});
+        themes.add ({HIGH_CONTRAST, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496"});
+        themes.add ({LIGHT, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496"});
+        themes.add ({DARK, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496"});
     }
 
     public static string get_active_palette () {
