@@ -89,11 +89,13 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         color14_button = new Gtk.ColorButton ();
         color15_button = new Gtk.ColorButton ();
         color16_button = new Gtk.ColorButton ();
-        background_button = new Gtk.ColorButton ();
-        background_button.use_alpha = true;
+        background_button = new Gtk.ColorButton () {
+            use_alpha = true
+        };
         foreground_button = new Gtk.ColorButton ();
-        cursor_button = new Gtk.ColorButton ();
-        cursor_button.use_alpha = true;
+        cursor_button = new Gtk.ColorButton () {
+            use_alpha = true
+        };
 
         color01_button.color_set.connect (update_settings_from_buttons);
         color02_button.color_set.connect (update_settings_from_buttons);
