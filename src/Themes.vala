@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 elementary, Inc. (https://elementary.io)
+* Copyright 2020 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -16,11 +16,6 @@
 * Boston, MA 02110-1301 USA
 */
 
-public struct Terminal.Theme {
-    string name;
-    string palette;
-}
-
 public class Terminal.Themes {
     public const int PALETTE_SIZE = 19;
     public const string CUSTOM = "custom";
@@ -28,34 +23,27 @@ public class Terminal.Themes {
     public const string HIGH_CONTRAST = "high-contrast";
     public const string LIGHT = "solarized-light";
 
-    private static Gee.ArrayList<Theme?> themes = new Gee.ArrayList<Theme?> ();
-    public static string active_name {
-        get {
-            var palette = get_active_palette ();
-
-            foreach (Terminal.Theme theme in themes) {
-                if (theme.palette == palette) {
-                    return theme.name;
-                }
-            }
-
-            return "Custom";
-        }
-        set {
-            foreach (var theme in themes) {
-                if (theme.name == value) {
-                    set_active_palette (theme.palette);
-                }
-            }
-        }
-    }
-
     // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
-        themes.add ({CUSTOM, ""});
-        themes.add ({HIGH_CONTRAST, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496"});
-        themes.add ({LIGHT, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496"});
-        themes.add ({DARK, "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496"});
+        Application.settings.changed["theme"].connect (() => {
+            switch (Application.settings.get_string ("theme")) {
+                case (HIGH_CONTRAST):
+                    Application.settings.set_boolean ("prefer-dark-style", false);
+                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496");
+                    break;
+                case (LIGHT):
+                    Application.settings.set_boolean ("prefer-dark-style", false);
+                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496");
+                    break;
+                case (DARK):
+                    Application.settings.set_boolean ("prefer-dark-style", true);
+                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496");
+                    break;
+                default:
+                    set_active_palette (get_active_palette ());
+                    break;
+            }
+        });
     }
 
     public static string get_active_palette () {
@@ -67,7 +55,7 @@ public class Terminal.Themes {
         return @"$palette:$background:$foreground:$cursor";
     }
 
-    public static void set_active_palette (string input) {
+    private static void set_active_palette (string input) {
         var input_palette = input.split (":");
         if (input_palette.length != Terminal.Themes.PALETTE_SIZE) {
             warning ("Length of palette setting does not match palette size");

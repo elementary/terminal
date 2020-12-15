@@ -557,25 +557,21 @@ namespace Terminal {
             });
 
             color_button_dark.button_release_event.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", true);
-                Terminal.Themes.active_name = Themes.DARK;
+                Application.settings.set_string ("theme", Themes.DARK);
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_light.button_release_event.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.active_name = Themes.LIGHT;
+                Application.settings.set_string ("theme", Themes.LIGHT);
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_white.button_release_event.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Terminal.Themes.active_name = Themes.HIGH_CONTRAST;
+                Application.settings.set_string ("theme", Themes.HIGH_CONTRAST);
                 return Gdk.EVENT_PROPAGATE;
             });
 
             color_button_custom.button_release_event.connect (() => {
-                Terminal.Themes.active_name = Themes.CUSTOM;
                 open_color_preferences ();
                 menu_popover.popdown ();
                 return Gdk.EVENT_STOP;
@@ -725,7 +721,7 @@ namespace Terminal {
         }
 
         private void update_color_buttons () {
-            switch (Terminal.Themes.active_name) {
+            switch (Application.settings.get_string ("theme")) {
                 case Themes.HIGH_CONTRAST:
                     color_button_white.active = true;
                     break;

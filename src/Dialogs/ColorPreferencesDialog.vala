@@ -201,12 +201,14 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             color14_button.rgba.to_string (),
             color15_button.rgba.to_string (),
             color16_button.rgba.to_string (),
-            background_button.rgba.to_string (),
-            foreground_button.rgba.to_string (),
-            cursor_button.rgba.to_string ()
         };
 
-        Terminal.Themes.set_active_palette (string.joinv (":", colors));
+        Application.settings.set_string ("palette", string.joinv (":", colors));
+        Application.settings.set_string ("background", background_button.rgba.to_string ());
+        Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
+        Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
+        Application.settings.set_string ("theme", Themes.CUSTOM);
+
         update_contrast_from_settings ();
         theme_changed ();
     }
