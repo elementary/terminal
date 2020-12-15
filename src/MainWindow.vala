@@ -431,8 +431,6 @@ namespace Terminal {
             color_grid.add (color_button_dark);
             color_grid.add (color_button_custom);
 
-            update_color_buttons ();
-
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
             natural_copy_paste_label.vexpand = true;
@@ -556,6 +554,21 @@ namespace Terminal {
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
+            switch (Application.settings.get_string ("theme")) {
+                case Themes.HIGH_CONTRAST:
+                    color_button_white.active = true;
+                    break;
+                case Themes.LIGHT:
+                    color_button_light.active = true;
+                    break;
+                case Themes.DARK:
+                    color_button_dark.active = true;
+                    break;
+                default:
+                    color_button_custom.active = true;
+                    break;
+            }
+
             color_button_dark.button_release_event.connect (() => {
                 Application.settings.set_string ("theme", Themes.DARK);
                 return Gdk.EVENT_PROPAGATE;
@@ -572,6 +585,7 @@ namespace Terminal {
             });
 
             color_button_custom.button_release_event.connect (() => {
+                color_button_custom.active = true;
                 open_color_preferences ();
                 menu_popover.popdown ();
                 return Gdk.EVENT_STOP;
@@ -718,23 +732,6 @@ namespace Terminal {
 
                 return false;
             });
-        }
-
-        private void update_color_buttons () {
-            switch (Application.settings.get_string ("theme")) {
-                case Themes.HIGH_CONTRAST:
-                    color_button_white.active = true;
-                    break;
-                case Themes.LIGHT:
-                    color_button_light.active = true;
-                    break;
-                case Themes.DARK:
-                    color_button_dark.active = true;
-                    break;
-                default:
-                    color_button_custom.active = true;
-                    break;
-            }
         }
 
         private bool handle_paste_event () {
@@ -1401,8 +1398,6 @@ namespace Terminal {
             if (color_preferences_dialog == null) {
                 color_preferences_dialog = new Dialogs.ColorPreferences (this);
                 color_preferences_dialog.show_all ();
-
-                color_preferences_dialog.theme_changed.connect (update_color_buttons);
 
                 color_preferences_dialog.destroy.connect (() => {
                     color_preferences_dialog = null;
