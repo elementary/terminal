@@ -39,20 +39,8 @@ public class Terminal.Themes {
                     Application.settings.set_boolean ("prefer-dark-style", true);
                     set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496");
                     break;
-                default:
-                    set_active_palette (get_active_palette ());
-                    break;
             }
         });
-    }
-
-    public static string get_active_palette () {
-        var palette = Application.settings.get_string ("palette");
-        var background = Application.settings.get_string ("background");
-        var foreground = Application.settings.get_string ("foreground");
-        var cursor = Application.settings.get_string ("cursor-color");
-
-        return @"$palette:$background:$foreground:$cursor";
     }
 
     private static void set_active_palette (string input) {

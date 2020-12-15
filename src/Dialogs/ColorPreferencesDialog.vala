@@ -170,17 +170,13 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (color16_button, 2, 14, 1);
         colors_grid.attach (contrast_grid, 2, 4, 1, 2);
 
-        update_widgets_from_settings ();
+        update_buttons_from_settings ();
+        update_contrast ();
 
         get_content_area ().add (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
         close_button.clicked.connect (destroy);
-    }
-
-    public void update_widgets_from_settings () {
-        update_buttons_from_settings ();
-        update_contrast_from_settings ();
     }
 
     private void update_settings_from_buttons () {
@@ -200,7 +196,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             color13_button.rgba.to_string (),
             color14_button.rgba.to_string (),
             color15_button.rgba.to_string (),
-            color16_button.rgba.to_string (),
+            color16_button.rgba.to_string ()
         };
 
         Application.settings.set_string ("palette", string.joinv (":", colors));
@@ -209,30 +205,33 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
         Application.settings.set_string ("theme", Themes.CUSTOM);
 
-        update_contrast_from_settings ();
+        update_contrast ();
         theme_changed ();
+    }
+
+    private string get_active_palette () {
+        var palette = Application.settings.get_string ("palette");
+        var background = Application.settings.get_string ("background");
+        var foreground = Application.settings.get_string ("foreground");
+        var cursor = Application.settings.get_string ("cursor-color");
+
+        return @"$palette:$background:$foreground:$cursor";
     }
 
     private Gdk.RGBA[]? get_palette_from_settings () {
         var color_palette = new Gdk.RGBA[Terminal.Themes.PALETTE_SIZE];
-        var input_palette = Terminal.Themes.get_active_palette ().split (":");
+        var input_palette = get_active_palette ().split (":");
 
         if (input_palette.length != Terminal.Themes.PALETTE_SIZE) {
             warning ("Length of palette setting does not match palette size");
             return null;
         }
 
-        var error = false;
-
         for (int i = 0; i < Terminal.Themes.PALETTE_SIZE; i++) {
             if (!color_palette[i].parse (input_palette[i])) {
-                error = true;
+                warning ("Found invalid color in one of the color palette settings");
+                return null;
             }
-        }
-
-        if (error) {
-            warning ("Found invalid color in one of the color palette settings");
-            return null;
         }
 
         return color_palette;
@@ -265,13 +264,8 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         cursor_button.rgba = color_palette[18];
     }
 
-    private void update_contrast_from_settings () {
-        var color_palette = get_palette_from_settings ();
-        if (color_palette == null) {
-            return;
-        }
-
-        var contrast_ratio = get_contrast_ratio (color_palette[17], color_palette[16]);
+    private void update_contrast () {
+        var contrast_ratio = get_contrast_ratio (foreground_button.rgba, background_button.rgba);
         if (contrast_ratio < 3) {
             contrast_image.icon_name = "dialog-warning";
             contrast_image.tooltip_text = _("Contrast is very low");
