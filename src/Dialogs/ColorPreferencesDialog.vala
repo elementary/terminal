@@ -38,8 +38,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     private Gtk.ColorButton cursor_button;
     private Gtk.Image contrast_image;
 
-    public signal void theme_changed ();
-
     public ColorPreferences (Gtk.Window? parent) {
         Object (
             deletable: false,
@@ -96,26 +94,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         cursor_button = new Gtk.ColorButton () {
             use_alpha = true
         };
-
-        color01_button.color_set.connect (update_settings_from_buttons);
-        color02_button.color_set.connect (update_settings_from_buttons);
-        color03_button.color_set.connect (update_settings_from_buttons);
-        color04_button.color_set.connect (update_settings_from_buttons);
-        color05_button.color_set.connect (update_settings_from_buttons);
-        color06_button.color_set.connect (update_settings_from_buttons);
-        color07_button.color_set.connect (update_settings_from_buttons);
-        color08_button.color_set.connect (update_settings_from_buttons);
-        color09_button.color_set.connect (update_settings_from_buttons);
-        color10_button.color_set.connect (update_settings_from_buttons);
-        color11_button.color_set.connect (update_settings_from_buttons);
-        color12_button.color_set.connect (update_settings_from_buttons);
-        color13_button.color_set.connect (update_settings_from_buttons);
-        color14_button.color_set.connect (update_settings_from_buttons);
-        color15_button.color_set.connect (update_settings_from_buttons);
-        color16_button.color_set.connect (update_settings_from_buttons);
-        background_button.color_set.connect (update_settings_from_buttons);
-        foreground_button.color_set.connect (update_settings_from_buttons);
-        cursor_button.color_set.connect (update_settings_from_buttons);
 
         var contrast_top_label = new Gtk.Label ("┐");
 
@@ -179,9 +157,42 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
         close_button.clicked.connect (destroy);
+
+        Application.settings.set_string ("theme", Themes.CUSTOM);
+
+        color01_button.color_set.connect (update_palette_settings);
+        color02_button.color_set.connect (update_palette_settings);
+        color03_button.color_set.connect (update_palette_settings);
+        color04_button.color_set.connect (update_palette_settings);
+        color05_button.color_set.connect (update_palette_settings);
+        color06_button.color_set.connect (update_palette_settings);
+        color07_button.color_set.connect (update_palette_settings);
+        color08_button.color_set.connect (update_palette_settings);
+        color09_button.color_set.connect (update_palette_settings);
+        color10_button.color_set.connect (update_palette_settings);
+        color11_button.color_set.connect (update_palette_settings);
+        color12_button.color_set.connect (update_palette_settings);
+        color13_button.color_set.connect (update_palette_settings);
+        color14_button.color_set.connect (update_palette_settings);
+        color15_button.color_set.connect (update_palette_settings);
+        color16_button.color_set.connect (update_palette_settings);
+
+        background_button.color_set.connect (() => {
+            Application.settings.set_string ("background", background_button.rgba.to_string ());
+            update_contrast ();
+        });
+
+        foreground_button.color_set.connect (() => {
+            Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
+            update_contrast ();
+        });
+
+        cursor_button.color_set.connect (() => {
+            Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
+        });
     }
 
-    private void update_settings_from_buttons () {
+    private void update_palette_settings () {
         string[] colors = {
             color01_button.rgba.to_string (),
             color02_button.rgba.to_string (),
@@ -202,13 +213,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         };
 
         Application.settings.set_string ("palette", string.joinv (":", colors));
-        Application.settings.set_string ("background", background_button.rgba.to_string ());
-        Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
-        Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
-        Application.settings.set_string ("theme", Themes.CUSTOM);
-
-        update_contrast ();
-        theme_changed ();
     }
 
     private void update_buttons_from_settings () {
