@@ -27,10 +27,6 @@ namespace Terminal {
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
-        private Gtk.RadioButton color_button_white;
-        private Gtk.RadioButton color_button_light;
-        private Gtk.RadioButton color_button_dark;
-        private Gtk.RadioButton color_button_custom;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -388,31 +384,31 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            color_button_white = new Gtk.RadioButton (null);
+            var color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
             color_button_white.tooltip_text = _("High Contrast");
 
-            var color_button_white_context = color_button_white.get_style_context ();
+            unowned Gtk.StyleContext color_button_white_context = color_button_white.get_style_context ();
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
-            color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
+            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
             color_button_light.tooltip_text = _("Solarized Light");
 
-            var color_button_light_context = color_button_light.get_style_context ();
+            unowned Gtk.StyleContext color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
             color_button_dark.tooltip_text = _("Dark");
 
-            var color_button_dark_context = color_button_dark.get_style_context ();
+            unowned Gtk.StyleContext color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
+            var color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Custom")
             };
