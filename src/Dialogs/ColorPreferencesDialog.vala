@@ -209,38 +209,21 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         theme_changed ();
     }
 
-    private string get_active_palette () {
+    private void update_buttons_from_settings () {
+        var color_palette = new Gdk.RGBA[Terminal.Themes.PALETTE_SIZE];
+
         var palette = Application.settings.get_string ("palette");
         var background = Application.settings.get_string ("background");
         var foreground = Application.settings.get_string ("foreground");
         var cursor = Application.settings.get_string ("cursor-color");
 
-        return @"$palette:$background:$foreground:$cursor";
-    }
+        var input_palette = @"$palette:$background:$foreground:$cursor".split (":");
 
-    private Gdk.RGBA[]? get_palette_from_settings () {
-        var color_palette = new Gdk.RGBA[Terminal.Themes.PALETTE_SIZE];
-        var input_palette = get_active_palette ().split (":");
-
-        if (input_palette.length != Terminal.Themes.PALETTE_SIZE) {
-            warning ("Length of palette setting does not match palette size");
-            return null;
-        }
-
-        for (int i = 0; i < Terminal.Themes.PALETTE_SIZE; i++) {
+        for (int i = 0; i < input_palette.length; i++) {
             if (!color_palette[i].parse (input_palette[i])) {
                 warning ("Found invalid color in one of the color palette settings");
-                return null;
+                return;
             }
-        }
-
-        return color_palette;
-    }
-
-    private void update_buttons_from_settings () {
-        var color_palette = get_palette_from_settings ();
-        if (color_palette == null) {
-            return;
         }
 
         color01_button.rgba = color_palette[0];
@@ -259,6 +242,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         color14_button.rgba = color_palette[13];
         color15_button.rgba = color_palette[14];
         color16_button.rgba = color_palette[15];
+
         background_button.rgba = color_palette[16];
         foreground_button.rgba = color_palette[17];
         cursor_button.rgba = color_palette[18];
