@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-08 03:16+0000\n"
+"PO-Revision-Date: 2020-12-19 14:16+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -277,7 +277,7 @@ msgstr "Yeni Pencere"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Yeni Kök Sekmesi"
+msgstr "Yönetici Olarak Yeni Sekme"
 
 #~ msgid "About Terminal"
 #~ msgstr "Terminal Hakkında"
