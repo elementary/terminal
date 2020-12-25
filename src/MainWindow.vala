@@ -71,6 +71,7 @@ namespace Terminal {
         public const string ACTION_COPY = "action-copy";
         public const string ACTION_COPY_LAST_OUTPUT = "action-copy-last-output";
         public const string ACTION_PASTE = "action-paste";
+        public const string ACTION_PASTE_SELECTED = "action-paste-selected";
         public const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
@@ -96,6 +97,7 @@ namespace Terminal {
             { ACTION_COPY, action_copy },
             { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
             { ACTION_PASTE, action_paste },
+            { ACTION_PASTE_SELECTED, action_paste_selected },
             { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
@@ -165,6 +167,7 @@ namespace Terminal {
             action_accelerators[ACTION_COPY] = "<Control><Shift>c";
             action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
+            action_accelerators[ACTION_PASTE_SELECTED] = "<Control><Shift>x";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
@@ -215,6 +218,10 @@ namespace Terminal {
             var paste_menuitem = new Gtk.MenuItem ();
             paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
             paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), paste_menuitem.action_name));
+            
+            var paste_selected_menuitem = new Gtk.MenuItem ();
+            paste_selected_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE_SELECTED);
+            paste_selected_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste Selected"), paste_selected_menuitem.action_name));
 
             var select_all_menuitem = new Gtk.MenuItem ();
             select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
@@ -239,6 +246,7 @@ namespace Terminal {
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
+            menu.append (paste_selected_menuitem);
             menu.append (select_all_menuitem);
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
@@ -1217,6 +1225,22 @@ namespace Terminal {
                 current_terminal.paste_clipboard ();
             }
         }
+        
+        private void on_get_text2 (Gtk.Clipboard board, string? intext) {
+			/* don't accidentally cause a command execution due to pasted newlines */
+			if (intext.index_of ("\n") != -1) {
+				warning ("Dropping multiline paste");
+                return;
+			}
+
+            current_terminal.remember_command_start_position ();
+
+            if (board == primary_selection) {
+                current_terminal.paste_primary ();
+            } else {
+                current_terminal.paste_clipboard ();
+            }
+        }
 
         private void action_copy () {
             if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
@@ -1233,6 +1257,11 @@ namespace Terminal {
 
         private void action_paste () {
             clipboard.request_text (on_get_text);
+        }
+        
+        private void action_paste_selected () {
+			current_terminal.copy_clipboard ();
+            clipboard.request_text (on_get_text2);
         }
 
         private void action_select_all () {
