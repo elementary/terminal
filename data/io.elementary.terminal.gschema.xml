@@ -179,5 +179,10 @@
       <summary>Alert the user about unsafe paste.</summary>
       <description>If the user paste's a command into the terminal that might be considered unsafe, warn them.</description>
     </key>
+    <key name="block-multiline-paste-alert" type="b">
+      <default>true</default>
+      <summary>Alert the user about multiline paste.</summary>
+      <description>If the user pastes text into the terminal which contains newlines, warn them, since it could lead to an unintentionally command execution.</description>
+    </key>
   </schema>
 </schemalist>

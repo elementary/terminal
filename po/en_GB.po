@@ -153,6 +153,18 @@ msgstr "If you quit Terminal, the process will end."
 msgid "Quit Terminal"
 msgstr "Quit Terminal"
 
+#: src/Dialogs/BlockMultilinePasteDialog.vala:29
+msgid "Multiline Paste Blocked"
+msgstr "Multiline Paste Blocked"
+
+#: src/Dialogs/BlockMultilinePasteDialog.vala:32
+msgid "The text you want to paste may be treated as command and could unintentionally be executed."
+msgstr "The text you want to paste may be treated as command and could unintentionally be executed."
+
+#: src/Dialogs/BlockMultilinePasteDialog.vala:33
+msgid "Be sure your paste doesn't contain newline characters."
+msgstr "Be sure your paste doesn't contain newline characters."
+
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
 msgstr "This command is asking for Administrative access to your computer"

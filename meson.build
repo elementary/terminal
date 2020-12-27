@@ -51,6 +51,7 @@ executable(
     'src/Application.vala',
     'src/DBus.vala',
     'src/MainWindow.vala',
+    'src/Dialogs/BlockMultilinePasteDialog.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',

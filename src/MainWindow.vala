@@ -1187,6 +1187,20 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
+            /* don't accidentally cause command executions from pasting multiline text */
+            if (Application.settings.get_boolean ("block-multiline-paste-alert")) {
+				
+				if (intext.index_of ("\n") != -1) {
+					var d = new BlockMultilinePasteDialog (this);
+                    if (d.run () == 1) {
+                        d.destroy ();
+                        return;
+                    }
+                    d.destroy ();
+				}
+				
+			}
+			            
             /* if unsafe paste alert is enabled, show dialog */
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
