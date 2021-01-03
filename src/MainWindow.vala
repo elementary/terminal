@@ -1225,22 +1225,6 @@ namespace Terminal {
                 current_terminal.paste_clipboard ();
             }
         }
-        
-        private void on_get_text2 (Gtk.Clipboard board, string? intext) {
-			/* don't accidentally cause a command execution due to pasted newlines */
-			if (intext.index_of ("\n") != -1) {
-				warning ("Dropping multiline paste");
-                return;
-			}
-
-            current_terminal.remember_command_start_position ();
-
-            if (board == primary_selection) {
-                current_terminal.paste_primary ();
-            } else {
-                current_terminal.paste_clipboard ();
-            }
-        }
 
         private void action_copy () {
             if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
@@ -1261,7 +1245,7 @@ namespace Terminal {
         
         private void action_paste_selected () {
 			current_terminal.copy_clipboard ();
-            clipboard.request_text (on_get_text2);
+            clipboard.request_text (on_get_text);
         }
 
         private void action_select_all () {
