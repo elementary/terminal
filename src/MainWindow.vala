@@ -255,6 +255,7 @@ namespace Terminal {
 
             menu.popped_up.connect (() => {
                 update_copy_output_sensitive ();
+                update_paste_selected ();
             });
 
             setup_ui ();
@@ -889,6 +890,10 @@ namespace Terminal {
 
         private void update_copy_output_sensitive () {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
+        }
+        
+        private void update_paste_selected () {
+            get_simple_action (ACTION_PASTE_SELECTED).set_enabled (current_terminal.get_has_selection ());
         }
 
         private uint timer_window_state_change = 0;
