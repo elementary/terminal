@@ -26,7 +26,7 @@ public class Terminal.BlockMultilinePasteDialog : Granite.MessageDialog {
 
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
-        primary_text = _("Multiline Paste Blocked");
+        primary_text = _("The pasted text may execute multiple commands");
 
         secondary_text =
             _("The text you want to paste may be treated as command and could unintentionally be executed.") + " " +
