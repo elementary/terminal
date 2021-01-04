@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-09-03 18:13+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"PO-Revision-Date: 2020-12-08 03:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -40,9 +40,9 @@ msgstr ""
 "Unix, qui vous permet d'exécuter les programmes de votre système."
 
 #: data/io.elementary.terminal.appdata.xml.in:40
-#: data/io.elementary.terminal.appdata.xml.in:54
-#: data/io.elementary.terminal.appdata.xml.in:67
-#: data/io.elementary.terminal.appdata.xml.in:82
+#: data/io.elementary.terminal.appdata.xml.in:55
+#: data/io.elementary.terminal.appdata.xml.in:68
+#: data/io.elementary.terminal.appdata.xml.in:83
 msgid "New features:"
 msgstr "Nouvelles fonctionnalités :"
 
@@ -55,26 +55,177 @@ msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
 msgstr ""
 "Naviguez entre les onglets avec les raccourcis Ctrl + Tab et Ctrl + Maj + Tab"
 
-#: data/io.elementary.terminal.appdata.xml.in:45
-#: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:72
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:44
+msgid "Zoom levels are now remembered per-tab"
+msgstr "Le niveau de zoom est désormais sauvegardé pour chaque onglet"
+
+#: data/io.elementary.terminal.appdata.xml.in:46
+#: data/io.elementary.terminal.appdata.xml.in:59
+#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Other updates:"
 msgstr "Autres mises à jour :"
 
-#: data/io.elementary.terminal.appdata.xml.in:47
+#: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Validate custom palette"
 msgstr "Validation de la palette de couleurs personnalisée"
 
-#: data/io.elementary.terminal.appdata.xml.in:48
+#: data/io.elementary.terminal.appdata.xml.in:49
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:105
+#: data/io.elementary.terminal.appdata.xml.in:114
+#: data/io.elementary.terminal.appdata.xml.in:123
+#: data/io.elementary.terminal.appdata.xml.in:133
+#: data/io.elementary.terminal.appdata.xml.in:146
+#: data/io.elementary.terminal.appdata.xml.in:156
+#: data/io.elementary.terminal.appdata.xml.in:164
+#: data/io.elementary.terminal.appdata.xml.in:172
+#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:188
+#: data/io.elementary.terminal.appdata.xml.in:199
+#: data/io.elementary.terminal.appdata.xml.in:207
+#: data/io.elementary.terminal.appdata.xml.in:216
+#: data/io.elementary.terminal.appdata.xml.in:225
+#: data/io.elementary.terminal.appdata.xml.in:233
+#: data/io.elementary.terminal.appdata.xml.in:248
+msgid "Translation updates"
+msgstr "Mise à jour des traductions"
+
+#: data/io.elementary.terminal.appdata.xml.in:57
+msgid "Add commandline option for New Tab (-t)"
+msgstr ""
+"Ajout d'une option en ligne de commande pour ouvrir un nouvel onglet (-t)"
+
 #: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Fix URL selection"
+msgstr "Correction de la sélection d'URL"
+
+#: data/io.elementary.terminal.appdata.xml.in:70
+msgid "Add commandline option for \"Show version\" (-v, --version)"
+msgstr ""
+"Ajout d'une option en ligne de commande pour « Afficher la version » (-v, --"
+"version)"
+
+#: data/io.elementary.terminal.appdata.xml.in:71
+msgid "Add commandline option for New Window (-n)"
+msgstr ""
+"Ajout d'une option en ligne de commande pour ouvrir une nouvelle fenêtre (-n)"
+
+#: data/io.elementary.terminal.appdata.xml.in:75
+msgid "Prevent duplicate tab on startup"
+msgstr "Correction des onglets en double au démarrage"
+
 #: data/io.elementary.terminal.appdata.xml.in:76
+msgid "Prevent unnecessary Home tab on startup"
+msgstr "Correction de l'onglet « Home » inutile au démarrage"
+
+#: data/io.elementary.terminal.appdata.xml.in:85
+msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+msgstr "Activez ou désactivez le copier-coller naturel dans le menu Paramètres"
+
+#: data/io.elementary.terminal.appdata.xml.in:86
+msgid "Zoom with Ctrl + Scroll"
+msgstr "Zoom avant avec Ctrl + Molette"
+
+#: data/io.elementary.terminal.appdata.xml.in:90
+msgid "Include sudo password prompt when copying last output"
+msgstr "Inclusion du mot de passe sudo lors de la copie de la dernière sortie"
+
 #: data/io.elementary.terminal.appdata.xml.in:91
+msgid "Apply font changes without restarting"
+msgstr "Mise à jour de la police sans redémarrage"
+
+#: data/io.elementary.terminal.appdata.xml.in:99
+msgid "Don't remember tabs when History is disabled in System Settings"
+msgstr ""
+"Ne pas se souvenir des onglets lorsque l'historique est désactivé dans les "
+"paramètres systèmes"
+
+#: data/io.elementary.terminal.appdata.xml.in:100
+msgid "Show keyboard shortcuts in the secondary-click menu"
+msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
+
+#: data/io.elementary.terminal.appdata.xml.in:101
+msgid "Middle-click paste now properly follows System Settings"
+msgstr "Le collage en clic médian suit les paramètres système"
+
+#: data/io.elementary.terminal.appdata.xml.in:102
+msgid "Shift + Control + D to duplicate tabs"
+msgstr "Maj + Contrôle + D pour dupliquer un onglet"
+
+#: data/io.elementary.terminal.appdata.xml.in:103
+msgid "Use neutral colors for the dark style scheme"
+msgstr "Utilisation de couleurs neutres pour le thème foncé"
+
 #: data/io.elementary.terminal.appdata.xml.in:104
+msgid "Slightly pad text from the edge of the window"
+msgstr "Ajout d'une marge du texte au bord de la fenêtre"
+
+#: data/io.elementary.terminal.appdata.xml.in:112
+msgid "Pressing the Menu key now opens the context menu"
+msgstr "L'appui sur la touche Menu ouvre maintenant le menu contextuel"
+
 #: data/io.elementary.terminal.appdata.xml.in:113
+msgid "Store state with GSettings"
+msgstr "Enregistrement de l'état avec GSettings"
+
+#: data/io.elementary.terminal.appdata.xml.in:121
+msgid "Support Ctrl+Equal key combo to zoom in"
+msgstr "Support de Ctrl+Égal pour zoomer"
+
 #: data/io.elementary.terminal.appdata.xml.in:122
+msgid "Fix a wrong foreground process response code"
+msgstr "Correction d'un mauvais code de processus de premier plan"
+
+#: data/io.elementary.terminal.appdata.xml.in:130
+msgid "Return focus after popover menu closes"
+msgstr "Remise au premier plan à la fermeture du menu flottant"
+
+#: data/io.elementary.terminal.appdata.xml.in:131
+msgid "Prevent search and style buttons from receiving focus"
+msgstr ""
+"Empêchement de la recherche et du style des boutons à être mis au premier "
+"plan"
+
 #: data/io.elementary.terminal.appdata.xml.in:132
+msgid "Hide the cursor while typing"
+msgstr "Masquage du curseur lors de la saisie"
+
+#: data/io.elementary.terminal.appdata.xml.in:140
+msgid "Fix erratic search text highlightning behavior"
+msgstr ""
+"Correction du comportement de mise en surbrillance d'une recherche erronée"
+
+#: data/io.elementary.terminal.appdata.xml.in:141
+msgid "Support -h flag for help"
+msgstr "Prise en charge du paramètre -h pour obtenir de l'aide"
+
+#: data/io.elementary.terminal.appdata.xml.in:142
+msgid "Disable audible bell"
+msgstr "Désactivation du son de cloche"
+
+#: data/io.elementary.terminal.appdata.xml.in:143
+msgid "Add Alt+↑ action to scroll to last command"
+msgstr "Ajout du raccourci Alt + ↑ pour aller à la dernière commande"
+
+#: data/io.elementary.terminal.appdata.xml.in:144
+msgid "Add Alt+c action to copy last output"
+msgstr "Ajout du raccourci Alt + C pour copier la dernière sortie"
+
 #: data/io.elementary.terminal.appdata.xml.in:145
+msgid "Add accels to tooltips"
+msgstr "Ajout des raccourcis aux infobulles"
+
+#: data/io.elementary.terminal.appdata.xml.in:153
+msgid "Fix zsh notifications"
+msgstr "Correction des notifications de zsh"
+
+#: data/io.elementary.terminal.appdata.xml.in:154
+msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+msgstr "Raccourci conditionnel Ctrl + G pour empêcher les conflits avec emacs"
+
 #: data/io.elementary.terminal.appdata.xml.in:155
 #: data/io.elementary.terminal.appdata.xml.in:163
 #: data/io.elementary.terminal.appdata.xml.in:171
@@ -86,182 +237,35 @@ msgstr "Validation de la palette de couleurs personnalisée"
 #: data/io.elementary.terminal.appdata.xml.in:224
 #: data/io.elementary.terminal.appdata.xml.in:232
 #: data/io.elementary.terminal.appdata.xml.in:247
-msgid "Translation updates"
-msgstr "Mise à jour des traductions"
-
-#: data/io.elementary.terminal.appdata.xml.in:56
-msgid "Add commandline option for New Tab (-t)"
-msgstr ""
-"Ajout d'une option en ligne de commande pour ouvrir un nouvel onglet (-t)"
-
-#: data/io.elementary.terminal.appdata.xml.in:60
-msgid "Fix URL selection"
-msgstr "Correction de la sélection d'URL"
-
-#: data/io.elementary.terminal.appdata.xml.in:69
-msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr ""
-"Ajout d'une option en ligne de commande pour « Afficher la version » (-v, --"
-"version)"
-
-#: data/io.elementary.terminal.appdata.xml.in:70
-msgid "Add commandline option for New Window (-n)"
-msgstr ""
-"Ajout d'une option en ligne de commande pour ouvrir une nouvelle fenêtre (-n)"
-
-#: data/io.elementary.terminal.appdata.xml.in:74
-msgid "Prevent duplicate tab on startup"
-msgstr "Correction des onglets en double au démarrage"
-
-#: data/io.elementary.terminal.appdata.xml.in:75
-msgid "Prevent unnecessary Home tab on startup"
-msgstr "Correction de l'onglet « Home » inutile au démarrage"
-
-#: data/io.elementary.terminal.appdata.xml.in:84
-msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "Activez ou désactivez le copier-coller naturel dans le menu Paramètres"
-
-#: data/io.elementary.terminal.appdata.xml.in:85
-msgid "Zoom with Ctrl + Scroll"
-msgstr "Zoom avant avec Ctrl + Molette"
-
-#: data/io.elementary.terminal.appdata.xml.in:89
-msgid "Include sudo password prompt when copying last output"
-msgstr "Inclusion du mot de passe sudo lors de la copie de la dernière sortie"
-
-#: data/io.elementary.terminal.appdata.xml.in:90
-msgid "Apply font changes without restarting"
-msgstr "Mise à jour de la police sans redémarrage"
-
-#: data/io.elementary.terminal.appdata.xml.in:98
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
-"Ne pas se souvenir des onglets lorsque l'historique est désactivé dans les "
-"paramètres systèmes"
-
-#: data/io.elementary.terminal.appdata.xml.in:99
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
-
-#: data/io.elementary.terminal.appdata.xml.in:100
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "Le collage en clic médian suit les paramètres système"
-
-#: data/io.elementary.terminal.appdata.xml.in:101
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "Maj + Contrôle + D pour dupliquer un onglet"
-
-#: data/io.elementary.terminal.appdata.xml.in:102
-msgid "Use neutral colors for the dark style scheme"
-msgstr "Utilisation de couleurs neutres pour le thème foncé"
-
-#: data/io.elementary.terminal.appdata.xml.in:103
-msgid "Slightly pad text from the edge of the window"
-msgstr "Ajout d'une marge du texte au bord de la fenêtre"
-
-#: data/io.elementary.terminal.appdata.xml.in:111
-msgid "Pressing the Menu key now opens the context menu"
-msgstr "L'appui sur la touche Menu ouvre maintenant le menu contextuel"
-
-#: data/io.elementary.terminal.appdata.xml.in:112
-msgid "Store state with GSettings"
-msgstr "Enregistrement de l'état avec GSettings"
-
-#: data/io.elementary.terminal.appdata.xml.in:120
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Support de Ctrl+Égal pour zoomer"
-
-#: data/io.elementary.terminal.appdata.xml.in:121
-msgid "Fix a wrong foreground process response code"
-msgstr "Correction d'un mauvais code de processus de premier plan"
-
-#: data/io.elementary.terminal.appdata.xml.in:129
-msgid "Return focus after popover menu closes"
-msgstr "Remise au premier plan à la fermeture du menu flottant"
-
-#: data/io.elementary.terminal.appdata.xml.in:130
-msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
-"Empêchement de la recherche et du style des boutons à être mis au premier "
-"plan"
-
-#: data/io.elementary.terminal.appdata.xml.in:131
-msgid "Hide the cursor while typing"
-msgstr "Masquage du curseur lors de la saisie"
-
-#: data/io.elementary.terminal.appdata.xml.in:139
-msgid "Fix erratic search text highlightning behavior"
-msgstr ""
-"Correction du comportement de mise en surbrillance d'une recherche erronée"
-
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Support -h flag for help"
-msgstr "Prise en charge du paramètre -h pour obtenir de l'aide"
-
-#: data/io.elementary.terminal.appdata.xml.in:141
-msgid "Disable audible bell"
-msgstr "Désactivation du son de cloche"
-
-#: data/io.elementary.terminal.appdata.xml.in:142
-msgid "Add Alt+↑ action to scroll to last command"
-msgstr "Ajout du raccourci Alt + ↑ pour aller à la dernière commande"
-
-#: data/io.elementary.terminal.appdata.xml.in:143
-msgid "Add Alt+c action to copy last output"
-msgstr "Ajout du raccourci Alt + C pour copier la dernière sortie"
-
-#: data/io.elementary.terminal.appdata.xml.in:144
-msgid "Add accels to tooltips"
-msgstr "Ajout des raccourcis aux infobulles"
-
-#: data/io.elementary.terminal.appdata.xml.in:152
-msgid "Fix zsh notifications"
-msgstr "Correction des notifications de zsh"
-
-#: data/io.elementary.terminal.appdata.xml.in:153
-msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr "Raccourci conditionnel Ctrl + G pour empêcher les conflits avec emacs"
-
-#: data/io.elementary.terminal.appdata.xml.in:154
-#: data/io.elementary.terminal.appdata.xml.in:162
-#: data/io.elementary.terminal.appdata.xml.in:170
-#: data/io.elementary.terminal.appdata.xml.in:178
-#: data/io.elementary.terminal.appdata.xml.in:186
-#: data/io.elementary.terminal.appdata.xml.in:197
-#: data/io.elementary.terminal.appdata.xml.in:205
-#: data/io.elementary.terminal.appdata.xml.in:214
-#: data/io.elementary.terminal.appdata.xml.in:223
-#: data/io.elementary.terminal.appdata.xml.in:231
-#: data/io.elementary.terminal.appdata.xml.in:246
 msgid "Minor bug fixes"
 msgstr "Corrections de bugs mineurs"
 
-#: data/io.elementary.terminal.appdata.xml.in:194
+#: data/io.elementary.terminal.appdata.xml.in:195
 msgid "FISH integration fixes"
 msgstr "Corrections de l'intégration de FISH"
 
-#: data/io.elementary.terminal.appdata.xml.in:195
+#: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Theme preference menu"
 msgstr "Menu de préférence du thème"
 
-#: data/io.elementary.terminal.appdata.xml.in:196
+#: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Zoom level controls"
 msgstr "Contrôles du niveau de zoom"
 
-#: data/io.elementary.terminal.appdata.xml.in:213
+#: data/io.elementary.terminal.appdata.xml.in:214
 msgid "Allow tab to close after typing exit at the commandline"
 msgstr ""
 "Permet aux onglets d'être fermés après avoir tapé exit en ligne de commande"
 
-#: data/io.elementary.terminal.appdata.xml.in:222
+#: data/io.elementary.terminal.appdata.xml.in:223
 msgid "Fix copying URLs to clipboard"
 msgstr "Correction de la copie des URL dans le presse-papiers"
 
-#: data/io.elementary.terminal.appdata.xml.in:239
+#: data/io.elementary.terminal.appdata.xml.in:240
 msgid "Fix appstream date format"
 msgstr "Correction du format de date dans les métadonnées"
 
-#: data/io.elementary.terminal.appdata.xml.in:281
+#: data/io.elementary.terminal.appdata.xml.in:282
 msgid "elementary LLC."
 msgstr "elementary, Inc."
 
