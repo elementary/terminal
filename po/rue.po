@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2015-12-05 14:38+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Rusyn <rue@li.org>\n"
@@ -58,67 +58,67 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "Купірувати"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "Вложити"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "Убрати вшитко"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:232
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
 msgstr ""
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr ""
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr ""
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:395
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:403
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:411
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
 msgstr ""
 
