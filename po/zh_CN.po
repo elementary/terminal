@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-06-13 07:11+0000\n"
+"PO-Revision-Date: 2020-12-30 06:16+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
@@ -41,12 +41,12 @@ msgstr "在终端中以指令形式运行剩余指令。 也可以使用 '--' �
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
 msgid "Open a new terminal window"
-msgstr "打开新窗口"
+msgstr "新建窗口"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
 msgid "Open a new terminal tab"
-msgstr "打开新标签"
+msgstr "新建标签"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -86,7 +86,7 @@ msgstr "缩小"
 
 #: src/MainWindow.vala:372
 msgid "Default zoom level"
-msgstr "默认缩放等级"
+msgstr "默认"
 
 #: src/MainWindow.vala:379
 msgid "Zoom in"
@@ -126,7 +126,7 @@ msgstr "您确定要关闭此标签吗？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "此标签中有正在运行的进程。"
+msgstr "标签中有正在运行的进程。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
