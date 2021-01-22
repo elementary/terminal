@@ -7,16 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2017-01-08 07:33+0000\n"
+"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"PO-Revision-Date: 2020-12-19 14:16+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <(nothing)>\n"
+"Language-Team: Serbian <https://l10n.elementary.io/projects/terminal/"
+"terminal/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-01-09 05:33+0000\n"
-"X-Generator: Launchpad (build 18302)\n"
 
 #: src/Application.vala:117
 msgid "Task finished"
@@ -24,7 +27,7 @@ msgstr "Задатак је завршен"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Приказује издање"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -35,94 +38,90 @@ msgstr "Покреће програм у терминалу"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Покрените подсетника реда као наредбу у терминалу. Може такође користити „--“"
+" као заставицу"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Отворите нови прозор"
+msgstr "Отвара нови прозор терминала"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Отворите нови прозор"
+msgstr "Отвара нови језичак терминала"
 
 #: src/Application.vala:266
 msgid "Show help"
-msgstr ""
+msgstr "Прикажите помоћ"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
-msgstr "Подешава радни директоријум шкољке"
+msgstr "Подесите радни директоријум шкољке"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:207
 msgid "Copy"
 msgstr "Умножи"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:212
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Умножи последњи излаз"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:217
 msgid "Paste"
 msgstr "Убаци"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:222
 msgid "Select All"
 msgstr "Изабери све"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
 msgstr "Нађи…"
 
-#: src/MainWindow.vala:232
+#: src/MainWindow.vala:233
 msgid "Show in File Browser"
-msgstr ""
+msgstr "Прикажи у разгледачу датотека"
 
-#: src/MainWindow.vala:364
-#, fuzzy
+#: src/MainWindow.vala:365
 msgid "Zoom out"
 msgstr "Умањи"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:372
 msgid "Default zoom level"
-msgstr ""
+msgstr "Основни ниво увеличања"
 
-#: src/MainWindow.vala:390
-#, fuzzy
+#: src/MainWindow.vala:379
 msgid "Zoom in"
 msgstr "Увећај"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:395
 msgid "High Contrast"
-msgstr ""
+msgstr "Велики контраст"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:403
 msgid "Solarized Light"
-msgstr ""
+msgstr "Осунчано слабије"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:411
 msgid "Dark"
-msgstr ""
+msgstr "Тамна"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Природно умножи/убаци"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Пречице не захтевају Промени; може ометати програме командне линије"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:476
 msgid "Settings"
-msgstr ""
+msgstr "Подешавања"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:1326
 msgid "Hide find bar"
-msgstr ""
+msgstr "Сакриј траку претраге"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -146,7 +145,7 @@ msgstr "Да ли сигурно желите да напустите Терми
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "У овом терминалу се одвија активан процес."
+msgstr "У овом терминалу постоји активан процес."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
@@ -162,7 +161,7 @@ msgstr "Ова наредба тражи администраторски при
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Умножавање наредби у Терминал може бити опасно."
+msgstr "Умножавање наредби у Терминалу може бити опасно."
 
 #: src/Dialogs/UnsafePasteDialog.vala:33
 msgid "Be sure you understand what each part of this command does."
@@ -170,7 +169,7 @@ msgstr "Будите сигурни да разумете шта сваки де
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Прикажи упозорења заштите убацивања"
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
@@ -194,7 +193,7 @@ msgstr "Следећи резултат"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "Кружна претрага"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"

@@ -43,9 +43,15 @@
         <description>The index of the tab from the saved tabs that is currently focused.</description>
     </key>
     <key name="zoom" type="d">
+    <range min="0.25" max="4.0" />
       <default>1.0</default>
-      <summary>Most recent zoom level of terminal</summary>
-      <description>Most recent zoom level of terminal</description>
+      <summary>Default zoom level of new terminal</summary>
+      <description>Default zoom level of new terminal</description>
+    </key>
+    <key name="tab-zooms" type="as">
+      <default>[]</default>
+      <summary>Zoom level of each open terminal</summary>
+      <description>Zoom level of each open terminal</description>
     </key>
   </schema>
 
