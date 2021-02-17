@@ -452,6 +452,9 @@ namespace Terminal {
             natural_copy_paste_button.get_child ().destroy ();
             natural_copy_paste_button.add (natural_copy_paste_grid);
 
+            var terminate_process_button = new Gtk.Button ();
+            terminate_process_button.set_label ("Terminate Process");
+
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
             menu_popover_grid.margin_bottom = 6;
@@ -463,6 +466,7 @@ namespace Terminal {
             menu_popover_grid.add (color_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
+            menu_popover_grid.add (terminate_process_button);
 
             menu_popover_grid.show_all ();
 
@@ -578,6 +582,11 @@ namespace Terminal {
 
             natural_copy_paste_button.button_release_event.connect (() => {
                 natural_copy_paste_switch.activate ();
+                return Gdk.EVENT_STOP;
+            });
+
+            terminate_process_button.button_release_event.connect (() => {
+                action_terminate ();
                 return Gdk.EVENT_STOP;
             });
 
@@ -1376,6 +1385,20 @@ namespace Terminal {
             } else {
                 fullscreen ();
                 is_fullscreen = true;
+            }
+        }
+
+        private void action_terminate () {
+            if (current_terminal.has_foreground_process ()) {
+                var d = new ForegroundProcessDialog.kill_process (this);
+
+                if (d.run () == Gtk.ResponseType.ACCEPT) {
+                    current_terminal.kill_fg ();
+                }
+                else {
+
+                }
+                d.destroy ();
             }
         }
 
