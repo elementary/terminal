@@ -50,6 +50,8 @@ public class Terminal.Application : Gtk.Application {
 
     construct {
         flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
+        flags |= ApplicationFlags.SEND_ENVIRONMENT; /* Need pwd of commandline if -w flag not given */
+
         application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
 
         Intl.setlocale (LocaleCategory.ALL, "");
@@ -178,14 +180,40 @@ public class Terminal.Application : Gtk.Application {
             command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
             if (command_e != null) {
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    var command_wd = get_parent_dir (command_e[0]);
+                    if (command_wd != null) {
+                        working_directory = command_wd;
+                    } else {
+                        /* Try to get pwd from commandline (may still be null) */
+                        working_directory = Uri.escape_string (command_line.getenv ("PWD"));
+                    }
+                }
+
                 run_commands (command_e, working_directory);
             } else if (commandline.length > 0) {
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    var command_wd = get_parent_dir (commandline);
+                    if (command_wd != null) {
+                        working_directory = command_wd;
+                    } else {
+                        working_directory = command_line.getenv ("PWD");
+                    }
+                }
+
                 run_command_line (commandline, working_directory);
             } else if (command_x != null) {
+                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                    working_directory = command_line.getenv ("PWD");
+                }
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
                 get_last_window ().current_terminal.feed (WARNING.data);
             } else {
+                if (working_directory == null) {
+                    working_directory = command_line.getenv ("PWD");
+                }
+
                 start_terminal_with_working_directory (working_directory);
             }
         }
@@ -200,6 +228,16 @@ public class Terminal.Application : Gtk.Application {
         working_directory = null;
 
         return 0;
+    }
+
+    private string? get_parent_dir (string uri) {
+        var file = File.new_for_commandline_arg (uri);
+        var parent = file.get_parent ();
+        if (parent != null) {
+            return parent.get_path ();
+        } else {
+            return null;
+        }
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
