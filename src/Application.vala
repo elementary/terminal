@@ -23,6 +23,7 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings_sys;
 
     private GLib.List <MainWindow> windows;
+    private static Themes themes;
 
     public static string? working_directory = null;
     [CCode (array_length = false, array_null_terminated = true)]
@@ -46,6 +47,7 @@ public class Terminal.Application : Gtk.Application {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+        themes = new Themes ();
     }
 
     construct {
