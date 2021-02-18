@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-08 03:16+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2021-02-18 12:01+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -149,7 +149,7 @@ msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Middle-click paste now properly follows System Settings"
-msgstr "Le collage en clic médian suit les paramètres système"
+msgstr "Le collage en clic central suit les paramètres système"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
