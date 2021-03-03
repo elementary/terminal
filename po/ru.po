@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2018-11-22 20:24+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2021-03-03 14:36+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -33,6 +33,8 @@ msgstr "Запустить программу в терминале"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Запустить остаток строки как команду в терминале. Также можно использовать "
+"«-» в качестве флага"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -98,11 +100,11 @@ msgstr "High Contrast"
 
 #: src/MainWindow.vala:403
 msgid "Solarized Light"
-msgstr "Solarized Light"
+msgstr "Соляризованный свет"
 
 #: src/MainWindow.vala:411
 msgid "Dark"
-msgstr ""
+msgstr "Тёмный"
 
 #: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
@@ -114,7 +116,7 @@ msgstr ""
 
 #: src/MainWindow.vala:476
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: src/MainWindow.vala:1326
 msgid "Hide find bar"
