@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
 "PO-Revision-Date: 2021-03-05 19:50+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: Edwin Youn <younyokel@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -108,15 +108,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Добавлена опция командной строки для открытия нового окна (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Предотвращено дублирование вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Предотвращено открытие лишней домашней вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
@@ -132,7 +132,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Применение изменений шрифта без перезагрузки"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Don't remember tabs when History is disabled in System Settings"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D для дублирования вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Use neutral colors for the dark style scheme"
