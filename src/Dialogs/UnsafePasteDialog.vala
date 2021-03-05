@@ -17,11 +17,13 @@
 */
 
 public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
-    public UnsafePasteDialog (MainWindow parent) {
+    public UnsafePasteDialog (MainWindow parent, string text_to_paste) {
         Object (
             buttons: Gtk.ButtonsType.NONE,
             transient_for: parent
         );
+
+        show_error_details (text_to_paste);
     }
 
     construct {
