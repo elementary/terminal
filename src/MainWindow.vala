@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+* Copyright 2011–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -26,6 +26,9 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Gtk.RadioButton color_button_dark;
+        private Gtk.RadioButton color_button_light;
+        private Gtk.RadioButton color_button_white;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -379,18 +382,39 @@ namespace Terminal {
                 _("Zoom in")
             );
 
-            var font_size_grid = new Gtk.Grid ();
-            font_size_grid.column_homogeneous = true;
-            font_size_grid.hexpand = true;
-            font_size_grid.margin_start = font_size_grid.margin_end = 12;
-            font_size_grid.margin_bottom = 6;
+            var font_size_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                hexpand = true,
+                margin_end = 12,
+                margin_start = 12
+            };
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
             font_size_grid.add (zoom_out_button);
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.RadioButton (null);
+            var follow_system_label = new Gtk.Label (_("Follow System Style")) {
+                halign = Gtk.Align.START,
+                hexpand = true,
+                vexpand = true
+            };
+
+            var follow_system_switch = new Gtk.Switch () {
+                valign = Gtk.Align.START
+            };
+
+            var follow_system_button_grid = new Gtk.Grid () {
+                column_spacing = 12
+            };
+            follow_system_button_grid.add (follow_system_label);
+            follow_system_button_grid.add (follow_system_switch);
+
+            var follow_system_button = new Gtk.ModelButton ();
+            follow_system_button.get_child ().destroy ();
+            follow_system_button.add (follow_system_button_grid);
+
+            color_button_white = new Gtk.RadioButton (null);
             color_button_white.halign = Gtk.Align.CENTER;
             color_button_white.tooltip_text = _("High Contrast");
 
@@ -398,7 +422,7 @@ namespace Terminal {
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_light.halign = Gtk.Align.CENTER;
             color_button_light.tooltip_text = _("Solarized Light");
 
@@ -406,7 +430,7 @@ namespace Terminal {
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
             color_button_dark.halign = Gtk.Align.CENTER;
             color_button_dark.tooltip_text = _("Dark");
 
@@ -414,14 +438,26 @@ namespace Terminal {
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            var color_grid = new Gtk.Grid ();
-            color_grid.column_homogeneous = true;
-            color_grid.margin_start = color_grid.margin_end = 12;
-            color_grid.margin_bottom = 6;
+            var color_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                margin_bottom = 6,
+                margin_end = 12,
+                margin_start = 12,
+                margin_top = 6
+            };
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
+
+            var color_revealer = new Gtk.Revealer ();
+            color_revealer.add (color_grid);
+
+            var follow_system_grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL
+            };
+            follow_system_grid.add (follow_system_button);
+            follow_system_grid.add (color_revealer);
 
             var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
             natural_copy_paste_label.halign = Gtk.Align.START;
@@ -460,7 +496,7 @@ namespace Terminal {
             menu_popover_grid.row_spacing = 6;
 
             menu_popover_grid.add (font_size_grid);
-            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (follow_system_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
@@ -544,6 +580,7 @@ namespace Terminal {
                 );
 
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
+                activate_color_button ();
             });
 
             switch (Application.settings.get_string ("background")) {
@@ -558,23 +595,34 @@ namespace Terminal {
                     break;
             }
 
-            color_button_dark.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", true);
-                Application.settings.set_string ("background", DARK_BG);
-                Application.settings.set_string ("foreground", DARK_FG);
+            follow_system_button.button_release_event.connect (() => {
+                follow_system_switch.activate ();
+                activate_color_button ();
+                return Gdk.EVENT_STOP;
             });
 
-            color_button_light.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
-            });
+            Application.settings.bind (
+                "follow-system-style",
+                follow_system_switch,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
 
-            color_button_white.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
-            });
+            follow_system_switch.bind_property (
+                "active",
+                color_revealer,
+                "reveal-child",
+                GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
+            );
+
+            var granite_settings = Granite.Settings.get_default ();
+
+            granite_settings.notify["prefers-color-scheme"].connect (set_color_scheme);
+            Application.settings.notify["follow-system-style"].connect (set_color_scheme);
+
+            color_button_dark.clicked.connect (set_dark_style);
+            color_button_light.clicked.connect (set_light_style);
+            color_button_white.clicked.connect (set_high_contrast_style);
 
             natural_copy_paste_button.button_release_event.connect (() => {
                 natural_copy_paste_switch.activate ();
@@ -717,6 +765,58 @@ namespace Terminal {
 
                 return false;
             });
+        }
+
+        private void set_color_scheme () {
+            var gtk_settings = Gtk.Settings.get_default ();
+            var granite_settings = Granite.Settings.get_default ();
+
+            if (Application.settings.get_boolean ("follow-system-style")) {
+                switch (granite_settings.prefers_color_scheme) {
+                    case Granite.Settings.ColorScheme.DARK:
+                        gtk_settings.gtk_application_prefer_dark_theme = true;
+                        set_dark_style ();
+                        break;
+                    default:
+                        set_light_style ();
+                        break;
+                }
+            } else {
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+                activate_color_button ();
+            }
+        }
+
+        private void set_dark_style () {
+            Application.settings.set_boolean ("prefer-dark-style", true);
+            Application.settings.set_string ("background", DARK_BG);
+            Application.settings.set_string ("foreground", DARK_FG);
+        }
+
+        private void set_light_style () {
+            Application.settings.set_boolean ("prefer-dark-style", false);
+            Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
+            Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+        }
+
+        private void set_high_contrast_style () {
+            Application.settings.set_boolean ("prefer-dark-style", false);
+            Application.settings.set_string ("background", HIGH_CONTRAST_BG);
+            Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
+        }
+
+        private void activate_color_button () {
+            switch (Application.settings.get_string ("background")) {
+                case HIGH_CONTRAST_BG:
+                    color_button_white.active = true;
+                    break;
+                case SOLARIZED_LIGHT_BG:
+                    color_button_light.active = true;
+                    break;
+                case DARK_BG:
+                    color_button_dark.active = true;
+                    break;
+            }
         }
 
         private bool handle_paste_event () {
