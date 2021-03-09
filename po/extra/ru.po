@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2018-03-24 00:09+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
-"extra/ru/>\n"
+"PO-Revision-Date: 2021-03-05 19:50+0000\n"
+"Last-Translator: Edwin Youn <younyokel@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -45,30 +45,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:68
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "New features:"
-msgstr ""
+msgstr "Новые возможности:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Перемещение вкладкок сочетанием клавиш Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
 msgstr ""
+"Переключение вкладок сочетаниями клавиш Ctrl + Tab and Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Уровни масштабирования теперь запоминаются для каждой вкладки"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
 #: data/io.elementary.terminal.appdata.xml.in:73
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Other updates:"
-msgstr ""
+msgstr "Остальные обновления:"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Проверка собственной палитры"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -91,7 +92,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:233
 #: data/io.elementary.terminal.appdata.xml.in:248
 msgid "Translation updates"
-msgstr ""
+msgstr "Обновления переводов"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Add commandline option for New Tab (-t)"
@@ -107,15 +108,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Добавлена опция командной строки для открытия нового окна (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Предотвращено дублирование вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Предотвращено открытие лишней домашней вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
@@ -123,7 +124,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Изменение масштаба с помощью Ctrl + Scroll"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Include sudo password prompt when copying last output"
@@ -131,27 +132,29 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Применение изменений шрифта без перезагрузки"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "Вкладки не запоминаются, когда История выключена в Параметрах системы"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Показывать горячие клавиши в контекстном меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Вставка средней кнопкой мыши, теперь должным образом следует Параметрам "
+"системы"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D для дублирования вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Использование естественных цветов для тёмной цветовой схемы"
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Slightly pad text from the edge of the window"
@@ -183,7 +186,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Скрытие курсора при вводе текста"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Fix erratic search text highlightning behavior"
@@ -229,7 +232,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:232
 #: data/io.elementary.terminal.appdata.xml.in:247
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Исправления небольших ошибок"
 
 #: data/io.elementary.terminal.appdata.xml.in:195
 msgid "FISH integration fixes"

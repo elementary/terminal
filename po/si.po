@@ -2,8 +2,16 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"PO-Revision-Date: 2021-03-04 21:17+0000\n"
+"Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
+"Language-Team: Sinhala <https://l10n.elementary.io/projects/terminal/"
+"terminal/si/>\n"
+"Language: si\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/Application.vala:117
 msgid "Task finished"
@@ -11,7 +19,7 @@ msgstr ""
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "අනුවාදය පෙන්වන්න"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -35,7 +43,7 @@ msgstr ""
 
 #: src/Application.vala:266
 msgid "Show help"
-msgstr ""
+msgstr "උපකාර පෙන්වන්න"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
@@ -43,19 +51,19 @@ msgstr ""
 
 #: src/MainWindow.vala:207
 msgid "Copy"
-msgstr ""
+msgstr "පිටපත්"
 
 #: src/MainWindow.vala:212
 msgid "Copy Last Output"
-msgstr ""
+msgstr "අවසාන ප්‍රතිදානය පිටපත් කරන්න"
 
 #: src/MainWindow.vala:217
 msgid "Paste"
-msgstr ""
+msgstr "අලවන්න"
 
 #: src/MainWindow.vala:222
 msgid "Select All"
-msgstr ""
+msgstr "සියල්ල තෝරන්න"
 
 #: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
 msgid "Find…"
@@ -87,7 +95,7 @@ msgstr ""
 
 #: src/MainWindow.vala:411
 msgid "Dark"
-msgstr ""
+msgstr "අඳුරු"
 
 #: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
@@ -99,7 +107,7 @@ msgstr ""
 
 #: src/MainWindow.vala:476
 msgid "Settings"
-msgstr ""
+msgstr "සැකසුම්"
 
 #: src/MainWindow.vala:1326
 msgid "Hide find bar"
@@ -139,7 +147,7 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "This command is asking for Administrative access to your computer"
-msgstr ""
+msgstr "මෙම විධානය ඔබගේ පරිගණකයට පරිපාලනමය ප්‍රවේශය ඉල්ලා සිටී"
 
 #: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Copying commands into the Terminal can be dangerous."
@@ -155,7 +163,7 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:40
 msgid "Don't Paste"
-msgstr ""
+msgstr "අලවන්න එපා"
 
 #: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Paste Anyway"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-14 19:16+0000\n"
+"PO-Revision-Date: 2021-02-06 22:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -102,7 +102,7 @@ msgstr "תיקון בחירת כתובות"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "הוספת אפשרות בשורת הפקודה ל„הצגת גרסה”  (‎-v, --version)"
+msgstr "הוספת אפשרות בשורת הפקודה ל„הצגת גרסה” (‎-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"

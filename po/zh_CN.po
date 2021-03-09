@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-30 06:16+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2021-02-19 07:47+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -78,7 +78,7 @@ msgstr "查找…"
 
 #: src/MainWindow.vala:233
 msgid "Show in File Browser"
-msgstr "在 文件管理器 中打开"
+msgstr "打开目录"
 
 #: src/MainWindow.vala:365
 msgid "Zoom out"
@@ -110,7 +110,9 @@ msgstr "自然复制/粘贴"
 
 #: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr "快捷键不使用 Shift 键; 可能会和 CLI 应用冲突"
+msgstr ""
+"快捷键不使用 Shift 键\n"
+"（可能会与 CLI 应用冲突）"
 
 #: src/MainWindow.vala:476
 msgid "Settings"

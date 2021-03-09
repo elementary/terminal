@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2018-11-22 20:24+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2021-03-03 14:36+0000\n"
+"Last-Translator: Stas <SedovSG@yandex.ru>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -22,7 +22,7 @@ msgstr "Задание завершено"
 
 #: src/Application.vala:251
 msgid "Show version"
-msgstr ""
+msgstr "Показать версию"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:253
@@ -33,24 +33,22 @@ msgstr "Запустить программу в терминале"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Запустить остаток строки как команду в терминале. Также можно использовать "
+"«-» в качестве флага"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Открыть новое окно"
+msgstr "Открыть новое окно терминала"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Открыть новое окно"
+msgstr "Открыть новую вкладку терминала"
 
 #: src/Application.vala:266
 msgid "Show help"
-msgstr ""
+msgstr "Показать справку"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
@@ -94,27 +92,28 @@ msgstr "Увеличить"
 
 #: src/MainWindow.vala:395
 msgid "High Contrast"
-msgstr "High Contrast"
+msgstr "Высокий контраст"
 
 #: src/MainWindow.vala:403
 msgid "Solarized Light"
-msgstr "Solarized Light"
+msgstr "Соляризованный свет"
 
 #: src/MainWindow.vala:411
 msgid "Dark"
-msgstr ""
+msgstr "Тёмный"
 
 #: src/MainWindow.vala:426
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Привычное копирование/вставка"
 
 #: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Сочетания клавиш не включают Shift; может конфликтовать c CLI приложениями"
 
 #: src/MainWindow.vala:476
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: src/MainWindow.vala:1326
 msgid "Hide find bar"
