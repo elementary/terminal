@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-03-10 20:19+0000\n"
 "PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -58,69 +58,75 @@ msgstr "Afficher l'aide"
 msgid "Set shell working directory"
 msgstr "Configurer le répertoire courant du terminal"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Copier"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Copier la dernière sortie"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Coller"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
 msgid "Find…"
 msgstr "Rechercher…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Afficher dans l'explorateur de fichiers"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Zoom par défaut"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Contrastes élevés"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Foncé"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Copier-coller naturel"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Les raccourcis ne nécessitent pas d'appuyer sur Maj, ils pourraient "
 "interférer avec les applications en ligne de commande"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "Afficher la version"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1394
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -156,28 +162,28 @@ msgstr "Si vous quittez le Terminal, le processus prendra fin."
 msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Cette commande demande un accès administrateur sur votre ordinateur"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Coller des commandes dans le Terminal peut être dangereux."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Soyez certain de comprendre ce que fait chaque partie de cette commande."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Afficher les avertissements de protection lors d'un « coller »"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Ne pas coller"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Coller quand même"
 
@@ -200,6 +206,9 @@ msgstr "Recherche cyclique"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Afficher dans l'explorateur de fichiers"
 
 #~ msgid "Style"
 #~ msgstr "Style"

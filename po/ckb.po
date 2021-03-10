@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-03-10 20:19+0000\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Kurdish (Sorani) <ckb@li.org>\n"
@@ -58,69 +58,74 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr "رێکخستنی ڕاسەوخۆی شێڵ"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "ڕوونووس"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "لكاندن"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "هه‌مووی دیاری بکه‌"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
 msgid "Find…"
 msgstr "پەیداکردن..."
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr ""
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 #, fuzzy
 msgid "Zoom out"
 msgstr "دەرهاتن لە گەورەنوێیی"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "گەورەنویێی"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr ""
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1394
 msgid "Hide find bar"
 msgstr ""
 
@@ -156,27 +161,27 @@ msgstr "گەر بچیتە دەرەوە لە ترمیناڵ،پرۆسە کۆتا�
 msgid "Quit Terminal"
 msgstr "چونەدەرەڤە لە ترمیناڵ."
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "ئەم خوازە دەستپێگەیستنی تەواوی هەیە بە  کۆمپیۆترەکەت."
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "دەڵنیا بە کە دەزانیت هەر فەرمان چی دەکات."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "نەلکاندن"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "لکاندن لە هەرشوێن"
 

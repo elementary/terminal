@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-03-10 20:19+0000\n"
 "PO-Revision-Date: 2021-03-03 14:36+0000\n"
 "Last-Translator: Stas <SedovSG@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
@@ -54,68 +54,74 @@ msgstr "Показать справку"
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Копировать последний вывод"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
 msgid "Find…"
 msgstr "Поиск…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Открыть в файловом менеджере"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Уменьшить"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Масштаб по умолчанию"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Высокий контраст"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Соляризованный свет"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Тёмный"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Привычное копирование/вставка"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Сочетания клавиш не включают Shift; может конфликтовать c CLI приложениями"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr "Параметры"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "Показать версию"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1394
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
@@ -151,29 +157,29 @@ msgstr "Если вы выйдете из терминала, процесс б�
 msgid "Quit Terminal"
 msgstr "Закрыть терминал"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Эта команда запрашивает права администратора"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Копирование команд в терминал может быть опасным."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr ""
 "Удостоверьтесь в том, что вы понимаете, что это за команда и что она "
 "означает."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Показывать предупреждения о вставках"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Не вставлять"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Вставить всё равно"
 
@@ -196,6 +202,9 @@ msgstr "Циклический поиск"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Открыть в файловом менеджере"
 
 #~ msgid "Style"
 #~ msgstr "Стиль"

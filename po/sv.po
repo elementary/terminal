@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-03-10 20:19+0000\n"
 "PO-Revision-Date: 2018-10-22 15:24+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
@@ -60,69 +60,75 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr "Ställ in terminalens arbetsmapp"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Visa i Filer"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 #, fuzzy
 msgid "Zoom out"
 msgstr "Förminska"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Normalstorlek"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "Förstora"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Hög kontrast"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solariserat ljus"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show in File Browser"
+msgid "Show in %s"
+msgstr "Visa i Filer"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1394
 msgid "Hide find bar"
 msgstr ""
 
@@ -158,27 +164,27 @@ msgstr "Om du stänger terminalen kommer processen att avslutas."
 msgid "Quit Terminal"
 msgstr "Avsluta terminalen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Det här kommandot begär administratörsrättigheter till din dator"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Att klistra in kommandon i terminalen kan vara farligt."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Var säker på att du förstår vad varje del av kommandot gör."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Klistra inte in"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Klistra in ändå"
 

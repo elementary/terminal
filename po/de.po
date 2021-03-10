@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-03-10 20:19+0000\n"
 "PO-Revision-Date: 2020-10-28 01:15+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -58,68 +58,74 @@ msgstr "Hilfe anzeigen"
 msgid "Set shell working directory"
 msgstr "Shell-Arbeitsordner festlegen"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Letzte Ausgabe kopieren"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
 msgid "Find…"
 msgstr "Suchen …"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Im Dateimanager anzeigen"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Verkleinern"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Standard-Zoomfaktor"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Hoher Kontrast"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarisiert hell"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Dunkel"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Natürliches Kopieren/Einfügen"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Tastaturkürzel erfordern keine Umschalttaste; könnte CLI-Anwendungen stören"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:475
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "Version anzeigen"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1394
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
@@ -155,27 +161,27 @@ msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
 msgid "Quit Terminal"
 msgstr "Terminal beenden"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Dieser Befehl erfordert Systemverwalterrechte"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Das Einfügen von Befehlen in das Terminal kann gefährlich sein."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Vergewissern Sie sich, dass Sie verstehen, was dieser Befehl bewirkt."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Warnhinweise beim Einfügen anzeigen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Nicht einfügen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Trotzdem einfügen"
 
@@ -198,6 +204,9 @@ msgstr "Zyklisches Suchen"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Im Dateimanager anzeigen"
 
 #~ msgid "Style"
 #~ msgstr "Stil"
