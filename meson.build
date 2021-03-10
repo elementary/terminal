@@ -55,6 +55,7 @@ executable(
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',
     'src/Widgets/TerminalWidget.vala',
+    'src/Utils.vala',
     terminal_resources,
     dependencies: [
         dependency('gee-0.8'),
