@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2021-01-28 05:58+0000\n"
+"PO-Revision-Date: 2021-03-10 21:17+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -118,14 +118,13 @@ msgid "Settings"
 msgstr "Параметри"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "Показати версію"
+msgstr "Показати в %s"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Типовий застосунок"
 
 #: src/MainWindow.vala:1394
 msgid "Hide find bar"
