@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2020-10-28 01:15+0000\n"
+"PO-Revision-Date: 2021-03-11 04:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -37,8 +37,8 @@ msgstr "Ein Programm im Terminal ausführen"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Den restlichen Teil der Zeile als Befehl im Terminal ausführen. Kann auch "
-"'--' als Option verwenden"
+"Restlichen Teil der Zeile als Befehl im Terminal ausführen. '--' ist als "
+"Option möglich"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -56,7 +56,7 @@ msgstr "Hilfe anzeigen"
 
 #: src/Application.vala:268
 msgid "Set shell working directory"
-msgstr "Shell-Arbeitsordner festlegen"
+msgstr "Shell-Arbeitsverzeichnis festlegen"
 
 #: src/MainWindow.vala:214
 msgid "Copy"
@@ -116,14 +116,13 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "Version anzeigen"
+msgstr "In %s anzeigen"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Standardanwendung"
 
 #: src/MainWindow.vala:1394
 msgid "Hide find bar"
@@ -167,7 +166,7 @@ msgstr "Dieser Befehl erfordert Systemverwalterrechte"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Das Einfügen von Befehlen in das Terminal kann gefährlich sein."
+msgstr "Das Einfügen von Befehlen in das Terminal birgt Risiken."
 
 #: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
