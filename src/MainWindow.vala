@@ -447,9 +447,9 @@ namespace Terminal {
             natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1);
             natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0, 1, 2);
 
-            var natural_copy_paste_button = new Gtk.ModelButton ();
-            natural_copy_paste_button.get_child ().destroy ();
-            natural_copy_paste_button.add (natural_copy_paste_grid);
+            var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
+                description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
+            };
 
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
