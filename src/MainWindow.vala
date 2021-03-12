@@ -422,31 +422,6 @@ namespace Terminal {
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
 
-            var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
-            natural_copy_paste_label.halign = Gtk.Align.START;
-            natural_copy_paste_label.vexpand = true;
-
-            var natural_copy_paste_switch = new Gtk.Switch ();
-            natural_copy_paste_switch.valign = Gtk.Align.START;
-
-            var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
-                _("Shortcuts don’t require Shift; may interfere with CLI apps")
-            ));
-            natural_copy_paste_description.max_width_chars = 25;
-            natural_copy_paste_description.use_markup = true;
-            natural_copy_paste_description.wrap = true;
-            natural_copy_paste_description.xalign = 0;
-            natural_copy_paste_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-            var natural_copy_paste_revealer = new Gtk.Revealer ();
-            natural_copy_paste_revealer.add (natural_copy_paste_description);
-
-            var natural_copy_paste_grid = new Gtk.Grid ();
-            natural_copy_paste_grid.column_spacing = 12;
-            natural_copy_paste_grid.attach (natural_copy_paste_label, 0, 0);
-            natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1);
-            natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0, 1, 2);
-
             var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
             };
@@ -575,23 +550,11 @@ namespace Terminal {
                 Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
             });
 
-            natural_copy_paste_button.button_release_event.connect (() => {
-                natural_copy_paste_switch.activate ();
-                return Gdk.EVENT_STOP;
-            });
-
             Application.settings.bind (
                 "natural-copy-paste",
-                natural_copy_paste_switch,
+                natural_copy_paste_button,
                 "active",
                 SettingsBindFlags.DEFAULT
-            );
-
-            natural_copy_paste_switch.bind_property (
-                "active",
-                natural_copy_paste_revealer,
-                "reveal-child",
-                GLib.BindingFlags.SYNC_CREATE
             );
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
