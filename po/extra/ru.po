@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2021-03-15 22:17+0000\n"
+"PO-Revision-Date: 2021-03-17 19:50+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -96,15 +96,16 @@ msgstr "Обновления переводов"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Добавлен параметр командной строки для открытия новой вкладки (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Исправлен выбор URL-адреса"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for \"Show version\" (-v, --version)"
 msgstr ""
+"Добавлен параметр командной строки для «Показать версию» (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
@@ -120,11 +121,11 @@ msgstr "Предотвращено открытие лишней домашне�
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Включение и выключение обычного копирования/вставки в меню Параметры"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Zoom with Ctrl + Scroll"
-msgstr "Изменение масштаба с помощью Ctrl + Scroll"
+msgstr "Изменение масштаба с помощью Ctrl + Прокрутка"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Include sudo password prompt when copying last output"
@@ -158,19 +159,19 @@ msgstr "Использование естественных цветов для 
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Небольшое отступление текста от края окна"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Нажатие клавиши Меню открывает контекстное меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Хранение состояния с помощью GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Поддержка комбинации клавиш Ctrl+Равно для масштабирования"
 
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Fix a wrong foreground process response code"
@@ -178,7 +179,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Возврат фокуса после закрытия всплывающего меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Prevent search and style buttons from receiving focus"
@@ -194,19 +195,19 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:141
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Поддержка флага -h для помощи"
 
 #: data/io.elementary.terminal.appdata.xml.in:142
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Отключен звуковой колокол"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Добавлено действие Alt+↑ для перехода к последней команде"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Добавлено действие Alt+c для копирования последнего вывода"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Add accels to tooltips"
@@ -214,7 +215,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:153
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Исправлены zsh уведомления"
 
 #: data/io.elementary.terminal.appdata.xml.in:154
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
@@ -273,11 +274,11 @@ msgstr "команда;командная строка;выполнить;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr "Создать окно"
+msgstr "Новое окно"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Создать вкладку от имени администратора"
+msgstr "Новая вкладка от имени Администратора"
 
 #~ msgid "About Terminal"
 #~ msgstr "О программе"
