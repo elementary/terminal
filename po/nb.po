@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2021-01-21 20:28+0000\n"
+"PO-Revision-Date: 2021-03-19 11:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -42,17 +42,13 @@ msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Åpne et nytt vindu"
+msgstr "Åpne et nytt terminalvindu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Åpne et nytt vindu"
+msgstr "Åpne et nytt terminalvindu"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -119,14 +115,13 @@ msgid "Settings"
 msgstr "Innstillinger"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "Vis versjon"
+msgstr "Vis i %s"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Forvalgt program"
 
 #: src/MainWindow.vala:1394
 #, fuzzy
