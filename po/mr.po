@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2020-05-28 11:11+0000\n"
+"PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
 "terminal/mr/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/Application.vala:117
 msgid "Task finished"
@@ -106,14 +106,13 @@ msgid "Settings"
 msgstr "सेटिंग्ज"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "आवृत्ती दाखवा"
+msgstr "%s मध्ये दाखवा"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "डीफॉल्ट अप्लिकेशन"
 
 #: src/MainWindow.vala:1394
 msgid "Hide find bar"
@@ -153,7 +152,7 @@ msgstr "टर्मिनल बंद करा"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
-msgstr "ही कमांड  आपल्या संगणकावर प्रशासकीय प्रवेशासाठी परवानगी मागत आहे"
+msgstr "ही कमांड आपल्या संगणकावर प्रशासकीय प्रवेशासाठी परवानगी मागत आहे"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
