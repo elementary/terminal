@@ -1077,15 +1077,18 @@ namespace Terminal {
                 }
             });
 
-            /* This signal is not emitted when the .bashrc is missing or does not force terminal to
-             * set its title. So we cannot detect path changes in the shell. Tab name remains "Terminal".
-             */
             t.window_title_changed.connect (() => {
-                if (t == current_terminal) {
-                    title = t.window_title;
-                }
-
+                /* This does not trigger when there is a custom prompt because window_title property is empty. */
                 schedule_name_check ();
+            });
+
+            t.contents_changed.connect (() => {
+               /* This is the only way to check for change in cwd and updating tab label and window title when there
+                * is a custom prompt or the window title is permanently empty for some other reason.
+                */
+                if (t.window_title == "") {
+                    schedule_name_check (); 
+                }
             });
 
             t.set_font (term_font);
@@ -1415,19 +1418,23 @@ namespace Terminal {
         }
 
         private uint name_check_timeout_id = 0;
+        bool do_check = false;
         private void schedule_name_check () {
             if (name_check_timeout_id > 0) {
-                Source.remove (name_check_timeout_id);
+                do_check = false; // Delay check until contents stop changing
+                return;
             }
 
             name_check_timeout_id = Timeout.add (50, () => {
-                save_opened_terminals ();
-
-                if (!check_for_tabs_with_same_name ()) {
-                    return true;
-                } else {
+                if (do_check && check_for_tabs_with_same_name ()) {
                     name_check_timeout_id = 0;
-                    return false;
+                    title = current_terminal.get_shell_location ();
+                    save_opened_terminals ();
+                    return Source.REMOVE;
+
+                } else {
+                    do_check = true;
+                    return Source.CONTINUE;
                 }
             });
         }
@@ -1439,23 +1446,26 @@ namespace Terminal {
             var terms2 = terminals.copy ();
 
             foreach (TerminalWidget terminal in terms) {
-                string term_path = terminal.get_shell_location ();
-                string term_label = terminal.window_title;
-
-                if (term_label == "") { /* No point in continuing - tabs not finished updating */
-                    return false; /* Try again later */
-                }
-
-                if (terminal.tab_label == TerminalWidget.DEFAULT_LABEL) { /* Absent or incorrect .bashrc */
+                string term_path = terminal.get_shell_location (); //This may return "" if called too early
+                if (term_path == "") {
                     return true;
                 }
 
+                string term_label = Path.get_basename (term_path);
                 /* Reset tab_name to basename so long name only used when required */
                 terminal.tab_label = term_label;
 
+                if (terminal.tab_label == TerminalWidget.DEFAULT_LABEL) { /* Absent or incorrect .bashrc */
+                    continue;
+                }
+
                 foreach (TerminalWidget terminal2 in terms2) {
                     string term2_path = terminal2.get_shell_location ();
-                    string term2_name = terminal2.window_title;
+                    if (term2_path == "") {
+                        return false;
+                    }
+
+                    string term2_name = Path.get_basename (term2_path);
 
                     if (terminal2 != terminal && term2_name == term_label) {
                         if (term2_path != term_path) {
