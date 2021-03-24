@@ -1087,7 +1087,7 @@ namespace Terminal {
                 * is a custom prompt or the window title is permanently empty for some other reason.
                 */
                 if (t.window_title == "") {
-                    schedule_name_check (); 
+                    schedule_name_check ();
                 }
             });
 
