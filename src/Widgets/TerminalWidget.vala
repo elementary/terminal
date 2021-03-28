@@ -592,5 +592,12 @@ namespace Terminal {
         public bool has_output () {
             return !resized && get_last_output ().length > 0;
         }
+
+        public void reload () {
+            var old_loc = get_shell_location ();
+            Posix.kill (child_pid, Posix.Signal.TERM);
+            reset (true, true);
+            active_shell (old_loc);
+        }
     }
 }
