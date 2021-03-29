@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="application">
+    <id>io.elementary.terminal</id>
+    <metadata_license>FSFAP</metadata_license>
+    <project_license>GPL-3.0-only</project_license>
+    <name>elementary Terminal</name>
+    <summary>The terminal of the 21st century.</summary>
+    <description>
+        <p>A super lightweight, beautiful, and simple terminal. Comes with sane defaults, browser-class tabs, sudo paste protection, smart copy/paste, and little to no configuration.</p>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot.png</image>
+        </screenshot>
+    </screenshots>
+    <url type="homepage">https://github.com/elementary/terminal</url>
+    <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
+    <developer_name>elementary, Inc.</developer_name>
+    <releases>
+        <release version="5.5.2" date="2020-04-01" />
+    </releases>
+    <translation>https://elementary.io/docs/translation-guide</translation>
+    <update_contact>flatpak_at_elementary_dot_io</update_contact>
+</component>
