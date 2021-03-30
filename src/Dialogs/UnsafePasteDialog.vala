@@ -39,13 +39,13 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
         custom_bin.add (show_protection_warnings);
         custom_bin.show_all ();
 
-        add_button (_("Don't Paste"), 1);
+        add_button (_("Don't Paste"), Gtk.ResponseType.CANCEL);
 
-        var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), 0);
+        var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), Gtk.ResponseType.ACCEPT);
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (on_ignore);
 
-        set_default_response (1);
+        set_default_response (Gtk.ResponseType.CANCEL);
 
         Terminal.Application.settings.bind (
             "unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT
