@@ -1223,7 +1223,7 @@ namespace Terminal {
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this, text);
-                    if (d.run () == 1) {
+                    if (d.run () != Gtk.ResponseType.ACCEPT) {
                         d.destroy ();
                         return;
                     }
