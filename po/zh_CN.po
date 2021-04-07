@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2021-02-19 07:47+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"PO-Revision-Date: 2021-04-01 11:57+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -115,14 +115,13 @@ msgid "Settings"
 msgstr "设置"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "显示版本"
+msgstr "在 %s 中显示"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "默认应用"
 
 #: src/MainWindow.vala:1394
 msgid "Hide find bar"
