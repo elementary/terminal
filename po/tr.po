@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 20:19+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
 "PO-Revision-Date: 2021-04-08 20:27+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -74,7 +74,7 @@ msgstr "Yapıştır"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Bul…"
 
@@ -106,24 +106,24 @@ msgstr "Koyu Renk Tema"
 msgid "Natural Copy/Paste"
 msgstr "Doğal Kopyala/Yapıştır"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Kısayollar Shift gerektirmez; bazı CLI uygulamalarını engelleyebilir"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:845
 #, c-format
 msgid "Show in %s"
 msgstr "%s ile aç"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:846
 msgid "Default application"
 msgstr "Varsayılan uygulama"
 
-#: src/MainWindow.vala:1394
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
