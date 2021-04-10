@@ -32,6 +32,10 @@ namespace Terminal.Utils {
         }
 
         path = Uri.unescape_string (path);
+        if (path == null) {
+            return null;
+        }
+
         path = strip_uri (path);
 
         do {
