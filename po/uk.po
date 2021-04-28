@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 20:19+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
 "PO-Revision-Date: 2021-03-10 21:17+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
@@ -75,7 +75,7 @@ msgstr "Вставити"
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Пошук…"
 
@@ -107,26 +107,26 @@ msgstr "Темна"
 msgid "Natural Copy/Paste"
 msgstr "Звичайне копіювання/вставляння"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Скорочення не потребують використання клавіші Shift; може вплинути на "
 "програми CLI"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:845
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:846
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:1394
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 

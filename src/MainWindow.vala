@@ -1221,7 +1221,7 @@ namespace Terminal {
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
                     var d = new UnsafePasteDialog (this, text);
-                    if (d.run () == 1) {
+                    if (d.run () != Gtk.ResponseType.ACCEPT) {
                         d.destroy ();
                         return;
                     }
@@ -1261,11 +1261,13 @@ namespace Terminal {
 
         private void action_open_in_browser () {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-                try {
-                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                } catch (GLib.Error error) {
-                    warning ("Could not show %s - %s", to_open, error.message);
+                string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
+                if (to_open != null) {
+                    try {
+                        Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                    } catch (GLib.Error error) {
+                        warning ("Could not show %s - %s", to_open, error.message);
+                    }
                 }
             });
         }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 20:19+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
 "PO-Revision-Date: 2018-12-12 00:11+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
@@ -76,7 +76,7 @@ msgstr "붙여넣기"
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "찾기…"
 
@@ -108,25 +108,25 @@ msgstr ""
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:845
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "파일 브라우저에서 보기"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:846
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1394
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 

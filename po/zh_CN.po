@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 20:19+0000\n"
-"PO-Revision-Date: 2021-02-19 07:47+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"PO-Revision-Date: 2021-04-01 11:57+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -72,7 +72,7 @@ msgstr "粘贴"
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "查找…"
 
@@ -104,27 +104,26 @@ msgstr "深色"
 msgid "Natural Copy/Paste"
 msgstr "自然复制/粘贴"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "快捷键不使用 Shift 键\n"
 "（可能会与 CLI 应用冲突）"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show version"
+#: src/MainWindow.vala:845
+#, c-format
 msgid "Show in %s"
-msgstr "显示版本"
+msgstr "在 %s 中显示"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:846
 msgid "Default application"
-msgstr ""
+msgstr "默认应用"
 
-#: src/MainWindow.vala:1394
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "隐藏查找"
 

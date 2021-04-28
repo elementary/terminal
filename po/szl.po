@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 20:19+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -67,7 +67,7 @@ msgstr "Wraź"
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1402
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Znojdź…"
 
@@ -99,26 +99,26 @@ msgstr "Ciymny"
 msgid "Natural Copy/Paste"
 msgstr "Naturalne kopiowanie i wrażanie"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza kōmynd"
 
-#: src/MainWindow.vala:475
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Sztelōnki"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:845
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:846
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1394
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 
