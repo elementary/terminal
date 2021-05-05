@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-08 20:29+0000\n"
-"PO-Revision-Date: 2020-04-14 07:10+0000\n"
+"PO-Revision-Date: 2021-05-05 18:04+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -37,6 +37,7 @@ msgstr "Suorita ohjelma päätteessä"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Suorita loput rivistä komentona päätteessä. Voi käyttää myös '--' lippuna"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -107,20 +108,21 @@ msgstr "Luonnollinen kopiointi/liittäminen"
 #: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
+"komentoriviohjelmia"
 
 #: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Asetukset"
 
 #: src/MainWindow.vala:845
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "Näytä versio"
+msgstr "Näytä sovelluksessa %s"
 
 #: src/MainWindow.vala:846
 msgid "Default application"
-msgstr ""
+msgstr "Oletussovellus"
 
 #: src/MainWindow.vala:1357
 msgid "Hide find bar"
