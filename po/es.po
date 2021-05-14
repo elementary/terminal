@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"PO-Revision-Date: 2021-03-12 02:36+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:117
@@ -58,68 +58,73 @@ msgstr "Mostrar ayuda"
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo del intérprete"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Mostrar en el explorador de archivos"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Nivel de escala predeterminado"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Contraste alto"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarizado claro"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Copipegado natural"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:845
+#, c-format
+msgid "Show in %s"
+msgstr "Mostrar en %s"
+
+#: src/MainWindow.vala:846
+msgid "Default application"
+msgstr "Aplicación por defecto"
+
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -155,27 +160,27 @@ msgstr "Si sale del terminal, el proceso finalizará."
 msgid "Quit Terminal"
 msgstr "Salir del terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Esta orden solicita acceso administrativo al equipo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Pegar órdenes en el terminal puede ser peligroso."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Asegúrese de comprender lo que hace cada parte de esta orden."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Mostrar alertas de protección al pegar texto"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "No pegar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Pegar de todos modos"
 
@@ -198,6 +203,9 @@ msgstr "Búsqueda cíclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Mostrar en el explorador de archivos"
 
 #~ msgid "Style"
 #~ msgstr "Estilo"

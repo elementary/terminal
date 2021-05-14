@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2021-01-28 05:58+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"PO-Revision-Date: 2021-03-10 21:17+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -59,69 +59,74 @@ msgstr "Показати довідку"
 msgid "Set shell working directory"
 msgstr "Встановити робочу теку для оболонки"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Копіювати останнє виведене"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Показати у файловому переглядачі"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Зменшити"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Типовий масштаб"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Збільшити"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Високий контраст"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarized світла"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Темна"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Звичайне копіювання/вставляння"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Скорочення не потребують використання клавіші Shift; може вплинути на "
 "програми CLI"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:845
+#, c-format
+msgid "Show in %s"
+msgstr "Показати в %s"
+
+#: src/MainWindow.vala:846
+msgid "Default application"
+msgstr "Типовий застосунок"
+
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -157,27 +162,27 @@ msgstr "Якщо ви закриєте Термінал , то процес за
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Ця команда запитує права доступу адміністратора до вашого комп’ютера"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Копіювання команд до терміналу може бути небезпечним."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Переконайтеся, що ви розумієте, що робить кожна частина цієї команди."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Показувати попередження безпеку під час вставляння"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Не вставляти"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Все одно вставити"
 
@@ -200,6 +205,9 @@ msgstr "Циклічний пошук"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Термінал"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Показати у файловому переглядачі"
 
 #~ msgid "Cancel"
 #~ msgstr "Скасувати"

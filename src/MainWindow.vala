@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2019 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2011-2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -26,6 +26,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -75,8 +76,8 @@ namespace Terminal {
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_SELECT_ALL = "action-select-all";
-        public const string ACTION_OPEN_IN_FILES = "action-open-in-files";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
+        public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -100,8 +101,8 @@ namespace Terminal {
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_OPEN_IN_FILES, action_open_in_files },
-            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command }
+            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -167,7 +168,7 @@ namespace Terminal {
             action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
-            action_accelerators[ACTION_OPEN_IN_FILES] = "<Control><Shift>e";
+            action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
@@ -197,10 +198,16 @@ namespace Terminal {
             restore_saved_state (restore_pos);
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            update_context_menu ();
             clipboard.owner_change.connect (update_context_menu);
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
+
+            var open_in_browser_menuitem = new Gtk.MenuItem ();
+            open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
+            open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
+                "", open_in_browser_menuitem.action_name
+            );
+            open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
             var copy_menuitem = new Gtk.MenuItem ();
             copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
@@ -226,23 +233,15 @@ namespace Terminal {
             search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
             search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
-            var show_in_file_browser_menuitem = new Gtk.MenuItem ();
-            show_in_file_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_FILES);
-            show_in_file_browser_menuitem.add (
-                new Granite.AccelLabel.from_action_name (
-                    _("Show in File Browser"),
-                    show_in_file_browser_menuitem.action_name
-                )
-            );
-
             menu = new Gtk.Menu ();
+            menu.append (open_in_browser_menuitem);
+            menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (copy_menuitem);
             menu.append (copy_last_output_menuitem);
             menu.append (paste_menuitem);
             menu.append (select_all_menuitem);
             menu.append (new Gtk.SeparatorMenuItem ());
             menu.append (search_menuitem);
-            menu.append (show_in_file_browser_menuitem);
             menu.insert_action_group ("win", actions);
 
             menu.popped_up.connect (() => {
@@ -423,34 +422,9 @@ namespace Terminal {
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
 
-            var natural_copy_paste_label = new Gtk.Label (_("Natural Copy/Paste"));
-            natural_copy_paste_label.halign = Gtk.Align.START;
-            natural_copy_paste_label.vexpand = true;
-
-            var natural_copy_paste_switch = new Gtk.Switch ();
-            natural_copy_paste_switch.valign = Gtk.Align.START;
-
-            var natural_copy_paste_description = new Gtk.Label ("<small>%s</small>".printf (
-                _("Shortcuts don’t require Shift; may interfere with CLI apps")
-            ));
-            natural_copy_paste_description.max_width_chars = 25;
-            natural_copy_paste_description.use_markup = true;
-            natural_copy_paste_description.wrap = true;
-            natural_copy_paste_description.xalign = 0;
-            natural_copy_paste_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-            var natural_copy_paste_revealer = new Gtk.Revealer ();
-            natural_copy_paste_revealer.add (natural_copy_paste_description);
-
-            var natural_copy_paste_grid = new Gtk.Grid ();
-            natural_copy_paste_grid.column_spacing = 12;
-            natural_copy_paste_grid.attach (natural_copy_paste_label, 0, 0);
-            natural_copy_paste_grid.attach (natural_copy_paste_revealer, 0, 1);
-            natural_copy_paste_grid.attach (natural_copy_paste_switch, 1, 0, 1, 2);
-
-            var natural_copy_paste_button = new Gtk.ModelButton ();
-            natural_copy_paste_button.get_child ().destroy ();
-            natural_copy_paste_button.add (natural_copy_paste_grid);
+            var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
+                description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
+            };
 
             var menu_popover_grid = new Gtk.Grid ();
             menu_popover_grid.column_spacing = 6;
@@ -576,23 +550,11 @@ namespace Terminal {
                 Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
             });
 
-            natural_copy_paste_button.button_release_event.connect (() => {
-                natural_copy_paste_switch.activate ();
-                return Gdk.EVENT_STOP;
-            });
-
             Application.settings.bind (
                 "natural-copy-paste",
-                natural_copy_paste_switch,
+                natural_copy_paste_button,
                 "active",
                 SettingsBindFlags.DEFAULT
-            );
-
-            natural_copy_paste_switch.bind_property (
-                "active",
-                natural_copy_paste_revealer,
-                "reveal-child",
-                GLib.BindingFlags.SYNC_CREATE
             );
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
@@ -866,15 +828,70 @@ namespace Terminal {
             }
         }
 
-        private void update_context_menu () {
+        public void update_context_menu () {
+            /* Update the "Paste" menu option */
             clipboard.request_targets (update_context_menu_cb);
+
+            /* Update the "Show in ..." menu option */
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
+                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
+            });
+        }
+
+        private void update_menu_label (string? uri) {
+            AppInfo? appinfo = get_default_app_for_uri (uri);
+
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            open_in_browser_menuitem_label.label = _("Show in %s").printf (
+                appinfo != null ? appinfo.get_display_name () : _("Default application")
+            );
+        }
+
+        private AppInfo? get_default_app_for_uri (string? uri) {
+            if (uri == null) {
+                return null;
+            }
+
+            AppInfo? appinfo = null;
+            var scheme = Uri.parse_scheme (uri);
+            if (scheme != null) {
+                appinfo = AppInfo.get_default_for_uri_scheme (scheme);
+            }
+
+            if (appinfo == null) {
+                bool uncertain;
+                /* Guess content type from filename if possible */
+                //TODO Get content type from actual file (if exists)
+                var ctype = ContentType.guess (uri, null, out uncertain);
+                if (!uncertain) {
+                    appinfo = AppInfo.get_default_for_type (ctype, true);
+                }
+
+                if (appinfo == null) {
+                    var file = File.new_for_uri (uri);
+                    try {
+                        var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
+                                                    FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+
+                        if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                            appinfo = AppInfo.get_default_for_type (
+                                        info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                        }
+                    } catch (Error e) {
+                        warning ("Could not get file info %s", e.message);
+                    }
+                }
+            }
+
+            return appinfo;
         }
 
         private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
             bool can_paste = false;
 
-            if (atoms != null && atoms.length > 0)
+            if (atoms != null && atoms.length > 0) {
                 can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            }
 
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
@@ -1200,8 +1217,8 @@ namespace Terminal {
                 var text = intext.strip ();
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var d = new UnsafePasteDialog (this);
-                    if (d.run () == 1) {
+                    var d = new UnsafePasteDialog (this, text);
+                    if (d.run () != Gtk.ResponseType.ACCEPT) {
                         d.destroy ();
                         return;
                     }
@@ -1219,9 +1236,9 @@ namespace Terminal {
         }
 
         private void action_copy () {
-            if (current_terminal.uri != null && ! current_terminal.get_has_selection ())
-                clipboard.set_text (current_terminal.uri,
-                                    current_terminal.uri.length);
+            if (current_terminal.link_uri != null && ! current_terminal.get_has_selection ())
+                clipboard.set_text (current_terminal.link_uri,
+                                    current_terminal.link_uri.length);
             else
                 current_terminal.copy_clipboard ();
         }
@@ -1239,18 +1256,34 @@ namespace Terminal {
             current_terminal.select_all ();
         }
 
-        private void action_open_in_files () {
-            try {
-                string uri = Filename.to_uri (current_terminal.get_shell_location ());
+        private void action_open_in_browser () {
+            get_current_selection_link_or_pwd ((clipboard, uri) => {
+                string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
+                if (to_open != null) {
+                    try {
+                        Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                    } catch (GLib.Error error) {
+                        warning ("Could not show %s - %s", to_open, error.message);
+                    }
+                }
+            });
+        }
 
-                try {
-                     Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                } catch (Error e) {
-                     warning (e.message);
+        private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
+            var link_uri = current_terminal.link_uri;
+            if (link_uri == null) {
+                if (current_terminal.get_has_selection ()) {
+                    current_terminal.copy_primary ();
+                    primary_selection.request_text (uri_handler);
+                } else {
+                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                }
+            } else {
+                if (!link_uri.contains ("://")) {
+                    link_uri = "http://" + link_uri;
                 }
 
-            } catch (ConvertError e) {
-                warning (e.message);
+                uri_handler (primary_selection, link_uri);
             }
         }
 
@@ -1493,8 +1526,8 @@ namespace Terminal {
 
             /* Add parent directories until path and conflict path differ */
             while (prefix == conflict_prefix) {
-                var parent_temp_path = get_parent_path_from_path (temp_path);
-                var parent_temp_confict_path = get_parent_path_from_path (temp_conflict_path);
+                var parent_temp_path = Utils.get_parent_path_from_path (temp_path);
+                var parent_temp_confict_path = Utils.get_parent_path_from_path (temp_conflict_path);
                 prefix = Path.get_basename (parent_temp_path) + Path.DIR_SEPARATOR_S + prefix;
                 conflict_prefix = Path.get_basename (parent_temp_confict_path) + Path.DIR_SEPARATOR_S + conflict_prefix;
                 temp_path = parent_temp_path;
@@ -1502,26 +1535,6 @@ namespace Terminal {
             }
 
             return (prefix + basename).replace ("//", "/");
-        }
-
-        /*** Simplified version of PF.FileUtils function, with fewer checks ***/
-        private string get_parent_path_from_path (string path) {
-            if (path.length < 2) {
-                return Path.DIR_SEPARATOR_S;
-            }
-
-            StringBuilder string_builder = new StringBuilder (path);
-            if (path.has_suffix (Path.DIR_SEPARATOR_S)) {
-                string_builder.erase (string_builder.str.length - 1, -1);
-            }
-
-            int last_separator = string_builder.str.last_index_of (Path.DIR_SEPARATOR_S);
-            if (last_separator < 0) {
-                last_separator = 0;
-            }
-
-            string_builder.erase (last_separator, -1);
-            return string_builder.str + Path.DIR_SEPARATOR_S;
         }
 
         public GLib.SimpleAction? get_simple_action (string action) {

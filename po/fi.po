@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-04-14 07:10+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"PO-Revision-Date: 2021-05-05 18:04+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:117
@@ -37,6 +37,7 @@ msgstr "Suorita ohjelma päätteessä"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Suorita loput rivistä komentona päätteessä. Voi käyttää myös '--' lippuna"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -56,67 +57,74 @@ msgstr "Näytä ohje"
 msgid "Set shell working directory"
 msgstr "Aseta komentotulkin työskentelyhakemisto"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Näytä tiedostoselaimessa"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Loitonna"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Oletusmittakaava"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Lähennä"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Suuri kontrasti"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarized, vaalea"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Tumma"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Luonnollinen kopiointi/liittäminen"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
+"komentoriviohjelmia"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:845
+#, c-format
+msgid "Show in %s"
+msgstr "Näytä sovelluksessa %s"
+
+#: src/MainWindow.vala:846
+msgid "Default application"
+msgstr "Oletussovellus"
+
+#: src/MainWindow.vala:1357
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -152,27 +160,27 @@ msgstr "Jos lopetat päätteen, prosessi päättyy."
 msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Tämä komento pyytää ylläpito-oikeuksia järjestelmään"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "Komentojen kopiointi ja liittäminen päätteeseen voi olla vaarallista."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr "Näytä liittämisen suojausvaroitukset"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Älä liitä"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Liitä silti"
 
@@ -195,6 +203,9 @@ msgstr "Kierteinen haku"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Pääte"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Näytä tiedostoselaimessa"
 
 #~ msgid "Style"
 #~ msgstr "Tyyli"

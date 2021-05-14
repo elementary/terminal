@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2021-01-21 20:28+0000\n"
+"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"PO-Revision-Date: 2021-03-19 11:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -42,17 +42,13 @@ msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Åpne et nytt vindu"
+msgstr "Åpne et nytt terminalvindu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Åpne et nytt vindu"
+msgstr "Åpne et nytt terminalvindu"
 
 #: src/Application.vala:266
 msgid "Show help"
@@ -62,67 +58,72 @@ msgstr "Vis hjelp"
 msgid "Set shell working directory"
 msgstr "Sett arbeidsmappe for skall"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:214
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:219
 msgid "Copy Last Output"
 msgstr "Kopier siste utdata"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Lim inn"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:229
 msgid "Select All"
 msgstr "Merk alt"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
 msgid "Find…"
 msgstr "Finn…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Vis i filutforsker"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:364
 msgid "Zoom out"
 msgstr "Forminsk"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Forvalgt forstørrelsesnivå"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Forstørr"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:394
 msgid "High Contrast"
 msgstr "Høy kontrast"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:402
 msgid "Solarized Light"
 msgstr "Solarisert lys"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:410
 msgid "Dark"
 msgstr "Mørk"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:425
 msgid "Natural Copy/Paste"
 msgstr "Naturlig kopier/lim inn"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:426
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Snarveier krever ikke Shift; kan forstyrre CLI-programmer"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:450
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:845
+#, c-format
+msgid "Show in %s"
+msgstr "Vis i %s"
+
+#: src/MainWindow.vala:846
+msgid "Default application"
+msgstr "Forvalgt program"
+
+#: src/MainWindow.vala:1357
 #, fuzzy
 msgid "Hide find bar"
 msgstr "Skjul søkelinje"
@@ -159,30 +160,30 @@ msgstr "Hvis du avslutter Terminalen vil prosessen avsluttes."
 msgid "Quit Terminal"
 msgstr "Avslutt terminalen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Denne kommandoen spør om administrativ tilgang til din datamaskin"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Kopiere kommandoer til terminalen kan være skadelig eller en "
 "sikkerhetsrisiko."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Vær sikker på at du forstår hva hver del av denne kommandoen gjør."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 #, fuzzy
 msgid "Show paste protection warnings"
 msgstr "Vis advarsler for innlimingsbeskyttelse"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Ikke lim inn"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Lim inn likevel"
 
@@ -205,6 +206,9 @@ msgstr "Syklisk søk"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Vis i filutforsker"
 
 #~ msgid "Style"
 #~ msgstr "Stil"
