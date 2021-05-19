@@ -18,7 +18,7 @@
 
 
 namespace Terminal.Utils {
-    public string sanitize_path (string _path, string shell_location) {
+    public string? sanitize_path (string _path, string shell_location) {
         /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
         string scheme, path;
 
@@ -32,6 +32,10 @@ namespace Terminal.Utils {
         }
 
         path = Uri.unescape_string (path);
+        if (path == null) {
+            return null;
+        }
+
         path = strip_uri (path);
 
         do {
