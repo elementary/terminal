@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-04-14 15:51+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2021-05-19 18:43+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
 "Language: es\n"
@@ -203,15 +203,17 @@ msgstr "Desactivar la campana audible"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr "Agregar la acción Alt+↑ para desplazarse al último comando"
+msgstr "Añade la acción Alt + ↑ para desplazarse a la última orden"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add Alt+c action to copy last output"
-msgstr "Agregue la acción Alt+c para copiar la última salida"
+msgstr "Añade la acción Alt + C para copiar la última salida"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Add accels to tooltips"
-msgstr "Agregar accesos directos a la información sobre herramientas"
+msgstr ""
+"Añade aceleradores a las descripciones emergentes de los elementos en "
+"pantalla"
 
 #: data/io.elementary.terminal.appdata.xml.in:153
 msgid "Fix zsh notifications"
@@ -245,7 +247,7 @@ msgstr "Menú de preferencias de tema"
 
 #: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Zoom level controls"
-msgstr "Controles de nivel de zoom"
+msgstr "Controles de nivel de escala"
 
 #: data/io.elementary.terminal.appdata.xml.in:214
 msgid "Allow tab to close after typing exit at the commandline"
@@ -276,11 +278,11 @@ msgstr "command;prompt;cmd;commandline;intérprete;línea de comandos;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr "Nueva ventana"
+msgstr "Ventana nueva"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Nueva pestaña como administrador"
+msgstr "Pestaña nueva con permisos administrativos"
 
 #~ msgid "About Terminal"
 #~ msgstr "Acerca de Terminal"
