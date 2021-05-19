@@ -152,6 +152,7 @@ namespace Terminal {
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_RELOAD_TAB] = "<Control><Shift>r";
+            action_accelerators[ACTION_RELOAD_TAB] = "F5";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
