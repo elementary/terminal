@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 08:21+0000\n"
+"POT-Creation-Date: 2021-05-19 16:02+0000\n"
 "PO-Revision-Date: 2015-12-05 14:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Javanese <jv@li.org>\n"
@@ -161,6 +161,20 @@ msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
 msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:31

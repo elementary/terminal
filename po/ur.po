@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 08:21+0000\n"
+"POT-Creation-Date: 2021-05-19 16:02+0000\n"
 "PO-Revision-Date: 2016-09-21 19:57+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: Urdu <ur@li.org>\n"
@@ -164,6 +164,24 @@ msgstr ""
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "کیا آپ واقعی اس ٹیب کو بند کرنا چاہتے ہیں؟"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "ٹیب بند کریں"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
