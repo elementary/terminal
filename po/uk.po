@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 08:21+0000\n"
-"PO-Revision-Date: 2021-03-10 21:17+0000\n"
+"POT-Creation-Date: 2021-05-19 16:02+0000\n"
+"PO-Revision-Date: 2021-05-19 16:02+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -128,7 +128,7 @@ msgstr "Типовий застосунок"
 
 #: src/MainWindow.vala:1138
 msgid "Reload"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: src/MainWindow.vala:1364
 msgid "Hide find bar"
@@ -165,6 +165,26 @@ msgstr "Якщо ви закриєте Термінал , то процес за
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "У терміналі є активний процес."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Reload"
+msgid "Reload Tab"
+msgstr "Перезавантажити"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
