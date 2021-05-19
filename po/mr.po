@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2021-05-19 08:21+0000\n"
 "PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -65,7 +65,7 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
 msgid "Find…"
 msgstr "शोधा…"
 
@@ -114,7 +114,11 @@ msgstr "%s मध्ये दाखवा"
 msgid "Default application"
 msgstr "डीफॉल्ट अप्लिकेशन"
 
-#: src/MainWindow.vala:1357
+#: src/MainWindow.vala:1138
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1364
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 

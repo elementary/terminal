@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2021-05-19 08:21+0000\n"
 "PO-Revision-Date: 2018-06-14 00:07+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
@@ -75,7 +75,7 @@ msgstr "Tempel"
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
 msgid "Find…"
 msgstr "Cari…"
 
@@ -127,7 +127,11 @@ msgstr "Tampilkan pada Penelusur Berkas"
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1357
+#: src/MainWindow.vala:1138
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1364
 msgid "Hide find bar"
 msgstr ""
 

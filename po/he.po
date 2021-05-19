@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2021-05-19 08:21+0000\n"
 "PO-Revision-Date: 2021-03-10 20:54+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -72,7 +72,7 @@ msgstr "הדבקה"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
 msgid "Find…"
 msgstr "חיפוש…"
 
@@ -121,7 +121,11 @@ msgstr "להציג עם %s"
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:1357
+#: src/MainWindow.vala:1138
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1364
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 

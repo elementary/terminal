@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2021-05-19 08:21+0000\n"
 "PO-Revision-Date: 2015-12-05 14:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Javanese <jv@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Select All"
 msgstr ""
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
 msgid "Find…"
 msgstr ""
 
@@ -123,7 +123,11 @@ msgstr ""
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1357
+#: src/MainWindow.vala:1138
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1364
 msgid "Hide find bar"
 msgstr ""
 

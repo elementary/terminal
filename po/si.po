@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2021-05-19 08:21+0000\n"
 "PO-Revision-Date: 2021-03-04 21:17+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/terminal/"
@@ -65,7 +65,7 @@ msgstr "අලවන්න"
 msgid "Select All"
 msgstr "සියල්ල තෝරන්න"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
 msgid "Find…"
 msgstr ""
 
@@ -115,7 +115,11 @@ msgstr "අනුවාදය පෙන්වන්න"
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1357
+#: src/MainWindow.vala:1138
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1364
 msgid "Hide find bar"
 msgstr ""
 
