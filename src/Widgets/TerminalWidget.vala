@@ -594,6 +594,16 @@ namespace Terminal {
         }
 
         public void reload () {
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog.before_tab_reload (window);
+                var response_type = dialog.run ();
+                dialog.destroy ();
+
+                if (response_type != Gtk.ResponseType.ACCEPT) {
+                    return;
+                }
+            }
+
             var old_loc = get_shell_location ();
             Posix.kill (child_pid, Posix.Signal.TERM);
             reset (true, true);
