@@ -602,7 +602,7 @@ namespace Terminal {
                 if (response_type != Gtk.ResponseType.ACCEPT) {
                     return;
                 }
-            } 
+            }
 
             var old_loc = get_shell_location ();
             Posix.kill (child_pid, Posix.Signal.TERM);
