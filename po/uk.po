@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-05-19 16:02+0000\n"
+"PO-Revision-Date: 2021-05-20 00:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -38,8 +38,8 @@ msgstr "Запустити програму в терміналі"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Запустити залишок рядка як команду в терміналі. Також можна використати '--' "
-"як прапор"
+"Запустити залишок рядка як команду в терміналі. Також можна застосувати '--' "
+"як прапорець"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:261
@@ -65,7 +65,7 @@ msgstr "Копіювати"
 
 #: src/MainWindow.vala:219
 msgid "Copy Last Output"
-msgstr "Копіювати останнє виведене"
+msgstr "Скопіювати останній вивід"
 
 #: src/MainWindow.vala:224
 msgid "Paste"
@@ -167,24 +167,20 @@ msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
+msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "У терміналі є активний процес."
+msgstr ""
+"На цій вкладці терміналу є активний процес. Якщо ви перезавантажите її, "
+"процес завершиться."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Reload"
 msgid "Reload Tab"
-msgstr "Перезавантажити"
+msgstr "Перезавантажити вкладку"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"

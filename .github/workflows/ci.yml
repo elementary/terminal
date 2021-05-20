@@ -1,17 +1,21 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     
     container:
       image: elementary/docker:unstable
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Install Dependencies
       run: |
         apt update
@@ -23,13 +27,12 @@ jobs:
         ninja -C build install
 
   lint:
-
     runs-on: ubuntu-latest
     
     container:
       image: valalang/lint
       
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Lint
       run: io.elementary.vala-lint -d .
