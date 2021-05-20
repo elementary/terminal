@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-05-19 12:09+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2021-05-19 18:43+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -122,7 +122,7 @@ msgstr "Mostrar en %s"
 
 #: src/MainWindow.vala:846
 msgid "Default application"
-msgstr "Aplicación por defecto"
+msgstr "Aplicación predeterminada"
 
 #: src/MainWindow.vala:1138
 msgid "Reload"
@@ -165,24 +165,20 @@ msgid "Quit Terminal"
 msgstr "Salir del terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "¿Confirma que quiere cerrar esta pestaña?"
+msgstr "¿Confirma que quiere volver a cargar esta pestaña?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Hay un proceso activo en este terminal."
+msgstr ""
+"Hay un proceso activo en esta pestaña. Si lo vuelve a cargar, el proceso "
+"finalizará."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Reload"
 msgid "Reload Tab"
-msgstr "Volver a cargar"
+msgstr "Volver a cargar pestaña"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
