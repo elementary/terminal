@@ -1134,9 +1134,9 @@ namespace Terminal {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
             var tab = new Granite.Widgets.Tab (
-                label, 
-                icon, 
-                sw, 
+                label,
+                icon,
+                sw,
                 new Granite.AccelLabel (_("Close Tab"), "<Shift><Ctrl>w"),
                 new Granite.AccelLabel (_("Duplicate"), "<Shift><Ctrl>d")
             );
