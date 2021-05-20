@@ -470,7 +470,11 @@ namespace Terminal {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
-            notebook = new Granite.Widgets.DynamicNotebook ();
+            notebook = new Granite.Widgets.DynamicNotebook (
+                new Granite.AccelLabel (_("New Tab"), "<Ctrl>t"),
+                new Granite.AccelLabel (_("Undo Close Tab"), "<Shift><Ctrl>t")
+
+            );
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
@@ -1131,7 +1135,13 @@ namespace Terminal {
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
-            var tab = new Granite.Widgets.Tab (label, icon, sw);
+            var tab = new Granite.Widgets.Tab (
+                label, 
+                icon, 
+                sw, 
+                new Granite.AccelLabel (_("Close Tab"), "<Ctrl>w"),
+                new Granite.AccelLabel (_("Duplicate"), "<Ctrl>d")
+            );
             term.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
