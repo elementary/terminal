@@ -471,9 +471,7 @@ namespace Terminal {
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
             notebook = new Granite.Widgets.DynamicNotebook (
-                new Granite.AccelLabel (_("New Tab"), "<Ctrl>t"),
-                new Granite.AccelLabel (_("Undo Close Tab"), "<Shift><Ctrl>t")
-
+                new Granite.AccelLabel (_("New Tab"), "<Shift><Ctrl>t")
             );
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
@@ -1139,8 +1137,8 @@ namespace Terminal {
                 label, 
                 icon, 
                 sw, 
-                new Granite.AccelLabel (_("Close Tab"), "<Ctrl>w"),
-                new Granite.AccelLabel (_("Duplicate"), "<Ctrl>d")
+                new Granite.AccelLabel (_("Close Tab"), "<Shift><Ctrl>w"),
+                new Granite.AccelLabel (_("Duplicate"), "<Shift><Ctrl>d")
             );
             term.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
