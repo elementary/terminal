@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-05-03 16:16+0000\n"
+"PO-Revision-Date: 2021-05-20 00:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -190,7 +190,7 @@ msgstr "Запобігання фокусування на кнопках пош
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Hide the cursor while typing"
-msgstr "Приховування курсора під час введення"
+msgstr "Ховати курсор під час набору"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Fix erratic search text highlightning behavior"

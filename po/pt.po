@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-05-19 12:09+0000\n"
+"PO-Revision-Date: 2021-05-19 21:18+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -165,24 +165,20 @@ msgid "Quit Terminal"
 msgstr "Sair do terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Tem a certeza que quer fechar este separador?"
+msgstr "Tem a certeza que quer recarregar este separador?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Ainda existe um processo ativo neste terminal."
+msgstr ""
+"Há um processo ativo neste separador. Se o voltar a carregar, o processo "
+"terminará."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Reload"
 msgid "Reload Tab"
-msgstr "Recarregar"
+msgstr "Recarregar separador"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-03-12 02:36+0000\n"
+"PO-Revision-Date: 2021-05-20 10:32+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -127,7 +127,7 @@ msgstr "Application par défaut"
 
 #: src/MainWindow.vala:1138
 msgid "Reload"
-msgstr ""
+msgstr "Recharger"
 
 #: src/MainWindow.vala:1364
 msgid "Hide find bar"
@@ -166,24 +166,20 @@ msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
+msgstr "Êtes-vous certain de vouloir recharger cet onglet ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Il y a un processus actif dans ce terminal."
+msgstr ""
+"Il y a un processus actif dans cet onglet, si vous le rechargez, le "
+"processus sera arrêté."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Fermer l'onglet"
+msgstr "Recharger l'onglet"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
