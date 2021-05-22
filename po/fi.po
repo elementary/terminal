@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-05-05 18:04+0000\n"
+"PO-Revision-Date: 2021-05-22 09:49+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -126,7 +126,7 @@ msgstr "Oletussovellus"
 
 #: src/MainWindow.vala:1138
 msgid "Reload"
-msgstr ""
+msgstr "Lataa uudelleen"
 
 #: src/MainWindow.vala:1364
 msgid "Hide find bar"
@@ -165,24 +165,20 @@ msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Haluatko varmasti sulkea tämän välilehden?"
+msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Päätteessä on käynnissä oleva prosessi."
+msgstr ""
+"Päätteessä on käynnissä oleva prosessi. Jos lataat välilehden uudelleen, "
+"prosessi päättyy."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Sulje välilehti"
+msgstr "Lataa välilehti uudelleen"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
