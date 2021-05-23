@@ -585,6 +585,8 @@ namespace Terminal {
                             current_terminal.remember_command_end_position ();
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
+
+                        schedule_name_check (); // CWD may have changed
                         break;
 
                     case Gdk.Key.@1: //alt+[1-8]
@@ -939,7 +941,6 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
             /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
             Idle.add (() => {
@@ -956,6 +957,8 @@ namespace Terminal {
 
                 return false;
             });
+
+            update_title ();
         }
 
         private void open_tabs () {
@@ -1077,17 +1080,6 @@ namespace Terminal {
                 }
             });
 
-            /* This signal is not emitted when the .bashrc is missing or does not force terminal to
-             * set its title. So we cannot detect path changes in the shell. Tab name remains "Terminal".
-             */
-            t.window_title_changed.connect (() => {
-                if (t == current_terminal) {
-                    title = t.window_title;
-                }
-
-                schedule_name_check ();
-            });
-
             t.set_font (term_font);
 
             if (current_terminal != null) {
@@ -1125,6 +1117,7 @@ namespace Terminal {
                 t.run_program (program, location);
             }
 
+            schedule_name_check ();
             return t;
         }
 
@@ -1301,6 +1294,7 @@ namespace Terminal {
         private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
+            schedule_name_check ();
         }
 
         private void action_new_window () {
@@ -1447,7 +1441,7 @@ namespace Terminal {
 
             foreach (TerminalWidget terminal in terms) {
                 string term_path = terminal.get_shell_location ();
-                string term_label = terminal.window_title;
+                string term_label = Path.get_basename (term_path);
 
                 if (term_label == "") { /* No point in continuing - tabs not finished updating */
                     return false; /* Try again later */
@@ -1462,22 +1456,25 @@ namespace Terminal {
 
                 foreach (TerminalWidget terminal2 in terms2) {
                     string term2_path = terminal2.get_shell_location ();
-                    string term2_name = terminal2.window_title;
+                    string term2_name = Path.get_basename (term2_path);
 
                     if (terminal2 != terminal && term2_name == term_label) {
                         if (term2_path != term_path) {
                             terminal2.tab_label = disambiguate_label (term2_path, term_path);
                             terminal.tab_label = disambiguate_label (term_path, term2_path);
-
-                            if (terminal == current_terminal) {
-                                title = terminal.tab_label;
-                            }
                         }
                     }
                 }
+
+                terminal.tab.tooltip = term_path;
             }
 
+            update_title ();
             return true;
+        }
+
+        private void update_title () {
+            title = current_terminal.get_shell_location ();
         }
 
         private void save_opened_terminals () {
