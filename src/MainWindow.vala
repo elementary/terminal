@@ -1290,7 +1290,6 @@ namespace Terminal {
         private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
-            check_for_tabs_with_same_name ();
             // Closing a tab will switch to another, which will trigger check for same names
         }
 
