@@ -739,7 +739,6 @@ namespace Terminal {
             var t = get_term_widget (tab);
             terminals.append (t);
             t.window = this;
-            schedule_name_check ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
@@ -748,8 +747,6 @@ namespace Terminal {
 
             if (notebook.n_tabs == 0) {
                 destroy ();
-            } else {
-                schedule_name_check ();
             }
         }
 
@@ -793,7 +790,6 @@ namespace Terminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
-            schedule_name_check ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -957,7 +953,7 @@ namespace Terminal {
                 return false;
             });
 
-            update_title ();
+            check_for_tabs_with_same_name ();
         }
 
         private void open_tabs () {
@@ -1074,13 +1070,11 @@ namespace Terminal {
                         t.tab.close ();
                         return;
                     }
-
-                    schedule_name_check ();
                 }
             });
 
-            t.contents_changed.connect (() => {
-                schedule_name_check ();
+            t.cwd_changed.connect (() => {
+                check_for_tabs_with_same_name ();
             });
 
             t.set_font (term_font);
@@ -1120,7 +1114,6 @@ namespace Terminal {
                 t.run_program (program, location);
             }
 
-            schedule_name_check ();
             return t;
         }
 
@@ -1297,7 +1290,8 @@ namespace Terminal {
         private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
-            schedule_name_check ();
+            check_for_tabs_with_same_name ();
+            // Closing a tab will switch to another, which will trigger check for same names
         }
 
         private void action_new_window () {
@@ -1418,27 +1412,6 @@ namespace Terminal {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
-        private uint name_check_timeout_id = 0;
-        private bool next_time = false;
-        private void schedule_name_check () {
-            if (name_check_timeout_id > 0) {
-                next_time = false; // Keep existing timeout running
-                return;
-            }
-
-            name_check_timeout_id = Timeout.add (250, () => {
-                if (!next_time) {
-                    next_time = true;
-                    return Source.CONTINUE;
-                }
-
-                check_for_tabs_with_same_name ();
-                name_check_timeout_id = 0;
-                next_time = false;
-                return Source.REMOVE;
-            });
-        }
-
         /** Compare every tab label with every other and resolve ambiguities **/
         private void check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
@@ -1473,12 +1446,8 @@ namespace Terminal {
                 terminal.tab.tooltip = term_path;
             }
 
-            update_title ();
-            return;
-        }
-
-        private void update_title () {
             title = current_terminal.get_shell_location ();
+            return;
         }
 
         private void save_opened_terminals () {
