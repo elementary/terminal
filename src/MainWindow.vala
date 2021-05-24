@@ -808,6 +808,7 @@ namespace Terminal {
                 notebook.remove_tab (tab);
                 new_notebook.insert_tab (tab, -1);
                 new_window.current_terminal = t;
+                check_for_tabs_with_same_name (); // Update remaining tabs
                 return false;
             });
         }
