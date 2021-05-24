@@ -1074,9 +1074,7 @@ namespace Terminal {
                 }
             });
 
-            t.cwd_changed.connect (() => {
-                check_for_tabs_with_same_name ();
-            });
+            t.cwd_changed.connect (check_for_tabs_with_same_name);
 
             t.set_font (term_font);
 
