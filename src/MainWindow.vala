@@ -1419,25 +1419,28 @@ namespace Terminal {
         }
 
         private uint name_check_timeout_id = 0;
+        private bool next_time = false;
         private void schedule_name_check () {
             if (name_check_timeout_id > 0) {
-                Source.remove (name_check_timeout_id);
+                next_time = false; // Keep existing timeout running
+                return;
             }
 
-            name_check_timeout_id = Timeout.add (50, () => {
-                save_opened_terminals ();
-
-                if (!check_for_tabs_with_same_name ()) {
-                    return true;
-                } else {
-                    name_check_timeout_id = 0;
-                    return false;
+            name_check_timeout_id = Timeout.add (250, () => {
+                if (!next_time) {
+                    next_time = true;
+                    return Source.CONTINUE;
                 }
+
+                check_for_tabs_with_same_name ();
+                name_check_timeout_id = 0;
+                next_time = false;
+                return Source.REMOVE;
             });
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
-        private bool check_for_tabs_with_same_name () {
+        private void check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
@@ -1446,12 +1449,10 @@ namespace Terminal {
                 string term_path = terminal.get_shell_location ();
                 string term_label = Path.get_basename (term_path);
 
-                if (term_label == "") { /* No point in continuing - tabs not finished updating */
-                    return false; /* Try again later */
-                }
+                if (term_label == "" ||
+                    terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
 
-                if (terminal.tab_label == TerminalWidget.DEFAULT_LABEL) { /* Absent or incorrect .bashrc */
-                    return true;
+                    continue;
                 }
 
                 /* Reset tab_name to basename so long name only used when required */
@@ -1473,7 +1474,7 @@ namespace Terminal {
             }
 
             update_title ();
-            return true;
+            return;
         }
 
         private void update_title () {
