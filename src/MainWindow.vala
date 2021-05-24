@@ -1129,7 +1129,7 @@ namespace Terminal {
             sw.add (term);
             var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
-            tab.ellipsize_mode = Pango.EllipsizeMode.START;
+            tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
             var reload_menu_item = new Gtk.MenuItem.with_label (_("Reload"));
             tab.menu.append (reload_menu_item);
