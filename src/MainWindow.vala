@@ -586,7 +586,6 @@ namespace Terminal {
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
 
-                        schedule_name_check (); // CWD may have changed
                         break;
 
                     case Gdk.Key.@1: //alt+[1-8]
@@ -1078,6 +1077,10 @@ namespace Terminal {
 
                     schedule_name_check ();
                 }
+            });
+
+            t.contents_changed.connect (() => {
+                schedule_name_check ();
             });
 
             t.set_font (term_font);
