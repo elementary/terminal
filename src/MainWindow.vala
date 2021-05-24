@@ -1418,7 +1418,7 @@ namespace Terminal {
             var terms2 = terminals.copy ();
 
             foreach (TerminalWidget terminal in terms) {
-                string term_path = terminal.get_shell_location ();
+                string term_path = terminal.current_working_directory;
                 string term_label = Path.get_basename (term_path);
 
                 if (term_label == "" ||
@@ -1431,7 +1431,7 @@ namespace Terminal {
                 terminal.tab_label = term_label;
 
                 foreach (TerminalWidget terminal2 in terms2) {
-                    string term2_path = terminal2.get_shell_location ();
+                    string term2_path = terminal2.current_working_directory;
                     string term2_name = Path.get_basename (term2_path);
 
                     if (terminal2 != terminal && term2_name == term_label) {
@@ -1445,7 +1445,7 @@ namespace Terminal {
                 terminal.tab.tooltip = term_path;
             }
 
-            title = current_terminal.get_shell_location ();
+            title = current_terminal.current_working_directory;
             return;
         }
 
