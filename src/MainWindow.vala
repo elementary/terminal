@@ -202,35 +202,41 @@ namespace Terminal {
 
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            var open_in_browser_menuitem = new Gtk.MenuItem ();
-            open_in_browser_menuitem.set_action_name (ACTION_PREFIX + ACTION_OPEN_IN_BROWSER);
+            var open_in_browser_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
+            };
             open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
                 "", open_in_browser_menuitem.action_name
             );
             open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
-            var copy_menuitem = new Gtk.MenuItem ();
-            copy_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY);
+            var copy_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_COPY
+            };
             copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
 
-            var copy_last_output_menuitem = new Gtk.MenuItem ();
-            copy_last_output_menuitem.set_action_name (ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT);
+            var copy_last_output_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT
+            };
             copy_last_output_menuitem.add (
                 new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name)
             );
 
-            var paste_menuitem = new Gtk.MenuItem ();
-            paste_menuitem.set_action_name (ACTION_PREFIX + ACTION_PASTE);
+            var paste_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_PASTE
+            };
             paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), paste_menuitem.action_name));
 
-            var select_all_menuitem = new Gtk.MenuItem ();
-            select_all_menuitem.set_action_name (ACTION_PREFIX + ACTION_SELECT_ALL);
+            var select_all_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_SELECT_ALL
+            };
             select_all_menuitem.add (
                 new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name)
             );
 
-            var search_menuitem = new Gtk.MenuItem ();
-            search_menuitem.set_action_name (ACTION_PREFIX + ACTION_SEARCH);
+            var search_menuitem = new Gtk.MenuItem () {
+                action_name = ACTION_PREFIX + ACTION_SEARCH
+            };
             search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
             menu = new Gtk.Menu ();
@@ -348,75 +354,79 @@ namespace Terminal {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
             );
 
-            search_button = new Gtk.ToggleButton ();
-            search_button.action_name = ACTION_PREFIX + ACTION_SEARCH;
-            search_button.image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            search_button.valign = Gtk.Align.CENTER;
-            search_button.tooltip_markup = Granite.markup_accel_tooltip (
-                {"<Ctrl><Shift>f"},
-                _("Find…")
-            );
+            search_button = new Gtk.ToggleButton () {
+                action_name = ACTION_PREFIX + ACTION_SEARCH,
+                image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                valign = Gtk.Align.CENTER,
+                tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
+            };
 
-            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
-            zoom_out_button.action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT;
-            zoom_out_button.tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (zoom_out_button.action_name),
-                _("Zoom out")
-            );
+            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU) {
+                action_name = ACTION_PREFIX + ACTION_ZOOM_OUT_FONT,
+                tooltip_markup = Granite.markup_accel_tooltip (
+                    application.get_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_OUT_FONT), _("Zoom out")
+                )
+            };
 
-            zoom_default_button = new Gtk.Button.with_label ("100%");
-            zoom_default_button.action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT;
-            zoom_default_button.tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (zoom_default_button.action_name),
-                _("Default zoom level")
-            );
+            zoom_default_button = new Gtk.Button.with_label ("100%") {
+                action_name = ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT,
+                tooltip_markup = Granite.markup_accel_tooltip (
+                    application.get_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT),
+                    _("Default zoom level")
+                )
+            };
 
-            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
-            zoom_in_button.action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT;
-            zoom_in_button.tooltip_markup = Granite.markup_accel_tooltip (
-                application.get_accels_for_action (zoom_in_button.action_name),
-                _("Zoom in")
-            );
+            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU) {
+                action_name = ACTION_PREFIX + ACTION_ZOOM_IN_FONT,
+                tooltip_markup = Granite.markup_accel_tooltip (
+                    application.get_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_IN_FONT), _("Zoom in")
+                )
+            };
 
-            var font_size_grid = new Gtk.Grid ();
-            font_size_grid.column_homogeneous = true;
-            font_size_grid.hexpand = true;
-            font_size_grid.margin_start = font_size_grid.margin_end = 12;
-            font_size_grid.margin_bottom = 6;
+            var font_size_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                hexpand = true,
+                margin_start = margin_end = 12,
+                margin_bottom = 6
+            };
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
             font_size_grid.add (zoom_out_button);
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.RadioButton (null);
-            color_button_white.halign = Gtk.Align.CENTER;
-            color_button_white.tooltip_text = _("High Contrast");
+            var color_button_white = new Gtk.RadioButton (null) {
+                halign = Gtk.Align.CENTER,
+                tooltip_text = _("High Contrast")
+            };
 
             var color_button_white_context = color_button_white.get_style_context ();
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white);
-            color_button_light.halign = Gtk.Align.CENTER;
-            color_button_light.tooltip_text = _("Solarized Light");
+            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
+                halign = Gtk.Align.CENTER,
+                tooltip_text = _("Solarized Light")
+            };
 
             var color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white);
-            color_button_dark.halign = Gtk.Align.CENTER;
-            color_button_dark.tooltip_text = _("Dark");
+            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
+                halign = Gtk.Align.CENTER,
+                tooltip_text = _("Dark")
+            };
 
             var color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            var color_grid = new Gtk.Grid ();
-            color_grid.column_homogeneous = true;
-            color_grid.margin_start = color_grid.margin_end = 12;
-            color_grid.margin_bottom = 6;
+            var color_grid = new Gtk.Grid () {
+                column_homogeneous = true,
+                margin_start = margin_end = 12,
+                margin_bottom = 6
+            };
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
@@ -426,12 +436,13 @@ namespace Terminal {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
             };
 
-            var menu_popover_grid = new Gtk.Grid ();
-            menu_popover_grid.column_spacing = 6;
-            menu_popover_grid.margin_bottom = 6;
-            menu_popover_grid.margin_top = 12;
-            menu_popover_grid.orientation = Gtk.Orientation.VERTICAL;
-            menu_popover_grid.row_spacing = 6;
+            var menu_popover_grid = new Gtk.Grid () {
+                column_spacing = 6,
+                margin_bottom = 6,
+                margin_top = 12,
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 6
+            };
 
             menu_popover_grid.add (font_size_grid);
             menu_popover_grid.add (color_grid);
@@ -443,12 +454,13 @@ namespace Terminal {
             var menu_popover = new Gtk.Popover (null);
             menu_popover.add (menu_popover_grid);
 
-            var menu_button = new Gtk.MenuButton ();
-            menu_button.set_can_focus (false);
-            menu_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            menu_button.popover = menu_popover;
-            menu_button.tooltip_text = _("Settings");
-            menu_button.valign = Gtk.Align.CENTER;
+            var menu_button = new Gtk.MenuButton () {
+                can_focus = false,
+                image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                popover = menu_popover,
+                tooltip_text = _("Settings"),
+                valign = Gtk.Align.CENTER
+            };
 
             var header = new Hdy.HeaderBar () {
                 show_close_button = true,
@@ -470,7 +482,14 @@ namespace Terminal {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
-            notebook = new Granite.Widgets.DynamicNotebook ();
+            notebook = new Granite.Widgets.DynamicNotebook () {
+                allow_new_window = true,
+                allow_duplication = true,
+                allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
+                max_restorable_tabs = 5,
+                group_name = "pantheon-terminal",
+                can_focus = false
+            };
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
             notebook.tab_switched.connect (on_switch_page);
@@ -480,12 +499,6 @@ namespace Terminal {
             notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.close_tab_requested.connect (on_close_tab_requested);
             notebook.new_tab_requested.connect (on_new_tab_requested);
-            notebook.allow_new_window = true;
-            notebook.allow_duplication = true;
-            notebook.allow_restoring = Application.settings.get_boolean ("save-exited-tabs");
-            notebook.max_restorable_tabs = 5;
-            notebook.group_name = "pantheon-terminal";
-            notebook.can_focus = false;
             var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
@@ -1050,12 +1063,12 @@ namespace Terminal {
              */
 
             /* Set up terminal */
-            var terminal_widget = new TerminalWidget (this);
-            terminal_widget.scrollback_lines = Application.settings.get_int ("scrollback-lines");
+            var terminal_widget = new TerminalWidget (this) {
+                scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+                /* Make the terminal occupy the whole GUI */
+                expand = true
+            };
 
-            /* Make the terminal occupy the whole GUI */
-            terminal_widget.vexpand = true;
-            terminal_widget.hexpand = true;
 
 
             var tab = create_tab (
