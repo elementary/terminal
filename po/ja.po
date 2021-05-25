@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 16:02+0000\n"
-"PO-Revision-Date: 2021-03-23 15:58+0000\n"
+"PO-Revision-Date: 2021-05-23 07:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -127,7 +127,7 @@ msgstr "デフォルトのアプリケーション"
 
 #: src/MainWindow.vala:1138
 msgid "Reload"
-msgstr ""
+msgstr "再読み込み"
 
 #: src/MainWindow.vala:1364
 msgid "Hide find bar"
@@ -166,24 +166,18 @@ msgid "Quit Terminal"
 msgstr "\"ターミナル\" を終了"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "このタブを閉じてもよろしいですか？"
+msgstr "このタブを再読み込みしてもよろしいですか？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "このターミナルにはアクティブなプロセスがあります。"
+msgstr "このタブにはアクティブなプロセスがあります。再読み込みすると、このプロセスは終了します。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "タブを閉じる"
+msgstr "タブを再読み込み"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
