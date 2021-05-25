@@ -752,7 +752,6 @@ namespace Terminal {
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
             var t = get_term_widget (tab);
-            bool closing_current_terminal = t == current_terminal;
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog (this);
@@ -775,7 +774,7 @@ namespace Terminal {
             }
 
             current_terminal.grab_focus ();
-            if (!closing_current_terminal) { // Otherwise current_terminal will change triggering a name check
+            if (t != current_terminal) { // Otherwise current_terminal will change triggering a name check
                 check_for_tabs_with_same_name ();
             }
 
@@ -795,6 +794,7 @@ namespace Terminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
+            check_for_tabs_with_same_name ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -958,8 +958,6 @@ namespace Terminal {
 
                 return false;
             });
-
-            check_for_tabs_with_same_name ();
         }
 
         private void open_tabs () {
@@ -1438,14 +1436,13 @@ namespace Terminal {
                     string term2_path = terminal2.current_working_directory;
                     string term2_name = Path.get_basename (term2_path);
 
-                    if (terminal2 != terminal && term2_name == term_label) {
-                        if (term2_path != term_path) {
-                            terminal2.tab_label = disambiguate_label (term2_path, term_path);
-                            terminal.tab_label = disambiguate_label (term_path, term2_path);
-                            // Overwrite tooltip_text set by changing tab_label
-                            terminal2.tooltip_text = term2_path;
-                            terminal.tooltip_text = term_path;
-                        }
+                    if (terminal2 != terminal && term2_name == term_label && term2_path != term_path) {
+                        terminal2.tab_label = disambiguate_label (term2_path, term_path);
+                        terminal.tab_label = disambiguate_label (term_path, term2_path);
+                        // Overwrite tooltip_text set by changing tab_label
+                        terminal2.tooltip_text = term2_path;
+                        terminal.tooltip_text = term_path;
+
                     }
                 }
             }
