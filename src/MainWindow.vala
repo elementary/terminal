@@ -752,6 +752,7 @@ namespace Terminal {
 
         private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
             var t = get_term_widget (tab);
+            bool closing_current_terminal = t == current_terminal;
 
             if (t.has_foreground_process ()) {
                 var d = new ForegroundProcessDialog (this);
@@ -774,6 +775,10 @@ namespace Terminal {
             }
 
             current_terminal.grab_focus ();
+            if (!closing_current_terminal) { // Otherwise current_terminal will change triggering a name check
+                check_for_tabs_with_same_name ();
+            }
+
             return true;
         }
 
@@ -1437,11 +1442,12 @@ namespace Terminal {
                         if (term2_path != term_path) {
                             terminal2.tab_label = disambiguate_label (term2_path, term_path);
                             terminal.tab_label = disambiguate_label (term_path, term2_path);
+                            // Overwrite tooltip_text set by changing tab_label
+                            terminal2.tooltip_text = term2_path;
+                            terminal.tooltip_text = term_path;
                         }
                     }
                 }
-
-                terminal.tab.tooltip = term_path;
             }
 
             title = current_terminal.current_working_directory;
