@@ -587,6 +587,7 @@ namespace Terminal {
                             current_terminal.remember_command_end_position ();
                             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                         }
+
                         break;
 
                     case Gdk.Key.@1: //alt+[1-8]
@@ -740,7 +741,6 @@ namespace Terminal {
             var t = get_term_widget (tab);
             terminals.append (t);
             t.window = this;
-            schedule_name_check ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
@@ -749,8 +749,6 @@ namespace Terminal {
 
             if (notebook.n_tabs == 0) {
                 destroy ();
-            } else {
-                schedule_name_check ();
             }
         }
 
@@ -778,6 +776,10 @@ namespace Terminal {
             }
 
             current_terminal.grab_focus ();
+            if (t != current_terminal) { // Otherwise current_terminal will change triggering a name check
+                check_for_tabs_with_same_name ();
+            }
+
             return true;
         }
 
@@ -794,7 +796,7 @@ namespace Terminal {
             notebook.insert_tab (tab, -1);
             notebook.current = tab;
             term.grab_focus ();
-            schedule_name_check ();
+            check_for_tabs_with_same_name ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -813,6 +815,7 @@ namespace Terminal {
                 notebook.remove_tab (tab);
                 new_notebook.insert_tab (tab, -1);
                 new_window.current_terminal = t;
+                check_for_tabs_with_same_name (); // Update remaining tabs
                 return false;
             });
         }
@@ -941,7 +944,6 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
-            title = current_terminal.tab_label ?? TerminalWidget.DEFAULT_LABEL;
             /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
             Idle.add (() => {
@@ -1074,21 +1076,10 @@ namespace Terminal {
                         t.tab.close ();
                         return;
                     }
-
-                    schedule_name_check ();
                 }
             });
 
-            /* This signal is not emitted when the .bashrc is missing or does not force terminal to
-             * set its title. So we cannot detect path changes in the shell. Tab name remains "Terminal".
-             */
-            t.window_title_changed.connect (() => {
-                if (t == current_terminal) {
-                    title = t.window_title;
-                }
-
-                schedule_name_check ();
-            });
+            t.cwd_changed.connect (check_for_tabs_with_same_name);
 
             t.set_font (term_font);
 
@@ -1141,7 +1132,7 @@ namespace Terminal {
                 new Granite.AccelLabel (_("Duplicate"), "<Shift><Ctrl>d")
             );
             term.tab = tab;
-            tab.ellipsize_mode = Pango.EllipsizeMode.START;
+            tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
             var reload_menu_item = new Gtk.MenuItem () {
                 child = new Granite.AccelLabel (_("Reload"), "<Shift><Ctrl>r")
@@ -1311,6 +1302,7 @@ namespace Terminal {
         private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
+            // Closing a tab will switch to another, which will trigger check for same names
         }
 
         private void action_new_window () {
@@ -1431,63 +1423,42 @@ namespace Terminal {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
-        private uint name_check_timeout_id = 0;
-        private void schedule_name_check () {
-            if (name_check_timeout_id > 0) {
-                Source.remove (name_check_timeout_id);
-            }
-
-            name_check_timeout_id = Timeout.add (50, () => {
-                save_opened_terminals ();
-
-                if (!check_for_tabs_with_same_name ()) {
-                    return true;
-                } else {
-                    name_check_timeout_id = 0;
-                    return false;
-                }
-            });
-        }
-
         /** Compare every tab label with every other and resolve ambiguities **/
-        private bool check_for_tabs_with_same_name () {
+        private void check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/
             var terms = terminals.copy ();
             var terms2 = terminals.copy ();
 
             foreach (TerminalWidget terminal in terms) {
-                string term_path = terminal.get_shell_location ();
-                string term_label = terminal.window_title;
+                string term_path = terminal.current_working_directory;
+                string term_label = Path.get_basename (term_path);
 
-                if (term_label == "") { /* No point in continuing - tabs not finished updating */
-                    return false; /* Try again later */
-                }
+                if (term_label == "" ||
+                    terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
 
-                if (terminal.tab_label == TerminalWidget.DEFAULT_LABEL) { /* Absent or incorrect .bashrc */
-                    return true;
+                    continue;
                 }
 
                 /* Reset tab_name to basename so long name only used when required */
                 terminal.tab_label = term_label;
 
                 foreach (TerminalWidget terminal2 in terms2) {
-                    string term2_path = terminal2.get_shell_location ();
-                    string term2_name = terminal2.window_title;
+                    string term2_path = terminal2.current_working_directory;
+                    string term2_name = Path.get_basename (term2_path);
 
-                    if (terminal2 != terminal && term2_name == term_label) {
-                        if (term2_path != term_path) {
-                            terminal2.tab_label = disambiguate_label (term2_path, term_path);
-                            terminal.tab_label = disambiguate_label (term_path, term2_path);
+                    if (terminal2 != terminal && term2_name == term_label && term2_path != term_path) {
+                        terminal2.tab_label = disambiguate_label (term2_path, term_path);
+                        terminal.tab_label = disambiguate_label (term_path, term2_path);
+                        // Overwrite tooltip_text set by changing tab_label
+                        terminal2.tooltip_text = term2_path;
+                        terminal.tooltip_text = term_path;
 
-                            if (terminal == current_terminal) {
-                                title = terminal.tab_label;
-                            }
-                        }
                     }
                 }
             }
 
-            return true;
+            title = current_terminal.current_working_directory;
+            return;
         }
 
         private void save_opened_terminals () {
