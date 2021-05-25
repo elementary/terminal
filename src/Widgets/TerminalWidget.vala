@@ -28,6 +28,7 @@ namespace Terminal {
         internal const string DEFAULT_LABEL = _("Terminal");
         public Terminal.Application app;
         public string terminal_id;
+        public string current_working_directory { get; private set; default = "";}
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
@@ -122,6 +123,8 @@ namespace Terminal {
         public bool last_key_was_return = true;
 
         private double total_delta_y = 0.0;
+
+        public signal void cwd_changed ();
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -222,6 +225,8 @@ namespace Terminal {
             size_allocate.connect (() => {
                 resized = true;
             });
+
+            contents_changed.connect (check_cwd_changed);
 
             child_exited.connect (on_child_exited);
 
@@ -377,6 +382,8 @@ namespace Terminal {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            check_cwd_changed ();
         }
 
         public void run_program (string program_string, string? working_directory) {
@@ -608,6 +615,14 @@ namespace Terminal {
             Posix.kill (child_pid, Posix.Signal.TERM);
             reset (true, true);
             active_shell (old_loc);
+        }
+
+        private void check_cwd_changed () {
+            var cwd = get_shell_location ();
+            if (cwd != current_working_directory) {
+                current_working_directory = cwd;
+                cwd_changed ();
+            }
         }
     }
 }
