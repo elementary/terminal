@@ -483,7 +483,7 @@ namespace Terminal {
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
 
-            notebook = new Granite.Widgets.DynamicNotebook (
+            notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel (_("New Tab"), "<Shift><Ctrl>t")
             ) {
                 allow_new_window = true,
@@ -1138,7 +1138,7 @@ namespace Terminal {
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
-            var tab = new Granite.Widgets.Tab (
+            var tab = new Granite.Widgets.Tab.with_accellabels (
                 label,
                 icon,
                 sw,
