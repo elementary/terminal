@@ -484,7 +484,7 @@ namespace Terminal {
 
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
-                new Granite.AccelLabel (_("New Tab"), "<Shift><Ctrl>t")
+                new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
             ) {
                 allow_new_window = true,
                 allow_duplication = true,
@@ -1142,8 +1142,8 @@ namespace Terminal {
                 label,
                 icon,
                 sw,
-                new Granite.AccelLabel (_("Close Tab"), "<Shift><Ctrl>w"),
-                new Granite.AccelLabel (_("Duplicate"), "<Shift><Ctrl>d")
+                new Granite.AccelLabel.from_action_name (_("Close Tab"), ACTION_PREFIX + ACTION_CLOSE_TAB),
+                new Granite.AccelLabel.from_action_name (_("Duplicate"), ACTION_PREFIX + ACTION_DUPLICATE_TAB)
             );
             term.tab = tab;
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
