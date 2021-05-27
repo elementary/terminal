@@ -1136,7 +1136,7 @@ namespace Terminal {
             tab.ellipsize_mode = Pango.EllipsizeMode.START;
 
             var reload_menu_item = new Gtk.MenuItem () {
-                child = new Granite.AccelLabel (_("Reload"), "<Shift><Ctrl>r")
+                child = new Granite.AccelLabel.from_action_name (_("Reload"), ACTION_PREFIX + ACTION_RELOAD_TAB)
             };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
