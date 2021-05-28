@@ -1138,6 +1138,11 @@ namespace Terminal {
             sw.add (term);
             var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
+            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of 
+             * automatically changing the tooltip to be the same as the label. */
+            term.tab.notify["label"].connect_after (() => {
+                term.tab.tooltip = term.current_working_directory;
+            });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
             var reload_menu_item = new Gtk.MenuItem.with_label (_("Reload"));
