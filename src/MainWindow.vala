@@ -960,6 +960,7 @@ namespace Terminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
+                title = current_terminal.current_working_directory;
                 if (Granite.Services.System.history_is_enabled () &&
                     Application.settings.get_boolean ("remember-tabs")) {
 
