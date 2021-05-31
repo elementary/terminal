@@ -518,7 +518,7 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             });
 
-            menu_button.pressed.connect (() => {
+            menu_button.clicked.connect (() => {
                 zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
                 var binding = current_terminal.bind_property (
                     "font-scale",
