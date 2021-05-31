@@ -386,7 +386,8 @@ namespace Terminal {
             var font_size_grid = new Gtk.Grid () {
                 column_homogeneous = true,
                 hexpand = true,
-                margin_start = margin_end = 12,
+                margin_start = 12,
+                margin_end = 12,
                 margin_bottom = 6
             };
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -424,7 +425,8 @@ namespace Terminal {
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
-                margin_start = margin_end = 12,
+                margin_start = 12,
+                margin_end = 12,
                 margin_bottom = 6
             };
 
