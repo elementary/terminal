@@ -726,8 +726,7 @@ namespace Terminal {
             default_height = rect.height;
 
             if (default_width == -1 || default_height == -1) {
-                Gdk.Rectangle geometry;
-                get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+                Gdk.Rectangle geometry = get_display ().get_primary_monitor ().get_geometry ();
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
