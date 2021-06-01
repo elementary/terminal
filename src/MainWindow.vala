@@ -331,7 +331,7 @@ namespace Terminal {
         protected bool match_keycode (int keyval, uint code) {
 #endif
             Gdk.KeymapKey [] keys;
-            Gdk.Keymap keymap = Gdk.Keymap.get_for_display (get_display ());
+            var keymap = Gdk.Keymap.get_for_display (get_display ());
             if (keymap.get_entries_for_keyval (keyval, out keys)) {
                 foreach (var key in keys) {
                     if (code == key.keycode)
@@ -726,7 +726,7 @@ namespace Terminal {
             default_height = rect.height;
 
             if (default_width == -1 || default_height == -1) {
-                Gdk.Rectangle geometry = get_display ().get_primary_monitor ().get_geometry ();
+                var geometry = get_display ().get_primary_monitor ().get_geometry ();
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
