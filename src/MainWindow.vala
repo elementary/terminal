@@ -188,10 +188,6 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            /* Make GTK+ CSD not steal F10 from the terminal */
-            var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_menu_bar_accel = null;
-
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
