@@ -490,7 +490,8 @@ namespace Terminal {
                 allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
                 max_restorable_tabs = 5,
                 group_name = "pantheon-terminal",
-                can_focus = false
+                can_focus = false,
+                expand = true
             };
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
