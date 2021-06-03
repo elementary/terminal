@@ -188,10 +188,6 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            /* Make GTK+ CSD not steal F10 from the terminal */
-            var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_menu_bar_accel = null;
-
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
@@ -331,7 +327,7 @@ namespace Terminal {
         protected bool match_keycode (int keyval, uint code) {
 #endif
             Gdk.KeymapKey [] keys;
-            Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+            var keymap = Gdk.Keymap.get_for_display (get_display ());
             if (keymap.get_entries_for_keyval (keyval, out keys)) {
                 foreach (var key in keys) {
                     if (code == key.keycode)
@@ -519,7 +515,7 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             });
 
-            menu_button.pressed.connect (() => {
+            menu_button.clicked.connect (() => {
                 zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
                 var binding = current_terminal.bind_property (
                     "font-scale",
@@ -727,8 +723,7 @@ namespace Terminal {
             default_height = rect.height;
 
             if (default_width == -1 || default_height == -1) {
-                Gdk.Rectangle geometry;
-                get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+                var geometry = get_display ().get_primary_monitor ().get_geometry ();
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
