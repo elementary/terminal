@@ -107,7 +107,7 @@ public class Terminal.Application : Gtk.Application {
                             var process_string = _("Process completed");
                             var process_icon = new ThemedIcon ("process-completed-symbolic");
                             if (exit_status != 0) {
-                                process_string = _("Process exited unsuccessfully");
+                                process_string = _("Process exited with errors");
                                 process_icon = new ThemedIcon ("process-error-symbolic");
                             }
 
