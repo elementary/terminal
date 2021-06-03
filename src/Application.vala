@@ -104,7 +104,7 @@ public class Terminal.Application : Gtk.Application {
                         if (!terminal.is_init_complete ()) {
                             terminal.set_init_complete ();
                         } else {
-                            var process_string = _("Process exited successfully");
+                            var process_string = _("Process completed");
                             var process_icon = new ThemedIcon ("process-completed-symbolic");
                             if (exit_status != 0) {
                                 process_string = _("Process exited unsuccessfully");
