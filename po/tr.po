@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-03 22:39+0000\n"
-"PO-Revision-Date: 2021-05-21 21:34+0000\n"
+"PO-Revision-Date: 2021-06-04 13:30+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
 "terminal/tr/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "İşlem tamamlandı"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "İşlem hata ile sonlandı"
 
 #: src/Application.vala:253
 msgid "Show version"
