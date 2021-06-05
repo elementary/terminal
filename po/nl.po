@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 16:02+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,20 +20,24 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Taak voltooid"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Toon versie"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Voer programma in de terminal uit"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,28 +45,28 @@ msgstr ""
 "als vlag gebruiken"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Nieuw terminal venster openen"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Nieuw terminal tabblad openen"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Help tonen"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Stel werkmap van Terminal in"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Kopiëer"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "Kopieer de laatste uitvoer"
 
@@ -70,15 +74,15 @@ msgstr "Kopieer de laatste uitvoer"
 msgid "Paste"
 msgstr "Plakken"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Alles Selecteren"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "Zoeken…"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
@@ -90,46 +94,46 @@ msgstr "Standaard zoomniveau"
 msgid "Zoom in"
 msgstr "Inzoomen"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "Hoog contrast"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Gesolarizeerd licht"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr "Donker"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "Gewoon kopiëren/plakken"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Sneltoetsen hebben geen Shift nodig; mogelijk interfereert dit met CLI apps"
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:859
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Toon versie"
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:860
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1138
+#: src/MainWindow.vala:1146
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1364
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr "Verberg zoekbalk"
 
@@ -229,6 +233,9 @@ msgstr "Cyclisch zoeken"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Task finished"
+#~ msgstr "Taak voltooid"
 
 #~ msgid "Show in File Browser"
 #~ msgstr "Toon in Bestanden browser"

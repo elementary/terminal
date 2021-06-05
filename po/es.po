@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 16:02+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2021-05-19 18:43+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
@@ -20,20 +20,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tarea finalizada"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Mostrar versión"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en el terminal"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,28 +45,28 @@ msgstr ""
 "usar «--» como conmutador"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Abrir una ventana nueva del terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Abrir una pestaña nueva del terminal"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo del intérprete"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
@@ -70,15 +74,15 @@ msgstr "Copiar última salida"
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "Alejar"
 
@@ -90,45 +94,45 @@ msgstr "Nivel de escala predeterminado"
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "Contraste alto"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Solarizado claro"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "Copipegado natural"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:859
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar en %s"
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:860
 msgid "Default application"
 msgstr "Aplicación predeterminada"
 
-#: src/MainWindow.vala:1138
+#: src/MainWindow.vala:1146
 msgid "Reload"
 msgstr "Volver a cargar"
 
-#: src/MainWindow.vala:1364
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -223,6 +227,9 @@ msgstr "Búsqueda cíclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Task finished"
+#~ msgstr "Tarea finalizada"
 
 #~ msgid "Show in File Browser"
 #~ msgstr "Mostrar en el explorador de archivos"
