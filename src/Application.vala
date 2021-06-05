@@ -104,19 +104,21 @@ public class Terminal.Application : Gtk.Application {
                         if (!terminal.is_init_complete ()) {
                             terminal.set_init_complete ();
                         } else {
+                            var process_string = _("Process completed");
+                            var process_icon = new ThemedIcon ("process-completed-symbolic");
+                            if (exit_status != 0) {
+                                process_string = _("Process exited with errors");
+                                process_icon = new ThemedIcon ("process-error-symbolic");
+                            }
 
                             if (terminal != window.current_terminal) {
-                                if (exit_status == 0) {
-                                    terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
-                                } else {
-                                    terminal.tab.icon = new ThemedIcon ("process-error-symbolic");
-                                }
+                                terminal.tab.icon = process_icon;
                             }
 
                             if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                var notification = new Notification (_("Task finished"));
+                                var notification = new Notification (process_string);
                                 notification.set_body (process);
-                                notification.set_icon (new ThemedIcon ("utilities-terminal"));
+                                notification.set_icon (process_icon);
                                 send_notification (null, notification);
                             }
                         }

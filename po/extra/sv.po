@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2018-10-19 18:40+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
@@ -255,7 +255,9 @@ msgid "Fix appstream date format"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary LLC."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!

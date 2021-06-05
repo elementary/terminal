@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-09-01 15:04+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"PO-Revision-Date: 2021-05-19 18:43+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -44,7 +44,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:68
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "New features:"
-msgstr "Prestaciones nuevas:"
+msgstr "Funcionalidades nuevas:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
@@ -56,7 +56,7 @@ msgstr "Cambie entre pestañas con los atajos Ctrl + Tab y Ctrl + Mayús +�
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Los niveles de escala ahora se recuerdan por pestaña"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -203,15 +203,17 @@ msgstr "Desactivar la campana audible"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr "Agregar la acción Alt+↑ para desplazarse al último comando"
+msgstr "Añade la acción Alt + ↑ para desplazarse a la última orden"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add Alt+c action to copy last output"
-msgstr "Agregue la acción Alt+c para copiar la última salida"
+msgstr "Añade la acción Alt + C para copiar la última salida"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Add accels to tooltips"
-msgstr "Agregar accesos directos a la información sobre herramientas"
+msgstr ""
+"Añade aceleradores a las descripciones emergentes de los elementos en "
+"pantalla"
 
 #: data/io.elementary.terminal.appdata.xml.in:153
 msgid "Fix zsh notifications"
@@ -245,7 +247,7 @@ msgstr "Menú de preferencias de tema"
 
 #: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Zoom level controls"
-msgstr "Controles de nivel de zoom"
+msgstr "Controles de nivel de escala"
 
 #: data/io.elementary.terminal.appdata.xml.in:214
 msgid "Allow tab to close after typing exit at the commandline"
@@ -262,8 +264,8 @@ msgid "Fix appstream date format"
 msgstr "Corregir el formato de fecha de appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
@@ -276,11 +278,11 @@ msgstr "command;prompt;cmd;commandline;intérprete;línea de comandos;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr "Nueva ventana"
+msgstr "Ventana nueva"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Nueva pestaña como administrador"
+msgstr "Pestaña nueva con permisos administrativos"
 
 #~ msgid "About Terminal"
 #~ msgstr "Acerca de Terminal"

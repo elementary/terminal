@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-10 20:16+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"PO-Revision-Date: 2021-04-09 15:50+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-12-02 05:14+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -265,8 +265,8 @@ msgid "Fix appstream date format"
 msgstr "Correcció d'origen del format de la data"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

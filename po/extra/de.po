@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2019-12-25 21:35+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"PO-Revision-Date: 2021-01-30 17:01+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/extra/de/"
 ">\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -54,10 +54,12 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
 msgstr ""
+"Zwischen den Fenstern mit den Tastaturkürzeln Strg + Tab und Strg + Umschalt "
+"+ Tab wechseln"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Zoomstufen werden jetzt pro Tab gespeichert"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -263,7 +265,9 @@ msgid "Fix appstream date format"
 msgstr "Korrektur des Datumsformats für Appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary LLC."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!

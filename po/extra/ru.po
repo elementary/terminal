@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2018-03-24 00:09+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
-"extra/ru/>\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"PO-Revision-Date: 2021-03-17 19:50+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -45,30 +45,31 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:68
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "New features:"
-msgstr ""
+msgstr "Новые возможности:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Перемещение вкладкок сочетанием клавиш Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
 msgstr ""
+"Переключение вкладок сочетаниями клавиш Ctrl + Tab and Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Уровни масштабирования теперь запоминаются для каждой вкладки"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
 #: data/io.elementary.terminal.appdata.xml.in:73
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Other updates:"
-msgstr ""
+msgstr "Остальные обновления:"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Проверка собственной палитры"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -91,39 +92,40 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:233
 #: data/io.elementary.terminal.appdata.xml.in:248
 msgid "Translation updates"
-msgstr ""
+msgstr "Обновления переводов"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Добавлен параметр командной строки для открытия новой вкладки (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Fix URL selection"
-msgstr ""
+msgstr "Исправлен выбор URL-адреса"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for \"Show version\" (-v, --version)"
 msgstr ""
+"Добавлен параметр командной строки для «Показать версию» (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "Добавлена опция командной строки для открытия нового окна (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Предотвращено дублирование вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "Предотвращено открытие лишней домашней вкладки при запуске"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Включение и выключение обычного копирования/вставки в меню Параметры"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Изменение масштаба с помощью Ctrl + Прокрутка"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Include sudo password prompt when copying last output"
@@ -131,43 +133,45 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Применение изменений шрифта без перезагрузки"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr ""
+msgstr "Вкладки не запоминаются, когда История выключена в Параметрах системы"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr ""
+msgstr "Показывать горячие клавиши в контекстном меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
+"Вставка средней кнопкой мыши, теперь должным образом следует Параметрам "
+"системы"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
-msgstr ""
+msgstr "Shift + Control + D для дублирования вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Use neutral colors for the dark style scheme"
-msgstr ""
+msgstr "Использование естественных цветов для тёмной цветовой схемы"
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "Небольшое отступление текста от края окна"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "Нажатие клавиши Меню открывает контекстное меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "Хранение состояния с помощью GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr ""
+msgstr "Поддержка комбинации клавиш Ctrl+Равно для масштабирования"
 
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Fix a wrong foreground process response code"
@@ -175,7 +179,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Возврат фокуса после закрытия всплывающего меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Prevent search and style buttons from receiving focus"
@@ -183,7 +187,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Скрытие курсора при вводе текста"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Fix erratic search text highlightning behavior"
@@ -191,19 +195,19 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:141
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "Поддержка флага -h для помощи"
 
 #: data/io.elementary.terminal.appdata.xml.in:142
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Отключен звуковой колокол"
 
 #: data/io.elementary.terminal.appdata.xml.in:143
 msgid "Add Alt+↑ action to scroll to last command"
-msgstr ""
+msgstr "Добавлено действие Alt+↑ для перехода к последней команде"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add Alt+c action to copy last output"
-msgstr ""
+msgstr "Добавлено действие Alt+c для копирования последнего вывода"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Add accels to tooltips"
@@ -211,7 +215,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:153
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Исправлены zsh уведомления"
 
 #: data/io.elementary.terminal.appdata.xml.in:154
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
@@ -229,11 +233,11 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:232
 #: data/io.elementary.terminal.appdata.xml.in:247
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Исправления незначительных ошибок"
 
 #: data/io.elementary.terminal.appdata.xml.in:195
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Улучшение интеграции с FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Theme preference menu"
@@ -256,7 +260,9 @@ msgid "Fix appstream date format"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
+#, fuzzy
+#| msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary LLC."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
@@ -270,11 +276,11 @@ msgstr "команда;командная строка;выполнить;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr "Создать окно"
+msgstr "Новое окно"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr "Создать вкладку от имени администратора"
+msgstr "Новая вкладка от имени Администратора"
 
 #~ msgid "About Terminal"
 #~ msgstr "О программе"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -18,97 +18,97 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Dwumadi no awie"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Yi dwumadi no wɔ terminal no mu"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Bue window foforɔ"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Bue window foforɔ"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Fa"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Fa to ha"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Selecte ne nyinaa"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "Hwehwɛ ..."
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr ""
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 #, fuzzy
 msgid "Zoom out"
 msgstr "Twe kɔ akyire"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "Twe bɛn"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
@@ -116,11 +116,24 @@ msgstr ""
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:859
+#, c-format
+msgid "Show in %s"
+msgstr ""
+
+#: src/MainWindow.vala:860
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1146
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr ""
 
@@ -156,28 +169,48 @@ msgstr "Sɛ  woyi terminal no a, dwumadi no begyae."
 msgid "Quit Terminal"
 msgstr "Yi terminal no"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Wo gyedi sɛ wo pɛ sɛ wo yi tab wei?"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "Dwumadie foforo de terminal no reyɛ adwuma."
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Yi Tab No"
+
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "Dwumadi yi pɛ ho kwan adi dwuma bi a ehia sɛ wo pene so"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr ""
 "Ehia sɛ woyɛ ahwɛyie mmerɛ a worefa ntwerodeɛ bi ato terminal no mu no."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "Hwɛ sɛ wonim nea wopɛ sɛ woyɛ no anaa."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "Mmfa nto ha."
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "Fa to ha saa ara."
 
@@ -200,6 +233,9 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Task finished"
+#~ msgstr "Dwumadi no awie"
 
 #~ msgid "Cancel"
 #~ msgstr "Gyae"

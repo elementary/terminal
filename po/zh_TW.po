@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2020-03-01 14:09+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -20,97 +20,97 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "工作已完成"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "開啟新視窗"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "開啟新視窗"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "顯示幫助說明"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "設定 shell 工作目錄"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "複製上次的輸出"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "顯示在檔案瀏覽器中"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 #, fuzzy
 msgid "Zoom out"
 msgstr "拉遠"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 #, fuzzy
 msgid "Zoom in"
 msgstr "拉近"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "高對比"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
@@ -118,11 +118,25 @@ msgstr ""
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:859
+#, fuzzy, c-format
+#| msgid "Show in File Browser"
+msgid "Show in %s"
+msgstr "顯示在檔案瀏覽器中"
+
+#: src/MainWindow.vala:860
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1146
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr ""
 
@@ -158,27 +172,47 @@ msgstr "若您退出終端機，裡面的程序將會終止。"
 msgid "Quit Terminal"
 msgstr "退出終端機"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "您確定您想要關閉此分頁嗎？"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "此終端機中有個活動中程序。"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "關閉分頁"
+
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "This command is asking for Administrative access to your computer"
 msgstr "此指令要求您電腦的管理權限"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:34
 msgid "Copying commands into the Terminal can be dangerous."
 msgstr "把指令複製到《終端機》中可能造成危險。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
+#: src/Dialogs/UnsafePasteDialog.vala:35
 msgid "Be sure you understand what each part of this command does."
 msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:37
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:42
 msgid "Don't Paste"
 msgstr "不要貼上"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:44
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
@@ -201,6 +235,9 @@ msgstr "循環搜尋"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "終端機"
+
+#~ msgid "Task finished"
+#~ msgstr "工作已完成"
 
 #~ msgid "Style"
 #~ msgstr "樣式"

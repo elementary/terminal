@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-08 03:16+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"PO-Revision-Date: 2021-04-11 16:30+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -149,7 +149,7 @@ msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Middle-click paste now properly follows System Settings"
-msgstr "Le collage en clic médian suit les paramètres système"
+msgstr "Le collage en clic central suit les paramètres système"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
@@ -266,7 +266,7 @@ msgid "Fix appstream date format"
 msgstr "Correction du format de date dans les métadonnées"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
+msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
