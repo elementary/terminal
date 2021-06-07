@@ -55,7 +55,7 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
     private void on_ignore () {
         var terminal_window = get_transient_for ();
         if (terminal_window is MainWindow) {
-            (terminal_window as MainWindow).unsafe_ignored = true;
+            ((MainWindow) terminal_window).unsafe_ignored = true;
         }
     }
 }

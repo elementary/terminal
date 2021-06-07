@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 16:02+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2019-01-01 00:36+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/terminal/"
@@ -21,51 +21,55 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Zadanie zakończone"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Uruchom program w terminalu"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Otwiera nowe okno programu"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Otwiera nowe okno programu"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Wyświetl pomoc"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "Kopiuj ostatnie wyjście"
 
@@ -73,15 +77,15 @@ msgstr "Kopiuj ostatnie wyjście"
 msgid "Paste"
 msgstr "Wklej"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "Oddalenie"
 
@@ -93,45 +97,45 @@ msgstr "Domyślny poziom powiększenia"
 msgid "Zoom in"
 msgstr "Przybliżenie"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "Wysoki kontrast"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Solarna jasność"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:859
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Wyświetl w przeglądarce plików"
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:860
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1138
+#: src/MainWindow.vala:1146
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1364
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
@@ -230,6 +234,9 @@ msgstr "Wyszukiwanie cykliczne"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "Task finished"
+#~ msgstr "Zadanie zakończone"
 
 #~ msgid "Style"
 #~ msgstr "Styl"

@@ -192,10 +192,6 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            /* Make GTK+ CSD not steal F10 from the terminal */
-            var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_menu_bar_accel = null;
-
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
@@ -335,7 +331,7 @@ namespace Terminal {
         protected bool match_keycode (int keyval, uint code) {
 #endif
             Gdk.KeymapKey [] keys;
-            Gdk.Keymap keymap = Gdk.Keymap.get_default ();
+            var keymap = Gdk.Keymap.get_for_display (get_display ());
             if (keymap.get_entries_for_keyval (keyval, out keys)) {
                 foreach (var key in keys) {
                     if (code == key.keycode)
@@ -390,7 +386,8 @@ namespace Terminal {
             var font_size_grid = new Gtk.Grid () {
                 column_homogeneous = true,
                 hexpand = true,
-                margin_start = margin_end = 12,
+                margin_start = 12,
+                margin_end = 12,
                 margin_bottom = 6
             };
             font_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -428,7 +425,8 @@ namespace Terminal {
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
-                margin_start = margin_end = 12,
+                margin_start = 12,
+                margin_end = 12,
                 margin_bottom = 6
             };
 
@@ -492,7 +490,8 @@ namespace Terminal {
                 allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
                 max_restorable_tabs = 5,
                 group_name = "pantheon-terminal",
-                can_focus = false
+                can_focus = false,
+                expand = true
             };
             notebook.tab_added.connect (on_tab_added);
             notebook.tab_removed.connect (on_tab_removed);
@@ -520,7 +519,7 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             });
 
-            menu_button.pressed.connect (() => {
+            menu_button.clicked.connect (() => {
                 zoom_default_button.label = font_scale_to_zoom (current_terminal.font_scale);
                 var binding = current_terminal.bind_property (
                     "font-scale",
@@ -728,8 +727,7 @@ namespace Terminal {
             default_height = rect.height;
 
             if (default_width == -1 || default_height == -1) {
-                Gdk.Rectangle geometry;
-                get_screen ().get_monitor_geometry (get_screen ().get_primary_monitor (), out geometry);
+                var geometry = get_display ().get_primary_monitor ().get_geometry ();
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
@@ -964,6 +962,7 @@ namespace Terminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
+                title = current_terminal.current_working_directory;
                 if (Granite.Services.System.history_is_enabled () &&
                     Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1141,6 +1140,11 @@ namespace Terminal {
             sw.add (term);
             var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
+            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of 
+             * automatically changing the tooltip to be the same as the label. */
+            term.tab.notify["label"].connect_after (() => {
+                term.tab.tooltip = term.current_working_directory;
+            });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
             var reload_menu_item = new Gtk.MenuItem.with_label (_("Reload"));
