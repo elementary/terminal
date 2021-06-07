@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 16:02+0000\n"
+"POT-Creation-Date: 2021-06-03 22:39+0000\n"
 "PO-Revision-Date: 2021-03-12 02:36+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/terminal/"
@@ -21,20 +21,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-09 05:33+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Задатак је завршен"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Приказује издање"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Покреће програм у терминалу"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -42,28 +46,28 @@ msgstr ""
 "„--“ као заставицу"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Отвара нови прозор терминала"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Отвара нови језичак терминала"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Прикажите помоћ"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Подесите радни директоријум шкољке"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Умножи"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "Умножи последњи излаз"
 
@@ -71,15 +75,15 @@ msgstr "Умножи последњи излаз"
 msgid "Paste"
 msgstr "Убаци"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Изабери све"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1372
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
 msgid "Find…"
 msgstr "Нађи…"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "Умањи"
 
@@ -91,44 +95,44 @@ msgstr "Основни ниво увеличања"
 msgid "Zoom in"
 msgstr "Увећај"
 
-#: src/MainWindow.vala:394
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "Велики контраст"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Осунчано слабије"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr "Тамна"
 
-#: src/MainWindow.vala:425
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "Природно умножи/убаци"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:434
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Пречице не захтевају Промени; може ометати програме командне линије"
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "Подешавања"
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:859
 #, c-format
 msgid "Show in %s"
 msgstr "Прикажи у „%s“"
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:860
 msgid "Default application"
 msgstr "Основни програм"
 
-#: src/MainWindow.vala:1138
+#: src/MainWindow.vala:1146
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1364
+#: src/MainWindow.vala:1373
 msgid "Hide find bar"
 msgstr "Сакриј траку претраге"
 
@@ -227,6 +231,9 @@ msgstr "Кружна претрага"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
+
+#~ msgid "Task finished"
+#~ msgstr "Задатак је завршен"
 
 #~ msgid "Show in File Browser"
 #~ msgstr "Прикажи у разгледачу датотека"
