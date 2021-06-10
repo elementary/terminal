@@ -1,5 +1,5 @@
 /*
-* Copyright 2011-2018 elementary, Inc. (https://elementary.io)
+* Copyright 2011-2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -17,9 +17,10 @@
 */
 
 public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
-    public UnsafePasteDialog (MainWindow parent, string text_to_paste) {
+    public UnsafePasteDialog (MainWindow parent, string title_text, string text_to_paste) {
         Object (
             buttons: Gtk.ButtonsType.NONE,
+            primary_text: title_text,
             transient_for: parent
         );
 
@@ -28,11 +29,10 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
 
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
-        primary_text = _("This command is asking for Administrative access to your computer");
 
         secondary_text =
             _("Copying commands into the Terminal can be dangerous.") + " " +
-            _("Be sure you understand what each part of this command does.");
+            _("Be sure you understand what each part of the pasted text does.");
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
 

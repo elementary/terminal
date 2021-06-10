@@ -1217,21 +1217,6 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
-            /* don't accidentally cause command executions from pasting multiline text */
-            if (Application.settings.get_boolean ("block-multiline-paste-alert")) {
-
-                if (intext.index_of ("\n") != -1) {
-                    var d = new BlockMultilinePasteDialog (this);
-                    if (d.run () == 1) {
-                        d.destroy ();
-                        return;
-                    }
-                    d.destroy ();
-                }
-
-            }
-
-            /* if unsafe paste alert is enabled, show dialog */
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
                 if (intext == null) {
@@ -1243,8 +1228,28 @@ namespace Terminal {
                 }
                 var text = intext.strip ();
 
+                /* warn on pasting text with `sudo` */
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var dialog = new UnsafePasteDialog (this, text);
+                    var dialog = new UnsafePasteDialog (
+                        this,
+                        _("This command is asking for Administrative access to your computer"),
+                        text
+                    );
+
+                    if (dialog.run () != Gtk.ResponseType.ACCEPT) {
+                        dialog.destroy ();
+                        return;
+                    }
+                    dialog.destroy ();
+
+                /* warn on pasting multi-line text */
+                } else if (text.index_of ("\n") != -1) {
+                    var dialog = new UnsafePasteDialog (
+                        this,
+                        _("The pasted text may contain multiple commands"),
+                        text
+                    );
+
                     if (dialog.run () != Gtk.ResponseType.ACCEPT) {
                         dialog.destroy ();
                         return;
