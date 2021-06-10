@@ -1136,7 +1136,7 @@ namespace Terminal {
             sw.add (term);
             var tab = new Granite.Widgets.Tab (label, icon, sw);
             term.tab = tab;
-            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of 
+            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
              * automatically changing the tooltip to be the same as the label. */
             term.tab.notify["label"].connect_after (() => {
                 term.tab.tooltip = term.current_working_directory;
@@ -1219,18 +1219,18 @@ namespace Terminal {
         private void on_get_text (Gtk.Clipboard board, string? intext) {
             /* don't accidentally cause command executions from pasting multiline text */
             if (Application.settings.get_boolean ("block-multiline-paste-alert")) {
-				
-				if (intext.index_of ("\n") != -1) {
-					var d = new BlockMultilinePasteDialog (this);
+
+                if (intext.index_of ("\n") != -1) {
+                    var d = new BlockMultilinePasteDialog (this);
                     if (d.run () == 1) {
                         d.destroy ();
                         return;
                     }
                     d.destroy ();
-				}
-				
-			}
-			            
+                }
+
+            }
+
             /* if unsafe paste alert is enabled, show dialog */
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
