@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2017-03-02 13:09+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Ielīmēt"
 msgid "Select All"
 msgstr "Iezīmēt visu"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "Meklēt..."
 
@@ -120,20 +120,32 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Jauna cilne"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Aizvērt cilni"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr ""
 
@@ -148,10 +160,6 @@ msgstr "Šajā cilnē vēl norisinās aktīvs process"
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Ja aizvērsiet, process tiks apturēts."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Aizvērt cilni"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -256,9 +264,6 @@ msgstr "Terminālis"
 
 #~ msgid "Close"
 #~ msgstr "Aizvērt"
-
-#~ msgid "New Tab"
-#~ msgstr "Jauna cilne"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Izveidot jaunu cilni"

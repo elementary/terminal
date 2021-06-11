@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
-"PO-Revision-Date: 2021-06-04 00:28+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"PO-Revision-Date: 2021-06-08 12:20+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -69,7 +69,7 @@ msgstr "Копіювати"
 
 #: src/MainWindow.vala:218
 msgid "Copy Last Output"
-msgstr "Скопіювати останній вивід"
+msgstr "Копіювати останній вивід"
 
 #: src/MainWindow.vala:224
 msgid "Paste"
@@ -79,7 +79,7 @@ msgstr "Вставити"
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "Пошук…"
 
@@ -121,20 +121,32 @@ msgstr ""
 msgid "Settings"
 msgstr "Параметри"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Нова вкладка"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Закрити вкладку"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "Перезавантажити"
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -149,10 +161,6 @@ msgstr "У вкладці є активний процес."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Якщо ви закриєте цю вкладку, то процес буде завершено."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Закрити вкладку"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -256,9 +264,6 @@ msgstr "Термінал"
 
 #~ msgid "Close"
 #~ msgstr "Закрити"
-
-#~ msgid "New Tab"
-#~ msgstr "Нова вкладка"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Створити нову вкладку"
