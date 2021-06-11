@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2021-04-01 11:57+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -76,7 +76,7 @@ msgstr "粘贴"
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "查找…"
 
@@ -118,20 +118,32 @@ msgstr ""
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "新建标签页"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中显示"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr "默认应用"
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "关闭标签"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -146,10 +158,6 @@ msgstr "标签中有正在运行的进程。"
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "如果您关闭它，进程将会中断。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "关闭标签"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -266,9 +274,6 @@ msgstr "终端"
 
 #~ msgid "Close"
 #~ msgstr "关闭"
-
-#~ msgid "New Tab"
-#~ msgstr "新建标签页"
 
 #~ msgid "Create a new tab"
 #~ msgstr "创建新标签页"

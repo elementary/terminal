@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2016-10-17 09:13+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Afrikaans <af@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Plak"
 msgid "Select All"
 msgstr "Selekteer als"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr ""
 
@@ -120,20 +120,32 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Nuwe Blad"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Sluit blad"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr ""
 
@@ -148,10 +160,6 @@ msgstr "Daar is 'n aktiewe proses in hierdie blad."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "As jy dit toemaak sal die proses beëindig word."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Sluit blad"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -247,9 +255,6 @@ msgstr "Terminaal"
 
 #~ msgid "Close"
 #~ msgstr "Sluit"
-
-#~ msgid "New Tab"
-#~ msgstr "Nuwe Blad"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Skep 'n nuwe blad"

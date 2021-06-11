@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2021-06-04 09:06+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -76,7 +76,7 @@ msgstr "הדבקה"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "חיפוש…"
 
@@ -116,20 +116,32 @@ msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפר
 msgid "Settings"
 msgstr "הגדרות"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "לשונית חדשה"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "סגירת הלשונית"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "רענון"
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -144,10 +156,6 @@ msgstr "קיים תהליך פעיל בלשונית זו."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "סגירה תסיים את התהליך."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "סגירת הלשונית"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -258,9 +266,6 @@ msgstr "מסוף"
 
 #~ msgid "Close"
 #~ msgstr "סגירה"
-
-#~ msgid "New Tab"
-#~ msgstr "לשונית חדשה"
 
 #~ msgid "Create a new tab"
 #~ msgstr "יצירת לשונית חדשה"

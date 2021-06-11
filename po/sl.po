@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2020-04-27 00:10+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
@@ -79,7 +79,7 @@ msgstr "Prilepi"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "Najdi…"
 
@@ -119,21 +119,33 @@ msgstr "Bližnjice ne rabijo pritisnjene tipke Shift"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Nov zavihek"
+
+#: src/MainWindow.vala:862
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Pokaži verzijo"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Zapri zavihek"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "Skrij iskalno vrstico"
 
@@ -148,10 +160,6 @@ msgstr "V tem zavihku obstaja dejavno opravilo."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Če ga zaprete, se bo proces končal."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Zapri zavihek"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -268,9 +276,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Zapri"
-
-#~ msgid "New Tab"
-#~ msgstr "Nov zavihek"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Ustvari nov zavihek"
