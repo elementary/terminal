@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-06-05 20:02+0000\n"
+"PO-Revision-Date: 2021-06-12 04:11+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -138,7 +138,7 @@ msgstr "Fechar separador"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
