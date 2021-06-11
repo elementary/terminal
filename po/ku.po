@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2018-02-11 00:09+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/terminal/"
@@ -80,7 +80,7 @@ msgstr "Pêveke"
 msgid "Select All"
 msgstr "Hemû Hilbijêre"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "Lê gerrîn…"
 
@@ -122,20 +122,32 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Hilpekîna nû"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Hilpekinê Dade"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr ""
 
@@ -150,10 +162,6 @@ msgstr ""
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Hilpekinê Dade"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -251,9 +259,6 @@ msgstr "Termînal"
 
 #~ msgid "Close"
 #~ msgstr "Bigire"
-
-#~ msgid "New Tab"
-#~ msgstr "Hilpekîna nû"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Paceya nû çê bikin"

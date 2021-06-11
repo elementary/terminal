@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -69,7 +69,7 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "शोधा…"
 
@@ -109,20 +109,34 @@ msgstr "शॉर्टकट्सना शिफ्टची आवश्य�
 msgid "Settings"
 msgstr "सेटिंग्ज"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+#, fuzzy
+#| msgid "New Root Tab"
+msgid "New Tab"
+msgstr "नवीन रूट टॅब"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr "%s मध्ये दाखवा"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr "डीफॉल्ट अप्लिकेशन"
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "टॅब बंद करा"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 
@@ -137,10 +151,6 @@ msgstr "या टॅबवर एक सक्रिय प्रक्रि�
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "आपण ही टॅब बंद केल्यास प्रक्रिया समाप्त होईल."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "टॅब बंद करा"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -248,9 +258,6 @@ msgstr "टर्मिनल"
 
 #~ msgid "New Window"
 #~ msgstr "नवीन विंडो"
-
-#~ msgid "New Root Tab"
-#~ msgstr "नवीन रूट टॅब"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "येथे टर्मिनल उघडा"

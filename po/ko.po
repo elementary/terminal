@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2018-12-12 00:11+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
@@ -80,7 +80,7 @@ msgstr "붙여넣기"
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "찾기…"
 
@@ -120,21 +120,33 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "새 탭"
+
+#: src/MainWindow.vala:862
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "파일 브라우저에서 보기"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "탭 닫기"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 
@@ -149,10 +161,6 @@ msgstr "이 탭에 현재 실행 중인 프로세스가 있습니다."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "탭을 닫으시면, 실행 중인 프로세스도 함께 종료됩니다."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "탭 닫기"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -266,9 +274,6 @@ msgstr "터미널"
 
 #~ msgid "Close"
 #~ msgstr "닫기"
-
-#~ msgid "New Tab"
-#~ msgstr "새 탭"
 
 #~ msgid "Create a new tab"
 #~ msgstr "새 탭을 엽니다"
