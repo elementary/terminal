@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-06-04 15:55+0000\n"
+"PO-Revision-Date: 2021-06-12 04:11+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -139,7 +139,7 @@ msgstr "Fermer l'onglet"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliquer"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
