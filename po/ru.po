@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-11 07:56+0000\n"
 "PO-Revision-Date: 2021-06-12 04:11+0000\n"
-"Last-Translator: Deleted User <noreply+2813@weblate.org>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
@@ -134,7 +134,7 @@ msgstr "Закрыть вкладку"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Дублировать"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
