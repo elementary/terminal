@@ -1258,6 +1258,7 @@ namespace Terminal {
                         dialog.destroy ();
                         return;
                     }
+
                     dialog.destroy ();
                 }
             }
