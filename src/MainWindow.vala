@@ -1239,27 +1239,27 @@ namespace Terminal {
 
                 var text = intext.strip ();
 
-                string? dialog_text = null;
+                string? unsafe_warning = null;
 
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    dialog_text = _("The pasted text may be trying to gain administrative access");
+                    unsafe_warning = _("The pasted text may be trying to gain administrative access");
                 } else if (text.index_of ("\n") != -1) {
-                    dialog_text = _("The pasted text may contain multiple commands");
+                    unsafe_warning = _("The pasted text may contain multiple commands");
                 }
 
-                if (dialog_text != null) {
-                    var dialog = new UnsafePasteDialog (
+                if (unsafe_warning != null) {
+                    var unsafe_paste_dialog = new UnsafePasteDialog (
                         this,
-                        dialog_text,
+                        unsafe_warning,
                         text
                     );
 
-                    if (dialog.run () != Gtk.ResponseType.ACCEPT) {
-                        dialog.destroy ();
+                    if (unsafe_paste_dialog.run () != Gtk.ResponseType.ACCEPT) {
+                        unsafe_paste_dialog.destroy ();
                         return;
                     }
 
-                    dialog.destroy ();
+                    unsafe_paste_dialog.destroy ();
                 }
             }
 
