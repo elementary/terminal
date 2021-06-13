@@ -1231,31 +1231,26 @@ namespace Terminal {
                 if (intext == null) {
                     return;
                 }
+
                 if (!intext.validate ()) {
                     warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
+
                 var text = intext.strip ();
 
-                /* warn on pasting text with `sudo` */
+                string? dialog_text = null;
+
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var dialog = new UnsafePasteDialog (
-                        this,
-                        _("This command is asking for Administrative access to your computer"),
-                        text
-                    );
-
-                    if (dialog.run () != Gtk.ResponseType.ACCEPT) {
-                        dialog.destroy ();
-                        return;
-                    }
-                    dialog.destroy ();
-
-                /* warn on pasting multi-line text */
+                    dialog_text = _("The pasted text may be trying to gain administrative access");
                 } else if (text.index_of ("\n") != -1) {
+                    dialog_text = _("The pasted text may contain multiple commands");
+                }
+
+                if (dialog_text != null) {
                     var dialog = new UnsafePasteDialog (
                         this,
-                        _("The pasted text may contain multiple commands"),
+                        dialog_text,
                         text
                     );
 
