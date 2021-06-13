@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 22:39+0000\n"
-"PO-Revision-Date: 2021-05-22 09:49+0000\n"
+"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"PO-Revision-Date: 2021-06-13 16:45+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "Prosessi suoritettu"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Prosessi sulkeutui virheiden kera"
 
 #: src/Application.vala:253
 msgid "Show version"
@@ -77,7 +77,7 @@ msgstr "Liitä"
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1381
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
 msgid "Find…"
 msgstr "Etsi…"
 
@@ -119,20 +119,32 @@ msgstr ""
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:859
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Uusi välilehti"
+
+#: src/MainWindow.vala:862
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:860
+#: src/MainWindow.vala:863
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:1146
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Sulje välilehti"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr "Tee kaksoiskappale"
+
+#: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: src/MainWindow.vala:1373
+#: src/MainWindow.vala:1382
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -147,10 +159,6 @@ msgstr "Välilehdessä on käynnissä oleva prosessi."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Jos suljet sen, prosessi päättyy."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Sulje välilehti"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -263,9 +271,6 @@ msgstr "Pääte"
 
 #~ msgid "Close"
 #~ msgstr "Sulje"
-
-#~ msgid "New Tab"
-#~ msgstr "Uusi välilehti"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Avaa uusi välilehti"

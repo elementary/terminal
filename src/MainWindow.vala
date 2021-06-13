@@ -480,7 +480,10 @@ namespace Terminal {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
-            notebook = new Granite.Widgets.DynamicNotebook () {
+
+            notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
+                new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
+            ) {
                 allow_new_window = true,
                 allow_duplication = true,
                 allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
@@ -1134,7 +1137,13 @@ namespace Terminal {
         private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
-            var tab = new Granite.Widgets.Tab (label, icon, sw);
+            var tab = new Granite.Widgets.Tab.with_accellabels (
+                label,
+                icon,
+                sw,
+                new Granite.AccelLabel.from_action_name (_("Close Tab"), ACTION_PREFIX + ACTION_CLOSE_TAB),
+                new Granite.AccelLabel.from_action_name (_("Duplicate"), ACTION_PREFIX + ACTION_DUPLICATE_TAB)
+            );
             term.tab = tab;
             /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
              * automatically changing the tooltip to be the same as the label. */
