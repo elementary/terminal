@@ -31,8 +31,7 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
         image_icon = new ThemedIcon ("dialog-warning");
 
         secondary_text =
-            _("Copying commands into Terminal can be dangerous.") + " " +
-            _("Be sure you understand what each part of the pasted text does before continuing.");
+            _("Copying commands into Terminal can be dangerous. Be sure you understand what each part of the pasted text does before continuing.");
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
 
