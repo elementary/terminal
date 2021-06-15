@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 07:17+0000\n"
-"PO-Revision-Date: 2021-06-12 04:11+0000\n"
+"PO-Revision-Date: 2021-06-15 14:27+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -148,11 +148,11 @@ msgstr "Перезавантажити"
 
 #: src/MainWindow.vala:1245
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Вставлений текст може намагатися отримати доступ до прав адміністратора"
 
 #: src/MainWindow.vala:1247
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Вставлений текст може містити кілька команд"
 
 #: src/MainWindow.vala:1397
 msgid "Hide find bar"
@@ -207,6 +207,8 @@ msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Копіювання команд до Термінала може бути небезпечним. Впевніться, що ви "
+"розумієте, що робить кожна з частин вставленого тексту перед продовженням."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
