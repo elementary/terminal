@@ -1145,7 +1145,7 @@ namespace Terminal {
                 new Granite.AccelLabel.from_action_name (_("Duplicate"), ACTION_PREFIX + ACTION_DUPLICATE_TAB)
             );
             term.tab = tab;
-            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of 
+            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
              * automatically changing the tooltip to be the same as the label. */
             term.tab.notify["label"].connect_after (() => {
                 term.tab.tooltip = term.current_working_directory;
@@ -1226,25 +1226,40 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
-            /* if unsafe paste alert is enabled, show dialog */
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
                 if (intext == null) {
                     return;
                 }
+
                 if (!intext.validate ()) {
                     warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
+
                 var text = intext.strip ();
 
+                string? unsafe_warning = null;
+
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var dialog = new UnsafePasteDialog (this, text);
-                    if (dialog.run () != Gtk.ResponseType.ACCEPT) {
-                        dialog.destroy ();
+                    unsafe_warning = _("The pasted text may be trying to gain administrative access");
+                } else if (text.index_of ("\n") != -1) {
+                    unsafe_warning = _("The pasted text may contain multiple commands");
+                }
+
+                if (unsafe_warning != null) {
+                    var unsafe_paste_dialog = new UnsafePasteDialog (
+                        this,
+                        unsafe_warning,
+                        text
+                    );
+
+                    if (unsafe_paste_dialog.run () != Gtk.ResponseType.ACCEPT) {
+                        unsafe_paste_dialog.destroy ();
                         return;
                     }
-                    dialog.destroy ();
+
+                    unsafe_paste_dialog.destroy ();
                 }
             }
 
