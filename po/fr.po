@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2021-06-12 04:11+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -78,7 +78,7 @@ msgstr "Coller"
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Rechercher…"
 
@@ -145,7 +145,15 @@ msgstr "Dupliquer"
 msgid "Reload"
 msgstr "Recharger"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -193,28 +201,21 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "Recharger l'onglet"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Cette commande demande un accès administrateur sur votre ordinateur"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Coller des commandes dans le Terminal peut être dangereux."
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
 msgstr ""
-"Soyez certain de comprendre ce que fait chaque partie de cette commande."
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Afficher les avertissements de protection lors d'un « coller »"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Ne pas coller"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Coller quand même"
 
@@ -237,6 +238,16 @@ msgstr "Recherche cyclique"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Cette commande demande un accès administrateur sur votre ordinateur"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Coller des commandes dans le Terminal peut être dangereux."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Soyez certain de comprendre ce que fait chaque partie de cette commande."
 
 #~ msgid "Task finished"
 #~ msgstr "Tâche terminée"

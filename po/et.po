@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2016-06-13 16:57+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Aseta"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Otsi…"
 
@@ -145,7 +145,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr ""
 
@@ -197,27 +205,21 @@ msgstr "Terminalis on töösolev protsess, mis"
 msgid "Reload Tab"
 msgstr "Sulge kaart"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Käivitatud toiming nõuab administratiivset ligipääsu sinu arvutile"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Käskude kopeerimine terminali võib ohtlik olla."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Veendu, et käivitatav käsk on sinu jaoks arusaadav."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Katkesta"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Kleebi"
 
@@ -240,6 +242,15 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Käivitatud toiming nõuab administratiivset ligipääsu sinu arvutile"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Käskude kopeerimine terminali võib ohtlik olla."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Veendu, et käivitatav käsk on sinu jaoks arusaadav."
 
 #~ msgid "Task finished"
 #~ msgstr "Toiming lõpetati edukalt"

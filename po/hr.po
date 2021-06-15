@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2016-07-07 19:14+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -78,7 +78,7 @@ msgstr "Zalijepi"
 msgid "Select All"
 msgstr "Odaberi sve"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Pretraži..."
 
@@ -145,7 +145,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr ""
 
@@ -197,27 +205,21 @@ msgstr "U tijeku je aktivan proces na ovom terminalu."
 msgid "Reload Tab"
 msgstr "Zatvori karticu"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Kopiranje naredbi u Terminal može biti opasno."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Nemoj zalijepiti"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Svejedno zalijepi"
 
@@ -240,6 +242,15 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Kopiranje naredbi u Terminal može biti opasno."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
 
 #~ msgid "Task finished"
 #~ msgstr "Zadatak završen"

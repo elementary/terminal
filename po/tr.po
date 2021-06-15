@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2021-06-12 04:11+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -78,7 +78,7 @@ msgstr "Yapıştır"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Bul…"
 
@@ -143,7 +143,15 @@ msgstr "Çoğalt"
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -191,27 +199,21 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "Sekmeyi Yeniden Yükle"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Bu komut bilgisayarınızın yönetici izinlerine erişmek istiyor"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Terminal'e komut kopyalayıp yapıştırmak tehlikeli olabilir."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin olun."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Yapıştırma koruması uyarılarını göster"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Yapıştırma"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Yine de Yapıştır"
 
@@ -234,6 +236,15 @@ msgstr "Döngüsel arama"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Bu komut bilgisayarınızın yönetici izinlerine erişmek istiyor"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Terminal'e komut kopyalayıp yapıştırmak tehlikeli olabilir."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Komutun her bir parçasının işlevini iyice anladığınızdan emin olun."
 
 #~ msgid "Task finished"
 #~ msgstr "İşlem tamamlandı"

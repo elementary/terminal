@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -71,7 +71,7 @@ msgstr "Lipește"
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Căutare…"
 
@@ -141,7 +141,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr ""
 
@@ -193,27 +201,21 @@ msgstr "Există un proces activ pe acest terminal."
 msgid "Reload Tab"
 msgstr "Închideți fila"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Această comandă solicită acces administrativ la computer"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copierea comenzilor în Terminal poate fi periculoasă."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Asigurați-vă că înțelegeți ce face fiecare parte a acestei comenzi."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Nu lipi"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Lipiște oricum"
 
@@ -236,6 +238,15 @@ msgstr "Clic în caută"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalul"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Această comandă solicită acces administrativ la computer"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Copierea comenzilor în Terminal poate fi periculoasă."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Asigurați-vă că înțelegeți ce face fiecare parte a acestei comenzi."
 
 #~ msgid "Task finished"
 #~ msgstr "Sarcină terminată"

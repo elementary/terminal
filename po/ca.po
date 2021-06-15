@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2021-06-12 04:11+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
@@ -78,7 +78,7 @@ msgstr "Enganxa"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Cerca…"
 
@@ -144,7 +144,15 @@ msgstr "Duplica"
 msgid "Reload"
 msgstr "Torna a carregar"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
 
@@ -192,27 +200,21 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "Torna-la a carregar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Aquesta ordre vol accedir amb privilegis administratius a l’ordinador"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copiar ordres al Terminal pot ser perillós."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Mostra els avisos de protecció en enganxar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "No enganxis"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Enganxa igualment"
 
@@ -235,6 +237,16 @@ msgstr "Cerca cíclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr ""
+#~ "Aquesta ordre vol accedir amb privilegis administratius a l’ordinador"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Copiar ordres al Terminal pot ser perillós."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Assegureu-vos que compreneu tot el que fa aquesta ordre."
 
 #~ msgid "Task finished"
 #~ msgstr "Tasca acabada"
