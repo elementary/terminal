@@ -761,6 +761,8 @@ namespace Terminal {
 
             if (notebook.n_tabs == 0) {
                 destroy ();
+            } else {
+                check_for_tabs_with_same_name ();
             }
         }
 
@@ -961,7 +963,8 @@ namespace Terminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
-                title = current_terminal.current_working_directory;
+                title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                            : TerminalWidget.DEFAULT_LABEL;
                 if (Granite.Services.System.history_is_enabled () &&
                     Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1092,6 +1095,7 @@ namespace Terminal {
                 }
             });
 
+            terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
             terminal_widget.cwd_changed.connect (check_for_tabs_with_same_name);
 
             terminal_widget.set_font (term_font);
@@ -1462,11 +1466,11 @@ namespace Terminal {
 
             foreach (TerminalWidget terminal in terms) {
                 string term_path = terminal.current_working_directory;
-                string term_label = Path.get_basename (term_path);
+                string term_label = terminal.window_title != "" ? terminal.window_title
+                                                                : Path.get_basename (term_path);
 
                 if (term_label == "" ||
                     terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
-
                     continue;
                 }
 
@@ -1475,7 +1479,8 @@ namespace Terminal {
 
                 foreach (TerminalWidget terminal2 in terms2) {
                     string term2_path = terminal2.current_working_directory;
-                    string term2_name = Path.get_basename (term2_path);
+                    string term2_name = terminal2.window_title != "" ? terminal2.window_title
+                                                                     : Path.get_basename (term2_path);
 
                     if (terminal2 != terminal && term2_name == term_label && term2_path != term_path) {
                         terminal2.tab_label = disambiguate_label (term2_path, term_path);
@@ -1488,7 +1493,8 @@ namespace Terminal {
                 }
             }
 
-            title = current_terminal.current_working_directory;
+            title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                        : TerminalWidget.DEFAULT_LABEL;
             return;
         }
 
