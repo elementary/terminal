@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 07:17+0000\n"
-"PO-Revision-Date: 2021-06-21 15:42+0000\n"
+"PO-Revision-Date: 2021-06-24 14:36+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -202,7 +202,6 @@ msgid "Reload Tab"
 msgstr "Volver a cargar pestaña"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
-#, fuzzy
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
