@@ -964,7 +964,7 @@ namespace Terminal {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
                 title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                            : TerminalWidget.DEFAULT_LABEL;
+                                                            : current_terminal.current_working_directory;
                 if (Granite.Services.System.history_is_enabled () &&
                     Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1494,7 +1494,7 @@ namespace Terminal {
             }
 
             title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                        : TerminalWidget.DEFAULT_LABEL;
+                                                        : current_terminal.current_working_directory;
             return;
         }
 
