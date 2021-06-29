@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-08 03:16+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-04-09 15:50+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-01 06:01+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -128,7 +128,7 @@ msgstr "Zoom com Ctrl + Scroll"
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Include sudo password prompt when copying last output"
 msgstr ""
-"Inclui a mensagem de palavra-passe do sudo quando copiar a última saída"
+"Inclui a mensagem de palavra-passe de sudo quando copiar o último resultado"
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Apply font changes without restarting"
@@ -207,7 +207,7 @@ msgstr "Adiciona a ação Alt+↑ para rolar para o último comando"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Add Alt+c action to copy last output"
-msgstr "Adicionar ação Alt+c para copiar a última saída"
+msgstr "Adicionar ação Alt+c para copiar o último resultado"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Add accels to tooltips"
@@ -260,8 +260,8 @@ msgid "Fix appstream date format"
 msgstr "Corrigir formato de data do appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

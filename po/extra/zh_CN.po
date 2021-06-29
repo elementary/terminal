@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2019-12-04 21:25+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-04-13 14:07+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -44,30 +44,30 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:68
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "New features:"
-msgstr ""
+msgstr "新特性："
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "使用 Ctrl + Alt + ←/→ 移动标签"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr ""
+msgstr "使用 Ctrl + Tab 和 Ctrl + Shift + Tab 切换标签"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "记住上一个标签的缩放等级"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 #: data/io.elementary.terminal.appdata.xml.in:59
 #: data/io.elementary.terminal.appdata.xml.in:73
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Other updates:"
-msgstr ""
+msgstr "其他更新："
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 msgid "Validate custom palette"
-msgstr ""
+msgstr "验证自定义调色板"
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 #: data/io.elementary.terminal.appdata.xml.in:62
@@ -94,43 +94,43 @@ msgstr "翻译更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "增加新标签命令行后缀（-t）"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Fix URL selection"
-msgstr ""
+msgstr "修复 URL 选中的问题"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr ""
+msgstr "增加显示版本命令行后缀（-v, --version）"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
-msgstr ""
+msgstr "增加新窗口命令行后缀（-n）"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "避免启动时出现重复标签"
 
 #: data/io.elementary.terminal.appdata.xml.in:76
 msgid "Prevent unnecessary Home tab on startup"
-msgstr ""
+msgstr "避免启动时出现不必要的主目录标签"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "设置菜单新增自然粘贴功能开关"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "使用 Ctrl + Scroll 缩放页面"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "复制上一条输出时包括 sudo 密码提示符"
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "应用字体变更时不再需要重启"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Don't remember tabs when History is disabled in System Settings"
@@ -154,15 +154,15 @@ msgstr "暗色主题下使用非彩色颜色"
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Slightly pad text from the edge of the window"
-msgstr ""
+msgstr "轻微调整字体和窗口边缘间隙"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Pressing the Menu key now opens the context menu"
-msgstr ""
+msgstr "按下菜单键时打开右键菜单"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Store state with GSettings"
-msgstr ""
+msgstr "使用 GSettings 保存状态"
 
 #: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Support Ctrl+Equal key combo to zoom in"
@@ -255,8 +255,8 @@ msgid "Fix appstream date format"
 msgstr "修正 Appstream 日期格式"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

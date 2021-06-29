@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,95 +20,95 @@ msgstr ""
 "X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "कार्य समाप्त हुआ"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "टर्मिनल में एक प्रोग्राम रन करें"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "नया विंडो खोलें"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "नया विंडो खोलें"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "मदद दिखाएँ"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "फ़ाइल ब्राउज़र में दिखाएं"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
@@ -116,11 +116,45 @@ msgstr ""
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "नया टैब"
+
+#: src/MainWindow.vala:862
+#, fuzzy, c-format
+#| msgid "Show in File Browser"
+msgid "Show in %s"
+msgstr "फ़ाइल ब्राउज़र में दिखाएं"
+
+#: src/MainWindow.vala:863
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "टैब बंद करें"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 
@@ -135,10 +169,6 @@ msgstr "इस टैब पर एक सक्रिय प्रक्रि�
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "टैब बंद करें"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -156,27 +186,41 @@ msgstr "अगर आप टर्मिनल बंद करेंगे त�
 msgid "Quit Terminal"
 msgstr "टर्मिनल बंद करें"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "यह कमांड कंप्यूटर पर प्रशासकीय पहुंच चाहता है"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है।"
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "यह सुनिश्चित कर लें कि यह कमांड जो करेगा उसके हरेक हिस्से से आप भिज्ञ हैं।"
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "टैब बंद करें"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "पेस्ट सुरक्षा चेतावनी दिखाएं"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "पेस्ट न करें"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "चाहे जैसे पेस्ट करें"
 
@@ -199,6 +243,18 @@ msgstr "चक्रीय खोज"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "टर्मिनल"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "यह कमांड कंप्यूटर पर प्रशासकीय पहुंच चाहता है"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "टर्मिनल में कमांड्स कॉपी करना ख़तरनाक हो सकता है।"
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "यह सुनिश्चित कर लें कि यह कमांड जो करेगा उसके हरेक हिस्से से आप भिज्ञ हैं।"
+
+#~ msgid "Task finished"
+#~ msgstr "कार्य समाप्त हुआ"
 
 #~ msgid "Style"
 #~ msgstr "शैली"
@@ -229,9 +285,6 @@ msgstr "टर्मिनल"
 
 #~ msgid "Close"
 #~ msgstr "बंद करें"
-
-#~ msgid "New Tab"
-#~ msgstr "नया टैब"
 
 #~ msgid "Create a new tab"
 #~ msgstr "एक नया टैब बनाएँ"

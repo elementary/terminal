@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-08 03:16+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-05-20 00:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -16,9 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -106,8 +106,7 @@ msgstr "Виправлено вибір URL-адреси"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr ""
-"Додано параметр командного рядка для \"Показати версію\"  (-v, --version)"
+msgstr "Додано параметр командного рядка для «Показати версію» (-v, --version)"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Add commandline option for New Window (-n)"
@@ -191,7 +190,7 @@ msgstr "Запобігання фокусування на кнопках пош
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Hide the cursor while typing"
-msgstr "Приховування курсора під час введення"
+msgstr "Ховати курсор під час набору"
 
 #: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Fix erratic search text highlightning behavior"
@@ -241,7 +240,7 @@ msgstr "Незначні оновлення"
 
 #: data/io.elementary.terminal.appdata.xml.in:195
 msgid "FISH integration fixes"
-msgstr "Поліпшення інтеграції  FISH"
+msgstr "Поліпшення інтеграції FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Theme preference menu"
@@ -261,11 +260,11 @@ msgstr "Виправлено копіювання URL-адрес до буфер
 
 #: data/io.elementary.terminal.appdata.xml.in:240
 msgid "Fix appstream date format"
-msgstr "Виправлено формат дати потоку застосунків"
+msgstr "Виправлено формат дати appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

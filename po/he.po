@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-04-16 00:10+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-06-16 01:43+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -17,94 +17,94 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "פעולה הסתיימה"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "התהליך הושלם"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "התהליך הסתיים עם שגיאות"
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "הצגת גרסה"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "הרצת שאר השורה כפקודה במסוף. ניתן להשתמש ב־‚--’ כדגלון"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "פתיחת חלון מסוף חדש"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "פתיחת לשונית מסוף חדשה"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "הצגת עזרה"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "הצגה בדפדפן הקבצים"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr "כהה"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr "העתקה/הדבקה טבעיים"
 
@@ -112,11 +112,44 @@ msgstr "העתקה/הדבקה טבעיים"
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "הגדרות"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "לשונית חדשה"
+
+#: src/MainWindow.vala:862
+#, c-format
+msgid "Show in %s"
+msgstr "להציג עם %s"
+
+#: src/MainWindow.vala:863
+msgid "Default application"
+msgstr "יישום בררת מחדל"
+
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "סגירת הלשונית"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr "שכפול"
+
+#: src/MainWindow.vala:1155
+msgid "Reload"
+msgstr "רענון"
+
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "הטקסט שמיועד להדבקה חשוד בניסיון השגת גישה ניהולית"
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr "הטקסט שמיועד להדבקה מכיל יותר מפקודה אחת"
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -131,10 +164,6 @@ msgstr "קיים תהליך פעיל בלשונית זו."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "סגירה תסיים את התהליך."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "סגירת הלשונית"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -152,27 +181,37 @@ msgstr "ביציאה מהמסוף, התהליך יסתיים."
 msgid "Quit Terminal"
 msgstr "יציאה מהמסוף"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "פקודה זו מבקשת גישת מנהל למחשב"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "האם לרענן לשונית זו?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "העתקת פקודות למסוף עלולה להיות מסוכנת."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "יש תהליך פעיל בלשונית זו. רענון יסיים את התהליך."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "נא לוודא הבנה של כל חלק בפקודה זו."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "רענון לשונית"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"העתקת פקודות למסוף יכולה להיות מסוכנת. נא לוודא שברור לך מה כל חלק מהטקסט "
+"המודבק מבצע בטרם המשך התהליך."
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "הצגת אזהרות הגנת הדבקה"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "לא להדביק"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "להדביק בכל זאת"
 
@@ -195,6 +234,21 @@ msgstr "חיפוש מעגלי"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "מסוף"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "פקודה זו מבקשת גישת מנהל למחשב"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "העתקת פקודות למסוף עלולה להיות מסוכנת."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "נא לוודא הבנה של כל חלק בפקודה זו."
+
+#~ msgid "Task finished"
+#~ msgstr "פעולה הסתיימה"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "הצגה בדפדפן הקבצים"
 
 #~ msgid "Style"
 #~ msgstr "סגנון"
@@ -225,9 +279,6 @@ msgstr "מסוף"
 
 #~ msgid "Close"
 #~ msgstr "סגירה"
-
-#~ msgid "New Tab"
-#~ msgstr "לשונית חדשה"
 
 #~ msgid "Create a new tab"
 #~ msgstr "יצירת לשונית חדשה"

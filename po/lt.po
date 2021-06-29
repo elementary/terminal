@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2018-12-11 21:13+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/terminal/"
@@ -21,95 +21,95 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Užduotis baigta"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Vykdyti programą terminale"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Atverti naują langą"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Atverti naują langą"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Rodyti žinyną"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Nustatyti apvalkalo darbinį katalogą"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:212
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:218
 msgid "Copy Last Output"
 msgstr "Kopijuoti paskutinę išvestį"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:224
 msgid "Paste"
 msgstr "Įdėti"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:230
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Rasti…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Rodyti failų naršyklėje"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Zoom out"
 msgstr "Mažinti"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:371
 msgid "Default zoom level"
 msgstr "Numatytasis mastelio lygis"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:378
 msgid "Zoom in"
 msgstr "Didinti"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:397
 msgid "High Contrast"
 msgstr "Didelis kontrastas"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:406
 msgid "Solarized Light"
 msgstr "Apšviesta šviesi"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:415
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:433
 msgid "Natural Copy/Paste"
 msgstr ""
 
@@ -117,11 +117,45 @@ msgstr ""
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:485
+msgid "New Tab"
+msgstr "Nauja kortelė"
+
+#: src/MainWindow.vala:862
+#, fuzzy, c-format
+#| msgid "Show in File Browser"
+msgid "Show in %s"
+msgstr "Rodyti failų naršyklėje"
+
+#: src/MainWindow.vala:863
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Užverti kortelę"
+
+#: src/MainWindow.vala:1145
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1155
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Slėpti paieškos juostą"
 
@@ -136,10 +170,6 @@ msgstr "Šioje kortelėje yra aktyvus procesas."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Jeigu ją užversite, procesas užsibaigs."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Užverti kortelę"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -157,27 +187,41 @@ msgstr "Jeigu išeisite iš Terminalo, procesas užsibaigs."
 msgid "Quit Terminal"
 msgstr "Išeiti iš Terminalo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ši komanda prašo administracinės prieigos prie jūsų kompiuterio"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Ar tikrai norite užverti šią kortelę?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komandų kopijavimas į Terminalą gali būti pavojingas."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "Šiame terminale yra aktyvus procesas."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Įsitikinkite, kad žinote, ką kiekviena šios komandos dalis daro."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Užverti kortelę"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Rodyti įdėjimo apsaugos įspėjimus"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Neįdėti"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Vis tiek įdėti"
 
@@ -200,6 +244,18 @@ msgstr "Ciklinė paieška"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalas"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Ši komanda prašo administracinės prieigos prie jūsų kompiuterio"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Komandų kopijavimas į Terminalą gali būti pavojingas."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Įsitikinkite, kad žinote, ką kiekviena šios komandos dalis daro."
+
+#~ msgid "Task finished"
+#~ msgstr "Užduotis baigta"
 
 #~ msgid "Style"
 #~ msgstr "Stilius"
@@ -230,9 +286,6 @@ msgstr "Terminalas"
 
 #~ msgid "Close"
 #~ msgstr "Užverti"
-
-#~ msgid "New Tab"
-#~ msgstr "Nauja kortelė"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Sukurti naują kortelę"

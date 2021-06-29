@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-19 14:16+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-04-09 15:50+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -52,7 +52,7 @@ msgstr "Ctrl + Alt + ←/→ kısayolları ile sekmeleri taşı"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Ctrl + Tab ve Ctrl + Shift + Tab  ile sekme değiştirin"
+msgstr "Ctrl + Tab ve Ctrl + Shift + Tab ile sekme değiştirin"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Zoom levels are now remembered per-tab"
@@ -259,8 +259,8 @@ msgid "Fix appstream date format"
 msgstr "appstream uygulamasının tarih biçimi düzeltildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary LLC."
-msgstr "elementary LLC."
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
