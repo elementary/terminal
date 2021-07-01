@@ -1,0 +1,69 @@
+{
+  "id": "io.elementary.terminal",
+  "runtime": "org.gnome.Platform",
+  "sdk": "org.gnome.Sdk",
+  "runtime-version": "40",
+  "appstream-compose": false,
+  "separate-locales": false,
+  "modules": [
+    {
+      "name": "libvte-2.91-dev",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/vte/-/archive/0.64.0/vte-0.64.0.tar.gz",
+          "sha256": "2297503448325972cbe13b87f70f6882ac91836c6e2adbddfbe5323bfbb17547"
+        }
+      ]
+    },
+    {
+      "name": "granite",
+      "buildsystem": "meson",
+      "cleanup": [
+        "/bin",
+        "/share/applications"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/elementary/granite/archive/5.5.0.tar.gz",
+          "sha256": "0c376520c7d462fca05213a14970ee1075fea4a78062a33b47529e2647cd5557"
+        }
+      ]
+    },
+    {
+      "name": "Terminal",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/elementary/terminal/archive/refs/tags/5.5.2.tar.gz",
+          "sha256": "589ad0225e3a45700d95c8ead1b646f22a22c7688f647876a5329b3b4bd923cd"
+        }
+      ]
+    },
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm644 --target-directory=${FLATPAK_DEST}/share/appdata io.elementary.terminal.appdata.xml",
+        "appstream-compose --basename=io.elementary.terminal --prefix=${FLATPAK_DEST} --origin=flatpak io.elementary.terminal"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "io.elementary.terminal.appdata.xml"
+        }
+      ]
+    }
+  ],
+  "finish-args": [
+	 "--share=ipc",
+	 "--socket=x11",
+	 "--socket=wayland",
+	 "--share=network",
+	 "--allow=bluetooth",
+	 "--filesystem=host"
+  ]
+}
