@@ -1466,8 +1466,7 @@ namespace Terminal {
 
             foreach (TerminalWidget terminal in terms) {
                 string term_path = terminal.current_working_directory;
-                string term_label = terminal.window_title != "" ? terminal.window_title
-                                                                : Path.get_basename (term_path);
+                string term_label = Path.get_basename (term_path);
 
                 if (term_label == "" ||
                     terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
@@ -1479,8 +1478,7 @@ namespace Terminal {
 
                 foreach (TerminalWidget terminal2 in terms2) {
                     string term2_path = terminal2.current_working_directory;
-                    string term2_name = terminal2.window_title != "" ? terminal2.window_title
-                                                                     : Path.get_basename (term2_path);
+                    string term2_name = Path.get_basename (term2_path);
 
                     if (terminal2 != terminal && term2_name == term_label && term2_path != term_path) {
                         terminal2.tab_label = disambiguate_label (term2_path, term_path);
