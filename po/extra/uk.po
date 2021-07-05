@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 07:17+0000\n"
-"PO-Revision-Date: 2021-07-03 15:26+0000\n"
+"PO-Revision-Date: 2021-07-05 10:38+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -244,7 +244,7 @@ msgstr "Поліпшення інтеграції FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Theme preference menu"
-msgstr "Меню параметрів теми"
+msgstr "Меню налаштувань теми"
 
 #: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Zoom level controls"
