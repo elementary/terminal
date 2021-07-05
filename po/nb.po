@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 07:17+0000\n"
-"PO-Revision-Date: 2021-05-19 16:39+0000\n"
+"PO-Revision-Date: 2021-07-03 15:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "Prosess fullført"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Prosess avsluttet med feil"
 
 #: src/Application.vala:253
 msgid "Show version"
@@ -137,7 +137,7 @@ msgstr "Lukk Fane"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliser"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
@@ -145,11 +145,11 @@ msgstr "Last inn igjen"
 
 #: src/MainWindow.vala:1245
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Innlimt tekst kan prøve å tilegne seg administratortilgang"
 
 #: src/MainWindow.vala:1247
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Innlimt tekst kan inneholde flere kommandoer"
 
 #: src/MainWindow.vala:1397
 #, fuzzy
@@ -205,6 +205,8 @@ msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Kopiering av kommandoer inn i Terminal kan være farlig. Forsikre deg om at "
+"du forstår hva hver del av den innlimte teksten gjør før du fortsetter."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 #, fuzzy
