@@ -761,6 +761,8 @@ namespace Terminal {
 
             if (notebook.n_tabs == 0) {
                 destroy ();
+            } else {
+                check_for_tabs_with_same_name ();
             }
         }
 
@@ -961,7 +963,8 @@ namespace Terminal {
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
-                title = current_terminal.current_working_directory;
+                title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                            : current_terminal.current_working_directory;
                 if (Granite.Services.System.history_is_enabled () &&
                     Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1092,6 +1095,7 @@ namespace Terminal {
                 }
             });
 
+            terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
             terminal_widget.cwd_changed.connect (check_for_tabs_with_same_name);
 
             terminal_widget.set_font (term_font);
@@ -1466,7 +1470,6 @@ namespace Terminal {
 
                 if (term_label == "" ||
                     terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
-
                     continue;
                 }
 
@@ -1488,7 +1491,8 @@ namespace Terminal {
                 }
             }
 
-            title = current_terminal.current_working_directory;
+            title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                        : current_terminal.current_working_directory;
             return;
         }
 
