@@ -35,16 +35,24 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="5.6.0" date="2020-05-09" urgency="medium">
+    <release version="6.0.0" date="2020-05-09" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
           <li>Move tabs with the shortcut Ctrl + Alt + ←/→</li>
           <li>Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab</li>
           <li>Zoom levels are now remembered per-tab</li>
+          <li>Also warn about multi-line pastes</li>
+          <li>Show text details in unsafe paste dialogs</li>
+          <li>Open Link option when secondary clicking</li>
+          <li>Reload tabs in the context menu or with the shortcut Ctrl + Shift + R</li>
+          <li>Notifications indicate if a process exited with errors or not</li>
+          <li>Show keyboard shortcuts in tab context menus</li>
         </ul>
         <p>Other updates:</p>
         <ul>
+          <li>Fix an issue with keyboard shortcuts not activating the first time they're pressed</li>
+          <li>Avoid losing focus when closing background tabs</li>
           <li>Validate custom palette</li>
           <li>Translation updates</li>
         </ul>
