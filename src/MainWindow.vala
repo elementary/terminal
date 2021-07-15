@@ -760,10 +760,11 @@ namespace Terminal {
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var terminal_widget = get_term_widget (tab);
-            terminals.remove (terminal_widget);
-
             if (!on_drag && notebook.n_tabs == 0) {
+                save_opened_terminals ();
                 destroy ();
+            } else {
+                terminals.remove (terminal_widget);
             }
         }
 
@@ -1516,8 +1517,7 @@ namespace Terminal {
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
-                notebook.tabs.foreach ((tab) => {
-                    var term = get_term_widget (tab);
+                terminals.foreach ((term) => {
                     if (term != null) {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
@@ -1540,7 +1540,7 @@ namespace Terminal {
 
             Terminal.Application.saved_state.set_int (
                 "focused-tab",
-                notebook.get_tab_position (notebook.current)
+                notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
             );
         }
 
