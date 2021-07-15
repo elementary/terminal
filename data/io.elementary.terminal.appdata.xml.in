@@ -8,7 +8,7 @@
   <name>Terminal</name>
   <summary>Use the command line</summary>
   <description>
-    <p>Terminal is a terminal emulator application for accessing a UNIX shell environment which can be used to run programs available on your system.</p>
+    <p>Terminal is a terminal emulator for accessing a UNIX shell environment that can run programs available on your system.</p>
   </description>
   <provides>
     <binary>io.elementary.terminal</binary>
@@ -40,7 +40,7 @@
           <li>Zoom levels are now remembered per-tab</li>
           <li>Also warn about multi-line pastes</li>
           <li>Show text details in unsafe paste dialogs</li>
-          <li>Open Link option when secondary clicking</li>
+          <li>Open link options when right-clicking</li>
           <li>Reload tabs in the context menu or with the shortcut Ctrl + Shift + R</li>
           <li>Notifications indicate if a process exited with errors or not</li>
           <li>Show keyboard shortcuts in tab context menus</li>
