@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2018 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2015–2021 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.terminal</id>
   <metadata_license>CC0</metadata_license>
@@ -8,11 +8,7 @@
   <name>Terminal</name>
   <summary>Use the command line</summary>
   <description>
-    <p>
-      Terminal is a terminal emulator application for accessing
-      a UNIX shell environment which can be used to run programs
-      available on your system.
-    </p>
+    <p>Terminal is a terminal emulator application for accessing a UNIX shell environment which can be used to run programs available on your system.</p>
   </description>
   <provides>
     <binary>io.elementary.terminal</binary>
@@ -35,7 +31,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="6.0.0" date="2020-05-09" urgency="medium">
+    <release version="6.0.0" date="2020-06-15" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
