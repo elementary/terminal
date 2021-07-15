@@ -1,3 +1,57 @@
+io.elementary.terminal (6.0.0) bionic; urgency=medium
+
+  * Release 6.0.0 (#608)
+  * Add accellabel to reload menuitem (#580)
+  * Save and restore last tab closed (#604)
+  * MainWindow: don't close the window during drag and drop (#607)
+  * Extra: rename mo.po to ro_MD.po (#600)
+  * Change locale code mo to ro_MD (Closes: elementary/terminal#598)
+    (#599)
+  * Update translation files
+  * Update translation template
+  * Unsafe Pastes: Handle multi-line pastes as well (#595)
+  * Add accelerator labels to tab context menu (#582)
+  * Application: set notification icon badges (#592)
+  * Replace some deprecated functions (#590)
+  * Set notebook to expand (#591)
+  * Initalize properties separately (#589)
+  * Stop the tooltip being changed by Granite. (#587)
+  * Update window title on switch page (#586)
+  * Initialize Objects with Properties
+  * More verbose names for single character variables
+  * Refactor name check and title update so works with custom prompt
+    (#584)
+  * Actions: only run CI on PR (#581)
+  * Add dialog to reload tab action if there is a foreground process
+    (#579)
+  * Add Reload item to terminal tabs. (#570)
+  * Catch Uri.unescape_string returning null (#575)
+  * Update io.elementary.terminal.appdata.xml.in (#574)
+  * UnsafePasteDialog: Use Gtk.ResponseType (#572)
+  * Paste if Protection dialog does not return 0. Sef default button to
+    "Do not Paste". (#569)
+  * Use Granite.SwitchModelButton (#566)
+  * Add "Open In" to context menu (#550)
+  * Add text to paste in details pane for UnsafePasteDialog. (#563)
+  * LINGUAS: Sort and remove en
+  * Zoom per tab (#505)
+  * TerminalWidget: fix copy not working on the first try (#548)
+  * Application.css: increase padding (#527)
+  * keep focus when tab is closed (#540)
+  * Update next release appdata re new shortcuts (#536)
+  * Ctrl+tab key bind: go to previous tab (#533)
+  * Application.css: Fix color button sharpness (#535)
+  * MainWindow: Use Hdy.HeaderBar and Hdy.init (#523)
+  * Add moving current tab shortcuts (#361)
+  * Use ColorButton style from Greenfield (#520)
+  * MainWindow: subclass Hdy.Window (#514)
+  * Fix long lines (#445)
+  * Validate colors restored from settings; correct and replace as
+    required. (#512)
+  * Implement version flag (#438)
+
+ -- elementary, Inc. <builds@elementary.io>  Thu, 15 Jul 2021 21:31:48 +0000
+
 io.elementary.terminal (5.5.1) bionic; urgency=medium
 
   * Release 5.5.1
