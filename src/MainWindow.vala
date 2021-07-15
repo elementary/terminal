@@ -62,6 +62,7 @@ namespace Terminal {
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-new-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
+        public const string ACTION_RELOAD_TAB = "action-reload-tab";
         public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
@@ -87,6 +88,7 @@ namespace Terminal {
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
+            { ACTION_RELOAD_TAB, action_reload_tab },
             { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
@@ -150,6 +152,8 @@ namespace Terminal {
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
+            action_accelerators[ACTION_RELOAD_TAB] = "<Control><Shift>r";
+            action_accelerators[ACTION_RELOAD_TAB] = "F5";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
@@ -1168,7 +1172,9 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            var reload_menu_item = new Gtk.MenuItem.with_label (_("Reload"));
+            var reload_menu_item = new Gtk.MenuItem () {
+                child = new Granite.AccelLabel.from_action_name (_("Reload"), ACTION_PREFIX + ACTION_RELOAD_TAB)
+            };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
             tab.menu.show_all ();
@@ -1366,6 +1372,10 @@ namespace Terminal {
 
         private void action_duplicate_tab () {
             new_tab (current_terminal.get_shell_location ());
+        }
+
+        private void action_reload_tab () {
+            current_terminal.reload ();
         }
 
         private void action_zoom_in_font () {
