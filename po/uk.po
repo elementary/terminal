@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-06 22:04+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
@@ -63,98 +63,99 @@ msgstr "Показати довідку"
 msgid "Set shell working directory"
 msgstr "Встановити робочу теку для оболонки"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Копіювати останній вивід"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:363
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Зменшити"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Типовий масштаб"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Збільшити"
 
-#: src/MainWindow.vala:397
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Високий контраст"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarized світла"
 
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Темна"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Звичайне копіювання/вставляння"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Скорочення не потребують використання клавіші Shift; може вплинути на "
 "програми CLI"
 
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:490
 msgid "New Tab"
 msgstr "Нова вкладка"
 
-#: src/MainWindow.vala:862
+#: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:863
+#: src/MainWindow.vala:883
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
-#: src/MainWindow.vala:1145
+#: src/MainWindow.vala:1165
 msgid "Duplicate"
 msgstr "Дублювати"
 
-#: src/MainWindow.vala:1155
+#: src/MainWindow.vala:1176
 msgid "Reload"
 msgstr "Перезавантажити"
 
-#: src/MainWindow.vala:1245
+#: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr "Вставлений текст може намагатися отримати доступ до прав адміністратора"
+msgstr ""
+"Вставлений текст може намагатися отримати доступ до прав адміністратора"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
 msgstr "Вставлений текст може містити кілька команд"
 
-#: src/MainWindow.vala:1397
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
