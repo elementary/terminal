@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-02 00:23+0000\n"
+"PO-Revision-Date: 2021-07-15 22:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -60,15 +60,16 @@ msgstr "Forstørrelsesnivåer huskes nå per fane"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Advar om flerlinjeinnliminger også"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Vis tekstdetaljer om utrygge innliminger"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
+#, fuzzy
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Åpne lenkevalg ved høyreklikk"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 #, fuzzy
@@ -78,11 +79,11 @@ msgstr "Flytt faner med snarveien Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Merknader indikerer hvorvidt en prosess avsluttet med feil eller ei"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr ""
+msgstr "Vis tastatursnarveier i fane-bindeleddsmenyer"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -96,6 +97,8 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Fikset et problem med tastatursnarveier som ikke aktiveres første gang de "
+"trykkes"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
