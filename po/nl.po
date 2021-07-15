@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2020-04-14 07:10+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -78,7 +78,7 @@ msgstr "Plakken"
 msgid "Select All"
 msgstr "Alles Selecteren"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Zoeken…"
 
@@ -145,7 +145,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Verberg zoekbalk"
 
@@ -197,28 +205,21 @@ msgstr "Er is een actief proces in deze terminal."
 msgid "Reload Tab"
 msgstr "Tabblad sluiten"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Deze opdracht vereist administratieve toegang tot uw computer"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Opdrachten kopiëren naar het terminalvenster kan gevaarlijk zijn."
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
 msgstr ""
-"Zorg ervoor dat u de werking van elk onderdeel van deze opdracht begrijpt."
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Toon plak bescherming waarschuwingen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Niet plakken"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Toch plakken"
 
@@ -241,6 +242,16 @@ msgstr "Cyclisch zoeken"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Deze opdracht vereist administratieve toegang tot uw computer"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Opdrachten kopiëren naar het terminalvenster kan gevaarlijk zijn."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Zorg ervoor dat u de werking van elk onderdeel van deze opdracht begrijpt."
 
 #~ msgid "Task finished"
 #~ msgstr "Taak voltooid"

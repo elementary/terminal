@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-06-06 18:16+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-06-15 14:27+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -78,7 +78,7 @@ msgstr "貼り付け"
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "検索…"
 
@@ -139,13 +139,21 @@ msgstr "タブを閉じる"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "タブを複製"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "再読み込み"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "検索バーを隠します"
 
@@ -193,27 +201,22 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "タブを再読み込み"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "このコマンドは管理者権限を必要とします"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "\"ターミナル\" にコマンドをコピーすると危険な場合があります。"
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"“ターミナル”へのコマンドの貼り付けは、危険な場合があります。続行する前に、貼り付けされたテキストの各部分が実行する内容を必ず理解するようにしてください。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "このコマンドの各部分が実行することを、必ず理解するようにしてください。"
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "貼り付け時に保護警告を表示"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "貼り付けしない"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "了解して貼り付け"
 
@@ -236,6 +239,16 @@ msgstr "循環検索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "このコマンドは管理者権限を必要とします"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "\"ターミナル\" にコマンドをコピーすると危険な場合があります。"
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "このコマンドの各部分が実行することを、必ず理解するようにしてください。"
 
 #~ msgid "Task finished"
 #~ msgstr "タスクが終了しました"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-06-04 13:30+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-06-16 01:43+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
@@ -78,7 +78,7 @@ msgstr "Einfügen"
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Suchen …"
 
@@ -138,13 +138,21 @@ msgstr "Tab schließen"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplizieren"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "Neu laden"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
@@ -192,27 +200,24 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "Tab neu laden"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Dieser Befehl erfordert Systemverwalterrechte"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Das Einfügen von Befehlen in das Terminal birgt Risiken."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Das Einfügen von Befehlen in ein Terminal ist gefährlich. Bevor Sie "
+"fortfahren, sollten Sie unbedingt verstehen, was die einzelnen Teile des "
+"eingefügten Textes bedeuten."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Vergewissern Sie sich, dass Sie verstehen, was dieser Befehl bewirkt."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Warnhinweise beim Einfügen anzeigen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Nicht einfügen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Trotzdem einfügen"
 
@@ -235,6 +240,16 @@ msgstr "Zyklisches Suchen"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Dieser Befehl erfordert Systemverwalterrechte"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Das Einfügen von Befehlen in das Terminal birgt Risiken."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Vergewissern Sie sich, dass Sie verstehen, was dieser Befehl bewirkt."
 
 #~ msgid "Task finished"
 #~ msgstr "Aufgabe abgeschlossen"

@@ -176,8 +176,8 @@
     </key>
     <key name="unsafe-paste-alert" type="b">
       <default>true</default>
-      <summary>Alert the user about unsafe paste.</summary>
-      <description>If the user paste's a command into the terminal that might be considered unsafe, warn them.</description>
+      <summary>Alert on unsafe pastes</summary>
+      <description>If the user pastes a command that might be considered unsafe (e.g. with sudo or multiple lines), show a warning</description>
     </key>
   </schema>
 </schemalist>

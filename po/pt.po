@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-06-05 20:02+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-06-15 14:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -78,7 +78,7 @@ msgstr "Colar"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Procurar…"
 
@@ -138,13 +138,21 @@ msgstr "Fechar separador"
 
 #: src/MainWindow.vala:1145
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: src/MainWindow.vala:1155
 msgid "Reload"
 msgstr "Recarregar"
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "O texto colado pode estar a tentar obter acesso administrativo"
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr "O texto colado pode conter vários comandos"
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Esconder barra de localização"
 
@@ -192,27 +200,23 @@ msgstr ""
 msgid "Reload Tab"
 msgstr "Recarregar separador"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Este comando está a pedir acesso de administrador ao seu computador"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Copiar comandos para o Terminal pode ser perigoso."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Copiar comandos para o Terminal pode ser perigoso. Certifique-se de que "
+"compreende o que cada parte do texto colado faz antes de continuar."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Mostrar avisos de proteção do copiar e colar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Não colar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Colar mesmo assim"
 
@@ -235,6 +239,15 @@ msgstr "Procura cíclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Este comando está a pedir acesso de administrador ao seu computador"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Copiar comandos para o Terminal pode ser perigoso."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Tenha a certeza que percebe exatamente o que este comando faz."
 
 #~ msgid "Task finished"
 #~ msgstr "Tarefa concluída"

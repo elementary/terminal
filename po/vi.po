@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -80,7 +80,7 @@ msgstr "Dán"
 msgid "Select All"
 msgstr "Chọn toàn bộ"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
@@ -147,7 +147,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr ""
 
@@ -199,27 +207,21 @@ msgstr "Có tiến trình đang hoạt động trong cửa sổ lệnh này."
 msgid "Reload Tab"
 msgstr "Đóng tab"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Lệnh này yêu cầu quyền quản trị vào máy tính của bạn"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Sao chép lệnh vào Terminal có thể nguy hiểm."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Hãy chắc chắn rằng bạn hiểu những gì từng phần của lệnh này không."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Đừng dán"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Dán mọi cách"
 
@@ -242,6 +244,15 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Cửa sổ dòng lệnh"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Lệnh này yêu cầu quyền quản trị vào máy tính của bạn"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Sao chép lệnh vào Terminal có thể nguy hiểm."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Hãy chắc chắn rằng bạn hiểu những gì từng phần của lệnh này không."
 
 #~ msgid "Task finished"
 #~ msgstr "Tác vụ đã hoàn thành"
