@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-01-20 20:26+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-07-02 00:23+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -93,8 +93,9 @@ msgid "Translation updates"
 msgstr "Oversettelsesoppdateringer"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
+#, fuzzy
 msgid "Add commandline option for New Tab (-t)"
-msgstr ""
+msgstr "Legg til kommandolinjevalg for ny fane (-t)"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Fix URL selection"
@@ -255,10 +256,8 @@ msgid "Fix appstream date format"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:282
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC. (selskap med begrenset ansvar)"
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

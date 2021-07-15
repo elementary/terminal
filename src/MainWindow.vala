@@ -30,6 +30,7 @@ namespace Terminal {
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
+        private bool on_drag = false;
         private string[] saved_tabs;
         private string[] saved_zooms;
 
@@ -505,6 +506,8 @@ namespace Terminal {
             notebook.tab_duplicated.connect (on_tab_duplicated);
             notebook.close_tab_requested.connect (on_close_tab_requested);
             notebook.new_tab_requested.connect (on_new_tab_requested);
+            notebook.get_child ().drag_begin.connect (on_drag_begin);
+            notebook.get_child ().drag_end.connect (on_drag_end);
             var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
@@ -761,10 +764,11 @@ namespace Terminal {
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var terminal_widget = get_term_widget (tab);
-            terminals.remove (terminal_widget);
-
-            if (notebook.n_tabs == 0) {
+            if (!on_drag && notebook.n_tabs == 0) {
+                save_opened_terminals ();
                 destroy ();
+            } else {
+                terminals.remove (terminal_widget);
             }
         }
 
@@ -846,6 +850,18 @@ namespace Terminal {
                 new_tab (current_terminal.get_shell_location ());
             } else {
                 new_tab (Environment.get_home_dir ());
+            }
+        }
+
+        private void on_drag_begin (Gdk.DragContext context) {
+            on_drag = true;
+        }
+
+        private void on_drag_end (Gdk.DragContext context) {
+            on_drag = false;
+
+            if (notebook.n_tabs == 0) {
+                destroy ();
             }
         }
 
@@ -1149,14 +1165,16 @@ namespace Terminal {
                 new Granite.AccelLabel.from_action_name (_("Duplicate"), ACTION_PREFIX + ACTION_DUPLICATE_TAB)
             );
             term.tab = tab;
-            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of 
+            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
              * automatically changing the tooltip to be the same as the label. */
             term.tab.notify["label"].connect_after (() => {
                 term.tab.tooltip = term.current_working_directory;
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            var reload_menu_item = new Gtk.MenuItem.with_label (_("Reload"));
+            var reload_menu_item = new Gtk.MenuItem () {
+                child = new Granite.AccelLabel.from_action_name (_("Reload"), ACTION_PREFIX + ACTION_RELOAD_TAB)
+            };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
             tab.menu.show_all ();
@@ -1230,25 +1248,40 @@ namespace Terminal {
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
-            /* if unsafe paste alert is enabled, show dialog */
             if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
 
                 if (intext == null) {
                     return;
                 }
+
                 if (!intext.validate ()) {
                     warning ("Dropping invalid UTF-8 paste");
                     return;
                 }
+
                 var text = intext.strip ();
 
+                string? unsafe_warning = null;
+
                 if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    var dialog = new UnsafePasteDialog (this, text);
-                    if (dialog.run () != Gtk.ResponseType.ACCEPT) {
-                        dialog.destroy ();
+                    unsafe_warning = _("The pasted text may be trying to gain administrative access");
+                } else if (text.index_of ("\n") != -1) {
+                    unsafe_warning = _("The pasted text may contain multiple commands");
+                }
+
+                if (unsafe_warning != null) {
+                    var unsafe_paste_dialog = new UnsafePasteDialog (
+                        this,
+                        unsafe_warning,
+                        text
+                    );
+
+                    if (unsafe_paste_dialog.run () != Gtk.ResponseType.ACCEPT) {
+                        unsafe_paste_dialog.destroy ();
                         return;
                     }
-                    dialog.destroy ();
+
+                    unsafe_paste_dialog.destroy ();
                 }
             }
 
@@ -1494,8 +1527,7 @@ namespace Terminal {
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
-                notebook.tabs.foreach ((tab) => {
-                    var term = get_term_widget (tab);
+                terminals.foreach ((term) => {
                     if (term != null) {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
@@ -1518,7 +1550,7 @@ namespace Terminal {
 
             Terminal.Application.saved_state.set_int (
                 "focused-tab",
-                notebook.get_tab_position (notebook.current)
+                notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
             );
         }
 

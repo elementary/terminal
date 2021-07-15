@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -81,7 +81,7 @@ msgstr "Gludo"
 msgid "Select All"
 msgstr "Dewis Popeth"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "Chwilio…"
 
@@ -148,7 +148,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "Cuddio'r bar chwilio"
 
@@ -200,29 +208,21 @@ msgstr "Mae 'na proses weithredol yn y derfynell hwn."
 msgid "Reload Tab"
 msgstr "Cau Tab"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Mae'r gorchymyn hwn yn gofyn am fynediad Gweinyddol i'ch cyfrifiadur"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Gall copïo gorchymion i mewn i'r Terfynell fod yn beryglus."
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
 msgstr ""
-"Byddwch yn sicr eich bod chi'n deall beth mae pob rhan o'r gorchymyn yn ei "
-"wneud."
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Dangos rhybuddion diogelu gludo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Peidio â Gludo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Gludo Beth Bynnag"
 
@@ -245,6 +245,18 @@ msgstr "Chwilio cylchol"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terfynell"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr ""
+#~ "Mae'r gorchymyn hwn yn gofyn am fynediad Gweinyddol i'ch cyfrifiadur"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Gall copïo gorchymion i mewn i'r Terfynell fod yn beryglus."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Byddwch yn sicr eich bod chi'n deall beth mae pob rhan o'r gorchymyn yn "
+#~ "ei wneud."
 
 #~ msgid "Task finished"
 #~ msgstr "Tasg wedi dod i ben"

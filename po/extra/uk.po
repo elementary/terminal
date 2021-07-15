@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
-"PO-Revision-Date: 2021-05-20 00:07+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"PO-Revision-Date: 2021-07-05 10:38+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -123,7 +123,7 @@ msgstr "Запобігання непотрібній відкриванню д�
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
 msgstr ""
-"Увімкнення або вимкнення звичайного копіювання/вставлення в меню Параметри"
+"Увімкнення або вимкнення звичайного копіювання/вставлення в меню Налаштування"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Zoom with Ctrl + Scroll"
@@ -140,7 +140,7 @@ msgstr "Застосування зміни шрифту без перезапу
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
-"Вкладки не запам'ятовуються, коли історію вимкнено в системних параметрах"
+"Вкладки не запам'ятовуються, коли історію вимкнено в налаштуваннях системи"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Show keyboard shortcuts in the secondary-click menu"
@@ -149,8 +149,8 @@ msgstr "Показувати комбінацій клавіш у контекс
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Middle-click paste now properly follows System Settings"
 msgstr ""
-"Вставлення середньою клавішею тепер належним чином слідує системним "
-"параметрам"
+"Вставлення середньою клавішею тепер належним чином слідує налаштуванням "
+"системи"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Shift + Control + D to duplicate tabs"
@@ -244,7 +244,7 @@ msgstr "Поліпшення інтеграції FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:196
 msgid "Theme preference menu"
-msgstr "Меню параметрів теми"
+msgstr "Меню налаштувань теми"
 
 #: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Zoom level controls"

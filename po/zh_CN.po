@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-11 07:56+0000\n"
+"POT-Creation-Date: 2021-06-15 07:17+0000\n"
 "PO-Revision-Date: 2021-04-01 11:57+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -76,7 +76,7 @@ msgstr "粘贴"
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1390
+#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
 msgid "Find…"
 msgstr "查找…"
 
@@ -143,7 +143,15 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1382
+#: src/MainWindow.vala:1245
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1247
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1397
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -195,27 +203,21 @@ msgstr "此终端中有一个进程正在运行。"
 msgid "Reload Tab"
 msgstr "关闭标签"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "运行此命令需要管理员权限"
-
 #: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "复制命令到终端可能会有安全隐患。"
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "请确定您理解指令各部分的作用。"
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "显示粘贴警告"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "取消粘贴"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "继续粘贴"
 
@@ -238,6 +240,15 @@ msgstr "循环搜索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "终端"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "运行此命令需要管理员权限"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "复制命令到终端可能会有安全隐患。"
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "请确定您理解指令各部分的作用。"
 
 #~ msgid "Task finished"
 #~ msgstr "任务已完成"
