@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-04-09 00:02+0000\n"
+"PO-Revision-Date: 2021-07-16 11:54+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -60,31 +60,27 @@ msgstr "רמות התקריב נשמרות נקודתית לכל לשונית"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "מופיעה אזהרה גם על הדבקה של מספר שורות יחד"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "פרטי הטקסט יופיעו בחלוניות של הדבקות בלתי בטוחות"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "אפשרות לפתיחת קישור בכפתור עכבר ימני"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "העברת לשוניות עם קיצור המקשים Ctrl + Alt + ←/→‎"
+msgstr "ניתן לרענן לשוניות דרך תפריט ההקשר או עם צירוף המקשים Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "התראות מציינות האם תהליך הסתיים עם שגיאות או שלא"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "הצגת קיצורי מקלדת בתפריט כפתור הלחיצה המשנית"
+msgstr "יוצגו קיצורי מקלדת בתפריטי ההקשר של הלשוניות"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -97,11 +93,11 @@ msgstr "עדכונים נוספים:"
 msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
-msgstr ""
+msgstr "תוקנה תקלה עם קיצורי מקלדת שלא פעלו בפעם הראשונה שנלחצו"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "מניעת איבוד מיקוד בעת סגירת לשוניות רקע"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
