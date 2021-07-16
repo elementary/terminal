@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-05-19 18:43+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2021-07-16 12:08+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
 "Language: es\n"
@@ -68,23 +68,21 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Opción Abrir enlace al hacer clic secundario"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Es posible desplazar las pestañas mediante Ctrl + Alt + ←/→"
+msgstr ""
+"Vuelva a cargar las pestañas en el menú contextual o con el atajo Ctrl + "
+"Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Las notificaciones indican si un proceso salió con errores o no"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Mostrar atajos de teclado en el menú secundario"
+msgstr "Mostrar atajos de teclado en menús contextuales de pestañas"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -98,10 +96,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Soluciona un problema con los atajos de teclado que no se activan la primera "
+"vez que se presionan"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Evitar la pérdida de enfoque al cerrar pestañas fondo"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
