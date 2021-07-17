@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-04-23 19:18+0000\n"
+"PO-Revision-Date: 2021-07-18 02:03+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "terminal/extra/en_GB/>\n"
@@ -60,31 +60,27 @@ msgstr "Zoom levels are now remembered per-tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Also warn about multi-line pastes"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Show text details in unsafe paste dialogs"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Open Link option when secondary clicking"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Move tabs with the shortcut Ctrl + Alt + ←/→"
+msgstr "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Notifications indicate if a process exited with errors or not"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Show keyboard shortcuts in the secondary-click menu"
+msgstr "Show keyboard shortcuts in tab context menus"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -98,10 +94,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Fix an issue with keyboard shortcuts not activating the first time they're "
+"pressed"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Avoid losing focus when closing background tabs"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
