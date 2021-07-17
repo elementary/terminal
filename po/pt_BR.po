@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-17 17:21+0000\n"
-"Last-Translator: Mário Victor Ribeiro Silva <mariovictorrs@gmail.com>\n"
+"Last-Translator: nenufa <jean.a.r22@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -112,7 +112,7 @@ msgstr "Copiar/colar natural"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr "Os atalhos não exigem Shift; pode interferir com aplicativos CLI"
+msgstr "Atalhos não requerem Shift; pode interferir com apps CLI"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
