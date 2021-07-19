@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-17 17:21+0000\n"
-"Last-Translator: nenufa <jean.a.r22@hotmail.com>\n"
+"PO-Revision-Date: 2021-07-17 12:24-0300\n"
+"Last-Translator: Lucas Fank <lucaslucasfank@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "Processo concluído"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Processo encerrou com erros"
 
 #: src/Application.vala:253
 msgid "Show version"
@@ -42,7 +42,7 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 "Execute o restante da linha como um comando no terminal. Também pode usar "
-"'-' como sinalizador"
+"'--' como sinalizador"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
@@ -108,7 +108,7 @@ msgstr "Escuro"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr "Copiar/colar natural"
+msgstr "Copiar/Colar natural"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
@@ -137,19 +137,19 @@ msgstr "Fechar aba"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "Recarregar"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "O texto colado pode estar tentando ganhar acesso administrativo"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "O texto colado pode conter multiplos comandos"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
@@ -157,7 +157,7 @@ msgstr "Ocultar barra de localização"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Você tem certeza que deseja fechar esta aba ?"
+msgstr "Você tem certeza que deseja fechar esta aba?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -169,15 +169,15 @@ msgstr "Se você fechar, o processo irá terminar."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Tem certeza de que deseja sair do Terminal ?"
+msgstr "Tem certeza de que deseja sair do Terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "Há um processo ativo no terminal."
+msgstr "Há um processo ativo neste terminal."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Se você fechar o Terminal, o processo irá terminar."
+msgstr "Se você sair do Terminal, o processo irá terminar."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
@@ -187,7 +187,7 @@ msgstr "Sair do Terminal"
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Você tem certeza que deseja fechar esta aba ?"
+msgstr "Você tem certeza que deseja recarregar esta aba?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 #, fuzzy
@@ -195,19 +195,21 @@ msgstr "Você tem certeza que deseja fechar esta aba ?"
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Há um processo ativo no terminal."
+msgstr "Há um processo ativo nesta aba. Se você recarregá-lo, o processo irá "
+"terminar."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Fechar aba"
+msgstr "Recarregar aba"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
-msgstr ""
+msgstr "Copiar comandos para o terminal pode ser perigoso. Tenha certeza de "
+"entender o que cada parte do texto colado faz, antes de continuar."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
@@ -215,7 +217,7 @@ msgstr "Exibir avisos de proteção de colar"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
-msgstr "Não colar"
+msgstr "Não Colar"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
