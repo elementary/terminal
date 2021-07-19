@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-19 14:17+0000\n"
+"PO-Revision-Date: 2021-07-20 00:15+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -81,10 +81,9 @@ msgid "Notifications indicate if a process exited with errors or not"
 msgstr "Les notificacions indiquen si un procés ha sortit amb errors o no."
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Es mostren les dreceres del teclat al menú del clic secundari."
+msgstr ""
+"Es mostren les dreceres de teclat als menús contextuals de les pestanyes."
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -98,10 +97,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Solució d'un problema amb les tecles de drecera que no s'activaven la "
+"primera vegada que es premien"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "S'evita perdre el focus quan tanqueu les pestanyes del fons."
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
