@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-04-11 16:30+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2021-07-21 02:43+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
 "Language: fr\n"
@@ -233,8 +233,7 @@ msgstr "Masquage du curseur lors de la saisie"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
-"Correction du comportement de mise en surbrillance d'une recherche erronée"
+msgstr "Correction du mauvais surlignage d'un texte recherché"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Support -h flag for help"
