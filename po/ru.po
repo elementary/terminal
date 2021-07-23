@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-23 14:37+0000\n"
-"Last-Translator: Pavel Gorelikov <pavop02@gmail.com>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
@@ -143,10 +143,11 @@ msgstr "Перезагрузить"
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+"Вставленный текст может пытаться получить доступ к правам администратора"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Вставленный текст может содержать несколько команд"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
