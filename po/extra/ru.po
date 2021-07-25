@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-12 04:11+0000\n"
+"PO-Revision-Date: 2021-07-25 12:03+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -73,10 +73,10 @@ msgid "Open Link option when secondary clicking"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Перемещение вкладкок сочетанием клавиш Ctrl + Alt + ←/→"
+msgstr ""
+"Перезагрузка вкладок из контекстного меню или с помощью сочетания клавиш "
+"Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
@@ -179,7 +179,7 @@ msgstr "Вкладки не запоминаются, когда История 
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "Показывать горячие клавиши в контекстном меню"
+msgstr "Показывать сочетания клавиш в контекстном меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:105
 msgid "Middle-click paste now properly follows System Settings"
@@ -209,7 +209,7 @@ msgstr "Хранение состояния с помощью GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Поддержка комбинации клавиш Ctrl+Равно для масштабирования"
+msgstr "Поддержка сочетания клавиш Ctrl+Равно для увеличения масштаба"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Fix a wrong foreground process response code"
