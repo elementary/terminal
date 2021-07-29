@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-29 15:59+0000\n"
-"Last-Translator: largecreeper <largecreeper@gmail.com>\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -106,7 +106,7 @@ msgstr "深色"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr "自然的複製 / 貼上"
+msgstr "自然地複製 / 貼上"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
@@ -135,19 +135,19 @@ msgstr "關閉分頁"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "再製"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "重新載入"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "貼上的文字可能包含多項指令"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
