@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-29 15:38+0000\n"
-"Last-Translator: williamlin <williamlin032914@gmail.com>\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "行程完成執行"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "行程錯誤地結束"
 
 #: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "顯示版本"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
@@ -40,21 +40,17 @@ msgstr "在終端機中執行程式"
 #: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
+msgstr "在終端機中將剩餘內容以指令形式執行。也可以使用 '--' 作為前綴"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "開啟新視窗"
+msgstr "開啟新終端機視窗"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "開啟新視窗"
+msgstr "開啟新終端機分頁"
 
 #: src/Application.vala:268
 msgid "Show help"
@@ -85,18 +81,16 @@ msgid "Find…"
 msgstr "尋找…"
 
 #: src/MainWindow.vala:368
-#, fuzzy
 msgid "Zoom out"
-msgstr "拉遠"
+msgstr "縮小"
 
 #: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
 #: src/MainWindow.vala:383
-#, fuzzy
 msgid "Zoom in"
-msgstr "拉近"
+msgstr "放大"
 
 #: src/MainWindow.vala:402
 msgid "High Contrast"
@@ -108,7 +102,7 @@ msgstr "Solarized 亮色"
 
 #: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "深色"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
