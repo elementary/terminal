@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-29 15:38+0000\n"
-"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"PO-Revision-Date: 2021-07-29 15:39+0000\n"
+"Last-Translator: williamlin <williamlin032914@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -128,7 +128,7 @@ msgstr "顯示在檔案瀏覽器中"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "預設應用程式"
 
 #: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -183,10 +183,8 @@ msgid "Quit Terminal"
 msgstr "退出終端機"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "您確定您想要關閉此分頁嗎？"
+msgstr "您確定您想要重新整理此分頁嗎？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 #, fuzzy
