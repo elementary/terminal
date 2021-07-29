@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2020-03-01 14:09+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"PO-Revision-Date: 2021-07-29 15:38+0000\n"
+"Last-Translator: williamlin <williamlin032914@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:107
@@ -116,7 +116,7 @@ msgstr ""
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "快捷鍵操作免按shift；可能會與CLI程式產生衝突"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
