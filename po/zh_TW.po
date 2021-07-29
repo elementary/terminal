@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-07-29 15:39+0000\n"
-"Last-Translator: williamlin <williamlin032914@gmail.com>\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -110,21 +110,20 @@ msgstr ""
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr "快捷鍵操作免按shift；可能會與CLI程式產生衝突"
+msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: src/MainWindow.vala:490
 msgid "New Tab"
 msgstr "新增分頁"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show in File Browser"
+#, c-format
 msgid "Show in %s"
-msgstr "顯示在檔案瀏覽器中"
+msgstr "在 %s 中顯示"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
