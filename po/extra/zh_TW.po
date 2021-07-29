@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-29 15:59+0000\n"
+"PO-Revision-Date: 2021-07-29 20:51+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hant/>\n"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "修復 zsh 通知"
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
@@ -262,7 +262,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:236
 #: data/io.elementary.terminal.appdata.xml.in:251
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "小錯誤修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:199
 msgid "FISH integration fixes"
@@ -289,10 +289,8 @@ msgid "Fix appstream date format"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:286
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
