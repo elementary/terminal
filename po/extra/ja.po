@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-18 02:03+0000\n"
+"PO-Revision-Date: 2021-08-09 12:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -36,8 +36,7 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"\"ターミナル\" は、システム上のプログラムを実行するのに使用される UNIX のシェ"
-"ル環境にアクセスするための端末エミュレータアプリケーションです。"
+"“ターミナル”は、システム上のプログラムを実行するのに使用される UNIX のシェル環境にアクセスするための端末エミュレータアプリケーションです。"
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -136,7 +135,7 @@ msgstr "一部の URL がクリックできない不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "\"バージョンを表示\" コマンドラインオプション (-v, --version) を追加"
+msgstr "\"バージョンを表示\"コマンドラインオプション (-v, --version) を追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Add commandline option for New Window (-n)"
