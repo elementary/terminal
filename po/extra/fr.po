@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-08-03 15:56+0000\n"
+"PO-Revision-Date: 2021-08-12 09:03+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -185,7 +185,7 @@ msgstr "Mise à jour de la police sans redémarrage"
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
 "Ne pas se souvenir des onglets lorsque l'historique est désactivé dans les "
-"paramètres systèmes"
+"paramètres du système"
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Show keyboard shortcuts in the secondary-click menu"
@@ -193,7 +193,7 @@ msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
 
 #: data/io.elementary.terminal.appdata.xml.in:105
 msgid "Middle-click paste now properly follows System Settings"
-msgstr "Le collage en clic central suit les paramètres système"
+msgstr "Le collage au clic central suit les paramètres du système"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Shift + Control + D to duplicate tabs"
