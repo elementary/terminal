@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-13 18:08+0000\n"
-"Last-Translator: Nikita Kharchenko <m4r5hdev@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -62,15 +62,15 @@ msgstr "Уровни масштабирования теперь запомин�
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Предупреждение о многострочных вставках"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Отображение деталей текста в диалоговых окнах небезопасной вставки"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Опция позволяющая открывать ссылки нажав правой кнопкой мыши"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
