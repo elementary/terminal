@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-08-13 10:46+0000\n"
+"PO-Revision-Date: 2021-08-13 14:42+0000\n"
 "Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -165,7 +165,7 @@ msgstr "Изменение масштаба с помощью Ctrl + Прокр�
 
 #: data/io.elementary.terminal.appdata.xml.in:94
 msgid "Include sudo password prompt when copying last output"
-msgstr "Внесен запрос sudo password при копировании последнего вывода"
+msgstr "Внесен запрос пароля sudo при копировании последнего вывода"
 
 #: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Apply font changes without restarting"
@@ -219,7 +219,7 @@ msgstr "Возврат фокуса после закрытия всплываю
 
 #: data/io.elementary.terminal.appdata.xml.in:135
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Предотвращение фокусировки на кнопках поиска и стиля"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Hide the cursor while typing"
@@ -247,7 +247,7 @@ msgstr "Добавлено действие Alt+c для копирования 
 
 #: data/io.elementary.terminal.appdata.xml.in:149
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Добавлены аксели к всплывающим подсказкам"
 
 #: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Fix zsh notifications"
@@ -277,23 +277,23 @@ msgstr "Улучшение интеграции с FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:200
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Меню настроек темы"
 
 #: data/io.elementary.terminal.appdata.xml.in:201
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Элементы управления уровнем масштаба"
 
 #: data/io.elementary.terminal.appdata.xml.in:218
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Разрешено закрывать вкладку после ввода команды exit в командной строке"
 
 #: data/io.elementary.terminal.appdata.xml.in:227
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Исправлено копирование URL-адресов в буфер обмена"
 
 #: data/io.elementary.terminal.appdata.xml.in:244
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Исправлен формат даты appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:286
 msgid "elementary, Inc."
