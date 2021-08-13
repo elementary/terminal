@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-13 10:46+0000\n"
-"Last-Translator: Edwin Youn <younyokel@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -83,10 +83,8 @@ msgid "Notifications indicate if a process exited with errors or not"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Показывать горячие клавиши в контекстном меню"
+msgstr "Показывать сочетания клавиш в контекстных меню вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
