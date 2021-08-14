@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-08-14 11:11+0000\n"
-"Last-Translator: Nikita Kharchenko <m4r5hdev@gmail.com>\n"
+"PO-Revision-Date: 2021-08-14 19:02+0000\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -257,7 +257,7 @@ msgstr "Исправлены zsh уведомления"
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr "Условное сочетание клавиш CTRL+G для деконфликтного управления в Emacs"
+msgstr "Условное сочетание клавиш ctrl+g для устранения конфликта с emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:159
 #: data/io.elementary.terminal.appdata.xml.in:167
