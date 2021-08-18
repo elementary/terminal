@@ -1007,23 +1007,23 @@ namespace Terminal {
                 tabs = saved_tabs;
                 var n_tabs = tabs.length;
 
-                foreach (string zoom_s in saved_zooms) {
-                    var zoom = double.parse (zoom_s);
-
-                    if (zooms.length < n_tabs) {
-                        zooms += zoom;
-                    } else {
-                        break;
-                    }
-                }
-
-                while (zooms.length < n_tabs) {
-                    zooms += default_zoom;
-                }
-
-                if (tabs.length == 0) {
+                if (n_tabs == 0) {
                     tabs += Environment.get_home_dir ();
                     zooms += default_zoom;
+                } else {
+                    foreach (unowned string zoom_s in saved_zooms) {
+                        var zoom = double.parse (zoom_s); // Locale independent
+
+                        if (zooms.length < n_tabs) {
+                            zooms += zoom;
+                        } else {
+                            break;
+                        }
+                    }
+
+                    while (zooms.length < n_tabs) {
+                        zooms += default_zoom;
+                    }
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
@@ -1031,7 +1031,6 @@ namespace Terminal {
                 tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
                 zooms += default_zoom;
             }
-
 
             assert (zooms.length == tabs.length);
 
@@ -1532,7 +1531,7 @@ namespace Terminal {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
                             opened_tabs += location;
-                            zooms += ("%.1f").printf (term.font_scale);
+                            zooms += term.font_scale.to_string (); // Locale independent
                         }
                     }
                 });
