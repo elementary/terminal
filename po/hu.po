@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-23 11:04+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: src/MainWindow.vala:490
 msgid "New Tab"
@@ -159,7 +159,7 @@ msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "Keresősáv elrejtése"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
