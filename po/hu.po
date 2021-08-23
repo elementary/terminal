@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-23 10:58+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -46,10 +46,8 @@ msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Új ablak megnyitása"
+msgstr "Új terminálablak megnyitása"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
