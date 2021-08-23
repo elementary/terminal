@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-23 10:58+0000\n"
-"Last-Translator: Muráncsik Sebestyén <smurancsik@outlook.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -30,7 +30,7 @@ msgstr "A feladat kilépett hibákkal"
 
 #: src/Application.vala:253
 msgid "Show version"
-msgstr "Verzió mutatása"
+msgstr "Verzió megjelenítése"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
@@ -41,6 +41,8 @@ msgstr "Program futtatása terminálban"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"A sor további részének futtatása terminálban parancsként. Használhatja a '--"
+"' karaktereket flagként"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
@@ -62,7 +64,7 @@ msgstr "Súgó mutatása"
 
 #: src/Application.vala:270
 msgid "Set shell working directory"
-msgstr "Shell munkakönyvtár beállítása"
+msgstr "A shell munkakönyvtárának beállítása"
 
 #: src/MainWindow.vala:217
 msgid "Copy"
@@ -70,7 +72,7 @@ msgstr "Másolás"
 
 #: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Legutóbbi kimenet másolása"
 
 #: src/MainWindow.vala:229
 msgid "Paste"
@@ -104,11 +106,11 @@ msgstr "Magas kontraszt"
 
 #: src/MainWindow.vala:411
 msgid "Solarized Light"
-msgstr "Világos solarizált"
+msgstr "Szolarizált világos"
 
 #: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Sötét"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
