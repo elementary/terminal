@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-23 11:04+0000\n"
-"Last-Translator: Muráncsik Sebestyén <smurancsik@outlook.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -117,7 +117,7 @@ msgstr "Természetes másolás/beillesztés"
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
-"A gyorsbillentyűk nem igénylik Shift lenyomását, konzolos alkalmazásoknál "
+"A gyorsbillentyűk nem igénylik a Shift lenyomását; konzolos alkalmazásoknál "
 "problémát okozhat"
 
 #: src/MainWindow.vala:464
@@ -129,14 +129,13 @@ msgid "New Tab"
 msgstr "Új lap"
 
 #: src/MainWindow.vala:882
-#, fuzzy, c-format
-#| msgid "Show in File Browser"
+#, c-format
 msgid "Show in %s"
-msgstr "Megjelenítés a Fájlkezelőben"
+msgstr "Megjelenítés itt: %s"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Alapértelmezett alkalmazás"
 
 #: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -144,19 +143,19 @@ msgstr "Lap bezárása"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "Megkettőzés"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "Újratöltés"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
@@ -164,7 +163,7 @@ msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Biztos, hogy beakarja zárni ezt a lapot?"
+msgstr "Biztos, hogy be akarja zárni ezt a lapot?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -176,7 +175,7 @@ msgstr "Ha bezárja, a folyamat befejeződik."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Biztos, hogy ki akar lépni terminálból?"
+msgstr "Biztos, hogy ki akar lépni a terminálból?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -191,30 +190,27 @@ msgid "Quit Terminal"
 msgstr "Kilépés a terminálból"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Biztos, hogy beakarja zárni ezt a lapot?"
+msgstr "Biztos, hogy újratölti ezt a lapot?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Egy aktív folyamat fut ebben a terminálban."
+msgstr ""
+"Egy aktív folyamat fut ebben a terminálban. Ha frissíti, be fog fejeződni."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Lap bezárása"
+msgstr "Lap újratöltése"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Parancsok terminálba való másolása veszélyes lehet. Győződjön meg róla, hogy "
+"érti minden egyes részét a beillesztett szövegnek a folytatás előtt."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
