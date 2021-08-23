@@ -214,7 +214,7 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr "Beillesztés-védelmi figyelmeztetés mutatása"
+msgstr "Figyelmeztetés megjelenítése beillesztéskor"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
