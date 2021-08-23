@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-08-23 10:58+0000\n"
-"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
+"Last-Translator: Muráncsik Sebestyén <smurancsik@outlook.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -117,6 +117,8 @@ msgstr "Természetes Másolás/Beillesztés"
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"A gyorsbillentyűk nem igénylik Shift lenyomását, konzolos alkalmazásoknál "
+"problémát okozhat"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
