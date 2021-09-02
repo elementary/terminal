@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-09-02 21:16+0000\n"
+"PO-Revision-Date: 2021-09-02 22:09+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -155,7 +155,7 @@ msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr "Kereső elrejtése"
+msgstr "Keresősáv elrejtése"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
