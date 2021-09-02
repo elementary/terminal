@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-09-02 21:16+0000\n"
-"Last-Translator: Muráncsik Sebestyén <smurancsik@outlook.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
@@ -68,7 +68,7 @@ msgstr "Másolás"
 
 #: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr "Legutolsó kimenet másolása"
+msgstr "Legutóbbi kimenet másolása"
 
 #: src/MainWindow.vala:229
 msgid "Paste"
