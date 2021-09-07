@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2017-02-19 12:31+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -62,98 +62,98 @@ msgstr ""
 msgid "Set shell working directory"
 msgstr "Ορισμός καταλόγου με λειτουργία κελύφους"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Εύρεση…"
 
-#: src/MainWindow.vala:363
+#: src/MainWindow.vala:368
 #, fuzzy
 msgid "Zoom out"
 msgstr "Σμίκρυνση"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:383
 #, fuzzy
 msgid "Zoom in"
 msgstr "Μεγέθυνση"
 
-#: src/MainWindow.vala:397
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:490
 msgid "New Tab"
 msgstr "Νέα καρτέλα"
 
-#: src/MainWindow.vala:862
+#: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:863
+#: src/MainWindow.vala:883
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
 
-#: src/MainWindow.vala:1145
+#: src/MainWindow.vala:1165
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1155
+#: src/MainWindow.vala:1176
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1245
+#: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1397
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr ""
 

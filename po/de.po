@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 07:17+0000\n"
-"PO-Revision-Date: 2021-06-16 01:43+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-07-21 22:22+0000\n"
+"Last-Translator: Patrick <invarianztheorem@web.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
 "Language: de\n"
@@ -62,97 +62,98 @@ msgstr "Hilfe anzeigen"
 msgid "Set shell working directory"
 msgstr "Shell-Arbeitsverzeichnis festlegen"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Letzte Ausgabe kopieren"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Suchen …"
 
-#: src/MainWindow.vala:363
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Verkleinern"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Standard-Zoomfaktor"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: src/MainWindow.vala:397
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Hoher Kontrast"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarisiert hell"
 
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Dunkel"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Natürliches Kopieren/Einfügen"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Tastaturkürzel erfordern keine Umschalttaste; könnte CLI-Anwendungen stören"
 
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:490
 msgid "New Tab"
 msgstr "Neuer Tab"
 
-#: src/MainWindow.vala:862
+#: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
 msgstr "In %s anzeigen"
 
-#: src/MainWindow.vala:863
+#: src/MainWindow.vala:883
 msgid "Default application"
 msgstr "Standardanwendung"
 
-#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Tab schließen"
 
-#: src/MainWindow.vala:1145
+#: src/MainWindow.vala:1165
 msgid "Duplicate"
 msgstr "Duplizieren"
 
-#: src/MainWindow.vala:1155
+#: src/MainWindow.vala:1176
 msgid "Reload"
 msgstr "Neu laden"
 
-#: src/MainWindow.vala:1245
+#: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+"Der eingefügte Text versucht möglicherweise Administratorrechte zu erhalten"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
 msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
 
-#: src/MainWindow.vala:1397
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
