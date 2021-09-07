@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -55,100 +55,100 @@ msgstr "Pokoż pōmoc"
 msgid "Set shell working directory"
 msgstr "Szteluj katalog roboczy powłōki"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Wraź"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Znojdź…"
 
-#: src/MainWindow.vala:363
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Pōmyńszynie"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Wychodny poziōm powiynkszynio"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Powiynkszynie"
 
-#: src/MainWindow.vala:397
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Wysoki kōntrast"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Jasny Solarized"
 
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Ciymny"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Naturalne kopiowanie i wrażanie"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza kōmynd"
 
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Sztelōnki"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:490
 #, fuzzy
 #| msgid "Close Tab"
 msgid "New Tab"
 msgstr "Zawrzij karta"
 
-#: src/MainWindow.vala:862
+#: src/MainWindow.vala:882
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:863
+#: src/MainWindow.vala:883
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zawrzij karta"
 
-#: src/MainWindow.vala:1145
+#: src/MainWindow.vala:1165
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1155
+#: src/MainWindow.vala:1176
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1245
+#: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1397
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 

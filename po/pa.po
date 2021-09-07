@@ -1,219 +1,233 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 07:17+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-07-28 03:24+0000\n"
+"Last-Translator: elSolus <tumbleweed@tuta.io>\n"
+"Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
+"terminal/pa/>\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "ਅਮਲ ਮੁਕੰਮਲ ਹੋਇਆ"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "ਅਮਲ ਖ਼ਰਾਬੀਆਂ ਸਮੇਤ ਬੰਦ ਹੋਇਆ"
 
 #: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "ਵਰਜਨ ਵਿਖਾਓ"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
 msgid "Run a program in terminal"
-msgstr ""
+msgstr "ਟਰਮੀਨਲ 'ਚ ਕੋਈ ਪ੍ਰੋਗਰਾਮ ਚਲਾਓ"
 
 #: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"ਲਾਈਨ ਦੇ ਬਚੇ ਹਿੱਸੇ ਨੂੰ ਟਰਮੀਨਲ ਵਿੱਚ ਕਮਾਂਡ ਵਜੋਂ ਚਲਾਓ। \"--\" ਫ਼ਲੈਗ ਵੀ ਵਰਤ ਸਕਦੈ"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
 msgid "Open a new terminal window"
-msgstr ""
+msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਵਿੰਡੋ ਖੋਲ੍ਹੋ"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
 msgid "Open a new terminal tab"
-msgstr ""
+msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"
 
 #: src/Application.vala:268
 msgid "Show help"
-msgstr ""
+msgstr "ਮਦਦ ਵਿਖਾਓ"
 
 #: src/Application.vala:270
 msgid "Set shell working directory"
-msgstr ""
+msgstr "ਸ਼ੈੱਲ ਦੀ ਕੰਮਕਾਜੀ ਡਾਇਰੈਕਟਰੀ ਸੈੱਟ ਕਰੋ"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:217
 msgid "Copy"
-msgstr ""
+msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:218
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr ""
+msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:229
 msgid "Paste"
-msgstr ""
+msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:235
 msgid "Select All"
-msgstr ""
+msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:236 src/MainWindow.vala:357 src/MainWindow.vala:1405
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
-msgstr ""
+msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:363
+#: src/MainWindow.vala:368
 msgid "Zoom out"
-msgstr ""
+msgstr "ਜ਼ੂਮ ਘਟਾਓ"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
-msgstr ""
+msgstr "ਪਹਿਲਾਂ ਹੀ ਸੈੱਟ ਜ਼ੂਮ ਦਰਜਾ"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:383
 msgid "Zoom in"
-msgstr ""
+msgstr "ਜ਼ੂਮ ਵਧਾਓ"
 
-#: src/MainWindow.vala:397
+#: src/MainWindow.vala:402
 msgid "High Contrast"
-msgstr ""
+msgstr "ਜ਼ਿਆਦਾ ਵਖਰੇਵਾਂ"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
-msgstr ""
+msgstr "ਸੂਰਜੀ ਰੌਸ਼ਨੀ"
 
-#: src/MainWindow.vala:415
+#: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "ਕਾਲ਼ਾ/ਕਾਲ਼ੀ"
 
-#: src/MainWindow.vala:433
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "ਆਮ ਨਕਲ/ਚੇਪੀ"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"ਸ਼ਾਰਟਕੱਟ ਲਈ ਸ਼ਿਫ਼ਟ ਦੀ ਲੋੜ ਨਹੀਂ; ਕਮਾਂਡ ਲਾਈਨ ਇੰਟਰਫ਼ੇਸ ਵਿੱਚ ਦਖ਼ਲ ਦੇ ਸਕਦੀ ਹੈ"
 
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:490
 msgid "New Tab"
-msgstr ""
+msgstr "ਨਵੀਂ ਟੈਬ"
 
-#: src/MainWindow.vala:862
+#: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
-msgstr ""
+msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:863
+#: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:1144 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
-msgstr ""
+msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/MainWindow.vala:1145
+#: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 
-#: src/MainWindow.vala:1155
+#: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
-#: src/MainWindow.vala:1245
+#: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
 
-#: src/MainWindow.vala:1247
+#: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂਡਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:1397
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr ""
+msgstr "ਇਸ ਟੈਬ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr ""
+msgstr "ਜੇ ਤੁਸੀਂ ਇਸਨੂੰ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr ""
+msgstr "ਇਸ ਟਰਮੀਨਲ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr ""
+msgstr "ਜੇ ਤੁਸੀਂ ਟਰਮੀਨਲ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr ""
+msgstr "ਟਰਮੀਨਲ ਬੰਦ ਕਰੋ"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
 msgstr ""
+"ਇਸ ਟੈਬ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਹੈ। ਜੇ ਤੁਸੀਂ ਇਸਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕੀਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ "
+"ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
 msgid "Reload Tab"
-msgstr ""
+msgstr "ਟੈਬ ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"ਟਰਮੀਨਲ ਵਿੱਚ ਕਮਾਂਡਾਂ ਨਕਲ ਕਰਨ ਨੁਕਸਾਨਦੇਹ ਹੋ ਸਕਦੈ। ਜਾਰੀ ਰੱਖਣ ਤੋਂ ਪਹਿਲਾਂ ਇਹ ਯਕੀਨੀ "
+"ਬਣਾਓ ਕਿ ਤੁਹਾਨੂੰ ਪਤਾ ਹੋਵੇ ਕਿ ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਦਾ ਕਿਹੜਾ ਹਿੱਸਾ ਕੀ ਕੰਮ ਕਰਦੈ।"
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "ਪੇਸਟ-ਸੁਰੱਖਿਆ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
-msgstr ""
+msgstr "ਨਾ ਚਿਪਕਾਓ"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr ""
+msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਚਿਪਕਾਓ"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr ""
+msgstr "ਲੱਭੋ"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr ""
+msgstr "ਪਿਛਲੇ ਨਤੀਜੇ"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr ""
+msgstr "ਅਗਲੇ ਨਤੀਜੇ"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "ਚੱਕਰੀ ਖੋਜ"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
-msgstr ""
+msgstr "ਟਰਮੀਨਲ"
