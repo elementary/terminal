@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-09-17 16:51+0000\n"
+"PO-Revision-Date: 2021-09-17 21:36+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
 "sk/>\n"
@@ -114,10 +114,12 @@ msgstr "Prirodzené kopírovanie/vkladanie"
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
+"príkazovom riadku"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Nastavenia"
 
 #: src/MainWindow.vala:490
 msgid "New Tab"
@@ -126,11 +128,11 @@ msgstr "Nová karta"
 #: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
-msgstr ""
+msgstr "Zobraziť v %s"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Predvolená aplikácia"
 
 #: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -138,31 +140,31 @@ msgstr "Zatvoriť kartu"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplikovať"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "Obnoviť"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Vložený text môže obsahovať viacero príkazov"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skryť panel vyhľadávania"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Chcete zatvoriť túto kartu?"
+msgstr "Naozaj chcete zatvoriť túto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "Na tejto karte prebieha aktívny proces."
+msgstr "Na tejto karte je spustený aktívny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
@@ -170,11 +172,11 @@ msgstr "Ak ju zatvoríte, proces sa ukončí."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Skutočne chcete ukončiť Terminál?"
+msgstr "Naozaj chcete ukončiť Terminál?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "V tomto termináli je aktívny proces."
+msgstr "V tomto termináli je spustený aktívny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
@@ -185,34 +187,32 @@ msgid "Quit Terminal"
 msgstr "Ukončiť Terminál"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Chcete zatvoriť túto kartu?"
+msgstr "Naozaj chcete obnoviť túto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "V tomto termináli je aktívny proces."
+msgstr ""
+"Na tejto karte je spustený aktívny proces. Ak ju obnovíte, proces sa ukončí."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Zatvoriť kartu"
+msgstr "Obnoviť kartu"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Kopírovanie príkazov do Terminálu môže byť nebezpečné. Uistite sa, že "
+"rozumiete čo jednotlivé časti textu vykonávajú predtým, než budete "
+"pokračovať."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Zobrazovať upozornenia o vkladaní"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
@@ -220,11 +220,11 @@ msgstr "Nevkladať"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr "Určite vložiť"
+msgstr "Napriek tomu vložiť"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr "Hľadanie"
+msgstr "Nájsť"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
@@ -236,7 +236,7 @@ msgstr "Ďalší výsledok"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "Opakované hľadanie"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
