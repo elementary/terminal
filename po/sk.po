@@ -8,27 +8,29 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2016-01-10 13:45+0000\n"
-"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"PO-Revision-Date: 2021-09-17 16:51+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
+"sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "Proces úspešne dokončený"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Proces bol ukončený s chybami"
 
 #: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "Zobraziť verziu"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
@@ -39,28 +41,26 @@ msgstr "Spustiť program v termináli"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Spustiť zvyšok riadku ako príkaz v termináli. Môžete tiež použiť „--“ ako "
+"vlajku"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otvoriť nové okno"
+msgstr "Otvoriť nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Otvoriť nové okno"
+msgstr "Otvoriť novú kartu terminálu"
 
 #: src/Application.vala:268
 msgid "Show help"
-msgstr ""
+msgstr "Zobraziť nápovedu"
 
 #: src/Application.vala:270
 msgid "Set shell working directory"
-msgstr "Nastaviť pracovný adresár pre konzolu"
+msgstr "Nastaviť pracovný adresár shellu"
 
 #: src/MainWindow.vala:217
 msgid "Copy"
@@ -68,7 +68,7 @@ msgstr "Kopírovať"
 
 #: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopírovať posledný výstup"
 
 #: src/MainWindow.vala:229
 msgid "Paste"
@@ -76,7 +76,7 @@ msgstr "Vložiť"
 
 #: src/MainWindow.vala:235
 msgid "Select All"
-msgstr "Vybrať všetko"
+msgstr "Označiť všetko"
 
 #: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
@@ -89,28 +89,27 @@ msgstr "Oddialiť"
 
 #: src/MainWindow.vala:376
 msgid "Default zoom level"
-msgstr ""
+msgstr "Mierka 1:1"
 
 #: src/MainWindow.vala:383
-#, fuzzy
 msgid "Zoom in"
 msgstr "Priblížiť"
 
 #: src/MainWindow.vala:402
 msgid "High Contrast"
-msgstr ""
+msgstr "Vysoký kontrast"
 
 #: src/MainWindow.vala:411
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarizovaný svetlý"
 
 #: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Tmavý"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Prirodzené kopírovanie/vkladanie"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
