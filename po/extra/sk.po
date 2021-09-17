@@ -8,95 +8,104 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2018-03-11 14:30-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-09-17 21:36+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/extra/sk/"
+">\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
 #: data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr ""
+msgstr "Používajte príkazový riadok"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
+"Terminál je aplikácia emulujúca terminál. Umožňuje prístup k rozhraniu UNIX "
+"shellu, ktorý môže byť použitý na spúšťanie programov dostupných vo vašom "
+"systéme."
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 #: data/io.elementary.terminal.appdata.xml.in:59
 #: data/io.elementary.terminal.appdata.xml.in:72
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "New features:"
-msgstr ""
+msgstr "Nové funkcie:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Presúvajte karty pomocou skratky Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr ""
+msgstr "Prepínajte karty pomocou skratiek Ctrl + Tab a Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Jednotlivé karty si po novom zapamätávajú úroveň priblíženia"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Tiež pridané varovania o viacriadkovom vkladaní"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Zobrazovať detaily textu v dialógoch nebezpečného vkladania"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Možnosť Otvoriť odkaz pri kliknutí sekundárnym tlačidlom myši"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr ""
+msgstr "Obnovte karty v kontextovom menu alebo pomocou skratky Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Oznámenia indikujú ukončenie procesu aj s chybami alebo bez nich"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr ""
+msgstr "Zobrazovať klávesové skratky v kontextových menu kariet"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:77
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Other updates:"
-msgstr ""
+msgstr "Ostatné aktualizácie:"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Opravený problém s klávesovými skratkami, ktoré sa neaktivovali, keď boli "
+"prvý raz stlačené"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
 msgstr ""
+"Zabezpečené, aby pri zatváraní okien aplikácií v pozadí zostalo okno "
+"Terminálu označené"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Overovanie správnosti vlastných farebných paliet"
 
 #: data/io.elementary.terminal.appdata.xml.in:53
 #: data/io.elementary.terminal.appdata.xml.in:66
@@ -119,7 +128,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:237
 #: data/io.elementary.terminal.appdata.xml.in:252
 msgid "Translation updates"
-msgstr ""
+msgstr "Aktualizácie prekladov"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Add commandline option for New Tab (-t)"
