@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-09-17 21:36+0000\n"
+"PO-Revision-Date: 2021-09-19 18:30+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
 "sk/>\n"
@@ -83,7 +83,6 @@ msgid "Find…"
 msgstr "Nájsť…"
 
 #: src/MainWindow.vala:368
-#, fuzzy
 msgid "Zoom out"
 msgstr "Oddialiť"
 
