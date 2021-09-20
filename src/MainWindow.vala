@@ -80,6 +80,7 @@ namespace Terminal {
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
+        public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -152,8 +153,8 @@ namespace Terminal {
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
-            action_accelerators[ACTION_RELOAD_TAB] = "<Control><Shift>r";
-            action_accelerators[ACTION_RELOAD_TAB] = "F5";
+            action_accelerators[ACTION_RELOAD_TAB] = ACTION_RELOAD_PREFERRED_ACCEL;
+            action_accelerators[ACTION_RELOAD_TAB] = "<Shift>F5";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
@@ -1174,8 +1175,10 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
+            /* Granite.Accel.from_action_name () does not allow control of which accel is used when 
+             * there are multiple so we have use other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
-                child = new Granite.AccelLabel.from_action_name (_("Reload"), ACTION_PREFIX + ACTION_RELOAD_TAB)
+                child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
             };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
