@@ -1176,7 +1176,7 @@ namespace Terminal {
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
             /* Granite.Accel.from_action_name () does not allow control of which accel is used when 
-             * there are multiple so we have use other constructor to specify it. */
+             * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
                 child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
             };
