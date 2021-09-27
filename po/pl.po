@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-09-27 10:11+0000\n"
-"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
+"PO-Revision-Date: 2021-09-27 10:13+0000\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
 "Language: pl\n"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Naturalne kopiowanie/wklejanie"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
@@ -147,11 +147,11 @@ msgstr ""
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "Odśwież"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Wklejony tekst może próbować uzyskać dostępu administracyjnego"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
