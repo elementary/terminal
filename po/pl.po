@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-09-27 10:13+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
 "Language: pl\n"
@@ -152,7 +152,7 @@ msgstr "Wklejony tekst może próbować uzyskać dostępu administracyjnego"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Wklejony tekst może mieć kilka komend"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
