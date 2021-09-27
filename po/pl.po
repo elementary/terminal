@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-09-27 10:13+0000\n"
-"Last-Translator: Bartek <blogowanie.xyz@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
 "Language: pl\n"
@@ -42,22 +42,18 @@ msgstr "Uruchom program w terminalu"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Uruchom przypomnienie w linii jako komenda w terminalu. Można też użyć '--' "
+"Uruchom pozostałą część linii jako komendę w terminalu. Można też użyć '--' "
 "jako flagi"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otwiera nowe okno programu"
+msgstr "Otwórz nowe okno terminala"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Otwiera nowe okno programu"
+msgstr "Otwórz nową kartę terminala"
 
 #: src/Application.vala:268
 msgid "Show help"
@@ -109,7 +105,7 @@ msgstr "Solarna jasność"
 
 #: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Ciemny"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
@@ -118,10 +114,12 @@ msgstr "Naturalne kopiowanie/wklejanie"
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Skróty klawiszowe nie wymagają użycia klawisza \"Shift\"; mogą kolidować z "
+"interfejsem wiersza poleceń"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: src/MainWindow.vala:490
 msgid "New Tab"
