@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-09-27 10:13+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
 "Language: pl\n"
@@ -187,10 +187,8 @@ msgid "Quit Terminal"
 msgstr "Zakończ Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Jesteś pewien, że chcesz zamknąć tę kartę?"
+msgstr "Czy na pewno chcesz odświeżyć tą kartę?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 #, fuzzy
