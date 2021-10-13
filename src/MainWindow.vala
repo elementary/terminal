@@ -421,7 +421,7 @@ namespace Terminal {
             follow_system_button.get_child ().destroy ();
             follow_system_button.add (follow_system_button_grid);
 
-            var color_button_white = new Gtk.RadioButton (null) {
+            color_button_white = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
             };
@@ -430,7 +430,7 @@ namespace Terminal {
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Solarized Light")
             };
@@ -439,7 +439,7 @@ namespace Terminal {
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Dark")
             };
