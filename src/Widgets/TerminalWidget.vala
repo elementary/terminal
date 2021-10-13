@@ -27,6 +27,7 @@ namespace Terminal {
         internal const string DEFAULT_LABEL = _("Terminal");
         public Terminal.Application app;
         public string terminal_id;
+        public string current_working_directory { get; private set; default = "";}
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
@@ -49,7 +50,7 @@ namespace Terminal {
 
         private Gtk.Menu menu;
         public Granite.Widgets.Tab tab;
-        public string? uri;
+        public string? link_uri;
 
         private string _tab_label;
         public string tab_label {
@@ -122,6 +123,8 @@ namespace Terminal {
 
         private double total_delta_y = 0.0;
 
+        public signal void cwd_changed ();
+
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -139,6 +142,7 @@ namespace Terminal {
 
             /* Connect to necessary signals */
             button_press_event.connect ((event) => {
+                link_uri = null;
                 /* If this event caused focus-in then window.focus_timeout is > 0
                  * and we need to suppress following hyperlinks on button release.
                  * If focus-in was caused by keyboard then the focus_timeout will have
@@ -146,11 +150,12 @@ namespace Terminal {
                 allow_hyperlink = window.focus_timeout == 0;
 
                 if (event.button == Gdk.BUTTON_SECONDARY) {
-                    uri = get_link (event);
-
-                    if (uri != null) {
+                    link_uri = get_link (event);
+                    if (link_uri != null) {
                         window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
                     }
+
+                    window.update_context_menu ();
 
                     menu.popup_at_pointer (event);
                     menu.select_first (false);
@@ -165,14 +170,10 @@ namespace Terminal {
 
                 if (event.button == Gdk.BUTTON_PRIMARY) {
                     if (allow_hyperlink) {
-                        uri = get_link (event);
+                        link_uri = get_link (event);
 
-                        if (uri != null && !get_has_selection ()) {
-                            try {
-                                Gtk.show_uri (null, uri, Gtk.get_current_event_time ());
-                            } catch (GLib.Error error) {
-                                warning ("Could Not Open link");
-                            }
+                        if (link_uri != null && !get_has_selection ()) {
+                           window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                         }
                     } else {
                         allow_hyperlink = true;
@@ -218,11 +219,14 @@ namespace Terminal {
 
             selection_changed.connect (() => {
                 window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
+                window.update_context_menu ();
             });
 
             size_allocate.connect (() => {
                 resized = true;
             });
+
+            contents_changed.connect (check_cwd_changed);
 
             child_exited.connect (on_child_exited);
 
@@ -383,6 +387,8 @@ namespace Terminal {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            check_cwd_changed ();
         }
 
         public void run_program (string program_string, string? working_directory) {
@@ -597,6 +603,31 @@ namespace Terminal {
 
         public bool has_output () {
             return !resized && get_last_output ().length > 0;
+        }
+
+        public void reload () {
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog.before_tab_reload (window);
+                var response_type = dialog.run ();
+                dialog.destroy ();
+
+                if (response_type != Gtk.ResponseType.ACCEPT) {
+                    return;
+                }
+            }
+
+            var old_loc = get_shell_location ();
+            Posix.kill (child_pid, Posix.Signal.TERM);
+            reset (true, true);
+            active_shell (old_loc);
+        }
+
+        private void check_cwd_changed () {
+            var cwd = get_shell_location ();
+            if (cwd != current_working_directory) {
+                current_working_directory = cwd;
+                cwd_changed ();
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2017-12-28 05:23+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/terminal/"
@@ -20,109 +20,142 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tác vụ đã hoàn thành"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Chạy một chương trình trong terminal"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Mở một cửa sổ mới"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Mở một cửa sổ mới"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Thiết lập thư mục làm việc shell"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Chép"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Dán"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Chọn toàn bộ"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Tìm kiếm…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr ""
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:368
 #, fuzzy
 msgid "Zoom out"
 msgstr "Thu nhỏ"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:383
 #, fuzzy
 msgid "Zoom in"
 msgstr "Phóng to"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Tab mới"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr ""
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Đóng tab"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr ""
 
@@ -137,10 +170,6 @@ msgstr "Có tiến trình đang hoạt động trong tab này."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Nếu bạn đóng nó, tiến trình sẽ kết thúc."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Đóng tab"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -158,27 +187,41 @@ msgstr "Nếu bạn thoát khỏi Terminal, tiến trình sẽ kết thúc."
 msgid "Quit Terminal"
 msgstr "Đóng Cửa sổ dòng lệnh"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Lệnh này yêu cầu quyền quản trị vào máy tính của bạn"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Bạn có chắc bạn muốn đóng tab này không?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Sao chép lệnh vào Terminal có thể nguy hiểm."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "Có tiến trình đang hoạt động trong cửa sổ lệnh này."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Hãy chắc chắn rằng bạn hiểu những gì từng phần của lệnh này không."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Đóng tab"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Đừng dán"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Dán mọi cách"
 
@@ -202,6 +245,18 @@ msgstr ""
 msgid "Terminal"
 msgstr "Cửa sổ dòng lệnh"
 
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Lệnh này yêu cầu quyền quản trị vào máy tính của bạn"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Sao chép lệnh vào Terminal có thể nguy hiểm."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Hãy chắc chắn rằng bạn hiểu những gì từng phần của lệnh này không."
+
+#~ msgid "Task finished"
+#~ msgstr "Tác vụ đã hoàn thành"
+
 #~ msgid "Cancel"
 #~ msgstr "Thôi"
 
@@ -222,9 +277,6 @@ msgstr "Cửa sổ dòng lệnh"
 
 #~ msgid "Close"
 #~ msgstr "Đóng"
-
-#~ msgid "New Tab"
-#~ msgstr "Tab mới"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Tạo tab mới"

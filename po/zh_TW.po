@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-03-01 14:09+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-07-29 15:59+0000\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -17,114 +17,141 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "工作已完成"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "行程完成執行"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "行程錯誤地結束"
+
+#: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "顯示版本"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
+msgstr "在終端機中將剩餘內容以指令形式執行。也可以使用 '--' 作為前綴"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
+#: src/Application.vala:263
 msgid "Open a new terminal window"
-msgstr "開啟新視窗"
+msgstr "開啟新終端機視窗"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
-msgid "Open a new terminal tab"
-msgstr "開啟新視窗"
-
 #: src/Application.vala:266
+msgid "Open a new terminal tab"
+msgstr "開啟新終端機分頁"
+
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "顯示幫助說明"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "設定 shell 工作目錄"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "複製上次的輸出"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "顯示在檔案瀏覽器中"
-
-#: src/MainWindow.vala:365
-#, fuzzy
+#: src/MainWindow.vala:368
 msgid "Zoom out"
-msgstr "拉遠"
+msgstr "縮小"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
-#: src/MainWindow.vala:379
-#, fuzzy
+#: src/MainWindow.vala:383
 msgid "Zoom in"
-msgstr "拉近"
+msgstr "放大"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "高對比"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "深色"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "自然地複製 / 貼上"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "新增分頁"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "在 %s 中顯示"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "預設應用程式"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "關閉分頁"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "再製"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "重新載入"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼上的文字有可能在嘗試獲得管理員權限"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "貼上的文字可能包含多項指令"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "隱藏搜尋列"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -137,10 +164,6 @@ msgstr "此分頁中有個活動中程序。"
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "如果您將它關閉，裡面的程序將會終止。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "關閉分頁"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -158,27 +181,35 @@ msgstr "若您退出終端機，裡面的程序將會終止。"
 msgid "Quit Terminal"
 msgstr "退出終端機"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "此指令要求您電腦的管理權限"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "您確定您想要重新載入此分頁嗎？"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "把指令複製到《終端機》中可能造成危險。"
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "此分頁尚有運行的行程。重新載入將導致該行程終止。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "重載分頁"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr "複製指令至終端機有一定的風險。請確定您了解您貼上的所有內容後再繼續。"
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "顯示貼上保護警告"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "不要貼上"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
@@ -201,6 +232,18 @@ msgstr "循環搜尋"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "終端機"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "此指令要求您電腦的管理權限"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "把指令複製到《終端機》中可能造成危險。"
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "請確定您已瞭解這個指令結構每個部份的意義。"
+
+#~ msgid "Task finished"
+#~ msgstr "工作已完成"
 
 #~ msgid "Style"
 #~ msgstr "樣式"
@@ -231,9 +274,6 @@ msgstr "終端機"
 
 #~ msgid "Close"
 #~ msgstr "關閉"
-
-#~ msgid "New Tab"
-#~ msgstr "新增分頁"
 
 #~ msgid "Create a new tab"
 #~ msgstr "建立新分頁"

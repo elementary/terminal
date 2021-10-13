@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2018-11-22 20:24+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-08-26 11:03+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -13,110 +13,143 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Задание завершено"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "Процесс завершен"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "Процесс завершен с ошибками"
+
+#: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "Показать версию"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Запустить остаток строки как команду в терминале. Также можно использовать "
+"«--» в качестве флага"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
+#: src/Application.vala:263
 msgid "Open a new terminal window"
-msgstr "Открыть новое окно"
+msgstr "Открыть новое окно терминала"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
-msgid "Open a new terminal tab"
-msgstr "Открыть новое окно"
-
 #: src/Application.vala:266
-msgid "Show help"
-msgstr ""
+msgid "Open a new terminal tab"
+msgstr "Открыть новую вкладку терминала"
 
 #: src/Application.vala:268
+msgid "Show help"
+msgstr "Показать справку"
+
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Копировать последний вывод"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Вставить"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Поиск…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Открыть в файловом менеджере"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Уменьшить"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Масштаб по умолчанию"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
-msgstr "High Contrast"
-
-#: src/MainWindow.vala:403
-msgid "Solarized Light"
-msgstr "Solarized Light"
+msgstr "Высокий контраст"
 
 #: src/MainWindow.vala:411
+msgid "Solarized Light"
+msgstr "Соляризованный свет"
+
+#: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Тёмный"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Обычное копирование/вставка"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Сочетания клавиш не включают Shift; может конфликтовать c CLI приложениями"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Создать вкладку"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "Показать в %s"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "Приложение по умолчанию"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Закрыть вкладку"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "Перезагрузить"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Вставленный текст может пытаться получить доступ к правам администратора"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "Вставленный текст может содержать несколько команд"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
@@ -131,10 +164,6 @@ msgstr "Во вкладке выполняется процесс."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Если вы закроете терминал, процесс будет остановлен."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Закрыть вкладку"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -152,29 +181,39 @@ msgstr "Если вы выйдете из терминала, процесс б�
 msgid "Quit Terminal"
 msgstr "Закрыть терминал"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Эта команда запрашивает права администратора"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "Вы уверены, что хотите перезагрузить эту вкладку?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Копирование команд в терминал может быть опасным."
-
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
 msgstr ""
-"Удостоверьтесь в том, что вы понимаете, что это за команда и что она "
-"означает."
+"На этой вкладке идет активный процесс. Если вы перезагрузите ее, процесс "
+"завершится."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "Перезагрузить вкладку"
+
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Копирование команд в Терминал может быть опасным. Прежде чем продолжить, "
+"убедитесь, что вы понимаете, что делает каждая часть вставленного текста."
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Показывать предупреждения о вставках"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Не вставлять"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Вставить всё равно"
 
@@ -197,6 +236,23 @@ msgstr "Циклический поиск"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Эта команда запрашивает права администратора"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Копирование команд в терминал может быть опасным."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Удостоверьтесь в том, что вы понимаете, что это за команда и что она "
+#~ "означает."
+
+#~ msgid "Task finished"
+#~ msgstr "Задание завершено"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Открыть в файловом менеджере"
 
 #~ msgid "Style"
 #~ msgstr "Стиль"
@@ -227,9 +283,6 @@ msgstr "Терминал"
 
 #~ msgid "Close"
 #~ msgstr "Закрыть"
-
-#~ msgid "New Tab"
-#~ msgstr "Создать вкладку"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Создать новую вкладку"

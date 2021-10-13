@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-12-19 14:16+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-03-12 02:36+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/terminal/"
 "terminal/sr/>\n"
@@ -16,110 +16,143 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-09 05:33+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Задатак је завршен"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Приказује издање"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Покреће програм у терминалу"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
-"Покрените подсетника реда као наредбу у терминалу. Може такође користити „--“"
-" као заставицу"
+"Покрените подсетника реда као наредбу у терминалу. Може такође користити "
+"„--“ као заставицу"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Отвара нови прозор терминала"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Отвара нови језичак терминала"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Прикажите помоћ"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Подесите радни директоријум шкољке"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Умножи"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Умножи последњи излаз"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Убаци"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Изабери све"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Нађи…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Прикажи у разгледачу датотека"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Умањи"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Основни ниво увеличања"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Увећај"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Велики контраст"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Осунчано слабије"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Тамна"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Природно умножи/убаци"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Пречице не захтевају Промени; може ометати програме командне линије"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Подешавања"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Нови језичак"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "Прикажи у „%s“"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "Основни програм"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Затвори језичак"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Сакриј траку претраге"
 
@@ -134,10 +167,6 @@ msgstr "На овом језичку се одвија активан проце
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Ако га затворите, процес ће бити прекинут."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Затвори језичак"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -155,27 +184,41 @@ msgstr "Ако напустите Терминал, процес ће бити �
 msgid "Quit Terminal"
 msgstr "Напусти Терминал"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ова наредба тражи администраторски приступ вашем рачунару"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Да ли сигурно желите да затворите овај језичак?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Умножавање наредби у Терминалу може бити опасно."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "У овом терминалу постоји активан процес."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Будите сигурни да разумете шта сваки део ове наредбе ради."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Затвори језичак"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Прикажи упозорења заштите убацивања"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Не убацуј"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Ипак убаци"
 
@@ -199,6 +242,21 @@ msgstr "Кружна претрага"
 msgid "Terminal"
 msgstr "Терминал"
 
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Ова наредба тражи администраторски приступ вашем рачунару"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Умножавање наредби у Терминалу може бити опасно."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Будите сигурни да разумете шта сваки део ове наредбе ради."
+
+#~ msgid "Task finished"
+#~ msgstr "Задатак је завршен"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Прикажи у разгледачу датотека"
+
 #~ msgid "Cancel"
 #~ msgstr "Откажи"
 
@@ -219,9 +277,6 @@ msgstr "Терминал"
 
 #~ msgid "Close"
 #~ msgstr "Затвори"
-
-#~ msgid "New Tab"
-#~ msgstr "Нови језичак"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Направите нови језичак"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -21,108 +21,142 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tasg wedi dod i ben"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Rhedeg rhaglen mewn terfynell"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Agor ffenestr newydd"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Agor ffenestr newydd"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Dangos cymorth"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Gosod cyfeiriadur cragen gweithredol"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Copïo"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Copïo'r Allbwn Diwethaf"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Gludo"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Dewis Popeth"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Chwilio…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "Dangos ym Mhorwr Ffeiliau"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Chwyddo allan"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Lefel chwyddo rhagosodedig"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Chwyddo i mewn"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Cyferbynnedd Uchel"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:411
 #, fuzzy
 msgid "Solarized Light"
 msgstr "Golau wedi'i Heulo"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Tab Newydd"
+
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show in File Browser"
+msgid "Show in %s"
+msgstr "Dangos ym Mhorwr Ffeiliau"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Cau Tab"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Cuddio'r bar chwilio"
 
@@ -137,10 +171,6 @@ msgstr "Mae 'na proses weithredol yn y tab hwn."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Os ydych yn ei gau, bydd y broses yn dod i ben."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Cau Tab"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -158,29 +188,41 @@ msgstr "Os ydych yn cau Terfynell, bydd y broses yn dod i ben."
 msgid "Quit Terminal"
 msgstr "Cau Terfynell"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Mae'r gorchymyn hwn yn gofyn am fynediad Gweinyddol i'ch cyfrifiadur"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Ydych chi'n siŵr eich bod am gau'r tab hwn?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Gall copïo gorchymion i mewn i'r Terfynell fod yn beryglus."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "Mae 'na proses weithredol yn y derfynell hwn."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Cau Tab"
+
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
 msgstr ""
-"Byddwch yn sicr eich bod chi'n deall beth mae pob rhan o'r gorchymyn yn ei "
-"wneud."
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Dangos rhybuddion diogelu gludo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Peidio â Gludo"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Gludo Beth Bynnag"
 
@@ -204,6 +246,21 @@ msgstr "Chwilio cylchol"
 msgid "Terminal"
 msgstr "Terfynell"
 
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr ""
+#~ "Mae'r gorchymyn hwn yn gofyn am fynediad Gweinyddol i'ch cyfrifiadur"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Gall copïo gorchymion i mewn i'r Terfynell fod yn beryglus."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Byddwch yn sicr eich bod chi'n deall beth mae pob rhan o'r gorchymyn yn "
+#~ "ei wneud."
+
+#~ msgid "Task finished"
+#~ msgstr "Tasg wedi dod i ben"
+
 #~ msgid "Style"
 #~ msgstr "Arddull"
 
@@ -216,9 +273,6 @@ msgstr "Terfynell"
 
 #~ msgid "Close"
 #~ msgstr "Cau"
-
-#~ msgid "New Tab"
-#~ msgstr "Tab Newydd"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Creu tab newydd"

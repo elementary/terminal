@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 17:49+0000\n"
-"PO-Revision-Date: 2020-11-28 03:16+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-08-10 01:51+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,23 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "タスクが終了しました"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "プロセスが完了しました"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "プロセスはエラーで終了しました"
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "バージョンを表示します"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,88 +45,117 @@ msgstr ""
 "用できます"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "新しいターミナルタブを開く"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "ヘルプを表示します"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
-#: src/MainWindow.vala:207
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:212
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:227 src/MainWindow.vala:358 src/MainWindow.vala:1334
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:233
-msgid "Show in File Browser"
-msgstr "ファイルブラウザーで表示"
-
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "ズームアウト"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/MainWindow.vala:379
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: src/MainWindow.vala:395
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/MainWindow.vala:403
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "ダーク"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "ナチュラルコピー & ペースト"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
 "ります"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:1326
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "新しいタブ"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "%sで表示"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "デフォルトのアプリケーション"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "タブを閉じる"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "タブを複製"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "再読み込み"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr "検索バーを隠します"
+msgstr "検索バーを非表示にします"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -136,13 +169,9 @@ msgstr "このタブにはアクティブなプロセスがあります。"
 msgid "If you close it, the process will end."
 msgstr "タブを閉じた場合、プロセスは終了します。"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "タブを閉じる"
-
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "\"ターミナル\" を終了してもよろしいですか？"
+msgstr "“ターミナル”を終了してもよろしいですか？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -150,33 +179,45 @@ msgstr "このターミナルにはアクティブなプロセスがあります
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "\"ターミナル\" を終了した場合、プロセスは終了します。"
+msgstr "“ターミナル”を終了した場合、プロセスは終了します。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "\"ターミナル\" を終了"
+msgstr "“ターミナル”を終了"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "このコマンドは管理者権限を必要とします"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "このタブを再読み込みしてもよろしいですか？"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "\"ターミナル\" にコマンドをコピーすると危険な場合があります。"
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr ""
+"このタブにはアクティブなプロセスがあります。再読み込みすると、このプロセスは"
+"終了します。"
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "このコマンドの各部分が実行することを、必ず理解するようにしてください。"
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "タブを再読み込み"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"“ターミナル”へのコマンドの貼り付けは、危険な場合があります。続行する前に、貼"
+"り付けされたテキストの各部分が実行する内容を必ず理解するようにしてください。"
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "貼り付け時に保護警告を表示"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "貼り付けしない"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "了解して貼り付け"
 
@@ -199,6 +240,22 @@ msgstr "循環検索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "このコマンドは管理者権限を必要とします"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "\"ターミナル\" にコマンドをコピーすると危険な場合があります。"
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "このコマンドの各部分が実行することを、必ず理解するようにしてください。"
+
+#~ msgid "Task finished"
+#~ msgstr "タスクが終了しました"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "ファイルブラウザーで表示"
 
 #~ msgid "Style"
 #~ msgstr "スタイル"
@@ -229,9 +286,6 @@ msgstr "ターミナル"
 
 #~ msgid "Close"
 #~ msgstr "閉じる"
-
-#~ msgid "New Tab"
-#~ msgstr "新しいタブ"
 
 #~ msgid "Create a new tab"
 #~ msgstr "新しいタブを作成"
