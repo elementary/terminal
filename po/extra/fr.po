@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-04-11 16:30+0000\n"
+"PO-Revision-Date: 2021-08-12 09:03+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -61,31 +61,33 @@ msgstr "Le niveau de zoom est désormais sauvegardé pour chaque onglet"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Avertissement pour les copier-coller de plusieurs lignes"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
 msgstr ""
+"Affichage des informations détaillées dans les boîte de dialogue de copier-"
+"coller non sécurisé"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Option « Ouvrir le lien » lors d'un clic secondaire"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Déplacez les onglets avec le raccourci Ctrl + Alt + ←/→"
+msgstr ""
+"Rechargez les onglets depuis le menu contextuel ou avec le raccourci Ctrl + "
+"Maj + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
 msgstr ""
+"Les notifications indiquent si un processus s'est terminé avec des erreurs "
+"ou non"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
+msgstr "Affichage des raccourcis clavier dans les menus contextuels des onglets"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -99,10 +101,14 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Correction d'un problème avec les raccourcis clavier non activés la première "
+"fois qu'ils sont déclenchés"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
 msgstr ""
+"Nous avons fait en sorte d'éviter de perdre la mise au point lors de la "
+"fermeture des onglets en arrière-plan"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
@@ -179,7 +185,7 @@ msgstr "Mise à jour de la police sans redémarrage"
 msgid "Don't remember tabs when History is disabled in System Settings"
 msgstr ""
 "Ne pas se souvenir des onglets lorsque l'historique est désactivé dans les "
-"paramètres systèmes"
+"paramètres du système"
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Show keyboard shortcuts in the secondary-click menu"
@@ -187,7 +193,7 @@ msgstr "Afficher les raccourcis clavier dans le menu au clic secondaire"
 
 #: data/io.elementary.terminal.appdata.xml.in:105
 msgid "Middle-click paste now properly follows System Settings"
-msgstr "Le collage en clic central suit les paramètres système"
+msgstr "Le collage au clic central suit les paramètres du système"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Shift + Control + D to duplicate tabs"
@@ -233,8 +239,7 @@ msgstr "Masquage du curseur lors de la saisie"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
-"Correction du comportement de mise en surbrillance d'une recherche erronée"
+msgstr "Correction du mauvais surlignage d'un texte recherché"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Support -h flag for help"

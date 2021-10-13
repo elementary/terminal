@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-05-19 18:43+0000\n"
+"PO-Revision-Date: 2021-08-27 09:33+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -60,31 +60,31 @@ msgstr "Los niveles de escala ahora se recuerdan por pestaña"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Se avisa también al pegar textos con saltos de renglón"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
 msgstr ""
+"Se muestran detalles del texto en un cuadro de diálogo al efectuar pegados "
+"riesgosos"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Opción Abrir enlace al pulsar con el botón secundario del ratón"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Es posible desplazar las pestañas mediante Ctrl + Alt + ←/→"
+msgstr ""
+"Vuelva a cargar las pestañas en el menú contextual o con el atajo Ctrl + "
+"Mayús + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Las notificaciones indican si un proceso finalizó con errores o no"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Mostrar atajos de teclado en el menú secundario"
+msgstr "Mostrar atajos de teclado en menús contextuales de pestañas"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -98,10 +98,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Soluciona un problema con los atajos de teclado que no se activan la primera "
+"vez que se presionan"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Se evita la pérdida del foco al cerrar pestañas en segundo plano"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"

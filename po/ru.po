@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-12 04:11+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2021-08-26 11:03+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
@@ -38,7 +38,7 @@ msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 "Запустить остаток строки как команду в терминале. Также можно использовать "
-"«-» в качестве флага"
+"«--» в качестве флага"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
@@ -143,10 +143,11 @@ msgstr "Перезагрузить"
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+"Вставленный текст может пытаться получить доступ к правам администратора"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Вставленный текст может содержать несколько команд"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
@@ -201,6 +202,8 @@ msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Копирование команд в Терминал может быть опасным. Прежде чем продолжить, "
+"убедитесь, что вы понимаете, что делает каждая часть вставленного текста."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"

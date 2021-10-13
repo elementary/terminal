@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-04-09 15:50+0000\n"
+"PO-Revision-Date: 2021-07-22 15:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "extra/pt/>\n"
@@ -60,31 +60,28 @@ msgstr "Agora os níveis de zoom são memorizados por separador"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Também avisa sobre colar multilinhas"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Mostrar detalhes de texto em diálogos de pasta insegura"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Abrir a opção Ligação ao fazer um clique secundário"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Mover separadores com o atalho Ctrl + Alt + ←/→"
+msgstr ""
+"Recarregar separadores no menu de contexto ou com o atalho Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Notificações indicam se um processo saiu com erros ou não"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Mostrar atalhos de teclado no menu de clique secundário"
+msgstr "Mostrar teclas de atalho em menus de contexto de separadores"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -98,10 +95,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Corrige um problema com as teclas de atalho não ativadas na primeira vez que "
+"são premidas"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Evite perder o foco ao fechar os separadores em segundo plano"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"

@@ -8,27 +8,29 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2016-01-10 13:45+0000\n"
-"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"PO-Revision-Date: 2021-09-19 18:30+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
+"sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr ""
+msgstr "Proces úspešne dokončený"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Proces bol ukončený s chybami"
 
 #: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "Zobraziť verziu"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:255
@@ -39,28 +41,26 @@ msgstr "Spustiť program v termináli"
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Spustiť zvyšok riadku ako príkaz v termináli. Môžete tiež použiť „--“ ako "
+"vlajku"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:263
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otvoriť nové okno"
+msgstr "Otvoriť nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:266
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Otvoriť nové okno"
+msgstr "Otvoriť novú kartu terminálu"
 
 #: src/Application.vala:268
 msgid "Show help"
-msgstr ""
+msgstr "Zobraziť nápovedu"
 
 #: src/Application.vala:270
 msgid "Set shell working directory"
-msgstr "Nastaviť pracovný adresár pre konzolu"
+msgstr "Nastaviť pracovný adresár shellu"
 
 #: src/MainWindow.vala:217
 msgid "Copy"
@@ -68,7 +68,7 @@ msgstr "Kopírovať"
 
 #: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopírovať posledný výstup"
 
 #: src/MainWindow.vala:229
 msgid "Paste"
@@ -76,49 +76,49 @@ msgstr "Vložiť"
 
 #: src/MainWindow.vala:235
 msgid "Select All"
-msgstr "Vybrať všetko"
+msgstr "Označiť všetko"
 
 #: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Nájsť…"
 
 #: src/MainWindow.vala:368
-#, fuzzy
 msgid "Zoom out"
 msgstr "Oddialiť"
 
 #: src/MainWindow.vala:376
 msgid "Default zoom level"
-msgstr ""
+msgstr "Mierka 1:1"
 
 #: src/MainWindow.vala:383
-#, fuzzy
 msgid "Zoom in"
 msgstr "Priblížiť"
 
 #: src/MainWindow.vala:402
 msgid "High Contrast"
-msgstr ""
+msgstr "Vysoký kontrast"
 
 #: src/MainWindow.vala:411
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarizovaný svetlý"
 
 #: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Tmavý"
 
 #: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Prirodzené kopírovanie/vkladanie"
 
 #: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
+"príkazovom riadku"
 
 #: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Nastavenia"
 
 #: src/MainWindow.vala:490
 msgid "New Tab"
@@ -127,11 +127,11 @@ msgstr "Nová karta"
 #: src/MainWindow.vala:882
 #, c-format
 msgid "Show in %s"
-msgstr ""
+msgstr "Zobraziť v %s"
 
 #: src/MainWindow.vala:883
 msgid "Default application"
-msgstr ""
+msgstr "Predvolená aplikácia"
 
 #: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -139,31 +139,31 @@ msgstr "Zatvoriť kartu"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplikovať"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "Obnoviť"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Vložený text môže obsahovať viacero príkazov"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "Skryť panel vyhľadávania"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Chcete zatvoriť túto kartu?"
+msgstr "Naozaj chcete zatvoriť túto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "Na tejto karte prebieha aktívny proces."
+msgstr "Na tejto karte je spustený aktívny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
@@ -171,11 +171,11 @@ msgstr "Ak ju zatvoríte, proces sa ukončí."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Skutočne chcete ukončiť Terminál?"
+msgstr "Naozaj chcete ukončiť Terminál?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "V tomto termináli je aktívny proces."
+msgstr "V tomto termináli je spustený aktívny proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
@@ -186,34 +186,32 @@ msgid "Quit Terminal"
 msgstr "Ukončiť Terminál"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Chcete zatvoriť túto kartu?"
+msgstr "Naozaj chcete obnoviť túto kartu?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "V tomto termináli je aktívny proces."
+msgstr ""
+"Na tejto karte je spustený aktívny proces. Ak ju obnovíte, proces sa ukončí."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Zatvoriť kartu"
+msgstr "Obnoviť kartu"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Kopírovanie príkazov do Terminálu môže byť nebezpečné. Uistite sa, že "
+"rozumiete čo jednotlivé časti textu vykonávajú predtým, než budete "
+"pokračovať."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Zobrazovať upozornenia o vkladaní"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
@@ -221,11 +219,11 @@ msgstr "Nevkladať"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr "Určite vložiť"
+msgstr "Napriek tomu vložiť"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr "Hľadanie"
+msgstr "Nájsť"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
@@ -237,7 +235,7 @@ msgstr "Ďalší výsledok"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "Opakované hľadanie"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"

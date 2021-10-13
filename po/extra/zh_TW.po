@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2018-03-23 12:18+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"terminal/extra/zh_TW/>\n"
+"PO-Revision-Date: 2021-10-05 12:24+0000\n"
+"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"terminal/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -44,15 +44,15 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:72
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "New features:"
-msgstr ""
+msgstr "新功能："
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "使用 Ctrl + Alt + ←/→ 移動分頁"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr ""
+msgstr "使用 Ctrl + Tab 及 Ctrl + Shift + Tab 切換分頁"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "Zoom levels are now remembered per-tab"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "也對於多行內容之貼上產生警告"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
@@ -87,7 +87,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:77
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Other updates:"
-msgstr ""
+msgstr "其他更新："
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid ""
@@ -124,7 +124,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:237
 #: data/io.elementary.terminal.appdata.xml.in:252
 msgid "Translation updates"
-msgstr ""
+msgstr "翻譯更新"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Add commandline option for New Tab (-t)"
@@ -132,7 +132,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Fix URL selection"
-msgstr ""
+msgstr "修正 URL 選擇問題"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Add commandline option for \"Show version\" (-v, --version)"
@@ -156,15 +156,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "使用 Ctrl + 滾輪縮放"
 
 #: data/io.elementary.terminal.appdata.xml.in:94
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "複製最後的輸出時包含 sudo 密碼確認"
 
 #: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "在不重新啟動下套用字體變更"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Don't remember tabs when History is disabled in System Settings"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Support -h flag for help"
-msgstr ""
+msgstr "支援 -h 選項以取得幫助"
 
 #: data/io.elementary.terminal.appdata.xml.in:146
 msgid "Disable audible bell"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "修復 zsh 通知"
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
@@ -262,7 +262,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:236
 #: data/io.elementary.terminal.appdata.xml.in:251
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "小錯誤修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:199
 msgid "FISH integration fixes"
@@ -289,10 +289,8 @@ msgid "Fix appstream date format"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:286
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-15 13:01+0000\n"
+"PO-Revision-Date: 2021-08-09 12:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -36,8 +36,7 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"\"ターミナル\" は、システム上のプログラムを実行するのに使用される UNIX のシェ"
-"ル環境にアクセスするための端末エミュレータアプリケーションです。"
+"“ターミナル”は、システム上のプログラムを実行するのに使用される UNIX のシェル環境にアクセスするための端末エミュレータアプリケーションです。"
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 #: data/io.elementary.terminal.appdata.xml.in:59
@@ -48,11 +47,11 @@ msgstr "新機能:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "タブを Ctrl + Alt + ←/→ で移動できるように変更"
+msgstr "Ctrl + Alt + ←/→ でタブを移動できるように変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "タブを Ctrl + Tab / Ctrl + Shift + Tab で切り替えられるように変更"
+msgstr "Ctrl + Tab / Ctrl + Shift + Tab でタブを切り替えられるように変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "Zoom levels are now remembered per-tab"
@@ -60,31 +59,27 @@ msgstr "タブごとに拡大率が記録されるように変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "複数行あるテキストを貼り付けた場合にも警告する機能を追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "貼り付けようとしているテキストの内容を、安全でない貼り付けに関する警告ダイアログに表示するように変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "副クリックしてリンク先を表示できるオプションを追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "タブを Ctrl + Alt + ←/→ で移動できるように変更"
+msgstr "コンテキストメニューまたは Ctrl + Shift + R でタブを再読み込みできるように変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "プロセスがエラー終了したか正常終了したかを通知でお知らせ"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "コンテキストメニューにキーボードショートカットを表示するように修正"
+msgstr "タブのコンテキストメニューにキーボードショートカットを表示"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -97,11 +92,11 @@ msgstr "そのほかのアップデート:"
 msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
-msgstr ""
+msgstr "キーボードショートカットが初回押下時有効にならない不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "バックグラウンドにあるタブを閉じた場合にフォーカス状態が解除される不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
@@ -140,7 +135,7 @@ msgstr "一部の URL がクリックできない不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "\"バージョンを表示\" コマンドラインオプション (-v, --version) を追加"
+msgstr "\"バージョンを表示\"コマンドラインオプション (-v, --version) を追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Add commandline option for New Window (-n)"

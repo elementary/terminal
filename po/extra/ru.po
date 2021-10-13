@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-12 04:11+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2021-08-28 20:17+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -30,7 +30,7 @@ msgstr "Терминал"
 #: data/io.elementary.terminal.appdata.xml.in:9
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Использовать командную строку"
+msgstr "Пользуйтесь командной строкой"
 
 #: data/io.elementary.terminal.appdata.xml.in:11
 msgid ""
@@ -62,31 +62,29 @@ msgstr "Уровни масштабирования теперь запомин�
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Предупреждение о многострочных вставках"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Отображение деталей текста в диалоговых окнах небезопасной вставки"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Опция позволяющая открывать ссылки нажав правой кнопкой мыши"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Перемещение вкладкок сочетанием клавиш Ctrl + Alt + ←/→"
+msgstr ""
+"Перезагрузка вкладок из контекстного меню или с помощью сочетания клавиш "
+"Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Уведомления показывают, был ли процесс завершен с ошибками или нет"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Показывать горячие клавиши в контекстном меню"
+msgstr "Показывать сочетания клавиш в контекстных меню вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -100,10 +98,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Устранены проблемы, из-за которой сочетания клавиш не работали при первом "
+"нажатии"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Избегать потери фокуса при закрытии фоновых вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
@@ -167,7 +167,7 @@ msgstr "Изменение масштаба с помощью Ctrl + Прокр�
 
 #: data/io.elementary.terminal.appdata.xml.in:94
 msgid "Include sudo password prompt when copying last output"
-msgstr ""
+msgstr "Внесен запрос пароля sudo при копировании последнего вывода"
 
 #: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Apply font changes without restarting"
@@ -179,7 +179,7 @@ msgstr "Вкладки не запоминаются, когда История 
 
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "Показывать горячие клавиши в контекстном меню"
+msgstr "Показывать сочетания клавиш в контекстном меню"
 
 #: data/io.elementary.terminal.appdata.xml.in:105
 msgid "Middle-click paste now properly follows System Settings"
@@ -209,11 +209,11 @@ msgstr "Хранение состояния с помощью GSettings"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Поддержка комбинации клавиш Ctrl+Равно для масштабирования"
+msgstr "Поддержка сочетания клавиш Ctrl+Равно для увеличения масштаба"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Fix a wrong foreground process response code"
-msgstr ""
+msgstr "Исправлен неправильный код процесса, когда приложение работает в фоне"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Return focus after popover menu closes"
@@ -221,7 +221,7 @@ msgstr "Возврат фокуса после закрытия всплываю
 
 #: data/io.elementary.terminal.appdata.xml.in:135
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Предотвращение фокусировки на кнопках поиска и стиля"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Hide the cursor while typing"
@@ -229,7 +229,7 @@ msgstr "Скрытие курсора при вводе текста"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Исправлено неустойчивое поведение выделения текста при поиске"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Support -h flag for help"
@@ -249,7 +249,7 @@ msgstr "Добавлено действие Alt+c для копирования 
 
 #: data/io.elementary.terminal.appdata.xml.in:149
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Добавлены аксели к всплывающим подсказкам"
 
 #: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Fix zsh notifications"
@@ -257,7 +257,7 @@ msgstr "Исправлены zsh уведомления"
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Условное сочетание клавиш ctrl+g для устранения конфликта с emacs"
 
 #: data/io.elementary.terminal.appdata.xml.in:159
 #: data/io.elementary.terminal.appdata.xml.in:167
@@ -279,23 +279,23 @@ msgstr "Улучшение интеграции с FISH"
 
 #: data/io.elementary.terminal.appdata.xml.in:200
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Меню настроек темы"
 
 #: data/io.elementary.terminal.appdata.xml.in:201
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Элементы управления уровнем масштаба"
 
 #: data/io.elementary.terminal.appdata.xml.in:218
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Разрешено закрывать вкладку после ввода команды exit в командной строке"
 
 #: data/io.elementary.terminal.appdata.xml.in:227
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Исправлено копирование URL-адресов в буфер обмена"
 
 #: data/io.elementary.terminal.appdata.xml.in:244
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Исправлен формат даты appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:286
 msgid "elementary, Inc."

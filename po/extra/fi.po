@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2018-09-06 00:09+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/terminal/"
-"extra/fi/>\n"
+"PO-Revision-Date: 2021-07-25 17:13+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/extra/"
+"fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -44,7 +44,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:72
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "New features:"
-msgstr ""
+msgstr "Uudet ominaisuudet:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
@@ -87,7 +87,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:77
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Other updates:"
-msgstr ""
+msgstr "Muut päivitykset:"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid ""
@@ -301,7 +301,7 @@ msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;prompt;cmd;commandline;run;komentorivi;komento;kehote;"
+msgstr "command;prompt;cmd;commandline;run;komentorivi;komento;kehote;pääte;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"

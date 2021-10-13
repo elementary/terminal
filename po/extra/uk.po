@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-07-05 10:38+0000\n"
+"PO-Revision-Date: 2021-07-15 22:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -64,31 +64,29 @@ msgstr "Відтепер масштаб запам'ятовується для �
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Попередження про багаторядкові вставлення"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Показ деталей тексту в діалогових вікнах небезпечного вставлення"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Опція відкривати посилання клацнувши правою кнопкою миші"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Переміщуйте вкладки комбінаціями клавіш Ctrl + Alt + ←/→"
+msgstr ""
+"Перезавантаження вкладок з контекстного меню або за допомогою комбінації "
+"клавіш Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Сповіщення вказують, чи сталася помилка виконання"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Показувати комбінацій клавіш у контекстному меню"
+msgstr "Показувати комбінації клавіш у контекстних меню вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -102,10 +100,12 @@ msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Виправлено проблему, коли комбінації клавіш не працюють під час першого "
+"натискання"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Уникнення втрати фокусу під час закриття фонових вкладок"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
