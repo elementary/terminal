@@ -28,7 +28,7 @@ namespace Terminal {
         private Gtk.Button zoom_default_button;
         private Gtk.RadioButton color_button_dark;
         private Gtk.RadioButton color_button_light;
-        private Gtk.RadioButton color_button_white;
+        private Gtk.RadioButton color_button_high_contrast;
 
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
@@ -421,16 +421,16 @@ namespace Terminal {
             follow_system_button.get_child ().destroy ();
             follow_system_button.add (follow_system_button_grid);
 
-            color_button_white = new Gtk.RadioButton (null) {
+            color_button_high_contrast = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
             };
 
-            var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_white_context.add_class ("color-white");
+            var color_button_high_contrast_context = color_button_high_contrast.get_style_context ();
+            color_button_high_contrast_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            color_button_high_contrast_context.add_class ("color-white");
 
-            color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Solarized Light")
             };
@@ -439,7 +439,7 @@ namespace Terminal {
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
-            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Dark")
             };
@@ -456,7 +456,7 @@ namespace Terminal {
                 margin_top = 6
             };
 
-            color_grid.add (color_button_white);
+            color_grid.add (color_button_high_contrast);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
 
@@ -599,24 +599,13 @@ namespace Terminal {
                 );
 
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
-                activate_color_button ();
+                set_color_buttons_from_background_setting ();
             });
 
-            switch (Application.settings.get_string ("background")) {
-                case HIGH_CONTRAST_BG:
-                    color_button_white.active = true;
-                    break;
-                case SOLARIZED_LIGHT_BG:
-                    color_button_light.active = true;
-                    break;
-                case DARK_BG:
-                    color_button_dark.active = true;
-                    break;
-            }
+            set_color_buttons_from_background_setting ();
 
             follow_system_button.button_release_event.connect (() => {
                 follow_system_switch.activate ();
-                activate_color_button ();
                 return Gdk.EVENT_STOP;
             });
 
@@ -634,14 +623,32 @@ namespace Terminal {
                 GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
             );
 
+            follow_system_switch.notify["active"].connect (() => {
+                warning ("fss active");
+                set_color_scheme ();
+            });
+
             var granite_settings = Granite.Settings.get_default ();
 
             granite_settings.notify["prefers-color-scheme"].connect (set_color_scheme);
-            Application.settings.notify["follow-system-style"].connect (set_color_scheme);
 
-            color_button_dark.clicked.connect (set_dark_style);
-            color_button_light.clicked.connect (set_light_style);
-            color_button_white.clicked.connect (set_high_contrast_style);
+            color_button_dark.clicked.connect (() => {
+                if (color_button_dark.active) {
+                    set_dark_style ();
+                }
+            });
+
+            color_button_light.clicked.connect (() => {
+                if (color_button_light.active) {
+                    set_light_style ();
+                }
+            });
+
+            color_button_high_contrast.clicked.connect (() => {
+                if (color_button_high_contrast.active) {
+                    set_high_contrast_style ();
+                }
+            });
 
             Application.settings.bind (
                 "natural-copy-paste",
@@ -778,21 +785,28 @@ namespace Terminal {
         private void set_color_scheme () {
             var gtk_settings = Gtk.Settings.get_default ();
             var granite_settings = Granite.Settings.get_default ();
+            bool set_dark = false;
 
             if (Application.settings.get_boolean ("follow-system-style")) {
                 switch (granite_settings.prefers_color_scheme) {
                     case Granite.Settings.ColorScheme.DARK:
-                        gtk_settings.gtk_application_prefer_dark_theme = true;
-                        set_dark_style ();
+                        set_dark = true;
                         break;
                     default:
-                        set_light_style ();
                         break;
                 }
             } else {
-                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
-                activate_color_button ();
+                set_dark = Application.settings.get_boolean ("prefer-dark-style");
             }
+
+            gtk_settings.gtk_application_prefer_dark_theme = set_dark;
+            if (set_dark) {
+                set_dark_style ();
+            } else {
+                set_light_style ();
+            }
+
+            set_color_buttons_from_background_setting ();
         }
 
         private void set_dark_style () {
@@ -813,10 +827,10 @@ namespace Terminal {
             Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
         }
 
-        private void activate_color_button () {
+        private void set_color_buttons_from_background_setting () {
             switch (Application.settings.get_string ("background")) {
                 case HIGH_CONTRAST_BG:
-                    color_button_white.active = true;
+                    color_button_high_contrast.active = true;
                     break;
                 case SOLARIZED_LIGHT_BG:
                     color_button_light.active = true;
