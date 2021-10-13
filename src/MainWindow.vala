@@ -26,6 +26,7 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Widgets.ZoomOverlay zoom_overlay;
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
@@ -511,10 +512,13 @@ namespace Terminal {
             var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
+            zoom_overlay = new Widgets.ZoomOverlay ();
+            zoom_overlay.add (notebook);
+
             var grid = new Gtk.Grid ();
             grid.attach (header, 0, 0);
             grid.attach (search_revealer, 0, 1);
-            grid.attach (notebook, 0, 2);
+            grid.attach (zoom_overlay, 0, 2);
 
             get_style_context ().add_class ("terminal-window");
             add (grid);
@@ -976,6 +980,7 @@ namespace Terminal {
         private void on_switch_page (Granite.Widgets.Tab? old,
                                      Granite.Widgets.Tab new_tab) {
 
+            zoom_overlay.hide_zoom_level ();
             current_terminal = get_term_widget (new_tab);
             /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
@@ -1382,14 +1387,17 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
+            zoom_overlay.show_zoom_level (current_terminal.font_scale);
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
+            zoom_overlay.show_zoom_level (current_terminal.font_scale);
         }
 
         private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
+            zoom_overlay.show_zoom_level (current_terminal.font_scale);
         }
 
         private void action_next_tab () {
