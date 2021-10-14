@@ -17,6 +17,13 @@
 */
 
 namespace Terminal {
+    const string HIGH_CONTRAST_BG = "#fff";
+    const string HIGH_CONTRAST_FG = "#333";
+    const string DARK_BG = "rgba(46, 46, 46, 0.95)";
+    const string DARK_FG = "#a5a5a5";
+    const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
+    const string SOLARIZED_LIGHT_FG = "#586e75";
+
     public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
         private Granite.Widgets.DynamicNotebook notebook;
@@ -26,9 +33,6 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        private Gtk.RadioButton color_button_dark;
-        private Gtk.RadioButton color_button_light;
-        private Gtk.RadioButton color_button_high_contrast;
 
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
@@ -41,13 +45,6 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
-
-        private const string HIGH_CONTRAST_BG = "#fff";
-        private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
-        private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
-        private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -421,45 +418,7 @@ namespace Terminal {
             follow_system_button.get_child ().destroy ();
             follow_system_button.add (follow_system_button_grid);
 
-            color_button_high_contrast = new Gtk.RadioButton (null) {
-                halign = Gtk.Align.CENTER,
-                tooltip_text = _("High Contrast")
-            };
-
-            var color_button_high_contrast_context = color_button_high_contrast.get_style_context ();
-            color_button_high_contrast_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_high_contrast_context.add_class ("color-white");
-
-            color_button_light = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
-                halign = Gtk.Align.CENTER,
-                tooltip_text = _("Solarized Light")
-            };
-
-            var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_light_context.add_class ("color-light");
-
-            color_button_dark = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
-                halign = Gtk.Align.CENTER,
-                tooltip_text = _("Dark")
-            };
-
-            var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_dark_context.add_class ("color-dark");
-
-            var color_grid = new Gtk.Grid () {
-                column_homogeneous = true,
-                margin_bottom = 6,
-                margin_end = 12,
-                margin_start = 12,
-                margin_top = 6
-            };
-
-            color_grid.add (color_button_high_contrast);
-            color_grid.add (color_button_light);
-            color_grid.add (color_button_dark);
-
+            var color_grid = new ColorButtonGrid ();
             var color_revealer = new Gtk.Revealer ();
             color_revealer.add (color_grid);
 
@@ -599,10 +558,7 @@ namespace Terminal {
                 );
 
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
-                set_color_buttons_from_background_setting ();
             });
-
-            set_color_buttons_from_background_setting ();
 
             follow_system_button.button_release_event.connect (() => {
                 follow_system_switch.activate ();
@@ -616,15 +572,16 @@ namespace Terminal {
                 SettingsBindFlags.DEFAULT
             );
 
-            follow_system_switch.bind_property (
-                "active",
-                color_revealer,
-                "reveal-child",
-                GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
+            Application.settings.bind (
+                "background",
+                color_grid,
+                "background",
+                SettingsBindFlags.DEFAULT
             );
 
             follow_system_switch.notify["active"].connect (() => {
-                warning ("fss active");
+                // Instead of binding property, might as well do it here
+                color_revealer.reveal_child = !follow_system_switch.active;
                 set_color_scheme ();
             });
 
@@ -632,21 +589,22 @@ namespace Terminal {
 
             granite_settings.notify["prefers-color-scheme"].connect (set_color_scheme);
 
-            color_button_dark.clicked.connect (() => {
-                if (color_button_dark.active) {
-                    set_dark_style ();
-                }
-            });
-
-            color_button_light.clicked.connect (() => {
-                if (color_button_light.active) {
-                    set_light_style ();
-                }
-            });
-
-            color_button_high_contrast.clicked.connect (() => {
-                if (color_button_high_contrast.active) {
-                    set_high_contrast_style ();
+            color_grid.notify["background"].connect (() => {
+                switch (color_grid.background) {
+                    case DARK_BG:
+                        Application.settings.set_boolean ("prefer-dark-style", true);
+                        Application.settings.set_string ("foreground", DARK_FG);
+                        break;
+                    case SOLARIZED_LIGHT_BG:
+                        Application.settings.set_boolean ("prefer-dark-style", false);
+                        Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+                        break;
+                    case HIGH_CONTRAST_BG:
+                        Application.settings.set_boolean ("prefer-dark-style", false);
+                        Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
+                        break;
+                    default:
+                        break;
                 }
             });
 
@@ -800,45 +758,8 @@ namespace Terminal {
             }
 
             gtk_settings.gtk_application_prefer_dark_theme = set_dark;
-            if (set_dark) {
-                set_dark_style ();
-            } else {
-                set_light_style ();
-            }
-
-            set_color_buttons_from_background_setting ();
-        }
-
-        private void set_dark_style () {
-            Application.settings.set_boolean ("prefer-dark-style", true);
-            Application.settings.set_string ("background", DARK_BG);
-            Application.settings.set_string ("foreground", DARK_FG);
-        }
-
-        private void set_light_style () {
-            Application.settings.set_boolean ("prefer-dark-style", false);
-            Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-            Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
-        }
-
-        private void set_high_contrast_style () {
-            Application.settings.set_boolean ("prefer-dark-style", false);
-            Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-            Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
-        }
-
-        private void set_color_buttons_from_background_setting () {
-            switch (Application.settings.get_string ("background")) {
-                case HIGH_CONTRAST_BG:
-                    color_button_high_contrast.active = true;
-                    break;
-                case SOLARIZED_LIGHT_BG:
-                    color_button_light.active = true;
-                    break;
-                case DARK_BG:
-                    color_button_dark.active = true;
-                    break;
-            }
+            // The color buttons will update automatically through the ColorButtonGrid "background" property binding
+            Application.settings.set_string ("background", set_dark? DARK_BG : SOLARIZED_LIGHT_BG);
         }
 
         private bool handle_paste_event () {
@@ -1724,6 +1645,86 @@ namespace Terminal {
 
         private string font_scale_to_zoom (double font_scale) {
             return ("%.0f%%").printf (font_scale * 100);
+        }
+
+        protected class ColorButtonGrid : Gtk.Grid {
+            public string background {get; set;}
+            Gtk.RadioButton color_button_high_contrast;
+            Gtk.RadioButton color_button_light;
+            Gtk.RadioButton color_button_dark;
+
+            public ColorButtonGrid () {
+                Object (
+                    column_homogeneous: true,
+                    margin_bottom: 6,
+                    margin_end: 12,
+                    margin_start: 12,
+                    margin_top: 6
+                );
+            }
+
+            construct {
+                color_button_high_contrast = new Gtk.RadioButton (null) {
+                    halign = Gtk.Align.CENTER,
+                    tooltip_text = _("High Contrast")
+                };
+
+                color_button_high_contrast.set_data<string> ("background", HIGH_CONTRAST_BG);
+                var color_button_high_contrast_context = color_button_high_contrast.get_style_context ();
+                color_button_high_contrast_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+                color_button_high_contrast_context.add_class ("color-white");
+
+                color_button_light = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
+                    halign = Gtk.Align.CENTER,
+                    tooltip_text = _("Solarized Light")
+                };
+                color_button_light.set_data<string> ("background", SOLARIZED_LIGHT_BG);
+                var color_button_light_context = color_button_light.get_style_context ();
+                color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+                color_button_light_context.add_class ("color-light");
+
+                color_button_dark = new Gtk.RadioButton.from_widget (color_button_high_contrast) {
+                    halign = Gtk.Align.CENTER,
+                    tooltip_text = _("Dark")
+                };
+                color_button_dark.set_data<string> ("background", DARK_BG);
+
+                var color_button_dark_context = color_button_dark.get_style_context ();
+                color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+                color_button_dark_context.add_class ("color-dark");
+
+                add (color_button_high_contrast);
+                add (color_button_light);
+                add (color_button_dark);
+
+                color_button_high_contrast.clicked.connect (on_color_button_clicked);
+                color_button_light.clicked.connect (on_color_button_clicked);
+                color_button_dark.clicked.connect (on_color_button_clicked);
+
+                notify["background"].connect (() => {
+                    switch (background) {
+                        case HIGH_CONTRAST_BG:
+                            color_button_high_contrast.active = true;
+                            break;
+                        case SOLARIZED_LIGHT_BG:
+                            color_button_light.active = true;
+                            break;
+                        case DARK_BG:
+                            color_button_dark.active = true;
+                            break;
+                        default:
+                            break;
+                    }
+                });
+
+                show_all ();
+            }
+
+            private void on_color_button_clicked (Gtk.Widget source) {
+                if (((Gtk.ToggleButton)source).active) {
+                    background = source.get_data<string> ("background");
+                }
+            }
         }
     }
 }
