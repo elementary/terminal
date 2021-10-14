@@ -584,6 +584,7 @@ namespace Terminal {
                 color_revealer.reveal_child = !follow_system_switch.active;
                 set_color_scheme ();
             });
+            color_revealer.reveal_child = !follow_system_switch.active;
 
             var granite_settings = Granite.Settings.get_default ();
 
