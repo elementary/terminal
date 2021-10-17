@@ -119,7 +119,7 @@ namespace Terminal.Utils {
         // We only want to allow '#' in appropriate position for fragment identifier so replace '/#' with a reserved character sequence
         // not used in valid uris before escaping.
         var placeholder = "::::::";
-        var escaped_uri = uri.replace ("/#", placeholder);
+        var uri_to_escape = uri.replace ("/#", placeholder);
         string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
                     .replace ("#", "")
                     .replace ("*", "")
@@ -130,7 +130,7 @@ namespace Terminal.Utils {
         }
 
         //Escape and then replace fragment identifier
-        return Uri.escape_string ((Uri.unescape_string (escaped_uri) ?? escaped_uri), rc , allow_utf8).replace (placeholder, "/#");
+        return Uri.escape_string ((Uri.unescape_string (uri_to_escape) ?? uri_to_escape), rc , allow_utf8).replace (placeholder, "/#");
     }
 
 }
