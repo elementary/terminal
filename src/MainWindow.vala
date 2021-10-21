@@ -42,7 +42,7 @@ namespace Terminal {
         private const string HIGH_CONTRAST_FG = "#333";
         private const string DARK_BG = "rgb(46, 46, 46)";
         private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
+        private const string SOLARIZED_LIGHT_BG = "rgb(253, 246, 227)";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
