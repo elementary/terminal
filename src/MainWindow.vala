@@ -40,9 +40,9 @@ namespace Terminal {
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgb(46, 46, 46)";
+        private const string DARK_BG = "#2e2e2e";
         private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgb(253, 246, 227)";
+        private const string SOLARIZED_LIGHT_BG = "#fdf6e3";
         private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
@@ -560,6 +560,7 @@ namespace Terminal {
                 Application.settings.set_string ("foreground", DARK_FG);
             });
 
+
             color_button_light.clicked.connect (() => {
                 Application.settings.set_boolean ("prefer-dark-style", false);
                 Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
@@ -578,6 +579,15 @@ namespace Terminal {
                 "active",
                 SettingsBindFlags.DEFAULT
             );
+
+            if (Application.settings.get_string ("background").has_prefix ("rgba")) {
+                if (color_button_light.active) {
+                    Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
+                }
+                else if (color_button_dark.active) {
+                    Application.settings.set_string ("background", DARK_BG);
+                }
+            }
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
