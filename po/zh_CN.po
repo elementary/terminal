@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-11-01 02:06+0000\n"
-"Last-Translator: Jason-summer <1656703453@qq.com>\n"
+"PO-Revision-Date: 2021-11-01 05:45+0000\n"
+"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: src/Application.vala:107
 msgid "Process completed"
-msgstr "处理完成"
+msgstr "进程已完成"
 
 #: src/Application.vala:110
 msgid "Process exited with errors"
-msgstr ""
+msgstr "出错！进程已退出。"
 
 #: src/Application.vala:253
 msgid "Show version"
@@ -137,19 +137,19 @@ msgstr "关闭标签"
 
 #: src/MainWindow.vala:1165
 msgid "Duplicate"
-msgstr ""
+msgstr "重复"
 
 #: src/MainWindow.vala:1176
 msgid "Reload"
-msgstr ""
+msgstr "重新加载"
 
 #: src/MainWindow.vala:1267
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "您刚刚粘贴的文本可能会试图获得管理员访问权限"
 
 #: src/MainWindow.vala:1269
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "您刚刚粘贴的文本可能包含多个命令"
 
 #: src/MainWindow.vala:1423
 msgid "Hide find bar"
@@ -207,7 +207,7 @@ msgstr "关闭标签"
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
-msgstr ""
+msgstr "将命令复制到终端可能很危险，在继续之前，请确保您了解粘贴文本的每个部分所做的事情。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
