@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-01 05:45+0000\n"
-"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
+"Last-Translator: SuperMario SuperFans <supermariosf@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -184,24 +184,18 @@ msgid "Quit Terminal"
 msgstr "退出终端"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "您确定要关闭此标签吗？"
+msgstr "您确定要重新加载此标签吗？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "此终端中有一个进程正在运行。"
+msgstr "此标签中有一个进程正在运行。如果您重新加载它，其中的进程将会结束。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "关闭标签"
+msgstr "重新加载标签"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
