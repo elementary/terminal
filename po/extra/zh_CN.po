@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-01 07:10+0000\n"
-"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
+"Last-Translator: SuperMario SuperFans <supermariosf@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -60,11 +60,11 @@ msgstr "记住上一个标签的缩放等级"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "对多行粘贴也发出警告"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "在不安全粘贴对话框内显示文本详情"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
@@ -79,10 +79,8 @@ msgid "Notifications indicate if a process exited with errors or not"
 msgstr "无论进程是否因错误退出都发出通知"
 
 #: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "在二级菜单中显示键盘快捷键"
+msgstr "在标签的菜单中显示键盘快捷键"
 
 #: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
