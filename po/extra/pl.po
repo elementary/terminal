@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-03 06:37+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: Bartek <blogowanie.xyz@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -104,7 +104,7 @@ msgstr "Uniknięto tracenia fokusu podczas zamykania kart w tle"
 
 #: data/io.elementary.terminal.appdata.xml.in:52
 msgid "Validate custom palette"
-msgstr ""
+msgstr "Sprawdź poprawność palety niestandardowej"
 
 #: data/io.elementary.terminal.appdata.xml.in:53
 #: data/io.elementary.terminal.appdata.xml.in:66
@@ -127,7 +127,7 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:237
 #: data/io.elementary.terminal.appdata.xml.in:252
 msgid "Translation updates"
-msgstr ""
+msgstr "Aktualizacje tłumaczeń"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Add commandline option for New Tab (-t)"
@@ -147,7 +147,7 @@ msgstr "Dodaj opcję lini komend dla Nowego okna (-n)"
 
 #: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Prevent duplicate tab on startup"
-msgstr ""
+msgstr "Zapobiegaj duplikowaniu karty podczas uruchamiania"
 
 #: data/io.elementary.terminal.appdata.xml.in:80
 msgid "Prevent unnecessary Home tab on startup"
@@ -155,11 +155,11 @@ msgstr "Unikaj niepotrzebnej karty domowej przy uruchomieniu"
 
 #: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr ""
+msgstr "Włącz lub wyłącz opcję Naturalny Kopiuj/Wklej w menu Ustawienia"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Zoom with Ctrl + Scroll"
-msgstr ""
+msgstr "Powiększ za pomocą Ctrl + Scroll"
 
 #: data/io.elementary.terminal.appdata.xml.in:94
 msgid "Include sudo password prompt when copying last output"
@@ -167,7 +167,7 @@ msgstr "Dołącz hasło sudo kiedy kopiowane zostało ostatnie wyjście"
 
 #: data/io.elementary.terminal.appdata.xml.in:95
 msgid "Apply font changes without restarting"
-msgstr ""
+msgstr "Zastosuj zmiany czcionek bez ponownego uruchamiania"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Don't remember tabs when History is disabled in System Settings"
