@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-11-03 06:37+0000\n"
-"Last-Translator: Bartek <blogowanie.xyz@gmail.com>\n"
+"PO-Revision-Date: 2021-11-03 06:38+0000\n"
+"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -223,7 +223,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Hide the cursor while typing"
-msgstr ""
+msgstr "Ukryj kursor kiedy piszę się"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Fix erratic search text highlightning behavior"
