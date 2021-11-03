@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-11-03 06:38+0000\n"
+"PO-Revision-Date: 2021-11-03 10:09+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
@@ -95,8 +95,7 @@ msgstr "Inne aktualizacje:"
 msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
-msgstr ""
-"Napraw błąd z skrótami klawiszowymi kiedy nie są naciskane pierwszy raz."
+msgstr "Napraw błąd z skrótami klawiszowymi kiedy nie są naciskane pierwszy raz"
 
 #: data/io.elementary.terminal.appdata.xml.in:51
 msgid "Avoid losing focus when closing background tabs"
@@ -223,11 +222,11 @@ msgstr "Nie ustawiaj fokusu na przyciskach wyszukiwania i stylowania"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Hide the cursor while typing"
-msgstr "Ukryj kursor kiedy piszę się"
+msgstr "Ukryj kursor podczas pisania"
 
 #: data/io.elementary.terminal.appdata.xml.in:144
 msgid "Fix erratic search text highlightning behavior"
-msgstr ""
+msgstr "Naprawiono błędne zachowanie przy podświetlaniu tekstu"
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Support -h flag for help"
@@ -235,7 +234,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:146
 msgid "Disable audible bell"
-msgstr ""
+msgstr "Wyłącz dzwonek"
 
 #: data/io.elementary.terminal.appdata.xml.in:147
 msgid "Add Alt+↑ action to scroll to last command"
@@ -247,15 +246,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:149
 msgid "Add accels to tooltips"
-msgstr ""
+msgstr "Dodano osie do tooltipów"
 
 #: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Fix zsh notifications"
-msgstr ""
+msgstr "Naprawiono powiadomienia zsh"
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr ""
+msgstr "Warunkowy skrót Ctrl+G by nie konfliktować z emacsem"
 
 #: data/io.elementary.terminal.appdata.xml.in:159
 #: data/io.elementary.terminal.appdata.xml.in:167
@@ -269,37 +268,35 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:236
 #: data/io.elementary.terminal.appdata.xml.in:251
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Mniejsze poprawki błędów"
 
 #: data/io.elementary.terminal.appdata.xml.in:199
 msgid "FISH integration fixes"
-msgstr ""
+msgstr "Poprawki dla integracji z FISHem"
 
 #: data/io.elementary.terminal.appdata.xml.in:200
 msgid "Theme preference menu"
-msgstr ""
+msgstr "Menu ustawień motywu"
 
 #: data/io.elementary.terminal.appdata.xml.in:201
 msgid "Zoom level controls"
-msgstr ""
+msgstr "Kontrola poziomu przybliżenia"
 
 #: data/io.elementary.terminal.appdata.xml.in:218
 msgid "Allow tab to close after typing exit at the commandline"
-msgstr ""
+msgstr "Możliwość zamknięcia karty przez wpisanie exit w linii poleceń"
 
 #: data/io.elementary.terminal.appdata.xml.in:227
 msgid "Fix copying URLs to clipboard"
-msgstr ""
+msgstr "Naprawiono kopiowanie URL do schowka"
 
 #: data/io.elementary.terminal.appdata.xml.in:244
 msgid "Fix appstream date format"
-msgstr ""
+msgstr "Naprawiono format daty appstream"
 
 #: data/io.elementary.terminal.appdata.xml.in:286
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
