@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-03 06:33+0000\n"
-"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -45,11 +45,11 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:72
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "New features:"
-msgstr ""
+msgstr "Nowe funkcje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr ""
+msgstr "Przenoś karty za pomocą Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
@@ -66,6 +66,7 @@ msgstr "Też ostrzegaj o wkleju kilku liniowych"
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Show text details in unsafe paste dialogs"
 msgstr ""
+"Pokazuj dodatkowe informacje o tekście w okienkach o niebezpiecznym wklejaniu"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
