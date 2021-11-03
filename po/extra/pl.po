@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-03 06:38+0000\n"
-"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -211,15 +211,15 @@ msgstr "Wsparcie dla kombinacji Ctrl + = do przybliżania"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Fix a wrong foreground process response code"
-msgstr "Napraw nieprawidłowy proces w tle przez kod responsywny"
+msgstr "Napraw nieprawidłowy kod odpowiedzi procesu w tle"
 
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Return focus after popover menu closes"
-msgstr ""
+msgstr "Zwróć fokus gdy wyskakujące menu zostanie zamknięte"
 
 #: data/io.elementary.terminal.appdata.xml.in:135
 msgid "Prevent search and style buttons from receiving focus"
-msgstr ""
+msgstr "Nie ustawiaj fokusu na przyciskach wyszukiwania i stylowania"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Hide the cursor while typing"
