@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-03 06:34+0000\n"
-"Last-Translator: Tomasz Okurowski <twelwepolska@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Open Link option when secondary clicking"
-msgstr "Opcja Otwórz Link kiedy podwójnym kliknięciem"
+msgstr "Dodano opcję Otwórz link przy kliknięciu drugim przyciskiem myszy"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
@@ -89,7 +89,7 @@ msgstr "Pokaż skróty klawiszowe w menu tabulatorze"
 #: data/io.elementary.terminal.appdata.xml.in:77
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Other updates:"
-msgstr ""
+msgstr "Inne aktualizacje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:50
 msgid ""
