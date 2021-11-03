@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2021-11-03 06:33+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: Bartek <blogowanie.xyz@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -53,11 +53,11 @@ msgstr "Przenoś karty za pomocą Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr ""
+msgstr "Przełączaj karty za pomocą skrótów Ctrl + Tab i Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Poziomy powiększenia są teraz zapamiętywane dla każdej karty"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 msgid "Also warn about multi-line pastes"
