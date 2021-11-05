@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-15 14:27+0000\n"
+"PO-Revision-Date: 2021-11-05 10:22+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -159,7 +159,7 @@ msgstr "Masquer la barre de recherche"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
+msgstr "Voulez-vous vraiment fermer cet onglet ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -171,7 +171,7 @@ msgstr "Si vous fermez, le processus prendra fin."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Êtes-vous certain de vouloir quitter le Terminal ?"
+msgstr "Voulez-vous vraiment quitter le Terminal ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -187,7 +187,7 @@ msgstr "Quitter le Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr "Êtes-vous certain de vouloir recharger cet onglet ?"
+msgstr "Voulez-vous vraiment recharger cet onglet ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
