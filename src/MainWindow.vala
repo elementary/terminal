@@ -1482,6 +1482,10 @@ namespace Terminal {
             return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
         }
 
+        public void set_active_terminal_tab (Granite.Widgets.Tab tab) {
+            notebook.current = tab;
+        }
+
         /** Compare every tab label with every other and resolve ambiguities **/
         private void check_for_tabs_with_same_name () {
             /* Take list copies so foreach clauses can be nested safely*/

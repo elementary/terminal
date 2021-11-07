@@ -56,6 +56,27 @@ public class Terminal.Application : Gtk.Application {
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (Config.GETTEXT_PACKAGE);
+
+        var act = new SimpleAction ("process-finished", VariantType.STRING);
+        add_action (act);
+        act.activate.connect ((v) => {
+            var now = new DateTime.now_local ();
+            size_t len;
+            var tid = v.get_string (out len);
+            foreach (var window in windows) {
+                foreach (var terminal in window.terminals) {
+                    if (terminal.terminal_id == tid) {
+                        window.set_active_terminal_tab (terminal.tab);
+                        var ts = Gdk.X11.get_server_time ((Gdk.X11.Window) window.get_window ());
+                        window.present_with_time (ts);
+                        window.grab_focus ();
+                        terminal.tab.grab_focus ();
+                        return ;
+                    }
+                }
+            }
+            get_last_window ().present_with_time ((uint32) now.to_unix ());
+        });
     }
 
     public Application () {
@@ -122,6 +143,7 @@ public class Terminal.Application : Gtk.Application {
                                 var notification = new Notification (process_string);
                                 notification.set_body (process);
                                 notification.set_icon (process_icon);
+                                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
                                 send_notification (null, notification);
                             }
                         }
