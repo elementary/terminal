@@ -28,7 +28,8 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
     }
 
     construct {
-        image_icon = new ThemedIcon ("dialog-warning");
+        image_icon = new ThemedIcon ("edit-paste");
+        badge_icon = new ThemedIcon ("dialog-warning");
 
         secondary_text =
             _("Copying commands into Terminal can be dangerous. Be sure you understand what each part of the pasted text does before continuing.");
