@@ -184,8 +184,10 @@ public class Terminal.Application : Gtk.Application {
         } else if (option_version) {
             command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
         } else {
+            // In the following options, an explicitly specified working directory takes precedence.
+            // Otherwise try to determine the appropriate working directory.
             if (command_e != null) {
-                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                if (working_directory == null) {
                     var command_wd = get_parent_dir (command_e[0]);
                     if (command_wd != null) {
                         working_directory = command_wd;
@@ -197,7 +199,7 @@ public class Terminal.Application : Gtk.Application {
 
                 run_commands (command_e, working_directory);
             } else if (commandline.length > 0) {
-                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                if (working_directory == null) {
                     var command_wd = get_parent_dir (commandline);
                     if (command_wd != null) {
                         working_directory = command_wd;
@@ -208,9 +210,10 @@ public class Terminal.Application : Gtk.Application {
 
                 run_command_line (commandline, working_directory);
             } else if (command_x != null) {
-                if (working_directory == null) { // Explicitly specified working directory takes precedence
+                if (working_directory == null) {
                     working_directory = command_line.getenv ("PWD");
                 }
+
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
                 get_last_window ().current_terminal.feed (WARNING.data);
