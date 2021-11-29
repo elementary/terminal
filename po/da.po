@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,20 +20,24 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Opgave afsluttet"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Vis version"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Kør et program i terminalen"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,84 +45,114 @@ msgstr ""
 "flag"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Åbn et nyt terminal vindue"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Åbn et nyt vindue som fane"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Vis hjælp"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Kopier Forrige Resultat"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:232
-msgid "Show in File Browser"
-msgstr "Vis i Filbrowser"
-
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Zoom ud"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Zoom ind"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Høj Kontrast"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solariseret Lys"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Mørk"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Naturlig Kopi/Indsæt"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Genveje behøver ikke brug af Shift; kan forstyrre CLI applikationer"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Nyt faneblad"
+
+#: src/MainWindow.vala:882
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "Vis version"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Luk faneblad"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Skjul søgebar"
 
@@ -133,10 +167,6 @@ msgstr "Der er en aktiv proces i dette faneblad."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Hvis du lukker den, vil denne process blive afsluttet."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Luk faneblad"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -154,27 +184,41 @@ msgstr "Hvis du afslutter Terminal, vil denne process blive afsluttet."
 msgid "Quit Terminal"
 msgstr "Afslut Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Denne kommando forespørger administrativ adgang til din computer"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Er du sikker på, at du vil lukke dette faneblad?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Det kan være farligt at kopiere kommandoer ind i terminalen."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "Der er en aktiv proces i denne terminal."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Luk faneblad"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Vis advarsler om indsætningsbeskyttelse"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Indsæt ikke"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Indsæt alligevel"
 
@@ -197,6 +241,21 @@ msgstr "Cyklisk søgning"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Denne kommando forespørger administrativ adgang til din computer"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Det kan være farligt at kopiere kommandoer ind i terminalen."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Vær sikker på at du forstår hvad hver del af denne kommando gør."
+
+#~ msgid "Task finished"
+#~ msgstr "Opgave afsluttet"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Vis i Filbrowser"
 
 #~ msgid "Style"
 #~ msgstr "Udseende"
@@ -227,9 +286,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Luk"
-
-#~ msgid "New Tab"
-#~ msgstr "Nyt faneblad"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Opret et nyt faneblad"

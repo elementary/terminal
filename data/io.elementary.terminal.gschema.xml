@@ -43,9 +43,15 @@
         <description>The index of the tab from the saved tabs that is currently focused.</description>
     </key>
     <key name="zoom" type="d">
+    <range min="0.25" max="4.0" />
       <default>1.0</default>
-      <summary>Most recent zoom level of terminal</summary>
-      <description>Most recent zoom level of terminal</description>
+      <summary>Default zoom level of new terminal</summary>
+      <description>Default zoom level of new terminal</description>
+    </key>
+    <key name="tab-zooms" type="as">
+      <default>[]</default>
+      <summary>Zoom level of each open terminal</summary>
+      <description>Zoom level of each open terminal</description>
     </key>
   </schema>
 
@@ -170,8 +176,8 @@
     </key>
     <key name="unsafe-paste-alert" type="b">
       <default>true</default>
-      <summary>Alert the user about unsafe paste.</summary>
-      <description>If the user paste's a command into the terminal that might be considered unsafe, warn them.</description>
+      <summary>Alert on unsafe pastes</summary>
+      <description>If the user pastes a command that might be considered unsafe (e.g. with sudo or multiple lines), show a warning</description>
     </key>
   </schema>
 </schemalist>

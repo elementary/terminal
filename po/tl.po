@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -20,109 +20,142 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tapos na ang gawain"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr ""
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Magpatakbo ng progama sa terminal"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Magbukas ng bagong window"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Magbukas ng bagong window"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "I-set ang working directory ng shell"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Kopyahin"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Idikit"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Piliin Lahat"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Hanapin..."
 
-#: src/MainWindow.vala:232
-msgid "Show in File Browser"
-msgstr ""
-
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:368
 #, fuzzy
 msgid "Zoom out"
 msgstr "Mag-zoom out"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:383
 #, fuzzy
 msgid "Zoom in"
 msgstr "Mag-zoom in"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Bagong Tab"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr ""
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr ""
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Isara ang Tab"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr ""
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr ""
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr ""
 
@@ -137,10 +170,6 @@ msgstr "May aktibong proseso sa tab na ito."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Kung wawakasan mo ito, ipapatigil itong process."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Isara ang Tab"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -158,29 +187,41 @@ msgstr ""
 msgid "Quit Terminal"
 msgstr "Lumabas ng Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Humihingi ng Administrative access ang command na ito sa kompyuter mo"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Sigurado ka bang gusto mong isara ang tab na ito?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr "May aktibong proseso pa sa terminal na ito"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Isara ang Tab"
+
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
 msgstr ""
-"Maaaring maging mapanganib ang pagkopya ng mga command papunta sa terminal."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr ""
-"Siguraduhing naiintindihan mo ang ginagawa ng bawat parte ng command na ito"
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Huwag Idikit"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Idikit Pa Rin"
 
@@ -204,6 +245,23 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr ""
+#~ "Humihingi ng Administrative access ang command na ito sa kompyuter mo"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr ""
+#~ "Maaaring maging mapanganib ang pagkopya ng mga command papunta sa "
+#~ "terminal."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Siguraduhing naiintindihan mo ang ginagawa ng bawat parte ng command na "
+#~ "ito"
+
+#~ msgid "Task finished"
+#~ msgstr "Tapos na ang gawain"
+
 #~ msgid "Cancel"
 #~ msgstr "Ikansela"
 
@@ -224,9 +282,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Isara"
-
-#~ msgid "New Tab"
-#~ msgstr "Bagong Tab"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Gumawa ng bagong tab"

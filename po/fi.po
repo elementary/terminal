@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-04-14 07:10+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-06-17 07:51+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,106 +17,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tehtävä valmistui"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "Prosessi suoritettu"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "Prosessi sulkeutui virheiden kera"
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Näytä versio"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Suorita ohjelma päätteessä"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"Suorita loput rivistä komentona päätteessä. Voi käyttää myös '--' lippuna"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Avaa uusi pääteikkuna"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Avaa uusi päätevälilehti"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Näytä ohje"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Aseta komentotulkin työskentelyhakemisto"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:232
-msgid "Show in File Browser"
-msgstr "Näytä tiedostoselaimessa"
-
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Loitonna"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Oletusmittakaava"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Lähennä"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Suuri kontrasti"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarized, vaalea"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Tumma"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Luonnollinen kopiointi/liittäminen"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
+"komentoriviohjelmia"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Uusi välilehti"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "Näytä sovelluksessa %s"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "Oletussovellus"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Sulje välilehti"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "Tee kaksoiskappale"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "Lataa uudelleen"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -131,10 +168,6 @@ msgstr "Välilehdessä on käynnissä oleva prosessi."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Jos suljet sen, prosessi päättyy."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Sulje välilehti"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -152,27 +185,39 @@ msgstr "Jos lopetat päätteen, prosessi päättyy."
 msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Tämä komento pyytää ylläpito-oikeuksia järjestelmään"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Komentojen kopiointi ja liittäminen päätteeseen voi olla vaarallista."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr ""
+"Päätteessä on käynnissä oleva prosessi. Jos lataat välilehden uudelleen, "
+"prosessi päättyy."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "Lataa välilehti uudelleen"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Komentojen kopioiminen päätteeseen saattaa olla vaarallista. Varmista, että "
+"ymmärrät mitä kaikkea liitettävä teksti tekee, ennen kuin jatkat."
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Näytä liittämisen suojausvaroitukset"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Älä liitä"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Liitä silti"
 
@@ -195,6 +240,23 @@ msgstr "Kierteinen haku"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Pääte"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Tämä komento pyytää ylläpito-oikeuksia järjestelmään"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr ""
+#~ "Komentojen kopiointi ja liittäminen päätteeseen voi olla vaarallista."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Varmista, että ymmärrät, mitä kaikkea komento on aikeissa suorittaa."
+
+#~ msgid "Task finished"
+#~ msgstr "Tehtävä valmistui"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Näytä tiedostoselaimessa"
 
 #~ msgid "Style"
 #~ msgstr "Tyyli"
@@ -225,9 +287,6 @@ msgstr "Pääte"
 
 #~ msgid "Close"
 #~ msgstr "Sulje"
-
-#~ msgid "New Tab"
-#~ msgstr "Uusi välilehti"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Avaa uusi välilehti"

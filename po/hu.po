@@ -7,128 +7,159 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2018-06-19 00:08+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
-"Language-Team: Hungarian <https://weblate.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-09-02 22:09+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Feladat kész"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "Feladat befejezve"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "A feladat kilépett hibákkal"
+
+#: src/Application.vala:253
 msgid "Show version"
-msgstr ""
+msgstr "Verzió megjelenítése"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Program futtatása terminálban"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"A sor további részének futtatása terminálban parancsként. Használhatja a '--"
+"' karaktereket flagként"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
+#: src/Application.vala:263
 msgid "Open a new terminal window"
-msgstr "Új ablak megnyitása"
+msgstr "Új terminálablak megnyitása"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
-#, fuzzy
-#| msgid "Open a new window"
-msgid "Open a new terminal tab"
-msgstr "Új ablak megnyitása"
-
 #: src/Application.vala:266
-msgid "Show help"
-msgstr ""
+msgid "Open a new terminal tab"
+msgstr "Új lap megnyitása"
 
 #: src/Application.vala:268
-msgid "Set shell working directory"
-msgstr "Shell munkakönyvtár beállítása"
+msgid "Show help"
+msgstr "Súgó mutatása"
 
-#: src/MainWindow.vala:206
+#: src/Application.vala:270
+msgid "Set shell working directory"
+msgstr "A shell munkakönyvtárának beállítása"
+
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Legutóbbi kimenet másolása"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/MainWindow.vala:232
-msgid "Show in File Browser"
-msgstr "Megjelenítés a Fájlkezelőben"
-
-#: src/MainWindow.vala:364
-#, fuzzy
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Kicsinyítés"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/MainWindow.vala:390
-#, fuzzy
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Nagyítás"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
-msgstr "Világos solarizált"
+msgstr "Szolarizált világos"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:420
 msgid "Dark"
-msgstr ""
+msgstr "Sötét"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Természetes másolás/beillesztés"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"A gyorsbillentyűk nem igénylik a Shift lenyomását; konzolos alkalmazásoknál "
+"problémát okozhat"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:464
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Új lap"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "Megjelenítés itt: %s"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "Alapértelmezett alkalmazás"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Lap bezárása"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "Megkettőzés"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "Újratöltés"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
-msgstr ""
+msgstr "Keresősáv elrejtése"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Biztos, hogy beakarja zárni ezt a lapot?"
+msgstr "Biztos, hogy be akarja zárni ezt a lapot?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -138,13 +169,9 @@ msgstr "Ezen a lapon aktív folyamat van."
 msgid "If you close it, the process will end."
 msgstr "Ha bezárja, a folyamat befejeződik."
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Lap bezárása"
-
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Biztos, hogy ki akar lépni terminálból?"
+msgstr "Biztos, hogy ki akar lépni a terminálból?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -158,27 +185,38 @@ msgstr "Ha bezárja a terminált, a folyamat befejeződik."
 msgid "Quit Terminal"
 msgstr "Kilépés a terminálból"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ez a parancs rendszergazdai hozzáférést igényel a számítógépéhez"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "Biztos, hogy újratölti ezt a lapot?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Parancsok másolása a Terminálba veszélyes lehet."
-
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Show paste protection warnings"
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
 msgstr ""
+"Egy aktív folyamat fut ebben a terminálban. Ha frissíti, be fog fejeződni."
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "Lap újratöltése"
+
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Parancsok terminálba való másolása veszélyes lehet. Győződjön meg róla, hogy "
+"érti minden egyes részét a beillesztett szövegnek a folytatás előtt."
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
+msgid "Show paste protection warnings"
+msgstr "Figyelmeztetés megjelenítése beillesztéskor"
+
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "Ne illessze be"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Beillesztés mindenképpen"
 
@@ -201,6 +239,18 @@ msgstr "Ciklikus keresés"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Ez a parancs rendszergazdai hozzáférést igényel a számítógépéhez"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Parancsok másolása a Terminálba veszélyes lehet."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Győződjön meg róla, hogy érti, hogy a parancs részei mit csinálnak."
+
+#~ msgid "Task finished"
+#~ msgstr "Feladat kész"
 
 #~ msgid "Style"
 #~ msgstr "Stílus"
@@ -231,9 +281,6 @@ msgstr "Terminál"
 
 #~ msgid "Close"
 #~ msgstr "Bezárás"
-
-#~ msgid "New Tab"
-#~ msgstr "Új lap"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Új lap létrehozása"

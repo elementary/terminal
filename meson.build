@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '5.5.2'
+    version: '6.0.0'
 )
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
@@ -39,6 +39,8 @@ terminal_resources = gnome.compile_resources(
 conf_data = configuration_data()
 conf_data.set_quoted('PROJECT_NAME', meson.project_name())
 conf_data.set_quoted('VERSION', meson.project_version())
+conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 config_header = configure_file(
     input : 'config.vala.in',
     output : 'config.vala',
@@ -55,13 +57,14 @@ executable(
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',
     'src/Widgets/TerminalWidget.vala',
+    'src/Utils.vala',
     terminal_resources,
     dependencies: [
         dependency('gee-0.8'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
-        dependency('granite', version: '>=5.5.0'),
+        dependency('granite', version: '>=6.1.0'),
         dependency('libhandy-1', version: '>=0.83.0'),
         vte_dep,
         libpcre2_dep,

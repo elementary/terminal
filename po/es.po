@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 18:27+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"PO-Revision-Date: 2021-08-27 09:33+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -17,23 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Tarea finalizada"
+#: src/Application.vala:107
+msgid "Process completed"
+msgstr "Proceso completado"
 
-#: src/Application.vala:251
+#: src/Application.vala:110
+msgid "Process exited with errors"
+msgstr "El proceso finalizó con errores"
+
+#: src/Application.vala:253
 msgid "Show version"
 msgstr "Mostrar versión"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
+#: src/Application.vala:255
 msgid "Run a program in terminal"
 msgstr "Ejecutar un programa en el terminal"
 
-#: src/Application.vala:258
+#: src/Application.vala:260
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,85 +45,115 @@ msgstr ""
 "usar «--» como conmutador"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#: src/Application.vala:263
 msgid "Open a new terminal window"
 msgstr "Abrir una ventana nueva del terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:266
 msgid "Open a new terminal tab"
 msgstr "Abrir una pestaña nueva del terminal"
 
-#: src/Application.vala:266
+#: src/Application.vala:268
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: src/Application.vala:268
+#: src/Application.vala:270
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo del intérprete"
 
-#: src/MainWindow.vala:206
+#: src/MainWindow.vala:217
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:211
+#: src/MainWindow.vala:223
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:229
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:235
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:226 src/MainWindow.vala:357 src/MainWindow.vala:1284
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:232
-msgid "Show in File Browser"
-msgstr "Mostrar en el explorador de archivos"
-
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:368
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/MainWindow.vala:371
+#: src/MainWindow.vala:376
 msgid "Default zoom level"
 msgstr "Nivel de escala predeterminado"
 
-#: src/MainWindow.vala:390
+#: src/MainWindow.vala:383
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:402
 msgid "High Contrast"
 msgstr "Contraste alto"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:411
 msgid "Solarized Light"
 msgstr "Solarizado claro"
 
-#: src/MainWindow.vala:422
+#: src/MainWindow.vala:420
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/MainWindow.vala:437
+#: src/MainWindow.vala:438
 msgid "Natural Copy/Paste"
 msgstr "Copipegado natural"
 
-#: src/MainWindow.vala:445
+#: src/MainWindow.vala:439
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:464
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:1276
+#: src/MainWindow.vala:490
+msgid "New Tab"
+msgstr "Pestaña nueva"
+
+#: src/MainWindow.vala:882
+#, c-format
+msgid "Show in %s"
+msgstr "Mostrar en %s"
+
+#: src/MainWindow.vala:883
+msgid "Default application"
+msgstr "Aplicación predeterminada"
+
+#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+msgid "Close Tab"
+msgstr "Cerrar pestaña"
+
+#: src/MainWindow.vala:1165
+msgid "Duplicate"
+msgstr "Duplicado"
+
+#: src/MainWindow.vala:1176
+msgid "Reload"
+msgstr "Volver a cargar"
+
+#: src/MainWindow.vala:1267
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Es posible que el texto pegado esté intentando obtener acceso administrativo"
+
+#: src/MainWindow.vala:1269
+msgid "The pasted text may contain multiple commands"
+msgstr "El texto pegado puede contener varias órdenes"
+
+#: src/MainWindow.vala:1423
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
@@ -134,10 +168,6 @@ msgstr "Hay un proceso activo en esta pestaña."
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "Si la cierra, el proceso finalizará."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Cerrar pestaña"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -155,27 +185,39 @@ msgstr "Si sale del terminal, el proceso finalizará."
 msgid "Quit Terminal"
 msgstr "Salir del terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:29
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Esta orden solicita acceso administrativo al equipo"
+#: src/Dialogs/ForegroundProcessDialog.vala:50
+msgid "Are you sure you want to reload this tab?"
+msgstr "¿Confirma que quiere volver a cargar esta pestaña?"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Pegar órdenes en el terminal puede ser peligroso."
+#: src/Dialogs/ForegroundProcessDialog.vala:52
+msgid ""
+"There is an active process on this tab. If you reload it, the process will "
+"end."
+msgstr ""
+"Hay un proceso activo en esta pestaña. Si lo vuelve a cargar, el proceso "
+"finalizará."
 
-#: src/Dialogs/UnsafePasteDialog.vala:33
-msgid "Be sure you understand what each part of this command does."
-msgstr "Asegúrese de comprender lo que hace cada parte de esta orden."
+#: src/Dialogs/ForegroundProcessDialog.vala:54
+msgid "Reload Tab"
+msgstr "Volver a cargar pestaña"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
+#: src/Dialogs/UnsafePasteDialog.vala:34
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Copiar órdenes en la Terminal puede ser peligroso. Asegúrese de comprender "
+"lo que hace cada parte del texto pegado antes de continuar."
+
+#: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
 msgstr "Mostrar alertas de protección al pegar texto"
 
-#: src/Dialogs/UnsafePasteDialog.vala:40
+#: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
 msgstr "No pegar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
 msgstr "Pegar de todos modos"
 
@@ -198,6 +240,21 @@ msgstr "Búsqueda cíclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Esta orden solicita acceso administrativo al equipo"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Pegar órdenes en el terminal puede ser peligroso."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Asegúrese de comprender lo que hace cada parte de esta orden."
+
+#~ msgid "Task finished"
+#~ msgstr "Tarea finalizada"
+
+#~ msgid "Show in File Browser"
+#~ msgstr "Mostrar en el explorador de archivos"
 
 #~ msgid "Style"
 #~ msgstr "Estilo"
@@ -228,9 +285,6 @@ msgstr "Terminal"
 
 #~ msgid "Close"
 #~ msgstr "Cerrar"
-
-#~ msgid "New Tab"
-#~ msgstr "Nueva pestaña"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Crear una nueva pestaña"
