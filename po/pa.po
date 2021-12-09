@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 17:16+0000\n"
+"POT-Creation-Date: 2021-12-09 17:20+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -53,96 +53,96 @@ msgstr "ਮਦਦ ਵਿਖਾਓ"
 msgid "Set shell working directory"
 msgstr "ਸ਼ੈੱਲ ਦੀ ਕੰਮਕਾਜੀ ਡਾਇਰੈਕਟਰੀ ਸੈੱਟ ਕਰੋ"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:218
 msgid "Copy"
 msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:224
 msgid "Copy Last Output"
 msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Paste"
 msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Select All"
 msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
+#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:369
 msgid "Zoom out"
 msgstr "ਜ਼ੂਮ ਘਟਾਓ"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:377
 msgid "Default zoom level"
 msgstr "ਪਹਿਲਾਂ ਹੀ ਸੈੱਟ ਜ਼ੂਮ ਦਰਜਾ"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:384
 msgid "Zoom in"
 msgstr "ਜ਼ੂਮ ਵਧਾਓ"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:403
 msgid "High Contrast"
 msgstr "ਜ਼ਿਆਦਾ ਵਖਰੇਵਾਂ"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "ਸੂਰਜੀ ਰੌਸ਼ਨੀ"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:421
 msgid "Dark"
 msgstr "ਕਾਲ਼ਾ/ਕਾਲ਼ੀ"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:439
 msgid "Natural Copy/Paste"
 msgstr "ਆਮ ਨਕਲ/ਚੇਪੀ"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:440
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "ਸ਼ਾਰਟਕੱਟ ਲਈ ਸ਼ਿਫ਼ਟ ਦੀ ਲੋੜ ਨਹੀਂ; ਕਮਾਂਡ ਲਾਈਨ ਇੰਟਰਫ਼ੇਸ ਵਿੱਚ ਦਖ਼ਲ ਦੇ ਸਕਦੀ ਹੈ"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:465
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:491
 msgid "New Tab"
 msgstr "ਨਵੀਂ ਟੈਬ"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:885
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/MainWindow.vala:1167
+#: src/MainWindow.vala:1168
 msgid "Duplicate"
 msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 
-#: src/MainWindow.vala:1178
+#: src/MainWindow.vala:1181
 msgid "Reload"
 msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
 
-#: src/MainWindow.vala:1271
+#: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
 msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂਡਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ"
 
-#: src/MainWindow.vala:1425
+#: src/MainWindow.vala:1428
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
