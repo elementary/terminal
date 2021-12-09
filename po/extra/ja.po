@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:41+0000\n"
-"PO-Revision-Date: 2021-11-16 15:46+0000\n"
+"PO-Revision-Date: 2021-12-09 04:35+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "修正点:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "ロケールに関わらず、拡大レベルを適切に復元するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:60
