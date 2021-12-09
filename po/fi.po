@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 17:16+0000\n"
+"POT-Creation-Date: 2021-12-09 17:20+0000\n"
 "PO-Revision-Date: 2021-06-17 07:51+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -61,99 +61,99 @@ msgstr "Näytä ohje"
 msgid "Set shell working directory"
 msgstr "Aseta komentotulkin työskentelyhakemisto"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:218
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:224
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
+#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:369
 msgid "Zoom out"
 msgstr "Loitonna"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:377
 msgid "Default zoom level"
 msgstr "Oletusmittakaava"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:384
 msgid "Zoom in"
 msgstr "Lähennä"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:403
 msgid "High Contrast"
 msgstr "Suuri kontrasti"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "Solarized, vaalea"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:421
 msgid "Dark"
 msgstr "Tumma"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:439
 msgid "Natural Copy/Paste"
 msgstr "Luonnollinen kopiointi/liittäminen"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:440
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
 "komentoriviohjelmia"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:465
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:491
 msgid "New Tab"
 msgstr "Uusi välilehti"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:885
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#: src/MainWindow.vala:1167
+#: src/MainWindow.vala:1168
 msgid "Duplicate"
 msgstr "Tee kaksoiskappale"
 
-#: src/MainWindow.vala:1178
+#: src/MainWindow.vala:1181
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
 
-#: src/MainWindow.vala:1271
+#: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
 msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 
-#: src/MainWindow.vala:1425
+#: src/MainWindow.vala:1428
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
