@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 00:41+0000\n"
-"PO-Revision-Date: 2021-07-15 22:10+0000\n"
+"PO-Revision-Date: 2021-12-09 17:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
 "uk/>\n"
@@ -43,11 +43,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Виправлення:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "Правильне відновлення масштабу для всіх мов"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:60
