@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 00:41+0000\n"
 "PO-Revision-Date: 2021-07-29 15:59+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -20,43 +20,43 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr "行程完成執行"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr "行程錯誤地結束"
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "顯示版本"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "在終端機中將剩餘內容以指令形式執行。也可以使用 '--' 作為前綴"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "開啟新終端機視窗"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "開啟新終端機分頁"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "顯示幫助說明"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "設定 shell 工作目錄"
 
@@ -76,7 +76,7 @@ msgstr "貼上"
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
 msgid "Find…"
 msgstr "尋找…"
 
@@ -120,36 +120,36 @@ msgstr "設定"
 msgid "New Tab"
 msgstr "新增分頁"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:883
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中顯示"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 msgid "Default application"
 msgstr "預設應用程式"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "關閉分頁"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1167
 msgid "Duplicate"
 msgstr "再製"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1178
 msgid "Reload"
 msgstr "重新載入"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1269
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1271
 msgid "The pasted text may contain multiple commands"
 msgstr "貼上的文字可能包含多項指令"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1425
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
 
