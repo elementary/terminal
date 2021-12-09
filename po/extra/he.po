@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-07-16 11:54+0000\n"
+"PO-Revision-Date: 2021-12-09 19:15+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "תיקונים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "שחזור נכון של רמות התקריב לכל השפות"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -57,17 +57,19 @@ msgstr "עדכונים נוספים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "להשתמש בכותרת של XTerm ככותרת החלון עם ניתן"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"להחליף את הקיצור „רענון לשונית” ל־Shift + F5 כדי להימנע מסתירה מול תהליכים "
+"שפועלים בחזית"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr ""
+msgstr "הקיצור המועדף ל„רענון לשונית” הוחלף לכדי Shift + Control + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68
