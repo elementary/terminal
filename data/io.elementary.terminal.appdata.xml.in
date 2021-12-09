@@ -31,6 +31,18 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="6.0.1" date="2020-12-08" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Properly restore zoom levels for all locales</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.0.0" date="2020-06-15" urgency="medium">
       <description>
         <p>New features:</p>
