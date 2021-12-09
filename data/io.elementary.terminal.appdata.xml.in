@@ -39,6 +39,7 @@
         </ul>
         <p>Other updates:</p>
         <ul>
+          <li>Use XTerm title for window title if available</li>
           <li>Translation updates</li>
         </ul>
       </description>
