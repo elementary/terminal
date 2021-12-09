@@ -39,6 +39,9 @@
         </ul>
         <p>Other updates:</p>
         <ul>
+          <li>Use XTerm title for window title if available</li>
+          <li>Change "Reload Tab" shortcut to Shift + F5 to avoid clash with some foreground processes </li>
+          <li>Change preferred shortcut for "Reload Tab" to Shift + Control + R</li>
           <li>Translation updates</li>
         </ul>
       </description>

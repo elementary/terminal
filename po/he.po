@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:16+0000\n"
 "PO-Revision-Date: 2021-06-16 01:43+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,43 +20,43 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr "התהליך הושלם"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr "התהליך הסתיים עם שגיאות"
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "הצגת גרסה"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "הפעלת תכנית במסוף"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "הרצת שאר השורה כפקודה במסוף. ניתן להשתמש ב־‚--’ כדגלון"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "פתיחת חלון מסוף חדש"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "פתיחת לשונית מסוף חדשה"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "הצגת עזרה"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
@@ -76,7 +76,7 @@ msgstr "הדבקה"
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
 msgid "Find…"
 msgstr "חיפוש…"
 
@@ -120,36 +120,36 @@ msgstr "הגדרות"
 msgid "New Tab"
 msgstr "לשונית חדשה"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:883
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "סגירת הלשונית"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1167
 msgid "Duplicate"
 msgstr "שכפול"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1178
 msgid "Reload"
 msgstr "רענון"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1269
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "הטקסט שמיועד להדבקה חשוד בניסיון השגת גישה ניהולית"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1271
 msgid "The pasted text may contain multiple commands"
 msgstr "הטקסט שמיועד להדבקה מכיל יותר מפקודה אחת"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1425
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 

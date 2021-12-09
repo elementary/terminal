@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:16+0000\n"
 "PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -13,43 +13,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "आवृत्ती दाखवा"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "नवीन टर्मिनल विंडो उघडा"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "नवीन टर्मिनल टॅब उघडा"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
@@ -69,7 +69,7 @@ msgstr "चिकटवा(पेस्ट)"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
 msgid "Find…"
 msgstr "शोधा…"
 
@@ -115,36 +115,36 @@ msgstr "सेटिंग्ज"
 msgid "New Tab"
 msgstr "नवीन रूट टॅब"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:883
 #, c-format
 msgid "Show in %s"
 msgstr "%s मध्ये दाखवा"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 msgid "Default application"
 msgstr "डीफॉल्ट अप्लिकेशन"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "टॅब बंद करा"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1167
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1178
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1269
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1271
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1425
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 

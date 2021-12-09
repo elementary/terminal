@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:16+0000\n"
 "PO-Revision-Date: 2021-08-26 11:03+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
@@ -16,24 +16,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr "Процесс завершен"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr "Процесс завершен с ошибками"
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "Показать версию"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -41,20 +41,20 @@ msgstr ""
 "«--» в качестве флага"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "Открыть новое окно терминала"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "Открыть новую вкладку терминала"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "Показать справку"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "Установить рабочyю директорию для shell"
 
@@ -74,7 +74,7 @@ msgstr "Вставить"
 msgid "Select All"
 msgstr "Выделить всё"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
 msgid "Find…"
 msgstr "Поиск…"
 
@@ -119,37 +119,37 @@ msgstr "Параметры"
 msgid "New Tab"
 msgstr "Создать вкладку"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:883
 #, c-format
 msgid "Show in %s"
 msgstr "Показать в %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 msgid "Default application"
 msgstr "Приложение по умолчанию"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1167
 msgid "Duplicate"
 msgstr "Дублировать"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1178
 msgid "Reload"
 msgstr "Перезагрузить"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1269
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставленный текст может пытаться получить доступ к правам администратора"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1271
 msgid "The pasted text may contain multiple commands"
 msgstr "Вставленный текст может содержать несколько команд"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1425
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 

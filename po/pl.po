@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:16+0000\n"
 "PO-Revision-Date: 2021-09-27 14:32+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -21,24 +21,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr "Proces ukończony"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr "Proces zakończył się z błędami"
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "Pokaż wersję"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Uruchom program w terminalu"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -46,20 +46,20 @@ msgstr ""
 "jako flagi"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "Otwórz nowe okno terminala"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "Otwórz nową kartę terminala"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "Wyświetl pomoc"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "Ustaw aktualną ścieżkę powłoki"
 
@@ -79,7 +79,7 @@ msgstr "Wklej"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1433
 msgid "Find…"
 msgstr "Znajdź…"
 
@@ -125,36 +125,36 @@ msgstr "Ustawienia"
 msgid "New Tab"
 msgstr "Nowa karta"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:883
 #, c-format
 msgid "Show in %s"
 msgstr "Wyświetl w %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:884
 msgid "Default application"
 msgstr "Aplikacja domyślna"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1166 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zamyka kartę"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1167
 msgid "Duplicate"
 msgstr "Duplikuj"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1178
 msgid "Reload"
 msgstr "Odśwież"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1269
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Wklejony tekst może próbować uzyskać dostęp administracyjny"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1271
 msgid "The pasted text may contain multiple commands"
 msgstr "Wklejony tekst może mieć kilka komend"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1425
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
