@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-12-09 04:35+0000\n"
+"PO-Revision-Date: 2021-12-10 02:49+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "terminal/extra/en_GB/>\n"
@@ -57,17 +57,19 @@ msgstr "Other updates:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "Use XTerm title for window title if available"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
+"foreground processes"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr ""
+msgstr "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68
