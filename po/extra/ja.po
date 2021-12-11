@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-12-09 04:35+0000\n"
+"PO-Revision-Date: 2021-12-10 02:49+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -57,17 +57,17 @@ msgstr "そのほかのアップデート:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "XTerm のタイトルが利用可能であればウィンドウタイトルに使うように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
-msgstr ""
+msgstr "フォアグラウンドのプロセスがクラッシュしないように、“タブを再読み込み”のショートカットキーを Shift + F5 に変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr ""
+msgstr "“タブを再読み込み”のデフォルトのショートカットキーを Shift + Ctrl + R に変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68

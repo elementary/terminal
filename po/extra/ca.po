@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-07-20 00:15+0000\n"
+"PO-Revision-Date: 2021-12-10 09:56+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -41,11 +41,13 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Correccions:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
 msgstr ""
+"Restaura correctament els nivells de zoom per a totes les configuracions "
+"regionals."
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -57,17 +59,21 @@ msgstr "Altres actualitzacions:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "Ús del títol XTerm per al títol de la finestra si està disponible"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Canvi de la drecera \"Recarrega la pestanya\" a Maj + F5 per evitar "
+"conflictes amb alguns processos en primer pla"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"Canvi de la drecera preferida per a \"Recarrega la pestanya\" a Maj + "
+"Control + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68

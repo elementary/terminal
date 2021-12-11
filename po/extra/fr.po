@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-08-12 09:03+0000\n"
+"PO-Revision-Date: 2021-12-10 12:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -41,11 +41,11 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Corrections :"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "Restauration correcte du niveau de zoom pour toutes les langues"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -58,16 +58,21 @@ msgstr "Autres mises à jour :"
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
 msgstr ""
+"Utilisation du nom du terminal XTerm pour le nom de la fenêtre si disponible"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Modification du raccourci « Recharger l'onglet » pour Maj + F5 pour éviter "
+"tout conflit avec des processus de premier plan"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"Modification du raccourci par défaut pour Recharger l'onglet par Maj + Ctrl +"
+" R"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68
