@@ -1,3 +1,15 @@
+io.elementary.terminal (6.0.1) bionic; urgency=medium
+
+  * Release 6.0.1 (#642)
+  * Update translation files
+  * Update translation template
+  * Avoid F5 shortcut clash with some foreground processes (#623)
+  * MainWindow: Use the XTerm title if defined (#602)
+  * Use locale independent conversion for zoom (#615)
+  * l10n: Correctly setup the locales (#611)
+
+ -- elementary, Inc. <builds@elementary.io>  Mon, 13 Dec 2021 18:32:48 +0000
+
 io.elementary.terminal (6.0.0) bionic; urgency=medium
 
   * Release 6.0.0 (#608)
