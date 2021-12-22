@@ -492,6 +492,7 @@ namespace Terminal {
             ) {
                 allow_new_window = true,
                 allow_duplication = true,
+                allow_pinning = true,
                 allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
                 max_restorable_tabs = 5,
                 group_name = "pantheon-terminal",
@@ -978,8 +979,16 @@ namespace Terminal {
                                      Granite.Widgets.Tab new_tab) {
 
             current_terminal = get_term_widget (new_tab);
+
             /* The font-scales of all terminals are currently the synchronized through saved-state binding */
-            new_tab.icon = null;
+
+            // Switch from process-completed icon to pinned or blank depending on state of tab
+            if (new_tab.pinned) {
+                new_tab.icon = new ThemedIcon ("view-pin-symbolic");
+            } else {
+                new_tab.icon = null;
+            }
+
             Idle.add (() => {
                 get_term_widget (new_tab).grab_focus ();
                 update_copy_output_sensitive ();
@@ -1175,7 +1184,7 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            /* Granite.Accel.from_action_name () does not allow control of which accel is used when 
+            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
              * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
                 child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
@@ -1183,6 +1192,14 @@ namespace Terminal {
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
             tab.menu.show_all ();
+
+            tab.notify["pinned"].connect (() => {
+                if (tab.pinned) {
+                    tab.icon = new ThemedIcon ("view-pin-symbolic");
+                } else {
+                    tab.icon = null;
+                }
+            });
 
             return tab;
         }
