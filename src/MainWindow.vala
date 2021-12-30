@@ -27,6 +27,8 @@ namespace Terminal {
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
         private Granite.AccelLabel open_in_browser_menuitem_label;
+        private Gtk.Revealer size_revealer;
+        private Gtk.Label size_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -50,10 +52,14 @@ namespace Terminal {
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public uint focus_timeout { get; private set; default = 0;}
+        public uint size_timeout { get; private set; default = 0;}
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
+
+        public long last_x;
+        public long last_y;
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
@@ -258,6 +264,9 @@ namespace Terminal {
 
             setup_ui ();
             show_all ();
+
+            last_x = current_terminal.get_column_count();
+            last_y = current_terminal.get_row_count();
 
             search_revealer.set_reveal_child (false);
 
@@ -512,10 +521,25 @@ namespace Terminal {
             var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
+            size_label = new Gtk.Label();
+            size_label.set_valign(Gtk.Align.CENTER);
+
+            size_revealer = new Gtk.Revealer ();
+            size_revealer.set_transition_type(Gtk.RevealerTransitionType.CROSSFADE);
+            size_revealer.set_valign(Gtk.Align.CENTER);
+            size_revealer.hide();
+            size_revealer.add (size_label);
+
+            var overlay = new Gtk.Overlay();
+            overlay.add(notebook);
+            overlay.add_overlay (size_revealer);
+            overlay.set_overlay_pass_through(size_revealer,true);
+
             var grid = new Gtk.Grid ();
             grid.attach (header, 0, 0);
             grid.attach (search_revealer, 0, 1);
-            grid.attach (notebook, 0, 2);
+            grid.attach (overlay, 0, 2);
+            grid.size_allocate.connect(size_changed);
 
             get_style_context ().add_class ("terminal-window");
             add (grid);
@@ -1365,6 +1389,30 @@ namespace Terminal {
 
         private void action_new_window () {
             app.new_window ();
+        }
+
+        private void size_changed(){
+
+            long x = current_terminal.get_column_count();
+            long y = current_terminal.get_row_count();
+
+            if(last_x == x && last_y == y){
+                return;
+            }
+
+            last_x = x;
+            last_y = y;
+
+            size_label.set_text(x.to_string() + " x " + y.to_string());
+
+            GLib.Source.remove(size_timeout);
+            size_timeout = GLib.Timeout.add(800, ()=>{
+                size_revealer.set_reveal_child (false);
+                return true;
+            });
+
+            size_revealer.show();
+            size_revealer.set_reveal_child (true);
         }
 
         private void action_new_tab () {
