@@ -521,7 +521,7 @@ namespace Terminal {
             var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
-            size_label = new Gtk.Label();
+            size_label = new Gtk.Label("");
             size_label.set_valign(Gtk.Align.CENTER);
 
             size_revealer = new Gtk.Revealer ();
