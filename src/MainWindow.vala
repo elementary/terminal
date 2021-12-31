@@ -527,7 +527,6 @@ namespace Terminal {
             size_revealer = new Gtk.Revealer ();
             size_revealer.set_transition_type(Gtk.RevealerTransitionType.CROSSFADE);
             size_revealer.set_valign(Gtk.Align.CENTER);
-            size_revealer.hide();
             size_revealer.add (size_label);
 
             var overlay = new Gtk.Overlay();
@@ -1411,7 +1410,6 @@ namespace Terminal {
                 return true;
             });
 
-            size_revealer.show();
             size_revealer.set_reveal_child (true);
         }
 
