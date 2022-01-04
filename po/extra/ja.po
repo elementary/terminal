@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-12-10 02:49+0000\n"
+"PO-Revision-Date: 2022-01-04 09:14+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -222,7 +222,7 @@ msgstr "テキストをウィンドウの端から少し離して表示するよ
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Pressing the Menu key now opens the context menu"
-msgstr "メニューキーをクリックした際にコンテキストメニューを表示するように修正"
+msgstr "メニューキーを押すとコンテキストメニューを表示するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Store state with GSettings"
