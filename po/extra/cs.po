@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
 "PO-Revision-Date: 2022-01-09 20:09+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Last-Translator: Tadeáš Cvrček <tcvrcek@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/>"
 "\n"
 "Language: cs\n"
@@ -105,7 +105,7 @@ msgstr "Nové funkce:"
 
 #: data/io.elementary.terminal.appdata.xml.in:53
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "Přesouvání karet pomocí zkratky Ctrl + Alt + ←/→"
+msgstr "Posouvejte záložky pomocí klávesové zkratky Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
