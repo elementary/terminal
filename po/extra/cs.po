@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2020-08-25 06:13+0000\n"
+"PO-Revision-Date: 2022-01-09 20:09+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/"
-">\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/terminal/extra/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-27 05:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:8
@@ -42,11 +42,13 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Opravy:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
 msgstr ""
+"Správně obnovuje úrovně přiblížení pod všemi místními a jazykovými "
+"nastaveními"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -58,7 +60,7 @@ msgstr "Ostatní aktualizace:"
 
 #: data/io.elementary.terminal.appdata.xml.in:42
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "Pokud je k dispozici, použije titulek XTerm pro nadpis okna"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid ""
@@ -106,52 +108,50 @@ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgstr "Přesouvání karet pomocí zkratky Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:54
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Přesouvání karet pomocí zkratky Ctrl + Alt + ←/→"
+msgstr "Přepínání mezi kartami pomocí zkratek Ctrl + Tab a Ctrl + Shift + Tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:55
 msgid "Zoom levels are now remembered per-tab"
-msgstr ""
+msgstr "Úrovně přiblížení jsou nyní zapamatovány pro jednotlivé karty"
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 msgid "Also warn about multi-line pastes"
-msgstr ""
+msgstr "Také varovat ohledně vložení s více řádky"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Show text details in unsafe paste dialogs"
-msgstr ""
+msgstr "Zobrazení podrobností o textu v dialozích o nebezpečném vkládání"
 
 #: data/io.elementary.terminal.appdata.xml.in:58
 msgid "Open Link option when secondary clicking"
-msgstr ""
+msgstr "Při kliknutím pravým tlačítkem se otevře možnost odkazu"
 
 #: data/io.elementary.terminal.appdata.xml.in:59
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Přesouvání karet pomocí zkratky Ctrl + Alt + ←/→"
+msgstr ""
+"Obsah karet je možné znovu načítat přes kontextovou nabídku nebo pomocí "
+"zkratky Ctrl + Shift + R"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
+msgstr "Upozorňování značí pokud proces skončil s chybami či ne"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
 msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Zobrazovat klávesové zkratky v nabídce pod pravým tlačítkem myši"
+msgstr "Zobrazovat klávesové zkratky v kontextových nabídkách karty"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid ""
 "Fix an issue with keyboard shortcuts not activating the first time they're "
 "pressed"
 msgstr ""
+"Opraven problém s klávesovými zkratkami, které se neaktivovali při prvním "
+"stisknutí"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Avoid losing focus when closing background tabs"
-msgstr ""
+msgstr "Vyhnuto se ztrátě zaměření při zavírání karet na pozadí"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Validate custom palette"
@@ -322,10 +322,8 @@ msgid "Fix appstream date format"
 msgstr "Opraven formát data v appstream metadatech"
 
 #: data/io.elementary.terminal.appdata.xml.in:301
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/io.elementary.terminal.desktop.in:9
@@ -334,7 +332,7 @@ msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "příkaz;řadek;cmd;příkazová řádka;spustit;terminal;command;"
+msgstr "příkaz;řádek;cmd;příkazový řádek;spustit;terminal;command;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
