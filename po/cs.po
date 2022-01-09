@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
+"PO-Revision-Date: 2022-01-09 20:09+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
 "cs/>\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
 #: src/Application.vala:110
 msgid "Process completed"
-msgstr ""
+msgstr "Proces skončil"
 
 #: src/Application.vala:113
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Proces skončil s chybami"
 
 #: src/Application.vala:256
 msgid "Show version"
@@ -64,7 +64,7 @@ msgstr "Nastavit pracovní adresář shellu"
 
 #: src/MainWindow.vala:218
 msgid "Copy"
-msgstr "Kopírovat"
+msgstr "Zkopírovat"
 
 #: src/MainWindow.vala:224
 msgid "Copy Last Output"
@@ -125,14 +125,13 @@ msgid "New Tab"
 msgstr "Nová karta"
 
 #: src/MainWindow.vala:884
-#, fuzzy, c-format
-#| msgid "Show version"
+#, c-format
 msgid "Show in %s"
-msgstr "Zobrazit verzi"
+msgstr "Zobrazit v %s"
 
 #: src/MainWindow.vala:885
 msgid "Default application"
-msgstr ""
+msgstr "Výchozí aplikace"
 
 #: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -140,19 +139,19 @@ msgstr "Zavřít kartu"
 
 #: src/MainWindow.vala:1168
 msgid "Duplicate"
-msgstr ""
+msgstr "Zduplikovat"
 
 #: src/MainWindow.vala:1181
 msgid "Reload"
-msgstr ""
+msgstr "Načíst znovu"
 
 #: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Vložený text se může pokoušet získat práva správce systému"
 
 #: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Vložený text může obsahovat vícero příkazů"
 
 #: src/MainWindow.vala:1428
 msgid "Hide find bar"
@@ -176,7 +175,7 @@ msgstr "Opravdu chcete ukončit Terminál?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "V tomto okně terminálu běží aktivní proces."
+msgstr "V tomto okně terminálu je spuštěný aktivní proces."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
@@ -187,30 +186,28 @@ msgid "Quit Terminal"
 msgstr "Ukončit Terminál"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Opravdu chcete zavřít tuto kartu?"
+msgstr "Opravdu chcete tuto kartu znovu načíst?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "V tomto okně terminálu běží aktivní proces."
+msgstr ""
+"V této kartě je spuštěný aktivní proces. Pokud ji znovu načtete, proces bude "
+"ukončen."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Zavřít kartu"
+msgstr "Znovu načíst kartu"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Vkládání odněkud zkopírovaných příkazů do terminálu může být nebezpečné. Než "
+"budete pokračovat ujistěte se, že rozumíte všem částem vkládaného textu."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
