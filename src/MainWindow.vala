@@ -620,7 +620,8 @@ namespace Terminal {
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
                         if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab")) {
+                            Application.settings.get_boolean ("alt-changes-tab") &&
+                            notebook.n_tabs > 1) {
                             var i = event.keyval - 49;
                             if (i > notebook.n_tabs - 1)
                                 return false;
@@ -630,7 +631,8 @@ namespace Terminal {
                         break;
                     case Gdk.Key.@9:
                         if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab")) {
+                            Application.settings.get_boolean ("alt-changes-tab") &&
+                            notebook.n_tabs > 1) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
                         }
