@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:20+0000\n"
 "PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -13,138 +13,138 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "आवृत्ती दाखवा"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "टर्मिनलवर कमांड म्हणून उर्वरित लाईन चालवा. ध्वज म्हणून '--' देखील वापरू शकता"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "नवीन टर्मिनल विंडो उघडा"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "नवीन टर्मिनल टॅब उघडा"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "मदत दाखवा"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेक्टरी सेट करा"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:218
 msgid "Copy"
 msgstr "प्रतिकृती"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:224
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करा"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Paste"
 msgstr "चिकटवा(पेस्ट)"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
 msgid "Find…"
 msgstr "शोधा…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:369
 msgid "Zoom out"
 msgstr "झूम आऊट"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:377
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:384
 msgid "Zoom in"
 msgstr "झूम इन"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:403
 msgid "High Contrast"
 msgstr "उच्च तीव्रता"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "सौरकृत फिका"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:421
 msgid "Dark"
 msgstr "गडद"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:439
 msgid "Natural Copy/Paste"
 msgstr "नैसर्गिक कॉपी / पेस्ट"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:440
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "शॉर्टकट्सना शिफ्टची आवश्यकता नसते; सीएलआय अॅप्समध्ये हस्तक्षेप करू शकते"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:465
 msgid "Settings"
 msgstr "सेटिंग्ज"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:491
 #, fuzzy
 #| msgid "New Root Tab"
 msgid "New Tab"
 msgstr "नवीन रूट टॅब"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:884
 #, c-format
 msgid "Show in %s"
 msgstr "%s मध्ये दाखवा"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:885
 msgid "Default application"
 msgstr "डीफॉल्ट अप्लिकेशन"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "टॅब बंद करा"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1168
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1181
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1428
 msgid "Hide find bar"
 msgstr "शोध बार लपवा"
 

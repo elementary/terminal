@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2021-12-09 17:20+0000\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -18,142 +18,142 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "Ekzekuto një program në terminal"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Hap një dritare të re"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Hap një dritare të re"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:218
 msgid "Copy"
 msgstr "Kopjo"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:224
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Paste"
 msgstr "Ngjit"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Select All"
 msgstr "Përzgjidh gjithçka"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
 msgid "Find…"
 msgstr "Gjej…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:369
 #, fuzzy
 msgid "Zoom out"
 msgstr "Zvogëlo"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:377
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:384
 #, fuzzy
 msgid "Zoom in"
 msgstr "Zmadho"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:403
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:421
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:439
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:440
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:465
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:491
 msgid "New Tab"
 msgstr "Skedë e re"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:884
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:885
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Mbyll skedën"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1168
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1181
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1428
 msgid "Hide find bar"
 msgstr ""
 
