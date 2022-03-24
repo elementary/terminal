@@ -57,6 +57,7 @@ executable(
     'src/Dialogs/UnsafePasteDialog.vala',
     'src/Widgets/SearchToolbar.vala',
     'src/Widgets/TerminalWidget.vala',
+    'src/Widgets/ZoomOverlay.vala',
     'src/Utils.vala',
     terminal_resources,
     dependencies: [
