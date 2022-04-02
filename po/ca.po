@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-06-15 14:27+0000\n"
+"PO-Revision-Date: 2022-04-02 21:53+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -159,7 +159,7 @@ msgstr "Amaga la barra de cerca"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Esteu segur que voleu tancar aquesta pestanya?"
+msgstr "Segur que voleu tancar aquesta pestanya?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -171,7 +171,7 @@ msgstr "Si tanqueu la pestanya, s'acabarà el procés."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Esteu segur que voleu sortir del terminal?"
+msgstr "Segur que voleu sortir del terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
