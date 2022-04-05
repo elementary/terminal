@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-11-01 05:45+0000\n"
-"Last-Translator: SuperMario SuperFans <supermariosf@outlook.com>\n"
+"POT-Creation-Date: 2021-12-09 17:20+0000\n"
+"PO-Revision-Date: 2021-12-07 09:59+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -20,138 +20,138 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:110
 msgid "Process completed"
 msgstr "进程已完成"
 
-#: src/Application.vala:110
+#: src/Application.vala:113
 msgid "Process exited with errors"
-msgstr "出错！进程已退出。"
+msgstr "进程因错误已退出"
 
-#: src/Application.vala:253
+#: src/Application.vala:256
 msgid "Show version"
 msgstr "显示版本"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:258
 msgid "Run a program in terminal"
 msgstr "在终端运行程序"
 
-#: src/Application.vala:260
+#: src/Application.vala:263
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr "在终端中以指令形式运行剩余指令。 也可以使用 '--' 作为前缀"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:266
 msgid "Open a new terminal window"
 msgstr "新建窗口"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:269
 msgid "Open a new terminal tab"
 msgstr "新建标签"
 
-#: src/Application.vala:268
+#: src/Application.vala:271
 msgid "Show help"
 msgstr "显示帮助"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:218
 msgid "Copy"
 msgstr "复制"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:224
 msgid "Copy Last Output"
 msgstr "复制上次输出"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:230
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:236
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:369
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:377
 msgid "Default zoom level"
 msgstr "默认"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:384
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:403
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:421
 msgid "Dark"
 msgstr "深色"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:439
 msgid "Natural Copy/Paste"
 msgstr "自然复制/粘贴"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:440
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "快捷键不使用 Shift 键\n"
 "（可能会与 CLI 应用冲突）"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:465
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:491
 msgid "New Tab"
 msgstr "新建标签页"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:884
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中显示"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:885
 msgid "Default application"
 msgstr "默认应用"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "关闭标签"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1168
 msgid "Duplicate"
 msgstr "重复"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1181
 msgid "Reload"
 msgstr "重新加载"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1272
 msgid "The pasted text may be trying to gain administrative access"
-msgstr "您刚刚粘贴的文本可能会试图获得管理员访问权限"
+msgstr "当前粘贴的文本可能会试图获取管理员权限"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1274
 msgid "The pasted text may contain multiple commands"
-msgstr "您刚刚粘贴的文本可能包含多个命令"
+msgstr "当前粘贴的文本可能包含多个命令"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1428
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -201,7 +201,9 @@ msgstr "重新加载标签"
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
-msgstr "将命令复制到终端可能很危险，在继续之前，请确保您了解粘贴文本的每个部分所做的事情。"
+msgstr ""
+"复制命令到终端存在安全风险，在继续之前，请确保您了解所粘贴文本每个部分的作"
+"用。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
