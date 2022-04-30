@@ -81,6 +81,7 @@ namespace Terminal {
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
+        public const string ACTION_CLOSE_TERMINAL = "action-close-terminal";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -106,7 +107,8 @@ namespace Terminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser},
+            { ACTION_CLOSE_TERMINAL, action_close_terminal}
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -176,6 +178,7 @@ namespace Terminal {
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
+            action_accelerators[ACTION_CLOSE_TERMINAL] = "<Control><Shift>q";
         }
 
         construct {
@@ -1363,6 +1366,10 @@ namespace Terminal {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
             // Closing a tab will switch to another, which will trigger check for same names
+        }
+
+        public void action_close_terminal () {
+            Process.exit (0);
         }
 
         private void action_new_window () {
