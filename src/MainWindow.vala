@@ -1386,12 +1386,6 @@ namespace Terminal {
                     }
                 }
             }
-            //      tabs_to_terminate.append (terminal_widget);
-            //  }
-
-            //  foreach (var t in tabs_to_terminate) {
-            //      t.term_ps ();
-            //  }
 
             Process.exit (0);
         }
