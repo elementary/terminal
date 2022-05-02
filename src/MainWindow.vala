@@ -1369,6 +1369,30 @@ namespace Terminal {
         }
 
         public void action_close_terminal () {
+            
+            save_opened_terminals ();
+
+            var tabs_to_terminate = new GLib.List <TerminalWidget> ();
+
+            foreach (var terminal_widget in terminals) {
+                terminal_widget = (TerminalWidget) terminal_widget;
+                if (terminal_widget.has_foreground_process ()) {
+                    var dialog = new ForegroundProcessDialog.before_close (this);
+                    if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+                        terminal_widget.kill_fg ();
+                        dialog.destroy ();
+                    } else {
+                        dialog.destroy ();
+                    }
+                }
+            }
+            //      tabs_to_terminate.append (terminal_widget);
+            //  }
+
+            //  foreach (var t in tabs_to_terminate) {
+            //      t.term_ps ();
+            //  }
+
             Process.exit (0);
         }
 
