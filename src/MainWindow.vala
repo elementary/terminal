@@ -1370,7 +1370,7 @@ namespace Terminal {
 
         public void action_close_terminal () {
 
-close ();
+            close ();
         }
 
         private void action_new_window () {
