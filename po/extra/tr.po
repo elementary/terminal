@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-12-14 21:58+0000\n"
+"PO-Revision-Date: 2022-04-30 06:27+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -46,6 +46,7 @@ msgstr "Düzeltmeler:"
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Properly restore zoom levels for all locales"
 msgstr ""
+"Tüm yerel ayarlar için yakınlaştırma düzeylerini düzgün şekilde geri yükleyin"
 
 #: data/io.elementary.terminal.appdata.xml.in:40
 #: data/io.elementary.terminal.appdata.xml.in:63
@@ -64,10 +65,14 @@ msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Bazı ön plandaki işlemler ile çakışmaması için \"Sekmeyi Yeniden Yükle\" "
+"kısayollu olan Shift + F5 değiştirildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:44
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"\"Sekmeyi Yeniden Yükle\" kısayolunun tercih edilen kısayolu Shift + Control "
+"+ R ile değiştirildi"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:68
