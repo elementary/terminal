@@ -1369,7 +1369,7 @@ namespace Terminal {
         }
 
         public void action_close_terminal () {
-            
+
             save_opened_terminals ();
 
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
