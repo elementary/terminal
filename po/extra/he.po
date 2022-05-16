@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-16 16:18+0000\n"
-"PO-Revision-Date: 2021-12-09 19:15+0000\n"
+"PO-Revision-Date: 2022-05-16 18:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -49,11 +49,11 @@ msgstr "תכונות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "מעבר בין טאבים עם Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "יציאה עם Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 #: data/io.elementary.terminal.appdata.xml.in:53
@@ -62,7 +62,7 @@ msgstr "תיקונים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "תוקנה הבנייה ב־OS 7"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:57
