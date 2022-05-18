@@ -1,3 +1,16 @@
+io.elementary.terminal (6.0.2) bionic; urgency=medium
+
+  * Release 6.0.2 (#659)
+  * Update translation files
+  * Update translation template
+  * Appdata: Update for 6.0.2
+  * Added hotkey to close terminal (#658)
+  * MainWindow: Switch tab with Alt+[1-9] when there are at least 2 tabs
+    (#650)
+  * Meson: remove positional arguments from i18n.merge_file (#649)
+
+ -- elementary, Inc. <builds@elementary.io>  Wed, 18 May 2022 04:45:55 +0000
+
 io.elementary.terminal (6.0.1) bionic; urgency=medium
 
   * Release 6.0.1 (#642)
