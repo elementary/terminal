@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-16 16:18+0000\n"
-"PO-Revision-Date: 2022-01-04 09:14+0000\n"
+"PO-Revision-Date: 2022-05-20 16:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -49,11 +49,11 @@ msgstr "新機能:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Alt + 1〜9 キーでタブを切り替え可能に"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Ctrl + Shift + Q キーで終了可能に"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 #: data/io.elementary.terminal.appdata.xml.in:53
@@ -62,7 +62,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.terminal.appdata.xml.in:43
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "elementary OS 7 上でのビルドを修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:45
 #: data/io.elementary.terminal.appdata.xml.in:57
