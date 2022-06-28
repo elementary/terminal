@@ -26,7 +26,6 @@ namespace Terminal {
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
-        private Dialogs.ColorPreferences? color_preferences_dialog;
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
@@ -422,15 +421,6 @@ namespace Terminal {
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
-            var color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
-                halign = Gtk.Align.CENTER,
-                tooltip_text = _("Custom")
-            };
-
-            unowned Gtk.StyleContext color_button_custom_context = color_button_custom.get_style_context ();
-            color_button_custom_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_custom_context.add_class ("color-custom");
-
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
                 margin_start = 12,
@@ -441,7 +431,6 @@ namespace Terminal {
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
-            color_grid.add (color_button_custom);
 
             var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
@@ -560,9 +549,6 @@ namespace Terminal {
                 case Themes.DARK:
                     color_button_dark.active = true;
                     break;
-                default:
-                    color_button_custom.active = true;
-                    break;
             }
 
             color_button_dark.button_release_event.connect (() => {
@@ -578,13 +564,6 @@ namespace Terminal {
             color_button_white.button_release_event.connect (() => {
                 Application.settings.set_string ("theme", Themes.HIGH_CONTRAST);
                 return Gdk.EVENT_PROPAGATE;
-            });
-
-            color_button_custom.button_release_event.connect (() => {
-                color_button_custom.active = true;
-                open_color_preferences ();
-                menu_popover.popdown ();
-                return Gdk.EVENT_STOP;
             });
 
             Application.settings.bind (
@@ -1500,19 +1479,6 @@ namespace Terminal {
                 fullscreen ();
                 is_fullscreen = true;
             }
-        }
-
-        private void open_color_preferences () {
-            if (color_preferences_dialog == null) {
-                color_preferences_dialog = new Dialogs.ColorPreferences (this);
-                color_preferences_dialog.show_all ();
-
-                color_preferences_dialog.destroy.connect (() => {
-                    color_preferences_dialog = null;
-                });
-            }
-
-            color_preferences_dialog.present ();
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
