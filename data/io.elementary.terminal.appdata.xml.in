@@ -31,7 +31,24 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="6.0.1" date="2020-12-13" urgency="medium">
+    <release version="6.0.2" date="2022-05-16" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Switch tabs with Alt + 1-9</li>
+          <li>Quit with Ctrl + Shift + Q</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Fix build on OS 7</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.1" date="2021-12-13" urgency="medium">
       <description>
         <p>Fixes:</p>
         <ul>
