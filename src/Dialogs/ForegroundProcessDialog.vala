@@ -44,6 +44,17 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
         );
     }
 
+    public ForegroundProcessDialog.before_tab_reload (MainWindow parent) {
+        Object (
+            transient_for: parent,
+            primary_text: _("Are you sure you want to reload this tab?"),
+            secondary_text:
+                _("There is an active process on this tab. If you reload it, the process will end."),
+            buttons: Gtk.ButtonsType.CANCEL,
+            button_label: _("Reload Tab")
+        );
+    }
+
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
 
