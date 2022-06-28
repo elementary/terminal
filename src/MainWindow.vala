@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2021 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2011-2022 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -37,13 +37,6 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
-
-        private const string HIGH_CONTRAST_BG = "#fff";
-        private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
-        private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
-        private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -406,7 +399,7 @@ namespace Terminal {
                 tooltip_text = _("High Contrast")
             };
 
-            var color_button_white_context = color_button_white.get_style_context ();
+            unowned Gtk.StyleContext color_button_white_context = color_button_white.get_style_context ();
             color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_white_context.add_class ("color-white");
 
@@ -415,7 +408,7 @@ namespace Terminal {
                 tooltip_text = _("Solarized Light")
             };
 
-            var color_button_light_context = color_button_light.get_style_context ();
+            unowned Gtk.StyleContext color_button_light_context = color_button_light.get_style_context ();
             color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_light_context.add_class ("color-light");
 
@@ -424,7 +417,7 @@ namespace Terminal {
                 tooltip_text = _("Dark")
             };
 
-            var color_button_dark_context = color_button_dark.get_style_context ();
+            unowned Gtk.StyleContext color_button_dark_context = color_button_dark.get_style_context ();
             color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             color_button_dark_context.add_class ("color-dark");
 
@@ -546,34 +539,31 @@ namespace Terminal {
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
-            switch (Application.settings.get_string ("background")) {
-                case HIGH_CONTRAST_BG:
+            switch (Application.settings.get_string ("theme")) {
+                case Themes.HIGH_CONTRAST:
                     color_button_white.active = true;
                     break;
-                case SOLARIZED_LIGHT_BG:
+                case Themes.LIGHT:
                     color_button_light.active = true;
                     break;
-                case DARK_BG:
+                case Themes.DARK:
                     color_button_dark.active = true;
                     break;
             }
 
-            color_button_dark.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", true);
-                Application.settings.set_string ("background", DARK_BG);
-                Application.settings.set_string ("foreground", DARK_FG);
+            color_button_dark.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.DARK);
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_light.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+            color_button_light.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.LIGHT);
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_white.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
+            color_button_white.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.HIGH_CONTRAST);
+                return Gdk.EVENT_PROPAGATE;
             });
 
             Application.settings.bind (

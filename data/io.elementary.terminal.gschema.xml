@@ -142,7 +142,11 @@
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>
-
+    <key name="theme" type="s">
+      <default>"dark"</default>
+      <summary>Color palette name.</summary>
+      <description>Which theme the user has selected.</description>
+    </key>
     <key name="shell" type="s">
       <default>""</default>
       <summary>Terminal shell.</summary>
