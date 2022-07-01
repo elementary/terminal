@@ -78,11 +78,10 @@ public class Terminal.Themes {
         var rgba_palette = new Gdk.RGBA[PALETTE_SIZE];
         for (int i = 0; i < PALETTE_SIZE; i++) {
             var new_color = Gdk.RGBA ();
+            // Replace invalid color with corresponding one from default palette
             if (!new_color.parse (string_palette[i])) {
                 critical ("Color %i '%s' is not valid - replacing with default", i, string_palette[i]);
-                // Replace invalid color with corresponding one from default palette
                 string_palette[i] = DARK_PALETTE[i];
-
                 new_color.parse (DARK_PALETTE[i]);
                 settings_valid = false;
             }
