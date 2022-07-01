@@ -22,7 +22,6 @@ public class Terminal.Themes {
     public const string HIGH_CONTRAST = "high-contrast";
     public const string LIGHT = "solarized-light";
 
-    // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
         Application.settings.changed["theme"].connect (() => {
             switch (Application.settings.get_string ("theme")) {
@@ -39,31 +38,9 @@ public class Terminal.Themes {
         });
     }
 
+    // format is color01:color02:...:color16:background:foreground:cursor
     public static Gdk.RGBA[] get_rgba_palette (string theme) {
-        string settings_pallette_string;
-        switch (theme) {
-            case (HIGH_CONTRAST):
-                settings_pallette_string = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496";
-                break;
-            case (LIGHT):
-                settings_pallette_string = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496";
-                break;
-            case (DARK):
-                settings_pallette_string = "#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496";
-                break;
-            default:
-                settings_pallette_string = Application.settings.get_string ("palette");
-                settings_pallette_string += ":" + Application.settings.get_string ("background");
-                settings_pallette_string += ":" + Application.settings.get_string ("foreground");
-                settings_pallette_string += ":" + Application.settings.get_string ("cursor-color");
-                break;
-        }
-
-        var setting_palette_array = new string[PALETTE_SIZE];
-        setting_palette_array = settings_pallette_string.split (":");
-        bool settings_valid = setting_palette_array.length == PALETTE_SIZE;
-
-        const string[] DEFAULT_PALETTE = {
+        const string[] DARK_PALETTE = {
             "#073642", "#dc322f", "#859900", "#b58900",
             "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
             "#586e75", "#cb4b16", "#859900", "#b58900",
@@ -71,26 +48,59 @@ public class Terminal.Themes {
             "rgba(46, 46, 46, 0.95)", "#a5a5a5", "#839496"
         };
 
-        var palette = new Gdk.RGBA[PALETTE_SIZE];
+        var string_palette = new string[PALETTE_SIZE];
+        switch (theme) {
+            case (HIGH_CONTRAST):
+                string_palette = {
+                    "#073642", "#dc322f", "#859900", "#b58900",
+                    "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
+                    "#586e75", "#cb4b16", "#859900", "#b58900",
+                    "#268bd2", "#d33682", "#2aa198", "#6c71c4",
+                    "#ffffff", "#333333", "#839496"
+                };
+                break;
+            case (LIGHT):
+                string_palette = {
+                    "#073642", "#dc322f", "#859900", "#b58900",
+                    "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
+                    "#586e75", "#cb4b16", "#859900", "#b58900",
+                    "#268bd2", "#d33682", "#2aa198", "#6c71c4",
+                    "rgba(253, 246, 227, 0.95)", "#586e75", "#839496"
+                };
+                break;
+            case (DARK):
+                string_palette = DARK_PALETTE;
+                break;
+            default:
+                string_palette = Application.settings.get_string ("palette").split (":");
+                string_palette += Application.settings.get_string ("background");
+                string_palette += Application.settings.get_string ("foreground");
+                string_palette += Application.settings.get_string ("cursor-color");
+                break;
+        }
+
+        bool settings_valid = string_palette.length == PALETTE_SIZE;
+
+        var rgba_palette = new Gdk.RGBA[PALETTE_SIZE];
         for (int i = 0; i < PALETTE_SIZE; i++) {
             var new_color = Gdk.RGBA ();
-            if (!new_color.parse (setting_palette_array[i])) {
-                critical ("Color %i '%s' is not valid - replacing with default", i, setting_palette_array[i]);
+            if (!new_color.parse (string_palette[i])) {
+                critical ("Color %i '%s' is not valid - replacing with default", i, string_palette[i]);
                 // Replace invalid color with corresponding one from default palette
-                setting_palette_array[i] = DEFAULT_PALETTE[i];
+                string_palette[i] = DARK_PALETTE[i];
 
-                new_color.parse (DEFAULT_PALETTE[i]);
+                new_color.parse (DARK_PALETTE[i]);
                 settings_valid = false;
             }
 
-            palette[i] = new_color;
+            rgba_palette[i] = new_color;
         }
 
         if (!settings_valid) {
             /* Remove invalid colors from setting */
-            Application.settings.set_string ("palette", string.joinv (":", setting_palette_array));
+            Application.settings.set_string ("palette", string.joinv (":", string_palette));
         }
 
-        return palette;
+        return rgba_palette;
     }
 }
