@@ -17,22 +17,22 @@
 */
 
 public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
-    private Gtk.ColorButton color01_button; // Black
-    private Gtk.ColorButton color02_button; // Red
-    private Gtk.ColorButton color03_button; // Green
-    private Gtk.ColorButton color04_button; // Yellow
-    private Gtk.ColorButton color05_button; // Blue
-    private Gtk.ColorButton color06_button; // Magenta
-    private Gtk.ColorButton color07_button; // Cyan
-    private Gtk.ColorButton color08_button; // Light gray
-    private Gtk.ColorButton color09_button; // Dark gray
-    private Gtk.ColorButton color10_button; // Light Red
-    private Gtk.ColorButton color11_button; // Light Green
-    private Gtk.ColorButton color12_button; // Light Yellow
-    private Gtk.ColorButton color13_button; // Light Blue
-    private Gtk.ColorButton color14_button; // Light Magenta
-    private Gtk.ColorButton color15_button; // Light Cyan
-    private Gtk.ColorButton color16_button; // White
+    private Gtk.ColorButton black_button;
+    private Gtk.ColorButton red_button;
+    private Gtk.ColorButton green_button;
+    private Gtk.ColorButton yellow_button;
+    private Gtk.ColorButton blue_button;
+    private Gtk.ColorButton magenta_button;
+    private Gtk.ColorButton cyan_button;
+    private Gtk.ColorButton light_gray_button;
+    private Gtk.ColorButton dark_gray_button;
+    private Gtk.ColorButton light_red_button;
+    private Gtk.ColorButton light_green_button;
+    private Gtk.ColorButton light_yellow_button;
+    private Gtk.ColorButton light_blue_button;
+    private Gtk.ColorButton light_magenta_button;
+    private Gtk.ColorButton light_cyan_button;
+    private Gtk.ColorButton white_button;
     private Gtk.ColorButton background_button;
     private Gtk.ColorButton foreground_button;
     private Gtk.ColorButton cursor_button;
@@ -57,7 +57,15 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             secondary_icon_tooltip_text = _("Dark")
         };
         Application.settings.bind ("prefer-dark-style", window_theme_switch, "active", SettingsBindFlags.DEFAULT);
-
+        var window_theme_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            margin_start = 12,
+            margin_end = 12,
+            halign = Gtk.Align.CENTER
+        };
+        window_theme_grid.attach (window_theme_label, 0, 0);
+        window_theme_grid.attach (window_theme_switch, 2, 0, 2);
         var black_color_label = new SettingsLabel (_("Black:"));
         var red_color_label = new SettingsLabel (_("Red:"));
         var green_color_label = new SettingsLabel (_("Green:"));
@@ -65,27 +73,35 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         var blue_color_label = new SettingsLabel (_("Blue:"));
         var magenta_color_label = new SettingsLabel (_("Magenta:"));
         var cyan_color_label = new SettingsLabel (_("Cyan:"));
-        var grey_color_label = new SettingsLabel (_("Gray:"));
+        var dark_gray_color_label = new SettingsLabel (_("Gray:"));
+        var white_color_label = new SettingsLabel (_("White:"));
+        var light_red_color_label = new SettingsLabel (_("Light Red:"));
+        var light_green_color_label = new SettingsLabel (_("Light Green:"));
+        var light_yellow_color_label = new SettingsLabel (_("Light Yellow:"));
+        var light_blue_color_label = new SettingsLabel (_("Light Blue:"));
+        var light_magenta_color_label = new SettingsLabel (_("Light Magenta:"));
+        var light_cyan_color_label = new SettingsLabel (_("Light Cyan:"));
+        var light_gray_color_label = new SettingsLabel (_("Light Gray:"));
         var background_label = new SettingsLabel (_("Background:"));
         var foreground_label = new SettingsLabel (_("Foreground:"));
         var cursor_label = new SettingsLabel (_("Cursor:"));
 
-        color01_button = new Gtk.ColorButton ();
-        color02_button = new Gtk.ColorButton ();
-        color03_button = new Gtk.ColorButton ();
-        color04_button = new Gtk.ColorButton ();
-        color05_button = new Gtk.ColorButton ();
-        color06_button = new Gtk.ColorButton ();
-        color07_button = new Gtk.ColorButton ();
-        color08_button = new Gtk.ColorButton ();
-        color09_button = new Gtk.ColorButton ();
-        color10_button = new Gtk.ColorButton ();
-        color11_button = new Gtk.ColorButton ();
-        color12_button = new Gtk.ColorButton ();
-        color13_button = new Gtk.ColorButton ();
-        color14_button = new Gtk.ColorButton ();
-        color15_button = new Gtk.ColorButton ();
-        color16_button = new Gtk.ColorButton ();
+        black_button = new Gtk.ColorButton ();
+        red_button = new Gtk.ColorButton ();
+        green_button = new Gtk.ColorButton ();
+        yellow_button = new Gtk.ColorButton ();
+        blue_button = new Gtk.ColorButton ();
+        magenta_button = new Gtk.ColorButton ();
+        cyan_button = new Gtk.ColorButton ();
+        light_gray_button = new Gtk.ColorButton ();
+        dark_gray_button = new Gtk.ColorButton ();
+        light_red_button = new Gtk.ColorButton ();
+        light_green_button = new Gtk.ColorButton ();
+        light_yellow_button = new Gtk.ColorButton ();
+        light_blue_button = new Gtk.ColorButton ();
+        light_magenta_button = new Gtk.ColorButton ();
+        light_cyan_button = new Gtk.ColorButton ();
+        white_button = new Gtk.ColorButton ();
         background_button = new Gtk.ColorButton () {
             use_alpha = true
         };
@@ -112,9 +128,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             margin_end = 12,
             halign = Gtk.Align.CENTER
         };
-        colors_grid.attach (window_theme_label, 0, 0);
-        colors_grid.attach (window_theme_switch, 1, 0, 2);
-        colors_grid.attach (new Granite.HeaderLabel (_("Custom Colors")), 0, 3, 3);
         colors_grid.attach (background_label, 0, 4, 1);
         colors_grid.attach (background_button, 1, 4, 1);
         colors_grid.attach (foreground_label, 0, 5, 1);
@@ -122,34 +135,43 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (cursor_label, 0, 6, 1);
         colors_grid.attach (cursor_button, 1, 6, 1);
         colors_grid.attach (black_color_label, 0, 7, 1);
-        colors_grid.attach (color01_button, 1, 7, 1);
-        colors_grid.attach (color09_button, 2, 7, 1);
+        colors_grid.attach (black_button, 1, 7, 1);
+        colors_grid.attach (dark_gray_color_label, 2, 7, 1);
+        colors_grid.attach (dark_gray_button, 3, 7, 1);
         colors_grid.attach (red_color_label, 0, 8, 1);
-        colors_grid.attach (color02_button, 1, 8, 1);
-        colors_grid.attach (color10_button, 2, 8, 1);
+        colors_grid.attach (red_button, 1, 8, 1);
+        colors_grid.attach (light_red_color_label, 2, 8, 1);
+        colors_grid.attach (light_red_button, 3, 8, 1);
         colors_grid.attach (green_color_label, 0, 9, 1);
-        colors_grid.attach (color03_button, 1, 9, 1);
-        colors_grid.attach (color11_button, 2, 9, 1);
+        colors_grid.attach (green_button, 1, 9, 1);
+        colors_grid.attach (light_green_color_label, 2, 9, 1);
+        colors_grid.attach (light_green_button, 3, 9, 1);
         colors_grid.attach (yellow_color_label, 0, 10, 1);
-        colors_grid.attach (color04_button, 1, 10, 1);
-        colors_grid.attach (color12_button, 2, 10, 1);
+        colors_grid.attach (yellow_button, 1, 10, 1);
+        colors_grid.attach (light_yellow_color_label, 2, 10, 1);
+        colors_grid.attach (light_yellow_button, 3, 10, 1);
         colors_grid.attach (blue_color_label, 0, 11, 1);
-        colors_grid.attach (color05_button, 1, 11, 1);
-        colors_grid.attach (color13_button, 2, 11, 1);
+        colors_grid.attach (blue_button, 1, 11, 1);
+        colors_grid.attach (light_blue_color_label, 2, 11, 1);
+        colors_grid.attach (light_blue_button, 3, 11, 1);
         colors_grid.attach (magenta_color_label, 0, 12, 1);
-        colors_grid.attach (color06_button, 1, 12, 1);
-        colors_grid.attach (color14_button, 2, 12, 1);
+        colors_grid.attach (magenta_button, 1, 12, 1);
+        colors_grid.attach (light_magenta_color_label, 2, 12, 1);
+        colors_grid.attach (light_magenta_button, 3, 12, 1);
         colors_grid.attach (cyan_color_label, 0, 13, 1);
-        colors_grid.attach (color07_button, 1, 13, 1);
-        colors_grid.attach (color15_button, 2, 13, 1);
-        colors_grid.attach (grey_color_label, 0, 14, 1);
-        colors_grid.attach (color08_button, 1, 14, 1);
-        colors_grid.attach (color16_button, 2, 14, 1);
+        colors_grid.attach (cyan_button, 1, 13, 1);
+        colors_grid.attach (light_cyan_color_label, 2, 13, 1);
+        colors_grid.attach (light_cyan_button, 3, 13, 1);
+        colors_grid.attach (light_gray_color_label, 0, 14, 1);
+        colors_grid.attach (light_gray_button, 1, 14, 1);
+        colors_grid.attach (white_color_label, 2, 14, 1);
+        colors_grid.attach (white_button, 3, 14, 1);
         colors_grid.attach (contrast_grid, 2, 4, 1, 2);
 
         update_buttons_from_settings ();
         update_contrast (contrast_image);
 
+        get_content_area ().add (window_theme_grid);
         get_content_area ().add (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
@@ -157,22 +179,22 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
         Application.settings.set_string ("theme", Themes.CUSTOM);
 
-        color01_button.color_set.connect (update_palette_settings);
-        color02_button.color_set.connect (update_palette_settings);
-        color03_button.color_set.connect (update_palette_settings);
-        color04_button.color_set.connect (update_palette_settings);
-        color05_button.color_set.connect (update_palette_settings);
-        color06_button.color_set.connect (update_palette_settings);
-        color07_button.color_set.connect (update_palette_settings);
-        color08_button.color_set.connect (update_palette_settings);
-        color09_button.color_set.connect (update_palette_settings);
-        color10_button.color_set.connect (update_palette_settings);
-        color11_button.color_set.connect (update_palette_settings);
-        color12_button.color_set.connect (update_palette_settings);
-        color13_button.color_set.connect (update_palette_settings);
-        color14_button.color_set.connect (update_palette_settings);
-        color15_button.color_set.connect (update_palette_settings);
-        color16_button.color_set.connect (update_palette_settings);
+        black_button.color_set.connect (update_palette_settings);
+        red_button.color_set.connect (update_palette_settings);
+        green_button.color_set.connect (update_palette_settings);
+        yellow_button.color_set.connect (update_palette_settings);
+        blue_button.color_set.connect (update_palette_settings);
+        magenta_button.color_set.connect (update_palette_settings);
+        cyan_button.color_set.connect (update_palette_settings);
+        light_gray_button.color_set.connect (update_palette_settings);
+        dark_gray_button.color_set.connect (update_palette_settings);
+        light_red_button.color_set.connect (update_palette_settings);
+        light_green_button.color_set.connect (update_palette_settings);
+        light_yellow_button.color_set.connect (update_palette_settings);
+        light_blue_button.color_set.connect (update_palette_settings);
+        light_magenta_button.color_set.connect (update_palette_settings);
+        light_cyan_button.color_set.connect (update_palette_settings);
+        white_button.color_set.connect (update_palette_settings);
 
         background_button.color_set.connect (() => {
             Application.settings.set_string ("background", background_button.rgba.to_string ());
@@ -197,22 +219,22 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
     private void update_palette_settings () {
         string[] colors = {
-            color01_button.rgba.to_string (),
-            color02_button.rgba.to_string (),
-            color03_button.rgba.to_string (),
-            color04_button.rgba.to_string (),
-            color05_button.rgba.to_string (),
-            color06_button.rgba.to_string (),
-            color07_button.rgba.to_string (),
-            color08_button.rgba.to_string (),
-            color09_button.rgba.to_string (),
-            color10_button.rgba.to_string (),
-            color11_button.rgba.to_string (),
-            color12_button.rgba.to_string (),
-            color13_button.rgba.to_string (),
-            color14_button.rgba.to_string (),
-            color15_button.rgba.to_string (),
-            color16_button.rgba.to_string ()
+            black_button.rgba.to_string (),
+            red_button.rgba.to_string (),
+            green_button.rgba.to_string (),
+            yellow_button.rgba.to_string (),
+            blue_button.rgba.to_string (),
+            magenta_button.rgba.to_string (),
+            cyan_button.rgba.to_string (),
+            light_gray_button.rgba.to_string (),
+            dark_gray_button.rgba.to_string (),
+            light_red_button.rgba.to_string (),
+            light_green_button.rgba.to_string (),
+            light_yellow_button.rgba.to_string (),
+            light_blue_button.rgba.to_string (),
+            light_magenta_button.rgba.to_string (),
+            light_cyan_button.rgba.to_string (),
+            white_button.rgba.to_string ()
         };
 
         Application.settings.set_string ("palette", string.joinv (":", colors));
@@ -235,22 +257,22 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             }
         }
 
-        color01_button.rgba = color_palette[0];
-        color02_button.rgba = color_palette[1];
-        color03_button.rgba = color_palette[2];
-        color04_button.rgba = color_palette[3];
-        color05_button.rgba = color_palette[4];
-        color06_button.rgba = color_palette[5];
-        color07_button.rgba = color_palette[6];
-        color08_button.rgba = color_palette[7];
-        color09_button.rgba = color_palette[8];
-        color10_button.rgba = color_palette[9];
-        color11_button.rgba = color_palette[10];
-        color12_button.rgba = color_palette[11];
-        color13_button.rgba = color_palette[12];
-        color14_button.rgba = color_palette[13];
-        color15_button.rgba = color_palette[14];
-        color16_button.rgba = color_palette[15];
+        black_button.rgba = color_palette[0];
+        red_button.rgba = color_palette[1];
+        green_button.rgba = color_palette[2];
+        yellow_button.rgba = color_palette[3];
+        blue_button.rgba = color_palette[4];
+        magenta_button.rgba = color_palette[5];
+        cyan_button.rgba = color_palette[6];
+        light_gray_button.rgba = color_palette[7];
+        dark_gray_button.rgba = color_palette[8];
+        light_red_button.rgba = color_palette[9];
+        light_green_button.rgba = color_palette[10];
+        light_yellow_button.rgba = color_palette[11];
+        light_blue_button.rgba = color_palette[12];
+        light_magenta_button.rgba = color_palette[13];
+        light_cyan_button.rgba = color_palette[14];
+        white_button.rgba = color_palette[15];
 
         background_button.rgba = color_palette[16];
         foreground_button.rgba = color_palette[17];
