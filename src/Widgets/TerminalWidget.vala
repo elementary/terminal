@@ -252,19 +252,15 @@ namespace Terminal {
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
 
-            var background_color = Gdk.RGBA ();
-            background_color.parse (Application.settings.get_string ("background"));
+            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
 
-            var foreground_color = Gdk.RGBA ();
-            foreground_color.parse (Application.settings.get_string ("foreground"));
+            var background = theme_palette[Terminal.Themes.PALETTE_SIZE - 3];
+            var foreground = theme_palette[Terminal.Themes.PALETTE_SIZE - 2];
+            var cursor = theme_palette[Terminal.Themes.PALETTE_SIZE - 1];
+            var palette = theme_palette[0:16];
 
-            var palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("palette"));
-
-            set_colors (foreground_color, background_color, palette);
-
-            var cursor_color = Gdk.RGBA ();
-            cursor_color.parse (Application.settings.get_string ("cursor-color"));
-            set_color_cursor (cursor_color);
+            set_colors (foreground, background, palette);
+            set_color_cursor (cursor);
 
 #if !VTE_0_60
             /* Bold font */

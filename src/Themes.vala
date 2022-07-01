@@ -28,37 +28,15 @@ public class Terminal.Themes {
             switch (Application.settings.get_string ("theme")) {
                 case (HIGH_CONTRAST):
                     Application.settings.set_boolean ("prefer-dark-style", false);
-                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:#fff:#333:#839496");
                     break;
                 case (LIGHT):
                     Application.settings.set_boolean ("prefer-dark-style", false);
-                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(253, 246, 227, 0.95):#586e75:#839496");
                     break;
                 case (DARK):
                     Application.settings.set_boolean ("prefer-dark-style", true);
-                    set_active_palette ("#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4:rgba(46, 46, 46, 0.95):#a5a5a5:#839496");
                     break;
             }
         });
-    }
-
-    private static void set_active_palette (string input) {
-        var input_palette = input.split (":");
-        if (input_palette.length != Terminal.Themes.PALETTE_SIZE) {
-            warning ("Length of palette setting does not match palette size");
-            return;
-        }
-
-        var background = input_palette[Terminal.Themes.PALETTE_SIZE - 3];
-        var foreground = input_palette[Terminal.Themes.PALETTE_SIZE - 2];
-        var cursor = input_palette[Terminal.Themes.PALETTE_SIZE - 1];
-        var palette_length = input.length - background.length - foreground.length - cursor.length - 3;
-        var palette = input.substring (0, palette_length);
-
-        Application.settings.set_string ("palette", palette);
-        Application.settings.set_string ("background", background);
-        Application.settings.set_string ("foreground", foreground);
-        Application.settings.set_string ("cursor-color", cursor);
     }
 
     public static Gdk.RGBA[] get_rgba_palette (string theme) {
@@ -75,26 +53,29 @@ public class Terminal.Themes {
                 break;
             default:
                 settings_pallette_string = Application.settings.get_string ("palette");
+                settings_pallette_string += ":" + Application.settings.get_string ("background");
+                settings_pallette_string += ":" + Application.settings.get_string ("foreground");
+                settings_pallette_string += ":" + Application.settings.get_string ("cursor-color");
                 break;
         }
 
-        const int PALETTE_SIZE = 16;
-        var setting_palette_array = settings_pallette_string.split (":", PALETTE_SIZE + 1);
+        var setting_palette_array = new string[PALETTE_SIZE];
+        setting_palette_array = settings_pallette_string.split (":");
+        bool settings_valid = setting_palette_array.length == PALETTE_SIZE;
 
         const string[] DEFAULT_PALETTE = {
             "#073642", "#dc322f", "#859900", "#b58900",
             "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
             "#586e75", "#cb4b16", "#859900", "#b58900",
-            "#268bd2", "#d33682", "#2aa198", "#6c71c4"
+            "#268bd2", "#d33682", "#2aa198", "#6c71c4",
+            "rgba(46, 46, 46, 0.95)", "#a5a5a5", "#839496"
         };
-
-        bool settings_valid = setting_palette_array.length == PALETTE_SIZE;
 
         var palette = new Gdk.RGBA[PALETTE_SIZE];
         for (int i = 0; i < PALETTE_SIZE; i++) {
             var new_color = Gdk.RGBA ();
             if (!new_color.parse (setting_palette_array[i])) {
-                critical ("Color %s is not valid - replacing with default", setting_palette_array[i]);
+                critical ("Color %i '%s' is not valid - replacing with default", i, setting_palette_array[i]);
                 // Replace invalid color with corresponding one from default palette
                 setting_palette_array[i] = DEFAULT_PALETTE[i];
 
