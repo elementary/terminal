@@ -21,6 +21,7 @@ public class Terminal.Themes {
     public const string DARK = "dark";
     public const string HIGH_CONTRAST = "high-contrast";
     public const string LIGHT = "solarized-light";
+    public const string CUSTOM = "custom";
 
     // format is color01:color02:...:color16:background:foreground:cursor
     static construct {
