@@ -47,7 +47,9 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     }
 
     construct {
-        var window_theme_label = new SettingsLabel (_("Window style:"));
+        var window_theme_label = new SettingsLabel (_("Window style:")) {
+            margin_bottom = 12
+        };
 
         var window_theme_switch = new Granite.ModeSwitch.from_icon_name (
             "display-brightness-symbolic",
@@ -57,15 +59,24 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             secondary_icon_tooltip_text = _("Dark")
         };
         Application.settings.bind ("prefer-dark-style", window_theme_switch, "active", SettingsBindFlags.DEFAULT);
-        var window_theme_grid = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 6,
-            margin_start = 12,
-            margin_end = 12,
-            halign = Gtk.Align.CENTER
+
+        var palette_header = new Gtk.Label (_("Color Palette")) {
+            margin_top = 12,
+            margin_bottom = 12
         };
-        window_theme_grid.attach (window_theme_label, 0, 0);
-        window_theme_grid.attach (window_theme_switch, 2, 0, 2);
+        palette_header.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+
+        var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
+            halign = Gtk.Align.END,
+            margin_top = 12,
+            margin_bottom = 12,
+            tooltip_text = _("Reset to elementaryos default color palette")
+        };
+        default_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        default_button.clicked.connect (() => {
+            Application.settings.set_string ("palette", string.joinv (":", HEX_PALETTE));
+        });
+
         var black_color_label = new SettingsLabel (_("Black:"));
         var red_color_label = new SettingsLabel (_("Red:"));
         var green_color_label = new SettingsLabel (_("Green:"));
@@ -124,54 +135,60 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         var colors_grid = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 6,
+            margin_top = 12,
+            margin_bottom = 12,
             margin_start = 12,
             margin_end = 12,
             halign = Gtk.Align.CENTER
         };
+
+        colors_grid.attach (window_theme_label, 0, 1);
+        colors_grid.attach (window_theme_switch, 1, 1, 2);
         colors_grid.attach (background_label, 0, 4, 1);
         colors_grid.attach (background_button, 1, 4, 1);
         colors_grid.attach (foreground_label, 0, 5, 1);
         colors_grid.attach (foreground_button, 1, 5, 1);
+        colors_grid.attach (contrast_grid, 2, 4, 1, 2);
         colors_grid.attach (cursor_label, 0, 6, 1);
         colors_grid.attach (cursor_button, 1, 6, 1);
-        colors_grid.attach (black_color_label, 0, 7, 1);
-        colors_grid.attach (black_button, 1, 7, 1);
-        colors_grid.attach (dark_gray_color_label, 2, 7, 1);
-        colors_grid.attach (dark_gray_button, 3, 7, 1);
-        colors_grid.attach (red_color_label, 0, 8, 1);
-        colors_grid.attach (red_button, 1, 8, 1);
-        colors_grid.attach (light_red_color_label, 2, 8, 1);
-        colors_grid.attach (light_red_button, 3, 8, 1);
-        colors_grid.attach (green_color_label, 0, 9, 1);
-        colors_grid.attach (green_button, 1, 9, 1);
-        colors_grid.attach (light_green_color_label, 2, 9, 1);
-        colors_grid.attach (light_green_button, 3, 9, 1);
-        colors_grid.attach (yellow_color_label, 0, 10, 1);
-        colors_grid.attach (yellow_button, 1, 10, 1);
-        colors_grid.attach (light_yellow_color_label, 2, 10, 1);
-        colors_grid.attach (light_yellow_button, 3, 10, 1);
-        colors_grid.attach (blue_color_label, 0, 11, 1);
-        colors_grid.attach (blue_button, 1, 11, 1);
-        colors_grid.attach (light_blue_color_label, 2, 11, 1);
-        colors_grid.attach (light_blue_button, 3, 11, 1);
-        colors_grid.attach (magenta_color_label, 0, 12, 1);
-        colors_grid.attach (magenta_button, 1, 12, 1);
-        colors_grid.attach (light_magenta_color_label, 2, 12, 1);
-        colors_grid.attach (light_magenta_button, 3, 12, 1);
-        colors_grid.attach (cyan_color_label, 0, 13, 1);
-        colors_grid.attach (cyan_button, 1, 13, 1);
-        colors_grid.attach (light_cyan_color_label, 2, 13, 1);
-        colors_grid.attach (light_cyan_button, 3, 13, 1);
-        colors_grid.attach (light_gray_color_label, 0, 14, 1);
-        colors_grid.attach (light_gray_button, 1, 14, 1);
-        colors_grid.attach (white_color_label, 2, 14, 1);
-        colors_grid.attach (white_button, 3, 14, 1);
-        colors_grid.attach (contrast_grid, 2, 4, 1, 2);
+        colors_grid.attach (palette_header, 0, 7, 1);
+        colors_grid.attach (default_button, 3, 7, 1);
+        colors_grid.attach (black_color_label, 0, 8, 1);
+        colors_grid.attach (black_button, 1, 8, 1);
+        colors_grid.attach (dark_gray_color_label, 2, 8, 1);
+        colors_grid.attach (dark_gray_button, 3, 8, 1);
+        colors_grid.attach (red_color_label, 0, 9, 1);
+        colors_grid.attach (red_button, 1, 9, 1);
+        colors_grid.attach (light_red_color_label, 2, 9, 1);
+        colors_grid.attach (light_red_button, 3, 9, 1);
+        colors_grid.attach (green_color_label, 0, 10, 1);
+        colors_grid.attach (green_button, 1, 10, 1);
+        colors_grid.attach (light_green_color_label, 2, 10, 1);
+        colors_grid.attach (light_green_button, 3, 10, 1);
+        colors_grid.attach (yellow_color_label, 0, 11, 1);
+        colors_grid.attach (yellow_button, 1, 11, 1);
+        colors_grid.attach (light_yellow_color_label, 2, 11, 1);
+        colors_grid.attach (light_yellow_button, 3, 11, 1);
+        colors_grid.attach (blue_color_label, 0, 12, 1);
+        colors_grid.attach (blue_button, 1, 12, 1);
+        colors_grid.attach (light_blue_color_label, 2, 12, 1);
+        colors_grid.attach (light_blue_button, 3, 12, 1);
+        colors_grid.attach (magenta_color_label, 0, 13, 1);
+        colors_grid.attach (magenta_button, 1, 13, 1);
+        colors_grid.attach (light_magenta_color_label, 2, 13, 1);
+        colors_grid.attach (light_magenta_button, 3, 13, 1);
+        colors_grid.attach (cyan_color_label, 0, 14, 1);
+        colors_grid.attach (cyan_button, 1, 14, 1);
+        colors_grid.attach (light_cyan_color_label, 2, 14, 1);
+        colors_grid.attach (light_cyan_button, 3, 14, 1);
+        colors_grid.attach (light_gray_color_label, 0, 15, 1);
+        colors_grid.attach (light_gray_button, 1, 15, 1);
+        colors_grid.attach (white_color_label, 2, 15, 1);
+        colors_grid.attach (white_button, 3, 15, 1);
 
         update_buttons_from_settings ();
         update_contrast (contrast_image);
 
-        get_content_area ().add (window_theme_grid);
         get_content_area ().add (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);

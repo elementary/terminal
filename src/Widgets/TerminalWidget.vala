@@ -18,6 +18,14 @@
 */
 
 namespace Terminal {
+    const int PALETTE_SIZE = 16;
+    const string[] HEX_PALETTE = {
+        "#073642", "#dc322f", "#859900", "#b58900",
+        "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
+        "#586e75", "#cb4b16", "#859900", "#b58900",
+        "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
+    };
+
     public class TerminalWidget : Vte.Terminal {
         enum DropTargets {
             URILIST,
@@ -257,14 +265,6 @@ namespace Terminal {
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
             foreground_color.parse (Application.settings.get_string ("foreground"));
-
-            const int PALETTE_SIZE = 16;
-            const string[] HEX_PALETTE = {
-                "#073642", "#dc322f", "#859900", "#b58900",
-                "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-                "#586e75", "#cb4b16", "#859900", "#b58900",
-                "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
-            };
 
             var hex_palette = new string[PALETTE_SIZE + 1];
             var palette_setting_string = Application.settings.get_string ("palette");
