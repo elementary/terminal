@@ -36,7 +36,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
     private Gtk.ColorButton background_button;
     private Gtk.ColorButton foreground_button;
     private Gtk.ColorButton cursor_button;
-    private Gtk.Image contrast_image;
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
@@ -95,11 +94,9 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             use_alpha = true
         };
 
-        var contrast_top_label = new Gtk.Label ("┐");
-
-        contrast_image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.LARGE_TOOLBAR);
-
-        var contrast_bottom_label = new Gtk.Label ("┘");
+        var contrast_top_label = new Gtk.Label (""); // Text will be set on showing
+        var contrast_bottom_label = new Gtk.Label (""); // Text will be set on showing
+        var contrast_image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.LARGE_TOOLBAR);
 
         var contrast_grid = new Gtk.Grid () {
             row_spacing = 3
@@ -151,7 +148,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (contrast_grid, 2, 4, 1, 2);
 
         update_buttons_from_settings ();
-        update_contrast ();
+        update_contrast (contrast_image);
 
         get_content_area ().add (colors_grid);
 
@@ -179,16 +176,22 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
         background_button.color_set.connect (() => {
             Application.settings.set_string ("background", background_button.rgba.to_string ());
-            update_contrast ();
+            update_contrast (contrast_image);
         });
 
         foreground_button.color_set.connect (() => {
             Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
-            update_contrast ();
+            update_contrast (contrast_image);
         });
 
         cursor_button.color_set.connect (() => {
             Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
+        });
+
+        contrast_top_label.state_flags_changed.connect ((previous_flags) => {
+            var state_flags = get_state_flags ();
+            contrast_top_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┐" : "┌";
+            contrast_bottom_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┘" : "└";
         });
     }
 
@@ -254,7 +257,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         cursor_button.rgba = color_palette[18];
     }
 
-    private void update_contrast () {
+    private void update_contrast (Gtk.Image contrast_image) {
         var contrast_ratio = get_contrast_ratio (foreground_button.rgba, background_button.rgba);
         if (contrast_ratio < 3) {
             contrast_image.icon_name = "dialog-warning";
