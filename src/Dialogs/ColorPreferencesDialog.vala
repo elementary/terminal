@@ -69,7 +69,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
             halign = Gtk.Align.END,
             margin_top = 12,
-            margin_bottom = 12,
+            margin_bottom = 6,
             tooltip_text = _("Reset to elementaryos default color palette")
         };
         default_button.clicked.connect (() => {
@@ -144,6 +144,8 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
         colors_grid.attach (window_theme_label, 0, 1);
         colors_grid.attach (window_theme_switch, 1, 1, 2);
+        colors_grid.attach (palette_header, 0, 2, 1);
+        colors_grid.attach (default_button, 3, 2, 1);
         colors_grid.attach (background_label, 0, 4, 1);
         colors_grid.attach (background_button, 1, 4, 1);
         colors_grid.attach (foreground_label, 0, 5, 1);
@@ -151,8 +153,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
         colors_grid.attach (contrast_grid, 2, 4, 1, 2);
         colors_grid.attach (cursor_label, 0, 6, 1);
         colors_grid.attach (cursor_button, 1, 6, 1);
-        colors_grid.attach (palette_header, 0, 7, 1);
-        colors_grid.attach (default_button, 3, 7, 1);
+
         colors_grid.attach (black_color_label, 0, 8, 1);
         colors_grid.attach (black_button, 1, 8, 1);
         colors_grid.attach (dark_gray_color_label, 2, 8, 1);
