@@ -73,7 +73,7 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
             tooltip_text = _("Reset to elementaryos default color palette")
         };
         default_button.clicked.connect (() => {
-            Application.settings.set_string ("palette", string.joinv (":", HEX_PALETTE));
+            Terminal.Themes.set_default_palette_for_style ();
             update_buttons_from_settings ();
         });
 
