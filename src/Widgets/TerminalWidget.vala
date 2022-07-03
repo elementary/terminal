@@ -252,61 +252,15 @@ namespace Terminal {
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
 
-            Gdk.RGBA background_color = Gdk.RGBA ();
-            background_color.parse (Application.settings.get_string ("background"));
+            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
 
-            Gdk.RGBA foreground_color = Gdk.RGBA ();
-            foreground_color.parse (Application.settings.get_string ("foreground"));
+            var background = theme_palette[Terminal.Themes.PALETTE_SIZE - 3];
+            var foreground = theme_palette[Terminal.Themes.PALETTE_SIZE - 2];
+            var cursor = theme_palette[Terminal.Themes.PALETTE_SIZE - 1];
+            var palette = theme_palette[0:16];
 
-            const int PALETTE_SIZE = 16;
-            const string[] HEX_PALETTE = {
-                "#073642", "#dc322f", "#859900", "#b58900",
-                "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-                "#586e75", "#cb4b16", "#859900", "#b58900",
-                "#268bd2", "#d33682", "#2aa198", "#EEEEEE"
-            };
-
-            var hex_palette = new string[PALETTE_SIZE + 1];
-            var palette_setting_string = Application.settings.get_string ("palette");
-            var setting_palette = palette_setting_string.split (":", PALETTE_SIZE + 1);
-
-            bool settings_valid = setting_palette.length == PALETTE_SIZE;
-
-            int i = 0;
-            foreach (unowned string hex in setting_palette) {
-                hex_palette[i] = hex;
-                i++;
-            }
-
-            while (i < PALETTE_SIZE) {
-                hex_palette[i] = HEX_PALETTE[i];
-                i++;
-            }
-
-            Gdk.RGBA[] palette = new Gdk.RGBA[PALETTE_SIZE];
-
-            for (i = 0; i < PALETTE_SIZE; i++) {
-                Gdk.RGBA new_color = Gdk.RGBA ();
-                if (new_color.parse (hex_palette[i])) {
-                    palette[i] = new_color;
-                } else {
-                    warning ("Color %s is not valid - replacing with default", hex_palette[i]);
-                    // Replace invalid color with corresponding one from default palette
-                    hex_palette[i] = HEX_PALETTE[i];
-                    settings_valid = false;
-                }
-            }
-
-            if (!settings_valid) {
-             /* Remove invalid colors from setting */
-                Application.settings.set_string ("palette", string.joinv (":", hex_palette));
-            }
-
-            set_colors (foreground_color, background_color, palette);
-
-            Gdk.RGBA cursor_color = Gdk.RGBA ();
-            cursor_color.parse (Application.settings.get_string ("cursor-color"));
-            set_color_cursor (cursor_color);
+            set_colors (foreground, background, palette);
+            set_color_cursor (cursor);
 
 #if !VTE_0_60
             /* Bold font */
