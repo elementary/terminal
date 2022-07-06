@@ -399,37 +399,26 @@ namespace Terminal {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
             };
-
-            unowned Gtk.StyleContext color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_white_context.add_class ("color-white");
+            style_color_button (color_button_white, Themes.HIGH_CONTRAST);
 
             var color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Solarized Light")
             };
-
-            unowned Gtk.StyleContext color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_light_context.add_class ("color-light");
+            style_color_button (color_button_light, Themes.LIGHT);
 
             var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Dark")
             };
-
-            unowned Gtk.StyleContext color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_dark_context.add_class ("color-dark");
+            style_color_button (color_button_dark, Themes.DARK);
 
             var color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Custom")
             };
-
-            unowned Gtk.StyleContext color_button_custom_context = color_button_custom.get_style_context ();
-            color_button_custom_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_custom_context.add_class ("color-custom");
+            color_button_custom.get_style_context ().add_class ("color-custom");
+            style_color_button (color_button_custom, Themes.CUSTOM);
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
@@ -719,6 +708,41 @@ namespace Terminal {
 
                 return false;
             });
+
+            Application.settings.changed["background"].connect (() => {
+                style_color_button (color_button_custom, Themes.CUSTOM);
+            });
+
+            Application.settings.changed["foreground"].connect (() => {
+                style_color_button (color_button_custom, Themes.CUSTOM);
+            });
+        }
+
+        private void style_color_button (Gtk.Widget color_button, string theme) {
+            var theme_palette = Terminal.Themes.get_rgba_palette (theme);
+
+            var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
+
+            var style_css = """
+                .color-button radio {
+                    background-color: %s;
+                    color: %s;
+                    padding: 10px;
+                    -gtk-icon-shadow: none;
+                }
+            """.printf (background, foreground);
+
+            var css_provider = new Gtk.CssProvider ();
+            try {
+                css_provider.load_from_data (style_css);
+            } catch (Error e) {
+                critical ("Unable to style color button: %s", e.message);
+            }
+
+            unowned var style_context = color_button.get_style_context ();
+            style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         private bool handle_paste_event () {
