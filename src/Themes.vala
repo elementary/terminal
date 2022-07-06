@@ -62,6 +62,11 @@ public class Terminal.Themes {
             rgba_palette[i] = new_color;
         }
 
+        if (!settings_valid) {
+            /* Remove invalid colors from setting */
+            Application.settings.set_string ("palette", string.joinv (":", string_palette));
+        }
+
         return rgba_palette;
     }
 
