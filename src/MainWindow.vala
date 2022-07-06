@@ -23,7 +23,8 @@ namespace Terminal {
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
-        private Gtk.Revealer search_revealer;
+        private Gtk.Label title_label;
+        private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
@@ -256,7 +257,7 @@ namespace Terminal {
             setup_ui ();
             show_all ();
 
-            search_revealer.set_reveal_child (false);
+            title_stack.visible_child = title_label;
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
@@ -473,21 +474,27 @@ namespace Terminal {
                 valign = Gtk.Align.CENTER
             };
 
+            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
+
+            title_label = new Gtk.Label (title);
+            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+
+            title_stack = new Gtk.Stack () {
+                transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
+            };
+            title_stack.add (title_label);
+            title_stack.add (search_toolbar);
+
             var header = new Hdy.HeaderBar () {
                 show_close_button = true,
                 has_subtitle = false
             };
             header.pack_end (menu_button);
             header.pack_end (search_button);
+            header.set_custom_title (title_stack);
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
-
-            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
-
-            search_revealer = new Gtk.Revealer ();
-            search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
-            search_revealer.add (search_toolbar);
 
             get_simple_action (ACTION_COPY).set_enabled (false);
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
@@ -521,11 +528,12 @@ namespace Terminal {
 
             var grid = new Gtk.Grid ();
             grid.attach (header, 0, 0);
-            grid.attach (search_revealer, 0, 1);
-            grid.attach (notebook, 0, 2);
+            grid.attach (notebook, 0, 1);
 
             get_style_context ().add_class ("terminal-window");
             add (grid);
+
+            bind_property ("title", title_label, "label");
 
             menu_popover.closed.connect (() => {
                 var binding = menu_popover.get_data<Binding> ("zoom-binding");
@@ -1437,9 +1445,9 @@ namespace Terminal {
             var search_state = search_action.get_state ().get_boolean ();
 
             search_action.set_state (!search_state);
-            search_revealer.set_reveal_child (search_button.active);
 
             if (search_button.active) {
+                title_stack.visible_child = search_toolbar;
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
                 action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
@@ -1450,6 +1458,7 @@ namespace Terminal {
                 );
                 search_toolbar.grab_focus ();
             } else {
+                title_stack.visible_child = title_label;
                 action_accelerators.remove_all (ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
                 search_button.tooltip_markup = Granite.markup_accel_tooltip (
