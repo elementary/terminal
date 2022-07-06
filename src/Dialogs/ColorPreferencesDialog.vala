@@ -16,7 +16,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
+public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     private Gtk.ColorButton black_button;
     private Gtk.ColorButton red_button;
     private Gtk.ColorButton green_button;
@@ -39,7 +39,6 @@ public class Terminal.Dialogs.ColorPreferences : Gtk.Dialog {
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
-            deletable: false,
             resizable: false,
             title: _("Color Preferences"),
             transient_for: parent
