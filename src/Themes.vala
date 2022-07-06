@@ -17,10 +17,11 @@
 */
 
 public class Terminal.Themes {
-    public const int PALETTE_SIZE = 19;
     public const string DARK = "dark";
     public const string HIGH_CONTRAST = "high-contrast";
     public const string LIGHT = "solarized-light";
+    public const string CUSTOM = "custom";
+    public const int PALETTE_SIZE = 19;
 
     static construct {
         Application.settings.changed["theme"].connect (() => {
@@ -40,12 +41,36 @@ public class Terminal.Themes {
 
     // format is color01:color02:...:color16:background:foreground:cursor
     public static Gdk.RGBA[] get_rgba_palette (string theme) {
-        const string[] DARK_PALETTE = {
-            "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-            "#586e75", "#cb4b16", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#6c71c4",
-            "rgba(46, 46, 46, 0.95)", "#a5a5a5", "#839496"
-        };
+        var string_palette = get_string_palette (theme);
+        bool settings_valid = string_palette.length == PALETTE_SIZE;
 
+        var rgba_palette = new Gdk.RGBA[PALETTE_SIZE];
+        for (int i = 0; i < PALETTE_SIZE; i++) {
+            var new_color = Gdk.RGBA ();
+            // If custom palette invalid use a fallback one
+            if (!new_color.parse (string_palette[i])) {
+                critical ("Color %i '%s' is not valid - replacing with default", i, string_palette[i]);
+                settings_valid = false;
+
+                var fallback_palette = get_string_palette (
+                    Application.settings.get_boolean ("prefer-dark-style") ? DARK : LIGHT
+                );
+                string_palette[i] = fallback_palette[i];
+                new_color.parse (fallback_palette[i]);
+            }
+
+            rgba_palette[i] = new_color;
+        }
+
+        if (!settings_valid) {
+            /* Remove invalid colors from setting */
+            Application.settings.set_string ("palette", string.joinv (":", string_palette));
+        }
+
+        return rgba_palette;
+    }
+
+    private static string[] get_string_palette (string theme) {
         var string_palette = new string[PALETTE_SIZE];
         switch (theme) {
             case (HIGH_CONTRAST):
@@ -63,9 +88,13 @@ public class Terminal.Themes {
                 };
                 break;
             case (DARK):
-                string_palette = DARK_PALETTE;
+                string_palette = {
+                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
+                    "#586e75", "#cb4b16", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#6c71c4",
+                    "rgba(46, 46, 46, 0.95)", "#a5a5a5", "#839496"
+                };
                 break;
-            default:
+            case (CUSTOM):
                 string_palette = Application.settings.get_string ("palette").split (":");
                 string_palette += Application.settings.get_string ("background");
                 string_palette += Application.settings.get_string ("foreground");
@@ -73,27 +102,16 @@ public class Terminal.Themes {
                 break;
         }
 
-        bool settings_valid = string_palette.length == PALETTE_SIZE;
+        return string_palette;
+    }
 
-        var rgba_palette = new Gdk.RGBA[PALETTE_SIZE];
-        for (int i = 0; i < PALETTE_SIZE; i++) {
-            var new_color = Gdk.RGBA ();
-            // Replace invalid color with corresponding one from default palette
-            if (!new_color.parse (string_palette[i])) {
-                critical ("Color %i '%s' is not valid - replacing with default", i, string_palette[i]);
-                string_palette[i] = DARK_PALETTE[i];
-                new_color.parse (DARK_PALETTE[i]);
-                settings_valid = false;
-            }
-
-            rgba_palette[i] = new_color;
-        }
-
-        if (!settings_valid) {
-            /* Remove invalid colors from setting */
-            Application.settings.set_string ("palette", string.joinv (":", string_palette));
-        }
-
-        return rgba_palette;
+    public static void set_default_palette_for_style () {
+        var string_palette = get_string_palette (
+            Application.settings.get_boolean ("prefer-dark-style") ? DARK : LIGHT
+        );
+        Application.settings.set_string ("palette", string.joinv (":", string_palette[0:PALETTE_SIZE - 3]));
+        Application.settings.set_string ("background", string_palette[PALETTE_SIZE - 3]);
+        Application.settings.set_string ("foreground", string_palette[PALETTE_SIZE - 2]);
+        Application.settings.set_string ("cursor-color", string_palette[PALETTE_SIZE - 1]);
     }
 }

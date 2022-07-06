@@ -56,6 +56,7 @@ executable(
     'src/Themes.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
+    'src/Dialogs/ColorPreferencesDialog.vala',
     'src/Widgets/SearchToolbar.vala',
     'src/Widgets/TerminalWidget.vala',
     'src/Utils.vala',
