@@ -85,6 +85,11 @@
       <summary>Whether or not to use an audible bell event alert</summary>
       <description>Used when hitting the end of a line like in GTK entries, but also for tab-completion when there are either no or multiple possible completions.</description>
     </key>
+    <key name="follow-system-style" type="b">
+      <default>false</default>
+      <summary>Follow the Pantheon dark style preference</summary>
+      <description>Terminal will use the Dark style if the user prefers a dark style, or Solarized Light otherwise. Overrides control of prefer-dark-style, hiding the options in the UI.</description>
+    </key>
     <key name="natural-copy-paste" type="b">
       <default>true</default>
       <summary>Defined whether to use ctrl-c or ctrl-shift-c for copy</summary>
