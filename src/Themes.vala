@@ -49,10 +49,14 @@ public class Terminal.Themes {
             var new_color = Gdk.RGBA ();
             // If custom palette invalid use a fallback one
             if (!new_color.parse (string_palette[i])) {
-                critical ("Color %i '%s' is not valid - using fallback palette", i, string_palette[i]);
-                return get_rgba_palette (
+                critical ("Color %i '%s' is not valid - replacing with default", i, string_palette[i]);
+                settings_valid = false;
+
+                var fallback_palette = get_string_palette (
                     Application.settings.get_boolean ("prefer-dark-style") ? DARK : LIGHT
                 );
+                string_palette[i] = fallback_palette[i];
+                new_color.parse (fallback_palette[i]);
             }
 
             rgba_palette[i] = new_color;
