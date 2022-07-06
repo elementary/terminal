@@ -353,6 +353,8 @@ namespace Terminal {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
             );
 
+            style_window ();
+
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -709,8 +711,13 @@ namespace Terminal {
                 return false;
             });
 
+            Application.settings.changed["theme"].connect (() => {
+                style_window ();
+            });
+
             Application.settings.changed["background"].connect (() => {
                 style_color_button (color_button_custom, Themes.CUSTOM);
+                style_window ();
             });
 
             Application.settings.changed["foreground"].connect (() => {
@@ -743,6 +750,29 @@ namespace Terminal {
             unowned var style_context = color_button.get_style_context ();
             style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+
+        private void style_window () {
+            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+            var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
+
+            var style_css = """
+                @define-color tab_base_color %s;
+                @define-color color_primary %s;
+            """.printf (background, background);
+
+            var css_provider = new Gtk.CssProvider ();
+            try {
+                css_provider.load_from_data (style_css);
+            } catch (Error e) {
+                critical ("Unable to style color button: %s", e.message);
+            }
+
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
         }
 
         private bool handle_paste_event () {
