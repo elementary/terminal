@@ -29,27 +29,6 @@ vte-terminal {
     padding: 0 9px;
 }
 
-.color-button radio,
-.color-button radio:checked {
-   padding: 10px;
-   -gtk-icon-shadow: none;
-}
-
-.color-dark radio {
-    background-color: rgb(46, 46, 46);
-    color: #a5a5a5;
-}
-
-.color-light radio {
-    background-color: #fdf6e3;
-    color: #586e75;
-}
-
-.color-white radio {
-    background-color: #fff;
-    color: #000;
-}
-
 .color-custom radio {
     -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
