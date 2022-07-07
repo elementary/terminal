@@ -349,20 +349,20 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         cursor_button.rgba = color_palette[18];
     }
 
-    private void update_contrast (Gdk.RGBA fg, Gtk.Image contrast) {
+    private void update_contrast (Gdk.RGBA fg, Gtk.Image image) {
         var contrast_ratio = get_contrast_ratio (fg, background_button.rgba);
         if (contrast_ratio < 3) {
-            contrast.icon_name = "dialog-warning-symbolic";
-            contrast.tooltip_text = _("Poor contrast");
+            image.icon_name = "dialog-warning-symbolic";
+            image.tooltip_text = _("Poor contrast");
         } else if (contrast_ratio < 4.5) {
-            contrast.icon_name = "process-completed-symbolic";
-            contrast.tooltip_text = _("Acceptable contrast");
+            image.icon_name = "process-completed-symbolic";
+            image.tooltip_text = _("Acceptable contrast");
         } else if (contrast_ratio < 7) {
-            contrast.icon_name = "process-completed-symbolic";
-            contrast.tooltip_text = _("Good contrast");
+            image.icon_name = "process-completed-symbolic";
+            image.tooltip_text = _("Good contrast");
         } else {
-            contrast.icon_name = "process-completed-symbolic";
-            contrast.tooltip_text = _("High contrast");
+            image.icon_name = "process-completed-symbolic";
+            image.tooltip_text = _("High contrast");
         }
     }
 
