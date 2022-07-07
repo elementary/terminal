@@ -8,7 +8,6 @@
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
 *
 * You should have received a copy of the GNU Lesser General Public
 * License along with this program; if not, write to the
@@ -633,6 +632,11 @@ namespace Terminal {
                 SettingsBindFlags.DEFAULT
             );
 
+            var granite_settings = Granite.Settings.get_default ();
+            granite_settings.notify["prefers-color-scheme"].connect (() => {
+                Application.settings.changed ("theme"); // Signal terminal widgets to update their color scheme
+            });
+            
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
             key_press_event.connect ((event) => {

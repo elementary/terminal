@@ -249,14 +249,24 @@ namespace Terminal {
 
         public void restore_settings () {
             /* Load configuration */
+            var follow_system_style = Application.settings.get_boolean ("follow-system-style");
             var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+            var granite_settings = Granite.Settings.get_default ();
+            if (follow_system_style) {
+                gtk_settings.gtk_application_prefer_dark_theme =
+                granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+            } else {
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+            }
 
-            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+            var theme_palette =
+                follow_system_style ?
+                Themes.get_rgba_palette (Themes.SYSTEM) :
+                Themes.get_rgba_palette (Application.settings.get_string ("theme"));
 
-            var background = theme_palette[Terminal.Themes.PALETTE_SIZE - 3];
-            var foreground = theme_palette[Terminal.Themes.PALETTE_SIZE - 2];
-            var cursor = theme_palette[Terminal.Themes.PALETTE_SIZE - 1];
+            var background = theme_palette[Themes.PALETTE_SIZE - 3];
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2];
+            var cursor = theme_palette[Themes.PALETTE_SIZE - 1];
             var palette = theme_palette[0:16];
 
             set_colors (foreground, background, palette);

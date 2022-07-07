@@ -21,6 +21,7 @@ public class Terminal.Themes {
     public const string HIGH_CONTRAST = "high-contrast";
     public const string LIGHT = "solarized-light";
     public const string CUSTOM = "custom";
+    public const string SYSTEM = "system";
     public const int PALETTE_SIZE = 19;
 
     static construct {
@@ -72,7 +73,21 @@ public class Terminal.Themes {
 
     private static string[] get_string_palette (string theme) {
         var string_palette = new string[PALETTE_SIZE];
-        switch (theme) {
+        string theme_eff = DARK;
+        if (theme == SYSTEM) {
+            switch (Granite.Settings.get_default ().prefers_color_scheme) {
+                case Granite.Settings.ColorScheme.DARK:
+                    break;
+                case Granite.Settings.ColorScheme.LIGHT:
+                case Granite.Settings.ColorScheme.NO_PREFERENCE:
+                    theme_eff = LIGHT;
+                    break;
+            }
+        } else {
+            theme_eff = theme;
+        }
+
+        switch (theme_eff) {
             case (HIGH_CONTRAST):
                 string_palette = {
                     "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
