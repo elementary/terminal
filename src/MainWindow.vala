@@ -257,8 +257,6 @@ namespace Terminal {
             setup_ui ();
             show_all ();
 
-            title_stack.visible_child = title_label;
-
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
             Application.settings.changed["font"].connect (update_font);
@@ -473,6 +471,10 @@ namespace Terminal {
             };
             title_stack.add (title_label);
             title_stack.add (search_toolbar);
+            // Must show children before visible_child can be set
+            title_stack.show_all ();
+            // We set visible child here to avoid transition being visible on startup.
+            title_stack.visible_child = title_label;
 
             var header = new Hdy.HeaderBar () {
                 show_close_button = true,
@@ -1223,7 +1225,7 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            /* Granite.Accel.from_action_name () does not allow control of which accel is used when 
+            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
              * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
                 child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
