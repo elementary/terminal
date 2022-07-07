@@ -102,7 +102,7 @@
     </key>
 
     <key name="foreground" type="s">
-      <default>"#a5a5a5"</default>
+      <default>"#93A1A1"</default>
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
@@ -114,7 +114,7 @@
       </description>
     </key>
     <key name="background" type="s">
-      <default>"rgba(46, 46, 46, 0.95)"</default>
+      <default>"#002B36"</default>
       <summary>Color of the background.</summary>
       <description>
           The color of the background of the terminal.
