@@ -104,14 +104,4 @@ public class Terminal.Themes {
 
         return string_palette;
     }
-
-    public static void set_default_palette_for_style () {
-        var string_palette = get_string_palette (
-            Application.settings.get_boolean ("prefer-dark-style") ? DARK : LIGHT
-        );
-        Application.settings.set_string ("palette", string.joinv (":", string_palette[0:PALETTE_SIZE - 3]));
-        Application.settings.set_string ("background", string_palette[PALETTE_SIZE - 3]);
-        Application.settings.set_string ("foreground", string_palette[PALETTE_SIZE - 2]);
-        Application.settings.set_string ("cursor-color", string_palette[PALETTE_SIZE - 1]);
-    }
 }
