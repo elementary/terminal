@@ -456,7 +456,8 @@ namespace Terminal {
             color_revealer.add (color_grid);
 
             var follow_system_grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 6
             };
             follow_system_grid.add (follow_system_button);
             follow_system_grid.add (color_revealer);
@@ -474,6 +475,7 @@ namespace Terminal {
             };
 
             menu_popover_grid.add (font_size_grid);
+            menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (follow_system_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
