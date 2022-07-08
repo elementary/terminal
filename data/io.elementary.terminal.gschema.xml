@@ -138,7 +138,7 @@
       <description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
-      <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
+      <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#dc322f:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"</default>
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>

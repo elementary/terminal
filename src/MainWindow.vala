@@ -23,6 +23,10 @@ namespace Terminal {
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.RadioButton color_button_custom;
+        private Gtk.RadioButton color_button_dark;
+        private Gtk.RadioButton color_button_light;
+        private Gtk.RadioButton color_button_white;
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
@@ -395,25 +399,25 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.RadioButton (null) {
+            color_button_white = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
             };
             style_color_button (color_button_white, Themes.HIGH_CONTRAST);
 
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Solarized Light")
             };
             style_color_button (color_button_light, Themes.LIGHT);
 
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Dark")
             };
             style_color_button (color_button_dark, Themes.DARK);
 
-            var color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Custom")
             };
@@ -516,6 +520,8 @@ namespace Terminal {
             get_style_context ().add_class ("terminal-window");
             add (grid);
 
+            update_active_colorbutton ();
+
             menu_popover.closed.connect (() => {
                 var binding = menu_popover.get_data<Binding> ("zoom-binding");
                 binding.unref ();
@@ -538,21 +544,6 @@ namespace Terminal {
 
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
-
-            switch (Application.settings.get_string ("theme")) {
-                case Themes.HIGH_CONTRAST:
-                    color_button_white.active = true;
-                    break;
-                case Themes.LIGHT:
-                    color_button_light.active = true;
-                    break;
-                case Themes.DARK:
-                    color_button_dark.active = true;
-                    break;
-                case Themes.CUSTOM:
-                    color_button_custom.active = true;
-                    break;
-            }
 
             color_button_dark.button_release_event.connect (() => {
                 Application.settings.set_string ("theme", Themes.DARK);
@@ -582,6 +573,10 @@ namespace Terminal {
                 "active",
                 SettingsBindFlags.DEFAULT
             );
+
+            Application.settings.changed["theme"].connect (() => {
+                update_active_colorbutton ();
+            });
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
@@ -716,6 +711,23 @@ namespace Terminal {
             Application.settings.changed["foreground"].connect (() => {
                 style_color_button (color_button_custom, Themes.CUSTOM);
             });
+        }
+
+        private void update_active_colorbutton () {
+            switch (Application.settings.get_string ("theme")) {
+                case Themes.HIGH_CONTRAST:
+                    color_button_white.active = true;
+                    break;
+                case Themes.LIGHT:
+                    color_button_light.active = true;
+                    break;
+                case Themes.DARK:
+                    color_button_dark.active = true;
+                    break;
+                case Themes.CUSTOM:
+                    color_button_custom.active = true;
+                    break;
+            }
         }
 
         private void style_color_button (Gtk.Widget color_button, string theme) {
