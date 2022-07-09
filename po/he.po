@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-06 17:40+0000\n"
-"PO-Revision-Date: 2021-06-16 01:43+0000\n"
+"PO-Revision-Date: 2022-07-09 17:13+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -106,7 +106,7 @@ msgstr "כהה"
 
 #: src/MainWindow.vala:427
 msgid "Custom"
-msgstr ""
+msgstr "משלך"
 
 #: src/MainWindow.vala:446
 msgid "Natural Copy/Paste"
