@@ -87,8 +87,8 @@
     </key>
     <key name="follow-system-style" type="b">
       <default>false</default>
-      <summary>Follow the Pantheon dark style preference</summary>
-      <description>Terminal will use the Dark style if the user prefers a dark style, or Solarized Light otherwise. Overrides control of prefer-dark-style, hiding the options in the UI.</description>
+      <summary>Follow the FreeDesktop.org dark style preference</summary>
+      <description>Use the Dark style if the system prefers a dark style, or Solarized Light otherwise. Overrides control of prefer-dark-style.</description>
     </key>
     <key name="natural-copy-paste" type="b">
       <default>true</default>
@@ -97,8 +97,8 @@
     </key>
     <key name="prefer-dark-style" type="b">
       <default>true</default>
-      <summary>Defined whether to use dark stylesheet from Gtk</summary>
-      <description>Switches between dark and light style</description>
+      <summary>Whether or not the custom theme should use a dark or light window style</summary>
+      <description>Switches between dark and light style when using the custom theme</description>
     </key>
 
     <key name="foreground" type="s">
