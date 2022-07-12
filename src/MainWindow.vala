@@ -8,6 +8,7 @@
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
 *
 * You should have received a copy of the GNU Lesser General Public
 * License along with this program; if not, write to the
@@ -394,25 +395,7 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var follow_system_label = new Gtk.Label (_("Follow System Style")) {
-                halign = Gtk.Align.START,
-                hexpand = true,
-                vexpand = true
-            };
-
-            var follow_system_switch = new Gtk.Switch () {
-                valign = Gtk.Align.START
-            };
-
-            var follow_system_button_grid = new Gtk.Grid () {
-                column_spacing = 12
-            };
-            follow_system_button_grid.add (follow_system_label);
-            follow_system_button_grid.add (follow_system_switch);
-
-            var follow_system_button = new Gtk.ModelButton ();
-            follow_system_button.get_child ().destroy ();
-            follow_system_button.add (follow_system_button_grid);
+            var follow_system_switchmodelbutton = new Granite.SwitchModelButton (_("Follow System Style"));
 
             var color_button_white = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
@@ -441,9 +424,8 @@ namespace Terminal {
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
-                margin_start = 12,
-                margin_end = 12,
-                margin_bottom = 6
+                margin_bottom = 6,
+                margin_top = 6
             };
 
             color_grid.add (color_button_white);
@@ -454,12 +436,9 @@ namespace Terminal {
             var color_revealer = new Gtk.Revealer ();
             color_revealer.add (color_grid);
 
-            var follow_system_grid = new Gtk.Grid () {
-                orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 6
-            };
-            follow_system_grid.add (follow_system_button);
-            follow_system_grid.add (color_revealer);
+            var follow_system_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            follow_system_box.add (follow_system_switchmodelbutton);
+            follow_system_box.add (color_revealer);
 
             var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
@@ -475,7 +454,7 @@ namespace Terminal {
 
             menu_popover_grid.add (font_size_grid);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            menu_popover_grid.add (follow_system_grid);
+            menu_popover_grid.add (follow_system_box);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
@@ -606,12 +585,7 @@ namespace Terminal {
                 return Gdk.EVENT_STOP;
             });
 
-            follow_system_button.button_release_event.connect (() => {
-                follow_system_switch.activate ();
-                return Gdk.EVENT_STOP;
-            });
-
-            follow_system_switch.bind_property (
+            follow_system_switchmodelbutton.bind_property (
                 "active",
                 color_revealer,
                 "reveal-child",
@@ -620,7 +594,7 @@ namespace Terminal {
 
             Application.settings.bind (
                 "follow-system-style",
-                follow_system_switch,
+                follow_system_switchmodelbutton,
                 "active",
                 SettingsBindFlags.DEFAULT
             );
