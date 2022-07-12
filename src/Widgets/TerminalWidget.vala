@@ -136,6 +136,9 @@ namespace Terminal {
             restore_settings ();
             Application.settings.changed.connect (restore_settings);
 
+            var granite_settings = Granite.Settings.get_default ();
+            granite_settings.notify["prefers-color-scheme"].connect (restore_settings);
+
             window = parent_window;
             child_has_exited = false;
             killed = false;
@@ -250,13 +253,24 @@ namespace Terminal {
         public void restore_settings () {
             /* Load configuration */
             var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+            var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
+            if (Application.settings.get_boolean ("follow-system-style")) {
+                var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+                gtk_settings.gtk_application_prefer_dark_theme = system_prefers_dark;
 
-            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+                if (system_prefers_dark) {
+                    theme_palette = Themes.get_rgba_palette (Themes.DARK);
+                } else {
+                    theme_palette = Themes.get_rgba_palette (Themes.LIGHT);
+                }
+            } else {
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+                theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+            }
 
-            var background = theme_palette[Terminal.Themes.PALETTE_SIZE - 3];
-            var foreground = theme_palette[Terminal.Themes.PALETTE_SIZE - 2];
-            var cursor = theme_palette[Terminal.Themes.PALETTE_SIZE - 1];
+            var background = theme_palette[Themes.PALETTE_SIZE - 3];
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2];
+            var cursor = theme_palette[Themes.PALETTE_SIZE - 1];
             var palette = theme_palette[0:16];
 
             set_colors (foreground, background, palette);

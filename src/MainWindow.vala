@@ -399,6 +399,8 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
+            var follow_system_switchmodelbutton = new Granite.SwitchModelButton (_("Follow System Style"));
+
             color_button_white = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
@@ -426,15 +428,21 @@ namespace Terminal {
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
-                margin_start = 12,
-                margin_end = 12,
-                margin_bottom = 6
+                margin_bottom = 6,
+                margin_top = 6
             };
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
             color_grid.add (color_button_custom);
+
+            var color_revealer = new Gtk.Revealer ();
+            color_revealer.add (color_grid);
+
+            var follow_system_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            follow_system_box.add (follow_system_switchmodelbutton);
+            follow_system_box.add (color_revealer);
 
             var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
@@ -449,7 +457,8 @@ namespace Terminal {
             };
 
             menu_popover_grid.add (font_size_grid);
-            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            menu_popover_grid.add (follow_system_box);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
@@ -566,6 +575,20 @@ namespace Terminal {
                 menu_popover.popdown ();
                 return Gdk.EVENT_STOP;
             });
+
+            follow_system_switchmodelbutton.bind_property (
+                "active",
+                color_revealer,
+                "reveal-child",
+                GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
+            );
+
+            Application.settings.bind (
+                "follow-system-style",
+                follow_system_switchmodelbutton,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
 
             Application.settings.bind (
                 "natural-copy-paste",
@@ -1227,7 +1250,7 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            /* Granite.Accel.from_action_name () does not allow control of which accel is used when 
+            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
              * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
                 child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
