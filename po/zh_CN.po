@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2022-07-12 22:12+0000\n"
 "PO-Revision-Date: 2021-12-07 09:59+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -60,43 +60,47 @@ msgstr "显示帮助"
 msgid "Set shell working directory"
 msgstr "设置 Shell 工作目录"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:219
 msgid "Copy"
 msgstr "复制"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:225
 msgid "Copy Last Output"
 msgstr "复制上次输出"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:231
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:237
 msgid "Select All"
 msgstr "全选"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:366
+#: src/MainWindow.vala:370
 msgid "Zoom out"
 msgstr "缩小"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:378
 msgid "Default zoom level"
 msgstr "默认"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:385
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/MainWindow.vala:400
+#: src/MainWindow.vala:402
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "高对比度"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
@@ -104,58 +108,58 @@ msgstr "Solarized 亮色"
 msgid "Dark"
 msgstr "深色"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:424
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
 msgstr "自然复制/粘贴"
 
-#: src/MainWindow.vala:447
+#: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "快捷键不使用 Shift 键\n"
 "（可能会与 CLI 应用冲突）"
 
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:500
 msgid "New Tab"
 msgstr "新建标签页"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:959
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中显示"
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:960
 msgid "Default application"
 msgstr "默认应用"
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "关闭标签"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:1243
 msgid "Duplicate"
 msgstr "重复"
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:1256
 msgid "Reload"
 msgstr "重新加载"
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "当前粘贴的文本可能会试图获取管理员权限"
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
 msgstr "当前粘贴的文本可能包含多个命令"
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1508
 msgid "Hide find bar"
 msgstr "隐藏查找"
 

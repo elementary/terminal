@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2022-07-12 22:12+0000\n"
 "PO-Revision-Date: 2022-07-09 17:13+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -60,43 +60,47 @@ msgstr "הצגת עזרה"
 msgid "Set shell working directory"
 msgstr "הגדרת תיקית עבודה במעטפת"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:219
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:225
 msgid "Copy Last Output"
 msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:231
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:237
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:366
+#: src/MainWindow.vala:370
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:378
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:385
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: src/MainWindow.vala:400
+#: src/MainWindow.vala:402
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
@@ -104,56 +108,56 @@ msgstr "זריחה בהירה"
 msgid "Dark"
 msgstr "כהה"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:424
 msgid "Custom"
 msgstr "משלך"
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
 msgstr "העתקה/הדבקה טבעיים"
 
-#: src/MainWindow.vala:447
+#: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
 
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "הגדרות"
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:500
 msgid "New Tab"
 msgstr "לשונית חדשה"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:959
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:960
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "סגירת הלשונית"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:1243
 msgid "Duplicate"
 msgstr "שכפול"
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:1256
 msgid "Reload"
 msgstr "רענון"
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "הטקסט שמיועד להדבקה חשוד בניסיון השגת גישה ניהולית"
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
 msgstr "הטקסט שמיועד להדבקה מכיל יותר מפקודה אחת"
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1508
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 

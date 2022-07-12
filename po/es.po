@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2022-07-12 22:12+0000\n"
 "PO-Revision-Date: 2021-08-27 09:33+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
@@ -62,43 +62,47 @@ msgstr "Mostrar ayuda"
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo del intérprete"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:219
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:225
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:231
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:237
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:366
+#: src/MainWindow.vala:370
 msgid "Zoom out"
 msgstr "Alejar"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:378
 msgid "Default zoom level"
 msgstr "Nivel de escala predeterminado"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:385
 msgid "Zoom in"
 msgstr "Acercar"
 
-#: src/MainWindow.vala:400
+#: src/MainWindow.vala:402
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "Contraste alto"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "Solarizado claro"
 
@@ -106,58 +110,58 @@ msgstr "Solarizado claro"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:424
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
 msgstr "Copipegado natural"
 
-#: src/MainWindow.vala:447
+#: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
 
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:500
 msgid "New Tab"
 msgstr "Pestaña nueva"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:959
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar en %s"
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:960
 msgid "Default application"
 msgstr "Aplicación predeterminada"
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:1243
 msgid "Duplicate"
 msgstr "Duplicado"
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:1256
 msgid "Reload"
 msgstr "Volver a cargar"
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Es posible que el texto pegado esté intentando obtener acceso administrativo"
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
 msgstr "El texto pegado puede contener varias órdenes"
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1508
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 

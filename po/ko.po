@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2022-07-12 22:12+0000\n"
 "PO-Revision-Date: 2018-12-12 00:11+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/terminal/"
@@ -64,43 +64,47 @@ msgstr "도움말 보기"
 msgid "Set shell working directory"
 msgstr "작업 중인 셸의 디렉터리 보기"
 
-#: src/MainWindow.vala:215
+#: src/MainWindow.vala:219
 msgid "Copy"
 msgstr "복사"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:225
 msgid "Copy Last Output"
 msgstr "마지막 출력물 복사하기"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:231
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:237
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
 msgid "Find…"
 msgstr "찾기…"
 
-#: src/MainWindow.vala:366
+#: src/MainWindow.vala:370
 msgid "Zoom out"
 msgstr "축소"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:378
 msgid "Default zoom level"
 msgstr "기본 줌 레벨"
 
-#: src/MainWindow.vala:381
+#: src/MainWindow.vala:385
 msgid "Zoom in"
 msgstr "확대"
 
-#: src/MainWindow.vala:400
+#: src/MainWindow.vala:402
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:406
 msgid "High Contrast"
 msgstr "고 대비"
 
-#: src/MainWindow.vala:409
+#: src/MainWindow.vala:412
 msgid "Solarized Light"
 msgstr "솔라 라이트"
 
@@ -108,57 +112,57 @@ msgstr "솔라 라이트"
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:427
+#: src/MainWindow.vala:424
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:446
+#: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:447
+#: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:474
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:500
 msgid "New Tab"
 msgstr "새 탭"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:959
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "파일 브라우저에서 보기"
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:960
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:1243
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:1256
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1508
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 
