@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
-"PO-Revision-Date: 2022-07-06 22:09+0000\n"
+"PO-Revision-Date: 2022-07-13 11:53+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -97,7 +97,7 @@ msgstr "Збільшити"
 
 #: src/MainWindow.vala:402
 msgid "Follow System Style"
-msgstr ""
+msgstr "Використовувати системний стиль"
 
 #: src/MainWindow.vala:406
 msgid "High Contrast"
