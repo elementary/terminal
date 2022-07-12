@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-06 17:40+0000\n"
-"PO-Revision-Date: 2021-09-02 22:09+0000\n"
+"PO-Revision-Date: 2022-07-12 11:18+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -108,7 +108,7 @@ msgstr "Sötét"
 
 #: src/MainWindow.vala:427
 msgid "Custom"
-msgstr ""
+msgstr "Egyéni"
 
 #: src/MainWindow.vala:446
 msgid "Natural Copy/Paste"

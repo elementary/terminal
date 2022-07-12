@@ -75,23 +75,23 @@ public class Terminal.Themes {
         switch (theme) {
             case (HIGH_CONTRAST):
                 string_palette = {
-                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-                    "#586e75", "#cb4b16", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#6c71c4",
+                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#eee8d5",
+                    "#002b36", "#dc322f", "#586e75", "#657b83", "#839496", "#6c71c4", "#93a1a1", "#fdf6e3",
                     "#ffffff", "#333333", "#839496"
                 };
                 break;
             case (LIGHT):
                 string_palette = {
-                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-                    "#586e75", "#cb4b16", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#6c71c4",
-                    "rgba(253, 246, 227, 0.95)", "#586e75", "#839496"
+                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#eee8d5",
+                    "#002b36", "#dc322f", "#586e75", "#657b83", "#839496", "#6c71c4", "#93a1a1", "#fdf6e3",
+                    "#FDF6E3", "#586e75", "#839496"
                 };
                 break;
             case (DARK):
                 string_palette = {
-                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#ec0048", "#2aa198", "#94a3a5",
-                    "#586e75", "#cb4b16", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#6c71c4",
-                    "rgba(46, 46, 46, 0.95)", "#a5a5a5", "#839496"
+                    "#073642", "#dc322f", "#859900", "#b58900", "#268bd2", "#d33682", "#2aa198", "#eee8d5",
+                    "#002b36", "#dc322f", "#586e75", "#657b83", "#839496", "#6c71c4", "#93a1a1", "#fdf6e3",
+                    "#2E2E2E", "#a5a5a5", "#839496"
                 };
                 break;
             case (CUSTOM):
@@ -103,15 +103,5 @@ public class Terminal.Themes {
         }
 
         return string_palette;
-    }
-
-    public static void set_default_palette_for_style () {
-        var string_palette = get_string_palette (
-            Application.settings.get_boolean ("prefer-dark-style") ? DARK : LIGHT
-        );
-        Application.settings.set_string ("palette", string.joinv (":", string_palette[0:PALETTE_SIZE - 3]));
-        Application.settings.set_string ("background", string_palette[PALETTE_SIZE - 3]);
-        Application.settings.set_string ("foreground", string_palette[PALETTE_SIZE - 2]);
-        Application.settings.set_string ("cursor-color", string_palette[PALETTE_SIZE - 1]);
     }
 }
