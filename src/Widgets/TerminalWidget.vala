@@ -257,7 +257,12 @@ namespace Terminal {
             if (Application.settings.get_boolean ("follow-system-style")) {
                 var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
                 gtk_settings.gtk_application_prefer_dark_theme = system_prefers_dark;
-                theme_palette = Themes.get_rgba_palette (Themes.SYSTEM);
+
+                if (system_prefers_dark) {
+                    theme_palette = Themes.get_rgba_palette (Themes.DARK);
+                } else {
+                    theme_palette = Themes.get_rgba_palette (Themes.LIGHT);
+                }
             } else {
                 gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
                 theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
