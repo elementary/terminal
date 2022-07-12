@@ -136,6 +136,9 @@ namespace Terminal {
             restore_settings ();
             Application.settings.changed.connect (restore_settings);
 
+            var granite_settings = Granite.Settings.get_default ();
+            granite_settings.notify["prefers-color-scheme"].connect (restore_settings);
+
             window = parent_window;
             child_has_exited = false;
             killed = false;

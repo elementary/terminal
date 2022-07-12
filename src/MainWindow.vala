@@ -606,11 +606,6 @@ namespace Terminal {
                 SettingsBindFlags.DEFAULT
             );
 
-            var granite_settings = Granite.Settings.get_default ();
-            granite_settings.notify["prefers-color-scheme"].connect (() => {
-                Application.settings.changed ("theme"); // Signal terminal widgets to update their color scheme
-            });
-
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
             key_press_event.connect ((event) => {
