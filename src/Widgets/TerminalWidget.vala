@@ -133,9 +133,6 @@ namespace Terminal {
 
             init_complete = false;
 
-            restore_settings ();
-            Application.settings.changed.connect (restore_settings);
-
             window = parent_window;
             child_has_exited = false;
             killed = false;
@@ -294,10 +291,6 @@ namespace Terminal {
 
         private void update_cursor_shape () {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
-        }
-
-        private void restore_settings () {
-
         }
 
         void on_child_exited () {
