@@ -112,7 +112,7 @@ namespace Terminal.Widgets {
                     /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
                      * a "PCRE2 not supported" error.
                      */
-                    var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS|PCRE2.Flags.MULTILINE);
+                    var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
                     term.search_set_regex (regex, 0);
                     next_search (); /* Search immediately - not after ENTER pressed */
                 } catch (Error er) {

@@ -136,14 +136,26 @@ namespace Terminal {
             restore_settings ();
             Application.settings.changed.connect (restore_settings);
 
-            var granite_settings = Granite.Settings.get_default ();
-            granite_settings.notify["prefers-color-scheme"].connect (restore_settings);
-
             window = parent_window;
             child_has_exited = false;
             killed = false;
 
-            /* Connect to necessary signals */
+            update_audible_bell ();
+            update_cursor_shape ();
+            update_theme ();
+
+            var granite_settings = Granite.Settings.get_default ();
+            granite_settings.notify["prefers-color-scheme"].connect (update_theme);
+            Application.settings.changed["audible-bell"].connect (update_audible_bell);
+            Application.settings.changed["background"].connect (update_theme);
+            Application.settings.changed["cursor-color"].connect (update_theme);
+            Application.settings.changed["cursor-shape"].connect (update_cursor_shape);
+            Application.settings.changed["follow-system-style"].connect (update_theme);
+            Application.settings.changed["foreground"].connect (update_theme);
+            Application.settings.changed["palette"].connect (update_theme);
+            Application.settings.changed["prefer-dark-style"].connect (update_theme);
+            Application.settings.changed["theme"].connect (update_theme);
+
             button_press_event.connect ((event) => {
                 link_uri = null;
                 /* If this event caused focus-in then window.focus_timeout is > 0
@@ -250,8 +262,7 @@ namespace Terminal {
             this.clickable (REGEX_STRINGS);
         }
 
-        public void restore_settings () {
-            /* Load configuration */
+        private void update_theme () {
             var gtk_settings = Gtk.Settings.get_default ();
             var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
             if (Application.settings.get_boolean ("follow-system-style")) {
@@ -275,12 +286,18 @@ namespace Terminal {
 
             set_colors (foreground, background, palette);
             set_color_cursor (cursor);
+        }
 
-            /* Disable bell if necessary */
+        private void update_audible_bell () {
             audible_bell = Application.settings.get_boolean ("audible-bell");
+        }
 
-            /* Cursor shape */
+        private void update_cursor_shape () {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
+        }
+
+        private void restore_settings () {
+
         }
 
         void on_child_exited () {
