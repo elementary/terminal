@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
-"PO-Revision-Date: 2021-12-07 09:59+0000\n"
+"PO-Revision-Date: 2022-07-21 14:19+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hans/>\n"
@@ -94,7 +94,7 @@ msgstr "放大"
 
 #: src/MainWindow.vala:402
 msgid "Follow System Style"
-msgstr ""
+msgstr "跟随系统风格"
 
 #: src/MainWindow.vala:406
 msgid "High Contrast"
@@ -110,7 +110,7 @@ msgstr "深色"
 
 #: src/MainWindow.vala:424
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
