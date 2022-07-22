@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
-"PO-Revision-Date: 2022-07-12 22:12+0000\n"
+"PO-Revision-Date: 2022-07-22 16:53+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
@@ -100,7 +100,7 @@ msgstr "Высокий контраст"
 
 #: src/MainWindow.vala:412
 msgid "Solarized Light"
-msgstr "Соляризованный свет"
+msgstr "Solarized светлый"
 
 #: src/MainWindow.vala:418
 msgid "Dark"
