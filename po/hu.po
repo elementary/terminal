@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
-"PO-Revision-Date: 2022-07-12 11:18+0000\n"
+"PO-Revision-Date: 2022-07-15 00:12+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -96,7 +96,7 @@ msgstr "Nagyítás"
 
 #: src/MainWindow.vala:402
 msgid "Follow System Style"
-msgstr ""
+msgstr "Rendszertéma követése"
 
 #: src/MainWindow.vala:406
 msgid "High Contrast"
