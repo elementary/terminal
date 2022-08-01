@@ -18,18 +18,12 @@ add_global_arguments([
     language:'c'
 )
 
-vte_dep = dependency('vte-2.91')
+vte_dep = dependency('vte-2.91', version: '>=0.59')
+libpcre2_dep = dependency('libpcre2-8')
 
-libpcre2_dep = []
-if vte_dep.version().version_compare('>=0.59')
-    add_project_arguments(['--define', 'VTE_0_60'], language : 'vala')
-    vapi_dir = meson.current_source_dir() / 'vapi'
-    add_project_arguments('--vapidir=' + vapi_dir, language: 'vala')
-    add_project_arguments('-DPCRE2_CODE_UNIT_WIDTH=0', language: 'c')
-    libpcre2_dep = dependency('libpcre2-8')
-elif get_option('ubuntu-bionic-patched-vte')
-    add_project_arguments(['--define', 'UBUNTU_BIONIC_PATCHED_VTE'], language : 'vala')
-endif
+vapi_dir = meson.current_source_dir() / 'vapi'
+add_project_arguments('--vapidir=' + vapi_dir, language: 'vala')
+add_project_arguments('-DPCRE2_CODE_UNIT_WIDTH=0', language: 'c')
 
 terminal_resources = gnome.compile_resources(
     'terminal-resources', 'data/' + meson.project_name() + '.gresource.xml',

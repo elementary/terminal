@@ -161,7 +161,7 @@
     <key name="encoding" type="s">
       <default>""</default>
       <summary>Terminal encoding.</summary>
-      <description>Defines the encoding to be used by the terminal.</description>
+      <description>DEPRECATED: This key is deprecated and ignored.</description>
     </key>
     <key name="font" type="s">
       <default>""</default>
@@ -171,7 +171,7 @@
     <key name="allow-bold" type="b">
       <default>true</default>
       <summary>Whether to allow bold fonts.</summary>
-      <description>Defines whether fonts can be bold or not.</description>
+      <description>DEPRECATED: This key is deprecated and ignored.</description>
     </key>
     <key name="tab-bar-behavior" enum="dynamic-notebook-tab-bar-behavior">
       <default>'Always Show Tabs'</default>

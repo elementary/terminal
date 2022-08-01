@@ -133,9 +133,6 @@ namespace Terminal {
 
             init_complete = false;
 
-            restore_settings ();
-            Application.settings.changed.connect (restore_settings);
-
             window = parent_window;
             child_has_exited = false;
             killed = false;
@@ -296,26 +293,6 @@ namespace Terminal {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
         }
 
-        private void restore_settings () {
-#if !VTE_0_60
-            /* Bold font */
-            allow_bold = Application.settings.get_boolean ("allow-bold");
-#endif
-
-// Support for non-UTF-8 encoding is deprecated
-#if !VTE_0_60
-            /* Load encoding */
-            var encoding = Application.settings.get_string ("encoding");
-            if (encoding != "") {
-                try {
-                    set_encoding (encoding);
-                } catch (Error e) {
-                    warning ("Failed to set encoding - %s", e.message);
-                }
-            }
-#endif
-        }
-
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
@@ -418,15 +395,9 @@ namespace Terminal {
         private void clickable (string[] str) {
             foreach (unowned string exp in str) {
                 try {
-#if VTE_0_60
                     var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
                     int id = this.match_add_regex (regex, 0);
                     this.match_set_cursor_name (id, "pointer");
-#else
-                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
-                    int id = this.match_add_gregex (regex, 0);
-                    this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-#endif
                 } catch (GLib.Error error) {
                     warning (error.message);
                 }
@@ -485,26 +456,14 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if VTE_0_60
                     this.feed_child (uris_s.data);
-#elif UBUNTU_BIONIC_PATCHED_VTE
-                    this.feed_child (uris_s, uris_s.length);
-#else
-                    this.feed_child (uris_s.to_utf8 ());
-#endif
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if VTE_0_60
                         this.feed_child (data.data);
-#elif UBUNTU_BIONIC_PATCHED_VTE
-                        this.feed_child (data, data.length);
-#else
-                        this.feed_child (data.to_utf8 ());
-#endif
                     }
 
                     break;
