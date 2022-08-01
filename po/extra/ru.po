@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
 "PO-Revision-Date: 2022-08-01 20:34+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -50,11 +50,11 @@ msgstr "Новые возможности:"
 
 #: data/io.elementary.terminal.appdata.xml.in:38
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Переключение вкладок с помощью Alt + 1–9"
 
 #: data/io.elementary.terminal.appdata.xml.in:39
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Выход с помощью Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:41
 #: data/io.elementary.terminal.appdata.xml.in:53
