@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 22:12+0000\n"
-"PO-Revision-Date: 2022-08-05 16:20+0000\n"
+"PO-Revision-Date: 2022-08-06 11:37+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
 "ko/>\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: src/Application.vala:112
 msgid "Process completed"
-msgstr ""
+msgstr "프로세스 끝"
 
 #: src/Application.vala:115
 msgid "Process exited with errors"
-msgstr ""
+msgstr "오류로 끝난 프로세스"
 
 #: src/Application.vala:258
 msgid "Show version"
-msgstr ""
+msgstr "버전 표시"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:260
@@ -94,7 +94,7 @@ msgstr "확대"
 
 #: src/MainWindow.vala:402
 msgid "Follow System Style"
-msgstr ""
+msgstr "시스템 스타일 따르기"
 
 #: src/MainWindow.vala:406
 msgid "High Contrast"
@@ -106,23 +106,23 @@ msgstr "솔라 라이트"
 
 #: src/MainWindow.vala:418
 msgid "Dark"
-msgstr ""
+msgstr "다크"
 
 #: src/MainWindow.vala:424
 msgid "Custom"
-msgstr ""
+msgstr "사용자 설정"
 
 #: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "자연 복사/붙여넣기"
 
 #: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "바로 가기에는 Shift가 필요하지 않습니다. CLI 앱을 방해할 수 있음"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
-msgstr ""
+msgstr "설정"
 
 #: src/MainWindow.vala:500
 msgid "New Tab"
@@ -135,7 +135,7 @@ msgstr "%s에서 보기"
 
 #: src/MainWindow.vala:960
 msgid "Default application"
-msgstr ""
+msgstr "기본 애플리케이션"
 
 #: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -143,19 +143,19 @@ msgstr "탭 닫기"
 
 #: src/MainWindow.vala:1243
 msgid "Duplicate"
-msgstr ""
+msgstr "복제"
 
 #: src/MainWindow.vala:1256
 msgid "Reload"
-msgstr ""
+msgstr "새로고침"
 
 #: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 있습니다"
 
 #: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "붙여 넣은 텍스트에 여러 명령이 포함될 수 있습니다"
 
 #: src/MainWindow.vala:1508
 msgid "Hide find bar"
@@ -190,30 +190,24 @@ msgid "Quit Terminal"
 msgstr "터미널 종료"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "정말로 이 탭을 닫으시겠습니까?"
+msgstr "정말로 이 탭을 새로 고치시겠습니까?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "터미널에 현재 실행 중인 프로세스가 있습니다."
+msgstr "이 탭에는 작동 중인 프로세스가 있습니다. 새로 고치면 프로세스가 끝납니다."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "탭 닫기"
+msgstr "탭 새로 고침"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
-msgstr ""
+msgstr "터미널에 명령을 복사하는 것은 위험할 수 있습니다. 계속하기 전에 각각의 붙여 넣은 텍스트가 수행하는 작업을 확인해 주세요."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
