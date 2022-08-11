@@ -31,6 +31,24 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="6.1.0" date="2022-08-10" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Option to follow system dark style preference</li>
+          <li>Create a custom color palette</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Default styles are fully opaque for improved legibility</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+          <li>Performance improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.0.2" date="2022-05-16" urgency="medium">
       <description>
         <p>New features:</p>
