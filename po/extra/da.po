@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 19:08+0000\n"
+"POT-Creation-Date: 2022-08-11 19:39+0000\n"
 "PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/terminal/extra/da/"
@@ -72,7 +72,9 @@ msgid "Fixes:"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:62
-msgid "Default styles are fully opaque for improved legibility"
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:64
