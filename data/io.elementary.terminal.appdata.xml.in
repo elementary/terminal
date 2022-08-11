@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015–2021 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2015–2022 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.terminal</id>
+  <launchable type="desktop-id">io.elementary.terminal.desktop</launchable>
   <metadata_license>CC0</metadata_license>
-  <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
+
   <name>Terminal</name>
   <summary>Use the command line</summary>
   <description>
     <p>Terminal is a terminal emulator application for accessing a UNIX shell environment which can be used to run programs available on your system.</p>
   </description>
-  <provides>
-    <binary>io.elementary.terminal</binary>
-  </provides>
+
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot.png</image>
@@ -27,9 +26,29 @@
       <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-find.png</image>
     </screenshot>
     <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-custom-style.png</image>
+    </screenshot>
+    <screenshot>
       <image>https://raw.githubusercontent.com/elementary/terminal/master/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>io.elementary.terminal</binary>
+  </provides>
+
+  <url type="homepage">https://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/terminal/discussions/categories/q-a</url>
+  <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_AT_elementary.io</update_contact>
+
   <releases>
     <release version="6.1.0" date="2022-08-10" urgency="medium">
       <description>
@@ -304,40 +323,4 @@
       </description>
     </release>
   </releases>
-  <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="sex-themes">none</content_attribute>
-    <content_attribute id="sex-homosexuality">none</content_attribute>
-    <content_attribute id="sex-prostitution">none</content_attribute>
-    <content_attribute id="sex-adultery">none</content_attribute>
-    <content_attribute id="sex-appearance">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
-    <content_attribute id="social-info">none</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
-    <content_attribute id="money-purchasing">none</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
-  </content_rating>
-  <developer_name>elementary, Inc.</developer_name>
-  <url type="homepage">https://elementary.io/</url>
-  <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
-  <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://github.com/elementary/terminal/discussions/categories/q-a</url>
-  <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
-  <update_contact>contact_AT_elementary.io</update_contact>
 </component>
