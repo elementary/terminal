@@ -59,7 +59,7 @@
         </ul>
         <p>Fixes:</p>
         <ul>
-          <li>Default styles are fully opaque for improved legibility</li>
+          <li>Default styles are fully opaque and updated to the latest upstream values from Solarized for improved legibility</li>
         </ul>
         <p>Other updates:</p>
         <ul>
