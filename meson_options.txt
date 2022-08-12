@@ -1,1 +1,0 @@
-option ('ubuntu-bionic-patched-vte', type : 'boolean', value : true)
