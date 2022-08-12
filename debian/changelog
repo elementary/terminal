@@ -1,3 +1,25 @@
+io.elementary.terminal (6.1.0) bionic; urgency=medium
+
+  * Release 6.1.0 (#677)
+  * Update translation files
+  * Update translation template
+  * AppData: update format and screenshots (#678)
+  * Require libvte >=0.59 (#675)
+  * TerminalWidget: Connect specific settings to functions (#674)
+  * Add "Follow System Style" toggle (#666)
+  * Update Solarized Palette (#672)
+  * MainWindow: Update active color button on theme change (#671)
+  * Themes: Remove opacity from default themes (#670)
+  * Dialogs/ColorPreferences: reset to default via gsettings (#669)
+  * MainWindow: Style color buttons from theme (#665)
+  * GSchema: change custom theme default values to Solarized Dark (#667)
+  * ColorPreferencesDialog: Use Granite.Dialog (#664)
+  * Add a custom theme dialog (#662)
+  * Perpetuate custom theme (#663)
+  * Simplify handling of themes (#661)
+
+ -- elementary, Inc. <builds@elementary.io>  Fri, 12 Aug 2022 09:54:56 +0000
+
 io.elementary.terminal (6.0.2) bionic; urgency=medium
 
   * Release 6.0.2 (#659)
