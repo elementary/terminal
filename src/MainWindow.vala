@@ -286,6 +286,16 @@ namespace Terminal {
             if (recreate_tabs) {
                 open_tabs ();
             }
+
+            // Pass key presses to foreground process if there is one
+            key_press_event.connect ((event) => {
+                if (current_terminal.has_foreground_process ()) {
+                    current_terminal.key_press_event (event);
+                    return true;
+                } else {
+                    return false;
+                }
+            });
         }
 
         public void add_tab_with_command (string command, string? working_directory = null, bool create_new_tab = false) {
