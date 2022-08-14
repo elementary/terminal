@@ -292,8 +292,7 @@ namespace Terminal {
                 if (current_terminal.has_foreground_process ()) {
                     search_toolbar.search_entry.sensitive = false;
                     search_button.sensitive = false;
-                    current_terminal.key_press_event (event);
-                    return true;
+                    return current_terminal.key_press_event (event);
                 } else {
                     return false;
                 }
