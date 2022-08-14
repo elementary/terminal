@@ -290,12 +290,35 @@ namespace Terminal {
             // Pass key presses to foreground process if there is one
             key_press_event.connect ((event) => {
                 if (current_terminal.has_foreground_process ()) {
+                    search_toolbar.search_entry.sensitive = false;
+                    search_button.sensitive = false;
                     current_terminal.key_press_event (event);
                     return true;
                 } else {
                     return false;
                 }
             });
+
+            // As there is no signal on the start and end of a foreground process have
+            // set search sensitivty after each key release
+            key_release_event.connect_after (() => {
+                set_search_sensitivity ();
+                return false;
+            });
+
+            // Set search search sensitivy when tab changed with mouse
+            notify["current-terminal"].connect (set_search_sensitivity);
+        }
+
+
+        private void set_search_sensitivity () {
+            if (current_terminal.has_foreground_process ()) {
+                search_toolbar.search_entry.sensitive = false;
+                search_button.sensitive = false;
+            } else {
+                search_toolbar.search_entry.sensitive = true;
+                search_button.sensitive = true;
+            }
         }
 
         public void add_tab_with_command (string command, string? working_directory = null, bool create_new_tab = false) {
