@@ -298,7 +298,7 @@ namespace Terminal {
                 }
             });
 
-            // As there is no signal on the start and end of a foreground process have
+            // As there is no signal on the start and end of a foreground process have to
             // set search sensitivty after each key release
             key_release_event.connect_after (() => {
                 set_search_sensitivity ();
