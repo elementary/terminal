@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-05-16 18:12+0000\n"
+"PO-Revision-Date: 2022-08-15 14:40+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -50,17 +50,15 @@ msgstr "elementary בע״מ."
 #: data/io.elementary.terminal.appdata.xml.in:141
 #: data/io.elementary.terminal.appdata.xml.in:156
 msgid "New features:"
-msgstr "תכונות חדשות:"
+msgstr "יכולות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:57
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "אפשרות לעקוב אחר העדפת המצב הכהה של המערכת"
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#, fuzzy
-#| msgid "Validate custom palette"
 msgid "Create a custom color palette"
-msgstr "אימות ערכת צבעים מותאמת אישית"
+msgstr "יצירת ערכת צבעים משלך"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 #: data/io.elementary.terminal.appdata.xml.in:78
@@ -73,6 +71,8 @@ msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"סגנונות ברירת המחדל אטומים לחלוטין ומעודכנים לערכים העדכניים מ־Solarized "
+"לשיפור המראה"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:82
@@ -112,7 +112,7 @@ msgstr "תרגומים עודכנו"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Performance improvements"
-msgstr ""
+msgstr "שיפורי ביצועים"
 
 #: data/io.elementary.terminal.appdata.xml.in:75
 msgid "Switch tabs with Alt + 1-9"
