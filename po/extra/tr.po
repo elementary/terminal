@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-04-30 06:27+0000\n"
+"PO-Revision-Date: 2022-08-15 19:56+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
@@ -57,10 +57,8 @@ msgid "Option to follow system dark style preference"
 msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#, fuzzy
-#| msgid "Validate custom palette"
 msgid "Create a custom color palette"
-msgstr "Özel renk paletini doğrula"
+msgstr "Özel bir renk paleti oluşturun"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 #: data/io.elementary.terminal.appdata.xml.in:78
