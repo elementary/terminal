@@ -9,11 +9,6 @@ include /usr/share/dpkg/pkg-info.mk
 %:
 	dh $@ --buildsystem=meson
 
-ifneq ($(DEB_DISTRIBUTION),bionic)
-override_dh_auto_configure:
-	dh_auto_configure -- -Dubuntu-bionic-patched-vte=false
-endif
-
 override_dh_strip:
 	dh_strip --dbgsym-migration='pantheon-terminal-dbg (<< 0.4.3)'
 
