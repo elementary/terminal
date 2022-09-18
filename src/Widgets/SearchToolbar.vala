@@ -114,7 +114,10 @@ namespace Terminal.Widgets {
                      */
                     var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
                     term.search_set_regex (regex, 0);
-                    next_search (); /* Search immediately - not after ENTER pressed */
+                    bool initialFound = next_search (); /* Search immediately - not after ENTER pressed */
+                    if (!initialFound && !cycle_button.active) {
+                        previous_search ();
+                    }
                 } catch (Error er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
@@ -126,14 +129,34 @@ namespace Terminal.Widgets {
             last_search_term_length = 0;
         }
 
-        public void previous_search () {
+        public bool previous_search () {
             window.current_terminal.search_set_wrap_around (cycle_button.active);
-            window.current_terminal.search_find_previous ();
+            bool found = window.current_terminal.search_find_previous ();
+            window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled(found);
+
+            if (cycle_button.active) {
+                // If CYCLE is enabled then NEXT and PREVIOUS should match
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(found);
+            } else if (found) {
+                // If CYCLE is disabled then enable NEXT if search succeeded
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(true);
+            }
+            return found;
         }
 
-        public void next_search () {
+        public bool next_search () {
             window.current_terminal.search_set_wrap_around (cycle_button.active);
-            window.current_terminal.search_find_next ();
+            bool found = window.current_terminal.search_find_next ();
+            window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(found); 
+            
+            if (cycle_button.active) {
+                // If CYCLE is enabled then NEXT and PREVIOUS should match
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled(found);
+            } else if (found) {
+                // If CYCLE is disabled then enable PREVIOUS if search succeeded
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled(true);
+            }
+            return found;
         }
     }
 }
