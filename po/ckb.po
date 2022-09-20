@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
 "PO-Revision-Date: 2022-09-20 21:32+0000\n"
-"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
+"Last-Translator: Koshan Othman Saeed <koshan0othman@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
 "terminal/terminal/ckb/>\n"
 "Language: ckb\n"
@@ -30,7 +30,7 @@ msgstr "پڕۆسەکە بە کۆمەڵێک کێشەوە کۆتایی هات"
 
 #: src/Application.vala:258
 msgid "Show version"
-msgstr "پشاندانی وەشان"
+msgstr "وەشان نیشان بدە"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:260
