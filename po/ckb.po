@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-09-20 21:32+0000\n"
-"Last-Translator: Koshan Othman Saeed <koshan0othman@gmail.com>\n"
+"PO-Revision-Date: 2022-09-21 21:57+0000\n"
+"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
 "terminal/terminal/ckb/>\n"
 "Language: ckb\n"
@@ -35,42 +35,40 @@ msgstr "وەشان نیشان بدە"
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
 #: src/Application.vala:260
 msgid "Run a program in terminal"
-msgstr "بەکارهێنانی پرۆگرامێک لە ترمیناڵ"
+msgstr "کردنەوەی بەرنامەیەک لە تێرمیناڵدا"
 
 #: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
+"پاشماوەی هێڵەکە وەک فرمانێک لە تێرمیناڵدا جێبەجێ بکە. هەروەها دەتوانێت '--' "
+"وەک ئاڵا بەکاربهێنێت"
 
 #. -n flag forces a new window, instead of a new tab
 #: src/Application.vala:268
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "پەنجەرەيێكى نوێ بکەرەوە"
+msgstr "پەنجەرەيێكى نوێی تێرمیناڵ بکەوە"
 
 #. -t flag forces a new tab
 #: src/Application.vala:271
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "پەنجەرەيێكى نوێ بکەرەوە"
+msgstr "تابێکی نوێ بکەوە"
 
 #: src/Application.vala:273
 msgid "Show help"
-msgstr ""
+msgstr "پشاندانی یارمەتی"
 
 #: src/Application.vala:275
 msgid "Set shell working directory"
-msgstr "رێکخستنی ڕاسەوخۆی شێڵ"
+msgstr "رێکخستنی شێڵی بوخچەی کارکردن"
 
 #: src/MainWindow.vala:219
 msgid "Copy"
-msgstr "ڕوونووس"
+msgstr "لەبەرگرتنەوە"
 
 #: src/MainWindow.vala:225
 msgid "Copy Last Output"
-msgstr ""
+msgstr "کۆتا ئەنجام لەبەربگرەوە"
 
 #: src/MainWindow.vala:231
 msgid "Paste"
@@ -82,156 +80,151 @@ msgstr "هه‌مووی دیاری بکه‌"
 
 #: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
 msgid "Find…"
-msgstr "پەیداکردن..."
+msgstr "دۆزینەوە…"
 
 #: src/MainWindow.vala:370
-#, fuzzy
 msgid "Zoom out"
-msgstr "دەرهاتن لە گەورەنوێیی"
+msgstr "بچووکردنەوە"
 
 #: src/MainWindow.vala:378
 msgid "Default zoom level"
-msgstr ""
+msgstr "ئاستی بنەڕەتی زووم"
 
 #: src/MainWindow.vala:385
-#, fuzzy
 msgid "Zoom in"
-msgstr "گەورەنویێی"
+msgstr "گەورەکردن"
 
 #: src/MainWindow.vala:402
 msgid "Follow System Style"
-msgstr ""
+msgstr "هەڵگرتنی ستایلی سیستەم"
 
 #: src/MainWindow.vala:406
 msgid "High Contrast"
-msgstr ""
+msgstr "کۆنتراستی بەرز"
 
 #: src/MainWindow.vala:412
 msgid "Solarized Light"
-msgstr ""
+msgstr "ڕووناکی سۆلەرایزد"
 
 #: src/MainWindow.vala:418
 msgid "Dark"
-msgstr ""
+msgstr "تاریک"
 
 #: src/MainWindow.vala:424
 msgid "Custom"
-msgstr ""
+msgstr "تایبەت"
 
 #: src/MainWindow.vala:447
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "کۆپی/پەیستی سروشتی"
 
 #: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "قەتبڕەکان پێویستیان بە شفت نییە، لەوەیە لەگەڵ ئەپەکانی CLI کارلێك بکەن"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
-msgstr ""
+msgstr "ڕێکخستنەکان"
 
 #: src/MainWindow.vala:500
 msgid "New Tab"
-msgstr "سەرخشتی نوێ"
+msgstr "تابی تازە"
 
 #: src/MainWindow.vala:959
 #, c-format
 msgid "Show in %s"
-msgstr ""
+msgstr "پشاندان لە %s"
 
 #: src/MainWindow.vala:960
 msgid "Default application"
-msgstr ""
+msgstr "بەرنامە بنەڕەتییەکان"
 
 #: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
-msgstr "داخستنی سەرخشت"
+msgstr "داخستنی تاب"
 
 #: src/MainWindow.vala:1243
 msgid "Duplicate"
-msgstr ""
+msgstr "بەدووکردن"
 
 #: src/MainWindow.vala:1256
 msgid "Reload"
-msgstr ""
+msgstr "نوێکردنەوە"
 
 #: src/MainWindow.vala:1347
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی بەڕێوەبەر بەدەست بهێنێت"
 
 #: src/MainWindow.vala:1349
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لەخۆ بگرێت"
 
 #: src/MainWindow.vala:1508
 msgid "Hide find bar"
-msgstr ""
+msgstr "شاردنەوەی شریتی دۆزینەوە"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "دەڵنیای بۆ داخستنی ئەم سەر خشتە ؟"
+msgstr "دڵنیای لە داخستنی ئەم تابە؟"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "پرۆسەیێک چالاکە لەم سەر خشتە."
+msgstr "پڕۆسەیەکی چالاک لەسەر ئەم تابە هەیە."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr "گر  ئێوە دایخەن ، پرۆسە کۆتایی پێدێت."
+msgstr "ئەگەر دایبەخەیت، پڕۆسەکە کۆتایی پێ دێت."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "دڵنیای بۆ  چونە دەرەڤە لە ترمیناڵ ؟"
+msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "پرۆسەیێکی چالاک لەم ترمیناڵە هەیە"
+msgstr "پرۆسەیەکی چالاک لەم ترمیناڵەدا هەیە."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "گەر بچیتە دەرەوە لە ترمیناڵ،پرۆسە کۆتایی پێدێت."
+msgstr "ئەگەر تێرمیناڵ دابخەیت، پڕۆسەکە کۆتایی دێت."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "چونەدەرەڤە لە ترمیناڵ."
+msgstr "داخستنی تێرمیناڵ"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "دەڵنیای بۆ داخستنی ئەم سەر خشتە ؟"
+msgstr "دڵنیای لەنوێ کردنەوەی ئەم تابە؟"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "پرۆسەیێکی چالاک لەم ترمیناڵە هەیە"
+msgstr ""
+"پڕۆسەیەکی چالاک لەسەر ئەم تابە هەیە، ئەگەر نوێی بکەیتەوە؛ پڕۆسەکە کۆتایی دێت."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "داخستنی سەرخشت"
+msgstr "نوێکردنەوەی تاب"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"کۆپی کردنی فەرمان بۆناو تێرمیناڵ مەترسیدارە. دڵنیابە کە دەزانیت فەرمانەکان "
+"چین پێش ئەوەی داوا لە سیستەم بکەیت بۆت جێبەجێ بکات."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "پشاندانی ئاگاداری کە لکاندن وەستێنراوە/پارێزراوە"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
-msgstr "نەلکاندن"
+msgstr "مەی لکێنە"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr "لکاندن لە هەرشوێن"
+msgstr "ئاگادارم، بیلکێنە"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
@@ -239,15 +232,15 @@ msgstr "دۆزینه‌وه‌"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr "ئاکامی پێشتر"
+msgstr "ئەنجامی پێشتر"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr "ئاکامی دیکە"
+msgstr "ئەنجامی دواتر"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
-msgstr ""
+msgstr "گەڕانی خولیی"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
