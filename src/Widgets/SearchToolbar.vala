@@ -114,8 +114,8 @@ namespace Terminal.Widgets {
                      */
                     var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
                     term.search_set_regex (regex, 0);
-                    bool initialFound = next_search (); /* Search immediately - not after ENTER pressed */
-                    if (!initialFound && !cycle_button.active) {
+                    bool initial_found = next_search (); /* Search immediately - not after ENTER pressed */
+                    if (!initial_found && !cycle_button.active) {
                         previous_search ();
                     }
                 } catch (Error er) {
@@ -136,10 +136,10 @@ namespace Terminal.Widgets {
 
             if (cycle_button.active) {
                 // If CYCLE is enabled then NEXT and PREVIOUS should match
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled( found);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(  found);
             } else if (found) {
                 // If CYCLE is disabled then enable NEXT if search succeeded
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled( true);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(  true);
             }
             return found;
         }
@@ -151,10 +151,10 @@ namespace Terminal.Widgets {
 
             if (cycle_button.active) {
                 // If CYCLE is enabled then NEXT and PREVIOUS should match
-                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled( found);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled(  found);
             } else if (found) {
                 // If CYCLE is disabled then enable PREVIOUS if search succeeded
-                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled( true);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled(  true);
             }
             return found;
         }
