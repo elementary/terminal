@@ -136,7 +136,7 @@ namespace Terminal.Widgets {
 
             if (cycle_button.active) {
                 // If CYCLE is enabled then NEXT and PREVIOUS should match
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(  found);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (found);
             } else if (found) {
                 // If CYCLE is disabled then enable NEXT if search succeeded
                 window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(  true);
