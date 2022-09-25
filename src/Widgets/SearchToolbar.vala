@@ -157,6 +157,7 @@ namespace Terminal.Widgets {
                 // If CYCLE is disabled then enable PREVIOUS if search succeeded
                 window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
             }
+
             return found;
         }
     }
