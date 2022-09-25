@@ -139,7 +139,7 @@ namespace Terminal.Widgets {
                 window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (found);
             } else if (found) {
                 // If CYCLE is disabled then enable NEXT if search succeeded
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled(  true);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (true);
             }
             return found;
         }
