@@ -114,8 +114,8 @@ namespace Terminal.Widgets {
                      */
                     var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
                     term.search_set_regex (regex, 0);
-                    bool initial_found = next_search (); /* Search immediately - not after ENTER pressed */
-                    if (!initial_found && !cycle_button.active) {
+                     /* Search immediately - not after ENTER pressed */
+                    if (!next_search () && !cycle_button.active) {
                         previous_search ();
                     }
                 } catch (Error er) {
