@@ -35,27 +35,31 @@ namespace Terminal.Widgets {
             search_entry.hexpand = true;
             search_entry.placeholder_text = _("Find");
 
-            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            previous_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS);
-            previous_button.tooltip_markup = Granite.markup_accel_tooltip (
-                {"<Control>Up", "<Control><Shift>g"},
-                _("Previous result")
-            );
+            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                can_focus = false,
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS,
+                tooltip_markup = Granite.markup_accel_tooltip (
+                    {"<Control>Up", "<Control><Shift>g"},
+                    _("Previous result")
+                )
+            };
 
-            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            next_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT);
-            next_button.tooltip_markup = Granite.markup_accel_tooltip (
-                {"<Control>Down", "<Control>g"},
-                _("Next result")
-            );
+            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                can_focus = false,
+                action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT,
+                tooltip_markup = Granite.markup_accel_tooltip (
+                    {"<Control>Down", "<Control>g"},
+                    _("Next result")
+                )
+            };
 
-            cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image = new Gtk.Image.from_icon_name (
-                "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
-            );
-            cycle_button.sensitive = false;
-            cycle_button.set_can_focus (false);
-            cycle_button.tooltip_text = _("Cyclic search");
+            cycle_button = new Gtk.ToggleButton () {
+                can_focus = false,
+                image = new Gtk.Image.from_icon_name (
+                    "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
+                ),
+                tooltip_text = _("Cyclic search")
+            };
 
             var search_grid = new Gtk.Grid ();
             search_grid.margin = 3;
@@ -69,40 +73,36 @@ namespace Terminal.Widgets {
             get_style_context ().add_class ("search-bar");
             show_all ();
 
+
             grab_focus.connect (() => {
+                // When searchbar revealed
+                window.current_terminal.search_set_wrap_around (cycle_button.active);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (false);
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
                 search_entry.grab_focus_without_selecting ();
             });
 
-            next_button.clicked.connect_after (() => {
-                grab_focus ();
-            });
-
-            previous_button.clicked.connect_after (() => {
-                grab_focus ();
-            });
-
             cycle_button.clicked.connect_after (() => {
-                grab_focus ();
+                window.current_terminal.search_set_wrap_around (cycle_button.active);
+                search_entry.search_changed ();
             });
 
             search_entry.search_changed.connect (() => {
                 if (search_entry.text != "") {
                     window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (true);
                     window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
-                    cycle_button.sensitive = true;
                 } else {
                     window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (false);
                     window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
-                    cycle_button.sensitive = false;
                 }
 
                 var term = (Vte.Terminal)(window.current_terminal);
                 var search_term = search_entry.text;
-                previous_search ();  /* Ensure that we still at the highlighted occurrence */
-
                 if (last_search_term_length > search_term.length) {
                     term.match_remove_all ();
                     term.unselect_all ();  /* Ensure revised search finds first occurrence first*/
+                } else {
+                    term.search_find_previous ();
                 }
 
                 last_search_term_length = search_term.length;
@@ -115,9 +115,7 @@ namespace Terminal.Widgets {
                     var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
                     term.search_set_regex (regex, 0);
                      /* Search immediately - not after ENTER pressed */
-                    if (!next_search () && !cycle_button.active) {
-                        previous_search ();
-                    }
+                     next_search ();
                 } catch (Error er) {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
@@ -130,34 +128,50 @@ namespace Terminal.Widgets {
         }
 
         public bool previous_search () {
-            window.current_terminal.search_set_wrap_around (cycle_button.active);
             bool found = window.current_terminal.search_find_previous ();
-            window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (found);
-
+            // Update other button enabled
             if (cycle_button.active) {
+                if (!found) {
+                    // Cycle back to first match (if any)
+                    found = window.current_terminal.search_find_previous ();
+                }
                 // If CYCLE is enabled then NEXT and PREVIOUS should match
                 window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (found);
-            } else if (found) {
-                // If CYCLE is disabled then enable NEXT if search succeeded
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (true);
+            } else {
+                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (
+                    window.current_terminal.search_find_next ()
+                );
+                // If there was a match, highlight it again
+                if (found) {
+                    window.current_terminal.search_find_previous ();
+                }
             }
 
+            window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (found);
             return found;
         }
 
         public bool next_search () {
-            window.current_terminal.search_set_wrap_around (cycle_button.active);
             bool found = window.current_terminal.search_find_next ();
-            window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (found);
-
+            // Update other button enabled
             if (cycle_button.active) {
+                if (!found) {
+                    // Cycle back to first match (if any)
+                    found = window.current_terminal.search_find_next ();
+                }
                 // If CYCLE is enabled then NEXT and PREVIOUS should match
                 window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (found);
-            } else if (found) {
-                // If CYCLE is disabled then enable PREVIOUS if search succeeded
-                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
+            } else {
+                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (
+                    window.current_terminal.search_find_previous ()
+                );
+                // If there was a match, highlight it again
+                if (found) {
+                    window.current_terminal.search_find_next ();
+                }
             }
 
+            window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (found);
             return found;
         }
     }
