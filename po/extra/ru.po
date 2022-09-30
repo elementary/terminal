@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-08-13 06:27+0000\n"
+"PO-Revision-Date: 2022-09-30 15:26+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:96
 msgid "Use XTerm title for window title if available"
-msgstr "Заголовок XTerm используется заголовком окна, если это возможно"
+msgstr "Заголовок XTerm используется как заголовок окна, если это возможно"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid ""
@@ -151,7 +151,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "Перемещение вкладкок сочетанием клавиш Ctrl + Alt + ←/→"
+msgstr "Перемещение вкладок сочетанием клавиш Ctrl + Alt + ←/→"
 
 #: data/io.elementary.terminal.appdata.xml.in:108
 msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
@@ -182,7 +182,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:114
 msgid "Notifications indicate if a process exited with errors or not"
-msgstr "Уведомления показывают, был ли процесс завершен с ошибками или нет"
+msgstr "Уведомления показывают, был ли процесс завершён с ошибками или нет"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 msgid "Show keyboard shortcuts in tab context menus"
@@ -231,7 +231,7 @@ msgstr "Предотвращено открытие лишней домашне�
 
 #: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "Включение и выключение обычного копирования/вставки в меню Параметры"
+msgstr "Включение и выключение обычного копирования/вставки в меню «Параметры»"
 
 #: data/io.elementary.terminal.appdata.xml.in:159
 msgid "Zoom with Ctrl + Scroll"
@@ -239,7 +239,7 @@ msgstr "Изменение масштаба с помощью Ctrl + Прокр�
 
 #: data/io.elementary.terminal.appdata.xml.in:163
 msgid "Include sudo password prompt when copying last output"
-msgstr "Внесен запрос пароля sudo при копировании последнего вывода"
+msgstr "Внесён запрос пароля sudo при копировании последнего вывода"
 
 #: data/io.elementary.terminal.appdata.xml.in:164
 msgid "Apply font changes without restarting"
@@ -309,7 +309,7 @@ msgstr "Поддержка флага -h для помощи"
 
 #: data/io.elementary.terminal.appdata.xml.in:215
 msgid "Disable audible bell"
-msgstr "Отключен звуковой колокол"
+msgstr "Отключён звуковой колокол"
 
 #: data/io.elementary.terminal.appdata.xml.in:216
 msgid "Add Alt+↑ action to scroll to last command"
