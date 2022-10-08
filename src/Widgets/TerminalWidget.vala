@@ -73,7 +73,7 @@ namespace Terminal {
                                                   "/io/elementary/terminal " +
                                                   "io.elementary.terminal.ProcessFinished " +
                                                   "string:$PANTHEON_TERMINAL_ID " +
-                                                  "string:\"$(history 1 | cut -c 8-)\" " +
+                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
                                                   "int32:\$__bp_last_ret_value >/dev/null 2>&1";
 
         /* Following strings are used to build RegEx for matching URIs */
