@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-09-30 15:26+0000\n"
+"PO-Revision-Date: 2022-10-10 09:57+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -377,7 +377,7 @@ msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "команда;командная строка;выполнить;"
+msgstr "command;prompt;cmd;commandline;run;команда;командная строка;выполнить;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
