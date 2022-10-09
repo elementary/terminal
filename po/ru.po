@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-09-30 15:26+0000\n"
+"PO-Revision-Date: 2022-10-10 09:57+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
@@ -117,7 +117,7 @@ msgstr "Обычное копирование/вставка"
 #: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
-"Сочетания клавиш не включают Shift; может конфликтовать c CLI приложениями"
+"Сочетания клавиш не включают Shift. Может конфликтовать c CLI приложениями"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
