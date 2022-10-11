@@ -20,6 +20,16 @@ add_global_arguments([
 
 vte_dep = dependency('vte-2.91', version: '>=0.59')
 libpcre2_dep = dependency('libpcre2-8')
+glib_dep = dependency('glib-2.0')
+linux_dep = meson.get_compiler('vala').find_library('linux', required: false)
+
+if glib_dep.version().version_compare('>=2.73.2')
+    add_project_arguments('--define', 'HAS_GLIB_2_74', language: 'vala')
+endif
+
+if linux_dep.found()
+    add_project_arguments('--define', 'HAS_LINUX', language: 'vala')
+endif
 
 vapi_dir = meson.current_source_dir() / 'vapi'
 add_project_arguments('--vapidir=' + vapi_dir, language: 'vala')
@@ -57,7 +67,7 @@ executable(
     terminal_resources,
     dependencies: [
         dependency('gee-0.8'),
-        dependency('glib-2.0'),
+        glib_dep,
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
         dependency('granite', version: '>=6.1.0'),
@@ -65,6 +75,7 @@ executable(
         vte_dep,
         libpcre2_dep,
         meson.get_compiler('vala').find_library('posix'),
+        linux_dep,
         meson.get_compiler('c').find_library('m', required : false)
     ],
     install : true

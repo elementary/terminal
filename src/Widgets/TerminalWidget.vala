@@ -107,6 +107,8 @@ namespace Terminal {
         public const double MIN_SCALE = 0.25;
         public const double MAX_SCALE = 4.0;
 
+        public const int SYS_PIDFD_OPEN = 434; // Same on every arch
+
         public bool child_has_exited {
             get;
             private set;
@@ -307,12 +309,38 @@ namespace Terminal {
         public void term_ps () {
             killed = true;
 
-            /* Check if the shell process is still alive by sending 0 signals */
-            while (Posix.kill (this.child_pid, 0) == 0) {
-                Posix.kill (this.child_pid, Posix.Signal.HUP);
-                Posix.kill (this.child_pid, Posix.Signal.TERM);
-                Thread.usleep (100);
+#if HAS_LINUX
+            int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
+#else
+            int pid_fd = -1;
+#endif
+
+            Posix.kill (this.child_pid, Posix.Signal.HUP);
+            Posix.kill (this.child_pid, Posix.Signal.TERM);
+
+            // pidfd_open isn't supported in Linux kernel < 5.3
+            if (pid_fd == -1) {
+#if HAS_GLIB_2_74
+                // GLib 2.73.2 dropped global GChildWatch, we need to wait ourselves
+                Posix.waitpid (this.child_pid, null, 0);
+#else
+                while (Posix.kill (this.child_pid, 0) == 0) {
+                    Thread.usleep (100);
+                }
+#endif
+                return;
             }
+
+            Posix.pollfd pid_pfd[1];
+            pid_pfd[0] = Posix.pollfd () {
+                fd = pid_fd,
+                events = Posix.POLLIN
+            };
+
+            // The loop deals the case when SIGCHLD is delivered to us and restarts the call
+            while (Posix.poll (pid_pfd, -1) != 1) {}
+
+            Posix.close (pid_fd);
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
