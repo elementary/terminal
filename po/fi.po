@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 13:26+0000\n"
-"PO-Revision-Date: 2022-08-11 17:39+0000\n"
+"PO-Revision-Date: 2022-10-26 10:47+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -167,99 +167,99 @@ msgstr "Piilota hakupalkki"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
-msgstr ""
+msgstr "Väriasetukset"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
-msgstr ""
+msgstr "Ikkunatyyli:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "Vaalea"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "Väripaletti"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "Palauta oletusarvoon"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "Musta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "Punainen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "Vihreä:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "Keltainen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "Sininen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Syaani:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Harmaa:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
-msgstr ""
+msgstr "Valkoinen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr ""
+msgstr "Vaalea punainen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "Vaalea vihreä:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Vaalea keltainen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Vaalea sininen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Vaalea magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Vaalea syaani:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "Vaalea harmaa:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "Tausta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "Edusta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Kursori:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -267,19 +267,19 @@ msgstr "Sulje"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Kontrasti on erittäin matala"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:311
 msgid "Contrast is low"
-msgstr ""
+msgstr "Kontrasti on matala"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:314
 msgid "Contrast is good"
-msgstr ""
+msgstr "Kontrasti on hyvä"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:317
 msgid "Contrast is high"
-msgstr ""
+msgstr "Kontrasti on korkea"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
