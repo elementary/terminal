@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '6.1.0'
+    version: '6.1.1'
 )
 
 if meson.get_compiler('vala').version().version_compare('<0.40')
