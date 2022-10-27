@@ -1,3 +1,17 @@
+io.elementary.terminal (6.1.1) bionic; urgency=medium
+
+  * Release 6.1.1 (#695)
+  * Update translation files
+  * Update translation template
+  * AppData: 6.1.1 release notes (#694)
+  * TerminalWidget: Fix terminal freeze when closing with GLib 2.73.2+
+    (#691)
+  * Update POTFILES (#693)
+  * Use fc to get previous command (#690)
+  * build: Drop unused ubuntu-bionic-patched-vte option (#679)
+
+ -- elementary, Inc. <builds@elementary.io>  Thu, 27 Oct 2022 16:49:10 +0000
+
 io.elementary.terminal (6.1.0) bionic; urgency=medium
 
   * Release 6.1.0 (#677)
