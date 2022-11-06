@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-26 17:44+0000\n"
 "PO-Revision-Date: 2022-11-06 18:09+0000\n"
-"Last-Translator: Ali Karatel <karatelali@hotmail.com>\n"
+"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -92,7 +92,7 @@ msgstr "Yeni özellikler:"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Option to follow system dark style preference"
-msgstr "Sistem koyu stil tercihini takip etme seçeneği"
+msgstr "Sistem koyu renk tema tercihini takip etme seçeneği eklendi"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Create a custom color palette"
