@@ -677,6 +677,7 @@ namespace Terminal {
                                               (int)cell_width,
                                               (int)cell_height};
 
+                        update_context_menu ();
                         menu.popup_at_rect (rect_window,
                                             rect,
                                             Gdk.Gravity.SOUTH_WEST,
