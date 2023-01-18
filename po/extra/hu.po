@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-26 17:44+0000\n"
-"PO-Revision-Date: 2022-08-12 12:06+0000\n"
+"PO-Revision-Date: 2023-01-20 00:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/extra/"
 "hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:9
@@ -88,11 +88,11 @@ msgstr "Fordítással kapcsolatos frissítések"
 #: data/io.elementary.terminal.appdata.xml.in:153
 #: data/io.elementary.terminal.appdata.xml.in:168
 msgid "New features:"
-msgstr ""
+msgstr "Új funkciók:"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "Lehetőség a rendszer színsémájának követésére"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Create a custom color palette"
