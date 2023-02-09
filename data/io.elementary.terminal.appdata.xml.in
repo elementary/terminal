@@ -50,6 +50,18 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="6.1.1" date="2022-10-26" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/689">Notification displays timestamp when HISTTIMEFORMAT is set</issue>
+      </issues>
+    </release>
+
     <release version="6.1.0" date="2022-08-11" urgency="medium">
       <description>
         <p>New features:</p>

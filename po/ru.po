@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 19:39+0000\n"
-"PO-Revision-Date: 2022-08-01 20:34+0000\n"
+"POT-Creation-Date: 2022-10-26 17:44+0000\n"
+"PO-Revision-Date: 2023-01-14 09:17+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
@@ -13,16 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:112
 msgid "Process completed"
-msgstr "Процесс завершен"
+msgstr "Процесс завершён"
 
 #: src/Application.vala:115
 msgid "Process exited with errors"
-msgstr "Процесс завершен с ошибками"
+msgstr "Процесс завершён с ошибками"
 
 #: src/Application.vala:258
 msgid "Show version"
@@ -102,7 +102,7 @@ msgstr "Высокий контраст"
 msgid "Solarized Light"
 msgstr "Solarized светлый"
 
-#: src/MainWindow.vala:418
+#: src/MainWindow.vala:418 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Тёмный"
 
@@ -117,7 +117,7 @@ msgstr "Обычное копирование/вставка"
 #: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
-"Сочетания клавиш не включают Shift; может конфликтовать c CLI приложениями"
+"Сочетания клавиш не включают Shift. Может конфликтовать c CLI приложениями"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
@@ -161,6 +161,122 @@ msgstr "Вставленный текст может содержать неск
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "Цветовые предпочтения"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "Стиль окна:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "Светлый"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "Палитра цветов"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "Сбросить значения по умолчанию"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "Чёрный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "Красный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "Зелёный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "Жёлтый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "Синий:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "Пурпурный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "Бирюзовый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "Серый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "Белый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "Светло-красный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "Светло-зелёный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "Светло-жёлтый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "Голубой:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "Светло-пурпурный:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "Светло-бирюзовый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "Светло-серый:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "Задний фон:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "Передний план:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "Курсор:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr "Очень низкий контраст"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr "Низкий контраст"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr "Хороший контраст"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
+msgstr "Высокий контраст"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
 msgstr "Закрыть эту вкладку?"
@@ -175,7 +291,7 @@ msgstr "Если вы закроете терминал, процесс буде
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Выйти из терминала?"
+msgstr "Выйти из Терминала?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -183,11 +299,11 @@ msgstr "В терминале выполняется процесс."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Если вы выйдете из терминала, процесс будет остановлен."
+msgstr "Если вы выйдете из Терминала, процесс будет остановлен."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "Закрыть терминал"
+msgstr "Закрыть Терминал"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
@@ -198,7 +314,7 @@ msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
 msgstr ""
-"На этой вкладке идет активный процесс. Если вы перезагрузите ее, процесс "
+"На этой вкладке идёт активный процесс. Если вы перезагрузите её, процесс "
 "завершится."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
@@ -223,7 +339,7 @@ msgstr "Не вставлять"
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr "Вставить всё равно"
+msgstr "Всё равно вставить"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
@@ -288,9 +404,6 @@ msgstr "Терминал"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Открыть терминал здесь"
-
-#~ msgid "Close"
-#~ msgstr "Закрыть"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Создать новую вкладку"
