@@ -16,19 +16,15 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 glib_version = '>=2.40'
-gtk_version = '>-3.24'
-granite_version = '>=6.1'
-handy_version = '>=0.83'
-vte_version = '>=0.59'
 
 glib_dep = dependency('glib-2.0', version: glib_version)
 gobject_dep = dependency('gobject-2.0', version: glib_version)
 gio_dep = dependency('gio-2.0', version: glib_version)
 gee_dep = dependency('gee-0.8')
-gtk_dep = dependency('gtk+-3.0', version: gtk_version)
-granite_dep = dependency('granite', version: granite_version)
-handy_dep = dependency('libhandy-1', version: handy_version)
-vte_dep = dependency('vte-2.91', version: vte_version)
+gtk_dep = dependency('gtk+-3.0', version: '>=3.24')
+granite_dep = dependency('granite', version: '>=6.1')
+handy_dep = dependency('libhandy-1', version: '>=0.83')
+vte_dep = dependency('vte-2.91', version: '>=0.59')
 pcre2_dep = dependency('libpcre2-8')
 
 posix_dep = valac.find_library('posix')
