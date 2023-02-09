@@ -23,8 +23,17 @@ terminal_sources = [
     'MainWindow.vala',
     'Themes.vala',
     'Utils.vala',
-    configure_file(input: 'config.vala.in', output: '@BASENAME@', configuration: conf_data),
+    configure_file(
+        input: 'config.vala.in',
+        output: '@BASENAME@',
+        configuration: conf_data
+    ),
     terminal_gresource
 ]
 
-executable(meson.project_name(), terminal_sources, dependencies: terminal_deps, install : true)
+executable(
+    meson.project_name(),
+    terminal_sources,
+    dependencies: terminal_deps,
+    install : true
+)
