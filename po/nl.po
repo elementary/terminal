@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-26 17:44+0000\n"
 "PO-Revision-Date: 2023-02-10 12:04+0000\n"
-"Last-Translator: RuudSchellekens <ruudschellekens@gmail.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
 "nl/>\n"
 "Language: nl\n"
@@ -171,51 +171,51 @@ msgstr "Kleur voorkeuren"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
-msgstr ""
+msgstr "Vensterstijl:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "Licht"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "Kleurenpalet"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "Herstellen naar standaardinstellingen"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "Zwart:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "Rood:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "Groen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "Geel:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "Blauw:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Cyaan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Grijs:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
