@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-26 17:44+0000\n"
-"PO-Revision-Date: 2023-02-10 12:04+0000\n"
+"PO-Revision-Date: 2023-02-11 12:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
 "nl/>\n"
@@ -167,7 +167,7 @@ msgstr "Verberg zoekbalk"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
-msgstr "Kleur voorkeuren"
+msgstr "Kleurvoorkeur"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
@@ -223,43 +223,43 @@ msgstr "Wit:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr "Licht rood"
+msgstr "Lichtrood:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "Lichtgroen:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Lichtgeel:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Lichtblauw:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Lichtmagenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Lichtcyaan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "Lichtgrijs:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "Achtergrond:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "Voorgrond:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Cursor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -267,7 +267,7 @@ msgstr "Sluiten"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Contrast is erg laag"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:311
 msgid "Contrast is low"
