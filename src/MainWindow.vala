@@ -135,17 +135,6 @@ namespace Terminal {
             }
         }
 
-        public MainWindow.with_working_directory (Terminal.Application app, string? location,
-                                                  bool recreate_tabs = true, bool create_new_tab = false) {
-            Object (
-                app: app,
-                focus_restored_tabs: false,
-                recreate_tabs: recreate_tabs
-            );
-
-            add_tab_with_working_directory (location, null, create_new_tab);
-        }
-
         static construct {
             Hdy.init ();
 
@@ -288,10 +277,6 @@ namespace Terminal {
             if (recreate_tabs) {
                 open_tabs ();
             }
-        }
-
-        public void add_tab_with_command (string command, string? working_directory = null, bool create_new_tab = false) {
-            add_tab_with_working_directory (working_directory, command, create_new_tab);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
@@ -1109,7 +1094,7 @@ namespace Terminal {
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
-                tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                tabs += Environment.get_current_dir ();
                 zooms += default_zoom;
             }
 
@@ -1125,7 +1110,7 @@ namespace Terminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = Environment.get_current_dir ();
                 }
             }
 

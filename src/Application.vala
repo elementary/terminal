@@ -7,49 +7,18 @@ public class Terminal.Application : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
 
+    private string commandline = "\0"; // used to temporary hold the argument to --commandline=
+
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public static string? working_directory = null;
-
-    [CCode (array_length = false, array_null_terminated = true)]
-    private static string[]? command_e = null;
-    private static string? command_x = null;
-    private static bool option_help = false; // option_help will be true if help flag was given.
-    private static bool option_version = false;
-    private static bool option_new_window = false; // option_new_window will be true if the new-window flag was given.
-    private static bool option_new_tab = false; // option_new_tab will be true if the new-tab flag was given.
-
     private static Themes themes;
-
-    private const OptionEntry[] ENTRIES = {
-        { "version", 'v', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
-        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
-
-        /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
-         *  to  the --help flag */
-        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
-          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
-
-        /* -n flag forces a new window, instead of a new tab */
-        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
-
-        /* -t flag forces a new tab  */
-        { "new-tab", 't', 0, OptionArg.NONE, ref option_new_tab, N_("Open a new terminal tab"), null },
-
-        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
-          N_("Set shell working directory"), "DIR" },
-
-        { null }
-    };
 
     public Application () {
         Object (
-            application_id: "io.elementary.terminal",  /* Ensures only one instance runs */
-            flags: ApplicationFlags.HANDLES_COMMAND_LINE
+            application_id: "io.elementary.terminal", /* Ensures only one instance runs */
+            flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
     }
 
@@ -59,10 +28,78 @@ public class Terminal.Application : Gtk.Application {
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (Config.GETTEXT_PACKAGE);
 
+        add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
+        // -n flag forces a new window
+        add_main_option ("new-window", 'n', 0, OptionArg.NONE, _("Open a new terminal window"), null);
+        // -t flag forces a new tab
+        add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab"), null);
+        // -w flag defines the working directory that the new tab/window uses
+        add_main_option ("working-directory", 'w', 0, OptionArg.FILENAME, _("Set shell working directory"), "DIR");
+        // -e flag is used for running single strings as a command line
+        add_main_option ("execute", 'e', 0, OptionArg.FILENAME_ARRAY, _("Run a progam in terminal"), "PROGRAM");
+        // -x flag is used for using the rest of the command line in the new tab/window
+        add_main_option (
+            "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
+        );
+
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
         themes = new Themes ();
+    }
+
+    protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
+        bool show_help = false;
+
+        for (uint i = 1; args[i] != null; i++) {
+            if (args[i][0] != '-') {
+                continue;
+            }
+
+            // skip iterating if we are printing the version or showing the help page
+            if (args[i] == "--version" || args[i][1] != '-' && "v" in args[i]) {
+                print ("%s %s\n", Config.PROJECT_NAME, Config.VERSION);
+                exit_status = 0;
+                return false;
+            } else if (args[i] == "--help" || args[i][1] != '-' && "h" in args[i]) {
+                show_help = true;
+                break;
+            }
+
+            /* --commandline behaviour is to use the rest of the command line as a array to execve().
+             * we convert theses options to "--" here, since that give us the wanted semanitcs.
+             */
+            if (args[i][1] == '-') {
+                if (args[i][2:] == "commandline" || args[i][2:].has_prefix ("commandline")) {
+                    if (args[i].length > 14) {
+                        commandline = args[i].substring (14);
+                    }
+
+                    args[i] = "--";
+                }
+            } else if ("x" in args[i]) {
+                if ("w" in args[i] || "e" in args[i]) {
+                    continue; // GLib.Application will show a error in this case
+                }
+
+                if (args[i].length != 2) {
+                    args[i] = args[i].replace ("x", "");
+                    commandline = args[++i];
+                }
+
+                args[i] = "--";
+            }
+
+            if (args[i] == "--") {
+                break;
+            }
+        }
+
+        if ("--" in args || show_help) {
+            add_main_option (OPTION_REMAINING, '\0', 0, OptionArg.FILENAME_ARRAY, "", _("[-- COMMAND…]"));
+        }
+
+        return base.local_command_line (ref args, out exit_status);
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
@@ -74,7 +111,7 @@ public class Terminal.Application : Gtk.Application {
         dbus.finished_process.connect ((id, process, exit_status) => {
             TerminalWidget terminal = null;
 
-            foreach (var window in windows) {
+            foreach (var window in (List<MainWindow>) get_windows ()) {
                 if (terminal != null) {
                     break;
                 }
@@ -116,118 +153,72 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    public override int command_line (ApplicationCommandLine command_line) {
-        var context = new OptionContext (null);
-        context.add_main_entries (ENTRIES, "pantheon-terminal");
-        context.add_group (Gtk.get_option_group (true));
+    public override int handle_local_options (VariantDict options) {
+        unowned string working_directory;
+        unowned string[] args;
 
-        // Disable automatic help to prevent default `exit(0)` behaviour.
-        context.set_help_enabled (false);
+        if (options.lookup ("working-directory", "^&ay", out working_directory)) {
+            if (working_directory != "\0") {
+                Environment.set_current_dir (working_directory); // will be sent via platform-data
+            }
 
-        string[] args = command_line.get_arguments ();
-        string commandline = "";
-        string[] arg_opt = {};
-        string[] arg_cmd = {};
-        bool build_cmdline = false;
+            options.remove ("working-directory");
+        }
 
-        /* Everything after "--" or "-x" or "--commandline=" is to be treated as a single command to be executed
-         * (maybe with its own options) so it is not passed to the parser.  It will be passed as is to a new tab/shell.
-         */
-        foreach (unowned string s in args) {
-            if (build_cmdline) {
-                arg_cmd += s;
+        if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
+            if (commandline != "\0") {
+                commandline += " %s".printf (string.joinv (" ", args));
             } else {
-                if (s == "--" || s == "-x" || s.has_prefix ("--commandline=")) {
-                    if (s.has_prefix ("--commandline=") && s.length > 14) {
-                        arg_cmd += s.substring (14);
-                    }
+                commandline = string.joinv (" ", args);
+            }
+        }
 
-                    build_cmdline = true;
-                } else {
-                    arg_opt += s;
+        if (commandline != "\0") {
+            options.insert ("commandline", "^&ay", commandline.escape ());
+        }
+
+        return -1;
+    }
+
+    public override int command_line (ApplicationCommandLine command_line) {
+        unowned var options = command_line.get_options_dict ();
+        var window = (MainWindow) active_window;
+        bool new_window;
+
+        if (window == null || options.lookup ("new-window", "b", out new_window) && new_window) {
+            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
+             * Currently they are set to restore (subject to the restore-tabs setting).
+             * If it is desired that tabs should never be restored in these circimstances add another check below.
+             */
+            bool restore_tabs = !("commandline" in options || "execute" in options) || window == null;
+            window = new MainWindow (this, restore_tabs);
+        }
+
+        unowned var working_directory = command_line.get_cwd ();
+        unowned string[] commands;
+        unowned string command;
+        bool new_tab;
+
+        options.lookup ("new-tab", "b", out new_tab);
+
+        if (options.lookup ("execute", "^a&ay", out commands)) {
+            for (var i = 0; commands[i] != null; i++) {
+                if (commands[i] != "\0") {
+                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
-        }
-
-        commandline = string.joinv (" ", arg_cmd);
-
-        try {
-            unowned string[] tmp = arg_opt;
-            context.parse (ref tmp);
-        } catch (Error e) {
-            stdout.printf ("pantheon-terminal: ERROR: " + e.message + "\n");
-            return 0;
-        }
-
-        if (option_help) {
-            command_line.print (context.get_help (true, null));
-        } else if (option_version) {
-            command_line.print ("%s %s", Config.PROJECT_NAME, Config.VERSION + "\n\n");
+        } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
+            window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else {
-            if (command_e != null) {
-                run_commands (command_e, working_directory);
-            } else if (commandline.length > 0) {
-                run_command_line (commandline, working_directory);
-            } else if (command_x != null) {
-                const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
-                start_terminal_with_working_directory (working_directory);
-                ((MainWindow) active_window).current_terminal.feed (WARNING.data);
-            } else {
-                start_terminal_with_working_directory (working_directory);
-            }
+            window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
-        // Do not save the value until the next instance of
-        // Pantheon Terminal is started
-        command_e = null;
-        command_x = null;
-        option_help = false;
-        option_new_window = false;
-        option_new_tab = false;
-        working_directory = null;
-
+        window.present ();
         return 0;
     }
 
     public void new_window () {
-        new MainWindow (this, active_window == null);
-    }
-
-    private void run_commands (string[] commands, string? working_directory = null) {
-        var window = (MainWindow) active_window;
-
-        if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
-        }
-
-        foreach (string command in commands) {
-            window.add_tab_with_command (command, working_directory, option_new_tab);
-        }
-    }
-
-    private void run_command_line (string command_line, string? working_directory = null) {
-        var window = (MainWindow) active_window;
-
-        if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
-        }
-
-        window.add_tab_with_command (command_line, working_directory, option_new_tab);
-    }
-
-    private void start_terminal_with_working_directory (string? working_directory) {
-        var window = (MainWindow) active_window;
-
-        if (window != null && !option_new_window) {
-            window.add_tab_with_working_directory (working_directory, null, option_new_tab);
-            window.present ();
-        } else {
-            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-             * Currently they are set to restore (subject to the restore-tabs setting).
-             * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
-             * below. */
-            new MainWindow.with_working_directory (this, working_directory, window == null, option_new_tab);
-        }
+        new MainWindow (this, active_window == null).present ();
     }
 
     public static int main (string[] args) {
