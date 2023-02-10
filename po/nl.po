@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-26 17:44+0000\n"
 "PO-Revision-Date: 2023-02-11 12:25+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"Last-Translator: RuudSchellekens <ruudschellekens@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
 "nl/>\n"
 "Language: nl\n"
@@ -120,8 +120,7 @@ msgstr "Gewoon kopiëren/plakken"
 
 #: src/MainWindow.vala:448
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"Sneltoetsen hebben geen Shift nodig; mogelijk interfereert dit met CLI apps"
+msgstr "Sneltoetsen hebben geen Shift nodig; mogelijk stoort dit met CLI apps"
 
 #: src/MainWindow.vala:474
 msgid "Settings"
@@ -271,15 +270,15 @@ msgstr "Contrast is erg laag"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:311
 msgid "Contrast is low"
-msgstr ""
+msgstr "Contrast is laag"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:314
 msgid "Contrast is good"
-msgstr ""
+msgstr "Contrast is goed"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:317
 msgid "Contrast is high"
-msgstr ""
+msgstr "Contrast is hoog"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
