@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-26 17:44+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2020-04-27 00:10+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/terminal/"
@@ -63,105 +63,105 @@ msgstr "Prikaži pomoč"
 msgid "Set shell working directory"
 msgstr "Nastavi delovno mapo ukazne lupine"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr "Kopiraj zadnji izpis"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Prilepi"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Najdi…"
 
-#: src/MainWindow.vala:370
+#: src/MainWindow.vala:372
 msgid "Zoom out"
 msgstr "Pomanjšaj"
 
-#: src/MainWindow.vala:378
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr "Privzeta povečava"
 
-#: src/MainWindow.vala:385
+#: src/MainWindow.vala:387
 msgid "Zoom in"
 msgstr "Povečaj"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
 msgid "Follow System Style"
 msgstr ""
 
-#: src/MainWindow.vala:406
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: src/MainWindow.vala:412
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:418 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Temno"
 
-#: src/MainWindow.vala:424
+#: src/MainWindow.vala:426
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:447
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr "Naravno kopiranje in lepljenje"
 
-#: src/MainWindow.vala:448
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Bližnjice ne rabijo pritisnjene tipke Shift"
 
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/MainWindow.vala:500
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Nov zavihek"
 
-#: src/MainWindow.vala:959
+#: src/MainWindow.vala:962
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Pokaži verzijo"
 
-#: src/MainWindow.vala:960
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zapri zavihek"
 
-#: src/MainWindow.vala:1243
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1256
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1347
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1349
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1508
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
 msgstr "Skrij iskalno vrstico"
 
