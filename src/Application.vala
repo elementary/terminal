@@ -1,142 +1,126 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * Copyright 2011-2023 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: LGPL-3.0-only
+ */
 
 public class Terminal.Application : Gtk.Application {
+    public int minimum_width;
+    public int minimum_height;
+
+    private List<MainWindow> windows;
+
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    private GLib.List <MainWindow> windows;
-    private static Themes themes;
-
     public static string? working_directory = null;
+
     [CCode (array_length = false, array_null_terminated = true)]
     private static string[]? command_e = null;
     private static string? command_x = null;
-
-    // option_help will be true if help flag was given.
-    private static bool option_help = false;
+    private static bool option_help = false; // option_help will be true if help flag was given.
     private static bool option_version = false;
+    private static bool option_new_window = false; // option_new_window will be true if the new-window flag was given.
+    private static bool option_new_tab = false; // option_new_tab will be true if the new-tab flag was given.
 
-    // option_new_window will be true if the new-window flag was given.
-    private static bool option_new_window = false;
+    private static Themes themes;
 
-    // option_new_tab will be true if the new-tab flag was given.
-    private static bool option_new_tab = false;
+    private const OptionEntry[] ENTRIES = {
+        { "version", 'v', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
+        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
+        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
 
-    public int minimum_width;
-    public int minimum_height;
+        /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
+         *  to  the --help flag */
+        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
+          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
 
-    static construct {
-        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-        settings = new GLib.Settings ("io.elementary.terminal.settings");
-        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-        themes = new Themes ();
+        /* -n flag forces a new window, instead of a new tab */
+        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
+
+        /* -t flag forces a new tab  */
+        { "new-tab", 't', 0, OptionArg.NONE, ref option_new_tab, N_("Open a new terminal tab"), null },
+
+        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
+        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
+          N_("Set shell working directory"), "DIR" },
+
+        { null }
+    };
+
+    public Application () {
+        Object (
+            application_id: "io.elementary.terminal",  /* Ensures only one instance runs */
+            flags: ApplicationFlags.HANDLES_COMMAND_LINE
+        );
     }
 
     construct {
-        flags |= ApplicationFlags.HANDLES_COMMAND_LINE;
-        application_id = "io.elementary.terminal";  /* Ensures only one instance runs */
-
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (Config.GETTEXT_PACKAGE);
+
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+        themes = new Themes ();
+
+        windows = new List<MainWindow> ();
     }
 
-    public Application () {
-        Granite.Services.Logger.initialize ("PantheonTerminal");
-        Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
-
-        windows = new GLib.List <MainWindow> ();
-    }
-
-    public void new_window () {
-        var window = get_last_window ();
-
-        if (window == null) {
-            new MainWindow (this);
-        } else {
-            new MainWindow (this, false);
-        }
-    }
-
-    public override int command_line (ApplicationCommandLine command_line) {
-        // keep the application running until we are done with this commandline
-        hold ();
-        int res = _command_line (command_line);
-        release ();
-        return res;
-    }
-
-    public override void window_added (Gtk.Window window) {
-        windows.append (window as MainWindow);
-        base.window_added (window);
-    }
-
-    public override void window_removed (Gtk.Window window) {
-        windows.remove (window as MainWindow);
-        base.window_removed (window);
-    }
-
-    public override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+    protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
         connection.register_object (object_path, dbus);
 
         dbus.finished_process.connect ((id, process, exit_status) => {
+            TerminalWidget terminal = null;
+
             foreach (var window in windows) {
-                foreach (var terminal in window.terminals) {
+                if (terminal != null) {
+                    break;
+                }
+
+                foreach (var term in window.terminals) {
                     if (terminal.terminal_id == id) {
-
-                        if (!terminal.is_init_complete ()) {
-                            terminal.set_init_complete ();
-                        } else {
-                            var process_string = _("Process completed");
-                            var process_icon = new ThemedIcon ("process-completed-symbolic");
-                            if (exit_status != 0) {
-                                process_string = _("Process exited with errors");
-                                process_icon = new ThemedIcon ("process-error-symbolic");
-                            }
-
-                            if (terminal != window.current_terminal) {
-                                terminal.tab.icon = process_icon;
-                            }
-
-                            if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                var notification = new Notification (process_string);
-                                notification.set_body (process);
-                                notification.set_icon (process_icon);
-                                send_notification (null, notification);
-                            }
-                        }
-
+                        terminal = term;
+                        break;
                     }
                 }
+            }
+
+            if (terminal == null) {
+                return;
+            } else if (!terminal.is_init_complete ()) {
+                terminal.set_init_complete ();
+                return;
+            }
+
+            var process_string = _("Process completed");
+            var process_icon = new ThemedIcon ("process-completed-symbolic");
+            if (exit_status != 0) {
+                process_string = _("Process exited with errors");
+                process_icon = new ThemedIcon ("process-error-symbolic");
+            }
+
+            if (terminal != terminal.window.current_terminal) {
+                terminal.tab.icon = process_icon;
+            }
+
+            if (!(Gdk.WindowState.FOCUSED in terminal.window.get_window ().get_state ())) {
+                var notification = new Notification (process_string);
+                notification.set_body (process);
+                notification.set_icon (process_icon);
+                send_notification (null, notification);
             }
         });
 
         return true;
     }
 
-    private int _command_line (ApplicationCommandLine command_line) {
+    public override int command_line (ApplicationCommandLine command_line) {
         var context = new OptionContext (null);
         context.add_main_entries (ENTRIES, "pantheon-terminal");
         context.add_group (Gtk.get_option_group (true));
@@ -209,9 +193,22 @@ public class Terminal.Application : Gtk.Application {
         return 0;
     }
 
+    public override void window_added (Gtk.Window window) {
+        windows.append ((MainWindow) window);
+        base.window_added (window);
+    }
+
+    public override void window_removed (Gtk.Window window) {
+        windows.remove ((MainWindow) window);
+        base.window_removed (window);
+    }
+
+    public void new_window () {
+        new MainWindow (this, get_last_window () == null);
+    }
+
     private void run_commands (string[] commands, string? working_directory = null) {
-        MainWindow? window;
-        window = get_last_window ();
+        var window = get_last_window ();
 
         if (window == null || option_new_window) {
             window = new MainWindow (this, false);
@@ -223,8 +220,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void run_command_line (string command_line, string? working_directory = null) {
-        MainWindow? window;
-        window = get_last_window ();
+        var window = get_last_window ();
 
         if (window == null || option_new_window) {
             window = new MainWindow (this, false);
@@ -234,51 +230,25 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void start_terminal_with_working_directory (string? working_directory) {
-        MainWindow? window;
-        window = get_last_window ();
+        var window = get_last_window ();
 
         if (window != null && !option_new_window) {
             window.add_tab_with_working_directory (working_directory, null, option_new_tab);
             window.present ();
-        } else
+        } else {
             /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
              * Currently they are set to restore (subject to the restore-tabs setting).
              * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
              * below. */
             new MainWindow.with_working_directory (this, working_directory, window == null, option_new_tab);
+        }
     }
 
     private MainWindow? get_last_window () {
-        uint length = windows.length ();
-
-        return length > 0 ? windows.nth_data (length - 1) : null;
+        return windows.length () > 0 ? windows.last ().data : null;
     }
 
-    private const OptionEntry[] ENTRIES = {
-        { "version", 'v', 0, OptionArg.NONE, ref option_version, N_("Show version"), null },
-        /* -e flag is used for running single string commands. May be more than one -e flag in cmdline */
-        { "execute", 'e', 0, OptionArg.STRING_ARRAY, ref command_e, N_("Run a program in terminal"), "COMMAND" },
-
-        /* -x flag is removed before OptionContext parser applied but is included here so that it appears in response
-         *  to  the --help flag */
-        { "commandline", 'x', 0, OptionArg.STRING, ref command_x,
-          N_("Run remainder of line as a command in terminal. Can also use '--' as flag"), "COMMAND_LINE" },
-
-        /* -n flag forces a new window, instead of a new tab */
-        { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
-
-        /* -t flag forces a new tab  */
-        { "new-tab", 't', 0, OptionArg.NONE, ref option_new_tab, N_("Open a new terminal tab"), null },
-
-        { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
-        { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,
-          N_("Set shell working directory"), "DIR" },
-
-        { null }
-    };
-
     public static int main (string[] args) {
-        var app = new Terminal.Application ();
-        return app.run (args);
+        return new Terminal.Application ().run (args);
     }
 }
