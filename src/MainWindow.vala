@@ -61,7 +61,6 @@ namespace Terminal {
         public const string ACTION_NEW_TAB = "action-new-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_RELOAD_TAB = "action-reload-tab";
-        public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
         public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
@@ -79,7 +78,6 @@ namespace Terminal {
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
-        public const string ACTION_CLOSE_TERMINAL = "action-close-terminal";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -89,7 +87,6 @@ namespace Terminal {
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_RELOAD_TAB, action_reload_tab },
-            { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
@@ -105,8 +102,7 @@ namespace Terminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser},
-            { ACTION_CLOSE_TERMINAL, action_close_terminal}
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -136,15 +132,12 @@ namespace Terminal {
         }
 
         static construct {
-            Hdy.init ();
-
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_RELOAD_TAB] = ACTION_RELOAD_PREFERRED_ACCEL;
             action_accelerators[ACTION_RELOAD_TAB] = "<Shift>F5";
-            action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
@@ -167,7 +160,6 @@ namespace Terminal {
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
-            action_accelerators[ACTION_CLOSE_TERMINAL] = "<Control><Shift>q";
         }
 
         construct {
@@ -333,17 +325,6 @@ namespace Terminal {
         }
 
         private void setup_ui () {
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/terminal/Application.css");
-            // Vte.Terminal itself registers its default styling with the APPLICATION priority:
-            // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
-            // To be able to overwrite their styles, we need to use +1.
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
-            );
-
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -1424,15 +1405,6 @@ namespace Terminal {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
             // Closing a tab will switch to another, which will trigger check for same names
-        }
-
-        public void action_close_terminal () {
-
-            close ();
-        }
-
-        private void action_new_window () {
-            app.new_window ();
         }
 
         private void action_new_tab () {
