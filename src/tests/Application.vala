@@ -8,6 +8,7 @@ namespace Terminal.Test.Application {
 
     delegate void LocalOptionsCallback (VariantDict options);
     delegate void CommandLineCallback (ApplicationCommandLine command_line);
+    delegate void ActivateCallback ();
 
     private void setup () {
         application = new Terminal.Application () {
@@ -59,6 +60,32 @@ namespace Terminal.Test.Application {
         });
 
         application.run (null);
+    }
+
+    private void action (string name, Variant? @value, ActivateCallback callback) {
+        ulong oneshot = 0;
+        setup ();
+
+        oneshot = application.command_line.connect ((nill) => {
+            application.disconnect (oneshot);
+            application.command_line (nill);
+
+            assert_true (application.has_action (name));
+            application.activate_action (name, @value);
+
+            // using a idle callback here, so that we call the callback after activate_action() finished
+            Idle.add (() => {
+                callback ();
+                application.quit ();
+                return Source.REMOVE;
+            });
+
+            return 0;
+        });
+
+        if (application.run (null) != 0) {
+            GLib.Test.fail ();
+        }
     }
 
     public static int main (string[] args) {
@@ -165,6 +192,21 @@ namespace Terminal.Test.Application {
                 assert_nonnull (window);
                 var terminal_directory = window.current_terminal.get_shell_location ();
                 assert_cmpstr (terminal_directory, CompareOperator.EQ, working_directory);
+            });
+        });
+
+        // actions
+        GLib.Test.add_func ("/application/action/new-window", () => {
+            action ("new-window", null, () => {
+                // include the extra window from terminal launching
+                var n_windows = (int) application.get_windows ().length ();
+                assert_cmpint (n_windows, CompareOperator.EQ, 2);
+            });
+        });
+
+        GLib.Test.add_func ("/application/action/quit", () => {
+            action ("quit", null, () => {
+                assert_null (application.active_window);
             });
         });
 
