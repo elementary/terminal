@@ -7,8 +7,6 @@ public class Terminal.Application : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
 
-    private List<MainWindow> windows;
-
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
@@ -65,8 +63,6 @@ public class Terminal.Application : Gtk.Application {
         settings = new GLib.Settings ("io.elementary.terminal.settings");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
         themes = new Themes ();
-
-        windows = new List<MainWindow> ();
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
@@ -175,7 +171,7 @@ public class Terminal.Application : Gtk.Application {
             } else if (command_x != null) {
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
-                get_last_window ().current_terminal.feed (WARNING.data);
+                ((MainWindow) active_window).current_terminal.feed (WARNING.data);
             } else {
                 start_terminal_with_working_directory (working_directory);
             }
@@ -193,22 +189,12 @@ public class Terminal.Application : Gtk.Application {
         return 0;
     }
 
-    public override void window_added (Gtk.Window window) {
-        windows.append ((MainWindow) window);
-        base.window_added (window);
-    }
-
-    public override void window_removed (Gtk.Window window) {
-        windows.remove ((MainWindow) window);
-        base.window_removed (window);
-    }
-
     public void new_window () {
-        new MainWindow (this, get_last_window () == null);
+        new MainWindow (this, active_window == null);
     }
 
     private void run_commands (string[] commands, string? working_directory = null) {
-        var window = get_last_window ();
+        var window = (MainWindow) active_window;
 
         if (window == null || option_new_window) {
             window = new MainWindow (this, false);
@@ -220,7 +206,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void run_command_line (string command_line, string? working_directory = null) {
-        var window = get_last_window ();
+        var window = (MainWindow) active_window;
 
         if (window == null || option_new_window) {
             window = new MainWindow (this, false);
@@ -230,7 +216,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void start_terminal_with_working_directory (string? working_directory) {
-        var window = get_last_window ();
+        var window = (MainWindow) active_window;
 
         if (window != null && !option_new_window) {
             window.add_tab_with_working_directory (working_directory, null, option_new_tab);
@@ -242,10 +228,6 @@ public class Terminal.Application : Gtk.Application {
              * below. */
             new MainWindow.with_working_directory (this, working_directory, window == null, option_new_tab);
         }
-    }
-
-    private MainWindow? get_last_window () {
-        return windows.length () > 0 ? windows.last ().data : null;
     }
 
     public static int main (string[] args) {
