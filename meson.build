@@ -2,7 +2,7 @@ project(
     'io.elementary.terminal',
     'vala', 'c',
     version: '6.1.1',
-    meson_version: '>=0.58'
+    meson_version: '>=0.60'
 )
 
 valac = meson.get_compiler('vala')

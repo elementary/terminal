@@ -220,8 +220,10 @@ public class Terminal.Application : Gtk.Application {
     public void new_window () {
         new MainWindow (this, active_window == null).present ();
     }
-
-    public static int main (string[] args) {
-        return new Terminal.Application ().run (args);
-    }
 }
+
+#if !TESTS
+public static int main (string[] args) {
+    return new Terminal.Application ().run (args);
+}
+#endif
