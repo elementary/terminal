@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-26 17:44+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2019-07-22 02:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/extra/ko/"
@@ -358,11 +358,6 @@ msgstr "클립보드로 URL 복사하기 수정"
 msgid "Fix appstream date format"
 msgstr "appstream 날짜 형식 수정"
 
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
-
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "커맨드;프롬프트;cmd;커맨드라인;실행;"
@@ -374,6 +369,9 @@ msgstr "새 창"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "새 Root 탭"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"
 
 #~ msgid "About Terminal"
 #~ msgstr "터미널 소개"

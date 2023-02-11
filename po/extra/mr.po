@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-26 17:44+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2020-12-16 22:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/extra/"
@@ -363,11 +363,6 @@ msgstr "क्लिपबोर्डवर URL कॉपी करणे न�
 msgid "Fix appstream date format"
 msgstr "अ‍ॅपस्ट्रीम तारीख स्वरूप निश्चित करा"
 
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
-
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "कमांड;प्रांप्ट;सीएमडी;कमांडलाइन;रन;"
@@ -379,3 +374,6 @@ msgstr "नवीन विंडो"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "नवीन रूट टॅब"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"

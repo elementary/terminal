@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-26 17:44+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2021-11-01 07:10+0000\n"
 "Last-Translator: SuperMario SuperFans <supermariosf@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -358,11 +358,6 @@ msgstr "修复 URL 复制问题"
 msgid "Fix appstream date format"
 msgstr "修正 Appstream 日期格式"
 
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
-
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "命令;提示符;cmd;命令行;运行;"
@@ -374,6 +369,9 @@ msgstr "新建窗口"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "新建管理员标签"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"
 
 #~ msgid "About Terminal"
 #~ msgstr "关于终端"
