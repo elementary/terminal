@@ -43,7 +43,7 @@ namespace Terminal.Test.Application {
             application.command_line (nil);
 
             var cmdline = (ApplicationCommandLine) Object.new (
-                typeof(ApplicationCommandLine),
+                typeof (ApplicationCommandLine),
                 "options", new Variant.parsed (options),
                 "platform-data", new Variant.parsed (platform_data)
             );
