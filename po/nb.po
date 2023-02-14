@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-11 17:25+0000\n"
-"PO-Revision-Date: 2023-01-12 06:25+0000\n"
+"PO-Revision-Date: 2023-02-14 13:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -206,15 +206,15 @@ msgstr "Blå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Magentarød:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Cyanblå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Grå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
@@ -238,11 +238,11 @@ msgstr "Lyseblå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Lys magentarød:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Lys cyanblå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
@@ -266,19 +266,19 @@ msgstr "Lukk"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Veldig lav kontrast"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:311
 msgid "Contrast is low"
-msgstr ""
+msgstr "Lav kontrast"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:314
 msgid "Contrast is good"
-msgstr ""
+msgstr "God kontrast"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:317
 msgid "Contrast is high"
-msgstr ""
+msgstr "Høy kontrast"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
