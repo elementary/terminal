@@ -117,7 +117,7 @@ public class Terminal.Application : Gtk.Application {
                 }
 
                 foreach (var term in window.terminals) {
-                    if (terminal.terminal_id == id) {
+                    if (term.terminal_id == id) {
                         terminal = term;
                         break;
                     }
