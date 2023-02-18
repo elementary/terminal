@@ -60,7 +60,7 @@ public class Terminal.Application : Gtk.Application {
             if (args[i] == "--version" || args[i][1] != '-' && "v" in args[i]) {
                 print ("%s %s\n", Config.PROJECT_NAME, Config.VERSION);
                 exit_status = 0;
-                return false;
+                return true;
             } else if (args[i] == "--help" || args[i][1] != '-' && "h" in args[i]) {
                 show_help = true;
                 break;
