@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-15 14:27+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
+"PO-Revision-Date: 2022-10-17 14:57+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -20,24 +20,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:112
 msgid "Process completed"
 msgstr "Procés completat"
 
-#: src/Application.vala:110
+#: src/Application.vala:115
 msgid "Process exited with errors"
 msgstr "El procés ha acabat amb errors."
 
-#: src/Application.vala:253
+#: src/Application.vala:258
 msgid "Show version"
 msgstr "Mostra'n la versió"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid "Run a program in terminal"
 msgstr "Executa un programa al terminal"
 
-#: src/Application.vala:260
+#: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -45,121 +45,245 @@ msgstr ""
 "usar \"--\" com a bandera."
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:268
 msgid "Open a new terminal window"
 msgstr "Obre una finestra nova del terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:271
 msgid "Open a new terminal tab"
 msgstr "Obre una pestanya nova del terminal"
 
-#: src/Application.vala:268
+#: src/Application.vala:273
 msgid "Show help"
 msgstr "Mostra'n l'ajuda"
 
-#: src/Application.vala:270
+#: src/Application.vala:275
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr "Copia l'última sortida"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Enganxa"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Cerca…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:372
 msgid "Zoom out"
 msgstr "Allunya"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:387
 msgid "Zoom in"
 msgstr "Apropa"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
+msgid "Follow System Style"
+msgstr "Segueix l'estil del sistema"
+
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr "Contrast alt"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Fosc"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:426
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr "Copiar i enganxar naturals"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Les dreceres no necessiten Maj.; pot interferir en les aplicacions CLI."
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "Paràmetres"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Pestanya nova"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:962
 #, c-format
 msgid "Show in %s"
 msgstr "Mostra-ho a %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr "Aplicació per defecte"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Tanca la pestanya"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr "Duplica"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr "Torna a carregar"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "És possible que el text enganxat intenti obtenir accés d'administració."
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr "El text enganxat pot contenir ordres diverses."
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
 
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "Preferències del color"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "Estil de la finestra:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "Llum"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "Paleta de colors"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "Restableix els valors per defecte"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "Negre:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "Vermell:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "Verd:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "Groc:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "Blau:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "Magenta:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "Cian:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "Gris:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "Blanc:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "Vermell clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "Verd clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "Groc clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "Blau cel:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "Magenta clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "Cian clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "Gris clar:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "Fons:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "Primer pla:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "Cursor:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Tanca"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr "El contrast és molt baix"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr "El contrast és baix"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr "El contrast està bé"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
+msgstr "El contrast és alt"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Esteu segur que voleu tancar aquesta pestanya?"
+msgstr "Segur que voleu tancar aquesta pestanya?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -171,7 +295,7 @@ msgstr "Si tanqueu la pestanya, s'acabarà el procés."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Esteu segur que voleu sortir del terminal?"
+msgstr "Segur que voleu sortir del terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -283,9 +407,6 @@ msgstr "Terminal"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Obre un terminal aquí"
-
-#~ msgid "Close"
-#~ msgstr "Tanca"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Crea una pestanya nova"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2018-11-09 07:36+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/terminal/"
@@ -21,143 +21,267 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:112
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:110
+#: src/Application.vala:115
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/Application.vala:253
+#: src/Application.vala:258
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid "Run a program in terminal"
 msgstr "Pokreni program iz terminala"
 
-#: src/Application.vala:260
+#: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:268
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Otvori novi prozor"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:271
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Otvori novi prozor"
 
-#: src/Application.vala:268
+#: src/Application.vala:273
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:270
+#: src/Application.vala:275
 msgid "Set shell working directory"
 msgstr "Podesi radni direktorij ljuske"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Zalijepi"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Izaberi sve"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Pretraži…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:372
 msgid "Zoom out"
 msgstr "Umanji"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr "Zadani nivo uvećanja"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:387
 msgid "Zoom in"
 msgstr "Uvećaj"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr "Visoki kontrast"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarizirano svijetlo"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:426
+msgid "Custom"
+msgstr ""
+
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Novi tab"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:962
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Prikaži u pregledniku datoteka"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zatvori karticu"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
 msgstr "Sakrij traku pretrage"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Zatvori"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -280,9 +404,6 @@ msgstr "Terminal"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Otvori terminal ovdje"
-
-#~ msgid "Close"
-#~ msgstr "Zatvori"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Kreiraj novi tab"

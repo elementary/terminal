@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
 "PO-Revision-Date: 2016-10-17 09:12+0000\n"
 "Last-Translator: aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <ak@li.org>\n"
@@ -18,143 +18,267 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:112
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:110
+#: src/Application.vala:115
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/Application.vala:253
+#: src/Application.vala:258
 msgid "Show version"
 msgstr ""
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid "Run a program in terminal"
 msgstr "Yi dwumadi no wɔ terminal no mu"
 
-#: src/Application.vala:260
+#: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:268
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Bue window foforɔ"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:271
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Bue window foforɔ"
 
-#: src/Application.vala:268
+#: src/Application.vala:273
 msgid "Show help"
 msgstr ""
 
-#: src/Application.vala:270
+#: src/Application.vala:275
 msgid "Set shell working directory"
 msgstr "Hyehyɛ baabi a shell no bɛyɛ adwuma"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Fa"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Fa to ha"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Selecte ne nyinaa"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Hwehwɛ ..."
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:372
 #, fuzzy
 msgid "Zoom out"
 msgstr "Twe kɔ akyire"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:387
 #, fuzzy
 msgid "Zoom in"
 msgstr "Twe bɛn"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
+msgid "Follow System Style"
+msgstr ""
+
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:426
+msgid "Custom"
+msgstr ""
+
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Tab Foforɔ"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:962
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Yi Tab No"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Yi"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
@@ -273,9 +397,6 @@ msgstr "Terminal"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Bue Terminal No Wɔ Ha"
-
-#~ msgid "Close"
-#~ msgstr "Yi"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Bue tab foforɔ"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-09-19 18:30+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
+"PO-Revision-Date: 2022-12-26 20:25+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
 "sk/>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:112
 msgid "Process completed"
 msgstr "Proces úspešne dokončený"
 
-#: src/Application.vala:110
+#: src/Application.vala:115
 msgid "Process exited with errors"
 msgstr "Proces bol ukončený s chybami"
 
-#: src/Application.vala:253
+#: src/Application.vala:258
 msgid "Show version"
 msgstr "Zobraziť verziu"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid "Run a program in terminal"
 msgstr "Spustiť program v termináli"
 
-#: src/Application.vala:260
+#: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -45,117 +45,241 @@ msgstr ""
 "vlajku"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:268
 msgid "Open a new terminal window"
 msgstr "Otvoriť nové okno terminálu"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:271
 msgid "Open a new terminal tab"
 msgstr "Otvoriť novú kartu terminálu"
 
-#: src/Application.vala:268
+#: src/Application.vala:273
 msgid "Show help"
 msgstr "Zobraziť nápovedu"
 
-#: src/Application.vala:270
+#: src/Application.vala:275
 msgid "Set shell working directory"
 msgstr "Nastaviť pracovný adresár shellu"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr "Kopírovať posledný výstup"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Vložiť"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Označiť všetko"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Nájsť…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:372
 msgid "Zoom out"
 msgstr "Oddialiť"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr "Mierka 1:1"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:387
 msgid "Zoom in"
 msgstr "Priblížiť"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
+msgid "Follow System Style"
+msgstr "Nasledovať systémový štýl"
+
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarizovaný svetlý"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Tmavý"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:426
+msgid "Custom"
+msgstr "Vlastné"
+
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr "Prirodzené kopírovanie/vkladanie"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
 "príkazovom riadku"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Nová karta"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:962
 #, c-format
 msgid "Show in %s"
 msgstr "Zobraziť v %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr "Predvolená aplikácia"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zatvoriť kartu"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr "Duplikovať"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr "Obnoviť"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr "Vložený text môže obsahovať viacero príkazov"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
 msgstr "Skryť panel vyhľadávania"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "Nastavenia farieb"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "Štýl okna:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "Svetlý"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "Farebná paleta"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "Resetovať na predvolené"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "Čierna:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "Červená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "Zelená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "Žltá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "Modrá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "Purpurová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "Tyrkysová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "Sivá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "Biela:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "Svetlá červená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "Svetlá zelená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "Svetlá žltá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "Svetlá modrá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "Svetlá purpurová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "Svetlá tyrkysová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "Svetlá sivá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "Pozadie:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "Popredie:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "Kurzor:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Zatvoriť"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr "Kontrast je príliš nízky"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr "Kontrast je nízky"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr "Kontrast je dobrý"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
+msgstr "Kontrast je vysoký"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -267,9 +391,6 @@ msgstr "Terminál"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Otvoriť Terminál tu"
-
-#~ msgid "Close"
-#~ msgstr "Zatvoriť"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Vytvor novú záložku."

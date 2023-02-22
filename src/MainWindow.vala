@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2021 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2011-2022 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -23,9 +23,14 @@ namespace Terminal {
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.RadioButton color_button_custom;
+        private Gtk.RadioButton color_button_dark;
+        private Gtk.RadioButton color_button_light;
+        private Gtk.RadioButton color_button_white;
         private Gtk.Revealer search_revealer;
         private Gtk.ToggleButton search_button;
         private Gtk.Button zoom_default_button;
+        private Dialogs.ColorPreferences? color_preferences_dialog;
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
@@ -37,13 +42,6 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
-
-        private const string HIGH_CONTRAST_BG = "#fff";
-        private const string HIGH_CONTRAST_FG = "#333";
-        private const string DARK_BG = "rgba(46, 46, 46, 0.95)";
-        private const string DARK_FG = "#a5a5a5";
-        private const string SOLARIZED_LIGHT_BG = "rgba(253, 246, 227, 0.95)";
-        private const string SOLARIZED_LIGHT_FG = "#586e75";
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
@@ -80,6 +78,8 @@ namespace Terminal {
         public const string ACTION_SELECT_ALL = "action-select-all";
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
+        public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
+        public const string ACTION_CLOSE_TERMINAL = "action-close-terminal";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -105,7 +105,8 @@ namespace Terminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser}
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser},
+            { ACTION_CLOSE_TERMINAL, action_close_terminal}
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -152,13 +153,15 @@ namespace Terminal {
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
-            action_accelerators[ACTION_RELOAD_TAB] = "<Control><Shift>r";
-            action_accelerators[ACTION_RELOAD_TAB] = "F5";
+            action_accelerators[ACTION_RELOAD_TAB] = ACTION_RELOAD_PREFERRED_ACCEL;
+            action_accelerators[ACTION_RELOAD_TAB] = "<Shift>F5";
             action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
             action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control>Page_Up";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
@@ -175,6 +178,7 @@ namespace Terminal {
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
+            action_accelerators[ACTION_CLOSE_TERMINAL] = "<Control><Shift>q";
         }
 
         construct {
@@ -397,43 +401,50 @@ namespace Terminal {
             font_size_grid.add (zoom_default_button);
             font_size_grid.add (zoom_in_button);
 
-            var color_button_white = new Gtk.RadioButton (null) {
+            var follow_system_switchmodelbutton = new Granite.SwitchModelButton (_("Follow System Style"));
+
+            color_button_white = new Gtk.RadioButton (null) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("High Contrast")
             };
+            style_color_button (color_button_white, Themes.HIGH_CONTRAST);
 
-            var color_button_white_context = color_button_white.get_style_context ();
-            color_button_white_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_white_context.add_class ("color-white");
-
-            var color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_light = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Solarized Light")
             };
+            style_color_button (color_button_light, Themes.LIGHT);
 
-            var color_button_light_context = color_button_light.get_style_context ();
-            color_button_light_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_light_context.add_class ("color-light");
-
-            var color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
+            color_button_dark = new Gtk.RadioButton.from_widget (color_button_white) {
                 halign = Gtk.Align.CENTER,
                 tooltip_text = _("Dark")
             };
+            style_color_button (color_button_dark, Themes.DARK);
 
-            var color_button_dark_context = color_button_dark.get_style_context ();
-            color_button_dark_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            color_button_dark_context.add_class ("color-dark");
+            color_button_custom = new Gtk.RadioButton.from_widget (color_button_white) {
+                halign = Gtk.Align.CENTER,
+                tooltip_text = _("Custom")
+            };
+            color_button_custom.get_style_context ().add_class ("color-custom");
+            style_color_button (color_button_custom, Themes.CUSTOM);
 
             var color_grid = new Gtk.Grid () {
                 column_homogeneous = true,
-                margin_start = 12,
-                margin_end = 12,
-                margin_bottom = 6
+                margin_bottom = 6,
+                margin_top = 6
             };
 
             color_grid.add (color_button_white);
             color_grid.add (color_button_light);
             color_grid.add (color_button_dark);
+            color_grid.add (color_button_custom);
+
+            var color_revealer = new Gtk.Revealer ();
+            color_revealer.add (color_grid);
+
+            var follow_system_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            follow_system_box.add (follow_system_switchmodelbutton);
+            follow_system_box.add (color_revealer);
 
             var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
                 description = _("Shortcuts don’t require Shift; may interfere with CLI apps")
@@ -448,7 +459,8 @@ namespace Terminal {
             };
 
             menu_popover_grid.add (font_size_grid);
-            menu_popover_grid.add (color_grid);
+            menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            menu_popover_grid.add (follow_system_box);
             menu_popover_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             menu_popover_grid.add (natural_copy_paste_button);
 
@@ -519,6 +531,8 @@ namespace Terminal {
             get_style_context ().add_class ("terminal-window");
             add (grid);
 
+            update_active_colorbutton ();
+
             menu_popover.closed.connect (() => {
                 var binding = menu_popover.get_data<Binding> ("zoom-binding");
                 binding.unref ();
@@ -542,35 +556,41 @@ namespace Terminal {
                 menu_popover.set_data<Binding> ("zoom-binding", binding);
             });
 
-            switch (Application.settings.get_string ("background")) {
-                case HIGH_CONTRAST_BG:
-                    color_button_white.active = true;
-                    break;
-                case SOLARIZED_LIGHT_BG:
-                    color_button_light.active = true;
-                    break;
-                case DARK_BG:
-                    color_button_dark.active = true;
-                    break;
-            }
-
-            color_button_dark.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", true);
-                Application.settings.set_string ("background", DARK_BG);
-                Application.settings.set_string ("foreground", DARK_FG);
+            color_button_dark.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.DARK);
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_light.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", SOLARIZED_LIGHT_BG);
-                Application.settings.set_string ("foreground", SOLARIZED_LIGHT_FG);
+            color_button_light.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.LIGHT);
+                return Gdk.EVENT_PROPAGATE;
             });
 
-            color_button_white.clicked.connect (() => {
-                Application.settings.set_boolean ("prefer-dark-style", false);
-                Application.settings.set_string ("background", HIGH_CONTRAST_BG);
-                Application.settings.set_string ("foreground", HIGH_CONTRAST_FG);
+            color_button_white.button_release_event.connect (() => {
+                Application.settings.set_string ("theme", Themes.HIGH_CONTRAST);
+                return Gdk.EVENT_PROPAGATE;
             });
+
+            color_button_custom.button_release_event.connect (() => {
+                color_button_custom.active = true;
+                open_color_preferences ();
+                menu_popover.popdown ();
+                return Gdk.EVENT_STOP;
+            });
+
+            follow_system_switchmodelbutton.bind_property (
+                "active",
+                color_revealer,
+                "reveal-child",
+                GLib.BindingFlags.SYNC_CREATE | BindingFlags.INVERT_BOOLEAN
+            );
+
+            Application.settings.bind (
+                "follow-system-style",
+                follow_system_switchmodelbutton,
+                "active",
+                SettingsBindFlags.DEFAULT
+            );
 
             Application.settings.bind (
                 "natural-copy-paste",
@@ -578,6 +598,10 @@ namespace Terminal {
                 "active",
                 SettingsBindFlags.DEFAULT
             );
+
+            Application.settings.changed["theme"].connect (() => {
+                update_active_colorbutton ();
+            });
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
 
@@ -619,7 +643,8 @@ namespace Terminal {
                     case Gdk.Key.@7:
                     case Gdk.Key.@8:
                         if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab")) {
+                            Application.settings.get_boolean ("alt-changes-tab") &&
+                            notebook.n_tabs > 1) {
                             var i = event.keyval - 49;
                             if (i > notebook.n_tabs - 1)
                                 return false;
@@ -629,7 +654,8 @@ namespace Terminal {
                         break;
                     case Gdk.Key.@9:
                         if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab")) {
+                            Application.settings.get_boolean ("alt-changes-tab") &&
+                            notebook.n_tabs > 1) {
                             notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
                             return true;
                         }
@@ -653,6 +679,7 @@ namespace Terminal {
                                               (int)cell_width,
                                               (int)cell_height};
 
+                        update_context_menu ();
                         menu.popup_at_rect (rect_window,
                                             rect,
                                             Gdk.Gravity.SOUTH_WEST,
@@ -702,6 +729,58 @@ namespace Terminal {
 
                 return false;
             });
+
+            Application.settings.changed["background"].connect (() => {
+                style_color_button (color_button_custom, Themes.CUSTOM);
+            });
+
+            Application.settings.changed["foreground"].connect (() => {
+                style_color_button (color_button_custom, Themes.CUSTOM);
+            });
+        }
+
+        private void update_active_colorbutton () {
+            switch (Application.settings.get_string ("theme")) {
+                case Themes.HIGH_CONTRAST:
+                    color_button_white.active = true;
+                    break;
+                case Themes.LIGHT:
+                    color_button_light.active = true;
+                    break;
+                case Themes.DARK:
+                    color_button_dark.active = true;
+                    break;
+                case Themes.CUSTOM:
+                    color_button_custom.active = true;
+                    break;
+            }
+        }
+
+        private void style_color_button (Gtk.Widget color_button, string theme) {
+            var theme_palette = Terminal.Themes.get_rgba_palette (theme);
+
+            var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
+
+            var style_css = """
+                .color-button radio {
+                    background-color: %s;
+                    color: %s;
+                    padding: 10px;
+                    -gtk-icon-shadow: none;
+                }
+            """.printf (background, foreground);
+
+            var css_provider = new Gtk.CssProvider ();
+            try {
+                css_provider.load_from_data (style_css);
+            } catch (Error e) {
+                critical ("Unable to style color button: %s", e.message);
+            }
+
+            unowned var style_context = color_button.get_style_context ();
+            style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         private bool handle_paste_event () {
@@ -1174,8 +1253,10 @@ namespace Terminal {
             });
             tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
+            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
+             * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
-                child = new Granite.AccelLabel.from_action_name (_("Reload"), ACTION_PREFIX + ACTION_RELOAD_TAB)
+                child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
             };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
@@ -1360,6 +1441,11 @@ namespace Terminal {
             // Closing a tab will switch to another, which will trigger check for same names
         }
 
+        public void action_close_terminal () {
+
+            close ();
+        }
+
         private void action_new_window () {
             app.new_window ();
         }
@@ -1476,6 +1562,19 @@ namespace Terminal {
                 fullscreen ();
                 is_fullscreen = true;
             }
+        }
+
+        private void open_color_preferences () {
+            if (color_preferences_dialog == null) {
+                color_preferences_dialog = new Dialogs.ColorPreferences (this);
+                color_preferences_dialog.show_all ();
+
+                color_preferences_dialog.destroy.connect (() => {
+                    color_preferences_dialog = null;
+                });
+            }
+
+            color_preferences_dialog.present ();
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {

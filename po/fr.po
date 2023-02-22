@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
-"PO-Revision-Date: 2021-06-15 14:27+0000\n"
+"POT-Creation-Date: 2023-02-11 17:25+0000\n"
+"PO-Revision-Date: 2022-11-09 14:29+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:107
+#: src/Application.vala:112
 msgid "Process completed"
 msgstr "Processus terminé"
 
-#: src/Application.vala:110
+#: src/Application.vala:115
 msgid "Process exited with errors"
 msgstr "Le processus s'est arrêté avec des erreurs"
 
-#: src/Application.vala:253
+#: src/Application.vala:258
 msgid "Show version"
 msgstr "Afficher la version"
 
 #. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:255
+#: src/Application.vala:260
 msgid "Run a program in terminal"
 msgstr "Lancer un programme dans un terminal"
 
-#: src/Application.vala:260
+#: src/Application.vala:265
 msgid ""
 "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgstr ""
@@ -45,121 +45,245 @@ msgstr ""
 "également utiliser le drapeau « -- »"
 
 #. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:263
+#: src/Application.vala:268
 msgid "Open a new terminal window"
 msgstr "Ouvrir une nouvelle fenêtre de terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:266
+#: src/Application.vala:271
 msgid "Open a new terminal tab"
 msgstr "Ouvrir un nouvel onglet de terminal"
 
-#: src/Application.vala:268
+#: src/Application.vala:273
 msgid "Show help"
 msgstr "Afficher l'aide"
 
-#: src/Application.vala:270
+#: src/Application.vala:275
 msgid "Set shell working directory"
 msgstr "Configurer le répertoire courant du terminal"
 
-#: src/MainWindow.vala:217
+#: src/MainWindow.vala:221
 msgid "Copy"
 msgstr "Copier"
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:227
 msgid "Copy Last Output"
 msgstr "Copier la dernière sortie"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:233
 msgid "Paste"
 msgstr "Coller"
 
-#: src/MainWindow.vala:235
+#: src/MainWindow.vala:239
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:241 src/MainWindow.vala:362 src/MainWindow.vala:1431
+#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
 msgid "Find…"
 msgstr "Rechercher…"
 
-#: src/MainWindow.vala:368
+#: src/MainWindow.vala:372
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: src/MainWindow.vala:376
+#: src/MainWindow.vala:380
 msgid "Default zoom level"
 msgstr "Zoom par défaut"
 
-#: src/MainWindow.vala:383
+#: src/MainWindow.vala:387
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: src/MainWindow.vala:402
+#: src/MainWindow.vala:404
+msgid "Follow System Style"
+msgstr "Suivre le thème du système"
+
+#: src/MainWindow.vala:408
 msgid "High Contrast"
 msgstr "Contrastes élevés"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:414
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:420
+#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Foncé"
 
-#: src/MainWindow.vala:438
+#: src/MainWindow.vala:426
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: src/MainWindow.vala:449
 msgid "Natural Copy/Paste"
 msgstr "Copier-coller naturel"
 
-#: src/MainWindow.vala:439
+#: src/MainWindow.vala:450
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Les raccourcis ne nécessitent pas d'appuyer sur Maj, ils pourraient "
 "interférer avec les applications en ligne de commande"
 
-#: src/MainWindow.vala:464
+#: src/MainWindow.vala:476
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:490
+#: src/MainWindow.vala:502
 msgid "New Tab"
 msgstr "Nouvel Onglet"
 
-#: src/MainWindow.vala:882
+#: src/MainWindow.vala:962
 #, c-format
 msgid "Show in %s"
 msgstr "Afficher dans %s"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:963
 msgid "Default application"
 msgstr "Application par défaut"
 
-#: src/MainWindow.vala:1164 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Fermer l'onglet"
 
-#: src/MainWindow.vala:1165
+#: src/MainWindow.vala:1246
 msgid "Duplicate"
 msgstr "Dupliquer"
 
-#: src/MainWindow.vala:1176
+#: src/MainWindow.vala:1259
 msgid "Reload"
 msgstr "Recharger"
 
-#: src/MainWindow.vala:1267
+#: src/MainWindow.vala:1350
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
 
-#: src/MainWindow.vala:1269
+#: src/MainWindow.vala:1352
 msgid "The pasted text may contain multiple commands"
 msgstr "Le texte collé pourrait contenir plusieurs commandes"
 
-#: src/MainWindow.vala:1423
+#: src/MainWindow.vala:1511
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "Préférences de couleur"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "Thème de la fenêtre :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "Clair"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "Palette de couleur"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "Réinitialiser les valeurs par défaut"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "Noir :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "Rouge :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "Vert :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "Jaune :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "Bleu :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "Magenta :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "Cyan :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "Gris :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "Blanc :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "Rouge clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "Vert clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "Jaune clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "Bleu clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "Magenta clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "Cyan clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "Gris clair :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "Arrière-plan :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "Premier-plan :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "Curseur :"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Fermer"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is very low"
+msgstr "Le contraste est très faible"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:311
+msgid "Contrast is low"
+msgstr "Le contraste est faible"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:314
+msgid "Contrast is good"
+msgstr "Le contraste est correct"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:317
+msgid "Contrast is high"
+msgstr "Le contraste est élevé"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Êtes-vous certain de vouloir fermer cet onglet ?"
+msgstr "Voulez-vous vraiment fermer cet onglet ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -171,7 +295,7 @@ msgstr "Si vous fermez, le processus prendra fin."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Êtes-vous certain de vouloir quitter le Terminal ?"
+msgstr "Voulez-vous vraiment quitter le Terminal ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -187,7 +311,7 @@ msgstr "Quitter le Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr "Êtes-vous certain de vouloir recharger cet onglet ?"
+msgstr "Voulez-vous vraiment recharger cet onglet ?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
@@ -284,9 +408,6 @@ msgstr "Terminal"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Ouvrir un Terminal ici"
-
-#~ msgid "Close"
-#~ msgstr "Fermer"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Créer un nouvel onglet"
