@@ -118,9 +118,9 @@ namespace Terminal.Utils {
     public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
         // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
         var placeholder = "::::::";
-        var parts = uri.reverse ().split (Path.DIR_SEPARATOR_S);
-        parts[0] = parts[0].replace ("#", placeholder);
-        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts).reverse ();
+        var parts = uri.split (Path.DIR_SEPARATOR_S);
+        parts[parts.length - 1] = parts[parts.length - 1].replace ("#", placeholder);
+        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts);
         string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
                     .replace ("#", "")
                     .replace ("*", "")
