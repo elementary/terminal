@@ -132,8 +132,8 @@ namespace Terminal.Utils {
 
         //Escape and then replace fragment identifier
         return Uri.escape_string (
-            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape), 
-            rc , 
+            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape),
+            rc ,
             allow_utf8
         ).replace (placeholder, "#");
     }
