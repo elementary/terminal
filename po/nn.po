@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:16+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2019-01-06 11:59+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -47,7 +47,7 @@ msgstr "Sett arbeidsmappa til skalet"
 #: src/Application.vala:39
 #, fuzzy
 #| msgid "Run a program in terminal"
-msgid "Run a progam in terminal"
+msgid "Run a program in terminal"
 msgstr "Køyr program i kommandolinje"
 
 #. -x flag is used for using the rest of the command line in the new tab/window

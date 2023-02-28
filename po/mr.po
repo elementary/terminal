@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:16+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2021-03-20 21:29+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/terminal/"
@@ -36,7 +36,7 @@ msgstr "शेल वर्किंग डिरेक्टरी सेट �
 #: src/Application.vala:39
 #, fuzzy
 #| msgid "Run a program in terminal"
-msgid "Run a progam in terminal"
+msgid "Run a program in terminal"
 msgstr "टर्मिनल मध्ये चालवा"
 
 #. -x flag is used for using the rest of the command line in the new tab/window

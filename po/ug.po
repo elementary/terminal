@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:16+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2016-12-19 08:31+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -45,7 +45,7 @@ msgstr "shell خىزمەت قىلىدىغان مۇندەرىجىنى تەڭشە�
 #: src/Application.vala:39
 #, fuzzy
 #| msgid "Run a program in terminal"
-msgid "Run a progam in terminal"
+msgid "Run a program in terminal"
 msgstr "تېرمىنالدا پروگرامما ئىجرا قىلىش"
 
 #. -x flag is used for using the rest of the command line in the new tab/window

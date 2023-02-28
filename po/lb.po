@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:16+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2015-12-31 14:21+0000\n"
 "Last-Translator: Mika Beckerich <beckerichmika@gmail.com>\n"
 "Language-Team: Luxembourgish <lb@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-msgid "Run a progam in terminal"
+msgid "Run a program in terminal"
 msgstr ""
 
 #. -x flag is used for using the rest of the command line in the new tab/window
