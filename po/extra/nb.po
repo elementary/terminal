@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2021-07-15 22:10+0000\n"
+"PO-Revision-Date: 2023-03-02 10:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -84,7 +84,7 @@ msgstr "Bekreft egendefinert fargepalett"
 #: data/io.elementary.terminal.appdata.xml.in:105
 #: data/io.elementary.terminal.appdata.xml.in:118
 msgid "Fixes:"
-msgstr ""
+msgstr "Fikser:"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid ""
@@ -98,15 +98,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Bytt faner med Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Avslutt med Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "Fikset bygg på OS 7"
 
 #: data/io.elementary.terminal.appdata.xml.in:120
 msgid "Properly restore zoom levels for all locales"
