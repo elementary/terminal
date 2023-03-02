@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2023-01-14 09:17+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
 "Language: ru\n"
@@ -37,24 +37,17 @@ msgstr "Установить рабочую директорию оболочк�
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Запустить программу в терминале"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:42
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Запустить остаток строки как команду в терминале. Также можно использовать "
-"«--» в качестве флага"
+msgstr "Запустить остаток строки как команду в терминале"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- КОМАНДА…]"
 
 #: src/Application.vala:134
 msgid "Process completed"

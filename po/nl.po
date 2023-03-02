@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2023-02-11 12:25+0000\n"
-"Last-Translator: RuudSchellekens <ruudschellekens@gmail.com>\n"
+"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
 "nl/>\n"
 "Language: nl\n"
@@ -41,24 +41,17 @@ msgstr "Stel werkmap van Terminal in"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "Voer programma in de terminal uit"
+msgstr "Draai een programma in de terminal"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:42
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Voer de rest van de regel uit als commando in de terminal. U kunt ook ‘--‘ "
-"als vlag gebruiken"
+msgstr "Voer de rest van de regel uit als commando in de terminal"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- COMMANDO…]"
 
 #: src/Application.vala:134
 msgid "Process completed"
