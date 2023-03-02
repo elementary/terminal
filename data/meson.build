@@ -44,6 +44,8 @@ install_data(
 
 terminal_gresource = gnome.compile_resources('gresource', meson.project_name() + '.gresource.xml')
 
+test_schemas = gnome.compile_schemas(depend_files: meson.project_name() + '.gschema.xml', build_by_default: false)
+
 desktop_file_validate = find_program('desktop-file-validate', required: false)
 if desktop_file_validate.found()
     test(

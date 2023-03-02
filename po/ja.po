@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-11 17:25+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2022-10-17 14:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -20,148 +20,154 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:112
-msgid "Process completed"
-msgstr "プロセスが完了しました"
-
-#: src/Application.vala:115
-msgid "Process exited with errors"
-msgstr "プロセスはエラーで終了しました"
-
-#: src/Application.vala:258
+#: src/Application.vala:31
 msgid "Show version"
 msgstr "バージョンを表示します"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:260
-msgid "Run a program in terminal"
-msgstr "ターミナルでプログラムを実行します"
-
-#: src/Application.vala:265
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-"行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
-"用できます"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:268
+#. -n flag forces a new window
+#: src/Application.vala:33
 msgid "Open a new terminal window"
 msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
-#: src/Application.vala:271
+#: src/Application.vala:35
 msgid "Open a new terminal tab"
 msgstr "新しいターミナルタブを開く"
 
-#: src/Application.vala:273
-msgid "Show help"
-msgstr "ヘルプを表示します"
-
-#: src/Application.vala:275
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:37
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
-#: src/MainWindow.vala:221
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:39
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "ターミナルでプログラムを実行します"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:42
+#, fuzzy
+#| msgid ""
+#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+"行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
+"用できます"
+
+#: src/Application.vala:99
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:134
+msgid "Process completed"
+msgstr "プロセスが完了しました"
+
+#: src/Application.vala:137
+msgid "Process exited with errors"
+msgstr "プロセスはエラーで終了しました"
+
+#: src/MainWindow.vala:210
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:216
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:222
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:239
+#: src/MainWindow.vala:228
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
+#: src/MainWindow.vala:234 src/MainWindow.vala:351 src/MainWindow.vala:1504
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:357
 msgid "Zoom out"
 msgstr "ズームアウト"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:365
 msgid "Default zoom level"
 msgstr "デフォルトのズームレベル"
 
-#: src/MainWindow.vala:387
+#: src/MainWindow.vala:372
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:389
 msgid "Follow System Style"
 msgstr "システムのスタイルに従う"
 
-#: src/MainWindow.vala:408
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr "ハイコントラスト"
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:399
 msgid "Solarized Light"
 msgstr "Solarized Light"
 
-#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:405 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "ダーク"
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:411
 msgid "Custom"
 msgstr "カスタム"
 
-#: src/MainWindow.vala:449
+#: src/MainWindow.vala:434
 msgid "Natural Copy/Paste"
 msgstr "ナチュラルコピー & ペースト"
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
 "ります"
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:461
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:502
+#: src/MainWindow.vala:487
 msgid "New Tab"
 msgstr "新しいタブ"
 
-#: src/MainWindow.vala:962
+#: src/MainWindow.vala:947
 #, c-format
 msgid "Show in %s"
 msgstr "%sで表示"
 
-#: src/MainWindow.vala:963
+#: src/MainWindow.vala:948
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1230 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: src/MainWindow.vala:1246
+#: src/MainWindow.vala:1231
 msgid "Duplicate"
 msgstr "タブを複製"
 
-#: src/MainWindow.vala:1259
+#: src/MainWindow.vala:1244
 msgid "Reload"
 msgstr "再読み込み"
 
-#: src/MainWindow.vala:1350
+#: src/MainWindow.vala:1335
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
 
-#: src/MainWindow.vala:1352
+#: src/MainWindow.vala:1337
 msgid "The pasted text may contain multiple commands"
 msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
 
-#: src/MainWindow.vala:1511
+#: src/MainWindow.vala:1496
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -364,6 +370,9 @@ msgstr "循環検索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#~ msgid "Show help"
+#~ msgstr "ヘルプを表示します"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "このコマンドは管理者権限を必要とします"

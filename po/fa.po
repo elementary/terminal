@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-11 17:25+0000\n"
+"POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -20,150 +20,153 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:112
-msgid "Process completed"
-msgstr ""
-
-#: src/Application.vala:115
-msgid "Process exited with errors"
-msgstr ""
-
-#: src/Application.vala:258
+#: src/Application.vala:31
 msgid "Show version"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:260
-msgid "Run a program in terminal"
-msgstr "اجرای برنامه در ترمینال"
-
-#: src/Application.vala:265
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:268
+#. -n flag forces a new window
+#: src/Application.vala:33
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "باز کردن پنجره جدید"
 
 #. -t flag forces a new tab
-#: src/Application.vala:271
+#: src/Application.vala:35
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "باز کردن پنجره جدید"
 
-#: src/Application.vala:273
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:275
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:37
 msgid "Set shell working directory"
 msgstr "تنظیم کارکردن مستقیم شل"
 
-#: src/MainWindow.vala:221
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:39
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "اجرای برنامه در ترمینال"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:42
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+
+#: src/Application.vala:99
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:134
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:137
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:210
 msgid "Copy"
 msgstr "رونویسی"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:216
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:222
 msgid "Paste"
 msgstr "چسباندن"
 
-#: src/MainWindow.vala:239
+#: src/MainWindow.vala:228
 msgid "Select All"
 msgstr "انتخاب همه"
 
-#: src/MainWindow.vala:245 src/MainWindow.vala:366 src/MainWindow.vala:1519
+#: src/MainWindow.vala:234 src/MainWindow.vala:351 src/MainWindow.vala:1504
 msgid "Find…"
 msgstr "پیدا کردن…"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:357
 #, fuzzy
 msgid "Zoom out"
 msgstr "کوچک‌نمایی"
 
-#: src/MainWindow.vala:380
+#: src/MainWindow.vala:365
 msgid "Default zoom level"
 msgstr ""
 
-#: src/MainWindow.vala:387
+#: src/MainWindow.vala:372
 #, fuzzy
 msgid "Zoom in"
 msgstr "بزرگ‌نمایی"
 
-#: src/MainWindow.vala:404
+#: src/MainWindow.vala:389
 msgid "Follow System Style"
 msgstr ""
 
-#: src/MainWindow.vala:408
+#: src/MainWindow.vala:393
 msgid "High Contrast"
 msgstr ""
 
-#: src/MainWindow.vala:414
+#: src/MainWindow.vala:399
 msgid "Solarized Light"
 msgstr ""
 
-#: src/MainWindow.vala:420 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:405 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:426
+#: src/MainWindow.vala:411
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:449
+#: src/MainWindow.vala:434
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:435
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:461
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:502
+#: src/MainWindow.vala:487
 msgid "New Tab"
 msgstr "برگه جدید"
 
-#: src/MainWindow.vala:962
+#: src/MainWindow.vala:947
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:963
+#: src/MainWindow.vala:948
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1245 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1230 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "بستن برگه"
 
-#: src/MainWindow.vala:1246
+#: src/MainWindow.vala:1231
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1259
+#: src/MainWindow.vala:1244
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1350
+#: src/MainWindow.vala:1335
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1352
+#: src/MainWindow.vala:1337
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1511
+#: src/MainWindow.vala:1496
 msgid "Hide find bar"
 msgstr ""
 

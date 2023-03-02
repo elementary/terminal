@@ -37,3 +37,25 @@ executable(
     dependencies: terminal_deps,
     install : true
 )
+
+# tests
+
+test_env = [
+    'G_TEST_SRCDIR=' + meson.current_source_dir(),
+    'G_TEST_BUILDDIR=' + meson.current_build_dir(),
+    'GSETTINGS_SCHEMA_DIR=' + meson.project_build_root() / 'data',
+    'GSETTINGS_BACKEND=memory',
+    'GIO_USE_VFS=local'
+]
+
+test(
+    'Application', executable(
+        meson.project_name() + '.tests.application',
+        terminal_sources + 'tests/Application.vala',
+        dependencies: terminal_deps,
+        vala_args: [ '--define', 'TESTS']
+    ),
+    env: test_env,
+    protocol: 'tap',
+    depends: test_schemas
+)
