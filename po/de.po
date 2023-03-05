@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2022-11-16 21:49+0000\n"
+"PO-Revision-Date: 2023-03-06 02:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
@@ -41,24 +41,17 @@ msgstr "Shell-Arbeitsverzeichnis festlegen"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "Ein Programm im Terminal ausführen"
+msgstr "Programm im Terminal ausführen"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:42
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Restlichen Teil der Zeile als Befehl im Terminal ausführen. '--' ist als "
-"Option möglich"
+msgstr "Restlichen Teil der Zeile als Befehl im Terminal ausführen"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- OPTION …]"
 
 #: src/Application.vala:134
 msgid "Process completed"
