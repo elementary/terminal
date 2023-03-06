@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2022-10-17 14:57+0000\n"
+"PO-Revision-Date: 2023-03-07 13:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:31
@@ -41,24 +41,17 @@ msgstr "シェルのカレントディレクトリを設定します"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:42
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
-"用できます"
+msgstr "行の残りの部分をコマンドとしてターミナルで実行します"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- コマンド…]"
 
 #: src/Application.vala:134
 msgid "Process completed"
