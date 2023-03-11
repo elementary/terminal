@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2023-03-11 09:25+0000\n"
+"PO-Revision-Date: 2023-03-12 10:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/extra/"
 "ka/>\n"
@@ -35,9 +35,9 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"ტერმინალ აპლიკაცია არის ტერმინალის ემულატორის პროგრამა UNIX shell გარემოში "
-"შესასვლელად, რომელიც შეიძლება გამოყენებულ იქნას თქვენს სისტემაში არსებული "
-"პროგრამების გასაშვებად."
+"Terminal-ი ტერმინალის ემულატორია UNIX-ის გარსის გარემოსთან წვდომისთვის, "
+"რომელიც თქვენს სისტემაში ხელმისაწვდომი პროგრამების გასაშვებად შეგიძლიათ, "
+"გამოიყენოთ."
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 msgid "elementary, Inc."
@@ -133,7 +133,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr "command;prompt;cmd;commandline;run;"
+msgstr "command;prompt;cmd;commandline;run;ბრძანება;ტერმინალი;გაშვება;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
