@@ -35,9 +35,9 @@ msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"Terminal-ი ტერმინალის ემულატორია UNIX-ის გარსის გარემოსთან წვდომისთვის, "
-"რომელიც თქვენს სისტემაში ხელმისაწვდომი პროგრამების გასაშვებად შეგიძლიათ, "
-"გამოიყენოთ."
+"ტერმინალ აპლიკაცია არის ტერმინალის ემულატორის პროგრამა UNIX shell გარემოში "
+"შესასვლელად, რომელიც შეიძლება გამოყენებულ იქნას თქვენს სისტემაში არსებული "
+"პროგრამების გასაშვებად."
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 msgid "elementary, Inc."
