@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2023-03-11 09:14+0000\n"
+"PO-Revision-Date: 2023-03-11 09:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/extra/"
 "ka/>\n"
@@ -28,17 +28,20 @@ msgstr "ტერმინალი"
 #: data/io.elementary.terminal.appdata.xml.in:11
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr ""
+msgstr "ბრძანების სტრიქონის გამოყენება"
 
 #: data/io.elementary.terminal.appdata.xml.in:13
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
+"Terminal-ი ტერმინალის ემულატორია UNIX-ის გარსის გარემოსთან წვდომისთვის, "
+"რომელიც თქვენს სისტემაში ხელმისაწვდომი პროგრამების გასაშვებად შეგიძლიათ, "
+"გამოიყენოთ."
 
 #: data/io.elementary.terminal.appdata.xml.in:49
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 #: data/io.elementary.terminal.appdata.xml.in:69
@@ -46,13 +49,15 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:109
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Other updates:"
-msgstr ""
+msgstr "სხვა განახლებები:"
 
 #: data/io.elementary.terminal.appdata.xml.in:58
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"ჩანართებს შორის გადართვისთვის მალსახმობების \"Ctrl + PageUp\" და \"Ctrl + "
+"PageDown\" დამატება"
 
 #: data/io.elementary.terminal.appdata.xml.in:59
 #: data/io.elementary.terminal.appdata.xml.in:71
@@ -60,75 +65,80 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:111
 #: data/io.elementary.terminal.appdata.xml.in:127
 msgid "Translation updates"
-msgstr ""
+msgstr "თარგმანის განახლებები"
 
 #: data/io.elementary.terminal.appdata.xml.in:81
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "New features:"
-msgstr ""
+msgstr "ახალი ფუნქციები:"
 
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "პარამეტრი, მივყვე თუ არა სისტემის ბნელი სტილის პარამეტრს"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Create a custom color palette"
-msgstr ""
+msgstr "შექმენით მორგებული ფერის პალიტრა"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 #: data/io.elementary.terminal.appdata.xml.in:105
 #: data/io.elementary.terminal.appdata.xml.in:118
 msgid "Fixes:"
-msgstr ""
+msgstr "შეცდომების გასწორებები:"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"ნაგულისხმევი სტილები სრულად გაუმჭვირვალეა და განახლებულია Solarized– ის "
+"უახლესი ზედა მნიშვნელობებით, გაუმჯობესებული ლეგიტიმურობის გასაუმჯობესებლად"
 
 #: data/io.elementary.terminal.appdata.xml.in:93
 msgid "Performance improvements"
-msgstr ""
+msgstr "წარმადობის გაუმჯობესებები"
 
 #: data/io.elementary.terminal.appdata.xml.in:102
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "ჩანართების შეცვლა Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:103
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "გასვლა Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "OS 7-ზე აგების გასწორება"
 
 #: data/io.elementary.terminal.appdata.xml.in:120
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "ენებისთვის ნაგულისხმები გადიდების სწორად აღდგენა"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "ფანჯრის სათაურისთვის XTerm-ის გამოყენება, თუ ის ხელმისაწვდომია"
 
 #: data/io.elementary.terminal.appdata.xml.in:125
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"ზოგიერთ ფონურ პროცესთან კონფლიქტის თავიდან ასაცილებლად \"ჩანართის თავიდან "
+"ჩატვირთვა\" Shift + F5-ზე შეცვალეთ"
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"\"ჩანართის თავიდან ჩატვირთვის\" მალსახმობის Shift + Control + R-ზე შეცვლა"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
+msgstr "command;prompt;cmd;commandline;run;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr ""
+msgstr "ახალი ფანჯარა"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr ""
+msgstr "ახალი root-ის ჩანართი"
