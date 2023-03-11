@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
 "PO-Revision-Date: 2023-03-11 09:25+0000\n"
-"Last-Translator: Iuri Jikidze <ijiki16@freeuni.edu.ge>\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/extra/"
 "ka/>\n"
 "Language: ka\n"
@@ -28,7 +28,7 @@ msgstr "ტერმინალი"
 #: data/io.elementary.terminal.appdata.xml.in:11
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "გამოიყენეთ ბრძანების სტრიქონი"
+msgstr "ბრძანების სტრიქონის გამოყენება"
 
 #: data/io.elementary.terminal.appdata.xml.in:13
 msgid ""
