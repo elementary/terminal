@@ -24,7 +24,7 @@ jobs:
       run: |
         meson build
         ninja -C build
-        xvfb-run -a -s "-screen 0 1024x768x24 -noreset" ninja -C build test
+        ninja -C build test
         ninja -C build install
 
   lint:
