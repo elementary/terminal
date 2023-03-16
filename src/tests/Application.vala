@@ -31,7 +31,9 @@ namespace Terminal.Test.Application {
             return 0;
         });
 
-        application.run (args);
+        if (application.run (args) != 0) {
+            GLib.Test.fail ();
+        }
     }
 
     private void option (string options, string platform_data, CommandLineCallback callback) {
@@ -58,7 +60,9 @@ namespace Terminal.Test.Application {
             return application.command_line (cmdline);
         });
 
-        application.run (null);
+        if (application.run (null) != 0) {
+            GLib.Test.fail ();
+        }
     }
 
     public static int main (string[] args) {
