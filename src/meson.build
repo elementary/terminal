@@ -48,13 +48,22 @@ test_env = [
     'GIO_USE_VFS=local'
 ]
 
+add_test_setup(
+  'headless',
+  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24 -noreset' ],
+  is_default: true
+)
+
+app_test = executable(
+    meson.project_name() + '.tests.application',
+    terminal_sources + 'tests/Application.vala',
+    dependencies: terminal_deps,
+    vala_args: [ '--define', 'TESTS']
+)
+
 test(
-    'Application', executable(
-        meson.project_name() + '.tests.application',
-        terminal_sources + 'tests/Application.vala',
-        dependencies: terminal_deps,
-        vala_args: [ '--define', 'TESTS']
-    ),
+    'Application',
+    app_test,
     env: test_env,
     protocol: 'tap',
     depends: test_schemas

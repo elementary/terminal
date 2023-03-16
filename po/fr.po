@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2022-11-09 14:29+0000\n"
+"PO-Revision-Date: 2023-03-15 09:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -41,10 +41,8 @@ msgstr "Configurer le répertoire courant du terminal"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:39
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "Lancer un programme dans un terminal"
+msgstr "Lancer un programme dans le terminal"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:42
@@ -58,7 +56,7 @@ msgstr ""
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- COMMANDE…]"
 
 #: src/Application.vala:134
 msgid "Process completed"

@@ -11,8 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [stable, unstable, development-target]
     container:
-      image: elementary/docker:next-unstable
+      image: ghcr.io/elementary/docker:${{ matrix.version }}
 
     steps:
     - uses: actions/checkout@v3
@@ -24,7 +28,7 @@ jobs:
       run: |
         meson build
         ninja -C build
-        xvfb-run -a -s "-screen 0 1024x768x24 -noreset" ninja -C build test
+        ninja -C build test
         ninja -C build install
 
   lint:
