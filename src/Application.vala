@@ -8,6 +8,7 @@ public class Terminal.Application : Gtk.Application {
     public int minimum_height;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
+    private uint dbus_id = 0;
 
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
@@ -97,11 +98,38 @@ public class Terminal.Application : Gtk.Application {
         return base.local_command_line (ref args, out exit_status);
     }
 
+    protected override int handle_local_options (VariantDict options) {
+        unowned string working_directory;
+        unowned string[] args;
+
+        if (options.lookup ("working-directory", "^&ay", out working_directory)) {
+            if (working_directory != "\0") {
+                Environment.set_current_dir (working_directory); // will be sent via platform-data
+            }
+
+            options.remove ("working-directory");
+        }
+
+        if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
+            if (commandline != "\0") {
+                commandline += " %s".printf (string.joinv (" ", args));
+            } else {
+                commandline = string.joinv (" ", args);
+            }
+        }
+
+        if (commandline != "\0") {
+            options.insert ("commandline", "^&ay", commandline.escape ());
+        }
+
+        return -1;
+    }
+
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
-        connection.register_object (object_path, dbus);
+        dbus_id = connection.register_object (object_path, dbus);
 
         dbus.finished_process.connect ((id, process, exit_status) => {
             TerminalWidget terminal = null;
@@ -148,33 +176,6 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    public override int handle_local_options (VariantDict options) {
-        unowned string working_directory;
-        unowned string[] args;
-
-        if (options.lookup ("working-directory", "^&ay", out working_directory)) {
-            if (working_directory != "\0") {
-                Environment.set_current_dir (working_directory); // will be sent via platform-data
-            }
-
-            options.remove ("working-directory");
-        }
-
-        if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
-            if (commandline != "\0") {
-                commandline += " %s".printf (string.joinv (" ", args));
-            } else {
-                commandline = string.joinv (" ", args);
-            }
-        }
-
-        if (commandline != "\0") {
-            options.insert ("commandline", "^&ay", commandline.escape ());
-        }
-
-        return -1;
-    }
-
     protected override void startup () {
         base.startup ();
         Hdy.init ();
@@ -210,7 +211,7 @@ public class Terminal.Application : Gtk.Application {
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
     }
 
-    public override int command_line (ApplicationCommandLine command_line) {
+    protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         bool new_window;
@@ -245,6 +246,14 @@ public class Terminal.Application : Gtk.Application {
 
         window.present ();
         return 0;
+    }
+
+    protected override void dbus_unregister (DBusConnection connection, string path) {
+        if (dbus_id != 0) {
+            connection.unregister_object (dbus_id);
+        }
+
+        base.dbus_unregister (connection, path);
     }
 
     private void new_window () {
