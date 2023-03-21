@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-28 13:39+0000\n"
-"PO-Revision-Date: 2023-03-07 13:25+0000\n"
+"PO-Revision-Date: 2023-03-22 03:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:31
@@ -83,7 +83,7 @@ msgstr "検索…"
 
 #: src/MainWindow.vala:357
 msgid "Zoom out"
-msgstr "ズームアウト"
+msgstr "縮小"
 
 #: src/MainWindow.vala:365
 msgid "Default zoom level"
@@ -91,7 +91,7 @@ msgstr "デフォルトのズームレベル"
 
 #: src/MainWindow.vala:372
 msgid "Zoom in"
-msgstr "ズームイン"
+msgstr "拡大"
 
 #: src/MainWindow.vala:389
 msgid "Follow System Style"
