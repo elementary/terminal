@@ -202,7 +202,7 @@ public class Terminal.Application : Gtk.Application {
         new_window_action.activate.connect (new_window);
 
         var quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (quit);
+        quit_action.activate.connect (close);
 
         add_action (new_window_action);
         add_action (quit_action);
@@ -258,6 +258,12 @@ public class Terminal.Application : Gtk.Application {
 
     private void new_window () {
         new MainWindow (this, active_window == null).present ();
+    }
+
+    private void close () {
+        foreach (var window in get_windows ()) {
+            window.close (); // if all windows is closed, the main loop will stop automatically.
+        }
     }
 }
 
