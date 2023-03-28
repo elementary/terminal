@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:39+0000\n"
+"POT-Creation-Date: 2023-03-28 12:01+0000\n"
 "PO-Revision-Date: 2023-03-02 10:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,146 +20,151 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:31
+#: src/Application.vala:33
 msgid "Show version"
 msgstr "Toon versie"
 
 #. -n flag forces a new window
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Open a new terminal window"
 msgstr "Nieuw terminal venster openen"
 
 #. -t flag forces a new tab
-#: src/Application.vala:35
+#: src/Application.vala:37
 msgid "Open a new terminal tab"
 msgstr "Nieuw terminal tabblad openen"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:37
+#: src/Application.vala:39
 msgid "Set shell working directory"
 msgstr "Stel werkmap van Terminal in"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:39
+#: src/Application.vala:41
 msgid "Run a program in terminal"
 msgstr "Draai een programma in de terminal"
 
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:43
+msgid "Open terminal in a minimized state"
+msgstr ""
+
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:42
+#: src/Application.vala:46
 msgid "Run remainder of line as a command in terminal"
 msgstr "Voer de rest van de regel uit als commando in de terminal"
 
-#: src/Application.vala:99
+#: src/Application.vala:103
 msgid "[-- COMMAND…]"
 msgstr "[-- COMMANDO…]"
 
-#: src/Application.vala:134
+#: src/Application.vala:169
 msgid "Process completed"
 msgstr "Proces afgerond"
 
-#: src/Application.vala:137
+#: src/Application.vala:172
 msgid "Process exited with errors"
 msgstr "Proces is afgesloten met fouten"
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:208
 msgid "Copy"
 msgstr "Kopiëer"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:214
 msgid "Copy Last Output"
 msgstr "Kopieer de laatste uitvoer"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 msgid "Paste"
 msgstr "Plakken"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:226
 msgid "Select All"
 msgstr "Alles Selecteren"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:351 src/MainWindow.vala:1504
+#: src/MainWindow.vala:232 src/MainWindow.vala:349 src/MainWindow.vala:1502
 msgid "Find…"
 msgstr "Zoeken…"
 
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:355
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Default zoom level"
 msgstr "Standaard zoomniveau"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:370
 msgid "Zoom in"
 msgstr "Inzoomen"
 
-#: src/MainWindow.vala:389
+#: src/MainWindow.vala:387
 msgid "Follow System Style"
 msgstr "Volg systeemstijl"
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:391
 msgid "High Contrast"
 msgstr "Hoog contrast"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:397
 msgid "Solarized Light"
 msgstr "Gesolarizeerd licht"
 
-#: src/MainWindow.vala:405 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:403 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Donker"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:409
 msgid "Custom"
 msgstr "Aangepast"
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:432
 msgid "Natural Copy/Paste"
 msgstr "Gewoon kopiëren/plakken"
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Sneltoetsen hebben geen Shift nodig; mogelijk stoort dit met CLI apps"
 
-#: src/MainWindow.vala:461
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:485
 msgid "New Tab"
 msgstr "Nieuwe tab"
 
-#: src/MainWindow.vala:947
+#: src/MainWindow.vala:945
 #, c-format
 msgid "Show in %s"
 msgstr "Toon in %s"
 
-#: src/MainWindow.vala:948
+#: src/MainWindow.vala:946
 msgid "Default application"
 msgstr "Standaard toepassing"
 
-#: src/MainWindow.vala:1230 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Tabblad sluiten"
 
-#: src/MainWindow.vala:1231
+#: src/MainWindow.vala:1229
 msgid "Duplicate"
 msgstr "Dupliceer"
 
-#: src/MainWindow.vala:1244
+#: src/MainWindow.vala:1242
 msgid "Reload"
 msgstr "Herladen"
 
-#: src/MainWindow.vala:1335
+#: src/MainWindow.vala:1333
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "De geplakte tekst lijkt te proberen administratieve rechten te bemachtigen"
 
-#: src/MainWindow.vala:1337
+#: src/MainWindow.vala:1335
 msgid "The pasted text may contain multiple commands"
 msgstr "De geplakte tekst lijkt meerdere commando's te bevatten"
 
-#: src/MainWindow.vala:1496
+#: src/MainWindow.vala:1494
 msgid "Hide find bar"
 msgstr "Verberg zoekbalk"
 
