@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-28 12:01+0000\n"
-"PO-Revision-Date: 2023-03-22 03:59+0000\n"
+"PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -47,7 +47,7 @@ msgstr "ターミナルでプログラムを実行します"
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:43
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "ターミナルを最小化した状態で開きます"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:46
