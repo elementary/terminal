@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-28 12:01+0000\n"
-"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:33
@@ -48,8 +48,9 @@ msgstr "Kjør program i kommandolinje"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:43
+#, fuzzy
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Åpne terminal minimert"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:46
