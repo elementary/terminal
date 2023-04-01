@@ -16,11 +16,7 @@ namespace Terminal.Test.Application {
         };
 
         application.window_added.connect ((win) => win.show.connect (() => win.hide ()));
-
-        application.shutdown.connect (() => {
-            application.get_windows ().foreach ((win) => win.destroy ());
-            application = null;
-        });
+        application.shutdown.connect (() => application.get_windows ().foreach ((win) => win.destroy ()));
     }
 
     private void cli (string[] args, LocalOptionsCallback callback) {
