@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:39+0000\n"
+"POT-Creation-Date: 2023-03-28 12:01+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,152 +20,157 @@ msgstr ""
 "X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:31
+#: src/Application.vala:33
 msgid "Show version"
 msgstr ""
 
 #. -n flag forces a new window
-#: src/Application.vala:33
+#: src/Application.vala:35
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "नया विंडो खोलें"
 
 #. -t flag forces a new tab
-#: src/Application.vala:35
+#: src/Application.vala:37
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "नया विंडो खोलें"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:37
+#: src/Application.vala:39
 msgid "Set shell working directory"
 msgstr "शेल वर्किंग डिरेकटरी नियत करें"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:39
+#: src/Application.vala:41
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "टर्मिनल में एक प्रोग्राम रन करें"
 
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:43
+msgid "Open terminal in a minimized state"
+msgstr ""
+
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:42
+#: src/Application.vala:46
 msgid "Run remainder of line as a command in terminal"
 msgstr ""
 
-#: src/Application.vala:99
+#: src/Application.vala:103
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:134
+#: src/Application.vala:169
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:137
+#: src/Application.vala:172
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:208
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:214
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:226
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:351 src/MainWindow.vala:1504
+#: src/MainWindow.vala:232 src/MainWindow.vala:349 src/MainWindow.vala:1502
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:355
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Default zoom level"
 msgstr "डिफ़ॉल्ट ज़ूम स्तर"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:370
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
-#: src/MainWindow.vala:389
+#: src/MainWindow.vala:387
 msgid "Follow System Style"
 msgstr ""
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:391
 msgid "High Contrast"
 msgstr "उच्च कॉन्ट्रास्ट"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:397
 msgid "Solarized Light"
 msgstr "सौरकृत प्रकाश"
 
-#: src/MainWindow.vala:405 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:403 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr ""
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:409
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:432
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/MainWindow.vala:461
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:485
 msgid "New Tab"
 msgstr "नया टैब"
 
-#: src/MainWindow.vala:947
+#: src/MainWindow.vala:945
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/MainWindow.vala:948
+#: src/MainWindow.vala:946
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1230 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "टैब बंद करें"
 
-#: src/MainWindow.vala:1231
+#: src/MainWindow.vala:1229
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1244
+#: src/MainWindow.vala:1242
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1335
+#: src/MainWindow.vala:1333
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1337
+#: src/MainWindow.vala:1335
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1496
+#: src/MainWindow.vala:1494
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 

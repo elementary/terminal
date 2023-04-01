@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 13:39+0000\n"
+"POT-Creation-Date: 2023-03-28 12:01+0000\n"
 "PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,34 +20,39 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-22 06:48+0000\n"
 
-#: src/Application.vala:31
+#: src/Application.vala:33
 msgid "Show version"
 msgstr "Vis version"
 
 #. -n flag forces a new window
-#: src/Application.vala:33
+#: src/Application.vala:35
 msgid "Open a new terminal window"
 msgstr "Åbn et nyt terminal vindue"
 
 #. -t flag forces a new tab
-#: src/Application.vala:35
+#: src/Application.vala:37
 msgid "Open a new terminal tab"
 msgstr "Åbn et nyt vindue som fane"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:37
+#: src/Application.vala:39
 msgid "Set shell working directory"
 msgstr "Sæt kommandofortolkerens arbejdsmappe"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:39
+#: src/Application.vala:41
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Kør et program i terminalen"
 
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:43
+msgid "Open terminal in a minimized state"
+msgstr ""
+
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:42
+#: src/Application.vala:46
 #, fuzzy
 #| msgid ""
 #| "Run remainder of line as a command in terminal. Can also use '--' as flag"
@@ -56,117 +61,117 @@ msgstr ""
 "Kør resten af linjen som en kommando i terminal. '--' kan også benyttes som "
 "flag"
 
-#: src/Application.vala:99
+#: src/Application.vala:103
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:134
+#: src/Application.vala:169
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:137
+#: src/Application.vala:172
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:210
+#: src/MainWindow.vala:208
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:214
 msgid "Copy Last Output"
 msgstr "Kopier Forrige Resultat"
 
-#: src/MainWindow.vala:222
+#: src/MainWindow.vala:220
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/MainWindow.vala:228
+#: src/MainWindow.vala:226
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:351 src/MainWindow.vala:1504
+#: src/MainWindow.vala:232 src/MainWindow.vala:349 src/MainWindow.vala:1502
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:357
+#: src/MainWindow.vala:355
 msgid "Zoom out"
 msgstr "Zoom ud"
 
-#: src/MainWindow.vala:365
+#: src/MainWindow.vala:363
 msgid "Default zoom level"
 msgstr "Standard zoomniveau"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:370
 msgid "Zoom in"
 msgstr "Zoom ind"
 
-#: src/MainWindow.vala:389
+#: src/MainWindow.vala:387
 msgid "Follow System Style"
 msgstr ""
 
-#: src/MainWindow.vala:393
+#: src/MainWindow.vala:391
 msgid "High Contrast"
 msgstr "Høj Kontrast"
 
-#: src/MainWindow.vala:399
+#: src/MainWindow.vala:397
 msgid "Solarized Light"
 msgstr "Solariseret Lys"
 
-#: src/MainWindow.vala:405 src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/MainWindow.vala:403 src/Dialogs/ColorPreferencesDialog.vala:58
 msgid "Dark"
 msgstr "Mørk"
 
-#: src/MainWindow.vala:411
+#: src/MainWindow.vala:409
 msgid "Custom"
 msgstr ""
 
-#: src/MainWindow.vala:434
+#: src/MainWindow.vala:432
 msgid "Natural Copy/Paste"
 msgstr "Naturlig Kopi/Indsæt"
 
-#: src/MainWindow.vala:435
+#: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Genveje behøver ikke brug af Shift; kan forstyrre CLI applikationer"
 
-#: src/MainWindow.vala:461
+#: src/MainWindow.vala:459
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/MainWindow.vala:487
+#: src/MainWindow.vala:485
 msgid "New Tab"
 msgstr "Nyt faneblad"
 
-#: src/MainWindow.vala:947
+#: src/MainWindow.vala:945
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Vis version"
 
-#: src/MainWindow.vala:948
+#: src/MainWindow.vala:946
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1230 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Luk faneblad"
 
-#: src/MainWindow.vala:1231
+#: src/MainWindow.vala:1229
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1244
+#: src/MainWindow.vala:1242
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1335
+#: src/MainWindow.vala:1333
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1337
+#: src/MainWindow.vala:1335
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1496
+#: src/MainWindow.vala:1494
 msgid "Hide find bar"
 msgstr "Skjul søgebar"
 

@@ -6,6 +6,7 @@
 public class Terminal.Application : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
+    private bool minimized = false;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
     private uint dbus_id = 0;
@@ -38,6 +39,8 @@ public class Terminal.Application : Gtk.Application {
         add_main_option ("working-directory", 'w', 0, OptionArg.FILENAME, _("Set shell working directory"), "DIR");
         // -e flag is used for running single strings as a command line
         add_main_option ("execute", 'e', 0, OptionArg.FILENAME_ARRAY, _("Run a program in terminal"), "PROGRAM");
+        // -m flag starts terminal in a minimized state
+        add_main_option ("minimized", 'm', 0, OptionArg.NONE, _("Open terminal in a minimized state"), null);
         // -x flag is used for using the rest of the command line in the new tab/window
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
@@ -120,6 +123,10 @@ public class Terminal.Application : Gtk.Application {
 
         if (commandline != "\0") {
             options.insert ("commandline", "^&ay", commandline.escape ());
+        }
+
+        if (options.contains ("minimized")) {
+            minimized = true;
         }
 
         return -1;
@@ -244,7 +251,11 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
-        window.present ();
+        if (minimized) {
+            window.iconify ();
+        } else {
+            window.present ();
+        }
         return 0;
     }
 
