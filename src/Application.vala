@@ -271,9 +271,11 @@ public class Terminal.Application : Gtk.Application {
         new MainWindow (this, active_window == null).present ();
     }
 
-    private void close () {
+    public void close () {
         foreach (var window in get_windows ()) {
-            window.close (); // if all windows is closed, the main loop will stop automatically.
+            // ((MainWindow)window).prepare_to_close (); // if all windows is closed, the main loop will stop automatically.
+            window.close ();
+            window.destroy ();
         }
     }
 }
