@@ -1035,28 +1035,19 @@ namespace Terminal {
             return base.configure_event (event);
         }
 
-        private void on_switch_page (Granite.Widgets.Tab? old,
-                                     Granite.Widgets.Tab new_tab) {
-
+        private void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
             current_terminal = get_term_widget (new_tab);
-            /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
-            Idle.add (() => {
-                get_term_widget (new_tab).grab_focus ();
-                update_copy_output_sensitive ();
-                title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                            : current_terminal.current_working_directory;
-                if (Granite.Services.System.history_is_enabled () &&
-                    Application.settings.get_boolean ("remember-tabs")) {
 
-                    Terminal.Application.saved_state.set_int (
-                        "focused-tab",
-                        notebook.get_tab_position (new_tab)
-                    );
-                }
+            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
+                Application.saved_state.set_int ("focused-tab", notebook.get_tab_position (new_tab));
+            }
 
-                return false;
-            });
+            title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                        : current_terminal.current_working_directory;
+
+            update_copy_output_sensitive ();
+            current_terminal.grab_focus ();
         }
 
         private void open_tabs () {
