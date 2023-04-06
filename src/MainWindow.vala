@@ -1253,10 +1253,6 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            return prepare_to_close ();
-        }
-
-        public bool prepare_to_close () {
             save_opened_terminals ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
