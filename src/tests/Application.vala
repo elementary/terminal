@@ -15,8 +15,22 @@ namespace Terminal.Test.Application {
             application_id = "io.elementary.terminal.tests.application"
         };
 
-        application.window_added.connect ((win) => win.show.connect (() => win.hide ()));
         application.shutdown.connect (() => application.get_windows ().foreach ((win) => win.destroy ()));
+    }
+
+    private void iterate_context () {
+        unowned var context = MainContext.default ();
+        bool done = false;
+
+        Timeout.add (200, () => {
+            done = true;
+            context.wakeup ();
+            return Source.REMOVE;
+        });
+
+        while (!done) {
+            context.iteration (true);
+        }
     }
 
     private void cli (string[] args, LocalOptionsCallback callback) {
@@ -47,14 +61,11 @@ namespace Terminal.Test.Application {
                 "platform-data", new Variant.parsed (platform_data)
             );
 
-            // using a idle callback here, so that it's get called after command_line() finished
-            Idle.add (() => {
-                callback (cmdline);
-                application.quit ();
-                return Source.REMOVE;
-            });
-
-            return application.command_line (cmdline);
+            application.command_line (cmdline);
+            iterate_context ();
+            callback (cmdline);
+            application.quit ();
+            return 0;
         });
 
         if (application.run (null) != 0) {
@@ -73,13 +84,9 @@ namespace Terminal.Test.Application {
             assert_true (application.has_action (name));
             application.activate_action (name, @value);
 
-            // using a idle callback here, so that we call the callback after activate_action() finished
-            Idle.add (() => {
-                callback ();
-                application.quit ();
-                return Source.REMOVE;
-            });
-
+            iterate_context ();
+            callback ();
+            application.quit ();
             return 0;
         });
 
