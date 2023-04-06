@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
-"PO-Revision-Date: 2023-02-24 19:39+0000\n"
+"PO-Revision-Date: 2023-04-05 23:00+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -61,7 +61,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "Poprawne odeksportowanie interfejsu DBus przy wychodzeniu"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 #: data/io.elementary.terminal.appdata.xml.in:75
