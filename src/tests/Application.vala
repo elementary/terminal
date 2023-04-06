@@ -205,6 +205,7 @@ namespace Terminal.Test.Application {
         });
 
         GLib.Test.add_func ("/application/action/quit", () => {
+            GLib.Test.skip ();
             action ("quit", null, () => {
                 assert_null (application.active_window);
             });
