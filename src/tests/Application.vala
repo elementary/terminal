@@ -8,18 +8,29 @@ namespace Terminal.Test.Application {
 
     delegate void LocalOptionsCallback (VariantDict options);
     delegate void CommandLineCallback (ApplicationCommandLine command_line);
+    delegate void ActivateCallback ();
 
     private void setup () {
         application = new Terminal.Application () {
             application_id = "io.elementary.terminal.tests.application"
         };
 
-        application.window_added.connect ((win) => win.show.connect (() => win.hide ()));
+        application.shutdown.connect (() => application.get_windows ().foreach ((win) => win.destroy ()));
+    }
 
-        application.shutdown.connect (() => {
-            application.get_windows ().foreach ((win) => win.destroy ());
-            application = null;
+    private void iterate_context () {
+        unowned var context = MainContext.default ();
+        bool done = false;
+
+        Timeout.add (200, () => {
+            done = true;
+            context.wakeup ();
+            return Source.REMOVE;
         });
+
+        while (!done) {
+            context.iteration (true);
+        }
     }
 
     private void cli (string[] args, LocalOptionsCallback callback) {
@@ -50,14 +61,33 @@ namespace Terminal.Test.Application {
                 "platform-data", new Variant.parsed (platform_data)
             );
 
-            // using a idle callback here, so that it's get called after command_line() finished
-            Idle.add (() => {
-                callback (cmdline);
-                application.quit ();
-                return Source.REMOVE;
-            });
+            application.command_line (cmdline);
+            iterate_context ();
+            callback (cmdline);
+            application.quit ();
+            return 0;
+        });
 
-            return application.command_line (cmdline);
+        if (application.run (null) != 0) {
+            GLib.Test.fail ();
+        }
+    }
+
+    private void action (string name, Variant? @value, ActivateCallback callback) {
+        ulong oneshot = 0;
+        setup ();
+
+        oneshot = application.command_line.connect ((nill) => {
+            application.disconnect (oneshot);
+            application.command_line (nill);
+
+            assert_true (application.has_action (name));
+            application.activate_action (name, @value);
+
+            iterate_context ();
+            callback ();
+            application.quit ();
+            return 0;
         });
 
         if (application.run (null) != 0) {
@@ -169,6 +199,21 @@ namespace Terminal.Test.Application {
                 assert_nonnull (window);
                 var terminal_directory = window.current_terminal.get_shell_location ();
                 assert_cmpstr (terminal_directory, CompareOperator.EQ, working_directory);
+            });
+        });
+
+        // actions
+        GLib.Test.add_func ("/application/action/new-window", () => {
+            action ("new-window", null, () => {
+                // include the extra window from terminal launching
+                var n_windows = (int) application.get_windows ().length ();
+                assert_cmpint (n_windows, CompareOperator.EQ, 2);
+            });
+        });
+
+        GLib.Test.add_func ("/application/action/quit", () => {
+            action ("quit", null, () => {
+                assert_null (application.active_window);
             });
         });
 
