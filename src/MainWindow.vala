@@ -32,6 +32,7 @@ namespace Terminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private bool on_drag = false;
+        private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
@@ -41,7 +42,6 @@ namespace Terminal {
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
-        public uint focus_timeout { get; private set; default = 0;}
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
