@@ -124,7 +124,12 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
-        private double total_delta_y = 0.0;
+        private Gtk.EventControllerMotion motion_controller;
+        private Gtk.EventControllerScroll scroll_controller;
+        private Gtk.EventControllerKey key_controller;
+        private Gtk.GestureMultiPress press_gesture;
+
+        private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
 
@@ -155,81 +160,32 @@ namespace Terminal {
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
 
-            button_press_event.connect ((event) => {
-                link_uri = null;
-                /* If this event caused focus-in then window.focus_timeout is > 0
-                 * and we need to suppress following hyperlinks on button release.
-                 * If focus-in was caused by keyboard then the focus_timeout will have
-                 * expired and we can follow hyperlinks */
-                allow_hyperlink = window.focus_timeout == 0;
+            motion_controller = new Gtk.EventControllerMotion (this) {
+                propagation_phase = CAPTURE
+            };
+            motion_controller.enter.connect (pointer_focus);
 
-                if (event.button == Gdk.BUTTON_SECONDARY) {
-                    link_uri = get_link (event);
-                    if (link_uri != null) {
-                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
-                    }
+            scroll_controller = new Gtk.EventControllerScroll (this, NONE) {
+                propagation_phase = TARGET
+            };
+            scroll_controller.scroll.connect (scroll);
+            scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
 
-                    window.update_context_menu ();
+            key_controller = new Gtk.EventControllerKey (this) {
+                propagation_phase = NONE
+            };
+            key_controller.key_pressed.connect (key_pressed);
+            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
 
-                    menu.popup_at_pointer (event);
-                    menu.select_first (false);
+            press_gesture = new Gtk.GestureMultiPress (this) {
+                propagation_phase = TARGET,
+                button = 0
+            };
+            press_gesture.pressed.connect (button_pressed);
+            press_gesture.released.connect (button_released);
 
-                    return true;
-                }
-
-                return false;
-            });
-
-            button_release_event.connect ((event) => {
-
-                if (event.button == Gdk.BUTTON_PRIMARY) {
-                    if (allow_hyperlink) {
-                        link_uri = get_link (event);
-
-                        if (link_uri != null && !get_has_selection ()) {
-                           window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
-                        }
-                    } else {
-                        allow_hyperlink = true;
-                    }
-                }
-
-                return false;
-            });
-
-            scroll_event.connect ((event) => {
-                if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
-                    switch (event.direction) {
-                        case Gdk.ScrollDirection.UP:
-                            window.get_simple_action (MainWindow.ACTION_ZOOM_IN_FONT).activate (null);
-                            return Gdk.EVENT_STOP;
-
-                        case Gdk.ScrollDirection.DOWN:
-                            window.get_simple_action (MainWindow.ACTION_ZOOM_OUT_FONT).activate (null);
-                            return Gdk.EVENT_STOP;
-
-                        case Gdk.ScrollDirection.SMOOTH:
-                            /* try to emulate a normal scrolling event by summing deltas.
-                             * step size of 0.5 chosen to match sensitivity */
-                            total_delta_y += event.delta_y;
-
-                            if (total_delta_y >= 0.5) {
-                                total_delta_y = 0;
-                                window.get_simple_action (MainWindow.ACTION_ZOOM_OUT_FONT).activate (null);
-                            } else if (total_delta_y <= -0.5) {
-                                total_delta_y = 0;
-                                window.get_simple_action (MainWindow.ACTION_ZOOM_IN_FONT).activate (null);
-                            }
-
-                            return Gdk.EVENT_STOP;
-
-                        default:
-                            break;
-                    }
-                }
-
-                return Gdk.EVENT_PROPAGATE;
-            });
+            // send events to key controller manually, since key_released isn't emitted in any propagation phase
+            event.connect (key_controller.handle_event);
 
             selection_changed.connect (() => {
                 window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
@@ -259,6 +215,66 @@ namespace Terminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
+        }
+
+        private void pointer_focus () {
+            // If this event caused focus-in then we need to suppress following hyperlinks on button release.
+            allow_hyperlink = has_focus;
+        }
+
+        private void button_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = null;
+
+            if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
+                link_uri = get_link (gesture.get_last_event (null));
+
+                if (link_uri != null) {
+                    window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
+                }
+
+                Gdk.Rectangle rect = { (int) x, (int) y };
+                window.update_context_menu ();
+
+                menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                menu.select_first (false);
+
+                gesture.set_state (CLAIMED);
+            }
+        }
+
+        private void button_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
+                if (allow_hyperlink) {
+                    link_uri = get_link (gesture.get_last_event (null));
+
+                    if (link_uri != null && !get_has_selection ()) {
+                       window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                    }
+                } else {
+                    allow_hyperlink = true;
+                }
+            }
+        }
+
+        private void scroll (double x, double y) {
+            // try to emulate a normal scrolling event by summing deltas. step size of 0.5 chosen to match sensitivity
+            scroll_delta += y;
+
+            if (scroll_delta >= 0.5) {
+                window.get_simple_action (MainWindow.ACTION_ZOOM_OUT_FONT).activate (null);
+                scroll_delta = 0.0;
+            } else if (scroll_delta <= -0.5) {
+                window.get_simple_action (MainWindow.ACTION_ZOOM_IN_FONT).activate (null);
+                scroll_delta = 0.0;
+            }
+        }
+
+        private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            if (keyval == Gdk.Key.Control_R || keyval == Gdk.Key.Control_L) {
+                scroll_controller.flags = VERTICAL;
+            }
+
+            return false;
         }
 
         private void update_theme () {
