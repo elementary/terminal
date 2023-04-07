@@ -6,7 +6,6 @@
 public class Terminal.Application : Gtk.Application {
     public int minimum_width;
     public int minimum_height;
-    private bool minimized = false;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
     private uint dbus_id = 0;
@@ -125,10 +124,6 @@ public class Terminal.Application : Gtk.Application {
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
-        if (options.contains ("minimized")) {
-            minimized = true;
-        }
-
         return -1;
     }
 
@@ -235,7 +230,7 @@ public class Terminal.Application : Gtk.Application {
         unowned var working_directory = command_line.get_cwd ();
         unowned string[] commands;
         unowned string command;
-        bool new_tab;
+        bool new_tab, minimized;
 
         options.lookup ("new-tab", "b", out new_tab);
 
@@ -251,11 +246,12 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
-        if (minimized) {
+        if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.iconify ();
         } else {
             window.present ();
         }
+
         return 0;
     }
 
