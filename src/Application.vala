@@ -45,11 +45,6 @@ public class Terminal.Application : Gtk.Application {
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
         );
-
-        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-        settings = new GLib.Settings ("io.elementary.terminal.settings");
-        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-        themes = new Themes ();
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
@@ -188,6 +183,41 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
+    protected override void startup () {
+        base.startup ();
+        Hdy.init ();
+
+        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+        settings = new GLib.Settings ("io.elementary.terminal.settings");
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+        themes = new Themes ();
+
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("/io/elementary/terminal/Application.css");
+
+        /* Vte.Terminal itself registers its default styling with the APPLICATION priority:
+         * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
+         * To be able to overwrite their styles, we need to use +1.
+         */
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+        );
+
+        var new_window_action = new SimpleAction ("new-window", null);
+        new_window_action.activate.connect (new_window);
+
+        var quit_action = new SimpleAction ("quit", null);
+        quit_action.activate.connect (close);
+
+        add_action (new_window_action);
+        add_action (quit_action);
+
+        set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
+        set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
+    }
+
     protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
@@ -237,8 +267,14 @@ public class Terminal.Application : Gtk.Application {
         base.dbus_unregister (connection, path);
     }
 
-    public void new_window () {
+    private void new_window () {
         new MainWindow (this, active_window == null).present ();
+    }
+
+    private void close () {
+        foreach (var window in get_windows ()) {
+            window.close (); // if all windows is closed, the main loop will stop automatically.
+        }
     }
 }
 
