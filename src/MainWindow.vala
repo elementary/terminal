@@ -61,7 +61,6 @@ namespace Terminal {
         public const string ACTION_NEW_TAB = "action-new-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_RELOAD_TAB = "action-reload-tab";
-        public const string ACTION_NEW_WINDOW = "action-new-window";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
         public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
@@ -79,7 +78,6 @@ namespace Terminal {
         public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
-        public const string ACTION_CLOSE_TERMINAL = "action-close-terminal";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -89,7 +87,6 @@ namespace Terminal {
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_RELOAD_TAB, action_reload_tab },
-            { ACTION_NEW_WINDOW, action_new_window },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
@@ -105,8 +102,7 @@ namespace Terminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_SELECT_ALL, action_select_all },
             { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser},
-            { ACTION_CLOSE_TERMINAL, action_close_terminal}
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -135,31 +131,17 @@ namespace Terminal {
             }
         }
 
-        public MainWindow.with_working_directory (Terminal.Application app, string? location,
-                                                  bool recreate_tabs = true, bool create_new_tab = false) {
-            Object (
-                app: app,
-                focus_restored_tabs: false,
-                recreate_tabs: recreate_tabs
-            );
-
-            add_tab_with_working_directory (location, null, create_new_tab);
-        }
-
         static construct {
-            Hdy.init ();
-
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
             action_accelerators[ACTION_RELOAD_TAB] = ACTION_RELOAD_PREFERRED_ACCEL;
             action_accelerators[ACTION_RELOAD_TAB] = "<Shift>F5";
-            action_accelerators[ACTION_NEW_WINDOW] = "<Control><Shift>n";
-            action_accelerators[ACTION_NEXT_TAB] = "<Control><Shift>Right";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
-            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Left";
+            action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
+            action_accelerators[ACTION_PREVIOUS_TAB] = "<Control>Page_Up";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_ZOOM_DEFAULT_FONT] = "<Control>0";
@@ -176,7 +158,6 @@ namespace Terminal {
             action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
             action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
-            action_accelerators[ACTION_CLOSE_TERMINAL] = "<Control><Shift>q";
         }
 
         construct {
@@ -288,10 +269,6 @@ namespace Terminal {
             }
         }
 
-        public void add_tab_with_command (string command, string? working_directory = null, bool create_new_tab = false) {
-            add_tab_with_working_directory (working_directory, command, create_new_tab);
-        }
-
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
@@ -346,17 +323,6 @@ namespace Terminal {
         }
 
         private void setup_ui () {
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/terminal/Application.css");
-            // Vte.Terminal itself registers its default styling with the APPLICATION priority:
-            // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
-            // To be able to overwrite their styles, we need to use +1.
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
-            );
-
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -677,6 +643,7 @@ namespace Terminal {
                                               (int)cell_width,
                                               (int)cell_height};
 
+                        update_context_menu ();
                         menu.popup_at_rect (rect_window,
                                             rect,
                                             Gdk.Gravity.SOUTH_WEST,
@@ -1049,28 +1016,19 @@ namespace Terminal {
             return base.configure_event (event);
         }
 
-        private void on_switch_page (Granite.Widgets.Tab? old,
-                                     Granite.Widgets.Tab new_tab) {
-
+        private void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
             current_terminal = get_term_widget (new_tab);
-            /* The font-scales of all terminals are currently the synchronized through saved-state binding */
             new_tab.icon = null;
-            Idle.add (() => {
-                get_term_widget (new_tab).grab_focus ();
-                update_copy_output_sensitive ();
-                title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                            : current_terminal.current_working_directory;
-                if (Granite.Services.System.history_is_enabled () &&
-                    Application.settings.get_boolean ("remember-tabs")) {
 
-                    Terminal.Application.saved_state.set_int (
-                        "focused-tab",
-                        notebook.get_tab_position (new_tab)
-                    );
-                }
+            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
+                Application.saved_state.set_int ("focused-tab", notebook.get_tab_position (new_tab));
+            }
 
-                return false;
-            });
+            title = current_terminal.window_title != "" ? current_terminal.window_title
+                                                        : current_terminal.current_working_directory;
+
+            update_copy_output_sensitive ();
+            current_terminal.grab_focus ();
         }
 
         private void open_tabs () {
@@ -1106,7 +1064,7 @@ namespace Terminal {
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
             } else {
-                tabs += Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                tabs += Environment.get_current_dir ();
                 zooms += default_zoom;
             }
 
@@ -1122,7 +1080,7 @@ namespace Terminal {
                 }
 
                 if (null_dirs == tabs.length) {
-                    tabs[0] = Terminal.Application.working_directory ?? Environment.get_current_dir ();
+                    tabs[0] = Environment.get_current_dir ();
                 }
             }
 
@@ -1436,15 +1394,6 @@ namespace Terminal {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
             // Closing a tab will switch to another, which will trigger check for same names
-        }
-
-        public void action_close_terminal () {
-
-            close ();
-        }
-
-        private void action_new_window () {
-            app.new_window ();
         }
 
         private void action_new_tab () {

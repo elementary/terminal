@@ -115,15 +115,26 @@ namespace Terminal.Utils {
         return uri;
     }
 
-    private string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
-        string rc = (Uri.RESERVED_CHARS_GENERIC_DELIMITERS +
-                     Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS).replace ("#", "").replace ("*", "").replace ("~", "");
+    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
+        // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
+        var placeholder = "::::::";
+        var parts = uri.split (Path.DIR_SEPARATOR_S);
+        parts[parts.length - 1] = parts[parts.length - 1].replace ("#", placeholder);
+        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts);
+        string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
+                    .replace ("#", "")
+                    .replace ("*", "")
+                    .replace ("~", "");
 
         if (!allow_single_quote) {
             rc = rc.replace ("'", "");
         }
 
-        return Uri.escape_string ((Uri.unescape_string (uri) ?? uri), rc , allow_utf8);
+        //Escape and then replace fragment identifier
+        return Uri.escape_string (
+            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape),
+            rc ,
+            allow_utf8
+        ).replace (placeholder, "#");
     }
-
 }
