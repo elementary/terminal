@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:37+0000\n"
-"Last-Translator: Eldest Pasirula <aknutman@gmail.com>\n"
+"Last-Translator: Deleted User <noreply+2670@weblate.org>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -94,7 +94,6 @@ msgid "Default zoom level"
 msgstr "Tingkat zoom bawaan"
 
 #: src/MainWindow.vala:370
-#, fuzzy
 msgid "Zoom in"
 msgstr "Perbesar"
 
