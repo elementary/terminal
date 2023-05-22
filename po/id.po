@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:36+0000\n"
-"Last-Translator: Deleted User <noreply+2670@weblate.org>\n"
+"Last-Translator: Adek Lanin <adeklanin@me.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -59,11 +59,11 @@ msgstr "[-- PERINTAH…]"
 
 #: src/Application.vala:169
 msgid "Process completed"
-msgstr ""
+msgstr "Proses selesai"
 
 #: src/Application.vala:172
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Proses keluar dengan galat"
 
 #: src/MainWindow.vala:208
 msgid "Copy"
