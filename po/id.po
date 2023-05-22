@@ -8,8 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:37+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
-"io>\n"
+"Last-Translator: Adek Lanin <adeklanin@me.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -101,7 +100,7 @@ msgstr "Perbesar"
 
 #: src/MainWindow.vala:387
 msgid "Follow System Style"
-msgstr ""
+msgstr "Ikuti gaya sistem"
 
 #: src/MainWindow.vala:391
 msgid "High Contrast"
