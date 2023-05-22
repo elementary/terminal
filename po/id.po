@@ -8,8 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:41+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
-"io>\n"
+"Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -166,7 +165,7 @@ msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
 
 #: src/MainWindow.vala:1494
 msgid "Hide find bar"
-msgstr ""
+msgstr "Sembunyikan bilah pencarian"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
@@ -182,7 +181,7 @@ msgstr "Terang"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "Palet Warna"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
@@ -190,27 +189,27 @@ msgstr "Setel ulang ke bawaan"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "Hitam:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "Merah:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "Hijau:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "Kuning:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "Biru:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
@@ -218,15 +217,15 @@ msgstr "Cyan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Abu-abu:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
-msgstr ""
+msgstr "Putih:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr ""
+msgstr "Merah Cerah:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
