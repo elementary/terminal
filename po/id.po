@@ -7,8 +7,9 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
-"PO-Revision-Date: 2023-05-22 18:41+0000\n"
-"Last-Translator: Eldest Pasirula <aknutman@gmail.com>\n"
+"PO-Revision-Date: 2023-05-23 19:07+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -224,31 +225,31 @@ msgstr "Putih:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr "Merah Cerah:"
+msgstr "Merah Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "Hijau Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Kuning Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Biru Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Magenta Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Cyan Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "Abu-abu Terang:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
@@ -260,7 +261,7 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Kursor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -268,19 +269,19 @@ msgstr "Tutup"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Kontras sangat rendah"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:311
 msgid "Contrast is low"
-msgstr ""
+msgstr "Kontras rendah"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:314
 msgid "Contrast is good"
-msgstr ""
+msgstr "Kontras baik"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:317
 msgid "Contrast is high"
-msgstr ""
+msgstr "Kontras tinggi"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -311,34 +312,31 @@ msgid "Quit Terminal"
 msgstr "Keluar Terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Yakin ingin menutup tab ini?"
+msgstr "Yakin ingin memuat ulang tab ini?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "Ada proses aktif di terminal ini."
+msgstr ""
+"Ada proses aktif di tab ini. Jika Anda memuat ulang, prosesnya akan berakhir."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Tutup Tab"
+msgstr "Muat Ulang Tab"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Menyalin perintah ke Terminal bisa berbahaya. Pastikan Anda memahami apa "
+"yang dilakukan setiap bagian dari teks yang ditempelkan sebelum melanjutkan."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Tampilkan peringatan perlindungan tempel"
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
@@ -350,7 +348,7 @@ msgstr "Tempelkan saja"
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr "Cari"
+msgstr "Temukan"
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
@@ -358,7 +356,7 @@ msgstr "Hasil sebelumnya"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr "Hasil berikutnya"
+msgstr "Hasil selanjutnya"
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
