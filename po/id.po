@@ -7,16 +7,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
-"PO-Revision-Date: 2018-06-14 00:07+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2023-05-22 18:36+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:33
@@ -44,24 +45,22 @@ msgstr "Setel direktori kerja shell"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:41
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Jalankan program dalam terminal"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:43
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Buka terminal dalam keadaan terminimalkan"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:46
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
+msgstr "Jalankan sisa baris sebagai perintah di terminal"
 
 #: src/Application.vala:103
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- PERINTAH…]"
 
 #: src/Application.vala:169
 msgid "Process completed"
