@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:41+0000\n"
-"Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
+"Last-Translator: Eldest Pasirula <aknutman@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -134,10 +134,9 @@ msgid "New Tab"
 msgstr "Tab Baru"
 
 #: src/MainWindow.vala:945
-#, fuzzy, c-format
-#| msgid "Show in File Browser"
+#, c-format
 msgid "Show in %s"
-msgstr "Tampilkan pada Penelusur Berkas"
+msgstr "Tampilkan pada %s"
 
 #: src/MainWindow.vala:946
 msgid "Default application"
