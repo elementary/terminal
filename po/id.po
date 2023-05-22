@@ -8,7 +8,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:41+0000\n"
-"Last-Translator: Deleted User <noreply+2670@weblate.org>\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -99,7 +100,7 @@ msgstr "Perbesar"
 
 #: src/MainWindow.vala:387
 msgid "Follow System Style"
-msgstr "Ikuti gaya sistem"
+msgstr "Ikuti Gaya Sistem"
 
 #: src/MainWindow.vala:391
 msgid "High Contrast"
@@ -115,15 +116,15 @@ msgstr "Gelap"
 
 #: src/MainWindow.vala:409
 msgid "Custom"
-msgstr ""
+msgstr "Kustom"
 
 #: src/MainWindow.vala:432
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Salin/Tempel Alami"
 
 #: src/MainWindow.vala:433
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Pintasan tidak memerlukan Shift; dapat mengganggu aplikasi CLI"
 
 #: src/MainWindow.vala:459
 msgid "Settings"
@@ -141,7 +142,7 @@ msgstr "Tampilkan pada Penelusur Berkas"
 
 #: src/MainWindow.vala:946
 msgid "Default application"
-msgstr ""
+msgstr "Aplikasi bawaan"
 
 #: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
@@ -149,19 +150,19 @@ msgstr "Tutup Tab"
 
 #: src/MainWindow.vala:1229
 msgid "Duplicate"
-msgstr ""
+msgstr "Gandakan"
 
 #: src/MainWindow.vala:1242
 msgid "Reload"
-msgstr ""
+msgstr "Muat Ulang"
 
 #: src/MainWindow.vala:1333
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
 
 #: src/MainWindow.vala:1335
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
 
 #: src/MainWindow.vala:1494
 msgid "Hide find bar"
@@ -169,15 +170,15 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
-msgstr ""
+msgstr "Preferensi Warna"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
-msgstr ""
+msgstr "Gaya jendela:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "Terang"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
@@ -185,7 +186,7 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "Setel ulang ke bawaan"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
@@ -213,7 +214,7 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Cyan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
