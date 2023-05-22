@@ -8,8 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
 "PO-Revision-Date: 2023-05-22 18:36+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
-"io>\n"
+"Last-Translator: Deleted User <noreply+2670@weblate.org>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
@@ -22,21 +21,17 @@ msgstr ""
 
 #: src/Application.vala:33
 msgid "Show version"
-msgstr ""
+msgstr "Tampilkan versi"
 
 #. -n flag forces a new window
 #: src/Application.vala:35
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Buka jendela baru"
+msgstr "Buka jendela terminal baru"
 
 #. -t flag forces a new tab
 #: src/Application.vala:37
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab"
-msgstr "Buka jendela baru"
+msgstr "Buka tab terminal baru"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:39
