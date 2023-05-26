@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
-"PO-Revision-Date: 2018-08-24 00:01+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2023-05-26 21:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "extra/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
@@ -40,10 +41,8 @@ msgstr ""
 "sistem Anda."
 
 #: data/io.elementary.terminal.appdata.xml.in:49
-#, fuzzy
-#| msgid "elementary LLC."
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.terminal.appdata.xml.in:56
 #: data/io.elementary.terminal.appdata.xml.in:73
@@ -51,17 +50,19 @@ msgstr "elementary LLC."
 #: data/io.elementary.terminal.appdata.xml.in:113
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Other updates:"
-msgstr ""
+msgstr "Pembaruan lainnya:"
 
 #: data/io.elementary.terminal.appdata.xml.in:58
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"Menambahkan pintasan \"Ctrl + PageUp\" dan \"Ctrl + PageDown\" untuk beralih "
+"antar tab"
 
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "Batalkan ekspor Antarmuka DBus dengan benar saat Keluar"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 #: data/io.elementary.terminal.appdata.xml.in:75
@@ -69,66 +70,71 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:115
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Translation updates"
-msgstr ""
+msgstr "Pembaruan terjemahan"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 #: data/io.elementary.terminal.appdata.xml.in:104
 msgid "New features:"
-msgstr ""
+msgstr "Fitur baru:"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "Opsi untuk mengikuti preferensi gaya gelap sistem"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Create a custom color palette"
-msgstr ""
+msgstr "Buat palet warna kustom"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 #: data/io.elementary.terminal.appdata.xml.in:109
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Fixes:"
-msgstr ""
+msgstr "Perbaikan:"
 
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Gaya bawaan sepenuhnya solid dan diperbarui ke nilai hulu terbaru dari "
+"Solarized untuk peningkatkan keterbacaan"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Performance improvements"
-msgstr ""
+msgstr "Peningkatan kinerja"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Beralih tab dengan Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Keluar dengan Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:111
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "Memperbaiki build di OS 7"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "Memulihkan tingkat pembesaran dengan benar untuk semua lokal"
 
 #: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "Gunakan judul XTerm untuk judul jendela jika tersedia"
 
 #: data/io.elementary.terminal.appdata.xml.in:129
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Ubah pintasan \"Reload Tab\" menjadi Shift + F5 untuk menghindari benturan "
+"dengan beberapa proses latar depan"
 
 #: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"Ubah pintasan pilihan untuk \"Muat Ulang Tab\" menjadi Shift + Control + R"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
