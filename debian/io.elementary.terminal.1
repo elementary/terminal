@@ -10,17 +10,26 @@ and follows the elementary OS Human Interface Guidelines.
 \fR[\fIOPTION...\fR]
 .SH OPTIONS
 .TP
+.BR \-e ", " \-\-execute =\fIPATH\fR
+Execute the specified binary in a terminal
+.TP
 .BR \-h ", " \-\-help
 Show help message and exit
+.TP
+.BR \-m ", " \-\-minimized
+Open a terminal in a minimized state
+.TP
+.BR \-t ", " \-\-new\-tab
+Open a terminal tab
 .TP
 .BR \-v ", " \-\-version
 Print version info and exit
 .TP
-.BR \-e ", " \-\-execute =\fIPATH\fR
-Execute the specified binary with given parameters in terminal.
-.TP
 .BR \-w ", " \-\-working-directory =\fIPATH\fR
-Set the specified directory as shell working directory on startup
+Set the specified directory as the shell working directory on startup
+.TP
+.BR \-x ", " \-\-commandline =\fICOMMAND\fR
+Run the remainder of the line as a command in a terminal
 .SH AUTHOR
 Pantheon Terminal was written by Adrien Plazas <kekun.plazas@laposte.net>,
 Mario Guerriero <mario@elementaryos.org>,
