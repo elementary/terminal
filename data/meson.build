@@ -58,3 +58,7 @@ if desktop_file_validate.found()
         args: meson.current_build_dir() / 'open-pantheon-terminal-here.desktop'
     )
 endif
+
+install_man(
+    'io.elementary.terminal.1'
+)
