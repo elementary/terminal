@@ -26,10 +26,10 @@ jobs:
         apt install -y desktop-file-utils gettext libgranite-dev libgtk-3-dev libhandy-1-dev libvte-2.91-dev libxml2-utils meson valac xvfb
     - name: Build
       run: |
-        meson build
-        ninja -C build
-        ninja -C build test
-        ninja -C build install
+        meson setup build
+        meson compile -C build
+        meson test -C build --print-errorlogs
+        meson install -C build
 
   lint:
     runs-on: ubuntu-latest
