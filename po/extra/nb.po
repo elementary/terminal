@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-04 02:47+0000\n"
-"PO-Revision-Date: 2023-06-16 10:07+0000\n"
+"PO-Revision-Date: 2023-07-08 01:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -96,6 +96,8 @@ msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Forvalgte stiler er helt tilslørt og oppdatert til siste oppstrømsverdier "
+"fra Solarisert for bedret lesbarhet"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Performance improvements"
@@ -126,10 +128,13 @@ msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"Endret «Gjeninnlast fane»-snarvei til Shift+F5 for å unngå krasj med noen "
+"forgrunnsprosesser"
 
 #: data/io.elementary.terminal.appdata.xml.in:130
+#, fuzzy
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr ""
+msgstr "Endret foretrukket snarvei for «Gjeninnlast fane» til Shift + Ctrl + R"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
