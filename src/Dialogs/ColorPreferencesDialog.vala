@@ -237,6 +237,8 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             contrast_top_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┐" : "┌";
             contrast_bottom_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┘" : "└";
         });
+
+        show.connect (get_child ().show_all);
     }
 
     private void update_palette_settings () {

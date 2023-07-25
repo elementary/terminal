@@ -17,6 +17,7 @@ terminal_sources = [
     'Dialogs/ForegroundProcessDialog.vala',
     'Dialogs/UnsafePasteDialog.vala',
     'Widgets/SearchToolbar.vala',
+    'Widgets/SettingsPopover.vala',
     'Widgets/TerminalWidget.vala',
     'Application.vala',
     'DBus.vala',
