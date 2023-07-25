@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 02:47+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
 "PO-Revision-Date: 2023-07-08 01:10+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -55,7 +55,8 @@ msgstr "Andre oppdateringer:"
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
-msgstr "Snarveier »Ctrl + PageUp» og «Ctrl + PageDown» for å bytte mellom faner"
+msgstr ""
+"Snarveier »Ctrl + PageUp» og «Ctrl + PageDown» for å bytte mellom faner"
 
 #: data/io.elementary.terminal.appdata.xml.in:59
 #, fuzzy
