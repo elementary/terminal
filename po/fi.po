@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 02:47+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
 "PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -20,153 +20,111 @@ msgstr ""
 "X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:33
+#: src/Application.vala:32
 msgid "Show version"
 msgstr "Näytä versio"
 
 #. -n flag forces a new window
-#: src/Application.vala:35
+#: src/Application.vala:34
 msgid "Open a new terminal window"
 msgstr "Avaa uusi pääteikkuna"
 
 #. -t flag forces a new tab
-#: src/Application.vala:37
+#: src/Application.vala:36
 msgid "Open a new terminal tab"
 msgstr "Avaa uusi päätevälilehti"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:39
+#: src/Application.vala:38
 msgid "Set shell working directory"
 msgstr "Aseta komentotulkin työskentelyhakemisto"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:41
+#: src/Application.vala:40
 msgid "Run a program in terminal"
 msgstr "Suorita ohjelma päätteessä"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:43
+#: src/Application.vala:42
 msgid "Open terminal in a minimized state"
 msgstr "Avaa pääte pienennetyssä tilassa"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:46
+#: src/Application.vala:45
 msgid "Run remainder of line as a command in terminal"
 msgstr "Suorita loput rivistä komentona päätteessä"
 
-#: src/Application.vala:103
+#: src/Application.vala:97
 msgid "[-- COMMAND…]"
 msgstr "[-- KOMENTO…]"
 
-#: src/Application.vala:169
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr "Prosessi suoritettu"
 
-#: src/Application.vala:172
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr "Prosessi sulkeutui virheiden kera"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:202
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:220
+#: src/MainWindow.vala:208
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:226
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:232 src/MainWindow.vala:349 src/MainWindow.vala:1502
+#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:355
-msgid "Zoom out"
-msgstr "Loitonna"
-
-#: src/MainWindow.vala:363
-msgid "Default zoom level"
-msgstr "Oletusmittakaava"
-
-#: src/MainWindow.vala:370
-msgid "Zoom in"
-msgstr "Lähennä"
-
-#: src/MainWindow.vala:387
-msgid "Follow System Style"
-msgstr "Seuraa järjestelmän tyyliä"
-
-#: src/MainWindow.vala:391
-msgid "High Contrast"
-msgstr "Suuri kontrasti"
-
-#: src/MainWindow.vala:397
-msgid "Solarized Light"
-msgstr "Solarized, vaalea"
-
-#: src/MainWindow.vala:403 src/Dialogs/ColorPreferencesDialog.vala:58
-msgid "Dark"
-msgstr "Tumma"
-
-#: src/MainWindow.vala:409
-msgid "Custom"
-msgstr "Mukautettu"
-
-#: src/MainWindow.vala:432
-msgid "Natural Copy/Paste"
-msgstr "Luonnollinen kopiointi/liittäminen"
-
-#: src/MainWindow.vala:433
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
-"komentoriviohjelmia"
-
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:333
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:359
 msgid "New Tab"
 msgstr "Uusi välilehti"
 
-#: src/MainWindow.vala:945
+#: src/MainWindow.vala:707
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:946
+#: src/MainWindow.vala:708
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:982
 msgid "Duplicate"
 msgstr "Tee kaksoiskappale"
 
-#: src/MainWindow.vala:1242
+#: src/MainWindow.vala:995
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: src/MainWindow.vala:1333
+#: src/MainWindow.vala:1086
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
 
-#: src/MainWindow.vala:1335
+#: src/MainWindow.vala:1088
 msgid "The pasted text may contain multiple commands"
 msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 
-#: src/MainWindow.vala:1494
+#: src/MainWindow.vala:1238
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -181,6 +139,10 @@ msgstr "Ikkunatyyli:"
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
 msgstr "Vaalea"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+msgid "Dark"
+msgstr "Tumma"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
@@ -270,19 +232,19 @@ msgstr "Kursori:"
 msgid "Close"
 msgstr "Sulje"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
 msgstr "Kontrasti on erittäin matala"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:311
+#: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
 msgstr "Kontrasti on matala"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:314
+#: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
 msgstr "Kontrasti on hyvä"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:317
+#: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
 msgstr "Kontrasti on korkea"
 
@@ -369,6 +331,35 @@ msgstr "Kierteinen haku"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Pääte"
+
+#~ msgid "Zoom out"
+#~ msgstr "Loitonna"
+
+#~ msgid "Default zoom level"
+#~ msgstr "Oletusmittakaava"
+
+#~ msgid "Zoom in"
+#~ msgstr "Lähennä"
+
+#~ msgid "Follow System Style"
+#~ msgstr "Seuraa järjestelmän tyyliä"
+
+#~ msgid "High Contrast"
+#~ msgstr "Suuri kontrasti"
+
+#~ msgid "Solarized Light"
+#~ msgstr "Solarized, vaalea"
+
+#~ msgid "Custom"
+#~ msgstr "Mukautettu"
+
+#~ msgid "Natural Copy/Paste"
+#~ msgstr "Luonnollinen kopiointi/liittäminen"
+
+#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+#~ msgstr ""
+#~ "Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
+#~ "komentoriviohjelmia"
 
 #~ msgid "Show help"
 #~ msgstr "Näytä ohje"

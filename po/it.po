@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-04 02:47+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
 "PO-Revision-Date: 2020-11-06 13:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/terminal/"
@@ -20,39 +20,39 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-02 05:56+0000\n"
 
-#: src/Application.vala:33
+#: src/Application.vala:32
 msgid "Show version"
 msgstr "Mostra versione"
 
 #. -n flag forces a new window
-#: src/Application.vala:35
+#: src/Application.vala:34
 msgid "Open a new terminal window"
 msgstr "Apri una nuova finestra del terminale"
 
 #. -t flag forces a new tab
-#: src/Application.vala:37
+#: src/Application.vala:36
 msgid "Open a new terminal tab"
 msgstr "Apri una nuova scheda del terminale"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:39
+#: src/Application.vala:38
 msgid "Set shell working directory"
 msgstr "Imposta la directory di lavoro della shell"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:41
+#: src/Application.vala:40
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Esegui un programma nel terminale"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:43
+#: src/Application.vala:42
 msgid "Open terminal in a minimized state"
 msgstr ""
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:46
+#: src/Application.vala:45
 #, fuzzy
 #| msgid ""
 #| "Run remainder of line as a command in terminal. Can also use '--' as flag"
@@ -61,119 +61,77 @@ msgstr ""
 "Esegui il resto della riga come comando nel terminale. Puoi anche usare \"--"
 "\" come flag"
 
-#: src/Application.vala:103
+#: src/Application.vala:97
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:169
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:172
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:202
 msgid "Copy Last Output"
 msgstr "Copia l'ultimo risultato"
 
-#: src/MainWindow.vala:220
+#: src/MainWindow.vala:208
 msgid "Paste"
 msgstr "Incolla"
 
-#: src/MainWindow.vala:226
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: src/MainWindow.vala:232 src/MainWindow.vala:349 src/MainWindow.vala:1502
+#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
 msgid "Find…"
 msgstr "Trova…"
 
-#: src/MainWindow.vala:355
-msgid "Zoom out"
-msgstr "Riduci ingrandimento"
-
-#: src/MainWindow.vala:363
-msgid "Default zoom level"
-msgstr "Livello di ingrandimento predefinito"
-
-#: src/MainWindow.vala:370
-msgid "Zoom in"
-msgstr "Aumenta ingrandimento"
-
-#: src/MainWindow.vala:387
-msgid "Follow System Style"
-msgstr ""
-
-#: src/MainWindow.vala:391
-msgid "High Contrast"
-msgstr "Contrasto elevato"
-
-#: src/MainWindow.vala:397
-msgid "Solarized Light"
-msgstr "Solarizzato chiaro"
-
-#: src/MainWindow.vala:403 src/Dialogs/ColorPreferencesDialog.vala:58
-msgid "Dark"
-msgstr "Scuro"
-
-#: src/MainWindow.vala:409
-msgid "Custom"
-msgstr ""
-
-#: src/MainWindow.vala:432
-msgid "Natural Copy/Paste"
-msgstr "Copia e incolla naturale"
-
-#: src/MainWindow.vala:433
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"Le scorciatoie non richiedono il tasto Maiusc.\n"
-"Ciò potrebbe interferire con le applicazioni a riga di comando."
-
-#: src/MainWindow.vala:459
+#: src/MainWindow.vala:333
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: src/MainWindow.vala:485
+#: src/MainWindow.vala:359
 msgid "New Tab"
 msgstr "Nuova scheda"
 
-#: src/MainWindow.vala:945
+#: src/MainWindow.vala:707
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Mostra versione"
 
-#: src/MainWindow.vala:946
+#: src/MainWindow.vala:708
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1228 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Chiudi scheda"
 
-#: src/MainWindow.vala:1229
+#: src/MainWindow.vala:982
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1242
+#: src/MainWindow.vala:995
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1333
+#: src/MainWindow.vala:1086
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1335
+#: src/MainWindow.vala:1088
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1494
+#: src/MainWindow.vala:1238
 msgid "Hide find bar"
 msgstr "Nascondi la barra di ricerca"
 
@@ -188,6 +146,10 @@ msgstr ""
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
 msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+msgid "Dark"
+msgstr "Scuro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
@@ -277,19 +239,19 @@ msgstr ""
 msgid "Close"
 msgstr "Chiudi"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:311
+#: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:314
+#: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:317
+#: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
 msgstr ""
 
@@ -378,6 +340,29 @@ msgstr "Ricerca ciclica"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminale"
+
+#~ msgid "Zoom out"
+#~ msgstr "Riduci ingrandimento"
+
+#~ msgid "Default zoom level"
+#~ msgstr "Livello di ingrandimento predefinito"
+
+#~ msgid "Zoom in"
+#~ msgstr "Aumenta ingrandimento"
+
+#~ msgid "High Contrast"
+#~ msgstr "Contrasto elevato"
+
+#~ msgid "Solarized Light"
+#~ msgstr "Solarizzato chiaro"
+
+#~ msgid "Natural Copy/Paste"
+#~ msgstr "Copia e incolla naturale"
+
+#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+#~ msgstr ""
+#~ "Le scorciatoie non richiedono il tasto Maiusc.\n"
+#~ "Ciò potrebbe interferire con le applicazioni a riga di comando."
 
 #~ msgid "Show help"
 #~ msgstr "Mostra aiuto"
