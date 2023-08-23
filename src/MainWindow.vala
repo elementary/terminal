@@ -27,6 +27,7 @@ namespace Terminal {
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private Granite.AccelLabel open_in_browser_menuitem_label;
+        private bool tabs_were_restored = false;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -109,10 +110,6 @@ namespace Terminal {
                 app: app,
                 recreate_tabs: recreate_tabs
             );
-
-            if (!recreate_tabs) {
-                new_tab ("");
-            }
         }
 
         public MainWindow.with_coords (Terminal.Application app, int x, int y,
@@ -821,12 +818,12 @@ namespace Terminal {
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
+                tabs_were_restored = true; // An attempt was made to restore.
                 tabs = saved_tabs;
                 var n_tabs = tabs.length;
 
                 if (n_tabs == 0) {
-                    tabs += Environment.get_home_dir ();
-                    zooms += default_zoom;
+                    return;
                 } else {
                     foreach (unowned string zoom_s in saved_zooms) {
                         var zoom = double.parse (zoom_s); // Locale independent
@@ -910,8 +907,10 @@ namespace Terminal {
 
 
             var tab = create_tab (
-                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
-                null, terminal_widget); //Set correct label now to avoid race when spawning shell
+                Path.get_basename (location),
+                null,
+                terminal_widget
+            ); //Set correct label now to avoid race when spawning shell
 
             terminal_widget.child_exited.connect (() => {
                 if (!terminal_widget.killed) {
@@ -1338,8 +1337,8 @@ namespace Terminal {
             string[] zooms = {};
 
             Application.saved_state.set_double ("zoom", current_terminal.font_scale);
-
-            if (Granite.Services.System.history_is_enabled () &&
+            if (tabs_were_restored &&  // Do not save tabs if window opened without restoring to avoid overwriting
+                Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 terminals.foreach ((term) => {
@@ -1351,22 +1350,22 @@ namespace Terminal {
                         }
                     }
                 });
+
+                Terminal.Application.saved_state.set_strv (
+                    "tabs",
+                    opened_tabs
+                );
+
+                Terminal.Application.saved_state.set_strv (
+                    "tab-zooms",
+                    zooms
+                );
+
+                Terminal.Application.saved_state.set_int (
+                    "focused-tab",
+                    notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
+                );
             }
-
-            Terminal.Application.saved_state.set_strv (
-                "tabs",
-                opened_tabs
-            );
-
-            Terminal.Application.saved_state.set_strv (
-                "tab-zooms",
-                zooms
-            );
-
-            Terminal.Application.saved_state.set_int (
-                "focused-tab",
-                notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
-            );
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/

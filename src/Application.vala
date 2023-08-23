@@ -201,7 +201,11 @@ public class Terminal.Application : Gtk.Application {
         );
 
         var new_window_action = new SimpleAction ("new-window", null);
-        new_window_action.activate.connect (new_window);
+        new_window_action.activate.connect (() => {
+            var win = new MainWindow (this, false); // Do not restore tabs
+            win.add_tab_with_working_directory (null);  // Add default tab
+            win.present ();
+        });
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (close);
@@ -261,10 +265,6 @@ public class Terminal.Application : Gtk.Application {
         }
 
         base.dbus_unregister (connection, path);
-    }
-
-    private void new_window () {
-        new MainWindow (this, active_window == null).present ();
     }
 
     private void close () {
