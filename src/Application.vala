@@ -220,15 +220,15 @@ public class Terminal.Application : Gtk.Application {
     protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
-        bool new_window;
+        bool new_window = false;
+        options.lookup ("new-window", "b", out new_window);
+        /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
+         * Currently they are set to restore (subject to the restore-tabs setting).
+         * If it is desired that tabs should never be restored in these circimstances add another check below.
+         */
 
-        if (window == null || options.lookup ("new-window", "b", out new_window) && new_window) {
-            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-             * Currently they are set to restore (subject to the restore-tabs setting).
-             * If it is desired that tabs should never be restored in these circimstances add another check below.
-             */
-            bool restore_tabs = !("commandline" in options || "execute" in options) || window == null;
-            window = new MainWindow (this, restore_tabs);
+        if (window == null || new_window) {
+            window = new MainWindow (this, !new_window);
         }
 
         unowned var working_directory = command_line.get_cwd ();
@@ -248,6 +248,11 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
+        }
+
+        // Fallback to a default tab if no tabs were opened 
+        if (window.n_tabs == 0) {
+            window.add_tab_with_working_directory (Environment.get_home_dir ());
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
