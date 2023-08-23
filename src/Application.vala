@@ -251,7 +251,7 @@ public class Terminal.Application : Gtk.Application {
         }
 
         // Fallback to a default tab if no tabs were opened 
-        if (window.n_tabs == 0) {
+        if (window.terminals.length () == 0) {
             window.add_tab_with_working_directory (Environment.get_home_dir ());
         }
 

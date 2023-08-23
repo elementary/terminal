@@ -48,11 +48,6 @@ namespace Terminal {
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
-        public uint n_tabs {
-            get {
-                return notebook.n_tabs;
-            }
-        }
 
         public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
 
