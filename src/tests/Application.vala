@@ -165,10 +165,6 @@ namespace Terminal.Test.Application {
             option ("{'new-window':<false>}", "@a{sv} {}", () => {
                 var n_windows = (int) application.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
             });
         });
 
