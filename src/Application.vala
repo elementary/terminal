@@ -8,7 +8,6 @@ public class Terminal.Application : Gtk.Application {
     public int minimum_height;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
-    private bool wd_was_requested = false;
     private uint dbus_id = 0;
 
     public static GLib.Settings saved_state;
@@ -105,13 +104,12 @@ public class Terminal.Application : Gtk.Application {
         unowned string working_directory;
         unowned string[] args;
 
-        wd_was_requested = options.lookup ("working-directory", "^&ay", out working_directory);
-        if (wd_was_requested) {
+        if (options.lookup ("working-directory", "^&ay", out working_directory)) {
             if (working_directory != "\0") {
                 Environment.set_current_dir (working_directory); // will be sent via platform-data
+                // Need to know in commandline () whether this option was present and valid so do not remove
+                // options.remove ("working-directory");
             }
-
-            options.remove ("working-directory");
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
@@ -225,7 +223,10 @@ public class Terminal.Application : Gtk.Application {
             window = new MainWindow (this);
         }
 
-        unowned var working_directory = command_line.get_cwd ();
+        unowned string working_directory;
+        var wd_was_requested = options.lookup ("working-directory", "^&ay", out working_directory);
+        working_directory = command_line.get_cwd ();
+
         assert (working_directory != "\0");  // Can we be sure of this? If not, need fallback
 
         unowned string[] commands;
