@@ -41,7 +41,6 @@ namespace Terminal {
 
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
-        public bool recreate_tabs { get; construct; default = true; }
         public bool restore_pos { get; construct; default = true; }
         public uint focus_timeout { get; private set; default = 0;}
         public Gtk.Menu menu { get; private set; }
@@ -105,26 +104,27 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
+        public uint window_number { get; construct; }
+
+        public bool is_first_window {
+            get {
+                return (window_number == 0);
+            }
+        }
+
+        public MainWindow (Terminal.Application app) {
             Object (
-                app: app,
-                recreate_tabs: recreate_tabs
+                app: app
             );
         }
 
-        public MainWindow.with_coords (Terminal.Application app, int x, int y,
-                                       bool recreate_tabs, bool ensure_tab) {
+        public MainWindow.with_coords (Terminal.Application app, int x, int y) {
             Object (
                 app: app,
-                restore_pos: false,
-                recreate_tabs: recreate_tabs
+                restore_pos: false
             );
 
             move (x, y);
-
-            if (!recreate_tabs && ensure_tab) {
-                new_tab ("");
-            }
         }
 
         static construct {
@@ -150,6 +150,7 @@ namespace Terminal {
         }
 
         construct {
+            window_number = app.get_windows ().length ();
             actions = new SimpleActionGroup ();
             actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
@@ -257,28 +258,20 @@ namespace Terminal {
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
 
-            if (recreate_tabs) {
-                open_tabs ();
+            if (is_first_window) {
+                open_saved_tabs ();
             }
+
+            // This no longer ensures at least one tab is opened.
+            // The creator of the window (Application.vala or on_tab_moved) must add a tab if necessary
         }
 
-        public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
+        public void add_tab_with_working_directory (string location, string? command = null) {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
-            /* Do not add a new tab if location is already open in existing tab */
-            string? location = null;
-
-            if (directory == null || directory == "") {
-                if (notebook.tabs.first () == null || command != null || create_new_tab) { //Ensure at least one tab
-                    new_tab ("", command);
-                }
-
-                return;
-            } else {
-                location = directory;
-            }
+            /* Does not add a new tab if location is already open in existing tab */
 
             /* We can match existing tabs only if there is no command and create_new_tab == false */
-            if (command == null && !create_new_tab) {
+            if (command == null && location != null) {
                 var file = File.new_for_commandline_arg (location);
                 foreach (Granite.Widgets.Tab tab in notebook.tabs) {
                     var terminal_widget = get_term_widget (tab);
@@ -293,7 +286,7 @@ namespace Terminal {
                 }
             }
 
-            new_tab (location, command);
+            new_tab (location, command); // Always execute command in new tab
         }
 
         /** Returns true if the code parameter matches the keycode of the keyval parameter for
@@ -537,7 +530,8 @@ namespace Terminal {
         }
 
         private void restore_saved_state (bool restore_pos = true) {
-            if (Granite.Services.System.history_is_enabled () &&
+            if (!tabs_were_restored && // Only restore tabs once
+                Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
@@ -646,9 +640,7 @@ namespace Terminal {
                 var new_window = new MainWindow.with_coords (
                     app,
                     x,
-                    y,
-                    false,
-                    false
+                    y
                 );
 
                 var terminal_widget = get_term_widget (tab);
@@ -809,7 +801,7 @@ namespace Terminal {
             current_terminal.grab_focus ();
         }
 
-        private void open_tabs () {
+        private void open_saved_tabs () {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
@@ -841,9 +833,6 @@ namespace Terminal {
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
-            } else {
-                tabs += Environment.get_current_dir ();
-                zooms += default_zoom;
             }
 
             assert (zooms.length == tabs.length);
@@ -855,10 +844,6 @@ namespace Terminal {
                 if (file.query_exists () == false) {
                     null_dirs++;
                     tabs[i] = "";
-                }
-
-                if (null_dirs == tabs.length) {
-                    tabs[0] = Environment.get_current_dir ();
                 }
             }
 
@@ -883,7 +868,7 @@ namespace Terminal {
                 index++;
             }
 
-            if (focus_restored_tabs) {
+            if (index > 0 && focus_restored_tabs) {
                 var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
                 notebook.current = tab;
                 get_term_widget (tab).grab_focus ();
@@ -1176,9 +1161,13 @@ namespace Terminal {
             // Closing a tab will switch to another, which will trigger check for same names
         }
 
-        private void action_new_tab () {
+        public void action_new_tab () {
             if (Application.settings.get_boolean ("follow-last-tab")) {
-                new_tab (current_terminal.get_shell_location ());
+                if (current_terminal != null) {
+                    new_tab (current_terminal.get_shell_location ());
+                } else {
+                    new_tab (Environment.get_current_dir ());
+                }
             } else {
                 new_tab (Environment.get_home_dir ());
             }
@@ -1336,9 +1325,9 @@ namespace Terminal {
             string[] opened_tabs = {};
             string[] zooms = {};
 
+        // The last closed window will override the settings for any previously closed window
             Application.saved_state.set_double ("zoom", current_terminal.font_scale);
-            if (tabs_were_restored &&  // Do not save tabs if window opened without restoring to avoid overwriting
-                Granite.Services.System.history_is_enabled () &&
+            if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 terminals.foreach ((term) => {

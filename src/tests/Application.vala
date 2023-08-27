@@ -145,7 +145,7 @@ namespace Terminal.Test.Application {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 2);
+                assert_cmpint (n_tabs, CompareOperator.EQ, 1); // No default tab added as well in this case
             });
 
             option ("{'new-tab':<false>}", "@a{sv} {}", () => {

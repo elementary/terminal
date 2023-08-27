@@ -8,6 +8,7 @@ public class Terminal.Application : Gtk.Application {
     public int minimum_height;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
+    private bool wd_was_requested = false;
     private uint dbus_id = 0;
 
     public static GLib.Settings saved_state;
@@ -104,7 +105,8 @@ public class Terminal.Application : Gtk.Application {
         unowned string working_directory;
         unowned string[] args;
 
-        if (options.lookup ("working-directory", "^&ay", out working_directory)) {
+        wd_was_requested = options.lookup ("working-directory", "^&ay", out working_directory);
+        if (wd_was_requested) {
             if (working_directory != "\0") {
                 Environment.set_current_dir (working_directory); // will be sent via platform-data
             }
@@ -216,18 +218,16 @@ public class Terminal.Application : Gtk.Application {
     protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
-        bool new_window = false;
-        options.lookup ("new-window", "b", out new_window);
-        /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-         * Currently they are set to restore (subject to the restore-tabs setting).
-         * If it is desired that tabs should never be restored in these circimstances add another check below.
-         */
+        bool new_window;
+        if (window == null ||
+            options.lookup ("new-window", "b", out new_window) && new_window) {
 
-        if (window == null || new_window) {
-            window = new MainWindow (this, !new_window);
+            window = new MainWindow (this);
         }
 
         unowned var working_directory = command_line.get_cwd ();
+        assert (working_directory != "\0");  // Can we be sure of this? If not, need fallback
+
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
@@ -237,19 +237,19 @@ public class Terminal.Application : Gtk.Application {
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
-                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
+                    window.add_tab_with_working_directory (working_directory, commands[i]);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-            window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else {
-            window.add_tab_with_working_directory (working_directory, null, new_tab);
+            window.add_tab_with_working_directory (working_directory, command);
+        } else if (wd_was_requested) {
+            window.add_tab_with_working_directory (working_directory, null);
+        } else if (new_tab) {
+            window.add_tab_with_working_directory (working_directory, null); //FIXME Should we honor "follow-last-tab" setting?
         }
 
-        // Fallback to a default tab if no tabs were opened 
-        if (window.terminals.length () == 0) {
-            window.add_tab_with_working_directory (Environment.get_home_dir ());
-        }
+        // Only if no other tabs, add default tab
+        add_default_tab (window, false);
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.iconify ();
@@ -269,9 +269,15 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void new_window () {
-        var win = new MainWindow (this, false); // Do not restore tabs
-        win.add_tab_with_working_directory (null);  // Add default tab
-        win.present ();
+        var window = new MainWindow (this);
+        add_default_tab (window, false);
+        window.present ();
+    }
+
+    private void add_default_tab (MainWindow window, bool force) {
+        if (force || window.terminals.length () == 0) {
+            window.actions.activate_action (window.ACTION_NEW_TAB, null);
+        }
     }
 
     private void close () {
