@@ -152,7 +152,7 @@ namespace Terminal.Test.Application {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 1); // No default tab added as well in this case
+                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
             }, false);
 
             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
@@ -172,7 +172,7 @@ namespace Terminal.Test.Application {
             option ("{'new-window':<false>}", "@a{sv} {}", () => {
                 var n_windows = (int) application.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
-            }, true);
+            }, false);
         });
 
         GLib.Test.add_func ("/application/command-line/execute", () => {
@@ -184,7 +184,7 @@ namespace Terminal.Test.Application {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 4); // Includes initial default tab added when no tabs restored.
+                assert_cmpint (n_tabs, CompareOperator.EQ, 4);
             }, false);
 
             // invalid
@@ -192,7 +192,7 @@ namespace Terminal.Test.Application {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 1 + 0);
+                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
             }, false);
         });
 
