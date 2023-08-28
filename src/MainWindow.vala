@@ -261,9 +261,6 @@ namespace Terminal {
             if (is_first_window) {
                 open_saved_tabs ();
             }
-
-            // This no longer ensures at least one tab is opened.
-            // The creator of the window (Application.vala or on_tab_moved) must add a tab if necessary
         }
 
         public void add_tab_with_working_directory (string location, string? command = null) {
