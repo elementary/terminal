@@ -47,13 +47,20 @@ namespace Terminal.Test.Application {
         }
     }
 
-    private void option (string options, string platform_data, CommandLineCallback callback) {
+    private void option (
+        string options,
+        string platform_data,
+        CommandLineCallback callback,
+        bool create_default_window_first = true
+    ) {
         ulong oneshot = 0;
         setup ();
 
         oneshot = application.command_line.connect ((nil) => {
             application.disconnect (oneshot);
-            application.command_line (nil);
+            if (create_default_window_first) {
+                application.command_line (nil);
+            }
 
             var cmdline = (ApplicationCommandLine) Object.new (
                 typeof (ApplicationCommandLine),
@@ -146,26 +153,26 @@ namespace Terminal.Test.Application {
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
                 assert_cmpint (n_tabs, CompareOperator.EQ, 1); // No default tab added as well in this case
-            });
+            }, false);
 
             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
                 assert_cmpint (n_tabs, CompareOperator.EQ, 1);
-            });
+            }, false);
         });
 
         GLib.Test.add_func ("/application/command-line/new-window", () => {
             option ("{'new-window':<true>}", "@a{sv} {}", () => {
                 var n_windows = (int) application.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
-            });
+            }, true);
 
             option ("{'new-window':<false>}", "@a{sv} {}", () => {
                 var n_windows = (int) application.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
-            });
+            }, true);
         });
 
         GLib.Test.add_func ("/application/command-line/execute", () => {
@@ -173,19 +180,20 @@ namespace Terminal.Test.Application {
 
             // valid
             option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
+                debug ("execute callback");
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 5); // Includes initial default tab added when no tabs restored.
-            });
+                assert_cmpint (n_tabs, CompareOperator.EQ, 4); // Includes initial default tab added when no tabs restored.
+            }, false);
 
             // invalid
             option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var n_tabs = (int) window.terminals.length ();
-                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
-            });
+                assert_cmpint (n_tabs, CompareOperator.EQ, 1 + 0);
+            }, false);
         });
 
         //FIXME: cannot test the commandline option without a way to get the terminal command

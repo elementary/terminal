@@ -219,7 +219,6 @@ public class Terminal.Application : Gtk.Application {
         bool new_window;
         if (window == null ||
             options.lookup ("new-window", "b", out new_window) && new_window) {
-
             window = new MainWindow (this);
         }
 
@@ -247,7 +246,7 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, null); //FIXME Should we honor "follow-last-tab" setting?
         }
 
-        // Only if no other tabs, add default tab
+        // Only if no other tabs, add default tab (can happen if trying to execute invalid commands)
         add_default_tab (window, false);
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
