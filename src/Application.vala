@@ -227,8 +227,6 @@ public class Terminal.Application : Gtk.Application {
         var wd_was_requested = options.lookup ("working-directory", "^&ay", out working_directory);
         working_directory = command_line.get_cwd ();
 
-        assert (working_directory != "\0");  // Can we be sure of this? If not, need fallback
-
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
