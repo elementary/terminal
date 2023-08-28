@@ -104,14 +104,6 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public uint window_number { get; construct; }
-
-        public bool is_first_window {
-            get {
-                return (window_number == 0);
-            }
-        }
-
         public MainWindow (Terminal.Application app) {
             Object (
                 app: app
@@ -150,7 +142,6 @@ namespace Terminal {
         }
 
         construct {
-            window_number = app.get_windows ().length ();
             actions = new SimpleActionGroup ();
             actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
@@ -258,7 +249,7 @@ namespace Terminal {
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
 
-            if (is_first_window) {
+            if (app.get_windows ().length () == 1) {
                 open_saved_tabs ();
             }
         }
