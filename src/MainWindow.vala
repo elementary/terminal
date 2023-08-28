@@ -1161,7 +1161,7 @@ namespace Terminal {
             // Closing a tab will switch to another, which will trigger check for same names
         }
 
-        public void action_new_tab () {
+        private void action_new_tab () {
             if (Application.settings.get_boolean ("follow-last-tab")) {
                 if (current_terminal != null) {
                     new_tab (current_terminal.get_shell_location ());
