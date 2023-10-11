@@ -355,38 +355,67 @@ namespace Terminal {
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
 
-            notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
-                new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
-            ) {
-                allow_new_window = true,
-                allow_duplication = true,
-                allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
-                max_restorable_tabs = 5,
-                group_name = "pantheon-terminal",
-                can_focus = false,
-                expand = true
+            // notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
+            //     new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
+            // ) {
+            //     allow_new_window = true,
+            //     allow_duplication = true,
+            //     allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
+            //     max_restorable_tabs = 5,
+            //     group_name = "pantheon-terminal",
+            //     can_focus = false,
+            //     expand = true
+            // };
+            // notebook.tab_added.connect (on_tab_added);
+            // notebook.tab_removed.connect (on_tab_removed);
+            // notebook.tab_switched.connect (on_switch_page);
+            // notebook.tab_moved.connect (on_tab_moved);
+            // notebook.tab_reordered.connect (on_tab_reordered);
+            // notebook.tab_restored.connect (on_tab_restored);
+            // notebook.tab_duplicated.connect (on_tab_duplicated);
+            // notebook.close_tab_requested.connect (on_close_tab_requested);
+            // notebook.new_tab_requested.connect (on_new_tab_requested);
+            // notebook.get_child ().drag_begin.connect (on_drag_begin);
+            // notebook.get_child ().drag_end.connect (on_drag_end);
+
+            // var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
+            // notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
+
+            var tab_view = new Hdy.TabView () {
+                menu_model = new Menu ()
             };
-            notebook.tab_added.connect (on_tab_added);
-            notebook.tab_removed.connect (on_tab_removed);
-            notebook.tab_switched.connect (on_switch_page);
-            notebook.tab_moved.connect (on_tab_moved);
-            notebook.tab_reordered.connect (on_tab_reordered);
-            notebook.tab_restored.connect (on_tab_restored);
-            notebook.tab_duplicated.connect (on_tab_duplicated);
-            notebook.close_tab_requested.connect (on_close_tab_requested);
-            notebook.new_tab_requested.connect (on_new_tab_requested);
-            notebook.get_child ().drag_begin.connect (on_drag_begin);
-            notebook.get_child ().drag_end.connect (on_drag_end);
-            var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
-            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
-            var grid = new Gtk.Grid ();
-            grid.attach (header, 0, 0);
-            grid.attach (search_revealer, 0, 1);
-            grid.attach (notebook, 0, 2);
+            var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
+                action_name = ACTION_PREFIX + ACTION_NEW_TAB
+            };
+            new_tab_button.tooltip_markup = Granite.markup_accel_tooltip (
+                app.get_accels_for_action (ACTION_PREFIX + ACTION_NEW_TAB),
+                _("New Tab")
+            );
 
+            var tab_history_button = new Gtk.MenuButton () {
+                image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", MENU),
+                tooltip_text = _("Closed Tabs"),
+                use_popover = false
+            };
+
+            var tab_bar = new Hdy.TabBar () {
+                autohide = false,
+                expand_tabs = false,
+                inverted = true,
+                start_action_widget = new_tab_button,
+                end_action_widget = tab_history_button,
+                view = tab_view
+            };
+
+            var box = new Gtk.Box (VERTICAL, 0);
+            box.add (header);
+            box.add (search_revealer);
+            box.add (tab_bar);
+            box.add (tab_view);
+
+            child = box;
             get_style_context ().add_class ("terminal-window");
-            add (grid);
 
             unowned var menu_popover = (SettingsPopover) menu_button.popover;
 
