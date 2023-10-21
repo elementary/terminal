@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -21,143 +21,238 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:112
-msgid "Process completed"
-msgstr ""
-
-#: src/Application.vala:115
-msgid "Process exited with errors"
-msgstr ""
-
-#: src/Application.vala:258
+#: src/Application.vala:32
 msgid "Show version"
 msgstr "إظهار الإصدار"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:260
-msgid "Run a program in terminal"
-msgstr "شغِّل البرنامج في الطرفية"
-
-#: src/Application.vala:265
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr "شغِّل ما تبقى من السطر كأمر في الطرفية. يمكن استعمال '--' كعلامة"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:268
+#. -n flag forces a new window
+#: src/Application.vala:34
 msgid "Open a new terminal window"
 msgstr "فتح نافذة طرفية جديدة"
 
 #. -t flag forces a new tab
-#: src/Application.vala:271
+#: src/Application.vala:36
 msgid "Open a new terminal tab"
 msgstr "فتح علامة تبويب جديدة"
 
-#: src/Application.vala:273
-msgid "Show help"
-msgstr "أظهر المساعدة"
-
-#: src/Application.vala:275
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:38
 msgid "Set shell working directory"
 msgstr "عيِّن دليل عمل الطرفية"
 
-#: src/MainWindow.vala:215
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:40
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "شغِّل البرنامج في الطرفية"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:42
+msgid "Open terminal in a minimized state"
+msgstr ""
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:45
+#, fuzzy
+#| msgid ""
+#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
+msgid "Run remainder of line as a command in terminal"
+msgstr "شغِّل ما تبقى من السطر كأمر في الطرفية. يمكن استعمال '--' كعلامة"
+
+#: src/Application.vala:97
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:202
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:208
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
 msgid "Find…"
 msgstr "ابحث…"
 
-#: src/MainWindow.vala:366
-msgid "Zoom out"
-msgstr "تصغير"
-
-#: src/MainWindow.vala:374
-msgid "Default zoom level"
-msgstr "مستوى التقريب المبدئي"
-
-#: src/MainWindow.vala:381
-msgid "Zoom in"
-msgstr "تكبير"
-
-#: src/MainWindow.vala:400
-msgid "High Contrast"
-msgstr "تباين عالي"
-
-#: src/MainWindow.vala:409
-msgid "Solarized Light"
-msgstr "ضوء شمسي"
-
-#: src/MainWindow.vala:418
-msgid "Dark"
-msgstr "داكن"
-
-#: src/MainWindow.vala:427
-msgid "Custom"
-msgstr ""
-
-#: src/MainWindow.vala:446
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:447
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:333
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:359
 msgid "New Tab"
 msgstr "تبويب جديد"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:707
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:708
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "إغلاق تبويب"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:982
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:995
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1086
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1088
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1238
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+msgid "Dark"
+msgstr "داكن"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "إغلاق"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:310
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:313
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:316
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:319
+msgid "Contrast is high"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -245,6 +340,24 @@ msgstr ""
 msgid "Terminal"
 msgstr "الطرفية"
 
+#~ msgid "Zoom out"
+#~ msgstr "تصغير"
+
+#~ msgid "Default zoom level"
+#~ msgstr "مستوى التقريب المبدئي"
+
+#~ msgid "Zoom in"
+#~ msgstr "تكبير"
+
+#~ msgid "High Contrast"
+#~ msgstr "تباين عالي"
+
+#~ msgid "Solarized Light"
+#~ msgstr "ضوء شمسي"
+
+#~ msgid "Show help"
+#~ msgstr "أظهر المساعدة"
+
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "هذا الأمر يسأل عن الوصول الإداري إلى جهاز الحاسب الخاص بك"
 
@@ -268,9 +381,6 @@ msgstr "الطرفية"
 
 #~ msgid "New Window"
 #~ msgstr "نافذة جديدة"
-
-#~ msgid "Close"
-#~ msgstr "إغلاق"
 
 #~ msgid "Create a new tab"
 #~ msgstr "انشئ تبويب جديد"

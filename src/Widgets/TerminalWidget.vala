@@ -73,7 +73,7 @@ namespace Terminal {
                                                   "/io/elementary/terminal " +
                                                   "io.elementary.terminal.ProcessFinished " +
                                                   "string:$PANTHEON_TERMINAL_ID " +
-                                                  "string:\"$(history 1 | cut -c 8-)\" " +
+                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
                                                   "int32:\$__bp_last_ret_value >/dev/null 2>&1";
 
         /* Following strings are used to build RegEx for matching URIs */
@@ -107,6 +107,8 @@ namespace Terminal {
         public const double MIN_SCALE = 0.25;
         public const double MAX_SCALE = 4.0;
 
+        public const int SYS_PIDFD_OPEN = 434; // Same on every arch
+
         public bool child_has_exited {
             get;
             private set;
@@ -133,14 +135,26 @@ namespace Terminal {
 
             init_complete = false;
 
-            restore_settings ();
-            Application.settings.changed.connect (restore_settings);
-
             window = parent_window;
             child_has_exited = false;
             killed = false;
 
-            /* Connect to necessary signals */
+            update_audible_bell ();
+            update_cursor_shape ();
+            update_theme ();
+
+            var granite_settings = Granite.Settings.get_default ();
+            granite_settings.notify["prefers-color-scheme"].connect (update_theme);
+            Application.settings.changed["audible-bell"].connect (update_audible_bell);
+            Application.settings.changed["background"].connect (update_theme);
+            Application.settings.changed["cursor-color"].connect (update_theme);
+            Application.settings.changed["cursor-shape"].connect (update_cursor_shape);
+            Application.settings.changed["follow-system-style"].connect (update_theme);
+            Application.settings.changed["foreground"].connect (update_theme);
+            Application.settings.changed["palette"].connect (update_theme);
+            Application.settings.changed["prefer-dark-style"].connect (update_theme);
+            Application.settings.changed["theme"].connect (update_theme);
+
             button_press_event.connect ((event) => {
                 link_uri = null;
                 /* If this event caused focus-in then window.focus_timeout is > 0
@@ -247,43 +261,37 @@ namespace Terminal {
             this.clickable (REGEX_STRINGS);
         }
 
-        public void restore_settings () {
-            /* Load configuration */
+        private void update_theme () {
             var gtk_settings = Gtk.Settings.get_default ();
-            gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+            var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
+            if (Application.settings.get_boolean ("follow-system-style")) {
+                var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+                gtk_settings.gtk_application_prefer_dark_theme = system_prefers_dark;
 
-            var theme_palette = Terminal.Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+                if (system_prefers_dark) {
+                    theme_palette = Themes.get_rgba_palette (Themes.DARK);
+                } else {
+                    theme_palette = Themes.get_rgba_palette (Themes.LIGHT);
+                }
+            } else {
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+                theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
+            }
 
-            var background = theme_palette[Terminal.Themes.PALETTE_SIZE - 3];
-            var foreground = theme_palette[Terminal.Themes.PALETTE_SIZE - 2];
-            var cursor = theme_palette[Terminal.Themes.PALETTE_SIZE - 1];
+            var background = theme_palette[Themes.PALETTE_SIZE - 3];
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2];
+            var cursor = theme_palette[Themes.PALETTE_SIZE - 1];
             var palette = theme_palette[0:16];
 
             set_colors (foreground, background, palette);
             set_color_cursor (cursor);
+        }
 
-#if !VTE_0_60
-            /* Bold font */
-            allow_bold = Application.settings.get_boolean ("allow-bold");
-#endif
-
-// Support for non-UTF-8 encoding is deprecated
-#if !VTE_0_60
-            /* Load encoding */
-            var encoding = Application.settings.get_string ("encoding");
-            if (encoding != "") {
-                try {
-                    set_encoding (encoding);
-                } catch (Error e) {
-                    warning ("Failed to set encoding - %s", e.message);
-                }
-            }
-#endif
-
-            /* Disable bell if necessary */
+        private void update_audible_bell () {
             audible_bell = Application.settings.get_boolean ("audible-bell");
+        }
 
-            /* Cursor shape */
+        private void update_cursor_shape () {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
         }
 
@@ -301,12 +309,38 @@ namespace Terminal {
         public void term_ps () {
             killed = true;
 
-            /* Check if the shell process is still alive by sending 0 signals */
-            while (Posix.kill (this.child_pid, 0) == 0) {
-                Posix.kill (this.child_pid, Posix.Signal.HUP);
-                Posix.kill (this.child_pid, Posix.Signal.TERM);
-                Thread.usleep (100);
+#if HAS_LINUX
+            int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
+#else
+            int pid_fd = -1;
+#endif
+
+            Posix.kill (this.child_pid, Posix.Signal.HUP);
+            Posix.kill (this.child_pid, Posix.Signal.TERM);
+
+            // pidfd_open isn't supported in Linux kernel < 5.3
+            if (pid_fd == -1) {
+#if HAS_GLIB_2_74
+                // GLib 2.73.2 dropped global GChildWatch, we need to wait ourselves
+                Posix.waitpid (this.child_pid, null, 0);
+#else
+                while (Posix.kill (this.child_pid, 0) == 0) {
+                    Thread.usleep (100);
+                }
+#endif
+                return;
             }
+
+            Posix.pollfd pid_pfd[1];
+            pid_pfd[0] = Posix.pollfd () {
+                fd = pid_fd,
+                events = Posix.POLLIN
+            };
+
+            // The loop deals the case when SIGCHLD is delivered to us and restarts the call
+            while (Posix.poll (pid_pfd, -1) != 1) {}
+
+            Posix.close (pid_fd);
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
@@ -389,15 +423,9 @@ namespace Terminal {
         private void clickable (string[] str) {
             foreach (unowned string exp in str) {
                 try {
-#if VTE_0_60
                     var regex = new Vte.Regex.for_match (exp, -1, PCRE2.Flags.MULTILINE);
                     int id = this.match_add_regex (regex, 0);
                     this.match_set_cursor_name (id, "pointer");
-#else
-                    var regex = new GLib.Regex (exp, GLib.RegexCompileFlags.MULTILINE);
-                    int id = this.match_add_gregex (regex, 0);
-                    this.match_set_cursor_type (id, Gdk.CursorType.HAND2);
-#endif
                 } catch (GLib.Error error) {
                     warning (error.message);
                 }
@@ -456,26 +484,14 @@ namespace Terminal {
                     }
 
                     var uris_s = string.joinv ("", uris);
-#if VTE_0_60
                     this.feed_child (uris_s.data);
-#elif UBUNTU_BIONIC_PATCHED_VTE
-                    this.feed_child (uris_s, uris_s.length);
-#else
-                    this.feed_child (uris_s.to_utf8 ());
-#endif
                     break;
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
 
                     if (data != null) {
-#if VTE_0_60
                         this.feed_child (data.data);
-#elif UBUNTU_BIONIC_PATCHED_VTE
-                        this.feed_child (data, data.length);
-#else
-                        this.feed_child (data.to_utf8 ());
-#endif
                     }
 
                     break;

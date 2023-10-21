@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
-"PO-Revision-Date: 2022-05-16 18:12+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
+"PO-Revision-Date: 2023-04-05 23:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
-#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "מסוף"
 
-#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.appdata.xml.in:11
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "שימוש בשורת הפקודה"
 
-#: data/io.elementary.terminal.appdata.xml.in:11
+#: data/io.elementary.terminal.appdata.xml.in:13
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -39,74 +39,89 @@ msgstr ""
 "מסוף הוא יישום מדמה מסוף לגישה לסביבת מעטפת UNIX המשמשת להרצת התכניות "
 "הזמינות במערכת."
 
-#: data/io.elementary.terminal.appdata.xml.in:36
-#: data/io.elementary.terminal.appdata.xml.in:68
-#: data/io.elementary.terminal.appdata.xml.in:91
-#: data/io.elementary.terminal.appdata.xml.in:104
-#: data/io.elementary.terminal.appdata.xml.in:119
-msgid "New features:"
-msgstr "תכונות חדשות:"
+#: data/io.elementary.terminal.appdata.xml.in:49
+msgid "elementary, Inc."
+msgstr "elementary בע״מ."
 
-#: data/io.elementary.terminal.appdata.xml.in:38
-msgid "Switch tabs with Alt + 1-9"
-msgstr "מעבר בין טאבים עם Alt + 1-9"
-
-#: data/io.elementary.terminal.appdata.xml.in:39
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "יציאה עם Ctrl + Shift + Q"
-
-#: data/io.elementary.terminal.appdata.xml.in:41
-#: data/io.elementary.terminal.appdata.xml.in:53
-msgid "Fixes:"
-msgstr "תיקונים:"
-
-#: data/io.elementary.terminal.appdata.xml.in:43
-msgid "Fix build on OS 7"
-msgstr "תוקנה הבנייה ב־OS 7"
-
-#: data/io.elementary.terminal.appdata.xml.in:45
-#: data/io.elementary.terminal.appdata.xml.in:57
-#: data/io.elementary.terminal.appdata.xml.in:80
-#: data/io.elementary.terminal.appdata.xml.in:95
-#: data/io.elementary.terminal.appdata.xml.in:109
-#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:56
+#: data/io.elementary.terminal.appdata.xml.in:73
+#: data/io.elementary.terminal.appdata.xml.in:94
+#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Other updates:"
 msgstr "עדכונים נוספים:"
 
-#: data/io.elementary.terminal.appdata.xml.in:47
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:113
-#: data/io.elementary.terminal.appdata.xml.in:128
-#: data/io.elementary.terminal.appdata.xml.in:141
-#: data/io.elementary.terminal.appdata.xml.in:150
-#: data/io.elementary.terminal.appdata.xml.in:159
-#: data/io.elementary.terminal.appdata.xml.in:169
-#: data/io.elementary.terminal.appdata.xml.in:182
-#: data/io.elementary.terminal.appdata.xml.in:192
-#: data/io.elementary.terminal.appdata.xml.in:200
-#: data/io.elementary.terminal.appdata.xml.in:208
-#: data/io.elementary.terminal.appdata.xml.in:216
-#: data/io.elementary.terminal.appdata.xml.in:224
-#: data/io.elementary.terminal.appdata.xml.in:235
-#: data/io.elementary.terminal.appdata.xml.in:243
-#: data/io.elementary.terminal.appdata.xml.in:252
-#: data/io.elementary.terminal.appdata.xml.in:261
-#: data/io.elementary.terminal.appdata.xml.in:269
-#: data/io.elementary.terminal.appdata.xml.in:284
+#: data/io.elementary.terminal.appdata.xml.in:58
+msgid ""
+"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+"tabs"
+msgstr ""
+"נוספו קיצורי הדרך „Ctrl + PageUp” ו־„Ctrl + PageDown” כדי לעבור בין לשוניות"
+
+#: data/io.elementary.terminal.appdata.xml.in:59
+msgid "Properly unexport the DBus Interface on Exit"
+msgstr "ביטול הולם של ייצוא מנשק ה־D-Bus עם היציאה"
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:96
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Translation updates"
 msgstr "תרגומים עודכנו"
 
-#: data/io.elementary.terminal.appdata.xml.in:55
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:104
+msgid "New features:"
+msgstr "יכולות חדשות:"
+
+#: data/io.elementary.terminal.appdata.xml.in:87
+msgid "Option to follow system dark style preference"
+msgstr "אפשרות לעקוב אחר העדפת המצב הכהה של המערכת"
+
+#: data/io.elementary.terminal.appdata.xml.in:88
+msgid "Create a custom color palette"
+msgstr "יצירת ערכת צבעים משלך"
+
+#: data/io.elementary.terminal.appdata.xml.in:90
+#: data/io.elementary.terminal.appdata.xml.in:109
+#: data/io.elementary.terminal.appdata.xml.in:122
+msgid "Fixes:"
+msgstr "תיקונים:"
+
+#: data/io.elementary.terminal.appdata.xml.in:92
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
+msgstr ""
+"סגנונות ברירת המחדל אטומים לחלוטין ומעודכנים לערכים העדכניים מ־Solarized "
+"לשיפור המראה"
+
+#: data/io.elementary.terminal.appdata.xml.in:97
+msgid "Performance improvements"
+msgstr "שיפורי ביצועים"
+
+#: data/io.elementary.terminal.appdata.xml.in:106
+msgid "Switch tabs with Alt + 1-9"
+msgstr "מעבר בין טאבים עם Alt + 1-9"
+
+#: data/io.elementary.terminal.appdata.xml.in:107
+msgid "Quit with Ctrl + Shift + Q"
+msgstr "יציאה עם Ctrl + Shift + Q"
+
+#: data/io.elementary.terminal.appdata.xml.in:111
+msgid "Fix build on OS 7"
+msgstr "תוקנה הבנייה ב־OS 7"
+
+#: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Properly restore zoom levels for all locales"
 msgstr "שחזור נכון של רמות התקריב לכל השפות"
 
-#: data/io.elementary.terminal.appdata.xml.in:59
+#: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Use XTerm title for window title if available"
 msgstr "להשתמש בכותרת של XTerm ככותרת החלון עם ניתן"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:129
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
@@ -114,230 +129,9 @@ msgstr ""
 "להחליף את הקיצור „רענון לשונית” ל־Shift + F5 כדי להימנע מסתירה מול תהליכים "
 "שפועלים בחזית"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr "הקיצור המועדף ל„רענון לשונית” הוחלף לכדי Shift + Control + R"
-
-#: data/io.elementary.terminal.appdata.xml.in:70
-msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "העברת לשוניות עם קיצור המקשים Ctrl + Alt + ←/→‎"
-
-#: data/io.elementary.terminal.appdata.xml.in:71
-msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "מעבר בין לשוניות עם מקשי הקיצור Ctrl + Tab ו־Ctrl + Shift + Tab"
-
-#: data/io.elementary.terminal.appdata.xml.in:72
-msgid "Zoom levels are now remembered per-tab"
-msgstr "רמות התקריב נשמרות נקודתית לכל לשונית"
-
-#: data/io.elementary.terminal.appdata.xml.in:73
-msgid "Also warn about multi-line pastes"
-msgstr "מופיעה אזהרה גם על הדבקה של מספר שורות יחד"
-
-#: data/io.elementary.terminal.appdata.xml.in:74
-msgid "Show text details in unsafe paste dialogs"
-msgstr "פרטי הטקסט יופיעו בחלוניות של הדבקות בלתי בטוחות"
-
-#: data/io.elementary.terminal.appdata.xml.in:75
-msgid "Open Link option when secondary clicking"
-msgstr "אפשרות לפתיחת קישור בכפתור עכבר ימני"
-
-#: data/io.elementary.terminal.appdata.xml.in:76
-msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "ניתן לרענן לשוניות דרך תפריט ההקשר או עם צירוף המקשים Ctrl + Shift + R"
-
-#: data/io.elementary.terminal.appdata.xml.in:77
-msgid "Notifications indicate if a process exited with errors or not"
-msgstr "התראות מציינות האם תהליך הסתיים עם שגיאות או שלא"
-
-#: data/io.elementary.terminal.appdata.xml.in:78
-msgid "Show keyboard shortcuts in tab context menus"
-msgstr "יוצגו קיצורי מקלדת בתפריטי ההקשר של הלשוניות"
-
-#: data/io.elementary.terminal.appdata.xml.in:82
-msgid ""
-"Fix an issue with keyboard shortcuts not activating the first time they're "
-"pressed"
-msgstr "תוקנה תקלה עם קיצורי מקלדת שלא פעלו בפעם הראשונה שנלחצו"
-
-#: data/io.elementary.terminal.appdata.xml.in:83
-msgid "Avoid losing focus when closing background tabs"
-msgstr "מניעת איבוד מיקוד בעת סגירת לשוניות רקע"
-
-#: data/io.elementary.terminal.appdata.xml.in:84
-msgid "Validate custom palette"
-msgstr "אימות ערכת צבעים מותאמת אישית"
-
-#: data/io.elementary.terminal.appdata.xml.in:93
-msgid "Add commandline option for New Tab (-t)"
-msgstr "הוספת אפשרות בשורת הפקודה ללשונית חדשה (‎-t)"
-
-#: data/io.elementary.terminal.appdata.xml.in:97
-msgid "Fix URL selection"
-msgstr "תיקון בחירת כתובות"
-
-#: data/io.elementary.terminal.appdata.xml.in:106
-msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "הוספת אפשרות בשורת הפקודה ל„הצגת גרסה” (‎-v, --version)"
-
-#: data/io.elementary.terminal.appdata.xml.in:107
-msgid "Add commandline option for New Window (-n)"
-msgstr "הוספת אפשרות בשורת הפקודה לחלון חדש (‎-n)"
-
-#: data/io.elementary.terminal.appdata.xml.in:111
-msgid "Prevent duplicate tab on startup"
-msgstr "מניעת לשוניות כפולות בהתחלה"
-
-#: data/io.elementary.terminal.appdata.xml.in:112
-msgid "Prevent unnecessary Home tab on startup"
-msgstr "מניעת לשונית בית בלתי נחוצה עם ההפעלה"
-
-#: data/io.elementary.terminal.appdata.xml.in:121
-msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "הפעלה/כיבוי של העתקה/הדבקה טבעיים בתפריט ההגדרות"
-
-#: data/io.elementary.terminal.appdata.xml.in:122
-msgid "Zoom with Ctrl + Scroll"
-msgstr "התקרבות עם Ctrl + גלילה"
-
-#: data/io.elementary.terminal.appdata.xml.in:126
-msgid "Include sudo password prompt when copying last output"
-msgstr "לכלול את בקשת הססמה ל־sudo בעת העתקת הפלט הקודם"
-
-#: data/io.elementary.terminal.appdata.xml.in:127
-msgid "Apply font changes without restarting"
-msgstr "שינויי הגופנים ייכנסו לתוקף מבלי להפעיל את המערכת מחדש"
-
-#: data/io.elementary.terminal.appdata.xml.in:135
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr "לא לזכור את הלשוניות כאשר ההיסטוריה מושבתת בהגדרות המערכת"
-
-#: data/io.elementary.terminal.appdata.xml.in:136
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "הצגת קיצורי מקלדת בתפריט כפתור הלחיצה המשנית"
-
-#: data/io.elementary.terminal.appdata.xml.in:137
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "הדבקה עם כפתור אמצעי מתנהגת כמו הגדרות המערכת"
-
-#: data/io.elementary.terminal.appdata.xml.in:138
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "Shift + Control + D לשכפול לשוניות"
-
-#: data/io.elementary.terminal.appdata.xml.in:139
-msgid "Use neutral colors for the dark style scheme"
-msgstr "שימוש בצבעים ניטרליים עבור ערכת הצבעים הכהה"
-
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Slightly pad text from the edge of the window"
-msgstr "הרחקת הטקסט מעט מקצוות החלון"
-
-#: data/io.elementary.terminal.appdata.xml.in:148
-msgid "Pressing the Menu key now opens the context menu"
-msgstr "לחיצה על כפתור התפריט פותחת מעתה את תפריט ההקשר"
-
-#: data/io.elementary.terminal.appdata.xml.in:149
-msgid "Store state with GSettings"
-msgstr "שחזור המצב עם GSettings"
-
-#: data/io.elementary.terminal.appdata.xml.in:157
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "תמיכה בצירוף המקשים Ctrl+Equal כדי להתקרב"
-
-#: data/io.elementary.terminal.appdata.xml.in:158
-msgid "Fix a wrong foreground process response code"
-msgstr "תיקון קוד תגובה שגוי של תהליך שרץ בחזית"
-
-#: data/io.elementary.terminal.appdata.xml.in:166
-msgid "Return focus after popover menu closes"
-msgstr "החזרת המיקוד לאחר סגירת תפריט צף"
-
-#: data/io.elementary.terminal.appdata.xml.in:167
-msgid "Prevent search and style buttons from receiving focus"
-msgstr "מניעת קבלת מיקוד על כפתורי חיפוש וסגנון"
-
-#: data/io.elementary.terminal.appdata.xml.in:168
-msgid "Hide the cursor while typing"
-msgstr "הסתרת הסמן בזמן הקלדה"
-
-#: data/io.elementary.terminal.appdata.xml.in:176
-msgid "Fix erratic search text highlightning behavior"
-msgstr "תיקון התנהגות בלתי יציבה של הדגשת טקסט חיפוש"
-
-#: data/io.elementary.terminal.appdata.xml.in:177
-msgid "Support -h flag for help"
-msgstr "תמיכה בדגלון ‎-h לעזרה"
-
-#: data/io.elementary.terminal.appdata.xml.in:178
-msgid "Disable audible bell"
-msgstr "השבתת צלצול"
-
-#: data/io.elementary.terminal.appdata.xml.in:179
-msgid "Add Alt+↑ action to scroll to last command"
-msgstr "הוספת הפעולה Alt+↑ כדי לגלול לפקודה האחרונה"
-
-#: data/io.elementary.terminal.appdata.xml.in:180
-msgid "Add Alt+c action to copy last output"
-msgstr "הוספת הפקודה Alt+c כדי להעתיק את הפלט האחרון"
-
-#: data/io.elementary.terminal.appdata.xml.in:181
-msgid "Add accels to tooltips"
-msgstr "הוספת מקשי האצה לחלוניות עצה"
-
-#: data/io.elementary.terminal.appdata.xml.in:189
-msgid "Fix zsh notifications"
-msgstr "תיקון התראות zsh"
-
-#: data/io.elementary.terminal.appdata.xml.in:190
-msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr "קיצור מקשים מותנה ctrl+g כדי לא לסתור את emacs"
-
-#: data/io.elementary.terminal.appdata.xml.in:191
-#: data/io.elementary.terminal.appdata.xml.in:199
-#: data/io.elementary.terminal.appdata.xml.in:207
-#: data/io.elementary.terminal.appdata.xml.in:215
-#: data/io.elementary.terminal.appdata.xml.in:223
-#: data/io.elementary.terminal.appdata.xml.in:234
-#: data/io.elementary.terminal.appdata.xml.in:242
-#: data/io.elementary.terminal.appdata.xml.in:251
-#: data/io.elementary.terminal.appdata.xml.in:260
-#: data/io.elementary.terminal.appdata.xml.in:268
-#: data/io.elementary.terminal.appdata.xml.in:283
-msgid "Minor bug fixes"
-msgstr "תיקוני תקלות משניות"
-
-#: data/io.elementary.terminal.appdata.xml.in:231
-msgid "FISH integration fixes"
-msgstr "תיקוני שילוב עם FISH"
-
-#: data/io.elementary.terminal.appdata.xml.in:232
-msgid "Theme preference menu"
-msgstr "תפריט העדפת ערכת עיצוב"
-
-#: data/io.elementary.terminal.appdata.xml.in:233
-msgid "Zoom level controls"
-msgstr "פקדי רמת תקריב"
-
-#: data/io.elementary.terminal.appdata.xml.in:250
-msgid "Allow tab to close after typing exit at the commandline"
-msgstr "לאפשר סגירה של לשונית לאחר הקלדת exit בשורת הפקודה"
-
-#: data/io.elementary.terminal.appdata.xml.in:259
-msgid "Fix copying URLs to clipboard"
-msgstr "תיקון העתקת כתובות ללוח הגזירים"
-
-#: data/io.elementary.terminal.appdata.xml.in:276
-msgid "Fix appstream date format"
-msgstr "תיקון תבנית תאריך של appstream"
-
-#: data/io.elementary.terminal.appdata.xml.in:318
-msgid "elementary, Inc."
-msgstr "elementary בע״מ."
-
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -350,6 +144,163 @@ msgstr "חלון חדש"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "לשונית חדשה כמנהל"
+
+#~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
+#~ msgstr "העברת לשוניות עם קיצור המקשים Ctrl + Alt + ←/→‎"
+
+#~ msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
+#~ msgstr "מעבר בין לשוניות עם מקשי הקיצור Ctrl + Tab ו־Ctrl + Shift + Tab"
+
+#~ msgid "Zoom levels are now remembered per-tab"
+#~ msgstr "רמות התקריב נשמרות נקודתית לכל לשונית"
+
+#~ msgid "Also warn about multi-line pastes"
+#~ msgstr "מופיעה אזהרה גם על הדבקה של מספר שורות יחד"
+
+#~ msgid "Show text details in unsafe paste dialogs"
+#~ msgstr "פרטי הטקסט יופיעו בחלוניות של הדבקות בלתי בטוחות"
+
+#~ msgid "Open Link option when secondary clicking"
+#~ msgstr "אפשרות לפתיחת קישור בכפתור עכבר ימני"
+
+#~ msgid ""
+#~ "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
+#~ msgstr ""
+#~ "ניתן לרענן לשוניות דרך תפריט ההקשר או עם צירוף המקשים Ctrl + Shift + R"
+
+#~ msgid "Notifications indicate if a process exited with errors or not"
+#~ msgstr "התראות מציינות האם תהליך הסתיים עם שגיאות או שלא"
+
+#~ msgid "Show keyboard shortcuts in tab context menus"
+#~ msgstr "יוצגו קיצורי מקלדת בתפריטי ההקשר של הלשוניות"
+
+#~ msgid ""
+#~ "Fix an issue with keyboard shortcuts not activating the first time "
+#~ "they're pressed"
+#~ msgstr "תוקנה תקלה עם קיצורי מקלדת שלא פעלו בפעם הראשונה שנלחצו"
+
+#~ msgid "Avoid losing focus when closing background tabs"
+#~ msgstr "מניעת איבוד מיקוד בעת סגירת לשוניות רקע"
+
+#~ msgid "Validate custom palette"
+#~ msgstr "אימות ערכת צבעים מותאמת אישית"
+
+#~ msgid "Add commandline option for New Tab (-t)"
+#~ msgstr "הוספת אפשרות בשורת הפקודה ללשונית חדשה (‎-t)"
+
+#~ msgid "Fix URL selection"
+#~ msgstr "תיקון בחירת כתובות"
+
+#~ msgid "Add commandline option for \"Show version\" (-v, --version)"
+#~ msgstr "הוספת אפשרות בשורת הפקודה ל„הצגת גרסה” (‎-v, --version)"
+
+#~ msgid "Add commandline option for New Window (-n)"
+#~ msgstr "הוספת אפשרות בשורת הפקודה לחלון חדש (‎-n)"
+
+#~ msgid "Prevent duplicate tab on startup"
+#~ msgstr "מניעת לשוניות כפולות בהתחלה"
+
+#~ msgid "Prevent unnecessary Home tab on startup"
+#~ msgstr "מניעת לשונית בית בלתי נחוצה עם ההפעלה"
+
+#~ msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+#~ msgstr "הפעלה/כיבוי של העתקה/הדבקה טבעיים בתפריט ההגדרות"
+
+#~ msgid "Zoom with Ctrl + Scroll"
+#~ msgstr "התקרבות עם Ctrl + גלילה"
+
+#~ msgid "Include sudo password prompt when copying last output"
+#~ msgstr "לכלול את בקשת הססמה ל־sudo בעת העתקת הפלט הקודם"
+
+#~ msgid "Apply font changes without restarting"
+#~ msgstr "שינויי הגופנים ייכנסו לתוקף מבלי להפעיל את המערכת מחדש"
+
+#~ msgid "Don't remember tabs when History is disabled in System Settings"
+#~ msgstr "לא לזכור את הלשוניות כאשר ההיסטוריה מושבתת בהגדרות המערכת"
+
+#~ msgid "Show keyboard shortcuts in the secondary-click menu"
+#~ msgstr "הצגת קיצורי מקלדת בתפריט כפתור הלחיצה המשנית"
+
+#~ msgid "Middle-click paste now properly follows System Settings"
+#~ msgstr "הדבקה עם כפתור אמצעי מתנהגת כמו הגדרות המערכת"
+
+#~ msgid "Shift + Control + D to duplicate tabs"
+#~ msgstr "Shift + Control + D לשכפול לשוניות"
+
+#~ msgid "Use neutral colors for the dark style scheme"
+#~ msgstr "שימוש בצבעים ניטרליים עבור ערכת הצבעים הכהה"
+
+#~ msgid "Slightly pad text from the edge of the window"
+#~ msgstr "הרחקת הטקסט מעט מקצוות החלון"
+
+#~ msgid "Pressing the Menu key now opens the context menu"
+#~ msgstr "לחיצה על כפתור התפריט פותחת מעתה את תפריט ההקשר"
+
+#~ msgid "Store state with GSettings"
+#~ msgstr "שחזור המצב עם GSettings"
+
+#~ msgid "Support Ctrl+Equal key combo to zoom in"
+#~ msgstr "תמיכה בצירוף המקשים Ctrl+Equal כדי להתקרב"
+
+#~ msgid "Fix a wrong foreground process response code"
+#~ msgstr "תיקון קוד תגובה שגוי של תהליך שרץ בחזית"
+
+#~ msgid "Return focus after popover menu closes"
+#~ msgstr "החזרת המיקוד לאחר סגירת תפריט צף"
+
+#~ msgid "Prevent search and style buttons from receiving focus"
+#~ msgstr "מניעת קבלת מיקוד על כפתורי חיפוש וסגנון"
+
+#~ msgid "Hide the cursor while typing"
+#~ msgstr "הסתרת הסמן בזמן הקלדה"
+
+#~ msgid "Fix erratic search text highlightning behavior"
+#~ msgstr "תיקון התנהגות בלתי יציבה של הדגשת טקסט חיפוש"
+
+#~ msgid "Support -h flag for help"
+#~ msgstr "תמיכה בדגלון ‎-h לעזרה"
+
+#~ msgid "Disable audible bell"
+#~ msgstr "השבתת צלצול"
+
+#~ msgid "Add Alt+↑ action to scroll to last command"
+#~ msgstr "הוספת הפעולה Alt+↑ כדי לגלול לפקודה האחרונה"
+
+#~ msgid "Add Alt+c action to copy last output"
+#~ msgstr "הוספת הפקודה Alt+c כדי להעתיק את הפלט האחרון"
+
+#~ msgid "Add accels to tooltips"
+#~ msgstr "הוספת מקשי האצה לחלוניות עצה"
+
+#~ msgid "Fix zsh notifications"
+#~ msgstr "תיקון התראות zsh"
+
+#~ msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+#~ msgstr "קיצור מקשים מותנה ctrl+g כדי לא לסתור את emacs"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "תיקוני תקלות משניות"
+
+#~ msgid "FISH integration fixes"
+#~ msgstr "תיקוני שילוב עם FISH"
+
+#~ msgid "Theme preference menu"
+#~ msgstr "תפריט העדפת ערכת עיצוב"
+
+#~ msgid "Zoom level controls"
+#~ msgstr "פקדי רמת תקריב"
+
+#~ msgid "Allow tab to close after typing exit at the commandline"
+#~ msgstr "לאפשר סגירה של לשונית לאחר הקלדת exit בשורת הפקודה"
+
+#~ msgid "Fix copying URLs to clipboard"
+#~ msgstr "תיקון העתקת כתובות ללוח הגזירים"
+
+#~ msgid "Fix appstream date format"
+#~ msgstr "תיקון תבנית תאריך של appstream"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"
 
 #~ msgid "About Terminal"
 #~ msgstr "על אודות מסוף"

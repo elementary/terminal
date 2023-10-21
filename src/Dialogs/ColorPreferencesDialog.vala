@@ -69,12 +69,8 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             halign = Gtk.Align.END,
             margin_top = 12,
             margin_bottom = 6,
-            tooltip_text = _("Reset to elementaryos default color palette")
+            tooltip_text = _("Reset to default")
         };
-        default_button.clicked.connect (() => {
-            Terminal.Themes.set_default_palette_for_style ();
-            update_buttons_from_settings ();
-        });
 
         var black_color_label = new SettingsLabel (_("Black:"));
         var red_color_label = new SettingsLabel (_("Red:"));
@@ -213,6 +209,15 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         light_cyan_button.color_set.connect (update_palette_settings);
         white_button.color_set.connect (update_palette_settings);
 
+        default_button.clicked.connect (() => {
+            Application.settings.reset ("palette");
+            Application.settings.reset ("background");
+            Application.settings.reset ("foreground");
+            Application.settings.reset ("cursor-color");
+
+            update_buttons_from_settings ();
+        });
+
         background_button.color_set.connect (() => {
             Application.settings.set_string ("background", background_button.rgba.to_string ());
             update_contrast (contrast_image);
@@ -232,6 +237,8 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             contrast_top_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┐" : "┌";
             contrast_bottom_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┘" : "└";
         });
+
+        show.connect (get_child ().show_all);
     }
 
     private void update_palette_settings () {

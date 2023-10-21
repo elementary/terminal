@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 17:40+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
 "PO-Revision-Date: 2017-07-14 10:28+0000\n"
 "Last-Translator: Vladislav Glebovich <lightsunrider@live.ru>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/terminal/"
@@ -21,147 +21,237 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:112
-msgid "Process completed"
-msgstr ""
-
-#: src/Application.vala:115
-msgid "Process exited with errors"
-msgstr ""
-
-#: src/Application.vala:258
+#: src/Application.vala:32
 msgid "Show version"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:260
-msgid "Run a program in terminal"
-msgstr "Запусціць праграму ў тэрмінале"
-
-#: src/Application.vala:265
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:268
+#. -n flag forces a new window
+#: src/Application.vala:34
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Адкрыць новае акно"
 
 #. -t flag forces a new tab
-#: src/Application.vala:271
+#: src/Application.vala:36
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal tab"
 msgstr "Адкрыць новае акно"
 
-#: src/Application.vala:273
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:275
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:38
 msgid "Set shell working directory"
 msgstr "Выберыце працоўную папку для абалонкі"
 
-#: src/MainWindow.vala:215
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:40
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "Запусціць праграму ў тэрмінале"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:42
+msgid "Open terminal in a minimized state"
+msgstr ""
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:45
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+
+#: src/Application.vala:97
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Скапіяваць"
 
-#: src/MainWindow.vala:221
+#: src/MainWindow.vala:202
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:227
+#: src/MainWindow.vala:208
 msgid "Paste"
 msgstr "Уставіць"
 
-#: src/MainWindow.vala:233
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Вылучыць усё"
 
-#: src/MainWindow.vala:239 src/MainWindow.vala:360 src/MainWindow.vala:1457
+#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
 msgid "Find…"
 msgstr "Шукаем..."
 
-#: src/MainWindow.vala:366
-#, fuzzy
-msgid "Zoom out"
-msgstr "Паменшыць"
-
-#: src/MainWindow.vala:374
-msgid "Default zoom level"
-msgstr ""
-
-#: src/MainWindow.vala:381
-#, fuzzy
-msgid "Zoom in"
-msgstr "Павялічыць"
-
-#: src/MainWindow.vala:400
-msgid "High Contrast"
-msgstr ""
-
-#: src/MainWindow.vala:409
-msgid "Solarized Light"
-msgstr ""
-
-#: src/MainWindow.vala:418
-msgid "Dark"
-msgstr ""
-
-#: src/MainWindow.vala:427
-msgid "Custom"
-msgstr ""
-
-#: src/MainWindow.vala:446
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:447
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:472
+#: src/MainWindow.vala:333
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:498
+#: src/MainWindow.vala:359
 msgid "New Tab"
 msgstr "Новая ўкладка"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:707
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:901
+#: src/MainWindow.vala:708
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1183 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Зачыніць укладку"
 
-#: src/MainWindow.vala:1184
+#: src/MainWindow.vala:982
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:1197
+#: src/MainWindow.vala:995
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1288
+#: src/MainWindow.vala:1086
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/MainWindow.vala:1290
+#: src/MainWindow.vala:1088
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/MainWindow.vala:1449
+#: src/MainWindow.vala:1238
 msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+msgid "Dark"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Закрыць"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:310
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:313
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:316
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:319
+msgid "Contrast is high"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
@@ -250,6 +340,14 @@ msgstr ""
 msgid "Terminal"
 msgstr "Тэрмінал"
 
+#, fuzzy
+#~ msgid "Zoom out"
+#~ msgstr "Паменшыць"
+
+#, fuzzy
+#~ msgid "Zoom in"
+#~ msgstr "Павялічыць"
+
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "Гэтая каманда патрабуе правоў Адміністратара."
 
@@ -279,9 +377,6 @@ msgstr "Тэрмінал"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Адкрыць тэрмінал тут"
-
-#~ msgid "Close"
-#~ msgstr "Закрыць"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Стварыць новую ўкладка"
