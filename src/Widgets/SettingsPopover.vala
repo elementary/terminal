@@ -113,6 +113,11 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             active = Application.settings.get_boolean ("natural-copy-paste")
         };
 
+        var audible_bell_button = new Granite.SwitchModelButton (_("Audible Bell")) {
+            description = _("Send an event alert for invalid input or multiple possible completions (subject to system sound settings)."),
+            active = Application.settings.get_boolean ("audible-bell")
+        };
+
         var box = new Gtk.Box (VERTICAL, 6) {
             margin_bottom = 6,
             margin_top = 12,
@@ -123,6 +128,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.add (theme_box);
         box.add (new Gtk.Separator (HORIZONTAL));
         box.add (natural_copy_paste_button);
+        box.add (audible_bell_button);
         child = box;
 
         custom_button.clicked.connect (() => {
