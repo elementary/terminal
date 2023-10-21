@@ -114,7 +114,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
 
         var audible_bell_button = new Granite.SwitchModelButton (_("Audible Bell")) {
-            description = _("Send an event alert for invalid input or multiple possible completions (subject to system sound settings)."),
+            description = _("Send an event alert for invalid input or multiple possible completions (subject to system sound settings)"),
             active = Application.settings.get_boolean ("audible-bell")
         };
 
