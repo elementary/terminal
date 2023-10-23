@@ -145,6 +145,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         Application.settings.bind ("follow-system-style", follow_system_button, "active", DEFAULT);
         Application.settings.bind ("natural-copy-paste", natural_copy_paste_button, "active", DEFAULT);
+        Application.settings.bind ("audible-bell", audible_bell_button, "active", DEFAULT);
 
         Application.settings.changed.connect ((s, n) => {
             if (n == "background" || n == "foreground") {
