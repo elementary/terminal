@@ -649,6 +649,8 @@ namespace Terminal {
             notebook.current = tab;
             term.grab_focus ();
             check_for_tabs_with_same_name ();
+
+            save_opened_terminals ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -972,6 +974,8 @@ namespace Terminal {
             } else {
                 terminal_widget.run_program (program, location);
             }
+
+            save_opened_terminals ();
 
             return terminal_widget;
         }
