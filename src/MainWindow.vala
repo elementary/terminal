@@ -854,9 +854,6 @@ namespace Terminal {
             } else {
                 tabs += Environment.get_current_dir ();
                 zooms += default_zoom;
-
-                Terminal.Application.saved_state.set_strv ("tabs", {});
-                Terminal.Application.saved_state.set_strv ("tab-zooms", {});
             }
 
             assert (zooms.length == tabs.length);
@@ -1347,6 +1344,7 @@ namespace Terminal {
         private void save_opened_terminals () {
             string[] opened_tabs = {};
             string[] zooms = {};
+            int focused_tab = 0;
 
             Application.saved_state.set_double ("zoom", current_terminal.font_scale);
 
@@ -1362,23 +1360,26 @@ namespace Terminal {
                         }
                     }
                 });
-            
 
-                Terminal.Application.saved_state.set_strv (
-                    "tabs",
-                    opened_tabs
-                );
-
-                Terminal.Application.saved_state.set_strv (
-                    "tab-zooms",
-                    zooms
-                );
-
-                Terminal.Application.saved_state.set_int (
-                    "focused-tab",
-                    notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
-                );
+                if (notebook.current != null) {
+                    focused_tab = notebook.get_tab_position (notebook.current);
+                }
             }
+
+            Terminal.Application.saved_state.set_strv (
+                "tabs",
+                opened_tabs
+            );
+
+            Terminal.Application.saved_state.set_strv (
+                "tab-zooms",
+                zooms
+            );
+
+            Terminal.Application.saved_state.set_int (
+                "focused-tab",
+                focused_tab
+            );
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
