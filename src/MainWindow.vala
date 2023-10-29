@@ -1203,10 +1203,12 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
+            save_opened_terminals ();
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
+            save_opened_terminals ();
         }
 
         private void action_zoom_default_font () {
