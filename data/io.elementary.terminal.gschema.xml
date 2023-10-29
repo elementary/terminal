@@ -68,7 +68,7 @@
     </key>
     <key name="remember-tabs" type="b">
       <default>true</default>
-      <summary>Whether open tabs should be remembered on closing (subject to privacy setting).</summary>
+      <summary>Whether open tabs should be remembered (subject to privacy setting).</summary>
       <description>
           Defines whether the terminal should remember the last open tabs and restore
           them when the terminal is reopened. If the global privacy setting is on, the tabs
