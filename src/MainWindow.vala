@@ -1410,44 +1410,8 @@ namespace Terminal {
         }
 
         private void save_opened_terminals_with_zooms () {
-            string[] opened_tabs = {};
-            string[] zooms = {};
-            int focused_tab = 0;
-
-            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
-
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
-
-                terminals.foreach ((term) => {
-                    if (term != null) {
-                        var location = term.get_shell_location ();
-                        if (location != null && location != "") {
-                            opened_tabs += location;
-                            zooms += term.font_scale.to_string (); // Locale independent
-                        }
-                    }
-                });
-
-                if (notebook.current != null) {
-                    focused_tab = notebook.get_tab_position (notebook.current);
-                }
-            }
-
-            Terminal.Application.saved_state.set_strv (
-                "tabs",
-                opened_tabs
-            );
-
-            Terminal.Application.saved_state.set_strv (
-                "tab-zooms",
-                zooms
-            );
-
-            Terminal.Application.saved_state.set_int (
-                "focused-tab",
-                focused_tab
-            );
+            save_opened_terminals ();
+            save_opened_terminal_zoom (current_terminal);
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
