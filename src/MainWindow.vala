@@ -583,18 +583,18 @@ namespace Terminal {
             var terminal_widget = get_term_widget (tab);
             terminals.append (terminal_widget);
             terminal_widget.window = this;
-            save_opened_terminals ();
+            save_opened_terminals_with_zooms ();
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var terminal_widget = get_term_widget (tab);
             if (!on_drag && notebook.n_tabs == 0) {
-                save_opened_terminals ();
+                save_opened_terminals_with_zooms ();
                 destroy ();
             } else {
                 terminals.remove (terminal_widget);
                 check_for_tabs_with_same_name ();
-                save_opened_terminals ();
+                save_opened_terminals_with_zooms ();
             }
         }
 
@@ -650,7 +650,7 @@ namespace Terminal {
             term.grab_focus ();
             check_for_tabs_with_same_name ();
 
-            save_opened_terminals ();
+            save_opened_terminals_with_zooms ();
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -976,7 +976,7 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
-            save_opened_terminals ();
+            save_opened_terminals_with_zooms ();
 
             return terminal_widget;
         }
@@ -1044,7 +1044,7 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            save_opened_terminals ();
+            save_opened_terminals_with_zooms ();
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var terminal_widget in terminals) {
@@ -1344,8 +1344,8 @@ namespace Terminal {
             return;
         }
 
-        private void zoom_changed () {
-            save_opened_terminals ();
+        private void zoom_changed (TerminalWidget terminal_widget) {
+            save_opened_terminal_zoom (terminal_widget);
         }
 
         private void cwd_changed () {
@@ -1353,7 +1353,65 @@ namespace Terminal {
             save_opened_terminals ();
         }
 
+        private void save_opened_terminal_zoom (TerminalWidget terminal_widget) {
+            string[] zooms = {};
+
+            if (terminal_widget == current_terminal) {
+                Application.saved_state.set_double ("zoom", current_terminal.font_scale);
+            }
+
+            if (Granite.Services.System.history_is_enabled () &&
+                Application.settings.get_boolean ("remember-tabs")) {
+
+                terminals.foreach ((term) => {
+                    if (term != null) {
+                        var location = term.get_shell_location ();
+                        if (location != null && location != "") {
+                            zooms += term.font_scale.to_string (); // Locale independent
+                        }
+                    }
+                });
+            }
+
+            Terminal.Application.saved_state.set_strv (
+                "tab-zooms",
+                zooms
+            );
+        }
+
         private void save_opened_terminals () {
+            string[] opened_tabs = {};
+            int focused_tab = 0;
+
+            if (Granite.Services.System.history_is_enabled () &&
+                Application.settings.get_boolean ("remember-tabs")) {
+
+                terminals.foreach ((term) => {
+                    if (term != null) {
+                        var location = term.get_shell_location ();
+                        if (location != null && location != "") {
+                            opened_tabs += location;
+                        }
+                    }
+                });
+
+                if (notebook.current != null) {
+                    focused_tab = notebook.get_tab_position (notebook.current);
+                }
+            }
+
+            Terminal.Application.saved_state.set_strv (
+                "tabs",
+                opened_tabs
+            );
+
+            Terminal.Application.saved_state.set_int (
+                "focused-tab",
+                focused_tab
+            );
+        }
+
+        private void save_opened_terminals_with_zooms () {
             string[] opened_tabs = {};
             string[] zooms = {};
             int focused_tab = 0;
