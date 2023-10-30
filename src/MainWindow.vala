@@ -248,6 +248,7 @@ namespace Terminal {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
+                        save_opened_terminals_with_zooms ();
                         return Source.REMOVE;
                     });
                 }
