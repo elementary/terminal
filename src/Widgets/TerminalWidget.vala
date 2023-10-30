@@ -128,8 +128,6 @@ namespace Terminal {
 
         public signal void cwd_changed ();
 
-        public signal void zoom_changed (TerminalWidget terminal_widget);
-
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -203,11 +201,11 @@ namespace Terminal {
                 if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
                     switch (event.direction) {
                         case Gdk.ScrollDirection.UP:
-                            increment_size ();
+                            window.get_simple_action (MainWindow.ACTION_ZOOM_IN_FONT).activate (null);
                             return Gdk.EVENT_STOP;
 
                         case Gdk.ScrollDirection.DOWN:
-                            decrement_size ();
+                            window.get_simple_action (MainWindow.ACTION_ZOOM_OUT_FONT).activate (null);
                             return Gdk.EVENT_STOP;
 
                         case Gdk.ScrollDirection.SMOOTH:
@@ -452,17 +450,14 @@ namespace Terminal {
 
         public void increment_size () {
             font_scale = (font_scale + 0.1).clamp (MIN_SCALE, MAX_SCALE);
-            zoom_changed (this);
         }
 
         public void decrement_size () {
             font_scale = (font_scale - 0.1).clamp (MIN_SCALE, MAX_SCALE);
-            zoom_changed (this);
         }
 
         public void set_default_font_size () {
             font_scale = 1.0;
-            zoom_changed (this);
         }
 
         public bool is_init_complete () {
