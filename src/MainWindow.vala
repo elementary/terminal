@@ -1204,17 +1204,17 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
-            save_opened_terminal_zoom (current_terminal);
+            save_opened_terminals_zoom ();
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            save_opened_terminal_zoom (current_terminal);
+            save_opened_terminals_zoom ();
         }
 
         private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            save_opened_terminal_zoom (current_terminal);
+            save_opened_terminals_zoom ();
         }
 
         private void action_next_tab () {
@@ -1351,12 +1351,10 @@ namespace Terminal {
             save_opened_terminals ();
         }
 
-        private void save_opened_terminal_zoom (TerminalWidget terminal_widget) {
+        private void save_opened_terminals_zoom () {
             string[] zooms = {};
 
-            if (terminal_widget == current_terminal) {
-                Application.saved_state.set_double ("zoom", current_terminal.font_scale);
-            }
+            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
 
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
@@ -1411,7 +1409,7 @@ namespace Terminal {
 
         private void save_opened_terminals_with_zooms () {
             save_opened_terminals ();
-            save_opened_terminal_zoom (current_terminal);
+            save_opened_terminals_zoom ();
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
