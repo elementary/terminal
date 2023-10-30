@@ -936,7 +936,7 @@ namespace Terminal {
             });
 
             terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
-            terminal_widget.cwd_changed.connect (check_for_tabs_with_same_name);
+            terminal_widget.cwd_changed.connect (cwd_changed);
 
             terminal_widget.set_font (term_font);
 
@@ -1343,6 +1343,11 @@ namespace Terminal {
             title = current_terminal.window_title != "" ? current_terminal.window_title
                                                         : current_terminal.current_working_directory;
             return;
+        }
+
+        private void cwd_changed () {
+            check_for_tabs_with_same_name ();
+            save_opened_terminals ();
         }
 
         private void save_opened_terminals () {
