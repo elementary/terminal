@@ -215,10 +215,10 @@ namespace Terminal {
 
                             if (total_delta_y >= 0.5) {
                                 total_delta_y = 0;
-                                decrement_size ();
+                                window.get_simple_action (MainWindow.ACTION_ZOOM_OUT_FONT).activate (null);
                             } else if (total_delta_y <= -0.5) {
                                 total_delta_y = 0;
-                                increment_size ();
+                                window.get_simple_action (MainWindow.ACTION_ZOOM_IN_FONT).activate (null);
                             }
 
                             return Gdk.EVENT_STOP;
