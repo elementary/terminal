@@ -937,6 +937,7 @@ namespace Terminal {
 
             terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
             terminal_widget.cwd_changed.connect (cwd_changed);
+            terminal_widget.zoom_changed.connect (zoom_changed);
 
             terminal_widget.set_font (term_font);
 
@@ -1204,12 +1205,10 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
-            save_opened_terminals ();
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            save_opened_terminals ();
         }
 
         private void action_zoom_default_font () {
@@ -1343,6 +1342,10 @@ namespace Terminal {
             title = current_terminal.window_title != "" ? current_terminal.window_title
                                                         : current_terminal.current_working_directory;
             return;
+        }
+
+        private void zoom_changed () {
+            save_opened_terminals ();
         }
 
         private void cwd_changed () {

@@ -128,6 +128,8 @@ namespace Terminal {
 
         public signal void cwd_changed ();
 
+        public signal void zoom_changed ();
+
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -450,14 +452,17 @@ namespace Terminal {
 
         public void increment_size () {
             font_scale = (font_scale + 0.1).clamp (MIN_SCALE, MAX_SCALE);
+            zoom_changed ();
         }
 
         public void decrement_size () {
             font_scale = (font_scale - 0.1).clamp (MIN_SCALE, MAX_SCALE);
+            zoom_changed ();
         }
 
         public void set_default_font_size () {
             font_scale = 1.0;
+            zoom_changed ();
         }
 
         public bool is_init_complete () {
