@@ -637,7 +637,7 @@ namespace Terminal {
             terminals.remove (terminal_widget);
             terminals.insert (terminal_widget, new_pos);
 
-            save_opened_terminals ();
+            save_opened_terminals_with_zooms ();
         }
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
