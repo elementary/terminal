@@ -248,7 +248,7 @@ namespace Terminal {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
-                        save_opened_terminals_with_zooms ();
+                        save_opened_terminals (true, true);
                         return Source.REMOVE;
                     });
                 }
@@ -584,18 +584,18 @@ namespace Terminal {
             var terminal_widget = get_term_widget (tab);
             terminals.append (terminal_widget);
             terminal_widget.window = this;
-            save_opened_terminals_with_zooms ();
+            save_opened_terminals (true, true);
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var terminal_widget = get_term_widget (tab);
             if (!on_drag && notebook.n_tabs == 0) {
-                save_opened_terminals_with_zooms ();
+                save_opened_terminals (true, true);
                 destroy ();
             } else {
                 terminals.remove (terminal_widget);
                 check_for_tabs_with_same_name ();
-                save_opened_terminals_with_zooms ();
+                save_opened_terminals (true, true);
             }
         }
 
@@ -638,7 +638,7 @@ namespace Terminal {
             terminals.remove (terminal_widget);
             terminals.insert (terminal_widget, new_pos);
 
-            save_opened_terminals_with_zooms ();
+            save_opened_terminals (true, true);
         }
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
@@ -651,7 +651,7 @@ namespace Terminal {
             term.grab_focus ();
             check_for_tabs_with_same_name ();
 
-            save_opened_terminals_with_zooms ();
+            save_opened_terminals (true, true);
         }
 
         private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
@@ -976,7 +976,7 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
-            save_opened_terminals_with_zooms ();
+            save_opened_terminals (true, true);
 
             return terminal_widget;
         }
@@ -1044,7 +1044,7 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            save_opened_terminals_with_zooms ();
+            save_opened_terminals (true, true);
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var terminal_widget in terminals) {
@@ -1205,17 +1205,17 @@ namespace Terminal {
 
         private void action_zoom_in_font () {
             current_terminal.increment_size ();
-            save_opened_terminals_zoom ();
+            save_opened_terminals (false, true);
         }
 
         private void action_zoom_out_font () {
             current_terminal.decrement_size ();
-            save_opened_terminals_zoom ();
+            save_opened_terminals (false, true);
         }
 
         private void action_zoom_default_font () {
             current_terminal.set_default_font_size ();
-            save_opened_terminals_zoom ();
+            save_opened_terminals (false, true);
         }
 
         private void action_next_tab () {
@@ -1349,37 +1349,18 @@ namespace Terminal {
 
         private void cwd_changed () {
             check_for_tabs_with_same_name ();
-            save_opened_terminals ();
+            save_opened_terminals (true, false);
         }
 
-        private void save_opened_terminals_zoom () {
+        private void save_opened_terminals (bool save_tabs, bool save_zooms) {
             string[] zooms = {};
-
-            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
-
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
-
-                terminals.foreach ((term) => {
-                    if (term != null) {
-                        var location = term.get_shell_location ();
-                        if (location != null && location != "") {
-                            zooms += term.font_scale.to_string (); // Locale independent
-                        }
-                    }
-                });
-            }
-
-            Terminal.Application.saved_state.set_strv (
-                "tab-zooms",
-                zooms
-            );
-        }
-
-        private void save_opened_terminals () {
             string[] opened_tabs = {};
             int focused_tab = 0;
 
+            if (save_zooms) {
+                Application.saved_state.set_double ("zoom", current_terminal.font_scale);
+            }
+
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
@@ -1387,30 +1368,39 @@ namespace Terminal {
                     if (term != null) {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
-                            opened_tabs += location;
+                            if (save_tabs) {
+                                opened_tabs += location;
+                            }
+                            if (save_zooms) {
+                                zooms += term.font_scale.to_string (); // Locale independent
+                            }
                         }
                     }
                 });
 
-                if (notebook.current != null) {
+                if (save_tabs && notebook.current != null) {
                     focused_tab = notebook.get_tab_position (notebook.current);
                 }
             }
 
-            Terminal.Application.saved_state.set_strv (
-                "tabs",
-                opened_tabs
-            );
+            if (save_tabs) {
+                Terminal.Application.saved_state.set_strv (
+                    "tabs",
+                    opened_tabs
+                );
 
-            Terminal.Application.saved_state.set_int (
-                "focused-tab",
-                focused_tab
-            );
-        }
+                Terminal.Application.saved_state.set_int (
+                    "focused-tab",
+                    focused_tab
+                );
+            }
 
-        private void save_opened_terminals_with_zooms () {
-            save_opened_terminals ();
-            save_opened_terminals_zoom ();
+            if (save_zooms) {
+                Terminal.Application.saved_state.set_strv (
+                    "tab-zooms",
+                    zooms
+                );
+            }
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
