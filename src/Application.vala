@@ -108,8 +108,6 @@ public class Terminal.Application : Gtk.Application {
             if (working_directory != "\0") {
                 Environment.set_current_dir (working_directory); // will be sent via platform-data
             }
-
-            options.remove ("working-directory");
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
@@ -201,7 +199,10 @@ public class Terminal.Application : Gtk.Application {
         );
 
         var new_window_action = new SimpleAction ("new-window", null);
-        new_window_action.activate.connect (new_window);
+        new_window_action.activate.connect (() => {
+            // Ensure at least one tab when window created by action
+            new MainWindow (this, active_window == null, true).present ();
+        });
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (close);
@@ -223,27 +224,37 @@ public class Terminal.Application : Gtk.Application {
              * Currently they are set to restore (subject to the restore-tabs setting).
              * If it is desired that tabs should never be restored in these circimstances add another check below.
              */
-            bool restore_tabs = !("commandline" in options || "execute" in options) || window == null;
-            window = new MainWindow (this, restore_tabs);
+            bool restore_tabs = !("commandline" in options || "execute" in options || "working-directory" in options) || window == null;
+            window = new MainWindow (this, restore_tabs, false);
         }
 
-        unowned var working_directory = command_line.get_cwd ();
         unowned string[] commands;
         unowned string command;
+        unowned string wd;
         bool new_tab, minimized;
 
         options.lookup ("new-tab", "b", out new_tab);
+        options.lookup ("working-directory", "^&ay", out wd);
+
 
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
-                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
+                    window.add_tab_with_working_directory (
+                        wd != null ? wd : command_line.get_cwd (),
+                        commands[i],
+                        new_tab
+                    );
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-            window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else {
-            window.add_tab_with_working_directory (working_directory, null, new_tab);
+            window.add_tab_with_working_directory (
+                wd != null ? wd : command_line.get_cwd (),
+                command,
+                new_tab
+            );
+        } else if (wd != null) {
+            window.add_tab_with_working_directory (wd, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
@@ -261,10 +272,6 @@ public class Terminal.Application : Gtk.Application {
         }
 
         base.dbus_unregister (connection, path);
-    }
-
-    private void new_window () {
-        new MainWindow (this, active_window == null).present ();
     }
 
     private void close () {
