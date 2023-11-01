@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-26 17:44+0000\n"
-"PO-Revision-Date: 2023-02-04 12:25+0000\n"
+"POT-Creation-Date: 2023-07-25 09:26+0000\n"
+"PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -17,151 +17,113 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:112
-msgid "Process completed"
-msgstr "Feladat befejezve"
-
-#: src/Application.vala:115
-msgid "Process exited with errors"
-msgstr "A feladat kilépett hibákkal"
-
-#: src/Application.vala:258
+#: src/Application.vala:32
 msgid "Show version"
 msgstr "Verzió megjelenítése"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:260
-msgid "Run a program in terminal"
-msgstr "Program futtatása terminálban"
-
-#: src/Application.vala:265
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-"A sor további részének futtatása terminálban parancsként. Használhatja a "
-"'--' karaktereket flagként"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:268
+#. -n flag forces a new window
+#: src/Application.vala:34
 msgid "Open a new terminal window"
 msgstr "Új terminálablak megnyitása"
 
 #. -t flag forces a new tab
-#: src/Application.vala:271
+#: src/Application.vala:36
 msgid "Open a new terminal tab"
 msgstr "Új lap megnyitása"
 
-#: src/Application.vala:273
-msgid "Show help"
-msgstr "Súgó megjelenítése"
-
-#: src/Application.vala:275
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:38
 msgid "Set shell working directory"
 msgstr "A shell munkakönyvtárának beállítása"
 
-#: src/MainWindow.vala:219
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:40
+msgid "Run a program in terminal"
+msgstr "Programfuttatás terminálban"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:42
+msgid "Open terminal in a minimized state"
+msgstr "A terminál megnyitása lekicsinyített állapotban"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:45
+msgid "Run remainder of line as a command in terminal"
+msgstr "A sor további részének futtatása terminálban parancsként"
+
+#: src/Application.vala:97
+msgid "[-- COMMAND…]"
+msgstr "[-- PARANCS…]"
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr "Feladat befejezve"
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr "A feladat kilépett hibákkal"
+
+#: src/MainWindow.vala:196
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/MainWindow.vala:225
+#: src/MainWindow.vala:202
 msgid "Copy Last Output"
 msgstr "Legutóbbi kimenet másolása"
 
-#: src/MainWindow.vala:231
+#: src/MainWindow.vala:208
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/MainWindow.vala:237
+#: src/MainWindow.vala:214
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/MainWindow.vala:243 src/MainWindow.vala:364 src/MainWindow.vala:1516
+#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/MainWindow.vala:370
-msgid "Zoom out"
-msgstr "Kicsinyítés"
-
-#: src/MainWindow.vala:378
-msgid "Default zoom level"
-msgstr "Alapértelmezett nagyítási szint"
-
-#: src/MainWindow.vala:385
-msgid "Zoom in"
-msgstr "Nagyítás"
-
-#: src/MainWindow.vala:402
-msgid "Follow System Style"
-msgstr "Rendszertéma követése"
-
-#: src/MainWindow.vala:406
-msgid "High Contrast"
-msgstr "Magas kontraszt"
-
-#: src/MainWindow.vala:412
-msgid "Solarized Light"
-msgstr "Szolarizált világos"
-
-#: src/MainWindow.vala:418 src/Dialogs/ColorPreferencesDialog.vala:58
-msgid "Dark"
-msgstr "Sötét"
-
-#: src/MainWindow.vala:424
-msgid "Custom"
-msgstr "Egyéni"
-
-#: src/MainWindow.vala:447
-msgid "Natural Copy/Paste"
-msgstr "Természetes másolás/beillesztés"
-
-#: src/MainWindow.vala:448
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"A gyorsbillentyűk nem igénylik a Shift lenyomását; konzolos alkalmazásoknál "
-"problémát okozhat"
-
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:333
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/MainWindow.vala:500
+#: src/MainWindow.vala:359
 msgid "New Tab"
 msgstr "Új lap"
 
-#: src/MainWindow.vala:959
+#: src/MainWindow.vala:707
 #, c-format
 msgid "Show in %s"
 msgstr "Megjelenítés itt: %s"
 
-#: src/MainWindow.vala:960
+#: src/MainWindow.vala:708
 msgid "Default application"
 msgstr "Alapértelmezett alkalmazás"
 
-#: src/MainWindow.vala:1242 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
-#: src/MainWindow.vala:1243
+#: src/MainWindow.vala:982
 msgid "Duplicate"
 msgstr "Megkettőzés"
 
-#: src/MainWindow.vala:1256
+#: src/MainWindow.vala:995
 msgid "Reload"
 msgstr "Újratöltés"
 
-#: src/MainWindow.vala:1347
+#: src/MainWindow.vala:1086
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
-#: src/MainWindow.vala:1349
+#: src/MainWindow.vala:1088
 msgid "The pasted text may contain multiple commands"
 msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 
-#: src/MainWindow.vala:1508
+#: src/MainWindow.vala:1238
 msgid "Hide find bar"
 msgstr "Keresősáv elrejtése"
 
@@ -176,6 +138,10 @@ msgstr "Ablaktéma:"
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
 msgstr "Világos"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+msgid "Dark"
+msgstr "Sötét"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
@@ -265,19 +231,19 @@ msgstr "Kurzor:"
 msgid "Close"
 msgstr "Bezárás"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
 msgstr "A kontraszt nagyon alacsony"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:311
+#: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
 msgstr "A kontraszt alacsony"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:314
+#: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
 msgstr "A kontraszt jó"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:317
+#: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
 msgstr "A kontraszt magas"
 
@@ -363,6 +329,38 @@ msgstr "Ciklikus keresés"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
+
+#~ msgid "Zoom out"
+#~ msgstr "Kicsinyítés"
+
+#~ msgid "Default zoom level"
+#~ msgstr "Alapértelmezett nagyítási szint"
+
+#~ msgid "Zoom in"
+#~ msgstr "Nagyítás"
+
+#~ msgid "Follow System Style"
+#~ msgstr "Rendszertéma követése"
+
+#~ msgid "High Contrast"
+#~ msgstr "Magas kontraszt"
+
+#~ msgid "Solarized Light"
+#~ msgstr "Szolarizált világos"
+
+#~ msgid "Custom"
+#~ msgstr "Egyéni"
+
+#~ msgid "Natural Copy/Paste"
+#~ msgstr "Természetes másolás/beillesztés"
+
+#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+#~ msgstr ""
+#~ "A gyorsbillentyűk nem igénylik a Shift lenyomását; konzolos "
+#~ "alkalmazásoknál problémát okozhat"
+
+#~ msgid "Show help"
+#~ msgstr "Súgó megjelenítése"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "Ez a parancs rendszergazdai hozzáférést igényel a számítógépéhez"
