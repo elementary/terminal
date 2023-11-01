@@ -1357,6 +1357,11 @@ namespace Terminal {
             string[] opened_tabs = {};
             int focused_tab = 0;
 
+            // Continuous saving of opened terminals interferes with current unit tests
+            if (app.is_testing) {
+                return;
+            }
+
             if (save_zooms && current_terminal != null) {
                 Application.saved_state.set_double ("zoom", current_terminal.font_scale);
             }

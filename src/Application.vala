@@ -14,6 +14,8 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
+    public bool is_testing { get; set construct; }
+
     private static Themes themes;
 
     public Application () {
