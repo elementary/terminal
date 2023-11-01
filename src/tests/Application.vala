@@ -12,7 +12,8 @@ namespace Terminal.Test.Application {
 
     private void setup () {
         application = new Terminal.Application () {
-            application_id = "io.elementary.terminal.tests.application"
+            application_id = "io.elementary.terminal.tests.application",
+            is_testing = true
         };
 
         application.shutdown.connect (() => application.get_windows ().foreach ((win) => win.destroy ()));
