@@ -32,6 +32,9 @@ namespace Terminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private bool on_drag = false;
+
+        private Gtk.EventControllerKey key_controller;
+        private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
@@ -236,15 +239,11 @@ namespace Terminal {
             setup_ui ();
             show_all ();
 
-            update_font ();
-            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
-            Application.settings.changed["font"].connect (update_font);
-
-            set_size_request (app.minimum_width, app.minimum_height);
-
-            configure_event.connect (on_window_state_change);
-            destroy.connect (on_destroy);
-            focus_in_event.connect (() => {
+            key_controller = new Gtk.EventControllerKey (this) {
+                propagation_phase = TARGET
+            };
+            key_controller.key_pressed.connect (key_pressed);
+            key_controller.focus_in.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
@@ -252,9 +251,13 @@ namespace Terminal {
                         return Source.REMOVE;
                     });
                 }
-
-                return false;
             });
+
+            update_font ();
+            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+            Application.settings.changed["font"].connect (update_font);
+
+            set_size_request (app.minimum_width, app.minimum_height);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
 
@@ -295,25 +298,6 @@ namespace Terminal {
             }
 
             new_tab (location, command);
-        }
-
-        /** Returns true if the code parameter matches the keycode of the keyval parameter for
-          * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
-#if VALA_0_42
-        protected bool match_keycode (uint keyval, uint code) {
-#else
-        protected bool match_keycode (int keyval, uint code) {
-#endif
-            Gdk.KeymapKey [] keys;
-            var keymap = Gdk.Keymap.get_for_display (get_display ());
-            if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                foreach (var key in keys) {
-                    if (code == key.keycode)
-                        return true;
-                }
-            }
-
-            return false;
         }
 
         private void setup_ui () {
@@ -410,139 +394,145 @@ namespace Terminal {
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
             bind_property ("current-terminal", menu_popover, "terminal");
-
-            key_press_event.connect ((event) => {
-                if (event.is_modifier == 1) {
-                    return false;
-                }
-
-                switch (event.keyval) {
-                    case Gdk.Key.Escape:
-                        if (search_toolbar.search_entry.has_focus) {
-                            search_button.active = !search_button.active;
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.Return:
-                        if (search_toolbar.search_entry.has_focus) {
-                            if (Gdk.ModifierType.SHIFT_MASK in event.state) {
-                                search_toolbar.previous_search ();
-                            } else {
-                                search_toolbar.next_search ();
-                            }
-                            return true;
-                        } else {
-                            current_terminal.remember_position ();
-                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
-                            current_terminal.remember_command_end_position ();
-                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
-                        }
-
-                        break;
-
-                    case Gdk.Key.@1: //alt+[1-8]
-                    case Gdk.Key.@2:
-                    case Gdk.Key.@3:
-                    case Gdk.Key.@4:
-                    case Gdk.Key.@5:
-                    case Gdk.Key.@6:
-                    case Gdk.Key.@7:
-                    case Gdk.Key.@8:
-                        if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab") &&
-                            notebook.n_tabs > 1) {
-                            var i = event.keyval - 49;
-                            if (i > notebook.n_tabs - 1)
-                                return false;
-                            notebook.current = notebook.get_tab_by_index ((int) i);
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.@9:
-                        if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab") &&
-                            notebook.n_tabs > 1) {
-                            notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
-                            return true;
-                        }
-                        break;
-
-                    case Gdk.Key.Up:
-                    case Gdk.Key.Down:
-                        current_terminal.remember_command_start_position ();
-                        break;
-                    case Gdk.Key.Menu:
-                        /* Popup context menu below cursor position */
-                        long col, row;
-                        current_terminal.get_cursor_position (out col, out row);
-                        var cell_width = current_terminal.get_char_width ();
-                        var cell_height = current_terminal.get_char_height ();
-                        var rect_window = current_terminal.get_window ();
-                        var vadj_val = current_terminal.get_vadjustment ().get_value ();
-
-                        Gdk.Rectangle rect = {(int)(col * cell_width),
-                                              (int)((row - vadj_val) * cell_height),
-                                              (int)cell_width,
-                                              (int)cell_height};
-
-                        update_context_menu ();
-                        menu.popup_at_rect (rect_window,
-                                            rect,
-                                            Gdk.Gravity.SOUTH_WEST,
-                                            Gdk.Gravity.NORTH_WEST,
-                                            event);
-                        menu.select_first (false);
-                        break;
-                    default:
-                        if (!(Gtk.accelerator_get_default_mod_mask () in event.state)) {
-                            current_terminal.remember_command_start_position ();
-                        }
-
-                        break;
-                }
-
-                /* Use hardware keycodes so the key used
-                 * is unaffected by internationalized layout */
-                if (Gdk.ModifierType.CONTROL_MASK in event.state &&
-                    Application.settings.get_boolean ("natural-copy-paste")) {
-                    uint keycode = event.hardware_keycode;
-                    if (match_keycode (Gdk.Key.c, keycode)) {
-                        if (current_terminal.get_has_selection ()) {
-                            current_terminal.copy_clipboard ();
-                            if (!(Gdk.ModifierType.SHIFT_MASK in event.state)) { /* Shift not pressed */
-                                current_terminal.unselect_all ();
-                            }
-                            return true;
-                        } else { /* Ctrl-c: Command cancelled */
-                            current_terminal.last_key_was_return = true;
-                        }
-                    } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        return handle_paste_event ();
-                    }
-                }
-
-                if (Gdk.ModifierType.MOD1_MASK in event.state) {
-                    uint keycode = event.hardware_keycode;
-
-                    if (event.keyval == Gdk.Key.Up) {
-                        return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
-                    }
-
-                    if (match_keycode (Gdk.Key.c, keycode)) { /* Alt-c */
-                        update_copy_output_sensitive ();
-                    }
-                }
-
-                return false;
-            });
         }
 
-        private bool handle_paste_event () {
-            if (search_toolbar.search_entry.has_focus) {
+        private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            switch (keyval) {
+                case Gdk.Key.Escape:
+                    if (search_toolbar.search_entry.has_focus) {
+                        search_button.active = !search_button.active;
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.Return:
+                    if (search_toolbar.search_entry.has_focus) {
+                        if (SHIFT_MASK in modifiers) {
+                            search_toolbar.previous_search ();
+                        } else {
+                            search_toolbar.next_search ();
+                        }
+                        return true;
+                    } else {
+                        current_terminal.remember_position ();
+                        get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
+                        current_terminal.remember_command_end_position ();
+                        get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
+                    }
+                    break;
+
+                case Gdk.Key.@1: //alt+[1-8]
+                case Gdk.Key.@2:
+                case Gdk.Key.@3:
+                case Gdk.Key.@4:
+                case Gdk.Key.@5:
+                case Gdk.Key.@6:
+                case Gdk.Key.@7:
+                case Gdk.Key.@8:
+                    if (MOD1_MASK in modifiers
+                    && Application.settings.get_boolean ("alt-changes-tab")
+                    && notebook.n_tabs > 1) {
+                        var tab_index = keyval - 49;
+                        if (tab_index > notebook.n_tabs - 1) {
+                            return false;
+                        }
+
+                        notebook.current = notebook.get_tab_by_index ((int) tab_index);
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.@9:
+                    if (MOD1_MASK in modifiers
+                    && Application.settings.get_boolean ("alt-changes-tab")
+                    && notebook.n_tabs > 1) {
+                        notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.Up:
+                case Gdk.Key.Down:
+                    current_terminal.remember_command_start_position ();
+                    break;
+
+                case Gdk.Key.Menu:
+                    long col, row;
+                    current_terminal.get_cursor_position (out col, out row);
+
+                    var cell_width = current_terminal.get_char_width ();
+                    var cell_height = current_terminal.get_char_height ();
+                    var vadj = current_terminal.vadjustment.value;
+
+                    Gdk.Rectangle rect = {
+                        (int) (col * cell_width),
+                        (int) ((row - vadj) * cell_height),
+                        (int) cell_width,
+                        (int) cell_height
+                    };
+
+                    unowned var rect_window = current_terminal.get_window ();
+                    update_context_menu ();
+
+                    // Popup context menu below cursor position
+                    menu.popup_at_rect (rect_window, rect, SOUTH_WEST, NORTH_WEST);
+                    menu.select_first (false);
+                    break;
+
+                default:
+                    if (!(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                        current_terminal.remember_command_start_position ();
+                    }
+                    break;
+            }
+
+            // Use hardware keycodes so the key used is unaffected by internationalized layout
+            bool match_keycode (uint keyval, uint code) {
+                Gdk.KeymapKey[] keys;
+
+                var keymap = Gdk.Keymap.get_for_display (get_display ());
+                if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                    foreach (var key in keys) {
+                        if (code == key.keycode) {
+                            return true;
+                        }
+                    }
+                }
+
                 return false;
-            } else if (clipboard.wait_is_text_available ()) {
-                action_paste ();
-                return true;
+            }
+
+            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
+                if (match_keycode (Gdk.Key.c, keycode)) {
+                    if (current_terminal.get_has_selection ()) {
+                        current_terminal.copy_clipboard ();
+                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
+                            current_terminal.unselect_all ();
+                        }
+                        return true;
+                    } else {
+                        current_terminal.last_key_was_return = true; // Ctrl-c: Command cancelled
+                    }
+                } else if (match_keycode (Gdk.Key.v, keycode)) {
+                    if (search_toolbar.search_entry.has_focus) {
+                        return false;
+                    } else if (clipboard.wait_is_text_available ()) {
+                        action_paste ();
+                        return true;
+                    }
+
+                    return false;
+                }
+            }
+
+            if (MOD1_MASK in modifiers) {
+                if (keyval == Gdk.Key.Up) {
+                    return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
+                }
+
+                if (match_keycode (Gdk.Key.c, keycode)) { // Alt-c
+                    update_copy_output_sensitive ();
+                }
             }
 
             return false;
@@ -772,12 +762,12 @@ namespace Terminal {
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
         }
 
-        private uint timer_window_state_change = 0;
-        private bool on_window_state_change (Gdk.EventConfigure event) {
+        protected override bool configure_event (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
-            if (timer_window_state_change > 0)
+            if (timer_window_state_change > 0) {
                 GLib.Source.remove (timer_window_state_change);
+            }
 
             timer_window_state_change = GLib.Timeout.add (400, () => {
                 timer_window_state_change = 0;
@@ -1070,10 +1060,12 @@ namespace Terminal {
             return false;
         }
 
-        private void on_destroy () {
+        protected override void destroy () {
             foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
                 t.term_ps ();
             }
+
+            base.destroy ();
         }
 
         private void on_get_text (Gtk.Clipboard board, string? intext) {
