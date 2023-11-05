@@ -27,7 +27,9 @@ namespace Terminal {
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
-        private Granite.AccelLabel open_in_browser_menuitem_label;
+
+        private GLib.Menu open_in_menu;
+        private GLib.Menu search_menu;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
@@ -44,7 +46,6 @@ namespace Terminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalWidget current_terminal { get; private set; default = null; }
@@ -132,53 +133,11 @@ namespace Terminal {
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            var open_in_browser_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
-            };
-            open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
-                "", open_in_browser_menuitem.action_name
-            );
-            open_in_browser_menuitem.add (open_in_browser_menuitem_label);
+            open_in_menu = new GLib.Menu ();
+            open_in_menu.append (_("Open in Default Application"), "win.action-open-in-browser");
 
-            var copy_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_COPY
-            };
-            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), TerminalWidget.ACTION_COPY));
-
-            var copy_last_output_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_COPY_OUTPUT
-            };
-            copy_last_output_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), TerminalWidget.ACTION_COPY_OUTPUT)
-            );
-
-            var paste_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_PASTE
-            };
-            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), TerminalWidget.ACTION_PASTE));
-
-            var select_all_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_SELECT_ALL
-            };
-            select_all_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Select All"), TerminalWidget.ACTION_SELECT_ALL)
-            );
-
-            var search_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_SEARCH
-            };
-            search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
-
-            menu = new Gtk.Menu ();
-            menu.append (open_in_browser_menuitem);
-            menu.append (new Gtk.SeparatorMenuItem ());
-            menu.append (copy_menuitem);
-            menu.append (copy_last_output_menuitem);
-            menu.append (paste_menuitem);
-            menu.append (select_all_menuitem);
-            menu.append (new Gtk.SeparatorMenuItem ());
-            menu.append (search_menuitem);
-            menu.insert_action_group ("win", actions);
+            search_menu = new GLib.Menu ();
+            search_menu.append (_("Find…"), "win.action-search");
 
             setup_ui ();
             show_all ();
@@ -534,20 +493,20 @@ namespace Terminal {
             }
         }
 
-        public void update_context_menu () {
-            /* Update the "Show in ..." menu option */
+        private void on_setup_menu (TerminalWidget terminal) {
+            // Update the "Show in ..." menu option
             get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
+                var suri = Utils.sanitize_path (uri, terminal.get_shell_location ());
+                AppInfo? appinfo = get_default_app_for_uri (suri);
+
+                get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+                var label = _("Show in %s").printf (
+                    appinfo != null ? appinfo.get_display_name () : _("Default application")
+                );
+
+                open_in_menu.remove (0);
+                open_in_menu.append (label, "win.action-open-in-browser");
             });
-        }
-
-        private void update_menu_label (string? uri) {
-            AppInfo? appinfo = get_default_app_for_uri (uri);
-
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
-            open_in_browser_menuitem_label.label = _("Show in %s").printf (
-                appinfo != null ? appinfo.get_display_name () : _("Default application")
-            );
         }
 
         private AppInfo? get_default_app_for_uri (string? uri) {
@@ -631,7 +590,6 @@ namespace Terminal {
             title = current_terminal.window_title != "" ? current_terminal.window_title
                                                         : current_terminal.current_working_directory;
 
-            menu.insert_action_group ("term", current_terminal.get_action_group ("term"));
             current_terminal.grab_focus ();
         }
 
@@ -724,15 +682,27 @@ namespace Terminal {
             /* Set up terminal */
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+                font_desc = term_font,
                 /* Make the terminal occupy the whole GUI */
                 expand = true
             };
 
+            if (current_terminal != null) {
+                terminal_widget.font_scale = current_terminal.font_scale;
+            } else {
+                terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+            }
 
+            var model = new GLib.Menu ();
+            model.append_section (null, open_in_menu);
+            model.append_section (null, terminal_widget.menu_model);
+            model.append_section (null, search_menu);
+            terminal_widget.menu_model = model;
 
-            var tab = create_tab (
-                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
-                null, terminal_widget); //Set correct label now to avoid race when spawning shell
+            terminal_widget.notify["font-scale"].connect (() => save_opened_terminals (false, true));
+            terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
+            terminal_widget.cwd_changed.connect (cwd_changed);
+            terminal_widget.setup_menu.connect (on_setup_menu);
 
             terminal_widget.child_exited.connect (() => {
                 if (!terminal_widget.killed) {
@@ -749,17 +719,11 @@ namespace Terminal {
                 }
             });
 
-            terminal_widget.notify["font-scale"].connect (() => save_opened_terminals (false, true));
-            terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
-            terminal_widget.cwd_changed.connect (cwd_changed);
-
-            terminal_widget.set_font (term_font);
-
-            if (current_terminal != null) {
-                terminal_widget.font_scale = current_terminal.font_scale;
-            } else {
-                terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
-            }
+            var tab = create_tab (
+                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
+                null,
+                terminal_widget
+            ); //Set correct label now to avoid race when spawning shell
 
             int minimum_width = terminal_widget.calculate_width (80) / 2;
             int minimum_height = terminal_widget.calculate_height (24) / 2;
