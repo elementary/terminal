@@ -397,11 +397,6 @@ namespace Terminal {
                             search_toolbar.next_search ();
                         }
                         return true;
-                    } else {
-                        current_terminal.remember_position ();
-                        get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
-                        current_terminal.remember_command_end_position ();
-                        get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
                     }
                     break;
 
@@ -435,88 +430,8 @@ namespace Terminal {
                     }
                     break;
 
-                case Gdk.Key.Up:
-                case Gdk.Key.Down:
-                    current_terminal.remember_command_start_position ();
-                    break;
-
-                case Gdk.Key.Menu:
-                    long col, row;
-                    current_terminal.get_cursor_position (out col, out row);
-
-                    var cell_width = current_terminal.get_char_width ();
-                    var cell_height = current_terminal.get_char_height ();
-                    var vadj = current_terminal.vadjustment.value;
-
-                    Gdk.Rectangle rect = {
-                        (int) (col * cell_width),
-                        (int) ((row - vadj) * cell_height),
-                        (int) cell_width,
-                        (int) cell_height
-                    };
-
-                    unowned var rect_window = current_terminal.get_window ();
-                    update_context_menu ();
-
-                    // Popup context menu below cursor position
-                    menu.popup_at_rect (rect_window, rect, SOUTH_WEST, NORTH_WEST);
-                    menu.select_first (false);
-                    break;
-
                 default:
-                    if (!(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
-                        current_terminal.remember_command_start_position ();
-                    }
                     break;
-            }
-
-            // Use hardware keycodes so the key used is unaffected by internationalized layout
-            bool match_keycode (uint keyval, uint code) {
-                Gdk.KeymapKey[] keys;
-
-                var keymap = Gdk.Keymap.get_for_display (get_display ());
-                if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                    foreach (var key in keys) {
-                        if (code == key.keycode) {
-                            return true;
-                        }
-                    }
-                }
-
-                return false;
-            }
-
-            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
-                if (match_keycode (Gdk.Key.c, keycode)) {
-                    if (current_terminal.get_has_selection ()) {
-                        current_terminal.copy_clipboard ();
-                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
-                            current_terminal.unselect_all ();
-                        }
-                        return true;
-                    } else {
-                        current_terminal.last_key_was_return = true; // Ctrl-c: Command cancelled
-                    }
-                } else if (match_keycode (Gdk.Key.v, keycode)) {
-                    if (search_toolbar.search_entry.has_focus) {
-                        return false;
-                    } else if (clipboard.wait_is_text_available ()) {
-                        action_paste ();
-                        return true;
-                    }
-
-                    return false;
-                }
-            }
-
-            if (MOD1_MASK in modifiers) {
-                if (keyval == Gdk.Key.Up) {
-                    return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
-                }
-
-                if (match_keycode (Gdk.Key.c, keycode)) { // Alt-c
-                    update_copy_output_sensitive ();
-                }
             }
 
             return false;
@@ -732,10 +647,6 @@ namespace Terminal {
             get_simple_action (ACTION_PASTE).set_enabled (can_paste);
         }
 
-        private void update_copy_output_sensitive () {
-            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
-        }
-
         protected override bool configure_event (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
@@ -778,7 +689,7 @@ namespace Terminal {
             title = current_terminal.window_title != "" ? current_terminal.window_title
                                                         : current_terminal.current_working_directory;
 
-            update_copy_output_sensitive ();
+            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
             current_terminal.grab_focus ();
         }
 

@@ -129,6 +129,7 @@ namespace Terminal {
         private Gtk.EventControllerKey key_controller;
         private Gtk.GestureMultiPress press_gesture;
 
+        private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
@@ -176,6 +177,17 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (key_pressed);
             key_controller.key_released.connect (() => scroll_controller.flags = NONE);
+
+            // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
+            //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
+            //
+            // TODO(Gtk4): check if the modifier emission was fixed.
+            key_controller.modifiers.connect (() => {
+                // if two modifers are pressed in sequence (like <Control> -> <Shift>), modifier_pressed will be false.
+                // However, the modifer mask in key_pressed() will already contain the previous modifier.
+                modifier_pressed = !modifier_pressed;
+                return true;
+            });
 
             press_gesture = new Gtk.GestureMultiPress (this) {
                 propagation_phase = TARGET,
@@ -270,8 +282,95 @@ namespace Terminal {
         }
 
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
-            if (keyval == Gdk.Key.Control_R || keyval == Gdk.Key.Control_L) {
-                scroll_controller.flags = VERTICAL;
+            switch (keyval) {
+                case Gdk.Key.Control_R:
+                case Gdk.Key.Control_L:
+                    scroll_controller.flags = VERTICAL;
+                    break;
+
+                case Gdk.Key.Return:
+                    remember_position ();
+                    window.get_simple_action (MainWindow.ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
+                    remember_command_end_position ();
+                    window.set_simple_action (MainWindow.ACTION_COPY_LAST_OUTPUT).set_enabled (false);
+                    break;
+
+                case Gdk.Key.Up:
+                case Gdk.Key.Down:
+                    remember_command_start_position ();
+                    break;
+
+                case Gdk.Key.Menu:
+                    long col, row;
+
+                    get_cursor_position (out col, out row);
+
+                    var cell_width = get_char_width ();
+                    var cell_height = get_char_height ();
+                    var vadj = vadjustment.value;
+
+                    Gdk.Rectangle rect = {
+                        (int) (col * cell_width),
+                        (int) ((row - vadj) * cell_height),
+                        (int) cell_width,
+                        (int) cell_height
+                    };
+
+                    window.update_context_menu ();
+
+                    // Popup context menu below cursor position
+                    menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                    menu.select_first (false);
+                    break;
+
+                case Gdk.Key.Alt_L:
+                case Gdk.Key.Alt_R:
+                    // enable/disable the action before we try to use
+                    window.get_simple_action (MainWindow.ACTION_COPY_LAST_OUTPUT).set_enabled (has_output ());
+                    break;
+
+                default:
+                    if (!modifier_pressed || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                        remember_command_start_position ();
+                    }
+                    break;
+            }
+
+            // Use hardware keycodes so the key used is unaffected by internationalized layout
+            bool match_keycode (uint keyval, uint code) {
+                Gdk.KeymapKey[] keys;
+
+                var keymap = Gdk.Keymap.get_for_display (get_display ());
+                if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                    foreach (var key in keys) {
+                        if (code == key.keycode) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }
+
+            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
+                if (match_keycode (Gdk.Key.c, keycode)) {
+                    if (get_has_selection ()) {
+                        copy_clipboard ();
+                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
+                            unselect_all ();
+                        }
+                        return true;
+                    } else {
+                        last_key_was_return = true; // Ctrl-c: Command cancelled
+                    }
+                } else if (match_keycode (Gdk.Key.v, keycode) && clipboard.wait_is_text_available ()) {
+                    window.get_simple_action (MainWindow.ACTION_PASTE).activate (null);
+                    return true;
+                }
+            }
+
+            if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
+                return !window.get_simple_action (MainWindow.ACTION_SCROLL_TO_LAST_COMMAND).enabled;
             }
 
             return false;
