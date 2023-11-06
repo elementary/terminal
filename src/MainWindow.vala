@@ -73,9 +73,9 @@ namespace Terminal {
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
 
-        public const string[] ACCELS_ZOOM_DEFAULT_FONT = { "<control>0", "<Control>KP_0" };
-        public const string[] ACCELS_ZOOM_IN_FONT = { "<Control>plus", "<Control>equal", "<Control>KP_Add" };
-        public const string[] ACCELS_ZOOM_OUT_FONT = { "<Control>minus", "<Control>KP_Subtract" };
+        public const string[] ACCELS_ZOOM_DEFAULT_FONT = { "<control>0", "<Control>KP_0", null };
+        public const string[] ACCELS_ZOOM_IN_FONT = { "<Control>plus", "<Control>equal", "<Control>KP_Add", null };
+        public const string[] ACCELS_ZOOM_OUT_FONT = { "<Control>minus", "<Control>KP_Subtract", null };
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
