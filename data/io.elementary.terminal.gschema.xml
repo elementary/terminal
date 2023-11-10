@@ -17,11 +17,6 @@
   </enum>
 
   <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
-    <key name="window-position" type="(ii)">
-      <default>(-1, -1)</default>
-      <summary>Window position</summary>
-      <description>Most recent window position (x, y)</description>
-    </key>
     <key name="window-size" type="(ii)">
       <default>(-1, -1)</default>
       <summary>Most recent window size</summary>
