@@ -44,7 +44,6 @@ namespace Terminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public bool restore_pos { get; construct; default = true; }
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
@@ -106,26 +105,11 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
+        public MainWindow (Terminal.Application app, bool recreate_tabs = true, bool ensure_tab = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
             );
-
-            if (!recreate_tabs) {
-                new_tab ("");
-            }
-        }
-
-        public MainWindow.with_coords (Terminal.Application app, int x, int y,
-                                       bool recreate_tabs, bool ensure_tab) {
-            Object (
-                app: app,
-                restore_pos: false,
-                recreate_tabs: recreate_tabs
-            );
-
-            move (x, y);
 
             if (!recreate_tabs && ensure_tab) {
                 new_tab ("");
@@ -177,7 +161,7 @@ namespace Terminal {
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
-            restore_saved_state (restore_pos);
+            restore_saved_state ();
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             clipboard.owner_change.connect (update_context_menu);
@@ -538,7 +522,7 @@ namespace Terminal {
             return false;
         }
 
-        private void restore_saved_state (bool restore_pos = true) {
+        private void restore_saved_state () {
 
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -551,14 +535,6 @@ namespace Terminal {
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
-            }
-
-            if (restore_pos) {
-                Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
-
-                if (rect.x != -1 || rect.y != -1) {
-                    move (rect.x, rect.y);
-                }
             }
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
@@ -644,12 +620,10 @@ namespace Terminal {
             save_opened_terminals (true, true);
         }
 
-        private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
+        private void on_tab_moved (Granite.Widgets.Tab tab) {
             Idle.add (() => {
-                var new_window = new MainWindow.with_coords (
+                var new_window = new MainWindow (
                     app,
-                    x,
-                    y,
                     false,
                     false
                 );
@@ -785,10 +759,6 @@ namespace Terminal {
                     var rect = Gdk.Rectangle ();
                     get_size (out rect.width, out rect.height);
                     Terminal.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-
-                    int root_x, root_y;
-                    get_position (out root_x, out root_y);
-                    Terminal.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return false;
