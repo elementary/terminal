@@ -53,13 +53,13 @@ namespace Terminal {
             }
 
             set {
-                menu.bind_model (value, null, true);
+                menu.bind_model (value, null);
                 _menu_model = value;
             }
         }
 
         private GLib.MenuModel _menu_model;
-        private Gtk.Menu menu;
+        private Gtk.PopoverMenu menu;
 
         private static GLib.Menu term_menu;
 
@@ -274,10 +274,11 @@ namespace Terminal {
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
 
-            menu = new Gtk.Menu.from_model (term_menu) {
-                attach_widget = this
+            menu = new Gtk.PopoverMenu () {
+                position = BOTTOM,
+                relative_to = this
             };
-
+            menu.bind_model (term_menu, null);
             _menu_model = term_menu;
 
             // Setup Actions
@@ -343,11 +344,9 @@ namespace Terminal {
                     copy_action.set_enabled (true);
                 }
 
-                Gdk.Rectangle rect = { (int) x, (int) y };
+                menu.pointing_to = { (int) x, (int) y };
                 setup_menu.emit ();
-
-                menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                menu.select_first (false);
+                menu.popup ();
 
                 gesture.set_state (CLAIMED);
             }
@@ -408,7 +407,7 @@ namespace Terminal {
                     var cell_height = get_char_height ();
                     var vadj = vadjustment.value;
 
-                    Gdk.Rectangle rect = {
+                    menu.pointing_to = {
                         (int) (col * cell_width),
                         (int) ((row - vadj) * cell_height),
                         (int) cell_width,
@@ -416,10 +415,7 @@ namespace Terminal {
                     };
 
                     setup_menu.emit ();
-
-                    // Popup context menu below cursor position
-                    menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                    menu.select_first (false);
+                    menu.popup ();
                     break;
 
                 case Gdk.Key.Alt_L:
