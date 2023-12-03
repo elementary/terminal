@@ -204,6 +204,7 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (key_pressed);
             key_controller.key_released.connect (() => scroll_controller.flags = NONE);
+            key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
 
             // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
             //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
