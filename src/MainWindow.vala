@@ -19,6 +19,7 @@
 namespace Terminal {
     public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
+        private Hdy.HeaderBar header;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
@@ -30,7 +31,29 @@ namespace Terminal {
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
-        private bool is_fullscreen = false;
+        private bool _is_fullscreen = false;
+        private bool is_fullscreen {
+            get {
+                return _is_fullscreen;
+            }
+
+            set {
+                if (value && !_is_fullscreen) {
+                    fullscreen ();
+                    _is_fullscreen = true;
+                    // Hide Close and (non-functional) Maximise/Minimize buttons in fullscreen
+                    header.decoration_layout = "";
+                    header.decoration_layout_set = true;
+                    //TODO Show Toast like Chrome? or additional unfullscreen button
+                } else if (!value && _is_fullscreen) {
+                    unfullscreen ();
+                    _is_fullscreen = false;
+                    // Restore default decoration
+                    header.decoration_layout = null;
+                    header.decoration_layout_set = false;
+                }
+            }
+        }
         private bool on_drag = false;
 
         private Gtk.EventControllerKey key_controller;
@@ -275,7 +298,7 @@ namespace Terminal {
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
-            var header = new Hdy.HeaderBar () {
+            header = new Hdy.HeaderBar () {
                 show_close_button = true,
                 has_subtitle = false
             };
@@ -411,7 +434,6 @@ namespace Terminal {
             if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
             } else if (window_state == MainWindow.FULLSCREEN) {
-                fullscreen ();
                 is_fullscreen = true;
             }
         }
@@ -1019,13 +1041,7 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
-            if (is_fullscreen) {
-                unfullscreen ();
-                is_fullscreen = false;
-            } else {
-                fullscreen ();
-                is_fullscreen = true;
-            }
+            is_fullscreen = !_is_fullscreen;
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
