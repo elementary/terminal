@@ -128,7 +128,6 @@ namespace Terminal {
             actions = new SimpleActionGroup ();
             actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
-
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -143,7 +142,6 @@ namespace Terminal {
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
-            restore_saved_state ();
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
@@ -197,7 +195,6 @@ namespace Terminal {
             menu.insert_action_group ("win", actions);
 
             setup_ui ();
-            show_all ();
 
             key_controller = new Gtk.EventControllerKey (this) {
                 propagation_phase = TARGET
@@ -220,6 +217,9 @@ namespace Terminal {
             set_size_request (app.minimum_width, app.minimum_height);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            restore_saved_state ();
+            show_all ();
 
             if (recreate_tabs) {
                 open_tabs ();
@@ -411,7 +411,6 @@ namespace Terminal {
         }
 
         private void restore_saved_state () {
-
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
@@ -1036,7 +1035,7 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
-            is_fullscreen = !_is_fullscreen;
+            is_fullscreen = !is_fullscreen;
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
