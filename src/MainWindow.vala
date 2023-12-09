@@ -31,25 +31,18 @@ namespace Terminal {
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
-        private bool _is_fullscreen = false;
         private bool is_fullscreen {
             get {
-                return _is_fullscreen;
+                return header.decoration_layout_set;
             }
 
             set {
-                if (value && !_is_fullscreen) {
+                if (value) {
                     fullscreen ();
-                    _is_fullscreen = true;
-                    // Hide Close and (non-functional) Maximise/Minimize buttons in fullscreen
-                    header.decoration_layout = "";
                     header.decoration_layout_set = true;
-                    //TODO Show Toast like Chrome? or additional unfullscreen button
-                } else if (!value && _is_fullscreen) {
+                    //TODO Show Toast like Chrome? or additional unfullscreen button?
+                } else {
                     unfullscreen ();
-                    _is_fullscreen = false;
-                    // Restore default decoration
-                    header.decoration_layout = null;
                     header.decoration_layout_set = false;
                 }
             }
@@ -308,6 +301,8 @@ namespace Terminal {
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
+            header.decoration_layout = "";
+            is_fullscreen = false; // State will be restored later
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
