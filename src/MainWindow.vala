@@ -261,6 +261,17 @@ namespace Terminal {
         }
 
         private void setup_ui () {
+            var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
+                action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
+                margin_start = 12,
+                no_show_all = true,
+                visible = false
+            };
+            unfullscreen_button.tooltip_markup = Granite.markup_accel_tooltip (
+                action_accelerators[ACTION_FULLSCREEN].to_array (),
+                _("Exit FullScreen")
+            );
+
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -297,12 +308,15 @@ namespace Terminal {
                 decoration_layout = "close:",
                 decoration_layout_set = false
             };
+            header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
             header.set_custom_title (title_stack);
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
+
+            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
