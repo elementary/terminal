@@ -294,7 +294,7 @@ namespace Terminal {
             header = new Hdy.HeaderBar () {
                 show_close_button = true,
                 has_subtitle = false,
-                decoration_layout = "",
+                decoration_layout = "close:",
                 decoration_layout_set = false
             };
             header.pack_end (menu_button);
