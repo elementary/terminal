@@ -293,7 +293,9 @@ namespace Terminal {
 
             header = new Hdy.HeaderBar () {
                 show_close_button = true,
-                has_subtitle = false
+                has_subtitle = false,
+                decoration_layout = "",
+                decoration_layout_set = false
             };
             header.pack_end (menu_button);
             header.pack_end (search_button);
@@ -301,8 +303,6 @@ namespace Terminal {
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
-            header.decoration_layout = "";
-            is_fullscreen = false; // State will be restored later
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
