@@ -40,7 +40,6 @@ namespace Terminal {
                 if (value) {
                     fullscreen ();
                     header.decoration_layout_set = true;
-                    //TODO Show Toast like Chrome? or additional unfullscreen button?
                 } else {
                     unfullscreen ();
                     header.decoration_layout_set = false;
