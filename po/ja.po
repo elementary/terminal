@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-08-15 08:08+0000\n"
+"PO-Revision-Date: 2023-12-25 10:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -97,7 +97,7 @@ msgstr "新しいタブ"
 #: src/MainWindow.vala:548
 #, c-format
 msgid "Show in %s"
-msgstr "%sで表示"
+msgstr "“%s”で表示"
 
 #: src/MainWindow.vala:549
 msgid "Default application"
