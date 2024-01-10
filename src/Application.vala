@@ -265,7 +265,7 @@ public class Terminal.Application : Gtk.Application {
                 command,
                 new_tab
             );
-        } else if (wd != null) {
+        } else {
             window.add_tab_with_working_directory (wd, null, new_tab);
         }
 
