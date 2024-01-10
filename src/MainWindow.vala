@@ -271,6 +271,8 @@ namespace Terminal {
                 action_accelerators[ACTION_FULLSCREEN].to_array (),
                 _("Exit FullScreen")
             );
+            unfullscreen_button.get_style_context ().remove_class ("image-button");
+            unfullscreen_button.get_style_context ().add_class ("titlebutton");
 
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
