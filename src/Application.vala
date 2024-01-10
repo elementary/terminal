@@ -231,7 +231,7 @@ public class Terminal.Application : Gtk.Application {
         var window = (MainWindow) active_window;
         bool new_window;
 
-        if (window == null || options.lookup ("new-window", "b", out new_window) && new_window) {
+        if (window == null || (options.lookup ("new-window", "b", out new_window) && new_window)) {
             /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
              * Currently they are set to restore (subject to the restore-tabs setting).
              * If it is desired that tabs should never be restored in these circimstances add another check below.
@@ -247,7 +247,6 @@ public class Terminal.Application : Gtk.Application {
 
         options.lookup ("new-tab", "b", out new_tab);
         options.lookup ("working-directory", "^&ay", out wd);
-
 
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
