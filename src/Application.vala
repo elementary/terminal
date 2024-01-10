@@ -35,7 +35,7 @@ public class Terminal.Application : Gtk.Application {
         // -n flag forces a new window
         add_main_option ("new-window", 'n', 0, OptionArg.NONE, _("Open a new terminal window"), null);
         // -t flag forces a new tab
-        add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab"), null);
+        add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab at current working directory"), null);
         // -w flag defines the working directory that the new tab/window uses
         add_main_option ("working-directory", 'w', 0, OptionArg.FILENAME, _("Set shell working directory"), "DIR");
         // -e flag is used for running single strings as a command line
