@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
+"POT-Creation-Date: 2023-12-03 18:11+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -14,39 +14,39 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr ""
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "Ôtwōrz nowe ôkno terminala"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
+#: src/Application.vala:38
 msgid "Open a new terminal tab"
 msgstr "Ôtwōrz nowo karta terminala"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "Szteluj katalog roboczy powłōki"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Sztartnij program w terminalu"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr ""
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 #, fuzzy
 #| msgid ""
 #| "Run remainder of line as a command in terminal. Can also use '--' as flag"
@@ -54,79 +54,71 @@ msgid "Run remainder of line as a command in terminal"
 msgstr ""
 "Wykōnej reszta linije jako kōmynda we terminalu. Idzie użyć '--' jako fana"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:159
+#: src/Application.vala:161
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:162
+#: src/Application.vala:164
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:146
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:152
 msgid "Copy Last Output"
 msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:158
 msgid "Paste"
 msgstr "Wraź"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:164
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
 msgid "Find…"
 msgstr "Znojdź…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:259
 msgid "Settings"
 msgstr "Sztelōnki"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:290
 #, fuzzy
 #| msgid "Close Tab"
 msgid "New Tab"
 msgstr "Zawrzij karta"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:548
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zawrzij karta"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:806
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:819
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr ""
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:974
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 
@@ -337,6 +329,14 @@ msgstr "Wyszukowanie cykliczne"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
 
 #~ msgid "Zoom out"
 #~ msgstr "Pōmyńszynie"

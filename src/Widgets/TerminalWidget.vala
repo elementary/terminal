@@ -67,6 +67,26 @@ namespace Terminal {
             }
         }
 
+        public const string ACTION_COPY = "term.copy";
+        public const string ACTION_COPY_OUTPUT = "term.copy-output";
+        public const string ACTION_PASTE = "term.paste";
+        public const string ACTION_RELOAD = "term.reload";
+        public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
+        public const string ACTION_SELECT_ALL = "term.select-all";
+        public const string ACTION_ZOOM_DEFAULT = "term.zoom::default";
+        public const string ACTION_ZOOM_IN = "term.zoom::in";
+        public const string ACTION_ZOOM_OUT = "term.zoom::out";
+
+        public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
+        public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
+        public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
+        public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
+        public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
+        public const string[] ACCELS_SELECT_ALL = { "<Control><Shift>A", null };
+        public const string[] ACCELS_ZOOM_DEFAULT = { "<control>0", "<Control>KP_0", null };
+        public const string[] ACCELS_ZOOM_IN = { "<Control>plus", "<Control>equal", "<Control>KP_Add", null };
+        public const string[] ACCELS_ZOOM_OUT = { "<Control>minus", "<Control>KP_Subtract", null };
+
         public int default_size;
         const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call " +
                                                   "--session --dest=io.elementary.terminal " +
@@ -119,12 +139,25 @@ namespace Terminal {
             private set;
         }
 
+        private unowned Gtk.Clipboard clipboard;
+
+        private GLib.SimpleAction copy_action;
+        private GLib.SimpleAction copy_output_action;
+        private GLib.SimpleAction paste_action;
+        private GLib.SimpleAction scroll_to_command_action;
+
         private long remembered_position; /* Only need to remember row at the moment */
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
-        private double total_delta_y = 0.0;
+        private Gtk.EventControllerMotion motion_controller;
+        private Gtk.EventControllerScroll scroll_controller;
+        private Gtk.EventControllerKey key_controller;
+        private Gtk.GestureMultiPress press_gesture;
+
+        private bool modifier_pressed = false;
+        private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
 
@@ -155,94 +188,55 @@ namespace Terminal {
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
 
-            button_press_event.connect ((event) => {
-                link_uri = null;
-                /* If this event caused focus-in then window.focus_timeout is > 0
-                 * and we need to suppress following hyperlinks on button release.
-                 * If focus-in was caused by keyboard then the focus_timeout will have
-                 * expired and we can follow hyperlinks */
-                allow_hyperlink = window.focus_timeout == 0;
+            motion_controller = new Gtk.EventControllerMotion (this) {
+                propagation_phase = CAPTURE
+            };
+            motion_controller.enter.connect (pointer_focus);
 
-                if (event.button == Gdk.BUTTON_SECONDARY) {
-                    link_uri = get_link (event);
-                    if (link_uri != null) {
-                        window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (true);
-                    }
+            scroll_controller = new Gtk.EventControllerScroll (this, NONE) {
+                propagation_phase = TARGET
+            };
+            scroll_controller.scroll.connect (scroll);
+            scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
 
-                    window.update_context_menu ();
+            key_controller = new Gtk.EventControllerKey (this) {
+                propagation_phase = NONE
+            };
+            key_controller.key_pressed.connect (key_pressed);
+            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
+            key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
 
-                    menu.popup_at_pointer (event);
-                    menu.select_first (false);
-
-                    return true;
-                }
-
-                return false;
+            // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
+            //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
+            //
+            // TODO(Gtk4): check if the modifier emission was fixed.
+            key_controller.modifiers.connect (() => {
+                // if two modifers are pressed in sequence (like <Control> -> <Shift>), modifier_pressed will be false.
+                // However, the modifer mask in key_pressed() will already contain the previous modifier.
+                modifier_pressed = !modifier_pressed;
+                return true;
             });
 
-            button_release_event.connect ((event) => {
+            press_gesture = new Gtk.GestureMultiPress (this) {
+                propagation_phase = TARGET,
+                button = 0
+            };
+            press_gesture.pressed.connect (button_pressed);
+            press_gesture.released.connect (button_released);
 
-                if (event.button == Gdk.BUTTON_PRIMARY) {
-                    if (allow_hyperlink) {
-                        link_uri = get_link (event);
+            // send events to key controller manually, since key_released isn't emitted in any propagation phase
+            event.connect (key_controller.handle_event);
 
-                        if (link_uri != null && !get_has_selection ()) {
-                           window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
-                        }
-                    } else {
-                        allow_hyperlink = true;
-                    }
-                }
-
-                return false;
-            });
-
-            scroll_event.connect ((event) => {
-                if ((event.state & Gdk.ModifierType.CONTROL_MASK) > 0) {
-                    switch (event.direction) {
-                        case Gdk.ScrollDirection.UP:
-                            increment_size ();
-                            return Gdk.EVENT_STOP;
-
-                        case Gdk.ScrollDirection.DOWN:
-                            decrement_size ();
-                            return Gdk.EVENT_STOP;
-
-                        case Gdk.ScrollDirection.SMOOTH:
-                            /* try to emulate a normal scrolling event by summing deltas.
-                             * step size of 0.5 chosen to match sensitivity */
-                            total_delta_y += event.delta_y;
-
-                            if (total_delta_y >= 0.5) {
-                                total_delta_y = 0;
-                                decrement_size ();
-                            } else if (total_delta_y <= -0.5) {
-                                total_delta_y = 0;
-                                increment_size ();
-                            }
-
-                            return Gdk.EVENT_STOP;
-
-                        default:
-                            break;
-                    }
-                }
-
-                return Gdk.EVENT_PROPAGATE;
-            });
-
-            selection_changed.connect (() => {
-                window.get_simple_action (MainWindow.ACTION_COPY).set_enabled (get_has_selection ());
-                window.update_context_menu ();
-            });
-
-            size_allocate.connect (() => {
-                resized = true;
-            });
-
+            selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
+            size_allocate.connect (() => resized = true);
             contents_changed.connect (check_cwd_changed);
-
             child_exited.connect (on_child_exited);
+            ulong once = 0;
+            once = realize.connect (() => {
+                clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
+                clipboard.owner_change.connect (setup_menu);
+                disconnect (once);
+            });
 
             /* target entries specify what kind of data the terminal widget accepts */
             Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
@@ -259,6 +253,276 @@ namespace Terminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
+
+            // Setup Actions
+            var action_group = new GLib.SimpleActionGroup ();
+            insert_action_group ("term", action_group);
+
+            copy_action = new GLib.SimpleAction ("copy", null);
+            copy_action.set_enabled (false);
+            copy_action.activate.connect (() => copy_clipboard.emit ());
+            action_group.add_action (copy_action);
+
+            copy_output_action = new GLib.SimpleAction ("copy-output", null);
+            copy_output_action.set_enabled (false);
+            copy_output_action.activate.connect (copy_output);
+            action_group.add_action (copy_output_action);
+
+            paste_action = new GLib.SimpleAction ("paste", null);
+            paste_action.activate.connect (() => paste_clipboard.emit ());
+            action_group.add_action (paste_action);
+
+            var reload_action = new GLib.SimpleAction ("reload", null);
+            reload_action.activate.connect (reload);
+            action_group.add_action (reload_action);
+
+            scroll_to_command_action = new GLib.SimpleAction ("scroll-to-command", null);
+            scroll_to_command_action.set_enabled (false);
+            scroll_to_command_action.activate.connect (scroll_to_command);
+            action_group.add_action (scroll_to_command_action);
+
+            var select_all_action = new GLib.SimpleAction ("select-all", null);
+            select_all_action.activate.connect (select_all);
+            action_group.add_action (select_all_action);
+
+            var zoom_action = new GLib.SimpleAction ("zoom", VariantType.STRING);
+            zoom_action.activate.connect ((p) => {
+                switch ((string) p) {
+                    case "in":
+                        increase_font_size ();
+                        break;
+                    case "out":
+                        decrease_font_size ();
+                        break;
+                    case "default":
+                        font_scale = 1.0;
+                        break;
+                }
+            });
+            action_group.add_action (zoom_action);
+        }
+
+        private void pointer_focus () {
+            // If this event caused focus-in then we need to suppress following hyperlinks on button release.
+            allow_hyperlink = has_focus;
+        }
+
+        private void button_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = null;
+
+            if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
+                link_uri = get_link (gesture.get_last_event (null));
+
+                if (link_uri != null) {
+                    copy_action.set_enabled (true);
+                }
+
+                Gdk.Rectangle rect = { (int) x, (int) y };
+                window.update_context_menu ();
+                setup_menu ();
+
+                menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                menu.select_first (false);
+
+                gesture.set_state (CLAIMED);
+            }
+        }
+
+        private void button_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
+                if (allow_hyperlink) {
+                    link_uri = get_link (gesture.get_last_event (null));
+
+                    if (link_uri != null && !get_has_selection ()) {
+                       window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                    }
+                } else {
+                    allow_hyperlink = true;
+                }
+            }
+        }
+
+        private void scroll (double x, double y) {
+            // try to emulate a normal scrolling event by summing deltas. step size of 0.5 chosen to match sensitivity
+            scroll_delta += y;
+
+            if (scroll_delta >= 0.5) {
+                decrease_font_size ();
+                scroll_delta = 0.0;
+            } else if (scroll_delta <= -0.5) {
+                increase_font_size ();
+                scroll_delta = 0.0;
+            }
+        }
+
+        private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            switch (keyval) {
+                case Gdk.Key.Control_R:
+                case Gdk.Key.Control_L:
+                    scroll_controller.flags = VERTICAL;
+                    break;
+
+                case Gdk.Key.Return:
+                    remember_position ();
+                    scroll_to_command_action.set_enabled (true);
+                    remember_command_end_position ();
+                    copy_output_action.set_enabled (false);
+                    break;
+
+                case Gdk.Key.Up:
+                case Gdk.Key.Down:
+                    remember_command_start_position ();
+                    break;
+
+                case Gdk.Key.Menu:
+                    long col, row;
+
+                    get_cursor_position (out col, out row);
+
+                    var cell_width = get_char_width ();
+                    var cell_height = get_char_height ();
+                    var vadj = vadjustment.value;
+
+                    Gdk.Rectangle rect = {
+                        (int) (col * cell_width),
+                        (int) ((row - vadj) * cell_height),
+                        (int) cell_width,
+                        (int) cell_height
+                    };
+
+                    window.update_context_menu ();
+                    setup_menu ();
+
+                    // Popup context menu below cursor position
+                    menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                    menu.select_first (false);
+                    break;
+
+                case Gdk.Key.Alt_L:
+                case Gdk.Key.Alt_R:
+                    // enable/disable the action before we try to use
+                    copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
+                    break;
+
+                default:
+                    if (!modifier_pressed || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                        remember_command_start_position ();
+                    }
+                    break;
+            }
+
+            // Use hardware keycodes so the key used is unaffected by internationalized layout
+            bool match_keycode (uint keyval, uint code) {
+                Gdk.KeymapKey[] keys;
+
+                var keymap = Gdk.Keymap.get_for_display (get_display ());
+                if (keymap.get_entries_for_keyval (keyval, out keys)) {
+                    foreach (var key in keys) {
+                        if (code == key.keycode) {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }
+
+            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
+                if (match_keycode (Gdk.Key.c, keycode)) {
+                    if (get_has_selection ()) {
+                        copy_clipboard ();
+                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
+                            unselect_all ();
+                        }
+                        return true;
+                    } else {
+                        last_key_was_return = true; // Ctrl-c: Command cancelled
+                    }
+                } else if (match_keycode (Gdk.Key.v, keycode) && clipboard.wait_is_text_available ()) {
+                    paste_clipboard ();
+                    return true;
+                }
+            }
+
+            if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
+                return !scroll_to_command_action.enabled;
+            }
+
+            return false;
+        }
+
+        private void setup_menu () {
+            // Update the "Paste" menu option
+            clipboard.request_targets ((clipboard, atoms) => {
+                bool can_paste = false;
+
+                if (atoms != null && atoms.length > 0) {
+                    can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+                }
+
+                paste_action.set_enabled (can_paste);
+            });
+
+            // Update the "Copy Last Outptut" menu option
+            var has_output = !resized && get_last_output ().length > 0;
+            copy_output_action.set_enabled (has_output);
+        }
+
+        protected override void copy_clipboard () {
+            if (link_uri != null && !get_has_selection ()) {
+                clipboard.set_text (link_uri, link_uri.length);
+            } else {
+                base.copy_clipboard ();
+            }
+        }
+
+        private void copy_output () {
+            var output = get_last_output ();
+            clipboard.set_text (output, output.length);
+        }
+
+        protected override void paste_clipboard () {
+            clipboard.request_text ((clipboard, text) => {
+                if (text == null) {
+                    return;
+                }
+
+                if (!text.validate ()) {
+                    warning ("Dropping invalid UTF-8 paste");
+                    return;
+                }
+
+                unowned var toplevel = (MainWindow) get_toplevel ();
+
+                if (!toplevel.unsafe_ignored && Application.settings.get_boolean ("unsafe-paste-alert")) {
+                    string? warn_text = null;
+                    text._strip ();
+
+                    if ("\n" in text) {
+                        warn_text = _("The pasted text may contain multiple commands");
+                    } else if ("sudo" in text) {
+                        warn_text = _("The pasted text may be trying to gain administrative access");
+                    }
+
+                    if (warn_text != null) {
+                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
+                        dialog.response.connect ((res) => {
+                            if (res == Gtk.ResponseType.ACCEPT) {
+                               remember_command_start_position ();
+                               base.paste_clipboard ();
+                            }
+
+                            dialog.destroy ();
+                        });
+
+                        dialog.present ();
+                        return;
+                    }
+                }
+
+                remember_command_start_position ();
+                base.paste_clipboard ();
+            });
         }
 
         private void update_theme () {
@@ -448,16 +712,12 @@ namespace Terminal {
             }
         }
 
-        public void increment_size () {
-            font_scale = (font_scale + 0.1).clamp (MIN_SCALE, MAX_SCALE);
+        protected override void increase_font_size () {
+            font_scale += 0.1;
         }
 
-        public void decrement_size () {
-            font_scale = (font_scale - 0.1).clamp (MIN_SCALE, MAX_SCALE);
-        }
-
-        public void set_default_font_size () {
-            font_scale = 1.0;
+        protected override void decrease_font_size () {
+            font_scale -= 0.1;
         }
 
         public bool is_init_complete () {
@@ -557,31 +817,35 @@ namespace Terminal {
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
         }
 
-        public void scroll_to_last_command () {
-            long col, row;
-            get_cursor_position (out col, out row);
-            int delta = (int)(remembered_position - row);
-            vadjustment.set_value (
-                vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1
-            );
-        }
+        private void scroll_to_command (GLib.SimpleAction action, GLib.Variant? parameter) {
+            long row, delta;
 
-        public bool has_output () {
-            return !resized && get_last_output ().length > 0;
+            get_cursor_position (null, out row);
+            delta = remembered_position - row;
+
+            vadjustment.value += (int) delta + get_window ().get_height () / get_char_height () - 1;
+            action.set_enabled (false); // Repeated presses are ignored
         }
 
         public void reload () {
-            if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog.before_tab_reload (window);
-                var response_type = dialog.run ();
-                dialog.destroy ();
+            var old_loc = get_shell_location ();
 
-                if (response_type != Gtk.ResponseType.ACCEPT) {
-                    return;
-                }
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_toplevel ());
+                dialog.response.connect ((res) => {
+                    if (res == Gtk.ResponseType.ACCEPT) {
+                        Posix.kill (child_pid, Posix.Signal.TERM);
+                        reset (true, true);
+                        active_shell (old_loc);
+                    }
+
+                    dialog.destroy ();
+                });
+
+                dialog.present ();
+                return;
             }
 
-            var old_loc = get_shell_location ();
             Posix.kill (child_pid, Posix.Signal.TERM);
             reset (true, true);
             active_shell (old_loc);

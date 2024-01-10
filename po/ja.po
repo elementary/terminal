@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
-"PO-Revision-Date: 2023-08-15 08:08+0000\n"
+"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"PO-Revision-Date: 2023-12-25 10:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,113 +17,105 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "バージョンを表示します"
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
+#: src/Application.vala:38
 msgid "Open a new terminal tab"
 msgstr "新しいターミナルタブを開く"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "シェルのカレントディレクトリを設定します"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 msgid "Run a program in terminal"
 msgstr "ターミナルでプログラムを実行します"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr "ターミナルを最小化した状態で開きます"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 msgid "Run remainder of line as a command in terminal"
 msgstr "行の残りの部分をコマンドとしてターミナルで実行します"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr "[-- コマンド…]"
 
-#: src/Application.vala:159
+#: src/Application.vala:161
 msgid "Process completed"
 msgstr "プロセスが完了しました"
 
-#: src/Application.vala:162
+#: src/Application.vala:164
 msgid "Process exited with errors"
 msgstr "プロセスがエラー終了しました"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:146
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:152
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:158
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:164
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:259
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:290
 msgid "New Tab"
 msgstr "新しいタブ"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:548
 #, c-format
 msgid "Show in %s"
-msgstr "%sで表示"
+msgstr "“%s”で表示"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:806
 msgid "Duplicate"
 msgstr "タブを複製"
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:819
 msgid "Reload"
 msgstr "再読み込み"
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:974
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -330,6 +322,14 @@ msgstr "循環検索"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
+
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
 
 #~ msgid "Zoom out"
 #~ msgstr "縮小"

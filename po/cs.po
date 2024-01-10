@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
+"POT-Creation-Date: 2023-12-03 18:11+0000\n"
 "PO-Revision-Date: 2022-01-09 20:09+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -20,39 +20,39 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "Zobrazit verzi"
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "Otevřít nové okno terminálu"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
+#: src/Application.vala:38
 msgid "Open a new terminal tab"
 msgstr "Otevřít nový panel terminálu"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Spustit program v terminálu"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr ""
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 #, fuzzy
 #| msgid ""
 #| "Run remainder of line as a command in terminal. Can also use '--' as flag"
@@ -61,76 +61,68 @@ msgstr ""
 "Spustit zbytek řádku jako příkaz v terminálu. „--“ také můžete použít jako "
 "příznak"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:159
+#: src/Application.vala:161
 msgid "Process completed"
 msgstr "Proces skončil"
 
-#: src/Application.vala:162
+#: src/Application.vala:164
 msgid "Process exited with errors"
 msgstr "Proces skončil s chybami"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:146
 msgid "Copy"
 msgstr "Zkopírovat"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:152
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:158
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:164
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
 msgid "Find…"
 msgstr "Najít…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:259
 msgid "Settings"
 msgstr "Nastavení"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:290
 msgid "New Tab"
 msgstr "Nová karta"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:548
 #, c-format
 msgid "Show in %s"
 msgstr "Zobrazit v %s"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "Výchozí aplikace"
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zavřít kartu"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:806
 msgid "Duplicate"
 msgstr "Zduplikovat"
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:819
 msgid "Reload"
 msgstr "Načíst znovu"
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Vložený text se může pokoušet získat práva správce systému"
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr "Vložený text může obsahovat vícero příkazů"
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:974
 msgid "Hide find bar"
 msgstr "Skrýt panel vyhledávání"
 
@@ -337,6 +329,14 @@ msgstr "Opakované hledání"
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
+
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr "Vložený text může obsahovat vícero příkazů"
+
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Vložený text se může pokoušet získat práva správce systému"
 
 #~ msgid "Zoom out"
 #~ msgstr "Oddálit"

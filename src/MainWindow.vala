@@ -32,8 +32,10 @@ namespace Terminal {
         private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen = false;
         private bool on_drag = false;
-        private string[] saved_tabs;
-        private string[] saved_zooms;
+
+        private Gtk.EventControllerKey key_controller;
+        private uint timer_window_state_change = 0;
+        private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
@@ -42,8 +44,6 @@ namespace Terminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public bool restore_pos { get; construct; default = true; }
-        public uint focus_timeout { get; private set; default = 0;}
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
@@ -56,28 +56,14 @@ namespace Terminal {
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-new-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
-        public const string ACTION_RELOAD_TAB = "action-reload-tab";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
         public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
         public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
-        public const string ACTION_ZOOM_DEFAULT_FONT = "action-zoom-default-font";
-        public const string ACTION_ZOOM_IN_FONT = "action-zoom-in-font";
-        public const string ACTION_ZOOM_OUT_FONT = "action-zoom-out-font";
-        public const string ACTION_COPY = "action-copy";
-        public const string ACTION_COPY_LAST_OUTPUT = "action-copy-last-output";
-        public const string ACTION_PASTE = "action-paste";
         public const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
-        public const string ACTION_SELECT_ALL = "action-select-all";
-        public const string ACTION_SCROLL_TO_LAST_COMMAND = "action-scroll-to-last-command";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
-        public const string ACTION_RELOAD_PREFERRED_ACCEL = "<Shift><Control>R"; // Shown in context menu
-
-        public const string[] ACCELS_ZOOM_DEFAULT_FONT = { "<control>0", "<Control>KP_0" };
-        public const string[] ACCELS_ZOOM_IN_FONT = { "<Control>plus", "<Control>equal", "<Control>KP_Add" };
-        public const string[] ACCELS_ZOOM_OUT_FONT = { "<Control>minus", "<Control>KP_Subtract" };
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -86,22 +72,13 @@ namespace Terminal {
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
-            { ACTION_RELOAD_TAB, action_reload_tab },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
             { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
-            { ACTION_ZOOM_DEFAULT_FONT, action_zoom_default_font },
-            { ACTION_ZOOM_IN_FONT, action_zoom_in_font },
-            { ACTION_ZOOM_OUT_FONT, action_zoom_out_font },
-            { ACTION_COPY, action_copy },
-            { ACTION_COPY_LAST_OUTPUT, action_copy_last_output },
-            { ACTION_PASTE, action_paste },
             { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
-            { ACTION_SELECT_ALL, action_select_all },
-            { ACTION_SCROLL_TO_LAST_COMMAND, action_scroll_to_last_command },
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
@@ -116,41 +93,19 @@ namespace Terminal {
             }
         }
 
-        public MainWindow.with_coords (Terminal.Application app, int x, int y,
-                                       bool recreate_tabs, bool ensure_tab) {
-            Object (
-                app: app,
-                restore_pos: false,
-                recreate_tabs: recreate_tabs
-            );
-
-            move (x, y);
-
-            if (!recreate_tabs && ensure_tab) {
-                new_tab ("");
-            }
-        }
-
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
-            action_accelerators[ACTION_RELOAD_TAB] = ACTION_RELOAD_PREFERRED_ACCEL;
-            action_accelerators[ACTION_RELOAD_TAB] = "<Shift>F5";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control>Page_Up";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
-            action_accelerators[ACTION_COPY] = "<Control><Shift>c";
-            action_accelerators[ACTION_COPY_LAST_OUTPUT] = "<Alt>c";
-            action_accelerators[ACTION_PASTE] = "<Control><Shift>v";
             action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_SELECT_ALL] = "<Control><Shift>a";
             action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
-            action_accelerators[ACTION_SCROLL_TO_LAST_COMMAND] = "<Alt>Up";
         }
 
         construct {
@@ -169,18 +124,12 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_DEFAULT_FONT, ACCELS_ZOOM_DEFAULT_FONT);
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_IN_FONT, ACCELS_ZOOM_IN_FONT);
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_OUT_FONT, ACCELS_ZOOM_OUT_FONT);
-
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
-            restore_saved_state (restore_pos);
+            restore_saved_state ();
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            clipboard.owner_change.connect (update_context_menu);
-
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
             var open_in_browser_menuitem = new Gtk.MenuItem () {
@@ -192,27 +141,27 @@ namespace Terminal {
             open_in_browser_menuitem.add (open_in_browser_menuitem_label);
 
             var copy_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_COPY
+                action_name = TerminalWidget.ACTION_COPY
             };
-            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), copy_menuitem.action_name));
+            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), TerminalWidget.ACTION_COPY));
 
             var copy_last_output_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_COPY_LAST_OUTPUT
+                action_name = TerminalWidget.ACTION_COPY_OUTPUT
             };
             copy_last_output_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), copy_last_output_menuitem.action_name)
+                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), TerminalWidget.ACTION_COPY_OUTPUT)
             );
 
             var paste_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_PASTE
+                action_name = TerminalWidget.ACTION_PASTE
             };
-            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), paste_menuitem.action_name));
+            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), TerminalWidget.ACTION_PASTE));
 
             var select_all_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_SELECT_ALL
+                action_name = TerminalWidget.ACTION_SELECT_ALL
             };
             select_all_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Select All"), select_all_menuitem.action_name)
+                new Granite.AccelLabel.from_action_name (_("Select All"), TerminalWidget.ACTION_SELECT_ALL)
             );
 
             var search_menuitem = new Gtk.MenuItem () {
@@ -231,31 +180,28 @@ namespace Terminal {
             menu.append (search_menuitem);
             menu.insert_action_group ("win", actions);
 
-            menu.popped_up.connect (() => {
-                update_copy_output_sensitive ();
-            });
-
             setup_ui ();
             show_all ();
+
+            key_controller = new Gtk.EventControllerKey (this) {
+                propagation_phase = TARGET
+            };
+            key_controller.key_pressed.connect (key_pressed);
+            key_controller.focus_in.connect (() => {
+                if (focus_timeout == 0) {
+                    focus_timeout = Timeout.add (20, () => {
+                        focus_timeout = 0;
+                        save_opened_terminals (true, true);
+                        return Source.REMOVE;
+                    });
+                }
+            });
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
             Application.settings.changed["font"].connect (update_font);
 
             set_size_request (app.minimum_width, app.minimum_height);
-
-            configure_event.connect (on_window_state_change);
-            destroy.connect (on_destroy);
-            focus_in_event.connect (() => {
-                if (focus_timeout == 0) {
-                    focus_timeout = Timeout.add (20, () => {
-                        focus_timeout = 0;
-                        return Source.REMOVE;
-                    });
-                }
-
-                return false;
-            });
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
 
@@ -296,25 +242,6 @@ namespace Terminal {
             }
 
             new_tab (location, command);
-        }
-
-        /** Returns true if the code parameter matches the keycode of the keyval parameter for
-          * any keyboard group or level (in order to allow for non-QWERTY keyboards) **/
-#if VALA_0_42
-        protected bool match_keycode (uint keyval, uint code) {
-#else
-        protected bool match_keycode (int keyval, uint code) {
-#endif
-            Gdk.KeymapKey [] keys;
-            var keymap = Gdk.Keymap.get_for_display (get_display ());
-            if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                foreach (var key in keys) {
-                    if (code == key.keycode)
-                        return true;
-                }
-            }
-
-            return false;
         }
 
         private void setup_ui () {
@@ -358,11 +285,6 @@ namespace Terminal {
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
-
-            get_simple_action (ACTION_COPY).set_enabled (false);
-            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
-            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
-
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
@@ -411,154 +333,66 @@ namespace Terminal {
 
             bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
             bind_property ("current-terminal", menu_popover, "terminal");
-
-            key_press_event.connect ((event) => {
-                if (event.is_modifier == 1) {
-                    return false;
-                }
-
-                switch (event.keyval) {
-                    case Gdk.Key.Escape:
-                        if (search_toolbar.search_entry.has_focus) {
-                            search_button.active = !search_button.active;
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.Return:
-                        if (search_toolbar.search_entry.has_focus) {
-                            if (Gdk.ModifierType.SHIFT_MASK in event.state) {
-                                search_toolbar.previous_search ();
-                            } else {
-                                search_toolbar.next_search ();
-                            }
-                            return true;
-                        } else {
-                            current_terminal.remember_position ();
-                            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (true);
-                            current_terminal.remember_command_end_position ();
-                            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
-                        }
-
-                        break;
-
-                    case Gdk.Key.@1: //alt+[1-8]
-                    case Gdk.Key.@2:
-                    case Gdk.Key.@3:
-                    case Gdk.Key.@4:
-                    case Gdk.Key.@5:
-                    case Gdk.Key.@6:
-                    case Gdk.Key.@7:
-                    case Gdk.Key.@8:
-                        if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab") &&
-                            notebook.n_tabs > 1) {
-                            var i = event.keyval - 49;
-                            if (i > notebook.n_tabs - 1)
-                                return false;
-                            notebook.current = notebook.get_tab_by_index ((int) i);
-                            return true;
-                        }
-                        break;
-                    case Gdk.Key.@9:
-                        if (Gdk.ModifierType.MOD1_MASK in event.state &&
-                            Application.settings.get_boolean ("alt-changes-tab") &&
-                            notebook.n_tabs > 1) {
-                            notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
-                            return true;
-                        }
-                        break;
-
-                    case Gdk.Key.Up:
-                    case Gdk.Key.Down:
-                        current_terminal.remember_command_start_position ();
-                        break;
-                    case Gdk.Key.Menu:
-                        /* Popup context menu below cursor position */
-                        long col, row;
-                        current_terminal.get_cursor_position (out col, out row);
-                        var cell_width = current_terminal.get_char_width ();
-                        var cell_height = current_terminal.get_char_height ();
-                        var rect_window = current_terminal.get_window ();
-                        var vadj_val = current_terminal.get_vadjustment ().get_value ();
-
-                        Gdk.Rectangle rect = {(int)(col * cell_width),
-                                              (int)((row - vadj_val) * cell_height),
-                                              (int)cell_width,
-                                              (int)cell_height};
-
-                        update_context_menu ();
-                        menu.popup_at_rect (rect_window,
-                                            rect,
-                                            Gdk.Gravity.SOUTH_WEST,
-                                            Gdk.Gravity.NORTH_WEST,
-                                            event);
-                        menu.select_first (false);
-                        break;
-                    default:
-                        if (!(Gtk.accelerator_get_default_mod_mask () in event.state)) {
-                            current_terminal.remember_command_start_position ();
-                        }
-
-                        break;
-                }
-
-                /* Use hardware keycodes so the key used
-                 * is unaffected by internationalized layout */
-                if (Gdk.ModifierType.CONTROL_MASK in event.state &&
-                    Application.settings.get_boolean ("natural-copy-paste")) {
-                    uint keycode = event.hardware_keycode;
-                    if (match_keycode (Gdk.Key.c, keycode)) {
-                        if (current_terminal.get_has_selection ()) {
-                            current_terminal.copy_clipboard ();
-                            if (!(Gdk.ModifierType.SHIFT_MASK in event.state)) { /* Shift not pressed */
-                                current_terminal.unselect_all ();
-                            }
-                            return true;
-                        } else { /* Ctrl-c: Command cancelled */
-                            current_terminal.last_key_was_return = true;
-                        }
-                    } else if (match_keycode (Gdk.Key.v, keycode)) {
-                        return handle_paste_event ();
-                    }
-                }
-
-                if (Gdk.ModifierType.MOD1_MASK in event.state) {
-                    uint keycode = event.hardware_keycode;
-
-                    if (event.keyval == Gdk.Key.Up) {
-                        return !get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).enabled;
-                    }
-
-                    if (match_keycode (Gdk.Key.c, keycode)) { /* Alt-c */
-                        update_copy_output_sensitive ();
-                    }
-                }
-
-                return false;
-            });
         }
 
-        private bool handle_paste_event () {
-            if (search_toolbar.search_entry.has_focus) {
-                return false;
-            } else if (clipboard.wait_is_text_available ()) {
-                action_paste ();
-                return true;
+        private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            switch (keyval) {
+                case Gdk.Key.Escape:
+                    if (search_toolbar.search_entry.has_focus) {
+                        search_button.active = !search_button.active;
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.Return:
+                    if (search_toolbar.search_entry.has_focus) {
+                        if (SHIFT_MASK in modifiers) {
+                            search_toolbar.previous_search ();
+                        } else {
+                            search_toolbar.next_search ();
+                        }
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.@1: //alt+[1-8]
+                case Gdk.Key.@2:
+                case Gdk.Key.@3:
+                case Gdk.Key.@4:
+                case Gdk.Key.@5:
+                case Gdk.Key.@6:
+                case Gdk.Key.@7:
+                case Gdk.Key.@8:
+                    if (MOD1_MASK in modifiers
+                    && Application.settings.get_boolean ("alt-changes-tab")
+                    && notebook.n_tabs > 1) {
+                        var tab_index = keyval - 49;
+                        if (tab_index > notebook.n_tabs - 1) {
+                            return false;
+                        }
+
+                        notebook.current = notebook.get_tab_by_index ((int) tab_index);
+                        return true;
+                    }
+                    break;
+
+                case Gdk.Key.@9:
+                    if (MOD1_MASK in modifiers
+                    && Application.settings.get_boolean ("alt-changes-tab")
+                    && notebook.n_tabs > 1) {
+                        notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+                        return true;
+                    }
+                    break;
+
+                default:
+                    break;
             }
 
             return false;
         }
 
-        private void restore_saved_state (bool restore_pos = true) {
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
-
-                saved_tabs = Terminal.Application.saved_state.get_strv ("tabs");
-                saved_zooms = Terminal.Application.saved_state.get_strv ("tab-zooms");
-            } else {
-                saved_tabs = {};
-                saved_zooms = {};
-            }
+        private void restore_saved_state () {
 
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -571,14 +405,6 @@ namespace Terminal {
 
                 default_width = geometry.width * 2 / 3;
                 default_height = geometry.height * 3 / 4;
-            }
-
-            if (restore_pos) {
-                Terminal.Application.saved_state.get ("window-position", "(ii)", out rect.x, out rect.y);
-
-                if (rect.x != -1 || rect.y != -1) {
-                    move (rect.x, rect.y);
-                }
             }
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
@@ -594,16 +420,18 @@ namespace Terminal {
             var terminal_widget = get_term_widget (tab);
             terminals.append (terminal_widget);
             terminal_widget.window = this;
+            save_opened_terminals (true, true);
         }
 
         private void on_tab_removed (Granite.Widgets.Tab tab) {
             var terminal_widget = get_term_widget (tab);
             if (!on_drag && notebook.n_tabs == 0) {
-                save_opened_terminals ();
+                save_opened_terminals (true, true);
                 destroy ();
             } else {
                 terminals.remove (terminal_widget);
                 check_for_tabs_with_same_name ();
+                save_opened_terminals (true, true);
             }
         }
 
@@ -639,8 +467,14 @@ namespace Terminal {
         }
 
         private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
+            var terminal_widget = get_term_widget (tab);
+
             current_terminal.grab_focus ();
-            save_opened_terminals ();
+
+            terminals.remove (terminal_widget);
+            terminals.insert (terminal_widget, new_pos);
+
+            save_opened_terminals (true, true);
         }
 
         private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
@@ -652,14 +486,14 @@ namespace Terminal {
             notebook.current = tab;
             term.grab_focus ();
             check_for_tabs_with_same_name ();
+
+            save_opened_terminals (true, true);
         }
 
-        private void on_tab_moved (Granite.Widgets.Tab tab, int x, int y) {
+        private void on_tab_moved (Granite.Widgets.Tab tab) {
             Idle.add (() => {
-                var new_window = new MainWindow.with_coords (
+                var new_window = new MainWindow (
                     app,
-                    x,
-                    y,
                     false,
                     false
                 );
@@ -701,9 +535,6 @@ namespace Terminal {
         }
 
         public void update_context_menu () {
-            /* Update the "Paste" menu option */
-            clipboard.request_targets (update_context_menu_cb);
-
             /* Update the "Show in ..." menu option */
             get_current_selection_link_or_pwd ((clipboard, uri) => {
                 update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
@@ -758,26 +589,12 @@ namespace Terminal {
             return appinfo;
         }
 
-        private void update_context_menu_cb (Gtk.Clipboard clipboard_, Gdk.Atom[]? atoms) {
-            bool can_paste = false;
-
-            if (atoms != null && atoms.length > 0) {
-                can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
-            }
-
-            get_simple_action (ACTION_PASTE).set_enabled (can_paste);
-        }
-
-        private void update_copy_output_sensitive () {
-            get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (current_terminal.has_output ());
-        }
-
-        private uint timer_window_state_change = 0;
-        private bool on_window_state_change (Gdk.EventConfigure event) {
+        protected override bool configure_event (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
-            if (timer_window_state_change > 0)
+            if (timer_window_state_change > 0) {
                 GLib.Source.remove (timer_window_state_change);
+            }
 
             timer_window_state_change = GLib.Timeout.add (400, () => {
                 timer_window_state_change = 0;
@@ -795,10 +612,6 @@ namespace Terminal {
                     var rect = Gdk.Rectangle ();
                     get_size (out rect.width, out rect.height);
                     Terminal.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
-
-                    int root_x, root_y;
-                    get_position (out root_x, out root_y);
-                    Terminal.Application.saved_state.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return false;
@@ -818,7 +631,7 @@ namespace Terminal {
             title = current_terminal.window_title != "" ? current_terminal.window_title
                                                         : current_terminal.current_working_directory;
 
-            update_copy_output_sensitive ();
+            menu.insert_action_group ("term", current_terminal.get_action_group ("term"));
             current_terminal.grab_focus ();
         }
 
@@ -831,14 +644,14 @@ namespace Terminal {
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
-                tabs = saved_tabs;
+                tabs = Terminal.Application.saved_state.get_strv ("tabs");
                 var n_tabs = tabs.length;
 
                 if (n_tabs == 0) {
                     tabs += Environment.get_home_dir ();
                     zooms += default_zoom;
                 } else {
-                    foreach (unowned string zoom_s in saved_zooms) {
+                    foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
                         var zoom = double.parse (zoom_s); // Locale independent
 
                         if (zooms.length < n_tabs) {
@@ -874,8 +687,6 @@ namespace Terminal {
                     tabs[0] = Environment.get_current_dir ();
                 }
             }
-
-            Terminal.Application.saved_state.set_strv ("tabs", {});
 
             focus = focus.clamp (0, tabs.length - 1);
 
@@ -938,8 +749,9 @@ namespace Terminal {
                 }
             });
 
+            terminal_widget.notify["font-scale"].connect (() => save_opened_terminals (false, true));
             terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
-            terminal_widget.cwd_changed.connect (check_for_tabs_with_same_name);
+            terminal_widget.cwd_changed.connect (cwd_changed);
 
             terminal_widget.set_font (term_font);
 
@@ -978,6 +790,8 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
+            save_opened_terminals (true, true);
+
             return terminal_widget;
         }
 
@@ -1002,7 +816,7 @@ namespace Terminal {
             /* Granite.Accel.from_action_name () does not allow control of which accel is used when
              * there are multiple so we have to use the other constructor to specify it. */
             var reload_menu_item = new Gtk.MenuItem () {
-                child = new Granite.AccelLabel (_("Reload"), ACTION_RELOAD_PREFERRED_ACCEL)
+                child = new Granite.AccelLabel (_("Reload"), TerminalWidget.ACCELS_RELOAD[0]),
             };
             tab.menu.append (reload_menu_item);
             reload_menu_item.activate.connect (term.reload);
@@ -1044,7 +858,7 @@ namespace Terminal {
         }
 
         protected override bool delete_event (Gdk.EventAny event) {
-            save_opened_terminals ();
+            save_opened_terminals (true, true);
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
             foreach (var terminal_widget in terminals) {
@@ -1070,78 +884,12 @@ namespace Terminal {
             return false;
         }
 
-        private void on_destroy () {
+        protected override void destroy () {
             foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
                 t.term_ps ();
             }
-        }
 
-        private void on_get_text (Gtk.Clipboard board, string? intext) {
-            if (Application.settings.get_boolean ("unsafe-paste-alert") && !unsafe_ignored ) {
-
-                if (intext == null) {
-                    return;
-                }
-
-                if (!intext.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-
-                var text = intext.strip ();
-
-                string? unsafe_warning = null;
-
-                if ((text.index_of ("sudo") > -1) && (text.index_of ("\n") != 0)) {
-                    unsafe_warning = _("The pasted text may be trying to gain administrative access");
-                } else if (text.index_of ("\n") != -1) {
-                    unsafe_warning = _("The pasted text may contain multiple commands");
-                }
-
-                if (unsafe_warning != null) {
-                    var unsafe_paste_dialog = new UnsafePasteDialog (
-                        this,
-                        unsafe_warning,
-                        text
-                    );
-
-                    if (unsafe_paste_dialog.run () != Gtk.ResponseType.ACCEPT) {
-                        unsafe_paste_dialog.destroy ();
-                        return;
-                    }
-
-                    unsafe_paste_dialog.destroy ();
-                }
-            }
-
-            current_terminal.remember_command_start_position ();
-
-            if (board == primary_selection) {
-                current_terminal.paste_primary ();
-            } else {
-                current_terminal.paste_clipboard ();
-            }
-        }
-
-        private void action_copy () {
-            if (current_terminal.link_uri != null && ! current_terminal.get_has_selection ())
-                clipboard.set_text (current_terminal.link_uri,
-                                    current_terminal.link_uri.length);
-            else
-                current_terminal.copy_clipboard ();
-        }
-
-        private void action_copy_last_output () {
-            string output = current_terminal.get_last_output ();
-            Gtk.Clipboard.get_default (Gdk.Display.get_default ()).set_text (output, output.length);
-        }
-
-        private void action_paste () {
-            clipboard.request_text (on_get_text);
-        }
-
-        private void action_select_all () {
-            current_terminal.select_all ();
+            base.destroy ();
         }
 
         private void action_open_in_browser () {
@@ -1175,12 +923,6 @@ namespace Terminal {
             }
         }
 
-        private void action_scroll_to_last_command () {
-            current_terminal.scroll_to_last_command ();
-            /* Repeated presses are ignored */
-            get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
-        }
-
         private void action_close_tab () {
             current_terminal.tab.close ();
             current_terminal.grab_focus ();
@@ -1197,22 +939,6 @@ namespace Terminal {
 
         private void action_duplicate_tab () {
             new_tab (current_terminal.get_shell_location ());
-        }
-
-        private void action_reload_tab () {
-            current_terminal.reload ();
-        }
-
-        private void action_zoom_in_font () {
-            current_terminal.increment_size ();
-        }
-
-        private void action_zoom_out_font () {
-            current_terminal.decrement_size ();
-        }
-
-        private void action_zoom_default_font () {
-            current_terminal.set_default_font_size ();
         }
 
         private void action_next_tab () {
@@ -1344,11 +1070,24 @@ namespace Terminal {
             return;
         }
 
-        private void save_opened_terminals () {
-            string[] opened_tabs = {};
-            string[] zooms = {};
+        private void cwd_changed () {
+            check_for_tabs_with_same_name ();
+            save_opened_terminals (true, false);
+        }
 
-            Application.saved_state.set_double ("zoom", current_terminal.font_scale);
+        private void save_opened_terminals (bool save_tabs, bool save_zooms) {
+            string[] zooms = {};
+            string[] opened_tabs = {};
+            int focused_tab = 0;
+
+            // Continuous saving of opened terminals interferes with current unit tests
+            if (app.is_testing) {
+                return;
+            }
+
+            if (save_zooms && current_terminal != null) {
+                Application.saved_state.set_double ("zoom", current_terminal.font_scale);
+            }
 
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
@@ -1357,27 +1096,39 @@ namespace Terminal {
                     if (term != null) {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
-                            opened_tabs += location;
-                            zooms += term.font_scale.to_string (); // Locale independent
+                            if (save_tabs) {
+                                opened_tabs += location;
+                            }
+                            if (save_zooms) {
+                                zooms += term.font_scale.to_string (); // Locale independent
+                            }
                         }
                     }
                 });
+
+                if (save_tabs && notebook.current != null) {
+                    focused_tab = notebook.get_tab_position (notebook.current);
+                }
             }
 
-            Terminal.Application.saved_state.set_strv (
-                "tabs",
-                opened_tabs
-            );
+            if (save_tabs) {
+                Terminal.Application.saved_state.set_strv (
+                    "tabs",
+                    opened_tabs
+                );
 
-            Terminal.Application.saved_state.set_strv (
-                "tab-zooms",
-                zooms
-            );
+                Terminal.Application.saved_state.set_int (
+                    "focused-tab",
+                    focused_tab
+                );
+            }
 
-            Terminal.Application.saved_state.set_int (
-                "focused-tab",
-                notebook.current != null ? notebook.get_tab_position (notebook.current) : 0
-            );
+            if (save_zooms) {
+                Terminal.Application.saved_state.set_strv (
+                    "tab-zooms",
+                    zooms
+                );
+            }
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/

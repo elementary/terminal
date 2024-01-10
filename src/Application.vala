@@ -14,6 +14,8 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
+    public bool is_testing { get; set construct; }
+
     private static Themes themes;
 
     public Application () {
@@ -212,6 +214,16 @@ public class Terminal.Application : Gtk.Application {
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
+
+        set_accels_for_action (TerminalWidget.ACTION_COPY, TerminalWidget.ACCELS_COPY);
+        set_accels_for_action (TerminalWidget.ACTION_COPY_OUTPUT, TerminalWidget.ACCELS_COPY_OUTPUT);
+        set_accels_for_action (TerminalWidget.ACTION_PASTE, TerminalWidget.ACCELS_PASTE);
+        set_accels_for_action (TerminalWidget.ACTION_RELOAD, TerminalWidget.ACCELS_RELOAD);
+        set_accels_for_action (TerminalWidget.ACTION_SCROLL_TO_COMMAND, TerminalWidget.ACCELS_SCROLL_TO_COMMAND);
+        set_accels_for_action (TerminalWidget.ACTION_SELECT_ALL, TerminalWidget.ACCELS_SELECT_ALL);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
