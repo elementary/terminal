@@ -262,6 +262,7 @@ namespace Terminal {
         private void setup_ui () {
             var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
+                can_focus = false,
                 margin_start = 12,
                 no_show_all = true,
                 visible = false
