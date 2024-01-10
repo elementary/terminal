@@ -199,7 +199,7 @@ namespace Terminal.Test.Application {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 var terminal_directory = window.current_terminal.get_shell_location ();
-                assert_cmpstr (terminal_directory, CompareOperator.EQ, working_directory);
+                assert_cmpstr (terminal_directory, CompareOperator.EQ, Environment.get_current_dir ());
             });
         });
 

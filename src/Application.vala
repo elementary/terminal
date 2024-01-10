@@ -246,7 +246,7 @@ public class Terminal.Application : Gtk.Application {
         bool new_tab, minimized;
 
         options.lookup ("new-tab", "b", out new_tab);
-        options.lookup ("working-directory", "^&ay", out wd);
+        var wd_option_present = options.lookup ("working-directory", "^&ay", out wd);
 
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
@@ -264,8 +264,10 @@ public class Terminal.Application : Gtk.Application {
                 command,
                 new_tab
             );
-        } else {
+        } else if (wd_option_present) {
             window.add_tab_with_working_directory (wd != null ? wd : command_line.get_cwd (), null, new_tab);
+        } else if (new_tab) {
+            window.add_tab_with_working_directory (Environment.get_current_dir (), null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
