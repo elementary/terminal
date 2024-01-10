@@ -265,7 +265,7 @@ public class Terminal.Application : Gtk.Application {
                 new_tab
             );
         } else {
-            window.add_tab_with_working_directory (wd, null, new_tab);
+            window.add_tab_with_working_directory (wd != null ? wd : command_line.get_cwd (), null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
