@@ -108,7 +108,9 @@ public class Terminal.Application : Gtk.Application {
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
             if (working_directory != "\0") {
-                Environment.set_current_dir (working_directory); // will be sent via platform-data
+                Environment.set_current_dir (
+                    Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
+                ); // will be sent via platform-data
                 options.insert ("new-tab", "b", true);
             }
         }
