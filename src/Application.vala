@@ -124,6 +124,9 @@ public class Terminal.Application : Gtk.Application {
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
+
+        options.remove ("working-directory");
+
         return -1;
     }
 
@@ -239,16 +242,12 @@ public class Terminal.Application : Gtk.Application {
 
         unowned string[] commands;
         unowned string command;
-        unowned string wd;
         bool new_tab, minimized;
         options.lookup ("new-tab", "b", out new_tab);
 
         // If a specified working directory is not requested, use the current working directory from the commandline
-        var wd_option_present = options.lookup ("working-directory", "^&ay", out wd);
-        if (wd == null) {
-            command_line.get_cwd ();
-        }
 
+        var wd = command_line.get_cwd ();
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
