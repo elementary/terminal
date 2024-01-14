@@ -82,15 +82,11 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true, bool ensure_tab = false) {
+        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
             );
-
-            if (!recreate_tabs && ensure_tab) {
-                new_tab ("");
-            }
         }
 
         static construct {
@@ -494,7 +490,6 @@ namespace Terminal {
             Idle.add (() => {
                 var new_window = new MainWindow (
                     app,
-                    false,
                     false
                 );
 

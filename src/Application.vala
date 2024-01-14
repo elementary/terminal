@@ -202,8 +202,7 @@ public class Terminal.Application : Gtk.Application {
 
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
-            // Ensure at least one tab when window created by action
-            new MainWindow (this, active_window == null, true).present ();
+            new MainWindow (this, active_window == null).present ();
         });
 
         var quit_action = new SimpleAction ("quit", null);
@@ -229,30 +228,34 @@ public class Terminal.Application : Gtk.Application {
     protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
-        bool new_window;
+        var is_first_window = window == null;
+        bool new_window_requested;
+        options.lookup ("new-window", "b", out new_window_requested);
 
-        if (window == null || (options.lookup ("new-window", "b", out new_window) && new_window)) {
-            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-             * Currently they are set to restore (subject to the restore-tabs setting).
-             * If it is desired that tabs should never be restored in these circimstances add another check below.
-             */
-            bool restore_tabs = !("commandline" in options || "execute" in options || "working-directory" in options) || window == null;
-            window = new MainWindow (this, restore_tabs, false);
+        if (is_first_window || new_window_requested) {
+            // Always restore tabs if creating first window, but no extra tab at this stage
+            window = new MainWindow (this, is_first_window);
         }
 
         unowned string[] commands;
         unowned string command;
         unowned string wd;
         bool new_tab, minimized;
-
         options.lookup ("new-tab", "b", out new_tab);
-        var wd_option_present = options.lookup ("working-directory", "^&ay", out wd);
 
+        // If a specified working directory is not requested, use the current working directory from the commandline
+        var wd_option_present = options.lookup ("working-directory", "^&ay", out wd);
+        if (wd == null) {
+            command_line.get_cwd ();
+        }
+
+        // If "execute" option or "commandline" option used ignore any "new-tab option
+        // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
                     window.add_tab_with_working_directory (
-                        wd != null ? wd : command_line.get_cwd (),
+                        wd,
                         commands[i],
                         new_tab
                     );
@@ -260,14 +263,12 @@ public class Terminal.Application : Gtk.Application {
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (
-                wd != null ? wd : command_line.get_cwd (),
+                wd,
                 command,
                 new_tab
             );
-        } else if (wd_option_present) {
-            window.add_tab_with_working_directory (wd != null ? wd : command_line.get_cwd (), null, new_tab);
-        } else if (new_tab) {
-            window.add_tab_with_working_directory (Environment.get_current_dir (), null, new_tab);
+        } else if (new_tab || window.terminals.length () == 0) {
+            window.add_tab_with_working_directory (wd, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
