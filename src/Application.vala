@@ -113,6 +113,8 @@ public class Terminal.Application : Gtk.Application {
                 ); // will be sent via platform-data
                 options.insert ("new-tab", "b", true);
             }
+
+            options.remove ("working-directory");
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
@@ -126,9 +128,6 @@ public class Terminal.Application : Gtk.Application {
         if (commandline != "\0") {
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
-
-
-        options.remove ("working-directory");
 
         return -1;
     }
@@ -235,42 +234,33 @@ public class Terminal.Application : Gtk.Application {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
-        bool new_window_requested;
-        options.lookup ("new-window", "b", out new_window_requested);
+        bool new_window;
 
-        if (is_first_window || new_window_requested) {
-            // Always restore tabs if creating first window, but no extra tab at this stage
+        // Always restore tabs if creating first window, but no extra tab at this stage
+        if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
             window = new MainWindow (this, is_first_window);
         }
 
+        // If a specified working directory is not requested, use the current working directory from the commandline
+        unowned var working_directory = command_line.get_cwd ();
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
+
         options.lookup ("new-tab", "b", out new_tab);
 
-        // If a specified working directory is not requested, use the current working directory from the commandline
-
-        var wd = command_line.get_cwd ();
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
-                    window.add_tab_with_working_directory (
-                        wd,
-                        commands[i],
-                        new_tab
-                    );
+                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-            window.add_tab_with_working_directory (
-                wd,
-                command,
-                new_tab
-            );
-        } else if (new_tab || window.terminals.length () == 0) {
-            window.add_tab_with_working_directory (wd, null, new_tab);
+            window.add_tab_with_working_directory (working_directory, command, new_tab);
+        } else if (new_tab || window.terminals.is_empty ()) {
+            window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
