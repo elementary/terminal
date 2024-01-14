@@ -217,8 +217,7 @@ namespace Terminal {
 
                 return;
             } else {
-                // Substitute "~" etc but do not add the "file://" scheme
-                location = Utils.sanitize_path (directory, Environment.get_current_dir (), false);
+                location = directory;
             }
 
             /* We can match existing tabs only if there is no command and create_new_tab == false */
