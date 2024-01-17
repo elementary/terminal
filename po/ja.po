@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-15 15:36+0000\n"
-"PO-Revision-Date: 2023-12-25 10:10+0000\n"
+"PO-Revision-Date: 2024-01-18 16:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -31,10 +31,8 @@ msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "新しいターミナルウィンドウを開く"
+msgstr "カレントディレクトリで新しいターミナルタブを開く"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
