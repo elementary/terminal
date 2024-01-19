@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-15 15:36+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"PO-Revision-Date: 2024-01-19 21:48+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -32,10 +32,8 @@ msgstr "Otwórz nowe okno terminala"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Otwórz nowe okno terminala"
+msgstr "Otwórz nową kartę terminala w aktualnie otwartym katalogu"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
