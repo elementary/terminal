@@ -19,6 +19,7 @@
 namespace Terminal {
     public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
+        private Hdy.HeaderBar header;
         private Granite.Widgets.DynamicNotebook notebook;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
@@ -30,7 +31,21 @@ namespace Terminal {
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
         private HashTable<string, TerminalWidget> restorable_terminals;
-        private bool is_fullscreen = false;
+        private bool is_fullscreen {
+            get {
+                return header.decoration_layout_set;
+            }
+
+            set {
+                if (value) {
+                    fullscreen ();
+                    header.decoration_layout_set = true;
+                } else {
+                    unfullscreen ();
+                    header.decoration_layout_set = false;
+                }
+            }
+        }
         private bool on_drag = false;
 
         private Gtk.EventControllerKey key_controller;
@@ -108,7 +123,6 @@ namespace Terminal {
             actions = new SimpleActionGroup ();
             actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
-
             icon_name = "utilities-terminal";
 
             set_application (app);
@@ -123,7 +137,6 @@ namespace Terminal {
             set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
-            restore_saved_state ();
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
@@ -177,7 +190,6 @@ namespace Terminal {
             menu.insert_action_group ("win", actions);
 
             setup_ui ();
-            show_all ();
 
             key_controller = new Gtk.EventControllerKey (this) {
                 propagation_phase = TARGET
@@ -200,6 +212,9 @@ namespace Terminal {
             set_size_request (app.minimum_width, app.minimum_height);
 
             restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
+
+            restore_saved_state ();
+            show_all ();
 
             if (recreate_tabs) {
                 open_tabs ();
@@ -240,6 +255,20 @@ namespace Terminal {
         }
 
         private void setup_ui () {
+            var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
+                action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
+                can_focus = false,
+                margin_start = 12,
+                no_show_all = true,
+                visible = false
+            };
+            unfullscreen_button.tooltip_markup = Granite.markup_accel_tooltip (
+                action_accelerators[ACTION_FULLSCREEN].to_array (),
+                _("Exit FullScreen")
+            );
+            unfullscreen_button.get_style_context ().remove_class ("image-button");
+            unfullscreen_button.get_style_context ().add_class ("titlebutton");
+
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -270,16 +299,21 @@ namespace Terminal {
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
-            var header = new Hdy.HeaderBar () {
+            header = new Hdy.HeaderBar () {
                 show_close_button = true,
-                has_subtitle = false
+                has_subtitle = false,
+                decoration_layout = "close:",
+                decoration_layout_set = false
             };
+            header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
             header.set_custom_title (title_stack);
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
+
+            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
                 new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
@@ -388,7 +422,6 @@ namespace Terminal {
         }
 
         private void restore_saved_state () {
-
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
@@ -406,7 +439,6 @@ namespace Terminal {
             if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
             } else if (window_state == MainWindow.FULLSCREEN) {
-                fullscreen ();
                 is_fullscreen = true;
             }
         }
@@ -1013,13 +1045,7 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
-            if (is_fullscreen) {
-                unfullscreen ();
-                is_fullscreen = false;
-            } else {
-                fullscreen ();
-                is_fullscreen = true;
-            }
+            is_fullscreen = !is_fullscreen;
         }
 
         private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
