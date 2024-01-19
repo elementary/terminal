@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-15 15:36+0000\n"
 "PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -31,8 +31,10 @@ msgstr "Avaa uusi pääteikkuna"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Avaa uusi päätevälilehti"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Avaa uusi pääteikkuna"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -58,64 +60,64 @@ msgstr "Suorita loput rivistä komentona päätteessä"
 msgid "[-- COMMAND…]"
 msgstr "[-- KOMENTO…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Prosessi suoritettu"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "Prosessi sulkeutui virheiden kera"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:142
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:148
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:154
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:160
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:254
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:285
 msgid "New Tab"
 msgstr "Uusi välilehti"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:542
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:543
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:800
 msgid "Duplicate"
 msgstr "Tee kaksoiskappale"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:813
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:968
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -331,6 +333,9 @@ msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Avaa uusi päätevälilehti"
 
 #~ msgid "Zoom out"
 #~ msgstr "Loitonna"

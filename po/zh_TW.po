@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-15 15:36+0000\n"
 "PO-Revision-Date: 2021-07-29 15:59+0000\n"
 "Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -31,8 +31,10 @@ msgstr "開啟新終端機視窗"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "開啟新終端機分頁"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "開啟新終端機視窗"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -63,64 +65,64 @@ msgstr "在終端機中將剩餘內容以指令形式執行。也可以使用 '-
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "行程完成執行"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "行程錯誤地結束"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:142
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:148
 msgid "Copy Last Output"
 msgstr "複製上次的輸出"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:154
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:160
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:254
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:285
 msgid "New Tab"
 msgstr "新增分頁"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:542
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中顯示"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:543
 msgid "Default application"
 msgstr "預設應用程式"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "關閉分頁"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:800
 msgid "Duplicate"
 msgstr "再製"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:813
 msgid "Reload"
 msgstr "重新載入"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:968
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
 
@@ -331,6 +333,9 @@ msgstr "貼上的文字可能包含多項指令"
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼上的文字有可能在嘗試獲得管理員權限"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "開啟新終端機分頁"
 
 #~ msgid "Zoom out"
 #~ msgstr "縮小"

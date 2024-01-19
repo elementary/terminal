@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-15 15:36+0000\n"
 "PO-Revision-Date: 2021-07-17 17:21+0000\n"
 "Last-Translator: nenufa <jean.a.r22@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -31,8 +31,10 @@ msgstr "Abra uma nova janela do terminal"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Abra uma nova guia do terminal"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Abra uma nova janela do terminal"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -65,64 +67,64 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:142
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:148
 msgid "Copy Last Output"
 msgstr "Copiar a Última Saída"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:154
 msgid "Paste"
 msgstr "Colar"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:160
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:254
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:285
 msgid "New Tab"
 msgstr "Nova aba"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:542
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar em %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:543
 msgid "Default application"
 msgstr "Aplicativo Padrão"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Fechar aba"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:800
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:813
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:968
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 
@@ -339,6 +341,9 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Abra uma nova guia do terminal"
 
 #~ msgid "Zoom out"
 #~ msgstr "Reduzir o Zoom"

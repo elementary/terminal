@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-15 15:36+0000\n"
 "PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
@@ -32,8 +32,10 @@ msgstr "Відкрити нове вікно терміналу"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Відкрити нову вкладку терміналу"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Відкрити нове вікно терміналу"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -59,64 +61,64 @@ msgstr "Запустити решту рядка як команду в терм
 msgid "[-- COMMAND…]"
 msgstr "[-- COMMAND…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Процес завершено"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:142
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:148
 msgid "Copy Last Output"
 msgstr "Копіювати останній вивід"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:154
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:160
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:254
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:285
 msgid "New Tab"
 msgstr "Нова вкладка"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:542
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:543
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:800
 msgid "Duplicate"
 msgstr "Дублювати"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:813
 msgid "Reload"
 msgstr "Перезавантажити"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:968
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -332,6 +334,9 @@ msgstr "Вставлений текст може містити кілька к�
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставлений текст може намагатися отримати доступ до прав адміністратора"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Відкрити нову вкладку терміналу"
 
 #~ msgid "Zoom out"
 #~ msgstr "Зменшити"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-15 15:36+0000\n"
 "PO-Revision-Date: 2023-05-23 19:07+0000\n"
 "Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
@@ -30,8 +30,10 @@ msgstr "Buka jendela terminal baru"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Buka tab terminal baru"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Buka jendela terminal baru"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -57,64 +59,64 @@ msgstr "Jalankan sisa baris sebagai perintah di terminal"
 msgid "[-- COMMAND…]"
 msgstr "[-- PERINTAH…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Proses selesai"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "Proses keluar dengan kesalahan"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:142
 msgid "Copy"
 msgstr "Salin"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:148
 msgid "Copy Last Output"
 msgstr "Salin Keluaran Terakhir"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:154
 msgid "Paste"
 msgstr "Tempel"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:160
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
 msgid "Find…"
 msgstr "Cari…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:254
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:285
 msgid "New Tab"
 msgstr "Tab Baru"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:542
 #, c-format
 msgid "Show in %s"
 msgstr "Tampilkan pada %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:543
 msgid "Default application"
 msgstr "Aplikasi bawaan"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Tutup Tab"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:800
 msgid "Duplicate"
 msgstr "Gandakan"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:813
 msgid "Reload"
 msgstr "Muat Ulang"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:968
 msgid "Hide find bar"
 msgstr "Sembunyikan bilah pencarian"
 
@@ -328,6 +330,9 @@ msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Buka tab terminal baru"
 
 #~ msgid "Zoom out"
 #~ msgstr "Perkecil"

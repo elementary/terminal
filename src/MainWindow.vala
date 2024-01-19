@@ -97,15 +97,11 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true, bool ensure_tab = true) {
+        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
             Object (
                 app: app,
                 recreate_tabs: recreate_tabs
             );
-
-            if (!recreate_tabs && ensure_tab) {
-                new_tab ("");
-            }
         }
 
         static construct {
@@ -229,7 +225,6 @@ namespace Terminal {
             /* This requires all restored tabs to be initialized first so that the shell location is available */
             /* Do not add a new tab if location is already open in existing tab */
             string? location = null;
-
             if (directory == null || directory == "") {
                 if (notebook.tabs.first () == null || command != null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
@@ -526,7 +521,6 @@ namespace Terminal {
             Idle.add (() => {
                 var new_window = new MainWindow (
                     app,
-                    false,
                     false
                 );
 

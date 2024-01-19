@@ -18,17 +18,23 @@
 
 
 namespace Terminal.Utils {
-    public string? sanitize_path (string _path, string shell_location) {
+    public string? sanitize_path (string _path, string shell_location, bool add_file_scheme = true) {
         /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
-        string scheme, path;
+        string scheme = "", path = "";
 
         var parts_scheme = _path.split ("://", 2);
         if (parts_scheme.length == 2) {
             scheme = parts_scheme[0] + "://";
             path = parts_scheme[1];
-        } else {
-            scheme = "file://";
+        } else if (parts_scheme.length == 1 ) {
+            if (add_file_scheme) {
+                scheme = "file://";
+            }
+
             path = _path;
+        } else {
+            critical ("Invalid path");
+            return null;
         }
 
         path = Uri.unescape_string (path);
