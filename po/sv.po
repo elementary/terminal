@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 15:36+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2018-10-22 15:24+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
@@ -72,57 +72,63 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:142
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/MainWindow.vala:148
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/MainWindow.vala:160
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/MainWindow.vala:254
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Helskärm"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Ny flik"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:574
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Visa i Filer"
 
-#: src/MainWindow.vala:543
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Stäng flik"
 
-#: src/MainWindow.vala:800
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:813
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:968
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr ""
 
@@ -433,9 +439,6 @@ msgstr ""
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Gå till föregående flik"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Helskärm"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Växla helskärmsläge"

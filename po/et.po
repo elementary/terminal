@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 15:36+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2016-06-13 16:57+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -70,56 +70,62 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:142
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Kopeeri"
 
-#: src/MainWindow.vala:148
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:154
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Aseta"
 
-#: src/MainWindow.vala:160
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: src/MainWindow.vala:166 src/MainWindow.vala:247 src/MainWindow.vala:977
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Otsi…"
 
-#: src/MainWindow.vala:254
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Täisekraan"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:285
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Uus kaart"
 
-#: src/MainWindow.vala:542
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:543
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:799 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Sulge kaart"
 
-#: src/MainWindow.vala:800
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:813
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:968
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr ""
 
@@ -412,9 +418,6 @@ msgstr ""
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Mine eelmisele kaardile"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Täisekraan"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Täisekraani sisse/välja lülitamine"
