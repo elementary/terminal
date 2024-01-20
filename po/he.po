@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-19 21:48+0000\n"
-"PO-Revision-Date: 2024-01-17 11:11+0000\n"
+"PO-Revision-Date: 2024-01-21 10:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -87,10 +87,8 @@ msgid "Find…"
 msgstr "חיפוש…"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "מסך מלא"
+msgstr "יציאה ממסך מלא"
 
 #: src/MainWindow.vala:283
 msgid "Settings"
