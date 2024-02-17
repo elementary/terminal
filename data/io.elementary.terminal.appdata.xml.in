@@ -61,13 +61,16 @@
         <p>Other updates:</p>
         <ul>
           <li>Document missing options in the man page</li>
+          <li>Suppress unwanted default tab when opening a new window</li>
           <li>Translation updates</li>
         </ul>
       </description>
       <issues>
         <issue url="https://github.com/elementary/terminal/issues/596">No terminal bell any more</issue>
         <issue url="https://github.com/elementary/terminal/issues/728">Incomplete man page</issue>
+        <issue url="https://github.com/elementary/terminal/issues/736">When creating a new terminal window at a apecified working directory, an additional default tab is also opened</issue>
         <issue url="https://github.com/elementary/terminal/issues/741">Tabs and tab-zooms not saved to settings continuously</issue>
+        <issue url="https://github.com/elementary/terminal/issues/752">The F11 shortcut key causes the maximize/unmaximize button to fail</issue>
       </issues>
     </release>
 
