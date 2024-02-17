@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-04-12 08:59+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"PO-Revision-Date: 2024-01-24 03:32+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,8 +31,8 @@ msgstr "ტერმინალის ახალი ფანჯრის გ
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "ტერმინალის ახალი ჩანართის გახსნა"
+msgid "Open a new terminal tab at current working directory"
+msgstr "ტერმინალის ახალი ფანჯრის გახსნა მიმდინარე სამუშაო საქაღალდეში"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -58,64 +58,68 @@ msgstr "დარჩენილი ხაზების ტერმინა�
 msgid "[-- COMMAND…]"
 msgstr "[-- ბრძანება…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "პროცესი დასრულდა"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "კოპირება"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "ბოლო გამოტანის კოპირება"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "ძიება…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "სრული ეკრანიდან გასვლა"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "მორგება"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "ახალი ჩანართი"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "%s-ში ჩვენება"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "ნაგულისხმები აპლიკაცია"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "ჩანართის დახურვა"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "დუბლიკაცია"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "თავიდან ჩატვირთვა"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
@@ -331,6 +335,9 @@ msgstr "ჩასმული ტექსტი შეიძლება ბე
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
 
+#~ msgid "Open a new terminal tab"
+#~ msgstr "ტერმინალის ახალი ჩანართის გახსნა"
+
 #~ msgid "Zoom out"
 #~ msgstr "დაპატარავება"
 
@@ -418,9 +425,6 @@ msgstr "ჩასმულ ტექსტი შეიძლება ადმ
 
 #~ msgid "Go to previous tab"
 #~ msgstr "წინა ჩანართზე გადასვლა"
-
-#~ msgid "Fullscreen"
-#~ msgstr "სრული ეკრანი"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "სრული ეკრანის რეჟიმის ჩართვა/გამორთვა"

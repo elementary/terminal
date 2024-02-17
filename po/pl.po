@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"PO-Revision-Date: 2024-02-02 21:11+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -32,8 +32,8 @@ msgstr "Otwórz nowe okno terminala"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Otwórz nową kartę terminala"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Otwórz nową kartę terminala w aktualnie otwartym katalogu"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -59,64 +59,68 @@ msgstr "Uruchom pozostałą część linii jako komendę w terminalu"
 msgid "[-- COMMAND…]"
 msgstr "[-- KOMENDA…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Proces ukończony"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "Proces zakończył się z błędami"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "Kopiuj ostatnie wyjście"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Wklej"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "Opuść pełny ekran"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Nowa karta"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "Wyświetl w %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "Aplikacja domyślna"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Zamyka kartę"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "Duplikuj"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "Odśwież"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
@@ -332,6 +336,9 @@ msgstr "Wklejony tekst może mieć kilka komend"
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Wklejony tekst może próbować uzyskać dostęp administracyjny"
 
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Otwórz nową kartę terminala"
+
 #~ msgid "Zoom out"
 #~ msgstr "Oddalenie"
 
@@ -435,9 +442,6 @@ msgstr "Wklejony tekst może próbować uzyskać dostęp administracyjny"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Przechodzi do poprzedniej karty"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Pełny ekran"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Włącza/Wyłącza tryb pełnego ekranu"

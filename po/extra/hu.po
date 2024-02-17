@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-01-20 00:25+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"PO-Revision-Date: 2023-12-24 00:10+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/extra/"
 "hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -56,10 +56,12 @@ msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"\"Ctrl + PageUp\" és \"Ctrl + PageDown\" billentyűkombinációk a lapok "
+"közötti váltáshoz"
 
 #: data/io.elementary.terminal.appdata.xml.in:59
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "A DBus interface helyes kiexportálása kilépéskor"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 #: data/io.elementary.terminal.appdata.xml.in:75
@@ -86,47 +88,53 @@ msgstr "Egyedi színpaletta létrehozása"
 #: data/io.elementary.terminal.appdata.xml.in:109
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Fixes:"
-msgstr ""
+msgstr "Javítások:"
 
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Az alapértelmezett témák teljesen átlátszatlanok és a szolarizált "
+"színpaletta hozzáigazítva a friss verziókhoz a jobb olvashatóság érdekében"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Performance improvements"
-msgstr ""
+msgstr "Teljesítményoptimalizálások"
 
 #: data/io.elementary.terminal.appdata.xml.in:106
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Lapok közti váltás az Alt + 1-9 billentyűkkel"
 
 #: data/io.elementary.terminal.appdata.xml.in:107
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Kilépés a Ctrl + Shift + Q billentyűkkel"
 
 #: data/io.elementary.terminal.appdata.xml.in:111
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "Fordítás javítása OS 7-hez"
 
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Properly restore zoom levels for all locales"
-msgstr ""
+msgstr "A nagyítási szint helyes visszaállítása minden nyelven"
 
 #: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "XTerm cím használata az ablakcímhez, amennyiben elérhető"
 
 #: data/io.elementary.terminal.appdata.xml.in:129
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
+"A \"Lap újratöltése\" gyorsparancs lecserélése Shift + F5-re, hogy ne "
+"akadjon össze bizonyos előtérben lévő folyamatokkal"
 
 #: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
+"A \"Lap újratöltése\" parancshoz előnyben részesített billentyűkombináció "
+"cseréje Shift + Control + R-re"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"

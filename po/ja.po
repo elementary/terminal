@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-08-15 08:08+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"PO-Revision-Date: 2024-02-13 00:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,8 +31,8 @@ msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "新しいターミナルタブを開く"
+msgid "Open a new terminal tab at current working directory"
+msgstr "カレントディレクトリで新しいターミナルタブを開く"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -58,64 +58,68 @@ msgstr "行の残りの部分をコマンドとしてターミナルで実行し
 msgid "[-- COMMAND…]"
 msgstr "[-- コマンド…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "プロセスが完了しました"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "プロセスがエラー終了しました"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "全画面表示を終了"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "新しいタブ"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
-msgstr "%sで表示"
+msgstr "“%s”で表示"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "タブを複製"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "再読み込み"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -241,7 +245,7 @@ msgstr "コントラストは高いです"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "このタブを閉じてもよろしいですか？"
+msgstr "このタブを閉じてもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -253,7 +257,7 @@ msgstr "タブを閉じた場合、プロセスは終了します。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "“ターミナル”を終了してもよろしいですか？"
+msgstr "“ターミナル”を終了してもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -269,7 +273,7 @@ msgstr "“ターミナル”を終了"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr "このタブを再読み込みしてもよろしいですか？"
+msgstr "このタブを再読み込みしてもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
@@ -330,6 +334,9 @@ msgstr "貼り付けされたテキストは複数のコマンドを含んでい
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "新しいターミナルタブを開く"
 
 #~ msgid "Zoom out"
 #~ msgstr "縮小"
@@ -438,9 +445,6 @@ msgstr "貼り付けされたテキストは管理者権限を取得しようと
 
 #~ msgid "Go to previous tab"
 #~ msgstr "前のタブへ"
-
-#~ msgid "Fullscreen"
-#~ msgstr "全画面表示"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "全画面表示を切り替えます"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2018-04-05 12:13+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -35,7 +35,7 @@ msgstr "Open a new window"
 #: src/Application.vala:38
 #, fuzzy
 #| msgid "Open a new window"
-msgid "Open a new terminal tab"
+msgid "Open a new terminal tab at current working directory"
 msgstr "Open a new window"
 
 #. -w flag defines the working directory that the new tab/window uses
@@ -64,65 +64,71 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Fullscreen"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "New Tab"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Show in File Browser"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Close Tab"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr ""
 
@@ -341,6 +347,11 @@ msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
 #, fuzzy
+#~| msgid "Open a new window"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Open a new window"
+
+#, fuzzy
 #~ msgid "Zoom out"
 #~ msgstr "Zoom Out"
 
@@ -428,9 +439,6 @@ msgstr ""
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Go to previous tab"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Fullscreen"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Toggle/Untoggle fullscreen"

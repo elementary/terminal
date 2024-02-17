@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -32,8 +32,10 @@ msgstr "فتح نافذة طرفية جديدة"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "فتح علامة تبويب جديدة"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "فتح نافذة طرفية جديدة"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -64,65 +66,71 @@ msgstr "شغِّل ما تبقى من السطر كأمر في الطرفية. �
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "ابحث…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "ملء الشاشة"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "تبويب جديد"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "إغلاق تبويب"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 
@@ -340,6 +348,9 @@ msgstr ""
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
+#~ msgid "Open a new terminal tab"
+#~ msgstr "فتح علامة تبويب جديدة"
+
 #~ msgid "Zoom out"
 #~ msgstr "تصغير"
 
@@ -393,9 +404,6 @@ msgstr ""
 
 #~ msgid "Previous Tab"
 #~ msgstr "التبويب السابق"
-
-#~ msgid "Fullscreen"
-#~ msgstr "ملء الشاشة"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

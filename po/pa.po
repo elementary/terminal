@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -24,8 +24,10 @@ msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਵਿੰਡੋ ਖੋਲ੍�
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਵਿੰਡੋ ਖੋਲ੍ਹੋ"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -56,64 +58,68 @@ msgstr "ਲਾਈਨ ਦੇ ਬਚੇ ਹਿੱਸੇ ਨੂੰ ਟਰਮੀਨ�
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "ਅਮਲ ਮੁਕੰਮਲ ਹੋਇਆ"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "ਅਮਲ ਖ਼ਰਾਬੀਆਂ ਸਮੇਤ ਬੰਦ ਹੋਇਆ"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr ""
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "ਨਵੀਂ ਟੈਬ"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
@@ -329,6 +335,9 @@ msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂ�
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"
 
 #~ msgid "Zoom out"
 #~ msgstr "ਜ਼ੂਮ ਘਟਾਓ"

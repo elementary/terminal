@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2017-02-19 12:31+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -33,7 +33,7 @@ msgstr "Άνοιγμα ενός νέου παραθύρου"
 #: src/Application.vala:38
 #, fuzzy
 #| msgid "Open a new window"
-msgid "Open a new terminal tab"
+msgid "Open a new terminal tab at current working directory"
 msgstr "Άνοιγμα ενός νέου παραθύρου"
 
 #. -w flag defines the working directory that the new tab/window uses
@@ -62,64 +62,70 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Εύρεση…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Πλήρης οθόνη"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Νέα καρτέλα"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr ""
 
@@ -338,6 +344,11 @@ msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
 #, fuzzy
+#~| msgid "Open a new window"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Άνοιγμα ενός νέου παραθύρου"
+
+#, fuzzy
 #~ msgid "Zoom out"
 #~ msgstr "Σμίκρυνση"
 
@@ -402,9 +413,6 @@ msgstr ""
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Μετάβαση στην προηγούμενη καρτέλα"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Πλήρης οθόνη"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Εναλλαγή πλήρους οθόνης"

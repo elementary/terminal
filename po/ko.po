@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
 "PO-Revision-Date: 2022-08-06 11:37+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -31,8 +31,10 @@ msgstr "새 터미널 창 열기"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "새 터미널 탭 열기"
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "새 터미널 창 열기"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -65,64 +67,70 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "프로세스 끝"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "오류로 끝난 프로세스"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "복사"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "마지막 출력물 복사하기"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "전체 선택"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "찾기…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "전체화면"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "설정"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "새 탭"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "%s에서 보기"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "기본 애플리케이션"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "새로고침"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 
@@ -337,6 +345,9 @@ msgstr "붙여 넣은 텍스트에 여러 명령이 포함될 수 있습니다"
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 있습니다"
 
+#~ msgid "Open a new terminal tab"
+#~ msgstr "새 터미널 탭 열기"
+
 #~ msgid "Zoom out"
 #~ msgstr "축소"
 
@@ -439,9 +450,6 @@ msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 
 
 #~ msgid "Go to previous tab"
 #~ msgstr "이전 탭으로 가기"
-
-#~ msgid "Fullscreen"
-#~ msgstr "전체화면"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "전체 화면으로 보기/안 보기 설정"

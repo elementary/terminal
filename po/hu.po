@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 18:11+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"PO-Revision-Date: 2024-01-26 14:11+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,8 +31,8 @@ msgstr "Új terminálablak megnyitása"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-msgid "Open a new terminal tab"
-msgstr "Új lap megnyitása"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Új terminálablak megnyitása az éppen használt munkakönyvtárban"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -58,64 +58,68 @@ msgstr "A sor további részének futtatása terminálban parancsként"
 msgid "[-- COMMAND…]"
 msgstr "[-- PARANCS…]"
 
-#: src/Application.vala:161
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Feladat befejezve"
 
-#: src/Application.vala:164
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "A feladat kilépett hibákkal"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/MainWindow.vala:152
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "Legutóbbi kimenet másolása"
 
-#: src/MainWindow.vala:158
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/MainWindow.vala:164
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/MainWindow.vala:170 src/MainWindow.vala:252 src/MainWindow.vala:983
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/MainWindow.vala:259
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "Kilépés teljes képernyőről"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Új lap"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "Megjelenítés itt: %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "Alapértelmezett alkalmazás"
 
-#: src/MainWindow.vala:805 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
-#: src/MainWindow.vala:806
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "Megkettőzés"
 
-#: src/MainWindow.vala:819
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "Újratöltés"
 
-#: src/MainWindow.vala:974
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "Keresősáv elrejtése"
 
@@ -330,6 +334,9 @@ msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Új lap megnyitása"
+
 #~ msgid "Zoom out"
 #~ msgstr "Kicsinyítés"
 
@@ -433,9 +440,6 @@ msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Ugrás az előző lapra"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Teljes képernyő"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Teljes képernyős nézetváltás"
