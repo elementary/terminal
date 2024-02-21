@@ -44,12 +44,25 @@ namespace Terminal {
             set {
                 this._window = value;
                 this.app = value.app;
-                this.menu = value.menu;
-                this.menu.show_all ();
             }
         }
 
-        private Gtk.Menu menu;
+        public GLib.MenuModel menu_model {
+            get {
+                return _menu_model;
+            }
+
+            set {
+                menu.bind_model (value, null);
+                _menu_model = value;
+            }
+        }
+
+        private GLib.MenuModel _menu_model;
+        private Gtk.PopoverMenu menu;
+
+        private static GLib.Menu term_menu;
+
         public Granite.Widgets.Tab tab;
         public string? link_uri;
 
@@ -161,6 +174,14 @@ namespace Terminal {
 
         public signal void cwd_changed ();
 
+        static construct {
+            term_menu = new GLib.Menu ();
+            term_menu.append (_("Copy"), "term.copy");
+            term_menu.append (_("Copy Last Output"), "term.copy-output");
+            term_menu.append (_("Paste"), "term.paste");
+            term_menu.append (_("Select All"), "term.select-all");
+        }
+
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
 
@@ -234,7 +255,7 @@ namespace Terminal {
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-                clipboard.owner_change.connect (setup_menu);
+                clipboard.owner_change.connect (() => setup_menu.emit ());
                 disconnect (once);
             });
 
@@ -253,6 +274,13 @@ namespace Terminal {
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
+
+            menu = new Gtk.PopoverMenu () {
+                position = BOTTOM,
+                relative_to = this
+            };
+            menu.bind_model (term_menu, null);
+            _menu_model = term_menu;
 
             // Setup Actions
             var action_group = new GLib.SimpleActionGroup ();
@@ -317,12 +345,9 @@ namespace Terminal {
                     copy_action.set_enabled (true);
                 }
 
-                Gdk.Rectangle rect = { (int) x, (int) y };
-                window.update_context_menu ();
-                setup_menu ();
-
-                menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                menu.select_first (false);
+                menu.pointing_to = { (int) x, (int) y };
+                setup_menu.emit ();
+                menu.popup ();
 
                 gesture.set_state (CLAIMED);
             }
@@ -383,19 +408,15 @@ namespace Terminal {
                     var cell_height = get_char_height ();
                     var vadj = vadjustment.value;
 
-                    Gdk.Rectangle rect = {
+                    menu.pointing_to = {
                         (int) (col * cell_width),
                         (int) ((row - vadj) * cell_height),
                         (int) cell_width,
                         (int) cell_height
                     };
 
-                    window.update_context_menu ();
-                    setup_menu ();
-
-                    // Popup context menu below cursor position
-                    menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                    menu.select_first (false);
+                    setup_menu.emit ();
+                    menu.popup ();
                     break;
 
                 case Gdk.Key.Alt_L:
@@ -451,7 +472,7 @@ namespace Terminal {
             return false;
         }
 
-        private void setup_menu () {
+        public virtual signal void setup_menu () {
             // Update the "Paste" menu option
             clipboard.request_targets ((clipboard, atoms) => {
                 bool can_paste = false;
