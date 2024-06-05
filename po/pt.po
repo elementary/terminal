@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
-"PO-Revision-Date: 2023-04-15 14:59+0000\n"
+"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,10 +31,8 @@ msgstr "Abrir uma nova janela de terminal"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Abrir uma nova janela de terminal"
+msgstr "Abrir um novo separador do terminal no diretório de trabalho atual"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -89,10 +87,8 @@ msgid "Find…"
 msgstr "Procurar…"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Ecrã completo"
+msgstr "Sair de ecrã inteiro"
 
 #: src/MainWindow.vala:283
 msgid "Settings"
