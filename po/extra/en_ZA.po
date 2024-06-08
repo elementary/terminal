@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_ZA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.elementary.terminal.appdata.xml.in:10
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
+msgid "Terminal"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:11
+#: data/io.elementary.terminal.desktop.in:5
+msgid "Use the command line"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:13
+msgid ""
+"Terminal is a terminal emulator application for accessing a UNIX shell "
+"environment which can be used to run programs available on your system."
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:96
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:128
+msgid "Other updates:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid ""
+"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+"tabs"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Properly unexport the DBus Interface on Exit"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:133
+msgid "Translation updates"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:106
+msgid "New features:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:89
+msgid "Option to follow system dark style preference"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:90
+msgid "Create a custom color palette"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:124
+msgid "Fixes:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:94
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:99
+msgid "Performance improvements"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:108
+msgid "Switch tabs with Alt + 1-9"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:109
+msgid "Quit with Ctrl + Shift + Q"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:113
+msgid "Fix build on OS 7"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:126
+msgid "Properly restore zoom levels for all locales"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:130
+msgid "Use XTerm title for window title if available"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:131
+msgid ""
+"Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
+"foreground processes"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:132
+msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:13
+msgid "command;prompt;cmd;commandline;run;"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:18
+msgid "New Window"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
+msgstr ""
