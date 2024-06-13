@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-02 03:15+0000\n"
 "PO-Revision-Date: 2024-06-13 12:58+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: AlexMedina Software <alex.carcamo@alumnos.upla.cl>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
 "Language: es\n"
@@ -84,7 +84,7 @@ msgstr "Se puede crear una paleta de colores personalizada"
 #: data/io.elementary.terminal.appdata.xml.in:111
 #: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Fixes:"
-msgstr ""
+msgstr "Correcciones:"
 
 #: data/io.elementary.terminal.appdata.xml.in:94
 msgid ""
