@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2024-06-14 00:46+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
@@ -32,7 +32,8 @@ msgstr "Abrir una ventana nueva del terminal"
 #. -t flag forces a new tab
 #: src/Application.vala:38
 msgid "Open a new terminal tab at current working directory"
-msgstr "Abrir una pestaña nueva del terminal en el directorio de trabajo actual"
+msgstr ""
+"Abrir una pestaña nueva del terminal en el directorio de trabajo actual"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -136,6 +137,7 @@ msgid "Light"
 msgstr "Claro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Oscuro"
 
@@ -323,6 +325,53 @@ msgstr "Resultado siguiente"
 msgid "Cyclic search"
 msgstr "Búsqueda cíclica"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Alejar"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Nivel de escala predeterminado"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Acercar"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Contraste alto"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarizado claro"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Copipegado natural"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
@@ -339,29 +388,6 @@ msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Abrir una pestaña nueva del terminal"
-
-#~ msgid "Zoom out"
-#~ msgstr "Alejar"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Nivel de escala predeterminado"
-
-#~ msgid "Zoom in"
-#~ msgstr "Acercar"
-
-#~ msgid "High Contrast"
-#~ msgstr "Contraste alto"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarizado claro"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Copipegado natural"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones "
-#~ "CLI"
 
 #~ msgid "Show help"
 #~ msgstr "Mostrar ayuda"

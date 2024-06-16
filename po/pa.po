@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -136,6 +136,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "ਕਾਲ਼ਾ/ਕਾਲ਼ੀ"
 
@@ -324,6 +325,52 @@ msgstr "ਅਗਲੇ ਨਤੀਜੇ"
 msgid "Cyclic search"
 msgstr "ਚੱਕਰੀ ਖੋਜ"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "ਜ਼ੂਮ ਘਟਾਓ"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "ਪਹਿਲਾਂ ਹੀ ਸੈੱਟ ਜ਼ੂਮ ਦਰਜਾ"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "ਜ਼ੂਮ ਵਧਾਓ"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "ਜ਼ਿਆਦਾ ਵਖਰੇਵਾਂ"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "ਸੂਰਜੀ ਰੌਸ਼ਨੀ"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "ਆਮ ਨਕਲ/ਚੇਪੀ"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "ਸ਼ਾਰਟਕੱਟ ਲਈ ਸ਼ਿਫ਼ਟ ਦੀ ਲੋੜ ਨਹੀਂ; ਕਮਾਂਡ ਲਾਈਨ ਇੰਟਰਫ਼ੇਸ ਵਿੱਚ ਦਖ਼ਲ ਦੇ ਸਕਦੀ ਹੈ"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ਟਰਮੀਨਲ"
@@ -338,27 +385,6 @@ msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ �
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"
-
-#~ msgid "Zoom out"
-#~ msgstr "ਜ਼ੂਮ ਘਟਾਓ"
-
-#~ msgid "Default zoom level"
-#~ msgstr "ਪਹਿਲਾਂ ਹੀ ਸੈੱਟ ਜ਼ੂਮ ਦਰਜਾ"
-
-#~ msgid "Zoom in"
-#~ msgstr "ਜ਼ੂਮ ਵਧਾਓ"
-
-#~ msgid "High Contrast"
-#~ msgstr "ਜ਼ਿਆਦਾ ਵਖਰੇਵਾਂ"
-
-#~ msgid "Solarized Light"
-#~ msgstr "ਸੂਰਜੀ ਰੌਸ਼ਨੀ"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "ਆਮ ਨਕਲ/ਚੇਪੀ"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr "ਸ਼ਾਰਟਕੱਟ ਲਈ ਸ਼ਿਫ਼ਟ ਦੀ ਲੋੜ ਨਹੀਂ; ਕਮਾਂਡ ਲਾਈਨ ਇੰਟਰਫ਼ੇਸ ਵਿੱਚ ਦਖ਼ਲ ਦੇ ਸਕਦੀ ਹੈ"
 
 #~ msgid "Show help"
 #~ msgstr "ਮਦਦ ਵਿਖਾਓ"

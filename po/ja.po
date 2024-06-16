@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2024-05-18 12:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -136,6 +136,7 @@ msgid "Light"
 msgstr "ライト"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "ダーク"
 
@@ -323,6 +324,54 @@ msgstr "次の結果"
 msgid "Cyclic search"
 msgstr "循環検索"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "縮小"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "デフォルトのズームレベル"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "拡大"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "システムのスタイルに従う"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "ハイコントラスト"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "カスタム"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "ナチュラルコピー & ペースト"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
+"ります"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
@@ -337,35 +386,6 @@ msgstr "貼り付けされたテキストは管理者権限を取得しようと
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "新しいターミナルタブを開く"
-
-#~ msgid "Zoom out"
-#~ msgstr "縮小"
-
-#~ msgid "Default zoom level"
-#~ msgstr "デフォルトのズームレベル"
-
-#~ msgid "Zoom in"
-#~ msgstr "拡大"
-
-#~ msgid "Follow System Style"
-#~ msgstr "システムのスタイルに従う"
-
-#~ msgid "High Contrast"
-#~ msgstr "ハイコントラスト"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarized Light"
-
-#~ msgid "Custom"
-#~ msgstr "カスタム"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "ナチュラルコピー & ペースト"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性が"
-#~ "あります"
 
 #~ msgid "Show help"
 #~ msgstr "ヘルプを表示します"

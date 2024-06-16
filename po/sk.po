@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2022-12-26 20:25+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -147,6 +147,7 @@ msgid "Light"
 msgstr "Svetlý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Tmavý"
 
@@ -334,6 +335,54 @@ msgstr "Ďalší výsledok"
 msgid "Cyclic search"
 msgstr "Opakované hľadanie"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Oddialiť"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Mierka 1:1"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Priblížiť"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "Nasledovať systémový štýl"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Vysoký kontrast"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarizovaný svetlý"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "Vlastné"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Prirodzené kopírovanie/vkladanie"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
+"príkazovom riadku"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
@@ -348,35 +397,6 @@ msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otvoriť novú kartu terminálu"
-
-#~ msgid "Zoom out"
-#~ msgstr "Oddialiť"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Mierka 1:1"
-
-#~ msgid "Zoom in"
-#~ msgstr "Priblížiť"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Nasledovať systémový štýl"
-
-#~ msgid "High Contrast"
-#~ msgstr "Vysoký kontrast"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarizovaný svetlý"
-
-#~ msgid "Custom"
-#~ msgstr "Vlastné"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Prirodzené kopírovanie/vkladanie"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
-#~ "príkazovom riadku"
 
 #~ msgid "Show help"
 #~ msgstr "Zobraziť nápovedu"

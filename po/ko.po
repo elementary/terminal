@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2022-08-06 11:37+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -147,6 +147,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "다크"
 
@@ -333,6 +334,52 @@ msgstr "다음 결과"
 msgid "Cyclic search"
 msgstr "순환 검색"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "축소"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "기본 줌 레벨"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "확대"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "시스템 스타일 따르기"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "고 대비"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "솔라 라이트"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "사용자 설정"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "자연 복사/붙여넣기"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "바로 가기에는 Shift가 필요하지 않습니다. CLI 앱을 방해할 수 있음"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "터미널"
@@ -347,33 +394,6 @@ msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "새 터미널 탭 열기"
-
-#~ msgid "Zoom out"
-#~ msgstr "축소"
-
-#~ msgid "Default zoom level"
-#~ msgstr "기본 줌 레벨"
-
-#~ msgid "Zoom in"
-#~ msgstr "확대"
-
-#~ msgid "Follow System Style"
-#~ msgstr "시스템 스타일 따르기"
-
-#~ msgid "High Contrast"
-#~ msgstr "고 대비"
-
-#~ msgid "Solarized Light"
-#~ msgstr "솔라 라이트"
-
-#~ msgid "Custom"
-#~ msgstr "사용자 설정"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "자연 복사/붙여넣기"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr "바로 가기에는 Shift가 필요하지 않습니다. CLI 앱을 방해할 수 있음"
 
 #~ msgid "Show help"
 #~ msgstr "도움말 보기"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2020-11-06 13:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/terminal/"
@@ -148,6 +148,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Scuro"
 
@@ -337,6 +338,54 @@ msgstr "Risultato successivo"
 msgid "Cyclic search"
 msgstr "Ricerca ciclica"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Riduci ingrandimento"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Livello di ingrandimento predefinito"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Aumenta ingrandimento"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Contrasto elevato"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarizzato chiaro"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Copia e incolla naturale"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Le scorciatoie non richiedono il tasto Maiusc.\n"
+"Ciò potrebbe interferire con le applicazioni a riga di comando."
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminale"
@@ -351,29 +400,6 @@ msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Apri una nuova scheda del terminale"
-
-#~ msgid "Zoom out"
-#~ msgstr "Riduci ingrandimento"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Livello di ingrandimento predefinito"
-
-#~ msgid "Zoom in"
-#~ msgstr "Aumenta ingrandimento"
-
-#~ msgid "High Contrast"
-#~ msgstr "Contrasto elevato"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarizzato chiaro"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Copia e incolla naturale"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Le scorciatoie non richiedono il tasto Maiusc.\n"
-#~ "Ciò potrebbe interferire con le applicazioni a riga di comando."
 
 #~ msgid "Show help"
 #~ msgstr "Mostra aiuto"

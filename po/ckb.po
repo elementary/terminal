@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2022-09-21 21:57+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -147,6 +147,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "تاریک"
 
@@ -333,6 +334,52 @@ msgstr "ئەنجامی دواتر"
 msgid "Cyclic search"
 msgstr "گەڕانی خولیی"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "بچووکردنەوە"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "ئاستی بنەڕەتی زووم"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "گەورەکردن"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "هەڵگرتنی ستایلی سیستەم"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "کۆنتراستی بەرز"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "ڕووناکی سۆلەرایزد"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "تایبەت"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "کۆپی/پەیستی سروشتی"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "قەتبڕەکان پێویستیان بە شفت نییە، لەوەیە لەگەڵ ئەپەکانی CLI کارلێك بکەن"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "تێرمیناڵ"
@@ -347,34 +394,6 @@ msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی �
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "تابێکی نوێ بکەوە"
-
-#~ msgid "Zoom out"
-#~ msgstr "بچووکردنەوە"
-
-#~ msgid "Default zoom level"
-#~ msgstr "ئاستی بنەڕەتی زووم"
-
-#~ msgid "Zoom in"
-#~ msgstr "گەورەکردن"
-
-#~ msgid "Follow System Style"
-#~ msgstr "هەڵگرتنی ستایلی سیستەم"
-
-#~ msgid "High Contrast"
-#~ msgstr "کۆنتراستی بەرز"
-
-#~ msgid "Solarized Light"
-#~ msgstr "ڕووناکی سۆلەرایزد"
-
-#~ msgid "Custom"
-#~ msgstr "تایبەت"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "کۆپی/پەیستی سروشتی"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "قەتبڕەکان پێویستیان بە شفت نییە، لەوەیە لەگەڵ ئەپەکانی CLI کارلێك بکەن"
 
 #~ msgid "Show help"
 #~ msgstr "پشاندانی یارمەتی"

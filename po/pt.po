@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
@@ -136,6 +136,7 @@ msgid "Light"
 msgstr "Claro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Escuro"
 
@@ -323,6 +324,53 @@ msgstr "Resultado seguinte"
 msgid "Cyclic search"
 msgstr "Procura cíclica"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Reduzir zoom"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Nível de zoom padrão"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Ampliar"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "Seguir o estilo do sistema"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Alto contraste"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarizado claro"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "Personalizado"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Copiar/Colar natural"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Os atalhos não necessitam de Shift; podem interferir com as aplicações da CLI"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
@@ -337,35 +385,6 @@ msgstr "O texto colado pode estar a tentar obter acesso administrativo"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Abrir um novo separador de terminal"
-
-#~ msgid "Zoom out"
-#~ msgstr "Reduzir zoom"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Nível de zoom padrão"
-
-#~ msgid "Zoom in"
-#~ msgstr "Ampliar"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Seguir o estilo do sistema"
-
-#~ msgid "High Contrast"
-#~ msgstr "Alto contraste"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarizado claro"
-
-#~ msgid "Custom"
-#~ msgstr "Personalizado"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Copiar/Colar natural"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Os atalhos não necessitam de Shift; podem interferir com as aplicações da "
-#~ "CLI"
 
 #~ msgid "Show help"
 #~ msgstr "Mostrar ajuda"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2019-07-22 08:24+0000\n"
 "Last-Translator: Christopher Griffiths <chris@cgriff.co.uk>\n"
 "Language-Team: Welsh <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -144,6 +144,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr ""
 
@@ -333,6 +334,53 @@ msgstr "Canlyniad nesaf"
 msgid "Cyclic search"
 msgstr "Chwilio cylchol"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Chwyddo allan"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Lefel chwyddo rhagosodedig"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Chwyddo i mewn"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Cyferbynnedd Uchel"
+
+#: src/Widgets/SettingsPopover.vala:96
+#, fuzzy
+msgid "Solarized Light"
+msgstr "Golau wedi'i Heulo"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terfynell"
@@ -349,22 +397,6 @@ msgstr ""
 #~| msgid "Open a new window"
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Agor ffenestr newydd"
-
-#~ msgid "Zoom out"
-#~ msgstr "Chwyddo allan"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Lefel chwyddo rhagosodedig"
-
-#~ msgid "Zoom in"
-#~ msgstr "Chwyddo i mewn"
-
-#~ msgid "High Contrast"
-#~ msgstr "Cyferbynnedd Uchel"
-
-#, fuzzy
-#~ msgid "Solarized Light"
-#~ msgstr "Golau wedi'i Heulo"
 
 #~ msgid "Show help"
 #~ msgstr "Dangos cymorth"
