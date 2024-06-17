@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-16 05:15+0000\n"
-"PO-Revision-Date: 2024-01-23 11:11+0000\n"
+"PO-Revision-Date: 2024-06-17 11:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
 #: src/Application.vala:34
@@ -359,17 +359,19 @@ msgstr "Copiar i enganxar naturals"
 #: src/Widgets/SettingsPopover.vala:113
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
-"Les dreceres no necessiten Maj.; pot interferir en les aplicacions CLI."
+"Les dreceres no necessiten Maj.; això pot interferir en les aplicacions CLI."
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Event Alerts"
-msgstr ""
+msgstr "Alertes d'esdeveniments"
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Notificació d'entrada no vàlida o de múltiples complecions possibles ("
+"subjecte a Configuració del sistema → So)"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
