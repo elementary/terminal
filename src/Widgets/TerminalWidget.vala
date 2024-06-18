@@ -50,19 +50,18 @@ namespace Terminal {
         }
 
         private Gtk.Menu menu;
-        public Granite.Widgets.Tab tab;
+        public unowned Hdy.TabPage tab;
         public string? link_uri;
 
-        private string _tab_label;
+        // private string _tab_label;
         public string tab_label {
             get {
-                return _tab_label;
+                return tab.title;
             }
 
             set {
                 if (value != null) {
-                    _tab_label = value;
-                    tab.label = tab_label;
+                    tab.title = value;
                 }
             }
         }
@@ -300,6 +299,10 @@ namespace Terminal {
                 }
             });
             action_group.add_action (zoom_action);
+        }
+
+        ~TerminalWidget () {
+            critical ("Terminal Widget destroyed");
         }
 
         private void pointer_focus () {
@@ -560,17 +563,20 @@ namespace Terminal {
         }
 
         void on_child_exited () {
+warning ("TW on child exited");
             child_has_exited = true;
             last_key_was_return = true;
         }
 
         public void kill_fg () {
+warning ("TW kill fg");
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
                 Posix.kill (fg_pid, Posix.Signal.KILL);
         }
 
         public void term_ps () {
+warning ("TW term_ps");
             killed = true;
 
 #if HAS_LINUX
@@ -608,6 +614,7 @@ namespace Terminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
+warning ("active shell %s", dir);
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
