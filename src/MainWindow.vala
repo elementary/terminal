@@ -46,7 +46,6 @@ namespace Terminal {
             }
         }
 
-        private bool on_drag = false;
         private Gtk.EventControllerKey key_controller;
         private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
@@ -368,10 +367,6 @@ namespace Terminal {
                 });
             });
 
-            //TODO Implement DnD
-            // notebook.get_child ().drag_begin.connect (on_drag_begin);
-            // notebook.get_child ().drag_end.connect (on_drag_end);
-
             // var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
             // notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
 
@@ -486,8 +481,8 @@ namespace Terminal {
         }
 
         private void on_tab_removed (Hdy.TabPage tab) {
-            if (!on_drag && notebook.n_pages == 0) {
-                // Close window when last tab removed
+            if (notebook.n_pages == 0) {
+                // Close window when last tab removed (Note: cannot drag last tab out of window)
                 save_opened_terminals (true, true);
                 destroy ();
             } else {
