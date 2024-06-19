@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-16 05:15+0000\n"
-"PO-Revision-Date: 2024-02-08 09:11+0000\n"
+"PO-Revision-Date: 2024-06-20 14:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -365,13 +365,15 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Event Alerts"
-msgstr ""
+msgstr "Alertes d'évènement"
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Notifier en cas de saisie non valide ou de complétion multiple possible ("
+"sous réserve de Paramètres du système → Son)"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
