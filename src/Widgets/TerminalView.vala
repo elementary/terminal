@@ -104,8 +104,6 @@ public class Terminal.TerminalView : Gtk.Box {
 
         // update_inline_tab_colors ();
         
-        // Application.settings.changed["style-scheme"].connect (update_inline_tab_colors);
-        // Application.settings.changed["follow-system-style"].connect (update_inline_tab_colors);
         // var granite_settings = Granite.Settings.get_default ();
         // granite_settings.notify["prefers-color-scheme"].connect (update_inline_tab_colors);
 
@@ -118,45 +116,10 @@ public class Terminal.TerminalView : Gtk.Box {
         add (tab_view);
     }
 
-    // private void update_inline_tab_colors () {
-        // var style_scheme = "";
-        // if (Application.settings.get_boolean ("follow-system-style")) {
-        //     var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-        //     if (system_prefers_dark) {
-        //         style_scheme = "elementary-dark";
-        //     } else {
-        //         style_scheme = "elementary-light";
-        //     }
-        // } else {
-        //     style_scheme = Application.settings.get_string ("style-scheme");
-        // }
-
-        // var sssm = Gtk.SourceStyleSchemeManager.get_default ();
-        // if (style_scheme in sssm.scheme_ids) {
-        //     var theme = sssm.get_scheme (style_scheme);
-        //     var text_color_data = theme.get_style ("text");
-
-        //     // Default gtksourceview background color is white
-        //     var color = "#FFFFFF";
-        //     if (text_color_data != null) {
-        //         // If the current style has a background color, use that
-        //         color = text_color_data.background;
-        //     }
-
-        //     var define = "@define-color tab_base_color %s;".printf (color);
-        //     try {
-        //         style_provider.load_from_data (define);
-        //     } catch (Error e) {
-        //         critical ("Unable to set inline tab styling, going back to classic notebook tabs");
-        //     }
-        // }
-    // }
-
     public void make_restorable (string path) {
         if (tab_history_button.menu_model == null) {
             tab_history_button.menu_model = new Menu ();
         }
-
 
         var menu = (Menu) tab_history_button.menu_model;
         int position_in_menu = -1;

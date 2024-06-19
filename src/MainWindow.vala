@@ -356,7 +356,7 @@ namespace Terminal {
             notebook.tab_view.notify["selected-page"].connect (() => {
                 var term = get_term_widget (notebook.tab_view.selected_page);
                 if (term == null) {
-                    critical ("No terminal in selected page");
+                    // Happens on closing window - ignore
                     return;
                 }
 
