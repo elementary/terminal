@@ -35,7 +35,6 @@ namespace Terminal {
 
         GLib.Pid child_pid;
         private MainWindow _window;
-
         public MainWindow window {
             get {
                 return _window;
@@ -50,17 +49,18 @@ namespace Terminal {
         }
 
         private Gtk.Menu menu;
-        public unowned Hdy.TabPage tab;
+        // There may be no associated tab while made restorable
+        public Hdy.TabPage tab { get; set; }
         public string? link_uri;
 
         // private string _tab_label;
         public string tab_label {
             get {
-                return tab.title;
+                return tab != null ? tab.title : "";
             }
 
             set {
-                if (value != null) {
+                            if (value != null && tab != null) {
                     tab.title = value;
                 }
             }
@@ -158,7 +158,7 @@ namespace Terminal {
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
-        public signal void cwd_changed ();
+        public signal void cwd_changed (string cwd);
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -563,20 +563,17 @@ namespace Terminal {
         }
 
         void on_child_exited () {
-warning ("TW on child exited");
             child_has_exited = true;
             last_key_was_return = true;
         }
 
         public void kill_fg () {
-warning ("TW kill fg");
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
                 Posix.kill (fg_pid, Posix.Signal.KILL);
         }
 
         public void term_ps () {
-warning ("TW term_ps");
             killed = true;
 
 #if HAS_LINUX
@@ -614,7 +611,6 @@ warning ("TW term_ps");
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-warning ("active shell %s", dir);
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
@@ -862,7 +858,7 @@ warning ("active shell %s", dir);
             var cwd = get_shell_location ();
             if (cwd != current_working_directory) {
                 current_working_directory = cwd;
-                cwd_changed ();
+                cwd_changed (cwd);
             }
         }
     }

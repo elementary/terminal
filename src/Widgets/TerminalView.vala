@@ -28,7 +28,6 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Hdy.TabPage page);
-    public signal void restorable_terminal_dropped (string id);
     
     public uint n_pages {
         get {
@@ -49,7 +48,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public unowned MainWindow main_window { get; construct; }
     public Hdy.TabView tab_view { get; construct; }
     private Hdy.TabBar tab_bar;
-    private weak Hdy.TabPage? tab_menu_target = null;
+    public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
 
@@ -153,14 +152,10 @@ public class Terminal.TerminalView : Gtk.Box {
         // }
     // }
 
-    public void make_restorable (TerminalWidget terminal) {
-warning ("TV make restorable %s, %s", terminal.current_working_directory, terminal.terminal_id);
+    public void make_restorable (string path) {
         if (tab_history_button.menu_model == null) {
             tab_history_button.menu_model = new Menu ();
         }
-
-        var path = terminal.current_working_directory;
-        var id = terminal.terminal_id;
 
 
         var menu = (Menu) tab_history_button.menu_model;
@@ -169,7 +164,7 @@ warning ("TV make restorable %s, %s", terminal.current_working_directory, termin
         int i;
         for (i = 0; i < menu.get_n_items (); i++) {
             if (path == menu.get_item_attribute_value (
-                i, Menu.ATTRIBUTE_LABEL, VariantType.STRING).get_string ()
+                i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()
             ) {
                 path_in_menu = true;
                 position_in_menu = i;
@@ -179,27 +174,17 @@ warning ("TV make restorable %s, %s", terminal.current_working_directory, termin
 
         if (path_in_menu) {
 warning ("path in menu true %s ", path);
-            var dropped_id = menu.get_item_attribute_value (
-                i, Menu.ATTRIBUTE_TARGET, VariantType.STRING
-            ).get_string ();
-            
-            restorable_terminal_dropped (dropped_id);
             menu.remove (position_in_menu);
         }
 
         if (menu.get_n_items () >= TAB_HISTORY_MAX_ITEMS) {
 warning ("too many");
-            var dropped_id = menu.get_item_attribute_value (
-                TAB_HISTORY_MAX_ITEMS - 1, Menu.ATTRIBUTE_TARGET, VariantType.STRING
-            ).get_string ();
-            
-            restorable_terminal_dropped (dropped_id);
             menu.remove (TAB_HISTORY_MAX_ITEMS - 1);
         }
 
         menu.prepend (
             path,
-            "%s::%s".printf (MainWindow.ACTION_PREFIX + MainWindow.ACTION_RESTORE_CLOSED_TAB, id)
+            "%s::%s".printf (MainWindow.ACTION_PREFIX + MainWindow.ACTION_RESTORE_CLOSED_TAB, path)
         );
     }
 

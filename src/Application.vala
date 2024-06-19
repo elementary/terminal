@@ -146,12 +146,7 @@ public class Terminal.Application : Gtk.Application {
                     break;
                 }
 
-                foreach (var term in window.terminals) {
-                    if (term.terminal_id == id) {
-                        terminal = term;
-                        break;
-                    }
-                }
+                terminal = window.get_terminal (id);
             }
 
             if (terminal == null) {
@@ -259,7 +254,7 @@ public class Terminal.Application : Gtk.Application {
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else if (new_tab || window.terminals.is_empty ()) {
+        } else if (new_tab || window.notebook.n_pages == 0) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
