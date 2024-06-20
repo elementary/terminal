@@ -75,6 +75,7 @@ namespace Terminal {
         public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
         public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
         public const string ACTION_TAB_ACTIVE_SHELL = "action-tab_active_shell";
+        public const string ACTION_TAB_RELOAD = "action-tab_reload";
         public const string ACTION_RESTORE_CLOSED_TAB = "action-restore-closed-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_NEXT_TAB = "action-next-tab";
@@ -97,6 +98,7 @@ namespace Terminal {
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_NEW_TAB_AT, action_new_tab_at, "s" },
+            { ACTION_TAB_RELOAD, action_tab_reload},
             { ACTION_TAB_ACTIVE_SHELL, action_tab_active_shell, "s" },
             { ACTION_RESTORE_CLOSED_TAB, action_restore_closed_tab, "s" },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
@@ -123,6 +125,7 @@ namespace Terminal {
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
+            action_accelerators[ACTION_TAB_RELOAD] = "<Control><Shift>r";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
@@ -955,6 +958,20 @@ namespace Terminal {
 
             // Clear screen
             term.feed_child ("clear\n".data);
+        }
+
+        private void action_tab_reload () {
+            TerminalWidget? term;
+            var target = notebook.tab_menu_target;
+            if (target != null) {
+                term = get_term_widget (target);
+            } else {
+                term = get_term_widget (notebook.tab_view.selected_page);
+            }
+
+            if (term != null) {
+                term.reload ();
+            }
         }
 
         private void action_duplicate_tab () requires (current_terminal != null) {

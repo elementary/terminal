@@ -154,10 +154,6 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.selected_page = target;
     }
 
-    public void duplicate_tab () {
-
-    }
-
     public void transfer_tab_to_new_window () {
         var target = tab_menu_target ?? tab_view.selected_page;
 
@@ -208,8 +204,12 @@ public class Terminal.TerminalView : Gtk.Box {
         open_tab_section.append (_("Open in New Window"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW);
         open_tab_section.append (_("Duplicate Tab"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_DUPLICATE_TAB);
 
+        var reload_section = new Menu ();
+        reload_section.append (_("ReLoad"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
+
         menu.append_section (null, open_tab_section);
         menu.append_section (null, close_tab_section);
+        menu.append_section (null, reload_section);
         return menu;
     }
 
