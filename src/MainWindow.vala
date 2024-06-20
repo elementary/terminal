@@ -1091,8 +1091,7 @@ namespace Terminal {
 
                     if (term2.terminal_id != term.terminal_id &&
                         term2_name == term_label &&
-                        term2_path != term_path)
-                    {
+                        term2_path != term_path) {
 
                         term2.tab_label = disambiguate_label (term2_path, term_path);
                         term.tab_label = disambiguate_label (term_path, term2_path);
