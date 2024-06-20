@@ -947,9 +947,7 @@ namespace Terminal {
             }
 
             // Clear any partially entered command
-            //TODO Find a better way
-            var bs_string = string.nfill (1000, '\b');
-            term.feed_child (bs_string.data);
+            term.reload ();
 
             // Change to requested directory
             var command = "cd '" + path + "'\n";
