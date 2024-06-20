@@ -73,6 +73,8 @@ namespace Terminal {
         public const string ACTION_CLOSE_OTHER_TABS = "action_close_other_tabs";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
+        public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
+        public const string ACTION_TAB_ACTIVE_SHELL = "action-tab_active_shell";
         public const string ACTION_RESTORE_CLOSED_TAB = "action-restore-closed-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_NEXT_TAB = "action-next-tab";
@@ -94,6 +96,8 @@ namespace Terminal {
             { ACTION_CLOSE_OTHER_TABS, action_close_other_tabs },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_NEW_TAB_AT, action_new_tab_at, "s" },
+            { ACTION_TAB_ACTIVE_SHELL, action_tab_active_shell, "s" },
             { ACTION_RESTORE_CLOSED_TAB, action_restore_closed_tab, "s" },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_NEXT_TAB, action_next_tab },
@@ -927,6 +931,32 @@ namespace Terminal {
             } else {
                 new_tab (Environment.get_home_dir ());
             }
+        }
+
+        private void action_new_tab_at (GLib.SimpleAction action, GLib.Variant? param) {
+            var uri = param.get_string ();
+            new_tab (uri);
+        }
+
+        private void action_tab_active_shell (GLib.SimpleAction action, GLib.Variant? param) {
+            var path = param.get_string ();
+            var term = current_terminal;
+            // Ignore if foreground process running, for now.
+            if (term.has_foreground_process ()) {
+                return;
+            }
+
+            // Clear any partially entered command
+            //TODO Find a better way
+            var bs_string = string.nfill (1000, '\b');
+            term.feed_child (bs_string.data);
+
+            // Change to requested directory
+            var command = "cd '" + path + "'\n";
+            term.feed_child (command.data);
+
+            // Clear screen
+            term.feed_child ("clear\n".data);
         }
 
         private void action_duplicate_tab () requires (current_terminal != null) {

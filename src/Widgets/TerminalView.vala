@@ -1,23 +1,7 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/***
-  BEGIN LICENSE
 
-  Copyright (C) 2013 Mario Guerriero <mario@elementaryos.org>
-                2024 Colin Kiama <colinkiama@gmail.com>
-  This program is free software: you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License version 3, as published
-  by the Free Software Foundation.
-
-  This program is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranties of
-  MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
-  PURPOSE.  See the GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License along
-  with this program.  If not, see <http://www.gnu.org/licenses/>
-
-  END LICENSE
-***/
+/* Copyright 2024 elementary, Inc. <https://elementary.io>
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
 
 public class Terminal.TerminalView : Gtk.Box {
     const int TAB_HISTORY_MAX_ITEMS = 20;
@@ -28,7 +12,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Hdy.TabPage page);
-    
+
     public uint n_pages {
         get {
             return tab_view.n_pages;
@@ -39,7 +23,7 @@ public class Terminal.TerminalView : Gtk.Box {
         get {
             return tab_view.selected_page;
         }
-        
+
         set {
             tab_view.selected_page = value;
         }
@@ -102,15 +86,14 @@ public class Terminal.TerminalView : Gtk.Box {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        // update_inline_tab_colors ();
-        
-        // var granite_settings = Granite.Settings.get_default ();
-        // granite_settings.notify["prefers-color-scheme"].connect (update_inline_tab_colors);
+        // Handle Drag-and-drop of directory files onto add button to open in new tab
+        Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
+        Gtk.drag_dest_set (new_tab_button, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
+        new_tab_button.drag_data_received.connect (drag_received);
 
-        // Handle Drag-and-drop of files onto add-tab button to create document
-        // Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
-        // Gtk.drag_dest_set (tab_bar, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
-        // tab_bar.drag_data_received.connect (drag_received);
+        // Handle Drag-and-drop of directory files onto tab to open in that tab
+        tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
+        tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
         add (tab_bar);
         add (tab_view);
@@ -136,12 +119,10 @@ public class Terminal.TerminalView : Gtk.Box {
         }
 
         if (path_in_menu) {
-warning ("path in menu true %s ", path);
             menu.remove (position_in_menu);
         }
 
         if (menu.get_n_items () >= TAB_HISTORY_MAX_ITEMS) {
-warning ("too many");
             menu.remove (TAB_HISTORY_MAX_ITEMS - 1);
         }
 
@@ -230,5 +211,77 @@ warning ("too many");
         menu.append_section (null, open_tab_section);
         menu.append_section (null, close_tab_section);
         return menu;
+    }
+
+    private void drag_received (Gtk.Widget w,
+                                Gdk.DragContext ctx,
+                                int x,
+                                int y,
+                                Gtk.SelectionData data,
+                                uint info,
+                                uint time) {
+
+        if (info == TargetType.URI_LIST) {
+            var uris = data.get_uris ();
+            var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
+            // ACTION_NEW_TAB_AT only works with local paths to folders
+            foreach (var uri in uris) {
+                var file = GLib.File.new_for_uri (uri);
+                var scheme = file.get_uri_scheme ();
+                if (scheme != "file" && scheme != "") {
+                    return;
+                }
+
+                var type = file.query_file_type (NONE);
+                string path;
+                if (type == DIRECTORY) {
+                    path = file.get_path ();
+                } else if (type == REGULAR) {
+                    path = file.get_parent ().get_path ();
+                } else {
+                    continue;
+                }
+
+                new_tab_action.activate (path);
+            }
+        }
+
+        Gtk.drag_finish (ctx, true, false, time);
+    }
+
+    private void on_extra_drag_data_received (
+        Hdy.TabBar tab_bar,
+        Hdy.TabPage page,
+        Gdk.DragContext ctx,
+        Gtk.SelectionData data,
+        uint info,
+        uint time) {
+
+        if (info == TargetType.URI_LIST) {
+            var uris = data.get_uris ();
+            var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
+            // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
+            foreach (var uri in uris) {
+                var file = GLib.File.new_for_uri (uri);
+                var scheme = file.get_uri_scheme ();
+                if (scheme != "file" && scheme != "") {
+                    return;
+                }
+
+                var type = file.query_file_type (NONE);
+                string path;
+                if (type == DIRECTORY) {
+                    path = file.get_path ();
+                } else if (type == REGULAR) {
+                    path = file.get_parent ().get_path ();
+                } else {
+                    continue;
+                }
+
+                active_shell_action.activate (path);
+            }
+        }
+
+        Gtk.drag_finish (ctx, true, false, time);
     }
 }
