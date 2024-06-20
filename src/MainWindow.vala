@@ -374,9 +374,6 @@ namespace Terminal {
                 });
             });
 
-            // var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
-            // notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
-
             var grid = new Gtk.Grid ();
             grid.attach (header, 0, 0);
             grid.attach (notebook, 0, 1);
@@ -483,7 +480,6 @@ namespace Terminal {
         private void on_tab_added (Hdy.TabPage tab, int pos) {
             var term = get_term_widget (tab);
             term.window = this;
-            // terminals.append (term);
             save_opened_terminals (true, true);
         }
 
@@ -785,7 +781,6 @@ namespace Terminal {
             TerminalWidget term,
             int pos
         ) {
-            assert (term != null && term is TerminalWidget);
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
             var tab = notebook.tab_view.insert (sw, pos);
@@ -795,21 +790,6 @@ namespace Terminal {
             term.tab = tab;
 
             tab.child.show_all ();
-            // /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
-            //  * automatically changing the tooltip to be the same as the label. */
-            // term.tab.notify["label"].connect_after (() => {
-            //     term.tab.tooltip = term.current_working_directory;
-            // });
-            // tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
-
-            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
-             * there are multiple so we have to use the other constructor to specify it. */
-            // var reload_menu_item = new Gtk.MenuItem () {
-            //     child = new Granite.AccelLabel (_("Reload"), TerminalWidget.ACCELS_RELOAD[0]),
-            // };
-            // tab.menu.append (reload_menu_item);
-            // reload_menu_item.activate.connect (term.reload);
-            // tab.menu.show_all ();
             return tab;
         }
 
@@ -855,7 +835,6 @@ namespace Terminal {
                 if (term.has_foreground_process ()) {
                     var dialog = new ForegroundProcessDialog.before_close (this);
                     if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                    warning ("MW kill fg");
                         term.kill_fg ();
                         dialog.destroy ();
                     } else {
@@ -873,8 +852,6 @@ namespace Terminal {
 
             return false;
         }
-
-
 
         private void action_open_in_browser () requires (current_terminal != null) {
             get_current_selection_link_or_pwd ((clipboard, uri) => {

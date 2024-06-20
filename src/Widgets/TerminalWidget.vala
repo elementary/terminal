@@ -53,7 +53,6 @@ namespace Terminal {
         public Hdy.TabPage tab { get; set; }
         public string? link_uri;
 
-        // private string _tab_label;
         public string tab_label {
             get {
                 return tab != null ? tab.title : "";
@@ -299,10 +298,6 @@ namespace Terminal {
                 }
             });
             action_group.add_action (zoom_action);
-        }
-
-        ~TerminalWidget () {
-            critical ("Terminal Widget destroyed");
         }
 
         private void pointer_focus () {
