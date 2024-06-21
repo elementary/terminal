@@ -320,6 +320,7 @@ namespace Terminal {
                 decoration_layout = "close:",
                 decoration_layout_set = false
             };
+
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
@@ -327,7 +328,6 @@ namespace Terminal {
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
-
             header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new TerminalView (this);
@@ -374,12 +374,10 @@ namespace Terminal {
                 });
             });
 
-            var grid = new Gtk.Grid ();
-            grid.attach (header, 0, 0);
-            grid.attach (notebook, 0, 1);
-
-            get_style_context ().add_class ("terminal-window");
-            add (grid);
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            box.add (header);
+            box.add (notebook);
+            add (box);
 
             bind_property ("title", title_label, "label");
 
