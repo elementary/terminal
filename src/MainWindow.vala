@@ -60,12 +60,8 @@ namespace Terminal {
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
-        public TerminalWidget? current_terminal {
-             get {
-                return get_term_widget (notebook.selected_page);
-             }
-        }
 
+        public TerminalWidget? current_terminal { get; private set; default = null; }
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action-close-tab";
@@ -361,6 +357,7 @@ namespace Terminal {
 
             notebook.tab_view.notify["selected-page"].connect (() => {
                 var term = get_term_widget (notebook.tab_view.selected_page);
+                current_terminal = term;
                 if (term == null) {
                     // Happens on closing window - ignore
                     return;
