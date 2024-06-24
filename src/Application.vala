@@ -263,7 +263,6 @@ public class Terminal.Application : Gtk.Application {
         } else {
             window.present ();
         }
-
         return 0;
     }
 
@@ -275,7 +274,7 @@ public class Terminal.Application : Gtk.Application {
         base.dbus_unregister (connection, path);
     }
 
-    private void close () {
+    public void close () {
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
         }

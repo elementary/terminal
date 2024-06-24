@@ -230,6 +230,8 @@ namespace Terminal {
             if (recreate_tabs) {
                 open_tabs ();
             }
+
+            delete_event.connect (on_delete_event);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
@@ -691,7 +693,9 @@ namespace Terminal {
             string location,
             string? program = null,
             bool focus = true,
-            int pos = (int)notebook.n_pages) {
+            int pos = (int)notebook.n_pages
+        ) {
+
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -836,7 +840,7 @@ namespace Terminal {
             }
         }
 
-        protected override bool delete_event (Gdk.EventAny event) {
+        public bool on_delete_event () {
             //Avoid saved terminals being overwritten when tabs destroyed.
             notebook.tab_view.page_detached.disconnect (on_tab_removed);
             save_opened_terminals (true, true);
