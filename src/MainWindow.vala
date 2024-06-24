@@ -883,15 +883,15 @@ namespace Terminal {
         }
 
         private void action_close_tab () {
-            notebook.tab_view.close_page (notebook.selected_page);
+            notebook.close_tab ();
         }
 
         private void action_close_tabs_to_right () {
-            notebook.tab_view.close_pages_after (notebook.selected_page);
+            notebook.close_tabs_to_right ();
         }
 
         private void action_close_other_tabs () {
-            notebook.tab_view.close_other_pages (notebook.selected_page);
+            notebook.close_other_tabs ();
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {

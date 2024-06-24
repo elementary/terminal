@@ -132,6 +132,16 @@ public class Terminal.TerminalView : Gtk.Box {
         );
     }
 
+    public void close_tab () {
+        var target = tab_menu_target ?? tab_view.selected_page;
+
+        if (target == null) {
+            return;
+        }
+
+        tab_view.close_page (target);
+    }
+
     public void close_tabs_to_right () {
         var target = tab_menu_target ?? tab_view.selected_page;
 
