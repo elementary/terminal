@@ -376,7 +376,9 @@ namespace Terminal {
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (header);
             box.add (notebook);
+
             add (box);
+            get_style_context ().add_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
 
