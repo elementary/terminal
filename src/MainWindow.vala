@@ -348,6 +348,8 @@ namespace Terminal {
                     if (Application.settings.get_boolean ("save-exited-tabs")) {
                         make_restorable (term);
                     }
+
+                    disconnect_terminal_signals (term);
                 }
 
                 notebook.tab_view.close_page_finish (tab, confirmed);
@@ -744,30 +746,43 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
-            terminal_widget.child_exited.connect (() => {
-                if (!terminal_widget.killed) {
-                    if (program != null) {
-                        /* If a program was running, do not close the tab so that output of program
-                         * remains visible */
-                        terminal_widget.active_shell (location);
-                        /* Allow closing tab with "exit" */
-                        program = null;
-                    } else {
-                        if (terminal_widget.tab != null) {
-                            notebook.tab_view.close_page (terminal_widget.tab);
-                        }
-
-                        return;
-                    }
-                }
-            });
-
-            terminal_widget.notify["font-scale"].connect (() => save_opened_terminals (false, true));
-            terminal_widget.cwd_changed.connect (cwd_changed);
-
             check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
             return terminal_widget;
+        }
+
+        private void connect_terminal_signals (TerminalWidget terminal_widget) {
+            terminal_widget.child_exited.connect (on_terminal_child_exited);
+            terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
+            terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
+        }
+
+        private void disconnect_terminal_signals (TerminalWidget terminal_widget) {
+            terminal_widget.child_exited.disconnect (on_terminal_child_exited);
+            terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
+            terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
+        }
+
+        private void on_terminal_child_exited (Vte.Terminal term, int status) {
+            var tw = (TerminalWidget)term;
+             if (!tw.killed) {
+                if (tw.program_string != null) {
+                    /* If a program was running, do not close the tab so that output of program
+                     * remains visible */
+                    tw.program_string = null;
+                    tw.active_shell (tw.current_working_directory);
+                } else {
+                    if (tw.tab != null) {
+                        notebook.tab_view.close_page (tw.tab);
+                    }
+
+                    return;
+                }
+            }
+        }
+
+        private void on_terminal_font_scale_changed () {
+            save_opened_terminals (false, true);
         }
 
         private Hdy.TabPage append_tab (
@@ -1098,7 +1113,7 @@ namespace Terminal {
             return;
         }
 
-        private void cwd_changed (TerminalWidget src, string cwd) {
+        private void on_terminal_cwd_changed (TerminalWidget src, string cwd) {
             src.tab.tooltip = cwd;
             check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);

@@ -26,31 +26,29 @@ namespace Terminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public Terminal.Application app;
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
+        public string? program_string { get; set; default = null; }
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
-        private MainWindow _window;
-        public MainWindow window {
-            get {
-                return _window;
-            }
 
-            set {
-                this._window = value;
-                this.app = value.app;
-                this.menu = value.menu;
-                this.menu.show_all ();
+        private Terminal.Application app {
+            get {
+                return window.app;
             }
         }
 
-        private Gtk.Menu menu;
+        private Gtk.Menu menu {
+            get {
+                return window.menu;
+            }
+        }
+
         // There may be no associated tab while made restorable
-        public Hdy.TabPage tab { get; set; }
+        public unowned Hdy.TabPage tab;
         public string? link_uri;
 
         public string tab_label {
