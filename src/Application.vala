@@ -163,11 +163,11 @@ public class Terminal.Application : Gtk.Application {
                 process_icon = new ThemedIcon ("process-error-symbolic");
             }
 
-            if (terminal != terminal.window.current_terminal) {
+            if (terminal != terminal.main_window.current_terminal) {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(Gdk.WindowState.FOCUSED in terminal.window.get_window ().get_state ())) {
+            if (!(Gdk.WindowState.FOCUSED in terminal.main_window.get_window ().get_state ())) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);

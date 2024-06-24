@@ -476,7 +476,7 @@ namespace Terminal {
 
         private void on_tab_added (Hdy.TabPage tab, int pos) {
             var term = get_term_widget (tab);
-            term.window = this;
+            term.main_window = this;
             save_opened_terminals (true, true);
         }
 
@@ -509,9 +509,6 @@ namespace Terminal {
         }
 
         private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
-            var terminal_widget = get_term_widget (tab);
-
-
             save_opened_terminals (true, true);
         }
 
@@ -748,6 +745,9 @@ namespace Terminal {
 
             check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
+
+            connect_terminal_signals (terminal_widget);
+
             return terminal_widget;
         }
 
@@ -910,9 +910,7 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            var path = param.get_string ();
-            var term = new_tab (path, null, true); //TODO Restore icon?
-
+            new_tab (param.get_string (), null, true); //TODO Restore icon?
         }
 
         private void action_new_tab () requires (current_terminal != null) {

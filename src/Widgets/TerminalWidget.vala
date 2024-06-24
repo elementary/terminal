@@ -35,15 +35,16 @@ namespace Terminal {
 
         GLib.Pid child_pid;
 
+        public unowned MainWindow main_window;
         private Terminal.Application app {
             get {
-                return window.app;
+                return main_window.app;
             }
         }
 
         private Gtk.Menu menu {
             get {
-                return window.menu;
+                return main_window.menu;
             }
         }
 
@@ -164,7 +165,7 @@ namespace Terminal {
 
             init_complete = false;
 
-            window = parent_window;
+            main_window = parent_window;
             child_has_exited = false;
             killed = false;
 
@@ -314,7 +315,7 @@ namespace Terminal {
                 }
 
                 Gdk.Rectangle rect = { (int) x, (int) y };
-                window.update_context_menu ();
+                main_window.update_context_menu ();
                 setup_menu ();
 
                 menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
@@ -330,7 +331,7 @@ namespace Terminal {
                     link_uri = get_link (gesture.get_last_event (null));
 
                     if (link_uri != null && !get_has_selection ()) {
-                       window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                       main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                     }
                 } else {
                     allow_hyperlink = true;
@@ -386,7 +387,7 @@ namespace Terminal {
                         (int) cell_height
                     };
 
-                    window.update_context_menu ();
+                    main_window.update_context_menu ();
                     setup_menu ();
 
                     // Popup context menu below cursor position
