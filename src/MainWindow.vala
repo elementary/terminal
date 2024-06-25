@@ -367,6 +367,9 @@ namespace Terminal {
                     return;
                 }
 
+
+                title = term.window_title != "" ? term.window_title
+                                                : term.current_working_directory;
                 term.grab_focus ();
             });
 
@@ -756,12 +759,14 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
+            terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
         private void disconnect_terminal_signals (TerminalWidget terminal_widget) {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
+            terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
         private void on_terminal_child_exited (Vte.Terminal term, int status) {
@@ -788,6 +793,10 @@ namespace Terminal {
 
         private void on_terminal_font_scale_changed () {
             save_opened_terminals (false, true);
+        }
+
+        private void on_terminal_window_title_changed () {
+            title = current_terminal.window_title;
         }
 
         private Hdy.TabPage append_tab (
@@ -1112,7 +1121,6 @@ namespace Terminal {
                 }
             }
 
-            title = current_terminal.current_working_directory;
             return;
         }
 
