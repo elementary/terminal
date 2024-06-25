@@ -174,13 +174,13 @@ namespace Terminal.Test.Application {
         GLib.Test.add_func ("/application/command-line/execute", () => {
             string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
-            // valid
-            // option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
-            //     unowned var window = (MainWindow) application.active_window;
-            //     assert_nonnull (window);
-            //     var n_tabs = (int) window.notebook.n_pages;
-            //     assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
-            // });
+            //valid
+            option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
+                unowned var window = (MainWindow) application.active_window;
+                assert_nonnull (window);
+                var n_tabs = (int) window.notebook.n_pages;
+                assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
+            });
 
             // invalid
             option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {

@@ -635,9 +635,10 @@ namespace Terminal {
             check_cwd_changed ();
         }
 
-        public void run_program (string program_string, string? working_directory) {
+        public void run_program (string _program_string, string? working_directory) {
             try {
                 string[]? program_with_args = null;
+                this.program_string = _program_string;
                 Shell.parse_argv (program_string, out program_with_args);
 
                 this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
