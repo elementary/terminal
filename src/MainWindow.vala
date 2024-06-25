@@ -771,6 +771,10 @@ namespace Terminal {
 
         private void on_terminal_child_exited (Vte.Terminal term, int status) {
             var tw = (TerminalWidget)term;
+            if (tw.tab.child != tw.parent) {
+                // TabView already removed tab - ignore signal
+                return;
+            }
              if (!tw.killed) {
                 if (tw.program_string != null) {
                     /* If a program was running, do not close the tab so that output of program
