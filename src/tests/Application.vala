@@ -24,7 +24,6 @@ namespace Terminal.Test.Application {
     private void iterate_context () {
         unowned var context = MainContext.default ();
         bool done = false;
-
         Timeout.add (200, () => {
             done = true;
             context.wakeup ();
@@ -79,17 +78,16 @@ namespace Terminal.Test.Application {
     private void action (string name, Variant? @value, ActivateCallback callback) {
         ulong oneshot = 0;
         setup ();
-
         oneshot = application.command_line.connect ((nill) => {
             application.disconnect (oneshot);
             application.command_line (nill);
-
             assert_true (application.has_action (name));
             application.activate_action (name, @value);
-
             iterate_context ();
             callback ();
-            application.quit ();
+
+            application.close ();
+
             return 0;
         });
 
@@ -214,11 +212,11 @@ namespace Terminal.Test.Application {
             });
         });
 
-        // GLib.Test.add_func ("/application/action/quit", () => {
-        //     action ("quit", null, () => {
-        //         assert_null (application.active_window);
-        //     });
-        // });
+        GLib.Test.add_func ("/application/action/quit", () => {
+            action ("quit", null, () => {
+                assert_null (application.active_window);
+            });
+        });
 
         return GLib.Test.run ();
     }
