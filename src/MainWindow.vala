@@ -367,12 +367,7 @@ namespace Terminal {
                     return;
                 }
 
-                Idle.add (() => {
-                    title = term.current_working_directory;
-                    term.tab.tooltip = title;
-                    term.grab_focus ();
-                    return Source.REMOVE;
-                });
+                term.grab_focus ();
             });
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);

@@ -853,6 +853,7 @@ namespace Terminal {
             var cwd = get_shell_location ();
             if (cwd != current_working_directory) {
                 current_working_directory = cwd;
+                tab.tooltip = current_working_directory;
                 cwd_changed (cwd);
             }
         }
