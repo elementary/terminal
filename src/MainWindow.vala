@@ -20,7 +20,7 @@ namespace Terminal {
     public class MainWindow : Hdy.Window {
         private Pango.FontDescription term_font;
         private Hdy.HeaderBar header;
-        private Granite.Widgets.DynamicNotebook notebook;
+        public TerminalView notebook { get; private set construct; }
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
@@ -30,7 +30,6 @@ namespace Terminal {
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private Granite.AccelLabel open_in_browser_menuitem_label;
 
-        private HashTable<string, TerminalWidget> restorable_terminals;
         private bool is_fullscreen {
             get {
                 return header.decoration_layout_set;
@@ -46,7 +45,6 @@ namespace Terminal {
                 }
             }
         }
-        private bool on_drag = false;
 
         private Gtk.EventControllerKey key_controller;
         private uint timer_window_state_change = 0;
@@ -62,35 +60,49 @@ namespace Terminal {
         public Gtk.Menu menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
-        public TerminalWidget current_terminal { get; private set; default = null; }
 
-        public GLib.List <TerminalWidget> terminals = new GLib.List <TerminalWidget> ();
+        public TerminalWidget? current_terminal { get; private set; default = null; }
 
         public const string ACTION_PREFIX = "win.";
         public const string ACTION_CLOSE_TAB = "action-close-tab";
+        public const string ACTION_CLOSE_TABS_TO_RIGHT = "action_close_tabs_to_right";
+        public const string ACTION_CLOSE_OTHER_TABS = "action_close_other_tabs";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
-        public const string ACTION_NEW_TAB = "action-new-tab";
+        public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
+        public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
+        public const string ACTION_TAB_ACTIVE_SHELL = "action-tab_active_shell";
+        public const string ACTION_TAB_RELOAD = "action-tab_reload";
+        public const string ACTION_RESTORE_CLOSED_TAB = "action-restore-closed-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
         public const string ACTION_NEXT_TAB = "action-next-tab";
         public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
         public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
         public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
+        public const string ACTION_MOVE_TAB_TO_NEW_WINDOW = "action-move-tab-to-new-window";
         public const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
 
+
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
         private const ActionEntry[] ACTION_ENTRIES = {
             { ACTION_CLOSE_TAB, action_close_tab },
+            { ACTION_CLOSE_TABS_TO_RIGHT, action_close_tabs_to_right },
+            { ACTION_CLOSE_OTHER_TABS, action_close_other_tabs },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
+            { ACTION_NEW_TAB_AT, action_new_tab_at, "s" },
+            { ACTION_TAB_RELOAD, action_tab_reload},
+            { ACTION_TAB_ACTIVE_SHELL, action_tab_active_shell, "s" },
+            { ACTION_RESTORE_CLOSED_TAB, action_restore_closed_tab, "s" },
             { ACTION_DUPLICATE_TAB, action_duplicate_tab },
             { ACTION_NEXT_TAB, action_next_tab },
             { ACTION_PREVIOUS_TAB, action_previous_tab },
             { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
             { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
+            { ACTION_MOVE_TAB_TO_NEW_WINDOW, action_move_tab_to_new_window},
             { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
@@ -109,6 +121,7 @@ namespace Terminal {
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
+            action_accelerators[ACTION_TAB_RELOAD] = "<Control><Shift>r";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Tab";
             action_accelerators[ACTION_NEXT_TAB] = "<Control>Page_Down";
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control><Shift>Tab";
@@ -211,14 +224,14 @@ namespace Terminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            restorable_terminals = new HashTable<string, TerminalWidget> (str_hash, str_equal);
-
             restore_saved_state ();
             show_all ();
 
             if (recreate_tabs) {
                 open_tabs ();
             }
+
+            delete_event.connect (on_delete_event);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
@@ -226,7 +239,7 @@ namespace Terminal {
             /* Do not add a new tab if location is already open in existing tab */
             string? location = null;
             if (directory == null || directory == "") {
-                if (notebook.tabs.first () == null || command != null || create_new_tab) { //Ensure at least one tab
+                if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
                 }
 
@@ -238,14 +251,14 @@ namespace Terminal {
             /* We can match existing tabs only if there is no command and create_new_tab == false */
             if (command == null && !create_new_tab) {
                 var file = File.new_for_commandline_arg (location);
-                foreach (Granite.Widgets.Tab tab in notebook.tabs) {
+                for (int pos = 0; pos < notebook.n_pages; pos++) {
+                    var tab = notebook.tab_view.get_nth_page (pos);
                     var terminal_widget = get_term_widget (tab);
                     var tab_path = terminal_widget.get_shell_location ();
                     /* Detect equialent paths */
                     if (file.equal (File.new_for_path (tab_path))) {
                         /* Just focus the duplicate tab instead */
-                        notebook.current = tab;
-                        terminal_widget.grab_focus ();
+                        notebook.selected_page = tab;
                         return; /* Duplicate found, abandon adding tab */
                     }
                 }
@@ -305,6 +318,7 @@ namespace Terminal {
                 decoration_layout = "close:",
                 decoration_layout_set = false
             };
+
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
@@ -312,40 +326,59 @@ namespace Terminal {
 
             unowned Gtk.StyleContext header_context = header.get_style_context ();
             header_context.add_class ("default-decoration");
-
             header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
-            notebook = new Granite.Widgets.DynamicNotebook.with_accellabels (
-                new Granite.AccelLabel.from_action_name (_("New Tab"), ACTION_PREFIX + ACTION_NEW_TAB)
-            ) {
-                allow_new_window = true,
-                allow_duplication = true,
-                allow_restoring = Application.settings.get_boolean ("save-exited-tabs"),
-                max_restorable_tabs = 5,
-                group_name = "pantheon-terminal",
-                can_focus = false,
-                expand = true
-            };
-            notebook.tab_added.connect (on_tab_added);
-            notebook.tab_removed.connect (on_tab_removed);
-            notebook.tab_switched.connect (on_switch_page);
-            notebook.tab_moved.connect (on_tab_moved);
-            notebook.tab_reordered.connect (on_tab_reordered);
-            notebook.tab_restored.connect (on_tab_restored);
-            notebook.tab_duplicated.connect (on_tab_duplicated);
-            notebook.close_tab_requested.connect (on_close_tab_requested);
-            notebook.new_tab_requested.connect (on_new_tab_requested);
-            notebook.get_child ().drag_begin.connect (on_drag_begin);
-            notebook.get_child ().drag_end.connect (on_drag_end);
-            var tab_bar_behavior = Application.settings.get_enum ("tab-bar-behavior");
-            notebook.tab_bar_behavior = (Granite.Widgets.DynamicNotebook.TabBarBehavior)tab_bar_behavior;
+            notebook = new TerminalView (this);
+            notebook.tab_view.page_attached.connect (on_tab_added);
+            notebook.tab_view.page_detached.connect (on_tab_removed);
+            notebook.tab_view.page_reordered.connect (on_tab_reordered);
+            notebook.tab_view.create_window.connect (on_create_window_request);
+            notebook.tab_view.close_page.connect ((tab) => {
+                var term = get_term_widget (tab);
+                var confirmed = false;
+                if (term == null) {
+                    confirmed = true;
+                } else {
+                    confirmed = confirm_close_tab (term);
+                }
 
-            var grid = new Gtk.Grid ();
-            grid.attach (header, 0, 0);
-            grid.attach (notebook, 0, 1);
+                if (confirmed) {
+                    if (!term.child_has_exited) {
+                        term.term_ps ();
+                    }
 
+                    if (Application.settings.get_boolean ("save-exited-tabs")) {
+                        make_restorable (term);
+                    }
+
+                    disconnect_terminal_signals (term);
+                }
+
+                notebook.tab_view.close_page_finish (tab, confirmed);
+
+                return Gdk.EVENT_STOP;
+            });
+
+            notebook.tab_view.notify["selected-page"].connect (() => {
+                var term = get_term_widget (notebook.tab_view.selected_page);
+                current_terminal = term;
+                if (term == null) {
+                    // Happens on closing window - ignore
+                    return;
+                }
+
+
+                title = term.window_title != "" ? term.window_title
+                                                : term.current_working_directory;
+                term.grab_focus ();
+            });
+
+            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+            box.add (header);
+            box.add (notebook);
+
+            add (box);
             get_style_context ().add_class ("terminal-window");
-            add (grid);
 
             bind_property ("title", title_label, "label");
 
@@ -394,13 +427,13 @@ namespace Terminal {
                 case Gdk.Key.@8:
                     if (MOD1_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
-                    && notebook.n_tabs > 1) {
+                    && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
-                        if (tab_index > notebook.n_tabs - 1) {
+                        if (tab_index > notebook.n_pages - 1) {
                             return false;
                         }
 
-                        notebook.current = notebook.get_tab_by_index ((int) tab_index);
+                        notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         return true;
                     }
                     break;
@@ -408,8 +441,8 @@ namespace Terminal {
                 case Gdk.Key.@9:
                     if (MOD1_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
-                    && notebook.n_tabs > 1) {
-                        notebook.current = notebook.get_tab_by_index (notebook.n_tabs - 1);
+                    && notebook.n_pages > 1) {
+                        notebook.selected_page = notebook.tab_view.get_nth_page ((int)notebook.n_pages - 1);
                         return true;
                     }
                     break;
@@ -443,28 +476,24 @@ namespace Terminal {
             }
         }
 
-        private void on_tab_added (Granite.Widgets.Tab tab) {
-            var terminal_widget = get_term_widget (tab);
-            terminals.append (terminal_widget);
-            terminal_widget.window = this;
+        private void on_tab_added (Hdy.TabPage tab, int pos) {
+            var term = get_term_widget (tab);
+            term.main_window = this;
             save_opened_terminals (true, true);
         }
 
-        private void on_tab_removed (Granite.Widgets.Tab tab) {
-            var terminal_widget = get_term_widget (tab);
-            if (!on_drag && notebook.n_tabs == 0) {
+        private void on_tab_removed (Hdy.TabPage tab) {
+            if (notebook.n_pages == 0) {
+                // Close window when last tab removed (Note: cannot drag last tab out of window)
                 save_opened_terminals (true, true);
                 destroy ();
             } else {
-                terminals.remove (terminal_widget);
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
         }
 
-        private bool on_close_tab_requested (Granite.Widgets.Tab tab) {
-            var terminal_widget = get_term_widget (tab);
-
+        public bool confirm_close_tab (TerminalWidget terminal_widget) {
             if (terminal_widget.has_foreground_process ()) {
                 var dialog = new ForegroundProcessDialog (this);
                 if (dialog.run () == Gtk.ResponseType.ACCEPT) {
@@ -472,95 +501,29 @@ namespace Terminal {
                     terminal_widget.kill_fg ();
                 } else {
                     dialog.destroy ();
-
                     return false;
                 }
             }
 
-            if (!terminal_widget.child_has_exited) {
-                if (notebook.n_tabs >= 2 && Application.settings.get_boolean ("save-exited-tabs")) {
-                    make_restorable (tab);
-                } else {
-                    terminal_widget.term_ps ();
-                }
-            }
-
-            current_terminal.grab_focus ();
-            if (terminal_widget != current_terminal) { // Otherwise current_terminal will change triggering a name check
-                check_for_tabs_with_same_name ();
-            }
+            //Names checked in page_detached handler
 
             return true;
         }
 
-        private void on_tab_reordered (Granite.Widgets.Tab tab, int new_pos) {
-            var terminal_widget = get_term_widget (tab);
-
-            current_terminal.grab_focus ();
-
-            terminals.remove (terminal_widget);
-            terminals.insert (terminal_widget, new_pos);
-
+        private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
             save_opened_terminals (true, true);
         }
 
-        private void on_tab_restored (string label, string restore_key, GLib.Icon? icon) {
-            TerminalWidget term = restorable_terminals.get (restore_key);
-            var tab = create_tab (label, icon, term);
+        private unowned Hdy.TabView? on_create_window_request () {
+            var new_window = new MainWindow (
+                app,
+                false
+            );
 
-            restorable_terminals.remove (restore_key);
-            notebook.insert_tab (tab, -1);
-            notebook.current = tab;
-            term.grab_focus ();
-            check_for_tabs_with_same_name ();
-
-            save_opened_terminals (true, true);
+            return new_window.notebook.tab_view;
         }
 
-        private void on_tab_moved (Granite.Widgets.Tab tab) {
-            Idle.add (() => {
-                var new_window = new MainWindow (
-                    app,
-                    false
-                );
-
-                var terminal_widget = get_term_widget (tab);
-                var new_notebook = new_window.notebook;
-
-                notebook.remove_tab (tab);
-                new_notebook.insert_tab (tab, -1);
-                new_window.current_terminal = terminal_widget;
-                check_for_tabs_with_same_name (); // Update remaining tabs
-                return false;
-            });
-        }
-
-        private void on_tab_duplicated (Granite.Widgets.Tab tab) {
-            var terminal_widget = get_term_widget (tab);
-            new_tab (terminal_widget.get_shell_location ());
-        }
-
-        private void on_new_tab_requested () {
-            if (Application.settings.get_boolean ("follow-last-tab")) {
-                new_tab (current_terminal.get_shell_location ());
-            } else {
-                new_tab (Environment.get_home_dir ());
-            }
-        }
-
-        private void on_drag_begin (Gdk.DragContext context) {
-            on_drag = true;
-        }
-
-        private void on_drag_end (Gdk.DragContext context) {
-            on_drag = false;
-
-            if (notebook.n_tabs == 0) {
-                destroy ();
-            }
-        }
-
-        public void update_context_menu () {
+        public void update_context_menu () requires (current_terminal != null) {
             /* Update the "Show in ..." menu option */
             get_current_selection_link_or_pwd ((clipboard, uri) => {
                 update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
@@ -646,25 +609,10 @@ namespace Terminal {
             return base.configure_event (event);
         }
 
-        private void on_switch_page (Granite.Widgets.Tab? old, Granite.Widgets.Tab new_tab) {
-            current_terminal = get_term_widget (new_tab);
-            new_tab.icon = null;
-
-            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
-                Application.saved_state.set_int ("focused-tab", notebook.get_tab_position (new_tab));
-            }
-
-            title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                        : current_terminal.current_working_directory;
-
-            menu.insert_action_group ("term", current_terminal.get_action_group ("term"));
-            current_terminal.grab_focus ();
-        }
-
         private void open_tabs () {
             string[] tabs = {};
             double[] zooms = {};
-            int focus = 0;
+            uint focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
 
             if (Granite.Services.System.history_is_enabled () &&
@@ -717,7 +665,7 @@ namespace Terminal {
             focus = focus.clamp (0, tabs.length - 1);
 
             /* This must not be in an Idle loop to avoid duplicate tabs being opened (issue #245) */
-            focus += notebook.n_tabs;
+            focus += notebook.n_pages;
             int index = 0;
             foreach (string loc in tabs) {
                 if (loc == "") {
@@ -734,19 +682,23 @@ namespace Terminal {
             }
 
             if (focus_restored_tabs) {
-                var tab = notebook.get_tab_by_index (focus.clamp (0, notebook.n_tabs - 1));
-                notebook.current = tab;
-                get_term_widget (tab).grab_focus ();
+                var tab = notebook.tab_view.get_nth_page ((int)(focus.clamp (0, notebook.n_pages - 1)));
+                notebook.selected_page = tab;
             }
         }
 
-        private TerminalWidget new_tab (string location, string? program = null, bool focus = true) {
+        private TerminalWidget new_tab (
+            string location,
+            string? program = null,
+            bool focus = true,
+            int pos = (int)notebook.n_pages
+        ) {
+
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
              * leads to free'd memory being read.
              */
-
             /* Set up terminal */
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
@@ -754,30 +706,12 @@ namespace Terminal {
                 expand = true
             };
 
-
-
-            var tab = create_tab (
+            var tab = append_tab (
                 location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
-                null, terminal_widget); //Set correct label now to avoid race when spawning shell
+                null, terminal_widget, pos
+            );
 
-            terminal_widget.child_exited.connect (() => {
-                if (!terminal_widget.killed) {
-                    if (program != null) {
-                        /* If a program was running, do not close the tab so that output of program
-                         * remains visible */
-                        terminal_widget.active_shell (location);
-                        /* Allow closing tab with "exit" */
-                        program = null;
-                    } else {
-                        terminal_widget.tab.close ();
-                        return;
-                    }
-                }
-            });
-
-            terminal_widget.notify["font-scale"].connect (() => save_opened_terminals (false, true));
-            terminal_widget.window_title_changed.connect (check_for_tabs_with_same_name);
-            terminal_widget.cwd_changed.connect (cwd_changed);
+            //Set correct label now to avoid race when spawning shell
 
             terminal_widget.set_font (term_font);
 
@@ -798,11 +732,8 @@ namespace Terminal {
             hints.height_inc = (int) terminal_widget.get_char_height ();
             set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
 
-            notebook.insert_tab (tab, -1);
-
             if (focus) {
-                notebook.current = tab;
-                terminal_widget.grab_focus ();
+                notebook.selected_page = tab;
             }
 
             if (program == null) {
@@ -816,54 +747,87 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
+            check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
+
+            connect_terminal_signals (terminal_widget);
 
             return terminal_widget;
         }
 
-        private Granite.Widgets.Tab create_tab (string label, GLib.Icon? icon, TerminalWidget term) {
+        private void connect_terminal_signals (TerminalWidget terminal_widget) {
+            terminal_widget.child_exited.connect (on_terminal_child_exited);
+            terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
+            terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
+            terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
+        }
+
+        private void disconnect_terminal_signals (TerminalWidget terminal_widget) {
+            terminal_widget.child_exited.disconnect (on_terminal_child_exited);
+            terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
+            terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
+            terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
+        }
+
+        private void on_terminal_child_exited (Vte.Terminal term, int status) {
+            var tw = (TerminalWidget)term;
+            if (tw.tab.child != tw.parent) {
+                // TabView already removed tab - ignore signal
+                return;
+            }
+             if (!tw.killed) {
+                if (tw.program_string != null) {
+                    /* If a program was running, do not close the tab so that output of program
+                     * remains visible */
+                    tw.program_string = null;
+                    tw.active_shell (tw.current_working_directory);
+                } else {
+                    if (tw.tab != null) {
+                        notebook.tab_view.close_page (tw.tab);
+                    }
+
+                    return;
+                }
+            }
+        }
+
+        private void on_terminal_font_scale_changed () {
+            save_opened_terminals (false, true);
+        }
+
+        private void on_terminal_window_title_changed () {
+            title = current_terminal.window_title;
+        }
+
+        private Hdy.TabPage append_tab (
+            string label,
+            GLib.Icon? icon,
+            TerminalWidget term,
+            int pos
+        ) {
             var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
             sw.add (term);
-            var tab = new Granite.Widgets.Tab.with_accellabels (
-                label,
-                icon,
-                sw,
-                new Granite.AccelLabel.from_action_name (_("Close Tab"), ACTION_PREFIX + ACTION_CLOSE_TAB),
-                new Granite.AccelLabel.from_action_name (_("Duplicate"), ACTION_PREFIX + ACTION_DUPLICATE_TAB)
-            );
+            var tab = notebook.tab_view.insert (sw, pos);
+            tab.title = label;
+            tab.tooltip = term.current_working_directory;
+            tab.icon = icon;
             term.tab = tab;
-            /* We have to rewrite the tooltip everytime the label changes to override Granite annoying habit of
-             * automatically changing the tooltip to be the same as the label. */
-            term.tab.notify["label"].connect_after (() => {
-                term.tab.tooltip = term.current_working_directory;
-            });
-            tab.ellipsize_mode = Pango.EllipsizeMode.MIDDLE;
 
-            /* Granite.Accel.from_action_name () does not allow control of which accel is used when
-             * there are multiple so we have to use the other constructor to specify it. */
-            var reload_menu_item = new Gtk.MenuItem () {
-                child = new Granite.AccelLabel (_("Reload"), TerminalWidget.ACCELS_RELOAD[0]),
-            };
-            tab.menu.append (reload_menu_item);
-            reload_menu_item.activate.connect (term.reload);
-            tab.menu.show_all ();
-
+            tab.child.show_all ();
             return tab;
         }
 
-        private void make_restorable (Granite.Widgets.Tab tab) {
-            var term = get_term_widget (tab);
-            terminals.remove (term);
-            restorable_terminals.insert (term.terminal_id, term);
-            tab.restore_data = term.terminal_id;
+        private void make_restorable (TerminalWidget term) {
+            //FIXME Terminal child always exits when tab is closed (unlike Granite.DynamicNotebook)
+            if (Application.settings.get_boolean ("save-exited-tabs")) {
+                notebook.make_restorable (term.current_working_directory);
+            }
 
-            ((Gtk.Container)tab.page).remove (term);
+            if (!term.child_has_exited) {
+                term.term_ps ();
+            }
 
-            tab.dropped_callback = (() => {
-                unowned TerminalWidget terminal_widget = restorable_terminals.get (tab.restore_data);
-                terminal_widget.term_ps ();
-                restorable_terminals.remove (tab.restore_data);
-            });
+            return;
         }
 
         private void update_font () {
@@ -878,21 +842,24 @@ namespace Terminal {
                 term_font = Pango.FontDescription.from_string (sys_font_name);
             }
 
-            foreach (var terminal in terminals) {
-                terminal.set_font (term_font);
+            for (int i = 0; i < notebook.n_pages; i++) {
+                var term = get_term_widget (notebook.tab_view.get_nth_page (i));
+                term.set_font (term_font);
             }
         }
 
-        protected override bool delete_event (Gdk.EventAny event) {
+        public bool on_delete_event () {
+            //Avoid saved terminals being overwritten when tabs destroyed.
+            notebook.tab_view.page_detached.disconnect (on_tab_removed);
             save_opened_terminals (true, true);
             var tabs_to_terminate = new GLib.List <TerminalWidget> ();
 
-            foreach (var terminal_widget in terminals) {
-                terminal_widget = (TerminalWidget) terminal_widget;
-                if (terminal_widget.has_foreground_process ()) {
+            for (int i = 0; i < notebook.n_pages; i++) {
+                var term = get_term_widget (notebook.tab_view.get_nth_page (i));
+                if (term.has_foreground_process ()) {
                     var dialog = new ForegroundProcessDialog.before_close (this);
                     if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                        terminal_widget.kill_fg ();
+                        term.kill_fg ();
                         dialog.destroy ();
                     } else {
                         dialog.destroy ();
@@ -900,7 +867,7 @@ namespace Terminal {
                     }
                 }
 
-                tabs_to_terminate.append (terminal_widget);
+                tabs_to_terminate.append (term);
             }
 
             foreach (var t in tabs_to_terminate) {
@@ -910,15 +877,7 @@ namespace Terminal {
             return false;
         }
 
-        protected override void destroy () {
-            foreach (unowned TerminalWidget t in restorable_terminals.get_values ()) {
-                t.term_ps ();
-            }
-
-            base.destroy ();
-        }
-
-        private void action_open_in_browser () {
+        private void action_open_in_browser () requires (current_terminal != null) {
             get_current_selection_link_or_pwd ((clipboard, uri) => {
                 string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
                 if (to_open != null) {
@@ -931,7 +890,10 @@ namespace Terminal {
             });
         }
 
-        private void get_current_selection_link_or_pwd (Gtk.ClipboardTextReceivedFunc uri_handler) {
+        private void get_current_selection_link_or_pwd (
+            Gtk.ClipboardTextReceivedFunc uri_handler
+        ) requires (current_terminal != null) {
+
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
                 if (current_terminal.get_has_selection ()) {
@@ -950,12 +912,22 @@ namespace Terminal {
         }
 
         private void action_close_tab () {
-            current_terminal.tab.close ();
-            current_terminal.grab_focus ();
-            // Closing a tab will switch to another, which will trigger check for same names
+            notebook.close_tab ();
         }
 
-        private void action_new_tab () {
+        private void action_close_tabs_to_right () {
+            notebook.close_tabs_to_right ();
+        }
+
+        private void action_close_other_tabs () {
+            notebook.close_other_tabs ();
+        }
+
+        private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
+            new_tab (param.get_string (), null, true); //TODO Restore icon?
+        }
+
+        private void action_new_tab () requires (current_terminal != null) {
             if (Application.settings.get_boolean ("follow-last-tab")) {
                 new_tab (current_terminal.get_shell_location ());
             } else {
@@ -963,27 +935,77 @@ namespace Terminal {
             }
         }
 
-        private void action_duplicate_tab () {
-            new_tab (current_terminal.get_shell_location ());
+        private void action_new_tab_at (GLib.SimpleAction action, GLib.Variant? param) {
+            var uri = param.get_string ();
+            new_tab (uri);
+        }
+
+        private void action_tab_active_shell (GLib.SimpleAction action, GLib.Variant? param) {
+            var path = param.get_string ();
+            var term = current_terminal;
+            // Ignore if foreground process running, for now.
+            if (term.has_foreground_process ()) {
+                return;
+            }
+
+            // Clear any partially entered command
+            term.reload ();
+
+            // Change to requested directory
+            var command = "cd '" + path + "'\n";
+            term.feed_child (command.data);
+
+            // Clear screen
+            term.feed_child ("clear\n".data);
+        }
+
+        private void action_tab_reload () {
+            TerminalWidget? term;
+            var target = notebook.tab_menu_target;
+            if (target != null) {
+                term = get_term_widget (target);
+            } else {
+                term = get_term_widget (notebook.tab_view.selected_page);
+            }
+
+            if (term != null) {
+                term.reload ();
+            }
+        }
+
+        private void action_duplicate_tab () requires (current_terminal != null) {
+            var term = notebook.tab_menu_target != null ?
+                       get_term_widget (notebook.tab_menu_target) :
+                       current_terminal;
+
+            var pos = notebook.tab_menu_target != null ?
+                      notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
+                      (int)notebook.n_pages;
+
+            new_tab (term.get_shell_location (), null, true, pos);
         }
 
         private void action_next_tab () {
-            notebook.next_page ();
+            notebook.tab_view.select_next_page ();
         }
 
         private void action_previous_tab () {
-            notebook.previous_page ();
+            notebook.tab_view.select_previous_page ();
         }
 
         void action_move_tab_right () {
-            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) + 1) % notebook.n_tabs);
+            notebook.tab_view.reorder_forward (notebook.selected_page);
         }
 
         void action_move_tab_left () {
-            notebook.set_tab_position (notebook.current, (notebook.get_tab_position (notebook.current) - 1) % notebook.n_tabs);
+            notebook.tab_view.reorder_backward (notebook.selected_page);
         }
 
-        private void action_search () {
+        void action_move_tab_to_new_window () {
+            notebook.transfer_tab_to_new_window ();
+        }
+
+        private void action_search () requires (current_terminal != null) {
             var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
             var search_state = search_action.get_state ().get_boolean ();
 
@@ -1048,50 +1070,63 @@ namespace Terminal {
             is_fullscreen = !is_fullscreen;
         }
 
-        private TerminalWidget get_term_widget (Granite.Widgets.Tab tab) {
-            return (TerminalWidget)((Gtk.Bin)tab.page).get_child ();
+        private unowned TerminalWidget? get_term_widget (Hdy.TabPage? tab) {
+            if (tab == null) {
+                return null;
+            }
+            var tab_child = (Gtk.Bin)(tab.child); // ScrolledWindow
+            var term = tab_child.get_child (); // TerminalWidget
+            return (TerminalWidget)term;
+        }
+
+        public unowned TerminalWidget? get_terminal (string id) {
+            for (int i = 0; i < notebook.n_pages; i++) {
+                unowned var term = get_term_widget (notebook.tab_view.get_nth_page (i));
+                if (term.terminal_id == id) {
+                    return term;
+                }
+            }
+
+            return null;
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
-        private void check_for_tabs_with_same_name () {
-            /* Take list copies so foreach clauses can be nested safely*/
-            var terms = terminals.copy ();
-            var terms2 = terminals.copy ();
-
-            foreach (TerminalWidget terminal in terms) {
-                string term_path = terminal.current_working_directory;
+        private void check_for_tabs_with_same_name () requires (current_terminal != null) {
+            int i = 0;
+            int j = 0;
+            for (i = 0; i < notebook.n_pages; i++) {
+                var term = get_term_widget (notebook.tab_view.get_nth_page (i));
+                string term_path = term.current_working_directory;
                 string term_label = Path.get_basename (term_path);
-
                 if (term_label == "" ||
-                    terminal.tab_label == TerminalWidget.DEFAULT_LABEL) {
+                    term.tab_label == TerminalWidget.DEFAULT_LABEL) {
                     continue;
                 }
 
                 /* Reset tab_name to basename so long name only used when required */
-                terminal.tab_label = term_label;
+                term.tab_label = term_label;
 
-                foreach (TerminalWidget terminal2 in terms2) {
-                    string term2_path = terminal2.current_working_directory;
+                for (j = 0; j < notebook.n_pages; j++) {
+                var term2 = get_term_widget (notebook.tab_view.get_nth_page (j));
+                    string term2_path = term2.current_working_directory;
                     string term2_name = Path.get_basename (term2_path);
 
-                    if (terminal2 != terminal && term2_name == term_label && term2_path != term_path) {
-                        terminal2.tab_label = disambiguate_label (term2_path, term_path);
-                        terminal.tab_label = disambiguate_label (term_path, term2_path);
-                        // Overwrite tooltip_text set by changing tab_label
-                        terminal2.tooltip_text = term2_path;
-                        terminal.tooltip_text = term_path;
+                    if (term2.terminal_id != term.terminal_id &&
+                        term2_name == term_label &&
+                        term2_path != term_path) {
 
+                        term2.tab_label = disambiguate_label (term2_path, term_path);
+                        term.tab_label = disambiguate_label (term_path, term2_path);
                     }
                 }
             }
 
-            title = current_terminal.window_title != "" ? current_terminal.window_title
-                                                        : current_terminal.current_working_directory;
             return;
         }
 
-        private void cwd_changed () {
-            check_for_tabs_with_same_name ();
+        private void on_terminal_cwd_changed (TerminalWidget src, string cwd) {
+            src.tab.tooltip = cwd;
+            check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);
         }
 
@@ -1112,7 +1147,8 @@ namespace Terminal {
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
-                terminals.foreach ((term) => {
+                for (int i = 0; i < notebook.n_pages; i++) {
+                    var term = get_term_widget (notebook.tab_view.get_nth_page (i));
                     if (term != null) {
                         var location = term.get_shell_location ();
                         if (location != null && location != "") {
@@ -1124,10 +1160,10 @@ namespace Terminal {
                             }
                         }
                     }
-                });
+                }
 
-                if (save_tabs && notebook.current != null) {
-                    focused_tab = notebook.get_tab_position (notebook.current);
+                if (save_tabs && notebook.selected_page != null) {
+                    focused_tab = notebook.tab_view.get_page_position (notebook.selected_page);
                 }
             }
 
