@@ -59,7 +59,7 @@ namespace Terminal {
             }
 
             set {
-                            if (value != null && tab != null) {
+                if (value != null && tab != null) {
                     tab.title = value;
                 }
             }
