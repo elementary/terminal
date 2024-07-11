@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -141,6 +141,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Ciymny"
 
@@ -332,6 +333,53 @@ msgstr "Dalszy wynik"
 msgid "Cyclic search"
 msgstr "Wyszukowanie cykliczne"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Pōmyńszynie"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Wychodny poziōm powiynkszynio"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Powiynkszynie"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Wysoki kōntrast"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Jasny Solarized"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Naturalne kopiowanie i wrażanie"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza kōmynd"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
@@ -346,29 +394,6 @@ msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Ôtwōrz nowo karta terminala"
-
-#~ msgid "Zoom out"
-#~ msgstr "Pōmyńszynie"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Wychodny poziōm powiynkszynio"
-
-#~ msgid "Zoom in"
-#~ msgstr "Powiynkszynie"
-
-#~ msgid "High Contrast"
-#~ msgstr "Wysoki kōntrast"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Jasny Solarized"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Naturalne kopiowanie i wrażanie"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Skrōty niy potrzebujōm Shiftu; może szterować inksze programy wiersza "
-#~ "kōmynd"
 
 #~ msgid "Show help"
 #~ msgstr "Pokoż pōmoc"

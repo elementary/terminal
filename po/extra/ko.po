@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2019-07-22 02:24+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/extra/ko/"
@@ -39,94 +39,88 @@ msgstr ""
 "터미널은 여러분 시스템의 프로그램 실행에 사용할 수 있는 UNIX셸 환경에 접근하"
 "는 터미널 에뮬레이터 애플리케이션입니다."
 
-#: data/io.elementary.terminal.appdata.xml.in:49
-#, fuzzy
-#| msgid "elementary LLC."
-msgid "elementary, Inc."
-msgstr "elementary LLC."
-
-#: data/io.elementary.terminal.appdata.xml.in:56
-#: data/io.elementary.terminal.appdata.xml.in:73
-#: data/io.elementary.terminal.appdata.xml.in:94
-#: data/io.elementary.terminal.appdata.xml.in:113
-#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:96
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Other updates:"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:60
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:59
+#: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:60
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:96
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:133
 msgid "Translation updates"
 msgstr "번역 업데이트"
 
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:104
+#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:106
 msgid "New features:"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Option to follow system dark style preference"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Create a custom color palette"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:90
-#: data/io.elementary.terminal.appdata.xml.in:109
-#: data/io.elementary.terminal.appdata.xml.in:122
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Fixes:"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:94
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:97
+#: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Performance improvements"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:106
+#: data/io.elementary.terminal.appdata.xml.in:108
 msgid "Switch tabs with Alt + 1-9"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid "Quit with Ctrl + Shift + Q"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Fix build on OS 7"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Properly restore zoom levels for all locales"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Use XTerm title for window title if available"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:131
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:130
+#: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr ""
 
@@ -141,6 +135,11 @@ msgstr "새 창"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "새 Root 탭"
+
+#, fuzzy
+#~| msgid "elementary LLC."
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary LLC."
 
 #~ msgid "Support Ctrl+Equal key combo to zoom in"
 #~ msgstr "Ctrl+Equal 키 조합으로 화면 확대 지원"

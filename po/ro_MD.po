@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -136,6 +136,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr ""
 
@@ -327,6 +328,54 @@ msgstr "Rezultatul următor"
 msgid "Cyclic search"
 msgstr "Clic în caută"
 
+#: src/Widgets/SettingsPopover.vala:40
+#, fuzzy
+msgid "Zoom out"
+msgstr "Micșorează"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Nivel prestabilit"
+
+#: src/Widgets/SettingsPopover.vala:56
+#, fuzzy
+msgid "Zoom in"
+msgstr "Mărește"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Contrast mare"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Lumină solarizată"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalul"
@@ -338,23 +387,6 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Zoom out"
-#~ msgstr "Micșorează"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Nivel prestabilit"
-
-#, fuzzy
-#~ msgid "Zoom in"
-#~ msgstr "Mărește"
-
-#~ msgid "High Contrast"
-#~ msgstr "Contrast mare"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Lumină solarizată"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "Această comandă solicită acces administrativ la computer"

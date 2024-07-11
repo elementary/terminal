@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
-"PO-Revision-Date: 2024-01-24 03:32+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
+"PO-Revision-Date: 2024-06-19 05:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -136,6 +136,7 @@ msgid "Light"
 msgstr "ღია"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "ბნელი"
 
@@ -323,6 +324,55 @@ msgstr "მომდევნო შედეგი"
 msgid "Cyclic search"
 msgstr "ციკლური ძებნა"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "დაპატარავება"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "მასშტაბის ნაგულისხმევი დონე"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "გადიდება"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "სისტემის სტილის მიყოლა"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "მაღალი კონტრასტი"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "სოლარიზებული ღია"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "სხვა"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "ბუნებრივი კოპირება/ჩასმა"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr "მოვლენის განგაშები"
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"გაფრთხილება არასწორი შეყვანისას ან ერთზე მეტი შესაძლო დასრულებების ქონისას ("
+"იპოვეთ მენიუში სისტემის მორგება -> ხმა)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ტერმინალი"
@@ -337,34 +387,6 @@ msgstr "ჩასმულ ტექსტი შეიძლება ადმ
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ტერმინალის ახალი ჩანართის გახსნა"
-
-#~ msgid "Zoom out"
-#~ msgstr "დაპატარავება"
-
-#~ msgid "Default zoom level"
-#~ msgstr "მასშტაბის ნაგულისხმევი დონე"
-
-#~ msgid "Zoom in"
-#~ msgstr "გადიდება"
-
-#~ msgid "Follow System Style"
-#~ msgstr "სისტემის სტილის მიყოლა"
-
-#~ msgid "High Contrast"
-#~ msgstr "მაღალი კონტრასტი"
-
-#~ msgid "Solarized Light"
-#~ msgstr "სოლარიზებული ღია"
-
-#~ msgid "Custom"
-#~ msgstr "სხვა"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "ბუნებრივი კოპირება/ჩასმა"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "ეს ბრძანება მოითხოვს ადმინისტრაცილ წვდომას თქვენს კომპიუტერზე"

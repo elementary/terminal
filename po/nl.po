@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -140,6 +140,7 @@ msgid "Light"
 msgstr "Licht"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Donker"
 
@@ -327,6 +328,52 @@ msgstr "Volgende resultaat"
 msgid "Cyclic search"
 msgstr "Cyclisch zoeken"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Uitzoomen"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Standaard zoomniveau"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Inzoomen"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "Volg systeemstijl"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Hoog contrast"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Gesolarizeerd licht"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "Aangepast"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Gewoon kopiëren/plakken"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Sneltoetsen hebben geen Shift nodig; mogelijk stoort dit met CLI apps"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
@@ -342,34 +389,6 @@ msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Nieuw terminal tabblad openen"
-
-#~ msgid "Zoom out"
-#~ msgstr "Uitzoomen"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Standaard zoomniveau"
-
-#~ msgid "Zoom in"
-#~ msgstr "Inzoomen"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Volg systeemstijl"
-
-#~ msgid "High Contrast"
-#~ msgstr "Hoog contrast"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Gesolarizeerd licht"
-
-#~ msgid "Custom"
-#~ msgstr "Aangepast"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Gewoon kopiëren/plakken"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Sneltoetsen hebben geen Shift nodig; mogelijk stoort dit met CLI apps"
 
 #~ msgid "Show help"
 #~ msgstr "Help tonen"

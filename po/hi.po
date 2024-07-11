@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -145,6 +145,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr ""
 
@@ -334,6 +335,52 @@ msgstr "अगला परिणाम"
 msgid "Cyclic search"
 msgstr "चक्रीय खोज"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "ज़ूम आउट"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "डिफ़ॉल्ट ज़ूम स्तर"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "ज़ूम इन"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "उच्च कॉन्ट्रास्ट"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "सौरकृत प्रकाश"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "टर्मिनल"
@@ -350,21 +397,6 @@ msgstr ""
 #~| msgid "Open a new window"
 #~ msgid "Open a new terminal tab"
 #~ msgstr "नया विंडो खोलें"
-
-#~ msgid "Zoom out"
-#~ msgstr "ज़ूम आउट"
-
-#~ msgid "Default zoom level"
-#~ msgstr "डिफ़ॉल्ट ज़ूम स्तर"
-
-#~ msgid "Zoom in"
-#~ msgstr "ज़ूम इन"
-
-#~ msgid "High Contrast"
-#~ msgstr "उच्च कॉन्ट्रास्ट"
-
-#~ msgid "Solarized Light"
-#~ msgstr "सौरकृत प्रकाश"
 
 #~ msgid "Show help"
 #~ msgstr "मदद दिखाएँ"

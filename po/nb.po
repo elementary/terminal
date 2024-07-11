@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
+"PO-Revision-Date: 2024-07-05 14:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/terminal/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,10 +31,8 @@ msgstr "Åpne et nytt terminalvindu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Åpne et nytt terminalvindu"
+msgstr "Åpne et nytt terminalvindu i nåværende arbeidsområde"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -92,10 +90,8 @@ msgid "Find…"
 msgstr "Finn…"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Fullskjerm"
+msgstr "Avslutt fullskjerm"
 
 #: src/MainWindow.vala:283
 msgid "Settings"
@@ -144,6 +140,7 @@ msgid "Light"
 msgstr "Lys"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Mørk"
 
@@ -332,6 +329,55 @@ msgstr "Neste resultat"
 msgid "Cyclic search"
 msgstr "Syklisk søk"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Forminsk"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Forvalgt forstørrelsesnivå"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Forstørr"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "Følg systemets stil"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Høy kontrast"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarisert lys"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "Egendefinert"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Naturlig kopier/lim inn"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Snarveier krever ikke Shift; kan forstyrre CLI-programmer"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr "Begivenhetsvarsler"
+
+#: src/Widgets/SettingsPopover.vala:118
+#, fuzzy
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"Merknad for ugyldig inndata eller flere mulige fullføringer (i hht. Sys.-"
+"innstillinger → Lyd)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
@@ -346,33 +392,6 @@ msgstr "Innlimt tekst kan prøve å tilegne seg administratortilgang"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Åpne et nytt terminalvindu"
-
-#~ msgid "Zoom out"
-#~ msgstr "Forminsk"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Forvalgt forstørrelsesnivå"
-
-#~ msgid "Zoom in"
-#~ msgstr "Forstørr"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Følg systemets stil"
-
-#~ msgid "High Contrast"
-#~ msgstr "Høy kontrast"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarisert lys"
-
-#~ msgid "Custom"
-#~ msgstr "Egendefinert"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Naturlig kopier/lim inn"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr "Snarveier krever ikke Shift; kan forstyrre CLI-programmer"
 
 #~ msgid "Show help"
 #~ msgstr "Vis hjelp"

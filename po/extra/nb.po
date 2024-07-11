@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-19 21:48+0000\n"
-"PO-Revision-Date: 2023-07-08 01:10+0000\n"
+"POT-Creation-Date: 2024-06-16 05:15+0000\n"
+"PO-Revision-Date: 2024-07-05 14:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "terminal/extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -39,60 +39,54 @@ msgstr ""
 "Terminal er en terminal emulator for tilgang til et UNIX shell, som kan "
 "brukes til å kjøre programmer på ditt system."
 
-#: data/io.elementary.terminal.appdata.xml.in:49
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/io.elementary.terminal.appdata.xml.in:56
-#: data/io.elementary.terminal.appdata.xml.in:73
-#: data/io.elementary.terminal.appdata.xml.in:94
-#: data/io.elementary.terminal.appdata.xml.in:113
-#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:96
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:128
 msgid "Other updates:"
 msgstr "Andre oppdateringer:"
 
-#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:60
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
 "Snarveier »Ctrl + PageUp» og «Ctrl + PageDown» for å bytte mellom faner"
 
-#: data/io.elementary.terminal.appdata.xml.in:59
+#: data/io.elementary.terminal.appdata.xml.in:61
 #, fuzzy
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "Riktig aveksportering av D-Bus-grensesnitt ved avslutning"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:96
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:62
+#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:133
 msgid "Translation updates"
 msgstr "Oversettelsesoppdateringer"
 
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:104
+#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:106
 msgid "New features:"
 msgstr "Nye funksjoner:"
 
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:89
 msgid "Option to follow system dark style preference"
 msgstr "Alternativ for å følge mørkt draktvalg"
 
-#: data/io.elementary.terminal.appdata.xml.in:88
-#, fuzzy
-#| msgid "Validate custom palette"
-msgid "Create a custom color palette"
-msgstr "Bekreft egendefinert fargepalett"
-
 #: data/io.elementary.terminal.appdata.xml.in:90
-#: data/io.elementary.terminal.appdata.xml.in:109
-#: data/io.elementary.terminal.appdata.xml.in:122
+msgid "Create a custom color palette"
+msgstr "Opprett en egendefinert fargepalett"
+
+#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:124
 msgid "Fixes:"
 msgstr "Fikser:"
 
-#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:94
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -100,31 +94,31 @@ msgstr ""
 "Forvalgte stiler er helt tilslørt og oppdatert til siste oppstrømsverdier "
 "fra Solarisert for bedret lesbarhet"
 
-#: data/io.elementary.terminal.appdata.xml.in:97
+#: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Performance improvements"
 msgstr "Ytelsesforbedringer"
 
-#: data/io.elementary.terminal.appdata.xml.in:106
+#: data/io.elementary.terminal.appdata.xml.in:108
 msgid "Switch tabs with Alt + 1-9"
 msgstr "Bytt faner med Alt + 1-9"
 
-#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "Avslutt med Ctrl + Shift + Q"
 
-#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Fix build on OS 7"
 msgstr "Fikset bygg på OS 7"
 
-#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Properly restore zoom levels for all locales"
 msgstr "Riktig gjenoppretting av forstørrelsesnivå for alle lokaliteter"
 
-#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:130
 msgid "Use XTerm title for window title if available"
 msgstr "Bruk XTerm-navn som vindustittel hvis tilgjengelig"
 
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:131
 msgid ""
 "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
 "foreground processes"
@@ -132,7 +126,7 @@ msgstr ""
 "Endret «Gjeninnlast fane»-snarvei til Shift+F5 for å unngå krasj med noen "
 "forgrunnsprosesser"
 
-#: data/io.elementary.terminal.appdata.xml.in:130
+#: data/io.elementary.terminal.appdata.xml.in:132
 #, fuzzy
 msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 msgstr "Endret foretrukket snarvei for «Gjeninnlast fane» til Shift + Ctrl + R"
@@ -148,6 +142,9 @@ msgstr "Nytt vindu"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Ny fane med root-tilgang"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Flytt faner med snarveien Ctrl + Alt + ←/→"
