@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 05:15+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
 "PO-Revision-Date: 2023-04-05 23:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
@@ -40,52 +40,68 @@ msgstr ""
 "הזמינות במערכת."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:96
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:110
+#: data/io.elementary.terminal.appdata.xml.in:129
+msgid "New features:"
+msgstr "יכולות חדשות:"
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Allow switching event alerts on and off in the app menu"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Save tabs and zooms to the saved state settings when they change"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:81
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Other updates:"
 msgstr "עדכונים נוספים:"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:65
+msgid "Document missing options in the man page"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid "Suppress unwanted default tab when opening a new window"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:121
+#: data/io.elementary.terminal.appdata.xml.in:140
+msgid "Translation updates"
+msgstr "תרגומים עודכנו"
+
+#: data/io.elementary.terminal.appdata.xml.in:83
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
 "נוספו קיצורי הדרך „Ctrl + PageUp” ו־„Ctrl + PageDown” כדי לעבור בין לשוניות"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "ביטול הולם של ייצוא מנשק ה־D-Bus עם היציאה"
 
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:77
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:117
-#: data/io.elementary.terminal.appdata.xml.in:133
-msgid "Translation updates"
-msgstr "תרגומים עודכנו"
-
-#: data/io.elementary.terminal.appdata.xml.in:87
-#: data/io.elementary.terminal.appdata.xml.in:106
-msgid "New features:"
-msgstr "יכולות חדשות:"
-
-#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Option to follow system dark style preference"
 msgstr "אפשרות לעקוב אחר העדפת המצב הכהה של המערכת"
 
-#: data/io.elementary.terminal.appdata.xml.in:90
+#: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Create a custom color palette"
 msgstr "יצירת ערכת צבעים משלך"
 
-#: data/io.elementary.terminal.appdata.xml.in:92
-#: data/io.elementary.terminal.appdata.xml.in:111
-#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fixes:"
 msgstr "תיקונים:"
 
-#: data/io.elementary.terminal.appdata.xml.in:94
+#: data/io.elementary.terminal.appdata.xml.in:117
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -93,41 +109,21 @@ msgstr ""
 "סגנונות ברירת המחדל אטומים לחלוטין ומעודכנים לערכים העדכניים מ־Solarized "
 "לשיפור המראה"
 
-#: data/io.elementary.terminal.appdata.xml.in:99
+#: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Performance improvements"
 msgstr "שיפורי ביצועים"
 
-#: data/io.elementary.terminal.appdata.xml.in:108
+#: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Switch tabs with Alt + 1-9"
 msgstr "מעבר בין טאבים עם Alt + 1-9"
 
-#: data/io.elementary.terminal.appdata.xml.in:109
+#: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "יציאה עם Ctrl + Shift + Q"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Fix build on OS 7"
 msgstr "תוקנה הבנייה ב־OS 7"
-
-#: data/io.elementary.terminal.appdata.xml.in:126
-msgid "Properly restore zoom levels for all locales"
-msgstr "שחזור נכון של רמות התקריב לכל השפות"
-
-#: data/io.elementary.terminal.appdata.xml.in:130
-msgid "Use XTerm title for window title if available"
-msgstr "להשתמש בכותרת של XTerm ככותרת החלון עם ניתן"
-
-#: data/io.elementary.terminal.appdata.xml.in:131
-msgid ""
-"Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
-"foreground processes"
-msgstr ""
-"להחליף את הקיצור „רענון לשונית” ל־Shift + F5 כדי להימנע מסתירה מול תהליכים "
-"שפועלים בחזית"
-
-#: data/io.elementary.terminal.appdata.xml.in:132
-msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr "הקיצור המועדף ל„רענון לשונית” הוחלף לכדי Shift + Control + R"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -140,6 +136,22 @@ msgstr "חלון חדש"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "לשונית חדשה כמנהל"
+
+#~ msgid "Properly restore zoom levels for all locales"
+#~ msgstr "שחזור נכון של רמות התקריב לכל השפות"
+
+#~ msgid "Use XTerm title for window title if available"
+#~ msgstr "להשתמש בכותרת של XTerm ככותרת החלון עם ניתן"
+
+#~ msgid ""
+#~ "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
+#~ "foreground processes"
+#~ msgstr ""
+#~ "להחליף את הקיצור „רענון לשונית” ל־Shift + F5 כדי להימנע מסתירה מול "
+#~ "תהליכים שפועלים בחזית"
+
+#~ msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
+#~ msgstr "הקיצור המועדף ל„רענון לשונית” הוחלף לכדי Shift + Control + R"
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary בע״מ."
