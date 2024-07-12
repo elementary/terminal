@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2023-04-05 23:00+0000\n"
+"PO-Revision-Date: 2024-07-12 20:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -47,11 +47,11 @@ msgstr "יכולות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "לאפשר להפעיל ולכבות התראות אירועים בתפריט היישום"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
+msgstr "לשמור לשוניות ומרחק מתצוגה להגדרות המצב כשאלו משתנים"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -63,11 +63,11 @@ msgstr "עדכונים נוספים:"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "האפשרויות החסרות תועדו בעמוד ההדרכה (man)"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "הדחקת לשונית ברירת מחדל בלתי רצויה בעת פתיחת חלון חדש"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85
