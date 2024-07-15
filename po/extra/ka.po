@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2023-04-12 08:59+0000\n"
+"PO-Revision-Date: 2024-07-15 07:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/extra/"
 "ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
@@ -47,11 +47,11 @@ msgstr "ახალი ფუნქციები:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "აპის მენიუში მოვლენის განგაშები ჩართვა/გამორთვის დაშვება"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
+msgstr "ჩანართებისა და გადიდებების შენახვა მათი ცვლილებისას"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -63,11 +63,11 @@ msgstr "სხვა განახლებები:"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "ნაკლული პარამეტრების დოკუმენტირება man გვერდზე"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "არასასურველი ნაგულიხმევი ჩანართის მოცილება ახალი ფანჯრის გახსნისას"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85
