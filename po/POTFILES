@@ -4,4 +4,5 @@ src/Dialogs/ColorPreferencesDialog.vala
 src/Dialogs/ForegroundProcessDialog.vala
 src/Dialogs/UnsafePasteDialog.vala
 src/Widgets/SearchToolbar.vala
+src/Widgets/SettingsPopover.vala
 src/Widgets/TerminalWidget.vala

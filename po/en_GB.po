@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"PO-Revision-Date: 2024-07-03 14:16+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "terminal/terminal/en_GB/>\n"
@@ -17,113 +17,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "Show version"
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "Open a new terminal window"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
-msgid "Open a new terminal tab"
-msgstr "Open a new terminal tab"
+#: src/Application.vala:38
+msgid "Open a new terminal tab at current working directory"
+msgstr "Open a new terminal tab at current working directory"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "Set shell working directory"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 msgid "Run a program in terminal"
 msgstr "Run a program in terminal"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr "Open terminal in a minimized state"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 msgid "Run remainder of line as a command in terminal"
 msgstr "Run remainder of line as a command in terminal"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr "[-- COMMAND…]"
 
-#: src/Application.vala:159
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "Process completed"
 
-#: src/Application.vala:162
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "Process exited with errors"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "Copy Last Output"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "Exit FullScreen"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "Settings"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "New Tab"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "Show in %s"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "Default application"
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Close Tab"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "Reload"
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "The pasted text may be trying to gain administrative access"
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr "The pasted text may contain multiple commands"
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "Hide find bar"
 
@@ -140,6 +136,7 @@ msgid "Light"
 msgstr "Light"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Dark"
 
@@ -327,36 +324,68 @@ msgstr "Next result"
 msgid "Cyclic search"
 msgstr "Cyclic search"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Zoom out"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Default zoom level"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Zoom in"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "Follow System Style"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "High Contrast"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarised Light"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "Custom"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Natural Copy/Paste"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr "Event Alerts"
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#~ msgid "Zoom out"
-#~ msgstr "Zoom out"
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr "The pasted text may contain multiple commands"
 
-#~ msgid "Default zoom level"
-#~ msgstr "Default zoom level"
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "The pasted text may be trying to gain administrative access"
 
-#~ msgid "Zoom in"
-#~ msgstr "Zoom in"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Follow System Style"
-
-#~ msgid "High Contrast"
-#~ msgstr "High Contrast"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarised Light"
-
-#~ msgid "Custom"
-#~ msgstr "Custom"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Natural Copy/Paste"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Open a new terminal tab"
 
 #~ msgid "Show help"
 #~ msgstr "Show help"
@@ -435,9 +464,6 @@ msgstr "Terminal"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Go to previous tab"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Fullscreen"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Toggle/Untoggle fullscreen"

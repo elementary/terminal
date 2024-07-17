@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
-"PO-Revision-Date: 2023-04-12 08:59+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"PO-Revision-Date: 2024-06-19 05:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ka/>\n"
@@ -17,113 +17,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "ვერსიის ჩვენება"
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "ტერმინალის ახალი ფანჯრის გახსნა"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
-msgid "Open a new terminal tab"
-msgstr "ტერმინალის ახალი ჩანართის გახსნა"
+#: src/Application.vala:38
+msgid "Open a new terminal tab at current working directory"
+msgstr "ტერმინალის ახალი ფანჯრის გახსნა მიმდინარე სამუშაო საქაღალდეში"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "გარსის სამუშაო საქაღალდის დაყენება"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 msgid "Run a program in terminal"
 msgstr "პროგრამის ტერმინალში გაშვება"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr "ტერმინალის ჩაკეცილ მდგომარეობაში გახსნა"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 msgid "Run remainder of line as a command in terminal"
 msgstr "დარჩენილი ხაზების ტერმინალში ბრძანების სახით გაშვება"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr "[-- ბრძანება…]"
 
-#: src/Application.vala:159
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr "პროცესი დასრულდა"
 
-#: src/Application.vala:162
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "კოპირება"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "ბოლო გამოტანის კოპირება"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "ძიება…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:267
+msgid "Exit FullScreen"
+msgstr "სრული ეკრანიდან გასვლა"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "მორგება"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "ახალი ჩანართი"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:574
 #, c-format
 msgid "Show in %s"
 msgstr "%s-ში ჩვენება"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr "ნაგულისხმები აპლიკაცია"
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "ჩანართის დახურვა"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr "დუბლიკაცია"
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr "თავიდან ჩატვირთვა"
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
@@ -140,6 +136,7 @@ msgid "Light"
 msgstr "ღია"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "ბნელი"
 
@@ -327,37 +324,69 @@ msgstr "მომდევნო შედეგი"
 msgid "Cyclic search"
 msgstr "ციკლური ძებნა"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "დაპატარავება"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "მასშტაბის ნაგულისხმევი დონე"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "გადიდება"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr "სისტემის სტილის მიყოლა"
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "მაღალი კონტრასტი"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "სოლარიზებული ღია"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr "სხვა"
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "ბუნებრივი კოპირება/ჩასმა"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr "მოვლენის განგაშები"
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"გაფრთხილება არასწორი შეყვანისას ან ერთზე მეტი შესაძლო დასრულებების ქონისას "
+"(იპოვეთ მენიუში სისტემის მორგება -> ხმა)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#~ msgid "Zoom out"
-#~ msgstr "დაპატარავება"
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
 
-#~ msgid "Default zoom level"
-#~ msgstr "მასშტაბის ნაგულისხმევი დონე"
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
 
-#~ msgid "Zoom in"
-#~ msgstr "გადიდება"
-
-#~ msgid "Follow System Style"
-#~ msgstr "სისტემის სტილის მიყოლა"
-
-#~ msgid "High Contrast"
-#~ msgstr "მაღალი კონტრასტი"
-
-#~ msgid "Solarized Light"
-#~ msgstr "სოლარიზებული ღია"
-
-#~ msgid "Custom"
-#~ msgstr "სხვა"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "ბუნებრივი კოპირება/ჩასმა"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "ტერმინალის ახალი ჩანართის გახსნა"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "ეს ბრძანება მოითხოვს ადმინისტრაცილ წვდომას თქვენს კომპიუტერზე"
@@ -418,9 +447,6 @@ msgstr "ტერმინალი"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "წინა ჩანართზე გადასვლა"
-
-#~ msgid "Fullscreen"
-#~ msgstr "სრული ეკრანი"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "სრული ეკრანის რეჟიმის ჩართვა/გამორთვა"

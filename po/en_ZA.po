@@ -1,22 +1,20 @@
-# Croatian translation for pantheon-terminal
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the pantheon-terminal package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.elementary.terminal package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pantheon-terminal\n"
+"Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2016-07-07 19:14+0000\n"
-"Last-Translator: gogo <trebelnik2@gmail.com>\n"
-"Language-Team: Croatian <hr@li.org>\n"
-"Language: hr\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_ZA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:34
 msgid "Show version"
@@ -24,29 +22,23 @@ msgstr ""
 
 #. -n flag forces a new window
 #: src/Application.vala:36
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Otvori novi prozor"
+msgstr ""
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Otvori novi prozor"
+msgstr ""
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
 msgid "Set shell working directory"
-msgstr "Postavite radni direktorij ljuske"
+msgstr ""
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:42
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "Pokreni program u terminalu"
+msgstr ""
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:44
@@ -72,7 +64,7 @@ msgstr ""
 
 #: src/MainWindow.vala:155
 msgid "Copy"
-msgstr "Kopiraj"
+msgstr ""
 
 #: src/MainWindow.vala:161
 msgid "Copy Last Output"
@@ -80,21 +72,19 @@ msgstr ""
 
 #: src/MainWindow.vala:167
 msgid "Paste"
-msgstr "Zalijepi"
+msgstr ""
 
 #: src/MainWindow.vala:173
 msgid "Select All"
-msgstr "Odaberi sve"
+msgstr ""
 
 #: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
-msgstr "Pretraži..."
+msgstr ""
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Cijeli zaslon"
+msgstr ""
 
 #: src/MainWindow.vala:283
 msgid "Settings"
@@ -102,7 +92,7 @@ msgstr ""
 
 #: src/MainWindow.vala:319
 msgid "New Tab"
-msgstr "Nova kartica"
+msgstr ""
 
 #: src/MainWindow.vala:574
 #, c-format
@@ -115,7 +105,7 @@ msgstr ""
 
 #: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
-msgstr "Zatvori karticu"
+msgstr ""
 
 #: src/MainWindow.vala:832
 msgid "Duplicate"
@@ -232,7 +222,7 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
-msgstr "Zatvori"
+msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
@@ -252,51 +242,45 @@ msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "Sigurno želite zatvoriti ovu karticu?"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "U tijeku je aktivan proces na ovoj kartici."
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr "Ako zatvorite, proces će završiti."
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Sigurno želite zatvoriti Terminal?"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "U tijeku je aktivan proces na ovom terminalu."
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "Ukoliko izađete iz Terminala, proces će završiti."
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
-msgstr "Zatvori Terminal"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Sigurno želite zatvoriti ovu karticu?"
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "U tijeku je aktivan proces na ovom terminalu."
+msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Zatvori karticu"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -310,41 +294,39 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:41
 msgid "Don't Paste"
-msgstr "Nemoj zalijepiti"
+msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:43
 msgid "Paste Anyway"
-msgstr "Svejedno zalijepi"
+msgstr ""
 
 #: src/Widgets/SearchToolbar.vala:36
 msgid "Find"
-msgstr "Pretraži"
+msgstr ""
 
 #: src/Widgets/SearchToolbar.vala:42
 msgid "Previous result"
-msgstr "Prijašnji rezultat"
+msgstr ""
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Next result"
-msgstr "Sljedeći rezultat"
+msgstr ""
 
 #: src/Widgets/SearchToolbar.vala:58
 msgid "Cyclic search"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:40
-#, fuzzy
 msgid "Zoom out"
-msgstr "Smanji"
+msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:48
 msgid "Default zoom level"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:56
-#, fuzzy
 msgid "Zoom in"
-msgstr "Uvećaj"
+msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:84
 msgid "Follow System Style"
@@ -382,7 +364,7 @@ msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
-msgstr "Terminal"
+msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:502
 msgid "The pasted text may contain multiple commands"
@@ -391,105 +373,3 @@ msgstr ""
 #: src/Widgets/TerminalWidget.vala:504
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Open a new window"
-#~ msgid "Open a new terminal tab"
-#~ msgstr "Otvori novi prozor"
-
-#~ msgid "This command is asking for Administrative access to your computer"
-#~ msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
-
-#~ msgid "Copying commands into the Terminal can be dangerous."
-#~ msgstr "Kopiranje naredbi u Terminal može biti opasno."
-
-#~ msgid "Be sure you understand what each part of this command does."
-#~ msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
-
-#~ msgid "Task finished"
-#~ msgstr "Zadatak završen"
-
-#~ msgid "Cancel"
-#~ msgstr "Odustani"
-
-#~ msgid "About Terminal"
-#~ msgstr "O Terminalu"
-
-#~ msgid "Use the command line"
-#~ msgstr "Koristiti naredbeni redak"
-
-#~ msgid "New Window"
-#~ msgstr "Novi prozor"
-
-#~ msgid "New Root Tab"
-#~ msgstr "Nova korijenska kartica"
-
-#~ msgid "Open Terminal Here"
-#~ msgstr "Otvori terminal ovdje"
-
-#~ msgid "Create a new tab"
-#~ msgstr "Stvori novu karticu"
-
-#~ msgid "Copy the selected text"
-#~ msgstr "Kopiraj odabrani tekst"
-
-#~ msgid "Search for a given string in the terminal"
-#~ msgstr "Pretraži zadani tekst u terminalu"
-
-#~ msgid "Paste some text"
-#~ msgstr "Zalijepi dijelove teksta"
-
-#~ msgid "Select all the text in the terminal"
-#~ msgstr "Odaberi sav tekst u terminalu"
-
-#~ msgid "About"
-#~ msgstr "O programu"
-
-#~ msgid "Show about window"
-#~ msgstr "Prikaži o prozoru"
-
-#~ msgid "Next Tab"
-#~ msgstr "Sljedeća kartica"
-
-#~ msgid "Go to next tab"
-#~ msgstr "Idi na sljedeću karticu"
-
-#~ msgid "Previous Tab"
-#~ msgstr "Prijašnja kartica"
-
-#~ msgid "Go to previous tab"
-#~ msgstr "Idi na prijašnju karticu"
-
-#~ msgid "Toggle/Untoggle fullscreen"
-#~ msgstr "Cijelozaslonski prikaz"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Ivan Vrljić https://launchpad.net/~vrlja92\n"
-#~ "  Matija https://launchpad.net/~vatroslavbudgie\n"
-#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-#~ "  Nikola Curilovic https://launchpad.net/~ncurilovic\n"
-#~ "  gogo https://launchpad.net/~trebelnik-stefina\n"
-#~ "  zvacet https://launchpad.net/~ivicakolic"
-
-#~ msgid "Print version info and exit"
-#~ msgstr "Ispiši informacije o inačici i izađi"
-
-#~ msgid "Show about dialog"
-#~ msgstr "Prikaži dijalog o programu"
-
-#~ msgid "If you close this tab, this process will end."
-#~ msgstr "Ako zatvorite ovu karticu, ovaj proces će završiti."
-
-#~ msgid "If you quit Terminal, this process will end."
-#~ msgstr "Ako zatvorite ovaj Terminal, ovaj proces će završiti."
-
-#~ msgid "Open a new tab"
-#~ msgstr "Otvori novu karticu"
-
-#~ msgid "New Root Window"
-#~ msgstr "Novi 'Root' prozor"
-
-#~ msgid "Set shell at launch"
-#~ msgstr "Postavi ljusku pri pokretanju"

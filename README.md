@@ -15,7 +15,7 @@ You'll need the following dependencies:
 * libhandy-1-dev >= 0.83.0
 * libvte-2.91-dev >= 0.59
 * meson
-* valac
+* valac >= 0.56
 
 Run `meson` to configure the build environment and then `ninja test` to build and run tests
 

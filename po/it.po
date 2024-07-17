@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 09:26+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
 "PO-Revision-Date: 2020-11-06 13:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/terminal/"
@@ -20,39 +20,41 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-02-02 05:56+0000\n"
 
-#: src/Application.vala:32
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "Mostra versione"
 
 #. -n flag forces a new window
-#: src/Application.vala:34
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "Apri una nuova finestra del terminale"
 
 #. -t flag forces a new tab
-#: src/Application.vala:36
-msgid "Open a new terminal tab"
-msgstr "Apri una nuova scheda del terminale"
+#: src/Application.vala:38
+#, fuzzy
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Apri una nuova finestra del terminale"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:38
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "Imposta la directory di lavoro della shell"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:40
+#: src/Application.vala:42
 #, fuzzy
 #| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Esegui un programma nel terminale"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:42
+#: src/Application.vala:44
 msgid "Open terminal in a minimized state"
 msgstr ""
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:45
+#: src/Application.vala:47
 #, fuzzy
 #| msgid ""
 #| "Run remainder of line as a command in terminal. Can also use '--' as flag"
@@ -61,77 +63,75 @@ msgstr ""
 "Esegui il resto della riga come comando nel terminale. Puoi anche usare \"--"
 "\" come flag"
 
-#: src/Application.vala:97
+#: src/Application.vala:99
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:159
+#: src/Application.vala:164
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:162
+#: src/Application.vala:167
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:155
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:202
+#: src/MainWindow.vala:161
 msgid "Copy Last Output"
 msgstr "Copia l'ultimo risultato"
 
-#: src/MainWindow.vala:208
+#: src/MainWindow.vala:167
 msgid "Paste"
 msgstr "Incolla"
 
-#: src/MainWindow.vala:214
+#: src/MainWindow.vala:173
 msgid "Select All"
 msgstr "Seleziona tutto"
 
-#: src/MainWindow.vala:220 src/MainWindow.vala:326 src/MainWindow.vala:1246
+#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
 msgid "Find…"
 msgstr "Trova…"
 
-#: src/MainWindow.vala:333
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Schermo intero"
+
+#: src/MainWindow.vala:283
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: src/MainWindow.vala:359
+#: src/MainWindow.vala:319
 msgid "New Tab"
 msgstr "Nuova scheda"
 
-#: src/MainWindow.vala:707
+#: src/MainWindow.vala:574
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Mostra versione"
 
-#: src/MainWindow.vala:708
+#: src/MainWindow.vala:575
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:981 src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
 msgid "Close Tab"
 msgstr "Chiudi scheda"
 
-#: src/MainWindow.vala:982
+#: src/MainWindow.vala:832
 msgid "Duplicate"
 msgstr ""
 
-#: src/MainWindow.vala:995
+#: src/MainWindow.vala:845
 msgid "Reload"
 msgstr ""
 
-#: src/MainWindow.vala:1086
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-
-#: src/MainWindow.vala:1088
-msgid "The pasted text may contain multiple commands"
-msgstr ""
-
-#: src/MainWindow.vala:1238
+#: src/MainWindow.vala:1000
 msgid "Hide find bar"
 msgstr "Nascondi la barra di ricerca"
 
@@ -148,6 +148,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Scuro"
 
@@ -337,32 +338,68 @@ msgstr "Risultato successivo"
 msgid "Cyclic search"
 msgstr "Ricerca ciclica"
 
+#: src/Widgets/SettingsPopover.vala:40
+msgid "Zoom out"
+msgstr "Riduci ingrandimento"
+
+#: src/Widgets/SettingsPopover.vala:48
+msgid "Default zoom level"
+msgstr "Livello di ingrandimento predefinito"
+
+#: src/Widgets/SettingsPopover.vala:56
+msgid "Zoom in"
+msgstr "Aumenta ingrandimento"
+
+#: src/Widgets/SettingsPopover.vala:84
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:93
+msgid "High Contrast"
+msgstr "Contrasto elevato"
+
+#: src/Widgets/SettingsPopover.vala:96
+msgid "Solarized Light"
+msgstr "Solarizzato chiaro"
+
+#: src/Widgets/SettingsPopover.vala:106
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:112
+msgid "Natural Copy/Paste"
+msgstr "Copia e incolla naturale"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Le scorciatoie non richiedono il tasto Maiusc.\n"
+"Ciò potrebbe interferire con le applicazioni a riga di comando."
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminale"
 
-#~ msgid "Zoom out"
-#~ msgstr "Riduci ingrandimento"
+#: src/Widgets/TerminalWidget.vala:502
+msgid "The pasted text may contain multiple commands"
+msgstr ""
 
-#~ msgid "Default zoom level"
-#~ msgstr "Livello di ingrandimento predefinito"
+#: src/Widgets/TerminalWidget.vala:504
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
 
-#~ msgid "Zoom in"
-#~ msgstr "Aumenta ingrandimento"
-
-#~ msgid "High Contrast"
-#~ msgstr "Contrasto elevato"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarizzato chiaro"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Copia e incolla naturale"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Le scorciatoie non richiedono il tasto Maiusc.\n"
-#~ "Ciò potrebbe interferire con le applicazioni a riga di comando."
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Apri una nuova scheda del terminale"
 
 #~ msgid "Show help"
 #~ msgstr "Mostra aiuto"
@@ -441,9 +478,6 @@ msgstr "Terminale"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Vai alla scheda precedente"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Schermo intero"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Abilita/Disabilita schermo intero"

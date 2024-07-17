@@ -14,6 +14,8 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
+    public bool is_testing { get; set construct; }
+
     private static Themes themes;
 
     public Application () {
@@ -33,7 +35,7 @@ public class Terminal.Application : Gtk.Application {
         // -n flag forces a new window
         add_main_option ("new-window", 'n', 0, OptionArg.NONE, _("Open a new terminal window"), null);
         // -t flag forces a new tab
-        add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab"), null);
+        add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab at current working directory"), null);
         // -w flag defines the working directory that the new tab/window uses
         add_main_option ("working-directory", 'w', 0, OptionArg.FILENAME, _("Set shell working directory"), "DIR");
         // -e flag is used for running single strings as a command line
@@ -106,7 +108,10 @@ public class Terminal.Application : Gtk.Application {
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
             if (working_directory != "\0") {
-                Environment.set_current_dir (working_directory); // will be sent via platform-data
+                Environment.set_current_dir (
+                    Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
+                ); // will be sent via platform-data
+                options.insert ("new-tab", "b", true);
             }
 
             options.remove ("working-directory");
@@ -201,7 +206,9 @@ public class Terminal.Application : Gtk.Application {
         );
 
         var new_window_action = new SimpleAction ("new-window", null);
-        new_window_action.activate.connect (new_window);
+        new_window_action.activate.connect (() => {
+            new MainWindow (this, active_window == null).present ();
+        });
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (close);
@@ -211,22 +218,30 @@ public class Terminal.Application : Gtk.Application {
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
+
+        set_accels_for_action (TerminalWidget.ACTION_COPY, TerminalWidget.ACCELS_COPY);
+        set_accels_for_action (TerminalWidget.ACTION_COPY_OUTPUT, TerminalWidget.ACCELS_COPY_OUTPUT);
+        set_accels_for_action (TerminalWidget.ACTION_PASTE, TerminalWidget.ACCELS_PASTE);
+        set_accels_for_action (TerminalWidget.ACTION_RELOAD, TerminalWidget.ACCELS_RELOAD);
+        set_accels_for_action (TerminalWidget.ACTION_SCROLL_TO_COMMAND, TerminalWidget.ACCELS_SCROLL_TO_COMMAND);
+        set_accels_for_action (TerminalWidget.ACTION_SELECT_ALL, TerminalWidget.ACCELS_SELECT_ALL);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
+        set_accels_for_action (TerminalWidget.ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
+        var is_first_window = window == null;
         bool new_window;
 
-        if (window == null || options.lookup ("new-window", "b", out new_window) && new_window) {
-            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-             * Currently they are set to restore (subject to the restore-tabs setting).
-             * If it is desired that tabs should never be restored in these circimstances add another check below.
-             */
-            bool restore_tabs = !("commandline" in options || "execute" in options) || window == null;
-            window = new MainWindow (this, restore_tabs);
+        // Always restore tabs if creating first window, but no extra tab at this stage
+        if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
+            window = new MainWindow (this, is_first_window);
         }
 
+        // If a specified working directory is not requested, use the current working directory from the commandline
         unowned var working_directory = command_line.get_cwd ();
         unowned string[] commands;
         unowned string command;
@@ -234,6 +249,8 @@ public class Terminal.Application : Gtk.Application {
 
         options.lookup ("new-tab", "b", out new_tab);
 
+        // If "execute" option or "commandline" option used ignore any "new-tab option
+        // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
@@ -242,7 +259,7 @@ public class Terminal.Application : Gtk.Application {
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else {
+        } else if (new_tab || window.terminals.is_empty ()) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
@@ -261,10 +278,6 @@ public class Terminal.Application : Gtk.Application {
         }
 
         base.dbus_unregister (connection, path);
-    }
-
-    private void new_window () {
-        new MainWindow (this, active_window == null).present ();
     }
 
     private void close () {
