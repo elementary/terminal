@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"PO-Revision-Date: 2024-07-15 07:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -92,7 +92,7 @@ msgstr "終了時に DBus インターフェースを適切に削除するよう
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Option to follow system dark style preference"
-msgstr "システムのダークスタイル設定に従うオプションを追加"
+msgstr "システムのダークモード設定に従うオプションを追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Create a custom color palette"
