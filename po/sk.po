@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 05:15+0000\n"
-"PO-Revision-Date: 2022-12-26 20:25+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
 "sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,10 +31,8 @@ msgstr "Otvoriť nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Otvoriť nové okno terminálu"
+msgstr "Otvoriť nové okno terminálu v aktuálnom adresári"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -43,29 +41,22 @@ msgstr "Nastaviť pracovný adresár shellu"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:42
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Spustiť program v termináli"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:44
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Otvoriť terminál v minimalizovanom stave"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:47
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Spustiť zvyšok riadku ako príkaz v termináli. Môžete tiež použiť „--“ ako "
-"vlajku"
+msgstr "Spustiť zvyšok riadku ako príkaz v termináli"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- PRÍKAZ…]"
 
 #: src/Application.vala:164
 msgid "Process completed"
@@ -96,10 +87,8 @@ msgid "Find…"
 msgstr "Nájsť…"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Celá obrazovka"
+msgstr "Opustiť režim celej obrazovky"
 
 #: src/MainWindow.vala:283
 msgid "Settings"
@@ -375,13 +364,15 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Event Alerts"
-msgstr ""
+msgstr "Upozornenia na udalosti"
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Oznámiť neplatný vstup alebo viaceré možné ukončenia (podlieha Nastaveniam "
+"systému → Zvuk)"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"

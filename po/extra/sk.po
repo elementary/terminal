@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-16 05:15+0000\n"
-"PO-Revision-Date: 2021-09-17 21:36+0000\n"
+"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/extra/sk/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
@@ -40,103 +40,120 @@ msgstr ""
 "systéme."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:96
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:110
+#: data/io.elementary.terminal.appdata.xml.in:129
+msgid "New features:"
+msgstr "Nové funkcie:"
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Allow switching event alerts on and off in the app menu"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Save tabs and zooms to the saved state settings when they change"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:81
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Other updates:"
 msgstr "Ostatné aktualizácie:"
 
-#: data/io.elementary.terminal.appdata.xml.in:60
+#: data/io.elementary.terminal.appdata.xml.in:65
+msgid "Document missing options in the man page"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid "Suppress unwanted default tab when opening a new window"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:121
+#: data/io.elementary.terminal.appdata.xml.in:140
+msgid "Translation updates"
+msgstr "Aktualizácie prekladov"
+
+#: data/io.elementary.terminal.appdata.xml.in:83
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"Pridané skratky „Ctrl + PageUp“ a „Ctrl + PageDown“ na prepínanie medzi "
+"kartami"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "Správne odexportovať rozhranie DBus pri ukončení"
 
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:77
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:117
-#: data/io.elementary.terminal.appdata.xml.in:133
-msgid "Translation updates"
-msgstr "Aktualizácie prekladov"
-
-#: data/io.elementary.terminal.appdata.xml.in:87
-#: data/io.elementary.terminal.appdata.xml.in:106
-msgid "New features:"
-msgstr "Nové funkcie:"
-
-#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "Možnosť pre nasledovanie systémovej preferencie tmavého režimu"
 
-#: data/io.elementary.terminal.appdata.xml.in:90
-#, fuzzy
-#| msgid "Validate custom palette"
+#: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Create a custom color palette"
-msgstr "Overovanie správnosti vlastných farebných paliet"
+msgstr "Vytvorte si vlastnú paletu farieb"
 
-#: data/io.elementary.terminal.appdata.xml.in:92
-#: data/io.elementary.terminal.appdata.xml.in:111
-#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fixes:"
-msgstr ""
+msgstr "Opravy:"
 
-#: data/io.elementary.terminal.appdata.xml.in:94
+#: data/io.elementary.terminal.appdata.xml.in:117
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Predvolené štýly sú celkom nepriehľadné a aktualizované na najnovšie "
+"upstream hodnoty zo Solarized pre zlepšenie čitateľnosti"
 
-#: data/io.elementary.terminal.appdata.xml.in:99
+#: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Performance improvements"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:108
-msgid "Switch tabs with Alt + 1-9"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:109
-msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:113
-msgid "Fix build on OS 7"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:126
-msgid "Properly restore zoom levels for all locales"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:130
-msgid "Use XTerm title for window title if available"
-msgstr ""
+msgstr "Zlepšenia výkonu"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
-msgid ""
-"Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
-"foreground processes"
-msgstr ""
+msgid "Switch tabs with Alt + 1-9"
+msgstr "Prepínajte karty s Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:132
-msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
-msgstr ""
+msgid "Quit with Ctrl + Shift + Q"
+msgstr "Ukončite s Ctrl + Shift + Q"
+
+#: data/io.elementary.terminal.appdata.xml.in:136
+msgid "Fix build on OS 7"
+msgstr "Oprava zostavenia na OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
-msgstr ""
+msgstr "príkaz;riadok;cmd;príkazový riadok;spustiť;"
 
 #: data/io.elementary.terminal.desktop.in:18
 msgid "New Window"
-msgstr ""
+msgstr "Nové okno"
 
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
-msgstr ""
+msgstr "Nová koreňová karta"
+
+#~ msgid "Properly restore zoom levels for all locales"
+#~ msgstr "Správne obnoviť úroveň priblíženia pre všetky jazykové nastavenia"
+
+#~ msgid "Use XTerm title for window title if available"
+#~ msgstr "Použiť XTerm nadpis ako nadpis okna, ak je dostupný"
+
+#~ msgid ""
+#~ "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
+#~ "foreground processes"
+#~ msgstr ""
+#~ "Zmena klávesovej skratky „Obnoviť karty“ na Shift + F5 pre zabránenie "
+#~ "konfliktu s procesmi na popredí"
+
+#~ msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
+#~ msgstr ""
+#~ "Zmena preferovanej skratky pre „Obnoviť kartu“ na Shift + Control + R"
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Presúvajte karty pomocou skratky Ctrl + Alt + ←/→"
