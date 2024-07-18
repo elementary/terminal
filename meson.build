@@ -1,7 +1,7 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '6.1.2',
+    version: '6.2.0',
     meson_version: '>=0.60'
 )
 
