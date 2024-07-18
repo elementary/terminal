@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-light.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-find.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -53,7 +53,7 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
-    <release version="6.2.0" date="2023-12-11" urgency="medium">
+    <release version="6.2.0" date="2024-07-18" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
