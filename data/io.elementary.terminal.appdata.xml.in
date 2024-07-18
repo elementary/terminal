@@ -53,7 +53,7 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
-    <release version="6.2.0" date="2024-07-12" urgency="medium">
+    <release version="6.2.0" date="2024-07-18" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
