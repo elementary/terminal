@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2023-12-24 00:10+0000\n"
+"PO-Revision-Date: 2024-07-23 15:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/extra/"
 "hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -47,11 +47,11 @@ msgstr "Új funkciók:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "Eseményértesítések ki-/bekapcsolása az alkalmazás menüjében"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
+msgstr "Tabulátorok és nagyítás állapotának mentése a változtatásukkor"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -63,11 +63,11 @@ msgstr "Egyéb frissítések:"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "A man oldal kibővítése az eddig nem dokumentált opciókkal"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "Új ablak megnyitásakor nemkívánatos új lap elkerülése"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85

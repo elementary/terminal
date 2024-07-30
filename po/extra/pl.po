@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 18:16+0000\n"
-"PO-Revision-Date: 2023-04-05 23:00+0000\n"
+"PO-Revision-Date: 2024-07-21 09:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -48,11 +48,13 @@ msgstr "Nowe funkcje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
+"Karty oraz skala przybliżenia są teraz zapisywane w ustawieniach stanu gdy "
+"są one zmieniane"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -64,11 +66,12 @@ msgstr "Inne aktualizacje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "Strony man zostały uzupełnione o brakujące opcje"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr ""
+"Przy otwieraniu nowego okna nie jest wyświetlana niechciana karta domyślna"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85
