@@ -6,3 +6,4 @@ src/Dialogs/UnsafePasteDialog.vala
 src/Widgets/SearchToolbar.vala
 src/Widgets/SettingsPopover.vala
 src/Widgets/TerminalWidget.vala
+src/Widgets/TerminalView.vala
