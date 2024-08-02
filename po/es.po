@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-02 01:57+0000\n"
-"PO-Revision-Date: 2024-06-17 11:16+0000\n"
+"PO-Revision-Date: 2024-08-03 02:07+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:34
@@ -382,36 +382,28 @@ msgid "New Tab"
 msgstr "Pestaña nueva"
 
 #: src/Widgets/TerminalView.vala:69
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Cerrar pestaña"
+msgstr "Pestañas cerradas"
 
 #: src/Widgets/TerminalView.vala:209
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Cerrar pestañas hacia la derecha"
 
 #: src/Widgets/TerminalView.vala:210
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Cerrar pestaña"
+msgstr "Cerrar las otras pestañas"
 
 #: src/Widgets/TerminalView.vala:214
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Nueva ventana"
+msgstr "Abrir en nueva ventana"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "Duplicar"
+msgstr "Duplicar pestaña"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "ReLoad"
-msgstr ""
+msgstr "Recargar pestaña"
 
 #~ msgid "Reload"
 #~ msgstr "Volver a cargar"
