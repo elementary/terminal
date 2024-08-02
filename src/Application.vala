@@ -146,12 +146,7 @@ public class Terminal.Application : Gtk.Application {
                     break;
                 }
 
-                foreach (var term in window.terminals) {
-                    if (term.terminal_id == id) {
-                        terminal = term;
-                        break;
-                    }
-                }
+                terminal = window.get_terminal (id);
             }
 
             if (terminal == null) {
@@ -168,11 +163,11 @@ public class Terminal.Application : Gtk.Application {
                 process_icon = new ThemedIcon ("process-error-symbolic");
             }
 
-            if (terminal != terminal.window.current_terminal) {
+            if (terminal != terminal.main_window.current_terminal) {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(Gdk.WindowState.FOCUSED in terminal.window.get_window ().get_state ())) {
+            if (!(Gdk.WindowState.FOCUSED in terminal.main_window.get_window ().get_state ())) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -259,7 +254,7 @@ public class Terminal.Application : Gtk.Application {
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else if (new_tab || window.terminals.is_empty ()) {
+        } else if (new_tab || window.notebook.n_pages == 0) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
@@ -268,7 +263,6 @@ public class Terminal.Application : Gtk.Application {
         } else {
             window.present ();
         }
-
         return 0;
     }
 
@@ -280,7 +274,7 @@ public class Terminal.Application : Gtk.Application {
         base.dbus_unregister (connection, path);
     }
 
-    private void close () {
+    public void close () {
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
         }

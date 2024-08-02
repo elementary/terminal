@@ -6,14 +6,16 @@
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
     public signal void show_theme_editor ();
 
-    public Vte.Terminal terminal {
+    public Vte.Terminal? terminal {
         owned get {
             return terminal_binding.source as Vte.Terminal;
         }
 
         set {
             terminal_binding.source = value;
-            insert_action_group ("term", value.get_action_group ("term"));
+            if (value != null) {
+                insert_action_group ("term", value.get_action_group ("term"));
+            }
         }
     }
 

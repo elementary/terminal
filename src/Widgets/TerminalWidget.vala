@@ -26,43 +26,40 @@ namespace Terminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public Terminal.Application app;
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
+        public string? program_string { get; set; default = null; }
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
-        private MainWindow _window;
 
-        public MainWindow window {
+        public unowned MainWindow main_window;
+        private Terminal.Application app {
             get {
-                return _window;
-            }
-
-            set {
-                this._window = value;
-                this.app = value.app;
-                this.menu = value.menu;
-                this.menu.show_all ();
+                return main_window.app;
             }
         }
 
-        private Gtk.Menu menu;
-        public Granite.Widgets.Tab tab;
+        private Gtk.Menu menu {
+            get {
+                return main_window.menu;
+            }
+        }
+
+        // There may be no associated tab while made restorable
+        public unowned Hdy.TabPage tab;
         public string? link_uri;
 
-        private string _tab_label;
         public string tab_label {
             get {
-                return _tab_label;
+                return tab != null ? tab.title : "";
             }
 
             set {
-                if (value != null) {
-                    _tab_label = value;
-                    tab.label = tab_label;
+                if (value != null && tab != null) {
+                    tab.title = value;
                 }
             }
         }
@@ -159,7 +156,7 @@ namespace Terminal {
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
-        public signal void cwd_changed ();
+        public signal void cwd_changed (string cwd);
 
         public TerminalWidget (MainWindow parent_window) {
             pointer_autohide = true;
@@ -168,7 +165,7 @@ namespace Terminal {
 
             init_complete = false;
 
-            window = parent_window;
+            main_window = parent_window;
             child_has_exited = false;
             killed = false;
 
@@ -318,7 +315,7 @@ namespace Terminal {
                 }
 
                 Gdk.Rectangle rect = { (int) x, (int) y };
-                window.update_context_menu ();
+                main_window.update_context_menu ();
                 setup_menu ();
 
                 menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
@@ -334,7 +331,7 @@ namespace Terminal {
                     link_uri = get_link (gesture.get_last_event (null));
 
                     if (link_uri != null && !get_has_selection ()) {
-                       window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                       main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                     }
                 } else {
                     allow_hyperlink = true;
@@ -390,7 +387,7 @@ namespace Terminal {
                         (int) cell_height
                     };
 
-                    window.update_context_menu ();
+                    main_window.update_context_menu ();
                     setup_menu ();
 
                     // Popup context menu below cursor position
@@ -638,9 +635,10 @@ namespace Terminal {
             check_cwd_changed ();
         }
 
-        public void run_program (string program_string, string? working_directory) {
+        public void run_program (string _program_string, string? working_directory) {
             try {
                 string[]? program_with_args = null;
+                this.program_string = _program_string;
                 Shell.parse_argv (program_string, out program_with_args);
 
                 this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
@@ -855,7 +853,8 @@ namespace Terminal {
             var cwd = get_shell_location ();
             if (cwd != current_working_directory) {
                 current_working_directory = cwd;
-                cwd_changed ();
+                tab.tooltip = current_working_directory;
+                cwd_changed (cwd);
             }
         }
     }
