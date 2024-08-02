@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-02 01:57+0000\n"
-"PO-Revision-Date: 2024-06-17 11:16+0000\n"
+"PO-Revision-Date: 2024-08-03 02:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -380,36 +380,28 @@ msgid "New Tab"
 msgstr "新しいタブ"
 
 #: src/Widgets/TerminalView.vala:69
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "タブを閉じる"
+msgstr "閉じたタブ"
 
 #: src/Widgets/TerminalView.vala:209
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "右側のタブを閉じる"
 
 #: src/Widgets/TerminalView.vala:210
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "タブを閉じる"
+msgstr "ほかのタブを閉じる"
 
 #: src/Widgets/TerminalView.vala:214
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "新しいウィンドウ"
+msgstr "新しいウィンドウで開く"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "タブを複製"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "ReLoad"
-msgstr ""
+msgstr "再読み込み"
 
 #~ msgid "Reload"
 #~ msgstr "再読み込み"
