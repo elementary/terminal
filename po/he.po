@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-02 01:57+0000\n"
-"PO-Revision-Date: 2024-06-17 11:16+0000\n"
+"PO-Revision-Date: 2024-08-03 02:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
 #: src/Application.vala:34
@@ -375,36 +375,28 @@ msgid "New Tab"
 msgstr "לשונית חדשה"
 
 #: src/Widgets/TerminalView.vala:69
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "סגירת הלשונית"
+msgstr "לשוניות סגורות"
 
 #: src/Widgets/TerminalView.vala:209
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "סגירת הלשוניות מימין"
 
 #: src/Widgets/TerminalView.vala:210
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "סגירת הלשונית"
+msgstr "סגירת שאר הלשונית"
 
 #: src/Widgets/TerminalView.vala:214
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "חלון חדש"
+msgstr "פתיחה בחלון חדש"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "שכפול"
+msgstr "שכפול לשונית"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "ReLoad"
-msgstr ""
+msgstr "רענון"
 
 #~ msgid "Reload"
 #~ msgstr "רענון"
