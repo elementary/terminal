@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"POT-Creation-Date: 2024-08-02 01:57+0000\n"
 "PO-Revision-Date: 2015-12-05 14:38+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Kinyarwanda <rw@li.org>\n"
@@ -62,70 +62,54 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:168
 msgid "Copy"
 msgstr "Kopiya"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:174
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:180
 msgid "Paste"
 msgstr "Omeka"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:186
 msgid "Select All"
 msgstr "Hitamo byose"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
+#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
 msgid "Find…"
 msgstr "Shaka ...."
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:280
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Screen Yuzuye"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Akadirishya gashya"
-
-#: src/MainWindow.vala:574
+#: src/MainWindow.vala:537
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:538
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Funga akadirishya"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr ""
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr ""
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1022
 msgid "Hide find bar"
 msgstr ""
 
@@ -142,7 +126,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr ""
 
@@ -262,6 +246,11 @@ msgstr "Hari porgorame irigukora kuri iri dirishya?"
 msgid "If you close it, the process will end."
 msgstr "Nurifunga , iyi porogaramu irahagarara."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Funga akadirishya"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ese koko urashaka gufunga iyi Terminal?"
@@ -332,49 +321,49 @@ msgstr "Ibisubizo bikurikira"
 msgid "Cyclic search"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:42
 #, fuzzy
 msgid "Zoom out"
 msgstr "Tubya"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:50
 msgid "Default zoom level"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:58
 #, fuzzy
 msgid "Zoom in"
 msgstr "Tubura"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:86
 msgid "Follow System Style"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:95
 msgid "High Contrast"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:98
 msgid "Solarized Light"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Custom"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -384,12 +373,46 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:499
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:501
 msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Akadirishya gashya"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Funga akadirishya"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Funga akadirishya"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Idirishya rishya"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:218
+msgid "ReLoad"
 msgstr ""
 
 #, fuzzy
@@ -414,9 +437,6 @@ msgstr ""
 
 #~ msgid "Use the command line"
 #~ msgstr "koresha uburyo bwamakomande"
-
-#~ msgid "New Window"
-#~ msgstr "Idirishya rishya"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Fungura terminal hano"

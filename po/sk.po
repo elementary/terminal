@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"POT-Creation-Date: 2024-08-02 01:57+0000\n"
 "PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -58,68 +58,52 @@ msgstr "Spustiť zvyšok riadku ako príkaz v termináli"
 msgid "[-- COMMAND…]"
 msgstr "[-- PRÍKAZ…]"
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr "Proces úspešne dokončený"
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr "Proces bol ukončený s chybami"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:168
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:174
 msgid "Copy Last Output"
 msgstr "Kopírovať posledný výstup"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:180
 msgid "Paste"
 msgstr "Vložiť"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:186
 msgid "Select All"
 msgstr "Označiť všetko"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
+#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
 msgid "Find…"
 msgstr "Nájsť…"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:280
 msgid "Exit FullScreen"
 msgstr "Opustiť režim celej obrazovky"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Nová karta"
-
-#: src/MainWindow.vala:574
+#: src/MainWindow.vala:537
 #, c-format
 msgid "Show in %s"
 msgstr "Zobraziť v %s"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:538
 msgid "Default application"
 msgstr "Predvolená aplikácia"
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Zatvoriť kartu"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr "Duplikovať"
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr "Obnoviť"
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1022
 msgid "Hide find bar"
 msgstr "Skryť panel vyhľadávania"
 
@@ -136,7 +120,7 @@ msgid "Light"
 msgstr "Svetlý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "Tmavý"
 
@@ -256,6 +240,11 @@ msgstr "Na tejto karte je spustený aktívny proces."
 msgid "If you close it, the process will end."
 msgstr "Ak ju zatvoríte, proces sa ukončí."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Zatvoriť kartu"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Naozaj chcete ukončiť Terminál?"
@@ -324,49 +313,49 @@ msgstr "Ďalší výsledok"
 msgid "Cyclic search"
 msgstr "Opakované hľadanie"
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:42
 msgid "Zoom out"
 msgstr "Oddialiť"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:50
 msgid "Default zoom level"
 msgstr "Mierka 1:1"
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:58
 msgid "Zoom in"
 msgstr "Priblížiť"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:86
 msgid "Follow System Style"
 msgstr "Nasledovať systémový štýl"
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:95
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:98
 msgid "Solarized Light"
 msgstr "Solarizovaný svetlý"
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Custom"
 msgstr "Vlastné"
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Natural Copy/Paste"
 msgstr "Prirodzené kopírovanie/vkladanie"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
 "príkazovom riadku"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "Upozornenia na udalosti"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -378,13 +367,52 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:499
 msgid "The pasted text may contain multiple commands"
 msgstr "Vložený text môže obsahovať viacero príkazov"
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:501
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Nová karta"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Zatvoriť kartu"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Zatvoriť kartu"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Nové okno"
+
+#: src/Widgets/TerminalView.vala:215
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "Duplikovať"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "ReLoad"
+msgstr ""
+
+#~ msgid "Reload"
+#~ msgstr "Obnoviť"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otvoriť novú kartu terminálu"
@@ -409,9 +437,6 @@ msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
 #~ msgid "Use the command line"
 #~ msgstr "Použiť príkazový riadok"
-
-#~ msgid "New Window"
-#~ msgstr "Nové okno"
 
 #~ msgid "New Root Tab"
 #~ msgstr "Nová root záložka"

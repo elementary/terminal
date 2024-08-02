@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"POT-Creation-Date: 2024-08-02 01:57+0000\n"
 "PO-Revision-Date: 2024-06-19 05:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
@@ -58,68 +58,52 @@ msgstr "დარჩენილი ხაზების ტერმინა�
 msgid "[-- COMMAND…]"
 msgstr "[-- ბრძანება…]"
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr "პროცესი დასრულდა"
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:168
 msgid "Copy"
 msgstr "კოპირება"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:174
 msgid "Copy Last Output"
 msgstr "ბოლო გამოტანის კოპირება"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:180
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:186
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
+#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
 msgid "Find…"
 msgstr "ძიება…"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:280
 msgid "Exit FullScreen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296
 msgid "Settings"
 msgstr "მორგება"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "ახალი ჩანართი"
-
-#: src/MainWindow.vala:574
+#: src/MainWindow.vala:537
 #, c-format
 msgid "Show in %s"
 msgstr "%s-ში ჩვენება"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:538
 msgid "Default application"
 msgstr "ნაგულისხმები აპლიკაცია"
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "ჩანართის დახურვა"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr "დუბლიკაცია"
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr "თავიდან ჩატვირთვა"
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1022
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
@@ -136,7 +120,7 @@ msgid "Light"
 msgstr "ღია"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "ბნელი"
 
@@ -256,6 +240,11 @@ msgstr "ამ ჩანართში მიმდინარეობს პ
 msgid "If you close it, the process will end."
 msgstr "თუ ამას დახურავთ, პროცესი დასრულდება."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "ჩანართის დახურვა"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
@@ -324,48 +313,48 @@ msgstr "მომდევნო შედეგი"
 msgid "Cyclic search"
 msgstr "ციკლური ძებნა"
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:42
 msgid "Zoom out"
 msgstr "დაპატარავება"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:50
 msgid "Default zoom level"
 msgstr "მასშტაბის ნაგულისხმევი დონე"
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:58
 msgid "Zoom in"
 msgstr "გადიდება"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:86
 msgid "Follow System Style"
 msgstr "სისტემის სტილის მიყოლა"
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:95
 msgid "High Contrast"
 msgstr "მაღალი კონტრასტი"
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:98
 msgid "Solarized Light"
 msgstr "სოლარიზებული ღია"
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Custom"
 msgstr "სხვა"
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Natural Copy/Paste"
 msgstr "ბუნებრივი კოპირება/ჩასმა"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "მოვლენის განგაშები"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -377,13 +366,52 @@ msgstr ""
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:499
 msgid "The pasted text may contain multiple commands"
 msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:501
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "ახალი ჩანართი"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "ჩანართის დახურვა"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "ჩანართის დახურვა"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "ახალი ფანჯარა"
+
+#: src/Widgets/TerminalView.vala:215
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "დუბლიკაცია"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "ReLoad"
+msgstr ""
+
+#~ msgid "Reload"
+#~ msgstr "თავიდან ჩატვირთვა"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ტერმინალის ახალი ჩანართის გახსნა"
@@ -405,9 +433,6 @@ msgstr "ჩასმულ ტექსტი შეიძლება ადმ
 
 #~ msgid "Use the command line"
 #~ msgstr "ბრძანებითი ხაზის გამოყენება"
-
-#~ msgid "New Window"
-#~ msgstr "ახალი ფანჯარა"
 
 #~ msgid "New Root Tab"
 #~ msgstr "ახალი რუთ ჩანართი"
