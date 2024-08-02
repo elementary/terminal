@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"POT-Creation-Date: 2024-08-02 01:57+0000\n"
 "PO-Revision-Date: 2024-07-15 07:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
@@ -67,7 +67,8 @@ msgstr "man ページに記載が漏れていたオプションを追記"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr "新しいウィンドウを開いた場合に、不要なデフォルトのタブが表示されないように修"
+msgstr ""
+"新しいウィンドウを開いた場合に、不要なデフォルトのタブが表示されないように修"
 "正"
 
 #: data/io.elementary.terminal.appdata.xml.in:67

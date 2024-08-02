@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 18:16+0000\n"
+"POT-Creation-Date: 2024-08-02 01:57+0000\n"
 "PO-Revision-Date: 2024-07-21 09:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
@@ -48,7 +48,8 @@ msgstr "Nowe funkcje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr "Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
+msgstr ""
+"Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
