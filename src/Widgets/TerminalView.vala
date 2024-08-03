@@ -215,7 +215,7 @@ public class Terminal.TerminalView : Gtk.Box {
         open_tab_section.append (_("Duplicate Tab"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_DUPLICATE_TAB);
 
         var reload_section = new Menu ();
-        reload_section.append (_("ReLoad"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
+        reload_section.append (_("Reload"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
 
         menu.append_section (null, open_tab_section);
         menu.append_section (null, close_tab_section);
