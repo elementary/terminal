@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 01:57+0000\n"
+"POT-Creation-Date: 2024-08-03 02:07+0000\n"
 "PO-Revision-Date: 2024-06-21 15:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -409,11 +409,8 @@ msgid "Duplicate Tab"
 msgstr "Duplikuj"
 
 #: src/Widgets/TerminalView.vala:218
-msgid "ReLoad"
-msgstr ""
-
-#~ msgid "Reload"
-#~ msgstr "Odśwież"
+msgid "Reload"
+msgstr "Odśwież"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otwórz nową kartę terminala"

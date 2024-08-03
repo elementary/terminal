@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 01:57+0000\n"
+"POT-Creation-Date: 2024-08-03 02:07+0000\n"
 "PO-Revision-Date: 2023-05-23 19:07+0000\n"
 "Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
@@ -406,11 +406,8 @@ msgid "Duplicate Tab"
 msgstr "Gandakan"
 
 #: src/Widgets/TerminalView.vala:218
-msgid "ReLoad"
-msgstr ""
-
-#~ msgid "Reload"
-#~ msgstr "Muat Ulang"
+msgid "Reload"
+msgstr "Muat Ulang"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Buka tab terminal baru"

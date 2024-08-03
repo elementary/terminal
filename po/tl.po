@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 01:57+0000\n"
+"POT-Creation-Date: 2024-08-03 02:07+0000\n"
 "PO-Revision-Date: 2018-02-18 06:06+0000\n"
 "Last-Translator: Arden Shackelford <ardenshackelford@gmail.com>\n"
 "Language-Team: Tagalog <https://weblate.elementary.io/projects/terminal/"
@@ -414,8 +414,10 @@ msgid "Duplicate Tab"
 msgstr ""
 
 #: src/Widgets/TerminalView.vala:218
-msgid "ReLoad"
-msgstr ""
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "Isara ang Tab"
 
 #, fuzzy
 #~| msgid "Open a new window"
