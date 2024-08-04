@@ -57,7 +57,7 @@ namespace Terminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public Gtk.Menu menu { get; private set; }
+        public Gtk.Menu context_menu { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
 
@@ -191,16 +191,16 @@ namespace Terminal {
             };
             search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
 
-            menu = new Gtk.Menu ();
-            menu.append (open_in_browser_menuitem);
-            menu.append (new Gtk.SeparatorMenuItem ());
-            menu.append (copy_menuitem);
-            menu.append (copy_last_output_menuitem);
-            menu.append (paste_menuitem);
-            menu.append (select_all_menuitem);
-            menu.append (new Gtk.SeparatorMenuItem ());
-            menu.append (search_menuitem);
-            menu.insert_action_group ("win", actions);
+            context_menu = new Gtk.Menu ();
+            context_menu.append (open_in_browser_menuitem);
+            context_menu.append (new Gtk.SeparatorMenuItem ());
+            context_menu.append (copy_menuitem);
+            context_menu.append (copy_last_output_menuitem);
+            context_menu.append (paste_menuitem);
+            context_menu.append (select_all_menuitem);
+            context_menu.append (new Gtk.SeparatorMenuItem ());
+            context_menu.append (search_menuitem);
+            context_menu.insert_action_group ("win", actions);
 
             setup_ui ();
 

@@ -42,9 +42,9 @@ namespace Terminal {
             }
         }
 
-        private Gtk.Menu menu {
+        private Gtk.Menu context_menu {
             get {
-                return main_window.menu;
+                return main_window.context_menu;
             }
         }
 
@@ -317,9 +317,8 @@ namespace Terminal {
                 Gdk.Rectangle rect = { (int) x, (int) y };
                 main_window.update_context_menu ();
                 setup_menu ();
-
-                menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                menu.select_first (false);
+                context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                context_menu.select_first (false);
 
                 gesture.set_state (CLAIMED);
             }
@@ -391,8 +390,8 @@ namespace Terminal {
                     setup_menu ();
 
                     // Popup context menu below cursor position
-                    menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                    menu.select_first (false);
+                    context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+                    context_menu.select_first (false);
                     break;
 
                 case Gdk.Key.Alt_L:
