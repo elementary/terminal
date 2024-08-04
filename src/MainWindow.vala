@@ -201,6 +201,7 @@ namespace Terminal {
             context_menu.append (new Gtk.SeparatorMenuItem ());
             context_menu.append (search_menuitem);
             context_menu.insert_action_group ("win", actions);
+            context_menu.show_all ();
 
             setup_ui ();
 
