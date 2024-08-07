@@ -42,13 +42,6 @@ namespace Terminal {
             }
         }
 
-        private Menu context_menu_model {
-            get {
-                return main_window.context_menu_model;
-            }
-        }
-
-        private Gtk.PopoverMenu context_popover;
         // There may be no associated tab while made restorable
         public unowned Hdy.TabPage tab;
         public string? link_uri;
@@ -461,12 +454,12 @@ namespace Terminal {
             setup_menu ();
 
             // Popup context menu below cursor position
-            context_popover = new Gtk.PopoverMenu () {
+            var context_popover = new Gtk.PopoverMenu () {
                 relative_to = this,
                 pointing_to = rect
             };
 
-            context_popover.bind_model (context_menu_model, null);
+            context_popover.bind_model (main_window.context_menu_model, null);
             context_popover.show_all ();
             context_popover.popup ();
         }
