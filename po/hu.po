@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-03 02:07+0000\n"
-"PO-Revision-Date: 2024-06-19 05:16+0000\n"
+"PO-Revision-Date: 2024-08-07 00:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -379,32 +379,24 @@ msgid "New Tab"
 msgstr "Új lap"
 
 #: src/Widgets/TerminalView.vala:69
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Lap bezárása"
+msgstr "Bezárt lapok"
 
 #: src/Widgets/TerminalView.vala:209
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Jobbra lévő lapok bezárása"
 
 #: src/Widgets/TerminalView.vala:210
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Lap bezárása"
+msgstr "A többi lap bezárása"
 
 #: src/Widgets/TerminalView.vala:214
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Új ablak"
+msgstr "Megnyitás új ablakban"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "Megkettőzés"
+msgstr "Lap megkettőzése"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Reload"
