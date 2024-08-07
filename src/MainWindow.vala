@@ -158,7 +158,7 @@ namespace Terminal {
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
-               "DUMMY open in name",
+               "", // Appropriate label attribute will be set in update_menu_label ()
                ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
             );
             open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
