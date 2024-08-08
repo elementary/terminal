@@ -48,7 +48,3 @@ tabbar .box {
 menu {
     font: initial;
 }
-
-menu separator {
-    font-size: 0;
-}

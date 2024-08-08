@@ -206,8 +206,8 @@ namespace Terminal {
             context_menu_model = new Menu ();
             // "Open in" item must be in position 0 (see update_menu_label ())
             context_menu_model.append_item (open_in_browser_menuitem);
-            context_menu_model.append_section ("", terminal_action_section);
-            context_menu_model.append_section ("", search_section);
+            context_menu_model.append_section (null, terminal_action_section);
+            context_menu_model.append_section (null, search_section);
 
             setup_ui ();
 
