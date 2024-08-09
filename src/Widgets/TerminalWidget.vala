@@ -42,12 +42,6 @@ namespace Terminal {
             }
         }
 
-        private Gtk.Menu context_menu {
-            get {
-                return main_window.context_menu;
-            }
-        }
-
         // There may be no associated tab while made restorable
         public unowned Hdy.TabPage tab;
         public string? link_uri;
@@ -314,11 +308,7 @@ namespace Terminal {
                     copy_action.set_enabled (true);
                 }
 
-                Gdk.Rectangle rect = { (int) x, (int) y };
-                main_window.update_context_menu ();
-                setup_menu ();
-                context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                context_menu.select_first (false);
+                popup_context_menu ({ (int) x, (int) y });
 
                 gesture.set_state (CLAIMED);
             }
@@ -386,12 +376,7 @@ namespace Terminal {
                         (int) cell_height
                     };
 
-                    main_window.update_context_menu ();
-                    setup_menu ();
-
-                    // Popup context menu below cursor position
-                    context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
-                    context_menu.select_first (false);
+                    popup_context_menu (rect);
                     break;
 
                 case Gdk.Key.Alt_L:
@@ -459,9 +444,20 @@ namespace Terminal {
                 paste_action.set_enabled (can_paste);
             });
 
-            // Update the "Copy Last Outptut" menu option
+            // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
             copy_output_action.set_enabled (has_output);
+        }
+
+        private void popup_context_menu (Gdk.Rectangle rect) {
+            main_window.update_context_menu ();
+            setup_menu ();
+
+            // Popup context menu below cursor position
+            var context_menu = new Gtk.Menu.from_model (main_window.context_menu_model) {
+                attach_widget = this
+            };
+            context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
         }
 
         protected override void copy_clipboard () {

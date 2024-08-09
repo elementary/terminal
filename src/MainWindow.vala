@@ -28,7 +28,7 @@ namespace Terminal {
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
-        private Granite.AccelLabel open_in_browser_menuitem_label;
+        private MenuItem open_in_browser_menuitem;
 
         private bool is_fullscreen {
             get {
@@ -57,7 +57,7 @@ namespace Terminal {
         public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public Gtk.Menu context_menu { get; private set; }
+        public Menu context_menu_model { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
 
@@ -80,9 +80,11 @@ namespace Terminal {
         public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_MOVE_TAB_TO_NEW_WINDOW = "action-move-tab-to-new-window";
         public const string ACTION_SEARCH = "action-search";
+        public const string ACTION_SEARCH_ACCEL = "<Control><Shift>f";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
+        public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
 
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
@@ -128,8 +130,8 @@ namespace Terminal {
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control>Page_Up";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
-            action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
-            action_accelerators[ACTION_OPEN_IN_BROWSER] = "<Control><Shift>e";
+            action_accelerators[ACTION_SEARCH] = ACTION_SEARCH_ACCEL;
+            action_accelerators[ACTION_OPEN_IN_BROWSER] = ACTION_OPEN_IN_BROWSER_ACCEL;
         }
 
         construct {
@@ -154,54 +156,58 @@ namespace Terminal {
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
             primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
-            var open_in_browser_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
-            };
-            open_in_browser_menuitem_label = new Granite.AccelLabel.from_action_name (
-                "", open_in_browser_menuitem.action_name
+            //Window actions
+            open_in_browser_menuitem = new MenuItem (
+               "", // Appropriate label attribute will be set in update_menu_label ()
+               ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
             );
-            open_in_browser_menuitem.add (open_in_browser_menuitem_label);
+            open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
 
-            var copy_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_COPY
-            };
-            copy_menuitem.add (new Granite.AccelLabel.from_action_name (_("Copy"), TerminalWidget.ACTION_COPY));
-
-            var copy_last_output_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_COPY_OUTPUT
-            };
-            copy_last_output_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Copy Last Output"), TerminalWidget.ACTION_COPY_OUTPUT)
+            var search_menuitem = new MenuItem (
+                _("Show Search Bar"),
+                ACTION_PREFIX + ACTION_SEARCH
             );
+            search_menuitem.set_attribute_value ("accel", ACTION_SEARCH_ACCEL);
 
-            var paste_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_PASTE
-            };
-            paste_menuitem.add (new Granite.AccelLabel.from_action_name (_("Paste"), TerminalWidget.ACTION_PASTE));
-
-            var select_all_menuitem = new Gtk.MenuItem () {
-                action_name = TerminalWidget.ACTION_SELECT_ALL
-            };
-            select_all_menuitem.add (
-                new Granite.AccelLabel.from_action_name (_("Select All"), TerminalWidget.ACTION_SELECT_ALL)
+            //TerminalWidget actions
+            var copy_menuitem = new MenuItem (
+                _("Copy"),
+                TerminalWidget.ACTION_COPY
             );
+            copy_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY[0]));
 
-            var search_menuitem = new Gtk.MenuItem () {
-                action_name = ACTION_PREFIX + ACTION_SEARCH
-            };
-            search_menuitem.add (new Granite.AccelLabel.from_action_name (_("Find…"), search_menuitem.action_name));
+            var copy_last_output_menuitem = new MenuItem (
+                _("Copy Last Output"),
+                TerminalWidget.ACTION_COPY_OUTPUT
+            );
+            copy_last_output_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY_OUTPUT[0]));
 
-            context_menu = new Gtk.Menu ();
-            context_menu.append (open_in_browser_menuitem);
-            context_menu.append (new Gtk.SeparatorMenuItem ());
-            context_menu.append (copy_menuitem);
-            context_menu.append (copy_last_output_menuitem);
-            context_menu.append (paste_menuitem);
-            context_menu.append (select_all_menuitem);
-            context_menu.append (new Gtk.SeparatorMenuItem ());
-            context_menu.append (search_menuitem);
-            context_menu.insert_action_group ("win", actions);
-            context_menu.show_all ();
+            var paste_menuitem = new MenuItem (
+                _("Paste"),
+                TerminalWidget.ACTION_PASTE
+            );
+            paste_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_PASTE[0]));
+
+            var select_all_menuitem = new MenuItem (
+                _("Select All"),
+                TerminalWidget.ACTION_SELECT_ALL
+            );
+            select_all_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_SELECT_ALL[0]));
+
+            var terminal_action_section = new Menu ();
+            terminal_action_section.append_item (copy_menuitem);
+            terminal_action_section.append_item (copy_last_output_menuitem);
+            terminal_action_section.append_item (paste_menuitem);
+            terminal_action_section.append_item (select_all_menuitem);
+
+            var search_section = new Menu ();
+            search_section.append_item (search_menuitem);
+
+            context_menu_model = new Menu ();
+            // "Open in" item must be in position 0 (see update_menu_label ())
+            context_menu_model.append_item (open_in_browser_menuitem);
+            context_menu_model.append_section (null, terminal_action_section);
+            context_menu_model.append_section (null, search_section);
 
             setup_ui ();
 
@@ -534,10 +540,20 @@ namespace Terminal {
         private void update_menu_label (string? uri) {
             AppInfo? appinfo = get_default_app_for_uri (uri);
 
+            //Changing atributes has no effect after adding item to menu so remove and re-add.
+            context_menu_model.remove (0); // This item was added first
             get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
-            open_in_browser_menuitem_label.label = _("Show in %s").printf (
-                appinfo != null ? appinfo.get_display_name () : _("Default application")
+            var new_name = _("Show in %s").printf (
+                appinfo != null ?
+                appinfo.get_display_name () : _("Default application")
             );
+
+            open_in_browser_menuitem.set_attribute_value (
+                "label",
+                new Variant ("s", new_name)
+            );
+
+            context_menu_model.prepend_item (open_in_browser_menuitem);
         }
 
         private AppInfo? get_default_app_for_uri (string? uri) {
