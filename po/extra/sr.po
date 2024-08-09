@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 21:31+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2021-02-16 04:03+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/terminal/extra/"
@@ -16,23 +16,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-01-07 06:15+0000\n"
 
-#: data/io.elementary.terminal.appdata.xml.in:8
+#: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "Терминал"
 
-#: data/io.elementary.terminal.appdata.xml.in:9
+#: data/io.elementary.terminal.appdata.xml.in:11
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "Користите линију наредби"
 
-#: data/io.elementary.terminal.appdata.xml.in:11
+#: data/io.elementary.terminal.appdata.xml.in:13
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -40,270 +40,90 @@ msgstr ""
 "Терминал је опонашавач терминала са којим се приступа окружењу ЈУНИКС љуске "
 "која се може користити за покретање програма доступних на вашем систему."
 
-#: data/io.elementary.terminal.appdata.xml.in:36
-#: data/io.elementary.terminal.appdata.xml.in:59
-#: data/io.elementary.terminal.appdata.xml.in:72
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:110
+#: data/io.elementary.terminal.appdata.xml.in:129
 msgid "New features:"
 msgstr "Нове функције:"
 
-#: data/io.elementary.terminal.appdata.xml.in:38
-msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "Премешта језичке пречицом Ктрл + Алт + ←/→"
-
-#: data/io.elementary.terminal.appdata.xml.in:39
-msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "Мења језичке пречицама Ктрл + Табулатор и Ктрл + Промени + Табулатор"
-
-#: data/io.elementary.terminal.appdata.xml.in:40
-msgid "Zoom levels are now remembered per-tab"
-msgstr "Нивои увеличавања се сада памте по језичку"
-
-#: data/io.elementary.terminal.appdata.xml.in:41
-msgid "Also warn about multi-line pastes"
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Allow switching event alerts on and off in the app menu"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Show text details in unsafe paste dialogs"
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:43
-msgid "Open Link option when secondary clicking"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:44
-#, fuzzy
-#| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgid "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
-msgstr "Премешта језичке пречицом Ктрл + Алт + ←/→"
-
-#: data/io.elementary.terminal.appdata.xml.in:45
-msgid "Notifications indicate if a process exited with errors or not"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:46
-#, fuzzy
-#| msgid "Show keyboard shortcuts in the secondary-click menu"
-msgid "Show keyboard shortcuts in tab context menus"
-msgstr "Приказује пречице тастатуре у изборнику другог клика"
-
-#: data/io.elementary.terminal.appdata.xml.in:48
 #: data/io.elementary.terminal.appdata.xml.in:63
-#: data/io.elementary.terminal.appdata.xml.in:77
-#: data/io.elementary.terminal.appdata.xml.in:92
+#: data/io.elementary.terminal.appdata.xml.in:81
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Other updates:"
 msgstr "Остала ажурирања:"
 
-#: data/io.elementary.terminal.appdata.xml.in:50
-msgid ""
-"Fix an issue with keyboard shortcuts not activating the first time they're "
-"pressed"
+#: data/io.elementary.terminal.appdata.xml.in:65
+msgid "Document missing options in the man page"
 msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:51
-msgid "Avoid losing focus when closing background tabs"
-msgstr ""
-
-#: data/io.elementary.terminal.appdata.xml.in:52
-msgid "Validate custom palette"
-msgstr "Потврђује произвољну палету"
-
-#: data/io.elementary.terminal.appdata.xml.in:53
 #: data/io.elementary.terminal.appdata.xml.in:66
-#: data/io.elementary.terminal.appdata.xml.in:81
-#: data/io.elementary.terminal.appdata.xml.in:96
-#: data/io.elementary.terminal.appdata.xml.in:109
-#: data/io.elementary.terminal.appdata.xml.in:118
-#: data/io.elementary.terminal.appdata.xml.in:127
-#: data/io.elementary.terminal.appdata.xml.in:137
-#: data/io.elementary.terminal.appdata.xml.in:150
-#: data/io.elementary.terminal.appdata.xml.in:160
-#: data/io.elementary.terminal.appdata.xml.in:168
-#: data/io.elementary.terminal.appdata.xml.in:176
-#: data/io.elementary.terminal.appdata.xml.in:184
-#: data/io.elementary.terminal.appdata.xml.in:192
-#: data/io.elementary.terminal.appdata.xml.in:203
-#: data/io.elementary.terminal.appdata.xml.in:211
-#: data/io.elementary.terminal.appdata.xml.in:220
-#: data/io.elementary.terminal.appdata.xml.in:229
-#: data/io.elementary.terminal.appdata.xml.in:237
-#: data/io.elementary.terminal.appdata.xml.in:252
+msgid "Suppress unwanted default tab when opening a new window"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:121
+#: data/io.elementary.terminal.appdata.xml.in:140
 msgid "Translation updates"
 msgstr "Освежења превода"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
-msgid "Add commandline option for New Tab (-t)"
-msgstr "Додаје опцију линије наредби за нови језичак (-t)"
-
-#: data/io.elementary.terminal.appdata.xml.in:65
-msgid "Fix URL selection"
-msgstr "Попраља избор адресе"
-
-#: data/io.elementary.terminal.appdata.xml.in:74
-msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "Додаје опцију линије наредби за приказивање издања (-v, --version)"
-
-#: data/io.elementary.terminal.appdata.xml.in:75
-msgid "Add commandline option for New Window (-n)"
-msgstr "Додаје опцију линије наредби за нови прозор (-n)"
-
-#: data/io.elementary.terminal.appdata.xml.in:79
-msgid "Prevent duplicate tab on startup"
-msgstr "Спречава удвостручени језичак при покретању"
-
-#: data/io.elementary.terminal.appdata.xml.in:80
-msgid "Prevent unnecessary Home tab on startup"
-msgstr "Спречава непотребан језичак личне фасцикле при покретању"
-
-#: data/io.elementary.terminal.appdata.xml.in:89
-msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+#: data/io.elementary.terminal.appdata.xml.in:83
+msgid ""
+"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+"tabs"
 msgstr ""
-"Укључује или искључује природно умножавање/убацивање у изборнику подешавања"
 
-#: data/io.elementary.terminal.appdata.xml.in:90
-msgid "Zoom with Ctrl + Scroll"
-msgstr "Зумира са Ктрл + Премакни"
+#: data/io.elementary.terminal.appdata.xml.in:84
+msgid "Properly unexport the DBus Interface on Exit"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:94
-msgid "Include sudo password prompt when copying last output"
-msgstr "Укључује упит лозинке „sudo“-а приликом умножавања последњег излаза"
+#: data/io.elementary.terminal.appdata.xml.in:112
+msgid "Option to follow system dark style preference"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:95
-msgid "Apply font changes without restarting"
-msgstr "Примењује промене словних ликова без поновног покретања"
+#: data/io.elementary.terminal.appdata.xml.in:113
+#, fuzzy
+#| msgid "Validate custom palette"
+msgid "Create a custom color palette"
+msgstr "Потврђује произвољну палету"
 
-#: data/io.elementary.terminal.appdata.xml.in:103
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr "Не памти језичке када је историјат искључен у подешавањима система"
-
-#: data/io.elementary.terminal.appdata.xml.in:104
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "Приказује пречице тастатуре у изборнику другог клика"
-
-#: data/io.elementary.terminal.appdata.xml.in:105
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "Средњи клик убацивања сада исправно прати подешавања система"
-
-#: data/io.elementary.terminal.appdata.xml.in:106
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "Промени + Контрол + D за удвостручавање језичака"
-
-#: data/io.elementary.terminal.appdata.xml.in:107
-msgid "Use neutral colors for the dark style scheme"
-msgstr "Користи неутралне боје за тамну шему стила"
-
-#: data/io.elementary.terminal.appdata.xml.in:108
-msgid "Slightly pad text from the edge of the window"
-msgstr "Неприметно попуњава текст са ивице прозора"
-
-#: data/io.elementary.terminal.appdata.xml.in:116
-msgid "Pressing the Menu key now opens the context menu"
-msgstr "Притисак тастера изборника сада отвара приручни изборник"
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:134
+msgid "Fixes:"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:117
-msgid "Store state with GSettings"
-msgstr "Чува стање са ГПодешавањима"
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:125
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Подржава комбо тастер Ктрл+једнако за увеличање"
+#: data/io.elementary.terminal.appdata.xml.in:122
+msgid "Performance improvements"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:126
-msgid "Fix a wrong foreground process response code"
-msgstr "Поправља погрешан код одговора процеса прочеља"
+#: data/io.elementary.terminal.appdata.xml.in:131
+msgid "Switch tabs with Alt + 1-9"
+msgstr ""
 
-#: data/io.elementary.terminal.appdata.xml.in:134
-msgid "Return focus after popover menu closes"
-msgstr "Враћа фокус након затварања искачућег изборника"
-
-#: data/io.elementary.terminal.appdata.xml.in:135
-msgid "Prevent search and style buttons from receiving focus"
-msgstr "Спречава дугмад прераге и стила да буду у жижи"
+#: data/io.elementary.terminal.appdata.xml.in:132
+msgid "Quit with Ctrl + Shift + Q"
+msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:136
-msgid "Hide the cursor while typing"
-msgstr "Скрива курзор приликом куцања"
-
-#: data/io.elementary.terminal.appdata.xml.in:144
-msgid "Fix erratic search text highlightning behavior"
-msgstr "Поправља понашање истицања погрешног текста претраге"
-
-#: data/io.elementary.terminal.appdata.xml.in:145
-msgid "Support -h flag for help"
-msgstr "Подржава заставицу „-h“ за помоћ"
-
-#: data/io.elementary.terminal.appdata.xml.in:146
-msgid "Disable audible bell"
-msgstr "Искључује чујно звоно"
-
-#: data/io.elementary.terminal.appdata.xml.in:147
-msgid "Add Alt+↑ action to scroll to last command"
-msgstr "Додаје „Алт+↑“ радњу да дође до последње наредбе"
-
-#: data/io.elementary.terminal.appdata.xml.in:148
-msgid "Add Alt+c action to copy last output"
-msgstr "Додаје „Алт+c“ радњу за умножавање последњег излаза"
-
-#: data/io.elementary.terminal.appdata.xml.in:149
-msgid "Add accels to tooltips"
-msgstr "Додаје убрзиваче облачићима"
-
-#: data/io.elementary.terminal.appdata.xml.in:157
-msgid "Fix zsh notifications"
-msgstr "Поправка „zsh“ обавештења"
-
-#: data/io.elementary.terminal.appdata.xml.in:158
-msgid "Conditional ctrl+g shortcut to deconflict with emacs"
-msgstr "Условна „ctrl+g“ пречица за расукобљавање са емаксом"
-
-#: data/io.elementary.terminal.appdata.xml.in:159
-#: data/io.elementary.terminal.appdata.xml.in:167
-#: data/io.elementary.terminal.appdata.xml.in:175
-#: data/io.elementary.terminal.appdata.xml.in:183
-#: data/io.elementary.terminal.appdata.xml.in:191
-#: data/io.elementary.terminal.appdata.xml.in:202
-#: data/io.elementary.terminal.appdata.xml.in:210
-#: data/io.elementary.terminal.appdata.xml.in:219
-#: data/io.elementary.terminal.appdata.xml.in:228
-#: data/io.elementary.terminal.appdata.xml.in:236
-#: data/io.elementary.terminal.appdata.xml.in:251
-msgid "Minor bug fixes"
-msgstr "Мање исправке грешака"
-
-#: data/io.elementary.terminal.appdata.xml.in:199
-msgid "FISH integration fixes"
-msgstr "Поправке интеграције „FISH“"
-
-#: data/io.elementary.terminal.appdata.xml.in:200
-msgid "Theme preference menu"
-msgstr "Изборник поставке теме"
-
-#: data/io.elementary.terminal.appdata.xml.in:201
-msgid "Zoom level controls"
-msgstr "Контроле нивоа увеличања"
-
-#: data/io.elementary.terminal.appdata.xml.in:218
-msgid "Allow tab to close after typing exit at the commandline"
-msgstr "Дозвољава језичку да се затвори након уписа „exit“ на линији наредби"
-
-#: data/io.elementary.terminal.appdata.xml.in:227
-msgid "Fix copying URLs to clipboard"
-msgstr "Поправка умноожавања адреса у оставу"
-
-#: data/io.elementary.terminal.appdata.xml.in:244
-msgid "Fix appstream date format"
-msgstr "Поправка записа дтума тока програма"
-
-#: data/io.elementary.terminal.appdata.xml.in:286
-#, fuzzy
-#| msgid "elementary LLC."
-msgid "elementary, Inc."
-msgstr "elementary LLC."
-
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
+msgid "Fix build on OS 7"
+msgstr ""
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -316,6 +136,155 @@ msgstr "Нови прозор"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Нови корени језичак"
+
+#, fuzzy
+#~| msgid "elementary LLC."
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary LLC."
+
+#~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
+#~ msgstr "Премешта језичке пречицом Ктрл + Алт + ←/→"
+
+#~ msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
+#~ msgstr ""
+#~ "Мења језичке пречицама Ктрл + Табулатор и Ктрл + Промени + Табулатор"
+
+#~ msgid "Zoom levels are now remembered per-tab"
+#~ msgstr "Нивои увеличавања се сада памте по језичку"
+
+#, fuzzy
+#~| msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
+#~ msgid ""
+#~ "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
+#~ msgstr "Премешта језичке пречицом Ктрл + Алт + ←/→"
+
+#, fuzzy
+#~| msgid "Show keyboard shortcuts in the secondary-click menu"
+#~ msgid "Show keyboard shortcuts in tab context menus"
+#~ msgstr "Приказује пречице тастатуре у изборнику другог клика"
+
+#~ msgid "Validate custom palette"
+#~ msgstr "Потврђује произвољну палету"
+
+#~ msgid "Add commandline option for New Tab (-t)"
+#~ msgstr "Додаје опцију линије наредби за нови језичак (-t)"
+
+#~ msgid "Fix URL selection"
+#~ msgstr "Попраља избор адресе"
+
+#~ msgid "Add commandline option for \"Show version\" (-v, --version)"
+#~ msgstr "Додаје опцију линије наредби за приказивање издања (-v, --version)"
+
+#~ msgid "Add commandline option for New Window (-n)"
+#~ msgstr "Додаје опцију линије наредби за нови прозор (-n)"
+
+#~ msgid "Prevent duplicate tab on startup"
+#~ msgstr "Спречава удвостручени језичак при покретању"
+
+#~ msgid "Prevent unnecessary Home tab on startup"
+#~ msgstr "Спречава непотребан језичак личне фасцикле при покретању"
+
+#~ msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+#~ msgstr ""
+#~ "Укључује или искључује природно умножавање/убацивање у изборнику "
+#~ "подешавања"
+
+#~ msgid "Zoom with Ctrl + Scroll"
+#~ msgstr "Зумира са Ктрл + Премакни"
+
+#~ msgid "Include sudo password prompt when copying last output"
+#~ msgstr "Укључује упит лозинке „sudo“-а приликом умножавања последњег излаза"
+
+#~ msgid "Apply font changes without restarting"
+#~ msgstr "Примењује промене словних ликова без поновног покретања"
+
+#~ msgid "Don't remember tabs when History is disabled in System Settings"
+#~ msgstr "Не памти језичке када је историјат искључен у подешавањима система"
+
+#~ msgid "Show keyboard shortcuts in the secondary-click menu"
+#~ msgstr "Приказује пречице тастатуре у изборнику другог клика"
+
+#~ msgid "Middle-click paste now properly follows System Settings"
+#~ msgstr "Средњи клик убацивања сада исправно прати подешавања система"
+
+#~ msgid "Shift + Control + D to duplicate tabs"
+#~ msgstr "Промени + Контрол + D за удвостручавање језичака"
+
+#~ msgid "Use neutral colors for the dark style scheme"
+#~ msgstr "Користи неутралне боје за тамну шему стила"
+
+#~ msgid "Slightly pad text from the edge of the window"
+#~ msgstr "Неприметно попуњава текст са ивице прозора"
+
+#~ msgid "Pressing the Menu key now opens the context menu"
+#~ msgstr "Притисак тастера изборника сада отвара приручни изборник"
+
+#~ msgid "Store state with GSettings"
+#~ msgstr "Чува стање са ГПодешавањима"
+
+#~ msgid "Support Ctrl+Equal key combo to zoom in"
+#~ msgstr "Подржава комбо тастер Ктрл+једнако за увеличање"
+
+#~ msgid "Fix a wrong foreground process response code"
+#~ msgstr "Поправља погрешан код одговора процеса прочеља"
+
+#~ msgid "Return focus after popover menu closes"
+#~ msgstr "Враћа фокус након затварања искачућег изборника"
+
+#~ msgid "Prevent search and style buttons from receiving focus"
+#~ msgstr "Спречава дугмад прераге и стила да буду у жижи"
+
+#~ msgid "Hide the cursor while typing"
+#~ msgstr "Скрива курзор приликом куцања"
+
+#~ msgid "Fix erratic search text highlightning behavior"
+#~ msgstr "Поправља понашање истицања погрешног текста претраге"
+
+#~ msgid "Support -h flag for help"
+#~ msgstr "Подржава заставицу „-h“ за помоћ"
+
+#~ msgid "Disable audible bell"
+#~ msgstr "Искључује чујно звоно"
+
+#~ msgid "Add Alt+↑ action to scroll to last command"
+#~ msgstr "Додаје „Алт+↑“ радњу да дође до последње наредбе"
+
+#~ msgid "Add Alt+c action to copy last output"
+#~ msgstr "Додаје „Алт+c“ радњу за умножавање последњег излаза"
+
+#~ msgid "Add accels to tooltips"
+#~ msgstr "Додаје убрзиваче облачићима"
+
+#~ msgid "Fix zsh notifications"
+#~ msgstr "Поправка „zsh“ обавештења"
+
+#~ msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+#~ msgstr "Условна „ctrl+g“ пречица за расукобљавање са емаксом"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Мање исправке грешака"
+
+#~ msgid "FISH integration fixes"
+#~ msgstr "Поправке интеграције „FISH“"
+
+#~ msgid "Theme preference menu"
+#~ msgstr "Изборник поставке теме"
+
+#~ msgid "Zoom level controls"
+#~ msgstr "Контроле нивоа увеличања"
+
+#~ msgid "Allow tab to close after typing exit at the commandline"
+#~ msgstr ""
+#~ "Дозвољава језичку да се затвори након уписа „exit“ на линији наредби"
+
+#~ msgid "Fix copying URLs to clipboard"
+#~ msgstr "Поправка умноожавања адреса у оставу"
+
+#~ msgid "Fix appstream date format"
+#~ msgstr "Поправка записа дтума тока програма"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"
 
 #~ msgid "About Terminal"
 #~ msgstr "О Терминалу"

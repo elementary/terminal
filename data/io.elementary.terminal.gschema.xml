@@ -17,11 +17,6 @@
   </enum>
 
   <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
-    <key name="window-position" type="(ii)">
-      <default>(-1, -1)</default>
-      <summary>Window position</summary>
-      <description>Most recent window position (x, y)</description>
-    </key>
     <key name="window-size" type="(ii)">
       <default>(-1, -1)</default>
       <summary>Most recent window size</summary>
@@ -68,7 +63,7 @@
     </key>
     <key name="remember-tabs" type="b">
       <default>true</default>
-      <summary>Whether open tabs should be remembered on closing (subject to privacy setting).</summary>
+      <summary>Whether open tabs should be remembered (subject to privacy setting).</summary>
       <description>
           Defines whether the terminal should remember the last open tabs and restore
           them when the terminal is reopened. If the global privacy setting is on, the tabs
@@ -85,6 +80,11 @@
       <summary>Whether or not to use an audible bell event alert</summary>
       <description>Used when hitting the end of a line like in GTK entries, but also for tab-completion when there are either no or multiple possible completions.</description>
     </key>
+    <key name="follow-system-style" type="b">
+      <default>false</default>
+      <summary>Follow the FreeDesktop.org dark style preference</summary>
+      <description>Use the Dark style if the system prefers a dark style, or Solarized Light otherwise. Overrides control of prefer-dark-style.</description>
+    </key>
     <key name="natural-copy-paste" type="b">
       <default>true</default>
       <summary>Defined whether to use ctrl-c or ctrl-shift-c for copy</summary>
@@ -92,12 +92,12 @@
     </key>
     <key name="prefer-dark-style" type="b">
       <default>true</default>
-      <summary>Defined whether to use dark stylesheet from Gtk</summary>
-      <description>Switches between dark and light style</description>
+      <summary>Whether or not the custom theme should use a dark or light window style</summary>
+      <description>Switches between dark and light style when using the custom theme</description>
     </key>
 
     <key name="foreground" type="s">
-      <default>"#a5a5a5"</default>
+      <default>"#93A1A1"</default>
       <summary>Color of the text.</summary>
       <description>
           The color of the text of the terminal.
@@ -109,7 +109,7 @@
       </description>
     </key>
     <key name="background" type="s">
-      <default>"rgba(46, 46, 46, 0.95)"</default>
+      <default>"#002B36"</default>
       <summary>Color of the background.</summary>
       <description>
           The color of the background of the terminal.
@@ -138,11 +138,15 @@
       <description>The shape of the cursor of the terminal.</description>
     </key>
     <key name="palette" type="s">
-      <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#ec0048:#2aa198:#94a3a5:#586e75:#cb4b16:#859900:#b58900:#268bd2:#d33682:#2aa198:#6c71c4"</default>
+      <default>"#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#dc322f:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"</default>
       <summary>Palette of the terminal.</summary>
       <description>Defines the colors of various things in the terminal.</description>
     </key>
-
+    <key name="theme" type="s">
+      <default>"dark"</default>
+      <summary>Color palette name.</summary>
+      <description>Which theme the user has selected.</description>
+    </key>
     <key name="shell" type="s">
       <default>""</default>
       <summary>Terminal shell.</summary>
@@ -152,7 +156,7 @@
     <key name="encoding" type="s">
       <default>""</default>
       <summary>Terminal encoding.</summary>
-      <description>Defines the encoding to be used by the terminal.</description>
+      <description>DEPRECATED: This key is deprecated and ignored.</description>
     </key>
     <key name="font" type="s">
       <default>""</default>
@@ -162,7 +166,7 @@
     <key name="allow-bold" type="b">
       <default>true</default>
       <summary>Whether to allow bold fonts.</summary>
-      <description>Defines whether fonts can be bold or not.</description>
+      <description>DEPRECATED: This key is deprecated and ignored.</description>
     </key>
     <key name="tab-bar-behavior" enum="dynamic-notebook-tab-bar-behavior">
       <default>'Always Show Tabs'</default>
