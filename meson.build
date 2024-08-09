@@ -43,34 +43,6 @@ add_project_arguments(
     language: 'vala'
 )
 
-# <<<<<<< HEAD
-# executable(
-#     meson.project_name(),
-#     config_header,
-#     'src/Application.vala',
-#     'src/DBus.vala',
-#     'src/MainWindow.vala',
-#     'src/Dialogs/ForegroundProcessDialog.vala',
-#     'src/Dialogs/UnsafePasteDialog.vala',
-#     'src/Widgets/SearchToolbar.vala',
-#     'src/Widgets/TerminalWidget.vala',
-#     'src/Widgets/ZoomOverlay.vala',
-#     'src/Utils.vala',
-#     terminal_resources,
-#     dependencies: [
-#         dependency('gee-0.8'),
-#         dependency('glib-2.0'),
-#         dependency('gobject-2.0'),
-#         dependency('gtk+-3.0'),
-#         dependency('granite', version: '>=6.1.0'),
-#         dependency('libhandy-1', version: '>=0.83.0'),
-#         vte_dep,
-#         libpcre2_dep,
-#         meson.get_compiler('vala').find_library('posix'),
-#         meson.get_compiler('c').find_library('m', required : false)
-#     ],
-#     install : true
-# =======
 if glib_dep.version().version_compare('>=2.73.2')
     add_project_arguments('--define', 'HAS_GLIB_2_74', language: 'vala')
 endif
@@ -84,7 +56,6 @@ add_project_arguments(
     '-DPCRE2_CODE_UNIT_WIDTH=0',
     '-DHANDY_USE_UNSTABLE_API',
     language:'c'
-# >>>>>>> master
 )
 
 subdir('po')
