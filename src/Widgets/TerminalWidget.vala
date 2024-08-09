@@ -454,14 +454,10 @@ namespace Terminal {
             setup_menu ();
 
             // Popup context menu below cursor position
-            var context_popover = new Gtk.PopoverMenu () {
-                relative_to = this,
-                pointing_to = rect
+            var context_menu = new Gtk.Menu.from_model (main_window.context_menu_model) {
+                attach_widget = this
             };
-
-            context_popover.bind_model (main_window.context_menu_model, null);
-            context_popover.show_all ();
-            context_popover.popup ();
+            context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
         }
 
         protected override void copy_clipboard () {

@@ -194,19 +194,20 @@ namespace Terminal {
             );
             select_all_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_SELECT_ALL[0]));
 
-            context_menu_model = new Menu ();
-            // "Open in" item must be in position 0 (see update_menu_label ())
-            context_menu_model.append_item (open_in_browser_menuitem);
-
             var terminal_action_section = new Menu ();
             terminal_action_section.append_item (copy_menuitem);
             terminal_action_section.append_item (copy_last_output_menuitem);
             terminal_action_section.append_item (paste_menuitem);
             terminal_action_section.append_item (select_all_menuitem);
-            context_menu_model.append_section ("", terminal_action_section);
+
             var search_section = new Menu ();
             search_section.append_item (search_menuitem);
-            context_menu_model.append_section ("", search_section);
+
+            context_menu_model = new Menu ();
+            // "Open in" item must be in position 0 (see update_menu_label ())
+            context_menu_model.append_item (open_in_browser_menuitem);
+            context_menu_model.append_section (null, terminal_action_section);
+            context_menu_model.append_section (null, search_section);
 
             setup_ui ();
 
