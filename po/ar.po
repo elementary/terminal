@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-03 02:07+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -74,47 +74,54 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
-msgid "Find…"
-msgstr "ابحث…"
-
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "ملء الشاشة"
 
-#: src/MainWindow.vala:296
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "ابحث…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/MainWindow.vala:537
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1022
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 
@@ -376,11 +383,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "الطرفية"
 
-#: src/Widgets/TerminalWidget.vala:499
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:501
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 

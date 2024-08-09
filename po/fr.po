@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-03 02:07+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2024-06-20 14:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,44 +66,51 @@ msgstr "Processus terminé"
 msgid "Process exited with errors"
 msgstr "Le processus s'est arrêté avec des erreurs"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copier"
 
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copier la dernière sortie"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Coller"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
-msgid "Find…"
-msgstr "Rechercher…"
-
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:287
 msgid "Exit FullScreen"
 msgstr "Quitter le plein écran"
 
-#: src/MainWindow.vala:296
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Rechercher…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:537
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Afficher dans %s"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Application par défaut"
 
-#: src/MainWindow.vala:1022
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -368,11 +375,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:499
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr "Le texte collé pourrait contenir plusieurs commandes"
 
-#: src/Widgets/TerminalWidget.vala:501
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
 

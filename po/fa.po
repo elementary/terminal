@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-03 02:07+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -72,46 +72,53 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "رونویسی"
 
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "چسباندن"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "انتخاب همه"
 
-#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
-msgid "Find…"
-msgstr "پیدا کردن…"
-
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "تمام‌صفحه"
 
-#: src/MainWindow.vala:296
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "پیدا کردن…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:537
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1022
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr ""
 
@@ -375,11 +382,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "ترمینال"
 
-#: src/Widgets/TerminalWidget.vala:499
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:501
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 

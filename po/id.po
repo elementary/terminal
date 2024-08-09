@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-03 02:07+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2023-05-23 19:07+0000\n"
 "Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
@@ -67,46 +67,53 @@ msgstr "Proses selesai"
 msgid "Process exited with errors"
 msgstr "Proses keluar dengan kesalahan"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Salin"
 
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Salin Keluaran Terakhir"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Tempel"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:192 src/MainWindow.vala:289 src/MainWindow.vala:1031
-msgid "Find…"
-msgstr "Cari…"
-
-#: src/MainWindow.vala:280
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Layar penuh"
 
-#: src/MainWindow.vala:296
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Cari…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: src/MainWindow.vala:537
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Tampilkan pada %s"
 
-#: src/MainWindow.vala:538
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Aplikasi bawaan"
 
-#: src/MainWindow.vala:1022
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Sembunyikan bilah pencarian"
 
@@ -365,11 +372,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:499
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
 
-#: src/Widgets/TerminalWidget.vala:501
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
 
