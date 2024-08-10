@@ -20,7 +20,9 @@ namespace Terminal.Widgets {
                 transition_type = Gtk.RevealerTransitionType.CROSSFADE
             };
 
-            zoom_label = new Gtk.Label ("");
+            zoom_label = new Gtk.Label ("") {
+                use_markup = true
+            };
 
             revealer.add (zoom_label);
             overlay.add_overlay (revealer);
@@ -39,7 +41,7 @@ namespace Terminal.Widgets {
 
         public void show_zoom_level (double zoom_level) {
             revealer.reveal_child = true;
-            zoom_label.label = "%.0f%%".printf (zoom_level * 100);
+            zoom_label.label = "<span face='monospaced' size='24pt' alpha='20000'><b>%.0f%%</b></span>".printf (zoom_level * 100);
 
             if (will_hide) {
                 GLib.Source.remove (timer_id);
