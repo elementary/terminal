@@ -384,7 +384,7 @@ namespace Terminal {
             });
 
             zoom_overlay = new Widgets.ZoomOverlay ();
-            zoom_overlay.add (notebook);
+            zoom_overlay.add_overlay_child (notebook);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (header);

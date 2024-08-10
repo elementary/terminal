@@ -1,18 +1,17 @@
 
 namespace Terminal.Widgets {
 
-    public class ZoomOverlay : Gtk.Overlay {
+    public class ZoomOverlay : Gtk.Bin {
+        private Gtk.Overlay overlay;
         private Gtk.Revealer revealer;
         private Gtk.Label zoom_label;
         private int visible_duration;
         private uint timer_id;
         private bool will_hide;
 
-        static construct {
-            set_css_name ("tooltip");
-        }
-
         construct {
+            overlay = new Gtk.Overlay ();
+
             revealer = new Gtk.Revealer () {
                 hexpand = false,
                 vexpand = false,
@@ -24,12 +23,18 @@ namespace Terminal.Widgets {
             zoom_label = new Gtk.Label ("");
 
             revealer.add (zoom_label);
-
-            add_overlay (revealer);
-            set_overlay_pass_through (revealer, true);
+            overlay.add_overlay (revealer);
+            overlay.set_overlay_pass_through (revealer, true);
 
             visible_duration = 1500;
             will_hide = false;
+
+            add (overlay);
+            show_all ();
+        }
+
+        public void add_overlay_child (Gtk.Widget child) {
+            overlay.add (child);
         }
 
         public void show_zoom_level (double zoom_level) {
