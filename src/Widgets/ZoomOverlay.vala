@@ -8,16 +8,9 @@ namespace Terminal.Widgets {
         private uint timer_id;
         private bool will_hide;
 
-        private const string CSS_STYLE = """
-        label {
-            font-weight: bold;
-            font-size: 42pt;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 10px;
+        static construct {
+            set_css_name ("tooltip");
         }
-
-        """;
 
         construct {
             revealer = new Gtk.Revealer () {
@@ -29,9 +22,6 @@ namespace Terminal.Widgets {
             };
 
             zoom_label = new Gtk.Label ("");
-            var style_provider = new Gtk.CssProvider ();
-            style_provider.load_from_data (CSS_STYLE, CSS_STYLE.length);
-            zoom_label.get_style_context ().add_provider (style_provider, 0);
 
             revealer.add (zoom_label);
 
