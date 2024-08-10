@@ -36,7 +36,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     construct {
-        var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", MENU) {
+        var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
             tooltip_markup = Granite.markup_accel_tooltip (
                 TerminalWidget.ACCELS_ZOOM_OUT,
                 _("Zoom out")
@@ -52,7 +52,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
         zoom_default_button.set_detailed_action_name (TerminalWidget.ACTION_ZOOM_DEFAULT);
 
-        var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", MENU) {
+        var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic") {
             tooltip_markup = Granite.markup_accel_tooltip (
                 TerminalWidget.ACCELS_ZOOM_IN,
                 _("Zoom in")
