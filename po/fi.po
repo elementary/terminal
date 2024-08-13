@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -60,70 +60,61 @@ msgstr "Suorita loput rivistä komentona päätteessä"
 msgid "[-- COMMAND…]"
 msgstr "[-- KOMENTO…]"
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr "Prosessi suoritettu"
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr "Prosessi sulkeutui virheiden kera"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
-msgid "Find…"
-msgstr "Etsi…"
-
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Koko näyttö"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Etsi…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Uusi välilehti"
-
-#: src/MainWindow.vala:574
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Sulje välilehti"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr "Tee kaksoiskappale"
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr "Lataa uudelleen"
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -140,6 +131,7 @@ msgid "Light"
 msgstr "Vaalea"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "Tumma"
 
@@ -259,6 +251,11 @@ msgstr "Välilehdessä on käynnissä oleva prosessi."
 msgid "If you close it, the process will end."
 msgstr "Jos suljet sen, prosessi päättyy."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Sulje välilehti"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Haluatko varmasti lopettaa päätteen?"
@@ -327,50 +324,105 @@ msgstr "Seuraava tulos"
 msgid "Cyclic search"
 msgstr "Kierteinen haku"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "Loitonna"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "Oletusmittakaava"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "Lähennä"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr "Seuraa järjestelmän tyyliä"
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "Suuri kontrasti"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Solarized, vaalea"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr "Luonnollinen kopiointi/liittäminen"
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
+"komentoriviohjelmia"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Pääte"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
 
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Uusi välilehti"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Sulje välilehti"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Sulje välilehti"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Uusi ikkuna"
+
+#: src/Widgets/TerminalView.vala:215
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "Tee kaksoiskappale"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "Reload"
+msgstr "Lataa uudelleen"
+
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Avaa uusi päätevälilehti"
-
-#~ msgid "Zoom out"
-#~ msgstr "Loitonna"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Oletusmittakaava"
-
-#~ msgid "Zoom in"
-#~ msgstr "Lähennä"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Seuraa järjestelmän tyyliä"
-
-#~ msgid "High Contrast"
-#~ msgstr "Suuri kontrasti"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarized, vaalea"
-
-#~ msgid "Custom"
-#~ msgstr "Mukautettu"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Luonnollinen kopiointi/liittäminen"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Pikanäppäimet eivät vaadi Shiftin painamista; se saattaa häiritä "
-#~ "komentoriviohjelmia"
 
 #~ msgid "Show help"
 #~ msgstr "Näytä ohje"
@@ -409,9 +461,6 @@ msgstr ""
 
 #~ msgid "Use the command line"
 #~ msgstr "Käytä komentoriviä"
-
-#~ msgid "New Window"
-#~ msgstr "Uusi ikkuna"
 
 #~ msgid "New Root Tab"
 #~ msgstr "Uusi pääkäyttäjän välilehti"

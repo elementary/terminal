@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2021-03-12 02:36+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/terminal/"
@@ -68,70 +68,61 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Умножи"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Умножи последњи излаз"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Убаци"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Изабери све"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
-msgid "Find…"
-msgstr "Нађи…"
-
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Преко целог екрана"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Нађи…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Подешавања"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Нови језичак"
-
-#: src/MainWindow.vala:574
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Прикажи у „%s“"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Основни програм"
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Затвори језичак"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr ""
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr ""
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Сакриј траку претраге"
 
@@ -148,6 +139,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "Тамна"
 
@@ -267,6 +259,11 @@ msgstr "На овом језичку се одвија активан проце
 msgid "If you close it, the process will end."
 msgstr "Ако га затворите, процес ће бити прекинут."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Затвори језичак"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Да ли сигурно желите да напустите Терминал?"
@@ -337,41 +334,102 @@ msgstr "Следећи резултат"
 msgid "Cyclic search"
 msgstr "Кружна претрага"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "Умањи"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "Основни ниво увеличања"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "Увећај"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "Велики контраст"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Осунчано слабије"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr "Природно умножи/убаци"
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Пречице не захтевају Промени; може ометати програме командне линије"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Нови језичак"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Затвори језичак"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Затвори језичак"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Нови прозор"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:218
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "Затвори језичак"
+
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Отвара нови језичак терминала"
-
-#~ msgid "Zoom out"
-#~ msgstr "Умањи"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Основни ниво увеличања"
-
-#~ msgid "Zoom in"
-#~ msgstr "Увећај"
-
-#~ msgid "High Contrast"
-#~ msgstr "Велики контраст"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Осунчано слабије"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Природно умножи/убаци"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr "Пречице не захтевају Промени; може ометати програме командне линије"
 
 #~ msgid "Show help"
 #~ msgstr "Прикажите помоћ"
@@ -399,9 +457,6 @@ msgstr ""
 
 #~ msgid "Use the command line"
 #~ msgstr "Користите линију наредби"
-
-#~ msgid "New Window"
-#~ msgstr "Нови прозор"
 
 #~ msgid "New Root Tab"
 #~ msgstr "Нови корени језичак"

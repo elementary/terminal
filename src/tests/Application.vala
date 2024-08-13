@@ -16,13 +16,14 @@ namespace Terminal.Test.Application {
             is_testing = true
         };
 
-        application.shutdown.connect (() => application.get_windows ().foreach ((win) => win.destroy ()));
+        application.shutdown.connect (() => {
+            application.close ();
+        });
     }
 
     private void iterate_context () {
         unowned var context = MainContext.default ();
         bool done = false;
-
         Timeout.add (200, () => {
             done = true;
             context.wakeup ();
@@ -77,17 +78,16 @@ namespace Terminal.Test.Application {
     private void action (string name, Variant? @value, ActivateCallback callback) {
         ulong oneshot = 0;
         setup ();
-
         oneshot = application.command_line.connect ((nill) => {
             application.disconnect (oneshot);
             application.command_line (nill);
-
             assert_true (application.has_action (name));
             application.activate_action (name, @value);
-
             iterate_context ();
             callback ();
-            application.quit ();
+
+            application.close ();
+
             return 0;
         });
 
@@ -145,14 +145,14 @@ namespace Terminal.Test.Application {
             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
-                var n_tabs = (int) window.terminals.length ();
+                var n_tabs = (int) window.notebook.n_pages;
                 assert_cmpint (n_tabs, CompareOperator.EQ, 2);
             });
 
             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
-                var n_tabs = (int) window.terminals.length ();
+                var n_tabs = (int) window.notebook.n_pages;
                 assert_cmpint (n_tabs, CompareOperator.EQ, 1);
             });
         });
@@ -172,11 +172,11 @@ namespace Terminal.Test.Application {
         GLib.Test.add_func ("/application/command-line/execute", () => {
             string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
-            // valid
+            //valid
             option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
-                var n_tabs = (int) window.terminals.length ();
+                var n_tabs = (int) window.notebook.n_pages;
                 assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
             });
 
@@ -184,7 +184,7 @@ namespace Terminal.Test.Application {
             option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
-                var n_tabs = (int) window.terminals.length ();
+                var n_tabs = (int) window.notebook.n_pages;
                 assert_cmpint (n_tabs, CompareOperator.EQ, 1);
             });
         });

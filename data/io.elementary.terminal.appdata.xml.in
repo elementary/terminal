@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-light.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-find.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.1.2/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/6.2.0/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -53,6 +53,29 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="6.2.0" date="2024-07-18" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Allow switching event alerts on and off in the app menu</li>
+          <li>Save tabs and zooms to the saved state settings when they change</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Document missing options in the man page</li>
+          <li>Suppress unwanted default tab when opening a new window</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/596">No terminal bell any more</issue>
+        <issue url="https://github.com/elementary/terminal/issues/728">Incomplete man page</issue>
+        <issue url="https://github.com/elementary/terminal/issues/736">When creating a new terminal window at a apecified working directory, an additional default tab is also opened</issue>
+        <issue url="https://github.com/elementary/terminal/issues/741">Tabs and tab-zooms not saved to settings continuously</issue>
+        <issue url="https://github.com/elementary/terminal/issues/752">The F11 shortcut key causes the maximize/unmaximize button to fail</issue>
+      </issues>
+    </release>
+
     <release version="6.1.2" date="2023-04-03" urgency="medium">
       <description>
         <p>Other updates:</p>
@@ -119,22 +142,7 @@
       </description>
     </release>
 
-    <release version="6.0.1" date="2021-12-13" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Properly restore zoom levels for all locales</li>
-        </ul>
-        <p>Other updates:</p>
-        <ul>
-          <li>Use XTerm title for window title if available</li>
-          <li>Change "Reload Tab" shortcut to Shift + F5 to avoid clash with some foreground processes </li>
-          <li>Change preferred shortcut for "Reload Tab" to Shift + Control + R</li>
-          <li>Translation updates</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="6.0.1" date="2021-12-13"/>
     <release version="6.0.0" date="2020-06-15"/>
     <release version="5.5.2" date="2020-04-01"/>
     <release version="5.5.1" date="2020-01-11"/>

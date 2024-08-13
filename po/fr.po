@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
-"PO-Revision-Date: 2024-02-08 09:11+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"PO-Revision-Date: 2024-06-20 14:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -58,68 +58,59 @@ msgstr "Exécutez la fin de la ligne comme commande dans le terminal"
 msgid "[-- COMMAND…]"
 msgstr "[-- COMMANDE…]"
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr "Processus terminé"
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr "Le processus s'est arrêté avec des erreurs"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copier"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copier la dernière sortie"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Coller"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Tout Sélectionner"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
-msgid "Find…"
-msgstr "Rechercher…"
-
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:287
 msgid "Exit FullScreen"
 msgstr "Quitter le plein écran"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Rechercher…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Nouvel Onglet"
-
-#: src/MainWindow.vala:574
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Afficher dans %s"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Application par défaut"
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Fermer l'onglet"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr "Dupliquer"
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr "Recharger"
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -136,6 +127,7 @@ msgid "Light"
 msgstr "Clair"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "Foncé"
 
@@ -255,6 +247,11 @@ msgstr "Il y a un processus actif dans cet onglet."
 msgid "If you close it, the process will end."
 msgstr "Si vous fermez, le processus prendra fin."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Fermer l'onglet"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Voulez-vous vraiment quitter le Terminal ?"
@@ -324,49 +321,106 @@ msgstr "Résultat suivant"
 msgid "Cyclic search"
 msgstr "Recherche cyclique"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "Zoom arrière"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "Zoom par défaut"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "Zoom avant"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr "Suivre le thème du système"
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "Contrastes élevés"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr "Copier-coller naturel"
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Les raccourcis ne nécessitent pas d'appuyer sur Maj, ils pourraient "
+"interférer avec les applications en ligne de commande"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr "Alertes d'évènement"
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"Notifier en cas de saisie non valide ou de complétion multiple possible "
+"(sous réserve de Paramètres du système → Son)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr "Le texte collé pourrait contenir plusieurs commandes"
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
 
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Nouvel Onglet"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Fermer l'onglet"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Fermer l'onglet"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Nouvelle Fenêtre"
+
+#: src/Widgets/TerminalView.vala:215
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "Dupliquer"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "Reload"
+msgstr "Recharger"
+
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Ouvrir un nouvel onglet de terminal"
-
-#~ msgid "Zoom out"
-#~ msgstr "Zoom arrière"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Zoom par défaut"
-
-#~ msgid "Zoom in"
-#~ msgstr "Zoom avant"
-
-#~ msgid "Follow System Style"
-#~ msgstr "Suivre le thème du système"
-
-#~ msgid "High Contrast"
-#~ msgstr "Contrastes élevés"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Solarized Light"
-
-#~ msgid "Custom"
-#~ msgstr "Personnalisé"
-
-#~ msgid "Natural Copy/Paste"
-#~ msgstr "Copier-coller naturel"
-
-#~ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-#~ msgstr ""
-#~ "Les raccourcis ne nécessitent pas d'appuyer sur Maj, ils pourraient "
-#~ "interférer avec les applications en ligne de commande"
 
 #~ msgid "Show help"
 #~ msgstr "Afficher l'aide"
@@ -404,9 +458,6 @@ msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
 
 #~ msgid "Use the command line"
 #~ msgstr "Utiliser la ligne de commande"
-
-#~ msgid "New Window"
-#~ msgstr "Nouvelle Fenêtre"
 
 #~ msgid "New Root Tab"
 #~ msgstr "Nouvel onglet en tant qu'administrateur"

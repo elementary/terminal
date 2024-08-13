@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,71 +66,62 @@ msgstr "شغِّل ما تبقى من السطر كأمر في الطرفية. �
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "انسخ آخر مخرج"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "لصق"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "اختر الكل"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
-msgid "Find…"
-msgstr "ابحث…"
-
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "ملء الشاشة"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "ابحث…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "تبويب جديد"
-
-#: src/MainWindow.vala:574
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "إغلاق تبويب"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr ""
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr ""
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 
@@ -147,6 +138,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr "داكن"
 
@@ -266,6 +258,11 @@ msgstr "هناك عملية نشطة في علامة التبويب هذه."
 msgid "If you close it, the process will end."
 msgstr "إذا قمت بإغلاقه، ستنهى هذه العملية."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "إغلاق تبويب"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "هل أنت متأكد من أنك تريد اغلاق هذه الطرفية؟"
@@ -336,35 +333,102 @@ msgstr "النتيجة التالية"
 msgid "Cyclic search"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "تصغير"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "مستوى التقريب المبدئي"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "تكبير"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "تباين عالي"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "ضوء شمسي"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "الطرفية"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "تبويب جديد"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "إغلاق تبويب"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "إغلاق تبويب"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "نافذة جديدة"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:218
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "إغلاق تبويب"
+
 #~ msgid "Open a new terminal tab"
 #~ msgstr "فتح علامة تبويب جديدة"
-
-#~ msgid "Zoom out"
-#~ msgstr "تصغير"
-
-#~ msgid "Default zoom level"
-#~ msgstr "مستوى التقريب المبدئي"
-
-#~ msgid "Zoom in"
-#~ msgstr "تكبير"
-
-#~ msgid "High Contrast"
-#~ msgstr "تباين عالي"
-
-#~ msgid "Solarized Light"
-#~ msgstr "ضوء شمسي"
 
 #~ msgid "Show help"
 #~ msgstr "أظهر المساعدة"
@@ -389,9 +453,6 @@ msgstr ""
 
 #~ msgid "Use the command line"
 #~ msgstr "استعمل سطرالأوامر"
-
-#~ msgid "New Window"
-#~ msgstr "نافذة جديدة"
 
 #~ msgid "Create a new tab"
 #~ msgstr "انشئ تبويب جديد"

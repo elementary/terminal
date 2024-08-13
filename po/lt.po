@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
 "PO-Revision-Date: 2018-12-11 21:13+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/terminal/"
@@ -65,71 +65,62 @@ msgstr ""
 msgid "[-- COMMAND…]"
 msgstr ""
 
-#: src/Application.vala:164
+#: src/Application.vala:159
 msgid "Process completed"
 msgstr ""
 
-#: src/Application.vala:167
+#: src/Application.vala:162
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopijuoti"
 
-#: src/MainWindow.vala:161
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopijuoti paskutinę išvestį"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Įdėti"
 
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:276 src/MainWindow.vala:1009
-msgid "Find…"
-msgstr "Rasti…"
-
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:287
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Visas ekranas"
 
-#: src/MainWindow.vala:283
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+msgid "Find…"
+msgstr "Rasti…"
+
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:319
-msgid "New Tab"
-msgstr "Nauja kortelė"
-
-#: src/MainWindow.vala:574
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Rodyti failų naršyklėje"
 
-#: src/MainWindow.vala:575
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:831 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Užverti kortelę"
-
-#: src/MainWindow.vala:832
-msgid "Duplicate"
-msgstr ""
-
-#: src/MainWindow.vala:845
-msgid "Reload"
-msgstr ""
-
-#: src/MainWindow.vala:1000
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Slėpti paieškos juostą"
 
@@ -146,6 +137,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
 msgid "Dark"
 msgstr ""
 
@@ -265,6 +257,11 @@ msgstr "Šioje kortelėje yra aktyvus procesas."
 msgid "If you close it, the process will end."
 msgstr "Jeigu ją užversite, procesas užsibaigs."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Užverti kortelę"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ar tikrai norite išeiti iš Terminalo?"
@@ -335,37 +332,104 @@ msgstr "Kitas rezultatas"
 msgid "Cyclic search"
 msgstr "Ciklinė paieška"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "Mažinti"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "Numatytasis mastelio lygis"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "Didinti"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "Didelis kontrastas"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Apšviesta šviesi"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminalas"
 
-#: src/Widgets/TerminalWidget.vala:502
+#: src/Widgets/TerminalWidget.vala:494
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:504
+#: src/Widgets/TerminalWidget.vala:496
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Nauja kortelė"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Užverti kortelę"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Užverti kortelę"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Naujas langas"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:218
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "Užverti kortelę"
 
 #, fuzzy
 #~| msgid "Open a new window"
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Atverti naują langą"
-
-#~ msgid "Zoom out"
-#~ msgstr "Mažinti"
-
-#~ msgid "Default zoom level"
-#~ msgstr "Numatytasis mastelio lygis"
-
-#~ msgid "Zoom in"
-#~ msgstr "Didinti"
-
-#~ msgid "High Contrast"
-#~ msgstr "Didelis kontrastas"
-
-#~ msgid "Solarized Light"
-#~ msgstr "Apšviesta šviesi"
 
 #~ msgid "Show help"
 #~ msgstr "Rodyti žinyną"
@@ -399,9 +463,6 @@ msgstr ""
 
 #~ msgid "Use the command line"
 #~ msgstr "Naudoti komandų eilutę"
-
-#~ msgid "New Window"
-#~ msgstr "Naujas langas"
 
 #~ msgid "New Root Tab"
 #~ msgstr "Nauja šaknies kortelė"

@@ -35,14 +35,14 @@ namespace Terminal.Widgets {
             search_entry.hexpand = true;
             search_entry.placeholder_text = _("Find");
 
-            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic");
             previous_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS);
             previous_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Up", "<Control><Shift>g"},
                 _("Previous result")
             );
 
-            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic");
             next_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT);
             next_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Down", "<Control>g"},
