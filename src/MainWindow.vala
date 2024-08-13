@@ -383,13 +383,11 @@ namespace Terminal {
                 term.grab_focus ();
             });
 
-            zoom_overlay = new Widgets.ZoomOverlay ();
-
             var overlay = new Gtk.Overlay () {
                 child = notebook
             };
-            overlay.add_overlay (zoom_overlay);
-            overlay.set_overlay_pass_through (zoom_overlay, true);
+
+            zoom_overlay = new Widgets.ZoomOverlay (overlay);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (header);
