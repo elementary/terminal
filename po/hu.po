@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-09 15:36+0000\n"
-"PO-Revision-Date: 2024-08-07 00:16+0000\n"
+"PO-Revision-Date: 2024-08-15 10:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -68,7 +68,7 @@ msgstr "A feladat kilépett hibákkal"
 
 #: src/MainWindow.vala:167
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Keresősáv"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:174
