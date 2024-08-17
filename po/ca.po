@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-09 15:36+0000\n"
-"PO-Revision-Date: 2024-08-07 00:16+0000\n"
+"PO-Revision-Date: 2024-08-10 16:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -68,7 +68,7 @@ msgstr "El procés ha acabat amb errors."
 
 #: src/MainWindow.vala:167
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Mostra la barra de cerca."
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:174
