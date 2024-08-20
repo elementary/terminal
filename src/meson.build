@@ -20,6 +20,7 @@ terminal_sources = [
     'Widgets/SettingsPopover.vala',
     'Widgets/TerminalView.vala',
     'Widgets/TerminalWidget.vala',
+    'Widgets/ZoomOverlay.vala',
     'Application.vala',
     'DBus.vala',
     'MainWindow.vala',

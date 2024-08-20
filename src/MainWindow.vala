@@ -27,6 +27,7 @@ namespace Terminal {
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
+        private Widgets.ZoomOverlay zoom_overlay;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
 
@@ -369,6 +370,8 @@ namespace Terminal {
             notebook.tab_view.notify["selected-page"].connect (() => {
                 var term = get_term_widget (notebook.tab_view.selected_page);
                 current_terminal = term;
+                zoom_overlay.hide_zoom_level ();
+
                 if (term == null) {
                     // Happens on closing window - ignore
                     return;
@@ -380,9 +383,15 @@ namespace Terminal {
                 term.grab_focus ();
             });
 
+            var overlay = new Gtk.Overlay () {
+                child = notebook
+            };
+
+            zoom_overlay = new Widgets.ZoomOverlay (overlay);
+
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             box.add (header);
-            box.add (notebook);
+            box.add (overlay);
 
             add (box);
             get_style_context ().add_class ("terminal-window");
@@ -809,6 +818,7 @@ namespace Terminal {
         }
 
         private void on_terminal_font_scale_changed () {
+            zoom_overlay.show_zoom_level (current_terminal.font_scale);
             save_opened_terminals (false, true);
         }
 
