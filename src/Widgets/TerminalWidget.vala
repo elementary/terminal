@@ -492,7 +492,7 @@ namespace Terminal {
 
                     if ("\n" in text) {
                         warn_text = _("The pasted text may contain multiple commands");
-                    } else if ("sudo" in text) || ("doas" in text) {
+                    } else if ("sudo" in text || "doas" in text) {
                         warn_text = _("The pasted text may be trying to gain administrative access");
                     }
 
