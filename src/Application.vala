@@ -75,7 +75,7 @@ public class Terminal.Application : Gtk.Application {
                     }
                 }
             }
-            get_last_window ().present_with_time ((uint32) now.to_unix ());
+            get_last_window ().present_with_time (Gtk.get_current_event_time ());
         });
     }
 
