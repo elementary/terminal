@@ -1117,8 +1117,8 @@ namespace Terminal {
             return null;
         }
 
-        public void set_active_terminal_tab (Granite.Widgets.Tab tab) {
-            notebook.current = tab;
+        public void set_active_terminal_tab (Hdy.TabPage tab) {
+            notebook.tab_view.selected_page = tab;
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/

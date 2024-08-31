@@ -34,22 +34,30 @@ public class Terminal.Application : Gtk.Application {
         var act = new SimpleAction ("process-finished", VariantType.STRING);
         add_action (act);
         act.activate.connect ((v) => {
-            var now = new DateTime.now_local ();
+            MainWindow window_to_present = (MainWindow)active_window;
             size_t len;
             var tid = v.get_string (out len);
-            foreach (var window in windows) {
-                foreach (var terminal in window.terminals) {
-                    if (terminal.terminal_id == tid) {
-                        window.set_active_terminal_tab (terminal.tab);
-                        var ts = Gdk.X11.get_server_time ((Gdk.X11.Window) window.get_window ());
-                        window.present_with_time (ts);
-                        window.grab_focus ();
-                        terminal.tab.grab_focus ();
-                        return ;
-                    }
+            foreach (var window in (List<MainWindow>) get_windows ()) {
+                var terminal = window.get_terminal (tid);
+                if (terminal != null) {
+                    window.set_active_terminal_tab (terminal.tab);
+                    window_to_present = window;
+                    break;
                 }
             }
-            get_last_window ().present_with_time (Gtk.get_current_event_time ());
+
+            // This is a hack to avoid using Gdk-Xii dependency.  Using present_with_time ()
+            // with the current event time does not work either on X11 or Wayland perhaps
+            // because the triggering event did not occur on the Terminal window?
+            // Using set_keep_above () at least works on X11 but not on Wayland
+            //TODO It may well be possible to use present () on Gtk4 so this needs revisiting
+            window_to_present.set_keep_above (true);
+            window_to_present.present ();
+            window_to_present.grab_focus ();
+            Idle.add (() => {
+                window_to_present.set_keep_above (false);
+                return Source.REMOVE;
+            });
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
@@ -193,7 +201,7 @@ public class Terminal.Application : Gtk.Application {
                 notification.set_body (process);
                 notification.set_icon (process_icon);
                 notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
-                send_notification (null, notification);
+                send_notification ("process-finished-%s".printf (id), notification);
             }
         });
 
