@@ -63,7 +63,8 @@ namespace Terminal.Utils {
             parts_sep[index] = construct_parent_path (shell_location);
         }
 
-        var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
+        // Terminal does not need an escaped uri
+        var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/");
         return result;
     }
 

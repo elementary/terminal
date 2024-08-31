@@ -104,17 +104,18 @@ public class Terminal.Application : Gtk.Application {
 
     protected override int handle_local_options (VariantDict options) {
         unowned string working_directory;
+        string sanitized_path;
         unowned string[] args;
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
             if (working_directory != "\0") {
-                Environment.set_current_dir (
-                    Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
-                ); // will be sent via platform-data
+                sanitized_path = Utils.sanitize_path (working_directory, Environment.get_current_dir (), false);
+                Environment.set_current_dir (sanitized_path); // will be sent via platform-data
+                // We need to keep the -w option so that it works from a different app when Terminal is already running
+                // In this case the Environment of the other app is not passed in platform-data
+                options.insert ("working-directory","^&ay", sanitized_path);
                 options.insert ("new-tab", "b", true);
             }
-
-            options.remove ("working-directory");
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
@@ -236,8 +237,18 @@ public class Terminal.Application : Gtk.Application {
             window = new MainWindow (this, is_first_window);
         }
 
+        unowned string? option_working_directory;
+        string working_directory;
+        options.lookup ("working-directory", "^&ay", out option_working_directory);
+
         // If a specified working directory is not requested, use the current working directory from the commandline
-        unowned var working_directory = command_line.get_cwd ();
+        if (option_working_directory == null) {
+            working_directory = command_line.get_cwd (); // In the Environment of the primary Terminal app instance
+        } else {
+            // Need to copy the unowned string to prevent corruption of the parameter passed to MainWindow
+            working_directory = option_working_directory.dup ();
+        }
+
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
