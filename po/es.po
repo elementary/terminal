@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-08-27 09:33+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"PO-Revision-Date: 2024-08-10 16:16+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
@@ -17,149 +17,228 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
-#: src/Application.vala:110
-msgid "Process completed"
-msgstr "Proceso completado"
-
-#: src/Application.vala:113
-msgid "Process exited with errors"
-msgstr "El proceso finalizó con errores"
-
-#: src/Application.vala:256
+#: src/Application.vala:34
 msgid "Show version"
 msgstr "Mostrar versión"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
-msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en el terminal"
-
-#: src/Application.vala:263
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-"Ejecutar el resto del renglón como una orden en el terminal. También puede "
-"usar «--» como conmutador"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#. -n flag forces a new window
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "Abrir una ventana nueva del terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:269
-msgid "Open a new terminal tab"
-msgstr "Abrir una pestaña nueva del terminal"
+#: src/Application.vala:38
+msgid "Open a new terminal tab at current working directory"
+msgstr ""
+"Abrir una pestaña nueva del terminal en el directorio de trabajo actual"
 
-#: src/Application.vala:271
-msgid "Show help"
-msgstr "Mostrar ayuda"
-
-#: src/Application.vala:273
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "Establecer el directorio de trabajo del intérprete"
 
-#: src/MainWindow.vala:218
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:42
+msgid "Run a program in terminal"
+msgstr "Ejecutar un programa en el terminal"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:44
+msgid "Open terminal in a minimized state"
+msgstr "Abrir un terminal minimizado"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:47
+msgid "Run remainder of line as a command in terminal"
+msgstr "Ejecutar el resto de la línea como un comando en el terminal"
+
+#: src/Application.vala:99
+msgid "[-- COMMAND…]"
+msgstr "[-- COMANDO…]"
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr "Proceso completado"
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr "El proceso finalizó con errores"
+
+#: src/MainWindow.vala:167
+msgid "Show Search Bar"
+msgstr "Mostrar barra de búsqueda"
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
+#: src/MainWindow.vala:287
+msgid "Exit FullScreen"
+msgstr "Salir de pantalla completa"
+
+#: src/MainWindow.vala:296 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:369
-msgid "Zoom out"
-msgstr "Alejar"
-
-#: src/MainWindow.vala:377
-msgid "Default zoom level"
-msgstr "Nivel de escala predeterminado"
-
-#: src/MainWindow.vala:384
-msgid "Zoom in"
-msgstr "Acercar"
-
-#: src/MainWindow.vala:403
-msgid "High Contrast"
-msgstr "Contraste alto"
-
-#: src/MainWindow.vala:412
-msgid "Solarized Light"
-msgstr "Solarizado claro"
-
-#: src/MainWindow.vala:421
-msgid "Dark"
-msgstr "Oscuro"
-
-#: src/MainWindow.vala:439
-msgid "Natural Copy/Paste"
-msgstr "Copipegado natural"
-
-#: src/MainWindow.vala:440
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
-
-#: src/MainWindow.vala:465
+#: src/MainWindow.vala:303
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:491
-msgid "New Tab"
-msgstr "Pestaña nueva"
-
-#: src/MainWindow.vala:884
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:546
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar en %s"
 
-#: src/MainWindow.vala:885
+#: src/MainWindow.vala:548
 msgid "Default application"
 msgstr "Aplicación predeterminada"
 
-#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Cerrar pestaña"
-
-#: src/MainWindow.vala:1168
-msgid "Duplicate"
-msgstr "Duplicado"
-
-#: src/MainWindow.vala:1181
-msgid "Reload"
-msgstr "Volver a cargar"
-
-#: src/MainWindow.vala:1272
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"Es posible que el texto pegado esté intentando obtener acceso administrativo"
-
-#: src/MainWindow.vala:1274
-msgid "The pasted text may contain multiple commands"
-msgstr "El texto pegado puede contener varias órdenes"
-
-#: src/MainWindow.vala:1428
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "Preferencias de color"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "Estilo de la ventana:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "Claro"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
+msgid "Dark"
+msgstr "Oscuro"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "Paleta de colores"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "Restablecer predeterminado"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "Negro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "Rojo:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "Verde:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "Amarillo:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "Azul:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "Magenta:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "Cian:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "Gris:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "Blanco:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "Rojo claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "Verde claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "Amarillo claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "Azul claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "Magenta claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "Cian claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "Gris claro:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "Fondo:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "Primer plano:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "Cursor:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "Cerrar"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:310
+msgid "Contrast is very low"
+msgstr "El contraste es muy bajo"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:313
+msgid "Contrast is low"
+msgstr "El contraste es bajo"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:316
+msgid "Contrast is good"
+msgstr "El contraste es bueno"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:319
+msgid "Contrast is high"
+msgstr "El contraste es alto"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "¿Confirma que quiere cerrar esta pestaña?"
+msgstr "¿Está seguro que desea cerrar esta pestaña?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -169,9 +248,14 @@ msgstr "Hay un proceso activo en esta pestaña."
 msgid "If you close it, the process will end."
 msgstr "Si la cierra, el proceso finalizará."
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "Cerrar pestaña"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "¿Confirma que quiere salir del terminal?"
+msgstr "¿Está seguro que desea salir del terminal?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -187,7 +271,7 @@ msgstr "Salir del terminal"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr "¿Confirma que quiere volver a cargar esta pestaña?"
+msgstr "¿Está seguro que desea volver a cargar esta pestaña?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
@@ -206,7 +290,7 @@ msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
-"Copiar órdenes en la Terminal puede ser peligroso. Asegúrese de comprender "
+"Copiar comandos en el terminal puede ser peligroso. Asegúrese de comprender "
 "lo que hace cada parte del texto pegado antes de continuar."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
@@ -237,9 +321,105 @@ msgstr "Resultado siguiente"
 msgid "Cyclic search"
 msgstr "Búsqueda cíclica"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "Alejar"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "Nivel de escala predeterminado"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "Acercar"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr "Seguir el estilo del sistema"
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "Contraste alto"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Solarizado claro"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr "Personalizado"
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr "Copipegado natural"
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Los atajos no requieren Mayús; pueden interferir con algunas aplicaciones CLI"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr "Alertas de sucesos"
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"Notifica de entradas no válidas o múltiples posibles palabras a completar "
+"(sujeto a Configuración del Sistema → Sonido)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#: src/Widgets/TerminalWidget.vala:494
+msgid "The pasted text may contain multiple commands"
+msgstr "El texto pegado puede contener varios comandos"
+
+#: src/Widgets/TerminalWidget.vala:496
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Es posible que el texto pegado esté intentando obtener permisos de "
+"administrador"
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "Pestaña nueva"
+
+#: src/Widgets/TerminalView.vala:69
+msgid "Closed Tabs"
+msgstr "Pestañas cerradas"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr "Cerrar pestañas hacia la derecha"
+
+#: src/Widgets/TerminalView.vala:210
+msgid "Close Other Tabs"
+msgstr "Cerrar las otras pestañas"
+
+#: src/Widgets/TerminalView.vala:214
+msgid "Open in New Window"
+msgstr "Abrir en nueva ventana"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr "Duplicar pestaña"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "Reload"
+msgstr "Volver a cargar"
+
+#~ msgid "ReLoad"
+#~ msgstr "Recargar pestaña"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Abrir una pestaña nueva del terminal"
+
+#~ msgid "Show help"
+#~ msgstr "Mostrar ayuda"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "Esta orden solicita acceso administrativo al equipo"
@@ -274,17 +454,11 @@ msgstr "Terminal"
 #~ msgid "Use the command line"
 #~ msgstr "Usar la línea de comandos"
 
-#~ msgid "New Window"
-#~ msgstr "Nueva ventana"
-
 #~ msgid "New Root Tab"
 #~ msgstr "Nueva pestaña como administrador"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Abrir un terminal aquí"
-
-#~ msgid "Close"
-#~ msgstr "Cerrar"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Crear una nueva pestaña"
@@ -318,9 +492,6 @@ msgstr "Terminal"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Ir a la pestaña anterior"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Pantalla completa"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Activar o desactivar la pantalla completa"
