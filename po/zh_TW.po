@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-09 15:36+0000\n"
-"PO-Revision-Date: 2021-07-29 15:59+0000\n"
-"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"PO-Revision-Date: 2024-09-02 22:33+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:34
@@ -31,10 +31,8 @@ msgstr "開啟新終端機視窗"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "開啟新終端機視窗"
+msgstr "在目前工作目錄開啟新終端機視窗"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -43,39 +41,34 @@ msgstr "設定 shell 工作目錄"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:42
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "在終端機中執行程式"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:44
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "以最小化狀態開啟終端機"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:47
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr "在終端機中將剩餘內容以指令形式執行。也可以使用 '--' 作為前綴"
+msgstr "在終端機中將行數剩下的部分作為指令執行。"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- 指令…]"
 
 #: src/Application.vala:159
 msgid "Process completed"
-msgstr "行程完成執行"
+msgstr "程序已完成"
 
 #: src/Application.vala:162
 msgid "Process exited with errors"
-msgstr "行程錯誤地結束"
+msgstr "程序錯誤地結束"
 
 #: src/MainWindow.vala:167
 msgid "Show Search Bar"
-msgstr ""
+msgstr "顯示搜尋列"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:174
@@ -95,10 +88,8 @@ msgid "Select All"
 msgstr "全部選擇"
 
 #: src/MainWindow.vala:287
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "全螢幕"
+msgstr "離開全螢幕"
 
 #: src/MainWindow.vala:296 src/MainWindow.vala:1048
 msgid "Find…"
@@ -125,15 +116,15 @@ msgstr "隱藏搜尋列"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
-msgstr ""
+msgstr "色彩偏好設定"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
-msgstr ""
+msgstr "視窗風格："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "亮色"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
 #: src/Widgets/SettingsPopover.vala:102
@@ -142,87 +133,87 @@ msgstr "深色"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "配色方案"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "重設為預設值"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "黑："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "紅："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "綠："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "黃："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "藍："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "紫"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "青："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "灰："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
-msgstr ""
+msgstr "白："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr ""
+msgstr "亮紅："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "亮綠："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "亮黃："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "亮藍："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "亮紫："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "亮青："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "亮灰："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "背景："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "前景："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "游標："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -230,19 +221,19 @@ msgstr "關閉"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
-msgstr ""
+msgstr "對比非常低"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
-msgstr ""
+msgstr "對比很低"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
-msgstr ""
+msgstr "對比沒問題"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
-msgstr ""
+msgstr "對比很高"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
@@ -250,11 +241,11 @@ msgstr "您確定您想要關閉此分頁嗎？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
-msgstr "此分頁中有個活動中程序。"
+msgstr "此分頁中有執行中的程序。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
-msgstr "如果您將它關閉，裡面的程序將會終止。"
+msgstr "如果您將它關閉，該程序將會終止。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
 #: src/Widgets/TerminalView.vala:211
@@ -263,15 +254,15 @@ msgstr "關閉分頁"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "您確定想退出終端機？"
+msgstr "您確定要退出終端機嗎？"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
-msgstr "此終端機中有個活動中程序。"
+msgstr "此終端機中有執行中的程序。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:41
 msgid "If you quit Terminal, the process will end."
-msgstr "若您退出終端機，裡面的程序將會終止。"
+msgstr "若您退出終端機，該程序將會終止。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:43
 msgid "Quit Terminal"
@@ -285,11 +276,11 @@ msgstr "您確定您想要重新載入此分頁嗎？"
 msgid ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-msgstr "此分頁尚有運行的行程。重新載入將導致該行程終止。"
+msgstr "此分頁尚有執行中的程序。重新載入將導致該程序終止。"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:54
 msgid "Reload Tab"
-msgstr "重載分頁"
+msgstr "重新載入"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -339,7 +330,7 @@ msgstr "放大"
 
 #: src/Widgets/SettingsPopover.vala:86
 msgid "Follow System Style"
-msgstr ""
+msgstr "跟隨系統風格"
 
 #: src/Widgets/SettingsPopover.vala:95
 msgid "High Contrast"
@@ -351,7 +342,7 @@ msgstr "Solarized 亮色"
 
 #: src/Widgets/SettingsPopover.vala:108
 msgid "Custom"
-msgstr ""
+msgstr "自訂"
 
 #: src/Widgets/SettingsPopover.vala:114
 msgid "Natural Copy/Paste"
@@ -363,13 +354,13 @@ msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
 #: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
-msgstr ""
+msgstr "事件警告"
 
 #: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
-msgstr ""
+msgstr "輸入錯誤或有多個補完候補時提醒（受系統設定→音效的設定值影響）"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
@@ -388,32 +379,24 @@ msgid "New Tab"
 msgstr "新增分頁"
 
 #: src/Widgets/TerminalView.vala:69
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "關閉分頁"
+msgstr "已關閉的分頁"
 
 #: src/Widgets/TerminalView.vala:209
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "關閉右方的分頁"
 
 #: src/Widgets/TerminalView.vala:210
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "關閉分頁"
+msgstr "關閉其他分頁"
 
 #: src/Widgets/TerminalView.vala:214
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "新增視窗"
+msgstr "在新視窗中開啟"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "再製"
+msgstr "建立分頁副本"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Reload"
