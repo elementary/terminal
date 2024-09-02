@@ -442,6 +442,16 @@ namespace Terminal {
                 }
             }
 
+            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
+                action_reset ();
+                return true;
+            }
+
+            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
+                action_clear_screen ();
+                return true;
+            }
+
             if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
                 return !scroll_to_command_action.enabled;
             }
