@@ -61,6 +61,7 @@ namespace Terminal {
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
         public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
+        public const string ACTION_RESET = "term.reset";
         public const string ACTION_PASTE = "term.paste";
         public const string ACTION_RELOAD = "term.reload";
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
@@ -73,6 +74,7 @@ namespace Terminal {
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
         public const string[] ACCELS_CLEAR_SCREEN = { "<Control>L", null };
+        public const string[] ACCELS_RESET = { "<Control>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
@@ -138,6 +140,7 @@ namespace Terminal {
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
         private GLib.SimpleAction clear_screen_action;
+        private GLib.SimpleAction reset_action;
         private GLib.SimpleAction paste_action;
         private GLib.SimpleAction scroll_to_command_action;
 
@@ -267,6 +270,11 @@ namespace Terminal {
             clear_screen_action.set_enabled (true);
             clear_screen_action.activate.connect (action_clear_screen);
             action_group.add_action (clear_screen_action);
+
+            reset_action = new GLib.SimpleAction ("reset", null);
+            reset_action.set_enabled (true);
+            reset_action.activate.connect (action_reset);
+            action_group.add_action (reset_action);
 
             paste_action = new GLib.SimpleAction ("paste", null);
             paste_action.activate.connect (() => paste_clipboard.emit ());
@@ -484,6 +492,12 @@ namespace Terminal {
 
         private void action_clear_screen () {
             run_program ("clear", null);
+        }
+
+        private void action_reset () {
+            debug ("Reset");
+            // This also clears the screen and the scrollback
+            run_program ("reset", null);
         }
 
         protected override void paste_clipboard () {

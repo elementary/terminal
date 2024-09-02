@@ -189,6 +189,12 @@ namespace Terminal {
             );
             clear_screen_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_CLEAR_SCREEN[0]));
 
+            var reset_menuitem = new MenuItem (
+                _("Reset"),
+                TerminalWidget.ACTION_RESET
+            );
+            reset_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_RESET[0]));
+
             var paste_menuitem = new MenuItem (
                 _("Paste"),
                 TerminalWidget.ACTION_PASTE
@@ -204,9 +210,12 @@ namespace Terminal {
             var terminal_action_section = new Menu ();
             terminal_action_section.append_item (copy_menuitem);
             terminal_action_section.append_item (copy_last_output_menuitem);
-            terminal_action_section.append_item (clear_screen_menuitem);
             terminal_action_section.append_item (paste_menuitem);
             terminal_action_section.append_item (select_all_menuitem);
+
+            var terminal_clear_reset_section = new Menu ();
+            terminal_clear_reset_section.append_item (clear_screen_menuitem);
+            terminal_clear_reset_section.append_item (reset_menuitem);
 
             var search_section = new Menu ();
             search_section.append_item (search_menuitem);
@@ -216,6 +225,7 @@ namespace Terminal {
             context_menu_model.append_item (open_in_browser_menuitem);
             context_menu_model.append_section (null, terminal_action_section);
             context_menu_model.append_section (null, search_section);
+            context_menu_model.append_section (null, terminal_clear_reset_section);
 
             setup_ui ();
 
