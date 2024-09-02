@@ -501,7 +501,9 @@ namespace Terminal {
         }
 
         private void action_clear_screen () {
-            run_program ("clear", null);
+            debug ("Clear screen only");
+            // Should we clear scrollback too?
+            run_program ("clear -x", null);
         }
 
         private void action_reset () {
