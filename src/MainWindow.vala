@@ -1101,7 +1101,7 @@ namespace Terminal {
             if (tab == null) {
                 return null;
             }
-            var tab_child = (Gtk.Bin)(tab.child); // ScrolledWindow
+            var tab_child = tab.child; // ScrolledWindow
             var term = tab_child.get_child (); // TerminalWidget
             return (TerminalWidget)term;
         }
