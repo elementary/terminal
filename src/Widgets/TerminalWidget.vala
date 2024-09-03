@@ -130,7 +130,7 @@ namespace Terminal {
             private set;
         }
 
-        private unowned Gtk.Clipboard clipboard;
+        private unowned Gdk.Clipboard clipboard;
 
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;

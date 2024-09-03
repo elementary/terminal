@@ -21,8 +21,8 @@ namespace Terminal {
         private Pango.FontDescription term_font;
         private Adw.HeaderBar header;
         public TerminalView notebook { get; private set construct; }
-        private Gtk.Clipboard clipboard;
-        private Gtk.Clipboard primary_selection;
+        private Gdk.Clipboard clipboard;
+        private Gdk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
@@ -154,8 +154,8 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
 
-            clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
+            clipboard = Gdk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
+            primary_selection = Gdk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
@@ -541,9 +541,11 @@ namespace Terminal {
 
         public void update_context_menu () requires (current_terminal != null) {
             /* Update the "Show in ..." menu option */
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
-            });
+            var uri = get_current_selection_link_or_pwd ();
+            update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
+            // get_current_selection_link_or_pwd ((clipboard, uri) => {
+            //     update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
+            // });
         }
 
         private void update_menu_label (string? uri) {
@@ -905,36 +907,44 @@ namespace Terminal {
         }
 
         private void action_open_in_browser () requires (current_terminal != null) {
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-                if (to_open != null) {
-                    try {
-                        Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                    } catch (GLib.Error error) {
-                        warning ("Could not show %s - %s", to_open, error.message);
-                    }
+            var uri = get_current_selection_link_or_pwd ();
+            // get_current_selection_link_or_pwd ((clipboard, uri) => {
+            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
+            if (to_open != null) {
+                try {
+                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                } catch (GLib.Error error) {
+                    warning ("Could not show %s - %s", to_open, error.message);
                 }
-            });
+            }
+            // });
         }
 
-        private void get_current_selection_link_or_pwd (
-            Gtk.ClipboardTextReceivedFunc uri_handler
-        ) requires (current_terminal != null) {
-
+        private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
-                    primary_selection.request_text (uri_handler);
+                    try {
+                        var cp = primary_selection.get_content ();
+                        if (cp != null) {
+                            return cp.get_value ().dup_string ();
+                        }   
+                    } catch (Error e) {
+                        critical ("Unable to get clipboard contents");
+                    }
+
+                    return null;
                 } else {
-                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                    return (current_terminal.get_shell_location ());
                 }
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
                 }
 
-                uri_handler (primary_selection, link_uri);
+                return (link_uri);
+                // uri_handler (primary_selection, link_uri);
             }
         }
 
