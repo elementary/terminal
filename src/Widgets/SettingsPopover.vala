@@ -161,8 +161,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         show.connect (get_child ().show_all);
     }
 
-    private Gtk.RadioButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
-        var button = new Gtk.RadioButton (null) {
+    private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
+        var button = new Gtk.CheckButton (null) {
             action_target = new Variant.string (theme),
             halign = Gtk.Align.CENTER
         };
@@ -175,7 +175,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
-            if (((Gtk.RadioButton) b).active) {
+            if (((Gtk.CheckButton) b).active) {
                 Application.settings.set_value ("theme", b.action_target);
             }
         });
@@ -184,8 +184,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         return button;
     }
 
-    private static void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
-        SearchFunc<Gtk.RadioButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
+    private static void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
+        SearchFunc<Gtk.CheckButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
         unowned var node = default_button.get_group ().search (theme, find_colorbutton);
 
         if (node != null) {
