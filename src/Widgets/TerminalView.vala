@@ -86,14 +86,22 @@ public class Terminal.TerminalView : Gtk.Box {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        // Handle Drag-and-drop of directory files onto add button to open in new tab
-        Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
-        Gtk.drag_dest_set (new_tab_button, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
-        new_tab_button.drag_data_received.connect (drag_received);
+        // // Handle Drag-and-drop of directory files onto add button to open in new tab
+        // Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
+        // Gtk.drag_dest_set (new_tab_button, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
+        // new_tab_button.drag_data_received.connect (drag_received);
 
-        // Handle Drag-and-drop of directory files onto tab to open in that tab
-        tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
-        tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
+        // // Handle Drag-and-drop of directory files onto tab to open in that tab
+        // tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
+        // tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
+
+        var button_target = new Gtk.DropTarget (Type.STRING);
+        button_target.drop.connect (on_add_button_drop);
+        new_tab_button.add_controller (button_target);
+
+        Type[] types = { STRING };
+        tab_bar.set_up_extra_drop_target (Gdk.DragAction.COPY, types);
+        tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
 
         add (tab_bar);
         add (tab_view);
@@ -223,16 +231,19 @@ public class Terminal.TerminalView : Gtk.Box {
         return menu;
     }
 
-    private void drag_received (Gtk.Widget w,
-                                Gdk.DragContext ctx,
-                                int x,
-                                int y,
-                                Gtk.SelectionData data,
-                                uint info,
-                                uint time) {
+    // private void drag_received (Gtk.Widget w,
+    //                             Gdk.DragContext ctx,
+    //                             int x,
+    //                             int y,
+    //                             Gtk.SelectionData data,
+    //                             uint info,
+    //                             uint time) {
+    private bool on_add_button_drop (Value val, double x, double y) {
 
-        if (info == TargetType.URI_LIST) {
-            var uris = data.get_uris ();
+        // if (info == TargetType.URI_LIST) {
+            // var uris = data.get_uris ();
+            //TODO Check val holds uri list
+            var uris = Uri.list_extract_uris (val.dup_string ());
             var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
             // ACTION_NEW_TAB_AT only works with local paths to folders
             foreach (var uri in uris) {
@@ -254,21 +265,23 @@ public class Terminal.TerminalView : Gtk.Box {
 
                 new_tab_action.activate (path);
             }
-        }
 
-        Gtk.drag_finish (ctx, true, false, time);
+        return true;
+        // Gtk.drag_finish (ctx, true, false, time);
     }
 
-    private void on_extra_drag_data_received (
-        Adw.TabBar tab_bar,
-        Adw.TabPage page,
-        Gdk.DragContext ctx,
-        Gtk.SelectionData data,
-        uint info,
-        uint time) {
-
-        if (info == TargetType.URI_LIST) {
-            var uris = data.get_uris ();
+    // private void on_extra_drag_data_received (
+    //     Adw.TabBar tab_bar,
+    //     Adw.TabPage page,
+    //     Gdk.DragContext ctx,
+    //     Gtk.SelectionData data,
+    //     uint info,
+    //     uint time) {
+    private void on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
+        // if (info == TargetType.URI_LIST) {
+            //TODO Check val contains uri_list
+            var uris = Uri.list_extract_uris (val.dup_string ());
+            // var uris = data.get_uris ();
             var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
             // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
             foreach (var uri in uris) {
@@ -290,8 +303,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
                 active_shell_action.activate (path);
             }
-        }
 
-        Gtk.drag_finish (ctx, true, false, time);
+        return true;
     }
 }

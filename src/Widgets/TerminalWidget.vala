@@ -230,16 +230,20 @@ namespace Terminal {
             });
 
             /* target entries specify what kind of data the terminal widget accepts */
-            Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
-            Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
-            Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
+            // Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
+            // Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
+            // Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
 
-            Gtk.TargetEntry[] targets = { };
-            targets += uri_entry;
-            targets += string_entry;
-            targets += text_entry;
+            // Gtk.TargetEntry[] targets = { };
+            // targets += uri_entry;
+            // targets += string_entry;
+            // targets += text_entry;
 
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
+            // Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
+
+            var drop_target = new Gtk.DropTarget (Type.STRING);
+            drop_target.drop.connect (on_drop);
+            add_controller (drop_target);
 
             /* Make Links Clickable */
             this.drag_data_received.connect (drag_received);
@@ -721,34 +725,40 @@ namespace Terminal {
             init_complete = true;
         }
 
-        public void drag_received (Gdk.DragContext context, int x, int y,
-                                   Gtk.SelectionData selection_data, uint target_type, uint time_) {
-            switch (target_type) {
-                case DropTargets.URILIST:
-                    var uris = selection_data.get_uris ();
+        // public void drag_received (Gdk.DragContext context, int x, int y,
+        //                            Gtk.SelectionData selection_data, uint target_type, uint time_) {
+        private bool on_drop (Value val, double x, double y) {
+            var uris = Uri.list_extract_uris (val.dup_string ());
+            //TODO Deal with text other than uri list
+            // switch (target_type) {
+            //     case DropTargets.URILIST:
+                    // var uris = selection_data.get_uris ();
                     string path;
                     File file;
 
                     for (var i = 0; i < uris.length; i++) {
-                         file = File.new_for_uri (uris[i]);
-                         if ((path = file.get_path ()) != null) {
-                             uris[i] = Shell.quote (path) + " ";
+                        if (Uri.is_valid (uris[i])) {
+                            file = File.new_for_uri (uris[i]);
+                            if ((path = file.get_path ()) != null) {
+                                uris[i] = Shell.quote (path) + " ";
+                            }
                         }
                     }
 
                     var uris_s = string.joinv ("", uris);
                     this.feed_child (uris_s.data);
-                    break;
-                case DropTargets.STRING:
-                case DropTargets.TEXT:
-                    var data = selection_data.get_text ();
+            //         break;
+            //     case DropTargets.STRING:
+            //     case DropTargets.TEXT:
+            //         var data = selection_data.get_text ();
 
-                    if (data != null) {
-                        this.feed_child (data.data);
-                    }
+            //         if (data != null) {
+            //             this.feed_child (data.data);
+            //         }
 
-                    break;
-            }
+            //         break;
+            // }
+            return true;
         }
 
         public void remember_position () {
