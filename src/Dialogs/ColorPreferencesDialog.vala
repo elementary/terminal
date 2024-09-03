@@ -36,6 +36,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     private Gtk.ColorDialogButton background_button;
     private Gtk.ColorDialogButton foreground_button;
     private Gtk.ColorDialogButton cursor_button;
+    private Gtk.ColorDialog color_dialog;
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
@@ -92,29 +93,26 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         var foreground_label = new SettingsLabel (_("Foreground:"));
         var cursor_label = new SettingsLabel (_("Cursor:"));
 
-        black_button = new Gtk.ColorDialogButton ();
-        red_button = new Gtk.ColorDialogButton ();
-        green_button = new Gtk.ColorDialogButton ();
-        yellow_button = new Gtk.ColorDialogButton ();
-        blue_button = new Gtk.ColorDialogButton ();
-        magenta_button = new Gtk.ColorDialogButton ();
-        cyan_button = new Gtk.ColorDialogButton ();
-        light_gray_button = new Gtk.ColorDialogButton ();
-        dark_gray_button = new Gtk.ColorDialogButton ();
-        light_red_button = new Gtk.ColorDialogButton ();
-        light_green_button = new Gtk.ColorDialogButton ();
-        light_yellow_button = new Gtk.ColorDialogButton ();
-        light_blue_button = new Gtk.ColorDialogButton ();
-        light_magenta_button = new Gtk.ColorDialogButton ();
-        light_cyan_button = new Gtk.ColorDialogButton ();
-        white_button = new Gtk.ColorDialogButton ();
-        background_button = new Gtk.ColorDialogButton () {
-            use_alpha = true
-        };
-        foreground_button = new Gtk.ColorDialogButton ();
-        cursor_button = new Gtk.ColorDialogButton () {
-            use_alpha = true
-        };
+        color_dialog = new Gtk.ColorDialog ();
+        black_button = new Gtk.ColorDialogButton (color_dialog);
+        red_button = new Gtk.ColorDialogButton (color_dialog);
+        green_button = new Gtk.ColorDialogButton (color_dialog);
+        yellow_button = new Gtk.ColorDialogButton (color_dialog);
+        blue_button = new Gtk.ColorDialogButton (color_dialog);
+        magenta_button = new Gtk.ColorDialogButton (color_dialog);
+        cyan_button = new Gtk.ColorDialogButton (color_dialog);
+        light_gray_button = new Gtk.ColorDialogButton (color_dialog);
+        dark_gray_button = new Gtk.ColorDialogButton (color_dialog);
+        light_red_button = new Gtk.ColorDialogButton (color_dialog);
+        light_green_button = new Gtk.ColorDialogButton (color_dialog);
+        light_yellow_button = new Gtk.ColorDialogButton (color_dialog);
+        light_blue_button = new Gtk.ColorDialogButton (color_dialog);
+        light_magenta_button = new Gtk.ColorDialogButton (color_dialog);
+        light_cyan_button = new Gtk.ColorDialogButton (color_dialog);
+        white_button = new Gtk.ColorDialogButton (color_dialog);
+        background_button = new Gtk.ColorDialogButton (color_dialog);
+        foreground_button = new Gtk.ColorDialogButton (color_dialog);
+        cursor_button = new Gtk.ColorDialogButton (color_dialog);
 
         var contrast_top_label = new Gtk.Label (""); // Text will be set on showing
         var contrast_bottom_label = new Gtk.Label (""); // Text will be set on showing
