@@ -145,7 +145,7 @@ namespace Terminal {
         private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
         private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress press_gesture;
+        // private Gtk.GestureClick press_gesture;
 
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
@@ -208,7 +208,7 @@ namespace Terminal {
                 return true;
             });
 
-            press_gesture = new Gtk.GestureMultiPress (this) {
+            var press_gesture = new Gtk.GestureClick (this) {
                 propagation_phase = TARGET,
                 button = 0
             };
@@ -302,7 +302,7 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void button_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+        private void button_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
             link_uri = null;
 
             if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
@@ -318,7 +318,7 @@ namespace Terminal {
             }
         }
 
-        private void button_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+        private void button_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
             if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
                 if (allow_hyperlink) {
                     link_uri = get_link (gesture.get_last_event (null));
