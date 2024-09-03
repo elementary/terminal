@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -66,51 +66,51 @@ msgstr "ਅਮਲ ਮੁਕੰਮਲ ਹੋਇਆ"
 msgid "Process exited with errors"
 msgstr "ਅਮਲ ਖ਼ਰਾਬੀਆਂ ਸਮੇਤ ਬੰਦ ਹੋਇਆ"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:168
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:288
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:546
+#: src/MainWindow.vala:555
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:1049
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
@@ -414,6 +414,11 @@ msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 #: src/Widgets/TerminalView.vala:218
 msgid "Reload"
 msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"

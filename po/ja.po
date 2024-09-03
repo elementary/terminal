@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
 "PO-Revision-Date: 2024-08-09 15:43+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -66,51 +66,51 @@ msgstr "プロセスが完了しました"
 msgid "Process exited with errors"
 msgstr "プロセスがエラー終了しました"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:168
 msgid "Show Search Bar"
 msgstr "検索バーを表示"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:288
 msgid "Exit FullScreen"
 msgstr "全画面表示を終了"
 
-#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr "設定"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:546
+#: src/MainWindow.vala:555
 #, c-format
 msgid "Show in %s"
 msgstr "“%s”で表示"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:1049
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -409,6 +409,11 @@ msgstr "タブを複製"
 #: src/Widgets/TerminalView.vala:218
 msgid "Reload"
 msgstr "再読み込み"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
 
 #~ msgid "ReLoad"
 #~ msgstr "再読み込み"
