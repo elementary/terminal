@@ -63,8 +63,6 @@ namespace Terminal.Widgets {
             add (previous_button);
             add (cycle_button);
 
-            show_all ();
-
             grab_focus.connect (() => {
                 search_entry.grab_focus_without_selecting ();
             });

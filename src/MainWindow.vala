@@ -233,7 +233,6 @@ namespace Terminal {
             set_size_request (app.minimum_width, app.minimum_height);
 
             // restore_saved_state ();
-            show_all ();
 
             if (recreate_tabs) {
                 open_tabs ();
@@ -316,7 +315,6 @@ namespace Terminal {
             title_stack.add (title_label);
             title_stack.add (search_toolbar);
             // Must show children before visible_child can be set
-            title_stack.show_all ();
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
@@ -840,7 +838,6 @@ namespace Terminal {
             tab.icon = icon;
             term.tab = tab;
 
-            tab.child.show_all ();
             return tab;
         }
 
