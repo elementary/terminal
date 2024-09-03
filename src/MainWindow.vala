@@ -17,9 +17,9 @@
 */
 
 namespace Terminal {
-    public class MainWindow : Hdy.Window {
+    public class MainWindow : Adw.Window {
         private Pango.FontDescription term_font;
-        private Hdy.HeaderBar header;
+        private Adw.HeaderBar header;
         public TerminalView notebook { get; private set construct; }
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
@@ -320,7 +320,7 @@ namespace Terminal {
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
-            header = new Hdy.HeaderBar () {
+            header = new Adw.HeaderBar () {
                 show_close_button = true,
                 has_subtitle = false,
                 decoration_layout = "close:",
@@ -492,13 +492,13 @@ namespace Terminal {
             }
         }
 
-        private void on_tab_added (Hdy.TabPage tab, int pos) {
+        private void on_tab_added (Adw.TabPage tab, int pos) {
             var term = get_term_widget (tab);
             term.main_window = this;
             save_opened_terminals (true, true);
         }
 
-        private void on_tab_removed (Hdy.TabPage tab) {
+        private void on_tab_removed (Adw.TabPage tab) {
             if (notebook.n_pages == 0) {
                 // Close window when last tab removed (Note: cannot drag last tab out of window)
                 save_opened_terminals (true, true);
@@ -526,11 +526,11 @@ namespace Terminal {
             return true;
         }
 
-        private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
+        private void on_tab_reordered (Adw.TabPage tab, int new_pos) {
             save_opened_terminals (true, true);
         }
 
-        private unowned Hdy.TabView? on_create_window_request () {
+        private unowned Adw.TabView? on_create_window_request () {
             var new_window = new MainWindow (
                 app,
                 false
@@ -826,7 +826,7 @@ namespace Terminal {
             title = current_terminal.window_title;
         }
 
-        private Hdy.TabPage append_tab (
+        private Adw.TabPage append_tab (
             string label,
             GLib.Icon? icon,
             TerminalWidget term,
@@ -1097,7 +1097,7 @@ namespace Terminal {
             is_fullscreen = !is_fullscreen;
         }
 
-        private unowned TerminalWidget? get_term_widget (Hdy.TabPage? tab) {
+        private unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
             if (tab == null) {
                 return null;
             }

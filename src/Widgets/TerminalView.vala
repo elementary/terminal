@@ -11,7 +11,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public signal void new_tab_requested ();
-    public signal void tab_duplicated (Hdy.TabPage page);
+    public signal void tab_duplicated (Adw.TabPage page);
 
     public uint n_pages {
         get {
@@ -19,7 +19,7 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    public Hdy.TabPage selected_page {
+    public Adw.TabPage selected_page {
         get {
             return tab_view.selected_page;
         }
@@ -30,9 +30,9 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public unowned MainWindow main_window { get; construct; }
-    public Hdy.TabView tab_view { get; construct; }
-    private Hdy.TabBar tab_bar;
-    public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
+    public Adw.TabView tab_view { get; construct; }
+    private Adw.TabBar tab_bar;
+    public Adw.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
 
@@ -47,7 +47,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
     construct {
         var app_instance = (Gtk.Application) GLib.Application.get_default ();
-        tab_view = new Hdy.TabView () {
+        tab_view = new Adw.TabView () {
             hexpand = true,
             vexpand = true
         };
@@ -70,7 +70,7 @@ public class Terminal.TerminalView : Gtk.Box {
             use_popover = false,
         };
 
-        tab_bar = new Hdy.TabBar () {
+        tab_bar = new Adw.TabBar () {
             autohide = false,
             expand_tabs = false,
             inverted = true,
@@ -176,7 +176,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     // This is called when tab context menu is opened or closed
-    private void tab_view_setup_menu (Hdy.TabPage? page) {
+    private void tab_view_setup_menu (Adw.TabPage? page) {
         tab_menu_target = page;
 
         var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, main_window.actions);
@@ -260,8 +260,8 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     private void on_extra_drag_data_received (
-        Hdy.TabBar tab_bar,
-        Hdy.TabPage page,
+        Adw.TabBar tab_bar,
+        Adw.TabPage page,
         Gdk.DragContext ctx,
         Gtk.SelectionData data,
         uint info,

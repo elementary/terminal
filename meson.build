@@ -24,6 +24,7 @@ i18n = import('i18n')
 # gtk_dep = dependency('gtk4', version: '>=4.1')
 # Granite dependency should pull in the correct versions of GLib and Gtk4
 granite_dep = dependency('granite-7', version: '>=6.1')
+adwaita_dep = dependency('libadwaita-1')
 # handy_dep = dependency('libhandy-1', version: '>=0.83')
 vte_dep = dependency('vte-2.91-gtk4')
 pcre2_dep = dependency('libpcre2-8') # Perl Regular Expression library

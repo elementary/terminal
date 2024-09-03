@@ -4,6 +4,7 @@ terminal_deps = [
     # gio_dep,
     # gtk_dep,
     granite_dep,
+    adwaita_dep,
     # handy_dep,
     pcre2_dep,
     vte_dep,

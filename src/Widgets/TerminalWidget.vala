@@ -43,7 +43,7 @@ namespace Terminal {
         }
 
         // There may be no associated tab while made restorable
-        public unowned Hdy.TabPage tab;
+        public unowned Adw.TabPage tab;
         public string? link_uri;
 
         public string tab_label {

@@ -180,7 +180,7 @@ public class Terminal.Application : Gtk.Application {
 
     protected override void startup () {
         base.startup ();
-        Hdy.init ();
+        Adw.init ();
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
