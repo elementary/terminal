@@ -192,22 +192,22 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
 
         Application.settings.set_string ("theme", Themes.CUSTOM);
 
-        black_button.color_set.connect (update_palette_settings);
-        red_button.color_set.connect (update_palette_settings);
-        green_button.color_set.connect (update_palette_settings);
-        yellow_button.color_set.connect (update_palette_settings);
-        blue_button.color_set.connect (update_palette_settings);
-        magenta_button.color_set.connect (update_palette_settings);
-        cyan_button.color_set.connect (update_palette_settings);
-        light_gray_button.color_set.connect (update_palette_settings);
-        dark_gray_button.color_set.connect (update_palette_settings);
-        light_red_button.color_set.connect (update_palette_settings);
-        light_green_button.color_set.connect (update_palette_settings);
-        light_yellow_button.color_set.connect (update_palette_settings);
-        light_blue_button.color_set.connect (update_palette_settings);
-        light_magenta_button.color_set.connect (update_palette_settings);
-        light_cyan_button.color_set.connect (update_palette_settings);
-        white_button.color_set.connect (update_palette_settings);
+        black_button.notify["rgba"].connect (update_palette_settings);
+        red_button.notify["rgba"].connect (update_palette_settings);
+        green_button.notify["rgba"].connect (update_palette_settings);
+        yellow_button.notify["rgba"].connect (update_palette_settings);
+        blue_button.notify["rgba"].connect (update_palette_settings);
+        magenta_button.notify["rgba"].connect (update_palette_settings);
+        cyan_button.notify["rgba"].connect (update_palette_settings);
+        light_gray_button.notify["rgba"].connect (update_palette_settings);
+        dark_gray_button.notify["rgba"].connect (update_palette_settings);
+        light_red_button.notify["rgba"].connect (update_palette_settings);
+        light_green_button.notify["rgba"].connect (update_palette_settings);
+        light_yellow_button.notify["rgba"].connect (update_palette_settings);
+        light_blue_button.notify["rgba"].connect (update_palette_settings);
+        light_magenta_button.notify["rgba"].connect (update_palette_settings);
+        light_cyan_button.notify["rgba"].connect (update_palette_settings);
+        white_button.notify["rgba"].connect (update_palette_settings);
 
         default_button.clicked.connect (() => {
             Application.settings.reset ("palette");
@@ -218,17 +218,17 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             update_buttons_from_settings ();
         });
 
-        background_button.color_set.connect (() => {
+        background_button.notify["rgba"].connect (() => {
             Application.settings.set_string ("background", background_button.rgba.to_string ());
             update_contrast (contrast_image);
         });
 
-        foreground_button.color_set.connect (() => {
+        foreground_button.notify["rgba"].connect (() => {
             Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
             update_contrast (contrast_image);
         });
 
-        cursor_button.color_set.connect (() => {
+        cursor_button.notify["rgba"].connect (() => {
             Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
         });
 
