@@ -263,6 +263,22 @@ public class Terminal.Application : Gtk.Application {
         } else {
             window.present ();
         }
+
+        if (is_first_window) {
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            settings.bind ("window-height", main_window, "default-height", SettingsBindFlags.DEFAULT);
+            settings.bind ("window-width", main_window, "default-width", SettingsBindFlags.DEFAULT);
+
+            if (settings.get_boolean ("window-maximized")) {
+                window.maximize ();
+            }
+
+            settings.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
+        }
         return 0;
     }
 

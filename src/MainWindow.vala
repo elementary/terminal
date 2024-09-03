@@ -232,7 +232,7 @@ namespace Terminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            restore_saved_state ();
+            // restore_saved_state ();
             show_all ();
 
             if (recreate_tabs) {
@@ -470,27 +470,25 @@ namespace Terminal {
             return false;
         }
 
-        private void restore_saved_state () {
-            var rect = Gdk.Rectangle ();
-            Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
+        // private void restore_saved_state () {
+        //     var rect = Gdk.Rectangle ();
+        //     Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            default_width = rect.width;
-            default_height = rect.height;
+        //     default_width = rect.width;
+        //     default_height = rect.height;
 
-            if (default_width == -1 || default_height == -1) {
-                var geometry = get_display ().get_primary_monitor ().get_geometry ();
+        //     if (default_width == -1 || default_height == -1) {
+        //         default_width = 800;
+        //         default_height = 600;
+        //     }
 
-                default_width = geometry.width * 2 / 3;
-                default_height = geometry.height * 3 / 4;
-            }
-
-            var window_state = Terminal.Application.saved_state.get_enum ("window-state");
-            if (window_state == MainWindow.MAXIMIZED) {
-                maximize ();
-            } else if (window_state == MainWindow.FULLSCREEN) {
-                is_fullscreen = true;
-            }
-        }
+        //     var window_state = Terminal.Application.saved_state.get_enum ("window-state");
+        //     if (window_state == MainWindow.MAXIMIZED) {
+        //         maximize ();
+        //     } else if (window_state == MainWindow.FULLSCREEN) {
+        //         is_fullscreen = true;
+        //     }
+        // }
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
             var term = get_term_widget (tab);
@@ -929,7 +927,7 @@ namespace Terminal {
                         var cp = primary_selection.get_content ();
                         if (cp != null) {
                             return cp.get_value ().dup_string ();
-                        }   
+                        }
                     } catch (Error e) {
                         critical ("Unable to get clipboard contents");
                     }
