@@ -110,10 +110,10 @@ namespace Terminal.Widgets {
         }
 
         public new bool grab_focus () {
-            return search_entry.grab_focus ();   
+            return search_entry.grab_focus ();
             //TODO Deselect selection if necessary
         }
-        
+
         public void clear () {
             search_entry.text = "";
             last_search_term_length = 0;

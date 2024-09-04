@@ -171,7 +171,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         Gtk.StyleContext.add_provider_for_display (
             Gdk.Display.get_default (),
-            css_provider, 
+            css_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
         update_theme_provider (css_provider, theme);
@@ -199,7 +199,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                     return;
                 }
             }
-            
+
             child = child.get_next_sibling ();
         }
 

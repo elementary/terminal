@@ -220,7 +220,7 @@ namespace Terminal {
             press_gesture.pressed.connect (button_pressed);
             press_gesture.released.connect (button_released);
             add_controller (press_gesture);
-            
+
             //TODO Is this needed in Gtk4?
             // send events to key controller manually, since key_released isn't emitted in any propagation phase
             // event.connect (key_controller.handle_event);
@@ -351,7 +351,7 @@ namespace Terminal {
                 increase_font_size ();
                 scroll_delta = 0.0;
             }
-            
+
             return true;
         }
 
@@ -435,7 +435,7 @@ namespace Terminal {
                     }
                 } else if (match_keycode (Gdk.Key.v, keycode)) {
                     if (clipboard.get_formats ().contain_gtype (Type.STRING)) {
-                        paste_clipboard (); 
+                        paste_clipboard ();
                         return true;
                     }
                 }
