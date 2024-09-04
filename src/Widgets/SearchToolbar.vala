@@ -50,9 +50,7 @@ namespace Terminal.Widgets {
             );
 
             cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image = new Gtk.Image.from_icon_name (
-                "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
-            );
+            cycle_button.icon_name = "media-playlist-repeat-symbolic";
             cycle_button.sensitive = false;
             cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
@@ -62,10 +60,6 @@ namespace Terminal.Widgets {
             append (next_button);
             append (previous_button);
             append (cycle_button);
-
-            grab_focus.connect (() => {
-                search_entry.grab_focus_without_selecting ();
-            });
 
             next_button.clicked.connect_after (() => {
                 grab_focus ();
@@ -115,6 +109,11 @@ namespace Terminal.Widgets {
             });
         }
 
+        public new bool grab_focus () {
+            return search_entry.grab_focus ();   
+            //TODO Deselect selection if necessary
+        }
+        
         public void clear () {
             search_entry.text = "";
             last_search_term_length = 0;

@@ -1086,9 +1086,9 @@ namespace Terminal {
             if (tab == null) {
                 return null;
             }
-            var tab_child = tab.child; // ScrolledWindow
-            var term = tab_child.get_child (); // TerminalWidget
-            return (TerminalWidget)term;
+            var tab_child = (Gtk.ScrolledWindow)(tab.child);
+            var term = (TerminalWidget)(tab_child.child); // TerminalWidget
+            return term;
         }
 
         public unowned TerminalWidget? get_terminal (string id) {

@@ -13,9 +13,10 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         set {
             terminal_binding.source = value;
-            if (value != null) {
-                insert_action_group ("term", value.get_action_group ("term"));
-            }
+            //TODO Do we need to do this in Gtk4?
+            // if (value != null) {
+            //     insert_action_group ("term", value.get_action_group ("term"));
+            // }
         }
     }
 
@@ -134,7 +135,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.append (audible_bell_button);
         child = box;
 
-        custom_button.clicked.connect (() => {
+        custom_button.toggled.connect (() => {
             if (custom_button.active) {
                 show_theme_editor ();
                 popdown ();
@@ -157,8 +158,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 update_active_colorbutton (dark_button, s.get_string (n));
             }
         });
-
-        show.connect (get_child ().show_all);
     }
 
     private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
@@ -170,7 +169,11 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         css_provider = new Gtk.CssProvider ();
 
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        get_style_context ().add_provider_for_display (
+            Gdk.Display.get_default (),
+            css_provider, 
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
@@ -185,7 +188,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
     private static void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
         SearchFunc<Gtk.CheckButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.get_group ().search (theme, find_colorbutton);
+        unowned var node = default_button.group.search (theme, find_colorbutton);
 
         if (node != null) {
             node.data.active = true;

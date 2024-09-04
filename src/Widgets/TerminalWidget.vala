@@ -834,7 +834,7 @@ namespace Terminal {
             var old_loc = get_shell_location ();
 
             if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_toplevel ());
+                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_root ());
                 dialog.response.connect ((res) => {
                     if (res == Gtk.ResponseType.ACCEPT) {
                         Posix.kill (child_pid, Posix.Signal.TERM);
