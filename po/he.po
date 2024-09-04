@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-03 23:09+0000\n"
-"PO-Revision-Date: 2024-08-11 18:16+0000\n"
+"PO-Revision-Date: 2024-09-04 14:43+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -408,7 +408,7 @@ msgstr "רענון"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "תקריב: %.0f%%"
 
 #~ msgid "ReLoad"
 #~ msgstr "רענון"
