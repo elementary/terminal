@@ -30,23 +30,6 @@ namespace Terminal {
         private Widgets.ZoomOverlay zoom_overlay;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
-
-        private bool is_fullscreen {
-            get {
-                return header.decoration_layout_set;
-            }
-
-            set {
-                if (value) {
-                    fullscreen ();
-                    header.decoration_layout_set = true;
-                } else {
-                    unfullscreen ();
-                    header.decoration_layout_set = false;
-                }
-            }
-        }
-
         private Gtk.EventControllerKey key_controller;
         private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
@@ -1097,7 +1080,11 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
-            is_fullscreen = !is_fullscreen;
+            if (is_fullscreen ()) {
+                unfullscreen ();
+            } else {
+                fullscreen ();
+            }
         }
 
         private unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
