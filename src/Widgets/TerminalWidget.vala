@@ -179,24 +179,26 @@ namespace Terminal {
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
 
-            motion_controller = new Gtk.EventControllerMotion (this) {
+            motion_controller = new Gtk.EventControllerMotion () {
                 propagation_phase = CAPTURE
             };
             motion_controller.enter.connect (pointer_focus);
+            add_controller (motion_controller);
 
-            scroll_controller = new Gtk.EventControllerScroll (this, NONE) {
+            scroll_controller = new Gtk.EventControllerScroll (NONE) {
                 propagation_phase = TARGET
             };
             scroll_controller.scroll.connect (scroll);
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
+            add_controller (scroll_controller);
 
-            key_controller = new Gtk.EventControllerKey (this) {
+            key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = NONE
             };
             key_controller.key_pressed.connect (key_pressed);
             key_controller.key_released.connect (() => scroll_controller.flags = NONE);
             key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
-
+            add_controller (key_controller);
             // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
             //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
             //
@@ -208,13 +210,13 @@ namespace Terminal {
                 return true;
             });
 
-            var press_gesture = new Gtk.GestureClick (this) {
+            var press_gesture = new Gtk.GestureClick () {
                 propagation_phase = TARGET,
                 button = 0
             };
             press_gesture.pressed.connect (button_pressed);
             press_gesture.released.connect (button_released);
-
+            add_controller (press_gesture);
             // send events to key controller manually, since key_released isn't emitted in any propagation phase
             event.connect (key_controller.handle_event);
 
