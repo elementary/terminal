@@ -286,8 +286,8 @@ namespace Terminal {
                 action_accelerators[ACTION_FULLSCREEN].to_array (),
                 _("Exit FullScreen")
             );
-            unfullscreen_button.get_style_context ().remove_class ("image-button");
-            unfullscreen_button.get_style_context ().add_class ("titlebutton");
+            unfullscreen_button.remove_css_class ("image-button");
+            unfullscreen_button.add_css_class ("titlebutton");
 
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
@@ -307,7 +307,7 @@ namespace Terminal {
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             title_label = new Gtk.Label (title);
-            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+            title_label.add_css_class (Gtk.STYLE_CLASS_TITLE);
 
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
@@ -330,8 +330,7 @@ namespace Terminal {
             header.pack_end (search_button);
             header.set_custom_title (title_stack);
 
-            unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class ("default-decoration");
+            add_css_class ("default-decoration");
             header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new TerminalView (this);
@@ -392,7 +391,7 @@ namespace Terminal {
             box.add (overlay);
 
             add (box);
-            get_style_context ().add_class ("terminal-window");
+            add_css_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
 

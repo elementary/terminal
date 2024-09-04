@@ -59,6 +59,6 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
         image_icon = new ThemedIcon ("dialog-warning");
 
         var close_button = add_button (button_label, Gtk.ResponseType.ACCEPT);
-        close_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        close_button.add_css_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
     }
 }

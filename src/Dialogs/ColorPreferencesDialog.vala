@@ -64,7 +64,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             margin_top = 12,
             margin_bottom = 12
         };
-        palette_header.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        palette_header.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
             halign = Gtk.Align.END,

@@ -71,7 +71,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         font_size_box.add (zoom_default_button);
         font_size_box.add (zoom_in_button);
 
-        font_size_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        font_size_box.add_css_class (Gtk.STYLE_CLASS_LINKED);
 
         theme_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             homogeneous = true,
@@ -107,7 +107,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
         custom_button.group = hc_button;
-        custom_button.get_style_context ().add_class ("color-custom");
+        custom_button.add_css_class ("color-custom");
 
         update_active_colorbutton (dark_button, Application.settings.get_string ("theme"));
 
@@ -170,7 +170,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         css_provider = new Gtk.CssProvider ();
 
         unowned var style_context = button.get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         update_theme_provider (css_provider, theme);
 

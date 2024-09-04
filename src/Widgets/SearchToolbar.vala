@@ -57,7 +57,7 @@ namespace Terminal.Widgets {
             cycle_button.set_can_focus (false);
             cycle_button.tooltip_text = _("Cyclic search");
 
-            get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            add_css_class (Gtk.STYLE_CLASS_LINKED);
             add (search_entry);
             add (next_button);
             add (previous_button);
