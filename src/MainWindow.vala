@@ -31,7 +31,6 @@ namespace Terminal {
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
         private Gtk.EventControllerKey key_controller;
-        private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
