@@ -47,9 +47,8 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     }
 
     construct {
-        var window_theme_label = new SettingsLabel (_("Window style:")) {
-            margin_bottom = 12
-        };
+        var window_theme_label = settings_label (_("Window style:"));
+        window_theme_label.margin_bottom = 12;
 
         var window_theme_switch = new Granite.ModeSwitch.from_icon_name (
             "display-brightness-symbolic",
@@ -73,25 +72,25 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             tooltip_text = _("Reset to default")
         };
 
-        var black_color_label = new SettingsLabel (_("Black:"));
-        var red_color_label = new SettingsLabel (_("Red:"));
-        var green_color_label = new SettingsLabel (_("Green:"));
-        var yellow_color_label = new SettingsLabel (_("Yellow:"));
-        var blue_color_label = new SettingsLabel (_("Blue:"));
-        var magenta_color_label = new SettingsLabel (_("Magenta:"));
-        var cyan_color_label = new SettingsLabel (_("Cyan:"));
-        var dark_gray_color_label = new SettingsLabel (_("Gray:"));
-        var white_color_label = new SettingsLabel (_("White:"));
-        var light_red_color_label = new SettingsLabel (_("Light Red:"));
-        var light_green_color_label = new SettingsLabel (_("Light Green:"));
-        var light_yellow_color_label = new SettingsLabel (_("Light Yellow:"));
-        var light_blue_color_label = new SettingsLabel (_("Light Blue:"));
-        var light_magenta_color_label = new SettingsLabel (_("Light Magenta:"));
-        var light_cyan_color_label = new SettingsLabel (_("Light Cyan:"));
-        var light_gray_color_label = new SettingsLabel (_("Light Gray:"));
-        var background_label = new SettingsLabel (_("Background:"));
-        var foreground_label = new SettingsLabel (_("Foreground:"));
-        var cursor_label = new SettingsLabel (_("Cursor:"));
+        var black_color_label = settings_label (_("Black:"));
+        var red_color_label = settings_label (_("Red:"));
+        var green_color_label = settings_label (_("Green:"));
+        var yellow_color_label = settings_label (_("Yellow:"));
+        var blue_color_label = settings_label (_("Blue:"));
+        var magenta_color_label = settings_label (_("Magenta:"));
+        var cyan_color_label = settings_label (_("Cyan:"));
+        var dark_gray_color_label = settings_label (_("Gray:"));
+        var white_color_label = settings_label (_("White:"));
+        var light_red_color_label = settings_label (_("Light Red:"));
+        var light_green_color_label = settings_label (_("Light Green:"));
+        var light_yellow_color_label = settings_label (_("Light Yellow:"));
+        var light_blue_color_label = settings_label (_("Light Blue:"));
+        var light_magenta_color_label = settings_label (_("Light Magenta:"));
+        var light_cyan_color_label = settings_label (_("Light Cyan:"));
+        var light_gray_color_label = settings_label (_("Light Gray:"));
+        var background_label = settings_label (_("Background:"));
+        var foreground_label = settings_label (_("Foreground:"));
+        var cursor_label = settings_label (_("Cursor:"));
 
         color_dialog = new Gtk.ColorDialog ();
         black_button = new Gtk.ColorDialogButton (color_dialog);
@@ -347,11 +346,17 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         return color;
     }
 
-    private class SettingsLabel : Gtk.Label {
-        public SettingsLabel (string text) {
-            label = text;
-            halign = Gtk.Align.END;
-            margin_start = 12;
-        }
+    private Gtk.Label settings_label (string text) {
+        return new Gtk.Label (text) {
+            halign = END,
+            margin_start = 12
+        };
     }
+    // private class SettingsLabel : Gtk.Label {
+    //     public SettingsLabel (string text) {
+    //         label = text;
+    //         halign = Gtk.Align.END;
+    //         margin_start = 12;
+    //     }
+    // }
 }
