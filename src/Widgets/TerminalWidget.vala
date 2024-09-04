@@ -197,8 +197,11 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (key_pressed);
             key_controller.key_released.connect (() => scroll_controller.flags = NONE);
-            key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
             add_controller (key_controller);
+
+            var focus_controller = new Gtk.EventControllerFocus ();
+            focus_controller.leave.connect (() => scroll_controller.flags = NONE);
+            add_controller (focus_controller);
             // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
             //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
             //
@@ -217,11 +220,14 @@ namespace Terminal {
             press_gesture.pressed.connect (button_pressed);
             press_gesture.released.connect (button_released);
             add_controller (press_gesture);
+            
+            //TODO Is this needed in Gtk4?
             // send events to key controller manually, since key_released isn't emitted in any propagation phase
-            event.connect (key_controller.handle_event);
+            // event.connect (key_controller.handle_event);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
-            size_allocate.connect (() => resized = true);
+            notify["height-request"].connect (() => resized = true);
+            notify["width-request"].connect (() => resized = true);
             contents_changed.connect (check_cwd_changed);
             child_exited.connect (on_child_exited);
             ulong once = 0;
@@ -248,7 +254,7 @@ namespace Terminal {
             add_controller (drop_target);
 
             /* Make Links Clickable */
-            this.drag_data_received.connect (drag_received);
+            // this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
 
             // Setup Actions
