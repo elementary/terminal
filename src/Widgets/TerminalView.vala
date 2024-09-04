@@ -97,7 +97,7 @@ public class Terminal.TerminalView : Gtk.Box {
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
 
-        Type[] types = { STRING };
+        Type[] types = { Type.STRING };
         tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, types);
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
 

@@ -226,8 +226,8 @@ namespace Terminal {
             child_exited.connect (on_child_exited);
             ulong once = 0;
             once = realize.connect (() => {
-                clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-                clipboard.owner_change.connect (setup_menu);
+                clipboard = Gdk.Display.get_default ().get_clipboard ();
+                clipboard.changed.connect (setup_menu);
                 disconnect (once);
             });
 
@@ -425,13 +425,15 @@ namespace Terminal {
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
-                } else if (match_keycode (Gdk.Key.v, keycode) && clipboard.wait_is_text_available ()) {
-                    paste_clipboard ();
-                    return true;
+                } else if (match_keycode (Gdk.Key.v, keycode)) {
+                    if (clipboard.get_formats ().contain_gtype (Type.STRING)) {
+                        paste_clipboard (); 
+                        return true;
+                    }
                 }
             }
 
-            if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
+            if (ALT_MASK in modifiers && keyval == Gdk.Key.Up) {
                 return !scroll_to_command_action.enabled;
             }
 
@@ -440,15 +442,16 @@ namespace Terminal {
 
         private void setup_menu () {
             // Update the "Paste" menu option
-            clipboard.request_targets ((clipboard, atoms) => {
-                bool can_paste = false;
+            var formats = clipboard.get_formats ();
+            bool can_paste = false;
 
-                if (atoms != null && atoms.length > 0) {
-                    can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
-                }
+            if (formats != null) {
+                can_paste = formats.contain_gtype (Type.STRING);
+                //TODO Use mimetype for text and uris?
+                // can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
+            }
 
-                paste_action.set_enabled (can_paste);
-            });
+            paste_action.set_enabled (can_paste);
 
             // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
@@ -468,7 +471,7 @@ namespace Terminal {
 
         protected override void copy_clipboard () {
             if (link_uri != null && !get_has_selection ()) {
-                clipboard.set_text (link_uri, link_uri.length);
+                clipboard.set_text (link_uri);
             } else {
                 base.copy_clipboard ();
             }
@@ -476,11 +479,23 @@ namespace Terminal {
 
         private void copy_output () {
             var output = get_last_output ();
-            clipboard.set_text (output, output.length);
+            clipboard.set_text (output);
         }
 
         protected override void paste_clipboard () {
-            clipboard.request_text ((clipboard, text) => {
+            var content_provider = clipboard.get_content ();
+            string? text;
+
+            if (content_provider != null) {
+                try {
+                    var val = content_provider.get_value ();
+                    text = val.dup_string ();
+                } catch (Error e) {
+                    warning ("Error pasting clipboard - %s", e.message);
+                    return;
+                }
+            }
+            // clipboard.request_text ((clipboard, text) => {
                 if (text == null) {
                     return;
                 }
@@ -490,7 +505,7 @@ namespace Terminal {
                     return;
                 }
 
-                unowned var toplevel = (MainWindow) get_toplevel ();
+                unowned var toplevel = (MainWindow) get_root ();
 
                 if (!toplevel.unsafe_ignored && Application.settings.get_boolean ("unsafe-paste-alert")) {
                     string? warn_text = null;
@@ -520,7 +535,7 @@ namespace Terminal {
 
                 remember_command_start_position ();
                 base.paste_clipboard ();
-            });
+            // });
         }
 
         private void update_theme () {
