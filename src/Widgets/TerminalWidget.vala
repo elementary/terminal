@@ -464,15 +464,14 @@ namespace Terminal {
             copy_output_action.set_enabled (has_output);
         }
 
-        private void popup_context_menu (Gdk.Rectangle rect) {
+        private void popup_context_menu (Gdk.Rectangle? rect) {
             main_window.update_context_menu ();
             setup_menu ();
 
             // Popup context menu below cursor position
-            var context_menu = new Gtk.Menu.from_model (main_window.context_menu_model) {
-                attach_widget = this
-            };
-            context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+            var context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model);
+            context_menu.set_pointing_to (rect);
+            context_menu.popup ();
         }
 
         protected override void copy_clipboard () {
