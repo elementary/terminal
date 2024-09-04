@@ -491,11 +491,11 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             var content_provider = clipboard.get_content ();
-            string? text;
+            string? text = null;
 
             if (content_provider != null) {
                 try {
-                    Value? val;
+                    Value? val = null;
                     content_provider.get_value (ref val);
                     text = val.dup_string ();
                 } catch (Error e) {
