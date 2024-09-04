@@ -209,8 +209,9 @@ namespace Terminal {
                 }
             });
 
-            add_controller (key_controller);
-            add_controller (focus_controller);
+            // Need to disambiguate from ShortcutManager interface add_controller ()
+            ((Gtk.Widget)this).add_controller (key_controller);
+            ((Gtk.Widget)this).add_controller (focus_controller);
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
