@@ -198,7 +198,7 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (key_pressed);
 
-            var focus_controller = new Gtk.EventController ();
+            var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.enter.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
