@@ -161,7 +161,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
-        var button = new Gtk.CheckButton (null) {
+        var button = new Gtk.CheckButton () {
             action_target = new Variant.string (theme),
             halign = Gtk.Align.CENTER
         };
