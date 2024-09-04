@@ -259,7 +259,7 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
-            window.iconify ();
+            window.minimize ();
         } else {
             window.present ();
         }
