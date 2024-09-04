@@ -198,7 +198,7 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (key_pressed);
 
-            var focus_controller = new Gtk.EventControllerFocus ();
+            var focus_controller = new Gtk.EventController ();
             focus_controller.enter.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
@@ -208,7 +208,7 @@ namespace Terminal {
                     });
                 }
             });
-            
+
             add_controller (key_controller);
             add_controller (focus_controller);
 
@@ -497,7 +497,7 @@ namespace Terminal {
                         return false;
                     }
                 });
-                
+
                 dialog.present ();
             }
 
@@ -815,8 +815,10 @@ namespace Terminal {
             TerminalWidget term,
             int pos
         ) {
-            var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
-            sw.add (term);
+            var sw = new Gtk.ScrolledWindow () {
+                vadjustment = term.get_vadjustment (),
+                child = term
+            };
             var tab = notebook.tab_view.insert (sw, pos);
             tab.title = label;
             tab.tooltip = term.current_working_directory;
