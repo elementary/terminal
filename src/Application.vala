@@ -195,7 +195,7 @@ public class Terminal.Application : Gtk.Application {
          * To be able to overwrite their styles, we need to use +1.
          */
         Gtk.StyleContext.add_provider_for_display (
-            Gdk.Screen.get_default (),
+            Gdk.Display.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
         );
