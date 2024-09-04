@@ -71,7 +71,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         font_size_box.append (zoom_default_button);
         font_size_box.append (zoom_in_button);
 
-        font_size_box.add_css_class (Gtk.STYLE_CLASS_LINKED);
+        font_size_box.add_css_class (Granite.STYLE_CLASS_LINKED);
 
         theme_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             homogeneous = true,
