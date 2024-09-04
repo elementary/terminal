@@ -167,7 +167,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(Gdk.WindowState.FOCUSED in terminal.main_window.get_window ().get_state ())) {
+            if (!(Gtk.StateFlags.FOCUSED in terminal.main_window.get_state_flags ())) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);

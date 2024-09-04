@@ -851,7 +851,8 @@ namespace Terminal {
             get_cursor_position (null, out row);
             delta = remembered_position - row;
 
-            vadjustment.value += (int) delta + get_window ().get_height () / get_char_height () - 1;
+            vadjustment.value += (int) delta + height_request / get_char_height () - 1;
+            // vadjustment.value += (int) delta + get_window ().get_height () / get_char_height () - 1;
             action.set_enabled (false); // Repeated presses are ignored
         }
 
