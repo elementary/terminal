@@ -313,7 +313,7 @@ namespace Terminal {
             header.title_widget = title_stack;
 
             add_css_class ("default-decoration");
-            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
+            // header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
@@ -387,7 +387,7 @@ namespace Terminal {
                 color_preferences_dialog.present ();
             });
 
-            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
+            // bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
