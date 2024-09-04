@@ -93,7 +93,7 @@ public class Terminal.TerminalView : Gtk.Box {
         // tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
         // tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
-        var button_target = new Gtk.DropTarget (Type.STRING);
+        var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
 

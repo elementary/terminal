@@ -243,7 +243,7 @@ namespace Terminal {
 
             // Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
 
-            var drop_target = new Gtk.DropTarget (Type.STRING);
+            var drop_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
             drop_target.drop.connect (on_drop);
             add_controller (drop_target);
 
