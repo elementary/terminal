@@ -372,7 +372,7 @@ namespace Terminal {
             box.append (header);
             box.append (overlay);
 
-            child = box;
+            content = box;
             add_css_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
