@@ -216,17 +216,17 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         });
 
         background_button.notify["rgba"].connect (() => {
-            Application.settings.set_string ("background", background_button.rgba.to_string ());
+            Application.settings.set_string ("background", background_button.get_rgba ().to_string ());
             update_contrast (contrast_image);
         });
 
         foreground_button.notify["rgba"].connect (() => {
-            Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
+            Application.settings.set_string ("foreground", foreground_button.get_rgba ().to_string ());
             update_contrast (contrast_image);
         });
 
         cursor_button.notify["rgba"].connect (() => {
-            Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
+            Application.settings.set_string ("cursor-color", cursor_button.get_rgba ().to_string ());
         });
 
         contrast_top_label.state_flags_changed.connect ((previous_flags) => {
@@ -238,24 +238,24 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         // show.connect (get_child ().show_all);
     }
 
-    private void update_palette_settings () {
+    private void update_palette_settings (ParamSpec param) {
         string[] colors = {
-            black_button.rgba.to_string (),
-            red_button.rgba.to_string (),
-            green_button.rgba.to_string (),
-            yellow_button.rgba.to_string (),
-            blue_button.rgba.to_string (),
-            magenta_button.rgba.to_string (),
-            cyan_button.rgba.to_string (),
-            light_gray_button.rgba.to_string (),
-            dark_gray_button.rgba.to_string (),
-            light_red_button.rgba.to_string (),
-            light_green_button.rgba.to_string (),
-            light_yellow_button.rgba.to_string (),
-            light_blue_button.rgba.to_string (),
-            light_magenta_button.rgba.to_string (),
-            light_cyan_button.rgba.to_string (),
-            white_button.rgba.to_string ()
+            black_button.get_rgba ().to_string (),
+            red_button.get_rgba ().to_string (),
+            green_button.get_rgba ().to_string (),
+            yellow_button.get_rgba ().to_string (),
+            blue_button.get_rgba ().to_string (),
+            magenta_button.get_rgba ().to_string (),
+            cyan_button.get_rgba ().to_string (),
+            light_gray_button.get_rgba ().to_string (),
+            dark_gray_button.get_rgba ().to_string (),
+            light_red_button.get_rgba ().to_string (),
+            light_green_button.get_rgba ().to_string (),
+            light_yellow_button.get_rgba ().to_string (),
+            light_blue_button.get_rgba ().to_string (),
+            light_magenta_button.get_rgba ().to_string (),
+            light_cyan_button.get_rgba ().to_string (),
+            white_button.get_rgba ().to_string ()
         };
 
         Application.settings.set_string ("palette", string.joinv (":", colors));
@@ -301,7 +301,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     }
 
     private void update_contrast (Gtk.Image contrast_image) {
-        var contrast_ratio = get_contrast_ratio (foreground_button.rgba, background_button.rgba);
+        var contrast_ratio = get_contrast_ratio (foreground_button.get_rgba (), background_button.get_rgba ());
         if (contrast_ratio < 3) {
             contrast_image.icon_name = "dialog-warning";
             contrast_image.tooltip_text = _("Contrast is very low");
