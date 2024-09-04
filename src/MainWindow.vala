@@ -135,8 +135,8 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
 
-            clipboard = Gdk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            primary_selection = Gdk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
+            clipboard = Gdk.Display.get_default ().get_clipboard ();
+            primary_selection = Gdk.Display_get_default ().get_primary_clipboard ();
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
@@ -305,7 +305,7 @@ namespace Terminal {
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
-            header.set_custom_title (title_stack);
+            header.title_widget = title_stack;
 
             add_css_class ("default-decoration");
             header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
@@ -367,7 +367,7 @@ namespace Terminal {
             box.append (header);
             box.append (overlay);
 
-            append (box);
+            child = box;
             add_css_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
@@ -414,7 +414,7 @@ namespace Terminal {
                 case Gdk.Key.@6:
                 case Gdk.Key.@7:
                 case Gdk.Key.@8:
-                    if (MOD1_MASK in modifiers
+                    if (ALT_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
@@ -428,7 +428,7 @@ namespace Terminal {
                     break;
 
                 case Gdk.Key.@9:
-                    if (MOD1_MASK in modifiers
+                    if (ALT_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         notebook.selected_page = notebook.tab_view.get_nth_page ((int)notebook.n_pages - 1);
@@ -483,13 +483,17 @@ namespace Terminal {
         public bool confirm_close_tab (TerminalWidget terminal_widget) {
             if (terminal_widget.has_foreground_process ()) {
                 var dialog = new ForegroundProcessDialog (this);
-                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                    dialog.destroy ();
-                    terminal_widget.kill_fg ();
-                } else {
-                    dialog.destroy ();
-                    return false;
-                }
+                dialog.response.connect ((res) => {
+                    if (res == Gtk.ResponseType.ACCEPT) {
+                        dialog.destroy ();
+                        terminal_widget.kill_fg ();
+                    } else {
+                        dialog.destroy ();
+                        return false;
+                    }
+                });
+                
+                dialog.present ();
             }
 
             //Names checked in page_detached handler
@@ -858,13 +862,15 @@ namespace Terminal {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
                 if (term.has_foreground_process ()) {
                     var dialog = new ForegroundProcessDialog.before_close (this);
-                    if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                        term.kill_fg ();
-                        dialog.destroy ();
-                    } else {
-                        dialog.destroy ();
-                        return true;
-                    }
+                    dialog.response.connect ((res) => {
+                        if (res == Gtk.ResponseType.ACCEPT) {
+                            term.kill_fg ();
+                            dialog.destroy ();
+                        } else {
+                            dialog.destroy ();
+                            return true;
+                        }
+                    });
                 }
 
                 tabs_to_terminate.append (term);
@@ -883,7 +889,8 @@ namespace Terminal {
             var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
             if (to_open != null) {
                 try {
-                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                    Gtk.show_uri (null, to_open, Gtk.get_current_event_time ());
+                    //TODO Replace with undeprecated alternative
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
