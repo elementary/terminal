@@ -406,12 +406,12 @@ namespace Terminal {
 
             // Use hardware keycodes so the key used is unaffected by internationalized layout
             bool match_keycode (uint keyval, uint code) {
+                //TODO Check this works for non-standard keyboard layouts
                 Gdk.KeymapKey[] keys;
-
-                var keymap = Gdk.Keymap.get_for_display (get_display ());
-                if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                    foreach (var key in keys) {
-                        if (code == key.keycode) {
+                uint[] keyvals;
+                if (get_display ().map_keycode (code, out keys, out keyvals)) {
+                    foreach (var kv in keyvals) {
+                        if (kv == keyval) {
                             return true;
                         }
                     }
