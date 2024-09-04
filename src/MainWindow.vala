@@ -136,7 +136,7 @@ namespace Terminal {
             title = TerminalWidget.DEFAULT_LABEL;
 
             clipboard = Gdk.Display.get_default ().get_clipboard ();
-            primary_selection = Gdk.Display_get_default ().get_primary_clipboard ();
+            primary_selection = Gdk.Display.get_default ().get_primary_clipboard ();
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
@@ -224,7 +224,7 @@ namespace Terminal {
                 open_tabs ();
             }
 
-            destroy.connect (on_delete_event);
+            close_request.connect (on_delete_event);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
@@ -894,8 +894,8 @@ namespace Terminal {
             var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
             if (to_open != null) {
                 try {
-                    Gtk.show_uri (null, to_open, Gtk.get_current_event_time ());
-                    //TODO Replace with undeprecated alternative
+                    var launcher = new Gtk.UriLauncher (to_open);
+                    launcher.launch ();
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
