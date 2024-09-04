@@ -250,7 +250,7 @@ public class Terminal.TerminalView : Gtk.Box {
                 var file = GLib.File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
-                    return;
+                    return false;
                 }
 
                 var type = file.query_file_type (NONE);
@@ -277,7 +277,7 @@ public class Terminal.TerminalView : Gtk.Box {
     //     Gtk.SelectionData data,
     //     uint info,
     //     uint time) {
-    private void on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
+    private bool on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
         // if (info == TargetType.URI_LIST) {
             //TODO Check val contains uri_list
             var uris = Uri.list_extract_uris (val.dup_string ());
@@ -288,7 +288,7 @@ public class Terminal.TerminalView : Gtk.Box {
                 var file = GLib.File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
-                    return;
+                    return false;
                 }
 
                 var type = file.query_file_type (NONE);
