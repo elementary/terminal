@@ -30,7 +30,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     """;
 
     private BindingGroup terminal_binding;
-    private Gtk.Box theme_buttons;
+    public Gtk.Box theme_buttons { get; private set; }
 
     public SettingsPopover () {
         Object ();
@@ -186,15 +186,24 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         return button;
     }
 
-    private static void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
-        SearchFunc<Gtk.CheckButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.group.search (theme, find_colorbutton);
-
-        if (node != null) {
-            node.data.active = true;
-        } else {
-            default_button.active = true;
+    private void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
+        // SearchFunc<Gtk.CheckButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
+        // unowned var node = default_button.group.search (theme, find_colorbutton);
+        var child = theme_buttons.get_first_child ();
+        var found = false;
+        while (child != null && !found) {
+            if (child is Gtk.CheckButton) {
+                var b = (Gtk.CheckButton)child;
+                if (b.action_target.get_string () == theme) {
+                    b.active = true;
+                    return;
+                }
+            }
+            
+            child = child.get_next_sibling ();
         }
+
+        default_button.active = true;
     }
 
     private static void update_theme_provider (Gtk.CssProvider css_provider, string theme) {
