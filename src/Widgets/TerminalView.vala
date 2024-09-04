@@ -103,8 +103,8 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_bar.set_up_extra_drop_target (Gdk.DragAction.COPY, types);
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
 
-        add (tab_bar);
-        add (tab_view);
+        append (tab_bar);
+        append (tab_view);
     }
 
     public void make_restorable (string path) {

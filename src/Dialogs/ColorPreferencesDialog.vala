@@ -183,7 +183,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         update_buttons_from_settings ();
         update_contrast (contrast_image);
 
-        get_content_area ().add (colors_grid);
+        get_content_area ().append (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
         close_button.clicked.connect (destroy);

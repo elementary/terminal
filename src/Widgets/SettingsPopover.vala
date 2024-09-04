@@ -67,9 +67,9 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_end = 12,
             margin_bottom = 6
         };
-        font_size_box.add (zoom_out_button);
-        font_size_box.add (zoom_default_button);
-        font_size_box.add (zoom_in_button);
+        font_size_box.append (zoom_out_button);
+        font_size_box.append (zoom_default_button);
+        font_size_box.append (zoom_in_button);
 
         font_size_box.add_css_class (Gtk.STYLE_CLASS_LINKED);
 
@@ -88,8 +88,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
 
         var theme_box = new Gtk.Box (VERTICAL, 0);
-        theme_box.add (follow_system_button);
-        theme_box.add (theme_revealer);
+        theme_box.append (follow_system_button);
+        theme_box.append (theme_revealer);
 
         var hc_button = add_theme_button (Themes.HIGH_CONTRAST);
         hc_button.tooltip_text = _("High Contrast");
@@ -126,12 +126,12 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_top = 12,
         };
 
-        box.add (font_size_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (theme_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (natural_copy_paste_button);
-        box.add (audible_bell_button);
+        box.append (font_size_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (theme_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (natural_copy_paste_button);
+        box.append (audible_bell_button);
         child = box;
 
         custom_button.clicked.connect (() => {
@@ -179,7 +179,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             }
         });
 
-        theme_buttons.add (button);
+        theme_buttons.append (button);
         return button;
     }
 

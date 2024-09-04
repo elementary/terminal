@@ -312,8 +312,8 @@ namespace Terminal {
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
             };
-            title_stack.add (title_label);
-            title_stack.add (search_toolbar);
+            title_stack.add_child (title_label);
+            title_stack.add_child (search_toolbar);
             // Must show children before visible_child can be set
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
@@ -387,10 +387,10 @@ namespace Terminal {
             zoom_overlay = new Widgets.ZoomOverlay (overlay);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            box.add (header);
-            box.add (overlay);
+            box.append (header);
+            box.append (overlay);
 
-            add (box);
+            append (box);
             add_css_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
