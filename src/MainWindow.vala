@@ -262,7 +262,6 @@ namespace Terminal {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
                 margin_start = 12,
-                no_show_all = true,
                 visible = false
             };
             unfullscreen_button.tooltip_markup = Granite.markup_accel_tooltip (
@@ -274,14 +273,14 @@ namespace Terminal {
 
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
-                image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                icon_name = "edit-find-symbolic",
                 valign = Gtk.Align.CENTER,
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
             var menu_button = new Gtk.MenuButton () {
                 can_focus = false,
-                image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                icon_name = "open-menu-symbolic",
                 popover = new SettingsPopover (),
                 tooltip_text = _("Settings"),
                 valign = Gtk.Align.CENTER
@@ -302,10 +301,7 @@ namespace Terminal {
             title_stack.visible_child = title_label;
 
             header = new Adw.HeaderBar () {
-                show_close_button = true,
-                has_subtitle = false,
                 decoration_layout = "close:",
-                decoration_layout_set = false
             };
 
             header.pack_end (unfullscreen_button);
@@ -708,7 +704,8 @@ namespace Terminal {
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
                 /* Make the terminal occupy the whole GUI */
-                expand = true
+                hexpand = true,
+                vexpand = true
             };
 
             var tab = append_tab (
