@@ -403,7 +403,6 @@ namespace Terminal {
                     color_preferences_dialog = new Dialogs.ColorPreferences (this);
                 }
 
-                color_preferences_dialog.destroy.connect (() => color_preferences_dialog = null);
                 color_preferences_dialog.present ();
             });
 
