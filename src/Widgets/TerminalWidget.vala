@@ -762,12 +762,14 @@ namespace Terminal {
 
                     for (var i = 0; i < uris.length; i++) {
                         //TODO Decide appropriate flags
-                        if (Uri.is_valid (uris[i], UriFlags.NONE)) {
-                            file = File.new_for_uri (uris[i]);
-                            if ((path = file.get_path ()) != null) {
-                                uris[i] = Shell.quote (path) + " ";
+                        try {
+                            if (Uri.is_valid (uris[i], UriFlags.NONE)) {
+                                file = File.new_for_uri (uris[i]);
+                                if ((path = file.get_path ()) != null) {
+                                    uris[i] = Shell.quote (path) + " ";
+                                }
                             }
-                        }
+                        } catch {}
                     }
 
                     var uris_s = string.joinv ("", uris);
