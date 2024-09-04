@@ -488,7 +488,8 @@ namespace Terminal {
 
             if (content_provider != null) {
                 try {
-                    var val = content_provider.get_value ();
+                    Value? val;
+                    content_provider.get_value (ref val);
                     text = val.dup_string ();
                 } catch (Error e) {
                     warning ("Error pasting clipboard - %s", e.message);
@@ -754,7 +755,8 @@ namespace Terminal {
                     File file;
 
                     for (var i = 0; i < uris.length; i++) {
-                        if (Uri.is_valid (uris[i])) {
+                        //TODO Decide appropriate flags
+                        if (Uri.is_valid (uris[i], UriFlags.NONE)) {
                             file = File.new_for_uri (uris[i]);
                             if ((path = file.get_path ()) != null) {
                                 uris[i] = Shell.quote (path) + " ";

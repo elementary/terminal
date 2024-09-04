@@ -897,7 +897,7 @@ namespace Terminal {
             if (to_open != null) {
                 try {
                     var launcher = new Gtk.UriLauncher (to_open);
-                    launcher.launch ();
+                    launcher.launch (null, null);
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
@@ -913,7 +913,9 @@ namespace Terminal {
                     try {
                         var cp = primary_selection.get_content ();
                         if (cp != null) {
-                            return cp.get_value ().dup_string ();
+                            Value? val;
+                            cp.get_value (ref val);
+                            return val.dup_string ();
                         }
                     } catch (Error e) {
                         critical ("Unable to get clipboard contents");
