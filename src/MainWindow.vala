@@ -495,7 +495,7 @@ namespace Terminal {
                         terminal_widget.kill_fg ();
                     } else {
                         dialog.destroy ();
-                        return false;
+                        return;
                     }
                 });
 
@@ -876,7 +876,7 @@ namespace Terminal {
                             dialog.destroy ();
                         } else {
                             dialog.destroy ();
-                            return true;
+                            return;
                         }
                     });
                 }
