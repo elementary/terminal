@@ -896,13 +896,9 @@ namespace Terminal {
             // get_current_selection_link_or_pwd ((clipboard, uri) => {
             var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
             if (to_open != null) {
-                try {
-                    var launcher = new Gtk.UriLauncher (to_open);
-                    launcher.launch.begin (null, null);
-                    //TODO Handle launch failure.
-                } catch (GLib.Error error) {
-                    warning ("Could not show %s - %s", to_open, error.message);
-                }
+                var launcher = new Gtk.UriLauncher (to_open);
+                launcher.launch.begin (null, null);
+                //TODO Handle launch failure.
             }
         }
 

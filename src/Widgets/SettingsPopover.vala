@@ -211,11 +211,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
-        try {
-            css_provider.load_from_string (STYLE_CSS.printf (background, foreground));
-        } catch (Error e) {
-            critical ("Unable to style color button: %s", e.message);
-        }
+        css_provider.load_from_string (STYLE_CSS.printf (background, foreground));
     }
 
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
