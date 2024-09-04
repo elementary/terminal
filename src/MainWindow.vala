@@ -307,7 +307,7 @@ namespace Terminal {
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             title_label = new Gtk.Label (title);
-            title_label.add_css_class (Gtk.STYLE_CLASS_TITLE);
+            title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
