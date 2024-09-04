@@ -351,6 +351,8 @@ namespace Terminal {
                 increase_font_size ();
                 scroll_delta = 0.0;
             }
+            
+            return true;
         }
 
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
