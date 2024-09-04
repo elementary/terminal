@@ -1101,7 +1101,7 @@ namespace Terminal {
                 return null;
             }
             var tab_child = (Gtk.ScrolledWindow)(tab.child);
-            var term = (TerminalWidget)(tab_child.child); // TerminalWidget
+            unowned var term = (TerminalWidget)(tab_child.child); // TerminalWidget
             return term;
         }
 
