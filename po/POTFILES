@@ -7,3 +7,4 @@ src/Widgets/SearchToolbar.vala
 src/Widgets/SettingsPopover.vala
 src/Widgets/TerminalWidget.vala
 src/Widgets/TerminalView.vala
+src/Widgets/ZoomOverlay.vala
