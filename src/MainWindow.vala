@@ -897,12 +897,12 @@ namespace Terminal {
             if (to_open != null) {
                 try {
                     var launcher = new Gtk.UriLauncher (to_open);
-                    launcher.launch (null, null);
+                    launcher.launch.begin (null, null);
+                    //TODO Handle launch failure.
                 } catch (GLib.Error error) {
                     warning ("Could not show %s - %s", to_open, error.message);
                 }
             }
-            // });
         }
 
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
