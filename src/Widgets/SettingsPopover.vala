@@ -169,8 +169,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         css_provider = new Gtk.CssProvider ();
 
-        unowned var style_context = button.get_style_context ();
-        add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
         style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         update_theme_provider (css_provider, theme);
 
@@ -201,7 +200,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
         try {
-            css_provider.load_from_data (STYLE_CSS.printf (background, foreground));
+            css_provider.load_from_string (STYLE_CSS.printf (background, foreground));
         } catch (Error e) {
             critical ("Unable to style color button: %s", e.message);
         }

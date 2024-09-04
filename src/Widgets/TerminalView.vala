@@ -80,7 +80,7 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         style_provider = new Gtk.CssProvider ();
-        Gtk.StyleContext.add_provider_for_screen (
+        Gtk.StyleContext.add_provider_for_display (
             Gdk.Screen.get_default (),
             style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION

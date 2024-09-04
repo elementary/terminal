@@ -194,7 +194,7 @@ public class Terminal.Application : Gtk.Application {
          * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
          * To be able to overwrite their styles, we need to use +1.
          */
-        Gtk.StyleContext.add_provider_for_screen (
+        Gtk.StyleContext.add_provider_for_display (
             Gdk.Screen.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
