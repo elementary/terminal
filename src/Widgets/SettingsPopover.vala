@@ -169,7 +169,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         css_provider = new Gtk.CssProvider ();
 
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        get_style_context ().add_provider_for_display (
+        Gtk.StyleContext.add_provider_for_display (
             Gdk.Display.get_default (),
             css_provider, 
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
