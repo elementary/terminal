@@ -185,10 +185,10 @@ namespace Terminal {
             motion_controller.enter.connect (pointer_focus);
             add_controller (motion_controller);
 
-            scroll_controller = new Gtk.EventControllerScroll (NONE) {
+            scroll_controller = new Gtk.EventControllerScroll (VERTICAL) {
                 propagation_phase = TARGET
             };
-            scroll_controller.scroll.connect (scroll);
+            scroll_controller.scroll.connect (on_scroll);
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
             add_controller (scroll_controller);
 
@@ -340,7 +340,7 @@ namespace Terminal {
             }
         }
 
-        private void scroll (double x, double y) {
+        private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
             // try to emulate a normal scrolling event by summing deltas. step size of 0.5 chosen to match sensitivity
             scroll_delta += y;
 
