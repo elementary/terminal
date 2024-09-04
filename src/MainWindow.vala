@@ -193,11 +193,13 @@ namespace Terminal {
 
             setup_ui ();
 
-            key_controller = new Gtk.EventControllerKey (this) {
+            key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = TARGET
             };
             key_controller.key_pressed.connect (key_pressed);
-            key_controller.focus_in.connect (() => {
+
+            var focus_controller = new Gtk.EventController ();
+            focus_controller.enter.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
@@ -206,6 +208,9 @@ namespace Terminal {
                     });
                 }
             });
+            
+            add_controller (key_controller);
+            add_controller (focus_controller);
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
@@ -219,7 +224,7 @@ namespace Terminal {
                 open_tabs ();
             }
 
-            delete_event.connect (on_delete_event);
+            destroy.connect (on_delete_event);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
