@@ -718,7 +718,9 @@ namespace Terminal {
         }
 
         private string? get_link (Gdk.Event event) {
-            return this.match_check_event (event, null);
+            double x, y;
+            event.get_position (out x, out y);
+            return this.check_match_at (x, y, null);
         }
 
         public string get_shell_location () {
