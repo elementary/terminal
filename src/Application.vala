@@ -301,19 +301,22 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void restore_saved_state (Gtk.Window window, bool is_first_window) {
+        window.resize (
+            Application.saved_state.get_int ("window-width"),
+            Application.saved_state.get_int ("window-height")
+        );
+
         if (Application.saved_state.get_boolean ("is-maximized")) {
             window.maximize ();
-        } else {
-            window.resize (
-                Application.saved_state.get_int ("window-width"),
-                Application.saved_state.get_int ("window-height")
-            );
         }
 
         if (is_first_window) {
             window.size_allocate.connect ((alloc) => {
-                Application.saved_state.set_int ("window-width", alloc.width);
-                Application.saved_state.set_int ("window-height", alloc.height);
+                if (!window.is_maximized) {
+                    Application.saved_state.set_int ("window-width", alloc.width);
+                    Application.saved_state.set_int ("window-height", alloc.height);
+                }
+
                 Application.saved_state.set_boolean ("is-maximized", window.is_maximized);
             });
         }
