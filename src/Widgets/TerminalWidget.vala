@@ -472,6 +472,7 @@ namespace Terminal {
 
             // Popup context menu below cursor position
             var context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model);
+            context_menu.set_parent (this);
             context_menu.set_pointing_to (rect);
             context_menu.popup ();
         }
