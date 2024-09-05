@@ -1109,7 +1109,7 @@ namespace Terminal {
             return null;
         }
 
-        public void set_active_terminal_tab (Hdy.TabPage tab) {
+        public void set_active_terminal_tab (Adw.TabPage tab) {
             notebook.tab_view.selected_page = tab;
         }
 

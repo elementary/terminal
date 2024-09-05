@@ -46,17 +46,8 @@ public class Terminal.Application : Gtk.Application {
                 }
             }
 
-            // This is a hack to avoid using Gdk-Xii dependency.  Using present_with_time ()
-            // with the current event time does not work either on X11 or Wayland perhaps
-            // because the triggering event did not occur on the Terminal window?
-            // Using set_keep_above () at least works on X11 but not on Wayland
-            //TODO It may well be possible to use present () on Gtk4 so this needs revisiting
-            window_to_present.set_keep_above (true);
-            window_to_present.present ();
-            window_to_present.grab_focus ();
             Idle.add (() => {
-                window_to_present.set_keep_above (false);
-                return Source.REMOVE;
+                window_to_present.present ();
             });
         });
 
