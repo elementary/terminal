@@ -162,10 +162,10 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
     private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
         var button = new Gtk.CheckButton () {
-            action_target = new Variant.string (theme),
             halign = Gtk.Align.CENTER
         };
 
+        button.set_data<string> ("theme", theme);
         css_provider = new Gtk.CssProvider ();
 
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
@@ -181,7 +181,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         button.toggled.connect ((b) => {
             if (((Gtk.CheckButton) b).active) {
-                Application.settings.set_value ("theme", b.action_target);
+                Application.settings.set_value ("theme", b.get_data<string> ("theme"));
             }
         });
 
@@ -197,7 +197,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         while (child != null && !found) {
             if (child is Gtk.CheckButton) {
                 var b = (Gtk.CheckButton)child;
-                if (b.action_target.get_string () == theme) {
+                if (b.get_data<string> ("theme") == theme) {
                     b.active = true;
                     return;
                 }
