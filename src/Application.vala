@@ -288,12 +288,35 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
+        //TODO In Gtk4 we can just bind the settings to first window properties
+        // instead of this function
+        restore_saved_state (window, is_first_window);
+
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.iconify ();
         } else {
             window.present ();
         }
         return 0;
+    }
+
+    private void restore_saved_state (Gtk.Window window, bool is_first_window) {
+        if (Application.saved_state.get_boolean ("is-maximized")) {
+            window.maximize ();
+        } else {
+            window.resize (
+                Application.saved_state.get_int ("window-width"),
+                Application.saved_state.get_int ("window-height")
+            );
+        }
+
+        if (is_first_window) {
+            window.size_allocate.connect ((alloc) => {
+                Application.saved_state.set_int ("window-width", alloc.width);
+                Application.saved_state.set_int ("window-height", alloc.height);
+                Application.saved_state.set_boolean ("is-maximized", window.is_maximized);
+            });
+        }
     }
 
     protected override void dbus_unregister (DBusConnection connection, string path) {

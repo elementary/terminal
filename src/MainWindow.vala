@@ -231,7 +231,6 @@ namespace Terminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            restore_saved_state ();
             show_all ();
 
             if (recreate_tabs) {
@@ -467,27 +466,6 @@ namespace Terminal {
             }
 
             return false;
-        }
-
-        private void restore_saved_state () {
-            if (Application.saved_state.get_boolean ("is-maximized")) {
-                maximize ();
-            } else {
-                //TODO In Gtk4 we can just bind the settings to the default width and default height
-                // for the first window
-                resize (
-                    Application.saved_state.get_int ("window-width"),
-                    Application.saved_state.get_int ("window-height")
-                );
-            }
-
-            size_allocate.connect ((alloc) => {
-                Application.saved_state.set_int ("window-width", alloc.width);
-                Application.saved_state.set_int ("window-height", alloc.height);
-                Application.saved_state.set_boolean ("is-maximized", is_maximized);
-            });
-
-
         }
 
         private void on_tab_added (Hdy.TabPage tab, int pos) {
