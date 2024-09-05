@@ -551,7 +551,9 @@ namespace Terminal {
             var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
             if (Application.settings.get_boolean ("follow-system-style")) {
                 var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-                gtk_settings.gtk_application_prefer_dark_theme = system_prefers_dark;
+                Adw.StyleManager.get_default ().set_color_scheme (
+                    system_prefers_dark ? Adw.ColorScheme.PREFER_DARK : Adw.ColorScheme.PREFER_LIGHT
+                );
 
                 if (system_prefers_dark) {
                     theme_palette = Themes.get_rgba_palette (Themes.DARK);
