@@ -20,7 +20,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .color-button radio {
+        .color-button check {
             background-color: %s;
             color: %s;
             padding: 10px;
@@ -29,7 +29,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     """;
 
     private BindingGroup terminal_binding;
-    private Gtk.Box theme_buttons;
+    public Gtk.Box theme_buttons { get; private set; }
 
     public SettingsPopover () {
         Object ();
@@ -96,17 +96,14 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         var light_button = add_theme_button (Themes.LIGHT);
         light_button.tooltip_text = _("Solarized Light");
-        light_button.group = hc_button;
 
         var dark_button = add_theme_button (Themes.DARK);
         dark_button.tooltip_text = _("Dark");
-        dark_button.group = hc_button;
 
         Gtk.CssProvider custom_button_provider;
 
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
-        custom_button.group = hc_button;
         custom_button.get_style_context ().add_class ("color-custom");
 
         update_active_colorbutton (dark_button, Application.settings.get_string ("theme"));
@@ -161,8 +158,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         show.connect (get_child ().show_all);
     }
 
-    private Gtk.RadioButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
-        var button = new Gtk.RadioButton (null) {
+    private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
+        var button = new Gtk.CheckButton () {
             action_target = new Variant.string (theme),
             halign = Gtk.Align.CENTER
         };
@@ -174,9 +171,21 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         update_theme_provider (css_provider, theme);
 
-        button.toggled.connect ((b) => {
-            if (((Gtk.RadioButton) b).active) {
-                Application.settings.set_value ("theme", b.action_target);
+        button.toggled.connect (() => {
+            if (!button.active) {
+                return;
+            }
+
+            //TODO In Gtk4 we can add Gtk.CheckButton to a group and avoid
+            // explicitly deactivating other buttons
+            theme_buttons.get_children ().foreach ((cb) => {
+              if (cb != button) {
+                  ((Gtk.CheckButton)cb).active = false;
+              }
+            });
+
+            if (button.active) {
+                Application.settings.set_value ("theme", button.action_target);
             }
         });
 
@@ -184,15 +193,24 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         return button;
     }
 
-    private static void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
-        SearchFunc<Gtk.RadioButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.get_group ().search (theme, find_colorbutton);
-
-        if (node != null) {
-            node.data.active = true;
-        } else {
-            default_button.active = true;
+    private void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
+    //TODO In Gtk Use get_first_child () and get_next_sibling ()
+    var children = theme_buttons.get_children ();
+    unowned var child = children.first ();
+    var found = false;
+    while (child != null && !found) {
+        if (child.data is Gtk.CheckButton) {
+            var b = (Gtk.CheckButton)(child.data);
+            if (b.action_target.get_string () == theme) {
+                b.active = true;
+                return;
+            }
         }
+
+        child = child.next;
+    }
+
+        default_button.active = true;
     }
 
     private static void update_theme_provider (Gtk.CssProvider css_provider, string theme) {
