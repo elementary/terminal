@@ -471,18 +471,16 @@ namespace Terminal {
         }
 
         private void restore_saved_state () {
-            var rect = Gdk.Rectangle ();
-            Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
+            //TODO In Gtk4 we can just bind the settings to the default width and default height
+            resize (
+                Application.saved_state.get_int ("window-width"),
+                Application.saved_state.get_int ("window-height")
+            );
 
-            default_width = rect.width;
-            default_height = rect.height;
-
-            if (default_width == -1 || default_height == -1) {
-                var geometry = get_display ().get_primary_monitor ().get_geometry ();
-
-                default_width = geometry.width * 2 / 3;
-                default_height = geometry.height * 3 / 4;
-            }
+            size_allocate.connect ((alloc) => {
+               Application.saved_state.set_int ("window-width", alloc.width);
+               Application.saved_state.set_int ("window-height", alloc.height);
+            });
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
