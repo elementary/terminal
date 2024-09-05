@@ -27,10 +27,10 @@
       <summary>Most recent window width</summary>
       <description>Most recent window width</description>
     </key>
-    <key name="window-state" enum="pantheon-terminal-window-states">
-      <default>"Normal"</default>
-      <summary>The saved state of the window.</summary>
-      <description>The saved state of the window.</description>
+    <key name="is-maximized" type="b">
+      <default>false</default>
+      <summary>Whether window is maximized</summary>
+      <description>Whether the main application window is maximized or not</description>
     </key>
     <key name="tabs" type="as">
       <default>[]</default>

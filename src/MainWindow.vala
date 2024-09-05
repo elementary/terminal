@@ -48,7 +48,6 @@ namespace Terminal {
         }
 
         private Gtk.EventControllerKey key_controller;
-        private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
@@ -471,23 +470,24 @@ namespace Terminal {
         }
 
         private void restore_saved_state () {
-            //TODO In Gtk4 we can just bind the settings to the default width and default height
-            resize (
-                Application.saved_state.get_int ("window-width"),
-                Application.saved_state.get_int ("window-height")
-            );
+            if (Application.saved_state.get_boolean ("is-maximized")) {
+                maximize ();
+            } else {
+                //TODO In Gtk4 we can just bind the settings to the default width and default height
+                // for the first window
+                resize (
+                    Application.saved_state.get_int ("window-width"),
+                    Application.saved_state.get_int ("window-height")
+                );
+            }
 
             size_allocate.connect ((alloc) => {
-               Application.saved_state.set_int ("window-width", alloc.width);
-               Application.saved_state.set_int ("window-height", alloc.height);
+                Application.saved_state.set_int ("window-width", alloc.width);
+                Application.saved_state.set_int ("window-height", alloc.height);
+                Application.saved_state.set_boolean ("is-maximized", is_maximized);
             });
 
-            var window_state = Terminal.Application.saved_state.get_enum ("window-state");
-            if (window_state == MainWindow.MAXIMIZED) {
-                maximize ();
-            } else if (window_state == MainWindow.FULLSCREEN) {
-                is_fullscreen = true;
-            }
+
         }
 
         private void on_tab_added (Hdy.TabPage tab, int pos) {
