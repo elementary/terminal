@@ -295,11 +295,11 @@ public class Terminal.Application : Gtk.Application {
             saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
             saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
 
-            if (saved_state.get_boolean ("window-maximized")) {
+            if (saved_state.get_boolean ("is-maximized")) {
                 window.maximize ();
             }
 
-            saved_state.bind ("window-maximized", window, "maximized", SettingsBindFlags.SET);
+            saved_state.bind ("is-maximized", window, "maximized", SettingsBindFlags.SET);
         }
         return 0;
     }
