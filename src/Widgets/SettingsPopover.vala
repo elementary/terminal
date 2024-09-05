@@ -21,7 +21,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .theme-button radio {
+        .color-button radio {
             background-color: %s;
             color: %s;
             padding: 10px;
@@ -169,7 +169,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         css_provider = new Gtk.CssProvider ();
 
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        button.add_css_class ("theme-button");
 
         Gtk.StyleContext.add_provider_for_display (
             Gdk.Display.get_default (),
