@@ -20,11 +20,9 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .color-button radio {
+        .color-button.%s radio {
             background-color: %s;
             color: %s;
-            padding: 10px;
-            -gtk-icon-shadow: none;
         }
     """;
 
@@ -167,11 +165,13 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             halign = Gtk.Align.CENTER
         };
 
+        button.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        button.get_style_context ().add_class (theme_to_css_class (theme));
+
         css_provider = new Gtk.CssProvider ();
 
-        unowned var style_context = button.get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
@@ -201,7 +201,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
         try {
-            css_provider.load_from_data (STYLE_CSS.printf (background, foreground));
+            css_provider.load_from_data (STYLE_CSS.printf (theme_to_css_class (theme), background, foreground));
         } catch (Error e) {
             critical ("Unable to style color button: %s", e.message);
         }
@@ -210,5 +210,19 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
         label.set_string ("%.0f%%".printf (font_scale.get_double () * 100));
         return true;
+    }
+
+    // Valid css selectors must not start with a number or contain delimiters besides `-`
+    private static string theme_to_css_class (string theme) {
+        var theme_palette = Themes.get_rgba_palette (theme);
+        var background = theme_palette[Themes.PALETTE_SIZE - 3];
+        var foreground = theme_palette[Themes.PALETTE_SIZE - 2];
+
+        var css_class = "theme-%.0lf%.0lf%.0lf%.0lf-%.0lf%.0lf%.0lf%.0lf".printf (
+            background.red * 128, background.green * 128, background.blue * 128, background.alpha * 128,
+            foreground.red * 128, foreground.green * 128, foreground.blue * 128, foreground.alpha * 128
+        );
+
+        return css_class;
     }
 }
