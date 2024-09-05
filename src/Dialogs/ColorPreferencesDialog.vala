@@ -352,11 +352,4 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             margin_start = 12
         };
     }
-    // private class SettingsLabel : Gtk.Label {
-    //     public SettingsLabel (string text) {
-    //         label = text;
-    //         halign = Gtk.Align.END;
-    //         margin_start = 12;
-    //     }
-    // }
 }
