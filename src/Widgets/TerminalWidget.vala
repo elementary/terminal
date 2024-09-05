@@ -559,7 +559,11 @@ namespace Terminal {
                     theme_palette = Themes.get_rgba_palette (Themes.LIGHT);
                 }
             } else {
-                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
+                var prefer_dark_style = Application.settings.get_boolean ("prefer-dark-style");
+                Adw.StyleManager.get_default ().set_color_scheme (
+                    prefer_dark_style ? Adw.ColorScheme.PREFER_DARK : Adw.ColorScheme.PREFER_LIGHT
+                );
+
                 theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
             }
 
