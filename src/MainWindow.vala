@@ -736,11 +736,6 @@ namespace Terminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
-            // Gdk.Geometry hints = Gdk.Geometry ();
-            // hints.width_inc = (int) terminal_widget.get_char_width ();
-            // hints.height_inc = (int) terminal_widget.get_char_height ();
-            // set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
-
             if (focus) {
                 notebook.selected_page = tab;
             }
@@ -1112,6 +1107,10 @@ namespace Terminal {
             }
 
             return null;
+        }
+
+        public void set_active_terminal_tab (Hdy.TabPage tab) {
+            notebook.tab_view.selected_page = tab;
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
