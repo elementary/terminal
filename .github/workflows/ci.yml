@@ -23,7 +23,7 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y desktop-file-utils gettext libgranite-dev libgtk-3-dev libhandy-1-dev libvte-2.91-dev libxml2-utils meson valac xvfb
+        apt install -y desktop-file-utils gettext libpcre2-8 libgranite-7-dev libgtk-4-dev libadwaita-1-dev libvte-2.91-gtk4-dev libxml2-utils meson valac xvfb
     - name: Build
       run: |
         meson setup build
