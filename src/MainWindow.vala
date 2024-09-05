@@ -698,11 +698,6 @@ namespace Terminal {
             app.minimum_width = minimum_width;
             app.minimum_height = minimum_height;
 
-            Gdk.Geometry hints = Gdk.Geometry ();
-            hints.width_inc = (int) terminal_widget.get_char_width ();
-            hints.height_inc = (int) terminal_widget.get_char_height ();
-            set_geometry_hints (this, hints, Gdk.WindowHints.RESIZE_INC);
-
             if (focus) {
                 notebook.selected_page = tab;
             }
