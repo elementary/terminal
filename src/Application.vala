@@ -180,6 +180,7 @@ public class Terminal.Application : Gtk.Application {
 
     protected override void startup () {
         base.startup ();
+        Granite.init ();
         Adw.init ();
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
