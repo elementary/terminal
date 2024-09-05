@@ -38,13 +38,3 @@ vte-terminal {
     -gtk-icon-source: -gtk-icontheme("check-active-symbolic");
 }
 
-/* Workaround Hdy.Tabbar transparent area. Remove during GTK 4 port */
-tabbar .box {
-    margin: 0;
-    padding-top: 2px;
-}
-
-/* Workaround for context menu styles. Remove during GTK4 port */
-menu {
-    font: initial;
-}
