@@ -21,7 +21,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .theme-button check {
+        .theme-button radio {
             background-color: %s;
             color: %s;
             padding: 10px;
