@@ -136,10 +136,6 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
-            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
-
             title = TerminalWidget.DEFAULT_LABEL;
 
             clipboard = Gdk.Display.get_default ().get_clipboard ();
