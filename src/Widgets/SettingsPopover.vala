@@ -21,7 +21,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .color-button radio {
+        .color-button.%s radio {
             background-color: %s;
             color: %s;
             padding: 10px;
@@ -104,7 +104,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         dark_button.group = hc_button;
 
         Gtk.CssProvider custom_button_provider;
-
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
         custom_button.group = hc_button;
@@ -167,12 +166,13 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         button.set_data<string> ("theme", theme);
         css_provider = new Gtk.CssProvider ();
-
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        button.add_css_class (theme + "-button");
 
-        button.get_style_context ().add_provider (
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
         );
 
         update_theme_provider (css_provider, theme);
@@ -212,7 +212,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
-        css_provider.load_from_string (STYLE_CSS.printf (background, foreground));
+        var css_string = STYLE_CSS.printf (theme + "-button", background, foreground);
+        css_provider.load_from_string (css_string);
     }
 
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
