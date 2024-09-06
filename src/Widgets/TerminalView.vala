@@ -108,6 +108,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public void make_restorable (string path) {
         if (tab_history_button.menu_model == null) {
             tab_history_button.menu_model = new Menu ();
+            tab_history_button.popover.has_arrow = false;
         }
 
         var menu = (Menu) tab_history_button.menu_model;
