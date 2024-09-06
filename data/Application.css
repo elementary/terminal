@@ -35,11 +35,11 @@ vte-terminal {
     -gtk-icon-shadow: none;
 }
 
-.color-custom radio {
+.color-button.custom radio {
     -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
 
-.color-custom radio:checked {
+.color-button.custom radio:checked {
     -gtk-icon-source: -gtk-icontheme("check-active-symbolic");
 }
 
