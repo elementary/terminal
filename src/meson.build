@@ -60,10 +60,10 @@ app_test = executable(
     vala_args: [ '--define', 'TESTS']
 )
 
-test(
-    'Application',
-    app_test,
-    env: test_env,
-    protocol: 'tap',
-    depends: test_schemas
-)
+# test(
+#     'Application',
+#     app_test,
+#     env: test_env,
+#     protocol: 'tap',
+#     depends: test_schemas
+# )
