@@ -302,7 +302,6 @@ namespace Terminal {
             header.title_widget = title_stack;
 
             add_css_class ("default-decoration");
-            // header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
@@ -376,7 +375,6 @@ namespace Terminal {
                 color_preferences_dialog.present ();
             });
 
-            // bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
@@ -492,9 +490,6 @@ namespace Terminal {
             /* Update the "Show in ..." menu option */
             var uri = get_current_selection_link_or_pwd ();
             update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
-            // get_current_selection_link_or_pwd ((clipboard, uri) => {
-            //     update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
-            // });
         }
 
         private void update_menu_label (string? uri) {
@@ -825,7 +820,6 @@ namespace Terminal {
 
         private void action_open_in_browser () requires (current_terminal != null) {
             var uri = get_current_selection_link_or_pwd ();
-            // get_current_selection_link_or_pwd ((clipboard, uri) => {
             var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
             if (to_open != null) {
                 var launcher = new Gtk.UriLauncher (to_open);
@@ -876,7 +870,6 @@ namespace Terminal {
                 }
 
                 return (link_uri);
-                // uri_handler (primary_selection, link_uri);
             }
         }
 

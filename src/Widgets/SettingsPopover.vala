@@ -13,10 +13,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         set {
             terminal_binding.source = value;
-            //TODO Do we need to do this in Gtk4?
-            // if (value != null) {
-            //     insert_action_group ("term", value.get_action_group ("term"));
-            // }
         }
     }
 
@@ -188,8 +184,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
-        // SearchFunc<Gtk.CheckButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        // unowned var node = default_button.group.search (theme, find_colorbutton);
         var child = theme_buttons.get_first_child ();
         var found = false;
         while (child != null && !found) {

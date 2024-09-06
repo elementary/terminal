@@ -223,24 +223,11 @@ namespace Terminal {
                 disconnect (once);
             });
 
-            /* target entries specify what kind of data the terminal widget accepts */
-            // Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
-            // Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
-            // Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
-
-            // Gtk.TargetEntry[] targets = { };
-            // targets += uri_entry;
-            // targets += string_entry;
-            // targets += text_entry;
-
-            // Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
-
             var drop_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
             drop_target.drop.connect (on_drop);
             add_controller (drop_target);
 
             /* Make Links Clickable */
-            // this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
 
             // Setup Actions
@@ -426,7 +413,6 @@ namespace Terminal {
             if (formats != null) {
                 can_paste = formats.contain_gtype (Type.STRING);
                 //TODO Use mimetype for text and uris?
-                // can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
             }
 
             paste_action.set_enabled (can_paste);
@@ -474,7 +460,6 @@ namespace Terminal {
                     return;
                 }
             }
-            // clipboard.request_text ((clipboard, text) => {
                 if (text == null) {
                     return;
                 }
@@ -486,7 +471,9 @@ namespace Terminal {
 
                 unowned var toplevel = (MainWindow) get_root ();
 
-                if (!toplevel.unsafe_ignored && Application.settings.get_boolean ("unsafe-paste-alert")) {
+                if (!toplevel.unsafe_ignored &&
+                     Application.settings.get_boolean ("unsafe-paste-alert")) {
+
                     string? warn_text = null;
                     text._strip ();
 
@@ -514,7 +501,6 @@ namespace Terminal {
 
                 remember_command_start_position ();
                 base.paste_clipboard ();
-            // });
         }
 
         private void update_theme () {
@@ -733,42 +719,26 @@ namespace Terminal {
             init_complete = true;
         }
 
-        // public void drag_received (Gdk.DragContext context, int x, int y,
-        //                            Gtk.SelectionData selection_data, uint target_type, uint time_) {
         private bool on_drop (Value val, double x, double y) {
             var uris = Uri.list_extract_uris (val.dup_string ());
             //TODO Deal with text other than uri list
-            // switch (target_type) {
-            //     case DropTargets.URILIST:
-                    // var uris = selection_data.get_uris ();
-                    string path;
-                    File file;
+            string path;
+            File file;
 
-                    for (var i = 0; i < uris.length; i++) {
-                        //TODO Decide appropriate flags
-                        try {
-                            if (Uri.is_valid (uris[i], UriFlags.NONE)) {
-                                file = File.new_for_uri (uris[i]);
-                                if ((path = file.get_path ()) != null) {
-                                    uris[i] = Shell.quote (path) + " ";
-                                }
-                            }
-                        } catch {}
+            for (var i = 0; i < uris.length; i++) {
+                //TODO Decide appropriate flags
+                try {
+                    if (Uri.is_valid (uris[i], UriFlags.NONE)) {
+                        file = File.new_for_uri (uris[i]);
+                        if ((path = file.get_path ()) != null) {
+                            uris[i] = Shell.quote (path) + " ";
+                        }
                     }
+                } catch {}
+            }
 
-                    var uris_s = string.joinv ("", uris);
-                    this.feed_child (uris_s.data);
-            //         break;
-            //     case DropTargets.STRING:
-            //     case DropTargets.TEXT:
-            //         var data = selection_data.get_text ();
-
-            //         if (data != null) {
-            //             this.feed_child (data.data);
-            //         }
-
-            //         break;
-            // }
+            var uris_s = string.joinv ("", uris);
+            this.feed_child (uris_s.data);
             return true;
         }
 

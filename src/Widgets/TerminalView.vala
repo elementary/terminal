@@ -84,15 +84,6 @@ public class Terminal.TerminalView : Gtk.Box {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        // // Handle Drag-and-drop of directory files onto add button to open in new tab
-        // Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
-        // Gtk.drag_dest_set (new_tab_button, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
-        // new_tab_button.drag_data_received.connect (drag_received);
-
-        // // Handle Drag-and-drop of directory files onto tab to open in that tab
-        // tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
-        // tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
-
         var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
@@ -230,78 +221,58 @@ public class Terminal.TerminalView : Gtk.Box {
         return menu;
     }
 
-    // private void drag_received (Gtk.Widget w,
-    //                             Gdk.DragContext ctx,
-    //                             int x,
-    //                             int y,
-    //                             Gtk.SelectionData data,
-    //                             uint info,
-    //                             uint time) {
     private bool on_add_button_drop (Value val, double x, double y) {
-
-        // if (info == TargetType.URI_LIST) {
-            // var uris = data.get_uris ();
-            //TODO Check val holds uri list
-            var uris = Uri.list_extract_uris (val.dup_string ());
-            var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
-            // ACTION_NEW_TAB_AT only works with local paths to folders
-            foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
-                var scheme = file.get_uri_scheme ();
-                if (scheme != "file" && scheme != "") {
-                    return false;
-                }
-
-                var type = file.query_file_type (NONE);
-                string path;
-                if (type == DIRECTORY) {
-                    path = file.get_path ();
-                } else if (type == REGULAR) {
-                    path = file.get_parent ().get_path ();
-                } else {
-                    continue;
-                }
-
-                new_tab_action.activate (path);
+        //TODO Check val holds uri list
+        var uris = Uri.list_extract_uris (val.dup_string ());
+        var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
+        // ACTION_NEW_TAB_AT only works with local paths to folders
+        foreach (var uri in uris) {
+            var file = GLib.File.new_for_uri (uri);
+            var scheme = file.get_uri_scheme ();
+            if (scheme != "file" && scheme != "") {
+                return false;
             }
+
+            var type = file.query_file_type (NONE);
+            string path;
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                continue;
+            }
+
+            new_tab_action.activate (path);
+        }
 
         return true;
-        // Gtk.drag_finish (ctx, true, false, time);
     }
 
-    // private void on_extra_drag_data_received (
-    //     Adw.TabBar tab_bar,
-    //     Adw.TabPage page,
-    //     Gdk.DragContext ctx,
-    //     Gtk.SelectionData data,
-    //     uint info,
-    //     uint time) {
     private bool on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
-        // if (info == TargetType.URI_LIST) {
-            //TODO Check val contains uri_list
-            var uris = Uri.list_extract_uris (val.dup_string ());
-            // var uris = data.get_uris ();
-            var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
-            // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
-            foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
-                var scheme = file.get_uri_scheme ();
-                if (scheme != "file" && scheme != "") {
-                    return false;
-                }
-
-                var type = file.query_file_type (NONE);
-                string path;
-                if (type == DIRECTORY) {
-                    path = file.get_path ();
-                } else if (type == REGULAR) {
-                    path = file.get_parent ().get_path ();
-                } else {
-                    continue;
-                }
-
-                active_shell_action.activate (path);
+        //TODO Check val contains uri_list
+        var uris = Uri.list_extract_uris (val.dup_string ());
+        var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
+        // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
+        foreach (var uri in uris) {
+            var file = GLib.File.new_for_uri (uri);
+            var scheme = file.get_uri_scheme ();
+            if (scheme != "file" && scheme != "") {
+                return false;
             }
+
+            var type = file.query_file_type (NONE);
+            string path;
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                continue;
+            }
+
+            active_shell_action.activate (path);
+        }
 
         return true;
     }
