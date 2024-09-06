@@ -68,7 +68,10 @@ namespace Terminal {
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
-
+        public const string ACTION_ZOOM = "action-zoom";
+        public const string ACTION_ZOOM_IN = "action-zoom::in";
+        public const string ACTION_ZOOM_OUT = "action-zoom::out";
+        public const string ACTION_ZOOM_DEFAULT = "action-zoom::default";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -91,7 +94,8 @@ namespace Terminal {
             { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser },
+            { ACTION_ZOOM, action_terminal_zoom, "s" }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -131,6 +135,10 @@ namespace Terminal {
 
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
+
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
+            app.set_accels_for_action (ACTION_PREFIX + ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
 
             title = TerminalWidget.DEFAULT_LABEL;
 
@@ -840,6 +848,22 @@ namespace Terminal {
                 var launcher = new Gtk.UriLauncher (to_open);
                 launcher.launch.begin (null, null);
                 //TODO Handle launch failure.
+            }
+        }
+
+        private void action_terminal_zoom (SimpleAction action, Variant? param) {
+            switch (param.get_string ()) {
+                case "in":
+                    current_terminal.increase_font_size ();
+                    break;
+                case "default":
+                    current_terminal.default_font_size ();
+                    break;
+                case "out":
+                    current_terminal.decrease_font_size ();
+                    break;
+                default:
+                    assert_not_reached ();
             }
         }
 

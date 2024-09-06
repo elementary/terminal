@@ -287,22 +287,6 @@ namespace Terminal {
             var select_all_action = new GLib.SimpleAction ("select-all", null);
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
-
-            var zoom_action = new GLib.SimpleAction ("zoom", VariantType.STRING);
-            zoom_action.activate.connect ((p) => {
-                switch ((string) p) {
-                    case "in":
-                        increase_font_size ();
-                        break;
-                    case "out":
-                        decrease_font_size ();
-                        break;
-                    case "default":
-                        font_scale = 1.0;
-                        break;
-                }
-            });
-            action_group.add_action (zoom_action);
         }
 
         private void pointer_focus () {
@@ -743,12 +727,16 @@ namespace Terminal {
             }
         }
 
-        protected override void increase_font_size () {
+        public override void increase_font_size () {
             font_scale += 0.1;
         }
 
-        protected override void decrease_font_size () {
+        public override void decrease_font_size () {
             font_scale -= 0.1;
+        }
+
+        public void default_font_size () {
+            font_scale = 1.0;
         }
 
         public bool is_init_complete () {
