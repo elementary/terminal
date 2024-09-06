@@ -105,7 +105,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
         custom_button.group = hc_button;
-        custom_button.get_style_context ().add_class ("color-custom");
 
         update_active_colorbutton (dark_button, Application.settings.get_string ("theme"));
 
