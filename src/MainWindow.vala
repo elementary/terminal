@@ -86,6 +86,10 @@ namespace Terminal {
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
 
+        public const string ACTION_ZOOM = "action-zoom";
+        public const string ACTION_ZOOM_IN = "action-zoom::in";
+        public const string ACTION_ZOOM_OUT = "action-zoom::out";
+        public const string ACTION_ZOOM_DEFAULT = "action-zoom::default";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -108,7 +112,8 @@ namespace Terminal {
             { ACTION_SEARCH, action_search, null, "false" },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
+            { ACTION_OPEN_IN_BROWSER, action_open_in_browser },
+            { ACTION_ZOOM, action_terminal_zoom, "s" }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -855,6 +860,22 @@ namespace Terminal {
                     }
                 }
             });
+        }
+
+        private void action_terminal_zoom (SimpleAction action, Variant? param) {
+            switch (param.get_string ()) {
+                case "in":
+                    current_terminal.increase_font_size ();
+                    break;
+                case "default":
+                    current_terminal.default_font_size ();
+                    break;
+                case "out":
+                    current_terminal.decrease_font_size ();
+                    break;
+                default:
+                    assert_not_reached ();
+            }
         }
 
         private void get_current_selection_link_or_pwd (

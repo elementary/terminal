@@ -42,7 +42,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom out")
             )
         };
-        zoom_out_button.set_detailed_action_name (TerminalWidget.ACTION_ZOOM_OUT);
+        zoom_out_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ZOOM_OUT);
 
         var zoom_default_button = new Gtk.Button () {
             tooltip_markup = Granite.markup_accel_tooltip (
@@ -50,7 +50,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Default zoom level")
             )
         };
-        zoom_default_button.set_detailed_action_name (TerminalWidget.ACTION_ZOOM_DEFAULT);
+        zoom_out_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ZOOM_DEFAULT);
 
         var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic") {
             tooltip_markup = Granite.markup_accel_tooltip (
@@ -58,7 +58,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom in")
             )
         };
-        zoom_in_button.set_detailed_action_name (TerminalWidget.ACTION_ZOOM_IN);
+        zoom_out_button.set_detailed_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_ZOOM_IN);
 
         var font_size_box = new Gtk.Box (HORIZONTAL, 0) {
             homogeneous = true,
