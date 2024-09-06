@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
+ * Copyright 2023-2024 elementary, Inc (https://elementary.io)
  * SPDX-License-Identifier: LGPL-3.0-only
  */
 
