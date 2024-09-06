@@ -167,7 +167,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         button.set_data<string> ("theme", theme);
         css_provider = new Gtk.CssProvider ();
         button.add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        button.add_css_class (theme + "-button");
+        button.add_css_class ("theme-" + theme);
 
         Gtk.StyleContext.add_provider_for_display (
             Gdk.Display.get_default (),
@@ -212,7 +212,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
-        var css_string = STYLE_CSS.printf (theme + "-button", background, foreground);
+        var css_string = STYLE_CSS.printf ("theme-" + theme, background, foreground);
         css_provider.load_from_string (css_string);
     }
 
