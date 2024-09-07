@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_ZA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.elementary.terminal.appdata.xml.in:10
+#: data/io.elementary.terminal.desktop.in:3
+#: data/io.elementary.terminal.desktop.in:4
+msgid "Terminal"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:11
+#: data/io.elementary.terminal.desktop.in:5
+msgid "Use the command line"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:13
+msgid ""
+"Terminal is a terminal emulator application for accessing a UNIX shell "
+"environment which can be used to run programs available on your system."
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:58
+#: data/io.elementary.terminal.appdata.xml.in:110
+#: data/io.elementary.terminal.appdata.xml.in:129
+msgid "New features:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Allow switching event alerts on and off in the app menu"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Save tabs and zooms to the saved state settings when they change"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:63
+#: data/io.elementary.terminal.appdata.xml.in:81
+#: data/io.elementary.terminal.appdata.xml.in:98
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:138
+msgid "Other updates:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:65
+msgid "Document missing options in the man page"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid "Suppress unwanted default tab when opening a new window"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:100
+#: data/io.elementary.terminal.appdata.xml.in:121
+#: data/io.elementary.terminal.appdata.xml.in:140
+msgid "Translation updates"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:83
+msgid ""
+"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+"tabs"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:84
+msgid "Properly unexport the DBus Interface on Exit"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:112
+msgid "Option to follow system dark style preference"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:113
+msgid "Create a custom color palette"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:115
+#: data/io.elementary.terminal.appdata.xml.in:134
+msgid "Fixes:"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:117
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:122
+msgid "Performance improvements"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:131
+msgid "Switch tabs with Alt + 1-9"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:132
+msgid "Quit with Ctrl + Shift + Q"
+msgstr ""
+
+#: data/io.elementary.terminal.appdata.xml.in:136
+msgid "Fix build on OS 7"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:13
+msgid "command;prompt;cmd;commandline;run;"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:18
+msgid "New Window"
+msgstr ""
+
+#: data/io.elementary.terminal.desktop.in:22
+msgid "New Root Tab"
+msgstr ""

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 17:20+0000\n"
-"PO-Revision-Date: 2021-08-10 01:51+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
+"PO-Revision-Date: 2024-09-04 14:43+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,149 +17,227 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
-msgid "Process completed"
-msgstr "プロセスが完了しました"
-
-#: src/Application.vala:113
-msgid "Process exited with errors"
-msgstr "プロセスはエラーで終了しました"
-
-#: src/Application.vala:256
+#: src/Application.vala:34
 msgid "Show version"
-msgstr "バージョンを表示します"
+msgstr "バージョンを表示する"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
-msgid "Run a program in terminal"
-msgstr "ターミナルでプログラムを実行します"
-
-#: src/Application.vala:263
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-"行の残りの部分をコマンドとしてターミナルで実行します。フラグとして '--' も使"
-"用できます"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#. -n flag forces a new window
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr "新しいターミナルウィンドウを開く"
 
 #. -t flag forces a new tab
-#: src/Application.vala:269
-msgid "Open a new terminal tab"
-msgstr "新しいターミナルタブを開く"
+#: src/Application.vala:38
+msgid "Open a new terminal tab at current working directory"
+msgstr "カレントディレクトリで新しいターミナルタブを開く"
 
-#: src/Application.vala:271
-msgid "Show help"
-msgstr "ヘルプを表示します"
-
-#: src/Application.vala:273
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:40
 msgid "Set shell working directory"
-msgstr "シェルのカレントディレクトリを設定します"
+msgstr "シェルのカレントディレクトリを設定する"
 
-#: src/MainWindow.vala:218
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:42
+msgid "Run a program in terminal"
+msgstr "ターミナルでプログラムを実行する"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:44
+msgid "Open terminal in a minimized state"
+msgstr "ターミナルを最小化した状態で開く"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:47
+msgid "Run remainder of line as a command in terminal"
+msgstr "行の残りの部分をコマンドとしてターミナルで実行する"
+
+#: src/Application.vala:99
+msgid "[-- COMMAND…]"
+msgstr "[-- コマンド…]"
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr "プロセスが完了しました"
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr "プロセスがエラー終了しました"
+
+#: src/MainWindow.vala:168
+msgid "Show Search Bar"
+msgstr "検索バーを表示"
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr "コピー"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr "最後の出力をコピー"
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr "貼り付け"
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
+#: src/MainWindow.vala:288
+msgid "Exit FullScreen"
+msgstr "全画面表示を終了"
+
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:369
-msgid "Zoom out"
-msgstr "ズームアウト"
-
-#: src/MainWindow.vala:377
-msgid "Default zoom level"
-msgstr "デフォルトのズームレベル"
-
-#: src/MainWindow.vala:384
-msgid "Zoom in"
-msgstr "ズームイン"
-
-#: src/MainWindow.vala:403
-msgid "High Contrast"
-msgstr "ハイコントラスト"
-
-#: src/MainWindow.vala:412
-msgid "Solarized Light"
-msgstr "Solarized Light"
-
-#: src/MainWindow.vala:421
-msgid "Dark"
-msgstr "ダーク"
-
-#: src/MainWindow.vala:439
-msgid "Natural Copy/Paste"
-msgstr "ナチュラルコピー & ペースト"
-
-#: src/MainWindow.vala:440
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-"Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
-"ります"
-
-#: src/MainWindow.vala:465
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:491
-msgid "New Tab"
-msgstr "新しいタブ"
-
-#: src/MainWindow.vala:884
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:555
 #, c-format
 msgid "Show in %s"
-msgstr "%sで表示"
+msgstr "“%s”で表示"
 
-#: src/MainWindow.vala:885
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "タブを閉じる"
-
-#: src/MainWindow.vala:1168
-msgid "Duplicate"
-msgstr "タブを複製"
-
-#: src/MainWindow.vala:1181
-msgid "Reload"
-msgstr "再読み込み"
-
-#: src/MainWindow.vala:1272
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
-
-#: src/MainWindow.vala:1274
-msgid "The pasted text may contain multiple commands"
-msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
-
-#: src/MainWindow.vala:1428
+#: src/MainWindow.vala:1049
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr "色設定"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr "ウィンドウスタイル:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr "ライト"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
+msgid "Dark"
+msgstr "ダーク"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr "カラーパレット"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr "デフォルトにリセット"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr "黒:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr "赤:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr "緑:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr "黄色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr "青:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr "マゼンタ:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr "シアン:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr "灰色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr "白:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr "明るい赤:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr "明るい緑:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr "明るい黄色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr "明るい青:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr "明るいマゼンタ:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr "明るいシアン:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr "明るい灰色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr "背景色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr "文字色:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr "カーソル:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+msgid "Close"
+msgstr "閉じる"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:310
+msgid "Contrast is very low"
+msgstr "コントラストが非常に低いです"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:313
+msgid "Contrast is low"
+msgstr "コントラストが低いです"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:316
+msgid "Contrast is good"
+msgstr "コントラストは問題ありません"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:319
+msgid "Contrast is high"
+msgstr "コントラストは高いです"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
-msgstr "このタブを閉じてもよろしいですか？"
+msgstr "このタブを閉じてもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:28
 msgid "There is an active process on this tab."
@@ -169,9 +247,14 @@ msgstr "このタブにはアクティブなプロセスがあります。"
 msgid "If you close it, the process will end."
 msgstr "タブを閉じた場合、プロセスは終了します。"
 
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "タブを閉じる"
+
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
-msgstr "“ターミナル”を終了してもよろしいですか？"
+msgstr "“ターミナル”を終了してもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:40
 msgid "There is an active process on this terminal."
@@ -187,7 +270,7 @@ msgstr "“ターミナル”を終了"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:50
 msgid "Are you sure you want to reload this tab?"
-msgstr "このタブを再読み込みしてもよろしいですか？"
+msgstr "このタブを再読み込みしてもよろしいですか?"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:52
 msgid ""
@@ -237,9 +320,109 @@ msgstr "次の結果"
 msgid "Cyclic search"
 msgstr "循環検索"
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr "縮小"
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr "デフォルトのズームレベル"
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr "拡大"
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr "システムのスタイルに従う"
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr "ハイコントラスト"
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr "Solarized Light"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr "カスタム"
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr "ナチュラルコピー & ペースト"
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+"Shift キーなしでショートカットを実行できます。CLI アプリと干渉する可能性があ"
+"ります"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr "イベント警告"
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+"入力が無効な場合や補完候補が複数の場合に通知します (システム設定 → サウンド "
+"の影響を受けます)"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
+
+#: src/Widgets/TerminalWidget.vala:494
+msgid "The pasted text may contain multiple commands"
+msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
+
+#: src/Widgets/TerminalWidget.vala:496
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼り付けされたテキストは管理者権限を取得しようとしています"
+
+#: src/Widgets/TerminalView.vala:62
+msgid "New Tab"
+msgstr "新しいタブ"
+
+#: src/Widgets/TerminalView.vala:69
+msgid "Closed Tabs"
+msgstr "閉じたタブ"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr "右側のタブを閉じる"
+
+#: src/Widgets/TerminalView.vala:210
+msgid "Close Other Tabs"
+msgstr "ほかのタブを閉じる"
+
+#: src/Widgets/TerminalView.vala:214
+msgid "Open in New Window"
+msgstr "新しいウィンドウで開く"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr "タブを複製"
+
+#: src/Widgets/TerminalView.vala:218
+msgid "Reload"
+msgstr "再読み込み"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr "拡大率: %.0f%%"
+
+#~ msgid "ReLoad"
+#~ msgstr "再読み込み"
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "新しいターミナルタブを開く"
+
+#~ msgid "Show help"
+#~ msgstr "ヘルプを表示します"
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "このコマンドは管理者権限を必要とします"
@@ -275,17 +458,11 @@ msgstr "ターミナル"
 #~ msgid "Use the command line"
 #~ msgstr "コマンドラインを使用します"
 
-#~ msgid "New Window"
-#~ msgstr "新しいウィンドウ"
-
 #~ msgid "New Root Tab"
 #~ msgstr "新しい root タブ"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "ここでターミナルを開く"
-
-#~ msgid "Close"
-#~ msgstr "閉じる"
 
 #~ msgid "Create a new tab"
 #~ msgstr "新しいタブを作成"
@@ -319,9 +496,6 @@ msgstr "ターミナル"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "前のタブへ"
-
-#~ msgid "Fullscreen"
-#~ msgstr "全画面表示"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "全画面表示を切り替えます"

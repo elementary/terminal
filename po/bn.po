@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 17:20+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
 "PO-Revision-Date: 2018-05-29 12:26+0000\n"
 "Last-Translator: Ibraheem Moosa <ibraheemmoosa1347@gmail.com>\n"
 "Language-Team: Bengali <https://weblate.elementary.io/projects/terminal/"
@@ -20,141 +20,225 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:110
-msgid "Process completed"
-msgstr ""
-
-#: src/Application.vala:113
-msgid "Process exited with errors"
-msgstr ""
-
-#: src/Application.vala:256
+#: src/Application.vala:34
 msgid "Show version"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:258
-msgid "Run a program in terminal"
-msgstr "টার্মিনালে প্রোগ্রাম চালান"
-
-#: src/Application.vala:263
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:266
+#. -n flag forces a new window
+#: src/Application.vala:36
 msgid "Open a new terminal window"
 msgstr ""
 
 #. -t flag forces a new tab
-#: src/Application.vala:269
+#: src/Application.vala:38
 #, fuzzy
 #| msgid "Open Terminal Here"
-msgid "Open a new terminal tab"
+msgid "Open a new terminal tab at current working directory"
 msgstr "এখানে টার্মিনাল খুলুন"
 
-#: src/Application.vala:271
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:273
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:40
 msgid "Set shell working directory"
 msgstr "শেলের ওয়ার্কিং ডিরেক্টরি সেট করুন"
 
-#: src/MainWindow.vala:218
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:42
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "টার্মিনালে প্রোগ্রাম চালান"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:44
+msgid "Open terminal in a minimized state"
+msgstr ""
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:47
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+
+#: src/Application.vala:99
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:159
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:162
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:168
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr ""
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:230
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr ""
 
-#: src/MainWindow.vala:236
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr ""
 
-#: src/MainWindow.vala:242 src/MainWindow.vala:363 src/MainWindow.vala:1436
+#: src/MainWindow.vala:288
+msgid "Exit FullScreen"
+msgstr ""
+
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "খুঁজুন…"
 
-#: src/MainWindow.vala:369
-msgid "Zoom out"
-msgstr ""
-
-#: src/MainWindow.vala:377
-msgid "Default zoom level"
-msgstr ""
-
-#: src/MainWindow.vala:384
-msgid "Zoom in"
-msgstr ""
-
-#: src/MainWindow.vala:403
-msgid "High Contrast"
-msgstr ""
-
-#: src/MainWindow.vala:412
-msgid "Solarized Light"
-msgstr ""
-
-#: src/MainWindow.vala:421
-msgid "Dark"
-msgstr ""
-
-#: src/MainWindow.vala:439
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:440
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:465
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:491
-#, fuzzy
-#| msgid "Close Tab"
-msgid "New Tab"
-msgstr "ট্যাব বন্ধ করুন"
-
-#: src/MainWindow.vala:884
+#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:555
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:885
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1167 src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
+#: src/MainWindow.vala:1049
+msgid "Hide find bar"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:43
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:49
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:57
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:58
+#: src/Widgets/SettingsPopover.vala:102
+msgid "Dark"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:62
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:83
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:84
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:85
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:86
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:87
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:88
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:89
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:90
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:91
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:92
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:93
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:190
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close"
 msgstr "ট্যাব বন্ধ করুন"
 
-#: src/MainWindow.vala:1168
-msgid "Duplicate"
+#: src/Dialogs/ColorPreferencesDialog.vala:310
+msgid "Contrast is very low"
 msgstr ""
 
-#: src/MainWindow.vala:1181
-msgid "Reload"
+#: src/Dialogs/ColorPreferencesDialog.vala:313
+msgid "Contrast is low"
 msgstr ""
 
-#: src/MainWindow.vala:1272
-msgid "The pasted text may be trying to gain administrative access"
+#: src/Dialogs/ColorPreferencesDialog.vala:316
+msgid "Contrast is good"
 msgstr ""
 
-#: src/MainWindow.vala:1274
-msgid "The pasted text may contain multiple commands"
-msgstr ""
-
-#: src/MainWindow.vala:1428
-msgid "Hide find bar"
+#: src/Dialogs/ColorPreferencesDialog.vala:319
+msgid "Contrast is high"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
@@ -168,6 +252,11 @@ msgstr "এই ট্যাবে একটি প্রক্রিয়া স�
 #: src/Dialogs/ForegroundProcessDialog.vala:29
 msgid "If you close it, the process will end."
 msgstr "আপনি যদি ইহা বন্ধ করেন, তাহলে প্রক্রিয়াটি বন্ধ হবে।"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/Widgets/TerminalView.vala:211
+msgid "Close Tab"
+msgstr "ট্যাব বন্ধ করুন"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:38
 msgid "Are you sure you want to quit Terminal?"
@@ -239,9 +328,106 @@ msgstr "পরের ফলাফল"
 msgid "Cyclic search"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:42
+msgid "Zoom out"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:50
+msgid "Default zoom level"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:58
+msgid "Zoom in"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:86
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:95
+msgid "High Contrast"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:98
+msgid "Solarized Light"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:115
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:120
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "টার্মিনাল"
+
+#: src/Widgets/TerminalWidget.vala:494
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:496
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:62
+#, fuzzy
+#| msgid "Close Tab"
+msgid "New Tab"
+msgstr "ট্যাব বন্ধ করুন"
+
+#: src/Widgets/TerminalView.vala:69
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "ট্যাব বন্ধ করুন"
+
+#: src/Widgets/TerminalView.vala:209
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:210
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "ট্যাব বন্ধ করুন"
+
+#: src/Widgets/TerminalView.vala:214
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "নতুন উইন্ডো"
+
+#: src/Widgets/TerminalView.vala:215
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:218
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "ট্যাব বন্ধ করুন"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
 
 #~ msgid "This command is asking for Administrative access to your computer"
 #~ msgstr "এই কমান্ড আপনার কম্পিটার ব্যবহার এর সম্পূর্ণ নিয়ন্ত্রণ চাচ্ছে"
@@ -257,9 +443,6 @@ msgstr "টার্মিনাল"
 
 #~ msgid "Use the command line"
 #~ msgstr "কমান্ড লাইন ব্যবহার করুন"
-
-#~ msgid "New Window"
-#~ msgstr "নতুন উইন্ডো"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
