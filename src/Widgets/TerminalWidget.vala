@@ -198,18 +198,23 @@ namespace Terminal {
                 modifier_pressed = !modifier_pressed;
                 return true;
             });
-
-            var press_gesture = new Gtk.GestureClick () {
-                propagation_phase = TARGET,
-                button = 0
-            };
-            press_gesture.pressed.connect (button_pressed);
-            press_gesture.released.connect (button_released);
-            add_controller (press_gesture);
-
             //TODO Is this needed in Gtk4?
             // send events to key controller manually, since key_released isn't emitted in any propagation phase
             // event.connect (key_controller.handle_event);
+
+            var context_gesture = new Gtk.GestureClick () {
+                propagation_phase = TARGET,
+                button = Gdk.BUTTON_SECONDARY
+            };
+            context_gesture.released.connect (secondary_released);
+            add_controller (context_gesture);
+
+            var primary_gesture = new Gtk.GestureClick () {
+                propagation_phase = TARGET,
+                button = Gdk.BUTTON_PRIMARY
+            };
+            primary_gesture.pressed.connect (primary_pressed);
+            add_controller (primary_gesture);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
             notify["height-request"].connect (() => resized = true);
@@ -267,34 +272,29 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void button_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
+        private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
             link_uri = null;
+            if (allow_hyperlink) {
+                link_uri = get_link (x, y);
 
-            if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
-                link_uri = get_link (gesture.get_last_event (null));
-
-                if (link_uri != null) {
-                    copy_action.set_enabled (true);
+                if (link_uri != null && !get_has_selection ()) {
+                   main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                 }
-
-                popup_context_menu ({ (int) x, (int) y });
-
-                gesture.set_state (CLAIMED);
+            } else {
+                allow_hyperlink = true;
             }
         }
 
-        private void button_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
-            if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
-                if (allow_hyperlink) {
-                    link_uri = get_link (gesture.get_last_event (null));
+        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
+            link_uri = get_link (x, y);
 
-                    if (link_uri != null && !get_has_selection ()) {
-                       main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
-                    }
-                } else {
-                    allow_hyperlink = true;
-                }
+            if (link_uri != null) {
+                copy_action.set_enabled (true);
             }
+
+            popup_context_menu ({ (int) x, (int) y });
+
+            gesture.set_state (CLAIMED);
         }
 
         private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
@@ -426,8 +426,9 @@ namespace Terminal {
             main_window.update_context_menu ();
             setup_menu ();
 
-            // Popup context menu below cursor position
-            var context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model);
+            context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
+                has_arrow = false
+            };
             context_menu.set_parent (this);
             context_menu.set_pointing_to (rect);
             context_menu.popup ();
@@ -681,10 +682,9 @@ namespace Terminal {
             }
         }
 
-        private string? get_link (Gdk.Event event) {
-            double x, y;
-            event.get_position (out x, out y);
-            return this.check_match_at (x, y, null);
+        private string? get_link (double? x, double? y) {
+            int tag = 0;
+            return check_match_at (x, y, out tag);
         }
 
         public string get_shell_location () {
