@@ -146,8 +146,8 @@ namespace Terminal {
         private Gtk.EventControllerScroll scroll_controller;
         private Gtk.EventControllerKey key_controller;
         private Gtk.GestureMultiPress press_gesture;
-
-        private bool modifier_pressed = false;
+        private bool control_pressed = false;
+        private bool shift_pressed = false;
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed (string cwd);
@@ -191,22 +191,11 @@ namespace Terminal {
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
 
             key_controller = new Gtk.EventControllerKey (this) {
-                propagation_phase = NONE
+                propagation_phase = TARGET
             };
             key_controller.key_pressed.connect (key_pressed);
-            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
+            key_controller.key_released.connect (key_released);
             key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
-
-            // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
-            //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
-            //
-            // TODO(Gtk4): check if the modifier emission was fixed.
-            key_controller.modifiers.connect (() => {
-                // if two modifers are pressed in sequence (like <Control> -> <Shift>), modifier_pressed will be false.
-                // However, the modifer mask in key_pressed() will already contain the previous modifier.
-                modifier_pressed = !modifier_pressed;
-                return true;
-            });
 
             press_gesture = new Gtk.GestureMultiPress (this) {
                 propagation_phase = TARGET,
@@ -215,7 +204,8 @@ namespace Terminal {
             press_gesture.pressed.connect (button_pressed);
             press_gesture.released.connect (button_released);
 
-            // send events to key controller manually, since key_released isn't emitted in any propagation phase
+            // Send events to key controller manually, since key_released isn't emitted in any propagation phase
+            // This is not needed in Gtk4 as key_released is emitted.
             event.connect (key_controller.handle_event);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
@@ -346,8 +336,18 @@ namespace Terminal {
                 case Gdk.Key.Control_R:
                 case Gdk.Key.Control_L:
                     scroll_controller.flags = VERTICAL;
+                    control_pressed = true;
                     break;
-
+                case Gdk.Key.Shift_R:
+                case Gdk.Key.Shift_L:
+                    scroll_controller.flags = VERTICAL;
+                    shift_pressed = true;
+                    break;
+                case Gdk.Key.Alt_L:
+                case Gdk.Key.Alt_R:
+                    // enable/disable the action before we try to use
+                    copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
+                    break;
                 case Gdk.Key.Return:
                     remember_position ();
                     scroll_to_command_action.set_enabled (true);
@@ -378,15 +378,8 @@ namespace Terminal {
 
                     popup_context_menu (rect);
                     break;
-
-                case Gdk.Key.Alt_L:
-                case Gdk.Key.Alt_R:
-                    // enable/disable the action before we try to use
-                    copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
-                    break;
-
                 default:
-                    if (!modifier_pressed || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                    if (!(control_pressed || shift_pressed) || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
                         remember_command_start_position ();
                     }
                     break;
@@ -408,11 +401,11 @@ namespace Terminal {
                 return false;
             }
 
-            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
+            if (control_pressed && Application.settings.get_boolean ("natural-copy-paste")) {
                 if (match_keycode (Gdk.Key.c, keycode)) {
                     if (get_has_selection ()) {
                         copy_clipboard ();
-                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
+                        if (!shift_pressed) { // Shift not pressed
                             unselect_all ();
                         }
                         return true;
@@ -430,6 +423,23 @@ namespace Terminal {
             }
 
             return false;
+        }
+
+        private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            switch (keyval) {
+                case Gdk.Key.Control_R:
+                case Gdk.Key.Control_L:
+                    control_pressed = false;
+                    break;
+                case Gdk.Key.Shift_R:
+                case Gdk.Key.Shift_L:
+                    shift_pressed = true;
+                    break;
+                default:
+                    break;
+            }
+
+            scroll_controller.flags = NONE;
         }
 
         private void setup_menu () {
