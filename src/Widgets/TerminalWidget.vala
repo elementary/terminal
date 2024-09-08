@@ -202,7 +202,7 @@ namespace Terminal {
             add_controller (scroll_controller);
             add_controller (key_controller);
             add_controller (focus_controller);
-            add_controller (context_gesture);
+            add_controller (secondary_gesture);
             add_controller (primary_gesture);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
