@@ -181,7 +181,7 @@ namespace Terminal {
             };
             key_controller.key_pressed.connect (on_key_pressed);
             key_controller.key_released.connect (on_key_released);
-            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
+            key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
 
             var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
