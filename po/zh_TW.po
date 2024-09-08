@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-03 23:09+0000\n"
-"PO-Revision-Date: 2024-09-02 22:33+0000\n"
+"PO-Revision-Date: 2024-09-07 13:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
@@ -52,7 +52,7 @@ msgstr "以最小化狀態開啟終端機"
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:47
 msgid "Run remainder of line as a command in terminal"
-msgstr "在終端機中將行數剩下的部分作為指令執行。"
+msgstr "在終端機中將行數剩下的部分作為指令執行"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
@@ -161,7 +161,7 @@ msgstr "藍："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr "紫"
+msgstr "紫："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
@@ -405,7 +405,7 @@ msgstr "重新載入"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "縮放：%.0f%%"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "開啟新終端機分頁"

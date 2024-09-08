@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-03 23:09+0000\n"
-"PO-Revision-Date: 2024-08-11 18:16+0000\n"
+"PO-Revision-Date: 2024-09-07 13:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
@@ -414,7 +414,7 @@ msgstr "Odśwież"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otwórz nową kartę terminala"
