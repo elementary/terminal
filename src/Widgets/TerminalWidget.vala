@@ -292,7 +292,7 @@ namespace Terminal {
                 copy_action.set_enabled (true);
             }
 
-            popup_context_menu ({ (int) x, (int) y });
+            popup_context_menu (x, y);
 
             gesture.set_state (CLAIMED);
         }
@@ -339,15 +339,7 @@ namespace Terminal {
                     var cell_width = get_char_width ();
                     var cell_height = get_char_height ();
                     var vadj = vadjustment.value;
-
-                    Gdk.Rectangle rect = {
-                        (int) (col * cell_width),
-                        (int) ((row - vadj) * cell_height),
-                        (int) cell_width,
-                        (int) cell_height
-                    };
-
-                    popup_context_menu (rect);
+                    popup_context_menu (col * cell_width, (row - vadj) * cell_height);
                     break;
 
                 case Gdk.Key.Alt_L:
@@ -422,16 +414,18 @@ namespace Terminal {
             copy_output_action.set_enabled (has_output);
         }
 
-        private void popup_context_menu (Gdk.Rectangle? rect) {
+        private void popup_context_menu (double x, double y) {
             main_window.update_context_menu ();
             setup_menu ();
 
-            context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
+            //FIXME For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
+            // does not work at the moment.
+            var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
                 has_arrow = false
             };
-            context_menu.set_parent (this);
-            context_menu.set_pointing_to (rect);
-            context_menu.popup ();
+            new_context_menu.set_parent (this);
+            new_context_menu.set_pointing_to ({ (int)x, (int)y, 1, 1});
+            new_context_menu.popup ();
         }
 
         protected override void copy_clipboard () {
