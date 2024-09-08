@@ -169,14 +169,12 @@ namespace Terminal {
                 propagation_phase = CAPTURE
             };
             motion_controller.enter.connect (pointer_focus);
-            add_controller (motion_controller);
 
             scroll_controller = new Gtk.EventControllerScroll (VERTICAL) {
                 propagation_phase = TARGET
             };
             scroll_controller.scroll.connect (on_scroll);
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
-            add_controller (scroll_controller);
 
             key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = CAPTURE
@@ -184,23 +182,27 @@ namespace Terminal {
             key_controller.key_pressed.connect (on_key_pressed);
             key_controller.key_released.connect (on_key_released);
             key_controller.key_released.connect (() => scroll_controller.flags = NONE);
-            add_controller (key_controller);
 
             var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
-            add_controller (focus_controller);
-            var context_gesture = new Gtk.GestureClick () {
-                propagation_phase = TARGET,
-                button = Gdk.BUTTON_SECONDARY
-            };
-            context_gesture.released.connect (secondary_released);
-            add_controller (context_gesture);
 
             var primary_gesture = new Gtk.GestureClick () {
                 propagation_phase = TARGET,
                 button = Gdk.BUTTON_PRIMARY
             };
             primary_gesture.pressed.connect (primary_pressed);
+
+            var secondary_gesture = new Gtk.GestureClick () {
+                propagation_phase = TARGET,
+                button = Gdk.BUTTON_SECONDARY
+            };
+            secondary_gesture.released.connect (secondary_released);
+
+            add_controller (motion_controller);
+            add_controller (scroll_controller);
+            add_controller (key_controller);
+            add_controller (focus_controller);
+            add_controller (context_gesture);
             add_controller (primary_gesture);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
@@ -259,6 +261,18 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
+        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
+            link_uri = get_link (x, y);
+
+            if (link_uri != null) {
+                copy_action.set_enabled (true);
+            }
+
+            popup_context_menu (x, y);
+
+            gesture.set_state (CLAIMED);
+        }
+
         private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
             link_uri = null;
             if (allow_hyperlink) {
@@ -270,18 +284,6 @@ namespace Terminal {
             } else {
                 allow_hyperlink = true;
             }
-        }
-
-        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
-            link_uri = get_link (x, y);
-
-            if (link_uri != null) {
-                copy_action.set_enabled (true);
-            }
-
-            popup_context_menu (x, y);
-
-            gesture.set_state (CLAIMED);
         }
 
         private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
