@@ -447,7 +447,7 @@ namespace Terminal {
 
             if (content_provider != null) {
                 try {
-                    Value? val = null;
+                    Value val = Value (typeof (string));
                     content_provider.get_value (ref val);
                     text = val.dup_string ();
                 } catch (Error e) {
