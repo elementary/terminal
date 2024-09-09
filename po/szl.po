@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -68,52 +68,52 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:168
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr "Wraź"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:288
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "Znojdź…"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr "Sztelōnki"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:546
+#: src/MainWindow.vala:555
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:1049
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 
@@ -423,6 +423,11 @@ msgstr ""
 #| msgid "Close Tab"
 msgid "Reload"
 msgstr "Zawrzij karta"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Ôtwōrz nowo karta terminala"

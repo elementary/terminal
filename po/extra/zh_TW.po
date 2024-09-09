@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-09 15:36+0000\n"
-"PO-Revision-Date: 2021-10-05 12:24+0000\n"
-"Last-Translator: Tommy Chiang <ty1208chiang@gmail.com>\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
+"PO-Revision-Date: 2024-09-02 22:33+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -47,11 +47,11 @@ msgstr "新功能："
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "允許在應用程式選單中切換是否使用事件警告"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
+msgstr "分頁和縮放狀態變更時將其儲存到已儲存的狀態設定值裡"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -63,11 +63,11 @@ msgstr "其他更新："
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "在 man 手冊裡補上尚未說明的選項"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "修正開啟新視窗時顯示不適合的預設分頁的問題"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85
@@ -81,46 +81,46 @@ msgstr "翻譯更新"
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
-msgstr ""
+msgstr "新增用來切換分頁的 \"Ctrl + PageUp\" 和 \"Ctrl + PageDown\" 快捷鍵"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "離開時適當的解除匯出 (unexport) DBus 介面"
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "新增跟隨系統深色風格的選項"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 msgid "Create a custom color palette"
-msgstr ""
+msgstr "新增建立自訂配色方案的功能"
 
 #: data/io.elementary.terminal.appdata.xml.in:115
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fixes:"
-msgstr ""
+msgstr "修正："
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
-msgstr ""
+msgstr "預設風格改為完全不透明，並且更新上游 Solarized 的新顏色來改善可讀性"
 
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Performance improvements"
-msgstr ""
+msgstr "效能改善"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "用 Alt + 1-9 來切換分頁"
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "用 Ctrl + Shift + Q 來退出"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "修正 elementary OS 7 上的編譯"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"

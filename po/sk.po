@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-09 15:36+0000\n"
+"POT-Creation-Date: 2024-09-03 23:09+0000\n"
 "PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,51 +66,51 @@ msgstr "Proces úspešne dokončený"
 msgid "Process exited with errors"
 msgstr "Proces bol ukončený s chybami"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:168
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:175
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:181
 msgid "Copy Last Output"
 msgstr "Kopírovať posledný výstup"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:187
 msgid "Paste"
 msgstr "Vložiť"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:193
 msgid "Select All"
 msgstr "Označiť všetko"
 
-#: src/MainWindow.vala:287
+#: src/MainWindow.vala:288
 msgid "Exit FullScreen"
 msgstr "Opustiť režim celej obrazovky"
 
-#: src/MainWindow.vala:296 src/MainWindow.vala:1048
+#: src/MainWindow.vala:297 src/MainWindow.vala:1058
 msgid "Find…"
 msgstr "Nájsť…"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:304
 msgid "Settings"
 msgstr "Nastavenia"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:546
+#: src/MainWindow.vala:555
 #, c-format
 msgid "Show in %s"
 msgstr "Zobraziť v %s"
 
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:557
 msgid "Default application"
 msgstr "Predvolená aplikácia"
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:1049
 msgid "Hide find bar"
 msgstr "Skryť panel vyhľadávania"
 
@@ -417,6 +417,11 @@ msgstr "Duplikovať"
 #: src/Widgets/TerminalView.vala:218
 msgid "Reload"
 msgstr "Obnoviť"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otvoriť novú kartu terminálu"

@@ -31,6 +31,35 @@ public class Terminal.Application : Gtk.Application {
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
         Intl.textdomain (Config.GETTEXT_PACKAGE);
 
+        var act = new SimpleAction ("process-finished", VariantType.STRING);
+        add_action (act);
+        act.activate.connect ((v) => {
+            MainWindow window_to_present = (MainWindow)active_window;
+            size_t len;
+            var tid = v.get_string (out len);
+            foreach (var window in (List<MainWindow>) get_windows ()) {
+                var terminal = window.get_terminal (tid);
+                if (terminal != null) {
+                    window.set_active_terminal_tab (terminal.tab);
+                    window_to_present = window;
+                    break;
+                }
+            }
+
+            // This is a hack to avoid using Gdk-Xii dependency.  Using present_with_time ()
+            // with the current event time does not work either on X11 or Wayland perhaps
+            // because the triggering event did not occur on the Terminal window?
+            // Using set_keep_above () at least works on X11 but not on Wayland
+            //TODO It may well be possible to use present () on Gtk4 so this needs revisiting
+            window_to_present.set_keep_above (true);
+            window_to_present.present ();
+            window_to_present.grab_focus ();
+            Idle.add (() => {
+                window_to_present.set_keep_above (false);
+                return Source.REMOVE;
+            });
+        });
+
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
         // -n flag forces a new window
         add_main_option ("new-window", 'n', 0, OptionArg.NONE, _("Open a new terminal window"), null);
@@ -171,7 +200,8 @@ public class Terminal.Application : Gtk.Application {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
-                send_notification (null, notification);
+                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+                send_notification ("process-finished-%s".printf (id), notification);
             }
         });
 
@@ -258,12 +288,38 @@ public class Terminal.Application : Gtk.Application {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
+        //TODO In Gtk4 we can just bind the settings to first window properties
+        // instead of this function
+        restore_saved_state (window, is_first_window);
+
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.iconify ();
         } else {
             window.present ();
         }
         return 0;
+    }
+
+    private void restore_saved_state (Gtk.Window window, bool is_first_window) {
+        window.resize (
+            Application.saved_state.get_int ("window-width"),
+            Application.saved_state.get_int ("window-height")
+        );
+
+        if (Application.saved_state.get_boolean ("is-maximized")) {
+            window.maximize ();
+        }
+
+        if (is_first_window) {
+            window.size_allocate.connect ((alloc) => {
+                if (!window.is_maximized) {
+                    Application.saved_state.set_int ("window-width", alloc.width);
+                    Application.saved_state.set_int ("window-height", alloc.height);
+                }
+
+                Application.saved_state.set_boolean ("is-maximized", window.is_maximized);
+            });
+        }
     }
 
     protected override void dbus_unregister (DBusConnection connection, string path) {
