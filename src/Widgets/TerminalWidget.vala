@@ -145,7 +145,9 @@ namespace Terminal {
         private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
         private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress press_gesture;
+        private Gtk.GestureMultiPress primary_gesture;
+        private Gtk.GestureMultiPress secondary_gesture;
+
         private bool control_pressed = false;
         private bool shift_pressed = false;
         private double scroll_delta = 0.0;
@@ -197,12 +199,17 @@ namespace Terminal {
             key_controller.key_released.connect (key_released);
             key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
 
-            press_gesture = new Gtk.GestureMultiPress (this) {
+            primary_gesture = new Gtk.GestureMultiPress (this) {
                 propagation_phase = TARGET,
-                button = 0
+                button = 1
             };
-            press_gesture.pressed.connect (button_pressed);
-            press_gesture.released.connect (button_released);
+            primary_gesture.pressed.connect (primary_pressed);
+
+            secondary_gesture = new Gtk.GestureMultiPress (this) {
+                propagation_phase = TARGET,
+                button = 3
+            };
+            secondary_gesture.released.connect (secondary_released);
 
             // Send events to key controller manually, since key_released isn't emitted in any propagation phase
             // This is not needed in Gtk4 as key_released is emitted.
@@ -288,33 +295,28 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void button_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
-            link_uri = null;
+        private void secondary_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = get_link (gesture.get_last_event (null));
 
-            if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
-                link_uri = get_link (gesture.get_last_event (null));
-
-                if (link_uri != null) {
-                    copy_action.set_enabled (true);
-                }
-
-                popup_context_menu ({ (int) x, (int) y });
-
-                gesture.set_state (CLAIMED);
+            if (link_uri != null) {
+                copy_action.set_enabled (true);
             }
+
+            popup_context_menu ({ (int) x, (int) y });
+
+            gesture.set_state (CLAIMED);
         }
 
-        private void button_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
-            if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
-                if (allow_hyperlink) {
-                    link_uri = get_link (gesture.get_last_event (null));
+        private void primary_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = null;
+            if (allow_hyperlink) {
+                link_uri = get_link (gesture.get_last_event (null));
 
-                    if (link_uri != null && !get_has_selection ()) {
-                       main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
-                    }
-                } else {
-                    allow_hyperlink = true;
+                if (link_uri != null && !get_has_selection ()) {
+                   main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                 }
+            } else {
+                allow_hyperlink = true;
             }
         }
 
