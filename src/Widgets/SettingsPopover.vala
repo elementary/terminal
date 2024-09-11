@@ -20,11 +20,9 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string STYLE_CSS = """
-        .color-button radio {
+        .color-button.%s radio {
             background-color: %s;
             color: %s;
-            padding: 10px;
-            -gtk-icon-shadow: none;
         }
     """;
 
@@ -107,7 +105,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
         custom_button.group = hc_button;
-        custom_button.get_style_context ().add_class ("color-custom");
 
         update_active_colorbutton (dark_button, Application.settings.get_string ("theme"));
 
@@ -167,11 +164,13 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             halign = Gtk.Align.CENTER
         };
 
+        button.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        button.get_style_context ().add_class (theme);
+
         css_provider = new Gtk.CssProvider ();
 
-        unowned var style_context = button.get_style_context ();
-        style_context.add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        style_context.add_provider (css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
@@ -201,7 +200,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
         try {
-            css_provider.load_from_data (STYLE_CSS.printf (background, foreground));
+            css_provider.load_from_data (STYLE_CSS.printf (theme, background, foreground));
         } catch (Error e) {
             critical ("Unable to style color button: %s", e.message);
         }

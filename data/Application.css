@@ -30,11 +30,16 @@ vte-terminal {
     padding: 0 9px;
 }
 
-.color-custom radio {
+.color-button radio {
+    padding: 10px;
+    -gtk-icon-shadow: none;
+}
+
+.color-button.custom radio {
     -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
 
-.color-custom radio:checked {
+.color-button.custom radio:checked {
     -gtk-icon-source: -gtk-icontheme("check-active-symbolic");
 }
 
