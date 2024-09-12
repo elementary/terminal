@@ -301,6 +301,7 @@ namespace Terminal {
         private bool on_key_pressed (Gtk.EventControllerKey controller, uint keyval, uint keycode, Gdk.ModifierType modifiers) {
             var control_pressed = CONTROL_MASK in modifiers;
             var shift_pressed = SHIFT_MASK in modifiers;
+
             switch (keyval) {
                 case Gdk.Key.Control_R:
                 case Gdk.Key.Control_L:
@@ -366,23 +367,27 @@ namespace Terminal {
                 return false;
             }
 
-            if (control_pressed) {
-                //Links not copied unless selected (compare context menu action)
-                var copypaste = get_has_selection () &&
-                                (Application.settings.get_boolean ("natural-copy-paste") || shift_pressed);
-
+            // If natural copy-paste is active we handle clipboard ourselves
+            // else leave to the native widget.
+            if (control_pressed && Application.settings.get_boolean ("natural-copy-paste")) {
                 if (match_keycode (Gdk.Key.c, keycode)) {
-                    if (copypaste) {
+                    //Links not copied unless selected (compare context menu action)
+                    if (get_has_selection ()) {
                         copy_clipboard ();
+                        // Natural copy unselects unless the shift is held down
+                        if (!shift_pressed) {
+                            unselect_all ();
+                        }
+
                         return true;
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
-                } else if (match_keycode (Gdk.Key.v, keycode)) {
-                    if (copypaste && clipboard.get_formats ().contain_gtype (Type.STRING)) {
-                        paste_clipboard ();
-                        return true;
-                    }
+                } else if (match_keycode (Gdk.Key.v, keycode) &&
+                           clipboard.get_formats ().contain_gtype (Type.STRING)) {
+
+                    paste_clipboard ();
+                    return true;
                 }
             }
 
