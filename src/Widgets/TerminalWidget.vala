@@ -131,8 +131,6 @@ namespace Terminal {
         private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
         private Gtk.EventControllerKey key_controller;
-        private bool control_pressed = false;
-        private bool shift_pressed = false;
 
         private double scroll_delta = 0.0;
 
@@ -180,7 +178,7 @@ namespace Terminal {
                 propagation_phase = CAPTURE
             };
             key_controller.key_pressed.connect (on_key_pressed);
-            key_controller.key_released.connect (on_key_released);
+            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
 
             var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
@@ -301,16 +299,17 @@ namespace Terminal {
         }
 
         private bool on_key_pressed (Gtk.EventControllerKey controller, uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            var control_pressed = CONTROL_MASK in modifiers;
+            var shift_pressed = SHIFT_MASK in modifiers;
             switch (keyval) {
                 case Gdk.Key.Control_R:
                 case Gdk.Key.Control_L:
                     scroll_controller.flags = VERTICAL;
-                    control_pressed = true;
                     break;
+
                 case Gdk.Key.Shift_R:
                 case Gdk.Key.Shift_L:
                     scroll_controller.flags = VERTICAL;
-                    shift_pressed = true;
                     break;
 
                 case Gdk.Key.Alt_L:
@@ -367,20 +366,20 @@ namespace Terminal {
                 return false;
             }
 
-            if (control_pressed && Application.settings.get_boolean ("natural-copy-paste")) {
-                if (match_keycode (Gdk.Key.c, keycode)) {
-                    if (get_has_selection ()) { //Links not copied unless selected (compare context menu action)
-                        copy_clipboard ();
-                        if (!shift_pressed) { // Shift not pressed
-                            unselect_all ();
-                        }
+            if (control_pressed) {
+                //Links not copied unless selected (compare context menu action)
+                var copypaste = get_has_selection () &&
+                                (Application.settings.get_boolean ("natural-copy-paste") || shift_pressed);
 
+                if (match_keycode (Gdk.Key.c, keycode)) {
+                    if (copypaste) {
+                        copy_clipboard ();
                         return true;
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
                 } else if (match_keycode (Gdk.Key.v, keycode)) {
-                    if (clipboard.get_formats ().contain_gtype (Type.STRING)) {
+                    if (copypaste && clipboard.get_formats ().contain_gtype (Type.STRING)) {
                         paste_clipboard ();
                         return true;
                     }
@@ -392,22 +391,6 @@ namespace Terminal {
             }
 
             return false;
-        }
-
-        private void on_key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
-            switch (keyval) {
-                case Gdk.Key.Control_R:
-                case Gdk.Key.Control_L:
-                    control_pressed = false;
-                    break;
-                case Gdk.Key.Shift_R:
-                case Gdk.Key.Shift_L:
-                    shift_pressed = true;
-                    break;
-                default:
-                    scroll_controller.flags = NONE;
-                    break;
-            }
         }
 
         private void setup_menu () {
