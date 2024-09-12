@@ -367,15 +367,16 @@ namespace Terminal {
                 return false;
             }
 
-            // If natural copy-paste is active we handle clipboard ourselves
-            // else leave to the native widget.
-            if (control_pressed && Application.settings.get_boolean ("natural-copy-paste")) {
+            // FIXME It appears the Vte.Terminal native handling of copy with <Shift><Control>C 
+            // does not work in Gtk4 so for now handle natural and native.
+            var natural = Application.settings.get_boolean ("natural-copy-paste");
+            if (control_pressed) {
                 if (match_keycode (Gdk.Key.c, keycode)) {
                     //Links not copied unless selected (compare context menu action)
-                    if (get_has_selection ()) {
+                    if (get_has_selection () && (natural || shift_pressed)) {
                         copy_clipboard ();
                         // Natural copy unselects unless the shift is held down
-                        if (!shift_pressed) {
+                        if (natural && !shift_pressed) {
                             unselect_all ();
                         }
 
@@ -383,7 +384,7 @@ namespace Terminal {
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
-                } else if (match_keycode (Gdk.Key.v, keycode) &&
+                } else if (match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
                            clipboard.get_formats ().contain_gtype (Type.STRING)) {
 
                     paste_clipboard ();
