@@ -299,6 +299,7 @@ namespace Terminal {
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
 
+            //TODO In Gtk4 replace action with `add_binding_signal ()``
             var zoom_action = new GLib.SimpleAction ("zoom", VariantType.STRING);
             zoom_action.activate.connect ((p) => {
                 switch ((string) p) {
@@ -309,7 +310,7 @@ namespace Terminal {
                         decrease_font_size ();
                         break;
                     case "default":
-                        font_scale = 1.0;
+                        default_font_size ();
                         break;
                 }
             });
@@ -751,6 +752,10 @@ namespace Terminal {
 
         protected override void decrease_font_size () {
             font_scale -= 0.1;
+        }
+
+        public void default_font_size () {
+            font_scale = 1.0;
         }
 
         public bool is_init_complete () {
