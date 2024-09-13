@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-03 23:09+0000\n"
-"PO-Revision-Date: 2024-08-15 10:16+0000\n"
+"PO-Revision-Date: 2024-09-14 21:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -412,7 +412,7 @@ msgstr "Újratöltés"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Nagyítás: %.0f%%"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Új lap megnyitása"
