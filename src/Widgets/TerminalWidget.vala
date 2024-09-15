@@ -168,7 +168,8 @@ namespace Terminal {
             };
             motion_controller.enter.connect (pointer_focus);
 
-            scroll_controller = new Gtk.EventControllerScroll (VERTICAL) {
+            // Used only for ctrl-scroll zooming
+            scroll_controller = new Gtk.EventControllerScroll (NONE) {
                 propagation_phase = TARGET
             };
             scroll_controller.scroll.connect (on_scroll);
