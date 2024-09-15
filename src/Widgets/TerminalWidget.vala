@@ -28,8 +28,8 @@ namespace Terminal {
             }
         }
 
-        // There may be no associated tab while made restorable
-        public unowned Adw.TabPage tab;
+        // There may be no associated tab while made restorable or when closing
+        public unowned Adw.TabPage? tab;
         public string? link_uri;
 
         public string tab_label {
@@ -832,11 +832,14 @@ namespace Terminal {
         }
 
         private void check_cwd_changed () {
-            var cwd = get_shell_location ();
-            if (cwd != current_working_directory) {
-                current_working_directory = cwd;
-                tab.tooltip = current_working_directory;
-                cwd_changed (cwd);
+            // Ignore if not associated with tab.
+            if (tab is Adw.TabPage) {
+                var cwd = get_shell_location ();
+                if (cwd != current_working_directory) {
+                    current_working_directory = cwd;
+                    tab.tooltip = current_working_directory;
+                    cwd_changed (cwd);
+                }
             }
         }
     }
