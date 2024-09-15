@@ -154,13 +154,15 @@ namespace Terminal {
         public signal void cwd_changed (string cwd);
 
         public TerminalWidget (MainWindow parent_window) {
+            Object (
+                main_window: parent_window
+            );
+        }
+
+        construct {
             pointer_autohide = true;
-
             terminal_id = "%i".printf (terminal_id_counter++);
-
             init_complete = false;
-
-            main_window = parent_window;
             child_has_exited = false;
             killed = false;
 
