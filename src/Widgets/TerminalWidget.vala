@@ -50,9 +50,6 @@ namespace Terminal {
         public const string ACTION_RELOAD = "term.reload";
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
         public const string ACTION_SELECT_ALL = "term.select-all";
-        public const string ACTION_ZOOM_DEFAULT = "term.zoom::default";
-        public const string ACTION_ZOOM_IN = "term.zoom::in";
-        public const string ACTION_ZOOM_OUT = "term.zoom::out";
 
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
