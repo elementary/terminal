@@ -343,6 +343,23 @@ namespace Terminal {
                     popup_context_menu (col * cell_width, (row - vadj) * cell_height);
                     break;
 
+                case Gdk.Key.plus:
+                case Gdk.Key.equal:
+                    if (control_pressed) {
+                        increase_font_size ();
+                        return true;
+                    }
+
+                    break;
+
+                case Gdk.Key.minus:
+                    if (control_pressed) {
+                        decrease_font_size ();
+                        return true;
+                    }
+
+                    break;
+
                 default:
                     if (!(control_pressed || shift_pressed) ||
                         !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
@@ -368,7 +385,7 @@ namespace Terminal {
                 return false;
             }
 
-            // FIXME It appears the Vte.Terminal native handling of copy with <Shift><Control>C 
+            // FIXME It appears the Vte.Terminal native handling of copy with <Shift><Control>C
             // does not work in Gtk4 so for now handle natural and native.
             var natural = Application.settings.get_boolean ("natural-copy-paste");
             if (control_pressed) {
