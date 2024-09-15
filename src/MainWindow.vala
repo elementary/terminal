@@ -189,6 +189,7 @@ namespace Terminal {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
                         save_opened_terminals (true, true);
+                        current_terminal.grab_focus ();
                         return Source.REMOVE;
                     });
                 }
