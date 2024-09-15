@@ -342,6 +342,7 @@ namespace Terminal {
 
                 case Gdk.Key.plus:
                 case Gdk.Key.equal:
+                case Gdk.Key.KP_Add:
                     if (control_pressed) {
                         increase_font_size ();
                         return true;
@@ -350,8 +351,18 @@ namespace Terminal {
                     break;
 
                 case Gdk.Key.minus:
+                case Gdk.Key.KP_Subtract:
                     if (control_pressed) {
                         decrease_font_size ();
+                        return true;
+                    }
+
+                    break;
+
+                case Gdk.Key.@0:
+                case Gdk.Key.KP_0:
+                    if (control_pressed) {
+                        default_font_size ();
                         return true;
                     }
 
