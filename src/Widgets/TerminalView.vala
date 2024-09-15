@@ -38,7 +38,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public TerminalView (MainWindow window) {
         Object (
-            main_window: window,
+            main_window: window
         );
     }
 
