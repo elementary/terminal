@@ -454,6 +454,7 @@ namespace Terminal {
             };
             new_context_menu.set_parent (this);
             new_context_menu.set_pointing_to ({ (int)x, (int)y, 1, 1});
+            new_context_menu.closed.connect (() => new_context_menu.destroy ());
             new_context_menu.popup ();
         }
 
