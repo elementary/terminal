@@ -514,47 +514,48 @@ namespace Terminal {
                     return;
                 }
             }
-                if (text == null) {
+
+            if (text == null) {
+                return;
+            }
+
+            if (!text.validate ()) {
+                warning ("Dropping invalid UTF-8 paste");
+                return;
+            }
+
+            unowned var toplevel = (MainWindow) get_root ();
+
+            if (!toplevel.unsafe_ignored &&
+                 Application.settings.get_boolean ("unsafe-paste-alert")) {
+
+                string? warn_text = null;
+                text._strip ();
+
+                if ("\n" in text) {
+                    warn_text = _("The pasted text may contain multiple commands");
+                } else if ("sudo" in text || "doas" in text) {
+                    warn_text = _("The pasted text may be trying to gain administrative access");
+                }
+
+                if (warn_text != null) {
+                    var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
+                    dialog.response.connect ((res) => {
+                        if (res == Gtk.ResponseType.ACCEPT) {
+                           remember_command_start_position ();
+                           base.paste_clipboard ();
+                        }
+
+                        dialog.destroy ();
+                    });
+
+                    dialog.present ();
                     return;
                 }
+            }
 
-                if (!text.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-
-                unowned var toplevel = (MainWindow) get_root ();
-
-                if (!toplevel.unsafe_ignored &&
-                     Application.settings.get_boolean ("unsafe-paste-alert")) {
-
-                    string? warn_text = null;
-                    text._strip ();
-
-                    if ("\n" in text) {
-                        warn_text = _("The pasted text may contain multiple commands");
-                    } else if ("sudo" in text || "doas" in text) {
-                        warn_text = _("The pasted text may be trying to gain administrative access");
-                    }
-
-                    if (warn_text != null) {
-                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
-                        dialog.response.connect ((res) => {
-                            if (res == Gtk.ResponseType.ACCEPT) {
-                               remember_command_start_position ();
-                               base.paste_clipboard ();
-                            }
-
-                            dialog.destroy ();
-                        });
-
-                        dialog.present ();
-                        return;
-                    }
-                }
-
-                remember_command_start_position ();
-                base.paste_clipboard ();
+            remember_command_start_position ();
+            base.paste_clipboard ();
         }
 
         private void update_theme () {
