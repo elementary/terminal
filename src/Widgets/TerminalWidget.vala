@@ -194,12 +194,41 @@ namespace Terminal {
             };
             secondary_gesture.released.connect (secondary_released);
 
+            // Accels added by set_accels_for_action in Application do not work for actions
+            // in child widgets so use shortcut_controller instead.
+            var select_all_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.A, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK),
+                new Gtk.NamedAction ("term.select-all")
+            );
+
+            var reload_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.R, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK),
+                new Gtk.NamedAction ("term.reload")
+            );
+
+            var scroll_to_command_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.Up, Gdk.ModifierType.ALT_MASK),
+                new Gtk.NamedAction ("term.scroll-to-command")
+            );
+
+            var copy_output_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.C, Gdk.ModifierType.ALT_MASK),
+                new Gtk.NamedAction ("term.copy-output")
+            );
+
+            var shortcut_controller = new Gtk.ShortcutController ();
+            shortcut_controller.add_shortcut (select_all_shortcut);
+            shortcut_controller.add_shortcut (reload_shortcut);
+            shortcut_controller.add_shortcut (scroll_to_command_shortcut);
+            shortcut_controller.add_shortcut (copy_output_shortcut);
+
             add_controller (motion_controller);
             add_controller (scroll_controller);
             add_controller (key_controller);
             add_controller (focus_controller);
             add_controller (secondary_gesture);
             add_controller (primary_gesture);
+            add_controller (shortcut_controller);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
             notify["height-request"].connect (() => resized = true);

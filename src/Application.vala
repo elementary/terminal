@@ -235,13 +235,6 @@ public class Terminal.Application : Gtk.Application {
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
-
-        set_accels_for_action (TerminalWidget.ACTION_COPY, TerminalWidget.ACCELS_COPY);
-        set_accels_for_action (TerminalWidget.ACTION_COPY_OUTPUT, TerminalWidget.ACCELS_COPY_OUTPUT);
-        set_accels_for_action (TerminalWidget.ACTION_PASTE, TerminalWidget.ACCELS_PASTE);
-        set_accels_for_action (TerminalWidget.ACTION_RELOAD, TerminalWidget.ACCELS_RELOAD);
-        set_accels_for_action (TerminalWidget.ACTION_SCROLL_TO_COMMAND, TerminalWidget.ACCELS_SCROLL_TO_COMMAND);
-        set_accels_for_action (TerminalWidget.ACTION_SELECT_ALL, TerminalWidget.ACCELS_SELECT_ALL);
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
