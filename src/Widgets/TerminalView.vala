@@ -38,20 +38,20 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public TerminalView (MainWindow window) {
         Object (
-            main_window: window,
-            orientation: Gtk.Orientation.VERTICAL,
-            hexpand: true,
-            vexpand: true
+            main_window: window
         );
     }
 
     construct {
+        orientation = Gtk.Orientation.VERTICAL;
+        hexpand = true;
+        vexpand = true;
+
         var app_instance = (Gtk.Application) GLib.Application.get_default ();
         tab_view = new Adw.TabView () {
             hexpand = true,
             vexpand = true
         };
-
         tab_view.menu_model = create_menu_model ();
         tab_view.setup_menu.connect (tab_view_setup_menu);
 

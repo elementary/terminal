@@ -27,13 +27,14 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
-            resizable: false,
-            title: _("Color Preferences"),
             transient_for: parent
         );
     }
 
     construct {
+        resizable = false;
+        title = _("Color Preferences");
+
         var window_theme_label = settings_label (_("Window style:"));
         window_theme_label.margin_bottom = 12;
 
