@@ -35,7 +35,7 @@ namespace Terminal {
 
         GLib.Pid child_pid;
 
-        public unowned MainWindow main_window { get; construct; }
+        public unowned MainWindow main_window { get; construct set; }
 
         private Terminal.Application app {
             get {
