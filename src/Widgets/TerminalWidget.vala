@@ -799,7 +799,8 @@ namespace Terminal {
             last_key_was_return = true;
         }
 
-        public string get_last_output (bool include_command = true) {
+        // This is only ever called privately with the default parameter at the moment
+        private string get_last_output (bool include_command = true) {
             long output_end_col, output_end_row, start_row;
             get_cursor_position (out output_end_col, out output_end_row);
 
