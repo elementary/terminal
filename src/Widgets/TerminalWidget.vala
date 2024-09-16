@@ -821,7 +821,8 @@ namespace Terminal {
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
              * maximum line length rather than determine the actual length.  */
-            return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
+            size_t len = 0;
+            return get_text_range_format (Vte.Format.TEXT, start_row, 0, output_end_row - 1, 1000, out len) + "\n";
         }
 
         private void scroll_to_command (GLib.SimpleAction action, GLib.Variant? parameter) {
