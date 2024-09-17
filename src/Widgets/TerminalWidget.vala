@@ -127,9 +127,7 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
-        private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
-        private Gtk.EventControllerKey key_controller;
 
         private double scroll_delta = 0.0;
 
@@ -164,7 +162,7 @@ namespace Terminal {
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
 
-            motion_controller = new Gtk.EventControllerMotion () {
+            var motion_controller = new Gtk.EventControllerMotion () {
                 propagation_phase = CAPTURE
             };
             motion_controller.enter.connect (pointer_focus);
@@ -176,7 +174,7 @@ namespace Terminal {
             scroll_controller.scroll.connect (on_scroll);
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
 
-            key_controller = new Gtk.EventControllerKey () {
+            var key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = CAPTURE
             };
             key_controller.key_pressed.connect (on_key_pressed);
