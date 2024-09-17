@@ -204,8 +204,12 @@ namespace Terminal {
                 new Gtk.NamedAction ("term.select-all")
             );
 
-            var reload_shortcut = new Gtk.Shortcut (
+            var reload_trigger = new Gtk.AlternativeTrigger (
                 new Gtk.KeyvalTrigger (Gdk.Key.R, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.F5, Gdk.ModifierType.CONTROL_MASK)
+            );
+            var reload_shortcut = new Gtk.Shortcut (
+                reload_trigger,
                 new Gtk.NamedAction ("term.reload")
             );
 
