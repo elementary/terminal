@@ -128,7 +128,6 @@ namespace Terminal {
         public bool last_key_was_return = true;
 
         private Gtk.EventControllerScroll scroll_controller;
-
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed (string cwd);
@@ -168,7 +167,7 @@ namespace Terminal {
             motion_controller.enter.connect (pointer_focus);
 
             // Used only for ctrl-scroll zooming
-            scroll_controller = new Gtk.EventControllerScroll (NONE) {
+            scroll_controller = new Gtk.EventControllerScroll (VERTICAL) {
                 propagation_phase = TARGET
             };
             scroll_controller.scroll.connect (on_scroll);
@@ -178,7 +177,6 @@ namespace Terminal {
                 propagation_phase = CAPTURE
             };
             key_controller.key_pressed.connect (on_key_pressed);
-            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
 
             var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
@@ -320,7 +318,13 @@ namespace Terminal {
         }
 
         private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
-            // try to emulate a normal scrolling event by summing deltas. step size of 0.5 chosen to match sensitivity
+            // If control is pressed try to emulate a normal scrolling event by summing deltas. 
+            // Step size of 0.5 chosen to match sensitivity
+            var control_pressed = Gdk.ModifierType.CONTROL_MASK in controller.get_current_event_state ();
+            if (!control_pressed) {
+                return false;
+            }
+
             scroll_delta += y;
 
             if (scroll_delta >= 0.5) {
@@ -339,16 +343,6 @@ namespace Terminal {
             var shift_pressed = SHIFT_MASK in modifiers;
 
             switch (keyval) {
-                case Gdk.Key.Control_R:
-                case Gdk.Key.Control_L:
-                    scroll_controller.flags = VERTICAL;
-                    break;
-
-                case Gdk.Key.Shift_R:
-                case Gdk.Key.Shift_L:
-                    scroll_controller.flags = VERTICAL;
-                    break;
-
                 case Gdk.Key.Alt_L:
                 case Gdk.Key.Alt_R:
                     // enable/disable the action before we try to use
