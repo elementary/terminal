@@ -219,7 +219,10 @@ namespace Terminal {
                 new Gtk.NamedAction ("term.copy-output")
             );
 
-            var shortcut_controller = new Gtk.ShortcutController ();
+            var shortcut_controller = new Gtk.ShortcutController () {
+                propagation_phase = CAPTURE,
+                propagation_limit = SAME_NATIVE
+            };
             shortcut_controller.add_shortcut (select_all_shortcut);
             shortcut_controller.add_shortcut (reload_shortcut);
             shortcut_controller.add_shortcut (scroll_to_command_shortcut);
