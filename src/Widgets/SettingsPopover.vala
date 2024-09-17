@@ -161,6 +161,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
 
         button.set_data<string> ("theme", theme);
+        button.add_css_class ("color-button");
+        button.add_css_class (theme);
 
         css_provider = new Gtk.CssProvider ();
         Gtk.StyleContext.add_provider_for_display (
