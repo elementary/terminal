@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-03 23:09+0000\n"
-"PO-Revision-Date: 2022-01-09 20:09+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 07:22+0000\n"
+"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
 #: src/Application.vala:34
@@ -31,10 +31,8 @@ msgstr "Otevřít nové okno terminálu"
 
 #. -t flag forces a new tab
 #: src/Application.vala:38
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Otevřít nové okno terminálu"
+msgstr "Otevřít novou záložku terminálu v pracovním adresáři"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:40
@@ -43,33 +41,26 @@ msgstr "Nastavit pracovní adresář shellu"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:42
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Spustit program v terminálu"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:44
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Otevřít terminál minimalizovaný"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:47
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Spustit zbytek řádku jako příkaz v terminálu. „--“ také můžete použít jako "
-"příznak"
+msgstr "Spustit zbytek řádku jako příkaz v terminálu"
 
 #: src/Application.vala:99
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- PŘÍKAZ…]"
 
 #: src/Application.vala:159
 msgid "Process completed"
-msgstr "Proces skončil"
+msgstr "Proces dokončen"
 
 #: src/Application.vala:162
 msgid "Process exited with errors"
@@ -77,7 +68,7 @@ msgstr "Proces skončil s chybami"
 
 #: src/MainWindow.vala:168
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Ukázat lištu vyhledávání"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:175
@@ -127,15 +118,15 @@ msgstr "Skrýt panel vyhledávání"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:43
 msgid "Color Preferences"
-msgstr ""
+msgstr "Nastavení barev"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:49
 msgid "Window style:"
-msgstr ""
+msgstr "Styl okna:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "Světlý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
 #: src/Widgets/SettingsPopover.vala:102
@@ -144,87 +135,87 @@ msgstr "Tmavý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta barev"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "Vrátit výchozí nastavení"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "Černá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "Červená:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "Zelená:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "Žlutá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "Modrá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Fuchsiová:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Cyanová:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Šedá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
-msgstr ""
+msgstr "Bílá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr ""
+msgstr "Světle červená:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "Světle zelená:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Světle žlutá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Světle modrá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Světle fuchsiová:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Světle cyanová:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "Světle šedá:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "Pozadí:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "Popředí:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Kurzor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -232,19 +223,19 @@ msgstr "Zavřít"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Kontrast je velmi nízký"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
-msgstr ""
+msgstr "Kontrast je nízký"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
-msgstr ""
+msgstr "Kontrast je dobrý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
-msgstr ""
+msgstr "Kontrast je vysoký"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:26
 msgid "Are you sure you want to close this tab?"
