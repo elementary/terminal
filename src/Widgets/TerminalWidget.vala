@@ -180,6 +180,7 @@ namespace Terminal {
 
             var focus_controller = new Gtk.EventControllerFocus ();
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
+            focus_controller.enter.connect (() => scroll_controller.flags = VERTICAL);
 
             var primary_gesture = new Gtk.GestureClick () {
                 propagation_phase = TARGET,
