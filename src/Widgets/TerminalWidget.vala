@@ -728,21 +728,27 @@ namespace Terminal {
                     var uris = selection_data.get_uris ();
                     string path;
                     File file;
-
                     for (var i = 0; i < uris.length; i++) {
-                         file = File.new_for_uri (uris[i]);
-                         if ((path = file.get_path ()) != null) {
-                             uris[i] = Shell.quote (path) + " ";
+                        // Get sanitized unquoted path (Files sends uris that are escaped and quoted)
+                        // We do not want the `file://` scheme included
+                        // We assume dropped paths are absolute
+                        file = File.new_for_uri (Utils.sanitize_path (Shell.unquote (uris[i]), "", false));
+                        path = file.get_path ();
+                        if (path != null) {
+                            uris[i] = Shell.quote (path) + " ";
+                        } else {
+                            // Ignore unvalid paths
+                            uris[i] = "";
                         }
                     }
 
                     var uris_s = string.joinv ("", uris);
                     this.feed_child (uris_s.data);
                     break;
+
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var data = selection_data.get_text ();
-
                     if (data != null) {
                         this.feed_child (data.data);
                     }
