@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-06 11:15+0000\n"
-"PO-Revision-Date: 2024-09-04 14:43+0000\n"
+"PO-Revision-Date: 2024-10-08 09:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -82,11 +82,11 @@ msgstr "Копіювати останній вивід"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Очистити екран"
 
 #: src/MainWindow.vala:192
 msgid "Reset"
-msgstr ""
+msgstr "Скинути"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
