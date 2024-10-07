@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-06 11:15+0000\n"
-"PO-Revision-Date: 2024-09-04 14:43+0000\n"
+"PO-Revision-Date: 2024-10-07 05:49+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ru/>\n"
@@ -77,11 +77,11 @@ msgstr "Копировать последний вывод"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Очистить экран"
 
 #: src/MainWindow.vala:192
 msgid "Reset"
-msgstr ""
+msgstr "Сбросить"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
