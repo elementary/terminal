@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-06 11:15+0000\n"
-"PO-Revision-Date: 2024-09-04 14:43+0000\n"
+"PO-Revision-Date: 2024-10-07 08:07+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -81,11 +81,11 @@ msgstr "העתקת הפלט האחרון"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "פינוי המסך"
 
 #: src/MainWindow.vala:192
 msgid "Reset"
-msgstr ""
+msgstr "איפוס"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
