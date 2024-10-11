@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-03 23:09+0000\n"
+"POT-Creation-Date: 2024-10-06 11:15+0000\n"
 "PO-Revision-Date: 2024-09-14 21:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
@@ -20,105 +20,113 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:34
+#: src/Application.vala:63
 msgid "Show version"
 msgstr "Verzió megjelenítése"
 
 #. -n flag forces a new window
-#: src/Application.vala:36
+#: src/Application.vala:65
 msgid "Open a new terminal window"
 msgstr "Új terminálablak megnyitása"
 
 #. -t flag forces a new tab
-#: src/Application.vala:38
+#: src/Application.vala:67
 msgid "Open a new terminal tab at current working directory"
 msgstr "Új terminálablak megnyitása az éppen használt munkakönyvtárban"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:40
+#: src/Application.vala:69
 msgid "Set shell working directory"
 msgstr "A shell munkakönyvtárának beállítása"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:42
+#: src/Application.vala:71
 msgid "Run a program in terminal"
 msgstr "Programfuttatás terminálban"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:44
+#: src/Application.vala:73
 msgid "Open terminal in a minimized state"
 msgstr "A terminál megnyitása lekicsinyített állapotban"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:47
+#: src/Application.vala:76
 msgid "Run remainder of line as a command in terminal"
 msgstr "A sor további részének futtatása terminálban parancsként"
 
-#: src/Application.vala:99
+#: src/Application.vala:128
 msgid "[-- COMMAND…]"
 msgstr "[-- PARANCS…]"
 
-#: src/Application.vala:159
+#: src/Application.vala:188
 msgid "Process completed"
 msgstr "Feladat befejezve"
 
-#: src/Application.vala:162
+#: src/Application.vala:191
 msgid "Process exited with errors"
 msgstr "A feladat kilépett hibákkal"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Keresősáv"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:175
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Másolás"
 
-#: src/MainWindow.vala:181
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Legutóbbi kimenet másolása"
 
-#: src/MainWindow.vala:187
+#: src/MainWindow.vala:186
+msgid "Clear Screen"
+msgstr ""
+
+#: src/MainWindow.vala:192
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: src/MainWindow.vala:193
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Összes kijelölése"
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:303
 msgid "Exit FullScreen"
 msgstr "Kilépés teljes képernyőről"
 
-#: src/MainWindow.vala:297 src/MainWindow.vala:1058
+#: src/MainWindow.vala:312 src/MainWindow.vala:1015
 msgid "Find…"
 msgstr "Keresés…"
 
-#: src/MainWindow.vala:304
+#: src/MainWindow.vala:319
 msgid "Settings"
 msgstr "Beállítások"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:555
+#: src/MainWindow.vala:548
 #, c-format
 msgid "Show in %s"
 msgstr "Megjelenítés itt: %s"
 
-#: src/MainWindow.vala:557
+#: src/MainWindow.vala:550
 msgid "Default application"
 msgstr "Alapértelmezett alkalmazás"
 
-#: src/MainWindow.vala:1049
+#: src/MainWindow.vala:1006
 msgid "Hide find bar"
 msgstr "Keresősáv elrejtése"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:43
+#: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
 msgstr "Színbeállítások"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:49
+#: src/Dialogs/ColorPreferencesDialog.vala:50
 msgid "Window style:"
 msgstr "Ablaktéma:"
 
@@ -127,7 +135,7 @@ msgid "Light"
 msgstr "Világos"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:102
+#: src/Widgets/SettingsPopover.vala:100
 msgid "Dark"
 msgstr "Sötét"
 
@@ -248,7 +256,7 @@ msgid "If you close it, the process will end."
 msgstr "Ha bezárja, a folyamat befejeződik."
 
 #: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:212
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
@@ -319,49 +327,49 @@ msgstr "Következő találat"
 msgid "Cyclic search"
 msgstr "Ciklikus keresés"
 
-#: src/Widgets/SettingsPopover.vala:42
+#: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
 msgstr "Kicsinyítés"
 
-#: src/Widgets/SettingsPopover.vala:50
+#: src/Widgets/SettingsPopover.vala:48
 msgid "Default zoom level"
 msgstr "Alapértelmezett nagyítási szint"
 
-#: src/Widgets/SettingsPopover.vala:58
+#: src/Widgets/SettingsPopover.vala:56
 msgid "Zoom in"
 msgstr "Nagyítás"
 
-#: src/Widgets/SettingsPopover.vala:86
+#: src/Widgets/SettingsPopover.vala:84
 msgid "Follow System Style"
 msgstr "Rendszertéma követése"
 
-#: src/Widgets/SettingsPopover.vala:95
+#: src/Widgets/SettingsPopover.vala:93
 msgid "High Contrast"
 msgstr "Magas kontraszt"
 
-#: src/Widgets/SettingsPopover.vala:98
+#: src/Widgets/SettingsPopover.vala:96
 msgid "Solarized Light"
 msgstr "Szolarizált világos"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:106
 msgid "Custom"
 msgstr "Egyéni"
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:111
 msgid "Natural Copy/Paste"
 msgstr "Természetes másolás/beillesztés"
 
-#: src/Widgets/SettingsPopover.vala:115
+#: src/Widgets/SettingsPopover.vala:112
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "A gyorsbillentyűk nem igénylik a Shift lenyomását; konzolos alkalmazásoknál "
 "problémát okozhat"
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:116
 msgid "Event Alerts"
 msgstr "Eseményértesítések"
 
-#: src/Widgets/SettingsPopover.vala:120
+#: src/Widgets/SettingsPopover.vala:117
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -373,39 +381,39 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/Widgets/TerminalWidget.vala:494
+#: src/Widgets/TerminalWidget.vala:538
 msgid "The pasted text may contain multiple commands"
 msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
 
-#: src/Widgets/TerminalWidget.vala:496
+#: src/Widgets/TerminalWidget.vala:540
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
-#: src/Widgets/TerminalView.vala:62
+#: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "Új lap"
 
-#: src/Widgets/TerminalView.vala:69
+#: src/Widgets/TerminalView.vala:70
 msgid "Closed Tabs"
 msgstr "Bezárt lapok"
 
-#: src/Widgets/TerminalView.vala:209
+#: src/Widgets/TerminalView.vala:210
 msgid "Close Tabs to the Right"
 msgstr "Jobbra lévő lapok bezárása"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:211
 msgid "Close Other Tabs"
 msgstr "A többi lap bezárása"
 
-#: src/Widgets/TerminalView.vala:214
+#: src/Widgets/TerminalView.vala:215
 msgid "Open in New Window"
 msgstr "Megnyitás új ablakban"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:216
 msgid "Duplicate Tab"
 msgstr "Lap megkettőzése"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:219
 msgid "Reload"
 msgstr "Újratöltés"
 
