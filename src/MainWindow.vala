@@ -866,7 +866,7 @@ namespace Terminal {
                     link_uri = "http://" + link_uri;
                 }
 
-                return link_uri
+                return link_uri;
             }
         }
 
