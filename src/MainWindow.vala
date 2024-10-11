@@ -323,26 +323,31 @@ namespace Terminal {
             notebook.tab_view.create_window.connect (on_create_window_request);
             notebook.tab_view.close_page.connect ((tab) => {
                 var term = get_term_widget (tab);
-                var confirmed = false;
-                if (term == null) {
-                    confirmed = true;
+                if (term == null || !term.has_foreground_process ()) {
+                    notebook.tab_view.close_page_finish (tab, true);
                 } else {
-                    confirmed = confirm_close_tab (term);
+                    var dialog = new ForegroundProcessDialog (this);
+                    dialog.response.connect ((res) => {
+                        dialog.destroy ();
+                        if (res == Gtk.ResponseType.ACCEPT) {
+                            term.kill_fg ();
+                            if (!term.child_has_exited) {
+                                term.term_ps ();
+                            }
+
+                            if (Application.settings.get_boolean ("save-exited-tabs")) {
+                                make_restorable (term);
+                            }
+
+                            disconnect_terminal_signals (term);
+                            notebook.tab_view.close_page_finish (tab, true);
+                        } else {
+                            notebook.tab_view.close_page_finish (tab, false);
+                        }
+                    });
+
+                    dialog.present ();
                 }
-
-                if (confirmed) {
-                    if (!term.child_has_exited) {
-                        term.term_ps ();
-                    }
-
-                    if (Application.settings.get_boolean ("save-exited-tabs")) {
-                        make_restorable (term);
-                    }
-
-                    disconnect_terminal_signals (term);
-                }
-
-                notebook.tab_view.close_page_finish (tab, confirmed);
 
                 return Gdk.EVENT_STOP;
             });
@@ -463,27 +468,6 @@ namespace Terminal {
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
-        }
-
-        public bool confirm_close_tab (TerminalWidget terminal_widget) {
-            if (terminal_widget.has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog (this);
-                dialog.response.connect ((res) => {
-                    if (res == Gtk.ResponseType.ACCEPT) {
-                        dialog.destroy ();
-                        terminal_widget.kill_fg ();
-                    } else {
-                        dialog.destroy ();
-                        return;
-                    }
-                });
-
-                dialog.present ();
-            }
-
-            //Names checked in page_detached handler
-
-            return true;
         }
 
         private void on_tab_reordered (Adw.TabPage tab, int new_pos) {
