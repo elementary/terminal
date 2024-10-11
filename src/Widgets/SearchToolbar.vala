@@ -97,7 +97,7 @@ namespace Terminal.Widgets {
 
         public new bool grab_focus () {
             return search_entry.grab_focus ();
-            //TODO Deselect selection if necessary
+            //TODO Gtk4 port:Deselect selection if necessary
         }
 
         public void clear () {

@@ -222,7 +222,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     private bool on_add_button_drop (Value val, double x, double y) {
-        //TODO Check val holds uri list
+        //TODO Gtk4 Port:Check val holds uri list
         var uris = Uri.list_extract_uris (val.dup_string ());
         var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
         // ACTION_NEW_TAB_AT only works with local paths to folders
@@ -250,7 +250,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     private bool on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
-        //TODO Check val contains uri_list
+        //TODO Gtk4 Port:Check val contains uri_list
         var uris = Uri.list_extract_uris (val.dup_string ());
         var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
         // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders

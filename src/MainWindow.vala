@@ -859,14 +859,14 @@ namespace Terminal {
 
                     return null;
                 } else {
-                    return (current_terminal.get_shell_location ());
+                    return current_terminal.get_shell_location ();
                 }
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
                 }
 
-                return (link_uri);
+                return link_uri
             }
         }
 
@@ -1038,7 +1038,7 @@ namespace Terminal {
                 return null;
             }
             var tab_child = (Gtk.ScrolledWindow)(tab.child);
-            unowned var term = (TerminalWidget)(tab_child.child); // TerminalWidget
+            unowned var term = (TerminalWidget)(tab_child.child);
             return term;
         }
 

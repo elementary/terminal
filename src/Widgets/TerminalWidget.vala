@@ -245,6 +245,7 @@ namespace Terminal {
             add_controller (shortcut_controller);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
+            // Cannot use copy last output action if window was resized after remembering start position
             notify["height-request"].connect (() => resized = true);
             notify["width-request"].connect (() => resized = true);
             contents_changed.connect (check_cwd_changed);
@@ -429,7 +430,7 @@ namespace Terminal {
 
             // Use hardware keycodes so the key used is unaffected by internationalized layout
             bool match_keycode (uint keyval, uint code) {
-                //TODO Check this works for non-standard keyboard layouts
+                //TODO Gtk4 Port:Check this works for non-standard keyboard layouts
                 Gdk.KeymapKey[] keys;
                 uint[] keyvals;
                 if (get_display ().map_keycode (code, out keys, out keyvals)) {
@@ -443,7 +444,7 @@ namespace Terminal {
                 return false;
             }
 
-            // FIXME It appears the Vte.Terminal native handling of copy with <Shift><Control>C
+            // FIXME Gtk4 Port:It appears the Vte.Terminal native handling of copy with <Shift><Control>C
             // does not work in Gtk4 so for now handle natural and native.
             var natural = Application.settings.get_boolean ("natural-copy-paste");
             if (control_pressed) {
@@ -492,7 +493,7 @@ namespace Terminal {
 
             if (formats != null) {
                 can_paste = formats.contain_gtype (Type.STRING);
-                //TODO Use mimetype for text and uris?
+                //TODO Gtk4 Port:Use mimetype for text and uris?
             }
 
             paste_action.set_enabled (can_paste);
@@ -506,8 +507,8 @@ namespace Terminal {
             main_window.update_context_menu ();
             setup_menu ();
 
-            //FIXME For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
-            // does not work at the moment.
+            //FIXME Gtk4 Port:For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
+            // does not work at the moment so create our own.
             var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
                 has_arrow = false
             };
@@ -816,12 +817,12 @@ namespace Terminal {
 
         private bool on_drop (Value val, double x, double y) {
             var uris = Uri.list_extract_uris (val.dup_string ());
-            //TODO Deal with text other than uri list
+            //TODO Gtk4 Port: Deal with text other than uri list
             string path;
             File file;
 
             for (var i = 0; i < uris.length; i++) {
-                //TODO Decide appropriate flags
+                //TODO Gtk Port: Decide appropriate flags
                 try {
                     if (Uri.is_valid (uris[i], UriFlags.NONE)) {
                         file = File.new_for_uri (uris[i]);
