@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-06 11:15+0000\n"
 "PO-Revision-Date: 2024-10-15 07:09+0000\n"
-"Last-Translator: Matheus Torres Carvalho <matheustcarvalho@hotmail.com>\n"
+"Last-Translator: Estevan Küster <estevan.kuster8@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -41,8 +41,6 @@ msgstr "Definir diretório de trabalho do shell"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:71
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Executar um programa no terminal"
 
