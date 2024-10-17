@@ -337,7 +337,7 @@ namespace Terminal {
         }
 
         private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
-            // If control is pressed try to emulate a normal scrolling event by summing deltas. 
+            // If control is pressed try to emulate a normal scrolling event by summing deltas.
             // Step size of 0.5 chosen to match sensitivity
             var control_pressed = Gdk.ModifierType.CONTROL_MASK in controller.get_current_event_state ();
             if (!control_pressed) {
@@ -545,30 +545,35 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             var content_provider = clipboard.get_content ();
-            string? text = null;
-
             if (content_provider != null) {
                 try {
                     Value val = Value (typeof (string));
                     content_provider.get_value (ref val);
-                    text = val.dup_string ();
+                    var text = val.dup_string ();
+                    handle_paste (text);
                 } catch (Error e) {
-                    warning ("Error pasting clipboard - %s", e.message);
+                    warning ("Error getting clipboard content - %s", e.message);
                     return;
                 }
+            } else {
+                clipboard.read_text_async.begin (null, (obj, res) => {
+                    try {
+                        var text = clipboard.read_text_async.end (res);
+                        handle_paste (text);
+                    } catch (Error e) {
+                        warning ("Error reading text from clipboard - %s", e.message);
+                    }
+                });
             }
+        }
 
-            if (text == null) {
-                return;
-            }
-
-            if (!text.validate ()) {
-                warning ("Dropping invalid UTF-8 paste");
+        private void handle_paste (string text) {
+            if (text == null || !text.validate ()) {
+                warning ("Pasted text is null or invalid");
                 return;
             }
 
             unowned var toplevel = (MainWindow) get_root ();
-
             if (!toplevel.unsafe_ignored &&
                  Application.settings.get_boolean ("unsafe-paste-alert")) {
 
