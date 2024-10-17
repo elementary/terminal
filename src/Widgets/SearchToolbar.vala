@@ -49,13 +49,23 @@ namespace Terminal.Widgets {
                 _("Next result")
             );
 
-            cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image = new Gtk.Image.from_icon_name (
-                "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
-            );
-            cycle_button.sensitive = false;
-            cycle_button.set_can_focus (false);
-            cycle_button.tooltip_text = _("Cyclic search");
+            cycle_button = new Gtk.ToggleButton () {
+                active = false,
+                sensitive = false,
+                image = new Gtk.Image ()
+            };
+            cycle_button.toggled.connect (() => {
+                if (cycle_button.active) {
+                    cycle_button.tooltip_text = _("Disable cyclic search");
+                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-symbolic";
+                } else {
+                    cycle_button.tooltip_text = _("Enable cyclic search");
+                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-disabled-symbolic";
+                }
+            });
+            // Toggle to update
+            // TODO Restore state from settings
+            cycle_button.toggled ();
 
             get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
             add (search_entry);
