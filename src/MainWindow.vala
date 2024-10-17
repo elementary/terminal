@@ -817,11 +817,22 @@ namespace Terminal {
 
         private void action_open_in_browser () requires (current_terminal != null) {
             var uri = get_current_selection_link_or_pwd ();
-            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-            if (to_open != null) {
-                var launcher = new Gtk.UriLauncher (to_open);
-                launcher.launch.begin (null, null);
-                //TODO Handle launch failure.
+            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location (), true);
+            AppInfo? appinfo = get_default_app_for_uri (to_open);
+            if (appinfo != null) {
+                //FIXME Gtk.UriLauncher fails for some reason ( in a VM at least )
+                List<string> uris = null;
+                uris.append (to_open);
+                appinfo.launch_uris_async.begin (uris, null, null, (obj, res) => {
+                    try {
+                        var success = appinfo.launch_uris_async.end (res);
+                    } catch (Error e) {
+                        warning ("Launcher failed with error %s", e.message);
+                        //TODO Handle launch failure - message box? 
+                    }
+                });
+            } else {
+                //TODO Show AppChooserDialog?
             }
         }
 
