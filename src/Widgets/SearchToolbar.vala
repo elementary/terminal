@@ -51,7 +51,7 @@ namespace Terminal.Widgets {
 
             cycle_button = new Gtk.ToggleButton () {
                 active = false,
-                can_focus = false,
+                sensitive = false,
                 image = new Gtk.Image ()
             };
             cycle_button.toggled.connect (() => {
