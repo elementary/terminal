@@ -56,10 +56,10 @@ namespace Terminal.Widgets {
             };
             cycle_button.toggled.connect (() => {
                 if (cycle_button.active) {
-                    cycle_button.tooltip_text = _("Cyclic search is enabled");
+                    cycle_button.tooltip_text = _("Disable cyclic search");
                     ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-symbolic";
                 } else {
-                    cycle_button.tooltip_text = _("Cyclic search is disabled");
+                    cycle_button.tooltip_text = _("Enable cyclic search");
                     ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-disabled-symbolic";
                 }
             });
