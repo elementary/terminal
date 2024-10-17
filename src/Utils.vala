@@ -21,7 +21,6 @@ namespace Terminal.Utils {
     public string? sanitize_path (string _path, string shell_location, bool add_file_scheme = true) {
         /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
         string scheme = "", path = "";
-
         var parts_scheme = _path.split ("://", 2);
         if (parts_scheme.length == 2) {
             scheme = parts_scheme[0] + "://";
@@ -63,7 +62,7 @@ namespace Terminal.Utils {
             parts_sep[index] = construct_parent_path (shell_location);
         }
 
-        var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
+        var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/");
         return result;
     }
 
