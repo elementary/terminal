@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-10-17 20:36+0000\n"
 "PO-Revision-Date: 2018-12-11 21:13+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/terminal/"
@@ -336,8 +336,16 @@ msgstr "Ankstesnis rezultatas"
 msgid "Next result"
 msgstr "Kitas rezultatas"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Ciklinė paieška"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "Ciklinė paieška"
 
 #: src/Widgets/SettingsPopover.vala:40

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-10-17 20:36+0000\n"
 "PO-Revision-Date: 2023-03-31 19:59+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -328,8 +328,16 @@ msgstr "Edellinen tulos"
 msgid "Next result"
 msgstr "Seuraava tulos"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Kierteinen haku"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "Kierteinen haku"
 
 #: src/Widgets/SettingsPopover.vala:40

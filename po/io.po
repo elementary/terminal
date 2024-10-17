@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-10-17 20:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
@@ -305,8 +305,12 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+msgid "Disable cyclic search"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:62
+msgid "Enable cyclic search"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:40

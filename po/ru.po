@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-10-17 20:36+0000\n"
 "PO-Revision-Date: 2024-10-13 18:16+0000\n"
 "Last-Translator: Kirill <fedorovkirillwww@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/"
@@ -320,8 +320,16 @@ msgstr "Предыдущий результат"
 msgid "Next result"
 msgstr "Следующий результат"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Циклический поиск"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "Циклический поиск"
 
 #: src/Widgets/SettingsPopover.vala:40
