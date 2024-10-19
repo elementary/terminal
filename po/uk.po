@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-08 09:16+0000\n"
+"PO-Revision-Date: 2024-10-20 00:19+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -326,16 +326,12 @@ msgid "Next result"
 msgstr "Наступний результат"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Циклічний пошук"
+msgstr "Вимкнути циклічний пошук"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Циклічний пошук"
+msgstr "Увімкнути циклічний пошук"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
