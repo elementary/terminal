@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"PO-Revision-Date: 2024-10-21 05:43+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -323,16 +323,12 @@ msgid "Next result"
 msgstr "התוצאה הבאה"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "חיפוש מעגלי"
+msgstr "השבתת חיפוש מעגלי"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "חיפוש מעגלי"
+msgstr "הפעלת חיפוש מעגלי"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
