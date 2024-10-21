@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-09-14 21:16+0000\n"
+"PO-Revision-Date: 2024-10-22 04:58+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -81,11 +81,11 @@ msgstr "Legutóbbi kimenet másolása"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Képernyő törlése"
 
 #: src/MainWindow.vala:192
 msgid "Reset"
-msgstr ""
+msgstr "Visszaállítás"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
@@ -324,16 +324,12 @@ msgid "Next result"
 msgstr "Következő találat"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Ciklikus keresés"
+msgstr "Ciklikus keresés letiltása"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Ciklikus keresés"
+msgstr "Ciklikus keresés engedélyezése"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
