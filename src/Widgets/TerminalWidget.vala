@@ -35,7 +35,8 @@ namespace Terminal {
 
         GLib.Pid child_pid;
 
-        public unowned MainWindow main_window;
+        public unowned MainWindow main_window { get; construct set; }
+
         private Terminal.Application app {
             get {
                 return main_window.app;
@@ -60,6 +61,8 @@ namespace Terminal {
 
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
+        public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
+        public const string ACTION_RESET = "term.reset";
         public const string ACTION_PASTE = "term.paste";
         public const string ACTION_RELOAD = "term.reload";
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
@@ -68,8 +71,11 @@ namespace Terminal {
         public const string ACTION_ZOOM_IN = "term.zoom::in";
         public const string ACTION_ZOOM_OUT = "term.zoom::out";
 
+
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
+        public const string[] ACCELS_CLEAR_SCREEN = { "<Control>L", null };
+        public const string[] ACCELS_RESET = { "<Control>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
@@ -134,6 +140,8 @@ namespace Terminal {
 
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
+        private GLib.SimpleAction clear_screen_action;
+        private GLib.SimpleAction reset_action;
         private GLib.SimpleAction paste_action;
         private GLib.SimpleAction scroll_to_command_action;
 
@@ -145,7 +153,8 @@ namespace Terminal {
         private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
         private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress press_gesture;
+        private Gtk.GestureMultiPress primary_gesture;
+        private Gtk.GestureMultiPress secondary_gesture;
 
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
@@ -153,13 +162,15 @@ namespace Terminal {
         public signal void cwd_changed (string cwd);
 
         public TerminalWidget (MainWindow parent_window) {
+            Object (
+                main_window: parent_window
+            );
+        }
+
+        construct {
             pointer_autohide = true;
-
             terminal_id = "%i".printf (terminal_id_counter++);
-
             init_complete = false;
-
-            main_window = parent_window;
             child_has_exited = false;
             killed = false;
 
@@ -208,12 +219,17 @@ namespace Terminal {
                 return true;
             });
 
-            press_gesture = new Gtk.GestureMultiPress (this) {
+            primary_gesture = new Gtk.GestureMultiPress (this) {
                 propagation_phase = TARGET,
-                button = 0
+                button = 1
             };
-            press_gesture.pressed.connect (button_pressed);
-            press_gesture.released.connect (button_released);
+            primary_gesture.pressed.connect (primary_pressed);
+
+            secondary_gesture = new Gtk.GestureMultiPress (this) {
+                propagation_phase = TARGET,
+                button = 3
+            };
+            secondary_gesture.released.connect (secondary_released);
 
             // send events to key controller manually, since key_released isn't emitted in any propagation phase
             event.connect (key_controller.handle_event);
@@ -259,6 +275,16 @@ namespace Terminal {
             copy_output_action.activate.connect (copy_output);
             action_group.add_action (copy_output_action);
 
+            clear_screen_action = new GLib.SimpleAction ("clear-screen", null);
+            clear_screen_action.set_enabled (true);
+            clear_screen_action.activate.connect (action_clear_screen);
+            action_group.add_action (clear_screen_action);
+
+            reset_action = new GLib.SimpleAction ("reset", null);
+            reset_action.set_enabled (true);
+            reset_action.activate.connect (action_reset);
+            action_group.add_action (reset_action);
+
             paste_action = new GLib.SimpleAction ("paste", null);
             paste_action.activate.connect (() => paste_clipboard.emit ());
             action_group.add_action (paste_action);
@@ -276,6 +302,7 @@ namespace Terminal {
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
 
+            //TODO In Gtk4 replace action with `add_binding_signal ()``
             var zoom_action = new GLib.SimpleAction ("zoom", VariantType.STRING);
             zoom_action.activate.connect ((p) => {
                 switch ((string) p) {
@@ -286,7 +313,7 @@ namespace Terminal {
                         decrease_font_size ();
                         break;
                     case "default":
-                        font_scale = 1.0;
+                        default_font_size ();
                         break;
                 }
             });
@@ -298,33 +325,28 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void button_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
-            link_uri = null;
+        private void secondary_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = get_link (gesture.get_last_event (null));
 
-            if (gesture.get_current_button () == Gdk.BUTTON_SECONDARY) {
-                link_uri = get_link (gesture.get_last_event (null));
-
-                if (link_uri != null) {
-                    copy_action.set_enabled (true);
-                }
-
-                popup_context_menu ({ (int) x, (int) y });
-
-                gesture.set_state (CLAIMED);
+            if (link_uri != null) {
+                copy_action.set_enabled (true);
             }
+
+            popup_context_menu ({ (int) x, (int) y });
+
+            gesture.set_state (CLAIMED);
         }
 
-        private void button_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
-            if (gesture.get_current_button () == Gdk.BUTTON_PRIMARY) {
-                if (allow_hyperlink) {
-                    link_uri = get_link (gesture.get_last_event (null));
+        private void primary_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            link_uri = null;
+            if (allow_hyperlink) {
+                link_uri = get_link (gesture.get_last_event (null));
 
-                    if (link_uri != null && !get_has_selection ()) {
-                       main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
-                    }
-                } else {
-                    allow_hyperlink = true;
+                if (link_uri != null && !get_has_selection ()) {
+                   main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
                 }
+            } else {
+                allow_hyperlink = true;
             }
         }
 
@@ -425,6 +447,16 @@ namespace Terminal {
                 }
             }
 
+            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
+                action_reset ();
+                return true;
+            }
+
+            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
+                action_clear_screen ();
+                return true;
+            }
+
             if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
                 return !scroll_to_command_action.enabled;
             }
@@ -471,6 +503,18 @@ namespace Terminal {
         private void copy_output () {
             var output = get_last_output ();
             clipboard.set_text (output, output.length);
+        }
+
+        private void action_clear_screen () {
+            debug ("Clear screen only");
+            // Should we clear scrollback too?
+            run_program ("clear -x", null);
+        }
+
+        private void action_reset () {
+            debug ("Reset");
+            // This also clears the screen and the scrollback
+            run_program ("reset", null);
         }
 
         protected override void paste_clipboard () {
@@ -711,6 +755,10 @@ namespace Terminal {
 
         protected override void decrease_font_size () {
             font_scale -= 0.1;
+        }
+
+        public void default_font_size () {
+            font_scale = 1.0;
         }
 
         public bool is_init_complete () {
