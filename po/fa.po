@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-10-17 20:36+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -334,8 +334,12 @@ msgstr "نتیجه قبلی"
 msgid "Next result"
 msgstr "نتیجه بعدی"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+msgid "Disable cyclic search"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:62
+msgid "Enable cyclic search"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:40
