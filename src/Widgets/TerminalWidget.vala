@@ -777,9 +777,8 @@ namespace Terminal {
                     string path;
                     File file;
                     for (var i = 0; i < uris.length; i++) {
-                        // Get sanitized unquoted path (Files sends uris that are escaped and quoted)
-                        // We do not want the `file://` scheme included
-                        // We assume dropped paths are absolute
+                        // Get unquoted path as some apps may drop uris that are escaped
+                        // and quoted.
                         string? unquoted_uri;
                         try {
                             unquoted_uri = Shell.unquote (uris[i]);
@@ -787,6 +786,8 @@ namespace Terminal {
                             warning ("Error unquoting %s. %s", uris[i], e.message);
                             unquoted_uri = uris[i];
                         }
+                        // Sanitize the path as we do not want the `file://` scheme included
+                        // and we assume dropped paths are absolute.
                         file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
                         path = file.get_path ();
                         if (path != null) {
