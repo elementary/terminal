@@ -114,7 +114,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
 
         var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
-            description = _("Show a warning dialog when pasting a command with 'sudo' or multiple lines"),
+            description = _("Warn when pasted text contains multiple or administrative commands"),
             active = Application.settings.get_boolean ("unsafe-paste-alert")
         };
 
