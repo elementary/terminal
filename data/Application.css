@@ -16,6 +16,7 @@
 * Boston, MA 02110-1301 USA
 */
 
+/* Make sure terminal background can use colors with alpha */
 .terminal-window.background {
     background-color: transparent;
 }
@@ -29,10 +30,26 @@ vte-terminal {
     padding: 0 9px;
 }
 
-.color-custom radio {
+.color-button radio {
+    padding: 10px;
+    -gtk-icon-shadow: none;
+}
+
+.color-button.custom radio {
     -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
 
-.color-custom radio:checked {
+.color-button.custom radio:checked {
     -gtk-icon-source: -gtk-icontheme("check-active-symbolic");
+}
+
+/* Workaround Hdy.Tabbar transparent area. Remove during GTK 4 port */
+tabbar .box {
+    margin: 0;
+    padding-top: 2px;
+}
+
+/* Workaround for context menu styles. Remove during GTK4 port */
+menu {
+    font: initial;
 }

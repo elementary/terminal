@@ -19,7 +19,7 @@
 
 namespace Terminal.Widgets {
 
-    public class SearchToolbar : Gtk.Grid {
+    public class SearchToolbar : Gtk.Box {
         private Gtk.ToggleButton cycle_button;
         private uint last_search_term_length = 0;
 
@@ -35,38 +35,44 @@ namespace Terminal.Widgets {
             search_entry.hexpand = true;
             search_entry.placeholder_text = _("Find");
 
-            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic");
             previous_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS);
             previous_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Up", "<Control><Shift>g"},
                 _("Previous result")
             );
 
-            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic");
             next_button.set_action_name (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT);
             next_button.tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Down", "<Control>g"},
                 _("Next result")
             );
 
-            cycle_button = new Gtk.ToggleButton ();
-            cycle_button.image = new Gtk.Image.from_icon_name (
-                "media-playlist-repeat-symbolic", Gtk.IconSize.SMALL_TOOLBAR
-            );
-            cycle_button.sensitive = false;
-            cycle_button.set_can_focus (false);
-            cycle_button.tooltip_text = _("Cyclic search");
+            cycle_button = new Gtk.ToggleButton () {
+                active = false,
+                sensitive = false,
+                image = new Gtk.Image ()
+            };
+            cycle_button.toggled.connect (() => {
+                if (cycle_button.active) {
+                    cycle_button.tooltip_text = _("Disable cyclic search");
+                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-symbolic";
+                } else {
+                    cycle_button.tooltip_text = _("Enable cyclic search");
+                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-disabled-symbolic";
+                }
+            });
+            // Toggle to update
+            // TODO Restore state from settings
+            cycle_button.toggled ();
 
-            var search_grid = new Gtk.Grid ();
-            search_grid.margin = 3;
-            search_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-            search_grid.add (search_entry);
-            search_grid.add (next_button);
-            search_grid.add (previous_button);
-            search_grid.add (cycle_button);
+            get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            add (search_entry);
+            add (next_button);
+            add (previous_button);
+            add (cycle_button);
 
-            add (search_grid);
-            get_style_context ().add_class ("search-bar");
             show_all ();
 
             grab_focus.connect (() => {

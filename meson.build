@@ -1,15 +1,15 @@
 project(
     'io.elementary.terminal',
     'vala', 'c',
-    version: '6.1.2',
+    version: '6.2.0',
     meson_version: '>=0.60'
 )
 
 valac = meson.get_compiler('vala')
 cc = meson.get_compiler('c')
 
-if valac.version().version_compare('<0.40')
-    error('Missing required dependency: valac >= 0.40')
+if valac.version().version_compare('<0.56')
+    error('Missing required dependency: valac >= 0.56')
 endif
 
 gnome = import('gnome')
@@ -37,7 +37,11 @@ conf_data.set_quoted('VERSION', meson.project_version())
 conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
 
-add_project_arguments('--vapidir', meson.current_source_dir() / 'vapi', language: 'vala')
+add_project_arguments(
+    '--vapidir', meson.current_source_dir() / 'vapi',
+    '--enable-experimental',
+    language: 'vala'
+)
 
 if glib_dep.version().version_compare('>=2.73.2')
     add_project_arguments('--define', 'HAS_GLIB_2_74', language: 'vala')
@@ -59,4 +63,4 @@ subdir('po/extra')
 subdir('data')
 subdir('src')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)
