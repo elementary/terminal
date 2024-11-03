@@ -780,7 +780,14 @@ namespace Terminal {
                         // Get sanitized unquoted path (Files sends uris that are escaped and quoted)
                         // We do not want the `file://` scheme included
                         // We assume dropped paths are absolute
-                        file = File.new_for_uri (Utils.sanitize_path (Shell.unquote (uris[i]), "", false));
+                        string? unquoted_uri;
+                        try {
+                            unquoted_uri = Shell.unquote (uris[i]);
+                        } catch (Error e) {
+                            warning ("Error unquoting %s. %s", uris[i], e.message);
+                            unquoted_uri = uris[i];
+                        }
+                        file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
                         path = file.get_path ();
                         if (path != null) {
                             uris[i] = Shell.quote (path) + " ";
