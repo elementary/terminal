@@ -112,6 +112,11 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             description = _("Shortcuts don’t require Shift; may interfere with CLI apps"),
             active = Application.settings.get_boolean ("natural-copy-paste")
         };
+        
+        var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
+            description = _("Show a warning dialog when pasting a command with 'sudo' or multiple lines"),
+            active = Application.settings.get_boolean ("unsafe-paste-alert")
+        };
 
         var audible_bell_button = new Granite.SwitchModelButton (_("Event Alerts")) {
             description = _("Notify for invalid input or multiple possible completions (subject to System Settings → Sound)"),
@@ -128,6 +133,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.add (theme_box);
         box.add (new Gtk.Separator (HORIZONTAL));
         box.add (natural_copy_paste_button);
+        box.add (unsafe_paste_alert_button);
         box.add (audible_bell_button);
         child = box;
 
@@ -145,6 +151,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         Application.settings.bind ("follow-system-style", follow_system_button, "active", DEFAULT);
         Application.settings.bind ("natural-copy-paste", natural_copy_paste_button, "active", DEFAULT);
+        Application.settings.bind ("unsafe-paste-alert", unsafe_paste_alert_button, "active", DEFAULT);
         Application.settings.bind ("audible-bell", audible_bell_button, "active", DEFAULT);
 
         Application.settings.changed.connect ((s, n) => {
