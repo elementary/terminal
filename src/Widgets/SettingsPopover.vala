@@ -112,7 +112,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             description = _("Shortcuts don’t require Shift; may interfere with CLI apps"),
             active = Application.settings.get_boolean ("natural-copy-paste")
         };
-        
+
         var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
             description = _("Show a warning dialog when pasting a command with 'sudo' or multiple lines"),
             active = Application.settings.get_boolean ("unsafe-paste-alert")
