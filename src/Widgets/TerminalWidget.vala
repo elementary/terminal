@@ -526,12 +526,12 @@ namespace Terminal {
         // Check pasted and dropped text before feeding to child;
         private void validated_feed (string? text) {
             if (text != null && text.validate ()) {
+                text._strip ();
                 unowned var toplevel = (MainWindow) get_toplevel ();
                 if (!toplevel.unsafe_ignored &&
                     Application.settings.get_boolean ("unsafe-paste-alert")) {
-                    string? warn_text = null;
 
-                    text._strip ();
+                    string? warn_text = null;
                     if ("\n" in text) {
                         warn_text = _("The pasted text may contain multiple commands");
                     } else if ("sudo" in text || "doas" in text) {
@@ -550,7 +550,7 @@ namespace Terminal {
                         dialog.present ();
                         return;
                     }
-
+                } else {
                     feed_child (text.data);
                 }
             }
