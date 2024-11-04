@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-11-04 13:03+0000\n"
+"PO-Revision-Date: 2024-11-04 13:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -375,10 +375,8 @@ msgid "Unsafe Paste Alert"
 msgstr "安全でない貼り付けを警告"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "貼り付けされたテキストは複数のコマンドを含んでいます"
+msgstr "複数行または管理者権限が必要なコマンドを貼り付けた場合に警告を表示します"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
