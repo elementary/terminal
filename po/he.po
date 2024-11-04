@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-10-21 05:43+0000\n"
+"PO-Revision-Date: 2024-11-04 11:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -368,13 +368,11 @@ msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפר
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "התראת הדבקה מפוקפקת"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "הטקסט שמיועד להדבקה מכיל יותר מפקודה אחת"
+msgstr "להזהיר כאשר טקסט מודבק מכיל מגוון פקודות או פקודות ניהוליות"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
