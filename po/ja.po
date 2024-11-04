@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-10-19 02:20+0000\n"
+"PO-Revision-Date: 2024-11-04 13:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -372,7 +372,7 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "安全でない貼り付けを警告"
 
 #: src/Widgets/SettingsPopover.vala:117
 #, fuzzy
