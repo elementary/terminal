@@ -534,9 +534,9 @@ namespace Terminal {
                     string? warn_text = null;
                     text._strip ();
 
-                    if ("\n" in text) {
+                    if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
                         warn_text = _("The pasted text may contain multiple commands");
-                    } else if ("sudo" in text || "doas" in text) {
+                    } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
                         warn_text = _("The pasted text may be trying to gain administrative access");
                     }
 
