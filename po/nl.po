@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -377,10 +377,20 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Sneltoetsen hebben geen Shift nodig; mogelijk stoort dit met CLI apps"
 
 #: src/Widgets/SettingsPopover.vala:116
-msgid "Event Alerts"
+msgid "Unsafe Paste Alert"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
+#, fuzzy
+#| msgid "The pasted text may contain multiple commands"
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "De geplakte tekst lijkt meerdere commando's te bevatten"
+
+#: src/Widgets/SettingsPopover.vala:121
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

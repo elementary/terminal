@@ -771,17 +771,32 @@ namespace Terminal {
                     var uris = selection_data.get_uris ();
                     string path;
                     File file;
-
                     for (var i = 0; i < uris.length; i++) {
-                         file = File.new_for_uri (uris[i]);
-                         if ((path = file.get_path ()) != null) {
-                             uris[i] = Shell.quote (path) + " ";
+                        // Get unquoted path as some apps may drop uris that are escaped
+                        // and quoted.
+                        string? unquoted_uri;
+                        try {
+                            unquoted_uri = Shell.unquote (uris[i]);
+                        } catch (Error e) {
+                            warning ("Error unquoting %s. %s", uris[i], e.message);
+                            unquoted_uri = uris[i];
+                        }
+                        // Sanitize the path as we do not want the `file://` scheme included
+                        // and we assume dropped paths are absolute.
+                        file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
+                        path = file.get_path ();
+                        if (path != null) {
+                            uris[i] = Shell.quote (path) + " ";
+                        } else {
+                            // Ignore unvalid paths
+                            uris[i] = "";
                         }
                     }
 
                     var uris_s = string.joinv ("", uris);
                     this.feed_child (uris_s.data);
                     break;
+
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var text = selection_data.get_text ();
