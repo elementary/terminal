@@ -547,7 +547,6 @@ namespace Terminal {
                         });
 
                         dialog.present ();
-                        return;
                     }
                 } else {
                     feed_child (text.data);
