@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"PO-Revision-Date: 2024-11-06 11:17+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
@@ -321,16 +321,12 @@ msgid "Next result"
 msgstr "下個結果"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "循環搜尋"
+msgstr "停用循環搜尋"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "循環搜尋"
+msgstr "啟用循環搜尋"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -370,13 +366,11 @@ msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "為不安全的貼上顯示警告"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "貼上的文字可能包含多項指令"
+msgstr "貼上的文字可能包含多個指令或管理員指令時顯示警告"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
