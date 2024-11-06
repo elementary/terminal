@@ -526,7 +526,6 @@ namespace Terminal {
         // Check pasted and dropped text before feeding to child;
         private void validated_feed (string? text) {
             if (text != null && text.validate ()) {
-                var stripped_text = text.strip ();
                 unowned var toplevel = (MainWindow) get_toplevel ();
                 if (!toplevel.unsafe_ignored &&
                     Application.settings.get_boolean ("unsafe-paste-alert")) {
@@ -539,7 +538,7 @@ namespace Terminal {
                     }
 
                     if (warn_text != null) {
-                        var dialog = new UnsafePasteDialog (toplevel, warn_text, stripped_text);
+                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
                         dialog.response.connect ((res) => {
                             dialog.destroy ();
                             if (res == Gtk.ResponseType.ACCEPT) {
