@@ -519,21 +519,18 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {
-                if (text == null) {
-                    return;
-                }
+                validated_feed (text);
+            });
+        }
 
-                if (!text.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-
+        // Check pasted and dropped text before feeding to child;
+        private void validated_feed (string? text) {
+            if (text != null && text.validate ()) {
                 unowned var toplevel = (MainWindow) get_toplevel ();
+                if (!toplevel.unsafe_ignored &&
+                    Application.settings.get_boolean ("unsafe-paste-alert")) {
 
-                if (!toplevel.unsafe_ignored && Application.settings.get_boolean ("unsafe-paste-alert")) {
                     string? warn_text = null;
-                    text._strip ();
-
                     if ("\n" in text) {
                         warn_text = _("The pasted text may contain multiple commands");
                     } else if ("sudo" in text || "doas" in text) {
@@ -541,24 +538,20 @@ namespace Terminal {
                     }
 
                     if (warn_text != null) {
-                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
+                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
                         dialog.response.connect ((res) => {
-                            if (res == Gtk.ResponseType.ACCEPT) {
-                               remember_command_start_position ();
-                               base.paste_clipboard ();
-                            }
-
                             dialog.destroy ();
+                            if (res == Gtk.ResponseType.ACCEPT) {
+                                feed_child (text.data);
+                            }
                         });
 
                         dialog.present ();
-                        return;
                     }
+                } else {
+                    feed_child (text.data);
                 }
-
-                remember_command_start_position ();
-                base.paste_clipboard ();
-            });
+            }
         }
 
         private void update_theme () {
@@ -804,11 +797,8 @@ namespace Terminal {
 
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
-                    var data = selection_data.get_text ();
-                    if (data != null) {
-                        this.feed_child (data.data);
-                    }
-
+                    var text = selection_data.get_text ();
+                    validated_feed (text);
                     break;
             }
         }
