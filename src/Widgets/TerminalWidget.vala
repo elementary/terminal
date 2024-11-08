@@ -548,7 +548,7 @@ namespace Terminal {
             }
 
             // No user interaction for safe commands
-            if (warn_text != null) {
+            if (warn_text == null) {
                 feed_child (text.data);
                 return;
             }
