@@ -542,6 +542,7 @@ namespace Terminal {
                         dialog.response.connect ((res) => {
                             dialog.destroy ();
                             if (res == Gtk.ResponseType.ACCEPT) {
+                                toplevel.unsafe_ignored = true;
                                 feed_child (text.data);
                             }
                         });
