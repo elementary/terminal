@@ -530,12 +530,8 @@ namespace Terminal {
                 return;
             }
 
-            unowned var toplevel = (MainWindow) get_toplevel ();
-
-            // No user interaction because of user's preference or previous selection
-            if (toplevel.unsafe_ignored ||
-                !Application.settings.get_boolean ("unsafe-paste-alert")) {
-
+            // No user interaction because of user's preference
+            if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
                 feed_child (text.data);
                 return;
             }
@@ -554,6 +550,7 @@ namespace Terminal {
             }
 
             // Ask user for interaction for unsafe commands
+            unowned var toplevel = (MainWindow) get_toplevel ();
             var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
             dialog.response.connect ((res) => {
                 dialog.destroy ();
