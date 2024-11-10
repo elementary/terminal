@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-10-22 04:58+0000\n"
+"PO-Revision-Date: 2024-11-10 01:19+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
 "terminal/ka/>\n"
@@ -371,13 +371,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "საშიში ჩასმის განგაში"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
+msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრძანებას შეიცავდეს"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
