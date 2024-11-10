@@ -525,33 +525,41 @@ namespace Terminal {
 
         // Check pasted and dropped text before feeding to child;
         private void validated_feed (string? text) {
-            if (text != null && text.validate ()) {
-                if (Application.settings.get_boolean ("unsafe-paste-alert")) {
-                    string? warn_text = null;
-                    if ("\n" in text) {
-                        warn_text = _("The pasted text may contain multiple commands");
-                    } else if ("sudo" in text || "doas" in text) {
-                        warn_text = _("The pasted text may be trying to gain administrative access");
-                    }
+            // Do nothing when text is invalid
+            if (text == null || !text.validate ()) {
+                return;
+            }
 
-                    if (warn_text != null) {
-                        unowned var toplevel = (MainWindow) get_toplevel ();
-                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
-                        dialog.response.connect ((res) => {
-                            dialog.destroy ();
-                            if (res == Gtk.ResponseType.ACCEPT) {
-                                feed_child (text.data);
-                            }
-                        });
+            // No user interaction because of user's preference
+            if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
+                feed_child (text.data);
+                return;
+            }
 
-                        dialog.present ();
-                    } else {
-                        feed_child (text.data);
-                    }
-                } else {
+            string? warn_text = null;
+            if ("\n" in text) {
+                warn_text = _("The pasted text may contain multiple commands");
+            } else if ("sudo" in text || "doas" in text) {
+                warn_text = _("The pasted text may be trying to gain administrative access");
+            }
+
+            // No user interaction for safe commands
+            if (warn_text == null) {
+                feed_child (text.data);
+                return;
+            }
+
+            // Ask user for interaction for unsafe commands
+            unowned var toplevel = (MainWindow) get_toplevel ();
+            var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
+            dialog.response.connect ((res) => {
+                dialog.destroy ();
+                if (res == Gtk.ResponseType.ACCEPT) {
                     feed_child (text.data);
                 }
-            }
+            });
+
+            dialog.present ();
         }
 
         private void update_theme () {
