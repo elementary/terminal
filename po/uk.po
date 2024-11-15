@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-20 00:19+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"PO-Revision-Date: 2024-11-07 04:31+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -372,10 +372,19 @@ msgstr ""
 "програми CLI"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "Застереження про небезпечне вставлення"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+"Попереджати, якщо вставлений текст містить кілька або адміністративні команди"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "Сповіщення про події"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

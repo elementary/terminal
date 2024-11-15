@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-13 18:16+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"PO-Revision-Date: 2024-11-06 03:27+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "terminal/terminal/en_GB/>\n"
@@ -325,16 +325,12 @@ msgid "Next result"
 msgstr "Next result"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Cyclic search"
+msgstr "Disable cyclic search"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Cyclic search"
+msgstr "Enable cyclic search"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -373,10 +369,18 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Shortcuts don’t require Shift; may interfere with CLI apps"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "Unsafe Paste Alert"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "Warn when pasted text contains multiple or administrative commands"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "Event Alerts"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

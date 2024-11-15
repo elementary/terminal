@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
 "PO-Revision-Date: 2015-12-05 14:39+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Tamil <ta@li.org>\n"
@@ -379,10 +379,18 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
-msgid "Event Alerts"
+msgid "Unsafe Paste Alert"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:121
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

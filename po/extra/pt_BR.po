@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2021-07-17 17:21+0000\n"
-"Last-Translator: lucaspifonseca <lucaspifonseca@gmail.com>\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"PO-Revision-Date: 2024-11-06 00:53+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "terminal/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -48,11 +48,12 @@ msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "Permitir ativar e desativar alertas de eventos no menu do aplicativo"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
+"Salve guias e zooms nas configurações de estado salvas quando elas mudarem"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -68,7 +69,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "Suprimir guia padrão indesejada ao abrir uma nova janela"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 #: data/io.elementary.terminal.appdata.xml.in:85
@@ -83,6 +84,8 @@ msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"Adicione os atalhos \"Ctrl + PageUp\" e \"Ctrl + PageDown\" para alternar "
+"entre as guias"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Properly unexport the DBus Interface on Exit"
@@ -90,7 +93,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:112
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "Opção para seguir a preferência de estilo escuro do sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:113
 #, fuzzy
@@ -101,29 +104,31 @@ msgstr "Validar paleta personalizada"
 #: data/io.elementary.terminal.appdata.xml.in:115
 #: data/io.elementary.terminal.appdata.xml.in:134
 msgid "Fixes:"
-msgstr ""
+msgstr "Correções:"
 
 #: data/io.elementary.terminal.appdata.xml.in:117
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Os estilos padrões são totalmente opacos e atualizados com os valores "
+"upstream mais recentes do Solarized para melhorar a legibilidade"
 
 #: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Performance improvements"
-msgstr ""
+msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.terminal.appdata.xml.in:131
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Alternar guias com Alt + 1-9"
 
 #: data/io.elementary.terminal.appdata.xml.in:132
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Saia com Ctrl + Shift + Q"
 
 #: data/io.elementary.terminal.appdata.xml.in:136
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "Corrigir compilação no OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"

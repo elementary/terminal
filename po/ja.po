@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-19 02:20+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"PO-Revision-Date: 2024-11-04 13:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -371,10 +371,18 @@ msgstr ""
 "ります"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "安全でない貼り付けを警告"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "複数行または管理者権限が必要なコマンドを貼り付けた場合に警告を表示します"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "イベント警告"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 20:36+0000\n"
-"PO-Revision-Date: 2024-10-19 02:20+0000\n"
+"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"PO-Revision-Date: 2024-11-05 10:01+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -370,10 +370,19 @@ msgstr ""
 "Les dreceres no necessiten Maj.; això pot interferir en les aplicacions CLI."
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "Alerta d'enganxament no segur"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+"Avisa quan el text enganxat conté múltiples ordres o ordres administratives."
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "Alertes d'esdeveniments"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
