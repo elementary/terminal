@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"PO-Revision-Date: 2024-11-17 16:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -48,15 +48,15 @@ msgstr "יכולות חדשות:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "הצגת רמת תקריב בתצוגת על בעת שינוי המרחק"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
+msgstr "מימוש פעולות תפריט ההקשר פינוי ואיפוס עם מקשי האצה"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
+msgstr "הוספת מתג לאזהרת הדבקה מפוקפקת לתפריט היישום"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -71,23 +71,23 @@ msgstr "עדכונים נוספים:"
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
-msgstr ""
+msgstr "עדכון הסמל וחלונית העצה של מתג החיפוש המעגלי למצב שלו"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
+msgstr "התמקדות על הלשונית הנוכחית לאחר לחיצה על התראת סיום תהליך"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
-msgstr ""
+msgstr "לבדוק גם את „doas” כמו גם את „sudo” בעת הדבקת טקסט למסוף"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "לבדוק הדבקה מפוקפקת גם בעת גרירת טקסט"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "שיפור ניגודיות הצבע האפור בערכה הכהה"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
