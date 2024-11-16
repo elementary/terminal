@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-07-15 07:16+0000\n"
+"PO-Revision-Date: 2024-11-16 02:31+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -48,15 +48,17 @@ msgstr "新機能:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "拡大/縮小中に拡大率をオーバーレイ表示する機能を追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
+msgstr "“画面を消去”と“リセット”を、ショートカットキー付きのコンテキストメニューアク"
+"ションとして実装"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
+msgstr "安全でない貼り付け警告の有効/無効を切り替えるスイッチをアプリケーションメニュ"
+"ーに追加"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -71,23 +73,26 @@ msgstr "そのほかのアップデート:"
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
-msgstr ""
+msgstr "循環検索のトグルボタンのアイコンとツールチップをボタンの状態に応じて更新する"
+"ように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
+msgstr "プロセス完了通知をクリックした際、適切なタブにフォーカスするように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
-msgstr ""
+msgstr "ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\" "
+"も警告対象として確認するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "テキストをドラッグ & "
+"ドロップした際も、安全でない貼り付け確認を実施するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "ダークテーマでの灰色のコントラストを改善"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
