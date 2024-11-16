@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"PO-Revision-Date: 2024-11-17 16:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -49,14 +49,19 @@ msgstr "Nuevas características:"
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
 msgstr ""
+"Se muestra el nivel de acercamiento en la interfaz mientras se acerca/aleja"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr ""
+"Se implementaron aceleradores para las acciones contextuales de «Limpiar» y "
+"«Reiniciar»"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"Se agregó una opción para activar o desactivar la advertencia de pegado en "
+"el menú de la aplicación"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -72,22 +77,29 @@ msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Se actualizó el icono y la descripción emergente al activar o desactivar «"
+"Búsqueda cíclica» de acuerdo a su estado"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Ahora se enfoca en la pestaña correcta después de hacer clic en una "
+"notificación de proceso terminado"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgstr ""
+"Ahora se verifica por la existencia de «doas» y «sudo» cuando se pega texto "
+"en la terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
 msgstr ""
+"Ahora también se verifica por un pegado inseguro al arrastrar y soltar texto"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Se ha mejorado el contraste de grises en el tema oscuro"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
