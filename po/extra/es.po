@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"PO-Revision-Date: 2024-11-17 16:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -40,50 +40,99 @@ msgstr ""
 "puede utilizar para ejecutar programas disponibles en el sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:110
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:155
 msgid "New features:"
 msgstr "Nuevas características:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Show zoom level in overlay when zooming"
+msgstr ""
+"Se muestra el nivel de acercamiento en la interfaz mientras se acerca/aleja"
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Implement Clear and Reset context menu actions with accelerators"
+msgstr ""
+"Se implementaron aceleradores para las acciones contextuales de «Limpiar» y "
+"«Reiniciar»"
+
+#: data/io.elementary.terminal.appdata.xml.in:62
+msgid "Add toggle for unsafe paste warning to application menu"
+msgstr ""
+"Se agregó una opción para activar o desactivar la advertencia de pegado en "
+"el menú de la aplicación"
+
+#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:145
+#: data/io.elementary.terminal.appdata.xml.in:164
+msgid "Other updates:"
+msgstr "Otras actualizaciones:"
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid ""
+"Update the icon and tooltip of the cyclic search togglebutton according to "
+"its state"
+msgstr ""
+"Se actualizó el icono y la descripción emergente al activar o desactivar «"
+"Búsqueda cíclica» de acuerdo a su estado"
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+msgid "Focus correct tab after clicking on a process finished notification"
+msgstr ""
+"Ahora se enfoca en la pestaña correcta después de hacer clic en una "
+"notificación de proceso terminado"
+
+#: data/io.elementary.terminal.appdata.xml.in:68
+msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
+msgstr ""
+"Ahora se verifica por la existencia de «doas» y «sudo» cuando se pega texto "
+"en la terminal"
+
+#: data/io.elementary.terminal.appdata.xml.in:69
+msgid "Check for unsafe paste on dropping text as well"
+msgstr ""
+"Ahora también se verifica por un pegado inseguro al arrastrar y soltar texto"
+
+#: data/io.elementary.terminal.appdata.xml.in:70
+msgid "Improve gray contrast in dark theme"
+msgstr "Se ha mejorado el contraste de grises en el tema oscuro"
+
+#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:93
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:147
+#: data/io.elementary.terminal.appdata.xml.in:166
+msgid "Translation updates"
+msgstr "Traducciones actualizadas"
+
+#: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr ""
 "Ahora se permiten activar o desactivar alertas de eventos en el menú de la "
 "aplicación"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
 "Se agregaron opciones para guardar pestañas y para persistir los niveles de "
 "acercamiento en cada una al cambiar entre ellas"
 
-#: data/io.elementary.terminal.appdata.xml.in:63
-#: data/io.elementary.terminal.appdata.xml.in:81
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:119
-#: data/io.elementary.terminal.appdata.xml.in:138
-msgid "Other updates:"
-msgstr "Otras actualizaciones:"
-
-#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Document missing options in the man page"
 msgstr "Se documentaron opciones faltantes en la página del manual"
 
-#: data/io.elementary.terminal.appdata.xml.in:66
+#: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr ""
 "Se evita crear una pestaña predeterminada no deseada cuando se abre una "
 "nueva ventana"
 
-#: data/io.elementary.terminal.appdata.xml.in:67
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:100
-#: data/io.elementary.terminal.appdata.xml.in:121
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Translation updates"
-msgstr "Traducciones actualizadas"
-
-#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
@@ -91,24 +140,24 @@ msgstr ""
 "Se agregaron atajos «Ctrl + Av Pág» y «Ctrl + Re Pág» para cambiar entre "
 "pestañas"
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:110
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "Se finaliza apropiadamente la exportación de DBus al salir"
 
-#: data/io.elementary.terminal.appdata.xml.in:112
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Option to follow system dark style preference"
 msgstr "Se agregó una opción para utilizar un estilo visual oscuro del sistema"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Create a custom color palette"
 msgstr "Se puede crear una paleta de colores personalizada"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:141
+#: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fixes:"
 msgstr "Correcciones:"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:143
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -116,19 +165,19 @@ msgstr ""
 "Los estilos predeterminados son completamente opacos y se actualizaron a los "
 "últimos valores del estilo Solarized para mejorar la legibilidad"
 
-#: data/io.elementary.terminal.appdata.xml.in:122
+#: data/io.elementary.terminal.appdata.xml.in:148
 msgid "Performance improvements"
 msgstr "Mejoras de rendimiento"
 
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Switch tabs with Alt + 1-9"
 msgstr "Se puede cambiar de pestaña con Alt + 1-9"
 
-#: data/io.elementary.terminal.appdata.xml.in:132
+#: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "Se puede salir con Ctrl + Mayús + Q"
 
-#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:162
 msgid "Fix build on OS 7"
 msgstr "Se corrigió la compilación en OS 7"
 
