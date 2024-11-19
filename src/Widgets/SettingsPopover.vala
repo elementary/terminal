@@ -127,7 +127,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_top = 12,
         };
 
-// <<<<<<< HEAD
         box.append (font_size_box);
         box.append (new Gtk.Separator (HORIZONTAL));
         box.append (theme_box);
@@ -135,15 +134,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.append (natural_copy_paste_button);
         box.append (unsafe_paste_alert_button);
         box.append (audible_bell_button);
-// =======
-//         box.add (font_size_box);
-//         box.add (new Gtk.Separator (HORIZONTAL));
-//         box.add (theme_box);
-//         box.add (new Gtk.Separator (HORIZONTAL));
-//         box.add (natural_copy_paste_button);
-//         box.add (unsafe_paste_alert_button);
-//         box.add (audible_bell_button);
-// >>>>>>> master
+
         child = box;
 
         custom_button.toggled.connect (() => {

@@ -35,22 +35,11 @@ namespace Terminal.Widgets {
                 _("Next result")
             );
 
-// <<<<<<< HEAD
             cycle_button = new Gtk.ToggleButton () {
                 active = false,
                 sensitive = false,
                 can_focus = false
             };
-            // cycle_button.icon_name = "media-playlist-repeat-symbolic";
-            // cycle_button.sensitive = false;
-            // cycle_button.set_can_focus (false);
-            // cycle_button.tooltip_text = _("Cyclic search");
-// =======
-            // cycle_button = new Gtk.ToggleButton () {
-            //     active = false,
-            //     sensitive = false,
-            //     image = new Gtk.Image ()
-            // };
             cycle_button.toggled.connect (() => {
                 if (cycle_button.active) {
                     cycle_button.tooltip_text = _("Disable cyclic search");
@@ -63,7 +52,6 @@ namespace Terminal.Widgets {
             // Toggle to update
             // TODO Restore state from settings
             cycle_button.toggled ();
-// >>>>>>> master
 
             add_css_class (Granite.STYLE_CLASS_LINKED);
             append (search_entry);

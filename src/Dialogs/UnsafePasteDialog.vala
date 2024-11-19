@@ -29,7 +29,6 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
 
         var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), Gtk.ResponseType.ACCEPT);
         ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        // ignore_button.clicked.connect (on_ignore);
 
         set_default_response (Gtk.ResponseType.CANCEL);
 
