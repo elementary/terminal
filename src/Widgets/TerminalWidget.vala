@@ -847,13 +847,13 @@ namespace Terminal {
             }
         }
 
-        // public override void increase_font_size () {
-        //     font_scale += 0.1;
-        // }
+        public new void increase_font_size () {
+            font_scale += 0.1;
+        }
 
-        // public override void decrease_font_size () {
-        //     font_scale -= 0.1;
-        // }
+        public new void decrease_font_size () {
+            font_scale -= 0.1;
+        }
 
         public void default_font_size () {
             font_scale = 1.0;
