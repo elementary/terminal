@@ -648,8 +648,19 @@ namespace Terminal {
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
-            if (shell == "")
+            if (shell == "") {
                 shell = Vte.get_user_shell ();
+            }
+
+            if (shell == "") {
+                critical ("No user shell available");
+                return;
+            }
+
+            if (dir == "") {
+                debug ("Using fallback directory");
+                dir = "/";
+            }
 
             envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
