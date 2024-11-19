@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2024-10-08 09:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,59 +66,59 @@ msgstr "Prozess abgeschlossen"
 msgid "Process exited with errors"
 msgstr "Prozess mit Fehlern beendet"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr "Suchleiste anzeigen"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "Letzte Ausgabe kopieren"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr "Fenster leeren"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 msgid "Exit FullScreen"
 msgstr "Vollbild verlassen"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "Suchen …"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "Einstellungen"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "In %s anzeigen"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "Standardanwendung"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
@@ -325,8 +325,16 @@ msgstr "Vorheriges Ergebnis"
 msgid "Next result"
 msgstr "Nächstes Ergebnis"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Zyklisches Suchen"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "Zyklisches Suchen"
 
 #: src/Widgets/SettingsPopover.vala:40
@@ -367,10 +375,20 @@ msgstr ""
 "Tastaturkürzel erfordern keine Umschalttaste; könnte CLI-Anwendungen stören"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:117
+#, fuzzy
+#| msgid "The pasted text may contain multiple commands"
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "Warnhinweise"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -382,11 +400,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Der eingefügte Text versucht möglicherweise Administratorrechte zu erhalten"

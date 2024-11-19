@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"PO-Revision-Date: 2024-11-04 11:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -66,59 +66,59 @@ msgstr "התהליך הושלם"
 msgid "Process exited with errors"
 msgstr "התהליך הסתיים עם שגיאות"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr "הצגת סרגל חיפוש"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "העתקה"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr "פינוי המסך"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr "איפוס"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "הדבקה"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "בחירת הכל"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 msgid "Exit FullScreen"
 msgstr "יציאה ממסך מלא"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "הגדרות"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -322,9 +322,13 @@ msgstr "התוצאה הקודמת"
 msgid "Next result"
 msgstr "התוצאה הבאה"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
-msgstr "חיפוש מעגלי"
+#: src/Widgets/SearchToolbar.vala:59
+msgid "Disable cyclic search"
+msgstr "השבתת חיפוש מעגלי"
+
+#: src/Widgets/SearchToolbar.vala:62
+msgid "Enable cyclic search"
+msgstr "הפעלת חיפוש מעגלי"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -363,10 +367,18 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "התראת הדבקה מפוקפקת"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "להזהיר כאשר טקסט מודבק מכיל מגוון פקודות או פקודות ניהוליות"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "התראות על אירועים"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -377,11 +389,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "מסוף"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "הטקסט שמיועד להדבקה מכיל יותר מפקודה אחת"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "הטקסט שמיועד להדבקה חשוד בניסיון השגת גישה ניהולית"
 

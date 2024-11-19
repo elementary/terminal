@@ -544,13 +544,14 @@ namespace Terminal {
         }
 
         protected override void paste_clipboard () {
+// <<<<<<< HEAD
             var content_provider = clipboard.get_content ();
             if (content_provider != null) {
                 try {
                     Value val = Value (typeof (string));
                     content_provider.get_value (ref val);
                     var text = val.dup_string ();
-                    handle_paste (text);
+                    validated_feed (text);
                 } catch (Error e) {
                     warning ("Error getting clipboard content - %s", e.message);
                     return;
@@ -559,7 +560,7 @@ namespace Terminal {
                 clipboard.read_text_async.begin (null, (obj, res) => {
                     try {
                         var text = clipboard.read_text_async.end (res);
-                        handle_paste (text);
+                        validated_feed (text);
                     } catch (Error e) {
                         warning ("Error reading text from clipboard - %s", e.message);
                     }
@@ -567,43 +568,90 @@ namespace Terminal {
             }
         }
 
-        private void handle_paste (string text) {
+//         private void handle_paste (string text) {
+//             if (text == null || !text.validate ()) {
+//                 warning ("Pasted text is null or invalid");
+//                 return;
+//             }
+
+//             unowned var toplevel = (MainWindow) get_root ();
+//             if (!toplevel.unsafe_ignored &&
+//                  Application.settings.get_boolean ("unsafe-paste-alert")) {
+
+//                 string? warn_text = null;
+//                 text._strip ();
+
+//                 if ("\n" in text) {
+//                     warn_text = _("The pasted text may contain multiple commands");
+//                 } else if ("sudo" in text || "doas" in text) {
+//                     warn_text = _("The pasted text may be trying to gain administrative access");
+//                 }
+
+//                 if (warn_text != null) {
+//                     var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
+//                     dialog.response.connect ((res) => {
+//                         if (res == Gtk.ResponseType.ACCEPT) {
+//                            remember_command_start_position ();
+//                            base.paste_clipboard ();
+//                         }
+
+//                         dialog.destroy ();
+//                     });
+
+//                     dialog.present ();
+//                     return;
+//                 }
+//             }
+
+//             remember_command_start_position ();
+//             base.paste_clipboard ();
+// =======
+//             clipboard.request_text ((clipboard, text) => {
+//                 validated_feed (text);
+//             });
+// >>>>>>> master
+        // }
+
+        // Check pasted and dropped text before feeding to child;
+        private void validated_feed (string? text) {
+            // Do nothing when text is invalid
             if (text == null || !text.validate ()) {
-                warning ("Pasted text is null or invalid");
                 return;
             }
 
-            unowned var toplevel = (MainWindow) get_root ();
-            if (!toplevel.unsafe_ignored &&
-                 Application.settings.get_boolean ("unsafe-paste-alert")) {
-
-                string? warn_text = null;
-                text._strip ();
-
-                if ("\n" in text) {
-                    warn_text = _("The pasted text may contain multiple commands");
-                } else if ("sudo" in text || "doas" in text) {
-                    warn_text = _("The pasted text may be trying to gain administrative access");
-                }
-
-                if (warn_text != null) {
-                    var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
-                    dialog.response.connect ((res) => {
-                        if (res == Gtk.ResponseType.ACCEPT) {
-                           remember_command_start_position ();
-                           base.paste_clipboard ();
-                        }
-
-                        dialog.destroy ();
-                    });
-
-                    dialog.present ();
-                    return;
-                }
+            // No user interaction because of user's preference
+            if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
+                remember_command_start_position ();
+                feed_child (text.data);
+                return;
             }
 
-            remember_command_start_position ();
-            base.paste_clipboard ();
+            string? warn_text = null;
+            if ("\n" in text) {
+                warn_text = _("The pasted text may contain multiple commands");
+            } else if ("sudo" in text || "doas" in text) {
+                warn_text = _("The pasted text may be trying to gain administrative access");
+            }
+
+            // No user interaction for safe commands
+            if (warn_text == null) {
+                remember_command_start_position ();
+                feed_child (text.data);
+                return;
+            }
+
+            // Ask user for interaction for unsafe commands
+            unowned var toplevel = (MainWindow) get_root ();
+            var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
+            dialog.response.connect ((res) => {
+                dialog.destroy ();
+                if (res == Gtk.ResponseType.ACCEPT) {
+                    remember_command_start_position ();
+                    feed_child (text.data);
+                }
+            });
+
+            dialog.present ();
         }
 
         private void update_theme () {
@@ -624,7 +672,6 @@ namespace Terminal {
                 Adw.StyleManager.get_default ().set_color_scheme (
                     prefer_dark_style ? Adw.ColorScheme.PREFER_DARK : Adw.ColorScheme.PREFER_LIGHT
                 );
-
                 theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
             }
 
@@ -800,13 +847,13 @@ namespace Terminal {
             }
         }
 
-        public override void increase_font_size () {
-            font_scale += 0.1;
-        }
+        // public override void increase_font_size () {
+        //     font_scale += 0.1;
+        // }
 
-        public override void decrease_font_size () {
-            font_scale -= 0.1;
-        }
+        // public override void decrease_font_size () {
+        //     font_scale -= 0.1;
+        // }
 
         public void default_font_size () {
             font_scale = 1.0;
@@ -820,6 +867,7 @@ namespace Terminal {
             init_complete = true;
         }
 
+// <<<<<<< HEAD
         private bool on_drop (Value val, double x, double y) {
             var uris = Uri.list_extract_uris (val.dup_string ());
             //TODO Gtk4 Port: Deal with text other than uri list
@@ -836,6 +884,46 @@ namespace Terminal {
                         }
                     }
                 } catch {}
+// =======
+//         public void drag_received (Gdk.DragContext context, int x, int y,
+//                                    Gtk.SelectionData selection_data, uint target_type, uint time_) {
+//             switch (target_type) {
+//                 case DropTargets.URILIST:
+//                     var uris = selection_data.get_uris ();
+//                     string path;
+//                     File file;
+//                     for (var i = 0; i < uris.length; i++) {
+//                         // Get unquoted path as some apps may drop uris that are escaped
+//                         // and quoted.
+//                         string? unquoted_uri;
+//                         try {
+//                             unquoted_uri = Shell.unquote (uris[i]);
+//                         } catch (Error e) {
+//                             warning ("Error unquoting %s. %s", uris[i], e.message);
+//                             unquoted_uri = uris[i];
+//                         }
+//                         // Sanitize the path as we do not want the `file://` scheme included
+//                         // and we assume dropped paths are absolute.
+//                         file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
+//                         path = file.get_path ();
+//                         if (path != null) {
+//                             uris[i] = Shell.quote (path) + " ";
+//                         } else {
+//                             // Ignore unvalid paths
+//                             uris[i] = "";
+//                         }
+//                     }
+
+//                     var uris_s = string.joinv ("", uris);
+//                     this.feed_child (uris_s.data);
+//                     break;
+
+//                 case DropTargets.STRING:
+//                 case DropTargets.TEXT:
+//                     var text = selection_data.get_text ();
+//                     validated_feed (text);
+//                     break;
+// >>>>>>> master
             }
 
             var uris_s = string.joinv ("", uris);

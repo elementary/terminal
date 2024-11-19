@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"PO-Revision-Date: 2024-11-06 11:17+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "terminal/terminal/zh_Hant/>\n"
@@ -66,59 +66,59 @@ msgstr "程序已完成"
 msgid "Process exited with errors"
 msgstr "程序錯誤地結束"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr "顯示搜尋列"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "複製上次的輸出"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr "清除畫面"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr "重設"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 msgid "Exit FullScreen"
 msgstr "離開全螢幕"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "設定"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中顯示"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "預設應用程式"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
 
@@ -320,9 +320,13 @@ msgstr "上個結果"
 msgid "Next result"
 msgstr "下個結果"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
-msgstr "循環搜尋"
+#: src/Widgets/SearchToolbar.vala:59
+msgid "Disable cyclic search"
+msgstr "停用循環搜尋"
+
+#: src/Widgets/SearchToolbar.vala:62
+msgid "Enable cyclic search"
+msgstr "啟用循環搜尋"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -361,10 +365,18 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
 #: src/Widgets/SettingsPopover.vala:116
+msgid "Unsafe Paste Alert"
+msgstr "為不安全的貼上顯示警告"
+
+#: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "貼上的文字可能包含多個指令或管理員指令時顯示警告"
+
+#: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
 msgstr "事件警告"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -374,11 +386,11 @@ msgstr "輸入錯誤或有多個補完候補時提醒（受系統設定→音效
 msgid "Terminal"
 msgstr "終端機"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "貼上的文字可能包含多項指令"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 

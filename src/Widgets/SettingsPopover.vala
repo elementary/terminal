@@ -112,6 +112,11 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             active = Application.settings.get_boolean ("natural-copy-paste")
         };
 
+        var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
+            description = _("Warn when pasted text contains multiple or administrative commands"),
+            active = Application.settings.get_boolean ("unsafe-paste-alert")
+        };
+
         var audible_bell_button = new Granite.SwitchModelButton (_("Event Alerts")) {
             description = _("Notify for invalid input or multiple possible completions (subject to System Settings → Sound)"),
             active = Application.settings.get_boolean ("audible-bell")
@@ -122,12 +127,23 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_top = 12,
         };
 
+// <<<<<<< HEAD
         box.append (font_size_box);
         box.append (new Gtk.Separator (HORIZONTAL));
         box.append (theme_box);
         box.append (new Gtk.Separator (HORIZONTAL));
         box.append (natural_copy_paste_button);
+        box.append (unsafe_paste_alert_button);
         box.append (audible_bell_button);
+// =======
+//         box.add (font_size_box);
+//         box.add (new Gtk.Separator (HORIZONTAL));
+//         box.add (theme_box);
+//         box.add (new Gtk.Separator (HORIZONTAL));
+//         box.add (natural_copy_paste_button);
+//         box.add (unsafe_paste_alert_button);
+//         box.add (audible_bell_button);
+// >>>>>>> master
         child = box;
 
         custom_button.toggled.connect (() => {
@@ -144,6 +160,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         Application.settings.bind ("follow-system-style", follow_system_button, "active", DEFAULT);
         Application.settings.bind ("natural-copy-paste", natural_copy_paste_button, "active", DEFAULT);
+        Application.settings.bind ("unsafe-paste-alert", unsafe_paste_alert_button, "active", DEFAULT);
         Application.settings.bind ("audible-bell", audible_bell_button, "active", DEFAULT);
 
         Application.settings.changed.connect ((s, n) => {

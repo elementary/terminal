@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -75,62 +75,62 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "Kopiér"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "Kopier Forrige Resultat"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "Indsæt"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "Markér alt"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Fuld skærm"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "Indstillinger"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Vis version"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "Skjul søgebar"
 
@@ -338,8 +338,16 @@ msgstr "Forrige resultat"
 msgid "Next result"
 msgstr "Næste resultat"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Cyklisk søgning"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "Cyklisk søgning"
 
 #: src/Widgets/SettingsPopover.vala:40
@@ -379,10 +387,18 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Genveje behøver ikke brug af Shift; kan forstyrre CLI applikationer"
 
 #: src/Widgets/SettingsPopover.vala:116
-msgid "Event Alerts"
+msgid "Unsafe Paste Alert"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:121
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -392,11 +408,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 

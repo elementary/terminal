@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:15+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2022-09-21 21:57+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -75,61 +75,61 @@ msgstr "پڕۆسەکە کۆتایی هات"
 msgid "Process exited with errors"
 msgstr "پڕۆسەکە بە کۆمەڵێک کێشەوە کۆتایی هات"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "لەبەرگرتنەوە"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "کۆتا ئەنجام لەبەربگرەوە"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "لكاندن"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "هه‌مووی دیاری بکه‌"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "ته‌واوی تێکست"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "دۆزینەوە…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "ڕێکخستنەکان"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "پشاندان لە %s"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "بەرنامە بنەڕەتییەکان"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "شاردنەوەی شریتی دۆزینەوە"
 
@@ -334,8 +334,16 @@ msgstr "ئەنجامی پێشتر"
 msgid "Next result"
 msgstr "ئەنجامی دواتر"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:59
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "گەڕانی خولیی"
+
+#: src/Widgets/SearchToolbar.vala:62
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
 msgstr "گەڕانی خولیی"
 
 #: src/Widgets/SettingsPopover.vala:40
@@ -375,10 +383,20 @@ msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "قەتبڕەکان پێویستیان بە شفت نییە، لەوەیە لەگەڵ ئەپەکانی CLI کارلێك بکەن"
 
 #: src/Widgets/SettingsPopover.vala:116
-msgid "Event Alerts"
+msgid "Unsafe Paste Alert"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
+#, fuzzy
+#| msgid "The pasted text may contain multiple commands"
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لەخۆ بگرێت"
+
+#: src/Widgets/SettingsPopover.vala:121
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -388,11 +406,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "تێرمیناڵ"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لەخۆ بگرێت"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی بەڕێوەبەر بەدەست بهێنێت"
 
