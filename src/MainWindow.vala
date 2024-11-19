@@ -824,7 +824,7 @@ namespace Terminal {
                 uris.append (to_open);
                 appinfo.launch_uris_async.begin (uris, null, null, (obj, res) => {
                     try {
-                        var success = appinfo.launch_uris_async.end (res);
+                        appinfo.launch_uris_async.end (res);
                     } catch (Error e) {
                         warning ("Launcher failed with error %s", e.message);
                         //TODO Handle launch failure - message box? 
