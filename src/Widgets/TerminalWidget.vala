@@ -823,8 +823,8 @@ namespace Terminal {
         }
 
         private bool on_drop (Value val, double x, double y) {
+            var text = val.dup_string ();
             var uris = Uri.list_extract_uris (val.dup_string ());
-            //TODO Gtk4 Port: Deal with text other than uri list
             string path;
             File file;
 
@@ -836,12 +836,15 @@ namespace Terminal {
                         if ((path = file.get_path ()) != null) {
                             uris[i] = Shell.quote (path) + " ";
                         }
+
+                        feed_child (uris[i].data);
                     }
-                } catch {}
+                } catch (Error e) {
+                    // Validate non-uri text for safety before feeding
+                    validated_feed (uris[i]);
+                }
             }
 
-            var uris_s = string.joinv ("", uris);
-            this.feed_child (uris_s.data);
             return true;
         }
 
