@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"PO-Revision-Date: 2024-11-19 15:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -48,15 +48,19 @@ msgstr "Funcions noves:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "Mostra el nivell d'ampliació en superposició quan amplieu la vista"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr ""
+"Implementació d'accions de menú contextual Esborra i Restableix amb "
+"acceleradors"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"S'afegeix l'opció per a l'advertència d'enganxament no segur al menú de "
+"l'aplicació"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -72,22 +76,26 @@ msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Actualització de la icona i la informació sobre eines del botó de commutació "
+"de cerca cíclica segons el seu estat"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Se centra la pestanya correcta després de fer clic en una notificació de "
+"procés acabat"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
-msgstr ""
+msgstr "Comprova si hi ha doas i sudo quan el text s'enganxa al terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "Comprova també si hi ha una enganxament no segur en deixar anar text"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Millora el contrast de grisos en el tema fosc"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
