@@ -278,7 +278,7 @@ stdout.printf ("#Got option commandline\n");
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
 stdout.printf ("#Got option minimize\n");
             window.minimize ();
-        } else if (!is_testing){
+        } else if (!is_testing) {
 stdout.printf ("#presenting window\n");
             window.present ();
         }
