@@ -43,14 +43,14 @@ test_env = [
     'G_TEST_SRCDIR=' + meson.current_source_dir(),
     'G_TEST_BUILDDIR=' + meson.current_build_dir(),
     'GSETTINGS_SCHEMA_DIR=' + meson.project_build_root() / 'data',
-    'GSETTINGS_BACKEND=memory',
-    'GIO_USE_VFS=local'
+    # 'GSETTINGS_BACKEND=memory',
+    # 'GIO_USE_VFS=local'
 ]
 
 add_test_setup(
   'headless',
-  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24 -noreset' ],
-  is_default: true
+  exe_wrapper: [ find_program('xvfb-run')],
+  is_default: false
 )
 
 app_test = executable(
@@ -60,10 +60,10 @@ app_test = executable(
     vala_args: [ '--define', 'TESTS']
 )
 
-# test(
-#     'Application',
-#     app_test,
-#     env: test_env,
-#     protocol: 'tap',
-#     depends: test_schemas
-# )
+test(
+    'Application',
+    app_test,
+    env: test_env,
+    protocol: 'tap',
+    depends: test_schemas
+)

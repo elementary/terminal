@@ -238,6 +238,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
+stdout.printf ("#Entering app commandline \n");
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
@@ -245,11 +246,13 @@ public class Terminal.Application : Gtk.Application {
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
+        stdout.printf ("#Creating new window \n");
             window = new MainWindow (this, is_first_window);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
-        unowned var working_directory = command_line.get_cwd ();
+        unowned var working_directory = command_line.get_cwd () ?? "NULL";
+stdout.printf ("#Current working dir %s\n", working_directory);
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
@@ -259,24 +262,28 @@ public class Terminal.Application : Gtk.Application {
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
+stdout.printf ("#Got option execute\n");
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
                     window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
+stdout.printf ("#Got option commandline\n");
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else if (new_tab || window.notebook.n_pages == 0) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
+stdout.printf ("#Got option minimize\n");
             window.minimize ();
-        } else {
+        } else if (!is_testing){
+stdout.printf ("#presenting window\n");
             window.present ();
         }
 
-        if (is_first_window) {
+        if (is_first_window && !is_testing) {
             /*
             * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
             * Set maximize after height/width else window is min size on unmaximize
@@ -291,6 +298,7 @@ public class Terminal.Application : Gtk.Application {
 
             saved_state.bind ("is-maximized", window, "maximized", SettingsBindFlags.SET);
         }
+
         return 0;
     }
 
