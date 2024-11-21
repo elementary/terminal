@@ -33,7 +33,7 @@ namespace Terminal {
         private bool init_complete;
         public bool resized {get; set;}
 
-        GLib.Pid child_pid;
+        GLib.Pid child_pid = -1;
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -665,29 +665,58 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
-            try {
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-            } catch (Error e) {
-                warning (e.message);
-            }
+            this.spawn_async (
+                Vte.PtyFlags.DEFAULT,
+                dir,
+                { shell },
+                envv,
+                SpawnFlags.SEARCH_PATH,
+                null,
+                -1,
+                null,
+                (terminal, pid, error) => {
+                    if (pid != -1) {
+                        this.child_pid = pid;
+                    } else {
+                        warning (error.message);
+                    }
+                }
+            );
 
             check_cwd_changed ();
         }
 
         public void run_program (string _program_string, string? working_directory) {
+            string[]? program_with_args = null;
+            this.program_string = _program_string;
             try {
-                string[]? program_with_args = null;
-                this.program_string = _program_string;
                 Shell.parse_argv (program_string, out program_with_args);
-
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
                 feed ((e.message + "\r\n\r\n").data);
                 active_shell (working_directory);
+                return;
             }
+
+            this.spawn_async (
+                Vte.PtyFlags.DEFAULT,
+                working_directory,
+                program_with_args,
+                null,
+                SpawnFlags.SEARCH_PATH,
+                null,
+                -1,
+                null,
+                (terminal, pid, error) => {
+                    if (pid != -1) {
+                        this.child_pid = pid;
+                    } else {
+                        warning (error.message);
+                        feed ((error.message + "\r\n\r\n").data);
+                        active_shell (working_directory);
+                    }
+                }
+            );
         }
 
         public bool try_get_foreground_pid (out int pid) {
