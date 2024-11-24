@@ -235,8 +235,8 @@ stdout.printf (" App startup \n");
 
         base.startup ();
 stdout.printf (" after base startup \n");
-        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
-stdout.printf (" after saved state init \n");
+//         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+// stdout.printf (" after saved state init \n");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
 stdout.printf (" after settings init \n");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
@@ -279,8 +279,8 @@ stdout.printf (" after startup \n");
 
         Granite.init ();
 stdout.printf (" after Granite init \n");
-        Adw.init ();
-stdout.printf (" after Adw init \n");
+//         Adw.init ();
+// stdout.printf (" after Adw init \n");
 
 
 
