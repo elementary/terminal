@@ -26,15 +26,15 @@ public class Terminal.Application : Gtk.Application {
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
 
-stdout.printf ("# Application new \n");
+stdout.printf (" Application new \n");
     }
 
     construct {
         if (is_testing) {
-stdout.printf ("# App construct - is testing\n");
+stdout.printf (" App construct - is testing\n");
             send_process_finished_bash = "";
         } else {
-stdout.printf ("# App construct - NOT testing\n");
+stdout.printf (" App construct - NOT testing\n");
             send_process_finished_bash = "dbus-send --type=method_call " +
                                                   "--session --dest=io.elementary.terminal " +
                                                   "/io/elementary/terminal " +
@@ -83,16 +83,16 @@ stdout.printf ("# App construct - NOT testing\n");
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
         );
-stdout.printf ("# End of application construct \n");
+stdout.printf (" End of application construct \n");
     }
 
     ~Application () {
-stdout.printf ("# App destruct \n");
+stdout.printf (" App destruct \n");
 
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
-stdout.printf ("# app local commandline \n");
+stdout.printf (" app local commandline \n");
         bool show_help = false;
 
         for (uint i = 1; args[i] != null; i++) {
@@ -147,12 +147,12 @@ stdout.printf ("# app local commandline \n");
     }
 
     protected override int handle_local_options (VariantDict options) {
-stdout.printf ("# App handle local options \n");
+stdout.printf (" App handle local options \n");
         unowned string working_directory;
         unowned string[] args;
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
-stdout.printf ("# options lookup working directory \n");
+stdout.printf (" options lookup working directory \n");
             if (working_directory != "\0") {
                 Environment.set_current_dir (
                     Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
@@ -164,7 +164,7 @@ stdout.printf ("# options lookup working directory \n");
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
-stdout.printf ("# options lookup OPTION_REMAINING \n");
+stdout.printf (" options lookup OPTION_REMAINING \n");
             if (commandline != "\0") {
                 commandline += " %s".printf (string.joinv (" ", args));
             } else {
@@ -176,7 +176,7 @@ stdout.printf ("# options lookup OPTION_REMAINING \n");
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
-stdout.printf ("# return -1 \n");
+stdout.printf (" return -1 \n");
         return -1;
     }
 
@@ -231,7 +231,7 @@ stdout.printf ("# return -1 \n");
     }
 
     protected override void startup () {
-stdout.printf ("# App startup \n");
+stdout.printf (" App startup \n");
         base.startup ();
         Granite.init ();
         Adw.init ();
@@ -274,7 +274,7 @@ stdout.printf ("# App startup \n");
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
-stdout.printf ("# App commandline \n");
+stdout.printf (" App commandline \n");
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
@@ -282,13 +282,13 @@ stdout.printf ("# App commandline \n");
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
-        stdout.printf ("#Creating new window \n");
+        stdout.printf ("Creating new window \n");
             window = new MainWindow (this, is_first_window);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
         unowned var working_directory = command_line.get_cwd () ?? "NULL";
-stdout.printf ("#Current working dir %s\n", working_directory);
+stdout.printf ("Current working dir %s\n", working_directory);
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
@@ -298,24 +298,24 @@ stdout.printf ("#Current working dir %s\n", working_directory);
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
-stdout.printf ("#Got option execute\n");
+stdout.printf ("Got option execute\n");
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
                     window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-stdout.printf ("#Got option commandline\n");
+stdout.printf ("Got option commandline\n");
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else if (new_tab || window.notebook.n_pages == 0) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
-stdout.printf ("#Got option minimize\n");
+stdout.printf ("Got option minimize\n");
             window.minimize ();
         } else if (!is_testing) {
-stdout.printf ("#presenting window\n");
+stdout.printf ("presenting window\n");
             window.present ();
         }
 
@@ -347,7 +347,7 @@ stdout.printf ("#presenting window\n");
     }
 
     public void close () {
-stdout.printf ("# App close \n");
+stdout.printf (" App close \n");
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
         }
