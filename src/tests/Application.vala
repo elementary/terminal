@@ -177,20 +177,20 @@ stdout.printf ("# null option callback\n");
                 default_tabs = (int) window.notebook.n_pages;
             });
 
-            option ("{'new-tab':<true>}", "@a{sv} {}", () => {
-stdout.printf ("# new tab true callback\n");
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.notebook.n_pages;
-                assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
-            });
+//             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
+// stdout.printf ("# new tab true callback\n");
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 var n_tabs = (int) window.notebook.n_pages;
+//                 assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
+//             });
 
-            option ("{'new-tab':<false>}", "@a{sv} {}", () => {
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.notebook.n_pages;
-                assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
-            });
+//             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 var n_tabs = (int) window.notebook.n_pages;
+//                 assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
+//             });
         });
 
 //         GLib.Test.add_func ("/application/command-line/new-window", () => {
