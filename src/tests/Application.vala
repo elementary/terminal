@@ -15,9 +15,10 @@ namespace Terminal.Test.Application {
             application.quit ();
             application = null;
         }
-        application = new Terminal.Application (true) {
-            application_id = "io.elementary.terminal.tests.application"
-        };
+        // application = new Terminal.Application (true) {
+        //     application_id = "io.elementary.terminal.tests.application"
+        // };
+        application = new Terminal.Application (true);
 
         application.shutdown.connect (() => {
             application.close ();
