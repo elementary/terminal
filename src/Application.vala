@@ -166,7 +166,9 @@ stdout.printf ("# return -1 \n");
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
-stdout.printf ("# App dbus register \n");
+        if (is_testing) {
+            return true;
+        }
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
@@ -322,7 +324,6 @@ stdout.printf ("#presenting window\n");
     }
 
     protected override void dbus_unregister (DBusConnection connection, string path) {
-stdout.printf ("# App dbus  unregister \n");
         if (dbus_id != 0) {
             connection.unregister_object (dbus_id);
         }
