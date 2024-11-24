@@ -232,13 +232,9 @@ stdout.printf (" return -1 from handle_local_options \n");
 
     protected override void startup () {
 stdout.printf (" App startup \n");
+
         base.startup ();
 stdout.printf (" after base startup \n");
-        Granite.init ();
-stdout.printf (" after Granite init \n");
-        Adw.init ();
-stdout.printf (" after Adw init \n");
-
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
 stdout.printf (" after saved state init \n");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
@@ -278,6 +274,16 @@ stdout.printf (" set accels \n");
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
 stdout.printf (" after startup \n");
+
+
+
+        Granite.init ();
+stdout.printf (" after Granite init \n");
+        Adw.init ();
+stdout.printf (" after Adw init \n");
+
+
+
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
