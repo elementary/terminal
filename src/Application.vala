@@ -218,7 +218,7 @@ stdout.printf (" return -1 from handle_local_options \n");
                 terminal.tab.icon = process_icon;
             }
 
-            if (!get_active_window ().is_active) {
+            if (!is_testing && !get_active_window ().is_active) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -240,10 +240,13 @@ stdout.printf (" after Granite init \n");
 stdout.printf (" after Adw init \n");
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+stdout.printf (" after saved state init \n");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
+stdout.printf (" after settings init \n");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+stdout.printf (" after settings_sys init \n");
         themes = new Themes ();
-stdout.printf (" after settings and themes init \n");
+stdout.printf (" after themes init \n");
         // if (!is_testing) {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("/io/elementary/terminal/Application.css");
