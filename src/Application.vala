@@ -181,9 +181,9 @@ stdout.printf (" return -1 from handle_local_options \n");
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
-        if (is_testing) {
-            return true;
-        }
+        // if (is_testing) {
+        //     return true;
+        // }
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();

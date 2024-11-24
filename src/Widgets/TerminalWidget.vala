@@ -692,7 +692,7 @@ namespace Terminal {
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
-
+stdout.printf (" Active shell");
             if (shell == "") {
                 shell = Vte.get_user_shell ();
                 if (shell == "") {
