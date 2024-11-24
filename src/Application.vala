@@ -176,7 +176,7 @@ stdout.printf (" options lookup OPTION_REMAINING \n");
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
-stdout.printf (" return -1 \n");
+stdout.printf (" return -1 from handle_local_options \n");
         return -1;
     }
 
@@ -233,8 +233,11 @@ stdout.printf (" return -1 \n");
     protected override void startup () {
 stdout.printf (" App startup \n");
         base.startup ();
+stdout.printf (" after base startup \n");
         Granite.init ();
+stdout.printf (" after Granite init \n");
         Adw.init ();
+stdout.printf (" after Adw init \n");
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
@@ -257,7 +260,7 @@ stdout.printf (" App startup \n");
             );
         }
 
-
+stdout.printf (" adding actions \n");
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
             new MainWindow (this, active_window == null).present ();
@@ -271,6 +274,7 @@ stdout.printf (" App startup \n");
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
+stdout.printf (" after startup \n");
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
