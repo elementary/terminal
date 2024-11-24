@@ -11,6 +11,10 @@ namespace Terminal.Test.Application {
     delegate void ActivateCallback ();
 
     private void setup () {
+        if (application != null) {
+            application.quit ();
+            application = null;
+        }
         application = new Terminal.Application () {
             application_id = "io.elementary.terminal.tests.application",
             is_testing = true
@@ -19,6 +23,9 @@ namespace Terminal.Test.Application {
         application.shutdown.connect (() => {
             application.close ();
         });
+
+stdout.printf ("# End of setup\n");
+assert (application is GLib.Application);
     }
 
     private void iterate_context () {
@@ -37,26 +44,30 @@ namespace Terminal.Test.Application {
 
     private void cli (string[] args, LocalOptionsCallback callback) {
         setup ();
-
+stdout.printf ("# cli after setup \n");
         application.handle_local_options.connect_after ((dict) => {
             callback (dict);
             application.quit ();
             return 0;
         });
-
+stdout.printf ("# Run application \n");
         if (application.run (args) != 0) {
             GLib.Test.fail ();
         }
+stdout.printf ("# End of cli \n");
     }
 
     private void option (string? options, string platform_data, CommandLineCallback callback) {
         ulong oneshot = 0;
         setup ();
-stdout.printf ("#Enter option after setup\n");
+stdout.printf ("# Enter option after setup\n");
+        assert (application != null);
+        assert (application is GLib.Application);
+stdout.printf ("# Setup oneshot \n");
         oneshot = application.command_line.connect ((nil) => {
-stdout.printf ("#oneshot callback\n");
+stdout.printf ("# oneshot callback\n");
             application.disconnect (oneshot);
-stdout.printf ("#calling commandline with nil\n");
+stdout.printf ("# calling commandline with nil\n");
             // Opens primary instance (no options)
             application.command_line (nil);
             ApplicationCommandLine? cmdline = null;
@@ -80,9 +91,12 @@ stdout.printf ("# quit app\n");
             return 0;
         });
 
+stdout.printf ("# Run application \n");
         if (application.run (null) != 0) {
+stdout.printf ("# Test fail \n");
             GLib.Test.fail ();
         }
+stdout.printf ("# End of option \n");
     }
 
     private void action (string name, Variant? @value, ActivateCallback callback) {
@@ -118,17 +132,19 @@ stdout.printf ("# quit app\n");
 
         // local command line: any instance from terminal
         // GLib.Test.add_func ("/application/cli/commandline", () => {
-        //     cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
-        //         assert_true ("commandline" in dict);
-        //         unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
-        //         assert_cmpstr (commandline, CompareOperator.EQ, "true");
-        //     });
+// stdout.printf ("# Starting cli/commandline\n");
+//             cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
+// stdout.printf ("# Callback cli 1\n");
+//                 assert_true ("commandline" in dict);
+//                 unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
+//                 assert_cmpstr (commandline, CompareOperator.EQ, "true");
+//             });
 
-        //     cli ({ "io.elementary.terminal", "-x", "echo", "-e", "true\tfalse" }, (dict) => {
-        //         assert_true ("commandline" in dict);
-        //         unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
-        //         assert_cmpstr (commandline, CompareOperator.EQ, "echo -e true\\tfalse");
-        //     });
+            // cli ({ "io.elementary.terminal", "-x", "echo", "-e", "true\tfalse" }, (dict) => {
+            //     assert_true ("commandline" in dict);
+            //     unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
+            //     assert_cmpstr (commandline, CompareOperator.EQ, "echo -e true\\tfalse");
+            // });
 
         //     cli ({ "io.elementary.terminal", "--commandline", "echo", "true" }, (dict) => {
         //         assert_true ("commandline" in dict);
@@ -152,48 +168,49 @@ stdout.printf ("# quit app\n");
 
         // primary command line: first instance from terminal. any instance from dbus.
         GLib.Test.add_func ("/application/command-line/new-tab", () => {
+stdout.printf ("# Starting command-line/new-tab\n");
             int default_tabs = 0;
             option (null, "@a{sv} {}", () => {
-stdout.printf ("#null option callback\n");
+stdout.printf ("# null option callback\n");
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 default_tabs = (int) window.notebook.n_pages;
             });
 
-//             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
-// stdout.printf ("new tab true callback\n");
-//                 unowned var window = (MainWindow) application.active_window;
-//                 assert_nonnull (window);
-//                 var n_tabs = (int) window.notebook.n_pages;
-//                 assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
-//             });
+            option ("{'new-tab':<true>}", "@a{sv} {}", () => {
+stdout.printf ("# new tab true callback\n");
+                unowned var window = (MainWindow) application.active_window;
+                assert_nonnull (window);
+                var n_tabs = (int) window.notebook.n_pages;
+                assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
+            });
 
-//             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
-//                 unowned var window = (MainWindow) application.active_window;
-//                 assert_nonnull (window);
-//                 var n_tabs = (int) window.notebook.n_pages;
-//                 assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
-//             });
+            option ("{'new-tab':<false>}", "@a{sv} {}", () => {
+                unowned var window = (MainWindow) application.active_window;
+                assert_nonnull (window);
+                var n_tabs = (int) window.notebook.n_pages;
+                assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
+            });
         });
 
-//         GLib.Test.add_func ("/application/command-line/new-window", () => {
-//             option ("{'new-window':<true>}", "@a{sv} {}", () => {
-// stdout.printf ("in callback\n");
-//                 var n_windows = (int) application.get_windows ().length ();
-// stdout.printf ("got n windows %i\n", n_windows);
-//                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
-//             });
+        GLib.Test.add_func ("/application/command-line/new-window", () => {
+            option ("{'new-window':<true>}", "@a{sv} {}", () => {
+stdout.printf ("# in callback\n");
+                var n_windows = (int) application.get_windows ().length ();
+stdout.printf ("# got n windows %i\n", n_windows);
+                assert_cmpint (n_windows, CompareOperator.EQ, 2);
+            });
 
-//             option ("{'new-window':<false>}", "@a{sv} {}", () => {
-//                 var n_windows = (int) application.get_windows ().length ();
-//                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
-//             });
-//         });
+            option ("{'new-window':<false>}", "@a{sv} {}", () => {
+                var n_windows = (int) application.get_windows ().length ();
+                assert_cmpint (n_windows, CompareOperator.EQ, 1);
+            });
+        });
 
         GLib.Test.add_func ("/application/command-line/execute", () => {
             int default_tabs = 0;
             option (null, "@a{sv} {}", () => {
-stdout.printf ("#null option callback\n");
+stdout.printf ("# null option callback\n");
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
                 default_tabs = (int) window.notebook.n_pages;

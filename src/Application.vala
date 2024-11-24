@@ -23,6 +23,8 @@ public class Terminal.Application : Gtk.Application {
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
+
+stdout.printf ("# Application new \n");
     }
 
     construct {
@@ -66,9 +68,16 @@ public class Terminal.Application : Gtk.Application {
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
         );
+stdout.printf ("# End of application construct \n");
+    }
+
+    ~Application () {
+stdout.printf ("# App destruct \n");
+
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
+stdout.printf ("# app local commandline \n");
         bool show_help = false;
 
         for (uint i = 1; args[i] != null; i++) {
@@ -123,10 +132,12 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int handle_local_options (VariantDict options) {
+stdout.printf ("# App handle local options \n");
         unowned string working_directory;
         unowned string[] args;
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
+stdout.printf ("# options lookup working directory \n");
             if (working_directory != "\0") {
                 Environment.set_current_dir (
                     Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
@@ -138,6 +149,7 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
+stdout.printf ("# options lookup OPTION_REMAINING \n");
             if (commandline != "\0") {
                 commandline += " %s".printf (string.joinv (" ", args));
             } else {
@@ -149,10 +161,12 @@ public class Terminal.Application : Gtk.Application {
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
+stdout.printf ("# return -1 \n");
         return -1;
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+stdout.printf ("# App dbus register \n");
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
@@ -200,6 +214,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override void startup () {
+stdout.printf ("# App startup \n");
         base.startup ();
         Granite.init ();
         Adw.init ();
@@ -209,18 +224,22 @@ public class Terminal.Application : Gtk.Application {
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
         themes = new Themes ();
 
-        var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("/io/elementary/terminal/Application.css");
+        if (!is_testing) {
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("/io/elementary/terminal/Application.css");
 
-        /* Vte.Terminal itself registers its default styling with the APPLICATION priority:
-         * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
-         * To be able to overwrite their styles, we need to use +1.
-         */
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
-        );
+
+            /* Vte.Terminal itself registers its default styling with the APPLICATION priority:
+             * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
+             * To be able to overwrite their styles, we need to use +1.
+             */
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
+        }
+
 
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
@@ -238,7 +257,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
-stdout.printf ("#Entering app commandline \n");
+stdout.printf ("# App commandline \n");
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
@@ -303,6 +322,7 @@ stdout.printf ("#presenting window\n");
     }
 
     protected override void dbus_unregister (DBusConnection connection, string path) {
+stdout.printf ("# App dbus  unregister \n");
         if (dbus_id != 0) {
             connection.unregister_object (dbus_id);
         }
@@ -311,6 +331,7 @@ stdout.printf ("#presenting window\n");
     }
 
     public void close () {
+stdout.printf ("# App close \n");
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
         }
