@@ -4,6 +4,7 @@
  */
 
 public class Terminal.Application : Gtk.Application {
+    public static string send_process_finished_bash;
     public int minimum_width;
     public int minimum_height;
 
@@ -14,18 +15,34 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public bool is_testing { get; set construct; }
+    public bool is_testing { get; construct; }
 
     private static Themes themes;
 
-    public Application () {
+    public Application (bool _is_testing = false) {
         Object (
+            is_testing: _is_testing,
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
+
+stdout.printf (" Application new \n");
     }
 
     construct {
+        if (is_testing) {
+stdout.printf (" App construct - is testing\n");
+            send_process_finished_bash = "";
+        } else {
+stdout.printf (" App construct - NOT testing\n");
+            send_process_finished_bash = "dbus-send --type=method_call " +
+                                                  "--session --dest=io.elementary.terminal " +
+                                                  "/io/elementary/terminal " +
+                                                  "io.elementary.terminal.ProcessFinished " +
+                                                  "string:$PANTHEON_TERMINAL_ID " +
+                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
+                                                  "int32:\$__bp_last_ret_value >/dev/null 2>&1";
+        }
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
@@ -66,9 +83,16 @@ public class Terminal.Application : Gtk.Application {
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
         );
+stdout.printf (" End of application construct \n");
+    }
+
+    ~Application () {
+stdout.printf (" App destruct \n");
+
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
+stdout.printf (" app local commandline \n");
         bool show_help = false;
 
         for (uint i = 1; args[i] != null; i++) {
@@ -123,10 +147,12 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int handle_local_options (VariantDict options) {
+stdout.printf (" App handle local options \n");
         unowned string working_directory;
         unowned string[] args;
 
         if (options.lookup ("working-directory", "^&ay", out working_directory)) {
+stdout.printf (" options lookup working directory \n");
             if (working_directory != "\0") {
                 Environment.set_current_dir (
                     Utils.sanitize_path (working_directory, Environment.get_current_dir (), false)
@@ -138,6 +164,7 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (options.lookup (OPTION_REMAINING, "^a&ay", out args)) {
+stdout.printf (" options lookup OPTION_REMAINING \n");
             if (commandline != "\0") {
                 commandline += " %s".printf (string.joinv (" ", args));
             } else {
@@ -149,10 +176,14 @@ public class Terminal.Application : Gtk.Application {
             options.insert ("commandline", "^&ay", commandline.escape ());
         }
 
+stdout.printf (" return -1 from handle_local_options \n");
         return -1;
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+        // if (is_testing) {
+        //     return true;
+        // }
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
@@ -187,7 +218,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!get_active_window ().is_active) {
+            if (!is_testing && !get_active_window ().is_active) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -200,28 +231,35 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override void startup () {
+stdout.printf (" App startup \n");
+
         base.startup ();
-        Granite.init ();
-        Adw.init ();
-
-        saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+stdout.printf (" after base startup \n");
+//         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
+// stdout.printf (" after saved state init \n");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
+stdout.printf (" after settings init \n");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+stdout.printf (" after settings_sys init \n");
         themes = new Themes ();
+stdout.printf (" after themes init \n");
+        // if (!is_testing) {
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("/io/elementary/terminal/Application.css");
 
-        var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("/io/elementary/terminal/Application.css");
 
-        /* Vte.Terminal itself registers its default styling with the APPLICATION priority:
-         * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
-         * To be able to overwrite their styles, we need to use +1.
-         */
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
-        );
-
+            /* Vte.Terminal itself registers its default styling with the APPLICATION priority:
+             * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
+             * To be able to overwrite their styles, we need to use +1.
+             */
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
+                provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+            );
+        // }
+stdout.printf (" after providers init \n");
+stdout.printf (" adding actions \n");
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
             new MainWindow (this, active_window == null).present ();
@@ -232,12 +270,24 @@ public class Terminal.Application : Gtk.Application {
 
         add_action (new_window_action);
         add_action (quit_action);
-
+stdout.printf (" set accels \n");
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
+stdout.printf (" after startup \n");
+
+
+
+        Granite.init ();
+stdout.printf (" after Granite init \n");
+//         Adw.init ();
+// stdout.printf (" after Adw init \n");
+
+
+
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
+stdout.printf (" App commandline \n");
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
@@ -245,11 +295,13 @@ public class Terminal.Application : Gtk.Application {
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
+        stdout.printf ("Creating new window \n");
             window = new MainWindow (this, is_first_window);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
-        unowned var working_directory = command_line.get_cwd ();
+        unowned var working_directory = command_line.get_cwd () ?? "NULL";
+stdout.printf ("Current working dir %s\n", working_directory);
         unowned string[] commands;
         unowned string command;
         bool new_tab, minimized;
@@ -259,24 +311,28 @@ public class Terminal.Application : Gtk.Application {
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
+stdout.printf ("Got option execute\n");
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
                     window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
+stdout.printf ("Got option commandline\n");
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else if (new_tab || window.notebook.n_pages == 0) {
             window.add_tab_with_working_directory (working_directory, null, new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
+stdout.printf ("Got option minimize\n");
             window.minimize ();
-        } else {
+        } else if (!is_testing) {
+stdout.printf ("presenting window\n");
             window.present ();
         }
 
-        if (is_first_window) {
+        if (is_first_window && !is_testing) {
             /*
             * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
             * Set maximize after height/width else window is min size on unmaximize
@@ -291,6 +347,7 @@ public class Terminal.Application : Gtk.Application {
 
             saved_state.bind ("is-maximized", window, "maximized", SettingsBindFlags.SET);
         }
+
         return 0;
     }
 
@@ -303,6 +360,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     public void close () {
+stdout.printf (" App close \n");
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
         }
