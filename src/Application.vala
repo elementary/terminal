@@ -4,7 +4,7 @@
  */
 
 public class Terminal.Application : Gtk.Application {
-    public static string SEND_PROCESS_FINISHED_BASH;
+    public static string send_process_finished_bash;
     public int minimum_width;
     public int minimum_height;
 
@@ -15,7 +15,7 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public bool is_testing { get; set construct; }
+    public bool is_testing { get; construct; }
 
     private static Themes themes;
 
@@ -31,9 +31,11 @@ stdout.printf ("# Application new \n");
 
     construct {
         if (is_testing) {
-            SEND_PROCESS_FINISHED_BASH = "";
+stdout.printf ("# App construct - is testing\n");
+            send_process_finished_bash = "";
         } else {
-            SEND_PROCESS_FINISHED_BASH= "dbus-send --type=method_call " +
+stdout.printf ("# App construct - NOT testing\n");
+            send_process_finished_bash = "dbus-send --type=method_call " +
                                                   "--session --dest=io.elementary.terminal " +
                                                   "/io/elementary/terminal " +
                                                   "io.elementary.terminal.ProcessFinished " +
