@@ -4,6 +4,7 @@
  */
 
 public class Terminal.Application : Gtk.Application {
+    public static string SEND_PROCESS_FINISHED_BASH;
     public int minimum_width;
     public int minimum_height;
 
@@ -18,8 +19,9 @@ public class Terminal.Application : Gtk.Application {
 
     private static Themes themes;
 
-    public Application () {
+    public Application (bool _is_testing = false) {
         Object (
+            is_testing: _is_testing,
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
@@ -28,6 +30,17 @@ stdout.printf ("# Application new \n");
     }
 
     construct {
+        if (is_testing) {
+            SEND_PROCESS_FINISHED_BASH = "";
+        } else {
+            SEND_PROCESS_FINISHED_BASH= "dbus-send --type=method_call " +
+                                                  "--session --dest=io.elementary.terminal " +
+                                                  "/io/elementary/terminal " +
+                                                  "io.elementary.terminal.ProcessFinished " +
+                                                  "string:$PANTHEON_TERMINAL_ID " +
+                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
+                                                  "int32:\$__bp_last_ret_value >/dev/null 2>&1";
+        }
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");

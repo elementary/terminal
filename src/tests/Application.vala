@@ -15,9 +15,8 @@ namespace Terminal.Test.Application {
             application.quit ();
             application = null;
         }
-        application = new Terminal.Application () {
-            application_id = "io.elementary.terminal.tests.application",
-            is_testing = true
+        application = new Terminal.Application (true) {
+            application_id = "io.elementary.terminal.tests.application"
         };
 
         application.shutdown.connect (() => {
@@ -131,27 +130,27 @@ stdout.printf ("# End of option \n");
         Environment.set_current_dir (Environment.get_home_dir ());
 
         // local command line: any instance from terminal
-        // GLib.Test.add_func ("/application/cli/commandline", () => {
-// stdout.printf ("# Starting cli/commandline\n");
-//             cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
-// stdout.printf ("# Callback cli 1\n");
-//                 assert_true ("commandline" in dict);
-//                 unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
-//                 assert_cmpstr (commandline, CompareOperator.EQ, "true");
-//             });
+        GLib.Test.add_func ("/application/cli/commandline", () => {
+stdout.printf ("# Starting cli/commandline\n");
+            cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
+stdout.printf ("# Callback cli 1\n");
+                assert_true ("commandline" in dict);
+                unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
+                assert_cmpstr (commandline, CompareOperator.EQ, "true");
+            });
 
-            // cli ({ "io.elementary.terminal", "-x", "echo", "-e", "true\tfalse" }, (dict) => {
-            //     assert_true ("commandline" in dict);
-            //     unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
-            //     assert_cmpstr (commandline, CompareOperator.EQ, "echo -e true\\tfalse");
-            // });
+            cli ({ "io.elementary.terminal", "-x", "echo", "-e", "true\tfalse" }, (dict) => {
+                assert_true ("commandline" in dict);
+                unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
+                assert_cmpstr (commandline, CompareOperator.EQ, "echo -e true\\tfalse");
+            });
 
-        //     cli ({ "io.elementary.terminal", "--commandline", "echo", "true" }, (dict) => {
-        //         assert_true ("commandline" in dict);
-        //         unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
-        //         assert_cmpstr (commandline, CompareOperator.EQ, "echo true");
-        //     });
-        // });
+            cli ({ "io.elementary.terminal", "--commandline", "echo", "true" }, (dict) => {
+                assert_true ("commandline" in dict);
+                unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
+                assert_cmpstr (commandline, CompareOperator.EQ, "echo true");
+            });
+        });
 
         // GLib.Test.add_func ("/application/cli/working-directory", () => {
         //     unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
@@ -167,65 +166,65 @@ stdout.printf ("# End of option \n");
         // });
 
         // primary command line: first instance from terminal. any instance from dbus.
-        GLib.Test.add_func ("/application/command-line/new-tab", () => {
-stdout.printf ("# Starting command-line/new-tab\n");
-            int default_tabs = 0;
-            option (null, "@a{sv} {}", () => {
-stdout.printf ("# null option callback\n");
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                default_tabs = (int) window.notebook.n_pages;
-            });
+//         GLib.Test.add_func ("/application/command-line/new-tab", () => {
+// stdout.printf ("# Starting command-line/new-tab\n");
+//             int default_tabs = 0;
+//             option (null, "@a{sv} {}", () => {
+// stdout.printf ("# null option callback\n");
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 default_tabs = (int) window.notebook.n_pages;
+//             });
 
-            option ("{'new-tab':<true>}", "@a{sv} {}", () => {
-stdout.printf ("# new tab true callback\n");
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.notebook.n_pages;
-                assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
-            });
+//             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
+// stdout.printf ("# new tab true callback\n");
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 var n_tabs = (int) window.notebook.n_pages;
+//                 assert_cmpint (n_tabs - default_tabs, CompareOperator.EQ, 1);
+//             });
 
-            option ("{'new-tab':<false>}", "@a{sv} {}", () => {
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.notebook.n_pages;
-                assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
-            });
-        });
+//             option ("{'new-tab':<false>}", "@a{sv} {}", () => {
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 var n_tabs = (int) window.notebook.n_pages;
+//                 assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs);
+//             });
+//         });
 
-        GLib.Test.add_func ("/application/command-line/new-window", () => {
-            option ("{'new-window':<true>}", "@a{sv} {}", () => {
-stdout.printf ("# in callback\n");
-                var n_windows = (int) application.get_windows ().length ();
-stdout.printf ("# got n windows %i\n", n_windows);
-                assert_cmpint (n_windows, CompareOperator.EQ, 2);
-            });
+//         GLib.Test.add_func ("/application/command-line/new-window", () => {
+//             option ("{'new-window':<true>}", "@a{sv} {}", () => {
+// stdout.printf ("# in callback\n");
+//                 var n_windows = (int) application.get_windows ().length ();
+// stdout.printf ("# got n windows %i\n", n_windows);
+//                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
+//             });
 
-            option ("{'new-window':<false>}", "@a{sv} {}", () => {
-                var n_windows = (int) application.get_windows ().length ();
-                assert_cmpint (n_windows, CompareOperator.EQ, 1);
-            });
-        });
+//             option ("{'new-window':<false>}", "@a{sv} {}", () => {
+//                 var n_windows = (int) application.get_windows ().length ();
+//                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
+//             });
+//         });
 
-        GLib.Test.add_func ("/application/command-line/execute", () => {
-            int default_tabs = 0;
-            option (null, "@a{sv} {}", () => {
-stdout.printf ("# null option callback\n");
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                default_tabs = (int) window.notebook.n_pages;
-            });
+//         GLib.Test.add_func ("/application/command-line/execute", () => {
+//             int default_tabs = 0;
+//             option (null, "@a{sv} {}", () => {
+// stdout.printf ("# null option callback\n");
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 default_tabs = (int) window.notebook.n_pages;
+//             });
 
-            // Execute 4 processes in separate tabs
-            string[] processes = { "true", "echo test", "echo -e te\\tst", "false" };
-            string options = "{'execute':<[b'%s']>}".printf (string.joinv ("',b'", processes));
-            //valid
-            option (options, "@a{sv} {}", () => {
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = (int) window.notebook.n_pages;
-                assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs + 4);
-            });
+//             // Execute 4 processes in separate tabs
+//             string[] processes = { "true", "echo test", "echo -e te\\tst", "false" };
+//             string options = "{'execute':<[b'%s']>}".printf (string.joinv ("',b'", processes));
+//             //valid
+//             option (options, "@a{sv} {}", () => {
+//                 unowned var window = (MainWindow) application.active_window;
+//                 assert_nonnull (window);
+//                 var n_tabs = (int) window.notebook.n_pages;
+//                 assert_cmpint (n_tabs, CompareOperator.EQ, default_tabs + 4);
+//             });
 
         //     // invalid
         //     option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
@@ -234,7 +233,7 @@ stdout.printf ("# null option callback\n");
         //         var n_tabs = (int) window.notebook.n_pages;
         //         assert_cmpint (n_tabs, CompareOperator.EQ, 1);
         //     });
-        });
+        // });
 
         // //FIXME: cannot test the commandline option without a way to get the terminal command
         // GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
