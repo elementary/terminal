@@ -243,8 +243,8 @@ stdout.printf (" after Adw init \n");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
         themes = new Themes ();
-
-        if (!is_testing) {
+stdout.printf (" after settings and themes init \n");
+        // if (!is_testing) {
             var provider = new Gtk.CssProvider ();
             provider.load_from_resource ("/io/elementary/terminal/Application.css");
 
@@ -258,8 +258,8 @@ stdout.printf (" after Adw init \n");
                 provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
             );
-        }
-
+        // }
+stdout.printf (" after providers init \n");
 stdout.printf (" adding actions \n");
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
@@ -271,7 +271,7 @@ stdout.printf (" adding actions \n");
 
         add_action (new_window_action);
         add_action (quit_action);
-
+stdout.printf (" set accels \n");
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
 stdout.printf (" after startup \n");
