@@ -202,6 +202,23 @@ public class Terminal.Application : Gtk.Application {
                 notification.set_icon (process_icon);
                 notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
                 send_notification ("process-finished-%s".printf (id), notification);
+
+                terminal.main_window.notify["current-terminal"].connect (() => {
+                    if (terminal.main_window.current_terminal == terminal) {
+                        terminal.tab.icon = null;
+                        withdraw_notification ("process-finished-%s".printf (id));
+                    }
+                });
+
+                terminal.main_window.focus_in_event.connect (() => {
+                    if (terminal.main_window.current_terminal == terminal) {
+                        terminal.tab.icon = null;
+                        withdraw_notification ("process-finished-%s".printf (id));
+                    }
+
+                    return Gdk.EVENT_PROPAGATE;
+                });
+
             }
         });
 
