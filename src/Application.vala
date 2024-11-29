@@ -204,17 +204,11 @@ public class Terminal.Application : Gtk.Application {
                 send_notification ("process-finished-%s".printf (id), notification);
 
                 terminal.main_window.notify["current-terminal"].connect (() => {
-                    if (terminal.main_window.current_terminal == terminal) {
-                        terminal.tab.icon = null;
-                        withdraw_notification ("process-finished-%s".printf (id));
-                    }
+                    withdraw_notification_for_terminal (terminal, id);
                 });
 
                 terminal.main_window.focus_in_event.connect (() => {
-                    if (terminal.main_window.current_terminal == terminal) {
-                        terminal.tab.icon = null;
-                        withdraw_notification ("process-finished-%s".printf (id));
-                    }
+                    withdraw_notification_for_terminal (terminal, id);
 
                     return Gdk.EVENT_PROPAGATE;
                 });
@@ -223,6 +217,13 @@ public class Terminal.Application : Gtk.Application {
         });
 
         return true;
+    }
+
+    private void withdraw_notification_for_terminal (TerminalWidget terminal, string id) {
+        if (terminal.main_window.current_terminal == terminal) {
+            terminal.tab.icon = null;
+            withdraw_notification ("process-finished-%s".printf (id));
+        }
     }
 
     protected override void startup () {
