@@ -203,12 +203,15 @@ public class Terminal.Application : Gtk.Application {
                 notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
                 send_notification ("process-finished-%s".printf (id), notification);
 
-                terminal.main_window.notify["current-terminal"].connect (() => {
-                    withdraw_notification_for_terminal (terminal, id);
+                ulong tab_change_handler = 0;
+                ulong focus_in_handler = 0;
+
+                tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
+                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
                 });
 
-                terminal.main_window.focus_in_event.connect (() => {
-                    withdraw_notification_for_terminal (terminal, id);
+                focus_in_handler = terminal.main_window.focus_in_event.connect (() => {
+                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
 
                     return Gdk.EVENT_PROPAGATE;
                 });
@@ -219,11 +222,16 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    private void withdraw_notification_for_terminal (TerminalWidget terminal, string id) {
-        if (terminal.main_window.current_terminal == terminal) {
-            terminal.tab.icon = null;
-            withdraw_notification ("process-finished-%s".printf (id));
+    private void withdraw_notification_for_terminal (TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+        if (terminal.main_window.current_terminal != terminal) {
+            return;
         }
+
+        terminal.tab.icon = null;
+        withdraw_notification ("process-finished-%s".printf (id));
+
+        terminal.main_window.disconnect (tab_change_handler);
+        terminal.main_window.disconnect (focus_in_handler);
     }
 
     protected override void startup () {
