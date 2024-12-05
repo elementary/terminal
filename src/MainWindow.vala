@@ -1,28 +1,15 @@
 /*
-* Copyright (c) 2011-2022 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * Copyright (c) 2011-2024 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: LGPL-3.0-only
+ */
 
 namespace Terminal {
-    public class MainWindow : Hdy.Window {
+    public class MainWindow : Adw.Window {
         private Pango.FontDescription term_font;
-        private Hdy.HeaderBar header;
+        private Adw.HeaderBar header;
         public TerminalView notebook { get; private set construct; }
-        private Gtk.Clipboard clipboard;
-        private Gtk.Clipboard primary_selection;
+        private Gdk.Clipboard clipboard;
+        private Gdk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
@@ -30,23 +17,6 @@ namespace Terminal {
         private Widgets.ZoomOverlay zoom_overlay;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
-
-        private bool is_fullscreen {
-            get {
-                return header.decoration_layout_set;
-            }
-
-            set {
-                if (value) {
-                    fullscreen ();
-                    header.decoration_layout_set = true;
-                } else {
-                    unfullscreen ();
-                    header.decoration_layout_set = false;
-                }
-            }
-        }
-
         private Gtk.EventControllerKey key_controller;
         private uint focus_timeout = 0;
 
@@ -84,7 +54,6 @@ namespace Terminal {
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
         public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
         public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
-
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -148,12 +117,10 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
-
             title = TerminalWidget.DEFAULT_LABEL;
 
-            clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
-            primary_selection = Gtk.Clipboard.get (Gdk.Atom.intern ("PRIMARY", false));
+            clipboard = Gdk.Display.get_default ().get_clipboard ();
+            primary_selection = Gdk.Display.get_default ().get_primary_clipboard ();
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
@@ -227,19 +194,26 @@ namespace Terminal {
 
             setup_ui ();
 
-            key_controller = new Gtk.EventControllerKey (this) {
+            key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = TARGET
             };
             key_controller.key_pressed.connect (key_pressed);
-            key_controller.focus_in.connect (() => {
+
+            var focus_controller = new Gtk.EventControllerFocus ();
+            focus_controller.enter.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
                         focus_timeout = 0;
                         save_opened_terminals (true, true);
+                        current_terminal.grab_focus ();
                         return Source.REMOVE;
                     });
                 }
             });
+
+            // Need to disambiguate from ShortcutManager interface add_controller ()
+            ((Gtk.Widget)this).add_controller (key_controller);
+            ((Gtk.Widget)this).add_controller (focus_controller);
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
@@ -247,13 +221,11 @@ namespace Terminal {
 
             set_size_request (app.minimum_width, app.minimum_height);
 
-            show_all ();
-
             if (recreate_tabs) {
                 open_tabs ();
             }
 
-            delete_event.connect (on_delete_event);
+            close_request.connect (on_delete_event);
         }
 
         public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
@@ -294,26 +266,25 @@ namespace Terminal {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
                 margin_start = 12,
-                no_show_all = true,
                 visible = false
             };
             unfullscreen_button.tooltip_markup = Granite.markup_accel_tooltip (
                 action_accelerators[ACTION_FULLSCREEN].to_array (),
                 _("Exit FullScreen")
             );
-            unfullscreen_button.get_style_context ().remove_class ("image-button");
-            unfullscreen_button.get_style_context ().add_class ("titlebutton");
+            unfullscreen_button.remove_css_class ("image-button");
+            unfullscreen_button.add_css_class ("titlebutton");
 
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
-                image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                icon_name = "edit-find-symbolic",
                 valign = Gtk.Align.CENTER,
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
             var menu_button = new Gtk.MenuButton () {
                 can_focus = false,
-                image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+                icon_name = "open-menu-symbolic",
                 popover = new SettingsPopover (),
                 tooltip_text = _("Settings"),
                 valign = Gtk.Align.CENTER
@@ -322,33 +293,27 @@ namespace Terminal {
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             title_label = new Gtk.Label (title);
-            title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+            title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
             };
-            title_stack.add (title_label);
-            title_stack.add (search_toolbar);
+            title_stack.add_child (title_label);
+            title_stack.add_child (search_toolbar);
             // Must show children before visible_child can be set
-            title_stack.show_all ();
             // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
-            header = new Hdy.HeaderBar () {
-                show_close_button = true,
-                has_subtitle = false,
+            header = new Adw.HeaderBar () {
                 decoration_layout = "close:",
-                decoration_layout_set = false
             };
 
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
-            header.set_custom_title (title_stack);
+            header.title_widget = title_stack;
 
-            unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class ("default-decoration");
-            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
+            add_css_class ("default-decoration");
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
@@ -357,26 +322,31 @@ namespace Terminal {
             notebook.tab_view.create_window.connect (on_create_window_request);
             notebook.tab_view.close_page.connect ((tab) => {
                 var term = get_term_widget (tab);
-                var confirmed = false;
-                if (term == null) {
-                    confirmed = true;
+                if (term == null || !term.has_foreground_process ()) {
+                    notebook.tab_view.close_page_finish (tab, true);
                 } else {
-                    confirmed = confirm_close_tab (term);
+                    var dialog = new ForegroundProcessDialog (this);
+                    dialog.response.connect ((res) => {
+                        dialog.destroy ();
+                        if (res == Gtk.ResponseType.ACCEPT) {
+                            term.kill_fg ();
+                            if (!term.child_has_exited) {
+                                term.term_ps ();
+                            }
+
+                            if (Application.settings.get_boolean ("save-exited-tabs")) {
+                                make_restorable (term);
+                            }
+
+                            disconnect_terminal_signals (term);
+                            notebook.tab_view.close_page_finish (tab, true);
+                        } else {
+                            notebook.tab_view.close_page_finish (tab, false);
+                        }
+                    });
+
+                    dialog.present ();
                 }
-
-                if (confirmed) {
-                    if (!term.child_has_exited) {
-                        term.term_ps ();
-                    }
-
-                    if (Application.settings.get_boolean ("save-exited-tabs")) {
-                        make_restorable (term);
-                    }
-
-                    disconnect_terminal_signals (term);
-                }
-
-                notebook.tab_view.close_page_finish (tab, confirmed);
 
                 return Gdk.EVENT_STOP;
             });
@@ -404,11 +374,11 @@ namespace Terminal {
             zoom_overlay = new Widgets.ZoomOverlay (overlay);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            box.add (header);
-            box.add (overlay);
+            box.append (header);
+            box.append (overlay);
 
-            add (box);
-            get_style_context ().add_class ("terminal-window");
+            content = box;
+            add_css_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
 
@@ -419,11 +389,9 @@ namespace Terminal {
                     color_preferences_dialog = new Dialogs.ColorPreferences (this);
                 }
 
-                color_preferences_dialog.destroy.connect (() => color_preferences_dialog = null);
                 color_preferences_dialog.present ();
             });
 
-            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
@@ -455,7 +423,7 @@ namespace Terminal {
                 case Gdk.Key.@6:
                 case Gdk.Key.@7:
                 case Gdk.Key.@8:
-                    if (MOD1_MASK in modifiers
+                    if (ALT_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
@@ -469,7 +437,7 @@ namespace Terminal {
                     break;
 
                 case Gdk.Key.@9:
-                    if (MOD1_MASK in modifiers
+                    if (ALT_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         notebook.selected_page = notebook.tab_view.get_nth_page ((int)notebook.n_pages - 1);
@@ -484,13 +452,13 @@ namespace Terminal {
             return false;
         }
 
-        private void on_tab_added (Hdy.TabPage tab, int pos) {
+        private void on_tab_added (Adw.TabPage tab, int pos) {
             var term = get_term_widget (tab);
             term.main_window = this;
             save_opened_terminals (true, true);
         }
 
-        private void on_tab_removed (Hdy.TabPage tab) {
+        private void on_tab_removed (Adw.TabPage tab) {
             if (notebook.n_pages == 0) {
                 // Close window when last tab removed (Note: cannot drag last tab out of window)
                 save_opened_terminals (true, true);
@@ -501,28 +469,11 @@ namespace Terminal {
             }
         }
 
-        public bool confirm_close_tab (TerminalWidget terminal_widget) {
-            if (terminal_widget.has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog (this);
-                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                    dialog.destroy ();
-                    terminal_widget.kill_fg ();
-                } else {
-                    dialog.destroy ();
-                    return false;
-                }
-            }
-
-            //Names checked in page_detached handler
-
-            return true;
-        }
-
-        private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
+        private void on_tab_reordered (Adw.TabPage tab, int new_pos) {
             save_opened_terminals (true, true);
         }
 
-        private unowned Hdy.TabView? on_create_window_request () {
+        private unowned Adw.TabView? on_create_window_request () {
             var new_window = new MainWindow (
                 app,
                 false
@@ -533,9 +484,8 @@ namespace Terminal {
 
         public void update_context_menu () requires (current_terminal != null) {
             /* Update the "Show in ..." menu option */
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
-            });
+            var uri = get_current_selection_link_or_pwd ();
+            update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
         }
 
         private void update_menu_label (string? uri) {
@@ -690,7 +640,8 @@ namespace Terminal {
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
                 /* Make the terminal occupy the whole GUI */
-                expand = true
+                hexpand = true,
+                vexpand = true
             };
 
             var tab = append_tab (
@@ -782,21 +733,22 @@ namespace Terminal {
             title = current_terminal.window_title;
         }
 
-        private Hdy.TabPage append_tab (
+        private Adw.TabPage append_tab (
             string label,
             GLib.Icon? icon,
             TerminalWidget term,
             int pos
         ) {
-            var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
-            sw.add (term);
+            var sw = new Gtk.ScrolledWindow () {
+                vadjustment = term.get_vadjustment (),
+                child = term
+            };
             var tab = notebook.tab_view.insert (sw, pos);
             tab.title = label;
             tab.tooltip = term.current_working_directory;
             tab.icon = icon;
             term.tab = tab;
 
-            tab.child.show_all ();
             return tab;
         }
 
@@ -841,13 +793,15 @@ namespace Terminal {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
                 if (term.has_foreground_process ()) {
                     var dialog = new ForegroundProcessDialog.before_close (this);
-                    if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                        term.kill_fg ();
-                        dialog.destroy ();
-                    } else {
-                        dialog.destroy ();
-                        return true;
-                    }
+                    dialog.response.connect ((res) => {
+                        if (res == Gtk.ResponseType.ACCEPT) {
+                            term.kill_fg ();
+                            dialog.destroy ();
+                        } else {
+                            dialog.destroy ();
+                            return;
+                        }
+                    });
                 }
 
                 tabs_to_terminate.append (term);
@@ -861,36 +815,52 @@ namespace Terminal {
         }
 
         private void action_open_in_browser () requires (current_terminal != null) {
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-                if (to_open != null) {
+            var uri = get_current_selection_link_or_pwd ();
+            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location (), true);
+            AppInfo? appinfo = get_default_app_for_uri (to_open);
+            if (appinfo != null) {
+                //FIXME Gtk.UriLauncher fails for some reason ( in a VM at least )
+                List<string> uris = null;
+                uris.append (to_open);
+                appinfo.launch_uris_async.begin (uris, null, null, (obj, res) => {
                     try {
-                        Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                    } catch (GLib.Error error) {
-                        warning ("Could not show %s - %s", to_open, error.message);
+                        appinfo.launch_uris_async.end (res);
+                    } catch (Error e) {
+                        warning ("Launcher failed with error %s", e.message);
+                        //TODO Handle launch failure - message box? 
                     }
-                }
-            });
+                });
+            } else {
+                //TODO Show AppChooserDialog?
+            }
         }
 
-        private void get_current_selection_link_or_pwd (
-            Gtk.ClipboardTextReceivedFunc uri_handler
-        ) requires (current_terminal != null) {
-
+        private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
-                    primary_selection.request_text (uri_handler);
+                    try {
+                        var cp = primary_selection.get_content ();
+                        if (cp != null) {
+                            Value? val = null;
+                            cp.get_value (ref val);
+                            return val.dup_string ();
+                        }
+                    } catch (Error e) {
+                        critical ("Unable to get clipboard contents");
+                    }
+
+                    return null;
                 } else {
-                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                    return current_terminal.get_shell_location ();
                 }
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
                 }
 
-                uri_handler (primary_selection, link_uri);
+                return link_uri;
             }
         }
 
@@ -1050,16 +1020,20 @@ namespace Terminal {
         }
 
         private void action_fullscreen () {
-            is_fullscreen = !is_fullscreen;
+            if (is_fullscreen ()) {
+                unfullscreen ();
+            } else {
+                fullscreen ();
+            }
         }
 
-        private unowned TerminalWidget? get_term_widget (Hdy.TabPage? tab) {
+        private unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
             if (tab == null) {
                 return null;
             }
-            var tab_child = (Gtk.Bin)(tab.child); // ScrolledWindow
-            var term = tab_child.get_child (); // TerminalWidget
-            return (TerminalWidget)term;
+            var tab_child = (Gtk.ScrolledWindow)(tab.child);
+            unowned var term = (TerminalWidget)(tab_child.child);
+            return term;
         }
 
         public unowned TerminalWidget? get_terminal (string id) {
@@ -1073,7 +1047,7 @@ namespace Terminal {
             return null;
         }
 
-        public void set_active_terminal_tab (Hdy.TabPage tab) {
+        public void set_active_terminal_tab (Adw.TabPage tab) {
             notebook.tab_view.selected_page = tab;
         }
 
@@ -1112,7 +1086,6 @@ namespace Terminal {
         }
 
         private void on_terminal_cwd_changed (TerminalWidget src, string cwd) {
-            src.tab.tooltip = cwd;
             check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);
         }

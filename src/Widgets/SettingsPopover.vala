@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
+ * Copyright 2023-2024 elementary, Inc (https://elementary.io)
  * SPDX-License-Identifier: LGPL-3.0-only
  */
 
@@ -13,9 +13,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         set {
             terminal_binding.source = value;
-            if (value != null) {
-                insert_action_group ("term", value.get_action_group ("term"));
-            }
         }
     }
 
@@ -27,7 +24,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     """;
 
     private BindingGroup terminal_binding;
-    private Gtk.Box theme_buttons;
+    public Gtk.Box theme_buttons { get; private set; }
 
     public SettingsPopover () {
         Object ();
@@ -40,6 +37,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom out")
             )
         };
+
         zoom_out_button.clicked.connect (() => terminal.decrease_font_size ());
 
         var zoom_default_button = new Gtk.Button () {
@@ -48,6 +46,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Default zoom level")
             )
         };
+
         zoom_default_button.clicked.connect (() => terminal.default_font_size ());
 
         var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic") {
@@ -56,6 +55,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom in")
             )
         };
+
         zoom_in_button.clicked.connect (() => terminal.increase_font_size ());
 
         var font_size_box = new Gtk.Box (HORIZONTAL, 0) {
@@ -65,11 +65,11 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_end = 12,
             margin_bottom = 6
         };
-        font_size_box.add (zoom_out_button);
-        font_size_box.add (zoom_default_button);
-        font_size_box.add (zoom_in_button);
+        font_size_box.append (zoom_out_button);
+        font_size_box.append (zoom_default_button);
+        font_size_box.append (zoom_in_button);
 
-        font_size_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        font_size_box.add_css_class (Granite.STYLE_CLASS_LINKED);
 
         theme_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
             homogeneous = true,
@@ -86,8 +86,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
 
         var theme_box = new Gtk.Box (VERTICAL, 0);
-        theme_box.add (follow_system_button);
-        theme_box.add (theme_revealer);
+        theme_box.append (follow_system_button);
+        theme_box.append (theme_revealer);
 
         var hc_button = add_theme_button (Themes.HIGH_CONTRAST);
         hc_button.tooltip_text = _("High Contrast");
@@ -101,7 +101,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         dark_button.group = hc_button;
 
         Gtk.CssProvider custom_button_provider;
-
         var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
         custom_button.tooltip_text = _("Custom");
         custom_button.group = hc_button;
@@ -128,16 +127,17 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             margin_top = 12,
         };
 
-        box.add (font_size_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (theme_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (natural_copy_paste_button);
-        box.add (unsafe_paste_alert_button);
-        box.add (audible_bell_button);
+        box.append (font_size_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (theme_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (natural_copy_paste_button);
+        box.append (unsafe_paste_alert_button);
+        box.append (audible_bell_button);
+
         child = box;
 
-        custom_button.clicked.connect (() => {
+        custom_button.toggled.connect (() => {
             if (custom_button.active) {
                 show_theme_editor ();
                 popdown ();
@@ -161,56 +161,59 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 update_active_colorbutton (dark_button, s.get_string (n));
             }
         });
-
-        show.connect (get_child ().show_all);
     }
 
-    private Gtk.RadioButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
-        var button = new Gtk.RadioButton (null) {
-            action_target = new Variant.string (theme),
+    private Gtk.CheckButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
+        var button = new Gtk.CheckButton () {
             halign = Gtk.Align.CENTER
         };
 
-        button.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        button.get_style_context ().add_class (theme);
+        button.set_data<string> ("theme", theme);
+        button.add_css_class ("color-button");
+        button.add_css_class (theme);
 
         css_provider = new Gtk.CssProvider ();
-
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+        );
 
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
-            if (((Gtk.RadioButton) b).active) {
-                Application.settings.set_value ("theme", b.action_target);
+            if (((Gtk.CheckButton) b).active) {
+                Application.settings.set_value ("theme", b.get_data<string> ("theme"));
             }
         });
 
-        theme_buttons.add (button);
+        theme_buttons.append (button);
         return button;
     }
 
-    private static void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
-        SearchFunc<Gtk.RadioButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.get_group ().search (theme, find_colorbutton);
+    private void update_active_colorbutton (Gtk.CheckButton default_button, string theme) {
+        var child = theme_buttons.get_first_child ();
+        var found = false;
+        while (child != null && !found) {
+            if (child is Gtk.CheckButton) {
+                var b = (Gtk.CheckButton)child;
+                if (b.get_data<string> ("theme") == theme) {
+                    b.active = true;
+                    return;
+                }
+            }
 
-        if (node != null) {
-            node.data.active = true;
-        } else {
-            default_button.active = true;
+            child = child.get_next_sibling ();
         }
+
+        default_button.active = true;
     }
 
     private static void update_theme_provider (Gtk.CssProvider css_provider, string theme) {
         var theme_palette = Themes.get_rgba_palette (theme);
         var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
         var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
-
-        try {
-            css_provider.load_from_data (STYLE_CSS.printf (theme, background, foreground));
-        } catch (Error e) {
-            critical ("Unable to style color button: %s", e.message);
-        }
+        css_provider.load_from_string (STYLE_CSS.printf (theme, background, foreground));
     }
 
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
