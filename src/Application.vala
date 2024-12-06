@@ -4,8 +4,8 @@
  */
 
 public class Terminal.Application : Gtk.Application {
-    public int minimum_width;
-    public int minimum_height;
+    public const int MINIMUM_WIDTH = 600;
+    public const int MINIMUM_HEIGHT = 400;
 
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
     private uint dbus_id = 0;
@@ -258,7 +258,19 @@ public class Terminal.Application : Gtk.Application {
 
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
-            new MainWindow (this, active_window == null).present ();
+            string dir = Environment.get_home_dir ();
+            if (active_window != null) {
+                dir = ((MainWindow)active_window).current_terminal.current_working_directory;
+            }
+
+            var new_window = new MainWindow (this, active_window == null);
+            new_window.present ();
+            new_window.set_size_request (
+                saved_state.get_int ("window-width"),
+                saved_state.get_int ("window-height")
+            );
+
+            new_window.add_tab_with_working_directory (dir);
         });
 
         var quit_action = new SimpleAction ("quit", null);

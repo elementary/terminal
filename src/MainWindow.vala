@@ -245,7 +245,7 @@ namespace Terminal {
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
             Application.settings.changed["font"].connect (update_font);
 
-            set_size_request (app.minimum_width, app.minimum_height);
+            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
             show_all ();
 
@@ -256,9 +256,14 @@ namespace Terminal {
             delete_event.connect (on_delete_event);
         }
 
-        public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
-            /* This requires all restored tabs to be initialized first so that the shell location is available */
-            /* Do not add a new tab if location is already open in existing tab */
+        public void add_tab_with_working_directory (
+            string? directory,
+            string? command = null,
+            bool create_new_tab = false
+        ) {
+            /* This requires all restored tabs to be initialized first so that
+             * the shell location is available.
+             * Do not add a new tab if location is already open in existing tab */
             string? location = null;
             if (directory == null || directory == "") {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
@@ -707,12 +712,6 @@ namespace Terminal {
             } else {
                 terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
             }
-
-            int minimum_width = terminal_widget.calculate_width (80) / 2;
-            int minimum_height = terminal_widget.calculate_height (24) / 2;
-            set_size_request (minimum_width, minimum_height);
-            app.minimum_width = minimum_width;
-            app.minimum_height = minimum_height;
 
             if (focus) {
                 notebook.selected_page = tab;
