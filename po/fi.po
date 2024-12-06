@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"PO-Revision-Date: 2024-12-02 14:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -31,10 +31,8 @@ msgstr "Avaa uusi pääteikkuna"
 
 #. -t flag forces a new tab
 #: src/Application.vala:67
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Avaa uusi pääteikkuna"
+msgstr "Avaa uusi päätevälilehti nykyiseen työskentelyhakemistoon"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:69
@@ -70,7 +68,7 @@ msgstr "Prosessi sulkeutui virheiden kera"
 
 #: src/MainWindow.vala:166
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Näytä hakupalkki"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:173
@@ -83,11 +81,11 @@ msgstr "Kopioi viimeisin tuloste"
 
 #: src/MainWindow.vala:185
 msgid "Clear Screen"
-msgstr ""
+msgstr "Tyhjennä näyttö"
 
 #: src/MainWindow.vala:191
 msgid "Reset"
-msgstr ""
+msgstr "Nollaa"
 
 #: src/MainWindow.vala:197
 msgid "Paste"
@@ -98,10 +96,8 @@ msgid "Select All"
 msgstr "Valitse kaikki"
 
 #: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Koko näyttö"
+msgstr "Poistu koko näytön tilasta"
 
 #: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
@@ -329,16 +325,12 @@ msgid "Next result"
 msgstr "Seuraava tulos"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Kierteinen haku"
+msgstr "Poista kierteinen haku käytöstä"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Kierteinen haku"
+msgstr "Käytä kierteistä hakua"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -380,17 +372,16 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Turvattoman liittämisen varoitus"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
+msgstr ""
+"Varoita kun liitetty teksti sisältää useita komentoja tai ylläpitokomentoja"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
-msgstr ""
+msgstr "Tapahtumahälytykset"
 
 #: src/Widgets/SettingsPopover.vala:122
 msgid ""
@@ -416,32 +407,24 @@ msgid "New Tab"
 msgstr "Uusi välilehti"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Sulje välilehti"
+msgstr "Suljetut välilehdet"
 
 #: src/Widgets/TerminalView.vala:210
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Sulje välilehdet tästä oikealle"
 
 #: src/Widgets/TerminalView.vala:211
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Sulje välilehti"
+msgstr "Sulje muut välilehdet"
 
 #: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Uusi ikkuna"
+msgstr "Avaa uudessa ikkunassa"
 
 #: src/Widgets/TerminalView.vala:216
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "Tee kaksoiskappale"
+msgstr "Tee kaksoiskappale välilehdestä"
 
 #: src/Widgets/TerminalView.vala:219
 msgid "Reload"
@@ -450,7 +433,7 @@ msgstr "Lataa uudelleen"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Suurennus: %.0f%%"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Avaa uusi päätevälilehti"

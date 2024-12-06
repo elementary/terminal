@@ -536,10 +536,11 @@ namespace Terminal {
                 return;
             }
 
+
             string? warn_text = null;
-            if ("\n" in text) {
+            if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
                 warn_text = _("The pasted text may contain multiple commands");
-            } else if ("sudo" in text || "doas" in text) {
+            } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
                 warn_text = _("The pasted text may be trying to gain administrative access");
             }
 
@@ -648,8 +649,19 @@ namespace Terminal {
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
-            if (shell == "")
+            if (shell == "") {
                 shell = Vte.get_user_shell ();
+            }
+
+            if (shell == "") {
+                critical ("No user shell available");
+                return;
+            }
+
+            if (dir == "") {
+                debug ("Using fallback directory");
+                dir = "/";
+            }
 
             envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
