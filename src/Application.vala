@@ -258,12 +258,19 @@ public class Terminal.Application : Gtk.Application {
 
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
+            string dir = Environment.get_home_dir ();
+            if (active_window != null) {
+                dir = ((MainWindow)active_window).current_terminal.current_working_directory;
+            }
+
             var new_window = new MainWindow (this, active_window == null);
-            var width = saved_state.get_int ("window-width");
-            var height = saved_state.get_int ("window-height");
-            new_window.set_size_request (width, height);
             new_window.present ();
-            new_window.add_tab_with_working_directory (Environment.get_current_dir ());
+            new_window.set_size_request (
+                saved_state.get_int ("window-width"),
+                saved_state.get_int ("window-height")
+            );
+
+            new_window.add_tab_with_working_directory (dir);
         });
 
         var quit_action = new SimpleAction ("quit", null);
