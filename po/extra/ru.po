@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"PO-Revision-Date: 2024-11-19 15:16+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
@@ -49,15 +49,17 @@ msgstr "Новые возможности:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "Отображение уровня масштаба при масштабировании"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
+msgstr "Реализованы действия контекстного меню «Очистить» и «Сбросить»"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"В меню приложения добавлен переключатель для предупреждений об опасной "
+"вставке"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -73,22 +75,25 @@ msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Обновление значка и подписи переключаемой кнопки циклического поиска в "
+"соответствии с её состоянием"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Фокус на текущий вкладке после нажатия на уведомление о завершении процесса"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
-msgstr ""
+msgstr "Проверка на наличие «doas» и «sudo» при вставке текста в терминал"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "Проверка на опасность вставки и для перетаскиваемого текста"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Улучшена контрастность серого цвета в тёмной теме"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
