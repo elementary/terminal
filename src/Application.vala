@@ -4,6 +4,9 @@
  */
 
 public class Terminal.Application : Gtk.Application {
+    public const int MINIMUM_WIDTH = 600;
+    public const int MINIMUM_HEIGHT = 400;
+
     private string commandline = "\0"; // used to temporary hold the argument to --commandline=
     private uint dbus_id = 0;
 

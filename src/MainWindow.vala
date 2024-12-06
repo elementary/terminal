@@ -245,7 +245,7 @@ namespace Terminal {
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
             Application.settings.changed["font"].connect (update_font);
 
-            set_size_request (app.minimum_width, app.minimum_height);
+            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
             show_all ();
 
