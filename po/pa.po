@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -66,59 +66,59 @@ msgstr "ਅਮਲ ਮੁਕੰਮਲ ਹੋਇਆ"
 msgid "Process exited with errors"
 msgstr "ਅਮਲ ਖ਼ਰਾਬੀਆਂ ਸਮੇਤ ਬੰਦ ਹੋਇਆ"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
@@ -397,11 +397,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "ਟਰਮੀਨਲ"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂਡਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
 

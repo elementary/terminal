@@ -519,46 +519,48 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {
-                if (text == null) {
-                    return;
-                }
-
-                if (!text.validate ()) {
-                    warning ("Dropping invalid UTF-8 paste");
-                    return;
-                }
-
-                unowned var toplevel = (MainWindow) get_toplevel ();
-
-                if (!toplevel.unsafe_ignored && Application.settings.get_boolean ("unsafe-paste-alert")) {
-                    string? warn_text = null;
-                    text._strip ();
-
-                    if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
-                        warn_text = _("The pasted text may contain multiple commands");
-                    } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
-                        warn_text = _("The pasted text may be trying to gain administrative access");
-                    }
-
-                    if (warn_text != null) {
-                        var dialog = new UnsafePasteDialog (toplevel, warn_text, text);
-                        dialog.response.connect ((res) => {
-                            if (res == Gtk.ResponseType.ACCEPT) {
-                               remember_command_start_position ();
-                               base.paste_clipboard ();
-                            }
-
-                            dialog.destroy ();
-                        });
-
-                        dialog.present ();
-                        return;
-                    }
-                }
-
-                remember_command_start_position ();
-                base.paste_clipboard ();
+                validated_feed (text);
             });
+        }
+
+        // Check pasted and dropped text before feeding to child;
+        private void validated_feed (string? text) {
+            // Do nothing when text is invalid
+            if (text == null || !text.validate ()) {
+                return;
+            }
+
+            // No user interaction because of user's preference
+            if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
+                feed_child (text.data);
+                return;
+            }
+
+
+            string? warn_text = null;
+            if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
+                warn_text = _("The pasted text may contain multiple commands");
+            } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
+                warn_text = _("The pasted text may be trying to gain administrative access");
+            }
+
+            // No user interaction for safe commands
+            if (warn_text == null) {
+                feed_child (text.data);
+                return;
+            }
+
+            // Ask user for interaction for unsafe commands
+            unowned var toplevel = (MainWindow) get_toplevel ();
+            var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
+            dialog.response.connect ((res) => {
+                dialog.destroy ();
+                if (res == Gtk.ResponseType.ACCEPT) {
+                    feed_child (text.data);
+                }
+            });
+
+            dialog.present ();
         }
 
         private void update_theme () {
@@ -647,8 +649,19 @@ namespace Terminal {
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
-            if (shell == "")
+            if (shell == "") {
                 shell = Vte.get_user_shell ();
+            }
+
+            if (shell == "") {
+                critical ("No user shell available");
+                return;
+            }
+
+            if (dir == "") {
+                debug ("Using fallback directory");
+                dir = "/";
+            }
 
             envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
@@ -804,11 +817,8 @@ namespace Terminal {
 
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
-                    var data = selection_data.get_text ();
-                    if (data != null) {
-                        this.feed_child (data.data);
-                    }
-
+                    var text = selection_data.get_text ();
+                    validated_feed (text);
                     break;
             }
         }

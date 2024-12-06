@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2015-12-05 14:37+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Southern Sami <sma@li.org>\n"
@@ -68,61 +68,61 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "Gïerts"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "Njimkehtidh"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "Gaajhke veeljedh"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "dievhtedh-leerehte"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr ""
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr ""
 
@@ -392,11 +392,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminale"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
 "PO-Revision-Date: 2024-11-04 17:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -67,59 +67,59 @@ msgstr "Proces ukończony"
 msgid "Process exited with errors"
 msgstr "Proces zakończył się z błędami"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:166
 msgid "Show Search Bar"
 msgstr "Pokaż pasek wyszukiwania"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:173
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:179
 msgid "Copy Last Output"
 msgstr "Kopiuj ostatnie wyjście"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:185
 msgid "Clear Screen"
 msgstr "Wyczyść ekran"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:191
 msgid "Reset"
 msgstr "Zresetuj"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:197
 msgid "Paste"
 msgstr "Wklej"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:203
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: src/MainWindow.vala:303
+#: src/MainWindow.vala:302
 msgid "Exit FullScreen"
 msgstr "Opuść pełny ekran"
 
-#: src/MainWindow.vala:312 src/MainWindow.vala:1015
+#: src/MainWindow.vala:311 src/MainWindow.vala:1014
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/MainWindow.vala:319
+#: src/MainWindow.vala:318
 msgid "Settings"
 msgstr "Ustawienia"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:548
+#: src/MainWindow.vala:547
 #, c-format
 msgid "Show in %s"
 msgstr "Wyświetl w %s"
 
-#: src/MainWindow.vala:550
+#: src/MainWindow.vala:549
 msgid "Default application"
 msgstr "Aplikacja domyślna"
 
-#: src/MainWindow.vala:1006
+#: src/MainWindow.vala:1005
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
@@ -377,7 +377,8 @@ msgstr "Ostrzeżenie o niebezpiecznym wklejeniu"
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Gdy wklejony tekst zawiera mieć kilka komend lub dostęp administracyjny"
+msgstr ""
+"Gdy wklejony tekst zawiera mieć kilka komend lub dostęp administracyjny"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
@@ -395,11 +396,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:538
+#: src/Widgets/TerminalWidget.vala:541
 msgid "The pasted text may contain multiple commands"
 msgstr "Wklejony tekst może mieć kilka komend"
 
-#: src/Widgets/TerminalWidget.vala:540
+#: src/Widgets/TerminalWidget.vala:543
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Wklejony tekst może próbować uzyskać dostęp administracyjny"
 

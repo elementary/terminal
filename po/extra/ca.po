@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-07-12 20:16+0000\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"PO-Revision-Date: 2024-11-19 15:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -40,49 +40,94 @@ msgstr ""
 "d'UNIX que es pot utilitzar per executar programes disponibles al sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:110
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:155
 msgid "New features:"
 msgstr "Funcions noves:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Show zoom level in overlay when zooming"
+msgstr "Mostra el nivell d'ampliació en superposició quan amplieu la vista"
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Implement Clear and Reset context menu actions with accelerators"
+msgstr ""
+"Implementació d'accions de menú contextual Esborra i Restableix amb "
+"acceleradors"
+
+#: data/io.elementary.terminal.appdata.xml.in:62
+msgid "Add toggle for unsafe paste warning to application menu"
+msgstr ""
+"S'afegeix l'opció per a l'advertència d'enganxament no segur al menú de "
+"l'aplicació"
+
+#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:145
+#: data/io.elementary.terminal.appdata.xml.in:164
+msgid "Other updates:"
+msgstr "Altres actualitzacions:"
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid ""
+"Update the icon and tooltip of the cyclic search togglebutton according to "
+"its state"
+msgstr ""
+"Actualització de la icona i la informació sobre eines del botó de commutació "
+"de cerca cíclica segons el seu estat"
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+msgid "Focus correct tab after clicking on a process finished notification"
+msgstr ""
+"Se centra la pestanya correcta després de fer clic en una notificació de "
+"procés acabat"
+
+#: data/io.elementary.terminal.appdata.xml.in:68
+msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
+msgstr "Comprova si hi ha doas i sudo quan el text s'enganxa al terminal"
+
+#: data/io.elementary.terminal.appdata.xml.in:69
+msgid "Check for unsafe paste on dropping text as well"
+msgstr "Comprova també si hi ha una enganxament no segur en deixar anar text"
+
+#: data/io.elementary.terminal.appdata.xml.in:70
+msgid "Improve gray contrast in dark theme"
+msgstr "Millora el contrast de grisos en el tema fosc"
+
+#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:93
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:147
+#: data/io.elementary.terminal.appdata.xml.in:166
+msgid "Translation updates"
+msgstr "Actualitzacions de les traduccions"
+
+#: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr ""
 "Permet activar i desactivar les alertes d'esdeveniments al menú de "
 "l'aplicació."
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
 "Es desen les pestanyes i les ampliacions a la configuració de l'estat desada "
 "quan canviïn."
 
-#: data/io.elementary.terminal.appdata.xml.in:63
-#: data/io.elementary.terminal.appdata.xml.in:81
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:119
-#: data/io.elementary.terminal.appdata.xml.in:138
-msgid "Other updates:"
-msgstr "Altres actualitzacions:"
-
-#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Document missing options in the man page"
 msgstr "Falten opcions del document a la pàgina del manual."
 
-#: data/io.elementary.terminal.appdata.xml.in:66
+#: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr ""
 "Suprimeix la pestanya predeterminada no desitjada en obrir una finestra nova."
 
-#: data/io.elementary.terminal.appdata.xml.in:67
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:100
-#: data/io.elementary.terminal.appdata.xml.in:121
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Translation updates"
-msgstr "Actualitzacions de les traduccions"
-
-#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
@@ -90,24 +135,24 @@ msgstr ""
 "Addició de les dreceres \"Ctrl + Pàg. amunt\" i \"Ctrl + Pàg. avall\" per "
 "canviar entre pestanyes"
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:110
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "Desexporta correctament la interfície DBus a la sortida"
 
-#: data/io.elementary.terminal.appdata.xml.in:112
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Option to follow system dark style preference"
 msgstr "Opció per seguir la preferència d'estil fosc del sistema"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Create a custom color palette"
 msgstr "Creeu una paleta de colors personalitzada"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:141
+#: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:143
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -115,19 +160,19 @@ msgstr ""
 "Els estils per defecte són totalment opacs i s'actualitzen als valors més "
 "recents de Solarized per millorar-ne la llegibilitat."
 
-#: data/io.elementary.terminal.appdata.xml.in:122
+#: data/io.elementary.terminal.appdata.xml.in:148
 msgid "Performance improvements"
 msgstr "Millores de rendiment"
 
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Switch tabs with Alt + 1-9"
 msgstr "Canvi de pestanya amb Alt + 1-9"
 
-#: data/io.elementary.terminal.appdata.xml.in:132
+#: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "Sortida amb Ctrl + Maj + Q"
 
-#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:162
 msgid "Fix build on OS 7"
 msgstr "Correcció de la compilació a SO 7"
 

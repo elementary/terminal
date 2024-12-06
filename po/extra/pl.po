@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 09:59+0000\n"
-"PO-Revision-Date: 2024-07-21 09:16+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"PO-Revision-Date: 2024-12-03 18:16+0000\n"
+"Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
 "Language: pl\n"
@@ -41,72 +41,119 @@ msgstr ""
 "UNIX, który może być używany do uruchamiania programów dostępnych w systemie."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:110
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:155
 msgid "New features:"
 msgstr "Nowe funkcje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
+msgid "Show zoom level in overlay when zooming"
+msgstr "Poziom przybliżeniu jest pokazywany w nakładce podczas przybliżania"
+
+#: data/io.elementary.terminal.appdata.xml.in:61
+msgid "Implement Clear and Reset context menu actions with accelerators"
+msgstr ""
+"Implementacja akcji menu kontekstowego „Wyczyść” oraz „Resetuj” przy użyciu "
+"akceleratorów"
+
+#: data/io.elementary.terminal.appdata.xml.in:62
+msgid "Add toggle for unsafe paste warning to application menu"
+msgstr ""
+"Dodano przełącznik dla ostrzeżenia o niebezpiecznym wklejeniu w menu "
+"aplikacji"
+
+#: data/io.elementary.terminal.appdata.xml.in:64
+#: data/io.elementary.terminal.appdata.xml.in:89
+#: data/io.elementary.terminal.appdata.xml.in:107
+#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:145
+#: data/io.elementary.terminal.appdata.xml.in:164
+msgid "Other updates:"
+msgstr "Inne aktualizacje:"
+
+#: data/io.elementary.terminal.appdata.xml.in:66
+msgid ""
+"Update the icon and tooltip of the cyclic search togglebutton according to "
+"its state"
+msgstr ""
+"Aktualizowanie ikony i tooltipa przycisku cyklicznego wyszukiwania w "
+"zależności od jego stanu"
+
+#: data/io.elementary.terminal.appdata.xml.in:67
+msgid "Focus correct tab after clicking on a process finished notification"
+msgstr ""
+"Skupienie na poprawnej karcie po kliknięciu na powiadomienie o zakończonym "
+"procesie"
+
+#: data/io.elementary.terminal.appdata.xml.in:68
+msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
+msgstr ""
+"Sprawdzanie zarówno obecności „doas” jak i „sudo” przy wklejaniu tekstu do "
+"terminala"
+
+#: data/io.elementary.terminal.appdata.xml.in:69
+msgid "Check for unsafe paste on dropping text as well"
+msgstr "Sprawdzanie niebezpiecznego wklejania również przy upuszczaniu tekstu"
+
+#: data/io.elementary.terminal.appdata.xml.in:70
+msgid "Improve gray contrast in dark theme"
+msgstr "Poprawiono kontrast szarości w ciemnym motywie"
+
+#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:93
+#: data/io.elementary.terminal.appdata.xml.in:111
+#: data/io.elementary.terminal.appdata.xml.in:126
+#: data/io.elementary.terminal.appdata.xml.in:147
+#: data/io.elementary.terminal.appdata.xml.in:166
+msgid "Translation updates"
+msgstr "Aktualizacje tłumaczeń"
+
+#: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr ""
 "Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
+#: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr ""
 "Karty oraz skala przybliżenia są teraz zapisywane w ustawieniach stanu gdy "
 "są one zmieniane"
 
-#: data/io.elementary.terminal.appdata.xml.in:63
-#: data/io.elementary.terminal.appdata.xml.in:81
-#: data/io.elementary.terminal.appdata.xml.in:98
-#: data/io.elementary.terminal.appdata.xml.in:119
-#: data/io.elementary.terminal.appdata.xml.in:138
-msgid "Other updates:"
-msgstr "Inne aktualizacje:"
-
-#: data/io.elementary.terminal.appdata.xml.in:65
+#: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Document missing options in the man page"
 msgstr "Strony man zostały uzupełnione o brakujące opcje"
 
-#: data/io.elementary.terminal.appdata.xml.in:66
+#: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr ""
 "Przy otwieraniu nowego okna nie jest wyświetlana niechciana karta domyślna"
 
-#: data/io.elementary.terminal.appdata.xml.in:67
-#: data/io.elementary.terminal.appdata.xml.in:85
-#: data/io.elementary.terminal.appdata.xml.in:100
-#: data/io.elementary.terminal.appdata.xml.in:121
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Translation updates"
-msgstr "Aktualizacje tłumaczeń"
-
-#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:109
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
 "Dodano skróty „Ctrl + PageUp” oraz „Ctrl + PageDown” do zmiany między kartami"
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:110
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "Poprawne odeksportowanie interfejsu DBus przy wychodzeniu"
 
-#: data/io.elementary.terminal.appdata.xml.in:112
+#: data/io.elementary.terminal.appdata.xml.in:138
 msgid "Option to follow system dark style preference"
 msgstr "Możliwość ustawienia trybu ciemnego na podstawie ustawień systemu"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:139
 msgid "Create a custom color palette"
 msgstr "Tworzenie niestandardowej palety kolorów"
 
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:134
+#: data/io.elementary.terminal.appdata.xml.in:141
+#: data/io.elementary.terminal.appdata.xml.in:160
 msgid "Fixes:"
 msgstr "Poprawki:"
 
-#: data/io.elementary.terminal.appdata.xml.in:117
+#: data/io.elementary.terminal.appdata.xml.in:143
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -114,19 +161,19 @@ msgstr ""
 "Domyślne style są całkowicie nieprzejrzyste i zaktualizowane do najnowszych "
 "wartości Solarized by poprawić czytelność"
 
-#: data/io.elementary.terminal.appdata.xml.in:122
+#: data/io.elementary.terminal.appdata.xml.in:148
 msgid "Performance improvements"
 msgstr "Ulepszenia wydajności"
 
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:157
 msgid "Switch tabs with Alt + 1-9"
 msgstr "Zmiana karty przy użyciu Alt + 1-9"
 
-#: data/io.elementary.terminal.appdata.xml.in:132
+#: data/io.elementary.terminal.appdata.xml.in:158
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "Zamknięcie przy użyciu Ctrl + Shift + Q"
 
-#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/io.elementary.terminal.appdata.xml.in:162
 msgid "Fix build on OS 7"
 msgstr "Naprawiono wersję dla OS 7"
 

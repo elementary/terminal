@@ -54,7 +54,6 @@ namespace Terminal {
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
 
-        public bool unsafe_ignored;
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
         public Menu context_menu_model { get; private set; }
