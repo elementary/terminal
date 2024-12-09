@@ -538,10 +538,9 @@ namespace Terminal {
 
 
             string? warn_text;
-            Utils.is_safe_paste (text, out warn_text);
 
             // No user interaction for safe commands
-            if (warn_text == null) {
+            if (Utils.is_safe_paste (text, out warn_text)) {
                 feed_child (text.data);
                 return;
             }
