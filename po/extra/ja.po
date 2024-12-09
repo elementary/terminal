@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-16 02:31+0000\n"
+"PO-Revision-Date: 2024-12-09 22:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2017-02-11 05:36+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -84,15 +84,12 @@ msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "プロセス完了通知をクリックした際、適切なタブにフォーカスするように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
-"ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\" も警告対象とし"
-"て確認するように修正"
+"ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\"、\"pkexec\"、"
+"\"run0\"、\"su\" も警告対象として確認するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -102,7 +99,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
+msgstr "安全でない貼り付け検出で複数行コマンドも確認するように修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
