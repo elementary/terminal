@@ -73,6 +73,7 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/terminal/issues/814">New window created with Ctrl Shift N has zero tabs and is transparent</issue>
         <issue url="https://github.com/elementary/terminal/issues/812">Notifications are not withdrawn</issue>
         <issue url="https://github.com/elementary/terminal/issues/806">Fails to build in Launchpad due to tests</issue>
         <issue url="https://github.com/elementary/terminal/issues/793">Drag-drop command bypasses sudo warning</issue>
