@@ -1,5 +1,6 @@
 src/Application.vala
 src/MainWindow.vala
+src/Utils.vala
 src/Dialogs/ColorPreferencesDialog.vala
 src/Dialogs/ForegroundProcessDialog.vala
 src/Dialogs/UnsafePasteDialog.vala
