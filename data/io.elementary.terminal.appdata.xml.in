@@ -65,13 +65,16 @@
         <ul>
           <li>Update the icon and tooltip of the cyclic search togglebutton according to its state</li>
           <li>Focus correct tab after clicking on a process finished notification</li>
-          <li>Check for "doas" as well as "sudo" when text pasted into terminal</li>
+          <li>Check for "doas", "pkexec", "run0", and "su" as well as "sudo" when text pasted into terminal</li>
           <li>Check for unsafe paste on dropping text as well</li>
+          <li>Check for multiline commands in unsafe paste detection</li>
           <li>Improve gray contrast in dark theme</li>
           <li>Translation updates</li>
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/terminal/issues/812">Notifications are not withdrawn</issue>
+        <issue url="https://github.com/elementary/terminal/issues/806">Fails to build in Launchpad due to tests</issue>
         <issue url="https://github.com/elementary/terminal/issues/793">Drag-drop command bypasses sudo warning</issue>
         <issue url="https://github.com/elementary/terminal/issues/682">Color issue in new version of Terminal</issue>
         <issue url="https://github.com/elementary/terminal/issues/442">Show percentage while zooming in with Ctrl+Scroll</issue>
@@ -79,6 +82,7 @@
         <issue url="https://github.com/elementary/terminal/issues/73">Open relevant tab when clicking on a task finished notification</issue>
       </issues>
     </release>
+
     <release version="6.2.0" date="2024-07-18" urgency="medium">
       <description>
         <p>New features:</p>
