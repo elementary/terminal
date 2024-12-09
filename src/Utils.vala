@@ -120,6 +120,15 @@ namespace Terminal.Utils {
         return uri;
     }
 
+    /**
+     * Checks a string for possible unsafe contents before pasting
+     *
+     * @param clipboard contents containing terminal commands
+     *
+     * @param return localized explanation of risk
+     *
+     * @return true if safe, false if unsafe.
+     */
     public bool is_safe_paste (string text, out string msg) {
         if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
             msg = _("The pasted text may contain multiple commands");
