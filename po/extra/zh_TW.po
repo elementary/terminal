@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-09-02 22:33+0000\n"
+"PO-Revision-Date: 2024-12-09 11:10+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"terminal/extra/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
+"projects/terminal/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -48,15 +48,15 @@ msgstr "新功能："
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "縮放時在覆蓋視窗中顯示縮放層級"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
+msgstr "實作「清除」與「重設」的內文選單動作，並提供鍵盤加速器"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
+msgstr "新增「不安全的貼上」警告的開關到應用程式選單中"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -71,23 +71,23 @@ msgstr "其他更新："
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
-msgstr ""
+msgstr "讓循環搜尋切換按鈕依它的狀態更新圖示與工具提示"
 
 #: data/io.elementary.terminal.appdata.xml.in:67
 msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
+msgstr "點擊程序完成時彈出的通知時聚焦在正確的分頁尚"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
 msgid "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
-msgstr ""
+msgstr "將文字貼上至終端機時除了 \"sudo\" 以外也檢查 \"doas\""
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "拖放文字到終端機時也檢查不安全的貼上"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "改善深色主題中的灰色對比"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 #: data/io.elementary.terminal.appdata.xml.in:93
