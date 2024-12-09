@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2024-12-09 21:34+0000\n"
 "PO-Revision-Date: 2018-05-31 07:40+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/terminal/"
@@ -398,11 +398,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminalul"
 
-#: src/Widgets/TerminalWidget.vala:541
+#: src/Widgets/TerminalWidget.vala:542
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:543
+#: src/Widgets/TerminalWidget.vala:544
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 

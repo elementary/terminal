@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2024-12-09 21:34+0000\n"
 "PO-Revision-Date: 2019-02-12 00:07+0000\n"
 "Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Galician <https://weblate.elementary.io/projects/terminal/"
@@ -405,11 +405,11 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
+#: src/Widgets/TerminalWidget.vala:542
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:543
+#: src/Widgets/TerminalWidget.vala:544
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
