@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-19 15:16+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2024-12-11 13:16+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -84,13 +84,12 @@ msgstr ""
 "Фокус на текущий вкладке после нажатия на уведомление о завершении процесса"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
-msgstr "Проверка на наличие «doas» и «sudo» при вставке текста в терминал"
+msgstr ""
+"Проверка на наличие «doas», «pkexec», «run0» и «su», а также «sudo» при "
+"вставке текста в терминал"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -98,7 +97,7 @@ msgstr "Проверка на опасность вставки и для пер
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
+msgstr "Проверка многострочных команд при обнаружении небезопасной вставки"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
