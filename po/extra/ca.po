@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-19 15:16+0000\n"
+"PO-Revision-Date: 2024-12-11 13:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/extra/"
 "ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-12-02 05:14+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -29,7 +29,7 @@ msgstr "Terminal"
 #: data/io.elementary.terminal.appdata.xml.in:11
 #: data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
-msgstr "Utilitzeu la línia d'ordres"
+msgstr "Usa la línia d'ordres"
 
 #: data/io.elementary.terminal.appdata.xml.in:13
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "environment which can be used to run programs available on your system."
 msgstr ""
 "El Terminal és un emulador de terminal per accedir a un entorn de shell "
-"d'UNIX que es pot utilitzar per executar programes disponibles al sistema."
+"d'UNIX que es pot usar per executar programes disponibles al sistema."
 
 #: data/io.elementary.terminal.appdata.xml.in:58
 #: data/io.elementary.terminal.appdata.xml.in:88
@@ -86,13 +86,12 @@ msgstr ""
 "procés acabat"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
-msgstr "Comprova si hi ha doas i sudo quan el text s'enganxa al terminal"
+msgstr ""
+"Comprova doas, pkexec, run0 i su, així com sudo quan s'enganxi text al "
+"terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -101,6 +100,7 @@ msgstr "Comprova també si hi ha una enganxament no segur en deixar anar text"
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr ""
+"Comprova si hi ha ordres multilínia a la detecció d'enganxament no segur"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
