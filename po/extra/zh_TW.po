@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-12-09 11:10+0000\n"
+"PO-Revision-Date: 2024-12-11 13:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
 "projects/terminal/extra/zh_Hant/>\n"
@@ -78,13 +78,11 @@ msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "點擊程序完成時彈出的通知時聚焦在正確的分頁尚"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
-msgstr "將文字貼上至終端機時除了 \"sudo\" 以外也檢查 \"doas\""
+msgstr "將文字貼上至終端機時除了 \"sudo\" 以外也檢查 \"doas\"、\"pkexec\"、\"run0\" "
+"和 \"su\""
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -92,7 +90,7 @@ msgstr "拖放文字到終端機時也檢查不安全的貼上"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
+msgstr "偵測不安全的貼上時也檢查多行指令"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
