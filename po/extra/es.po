@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-17 16:16+0000\n"
+"PO-Revision-Date: 2024-12-10 11:51+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/extra/"
 "es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -60,8 +60,8 @@ msgstr ""
 #: data/io.elementary.terminal.appdata.xml.in:62
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
-"Se agregó una opción para activar o desactivar la advertencia de pegado en "
-"el menú de la aplicación"
+"Se agregó una opción para activar o desactivar la advertencia de pegado no "
+"seguro en el menú de la aplicación"
 
 #: data/io.elementary.terminal.appdata.xml.in:64
 #: data/io.elementary.terminal.appdata.xml.in:93
@@ -87,24 +87,23 @@ msgstr ""
 "notificación de proceso terminado"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
-"Ahora se verifica por la existencia de «doas» y «sudo» cuando se pega texto "
-"en la terminal"
+"Ahora se verifica por la existencia de «doas», «pkexec», «run0», y tanto «su»"
+" como «sudo» cuando se pega texto en la terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
 msgstr ""
-"Ahora también se verifica por un pegado inseguro al arrastrar y soltar texto"
+"Ahora también se verifica por un pegado no seguro al arrastrar y soltar texto"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr ""
+"Ahora se verifica por comandos en múltiples líneas en la detección de pegado "
+"no seguro"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
