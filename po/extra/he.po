@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-17 16:16+0000\n"
+"PO-Revision-Date: 2024-12-11 13:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/extra/he/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -78,13 +78,12 @@ msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "התמקדות על הלשונית הנוכחית לאחר לחיצה על התראת סיום תהליך"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
-msgstr "לבדוק גם את „doas” כמו גם את „sudo” בעת הדבקת טקסט למסוף"
+msgstr ""
+"לבדוק גם את „doas”,‏ „pkexec”,‏ „run0”, ואת „su” כמו גם את „sudo” בעת הדבקת "
+"טקסט למסוף"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -92,7 +91,7 @@ msgstr "לבדוק הדבקה מפוקפקת גם בעת גרירת טקסט"
 
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
+msgstr "לבדוק פקודות מרובות שורות בזיהוי הדבקה מפוקפקת"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"
