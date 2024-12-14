@@ -266,8 +266,8 @@ public class Terminal.Application : Gtk.Application {
             var new_window = new MainWindow (this, active_window == null);
             new_window.present ();
             new_window.set_size_request (
-                saved_state.get_int ("window-width"),
-                saved_state.get_int ("window-height")
+                active_window.width_request,
+                active_window.height_request
             );
 
             new_window.add_tab_with_working_directory (dir);
