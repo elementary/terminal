@@ -74,8 +74,8 @@ namespace Terminal {
 
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
-        public const string[] ACCELS_CLEAR_SCREEN = { "<Control>L", null };
-        public const string[] ACCELS_RESET = { "<Control>K", null };
+        public const string[] ACCELS_CLEAR_SCREEN = { "<Control><Shift>L", null };
+        public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
