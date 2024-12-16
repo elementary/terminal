@@ -529,14 +529,15 @@ namespace Terminal {
         }
 
         private void action_clear_screen () {
-            if (confirm_kill_fg_process (
-                _("Are you sure you want to clear the screen?"),
-                _("Clear Screen"))
-            ) {
-                // Should we clear scrollback too?
-                // We know there is no foreground process so we can just feed the command in
-                feed_child ("clear -x\n".data);
+            if (has_foreground_process ()) {
+                // We cannot guarantee the terminal is left in sensible state if we 
+                // kill foreground process so ignore clear screen request
+                return;
             }
+
+            // We keep the scrollback history, just clear the screen
+            // We know there is no foreground process so we can just feed the command in
+            feed_child ("clear -x\n".data);
         }
 
         private void action_reset () {
