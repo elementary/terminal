@@ -534,7 +534,8 @@ namespace Terminal {
                 _("Clear Screen"))
             ) {
                 // Should we clear scrollback too?
-                run_program ("clear -x", null);
+                // We know there is no foreground process so we can just feed the command in
+                feed_child ("clear -x\n".data);
             }
         }
 
@@ -544,7 +545,8 @@ namespace Terminal {
                 _("Reset"))
             ) {
                 // This also clears the screen and the scrollback
-                run_program ("reset", null);
+                // We know there is no foreground process so we can just feed the command in
+                feed_child ("reset\n".data);
             }
         }
 
