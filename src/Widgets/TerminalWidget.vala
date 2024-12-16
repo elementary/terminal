@@ -505,16 +505,47 @@ namespace Terminal {
             clipboard.set_text (output, output.length);
         }
 
+        public bool confirm_kill_fg_process (
+            string primary_text,
+            string button_label
+        ) {
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog (
+                    (MainWindow) get_toplevel (),
+                    primary_text,
+                    button_label
+                );
+
+                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+                    dialog.destroy ();
+                    kill_fg ();
+                } else {
+                    dialog.destroy ();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void action_clear_screen () {
-            debug ("Clear screen only");
-            // Should we clear scrollback too?
-            run_program ("clear -x", null);
+            if (confirm_kill_fg_process (
+                _("Are you sure you want to clear the screen?"),
+                _("Clear Screen"))
+            ) {
+                // Should we clear scrollback too?
+                run_program ("clear -x", null);
+            }
         }
 
         private void action_reset () {
-            debug ("Reset");
-            // This also clears the screen and the scrollback
-            run_program ("reset", null);
+            if (confirm_kill_fg_process (
+                _("Are you sure you want to reset the terminal?"),
+                _("Reset"))
+            ) {
+                // This also clears the screen and the scrollback
+                run_program ("reset", null);
+            }
         }
 
         protected override void paste_clipboard () {
@@ -895,25 +926,14 @@ namespace Terminal {
         public void reload () {
             var old_loc = get_shell_location ();
 
-            if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_toplevel ());
-                dialog.response.connect ((res) => {
-                    if (res == Gtk.ResponseType.ACCEPT) {
-                        Posix.kill (child_pid, Posix.Signal.TERM);
-                        reset (true, true);
-                        active_shell (old_loc);
-                    }
+            if (confirm_kill_fg_process (
+                    _("Are you sure you want to reload this tab?"),
+                    _("Reload Tab"))
+                ) {
 
-                    dialog.destroy ();
-                });
-
-                dialog.present ();
-                return;
+                reset (true, true);
+                active_shell (old_loc);
             }
-
-            Posix.kill (child_pid, Posix.Signal.TERM);
-            reset (true, true);
-            active_shell (old_loc);
         }
 
         private void check_cwd_changed () {
