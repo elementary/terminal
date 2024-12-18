@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-07 15:17+0000\n"
+"PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
 "terminal/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -260,15 +260,11 @@ msgid "Contrast is high"
 msgstr "A kontraszt magas"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Egy aktív folyamat fut ebben a terminálban. Ha frissíti, be fog fejeződni."
+"Egy aktív folyamat fut ebben a terminálban. Ha folytatja, be fog fejeződni."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -375,10 +371,8 @@ msgid "Terminal"
 msgstr "Terminál"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Biztos, hogy ki akar lépni a terminálból?"
+msgstr "Biztos, hogy visszaállítja a terminált?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
