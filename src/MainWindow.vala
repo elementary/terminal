@@ -368,10 +368,13 @@ namespace Terminal {
                 if (term == null) {
                     confirmed = true;
                 } else {
-                    confirmed = confirm_close_tab (term);
+                    confirmed = term.confirm_kill_fg_process (
+                        _("Are you sure you want to close this tab?"),
+                        _("Close Tab")
+                    );
                 }
 
-                if (confirmed) {
+                if (confirmed && term != null) {
                     if (!term.child_has_exited) {
                         term.term_ps ();
                     }
@@ -528,23 +531,6 @@ namespace Terminal {
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
-        }
-
-        public bool confirm_close_tab (TerminalWidget terminal_widget) {
-            if (terminal_widget.has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog (this);
-                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                    dialog.destroy ();
-                    terminal_widget.kill_fg ();
-                } else {
-                    dialog.destroy ();
-                    return false;
-                }
-            }
-
-            //Names checked in page_detached handler
-
-            return true;
         }
 
         private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
@@ -893,18 +879,14 @@ namespace Terminal {
 
             for (int i = 0; i < notebook.n_pages; i++) {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.has_foreground_process ()) {
-                    var dialog = new ForegroundProcessDialog.before_close (this);
-                    if (dialog.run () == Gtk.ResponseType.ACCEPT) {
-                        term.kill_fg ();
-                        dialog.destroy ();
-                    } else {
-                        dialog.destroy ();
-                        return true;
-                    }
+                if (term.confirm_kill_fg_process (
+                    _("Are you sure you want to quit Terminal?"),
+                    _("Quit Terminal"))
+                ) {
+                    tabs_to_terminate.append (term);
+                } else {
+                    return true;
                 }
-
-                tabs_to_terminate.append (term);
             }
 
             foreach (var t in tabs_to_terminate) {

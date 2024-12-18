@@ -74,8 +74,8 @@ namespace Terminal {
 
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
-        public const string[] ACCELS_CLEAR_SCREEN = { "<Control>L", null };
-        public const string[] ACCELS_RESET = { "<Control>K", null };
+        public const string[] ACCELS_CLEAR_SCREEN = { "<Control><Shift>L", null };
+        public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
@@ -505,16 +505,50 @@ namespace Terminal {
             clipboard.set_text (output, output.length);
         }
 
+        public bool confirm_kill_fg_process (
+            string primary_text,
+            string button_label
+        ) {
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog (
+                    (MainWindow) get_toplevel (),
+                    primary_text,
+                    button_label
+                );
+
+                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+                    dialog.destroy ();
+                    kill_fg ();
+                } else {
+                    dialog.destroy ();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void action_clear_screen () {
-            debug ("Clear screen only");
-            // Should we clear scrollback too?
-            run_program ("clear -x", null);
+            if (has_foreground_process ()) {
+                // We cannot guarantee the terminal is left in sensible state if we 
+                // kill foreground process so ignore clear screen request
+                return;
+            }
+
+            // We keep the scrollback history, just clear the screen
+            // We know there is no foreground process so we can just feed the command in
+            feed_child ("clear -x\n".data);
         }
 
         private void action_reset () {
-            debug ("Reset");
-            // This also clears the screen and the scrollback
-            run_program ("reset", null);
+            if (confirm_kill_fg_process (
+                _("Are you sure you want to reset the terminal?"),
+                _("Reset"))
+            ) {
+                // This also clears the screen and the scrollback
+                // We know there is no foreground process so we can just feed the command in
+                feed_child ("reset\n".data);
+            }
         }
 
         protected override void paste_clipboard () {
@@ -895,25 +929,14 @@ namespace Terminal {
         public void reload () {
             var old_loc = get_shell_location ();
 
-            if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_toplevel ());
-                dialog.response.connect ((res) => {
-                    if (res == Gtk.ResponseType.ACCEPT) {
-                        Posix.kill (child_pid, Posix.Signal.TERM);
-                        reset (true, true);
-                        active_shell (old_loc);
-                    }
+            if (confirm_kill_fg_process (
+                    _("Are you sure you want to reload this tab?"),
+                    _("Reload Tab"))
+                ) {
 
-                    dialog.destroy ();
-                });
-
-                dialog.present ();
-                return;
+                reset (true, true);
+                active_shell (old_loc);
             }
-
-            Posix.kill (child_pid, Posix.Signal.TERM);
-            reset (true, true);
-            active_shell (old_loc);
         }
 
         private void check_cwd_changed () {
