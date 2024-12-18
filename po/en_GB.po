@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2024-12-18 19:54+0000\n"
 "PO-Revision-Date: 2024-11-06 03:27+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -66,59 +66,75 @@ msgstr "Process completed"
 msgid "Process exited with errors"
 msgstr "Process exited with errors"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Show Search Bar"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copy Last Output"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "Clear Screen"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Reset"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Exit FullScreen"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Settings"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Are you sure you want to close this tab?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+msgid "Close Tab"
+msgstr "Close Tab"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Show in %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Default application"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Are you sure you want to quit Terminal?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Quit Terminal"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Hide find bar"
 
@@ -243,54 +259,17 @@ msgstr "Contrast is good"
 msgid "Contrast is high"
 msgstr "Contrast is high"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Are you sure you want to close this tab?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "There is an active process on this tab."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "If you close it, the process will end."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Close Tab"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Are you sure you want to quit Terminal?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "There is an active process on this terminal."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "If you quit Terminal, the process will end."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Quit Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Are you sure you want to reload this tab?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "There is an active process on this tab. If you reload it, the process will "
 "end."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Reload Tab"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -392,13 +371,27 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Are you sure you want to quit Terminal?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "The pasted text may contain multiple commands"
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "The pasted text may be trying to gain administrative access"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Are you sure you want to reload this tab?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Reload Tab"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -432,6 +425,18 @@ msgstr "Reload"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "Zoom: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "There is an active process on this tab."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "If you close it, the process will end."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "There is an active process on this terminal."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "If you quit Terminal, the process will end."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Open a new terminal tab"
