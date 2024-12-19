@@ -508,6 +508,9 @@ namespace Terminal {
                 default_height = geometry.height * 3 / 4;
             }
 
+            default_width = int.max (Application.MINIMUM_WIDTH, default_width);
+            default_height = int.max (Application.MINIMUM_HEIGHT, default_height);
+
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
