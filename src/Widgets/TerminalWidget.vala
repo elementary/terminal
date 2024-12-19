@@ -447,12 +447,12 @@ namespace Terminal {
                 }
             }
 
-            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
+            if (CONTROL_MASK in modifiers && SHIFT_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
                 action_reset ();
                 return true;
             }
 
-            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
+            if (CONTROL_MASK in modifiers && SHIFT_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
                 action_clear_screen ();
                 return true;
             }
