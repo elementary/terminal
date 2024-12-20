@@ -494,22 +494,13 @@ namespace Terminal {
             return false;
         }
 
+        // This must run before the window is realized
         private void restore_saved_state () {
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
-            default_width = rect.width;
-            default_height = rect.height;
-
-            if (default_width == -1 || default_height == -1) {
-                var geometry = get_display ().get_primary_monitor ().get_geometry ();
-
-                default_width = geometry.width * 2 / 3;
-                default_height = geometry.height * 3 / 4;
-            }
-
-            default_width = int.max (Application.MINIMUM_WIDTH, default_width);
-            default_height = int.max (Application.MINIMUM_HEIGHT, default_height);
+            default_width = int.max (Application.MINIMUM_WIDTH, rect.width);
+            default_height = int.max (Application.MINIMUM_HEIGHT, rect.height);
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
