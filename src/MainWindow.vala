@@ -605,35 +605,39 @@ namespace Terminal {
             return appinfo;
         }
 
-        protected override bool configure_event (Gdk.EventConfigure event) {
-            // triggered when the size, position or stacking of the window has changed
-            // it is delayed 400ms to prevent spamming gsettings
-            if (timer_window_state_change > 0) {
-                GLib.Source.remove (timer_window_state_change);
-            }
-
-            timer_window_state_change = GLib.Timeout.add (400, () => {
-                timer_window_state_change = 0;
-                if (get_window () == null)
-                    return false;
-
-                /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
-                if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
-                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
-                } else if (is_maximized) {
-                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
-                } else {
-                    Terminal.Application.saved_state.set_enum ("window-state", MainWindow.NORMAL);
-
-                    var rect = Gdk.Rectangle ();
-                    get_size (out rect.width, out rect.height);
-                    Terminal.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
+        public void save_window_state () {
+            // Another method used for Gtk4 but keep existing one for now
+            configure_event.connect (() => {
+                // triggered when the size, position or stacking of the window has changed
+                // it is delayed 400ms to prevent spamming gsettings
+                if (timer_window_state_change > 0) {
+                    GLib.Source.remove (timer_window_state_change);
                 }
 
-                return false;
-            });
+                timer_window_state_change = GLib.Timeout.add (400, () => {
+                    timer_window_state_change = 0;
+                    if (get_window () == null) {
+                        return Source.REMOVE;
+                    }
 
-            return base.configure_event (event);
+                    /* Check for fullscreen first: https://github.com/elementary/terminal/issues/377 */
+                    if ((get_window ().get_state () & Gdk.WindowState.FULLSCREEN) != 0) {
+                        Terminal.Application.saved_state.set_enum ("window-state", MainWindow.FULLSCREEN);
+                    } else if (is_maximized) {
+                        Terminal.Application.saved_state.set_enum ("window-state", MainWindow.MAXIMIZED);
+                    } else {
+                        Terminal.Application.saved_state.set_enum ("window-state", MainWindow.NORMAL);
+
+                        var rect = Gdk.Rectangle ();
+                        get_size (out rect.width, out rect.height);
+                        Terminal.Application.saved_state.set ("window-size", "(ii)", rect.width, rect.height);
+                    }
+
+                    return Source.REMOVE;
+                });
+
+                return Gdk.EVENT_PROPAGATE;
+            });
         }
 
         private void open_tabs () {

@@ -261,15 +261,11 @@ public class Terminal.Application : Gtk.Application {
             string dir = Environment.get_home_dir ();
             if (active_window != null) {
                 dir = ((MainWindow)active_window).current_terminal.current_working_directory;
+            } else {
+                return;
             }
 
-            var new_window = new MainWindow (this, active_window == null);
-            new_window.present ();
-            new_window.set_size_request (
-                active_window.width_request,
-                active_window.height_request
-            );
-
+            var new_window = new MainWindow (this, false);
             new_window.add_tab_with_working_directory (dir);
         });
 
@@ -297,11 +293,16 @@ public class Terminal.Application : Gtk.Application {
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
-        bool new_window;
+        bool new_window = false;
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
             window = new MainWindow (this, is_first_window);
+            // All windows restore the window state from settings so matches first window, 
+            // but only the first window saves its window state
+            if (is_first_window) {
+                window.save_window_state ();
+            }
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
