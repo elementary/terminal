@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-10-08 09:16+0000\n"
+"PO-Revision-Date: 2024-12-26 00:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -260,16 +260,12 @@ msgid "Contrast is high"
 msgstr "Kontrast stark"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Dieser Tab enthält einen laufenden Prozess. Wenn Sie den Tab neu laden, wird "
-"der Prozess beendet."
+"Dieser Tab enthält einen laufenden Prozess. Falls Sie fortfahren, wird der "
+"Prozess beendet."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -305,16 +301,12 @@ msgid "Next result"
 msgstr "Nächstes Ergebnis"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Zyklisches Suchen"
+msgstr "Zyklisches Suchen ausschalten"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Zyklisches Suchen"
+msgstr "Zyklisches Suchen einschalten"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -355,13 +347,12 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Warnhinweis: Unsicheres Einfügen"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
+msgstr ""
+"Warnen, falls der eingefügte mehrere oder Systemverwaltungsbefehle enthält"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
@@ -380,10 +371,8 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
+msgstr "Sind Sie sicher, dass Sie das Terminal zurücksetzen wollen?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
