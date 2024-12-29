@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2024-12-18 19:54+0000\n"
 "PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
@@ -66,59 +66,75 @@ msgstr "Processo concluído"
 msgid "Process exited with errors"
 msgstr "Processo terminado com erros"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copiar o último resultado"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Colar"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Sair de ecrã inteiro"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Procurar…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Definições"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Tem a certeza que quer fechar este separador?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+msgid "Close Tab"
+msgstr "Fechar separador"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar em %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Aplicação predefinida"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Tem a certeza de que quer sair do terminal?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Sair do terminal"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Esconder barra de localização"
 
@@ -243,54 +259,17 @@ msgstr "O contraste é bom"
 msgid "Contrast is high"
 msgstr "O contraste é alto"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Tem a certeza que quer fechar este separador?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Ainda existe um processo ativo neste separador."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Se fechar, o processo em execução irá terminar."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Fechar separador"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Tem a certeza de que quer sair do terminal?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Ainda existe um processo ativo neste terminal."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Se fechar o Terminal, o processo vai terminar."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Sair do terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Tem a certeza que quer recarregar este separador?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Há um processo ativo neste separador. Se o voltar a carregar, o processo "
 "terminará."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Recarregar separador"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -397,13 +376,27 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Tem a certeza de que quer sair do terminal?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "O texto colado pode conter vários comandos"
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "O texto colado pode estar a tentar obter acesso administrativo"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Tem a certeza que quer recarregar este separador?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Recarregar separador"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -445,6 +438,18 @@ msgstr "Recarregar"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Ainda existe um processo ativo neste separador."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Se fechar, o processo em execução irá terminar."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Ainda existe um processo ativo neste terminal."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Se fechar o Terminal, o processo vai terminar."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Abrir um novo separador de terminal"
