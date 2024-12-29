@@ -10,6 +10,12 @@ public class Terminal.TerminalView : Gtk.Box {
         URI_LIST
     }
 
+    public enum TabBarBehavior {
+        ALWAYS = 0,
+        SINGLE = 1,
+        NEVER = 2
+    }
+
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Hdy.TabPage page);
 
@@ -71,8 +77,9 @@ public class Terminal.TerminalView : Gtk.Box {
             use_popover = false,
         };
 
+        var tab_bar_behavior = (TabBarBehavior)Application.settings.get_enum ("tab-bar-behavior");
         tab_bar = new Hdy.TabBar () {
-            autohide = false,
+            autohide = (tab_bar_behavior == TabBarBehavior.SINGLE), // This is <value value="1" nick="Hide When Single Tab"/>
             expand_tabs = false,
             inverted = true,
             start_action_widget = new_tab_button,
@@ -96,7 +103,11 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
         tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
-        add (tab_bar);
+        if( tab_bar_behavior != TabBarBehavior.NEVER ) {
+            // Looks like we can't use set_visible since its value should be overriden in TabBar
+            // so the only solution is not to add the widget to the box itself
+            add (tab_bar);
+        }
         add (tab_view);
     }
 
