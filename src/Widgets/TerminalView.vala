@@ -103,7 +103,11 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
         tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
-        add (tab_bar);
+        if( tab_bar_behavior != TabBarBehavior.NEVER ) {
+            // Looks like we can't use set_visible since its value should be overriden in TabBar
+            // so the only solution is not to add the widget to the box itself
+            add (tab_bar);
+        }
         add (tab_view);
     }
 
