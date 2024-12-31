@@ -1005,11 +1005,11 @@ namespace Terminal {
         }
 
         private void action_next_tab () {
-            notebook.tab_view.select_next_page ();
+            notebook.cycle_tabs (FORWARD);
         }
 
         private void action_previous_tab () {
-            notebook.tab_view.select_previous_page ();
+            notebook.cycle_tabs (BACK);
         }
 
         void action_move_tab_right () {
