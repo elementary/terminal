@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-12-19 16:12+0000\n"
+"PO-Revision-Date: 2024-12-24 18:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -366,7 +366,7 @@ msgstr "מסוף"
 
 #: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
-msgstr "האם לאפס את המסוף?"
+msgstr "לאפס את המסוף?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"

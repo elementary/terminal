@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-06 11:17+0000\n"
+"PO-Revision-Date: 2024-12-21 09:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"terminal/terminal/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
+"projects/terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -260,14 +260,10 @@ msgid "Contrast is high"
 msgstr "對比很高"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "此分頁尚有執行中的程序。重新載入將導致該程序終止。"
+msgstr "此分頁尚有執行中的程序。繼續進行此操作將導致該程序終止。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -366,10 +362,8 @@ msgid "Terminal"
 msgstr "終端機"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "您確定要退出終端機嗎？"
+msgstr "您確定要重設終端機嗎？"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
