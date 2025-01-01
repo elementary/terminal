@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-04 13:23+0000\n"
+"PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -260,16 +260,11 @@ msgid "Contrast is high"
 msgstr "コントラストは高いです"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr ""
-"このタブにはアクティブなプロセスがあります。再読み込みすると、このプロセスは"
-"終了します。"
+msgstr "このタブにはアクティブなプロセスがあります。続行すると、このプロセスは終了し"
+"ます。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -375,10 +370,8 @@ msgid "Terminal"
 msgstr "ターミナル"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "“ターミナル”を終了してもよろしいですか?"
+msgstr "ターミナルをリセットしてもよろしいですか?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"

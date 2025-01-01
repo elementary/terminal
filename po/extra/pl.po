@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-12-03 18:16+0000\n"
+"PO-Revision-Date: 2024-12-24 18:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -87,15 +87,12 @@ msgstr ""
 "procesie"
 
 #: data/io.elementary.terminal.appdata.xml.in:68
-#, fuzzy
-#| msgid ""
-#| "Check for \"doas\" as well as \"sudo\" when text pasted into terminal"
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
-"Sprawdzanie zarówno obecności „doas” jak i „sudo” przy wklejaniu tekstu do "
-"terminala"
+"Sprawdzanie zarówno obecności „doas”, „pkexec”, „run0” oraz „su” w dodatku "
+"do „sudo” przy wklejaniu tekstu do terminala"
 
 #: data/io.elementary.terminal.appdata.xml.in:69
 msgid "Check for unsafe paste on dropping text as well"
@@ -104,6 +101,8 @@ msgstr "Sprawdzanie niebezpiecznego wklejania również przy upuszczaniu tekstu"
 #: data/io.elementary.terminal.appdata.xml.in:70
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr ""
+"Sprawdzanie poleceń wielowierszowych podczas sprawdzania niebezpiecznych "
+"wklejeń"
 
 #: data/io.elementary.terminal.appdata.xml.in:71
 msgid "Improve gray contrast in dark theme"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-04 12:49+0000\n"
+"PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
 "terminal/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:63
@@ -27,13 +27,13 @@ msgstr "Mostrar versión"
 #. -n flag forces a new window
 #: src/Application.vala:65
 msgid "Open a new terminal window"
-msgstr "Abrir una ventana nueva del terminal"
+msgstr "Abrir una ventana nueva de terminal"
 
 #. -t flag forces a new tab
 #: src/Application.vala:67
 msgid "Open a new terminal tab at current working directory"
 msgstr ""
-"Abrir una pestaña nueva del terminal en el directorio de trabajo actual"
+"Abrir una pestaña nueva de la terminal en el directorio de trabajo actual"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:69
@@ -43,17 +43,17 @@ msgstr "Establecer el directorio de trabajo del intérprete"
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:71
 msgid "Run a program in terminal"
-msgstr "Ejecutar un programa en el terminal"
+msgstr "Ejecutar un programa en la terminal"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:73
 msgid "Open terminal in a minimized state"
-msgstr "Abrir un terminal minimizado"
+msgstr "Abrir una terminal minimizada"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:76
 msgid "Run remainder of line as a command in terminal"
-msgstr "Ejecutar el resto de la línea como un comando en el terminal"
+msgstr "Ejecutar el resto de la línea como un comando en la terminal"
 
 #: src/Application.vala:128
 msgid "[-- COMMAND…]"
@@ -129,11 +129,11 @@ msgstr "Aplicación predeterminada"
 
 #: src/MainWindow.vala:883
 msgid "Are you sure you want to quit Terminal?"
-msgstr "¿Está seguro que desea salir del terminal?"
+msgstr "¿Está seguro que desea salir de Terminal?"
 
 #: src/MainWindow.vala:884
 msgid "Quit Terminal"
-msgstr "Salir del terminal"
+msgstr "Salir de Terminal"
 
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
@@ -261,24 +261,19 @@ msgid "Contrast is high"
 msgstr "El contraste es alto"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Hay un proceso activo en esta pestaña. Si lo vuelve a cargar, el proceso "
-"finalizará."
+"Hay un proceso activo en esta pestaña. Si continúa, el proceso finalizará."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
-"Copiar comandos en el terminal puede ser peligroso. Asegúrese de comprender "
-"lo que hace cada parte del texto pegado antes de continuar."
+"Copiar comandos en Terminal puede ser peligroso. Asegúrese de comprender lo "
+"que hace cada parte del texto pegado antes de continuar."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
@@ -376,10 +371,8 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "¿Está seguro que desea salir del terminal?"
+msgstr "¿Está seguro que desea reiniciar la terminal?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"

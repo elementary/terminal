@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-04 11:11+0000\n"
+"PO-Revision-Date: 2024-12-24 18:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/terminal/terminal/"
 "he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
 #: src/Application.vala:63
@@ -260,14 +260,10 @@ msgid "Contrast is high"
 msgstr "הניגוד גבוה"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "יש תהליך פעיל בלשונית זו. רענון יסיים את התהליך."
+msgstr "יש תהליך פעיל בלשונית זו. המשך בפעילות יסיים את התהליך."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -369,10 +365,8 @@ msgid "Terminal"
 msgstr "מסוף"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "האם לצאת מהמסוף?"
+msgstr "לאפס את המסוף?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"

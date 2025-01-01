@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-18 19:54+0000\n"
-"PO-Revision-Date: 2024-11-04 17:55+0000\n"
+"PO-Revision-Date: 2024-12-21 09:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/terminal/"
 "pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -261,15 +261,11 @@ msgid "Contrast is high"
 msgstr "Kontrast jest wysoki"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"W tej karcie znajduje się aktywny proces. Jeśli ją odświeżysz, proces się "
+"W tej karcie znajduje się aktywny proces. Jeśli kontynuujesz, proces się "
 "zakończy."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
@@ -376,10 +372,8 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Zakończyć działanie programu?"
+msgstr "Czy na pewno chcesz zresetować terminal?"
 
 #: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
