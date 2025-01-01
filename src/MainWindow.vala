@@ -263,6 +263,7 @@ namespace Terminal {
             string? command = null,
             bool create_new_tab = false
         ) {
+
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
@@ -781,6 +782,7 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
+            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
@@ -788,6 +790,7 @@ namespace Terminal {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
+            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
             terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
@@ -797,12 +800,13 @@ namespace Terminal {
                 // TabView already removed tab - ignore signal
                 return;
             }
-             if (!tw.killed) {
+            if (!tw.killed) {
                 if (tw.program_string != null) {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
                     tw.program_string = null;
                     tw.active_shell (tw.current_working_directory);
+                    check_for_tabs_with_same_name ();
                 } else {
                     if (tw.tab != null) {
                         notebook.tab_view.close_page (tw.tab);
@@ -1119,15 +1123,20 @@ namespace Terminal {
             int j = 0;
             for (i = 0; i < notebook.n_pages; i++) {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                string term_path = term.current_working_directory;
-                string term_label = Path.get_basename (term_path);
-                if (term_label == "" ||
-                    term.tab_label == TerminalWidget.DEFAULT_LABEL) {
+                string term_path, term_label;
+                if (term.program_string != "") {
+                    term.tab_label = term.program_string;
                     continue;
+                } else {
+                    term_path = term.current_working_directory;
+                    term_label = Path.get_basename (term_path);
+                    if (term_label == "" || term_label == "/") {
+                        term.tab_label = TerminalWidget.DEFAULT_LABEL;
+                        continue;
+                    } else {
+                        term.tab_label = term_label;
+                    }
                 }
-
-                /* Reset tab_name to basename so long name only used when required */
-                term.tab_label = term_label;
 
                 for (j = 0; j < notebook.n_pages; j++) {
                 var term2 = get_term_widget (notebook.tab_view.get_nth_page (j));
@@ -1151,6 +1160,11 @@ namespace Terminal {
             src.tab.tooltip = cwd;
             check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);
+        }
+
+        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
+            src.program_string = cmdline;
+            check_for_tabs_with_same_name (); // Also sets window title
         }
 
         private void save_opened_terminals (bool save_tabs, bool save_zooms) {

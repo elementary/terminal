@@ -28,12 +28,13 @@ namespace Terminal {
         internal const string DEFAULT_LABEL = _("Terminal");
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
-        public string? program_string { get; set; default = null; }
+        public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
+        GLib.Pid fg_pid;
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -160,6 +161,7 @@ namespace Terminal {
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed (string cwd);
+        public signal void foreground_process_changed (string cmdline);
 
         public TerminalWidget (MainWindow parent_window) {
             Object (
@@ -236,7 +238,7 @@ namespace Terminal {
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
             size_allocate.connect (() => resized = true);
-            contents_changed.connect (check_cwd_changed);
+            contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
             ulong once = 0;
             once = realize.connect (() => {
@@ -718,7 +720,7 @@ namespace Terminal {
                 warning (e.message);
             }
 
-            check_cwd_changed ();
+            on_contents_changed ();
         }
 
         public void run_program (string _program_string, string? working_directory) {
@@ -792,6 +794,16 @@ namespace Terminal {
             } catch (GLib.FileError error) {
                 /* Tab name disambiguation may call this before shell location available. */
                 /* No terminal warning needed */
+                return "";
+            }
+        }
+
+        public string get_pid_name (int pid) {
+            try {
+                string cmdline;
+                GLib.FileUtils.get_contents ("/proc/%d/cmdline".printf (pid), out cmdline);
+                return cmdline;
+            } catch (GLib.Error e) {
                 return "";
             }
         }
@@ -939,12 +951,20 @@ namespace Terminal {
             }
         }
 
-        private void check_cwd_changed () {
+        private void on_contents_changed () {
             var cwd = get_shell_location ();
             if (cwd != current_working_directory) {
                 current_working_directory = cwd;
                 tab.tooltip = current_working_directory;
                 cwd_changed (cwd);
+            }
+
+            int pid;
+            try_get_foreground_pid (out pid);
+            if (pid != fg_pid) {
+                var cmdline = get_pid_name (pid);
+                foreground_process_changed (cmdline);
+                fg_pid = pid;
             }
         }
     }
