@@ -166,7 +166,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public void cycle_tabs (Hdy.NavigationDirection direction) {
-        var pos = (int) tab_view.get_page_position (selected_page);
+        var pos = tab_view.get_page_position (selected_page);
         pos = direction == FORWARD ? pos + 1 : pos - 1;
         if (pos == n_pages) {
             pos = 0;
