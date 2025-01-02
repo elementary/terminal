@@ -798,7 +798,7 @@ namespace Terminal {
             }
         }
 
-        public string get_pid_name (int pid) {
+        public string get_pid_cmdline (int pid) {
             try {
                 string cmdline;
                 GLib.FileUtils.get_contents ("/proc/%d/cmdline".printf (pid), out cmdline);
@@ -962,7 +962,7 @@ namespace Terminal {
             int pid;
             try_get_foreground_pid (out pid);
             if (pid != fg_pid) {
-                var cmdline = get_pid_name (pid);
+                var cmdline = get_pid_cmdline (pid);
                 foreground_process_changed (cmdline);
                 fg_pid = pid;
             }
