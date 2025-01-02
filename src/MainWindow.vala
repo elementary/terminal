@@ -770,11 +770,10 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
-            check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
 
             connect_terminal_signals (terminal_widget);
-
+            check_for_tabs_with_same_name ();
             return terminal_widget;
         }
 
@@ -1156,8 +1155,7 @@ namespace Terminal {
             return;
         }
 
-        private void on_terminal_cwd_changed (TerminalWidget src, string cwd) {
-            src.tab.tooltip = cwd;
+        private void on_terminal_cwd_changed () {
             check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);
         }

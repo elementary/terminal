@@ -160,7 +160,7 @@ namespace Terminal {
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
-        public signal void cwd_changed (string cwd);
+        public signal void cwd_changed ();
         public signal void foreground_process_changed (string cmdline);
 
         public TerminalWidget (MainWindow parent_window) {
@@ -532,7 +532,7 @@ namespace Terminal {
 
         private void action_clear_screen () {
             if (has_foreground_process ()) {
-                // We cannot guarantee the terminal is left in sensible state if we 
+                // We cannot guarantee the terminal is left in sensible state if we
                 // kill foreground process so ignore clear screen request
                 return;
             }
@@ -599,6 +599,12 @@ namespace Terminal {
             dialog.present ();
         }
 
+        private void update_current_working_directory (string cwd) {
+            current_working_directory = cwd;
+            tab.tooltip = current_working_directory;
+            cwd_changed ();
+        }
+
         private void update_theme () {
             var gtk_settings = Gtk.Settings.get_default ();
             var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
@@ -636,14 +642,16 @@ namespace Terminal {
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
+            fg_pid = -1;
         }
 
         public void kill_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, Posix.Signal.KILL);
+            int pid;
+            if (this.try_get_foreground_pid (out pid))
+                Posix.kill (pid, Posix.Signal.KILL);
         }
 
+        // Terminate the shell process prior to closing the tab
         public void term_ps () {
             killed = true;
 
@@ -720,7 +728,7 @@ namespace Terminal {
                 warning (e.message);
             }
 
-            on_contents_changed ();
+            update_current_working_directory (dir);
         }
 
         public void run_program (string _program_string, string? working_directory) {
@@ -951,21 +959,41 @@ namespace Terminal {
             }
         }
 
+        private uint contents_changed_timeout_id = 0;
+        private const int CONTENTS_CHANGED_DELAY_MSEC = 100;
+        private bool contents_changed_continue = true;
         private void on_contents_changed () {
-            var cwd = get_shell_location ();
-            if (cwd != current_working_directory) {
-                current_working_directory = cwd;
-                tab.tooltip = current_working_directory;
-                cwd_changed (cwd);
+            contents_changed_continue = true;
+            if (contents_changed_timeout_id > 0) {
+                return;
             }
 
-            int pid;
-            try_get_foreground_pid (out pid);
-            if (pid != fg_pid) {
-                var cmdline = get_pid_cmdline (pid);
-                foreground_process_changed (cmdline);
-                fg_pid = pid;
-            }
+            contents_changed_timeout_id = Timeout.add (
+                CONTENTS_CHANGED_DELAY_MSEC,
+                () => {
+                    if (contents_changed_continue) {
+                        contents_changed_continue = false;
+                        return Source.CONTINUE;
+                    }
+
+                    contents_changed_timeout_id = 0;
+
+                    var cwd = get_shell_location ();
+                    if (cwd != current_working_directory) {
+                        update_current_working_directory (cwd);
+                    }
+
+                    int pid;
+                    try_get_foreground_pid (out pid);
+                    if (pid != fg_pid) {
+                        var cmdline = get_pid_cmdline (pid);
+                        foreground_process_changed (cmdline);
+                        fg_pid = pid;
+                    }
+
+                    return Source.REMOVE;
+                }
+            );
         }
     }
 }
