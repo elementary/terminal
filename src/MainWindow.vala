@@ -999,7 +999,7 @@ namespace Terminal {
 
             var pos = notebook.tab_menu_target != null ?
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
-                      (int)notebook.n_pages;
+                      notebook.n_pages;
 
             new_tab (term.get_shell_location (), null, true, pos);
         }

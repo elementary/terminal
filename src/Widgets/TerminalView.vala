@@ -13,7 +13,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Hdy.TabPage page);
 
-    public uint n_pages {
+    public int n_pages {
         get {
             return tab_view.n_pages;
         }
