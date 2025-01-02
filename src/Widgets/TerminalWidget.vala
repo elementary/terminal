@@ -806,11 +806,24 @@ namespace Terminal {
             }
         }
 
+        private string get_shell_name () {
+            return (Path.get_basename (get_pid_cmdline (child_pid)));
+        }
+
         public string get_pid_cmdline (int pid) {
             try {
                 string cmdline;
                 GLib.FileUtils.get_contents ("/proc/%d/cmdline".printf (pid), out cmdline);
                 return cmdline;
+            } catch (GLib.Error e) {
+                return "";
+            }
+        }
+
+        public string get_pid_exe_name (int pid) {
+            try {
+                var exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                return Path.get_basename (exe);
             } catch (GLib.Error e) {
                 return "";
             }
@@ -982,12 +995,12 @@ namespace Terminal {
                     if (cwd != current_working_directory) {
                         update_current_working_directory (cwd);
                     }
-
+warning ("shell name %s", get_shell_name ());
                     int pid;
                     try_get_foreground_pid (out pid);
                     if (pid != fg_pid) {
-                        var cmdline = get_pid_cmdline (pid);
-                        foreground_process_changed (cmdline);
+                        var name = get_pid_exe_name (pid);
+                        foreground_process_changed (name);
                         fg_pid = pid;
                     }
 
