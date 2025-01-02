@@ -727,8 +727,6 @@ namespace Terminal {
             } catch (Error e) {
                 warning (e.message);
             }
-
-            update_current_working_directory (dir);
         }
 
         public void run_program (string _program_string, string? working_directory) {
