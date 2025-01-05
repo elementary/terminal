@@ -77,7 +77,7 @@ namespace Terminal {
 
             set {
                 _custom_tab_label = value;
-                if (value != null) {
+                if (value != null && value != "") {
                     tab.title = value;
                 } else {
                     tab.title = _tab_label;
@@ -433,6 +433,14 @@ namespace Terminal {
                     copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
                     break;
 
+                case Gdk.Key.F2:
+                warning ("F2 pressed - modifier_state %s", modifiers.to_string ());
+                    if (SHIFT_MASK in modifiers) {
+                        warning ("Rename tab");
+                        action_rename_tab ();
+                    }
+
+                    return Gdk.EVENT_STOP;
                 default:
                     if (!modifier_pressed || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
                         remember_command_start_position ();
@@ -575,6 +583,17 @@ namespace Terminal {
                 // We know there is no foreground process so we can just feed the command in
                 feed_child ("reset\n".data);
             }
+        }
+
+        private void action_rename_tab () {
+        warning ("action_rename_tab");
+            var dialog = new RenameTabDialog ((MainWindow) get_toplevel (), custom_tab_label);
+            if (dialog.run () == Gtk.ResponseType.APPLY) {
+                var label = dialog.custom_label;
+                warning ("got label %s", label);
+                custom_tab_label = label;
+            }
+            dialog.destroy ();
         }
 
         protected override void paste_clipboard () {
