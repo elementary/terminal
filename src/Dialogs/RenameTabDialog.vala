@@ -36,16 +36,16 @@ public class Terminal.RenameTabDialog : Granite.MessageDialog {
     }
     public RenameTabDialog (MainWindow parent, string? initial_text) {
         Object (
-            transient_for: parent,
-            primary_text: _("Set a short custom label for this tab"),
-            secondary_text: _("This label will not change until the tab is renamed or closed")
+            transient_for: parent
         );
 
         custom_label = initial_text;
-
     }
 
     construct {
+        primary_text = _("Set a short custom label for this tab");
+        secondary_text = _("This label will not change until the tab is renamed or closed");
+
         var apply_button = add_button (_("Rename tab"), Gtk.ResponseType.APPLY);
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
         // Safe to apply by default as it is reversible
@@ -54,13 +54,12 @@ public class Terminal.RenameTabDialog : Granite.MessageDialog {
         entry = new Gtk.Entry () {
             placeholder_text = _("Enter custom tab label"),
             margin_top = 24,
-            // margin_start = 24,
             halign = Gtk.Align.START,
             valign = Gtk.Align.CENTER,
             max_length = 20
         };
 
         custom_bin.add (entry);
-        show_all ();
+        custom_bin.show_all ();
     }
 }
