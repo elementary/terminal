@@ -221,7 +221,8 @@ public class Terminal.TerminalView : Gtk.Box {
 
         var open_tab_section = new Menu ();
         open_tab_section.append (_("Open in New Window"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW);
-        open_tab_section.append (_("Duplicate Tab"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_DUPLICATE_TAB);
+        open_tab_section.append (_("Duplicate Tab"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_DUPLICATE_TAB);        
+        open_tab_section.append (_("Rename Tab"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CUSTOM_TAB_LABEL);
 
         var reload_section = new Menu ();
         reload_section.append (_("Reload"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
