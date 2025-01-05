@@ -65,6 +65,8 @@ public class Terminal.Application : Gtk.Application {
         add_main_option ("new-window", 'n', 0, OptionArg.NONE, _("Open a new terminal window"), null);
         // -t flag forces a new tab
         add_main_option ("new-tab", 't', 0, OptionArg.NONE, _("Open a new terminal tab at current working directory"), null);
+        // -l flag forces a custom tab label
+        add_main_option ("tab-label", 'l', 0, OptionArg.STRING, _("Give new terminal tab a fixed custom label"), null);
         // -w flag defines the working directory that the new tab/window uses
         add_main_option ("working-directory", 'w', 0, OptionArg.FILENAME, _("Set shell working directory"), "DIR");
         // -e flag is used for running single strings as a command line
@@ -308,22 +310,24 @@ public class Terminal.Application : Gtk.Application {
         unowned var working_directory = command_line.get_cwd ();
         unowned string[] commands;
         unowned string command;
+        unowned string tab_label;
         bool new_tab, minimized;
 
         options.lookup ("new-tab", "b", out new_tab);
+        options.lookup ("tab-label", "s", out tab_label);
 
         // If "execute" option or "commandline" option used ignore any "new-tab option
         // because these add new tab(s) already
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
-                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
+                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab, tab_label);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-            window.add_tab_with_working_directory (working_directory, command, new_tab);
+            window.add_tab_with_working_directory (working_directory, command, new_tab, tab_label);
         } else if (new_tab || window.notebook.n_pages == 0) {
-            window.add_tab_with_working_directory (working_directory, null, new_tab);
+            window.add_tab_with_working_directory (working_directory, null, new_tab, tab_label);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {

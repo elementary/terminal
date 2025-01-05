@@ -29,6 +29,7 @@ namespace Terminal {
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
         public string? program_string { get; set; default = null; }
+
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
@@ -47,14 +48,39 @@ namespace Terminal {
         public unowned Hdy.TabPage tab;
         public string? link_uri;
 
+        private string _tab_label = DEFAULT_LABEL;
         public string tab_label {
             get {
-                return tab != null ? tab.title : "";
+                return _tab_label;
             }
 
             set {
-                if (value != null && tab != null) {
+                if (tab != null) {
+                    if (value != null) {
+                        _tab_label = value;
+                    } else {
+                        _tab_label = DEFAULT_LABEL;
+                    }
+                }
+
+                if (custom_tab_label == null) {
                     tab.title = value;
+                }
+            }
+        }
+
+        private string? _custom_tab_label = null;
+        public string? custom_tab_label {
+            get {
+                return _custom_tab_label;
+            }
+
+            set {
+                _custom_tab_label = value;
+                if (value != null) {
+                    tab.title = value;
+                } else {
+                    tab.title = _tab_label;
                 }
             }
         }
@@ -530,7 +556,7 @@ namespace Terminal {
 
         private void action_clear_screen () {
             if (has_foreground_process ()) {
-                // We cannot guarantee the terminal is left in sensible state if we 
+                // We cannot guarantee the terminal is left in sensible state if we
                 // kill foreground process so ignore clear screen request
                 return;
             }
