@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
@@ -111,7 +111,7 @@ msgstr "設定"
 msgid "Are you sure you want to close this tab?"
 msgstr "このタブを閉じてもよろしいですか?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
@@ -263,7 +263,8 @@ msgstr "コントラストは高いです"
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "このタブにはアクティブなプロセスがあります。続行すると、このプロセスは終了し"
+msgstr ""
+"このタブにはアクティブなプロセスがあります。続行すると、このプロセスは終了し"
 "ます。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
@@ -397,23 +398,23 @@ msgstr "新しいタブ"
 msgid "Closed Tabs"
 msgstr "閉じたタブ"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "右側のタブを閉じる"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "ほかのタブを閉じる"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "新しいウィンドウで開く"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "タブを複製"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "再読み込み"
 
