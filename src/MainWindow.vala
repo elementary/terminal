@@ -67,6 +67,7 @@ namespace Terminal {
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_CLOSE_TABS_TO_RIGHT = "action_close_tabs_to_right";
         public const string ACTION_CLOSE_OTHER_TABS = "action_close_other_tabs";
+        public const string ACTION_CUSTOM_LABEL = "action_custom-label";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
         public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
@@ -93,6 +94,7 @@ namespace Terminal {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_CLOSE_TABS_TO_RIGHT, action_close_tabs_to_right },
             { ACTION_CLOSE_OTHER_TABS, action_close_other_tabs },
+            { ACTION_CUSTOM_LABEL, action_tab_rename },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_NEW_TAB_AT, action_new_tab_at, "s" },
@@ -120,6 +122,7 @@ namespace Terminal {
 
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
+            action_accelerators[ACTION_CUSTOM_LABEL] = "<Shift>F2";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
@@ -997,6 +1000,20 @@ namespace Terminal {
 
             if (term != null) {
                 term.reload ();
+            }
+        }
+
+        private void action_tab_rename () {
+            TerminalWidget? term;
+            var target = notebook.tab_menu_target;
+            if (target != null) {
+                term = get_term_widget (target);
+            } else {
+                term = get_term_widget (notebook.tab_view.selected_page);
+            }
+
+            if (term != null) {
+                term.action_rename_tab ();
             }
         }
 
