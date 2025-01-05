@@ -3,6 +3,7 @@ src/MainWindow.vala
 src/Dialogs/ColorPreferencesDialog.vala
 src/Dialogs/ForegroundProcessDialog.vala
 src/Dialogs/UnsafePasteDialog.vala
+src/Dialogs/RenameTabDialog.vala
 src/Widgets/SearchToolbar.vala
 src/Widgets/SettingsPopover.vala
 src/Widgets/TerminalWidget.vala
