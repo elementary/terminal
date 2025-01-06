@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-12-24 18:16+0000\n"
+"PO-Revision-Date: 2025-01-07 19:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -52,11 +52,11 @@ msgstr "Inne aktualizacje:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Okno nie powiększa się już po otwarciu"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "Zmieniono skróty do resetowania i czyszczenia ekranu"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:89
