@@ -500,11 +500,10 @@ namespace Terminal {
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
-                        if (tab_index > notebook.n_pages - 1) {
-                            return false;
+                        if (tab_index <= notebook.n_pages - 1) {
+                            notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         }
 
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         return true;
                     }
                     break;
