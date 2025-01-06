@@ -401,10 +401,12 @@ namespace Terminal {
                     return;
                 }
 
-
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
                 term.grab_focus ();
+                //TODO Check that icon is "process-completed-symbolic"
+                // if `tab.icon` is ever used for something that should remain
+                term.tab.icon = null;
             });
 
             var overlay = new Gtk.Overlay () {
