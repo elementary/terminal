@@ -1,21 +1,7 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3 as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * Copyright (c) 2011-2024 elementary LLC. (https://elementary.io)
+ * SPDX-License-Identifier: LGPL-3.0-only
+ */
 
 namespace Terminal.Widgets {
 
@@ -52,32 +38,26 @@ namespace Terminal.Widgets {
             cycle_button = new Gtk.ToggleButton () {
                 active = false,
                 sensitive = false,
-                image = new Gtk.Image ()
+                can_focus = false
             };
             cycle_button.toggled.connect (() => {
                 if (cycle_button.active) {
                     cycle_button.tooltip_text = _("Disable cyclic search");
-                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-symbolic";
+                    cycle_button.icon_name = "media-playlist-repeat-symbolic";
                 } else {
                     cycle_button.tooltip_text = _("Enable cyclic search");
-                    ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-disabled-symbolic";
+                    cycle_button.icon_name = "media-playlist-repeat-disabled-symbolic";
                 }
             });
             // Toggle to update
             // TODO Restore state from settings
             cycle_button.toggled ();
 
-            get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-            add (search_entry);
-            add (next_button);
-            add (previous_button);
-            add (cycle_button);
-
-            show_all ();
-
-            grab_focus.connect (() => {
-                search_entry.grab_focus_without_selecting ();
-            });
+            add_css_class (Granite.STYLE_CLASS_LINKED);
+            append (search_entry);
+            append (next_button);
+            append (previous_button);
+            append (cycle_button);
 
             next_button.clicked.connect_after (() => {
                 grab_focus ();
@@ -125,6 +105,11 @@ namespace Terminal.Widgets {
                     warning ("There was an error to compile the regex: %s", er.message);
                 }
             });
+        }
+
+        public new bool grab_focus () {
+            return search_entry.grab_focus ();
+            //TODO Gtk4 port:Deselect selection if necessary
         }
 
         public void clear () {
