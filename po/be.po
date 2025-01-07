@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2017-07-14 10:28+0000\n"
 "Last-Translator: Vladislav Glebovich <lightsunrider@live.ru>\n"
 "Language-Team: Belarusian <https://l10n.elementary.io/projects/terminal/"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Are you sure you want to close this tab?"
 msgstr "Вы ўпэўнены, што жадаеце зачыніць гэтую ўкладку?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Зачыніць укладку"
 
@@ -410,27 +410,27 @@ msgstr "Новая ўкладка"
 msgid "Closed Tabs"
 msgstr "Зачыніць укладку"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Зачыніць укладку"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Новае акно"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"

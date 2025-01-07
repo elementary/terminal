@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2015-12-05 14:37+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Southern Sami <sma@li.org>\n"
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "saevege ﻿dahpedh"
 
@@ -397,27 +397,27 @@ msgstr "Orre saevege"
 msgid "Closed Tabs"
 msgstr "saevege ﻿dahpedh"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "saevege ﻿dahpedh"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Orre klaase"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"

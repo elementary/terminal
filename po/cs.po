@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2024-09-19 07:22+0000\n"
 "Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -113,7 +113,7 @@ msgstr "Nastavení"
 msgid "Are you sure you want to close this tab?"
 msgstr "Opravdu chcete zavřít tuto kartu?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Zavřít kartu"
 
@@ -411,29 +411,29 @@ msgstr "Nová karta"
 msgid "Closed Tabs"
 msgstr "Zavřít kartu"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Zavřít kartu"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Nové okno"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Zduplikovat"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Načíst znovu"
 

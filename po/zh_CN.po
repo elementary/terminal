@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2023-02-04 12:25+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -120,7 +120,7 @@ msgstr "设置"
 msgid "Are you sure you want to close this tab?"
 msgstr "您确定要关闭此标签吗？"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "关闭标签"
 
@@ -416,29 +416,29 @@ msgstr "新建标签页"
 msgid "Closed Tabs"
 msgstr "关闭标签"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "关闭标签"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "新建窗口"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "重复"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "重新加载"
 

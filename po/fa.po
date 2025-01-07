@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Are you sure you want to close this tab?"
 msgstr "آیا واقعاً می‌خواهید این برگه را ببندید؟"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "بستن برگه"
 
@@ -409,27 +409,27 @@ msgstr "برگه جدید"
 msgid "Closed Tabs"
 msgstr "بستن برگه"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "بستن برگه"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "پنجره جدید"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"
