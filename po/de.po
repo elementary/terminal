@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-10-08 09:16+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"PO-Revision-Date: 2024-12-26 00:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/terminal/terminal/"
 "de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -66,59 +66,75 @@ msgstr "Prozess abgeschlossen"
 msgid "Process exited with errors"
 msgstr "Prozess mit Fehlern beendet"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Suchleiste anzeigen"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Letzte Ausgabe kopieren"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "Fenster leeren"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Vollbild verlassen"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Suchen …"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Einstellungen"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Sind Sie sicher, dass Sie diesen Tab schließen wollen?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Tab schließen"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "In %s anzeigen"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Standardanwendung"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Terminal beenden"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
@@ -243,54 +259,13 @@ msgstr "Kontrast korrekt"
 msgid "Contrast is high"
 msgstr "Kontrast stark"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Sind Sie sicher, dass Sie diesen Tab schließen wollen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Dieser Tab enthält einen laufenden Prozess."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Wenn Sie es schließen, wird der Prozess beendet."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Tab schließen"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Dieses Terminal enthält einen laufenden Prozess."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Terminal beenden"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Sind Sie sicher, dass Sie diesen Tab neu laden wollen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Dieser Tab enthält einen laufenden Prozess. Wenn Sie den Tab neu laden, wird "
-"der Prozess beendet."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Tab neu laden"
+"Dieser Tab enthält einen laufenden Prozess. Falls Sie fortfahren, wird der "
+"Prozess beendet."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -326,16 +301,12 @@ msgid "Next result"
 msgstr "Nächstes Ergebnis"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Zyklisches Suchen"
+msgstr "Zyklisches Suchen ausschalten"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Zyklisches Suchen"
+msgstr "Zyklisches Suchen einschalten"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -376,13 +347,12 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Warnhinweis: Unsicheres Einfügen"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
+msgstr ""
+"Warnen, falls der eingefügte mehrere oder Systemverwaltungsbefehle enthält"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
@@ -400,14 +370,26 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
+#: src/Widgets/TerminalWidget.vala:545
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Sind Sie sicher, dass Sie das Terminal zurücksetzen wollen?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "Der eingefügte Text enthält möglicherweise mehrere Befehle"
 
-#: src/Widgets/TerminalWidget.vala:543
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Der eingefügte Text versucht möglicherweise Administratorrechte zu erhalten"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Sind Sie sicher, dass Sie diesen Tab neu laden wollen?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Tab neu laden"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -417,23 +399,23 @@ msgstr "Neuer Tab"
 msgid "Closed Tabs"
 msgstr "Geschlossene Tabs"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "Rechte Tabs schließen"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "Andere Tabs schließen"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "In neuem Fenster öffnen"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "Tab duplizieren"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Neu laden"
 
@@ -441,6 +423,18 @@ msgstr "Neu laden"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "Vergrößern: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Dieser Tab enthält einen laufenden Prozess."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Wenn Sie es schließen, wird der Prozess beendet."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Dieses Terminal enthält einen laufenden Prozess."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Wenn Sie das Terminal schließen, wird der Prozess beendet."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Neuen Terminal-Tab öffnen"

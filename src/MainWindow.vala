@@ -18,6 +18,7 @@ namespace Terminal {
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
         private Gtk.EventControllerKey key_controller;
+        private uint timer_window_state_change = 0;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
@@ -219,7 +220,7 @@ namespace Terminal {
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
             Application.settings.changed["font"].connect (update_font);
 
-            set_size_request (app.minimum_width, app.minimum_height);
+            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
             if (recreate_tabs) {
                 open_tabs ();
@@ -228,9 +229,14 @@ namespace Terminal {
             close_request.connect (on_delete_event);
         }
 
-        public void add_tab_with_working_directory (string? directory, string? command = null, bool create_new_tab = false) {
-            /* This requires all restored tabs to be initialized first so that the shell location is available */
-            /* Do not add a new tab if location is already open in existing tab */
+        public void add_tab_with_working_directory (
+            string? directory,
+            string? command = null,
+            bool create_new_tab = false
+        ) {
+            /* This requires all restored tabs to be initialized first so that
+             * the shell location is available.
+             * Do not add a new tab if location is already open in existing tab */
             string? location = null;
             if (directory == null || directory == "") {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
@@ -322,31 +328,29 @@ namespace Terminal {
             notebook.tab_view.create_window.connect (on_create_window_request);
             notebook.tab_view.close_page.connect ((tab) => {
                 var term = get_term_widget (tab);
-                if (term == null || !term.has_foreground_process ()) {
-                    notebook.tab_view.close_page_finish (tab, true);
+                var confirmed = false;
+                if (term == null) {
+                    confirmed = true;
                 } else {
-                    var dialog = new ForegroundProcessDialog (this);
-                    dialog.response.connect ((res) => {
-                        dialog.destroy ();
-                        if (res == Gtk.ResponseType.ACCEPT) {
-                            term.kill_fg ();
-                            if (!term.child_has_exited) {
-                                term.term_ps ();
-                            }
-
-                            if (Application.settings.get_boolean ("save-exited-tabs")) {
-                                make_restorable (term);
-                            }
-
-                            disconnect_terminal_signals (term);
-                            notebook.tab_view.close_page_finish (tab, true);
-                        } else {
-                            notebook.tab_view.close_page_finish (tab, false);
-                        }
-                    });
-
-                    dialog.present ();
+                    confirmed = term.confirm_kill_fg_process (
+                        _("Are you sure you want to close this tab?"),
+                        _("Close Tab")
+                    );
                 }
+
+                if (confirmed && term != null) {
+                    if (!term.child_has_exited) {
+                        term.term_ps ();
+                    }
+
+                    if (Application.settings.get_boolean ("save-exited-tabs")) {
+                        make_restorable (term);
+                    }
+
+                    disconnect_terminal_signals (term);
+                }
+
+                notebook.tab_view.close_page_finish (tab, confirmed);
 
                 return Gdk.EVENT_STOP;
             });
@@ -440,7 +444,7 @@ namespace Terminal {
                     if (ALT_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int)notebook.n_pages - 1);
+                        notebook.selected_page = notebook.tab_view.get_nth_page (notebook.n_pages - 1);
                         return true;
                     }
                     break;
@@ -549,7 +553,7 @@ namespace Terminal {
         private void open_tabs () {
             string[] tabs = {};
             double[] zooms = {};
-            uint focus = 0;
+            int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
 
             if (Granite.Services.System.history_is_enabled () &&
@@ -619,7 +623,7 @@ namespace Terminal {
             }
 
             if (focus_restored_tabs) {
-                var tab = notebook.tab_view.get_nth_page ((int)(focus.clamp (0, notebook.n_pages - 1)));
+                var tab = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
                 notebook.selected_page = tab;
             }
         }
@@ -628,7 +632,7 @@ namespace Terminal {
             string location,
             string? program = null,
             bool focus = true,
-            int pos = (int)notebook.n_pages
+            int pos = notebook.n_pages
         ) {
 
             /*
@@ -658,12 +662,6 @@ namespace Terminal {
             } else {
                 terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
             }
-
-            int minimum_width = terminal_widget.calculate_width (80) / 2;
-            int minimum_height = terminal_widget.calculate_height (24) / 2;
-            set_size_request (minimum_width, minimum_height);
-            app.minimum_width = minimum_width;
-            app.minimum_height = minimum_height;
 
             if (focus) {
                 notebook.selected_page = tab;
@@ -791,20 +789,14 @@ namespace Terminal {
 
             for (int i = 0; i < notebook.n_pages; i++) {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.has_foreground_process ()) {
-                    var dialog = new ForegroundProcessDialog.before_close (this);
-                    dialog.response.connect ((res) => {
-                        if (res == Gtk.ResponseType.ACCEPT) {
-                            term.kill_fg ();
-                            dialog.destroy ();
-                        } else {
-                            dialog.destroy ();
-                            return;
-                        }
-                    });
+                if (term.confirm_kill_fg_process (
+                    _("Are you sure you want to quit Terminal?"),
+                    _("Quit Terminal"))
+                ) {
+                    tabs_to_terminate.append (term);
+                } else {
+                    return true;
                 }
-
-                tabs_to_terminate.append (term);
             }
 
             foreach (var t in tabs_to_terminate) {
@@ -933,17 +925,17 @@ namespace Terminal {
 
             var pos = notebook.tab_menu_target != null ?
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
-                      (int)notebook.n_pages;
+                      notebook.n_pages;
 
             new_tab (term.get_shell_location (), null, true, pos);
         }
 
         private void action_next_tab () {
-            notebook.tab_view.select_next_page ();
+            notebook.cycle_tabs (FORWARD);
         }
 
         private void action_previous_tab () {
-            notebook.tab_view.select_previous_page ();
+            notebook.cycle_tabs (BACK);
         }
 
         void action_move_tab_right () {

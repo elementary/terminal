@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2023-03-31 19:59+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"PO-Revision-Date: 2024-12-02 14:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
 "terminal/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -31,10 +31,8 @@ msgstr "Avaa uusi pääteikkuna"
 
 #. -t flag forces a new tab
 #: src/Application.vala:67
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Avaa uusi pääteikkuna"
+msgstr "Avaa uusi päätevälilehti nykyiseen työskentelyhakemistoon"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:69
@@ -68,61 +66,75 @@ msgstr "Prosessi suoritettu"
 msgid "Process exited with errors"
 msgstr "Prosessi sulkeutui virheiden kera"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Näytä hakupalkki"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopioi"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopioi viimeisin tuloste"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Tyhjennä näyttö"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Nollaa"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Liitä"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: src/MainWindow.vala:302
-#, fuzzy
-#| msgid "Fullscreen"
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
-msgstr "Koko näyttö"
+msgstr "Poistu koko näytön tilasta"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Asetukset"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Haluatko varmasti sulkea tämän välilehden?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Sulje välilehti"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Haluatko varmasti lopettaa päätteen?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Lopeta pääte"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
@@ -247,54 +259,17 @@ msgstr "Kontrasti on hyvä"
 msgid "Contrast is high"
 msgstr "Kontrasti on korkea"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Haluatko varmasti sulkea tämän välilehden?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Välilehdessä on käynnissä oleva prosessi."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Jos suljet sen, prosessi päättyy."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Sulje välilehti"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Haluatko varmasti lopettaa päätteen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Päätteessä on käynnissä oleva prosessi."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Jos lopetat päätteen, prosessi päättyy."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Lopeta pääte"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Päätteessä on käynnissä oleva prosessi. Jos lataat välilehden uudelleen, "
 "prosessi päättyy."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Lataa välilehti uudelleen"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -329,16 +304,12 @@ msgid "Next result"
 msgstr "Seuraava tulos"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Kierteinen haku"
+msgstr "Poista kierteinen haku käytöstä"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Kierteinen haku"
+msgstr "Käytä kierteistä hakua"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -380,17 +351,16 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Turvattoman liittämisen varoitus"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
+msgstr ""
+"Varoita kun liitetty teksti sisältää useita komentoja tai ylläpitokomentoja"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
-msgstr ""
+msgstr "Tapahtumahälytykset"
 
 #: src/Widgets/SettingsPopover.vala:122
 msgid ""
@@ -402,55 +372,73 @@ msgstr ""
 msgid "Terminal"
 msgstr "Pääte"
 
-#: src/Widgets/TerminalWidget.vala:541
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Haluatko varmasti lopettaa päätteen?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 
-#: src/Widgets/TerminalWidget.vala:543
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Lataa välilehti uudelleen"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "Uusi välilehti"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Sulje välilehti"
+msgstr "Suljetut välilehdet"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
-msgstr ""
-
-#: src/Widgets/TerminalView.vala:211
-#, fuzzy
-#| msgid "Close Tab"
-msgid "Close Other Tabs"
-msgstr "Sulje välilehti"
-
-#: src/Widgets/TerminalView.vala:215
-#, fuzzy
-#| msgid "New Window"
-msgid "Open in New Window"
-msgstr "Uusi ikkuna"
-
-#: src/Widgets/TerminalView.vala:216
-#, fuzzy
-#| msgid "Duplicate"
-msgid "Duplicate Tab"
-msgstr "Tee kaksoiskappale"
+msgstr "Sulje välilehdet tästä oikealle"
 
 #: src/Widgets/TerminalView.vala:219
+msgid "Close Other Tabs"
+msgstr "Sulje muut välilehdet"
+
+#: src/Widgets/TerminalView.vala:223
+msgid "Open in New Window"
+msgstr "Avaa uudessa ikkunassa"
+
+#: src/Widgets/TerminalView.vala:224
+msgid "Duplicate Tab"
+msgstr "Tee kaksoiskappale välilehdestä"
+
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Suurennus: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Välilehdessä on käynnissä oleva prosessi."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Jos suljet sen, prosessi päättyy."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Päätteessä on käynnissä oleva prosessi."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Jos lopetat päätteen, prosessi päättyy."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Avaa uusi päätevälilehti"

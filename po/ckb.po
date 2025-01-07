@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2022-09-21 21:57+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -75,61 +75,77 @@ msgstr "پڕۆسەکە کۆتایی هات"
 msgid "Process exited with errors"
 msgstr "پڕۆسەکە بە کۆمەڵێک کێشەوە کۆتایی هات"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "لەبەرگرتنەوە"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "کۆتا ئەنجام لەبەربگرەوە"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "لكاندن"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "هه‌مووی دیاری بکه‌"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "ته‌واوی تێکست"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "دۆزینەوە…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "ڕێکخستنەکان"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "دڵنیای لە داخستنی ئەم تابە؟"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "داخستنی تاب"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "پشاندان لە %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "بەرنامە بنەڕەتییەکان"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "داخستنی تێرمیناڵ"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "شاردنەوەی شریتی دۆزینەوە"
 
@@ -254,53 +270,16 @@ msgstr ""
 msgid "Contrast is high"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "دڵنیای لە داخستنی ئەم تابە؟"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "پڕۆسەیەکی چالاک لەسەر ئەم تابە هەیە."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "ئەگەر دایبەخەیت، پڕۆسەکە کۆتایی پێ دێت."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "داخستنی تاب"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "پرۆسەیەکی چالاک لەم ترمیناڵەدا هەیە."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "ئەگەر تێرمیناڵ دابخەیت، پڕۆسەکە کۆتایی دێت."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "داخستنی تێرمیناڵ"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "دڵنیای لەنوێ کردنەوەی ئەم تابە؟"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "پڕۆسەیەکی چالاک لەسەر ئەم تابە هەیە، ئەگەر نوێی بکەیتەوە؛ پڕۆسەکە کۆتایی دێت."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "نوێکردنەوەی تاب"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -406,13 +385,27 @@ msgstr ""
 msgid "Terminal"
 msgstr "تێرمیناڵ"
 
-#: src/Widgets/TerminalWidget.vala:541
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لەخۆ بگرێت"
 
-#: src/Widgets/TerminalWidget.vala:543
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی بەڕێوەبەر بەدەست بهێنێت"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "دڵنیای لەنوێ کردنەوەی ئەم تابە؟"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "نوێکردنەوەی تاب"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -424,29 +417,29 @@ msgstr "تابی تازە"
 msgid "Closed Tabs"
 msgstr "داخستنی تاب"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "داخستنی تاب"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "پەنجەرەیەکی نوێ"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "بەدووکردن"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "نوێکردنەوە"
 
@@ -454,6 +447,18 @@ msgstr "نوێکردنەوە"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "پڕۆسەیەکی چالاک لەسەر ئەم تابە هەیە."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "ئەگەر دایبەخەیت، پڕۆسەکە کۆتایی پێ دێت."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "پرۆسەیەکی چالاک لەم ترمیناڵەدا هەیە."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "ئەگەر تێرمیناڵ دابخەیت، پڕۆسەکە کۆتایی دێت."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "تابێکی نوێ بکەوە"

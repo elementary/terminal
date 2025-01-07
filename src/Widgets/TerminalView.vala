@@ -13,7 +13,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Adw.TabPage page);
 
-    public uint n_pages {
+    public int n_pages {
         get {
             return tab_view.n_pages;
         }
@@ -160,6 +160,14 @@ public class Terminal.TerminalView : Gtk.Box {
 
         tab_view.close_other_pages (target);
         tab_view.selected_page = target;
+    }
+
+    public void cycle_tabs (Adw.NavigationDirection direction) {
+        var pos = tab_view.get_page_position (selected_page);
+        pos = direction == FORWARD ? pos + 1 : pos - 1;
+        pos = (pos + n_pages) % n_pages;
+
+        selected_page = tab_view.get_nth_page (pos);
     }
 
     public void transfer_tab_to_new_window () {

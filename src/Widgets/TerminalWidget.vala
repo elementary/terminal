@@ -57,8 +57,8 @@ namespace Terminal {
 
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
-        public const string[] ACCELS_CLEAR_SCREEN = { "<Control>L", null };
-        public const string[] ACCELS_RESET = { "<Control>K", null };
+        public const string[] ACCELS_CLEAR_SCREEN = { "<Control><Shift>L", null };
+        public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
@@ -469,12 +469,12 @@ namespace Terminal {
                 }
             }
 
-            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
+            if (CONTROL_MASK in modifiers && SHIFT_MASK in modifiers && match_keycode (Gdk.Key.k, keycode)) {
                 action_reset ();
                 return true;
             }
 
-            if (CONTROL_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
+            if (CONTROL_MASK in modifiers && SHIFT_MASK in modifiers && match_keycode (Gdk.Key.l, keycode)) {
                 action_clear_screen ();
                 return true;
             }
@@ -531,16 +531,55 @@ namespace Terminal {
             clipboard.set_text (output);
         }
 
+        public bool confirm_kill_fg_process (
+            string primary_text,
+            string button_label
+        ) {
+
+            var confirmed = true;
+            if (has_foreground_process ()) {
+                var dialog = new ForegroundProcessDialog (
+                    (MainWindow) get_root (),
+                    primary_text,
+                    button_label
+                );
+
+                dialog.response.connect ((res) => {
+                    dialog.destroy ();
+                    if (res == Gtk.ResponseType.ACCEPT) {
+                        kill_fg ();
+                    } else {
+                        confirmed = false;
+                    }
+                });
+
+                dialog.present ();
+            }
+
+            return confirmed;
+        }
+
         private void action_clear_screen () {
-            debug ("Clear screen only");
-            // Should we clear scrollback too?
-            run_program ("clear -x", null);
+            if (has_foreground_process ()) {
+                // We cannot guarantee the terminal is left in sensible state if we
+                // kill foreground process so ignore clear screen request
+                return;
+            }
+
+            // We keep the scrollback history, just clear the screen
+            // We know there is no foreground process so we can just feed the command in
+            feed_child ("clear -x\n".data);
         }
 
         private void action_reset () {
-            debug ("Reset");
-            // This also clears the screen and the scrollback
-            run_program ("reset", null);
+            if (confirm_kill_fg_process (
+                _("Are you sure you want to reset the terminal?"),
+                _("Reset"))
+            ) {
+                // This also clears the screen and the scrollback
+                // We know there is no foreground process so we can just feed the command in
+                feed_child ("reset\n".data);
+            }
         }
 
         protected override void paste_clipboard () {
@@ -581,10 +620,11 @@ namespace Terminal {
                 return;
             }
 
+
             string? warn_text = null;
-            if ("\n" in text) {
+            if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
                 warn_text = _("The pasted text may contain multiple commands");
-            } else if ("sudo" in text || "doas" in text) {
+            } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
                 warn_text = _("The pasted text may be trying to gain administrative access");
             }
 
@@ -699,8 +739,19 @@ namespace Terminal {
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
-            if (shell == "")
+            if (shell == "") {
                 shell = Vte.get_user_shell ();
+            }
+
+            if (shell == "") {
+                critical ("No user shell available");
+                return;
+            }
+
+            if (dir == "") {
+                debug ("Using fallback directory");
+                dir = "/";
+            }
 
             envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
@@ -950,26 +1001,14 @@ namespace Terminal {
 
         public void reload () {
             var old_loc = get_shell_location ();
+            if (confirm_kill_fg_process (
+                    _("Are you sure you want to reload this tab?"),
+                    _("Reload Tab"))
+                ) {
 
-            if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog.before_tab_reload ((MainWindow) get_root ());
-                dialog.response.connect ((res) => {
-                    if (res == Gtk.ResponseType.ACCEPT) {
-                        Posix.kill (child_pid, Posix.Signal.TERM);
-                        reset (true, true);
-                        active_shell (old_loc);
-                    }
-
-                    dialog.destroy ();
-                });
-
-                dialog.present ();
-                return;
+                reset (true, true);
+                active_shell (old_loc);
             }
-
-            Posix.kill (child_pid, Posix.Signal.TERM);
-            reset (true, true);
-            active_shell (old_loc);
         }
 
         private void check_cwd_changed () {
