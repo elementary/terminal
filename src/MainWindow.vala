@@ -267,6 +267,7 @@ namespace Terminal {
             new_tab (location, command);
         }
 
+        private Adw.TabPage? tab_to_close = null;
         private void setup_ui () {
             var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
@@ -328,30 +329,26 @@ namespace Terminal {
             notebook.tab_view.create_window.connect (on_create_window_request);
             notebook.tab_view.close_page.connect ((tab) => {
                 var term = get_term_widget (tab);
-                var confirmed = false;
-                if (term == null) {
-                    confirmed = true;
-                } else {
-                    confirmed = term.confirm_kill_fg_process (
-                        _("Are you sure you want to close this tab?"),
-                        _("Close Tab")
-                    );
+                if (term != null) {
+                    if (term.has_foreground_process ()) {
+                        // Need to keep external reference to tab that will be closed else crashes
+                        tab_to_close = tab;
+                        term.confirm_kill_fg_process (
+                            _("Are you sure you want to close this tab?"),
+                            _("Close tab"),
+                            () => {
+                                terminate_and_disconnect (get_term_widget (tab_to_close), true);
+                                notebook.tab_view.close_page_finish (tab_to_close, true);
+                            }
+                        );
+
+                        return Gdk.EVENT_STOP;
+                    } else {
+                        terminate_and_disconnect (term, true);
+                    }
                 }
 
-                if (confirmed && term != null) {
-                    if (!term.child_has_exited) {
-                        term.term_ps ();
-                    }
-
-                    if (Application.settings.get_boolean ("save-exited-tabs")) {
-                        make_restorable (term);
-                    }
-
-                    disconnect_terminal_signals (term);
-                }
-
-                notebook.tab_view.close_page_finish (tab, confirmed);
-
+                notebook.tab_view.close_page_finish (tab, true);
                 return Gdk.EVENT_STOP;
             });
 
@@ -781,29 +778,49 @@ namespace Terminal {
             }
         }
 
+        private bool close_immediately = false;
         public bool on_delete_event () {
+            if (close_immediately) {
+                return Gdk.EVENT_PROPAGATE;
+            }
             //Avoid saved terminals being overwritten when tabs destroyed.
             notebook.tab_view.page_detached.disconnect (on_tab_removed);
             save_opened_terminals (true, true);
-            var tabs_to_terminate = new GLib.List <TerminalWidget> ();
-
             for (int i = 0; i < notebook.n_pages; i++) {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.confirm_kill_fg_process (
-                    _("Are you sure you want to quit Terminal?"),
-                    _("Quit Terminal"))
-                ) {
-                    tabs_to_terminate.append (term);
-                } else {
-                    return true;
+                if (term.has_foreground_process ()) {
+                    term.confirm_kill_fg_process (
+                        _("Are you sure you want to close all foreground processes before closing the window?"),
+                        _("Close window"),
+                        (() => {
+                            terminate_all ();
+                            close_immediately = true;
+                            this.close ();
+                        })
+                    );
+
+                    return Gdk.EVENT_STOP;
                 }
             }
 
-            foreach (var t in tabs_to_terminate) {
-                t.term_ps ();
-            }
+            terminate_all ();
 
-            return false;
+            return Gdk.EVENT_PROPAGATE;
+        }
+
+        private void terminate_all () {
+            for (int i = 0; i < notebook.n_pages; i++) {
+                var term = get_term_widget (notebook.tab_view.get_nth_page (i));
+                terminate_and_disconnect (term, false);
+            }
+        }
+
+        private void terminate_and_disconnect (TerminalWidget term, bool make_restorable_required) {
+            term.term_ps ();
+            disconnect_terminal_signals (term);
+            if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
+                make_restorable (term);
+            }
         }
 
         private void action_open_in_browser () requires (current_terminal != null) {
@@ -819,7 +836,7 @@ namespace Terminal {
                         appinfo.launch_uris_async.end (res);
                     } catch (Error e) {
                         warning ("Launcher failed with error %s", e.message);
-                        //TODO Handle launch failure - message box? 
+                        //TODO Handle launch failure - message box?
                     }
                 });
             } else {

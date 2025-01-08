@@ -531,32 +531,36 @@ namespace Terminal {
             clipboard.set_text (output);
         }
 
-        public bool confirm_kill_fg_process (
+        public delegate void ConfirmedActionCallback ();
+        public void confirm_kill_fg_process (
             string primary_text,
-            string button_label
+            string button_label,
+            ConfirmedActionCallback cb
         ) {
-
-            var confirmed = true;
             if (has_foreground_process ()) {
-                var dialog = new ForegroundProcessDialog (
-                    (MainWindow) get_root (),
-                    primary_text,
-                    button_label
-                );
+                var dialog = new Gtk.AlertDialog (primary_text) {
+                    modal = true,
+                    buttons = {_("Cancel"), button_label},
+                    default_button = 0,
+                    cancel_button = 0,
+                };
 
-                dialog.response.connect ((res) => {
-                    dialog.destroy ();
-                    if (res == Gtk.ResponseType.ACCEPT) {
-                        kill_fg ();
-                    } else {
-                        confirmed = false;
+                dialog.choose.begin ((MainWindow) get_root (), null, (obj, res) => {
+                    try {
+                        var button = dialog.choose.end (res);
+                        warning ("warning returned button %i", button);
+                        if (button == 1) {
+                            kill_fg ();
+                            cb ();
+                        }
+                    } catch (Error e) {
+                        warning ("Error from AlertDialog.choose %s", e.message);
                     }
                 });
-
-                dialog.present ();
+            } else {
+                kill_fg ();
+                cb ();
             }
-
-            return confirmed;
         }
 
         private void action_clear_screen () {
@@ -572,16 +576,26 @@ namespace Terminal {
         }
 
         private void action_reset () {
-            if (confirm_kill_fg_process (
+            confirm_kill_fg_process (
                 _("Are you sure you want to reset the terminal?"),
-                _("Reset"))
-            ) {
-                // This also clears the screen and the scrollback
-                // We know there is no foreground process so we can just feed the command in
-                feed_child ("reset\n".data);
-            }
+                _("Reset"),
+                () => {
+                    reset (true, true);
+                }
+            );
         }
 
+        public void reload () {
+            var old_loc = get_shell_location ();
+            confirm_kill_fg_process (
+                _("Are you sure you want to reload this tab?"),
+                _("Reload"),
+                () => {
+                    reset (true, true);
+                    active_shell (old_loc);
+                }
+            );
+        }
         protected override void paste_clipboard () {
             var content_provider = clipboard.get_content ();
             if (content_provider != null) {
@@ -695,6 +709,9 @@ namespace Terminal {
         public void kill_fg () {
             int fg_pid;
             if (this.try_get_foreground_pid (out fg_pid))
+                // Give chance to terminate cleanly before killing
+                Posix.kill (fg_pid, Posix.Signal.HUP);
+                Posix.kill (fg_pid, Posix.Signal.TERM);
                 Posix.kill (fg_pid, Posix.Signal.KILL);
         }
 
@@ -999,17 +1016,7 @@ namespace Terminal {
             action.set_enabled (false); // Repeated presses are ignored
         }
 
-        public void reload () {
-            var old_loc = get_shell_location ();
-            if (confirm_kill_fg_process (
-                    _("Are you sure you want to reload this tab?"),
-                    _("Reload Tab"))
-                ) {
 
-                reset (true, true);
-                active_shell (old_loc);
-            }
-        }
 
         private void check_cwd_changed () {
             // Ignore if not associated with tab.
