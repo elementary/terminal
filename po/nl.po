@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -141,6 +141,15 @@ msgstr "Terminal afsluiten"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Verberg zoekbalk"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "De geplakte tekst lijkt meerdere commando's te bevatten"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"De geplakte tekst lijkt te proberen administratieve rechten te bemachtigen"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -385,20 +394,11 @@ msgstr "Terminal"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Weet u zeker dat u Terminal wilt afsluiten?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "De geplakte tekst lijkt meerdere commando's te bevatten"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"De geplakte tekst lijkt te proberen administratieve rechten te bemachtigen"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Weet u zeker dat u dit tabblad wil herladen?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Tabblad herladen"
 
