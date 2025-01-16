@@ -10,6 +10,7 @@ public class Terminal.TerminalView : Gtk.Box {
         URI_LIST
     }
 
+    // Make sure to match with the value of "tab-bar-behavior" in gschema
     public enum TabBarBehavior {
         ALWAYS = 0,
         SINGLE = 1,
@@ -38,6 +39,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public unowned MainWindow main_window { get; construct; }
     public Hdy.TabView tab_view { get; construct; }
     private Hdy.TabBar tab_bar;
+    private Gtk.Revealer tab_revealer;
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
@@ -79,12 +81,17 @@ public class Terminal.TerminalView : Gtk.Box {
 
         var tab_bar_behavior = (TabBarBehavior)Application.settings.get_enum ("tab-bar-behavior");
         tab_bar = new Hdy.TabBar () {
-            autohide = (tab_bar_behavior == TabBarBehavior.SINGLE), // This is <value value="1" nick="Hide When Single Tab"/>
+            autohide = (tab_bar_behavior == TabBarBehavior.SINGLE),
             expand_tabs = false,
             inverted = true,
             start_action_widget = new_tab_button,
             end_action_widget = tab_history_button,
             view = tab_view,
+        };
+
+        tab_revealer = new Gtk.Revealer () {
+            child = tab_bar,
+            reveal_child = (tab_bar_behavior != TabBarBehavior.NEVER),
         };
 
         style_provider = new Gtk.CssProvider ();
@@ -103,11 +110,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
         tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
-        if( tab_bar_behavior != TabBarBehavior.NEVER ) {
-            // Looks like we can't use set_visible since its value should be overriden in TabBar
-            // so the only solution is not to add the widget to the box itself
-            add (tab_bar);
-        }
+        add (tab_revealer);
         add (tab_view);
     }
 
