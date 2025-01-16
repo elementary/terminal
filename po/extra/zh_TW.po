@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-12-11 13:16+0000\n"
+"PO-Revision-Date: 2025-01-16 18:12+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
 "projects/terminal/extra/zh_Hant/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -51,11 +51,11 @@ msgstr "其他更新："
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "修正視窗隨著每次開啟而變得越來越大的問題"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "變更「重設」與「清除畫面」動作的快捷鍵"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:89
