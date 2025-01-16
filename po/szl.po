@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2020-02-23 13:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/terminal/"
@@ -68,60 +68,76 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopiuj ôstatni wychōd"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Wraź"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Zaznacz wszyjsko"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Znojdź…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Sztelōnki"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Je żeś zicher, iże chcesz zawrzić ta karta?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Zawrzij karta"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Pokoż we przeglōndarce zbiorōw"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Na zicher chcesz zawrzić Terminal?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Zawrzij Terminal"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Skryj posek szukanio"
 
@@ -248,58 +264,13 @@ msgstr ""
 msgid "Contrast is high"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Je żeś zicher, iże chcesz zawrzić ta karta?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "W tyj karcie je aktywny proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Po zawarciu proces bydzie zakōńczōny."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Zawrzij karta"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Na zicher chcesz zawrzić Terminal?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "W ôknie terminala je aktywny proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Po zawarciu Terminala proces bydzie zakōńczōny."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Zawrzij Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
-msgid "Are you sure you want to reload this tab?"
-msgstr "Je żeś zicher, iże chcesz zawrzić ta karta?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 #, fuzzy
 #| msgid "There is an active process on this terminal."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr "W ôknie terminala je aktywny proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
-msgid "Reload Tab"
-msgstr "Zawrzij karta"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -402,13 +373,31 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Na zicher chcesz zawrzić Terminal?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:933
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Je żeś zicher, iże chcesz zawrzić ta karta?"
+
+#: src/Widgets/TerminalWidget.vala:934
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Zawrzij karta"
 
 #: src/Widgets/TerminalView.vala:63
 #, fuzzy
@@ -422,27 +411,27 @@ msgstr "Zawrzij karta"
 msgid "Closed Tabs"
 msgstr "Zawrzij karta"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Zawrzij karta"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Open a new terminal window"
 msgid "Open in New Window"
 msgstr "Ôtwōrz nowe ôkno terminala"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"
@@ -452,6 +441,18 @@ msgstr "Zawrzij karta"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "W tyj karcie je aktywny proces."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Po zawarciu proces bydzie zakōńczōny."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "W ôknie terminala je aktywny proces."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Po zawarciu Terminala proces bydzie zakōńczōny."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Ôtwōrz nowo karta terminala"

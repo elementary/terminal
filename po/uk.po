@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
-"PO-Revision-Date: 2024-11-07 04:31+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
 "terminal/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -67,59 +67,75 @@ msgstr "Процес завершено"
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Показувати панель пошуку"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Копіювати останній вивід"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "Очистити екран"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Налаштування"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Закрити вкладку"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Вийти з Терміналу"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -244,54 +260,13 @@ msgstr "Хороша контрастність"
 msgid "Contrast is high"
 msgstr "Контрастність висока"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "У вкладці є активний процес."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Якщо ви закриєте цю вкладку, то процес буде завершено."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Закрити вкладку"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "У терміналі є активний процес."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Якщо ви закриєте Термінал , то процес завершиться."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Вийти з Терміналу"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"На цій вкладці терміналу є активний процес. Якщо ви перезавантажите її, "
-"процес завершиться."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Перезавантажити вкладку"
+"На цій вкладці термінала є активний процес. Якщо ви продовжите, процес "
+"завершиться."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -396,14 +371,26 @@ msgstr ""
 msgid "Terminal"
 msgstr "Термінал"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Ви впевнені, що хочете скинути термінал?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "Вставлений текст може містити кілька команд"
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставлений текст може намагатися отримати доступ до прав адміністратора"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Перезавантажити вкладку"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -413,23 +400,23 @@ msgstr "Нова вкладка"
 msgid "Closed Tabs"
 msgstr "Закриті вкладки"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "Закрити вкладки праворуч"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "Закрити інші вкладки"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "Відкрити у новому вікні"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "Дублювати вкладку"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Перезавантажити"
 
@@ -437,6 +424,18 @@ msgstr "Перезавантажити"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "Масштаб: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "У вкладці є активний процес."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Якщо ви закриєте цю вкладку, то процес буде завершено."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "У терміналі є активний процес."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Якщо ви закриєте Термінал , то процес завершиться."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Відкрити нову вкладку терміналу"

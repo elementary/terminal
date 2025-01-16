@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2024-11-10 01:19+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
@@ -66,59 +66,75 @@ msgstr "პროცესი დასრულდა"
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "ძებნის პანელის ჩვენება"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "კოპირება"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "ბოლო გამოტანის კოპირება"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "ეკრანის გასუფთავება"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "ჩამოყრა"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "ძიება…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "მორგება"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "ნამდვილად გსურთ ამ ჩანართის დახურვა?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "ჩანართის დახურვა"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "%s-ში ჩვენება"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "ნაგულისხმები აპლიკაცია"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "ტერმინალიდან გამოსვლა"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
@@ -243,54 +259,17 @@ msgstr "კონტრასტი კარგია"
 msgid "Contrast is high"
 msgstr "კონტრასტი მაღალია"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "ნამდვილად გსურთ ამ ჩანართის დახურვა?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "ამ ჩანართში მიმდინარეობს პროცესი."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "თუ ამას დახურავთ, პროცესი დასრულდება."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "ჩანართის დახურვა"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "ამ ტერმინალში მიმდინარეობს პროცესი."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "თუ ტერმინალიდან გამოხვალთ, პროცესი დასრულდება."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "ტერმინალიდან გამოსვლა"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "ნამდვილად გსურთ ამ ჩანართის თავიდან ჩატვირთვა?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "ამ ჩანართში პროცესია გაშვებული. თუ მას თავიდან ჩატვირთავთ, პროცესი "
 "დასრულდება."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "ჩანართის თავიდან ჩატვირთვა"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -393,13 +372,27 @@ msgstr ""
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "ნამდვილად გსურთ ამ ჩანართის თავიდან ჩატვირთვა?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "ჩანართის თავიდან ჩატვირთვა"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -409,23 +402,23 @@ msgstr "ახალი ჩანართი"
 msgid "Closed Tabs"
 msgstr "დახურული ჩანართები"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "მარჯვნივ მყოფი ჩანართების დახურვა"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "სხვა ჩანართების დახურვა"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "გახსნა ახალი ფანჯარაში"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "ჩანართის გამეორება"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "თავიდან ჩატვირთვა"
 
@@ -433,6 +426,18 @@ msgstr "თავიდან ჩატვირთვა"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "გადიდება: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "ამ ჩანართში მიმდინარეობს პროცესი."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "თუ ამას დახურავთ, პროცესი დასრულდება."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "ამ ტერმინალში მიმდინარეობს პროცესი."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "თუ ტერმინალიდან გამოხვალთ, პროცესი დასრულდება."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ტერმინალის ახალი ჩანართის გახსნა"

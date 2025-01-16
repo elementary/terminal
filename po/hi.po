@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -72,62 +72,78 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "पूर्णस्‍क्रीन"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr ""
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "टैब बंद करें"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "क्या आप वाकई टर्मिनल बंद करना चाहते हैं?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "टर्मिनल बंद करें"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 
@@ -252,58 +268,13 @@ msgstr ""
 msgid "Contrast is high"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "टैब बंद करें"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "क्या आप वाकई टर्मिनल बंद करना चाहते हैं?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "अगर आप टर्मिनल बंद करेंगे तो प्रक्रिया समाप्त हो जाएगी।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "टर्मिनल बंद करें"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
-msgid "Are you sure you want to reload this tab?"
-msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 #, fuzzy
 #| msgid "There is an active process on this terminal."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-#, fuzzy
-#| msgid "Close Tab"
-msgid "Reload Tab"
-msgstr "टैब बंद करें"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -405,13 +376,31 @@ msgstr ""
 msgid "Terminal"
 msgstr "टर्मिनल"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "क्या आप वाकई टर्मिनल बंद करना चाहते हैं?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:933
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
+
+#: src/Widgets/TerminalWidget.vala:934
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "टैब बंद करें"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -423,27 +412,27 @@ msgstr "नया टैब"
 msgid "Closed Tabs"
 msgstr "टैब बंद करें"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "टैब बंद करें"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "नई विंडो"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"
@@ -453,6 +442,18 @@ msgstr "टैब बंद करें"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "इस टैब पर एक सक्रिय प्रक्रिया है।"
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "अगर आप इसे बंद करेंगे, तो प्रक्रिया का अंत हो जाएगा।"
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "इस टर्मिनल पर एक प्रक्रिया सक्रिय है।"
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "अगर आप टर्मिनल बंद करेंगे तो प्रक्रिया समाप्त हो जाएगी।"
 
 #, fuzzy
 #~| msgid "Open a new window"

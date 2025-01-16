@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 21:34+0000\n"
+"POT-Creation-Date: 2025-01-05 18:00+0000\n"
 "PO-Revision-Date: 2024-09-19 07:22+0000\n"
 "Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,61 +66,77 @@ msgstr "Proces dokončen"
 msgid "Process exited with errors"
 msgstr "Proces skončil s chybami"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Ukázat lištu vyhledávání"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Zkopírovat"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Na celou obrazovku"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Najít…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Nastavení"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Opravdu chcete zavřít tuto kartu?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Zavřít kartu"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Zobrazit v %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Výchozí aplikace"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Opravdu chcete ukončit Terminál?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Ukončit Terminál"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Skrýt panel vyhledávání"
 
@@ -245,54 +261,17 @@ msgstr "Kontrast je dobrý"
 msgid "Contrast is high"
 msgstr "Kontrast je vysoký"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Opravdu chcete zavřít tuto kartu?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "V této kartě je spuštěný proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Pokud ji zavřete, proces bude ukončen."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Zavřít kartu"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Opravdu chcete ukončit Terminál?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "V tomto okně terminálu je spuštěný aktivní proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Pokud ukončíte Terminál, proces bude ukončen."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Ukončit Terminál"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Opravdu chcete tuto kartu znovu načíst?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "V této kartě je spuštěný aktivní proces. Pokud ji znovu načtete, proces bude "
 "ukončen."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Znovu načíst kartu"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -400,13 +379,27 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/Widgets/TerminalWidget.vala:542
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Opravdu chcete ukončit Terminál?"
+
+#: src/Widgets/TerminalWidget.vala:576
 msgid "The pasted text may contain multiple commands"
 msgstr "Vložený text může obsahovat vícero příkazů"
 
-#: src/Widgets/TerminalWidget.vala:544
+#: src/Widgets/TerminalWidget.vala:578
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Vložený text se může pokoušet získat práva správce systému"
+
+#: src/Widgets/TerminalWidget.vala:933
+msgid "Are you sure you want to reload this tab?"
+msgstr "Opravdu chcete tuto kartu znovu načíst?"
+
+#: src/Widgets/TerminalWidget.vala:934
+msgid "Reload Tab"
+msgstr "Znovu načíst kartu"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -418,29 +411,29 @@ msgstr "Nová karta"
 msgid "Closed Tabs"
 msgstr "Zavřít kartu"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Zavřít kartu"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Nové okno"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Zduplikovat"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Načíst znovu"
 
@@ -448,6 +441,18 @@ msgstr "Načíst znovu"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "V této kartě je spuštěný proces."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Pokud ji zavřete, proces bude ukončen."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "V tomto okně terminálu je spuštěný aktivní proces."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Pokud ukončíte Terminál, proces bude ukončen."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Otevřít nový panel terminálu"
