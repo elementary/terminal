@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-12-21 09:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
@@ -111,7 +111,7 @@ msgstr "設定"
 msgid "Are you sure you want to close this tab?"
 msgstr "您確定您想要關閉此分頁嗎？"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "關閉分頁"
 
@@ -137,6 +137,14 @@ msgstr "退出終端機"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "貼上的文字可能包含多項指令"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -365,19 +373,11 @@ msgstr "終端機"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "您確定要重設終端機嗎？"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "貼上的文字可能包含多項指令"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "貼上的文字有可能在嘗試獲得管理員權限"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "您確定您想要重新載入此分頁嗎？"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "重新載入"
 
@@ -389,23 +389,23 @@ msgstr "新增分頁"
 msgid "Closed Tabs"
 msgstr "已關閉的分頁"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "關閉右方的分頁"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "關閉其他分頁"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "在新視窗中開啟"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "建立分頁副本"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "重新載入"
 

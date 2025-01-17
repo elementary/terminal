@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-11-10 01:19+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
@@ -111,7 +111,7 @@ msgstr "მორგება"
 msgid "Are you sure you want to close this tab?"
 msgstr "ნამდვილად გსურთ ამ ჩანართის დახურვა?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "ჩანართის დახურვა"
 
@@ -137,6 +137,14 @@ msgstr "ტერმინალიდან გამოსვლა"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -378,19 +386,11 @@ msgstr "ტერმინალი"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "ნამდვილად გსურთ ამ ჩანართის თავიდან ჩატვირთვა?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "ჩანართის თავიდან ჩატვირთვა"
 
@@ -402,23 +402,23 @@ msgstr "ახალი ჩანართი"
 msgid "Closed Tabs"
 msgstr "დახურული ჩანართები"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "მარჯვნივ მყოფი ჩანართების დახურვა"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "სხვა ჩანართების დახურვა"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "გახსნა ახალი ფანჯარაში"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "ჩანართის გამეორება"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "თავიდან ჩატვირთვა"
 
