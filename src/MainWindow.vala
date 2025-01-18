@@ -328,7 +328,7 @@ namespace Terminal {
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
-            title_label = new Gtk.Label (title);
+            title_label = new Gtk.Label (TerminalWidget.DEFAULT_LABEL);
             title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
             title_stack = new Gtk.Stack () {
@@ -402,8 +402,10 @@ namespace Terminal {
                 }
 
 
-                title = term.window_title != "" ? term.window_title
-                                                : term.current_working_directory;
+                title_label.label = term.window_title != "" ?
+                                    term.window_title :
+                                    term.current_working_directory;
+
                 term.grab_focus ();
             });
 
@@ -420,8 +422,6 @@ namespace Terminal {
             add (box);
             get_style_context ().add_class ("terminal-window");
 
-            bind_property ("title", title_label, "label");
-
             unowned var menu_popover = (SettingsPopover) menu_button.popover;
 
             menu_popover.show_theme_editor.connect (() => {
@@ -433,7 +433,14 @@ namespace Terminal {
                 color_preferences_dialog.present ();
             });
 
-            bind_property ("title", header, "title", GLib.BindingFlags.SYNC_CREATE);
+            title_label.notify["label"].connect (() => {
+                if (title_label.label != "") {
+                    title = string.join (" - ", title_label.label, TerminalWidget.DEFAULT_LABEL);
+                } else {
+                    title = TerminalWidget.DEFAULT_LABEL;
+                }
+            });
+
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
@@ -818,8 +825,14 @@ namespace Terminal {
             save_opened_terminals (false, true);
         }
 
-        private void on_terminal_window_title_changed () {
-            title = current_terminal.window_title;
+        private void on_terminal_window_title_changed (Gtk.Widget source) {
+            if ((TerminalWidget)source != current_terminal) {
+                return;
+            }
+
+            title_label.label = current_terminal.window_title != "" ?
+                                current_terminal.window_title :
+                                current_terminal.current_working_directory;
         }
 
         private Hdy.TabPage append_tab (
