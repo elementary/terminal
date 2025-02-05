@@ -71,3 +71,5 @@ test(
     protocol: 'tap',
     depends: test_schemas
 )
+
+subdir('tests')

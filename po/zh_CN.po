@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2023-02-04 12:25+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -146,6 +146,14 @@ msgstr "退出终端"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "隐藏查找"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "当前粘贴的文本可能包含多个命令"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "当前粘贴的文本可能会试图获取管理员权限"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -390,19 +398,11 @@ msgstr "终端"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "您确定要退出终端吗？"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "当前粘贴的文本可能包含多个命令"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "当前粘贴的文本可能会试图获取管理员权限"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "您确定要重新加载此标签吗？"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "重新加载标签"
 

@@ -120,6 +120,30 @@ namespace Terminal.Utils {
         return uri;
     }
 
+    /**
+     * Checks a string for possible unsafe contents before pasting
+     *
+     * @param clipboard contents containing terminal commands
+     *
+     * @param return localized explanation of risk
+     *
+     * @return true if safe, false if unsafe.
+     */
+    public bool is_safe_paste (string text, out string msg) {
+        if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
+            msg = _("The pasted text may contain multiple commands");
+            return false;
+        }
+
+        if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
+            msg = _("The pasted text may be trying to gain administrative access");
+            return false;
+        }
+
+        msg = null;
+        return true;
+    }
+
     public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
         // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
         var placeholder = "::::::";
