@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-08-27 08:16+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2025-02-06 16:06+0000\n"
+"Last-Translator: Stella Ménier <stella.menier@gmx.de>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -81,11 +81,11 @@ msgstr "Copier la dernière sortie"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Effacer l'écran"
 
 #: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
@@ -137,6 +137,14 @@ msgstr "Quitter le Terminal"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Le texte collé pourrait contenir plusieurs commandes"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -260,15 +268,11 @@ msgid "Contrast is high"
 msgstr "Le contraste est élevé"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Il y a un processus actif dans cet onglet, si vous le rechargez, le "
+"Il y a un processus actif dans cet onglet, si vous le continuez, le "
 "processus sera arrêté."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
@@ -305,16 +309,12 @@ msgid "Next result"
 msgstr "Résultat suivant"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Recherche cyclique"
+msgstr "Désactiver la recherche cyclique"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Recherche cyclique"
+msgstr "Activer la recherche cyclique"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -356,13 +356,13 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Avertir lors d'un copier/coller dangereux"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Le texte collé pourrait contenir plusieurs commandes"
+msgstr ""
+"Avertir lorsque le texte collé contient des commandes d'administration ou "
+"multiples"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
@@ -381,24 +381,14 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Voulez-vous vraiment quitter le Terminal ?"
+msgstr "Voulez-vous vraiment réinitialiser le terminal ?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "Le texte collé pourrait contenir plusieurs commandes"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Le texte collé pourrait tenter d'obtenir un accès administrateur"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Voulez-vous vraiment recharger cet onglet ?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Recharger l'onglet"
 
@@ -433,7 +423,7 @@ msgstr "Recharger"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Il y a un processus actif dans cet onglet."

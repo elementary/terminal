@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
@@ -137,6 +137,15 @@ msgstr "Surt del terminal"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "El text enganxat pot contenir ordres diverses."
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"És possible que el text enganxat intenti obtenir accés d'administració."
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -372,20 +381,11 @@ msgstr "Terminal"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Segur que voleu restablir el terminal?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "El text enganxat pot contenir ordres diverses."
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"És possible que el text enganxat intenti obtenir accés d'administració."
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Segur que voleu tornar a carregar aquesta pestanya?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Torna-la a carregar"
 

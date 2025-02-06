@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-12-09 22:18+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2025-01-07 19:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2017-02-11 05:36+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -51,11 +51,11 @@ msgstr "そのほかのアップデート:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "ウィンドウが開くたびに大きくなる不具合を修正"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "“リセット”と“画面を消去”アクションのホットキーを変更"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:89

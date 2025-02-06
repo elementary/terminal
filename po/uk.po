@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
@@ -138,6 +138,15 @@ msgstr "Вийти з Терміналу"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Вставлений текст може містити кілька команд"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Вставлений текст може намагатися отримати доступ до прав адміністратора"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -375,20 +384,11 @@ msgstr "Термінал"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Ви впевнені, що хочете скинути термінал?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "Вставлений текст може містити кілька команд"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"Вставлений текст може намагатися отримати доступ до прав адміністратора"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Перезавантажити вкладку"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2016-08-26 13:07+0000\n"
 "Last-Translator: Nate <natejms@outlook.com>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
@@ -138,6 +138,14 @@ msgstr ""
 
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
+msgstr ""
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
@@ -371,21 +379,13 @@ msgstr ""
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Est-ce que vous êtes certain que vous voulez fermer cet onglet?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr ""
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "Est-ce que vous êtes certain que vous voulez fermer cet onglet?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"
