@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2025-02-06 16:06+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Last-Translator: Stella Ménier <stella.menier@gmx.de>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
 "Language: fr\n"
@@ -81,11 +81,11 @@ msgstr "Copier la dernière sortie"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Effacer l'écran"
 
 #: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
@@ -309,16 +309,12 @@ msgid "Next result"
 msgstr "Résultat suivant"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Recherche cyclique"
+msgstr "Désactiver la recherche cyclique"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Recherche cyclique"
+msgstr "Activer la recherche cyclique"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -360,7 +356,7 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Avertir lors d'un copier/coller dangereux"
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Warn when pasted text contains multiple or administrative commands"
@@ -427,7 +423,7 @@ msgstr "Recharger"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Il y a un processus actif dans cet onglet."
