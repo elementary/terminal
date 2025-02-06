@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-12-11 13:16+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2025-01-13 13:16+0000\n"
+"Last-Translator: Jeremy Wootten <jeremywootten@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "terminal/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -51,11 +51,11 @@ msgstr "Other updates:"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Stop window size increasing when opened"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "Change hotkeys for Reset and Clear Screen actions"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:89

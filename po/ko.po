@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2022-08-06 11:37+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -148,6 +148,14 @@ msgstr "터미널 종료"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "붙여 넣은 텍스트에 여러 명령이 포함될 수 있습니다"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 있습니다"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -391,19 +399,11 @@ msgstr "터미널"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "정말로 터미널을 닫으시겠습니까?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "붙여 넣은 텍스트에 여러 명령이 포함될 수 있습니다"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "붙여 넣은 텍스트가 접근 관리 권한을 얻으려고 할 수 있습니다"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "정말로 이 탭을 새로 고치시겠습니까?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "탭 새로 고침"
 

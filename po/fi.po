@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-12-02 14:16+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
@@ -137,6 +137,15 @@ msgstr "Lopeta pääte"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -378,20 +387,11 @@ msgstr "Pääte"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Haluatko varmasti lopettaa päätteen?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Lataa välilehti uudelleen"
 
