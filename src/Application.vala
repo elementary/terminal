@@ -298,7 +298,7 @@ public class Terminal.Application : Gtk.Application {
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
             window = new MainWindow (this, is_first_window);
-            // All windows restore the window state from settings so matches first window, 
+            // All windows restore the window state from settings so matches first window,
             // but only the first window saves its window state
             if (is_first_window) {
                 window.save_window_state ();

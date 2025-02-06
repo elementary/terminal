@@ -247,15 +247,18 @@ namespace Terminal {
             Application.settings.changed["font"].connect (update_font);
 
             set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
-
-            restore_saved_state ();
-            show_all ();
-
+            restore_saved_state (); // Restores saved window size and state
             if (recreate_tabs) {
                 open_tabs ();
             }
 
             delete_event.connect (on_delete_event);
+            realize.connect (() => {
+                // Reset the size request to allow user to resize the window smaller than initial size
+                set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
+            });
+
+            show_all ();
         }
 
         public void add_tab_with_working_directory (
@@ -503,9 +506,9 @@ namespace Terminal {
         private void restore_saved_state () {
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
-
-            default_width = int.max (Application.MINIMUM_WIDTH, rect.width);
-            default_height = int.max (Application.MINIMUM_HEIGHT, rect.height);
+            var initial_width = int.max (Application.MINIMUM_WIDTH, rect.width);
+            var initial_height = int.max (Application.MINIMUM_HEIGHT, rect.height);
+            set_size_request (initial_width, initial_height);
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
