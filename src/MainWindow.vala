@@ -525,6 +525,7 @@ namespace Terminal {
             var term = get_term_widget (tab);
             term.main_window = this;
             save_opened_terminals (true, true);
+            connect_terminal_signals (term);
         }
 
         private void on_tab_removed (Hdy.TabPage tab) {
@@ -536,6 +537,8 @@ namespace Terminal {
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
+
+            disconnect_terminal_signals (get_term_widget (tab));
         }
 
         private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
@@ -776,8 +779,6 @@ namespace Terminal {
 
             check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
-
-            connect_terminal_signals (terminal_widget);
 
             return terminal_widget;
         }
