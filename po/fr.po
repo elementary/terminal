@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-16 18:12+0000\n"
-"PO-Revision-Date: 2024-08-27 08:16+0000\n"
+"PO-Revision-Date: 2025-02-06 16:06+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -268,15 +268,11 @@ msgid "Contrast is high"
 msgstr "Le contraste est élevé"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Il y a un processus actif dans cet onglet, si vous le rechargez, le "
+"Il y a un processus actif dans cet onglet, si vous le continuez, le "
 "processus sera arrêté."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
@@ -367,10 +363,10 @@ msgid "Unsafe Paste Alert"
 msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "Le texte collé pourrait contenir plusieurs commandes"
+msgstr ""
+"Avertir lorsque le texte collé contient des commandes d'administration ou "
+"multiples"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
@@ -389,10 +385,8 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Voulez-vous vraiment quitter le Terminal ?"
+msgstr "Voulez-vous vraiment réinitialiser le terminal ?"
 
 #: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
