@@ -256,6 +256,7 @@ namespace Terminal {
             realize.connect (() => {
                 // Reset the size request to allow user to resize the window smaller than initial size
                 set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
+                zoom_overlay.hide_zoom_level ();
             });
 
             show_all ();
