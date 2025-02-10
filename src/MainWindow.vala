@@ -405,7 +405,12 @@ namespace Terminal {
 
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
-                term.grab_focus ();
+
+                // Need to wait for default handler to run before focusing
+                Idle.add (() => {
+                    term.grab_focus ();
+                    return Source.REMOVE;
+                });
             });
 
             var overlay = new Gtk.Overlay () {
@@ -483,7 +488,7 @@ namespace Terminal {
                     if (MOD1_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int)notebook.n_pages - 1);
+                        notebook.selected_page = notebook.tab_view.get_nth_page (notebook.n_pages - 1);
                         return true;
                     }
                     break;
@@ -646,7 +651,7 @@ namespace Terminal {
         private void open_tabs () {
             string[] tabs = {};
             double[] zooms = {};
-            uint focus = 0;
+            int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
 
             if (Granite.Services.System.history_is_enabled () &&
@@ -716,7 +721,7 @@ namespace Terminal {
             }
 
             if (focus_restored_tabs) {
-                var tab = notebook.tab_view.get_nth_page ((int)(focus.clamp (0, notebook.n_pages - 1)));
+                var tab = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
                 notebook.selected_page = tab;
             }
         }
@@ -725,7 +730,7 @@ namespace Terminal {
             string location,
             string? program = null,
             bool focus = true,
-            int pos = (int)notebook.n_pages
+            int pos = notebook.n_pages
         ) {
 
             /*
@@ -1002,17 +1007,17 @@ namespace Terminal {
 
             var pos = notebook.tab_menu_target != null ?
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
-                      (int)notebook.n_pages;
+                      notebook.n_pages;
 
             new_tab (term.get_shell_location (), null, true, pos);
         }
 
         private void action_next_tab () {
-            notebook.tab_view.select_next_page ();
+            notebook.cycle_tabs (FORWARD);
         }
 
         private void action_previous_tab () {
-            notebook.tab_view.select_previous_page ();
+            notebook.cycle_tabs (BACK);
         }
 
         void action_move_tab_right () {
