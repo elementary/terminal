@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 19:54+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
@@ -111,7 +111,7 @@ msgstr "Beállítások"
 msgid "Are you sure you want to close this tab?"
 msgstr "Biztos, hogy be akarja zárni ezt a lapot?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:212
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
@@ -137,6 +137,14 @@ msgstr "Kilépés a terminálból"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Keresősáv elrejtése"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -374,19 +382,11 @@ msgstr "Terminál"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Biztos, hogy visszaállítja a terminált?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "A beillesztendő szöveg több parancsot is tartalmazhat"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Biztos, hogy újratölti ezt a lapot?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Lap újratöltése"
 
@@ -398,23 +398,23 @@ msgstr "Új lap"
 msgid "Closed Tabs"
 msgstr "Bezárt lapok"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "Jobbra lévő lapok bezárása"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "A többi lap bezárása"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "Megnyitás új ablakban"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "Lap megkettőzése"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Újratöltés"
 
