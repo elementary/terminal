@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-09-19 07:22+0000\n"
 "Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -139,6 +139,14 @@ msgstr "Ukončit Terminál"
 #: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Skrýt panel vyhledávání"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Vložený text může obsahovat vícero příkazů"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Vložený text se může pokoušet získat práva správce systému"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -385,19 +393,11 @@ msgstr "Terminál"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Opravdu chcete ukončit Terminál?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "Vložený text může obsahovat vícero příkazů"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Vložený text se může pokoušet získat práva správce systému"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Opravdu chcete tuto kartu znovu načíst?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Znovu načíst kartu"
 

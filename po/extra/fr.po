@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-07-23 15:16+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2025-02-06 16:06+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/extra/fr/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -51,11 +51,12 @@ msgstr "Autres mises à jour :"
 
 #: data/io.elementary.terminal.appdata.xml.in:60
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Arrêt de l'augmentation de la taille de la fenêtre à l'ouverture"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
+"Modification du raccourci pour les actions Réinitialiser et Effacer l'écran"
 
 #: data/io.elementary.terminal.appdata.xml.in:62
 #: data/io.elementary.terminal.appdata.xml.in:89
@@ -76,43 +77,57 @@ msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.terminal.appdata.xml.in:77
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "Affichage du niveau de zoom en surimpression lors d'un zoom"
 
 #: data/io.elementary.terminal.appdata.xml.in:78
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr ""
+"Implémentation des actions Effacer et Réinitialiser dans le menu contextuel "
+"à l'aide de raccourcis"
 
 #: data/io.elementary.terminal.appdata.xml.in:79
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"Ajout d'un bouton pour l'avertissement de collage non sécurisé dans le menu "
+"de l'application"
 
 #: data/io.elementary.terminal.appdata.xml.in:83
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Mise à jour de l'icône et de l'infobulle du bouton de recherche cyclique en "
+"fonction de son état"
 
 #: data/io.elementary.terminal.appdata.xml.in:84
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Focalisation sur le bon onglet après avoir cliqué sur une notification de "
+"fin de processus"
 
 #: data/io.elementary.terminal.appdata.xml.in:85
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
+"Vérification de la présence de « doas », « pkexec », « run0 », et « su » "
+"ainsi que « sudo » lorsque le texte est collé dans le terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:86
 msgid "Check for unsafe paste on dropping text as well"
 msgstr ""
+"Vérification de la présence d'un collage non sécurisé sur le texte "
+"glissé-déposé"
 
 #: data/io.elementary.terminal.appdata.xml.in:87
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr ""
+"Vérification des commandes multilignes dans la détection des collages non "
+"sécurisés"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Amélioration du contraste des gris en thème sombre"
 
 #: data/io.elementary.terminal.appdata.xml.in:108
 msgid "Allow switching event alerts on and off in the app menu"

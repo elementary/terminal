@@ -408,7 +408,12 @@ namespace Terminal {
 
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
-                term.grab_focus ();
+
+                // Need to wait for default handler to run before focusing
+                Idle.add (() => {
+                    term.grab_focus ();
+                    return Source.REMOVE;
+                });
             });
 
             var overlay = new Gtk.Overlay () {
