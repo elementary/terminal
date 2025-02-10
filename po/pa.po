@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -66,61 +66,85 @@ msgstr "ਅਮਲ ਮੁਕੰਮਲ ਹੋਇਆ"
 msgid "Process exited with errors"
 msgstr "ਅਮਲ ਖ਼ਰਾਬੀਆਂ ਸਮੇਤ ਬੰਦ ਹੋਇਆ"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "ਚਿਪਕਾਓ"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "ਟਰਮੀਨਲ ਬੰਦ ਕਰੋ"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂਡਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -245,53 +269,16 @@ msgstr ""
 msgid "Contrast is high"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "ਇਸ ਟੈਬ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "ਜੇ ਤੁਸੀਂ ਇਸਨੂੰ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "ਇਸ ਟਰਮੀਨਲ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "ਜੇ ਤੁਸੀਂ ਟਰਮੀਨਲ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "ਟਰਮੀਨਲ ਬੰਦ ਕਰੋ"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "ਇਸ ਟੈਬ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਹੈ। ਜੇ ਤੁਸੀਂ ਇਸਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕੀਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "ਟੈਬ ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -397,13 +384,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "ਟਰਮੀਨਲ"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਵਿੱਚ ਕਈ ਕਮਾਂਡਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ"
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "ਪੇਸਟ ਕੀਤੀ ਲਿਖਤ ਸ਼ਾਇਦ ਐਡਮਿਨ ਇਖ਼ਤਿਆਰ ਲੈਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੀ ਹੈ"
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "ਟੈਬ ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -415,29 +408,29 @@ msgstr "ਨਵੀਂ ਟੈਬ"
 msgid "Closed Tabs"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Open a new terminal window"
 msgid "Open in New Window"
 msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਵਿੰਡੋ ਖੋਲ੍ਹੋ"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
@@ -445,6 +438,18 @@ msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "ਇਸ ਟੈਬ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "ਜੇ ਤੁਸੀਂ ਇਸਨੂੰ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "ਇਸ ਟਰਮੀਨਲ 'ਤੇ ਇੱਕ ਸਰਗਰਮ ਅਮਲ ਮੌਜੂਦ ਹੈ।"
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "ਜੇ ਤੁਸੀਂ ਟਰਮੀਨਲ ਬੰਦ ਕਰ ਦਿੱਤਾ ਤਾਂ ਉਹ ਅਮਲ ਖ਼ਤਮ ਹੋ ਜਾਵੇਗਾ।"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਟੈਬ ਖੋਲ੍ਹੋ"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-11-05 10:01+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/terminal/"
 "terminal/ca/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
 #: src/Application.vala:63
@@ -66,61 +66,86 @@ msgstr "Procés completat"
 msgid "Process exited with errors"
 msgstr "El procés ha acabat amb errors."
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "Mostra la barra de cerca."
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Copia"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Copia l'última sortida"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "Neteja la pantalla"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Restableix"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Enganxa"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Surt de la pantalla completa"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Cerca…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Paràmetres"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Segur que voleu tancar aquesta pestanya?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Tanca la pestanya"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Mostra-ho a %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Aplicació per defecte"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Segur que voleu sortir del terminal?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Surt del terminal"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "El text enganxat pot contenir ordres diverses."
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"És possible que el text enganxat intenti obtenir accés d'administració."
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -243,54 +268,12 @@ msgstr "El contrast està bé"
 msgid "Contrast is high"
 msgstr "El contrast és alt"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Segur que voleu tancar aquesta pestanya?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Hi ha un procés actiu en aquesta pestanya."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Si tanqueu la pestanya, s'acabarà el procés."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Tanca la pestanya"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Segur que voleu sortir del terminal?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Hi ha un procés actiu en aquest terminal."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Si sortiu del terminal, s'acabarà el procés."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Surt del terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Segur que voleu tornar a carregar aquesta pestanya?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Hi ha un procés actiu en aquesta pestanya. Si la torneu a carregar, el "
-"procés s'acabarà."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Torna-la a carregar"
+"Hi ha un procés actiu en aquesta pestanya. Si continueu, el procés s'acabarà."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -394,14 +377,17 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "El text enganxat pot contenir ordres diverses."
+#: src/Widgets/TerminalWidget.vala:545
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Segur que voleu restablir el terminal?"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"És possible que el text enganxat intenti obtenir accés d'administració."
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "Segur que voleu tornar a carregar aquesta pestanya?"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "Torna-la a carregar"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -411,23 +397,23 @@ msgstr "Pestanya nova"
 msgid "Closed Tabs"
 msgstr "Pestanyes tancades"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "Tanca les pestanyes de la dreta"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "Tanca les altres pestanyes"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "Obre-ho en una finestra nova"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "Duplica la pestanya"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Torna a carregar"
 
@@ -435,6 +421,18 @@ msgstr "Torna a carregar"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "Ampliació: %.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Hi ha un procés actiu en aquesta pestanya."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Si tanqueu la pestanya, s'acabarà el procés."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Hi ha un procés actiu en aquest terminal."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Si sortiu del terminal, s'acabarà el procés."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Obre una pestanya nova del terminal"

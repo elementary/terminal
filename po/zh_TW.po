@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
-"PO-Revision-Date: 2024-11-06 11:17+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2024-12-21 09:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"terminal/terminal/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
+"projects/terminal/terminal/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -66,61 +66,85 @@ msgstr "程序已完成"
 msgid "Process exited with errors"
 msgstr "程序錯誤地結束"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr "顯示搜尋列"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "複製"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "複製上次的輸出"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr "清除畫面"
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "重設"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "貼上"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "全部選擇"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "離開全螢幕"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "設定"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "您確定您想要關閉此分頁嗎？"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "關閉分頁"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中顯示"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "預設應用程式"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "您確定要退出終端機嗎？"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "退出終端機"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "貼上的文字可能包含多項指令"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -243,52 +267,11 @@ msgstr "對比沒問題"
 msgid "Contrast is high"
 msgstr "對比很高"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "您確定您想要關閉此分頁嗎？"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "此分頁中有執行中的程序。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "如果您將它關閉，該程序將會終止。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "關閉分頁"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "您確定要退出終端機嗎？"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "此終端機中有執行中的程序。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "若您退出終端機，該程序將會終止。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "退出終端機"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "您確定您想要重新載入此分頁嗎？"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "此分頁尚有執行中的程序。重新載入將導致該程序終止。"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "重新載入"
+msgstr "此分頁尚有執行中的程序。繼續進行此操作將導致該程序終止。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -386,13 +369,17 @@ msgstr "輸入錯誤或有多個補完候補時提醒（受系統設定→音效
 msgid "Terminal"
 msgstr "終端機"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "貼上的文字可能包含多項指令"
+#: src/Widgets/TerminalWidget.vala:545
+msgid "Are you sure you want to reset the terminal?"
+msgstr "您確定要重設終端機嗎？"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "貼上的文字有可能在嘗試獲得管理員權限"
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "您確定您想要重新載入此分頁嗎？"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "重新載入"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -402,23 +389,23 @@ msgstr "新增分頁"
 msgid "Closed Tabs"
 msgstr "已關閉的分頁"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr "關閉右方的分頁"
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
 msgstr "關閉其他分頁"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
 msgstr "在新視窗中開啟"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
 msgstr "建立分頁副本"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "重新載入"
 
@@ -426,6 +413,18 @@ msgstr "重新載入"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "縮放：%.0f%%"
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "此分頁中有執行中的程序。"
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "如果您將它關閉，該程序將會終止。"
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "此終端機中有執行中的程序。"
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "若您退出終端機，該程序將會終止。"
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "開啟新終端機分頁"

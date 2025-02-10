@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2023-05-23 19:07+0000\n"
 "Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
@@ -67,63 +67,87 @@ msgstr "Proses selesai"
 msgid "Process exited with errors"
 msgstr "Proses keluar dengan kesalahan"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Salin"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Salin Keluaran Terakhir"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Tempel"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Layar penuh"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Cari…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Pengaturan"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Yakin ingin menutup tab ini?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Tutup Tab"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Tampilkan pada %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Aplikasi bawaan"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Apa Anda yakin ingin keluar dari Terminal?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Keluar Terminal"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Sembunyikan bilah pencarian"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -246,53 +270,16 @@ msgstr "Kontras baik"
 msgid "Contrast is high"
 msgstr "Kontras tinggi"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Yakin ingin menutup tab ini?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Ada proses aktif di tab ini."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Tutup Tab"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Apa Anda yakin ingin keluar dari Terminal?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Ada proses aktif di terminal ini."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Keluar Terminal"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Yakin ingin memuat ulang tab ini?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Ada proses aktif di tab ini. Jika Anda memuat ulang, prosesnya akan berakhir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Muat Ulang Tab"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -398,13 +385,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Apa Anda yakin ingin keluar dari Terminal?"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "Yakin ingin memuat ulang tab ini?"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "Muat Ulang Tab"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -416,29 +409,29 @@ msgstr "Tab Baru"
 msgid "Closed Tabs"
 msgstr "Tutup Tab"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Tutup Tab"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Jendela Baru"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Gandakan"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Muat Ulang"
 
@@ -446,6 +439,18 @@ msgstr "Muat Ulang"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Ada proses aktif di tab ini."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Ada proses aktif di terminal ini."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Buka tab terminal baru"

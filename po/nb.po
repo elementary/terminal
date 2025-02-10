@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2024-07-05 14:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -69,62 +69,86 @@ msgstr "Prosess fullført"
 msgid "Process exited with errors"
 msgstr "Prosess avsluttet med feil"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Kopier siste utdata"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Lim inn"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Merk alt"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 msgid "Exit FullScreen"
 msgstr "Avslutt fullskjerm"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Finn…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Innstillinger"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Er du sikker på at du vil lukke denne fanen?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Lukk Fane"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Vis i %s"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Forvalgt program"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Er du sikker på at du vil lukke Terminalen?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Avslutt terminalen"
+
+#: src/MainWindow.vala:1041
 #, fuzzy
 msgid "Hide find bar"
 msgstr "Skjul søkelinje"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Innlimt tekst kan inneholde flere kommandoer"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Innlimt tekst kan prøve å tilegne seg administratortilgang"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -247,54 +271,17 @@ msgstr "God kontrast"
 msgid "Contrast is high"
 msgstr "Høy kontrast"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Er du sikker på at du vil lukke denne fanen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Det kjøres en aktiv prosess i denne fanen."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Hvis du lukker den, vil prosessen avsluttes."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Lukk Fane"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Er du sikker på at du vil lukke Terminalen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Det er en aktiv prosess i denne terminalen ."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Hvis du avslutter Terminalen vil prosessen avsluttes."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Avslutt terminalen"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Er du sikker på at du vil gjeninnlaste denne fanen?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Det er en aktiv prosess i denne fanen. Hvis du gjeninnlaster den, vil "
 "prosessen sluttføres."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Gjeninnlast fane"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -404,13 +391,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "Innlimt tekst kan inneholde flere kommandoer"
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Er du sikker på at du vil lukke Terminalen?"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Innlimt tekst kan prøve å tilegne seg administratortilgang"
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "Er du sikker på at du vil gjeninnlaste denne fanen?"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "Gjeninnlast fane"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -422,29 +415,29 @@ msgstr "Ny fane"
 msgid "Closed Tabs"
 msgstr "Lukk Fane"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Lukk Fane"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Nytt vindu"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Dupliser"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Last inn igjen"
 
@@ -452,6 +445,18 @@ msgstr "Last inn igjen"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Det kjøres en aktiv prosess i denne fanen."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Hvis du lukker den, vil prosessen avsluttes."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Det er en aktiv prosess i denne terminalen ."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Hvis du avslutter Terminalen vil prosessen avsluttes."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Åpne et nytt terminalvindu"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 19:29+0000\n"
+"POT-Creation-Date: 2025-01-16 18:12+0000\n"
 "PO-Revision-Date: 2022-10-17 14:57+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -75,63 +75,87 @@ msgstr "İşlem tamamlandı"
 msgid "Process exited with errors"
 msgstr "İşlem hata ile sonlandı"
 
-#: src/MainWindow.vala:166
+#: src/MainWindow.vala:167
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:173
+#: src/MainWindow.vala:174
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:180
 msgid "Copy Last Output"
 msgstr "Son Çıktıyı Kopyala"
 
-#: src/MainWindow.vala:185
+#: src/MainWindow.vala:186
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:191
+#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:198
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/MainWindow.vala:203
+#: src/MainWindow.vala:204
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: src/MainWindow.vala:302
+#: src/MainWindow.vala:309
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Tam Ekran"
 
-#: src/MainWindow.vala:311 src/MainWindow.vala:1014
+#: src/MainWindow.vala:318 src/MainWindow.vala:1050
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Ayarlar"
 
+#: src/MainWindow.vala:372
+msgid "Are you sure you want to close this tab?"
+msgstr "Bu sekmeyi kapatmak istediğinizden emin misiniz?"
+
+#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+msgid "Close Tab"
+msgstr "Sekmeyi Kapat"
+
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:547
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "%s ile aç"
 
-#: src/MainWindow.vala:549
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Varsayılan uygulama"
 
-#: src/MainWindow.vala:1005
+#: src/MainWindow.vala:883
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
+
+#: src/MainWindow.vala:884
+msgid "Quit Terminal"
+msgstr "Terminal'den Çık"
+
+#: src/MainWindow.vala:1041
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Yapıştırılan metin birden fazla komut içerebilir"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Yapıştırılan metin yönetim erişimi kazanmaya çalışıyor olabilir"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -254,54 +278,17 @@ msgstr "Kontrast iyi"
 msgid "Contrast is high"
 msgstr "Kontrast çok yüksek"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Bu sekmeyi kapatmak istediğinizden emin misiniz?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Bu sekmede bir işlem devam etmekte."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Bunu kapatırsanız süreç sonlanacak."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-#: src/Widgets/TerminalView.vala:212
-msgid "Close Tab"
-msgstr "Sekmeyi Kapat"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Bu terminalde bir işlem devam etmekte."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Terminal'den çıkarsanız, işlem sonlanacak."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Terminal'den Çık"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:50
-msgid "Are you sure you want to reload this tab?"
-msgstr "Bu sekmeyi yeniden yüklemek istediğinizden emin misiniz?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:52
+#: src/Dialogs/ForegroundProcessDialog.vala:37
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
 msgid ""
-"There is an active process on this tab. If you reload it, the process will "
+"There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Bu sekmede aktif bir işlem devam etmekte. Yeniden yüklerseniz, işlem sona "
 "erecektir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:54
-msgid "Reload Tab"
-msgstr "Sekmeyi Yeniden Yükle"
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -407,13 +394,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:541
-msgid "The pasted text may contain multiple commands"
-msgstr "Yapıştırılan metin birden fazla komut içerebilir"
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
 
-#: src/Widgets/TerminalWidget.vala:543
-msgid "The pasted text may be trying to gain administrative access"
-msgstr "Yapıştırılan metin yönetim erişimi kazanmaya çalışıyor olabilir"
+#: src/Widgets/TerminalWidget.vala:928
+msgid "Are you sure you want to reload this tab?"
+msgstr "Bu sekmeyi yeniden yüklemek istediğinizden emin misiniz?"
+
+#: src/Widgets/TerminalWidget.vala:929
+msgid "Reload Tab"
+msgstr "Sekmeyi Yeniden Yükle"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -425,29 +418,29 @@ msgstr "Yeni Sekme"
 msgid "Closed Tabs"
 msgstr "Sekmeyi Kapat"
 
-#: src/Widgets/TerminalView.vala:210
+#: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:211
+#: src/Widgets/TerminalView.vala:219
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Sekmeyi Kapat"
 
-#: src/Widgets/TerminalView.vala:215
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Yeni Pencere"
 
-#: src/Widgets/TerminalView.vala:216
+#: src/Widgets/TerminalView.vala:224
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Çoğalt"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:227
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
@@ -455,6 +448,18 @@ msgstr "Yeniden Yükle"
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Bu sekmede bir işlem devam etmekte."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Bunu kapatırsanız süreç sonlanacak."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Bu terminalde bir işlem devam etmekte."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Terminal'den çıkarsanız, işlem sonlanacak."
 
 #~ msgid "Open a new terminal tab"
 #~ msgstr "Yeni bir terminal sekmesi aç"
