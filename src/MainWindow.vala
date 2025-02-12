@@ -232,6 +232,7 @@ namespace Terminal {
                 propagation_phase = TARGET
             };
             key_controller.key_pressed.connect (key_pressed);
+            key_controller.key_released.connect (key_released);
             key_controller.focus_in.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
@@ -442,6 +443,19 @@ namespace Terminal {
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
+        private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            if (keyval == Gdk.Key.Alt_L) {
+                //Remove tab numbers if present
+                for (int i = 0; i < notebook.n_pages; i++) {
+                    var tab = notebook.tab_view.get_nth_page (i);
+                    var badge = "(%d) ".printf (i + 1);
+                    if (tab.title.has_prefix (badge)) {
+                        tab.title = tab.title.slice (badge.length, tab.title.length);
+                    }
+                }
+            }
+        }
+
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
             switch (keyval) {
                 case Gdk.Key.Escape:
@@ -462,6 +476,23 @@ namespace Terminal {
                     }
                     break;
 
+                case Gdk.Key.@0: //Show tab numbers
+                case Gdk.Key.KP_0:
+                    if (MOD1_MASK in modifiers) {
+                        //TODO Show number as badge? Need way of converting number to suitable icon
+                        // that can be used as TabPage.indicator_icon.
+                        // For now use text
+                        for (int i = 0; i < notebook.n_pages; i++) {
+                            var tab = notebook.tab_view.get_nth_page (i);
+                            var badge = "(%d) ".printf (i + 1);
+                            if (!tab.title.has_prefix (badge)) {
+                                tab.title = badge + tab.title;
+                            }
+                        }
+                    }
+
+                    return Gdk.EVENT_STOP;
+
                 case Gdk.Key.@1: //alt+[1-8]
                 case Gdk.Key.@2:
                 case Gdk.Key.@3:
@@ -474,11 +505,10 @@ namespace Terminal {
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
-                        if (tab_index > notebook.n_pages - 1) {
-                            return false;
+                        if (tab_index <= notebook.n_pages - 1) {
+                            notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         }
 
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         return true;
                     }
                     break;
