@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-02-12 18:46+0000\n"
 "PO-Revision-Date: 2025-01-16 18:12+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
@@ -40,63 +40,65 @@ msgstr ""
 "式。"
 
 #: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:81
-#: data/io.elementary.terminal.appdata.xml.in:111
-#: data/io.elementary.terminal.appdata.xml.in:129
-#: data/io.elementary.terminal.appdata.xml.in:146
-#: data/io.elementary.terminal.appdata.xml.in:167
-#: data/io.elementary.terminal.appdata.xml.in:186
+#: data/io.elementary.terminal.appdata.xml.in:71
+#: data/io.elementary.terminal.appdata.xml.in:94
+#: data/io.elementary.terminal.appdata.xml.in:124
+#: data/io.elementary.terminal.appdata.xml.in:142
+#: data/io.elementary.terminal.appdata.xml.in:159
+#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:199
 msgid "Other updates:"
 msgstr "其他更新："
 
 #: data/io.elementary.terminal.appdata.xml.in:60
-msgid "Stop window size increasing when opened"
-msgstr "修正視窗隨著每次開啟而變得越來越大的問題"
-
-#: data/io.elementary.terminal.appdata.xml.in:61
-msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr "變更「重設」與「清除畫面」動作的快捷鍵"
-
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:89
-#: data/io.elementary.terminal.appdata.xml.in:115
-#: data/io.elementary.terminal.appdata.xml.in:133
-#: data/io.elementary.terminal.appdata.xml.in:148
-#: data/io.elementary.terminal.appdata.xml.in:169
-#: data/io.elementary.terminal.appdata.xml.in:188
+#: data/io.elementary.terminal.appdata.xml.in:75
+#: data/io.elementary.terminal.appdata.xml.in:102
+#: data/io.elementary.terminal.appdata.xml.in:128
+#: data/io.elementary.terminal.appdata.xml.in:146
+#: data/io.elementary.terminal.appdata.xml.in:161
+#: data/io.elementary.terminal.appdata.xml.in:182
+#: data/io.elementary.terminal.appdata.xml.in:201
 msgid "Translation updates"
 msgstr "翻譯更新"
 
-#: data/io.elementary.terminal.appdata.xml.in:75
-#: data/io.elementary.terminal.appdata.xml.in:106
-#: data/io.elementary.terminal.appdata.xml.in:158
-#: data/io.elementary.terminal.appdata.xml.in:177
+#: data/io.elementary.terminal.appdata.xml.in:73
+msgid "Stop window size increasing when opened"
+msgstr "修正視窗隨著每次開啟而變得越來越大的問題"
+
+#: data/io.elementary.terminal.appdata.xml.in:74
+msgid "Change hotkeys for Reset and Clear Screen actions"
+msgstr "變更「重設」與「清除畫面」動作的快捷鍵"
+
+#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/io.elementary.terminal.appdata.xml.in:119
+#: data/io.elementary.terminal.appdata.xml.in:171
+#: data/io.elementary.terminal.appdata.xml.in:190
 msgid "New features:"
 msgstr "新功能："
 
-#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Show zoom level in overlay when zooming"
 msgstr "縮放時在覆蓋視窗中顯示縮放層級"
 
-#: data/io.elementary.terminal.appdata.xml.in:78
+#: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr "實作「清除」與「重設」的內文選單動作，並提供鍵盤加速器"
 
-#: data/io.elementary.terminal.appdata.xml.in:79
+#: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr "新增「不安全的貼上」警告的開關到應用程式選單中"
 
-#: data/io.elementary.terminal.appdata.xml.in:83
+#: data/io.elementary.terminal.appdata.xml.in:96
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr "讓循環搜尋切換按鈕依它的狀態更新圖示與工具提示"
 
-#: data/io.elementary.terminal.appdata.xml.in:84
+#: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "點擊程序完成時彈出的通知時聚焦在正確的分頁尚"
 
-#: data/io.elementary.terminal.appdata.xml.in:85
+#: data/io.elementary.terminal.appdata.xml.in:98
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
@@ -104,76 +106,76 @@ msgstr ""
 "將文字貼上至終端機時除了 \"sudo\" 以外也檢查 \"doas\"、\"pkexec\"、\"run0\" "
 "和 \"su\""
 
-#: data/io.elementary.terminal.appdata.xml.in:86
+#: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Check for unsafe paste on dropping text as well"
 msgstr "拖放文字到終端機時也檢查不安全的貼上"
 
-#: data/io.elementary.terminal.appdata.xml.in:87
+#: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr "偵測不安全的貼上時也檢查多行指令"
 
-#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Improve gray contrast in dark theme"
 msgstr "改善深色主題中的灰色對比"
 
-#: data/io.elementary.terminal.appdata.xml.in:108
+#: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr "允許在應用程式選單中切換是否使用事件警告"
 
-#: data/io.elementary.terminal.appdata.xml.in:109
+#: data/io.elementary.terminal.appdata.xml.in:122
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr "分頁和縮放狀態變更時將其儲存到已儲存的狀態設定值裡"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Document missing options in the man page"
 msgstr "在 man 手冊裡補上尚未說明的選項"
 
-#: data/io.elementary.terminal.appdata.xml.in:114
+#: data/io.elementary.terminal.appdata.xml.in:127
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr "修正開啟新視窗時顯示不適合的預設分頁的問題"
 
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/io.elementary.terminal.appdata.xml.in:144
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr "新增用來切換分頁的 \"Ctrl + PageUp\" 和 \"Ctrl + PageDown\" 快捷鍵"
 
-#: data/io.elementary.terminal.appdata.xml.in:132
+#: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "離開時適當的解除匯出 (unexport) DBus 介面"
 
-#: data/io.elementary.terminal.appdata.xml.in:160
+#: data/io.elementary.terminal.appdata.xml.in:173
 msgid "Option to follow system dark style preference"
 msgstr "新增跟隨系統深色風格的選項"
 
-#: data/io.elementary.terminal.appdata.xml.in:161
+#: data/io.elementary.terminal.appdata.xml.in:174
 msgid "Create a custom color palette"
 msgstr "新增建立自訂配色方案的功能"
 
-#: data/io.elementary.terminal.appdata.xml.in:163
-#: data/io.elementary.terminal.appdata.xml.in:182
+#: data/io.elementary.terminal.appdata.xml.in:176
+#: data/io.elementary.terminal.appdata.xml.in:195
 msgid "Fixes:"
 msgstr "修正："
 
-#: data/io.elementary.terminal.appdata.xml.in:165
+#: data/io.elementary.terminal.appdata.xml.in:178
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr "預設風格改為完全不透明，並且更新上游 Solarized 的新顏色來改善可讀性"
 
-#: data/io.elementary.terminal.appdata.xml.in:170
+#: data/io.elementary.terminal.appdata.xml.in:183
 msgid "Performance improvements"
 msgstr "效能改善"
 
-#: data/io.elementary.terminal.appdata.xml.in:179
+#: data/io.elementary.terminal.appdata.xml.in:192
 msgid "Switch tabs with Alt + 1-9"
 msgstr "用 Alt + 1-9 來切換分頁"
 
-#: data/io.elementary.terminal.appdata.xml.in:180
+#: data/io.elementary.terminal.appdata.xml.in:193
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "用 Ctrl + Shift + Q 來退出"
 
-#: data/io.elementary.terminal.appdata.xml.in:184
+#: data/io.elementary.terminal.appdata.xml.in:197
 msgid "Fix build on OS 7"
 msgstr "修正 elementary OS 7 上的編譯"
 
