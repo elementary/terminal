@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-12 18:46+0000\n"
-"PO-Revision-Date: 2024-07-15 07:16+0000\n"
+"PO-Revision-Date: 2025-02-16 18:08+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/extra/"
 "ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
@@ -63,11 +63,11 @@ msgstr "თარგმანის განახლებები"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "გახსნისას ფანჯრის ზომა არ გაიზრდება"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "ჩამოყრის და ეკრანის გასფუთავების ქმედებების მალსახმობის შეცვლა"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 #: data/io.elementary.terminal.appdata.xml.in:119
