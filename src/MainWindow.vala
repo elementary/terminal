@@ -420,7 +420,7 @@ namespace Terminal {
             box.add (header);
             box.add (overlay);
 
-            add (box);
+            child = box;
             get_style_context ().add_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
