@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
-"PO-Revision-Date: 2025-02-06 16:06+0000\n"
-"Last-Translator: Stella Ménier <stella.menier@gmx.de>\n"
+"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"PO-Revision-Date: 2025-02-07 16:16+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/terminal/terminal/"
 "fr/>\n"
 "Language: fr\n"
@@ -99,7 +99,7 @@ msgstr "Tout Sélectionner"
 msgid "Exit FullScreen"
 msgstr "Quitter le plein écran"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:318 src/MainWindow.vala:1056
 msgid "Find…"
 msgstr "Rechercher…"
 
@@ -117,24 +117,24 @@ msgstr "Fermer l'onglet"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:570
 #, c-format
 msgid "Show in %s"
 msgstr "Afficher dans %s"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:572
 msgid "Default application"
 msgstr "Application par défaut"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Voulez-vous vraiment quitter le Terminal ?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1047
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -423,7 +423,7 @@ msgstr "Recharger"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr "Zoom: %.0f%%"
+msgstr "Zoom : %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Il y a un processus actif dans cet onglet."

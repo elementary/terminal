@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-02-12 18:46+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -109,7 +109,7 @@ msgstr "اختر الكل"
 msgid "Exit FullScreen"
 msgstr "ملء الشاشة"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:318 src/MainWindow.vala:1056
 msgid "Find…"
 msgstr "ابحث…"
 
@@ -127,25 +127,25 @@ msgstr "إغلاق تبويب"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:570
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:572
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "هل أنت متأكد من أنك تريد اغلاق هذه الطرفية؟"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "اغلاق الطرفية"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1047
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 

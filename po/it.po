@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-02-12 18:46+0000\n"
 "PO-Revision-Date: 2020-11-06 13:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/terminal/"
@@ -110,7 +110,7 @@ msgstr "Seleziona tutto"
 msgid "Exit FullScreen"
 msgstr "Schermo intero"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:318 src/MainWindow.vala:1056
 msgid "Find…"
 msgstr "Trova…"
 
@@ -128,25 +128,25 @@ msgstr "Chiudi scheda"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:570
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "Mostra versione"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:572
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Vuoi davvero chiudere il terminale?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Chiudi terminale"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1047
 msgid "Hide find bar"
 msgstr "Nascondi la barra di ricerca"
 

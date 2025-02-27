@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
-"PO-Revision-Date: 2024-03-26 22:13+0000\n"
+"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"PO-Revision-Date: 2025-02-17 14:44+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/terminal/"
 "terminal/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -68,7 +68,7 @@ msgstr "Processo terminado com erros"
 
 #: src/MainWindow.vala:167
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Mostrar barra de pesquisa"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:174
@@ -81,11 +81,11 @@ msgstr "Copiar o último resultado"
 
 #: src/MainWindow.vala:186
 msgid "Clear Screen"
-msgstr ""
+msgstr "Limpar ecrã"
 
 #: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Repor"
 
 #: src/MainWindow.vala:198
 msgid "Paste"
@@ -99,7 +99,7 @@ msgstr "Selecionar tudo"
 msgid "Exit FullScreen"
 msgstr "Sair de ecrã inteiro"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:318 src/MainWindow.vala:1056
 msgid "Find…"
 msgstr "Procurar…"
 
@@ -117,24 +117,24 @@ msgstr "Fechar separador"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:570
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar em %s"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:572
 msgid "Default application"
 msgstr "Aplicação predefinida"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Tem a certeza de que quer sair do terminal?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Sair do terminal"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1047
 msgid "Hide find bar"
 msgstr "Esconder barra de localização"
 
@@ -268,16 +268,11 @@ msgid "Contrast is high"
 msgstr "O contraste é alto"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Há um processo ativo neste separador. Se o voltar a carregar, o processo "
-"terminará."
+"Há um processo ativo neste separador. Se continuar, o processo terminará."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
@@ -312,16 +307,12 @@ msgid "Next result"
 msgstr "Resultado seguinte"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Procura cíclica"
+msgstr "Desativar a pesquisa cíclica"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Procura cíclica"
+msgstr "Ativar a pesquisa cíclica"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -362,33 +353,32 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Alerta de colar inseguro"
 
 #: src/Widgets/SettingsPopover.vala:117
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "O texto colado pode conter vários comandos"
+msgstr ""
+"Avisar quando o texto colado contém comandos múltiplos ou administrativos"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
-msgstr ""
+msgstr "Alertas de eventos"
 
 #: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Notificar em caso de introdução inválida ou de vários preenchimentos "
+"possíveis (sujeito a Definições do Sistema → Som)"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Tem a certeza de que quer sair do terminal?"
+msgstr "Tem a certeza de que pretende reiniciar o terminal?"
 
 #: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
@@ -403,32 +393,24 @@ msgid "New Tab"
 msgstr "Novo separador"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Fechar separador"
+msgstr "Separadores fechados"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Fechar separadores à direita"
 
 #: src/Widgets/TerminalView.vala:219
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Fechar separador"
+msgstr "Fechar outros separadores"
 
 #: src/Widgets/TerminalView.vala:223
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Nova Janela"
+msgstr "Abrir numa nova janela"
 
 #: src/Widgets/TerminalView.vala:224
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "Duplicar"
+msgstr "Duplicar separador"
 
 #: src/Widgets/TerminalView.vala:227
 msgid "Reload"
@@ -437,7 +419,7 @@ msgstr "Recarregar"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Ainda existe um processo ativo neste separador."
