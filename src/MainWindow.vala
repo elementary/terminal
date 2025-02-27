@@ -24,6 +24,7 @@ namespace Terminal {
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.Button unfullscreen_button;
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
@@ -33,16 +34,18 @@ namespace Terminal {
 
         private bool is_fullscreen {
             get {
-                return header.decoration_layout_set;
+                return unfullscreen_button.visible;
             }
 
             set {
                 if (value) {
+                    header.decoration_layout = "close:";
+                    unfullscreen_button.visible = true;
                     fullscreen ();
-                    header.decoration_layout_set = true;
                 } else {
+                    header.decoration_layout = null;
+                    unfullscreen_button.visible = false;
                     unfullscreen ();
-                    header.decoration_layout_set = false;
                 }
             }
         }
@@ -297,7 +300,7 @@ namespace Terminal {
         }
 
         private void setup_ui () {
-            var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
+            unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
                 margin_start = 12,
@@ -343,19 +346,14 @@ namespace Terminal {
 
             header = new Hdy.HeaderBar () {
                 show_close_button = true,
-                has_subtitle = false,
-                decoration_layout = "close:",
-                decoration_layout_set = false
+                has_subtitle = false
             };
-
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
             header.set_custom_title (title_stack);
 
-            unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class ("default-decoration");
-            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
+            header.get_style_context ().add_class ("default-decoration");
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
@@ -744,7 +742,8 @@ namespace Terminal {
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
                 /* Make the terminal occupy the whole GUI */
-                expand = true
+                hexpand = true,
+                vexpand = true
             };
 
             var tab = append_tab (
@@ -834,8 +833,11 @@ namespace Terminal {
             TerminalWidget term,
             int pos
         ) {
-            var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
-            sw.add (term);
+            var sw = new Gtk.ScrolledWindow (null, null) {
+                vadjustment = term.get_vadjustment (),
+                child = term
+            };
+
             var tab = notebook.tab_view.insert (sw, pos);
             tab.title = label;
             tab.tooltip = term.current_working_directory;
@@ -1099,9 +1101,9 @@ namespace Terminal {
             if (tab == null) {
                 return null;
             }
-            var tab_child = (Gtk.Bin)(tab.child); // ScrolledWindow
-            var term = tab_child.get_child (); // TerminalWidget
-            return (TerminalWidget)term;
+            var tab_child = (Gtk.ScrolledWindow) tab.child;
+            unowned var term = (TerminalWidget) tab_child.get_child (); // TerminalWidget
+            return term;
         }
 
         public unowned TerminalWidget? get_terminal (string id) {
