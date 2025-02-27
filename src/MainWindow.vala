@@ -152,8 +152,6 @@ namespace Terminal {
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
 
-            set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
-
             title = TerminalWidget.DEFAULT_LABEL;
 
             clipboard = Gtk.Clipboard.get (Gdk.Atom.intern ("CLIPBOARD", false));
