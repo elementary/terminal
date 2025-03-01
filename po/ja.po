@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-12 18:46+0000\n"
-"PO-Revision-Date: 2024-12-19 16:12+0000\n"
+"PO-Revision-Date: 2025-03-01 15:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -404,7 +404,7 @@ msgstr "右側のタブを閉じる"
 
 #: src/Widgets/TerminalView.vala:219
 msgid "Close Other Tabs"
-msgstr "ほかのタブを閉じる"
+msgstr "他のタブを閉じる"
 
 #: src/Widgets/TerminalView.vala:223
 msgid "Open in New Window"
