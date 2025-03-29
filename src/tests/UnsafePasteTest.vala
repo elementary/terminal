@@ -36,7 +36,7 @@ private void main (string[] args) {
         assert (!Terminal.Utils.is_safe_paste ("apt install fuse -y", out msg));
         assert (!Terminal.Utils.is_safe_paste ("apt remove --yes pantheon", out msg));
         assert (!Terminal.Utils.is_safe_paste ("apt dist-upgrade --assume-yes", out msg));
-        assert (!Terminal.Utils.is_safe_paste ("rm -rf --interactive=never", out msg));
+        assert (!Terminal.Utils.is_safe_paste ("rm -rf --interactive=never /", out msg));
     });
 
     Test.run ();
