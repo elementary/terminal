@@ -140,6 +140,21 @@ namespace Terminal.Utils {
             return false;
         }
 
+        string[] skip_commands = {
+            "-y",
+            "--yes",
+            "--assume-yes",
+            "--interactive=never"
+        };
+
+        var words = text.split (" ");
+        foreach (unowned var skip_command in skip_commands) {
+            if (skip_command in words) {
+                msg = _("The pasted text includes a command to skip warnings and confirmations");
+                return false;
+            }
+        }
+
         msg = null;
         return true;
     }

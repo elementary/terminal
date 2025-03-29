@@ -11,6 +11,9 @@ private void main (string[] args) {
 
         // false positive for su
         assert (Terminal.Utils.is_safe_paste ("suspend", out msg));
+
+        // false positive for -y
+        assert (Terminal.Utils.is_safe_paste ("--yellow", out msg));
     });
 
     Test.add_func ("/invalid", () => {
@@ -28,6 +31,12 @@ private void main (string[] args) {
         assert (!Terminal.Utils.is_safe_paste ("&", out msg));
         assert (!Terminal.Utils.is_safe_paste ("|", out msg));
         assert (!Terminal.Utils.is_safe_paste (";", out msg));
+
+        // Skip commands
+        assert (!Terminal.Utils.is_safe_paste ("apt install fuse -y", out msg));
+        assert (!Terminal.Utils.is_safe_paste ("apt remove --yes pantheon", out msg));
+        assert (!Terminal.Utils.is_safe_paste ("apt upgrade --assume-yes", out msg));
+        assert (!Terminal.Utils.is_safe_paste ("rm -rf --interactive=never", out msg));
     });
 
     Test.run ();
