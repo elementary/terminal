@@ -571,16 +571,17 @@ namespace Terminal {
             }
 
 
-            string? warn_text;
+            string[] warn_text_array;
 
             // No user interaction for safe commands
-            if (Utils.is_safe_paste (text, out warn_text)) {
+            if (Utils.is_safe_paste (text, out warn_text_array)) {
                 feed_child (text.data);
                 return;
             }
 
             // Ask user for interaction for unsafe commands
             unowned var toplevel = (MainWindow) get_toplevel ();
+            var warn_text = string.joinv ("\n\n", warn_text_array);
             var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
             dialog.response.connect ((res) => {
                 dialog.destroy ();
