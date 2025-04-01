@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2019-07-14 05:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -72,78 +72,78 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "नकल"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "अंतिम आउटपुट कॉपी करें"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "चिपकाएँ(पेस्ट )"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "पूर्णस्‍क्रीन"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1056
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "ढूंढें…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "क्या आप यक़ीनन इस टैब को बंद करना चाहते हैं?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "टैब बंद करें"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:570
+#: src/MainWindow.vala:552
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "फ़ाइल ब्राउज़र में दिखाएं"
 
-#: src/MainWindow.vala:572
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "क्या आप वाकई टर्मिनल बंद करना चाहते हैं?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "टर्मिनल बंद करें"
 
-#: src/MainWindow.vala:1047
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr "खोज बार छिपायें"
 
@@ -153,6 +153,10 @@ msgstr ""
 
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
