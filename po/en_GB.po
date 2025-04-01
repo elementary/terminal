@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -66,75 +66,75 @@ msgstr "Process completed"
 msgid "Process exited with errors"
 msgstr "Process exited with errors"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr "Show Search Bar"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Copy"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "Copy Last Output"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr "Clear Screen"
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Reset"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Paste"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Select All"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 msgid "Exit FullScreen"
 msgstr "Exit FullScreen"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1056
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr "Settings"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "Are you sure you want to close this tab?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Close Tab"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:570
+#: src/MainWindow.vala:552
 #, c-format
 msgid "Show in %s"
 msgstr "Show in %s"
 
-#: src/MainWindow.vala:572
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr "Default application"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Are you sure you want to quit Terminal?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Quit Terminal"
 
-#: src/MainWindow.vala:1047
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr "Hide find bar"
 
@@ -145,6 +145,10 @@ msgstr "The pasted text may contain multiple commands"
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "The pasted text may be trying to gain administrative access"
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"

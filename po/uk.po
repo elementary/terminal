@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2024-12-19 16:12+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
@@ -67,75 +67,75 @@ msgstr "Процес завершено"
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr "Показувати панель пошуку"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "Копіювати останній вивід"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr "Очистити екран"
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1056
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:570
+#: src/MainWindow.vala:552
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:572
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
-#: src/MainWindow.vala:1047
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -147,6 +147,10 @@ msgstr "Вставлений текст може містити кілька к�
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставлений текст може намагатися отримати доступ до прав адміністратора"
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
