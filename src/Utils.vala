@@ -129,19 +129,38 @@ namespace Terminal.Utils {
      *
      * @return true if safe, false if unsafe.
      */
-    public bool is_safe_paste (string text, out string msg) {
+    public bool is_safe_paste (string text, out string[]? msg_array) {
+        string[] msgs = {};
         if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
-            msg = _("The pasted text may contain multiple commands");
-            return false;
+            msgs += _("The pasted text may contain multiple commands");
         }
 
         if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
-            msg = _("The pasted text may be trying to gain administrative access");
-            return false;
+            msgs += _("The pasted text may be trying to gain administrative access");
         }
 
-        msg = null;
-        return true;
+        string[] skip_commands = {
+            "-y",
+            "--yes",
+            "--assume-yes",
+            "--interactive=never"
+        };
+
+        var words = text.split (" ");
+        foreach (unowned var skip_command in skip_commands) {
+            if (skip_command in words) {
+                msgs += _("The pasted text includes a command to skip warnings and confirmations");
+                break;
+            }
+        }
+
+        if (msgs.length > 0) {
+            msg_array = msgs;
+            return false;
+        } else {
+            msg_array = null;
+            return true;
+        }
     }
 
     public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
