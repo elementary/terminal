@@ -36,7 +36,9 @@ private void main (string[] args) {
         assert (!Terminal.Utils.is_safe_paste ("apt install fuse -y", out msg_array));
         assert (!Terminal.Utils.is_safe_paste ("apt remove --yes pantheon", out msg_array));
         assert (!Terminal.Utils.is_safe_paste ("apt dist-upgrade --assume-yes", out msg_array));
-        assert (!Terminal.Utils.is_safe_paste ("rm -rf --interactive=never /", out msg_array));
+        assert (!Terminal.Utils.is_safe_paste ("rm -r --interactive=never /", out msg_array));
+        assert (!Terminal.Utils.is_safe_paste ("rm -f /", out msg_array));
+        assert (!Terminal.Utils.is_safe_paste ("rm --force /", out msg_array));
 
         // Multiple warnings
         var multiple_warning_command = """
