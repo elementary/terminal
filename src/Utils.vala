@@ -140,10 +140,12 @@ namespace Terminal.Utils {
         }
 
         string[] skip_commands = {
-            "-y",
-            "--yes",
             "--assume-yes",
-            "--interactive=never"
+            "-f",
+            "--force",
+            "--interactive=never",
+            "-y",
+            "--yes"
         };
 
         var words = text.split (" ");
