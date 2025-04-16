@@ -320,8 +320,12 @@ namespace Terminal {
             title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
             title_stack = new Gtk.Stack () {
-                transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
+                transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN,
+                hhomogeneous = false,
+                hexpand = false
             };
+
+            search_toolbar.width_request = 300;
             title_stack.add (title_label);
             title_stack.add (search_toolbar);
             // Must show children before visible_child can be set
