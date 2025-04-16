@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -70,77 +70,77 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "ኮፒ"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "መለጠፊያ"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "ሁሉንም መምረጫ"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "በሙሉ መመልከቻ ዘዴ"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "በእርግጥ ይህን ንዑስ መስኮት መዝጋት ይፈልጋሉ?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "ንዑስ መስኮቱን መዝጊያ"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:552
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "በእርግጥ ተርሚናልን መዝጋት ይፈልጋሉ?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "ተርሚናልን ማቋረጫ"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr ""
 
@@ -150,6 +150,10 @@ msgstr ""
 
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48

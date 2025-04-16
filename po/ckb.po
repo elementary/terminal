@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2022-09-21 21:57+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -75,77 +75,77 @@ msgstr "پڕۆسەکە کۆتایی هات"
 msgid "Process exited with errors"
 msgstr "پڕۆسەکە بە کۆمەڵێک کێشەوە کۆتایی هات"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "لەبەرگرتنەوە"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "کۆتا ئەنجام لەبەربگرەوە"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "لكاندن"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "هه‌مووی دیاری بکه‌"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "ته‌واوی تێکست"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "دۆزینەوە…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr "ڕێکخستنەکان"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "دڵنیای لە داخستنی ئەم تابە؟"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "داخستنی تاب"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:552
 #, c-format
 msgid "Show in %s"
 msgstr "پشاندان لە %s"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr "بەرنامە بنەڕەتییەکان"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "داخستنی تێرمیناڵ"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr "شاردنەوەی شریتی دۆزینەوە"
 
@@ -156,6 +156,10 @@ msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لە�
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی بەڕێوەبەر بەدەست بهێنێت"
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
