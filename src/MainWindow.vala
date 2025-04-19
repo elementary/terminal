@@ -230,6 +230,9 @@ namespace Terminal {
                     });
                 }
             });
+            key_controller.focus_out.connect (() => {
+                cancel_tab_numbers ();
+            });
 
             update_font ();
             Application.settings_sys.changed["monospace-font-name"].connect (update_font);
@@ -432,19 +435,11 @@ namespace Terminal {
         }
 
         private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
-            if (keyval == Gdk.Key.Alt_L) {
-                //Remove tab numbers if present
-                for (int i = 0; i < notebook.n_pages; i++) {
-                    var tab = notebook.tab_view.get_nth_page (i);
-                    var badge = "(%d) ".printf (i + 1);
-                    if (tab.title.has_prefix (badge)) {
-                        tab.title = tab.title.slice (badge.length, tab.title.length);
-                    }
-                }
-            }
+            cancel_tab_numbers ();
         }
 
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            cancel_tab_numbers ();
             switch (keyval) {
                 case Gdk.Key.Escape:
                     if (search_toolbar.search_entry.has_focus) {
@@ -462,24 +457,17 @@ namespace Terminal {
                         }
                         return true;
                     }
+
                     break;
 
                 case Gdk.Key.@0: //Show tab numbers
                 case Gdk.Key.KP_0:
                     if (MOD1_MASK in modifiers) {
-                        //TODO Show number as badge? Need way of converting number to suitable icon
-                        // that can be used as TabPage.indicator_icon.
-                        // For now use text
-                        for (int i = 0; i < notebook.n_pages; i++) {
-                            var tab = notebook.tab_view.get_nth_page (i);
-                            var badge = "(%d) ".printf (i + 1);
-                            if (!tab.title.has_prefix (badge)) {
-                                tab.title = badge + tab.title;
-                            }
-                        }
+                        show_tab_numbers ();
+                        return Gdk.EVENT_STOP;
                     }
 
-                    return Gdk.EVENT_STOP;
+                    break;
 
                 case Gdk.Key.@1: //alt+[1-8]
                 case Gdk.Key.@2:
@@ -499,6 +487,7 @@ namespace Terminal {
 
                         return true;
                     }
+
                     break;
 
                 case Gdk.Key.@9:
@@ -508,13 +497,69 @@ namespace Terminal {
                         notebook.selected_page = notebook.tab_view.get_nth_page (notebook.n_pages - 1);
                         return true;
                     }
+
                     break;
 
                 default:
+                    if (keyval == Gdk.Key.Alt_L) {
+                        schedule_tab_numbers ();
+                    }
+
                     break;
             }
 
             return false;
+        }
+
+        private uint tab_number_timeout = 0;
+        private bool tab_numbers_showing = false;
+        private void schedule_tab_numbers () {
+            if (tab_numbers_showing || tab_number_timeout > 0) {
+                return;
+            }
+
+            tab_number_timeout = Timeout.add (
+                Gtk.Settings.get_default ().gtk_long_press_time,
+                () => {
+                    tab_number_timeout = 0;
+                    show_tab_numbers ();
+                    return Source.REMOVE;
+                }
+            );
+        }
+
+
+        private void show_tab_numbers () {
+            tab_numbers_showing = true;
+            //TODO Show number as badge? Need way of converting number to suitable icon
+            // that can be used as TabPage.indicator_icon.
+            // For now use text
+            for (int i = 0; i < notebook.n_pages; i++) {
+                var tab = notebook.tab_view.get_nth_page (i);
+                var badge = "(%d) ".printf (i + 1);
+                if (!tab.title.has_prefix (badge)) {
+                    tab.title = badge + tab.title;
+                }
+            }
+        }
+
+        private void cancel_tab_numbers () {
+            if (tab_number_timeout > 0) {
+                Source.remove (tab_number_timeout);
+                tab_number_timeout = 0;
+            }
+
+            if (tab_numbers_showing) {
+                for (int i = 0; i < notebook.n_pages; i++) {
+                    var tab = notebook.tab_view.get_nth_page (i);
+                    var badge = "(%d) ".printf (i + 1);
+                    if (tab.title.has_prefix (badge)) {
+                        tab.title = tab.title.slice (badge.length, tab.title.length);
+                    }
+                }
+
+                tab_numbers_showing = false;
+            }
         }
 
         private void restore_saved_state () {
