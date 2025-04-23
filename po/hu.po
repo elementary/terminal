@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2024-12-19 16:12+0000\n"
+"PO-Revision-Date: 2025-04-22 12:12+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/terminal/"
+"Language-Team: Hungarian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.10.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -149,6 +149,8 @@ msgstr "A beillesztendő szöveg rendszergazdai jogokat szeretne szerezni"
 #: src/Utils.vala:153
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
+"A beillesztett szöveg tartalmaz egy parancsot, ami átugorja a "
+"figyelmeztetéseket és megerősítéseket"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
