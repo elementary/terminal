@@ -28,12 +28,13 @@ namespace Terminal {
         internal const string DEFAULT_LABEL = _("Terminal");
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
-        public string? program_string { get; set; default = null; }
+        public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
+        GLib.Pid fg_pid;
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -159,7 +160,8 @@ namespace Terminal {
         private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
-        public signal void cwd_changed (string cwd);
+        public signal void cwd_changed ();
+        public signal void foreground_process_changed (string cmdline);
 
         public TerminalWidget (MainWindow parent_window) {
             Object (
@@ -236,7 +238,7 @@ namespace Terminal {
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
             size_allocate.connect (() => resized = true);
-            contents_changed.connect (check_cwd_changed);
+            contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
             ulong once = 0;
             once = realize.connect (() => {
@@ -530,7 +532,7 @@ namespace Terminal {
 
         private void action_clear_screen () {
             if (has_foreground_process ()) {
-                // We cannot guarantee the terminal is left in sensible state if we 
+                // We cannot guarantee the terminal is left in sensible state if we
                 // kill foreground process so ignore clear screen request
                 return;
             }
@@ -571,16 +573,17 @@ namespace Terminal {
             }
 
 
-            string? warn_text;
+            string[]? warn_text_array;
 
             // No user interaction for safe commands
-            if (Utils.is_safe_paste (text, out warn_text)) {
+            if (Utils.is_safe_paste (text, out warn_text_array)) {
                 feed_child (text.data);
                 return;
             }
 
             // Ask user for interaction for unsafe commands
             unowned var toplevel = (MainWindow) get_toplevel ();
+            var warn_text = string.joinv ("\n\n", warn_text_array);
             var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
             dialog.response.connect ((res) => {
                 dialog.destroy ();
@@ -590,6 +593,12 @@ namespace Terminal {
             });
 
             dialog.present ();
+        }
+
+        private void update_current_working_directory (string cwd) {
+            current_working_directory = cwd;
+            tab.tooltip = current_working_directory;
+            cwd_changed ();
         }
 
         private void update_theme () {
@@ -629,14 +638,16 @@ namespace Terminal {
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
+            fg_pid = -1;
         }
 
         public void kill_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid))
-                Posix.kill (fg_pid, Posix.Signal.KILL);
+            int pid;
+            if (this.try_get_foreground_pid (out pid))
+                Posix.kill (pid, Posix.Signal.KILL);
         }
 
+        // Terminate the shell process prior to closing the tab
         public void term_ps () {
             killed = true;
 
@@ -712,8 +723,6 @@ namespace Terminal {
             } catch (Error e) {
                 warning (e.message);
             }
-
-            check_cwd_changed ();
         }
 
         public void run_program (string _program_string, string? working_directory) {
@@ -787,6 +796,15 @@ namespace Terminal {
             } catch (GLib.FileError error) {
                 /* Tab name disambiguation may call this before shell location available. */
                 /* No terminal warning needed */
+                return "";
+            }
+        }
+
+        public string get_pid_exe_name (int pid) {
+            try {
+                var exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                return Path.get_basename (exe);
+            } catch (GLib.Error e) {
                 return "";
             }
         }
@@ -934,13 +952,41 @@ namespace Terminal {
             }
         }
 
-        private void check_cwd_changed () {
-            var cwd = get_shell_location ();
-            if (cwd != current_working_directory) {
-                current_working_directory = cwd;
-                tab.tooltip = current_working_directory;
-                cwd_changed (cwd);
+        private uint contents_changed_timeout_id = 0;
+        private const int CONTENTS_CHANGED_DELAY_MSEC = 100;
+        private bool contents_changed_continue = true;
+        private void on_contents_changed () {
+            contents_changed_continue = true;
+            if (contents_changed_timeout_id > 0) {
+                return;
             }
+
+            contents_changed_timeout_id = Timeout.add (
+                CONTENTS_CHANGED_DELAY_MSEC,
+                () => {
+                    if (contents_changed_continue) {
+                        contents_changed_continue = false;
+                        return Source.CONTINUE;
+                    }
+
+                    contents_changed_timeout_id = 0;
+
+                    var cwd = get_shell_location ();
+                    if (cwd != current_working_directory) {
+                        update_current_working_directory (cwd);
+                    }
+
+                    int pid;
+                    try_get_foreground_pid (out pid);
+                    if (pid != fg_pid) {
+                        var name = get_pid_exe_name (pid);
+                        foreground_process_changed (name);
+                        fg_pid = pid;
+                    }
+
+                    return Source.REMOVE;
+                }
+            );
         }
     }
 }
