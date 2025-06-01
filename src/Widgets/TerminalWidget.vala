@@ -725,9 +725,9 @@ namespace Terminal {
             }
         }
 
-        public void run_program (string _program_string, string? working_directory) {
+        public void run_program (string _program_string, string? working_directory) requires (_program_string.length > 0) {
             try {
-                string[]? program_with_args = null;
+                string[] program_with_args = {};
                 this.program_string = _program_string;
                 Shell.parse_argv (program_string, out program_with_args);
 
@@ -962,14 +962,13 @@ namespace Terminal {
             }
 
             contents_changed_timeout_id = Timeout.add (
+
                 CONTENTS_CHANGED_DELAY_MSEC,
                 () => {
                     if (contents_changed_continue) {
                         contents_changed_continue = false;
                         return Source.CONTINUE;
                     }
-
-                    contents_changed_timeout_id = 0;
 
                     var cwd = get_shell_location ();
                     if (cwd != current_working_directory) {
@@ -984,9 +983,16 @@ namespace Terminal {
                         fg_pid = pid;
                     }
 
+                    contents_changed_timeout_id = 0;
                     return Source.REMOVE;
                 }
             );
+        }
+
+        public void prepare_to_close () {
+            if (contents_changed_timeout_id > 0) {
+                Source.remove (contents_changed_timeout_id);
+            }
         }
     }
 }
