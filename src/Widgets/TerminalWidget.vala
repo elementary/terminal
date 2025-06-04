@@ -992,6 +992,7 @@ namespace Terminal {
         public void prepare_to_close () {
             if (contents_changed_timeout_id > 0) {
                 Source.remove (contents_changed_timeout_id);
+                contents_changed_timeout_id = 0;
             }
         }
     }
