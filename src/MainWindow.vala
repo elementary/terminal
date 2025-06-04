@@ -321,7 +321,11 @@ namespace Terminal {
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
-            title_label = new Gtk.Label (title);
+            title_label = new Gtk.Label (title) {
+                wrap = false,
+                single_line_mode = true,
+                ellipsize = Pango.EllipsizeMode.END
+            };
             title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
             title_stack = new Gtk.Stack () {
