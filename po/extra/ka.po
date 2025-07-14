@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-03-24 00:04+0000\n"
+"PO-Revision-Date: 2025-05-23 03:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/terminal/"
 "extra/ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
 #: data/io.elementary.terminal.desktop.in:3
@@ -83,10 +83,13 @@ msgstr "გადიდების დონის ჩვენება გა
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr ""
+"განხორციელდა გასუფთავების და ჩამოყრის კონტექსტური მენიუს ქემედებები "
+"მალსახმობი ღილაკებით"
 
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"დაემატა გადასართველი სახიფათო ჩასმის გაფრთხილებისტვის აპლიკაციის მენიუში"
 
 #: data/io.elementary.terminal.appdata.xml.in:96
 msgid ""
