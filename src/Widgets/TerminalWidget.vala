@@ -579,11 +579,9 @@ namespace Terminal {
         }
 
         public void action_rename_tab () {
-        warning ("action_rename_tab");
             var dialog = new RenameTabDialog ((MainWindow) get_toplevel (), custom_tab_label);
             if (dialog.run () == Gtk.ResponseType.APPLY) {
                 var label = dialog.custom_label;
-                warning ("got label %s", label);
                 custom_tab_label = label;
             }
             dialog.destroy ();
