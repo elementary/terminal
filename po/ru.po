@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-04-05 13:55+0000\n"
+"PO-Revision-Date: 2025-06-27 14:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ru/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -28,12 +28,12 @@ msgstr "Открыть новое окно терминала"
 #. -t flag forces a new tab
 #: src/Application.vala:67
 msgid "Open a new terminal tab at current working directory"
-msgstr "Открыть новую вкладку терминала в текущей рабочей директории"
+msgstr "Открыть новую вкладку терминала в текущем рабочем каталоге"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:69
 msgid "Set shell working directory"
-msgstr "Установить рабочую директорию оболочки"
+msgstr "Установить рабочий каталог оболочки"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:71
