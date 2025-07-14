@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
-"PO-Revision-Date: 2024-12-19 16:12+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
+"PO-Revision-Date: 2025-04-03 16:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/"
+"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.10.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -67,77 +67,91 @@ msgstr "Процес завершено"
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr "Показувати панель пошуку"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "Копіювати останній вивід"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr "Очистити екран"
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Вставити"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Виділити все"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:552
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr "Вставлений текст може містити кілька команд"
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+"Вставлений текст може намагатися отримати доступ до прав адміністратора"
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
+"Вставлений текст містить команду для пропуску попереджень і підтверджень"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -375,20 +389,11 @@ msgstr "Термінал"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Ви впевнені, що хочете скинути термінал?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr "Вставлений текст може містити кілька команд"
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-"Вставлений текст може намагатися отримати доступ до прав адміністратора"
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 msgid "Are you sure you want to reload this tab?"
 msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
 msgstr "Перезавантажити вкладку"
 

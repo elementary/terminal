@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 18:00+0000\n"
+"POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2018-10-22 15:24+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
@@ -72,79 +72,91 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Kopiera"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Klistra in"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Markera allt"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Helskärm"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1050
+#: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:313
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:355
 msgid "Are you sure you want to close this tab?"
 msgstr "Är du säker på att du vill stänga den här fliken?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Stäng flik"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:552
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Visa i Filer"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:554
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:883
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Är du säker på att du vill stänga Terminalen?"
 
-#: src/MainWindow.vala:884
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Avsluta terminalen"
 
-#: src/MainWindow.vala:1041
+#: src/MainWindow.vala:1035
 msgid "Hide find bar"
+msgstr ""
+
+#: src/Utils.vala:134
+msgid "The pasted text may contain multiple commands"
+msgstr ""
+
+#: src/Utils.vala:139
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Utils.vala:153
+msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
@@ -384,21 +396,13 @@ msgstr "Terminal"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Är du säker på att du vill stänga Terminalen?"
 
-#: src/Widgets/TerminalWidget.vala:576
-msgid "The pasted text may contain multiple commands"
-msgstr ""
-
-#: src/Widgets/TerminalWidget.vala:578
-msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
-
-#: src/Widgets/TerminalWidget.vala:933
+#: src/Widgets/TerminalWidget.vala:928
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "Är du säker på att du vill stänga den här fliken?"
 
-#: src/Widgets/TerminalWidget.vala:934
+#: src/Widgets/TerminalWidget.vala:929
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"

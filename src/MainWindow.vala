@@ -1,20 +1,7 @@
 /*
-* Copyright (c) 2011-2022 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
+ */
 
 namespace Terminal {
     public class MainWindow : Hdy.Window {
@@ -24,6 +11,7 @@ namespace Terminal {
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
+        private Gtk.Button unfullscreen_button;
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
@@ -33,16 +21,18 @@ namespace Terminal {
 
         private bool is_fullscreen {
             get {
-                return header.decoration_layout_set;
+                return unfullscreen_button.visible;
             }
 
             set {
                 if (value) {
+                    header.decoration_layout = "close:";
+                    unfullscreen_button.visible = true;
                     fullscreen ();
-                    header.decoration_layout_set = true;
                 } else {
+                    header.decoration_layout = null;
+                    unfullscreen_button.visible = false;
                     unfullscreen ();
-                    header.decoration_layout_set = false;
                 }
             }
         }
@@ -148,8 +138,6 @@ namespace Terminal {
 
                 app.set_accels_for_action (ACTION_PREFIX + action, accels_array);
             }
-
-            set_visual (Gdk.Screen.get_default ().get_rgba_visual ());
 
             title = TerminalWidget.DEFAULT_LABEL;
 
@@ -259,15 +247,16 @@ namespace Terminal {
         }
 
         public void add_tab_with_working_directory (
-            string? directory,
-            string? command = null,
+            string directory = "",
+            string command = "",
             bool create_new_tab = false
         ) {
+
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
-            string? location = null;
-            if (directory == null || directory == "") {
+            string location = "";
+            if (directory.length == 0) {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
                 }
@@ -278,7 +267,7 @@ namespace Terminal {
             }
 
             /* We can match existing tabs only if there is no command and create_new_tab == false */
-            if (command == null && !create_new_tab) {
+            if (command.length == 0 && !create_new_tab) {
                 var file = File.new_for_commandline_arg (location);
                 for (int pos = 0; pos < notebook.n_pages; pos++) {
                     var tab = notebook.tab_view.get_nth_page (pos);
@@ -297,7 +286,7 @@ namespace Terminal {
         }
 
         private void setup_ui () {
-            var unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
+            unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
                 margin_start = 12,
@@ -328,12 +317,20 @@ namespace Terminal {
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
-            title_label = new Gtk.Label (title);
+            title_label = new Gtk.Label (title) {
+                wrap = false,
+                single_line_mode = true,
+                ellipsize = Pango.EllipsizeMode.END
+            };
             title_label.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
             title_stack = new Gtk.Stack () {
-                transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN
+                transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN,
+                hhomogeneous = false,
+                hexpand = false
             };
+
+            search_toolbar.width_request = 300;
             title_stack.add (title_label);
             title_stack.add (search_toolbar);
             // Must show children before visible_child can be set
@@ -343,19 +340,14 @@ namespace Terminal {
 
             header = new Hdy.HeaderBar () {
                 show_close_button = true,
-                has_subtitle = false,
-                decoration_layout = "close:",
-                decoration_layout_set = false
+                has_subtitle = false
             };
-
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
             header.set_custom_title (title_stack);
 
-            unowned Gtk.StyleContext header_context = header.get_style_context ();
-            header_context.add_class ("default-decoration");
-            header.bind_property ("decoration-layout-set", unfullscreen_button, "visible", BindingFlags.DEFAULT);
+            header.get_style_context ().add_class ("default-decoration");
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
@@ -384,6 +376,7 @@ namespace Terminal {
                     }
 
                     disconnect_terminal_signals (term);
+                    term.prepare_to_close ();
                 }
 
                 notebook.tab_view.close_page_finish (tab, confirmed);
@@ -403,7 +396,6 @@ namespace Terminal {
 
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
-                term.grab_focus ();
                 if (term.tab == null) {
                     // Happens on opening window - ignore
                     return;
@@ -411,6 +403,12 @@ namespace Terminal {
                 //TODO Check that icon is "process-completed-symbolic"
                 // if `tab.icon` is ever used for something that should remain
                 term.tab.icon = null;
+
+                // Need to wait for default handler to run before focusing
+                Idle.add (() => {
+                    term.grab_focus ();
+                    return Source.REMOVE;
+                });
             });
 
             var overlay = new Gtk.Overlay () {
@@ -423,7 +421,7 @@ namespace Terminal {
             box.add (header);
             box.add (overlay);
 
-            add (box);
+            child = box;
             get_style_context ().add_class ("terminal-window");
 
             bind_property ("title", title_label, "label");
@@ -526,6 +524,7 @@ namespace Terminal {
             var term = get_term_widget (tab);
             term.main_window = this;
             save_opened_terminals (true, true);
+            connect_terminal_signals (term);
         }
 
         private void on_tab_removed (Hdy.TabPage tab) {
@@ -537,6 +536,8 @@ namespace Terminal {
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
+
+            disconnect_terminal_signals (get_term_widget (tab));
         }
 
         private void on_tab_reordered (Hdy.TabPage tab, int new_pos) {
@@ -554,9 +555,8 @@ namespace Terminal {
 
         public void update_context_menu () requires (current_terminal != null) {
             /* Update the "Show in ..." menu option */
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
-            });
+            var uri = get_current_selection_link_or_pwd ();
+            update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
         }
 
         private void update_menu_label (string? uri) {
@@ -710,7 +710,7 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    var term = new_tab (loc, null, false);
+                    var term = new_tab (loc, "", false);
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
@@ -728,7 +728,7 @@ namespace Terminal {
 
         private TerminalWidget new_tab (
             string location,
-            string? program = null,
+            string program = "",
             bool focus = true,
             int pos = notebook.n_pages
         ) {
@@ -742,7 +742,8 @@ namespace Terminal {
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
                 /* Make the terminal occupy the whole GUI */
-                expand = true
+                hexpand = true,
+                vexpand = true
             };
 
             var tab = append_tab (
@@ -764,7 +765,7 @@ namespace Terminal {
                 notebook.selected_page = tab;
             }
 
-            if (program == null) {
+            if (program.length == 0) {
                 /* Set up the virtual terminal */
                 if (location == "") {
                     terminal_widget.active_shell ();
@@ -775,10 +776,7 @@ namespace Terminal {
                 terminal_widget.run_program (program, location);
             }
 
-            check_for_tabs_with_same_name ();
             save_opened_terminals (true, true);
-
-            connect_terminal_signals (terminal_widget);
 
             return terminal_widget;
         }
@@ -787,6 +785,7 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
+            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
@@ -794,6 +793,7 @@ namespace Terminal {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
+            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
             terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
@@ -803,12 +803,14 @@ namespace Terminal {
                 // TabView already removed tab - ignore signal
                 return;
             }
-             if (!tw.killed) {
-                if (tw.program_string != null) {
+
+            if (!tw.killed) {
+                if (tw.program_string.length > 0) {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
-                    tw.program_string = null;
+                    tw.program_string = "";
                     tw.active_shell (tw.current_working_directory);
+                    check_for_tabs_with_same_name ();
                 } else {
                     if (tw.tab != null) {
                         notebook.tab_view.close_page (tw.tab);
@@ -834,8 +836,11 @@ namespace Terminal {
             TerminalWidget term,
             int pos
         ) {
-            var sw = new Gtk.ScrolledWindow (null, term.get_vadjustment ());
-            sw.add (term);
+            var sw = new Gtk.ScrolledWindow (null, null) {
+                vadjustment = term.get_vadjustment (),
+                child = term
+            };
+
             var tab = notebook.tab_view.insert (sw, pos);
             tab.title = label;
             tab.tooltip = term.current_working_directory;
@@ -903,36 +908,38 @@ namespace Terminal {
         }
 
         private void action_open_in_browser () requires (current_terminal != null) {
-            get_current_selection_link_or_pwd ((clipboard, uri) => {
-                string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-                if (to_open != null) {
-                    try {
-                        Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                    } catch (GLib.Error error) {
-                        warning ("Could not show %s - %s", to_open, error.message);
-                    }
+            var uri = get_current_selection_link_or_pwd ();
+            string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
+            if (to_open != null) {
+                try {
+                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
+                } catch (GLib.Error error) {
+                    warning ("Could not show %s - %s", to_open, error.message);
                 }
-            });
+            }
         }
 
-        private void get_current_selection_link_or_pwd (
-            Gtk.ClipboardTextReceivedFunc uri_handler
-        ) requires (current_terminal != null) {
-
+        private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
-                    primary_selection.request_text (uri_handler);
+
+                    string? text = null;
+                    primary_selection.request_text ((clipboard, uri) => {
+                        text = uri;
+                    });
+
+                    return text;
                 } else {
-                    uri_handler (primary_selection, current_terminal.get_shell_location ());
+                    return current_terminal.get_shell_location ();
                 }
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
                 }
 
-                uri_handler (primary_selection, link_uri);
+                return link_uri;
             }
         }
 
@@ -949,7 +956,7 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            new_tab (param.get_string (), null, true); //TODO Restore icon?
+            new_tab (param.get_string ()); //TODO Restore icon?
         }
 
         private void action_new_tab () requires (current_terminal != null) {
@@ -1007,7 +1014,7 @@ namespace Terminal {
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
                       notebook.n_pages;
 
-            new_tab (term.get_shell_location (), null, true, pos);
+            new_tab (term.get_shell_location (), "", true, pos);
         }
 
         private void action_next_tab () {
@@ -1099,9 +1106,9 @@ namespace Terminal {
             if (tab == null) {
                 return null;
             }
-            var tab_child = (Gtk.Bin)(tab.child); // ScrolledWindow
-            var term = tab_child.get_child (); // TerminalWidget
-            return (TerminalWidget)term;
+            var tab_child = (Gtk.ScrolledWindow) tab.child;
+            unowned var term = (TerminalWidget) tab_child.get_child (); // TerminalWidget
+            return term;
         }
 
         public unowned TerminalWidget? get_terminal (string id) {
@@ -1125,15 +1132,20 @@ namespace Terminal {
             int j = 0;
             for (i = 0; i < notebook.n_pages; i++) {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                string term_path = term.current_working_directory;
-                string term_label = Path.get_basename (term_path);
-                if (term_label == "" ||
-                    term.tab_label == TerminalWidget.DEFAULT_LABEL) {
+                string term_path, term_label;
+                if (term.program_string != "") {
+                    term.tab_label = term.program_string;
                     continue;
+                } else {
+                    term_path = term.current_working_directory;
+                    term_label = Path.get_basename (term_path);
+                    if (term_label == "" || term_label == "/") {
+                        term.tab_label = TerminalWidget.DEFAULT_LABEL;
+                        continue;
+                    } else {
+                        term.tab_label = term_label;
+                    }
                 }
-
-                /* Reset tab_name to basename so long name only used when required */
-                term.tab_label = term_label;
 
                 for (j = 0; j < notebook.n_pages; j++) {
                 var term2 = get_term_widget (notebook.tab_view.get_nth_page (j));
@@ -1153,10 +1165,14 @@ namespace Terminal {
             return;
         }
 
-        private void on_terminal_cwd_changed (TerminalWidget src, string cwd) {
-            src.tab.tooltip = cwd;
+        private void on_terminal_cwd_changed () {
             check_for_tabs_with_same_name (); // Also sets window title
             save_opened_terminals (true, false);
+        }
+
+        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
+            src.program_string = cmdline;
+            check_for_tabs_with_same_name (); // Also sets window title
         }
 
         private void save_opened_terminals (bool save_tabs, bool save_zooms) {
