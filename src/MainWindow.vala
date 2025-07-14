@@ -251,16 +251,16 @@ namespace Terminal {
         }
 
         public void add_tab_with_working_directory (
-            string? directory,
-            string? command = null,
+            string directory = "",
+            string command = "",
             bool create_new_tab = false
         ) {
 
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
-            string? location = null;
-            if (directory == null || directory == "") {
+            string location = "";
+            if (directory.length == 0) {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
                     new_tab ("", command);
                 }
@@ -271,7 +271,7 @@ namespace Terminal {
             }
 
             /* We can match existing tabs only if there is no command and create_new_tab == false */
-            if (command == null && !create_new_tab) {
+            if (command.length == 0 && !create_new_tab) {
                 var file = File.new_for_commandline_arg (location);
                 for (int pos = 0; pos < notebook.n_pages; pos++) {
                     var tab = notebook.tab_view.get_nth_page (pos);
@@ -380,6 +380,7 @@ namespace Terminal {
                     }
 
                     disconnect_terminal_signals (term);
+                    term.prepare_to_close ();
                 }
 
                 notebook.tab_view.close_page_finish (tab, confirmed);
@@ -778,7 +779,7 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    var term = new_tab (loc, null, false);
+                    var term = new_tab (loc, "", false);
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
@@ -796,7 +797,7 @@ namespace Terminal {
 
         private TerminalWidget new_tab (
             string location,
-            string? program = null,
+            string program = "",
             bool focus = true,
             int pos = notebook.n_pages
         ) {
@@ -833,7 +834,7 @@ namespace Terminal {
                 notebook.selected_page = tab;
             }
 
-            if (program == null) {
+            if (program.length == 0) {
                 /* Set up the virtual terminal */
                 if (location == "") {
                     terminal_widget.active_shell ();
@@ -871,11 +872,12 @@ namespace Terminal {
                 // TabView already removed tab - ignore signal
                 return;
             }
+
             if (!tw.killed) {
-                if (tw.program_string != null) {
+                if (tw.program_string.length > 0) {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
-                    tw.program_string = null;
+                    tw.program_string = "";
                     tw.active_shell (tw.current_working_directory);
                     check_for_tabs_with_same_name ();
                 } else {
@@ -1023,7 +1025,7 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            new_tab (param.get_string (), null, true); //TODO Restore icon?
+            new_tab (param.get_string ()); //TODO Restore icon?
         }
 
         private void action_new_tab () requires (current_terminal != null) {
@@ -1081,7 +1083,7 @@ namespace Terminal {
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
                       notebook.n_pages;
 
-            new_tab (term.get_shell_location (), null, true, pos);
+            new_tab (term.get_shell_location (), "", true, pos);
         }
 
         private void action_next_tab () {
