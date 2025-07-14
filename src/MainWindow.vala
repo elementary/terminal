@@ -400,9 +400,13 @@ namespace Terminal {
                     // Happens on opening window - ignore
                     return;
                 }
-                //TODO Check that icon is "process-completed-symbolic"
-                // if `tab.icon` is ever used for something that should remain
-                term.tab.icon = null;
+
+                if (term.tab.icon is ThemedIcon) {
+                    var icon = (ThemedIcon) term.tab.icon;
+                    if (icon.names[0] == Terminal.Application.PROCESS_COMPLETED_ICON_NAME) {
+                        term.tab.icon = null;
+                    }
+                }
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
