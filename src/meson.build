@@ -67,3 +67,6 @@ app_test = executable(
 #     protocol: 'tap',
 #     depends: test_schemas
 # )
+
+# subdir('tests')
+

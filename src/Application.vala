@@ -305,7 +305,7 @@ public class Terminal.Application : Gtk.Application {
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else if (new_tab || window.notebook.n_pages == 0) {
-            window.add_tab_with_working_directory (working_directory, null, new_tab);
+            window.add_tab_with_working_directory (working_directory, "", new_tab);
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {

@@ -14,12 +14,13 @@ namespace Terminal {
         internal const string DEFAULT_LABEL = _("Terminal");
         public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
-        public string? program_string { get; set; default = null; }
+        public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
         GLib.Pid child_pid;
+        GLib.Pid fg_pid;
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -137,7 +138,8 @@ namespace Terminal {
         private Gtk.EventControllerScroll scroll_controller;
         private double scroll_delta = 0.0;
 
-        public signal void cwd_changed (string cwd);
+        public signal void cwd_changed ();
+        public signal void foreground_process_changed (string cmdline);
 
         public TerminalWidget (MainWindow parent_window) {
             Object (
@@ -248,7 +250,7 @@ namespace Terminal {
             // Cannot use copy last output action if window was resized after remembering start position
             notify["height-request"].connect (() => resized = true);
             notify["width-request"].connect (() => resized = true);
-            contents_changed.connect (check_cwd_changed);
+            contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
             ulong once = 0;
             once = realize.connect (() => {
@@ -635,15 +637,10 @@ namespace Terminal {
             }
 
 
-            string? warn_text = null;
-            if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
-                warn_text = _("The pasted text may contain multiple commands");
-            } else if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
-                warn_text = _("The pasted text may be trying to gain administrative access");
-            }
+            string[]? warn_text_array;
 
             // No user interaction for safe commands
-            if (warn_text == null) {
+            if (Utils.is_safe_paste (text, out warn_text_array)) {
                 remember_command_start_position ();
                 feed_child (text.data);
                 return;
@@ -651,6 +648,7 @@ namespace Terminal {
 
             // Ask user for interaction for unsafe commands
             unowned var toplevel = (MainWindow) get_root ();
+            var warn_text = string.joinv ("\n\n", warn_text_array);
             var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
             dialog.response.connect ((res) => {
                 dialog.destroy ();
@@ -661,6 +659,12 @@ namespace Terminal {
             });
 
             dialog.present ();
+        }
+
+        private void update_current_working_directory (string cwd) {
+            current_working_directory = cwd;
+            tab.tooltip = current_working_directory;
+            cwd_changed ();
         }
 
         private void update_theme () {
@@ -704,6 +708,7 @@ namespace Terminal {
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
+            fg_pid = -1;
         }
 
         public void kill_fg () {
@@ -715,6 +720,7 @@ namespace Terminal {
                 Posix.kill (fg_pid, Posix.Signal.KILL);
         }
 
+        // Terminate the shell process prior to closing the tab
         public void term_ps () {
             killed = true;
 
@@ -784,6 +790,8 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
+// <<<<<<< HEAD
+            //NOTE Use the non-deprecated async version for Gtk4
             this.spawn_async (
                 Vte.PtyFlags.DEFAULT,
                 dir,
@@ -800,7 +808,7 @@ namespace Terminal {
                         warning (error.message);
                     }
 
-                    check_cwd_changed ();
+                    // check_cwd_changed ();
                 }
             );
         }
@@ -895,6 +903,15 @@ namespace Terminal {
             } catch (GLib.FileError error) {
                 /* Tab name disambiguation may call this before shell location available. */
                 /* No terminal warning needed */
+                return "";
+            }
+        }
+
+        public string get_pid_exe_name (int pid) {
+            try {
+                var exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                return Path.get_basename (exe);
+            } catch (GLib.Error e) {
                 return "";
             }
         }
@@ -1016,17 +1033,47 @@ namespace Terminal {
             action.set_enabled (false); // Repeated presses are ignored
         }
 
+        private uint contents_changed_timeout_id = 0;
+        private const int CONTENTS_CHANGED_DELAY_MSEC = 100;
+        private bool contents_changed_continue = true;
+        private void on_contents_changed () {
+            contents_changed_continue = true;
+            if (contents_changed_timeout_id > 0) {
+                return;
+            }
 
+            contents_changed_timeout_id = Timeout.add (
 
-        private void check_cwd_changed () {
-            // Ignore if not associated with tab.
-            if (tab is Adw.TabPage) {
-                var cwd = get_shell_location ();
-                if (cwd != current_working_directory) {
-                    current_working_directory = cwd;
-                    tab.tooltip = current_working_directory;
-                    cwd_changed (cwd);
+                CONTENTS_CHANGED_DELAY_MSEC,
+                () => {
+                    if (contents_changed_continue) {
+                        contents_changed_continue = false;
+                        return Source.CONTINUE;
+                    }
+
+                    var cwd = get_shell_location ();
+                    if (cwd != current_working_directory) {
+                        update_current_working_directory (cwd);
+                    }
+
+                    int pid;
+                    try_get_foreground_pid (out pid);
+                    if (pid != fg_pid) {
+                        var name = get_pid_exe_name (pid);
+                        foreground_process_changed (name);
+                        fg_pid = pid;
+                    }
+
+                    contents_changed_timeout_id = 0;
+                    return Source.REMOVE;
                 }
+            );
+        }
+
+        public void prepare_to_close () {
+            if (contents_changed_timeout_id > 0) {
+                Source.remove (contents_changed_timeout_id);
+                contents_changed_timeout_id = 0;
             }
         }
     }

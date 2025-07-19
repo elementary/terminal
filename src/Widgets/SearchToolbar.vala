@@ -5,7 +5,7 @@
 
 namespace Terminal.Widgets {
 
-    public class SearchToolbar : Gtk.Box {
+    public class SearchToolbar : Granite.Box {
         private Gtk.ToggleButton cycle_button;
         private uint last_search_term_length = 0;
 
@@ -17,6 +17,7 @@ namespace Terminal.Widgets {
         }
 
         construct {
+            child_spacing = 0;
             search_entry = new Gtk.SearchEntry ();
             search_entry.hexpand = true;
             search_entry.placeholder_text = _("Find");
@@ -53,7 +54,7 @@ namespace Terminal.Widgets {
             // TODO Restore state from settings
             cycle_button.toggled ();
 
-            add_css_class (Granite.STYLE_CLASS_LINKED);
+            // add_css_class (Granite.STYLE_CLASS_LINKED);
             append (search_entry);
             append (next_button);
             append (previous_button);
