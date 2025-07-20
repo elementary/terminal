@@ -319,9 +319,7 @@ namespace Terminal {
             title_stack.visible_child = title_label;
 
             //TODO Checkout height of header is not larger than necessary (see https://github.com/elementary/terminal/pull/291)
-            header = new Adw.HeaderBar () {
-                decoration_layout = "close:",
-            };
+            header = new Adw.HeaderBar ();
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
