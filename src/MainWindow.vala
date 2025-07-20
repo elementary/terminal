@@ -350,6 +350,7 @@ namespace Terminal {
                         return Gdk.EVENT_STOP;
                     } else {
                         terminate_and_disconnect (term, true);
+                        notebook.tab_view.close_page_finish (tab, true);
                     }
                 }
 
@@ -829,8 +830,8 @@ namespace Terminal {
         }
 
         private void terminate_and_disconnect (TerminalWidget term, bool make_restorable_required) {
-            term.term_ps ();
             disconnect_terminal_signals (term);
+            term.term_ps ();
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
                 make_restorable (term);
             }
