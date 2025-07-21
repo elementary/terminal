@@ -978,7 +978,15 @@ namespace Terminal {
         }
 
         void action_move_tab_to_new_window () {
-            notebook.transfer_tab_to_new_window ();
+            // Do not use app action because we do not want default tab added
+            var new_window = new MainWindow (app, false);
+            new_window.set_size_request (
+                app.active_window.width_request,
+                app.active_window.height_request
+            );
+            new_window.present ();
+
+            notebook.transfer_tab_to_window (new_window);
         }
 
         private void action_search () requires (current_terminal != null) {

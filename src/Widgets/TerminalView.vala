@@ -170,15 +170,14 @@ public class Terminal.TerminalView : Gtk.Box {
         selected_page = tab_view.get_nth_page (pos);
     }
 
-    public void transfer_tab_to_new_window () {
+    public void transfer_tab_to_window (MainWindow window) {
         var target = tab_menu_target ?? tab_view.selected_page;
 
         if (target == null) {
             return;
         }
 
-        var new_window = new MainWindow (main_window.app, false);
-        tab_view.transfer_page (target, new_window.notebook.tab_view, 0);
+        tab_view.transfer_page (target, window.notebook.tab_view, 0);
     }
 
     // This is called when tab context menu is opened or closed
