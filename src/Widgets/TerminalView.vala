@@ -183,14 +183,16 @@ public class Terminal.TerminalView : Gtk.Box {
     // This is called when tab context menu is opened or closed
     private void tab_view_setup_menu (Adw.TabPage? page) {
         tab_menu_target = page;
-
-        var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, main_window.actions);
-        var close_tabs_to_right_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, main_window.actions);
+        var actions = main_window.actions;
+        var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, actions);
+        var close_tabs_to_right_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, actions);
+        var open_in_new_window_action = Utils.action_from_group (MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW, actions);
 
         int page_position = page != null ? tab_view.get_page_position (page) : -1;
 
         close_other_tabs_action.set_enabled (page != null && tab_view.n_pages > 1);
         close_tabs_to_right_action.set_enabled (page != null && page_position != tab_view.n_pages - 1);
+        open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
     }
 
     public void after_tab_restored (TerminalWidget term) {
