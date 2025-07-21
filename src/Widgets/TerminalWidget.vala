@@ -191,6 +191,7 @@ namespace Terminal {
             Application.settings.changed["palette"].connect (update_theme);
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
+            Application.settings.changed["opacity"].connect (update_theme);
 
             motion_controller = new Gtk.EventControllerMotion (this) {
                 propagation_phase = CAPTURE
@@ -623,6 +624,7 @@ namespace Terminal {
             var cursor = theme_palette[Themes.PALETTE_SIZE - 1];
             var palette = theme_palette[0:16];
 
+            background.alpha = Application.settings.get_int ("opacity") * 0.01f;
             set_colors (foreground, background, palette);
             set_color_cursor (cursor);
         }

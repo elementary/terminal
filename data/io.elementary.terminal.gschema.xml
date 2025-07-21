@@ -120,6 +120,14 @@
             - A RGBA color in the form “rgba(r,g,b,a)”
       </description>
     </key>
+    <key name="opacity" type="i">
+      <range min="0" max="100" />
+      <default>100</default>
+      <summary>Percent opacity of the background.</summary>
+      <description>
+          The percentage opacity of the background. 0 = fully transpaarent, 100 = fully opaque
+      </description>
+    </key>
     <key name="cursor-color" type="s">
       <default>"#839496"</default>
       <summary>Color of the cursor.</summary>
