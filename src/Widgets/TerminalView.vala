@@ -30,8 +30,8 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public unowned MainWindow main_window { get; construct; }
-    public Adw.TabView tab_view { get; construct; }
     private Adw.TabBar tab_bar;
+    public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;

@@ -488,12 +488,7 @@ namespace Terminal {
         }
 
         private unowned Adw.TabView? on_create_window_request () {
-            var new_window = new MainWindow (
-                app,
-                false
-            );
-
-            return new_window.notebook.tab_view;
+            return present_new_empty_window ().notebook.tab_view;
         }
 
         public void update_context_menu () requires (current_terminal != null) {
@@ -979,14 +974,7 @@ namespace Terminal {
 
         void action_move_tab_to_new_window () {
             // Do not use app action because we do not want default tab added
-            var new_window = new MainWindow (app, false);
-            new_window.set_size_request (
-                app.active_window.width_request,
-                app.active_window.height_request
-            );
-            new_window.present ();
-
-            notebook.transfer_tab_to_window (new_window);
+            notebook.transfer_tab_to_window (present_new_empty_window ());
         }
 
         private void action_search () requires (current_terminal != null) {
@@ -1216,6 +1204,17 @@ namespace Terminal {
             }
 
             return (prefix + basename).replace ("//", "/");
+        }
+
+        private MainWindow present_new_empty_window () {
+            var new_window = new MainWindow (app, false);
+            new_window.set_size_request (
+                app.active_window.width_request,
+                app.active_window.height_request
+            );
+
+            new_window.present ();
+            return new_window;
         }
 
         public GLib.SimpleAction? get_simple_action (string action) {
