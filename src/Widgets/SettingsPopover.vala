@@ -85,9 +85,24 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             active = Application.settings.get_boolean ("follow-system-style"),
         };
 
+        var opacity_label = new Gtk.Label (_("Opacity"));
+        var opacity_control = new Gtk.Scale.with_range (HORIZONTAL, 0, 100, 5) {
+            hexpand = true,
+            draw_value = false
+        };
+
+        Application.settings.bind ("opacity", opacity_control.adjustment, "value", SettingsBindFlags.DEFAULT);
+        var opacity_box = new Gtk.Box (HORIZONTAL, 12) {
+            margin_start = 12,
+            margin_end = 12
+        };
+        opacity_box.add (opacity_label);
+        opacity_box.add (opacity_control);
+
         var theme_box = new Gtk.Box (VERTICAL, 0);
         theme_box.add (follow_system_button);
         theme_box.add (theme_revealer);
+        theme_box.add (opacity_box);
 
         var hc_button = add_theme_button (Themes.HIGH_CONTRAST);
         hc_button.tooltip_text = _("High Contrast");
