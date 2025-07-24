@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:39+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -225,7 +225,7 @@ msgstr "Amarelo Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Azul claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
