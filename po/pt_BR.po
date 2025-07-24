@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-07-24 20:38+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"PO-Revision-Date: 2025-07-24 20:39+0000\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -221,7 +221,7 @@ msgstr "Verde claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Amarelo claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
