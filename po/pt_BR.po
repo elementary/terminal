@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-25 20:55+0000\n"
-"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -241,7 +241,7 @@ msgstr "Cinza claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "Fundo:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
@@ -249,7 +249,7 @@ msgstr "Frente:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Cursor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
