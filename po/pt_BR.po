@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:37+0000\n"
-"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
+"Last-Translator: Marcos Souza <marcos.souza101907@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -85,7 +85,7 @@ msgstr "Limpar Tela"
 
 #: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Redefinir"
 
 #: src/MainWindow.vala:186
 msgid "Paste"
