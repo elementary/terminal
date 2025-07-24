@@ -64,7 +64,7 @@ msgstr "Processo concluído."
 
 #: src/Application.vala:191
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Processo encerrado com erros."
 
 #: src/MainWindow.vala:155
 msgid "Show Search Bar"
