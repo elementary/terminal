@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-07-24 20:39+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"PO-Revision-Date: 2025-07-25 20:55+0000\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -245,7 +245,7 @@ msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "Frente:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
@@ -257,19 +257,19 @@ msgstr "Fechar"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
-msgstr ""
+msgstr "O contraste está muito baixo"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
-msgstr ""
+msgstr "O contraste está baixo"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
-msgstr ""
+msgstr "O contraste está bom"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
-msgstr ""
+msgstr "O contraste está alto"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
 #, fuzzy
