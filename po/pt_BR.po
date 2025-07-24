@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:33+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -51,13 +51,8 @@ msgstr "Abrir o terminal em estado minimizado"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:76
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Execute o restante da linha como um comando no terminal. Também pode usar "
-"'-' como sinalizador"
+msgstr "Execute o restante da linha como um comando no terminal"
 
 #: src/Application.vala:128
 msgid "[-- COMMAND…]"
