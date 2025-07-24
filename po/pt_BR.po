@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:38+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -169,7 +169,7 @@ msgstr "Escuro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr "Paleta de cores"
+msgstr "Paleta de Cores"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
