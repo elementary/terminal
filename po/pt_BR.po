@@ -233,7 +233,7 @@ msgstr "Magenta Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr "Ciano claro:"
+msgstr "Ciano Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
