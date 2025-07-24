@@ -221,7 +221,7 @@ msgstr "Verde Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr "Amarelo claro:"
+msgstr "Amarelo Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
