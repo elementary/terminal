@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:37+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -144,15 +144,15 @@ msgstr "O texto colado pode conter múltiplos comandos"
 
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "O texto colado pode estar tentando ganhar acesso administrativo"
 
 #: src/Utils.vala:153
 msgid "The pasted text includes a command to skip warnings and confirmations"
-msgstr ""
+msgstr "O texto colado inclue um commando para pular alertas e confirmações"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
-msgstr ""
+msgstr "Preferências de cores"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:50
 msgid "Window style:"
