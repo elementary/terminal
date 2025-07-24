@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-24 20:34+0000\n"
-"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -68,7 +68,7 @@ msgstr "Processo terminado com erros"
 
 #: src/MainWindow.vala:155
 msgid "Show Search Bar"
-msgstr "Mostrar barra de busca"
+msgstr "Mostrar Barra de Busca"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:162
