@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-07-27 16:45+0000\n"
+"PO-Revision-Date: 2025-07-28 16:55+0000\n"
 "Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
@@ -413,18 +413,16 @@ msgstr "Abrir em uma Nova Janela"
 
 #: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
-msgstr ""
+msgstr "Duplicar Aba"
 
 #: src/Widgets/TerminalView.vala:227
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload"
-msgstr "Fechar aba"
+msgstr "Recarregar"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Há um processo ativo nesta aba."
