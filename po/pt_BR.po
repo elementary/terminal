@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-27 16:41+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -361,6 +361,7 @@ msgstr "Alerta de Colagem Insegura"
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
+"Avisar quando o texto colado contém comandos múltiplos ou administrativos"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
