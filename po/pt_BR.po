@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-07-25 20:55+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"PO-Revision-Date: 2025-07-27 16:40+0000\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -347,7 +347,7 @@ msgstr "Luz Solarizada"
 
 #: src/Widgets/SettingsPopover.vala:106
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: src/Widgets/SettingsPopover.vala:111
 msgid "Natural Copy/Paste"
@@ -359,7 +359,7 @@ msgstr "Atalhos não requerem Shift; pode interferir com apps CLI"
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Alerta de colagem insegura"
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Warn when pasted text contains multiple or administrative commands"
