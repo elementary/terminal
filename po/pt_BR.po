@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-27 16:41+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -364,7 +364,7 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
-msgstr ""
+msgstr "Alertas de eventos"
 
 #: src/Widgets/SettingsPopover.vala:122
 msgid ""
