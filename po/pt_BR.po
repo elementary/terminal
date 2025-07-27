@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-27 16:45+0000\n"
-"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -381,13 +381,11 @@ msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Tem a certeza de que pretende resetar o terminal?"
+msgstr "Tem certeza de que pretende resetar o terminal?"
 
 #: src/Widgets/TerminalWidget.vala:928
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Você tem certeza que deseja fechar esta aba ?"
+msgstr "Você tem certeza que deseja recarregar esta aba?"
 
 #: src/Widgets/TerminalWidget.vala:929
 msgid "Reload Tab"
