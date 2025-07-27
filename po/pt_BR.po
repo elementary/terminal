@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2025-07-27 16:43+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"PO-Revision-Date: 2025-07-27 16:45+0000\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -390,36 +390,28 @@ msgid "Are you sure you want to reload this tab?"
 msgstr "Você tem certeza que deseja fechar esta aba ?"
 
 #: src/Widgets/TerminalWidget.vala:929
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Fechar aba"
+msgstr "Recarregar aba"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "Nova aba"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Fechar aba"
+msgstr "Abas Fechadas"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Fechar Abas à Direita"
 
 #: src/Widgets/TerminalView.vala:219
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Fechar aba"
+msgstr "Fechar as Outras Abas"
 
 #: src/Widgets/TerminalView.vala:223
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Nova janela"
+msgstr "Abrir em uma Nova Janela"
 
 #: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
