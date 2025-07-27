@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2024-11-06 00:53+0000\n"
+"PO-Revision-Date: 2025-07-27 16:40+0000\n"
 "Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/extra/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -64,11 +64,11 @@ msgstr "Atualizações de tradução"
 
 #: data/io.elementary.terminal.appdata.xml.in:73
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Interromper o aumento do tamanho da janela quando aberta"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "Alterar as teclas de atalho para as ações Redefinir e Limpar tela"
 
 #: data/io.elementary.terminal.appdata.xml.in:88
 #: data/io.elementary.terminal.appdata.xml.in:119
@@ -79,43 +79,51 @@ msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.terminal.appdata.xml.in:90
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "Mostrar o nível de zoom na sobreposição ao aplicar o zoom"
 
 #: data/io.elementary.terminal.appdata.xml.in:91
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr ""
+"Implementar ações do menu de contexto Limpar e Redefinir com aceleradores"
 
 #: data/io.elementary.terminal.appdata.xml.in:92
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr ""
+"Adicionar interruptor para aviso de colagem insegura ao menu do aplicativo"
 
 #: data/io.elementary.terminal.appdata.xml.in:96
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Atualizar o ícone e a dica de ferramenta do botão de interruptor de pesquisa "
+"cíclica de acordo com seu estado"
 
 #: data/io.elementary.terminal.appdata.xml.in:97
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Foco na guia correta após clicar em uma notificação de processo concluído"
 
 #: data/io.elementary.terminal.appdata.xml.in:98
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
+"Verifique se há \"doas\", \"pkexec\", \"run0\" e \"su\", bem como \"sudo\", "
+"quando o texto é colado no terminal"
 
 #: data/io.elementary.terminal.appdata.xml.in:99
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "Verifique também se há colagem insegura ao soltar o texto"
 
 #: data/io.elementary.terminal.appdata.xml.in:100
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr ""
+"Verificação de comandos de várias linhas na detecção de colagem insegura"
 
 #: data/io.elementary.terminal.appdata.xml.in:101
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Melhorar o contraste de cinza no tema escuro"
 
 #: data/io.elementary.terminal.appdata.xml.in:121
 msgid "Allow switching event alerts on and off in the app menu"
@@ -128,7 +136,7 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:126
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "Documentar opções ausentes na página de manual"
 
 #: data/io.elementary.terminal.appdata.xml.in:127
 msgid "Suppress unwanted default tab when opening a new window"
@@ -144,17 +152,15 @@ msgstr ""
 
 #: data/io.elementary.terminal.appdata.xml.in:145
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "Desexportar corretamente a interface DBus na saída"
 
 #: data/io.elementary.terminal.appdata.xml.in:173
 msgid "Option to follow system dark style preference"
 msgstr "Opção para seguir a preferência de estilo escuro do sistema"
 
 #: data/io.elementary.terminal.appdata.xml.in:174
-#, fuzzy
-#| msgid "Validate custom palette"
 msgid "Create a custom color palette"
-msgstr "Validar paleta personalizada"
+msgstr "Criar uma paleta de cores personalizada"
 
 #: data/io.elementary.terminal.appdata.xml.in:176
 #: data/io.elementary.terminal.appdata.xml.in:195
