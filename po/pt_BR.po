@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-27 16:40+0000\n"
-"Last-Translator: Max2020 <alcizmaxpereira@gmail.com>\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -272,12 +272,11 @@ msgid "Contrast is high"
 msgstr "O contraste está alto"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "Há um processo ativo no terminal."
+msgstr ""
+"Há um processo ativo nesta aba. Se você continuar, o processo será encerrado."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
