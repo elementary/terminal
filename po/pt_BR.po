@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
 "PO-Revision-Date: 2025-07-27 16:40+0000\n"
-"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Last-Translator: Renato Trevisan <rjltrevisan@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -283,6 +283,8 @@ msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Copiar comandos para o Terminal pode ser perigoso. Certifique-se de que "
+"compreende o que cada parte do texto colado faz antes de continuar."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
@@ -309,16 +311,12 @@ msgid "Next result"
 msgstr "Próximo resultado"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Busca cíclica"
+msgstr "Desativar a busca cíclica"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Busca cíclica"
+msgstr "Ativar a busca cíclica"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -334,7 +332,7 @@ msgstr "Ampliar o Zoom"
 
 #: src/Widgets/SettingsPopover.vala:84
 msgid "Follow System Style"
-msgstr ""
+msgstr "Seguir o Estilo do Sistema"
 
 #: src/Widgets/SettingsPopover.vala:93
 msgid "High Contrast"
