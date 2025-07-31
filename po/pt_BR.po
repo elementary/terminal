@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-01 13:35+0000\n"
-"PO-Revision-Date: 2024-10-15 07:09+0000\n"
-"Last-Translator: Estevan Küster <estevan.kuster8@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"PO-Revision-Date: 2025-07-28 16:55+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "terminal/terminal/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-18 06:32+0000\n"
 
 #: src/Application.vala:63
@@ -51,29 +51,24 @@ msgstr "Abrir o terminal em estado minimizado"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:76
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
-"Execute o restante da linha como um comando no terminal. Também pode usar "
-"'-' como sinalizador"
+msgstr "Execute o restante da linha como um comando no terminal"
 
 #: src/Application.vala:128
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- COMANDO…]"
 
 #: src/Application.vala:188
 msgid "Process completed"
-msgstr ""
+msgstr "Processo concluído"
 
 #: src/Application.vala:191
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Processo terminado com erros"
 
 #: src/MainWindow.vala:155
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Mostrar Barra de Busca"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:162
@@ -86,11 +81,11 @@ msgstr "Copiar a Última Saída"
 
 #: src/MainWindow.vala:174
 msgid "Clear Screen"
-msgstr ""
+msgstr "Limpar Tela"
 
 #: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Redefinir"
 
 #: src/MainWindow.vala:186
 msgid "Paste"
@@ -101,10 +96,8 @@ msgid "Select All"
 msgstr "Selecionar tudo"
 
 #: src/MainWindow.vala:297
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Tela cheia"
+msgstr "Sair da Tela cheia"
 
 #: src/MainWindow.vala:306 src/MainWindow.vala:1044
 msgid "Find…"
@@ -147,27 +140,27 @@ msgstr "Ocultar barra de localização"
 
 #: src/Utils.vala:134
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "O texto colado pode conter múltiplos comandos"
 
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "O texto colado pode estar tentando ganhar acesso administrativo"
 
 #: src/Utils.vala:153
 msgid "The pasted text includes a command to skip warnings and confirmations"
-msgstr ""
+msgstr "O texto colado inclue um commando para pular alertas e confirmações"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
-msgstr ""
+msgstr "Preferências de Cores"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:50
 msgid "Window style:"
-msgstr ""
+msgstr "Estilo de janela:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:57
 msgid "Light"
-msgstr ""
+msgstr "Claro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:58
 #: src/Widgets/SettingsPopover.vala:100
@@ -176,87 +169,87 @@ msgstr "Escuro"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:62
 msgid "Color Palette"
-msgstr ""
+msgstr "Paleta de Cores"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "Reset to default"
-msgstr ""
+msgstr "Redefinir para o padrão"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Black:"
-msgstr ""
+msgstr "Preto:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Red:"
-msgstr ""
+msgstr "Vermelho:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Green:"
-msgstr ""
+msgstr "Verde:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Yellow:"
-msgstr ""
+msgstr "Amarelo:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Blue:"
-msgstr ""
+msgstr "Azul:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Cyan:"
-msgstr ""
+msgstr "Ciano:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Gray:"
-msgstr ""
+msgstr "Cinza:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:83
 msgid "White:"
-msgstr ""
+msgstr "Branco:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:84
 msgid "Light Red:"
-msgstr ""
+msgstr "Vermelho Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:85
 msgid "Light Green:"
-msgstr ""
+msgstr "Verde Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:86
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Amarelo Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:87
 msgid "Light Blue:"
-msgstr ""
+msgstr "Azul Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:88
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Magenta Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:89
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Ciano Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:90
 msgid "Light Gray:"
-msgstr ""
+msgstr "Cinza Claro:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:91
 msgid "Background:"
-msgstr ""
+msgstr "Fundo:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:92
 msgid "Foreground:"
-msgstr ""
+msgstr "Frente:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:93
 msgid "Cursor:"
-msgstr ""
+msgstr "Cursor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:190
 msgid "Close"
@@ -264,33 +257,34 @@ msgstr "Fechar"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:310
 msgid "Contrast is very low"
-msgstr ""
+msgstr "O contraste está muito baixo"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:313
 msgid "Contrast is low"
-msgstr ""
+msgstr "O contraste está baixo"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:316
 msgid "Contrast is good"
-msgstr ""
+msgstr "O contraste está bom"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:319
 msgid "Contrast is high"
-msgstr ""
+msgstr "O contraste está alto"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:37
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "Há um processo ativo no terminal."
+msgstr ""
+"Há um processo ativo nesta aba. Se você continuar, o processo será encerrado."
 
 #: src/Dialogs/UnsafePasteDialog.vala:34
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Copiar comandos para o Terminal pode ser perigoso. Certifique-se de que "
+"compreende o que cada parte do texto colado faz antes de continuar."
 
 #: src/Dialogs/UnsafePasteDialog.vala:36
 msgid "Show paste protection warnings"
@@ -317,16 +311,12 @@ msgid "Next result"
 msgstr "Próximo resultado"
 
 #: src/Widgets/SearchToolbar.vala:59
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Busca cíclica"
+msgstr "Desativar a busca cíclica"
 
 #: src/Widgets/SearchToolbar.vala:62
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Busca cíclica"
+msgstr "Ativar a busca cíclica"
 
 #: src/Widgets/SettingsPopover.vala:40
 msgid "Zoom out"
@@ -342,7 +332,7 @@ msgstr "Ampliar o Zoom"
 
 #: src/Widgets/SettingsPopover.vala:84
 msgid "Follow System Style"
-msgstr ""
+msgstr "Seguir o Estilo do Sistema"
 
 #: src/Widgets/SettingsPopover.vala:93
 msgid "High Contrast"
@@ -354,7 +344,7 @@ msgstr "Luz Solarizada"
 
 #: src/Widgets/SettingsPopover.vala:106
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: src/Widgets/SettingsPopover.vala:111
 msgid "Natural Copy/Paste"
@@ -366,84 +356,73 @@ msgstr "Atalhos não requerem Shift; pode interferir com apps CLI"
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Alerta de Colagem Insegura"
 
 #: src/Widgets/SettingsPopover.vala:117
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
+"Avisar quando o texto colado contém comandos múltiplos ou administrativos"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid "Event Alerts"
-msgstr ""
+msgstr "Alertas de Eventos"
 
 #: src/Widgets/SettingsPopover.vala:122
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Notificar em caso de entrada inválida ou de vários preenchimentos possíveis ("
+"sujeito a Configurações do Sistema → Som)"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Tem certeza de que deseja sair do Terminal ?"
+msgstr "Tem certeza de que pretende resetar o terminal?"
 
 #: src/Widgets/TerminalWidget.vala:928
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Você tem certeza que deseja fechar esta aba ?"
+msgstr "Você tem certeza que deseja recarregar esta aba?"
 
 #: src/Widgets/TerminalWidget.vala:929
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Fechar aba"
+msgstr "Recarregar aba"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "Nova aba"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Fechar aba"
+msgstr "Abas Fechadas"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Fechar Abas à Direita"
 
 #: src/Widgets/TerminalView.vala:219
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Fechar aba"
+msgstr "Fechar as Outras Abas"
 
 #: src/Widgets/TerminalView.vala:223
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Nova janela"
+msgstr "Abrir em uma Nova Janela"
 
 #: src/Widgets/TerminalView.vala:224
 msgid "Duplicate Tab"
-msgstr ""
+msgstr "Duplicar Aba"
 
 #: src/Widgets/TerminalView.vala:227
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload"
-msgstr "Fechar aba"
+msgstr "Recarregar"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Há um processo ativo nesta aba."
