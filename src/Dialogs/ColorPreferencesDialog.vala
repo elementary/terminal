@@ -336,6 +336,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         } else {
             color = Math.pow ((color + 0.055) / 1.055, 2.4);
         }
+
         return color;
     }
 
