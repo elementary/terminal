@@ -4,14 +4,14 @@
  */
 
 public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
+    public string text_to_paste { get; construct; }
     public UnsafePasteDialog (MainWindow parent, string title_text, string text_to_paste) {
         Object (
-            buttons: Gtk.ButtonsType.NONE,
+            transient_for: parent,
             primary_text: title_text,
-            transient_for: parent
+            text_to_paste: text_to_paste,
+            buttons: Gtk.ButtonsType.NONE
         );
-
-        show_error_details (text_to_paste);
     }
 
     construct {
@@ -19,6 +19,7 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
 
         secondary_text =
             _("Copying commands into Terminal can be dangerous. Be sure you understand what each part of the pasted text does before continuing.");
+        show_error_details (text_to_paste);
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
 
