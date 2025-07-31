@@ -29,7 +29,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
         };
 
         var next_button = new Gtk.Button.from_icon_name ("go-down-symbolic") {
-            action_name = (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT),
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT,
             tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Down", "<Control>g"},
                 _("Next result")
