@@ -8,7 +8,9 @@ public class Terminal.Widgets.ZoomOverlay : Granite.Widgets.OverlayBar {
     private uint timer_id;
 
     public ZoomOverlay (Gtk.Overlay overlay) {
-        base (overlay);
+        Object (
+            overlay: overlay
+        );
     }
 
     public void show_zoom_level (double zoom_level) {
