@@ -56,7 +56,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         palette_header.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
-            halign = Gtk.Align.END,
+            halign = END,
             margin_top = 12,
             margin_bottom = 6,
             tooltip_text = _("Reset to default")
@@ -341,7 +341,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
 
     private Gtk.Label settings_label (string text) {
         return new Gtk.Label (text) {
-            halign = Gtk.Align.END,
+            halign = END,
             margin_start = 12
         };
     }
