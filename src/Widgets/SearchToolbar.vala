@@ -21,7 +21,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
         };
 
         var previous_button = new Gtk.Button.from_icon_name ("go-up-symbolic") {
-            action_name = (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS),
+            action_name = MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS,
             tooltip_markup = Granite.markup_accel_tooltip (
                 {"<Control>Up", "<Control><Shift>g"},
                 _("Previous result")
