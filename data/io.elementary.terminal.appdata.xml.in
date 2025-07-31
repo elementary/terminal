@@ -10,7 +10,7 @@
   <name>Terminal</name>
   <summary>Use the command line</summary>
   <description>
-    <p>Terminal is a terminal emulator application for accessing a UNIX shell environment which can be used to run programs available on your system.</p>
+    <p>Terminal is command-line interface to run programs available on your system.</p>
   </description>
 
   <screenshots>
