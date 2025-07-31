@@ -35,8 +35,9 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         resizable = false;
         title = _("Color Preferences");
 
-        var window_theme_label = settings_label (_("Window style:"));
-        window_theme_label.margin_bottom = 12;
+        var window_theme_label = settings_label (_("Window style:")) {
+            margin_bottom = 12
+        };
 
         var window_theme_switch = new Granite.ModeSwitch.from_icon_name (
             "display-brightness-symbolic",
