@@ -5,6 +5,7 @@
 
 
 public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
+    //TODO Gtk.ColorButton is deprecated after 4.10. After Gtk4 port use Gtk.ColorDialogButton instead.
     private Gtk.ColorButton black_button;
     private Gtk.ColorButton red_button;
     private Gtk.ColorButton green_button;
