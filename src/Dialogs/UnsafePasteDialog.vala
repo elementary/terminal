@@ -5,6 +5,7 @@
 
 public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
     public string text_to_paste { get; construct; }
+
     public UnsafePasteDialog (MainWindow parent, string title_text, string text_to_paste) {
         Object (
             transient_for: parent,
