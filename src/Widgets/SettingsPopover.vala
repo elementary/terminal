@@ -1,6 +1,6 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023-2025 elementary, Inc. (https://elementary.io)
  */
 
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
