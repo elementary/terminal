@@ -492,6 +492,7 @@ namespace Terminal {
             return false;
         }
 
+        //TODO Replace with separate window-width and window-height settings which are bound to the corresponding default properties
         private void restore_saved_state () {
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -611,6 +612,7 @@ namespace Terminal {
             return appinfo;
         }
 
+        //TODO Remove for Gtk4 and replace with bindings between settings and properties
         protected override bool configure_event (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
