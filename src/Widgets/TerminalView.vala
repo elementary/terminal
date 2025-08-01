@@ -68,7 +68,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_history_button = new Gtk.MenuButton () {
             image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", MENU),
             tooltip_text = _("Closed Tabs"),
-            use_popover = false,
+            use_popover = false
         };
 
         tab_bar = new Hdy.TabBar () {
