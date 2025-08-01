@@ -1,6 +1,6 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023-2025 elementary, Inc. (https://elementary.io)
  */
 
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
@@ -23,10 +23,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
     private BindingGroup terminal_binding;
     private Gtk.Box theme_buttons;
-
-    public SettingsPopover () {
-        Object ();
-    }
 
     construct {
         var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
