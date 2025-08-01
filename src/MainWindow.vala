@@ -303,7 +303,7 @@ namespace Terminal {
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-                valign = Gtk.Align.CENTER,
+                valign = CENTER,
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
@@ -312,7 +312,7 @@ namespace Terminal {
                 image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
                 popover = new SettingsPopover (),
                 tooltip_text = _("Settings"),
-                valign = Gtk.Align.CENTER
+                valign = CENTER
             };
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
