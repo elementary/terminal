@@ -878,6 +878,7 @@ namespace Terminal {
             }
         }
 
+        //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
         public bool on_delete_event () {
             //Avoid saved terminals being overwritten when tabs destroyed.
             notebook.tab_view.page_detached.disconnect (on_tab_removed);
