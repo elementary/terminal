@@ -211,8 +211,8 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    private GLib.Menu create_menu_model () {
-        var menu = new GLib.Menu ();
+    private Menu create_menu_model () {
+        var menu = new Menu ();
 
         var close_tab_section = new Menu ();
         close_tab_section.append (_("Close Tabs to the Right"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT);
@@ -245,7 +245,7 @@ public class Terminal.TerminalView : Gtk.Box {
             var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
             // ACTION_NEW_TAB_AT only works with local paths to folders
             foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
+                var file = File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
                     return;
@@ -281,7 +281,7 @@ public class Terminal.TerminalView : Gtk.Box {
             var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
             // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
             foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
+                var file = File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
                     return;
