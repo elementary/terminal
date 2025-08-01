@@ -43,7 +43,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         hexpand = true;
         vexpand = true;
 
@@ -57,7 +57,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.setup_menu.connect (tab_view_setup_menu);
 
         var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
-            relief = Gtk.ReliefStyle.NONE,
+            relief = NONE,
             tooltip_markup = Granite.markup_accel_tooltip (
                 app_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_TAB),
                 _("New Tab")
@@ -66,7 +66,7 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         tab_history_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", MENU),
             tooltip_text = _("Closed Tabs"),
             use_popover = false,
         };
