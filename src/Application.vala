@@ -202,12 +202,11 @@ public class Terminal.Application : Gtk.Application {
                     withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
                 });
 
-                focus_in_handler = terminal.main_window.focus_in_event.connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-
-                    return Gdk.EVENT_PROPAGATE;
+                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
+                    if (terminal.main_window.is_active) {
+                        withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                    }
                 });
-
             }
         });
 
