@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later
  * SPDX-FileCopyrightText: 2024-25 elementary, Inc. (https://elementary.io)
  */
- 
+
 public class Terminal.TerminalView : Gtk.Box {
     const int TAB_HISTORY_MAX_ITEMS = 20;
 
