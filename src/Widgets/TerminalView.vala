@@ -30,7 +30,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public unowned MainWindow main_window { get; construct; }
-    public Hdy.TabView tab_view { get; construct; }
+    public Hdy.TabView tab_view { get; private set; }
     private Hdy.TabBar tab_bar;
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
