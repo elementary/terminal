@@ -905,13 +905,22 @@ namespace Terminal {
 
         private void action_open_in_browser () requires (current_terminal != null) {
             var uri = get_current_selection_link_or_pwd ();
-            string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-            if (to_open != null) {
-                try {
-                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                } catch (GLib.Error error) {
-                    warning ("Could not show %s - %s", to_open, error.message);
-                }
+            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location (), true);
+            AppInfo? appinfo = get_default_app_for_uri (to_open);
+            if (appinfo != null) {
+                //FIXME Gtk.UriLauncher (Gtk4) fails for some reason ( in a VM at least )
+                List<string> uris = null;
+                uris.append (to_open);
+                appinfo.launch_uris_async.begin (uris, null, null, (obj, res) => {
+                    try {
+                        appinfo.launch_uris_async.end (res);
+                    } catch (Error e) {
+                        warning ("Launcher failed with error %s", e.message);
+                        //TODO Handle launch failure - message box?
+                    }
+                });
+            } else {
+                //TODO Show AppChooserDialog?
             }
         }
 
