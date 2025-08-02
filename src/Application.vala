@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2023 elementary, Inc. (https://elementary.io)
+ * Copyright 2011-2024 elementary, Inc. (https://elementary.io)
  * SPDX-License-Identifier: LGPL-3.0-only
  */
 
@@ -46,17 +46,8 @@ public class Terminal.Application : Gtk.Application {
                 }
             }
 
-            // This is a hack to avoid using Gdk-Xii dependency.  Using present_with_time ()
-            // with the current event time does not work either on X11 or Wayland perhaps
-            // because the triggering event did not occur on the Terminal window?
-            // Using set_keep_above () at least works on X11 but not on Wayland
-            //TODO It may well be possible to use present () on Gtk4 so this needs revisiting
-            window_to_present.set_keep_above (true);
-            window_to_present.present ();
-            window_to_present.grab_focus ();
             Idle.add (() => {
-                window_to_present.set_keep_above (false);
-                return Source.REMOVE;
+                window_to_present.present ();
             });
         });
 
@@ -196,7 +187,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(Gdk.WindowState.FOCUSED in terminal.main_window.get_window ().get_state ())) {
+            if (!get_active_window ().is_active) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -210,10 +201,10 @@ public class Terminal.Application : Gtk.Application {
                     withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
                 });
 
-                focus_in_handler = terminal.main_window.focus_in_event.connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-
-                    return Gdk.EVENT_PROPAGATE;
+                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
+                    if (terminal.main_window.is_active) {
+                        withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                    }
                 });
 
             }
@@ -236,7 +227,8 @@ public class Terminal.Application : Gtk.Application {
 
     protected override void startup () {
         base.startup ();
-        Hdy.init ();
+        Granite.init ();
+        Adw.init ();
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
@@ -250,8 +242,8 @@ public class Terminal.Application : Gtk.Application {
          * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
          * To be able to overwrite their styles, we need to use +1.
          */
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
         );
@@ -281,16 +273,6 @@ public class Terminal.Application : Gtk.Application {
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
-
-        set_accels_for_action (TerminalWidget.ACTION_COPY, TerminalWidget.ACCELS_COPY);
-        set_accels_for_action (TerminalWidget.ACTION_COPY_OUTPUT, TerminalWidget.ACCELS_COPY_OUTPUT);
-        set_accels_for_action (TerminalWidget.ACTION_PASTE, TerminalWidget.ACCELS_PASTE);
-        set_accels_for_action (TerminalWidget.ACTION_RELOAD, TerminalWidget.ACCELS_RELOAD);
-        set_accels_for_action (TerminalWidget.ACTION_SCROLL_TO_COMMAND, TerminalWidget.ACCELS_SCROLL_TO_COMMAND);
-        set_accels_for_action (TerminalWidget.ACTION_SELECT_ALL, TerminalWidget.ACCELS_SELECT_ALL);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
@@ -327,10 +309,27 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
-            window.iconify ();
+            window.minimize ();
         } else {
             window.present ();
         }
+
+        if (is_first_window) {
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
+
+            if (saved_state.get_boolean ("is-maximized")) {
+                window.maximize ();
+            }
+
+            saved_state.bind ("is-maximized", window, "maximized", SettingsBindFlags.SET);
+        }
+
         return 0;
     }
 
