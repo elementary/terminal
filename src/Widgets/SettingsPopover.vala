@@ -1,6 +1,6 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023-2025 elementary, Inc. (https://elementary.io)
  */
 
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
@@ -28,10 +28,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
     private BindingGroup terminal_binding;
     private Gtk.Box theme_buttons;
-
-    public SettingsPopover () {
-        Object ();
-    }
 
     construct {
         var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
@@ -167,22 +163,26 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
     private Gtk.RadioButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
         var button = new Gtk.RadioButton (null) {
-            action_target = new Variant.string (theme),
             halign = Gtk.Align.CENTER
         };
 
-        button.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+        button.set_data<string> ("theme", theme);
+        button.get_style_context ().add_class ("color-button");
         button.get_style_context ().add_class (theme);
 
         css_provider = new Gtk.CssProvider ();
 
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
+        );
 
         update_theme_provider (css_provider, theme);
 
         button.toggled.connect ((b) => {
             if (((Gtk.RadioButton) b).active) {
-                Application.settings.set_value ("theme", b.action_target);
+                Application.settings.set_value ("theme", b.get_data<string> ("theme"));
             }
         });
 
@@ -190,15 +190,23 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         return button;
     }
 
-    private static void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
-        SearchFunc<Gtk.RadioButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.get_group ().search (theme, find_colorbutton);
+    private void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
+        var buttons = theme_buttons.get_children ();
+        unowned var list = buttons.first ();
+        var found = false;
+        while (list != null && list.data != null && !found) {
+            if (list.data is Gtk.RadioButton) {
+                var b = (Gtk.RadioButton) list.data;
+                if (b.get_data<string> ("theme") == theme) {
+                    b.active = true;
+                    return;
+                }
+            }
 
-        if (node != null) {
-            node.data.active = true;
-        } else {
-            default_button.active = true;
+            list = list.next;
         }
+
+        default_button.active = true;
     }
 
     private static void update_theme_provider (Gtk.CssProvider css_provider, string theme) {
