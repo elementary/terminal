@@ -1,6 +1,6 @@
 /*
- * Copyright 2023 elementary, Inc (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2023-2025 elementary, Inc. (https://elementary.io)
  */
 
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
@@ -19,19 +19,10 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         }
     }
 
-    private const string STYLE_CSS = """
-        .color-button.%s radio {
-            background-color: %s;
-            color: %s;
-        }
-    """;
+    private const string ACTION_GROUP_NAME = "settings";
 
     private BindingGroup terminal_binding;
     private Gtk.Box theme_buttons;
-
-    public SettingsPopover () {
-        Object ();
-    }
 
     construct {
         var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
@@ -71,42 +62,43 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         font_size_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
-        theme_buttons = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0) {
+        var follow_system_button = new Granite.SwitchModelButton (_("Follow System Style")) {
+            active = Application.settings.get_boolean ("follow-system-style"),
+        };
+
+        var hc_button = new ThemeCheckButton (Themes.HIGH_CONTRAST) {
+            tooltip_text = _("High Contrast")
+        };
+
+        var light_button = new ThemeCheckButton (Themes.LIGHT) {
+            tooltip_text = _("Solarized Light")
+        };
+
+        var dark_button = new ThemeCheckButton (Themes.DARK) {
+            tooltip_text = _("Dark")
+        };
+
+        var custom_button = new ThemeCheckButton (Themes.CUSTOM) {
+            tooltip_text = _("Custom")
+        };
+
+        theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
             homogeneous = true,
             margin_bottom = 6,
             margin_top = 6
         };
+        theme_buttons.add (hc_button);
+        theme_buttons.add (light_button);
+        theme_buttons.add (dark_button);
+        theme_buttons.add (custom_button);
 
         var theme_revealer = new Gtk.Revealer () {
             child = theme_buttons
         };
 
-        var follow_system_button = new Granite.SwitchModelButton (_("Follow System Style")) {
-            active = Application.settings.get_boolean ("follow-system-style"),
-        };
-
         var theme_box = new Gtk.Box (VERTICAL, 0);
         theme_box.add (follow_system_button);
         theme_box.add (theme_revealer);
-
-        var hc_button = add_theme_button (Themes.HIGH_CONTRAST);
-        hc_button.tooltip_text = _("High Contrast");
-
-        var light_button = add_theme_button (Themes.LIGHT);
-        light_button.tooltip_text = _("Solarized Light");
-        light_button.group = hc_button;
-
-        var dark_button = add_theme_button (Themes.DARK);
-        dark_button.tooltip_text = _("Dark");
-        dark_button.group = hc_button;
-
-        Gtk.CssProvider custom_button_provider;
-
-        var custom_button = add_theme_button (Themes.CUSTOM, out custom_button_provider);
-        custom_button.tooltip_text = _("Custom");
-        custom_button.group = hc_button;
-
-        update_active_colorbutton (dark_button, Application.settings.get_string ("theme"));
 
         var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
             description = _("Shortcuts don’t require Shift; may interfere with CLI apps"),
@@ -137,6 +129,13 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.add (audible_bell_button);
         child = box;
 
+        var settings_action = Application.settings.create_action ("theme");
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (settings_action);
+
+        insert_action_group (ACTION_GROUP_NAME, action_group);
+
         custom_button.clicked.connect (() => {
             if (custom_button.active) {
                 show_theme_editor ();
@@ -156,65 +155,64 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         Application.settings.changed.connect ((s, n) => {
             if (n == "background" || n == "foreground") {
-                update_theme_provider (custom_button_provider, Themes.CUSTOM);
-            } else if (n == "theme") {
-                update_active_colorbutton (dark_button, s.get_string (n));
+                custom_button.update_theme_provider ();
             }
         });
 
         show.connect (get_child ().show_all);
     }
 
-    private Gtk.RadioButton add_theme_button (string theme, out Gtk.CssProvider css_provider = null) {
-        var button = new Gtk.RadioButton (null) {
-            action_target = new Variant.string (theme),
-            halign = Gtk.Align.CENTER
-        };
-
-        button.get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-        button.get_style_context ().add_class (theme);
-
-        css_provider = new Gtk.CssProvider ();
-
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        update_theme_provider (css_provider, theme);
-
-        button.toggled.connect ((b) => {
-            if (((Gtk.RadioButton) b).active) {
-                Application.settings.set_value ("theme", b.action_target);
-            }
-        });
-
-        theme_buttons.add (button);
-        return button;
-    }
-
-    private static void update_active_colorbutton (Gtk.RadioButton default_button, string theme) {
-        SearchFunc<Gtk.RadioButton,string> find_colorbutton = (b, t) => strcmp (b.action_target.get_string (), t);
-        unowned var node = default_button.get_group ().search (theme, find_colorbutton);
-
-        if (node != null) {
-            node.data.active = true;
-        } else {
-            default_button.active = true;
-        }
-    }
-
-    private static void update_theme_provider (Gtk.CssProvider css_provider, string theme) {
-        var theme_palette = Themes.get_rgba_palette (theme);
-        var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
-        var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
-
-        try {
-            css_provider.load_from_data (STYLE_CSS.printf (theme, background, foreground));
-        } catch (Error e) {
-            critical ("Unable to style color button: %s", e.message);
-        }
-    }
-
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
         label.set_string ("%.0f%%".printf (font_scale.get_double () * 100));
         return true;
+    }
+
+    private class ThemeCheckButton : Gtk.CheckButton {
+        public string theme { get; construct; }
+
+        private const string STYLE_CSS = """
+            .color-button.%s check {
+                background-color: %s;
+                color: %s;
+                padding: 0.8rem; /* FIXME: Remove during GTK4 port */
+            }
+        """;
+
+        private Gtk.CssProvider css_provider;
+
+        public ThemeCheckButton (string theme) {
+            Object (theme: theme);
+        }
+
+        construct {
+            action_name = ACTION_GROUP_NAME + ".theme";
+            action_target = new Variant.string (theme);
+            halign = CENTER;
+
+            get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            get_style_context ().add_class (theme);
+
+            css_provider = new Gtk.CssProvider ();
+
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
+
+            update_theme_provider ();
+        }
+
+        public void update_theme_provider () {
+            var theme_palette = Themes.get_rgba_palette (theme);
+            var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
+            var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
+
+            try {
+                css_provider.load_from_data (STYLE_CSS.printf (theme, background, foreground));
+            } catch (Error e) {
+                critical ("Unable to style color button: %s", e.message);
+            }
+        }
     }
 }
