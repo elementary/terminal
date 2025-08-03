@@ -46,10 +46,7 @@ public class Terminal.Application : Gtk.Application {
                 }
             }
 
-            Idle.add (() => {
-                window_to_present.present ();
-                return Source.REMOVE;
-            });
+            window_to_present.present ();
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
