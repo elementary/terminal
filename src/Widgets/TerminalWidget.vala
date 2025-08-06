@@ -577,7 +577,7 @@ namespace Terminal {
 
             // No user interaction for safe commands
             if (Utils.is_safe_paste (text, out warn_text_array)) {
-                paste_text (text.data);
+                paste_text (text);
                 return;
             }
 
