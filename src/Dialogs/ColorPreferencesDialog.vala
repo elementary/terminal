@@ -1,22 +1,11 @@
 /*
-* Copyright 2022 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2022-2025 elementary, Inc. (https://elementary.io)
+ */
+
 
 public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
+    //TODO Gtk.ColorButton is deprecated after 4.10. After Gtk4 port use Gtk.ColorDialogButton instead.
     private Gtk.ColorButton black_button;
     private Gtk.ColorButton red_button;
     private Gtk.ColorButton green_button;
@@ -66,7 +55,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         palette_header.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
-            halign = Gtk.Align.END,
+            halign = END,
             margin_top = 12,
             margin_bottom = 6,
             tooltip_text = _("Reset to default")
@@ -346,12 +335,13 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         } else {
             color = Math.pow ((color + 0.055) / 1.055, 2.4);
         }
+
         return color;
     }
 
     private Gtk.Label settings_label (string text) {
         return new Gtk.Label (text) {
-            halign = Gtk.Align.END,
+            halign = END,
             margin_start = 12
         };
     }
