@@ -1,3 +1,9 @@
+io.elementary.terminal (7.1.0) jammy; urgency=medium
+
+  * Release 7.1.0
+
+ -- Danielle Foré <danielle@elementary.io>  Thu, 07 Aug 2025 11:08:09 -0700
+
 io.elementary.terminal (7.0.0) jammy; urgency=medium
 
   * Release 7.0.0 (#856)
