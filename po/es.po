@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 18:46+0000\n"
-"PO-Revision-Date: 2024-12-19 16:12+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2025-07-31 15:47+0000\n"
+"PO-Revision-Date: 2025-04-02 13:55+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
+"Language-Team: Spanish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.10.4\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:63
@@ -67,79 +67,79 @@ msgstr "Proceso completado"
 msgid "Process exited with errors"
 msgstr "El proceso finalizó con errores"
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr "Mostrar barra de búsqueda"
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "Copiar última salida"
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr "Limpiar pantalla"
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Pegar"
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:298
 msgid "Exit FullScreen"
 msgstr "Salir de pantalla completa"
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1056
+#: src/MainWindow.vala:307 src/MainWindow.vala:1057
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:314
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:364
 msgid "Are you sure you want to close this tab?"
 msgstr "¿Está seguro que desea cerrar esta pestaña?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:570
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar en %s"
 
-#: src/MainWindow.vala:572
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr "Aplicación predeterminada"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:888
 msgid "Are you sure you want to quit Terminal?"
 msgstr "¿Está seguro que desea salir de Terminal?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:889
 msgid "Quit Terminal"
 msgstr "Salir de Terminal"
 
-#: src/MainWindow.vala:1047
+#: src/MainWindow.vala:1048
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:135
 msgid "The pasted text may contain multiple commands"
 msgstr "El texto pegado puede contener varios comandos"
 
@@ -148,6 +148,12 @@ msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Es posible que el texto pegado esté intentando obtener permisos de "
 "administrador"
+
+#: src/Utils.vala:154
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
+"El texto pegado incluye un comando para saltarse advertencias y "
+"confirmaciones"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
 msgid "Color Preferences"
@@ -380,15 +386,15 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:547
 msgid "Are you sure you want to reset the terminal?"
 msgstr "¿Está seguro que desea reiniciar la terminal?"
 
-#: src/Widgets/TerminalWidget.vala:928
+#: src/Widgets/TerminalWidget.vala:946
 msgid "Are you sure you want to reload this tab?"
 msgstr "¿Está seguro que desea volver a cargar esta pestaña?"
 
-#: src/Widgets/TerminalWidget.vala:929
+#: src/Widgets/TerminalWidget.vala:947
 msgid "Reload Tab"
 msgstr "Volver a cargar pestaña"
 

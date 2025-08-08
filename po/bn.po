@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 18:46+0000\n"
+"POT-Creation-Date: 2025-07-31 15:47+0000\n"
 "PO-Revision-Date: 2018-05-29 12:26+0000\n"
 "Last-Translator: Ibraheem Moosa <ibraheemmoosa1347@gmail.com>\n"
 "Language-Team: Bengali <https://weblate.elementary.io/projects/terminal/"
@@ -70,84 +70,88 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:167
+#: src/MainWindow.vala:155
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr ""
 
-#: src/MainWindow.vala:180
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:174
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:192 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:198
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr ""
 
-#: src/MainWindow.vala:204
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr ""
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:298
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:318 src/MainWindow.vala:1056
+#: src/MainWindow.vala:307 src/MainWindow.vala:1057
 msgid "Find…"
 msgstr "খুঁজুন…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:314
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:372
+#: src/MainWindow.vala:364
 msgid "Are you sure you want to close this tab?"
 msgstr "আপনি কি এই ট্যাবটি বন্ধ করতে চাচ্ছেন?"
 
-#: src/MainWindow.vala:373 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "ট্যাব বন্ধ করুন"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:570
+#: src/MainWindow.vala:562
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:572
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:888
 msgid "Are you sure you want to quit Terminal?"
 msgstr "আপনি কি আসলেই এই টার্মিনাল বন্ধ করতে চাচ্ছেন?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:889
 msgid "Quit Terminal"
 msgstr "টার্মিনাল বন্ধ করুন"
 
-#: src/MainWindow.vala:1047
+#: src/MainWindow.vala:1048
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Utils.vala:134
+#: src/Utils.vala:135
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
 #: src/Utils.vala:139
 msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
+
+#: src/Utils.vala:154
+msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:48
@@ -377,19 +381,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "টার্মিনাল"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:547
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "আপনি কি আসলেই এই টার্মিনাল বন্ধ করতে চাচ্ছেন?"
 
-#: src/Widgets/TerminalWidget.vala:928
+#: src/Widgets/TerminalWidget.vala:946
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "আপনি কি এই ট্যাবটি বন্ধ করতে চাচ্ছেন?"
 
-#: src/Widgets/TerminalWidget.vala:929
+#: src/Widgets/TerminalWidget.vala:947
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"
