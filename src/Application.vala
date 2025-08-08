@@ -1,6 +1,6 @@
 /*
- * Copyright 2011-2023 elementary, Inc. (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  */
 
 public class Terminal.Application : Gtk.Application {
@@ -48,18 +48,7 @@ public class Terminal.Application : Gtk.Application {
                 }
             }
 
-            // This is a hack to avoid using Gdk-Xii dependency.  Using present_with_time ()
-            // with the current event time does not work either on X11 or Wayland perhaps
-            // because the triggering event did not occur on the Terminal window?
-            // Using set_keep_above () at least works on X11 but not on Wayland
-            //TODO It may well be possible to use present () on Gtk4 so this needs revisiting
-            window_to_present.set_keep_above (true);
             window_to_present.present ();
-            window_to_present.grab_focus ();
-            Idle.add (() => {
-                window_to_present.set_keep_above (false);
-                return Source.REMOVE;
-            });
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
@@ -198,7 +187,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(Gdk.WindowState.FOCUSED in terminal.main_window.get_window ().get_state ())) {
+            if (!(get_active_window ().is_active)) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -212,12 +201,11 @@ public class Terminal.Application : Gtk.Application {
                     withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
                 });
 
-                focus_in_handler = terminal.main_window.focus_in_event.connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-
-                    return Gdk.EVENT_PROPAGATE;
+                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
+                    if (terminal.main_window.is_active) {
+                        withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                    }
                 });
-
             }
         });
 
