@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-01 13:35+0000\n"
+"POT-Creation-Date: 2025-07-31 15:47+0000\n"
 "PO-Revision-Date: 2019-11-11 12:24+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/terminal/"
@@ -89,7 +89,7 @@ msgstr "Kopii la lastan eligon"
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
 msgid "Reset"
 msgstr ""
 
@@ -101,53 +101,53 @@ msgstr "Alglui"
 msgid "Select All"
 msgstr "Elekti ĉion"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:298
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Tutekrane"
 
-#: src/MainWindow.vala:306 src/MainWindow.vala:1044
+#: src/MainWindow.vala:307 src/MainWindow.vala:1057
 msgid "Find…"
 msgstr "Trovi…"
 
-#: src/MainWindow.vala:313
+#: src/MainWindow.vala:314
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:364
 msgid "Are you sure you want to close this tab?"
 msgstr "Ĉu vi ja volas fermi ĉi tiun langeton?"
 
-#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Fermi langeton"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:552
+#: src/MainWindow.vala:562
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Montri en la dosieresplorilo"
 
-#: src/MainWindow.vala:554
+#: src/MainWindow.vala:564
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:888
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ĉu vi ja volas ĉesigi la terminalon?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:889
 msgid "Quit Terminal"
 msgstr "Ĉesigi terminalon"
 
-#: src/MainWindow.vala:1035
+#: src/MainWindow.vala:1048
 msgid "Hide find bar"
 msgstr "Kaŝi trovbreton"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:135
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr ""
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/Utils.vala:153
+#: src/Utils.vala:154
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
@@ -388,19 +388,19 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminalo"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:547
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Ĉu vi ja volas ĉesigi la terminalon?"
 
-#: src/Widgets/TerminalWidget.vala:928
+#: src/Widgets/TerminalWidget.vala:946
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "Ĉu vi ja volas fermi ĉi tiun langeton?"
 
-#: src/Widgets/TerminalWidget.vala:929
+#: src/Widgets/TerminalWidget.vala:947
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"
