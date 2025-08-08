@@ -848,8 +848,7 @@ namespace Terminal {
                         }
                         // Sanitize the path as we do not want the `file://` scheme included
                         // and we assume dropped paths are absolute.
-                        file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
-                        path = file.get_path ();
+                        path = Utils.sanitize_path (unquoted_uri, "", false);
                         if (path != null) {
                             uris[i] = Shell.quote (path) + " ";
                         } else {
