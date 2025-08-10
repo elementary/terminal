@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-31 15:47+0000\n"
-"PO-Revision-Date: 2023-02-04 12:25+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"terminal/terminal/zh_Hans/>\n"
+"PO-Revision-Date: 2025-08-10 03:55+0000\n"
+"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"l10n.elementaryos.org/projects/terminal/terminal/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:63
@@ -31,10 +31,8 @@ msgstr "新建窗口"
 
 #. -t flag forces a new tab
 #: src/Application.vala:67
-#, fuzzy
-#| msgid "Open a new terminal window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "新建窗口"
+msgstr "在当前工作目录中打开新的终端标签页"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:69
@@ -43,27 +41,22 @@ msgstr "设置 Shell 工作目录"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:71
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "在终端运行程序"
+msgstr "在终端中运行程序"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:73
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "以最小化状态打开终端"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:76
-#, fuzzy
-#| msgid ""
-#| "Run remainder of line as a command in terminal. Can also use '--' as flag"
 msgid "Run remainder of line as a command in terminal"
-msgstr "在终端中以指令形式运行剩余指令。 也可以使用 '--' 作为前缀"
+msgstr "在终端中将本行剩下的部分作为命令运行"
 
 #: src/Application.vala:128
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- 指令…]"
 
 #: src/Application.vala:188
 msgid "Process completed"
