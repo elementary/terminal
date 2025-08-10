@@ -14,9 +14,6 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public const string PROCESS_COMPLETED_ICON_NAME = "process-completed-symbolic";
-    public const string PROCESS_ERROR_ICON_NAME = "process-error-symbolic";
-
     public bool is_testing { get; set construct; }
 
     private static Themes themes;
@@ -178,10 +175,10 @@ public class Terminal.Application : Gtk.Application {
             }
 
             var process_string = _("Process completed");
-            var process_icon = new ThemedIcon (PROCESS_COMPLETED_ICON_NAME);
+            var process_icon = new ThemedIcon ("process-completed-symbolic");
             if (exit_status != 0) {
                 process_string = _("Process exited with errors");
-                process_icon = new ThemedIcon (PROCESS_ERROR_ICON_NAME);
+                process_icon = new ThemedIcon ("process-error-symbolic");
             }
 
             if (terminal != terminal.main_window.current_terminal) {
