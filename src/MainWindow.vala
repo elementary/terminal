@@ -394,9 +394,15 @@ namespace Terminal {
                     return;
                 }
 
-
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
+
+                if (term.tab == null) {
+                    // Happens on opening window - ignore
+                    return;
+                }
+
+                term.tab.icon = null; // Assume only process icons are set
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
