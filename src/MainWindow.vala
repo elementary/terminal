@@ -396,6 +396,7 @@ namespace Terminal {
 
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
+
                 if (term.tab == null) {
                     // Happens on opening window - ignore
                     return;
