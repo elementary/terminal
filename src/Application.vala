@@ -1,6 +1,6 @@
 /*
- * Copyright 2011-2024 elementary, Inc. (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  */
 
 public class Terminal.Application : Gtk.Application {
@@ -46,9 +46,7 @@ public class Terminal.Application : Gtk.Application {
                 }
             }
 
-            Idle.add (() => {
-                window_to_present.present ();
-            });
+            window_to_present.present ();
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
@@ -187,7 +185,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!get_active_window ().is_active) {
+            if (!(get_active_window ().is_active)) {
                 var notification = new Notification (process_string);
                 notification.set_body (process);
                 notification.set_icon (process_icon);
@@ -206,7 +204,6 @@ public class Terminal.Application : Gtk.Application {
                         withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
                     }
                 });
-
             }
         });
 

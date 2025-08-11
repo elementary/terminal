@@ -48,6 +48,11 @@ namespace Terminal.Utils {
 
         } while (path.contains ("//"));
 
+        // If just basename of file then assume in current shell location
+        if (!path.contains (Path.DIR_SEPARATOR_S)) {
+            path = string.join (Path.DIR_SEPARATOR_S, ".", path);
+        }
+
         var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
         var index = 0;
         while (parts_sep[index] == null && index < parts_sep.length - 1) {

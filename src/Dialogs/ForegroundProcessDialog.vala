@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2011-2024 elementary LLC. (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2017 elementary, Inc. (https://elementary.io)
  */
 
 public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {

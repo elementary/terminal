@@ -1,7 +1,8 @@
 /*
- * Copyright 2022-2024 elementary, Inc. (https://elementary.io)
- * SPDX-License-Identifier: LGPL-3.0-only
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2022-2025 elementary, Inc. (https://elementary.io)
  */
+
 
 public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     private Gtk.ColorDialogButton black_button;
@@ -54,7 +55,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         palette_header.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
-            halign = Gtk.Align.END,
+            halign = END,
             margin_top = 12,
             margin_bottom = 6,
             tooltip_text = _("Reset to default")
@@ -329,6 +330,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         } else {
             color = Math.pow ((color + 0.055) / 1.055, 2.4);
         }
+
         return color;
     }
 

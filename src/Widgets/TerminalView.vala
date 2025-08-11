@@ -1,6 +1,6 @@
 /*
- * Copyright 2024 elementary, Inc. <https://elementary.io>
- * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024-2025 elementary, Inc. (https://elementary.io)
  */
 
 public class Terminal.TerminalView : Gtk.Box {
@@ -43,7 +43,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         hexpand = true;
         vexpand = true;
 
@@ -56,6 +56,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.setup_menu.connect (tab_view_setup_menu);
 
         var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
+            has_frame = false,
             tooltip_markup = Granite.markup_accel_tooltip (
                 app_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_TAB),
                 _("New Tab")
@@ -209,8 +210,8 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    private GLib.Menu create_menu_model () {
-        var menu = new GLib.Menu ();
+    private Menu create_menu_model () {
+        var menu = new Menu ();
 
         var close_tab_section = new Menu ();
         close_tab_section.append (_("Close Tabs to the Right"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT);

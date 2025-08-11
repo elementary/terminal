@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-31 15:47+0000\n"
-"PO-Revision-Date: 2025-01-08 15:52+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/terminal/extra/"
-"ru/>\n"
+"PO-Revision-Date: 2025-08-04 12:55+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
+"extra/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -53,12 +53,16 @@ msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
+"При вставке команды с опциями пропуска подтверждения теперь показывается "
+"предупреждение"
 
 #: data/io.elementary.terminal.appdata.xml.in:61
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
+"При запуске процесса название вкладки теперь соответствует названию "
+"запущенного процесса"
 
 #: data/io.elementary.terminal.appdata.xml.in:63
 #: data/io.elementary.terminal.appdata.xml.in:81
@@ -74,7 +78,7 @@ msgstr "Остальные обновления:"
 
 #: data/io.elementary.terminal.appdata.xml.in:65
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "Выход из оболочки теперь закрывает вкладку"
 
 #: data/io.elementary.terminal.appdata.xml.in:66
 #: data/io.elementary.terminal.appdata.xml.in:83

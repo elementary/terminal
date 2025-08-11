@@ -605,7 +605,7 @@ namespace Terminal {
                     Value val = Value (typeof (string));
                     content_provider.get_value (ref val);
                     var text = val.dup_string ();
-                    validated_feed (text);
+                    validated_paste (text);
                 } catch (Error e) {
                     warning ("Error getting clipboard content - %s", e.message);
                     return;
@@ -614,7 +614,7 @@ namespace Terminal {
                 clipboard.read_text_async.begin (null, (obj, res) => {
                     try {
                         var text = clipboard.read_text_async.end (res);
-                        validated_feed (text);
+                        validated_paste (text);
                     } catch (Error e) {
                         warning ("Error reading text from clipboard - %s", e.message);
                     }
@@ -623,7 +623,7 @@ namespace Terminal {
         }
 
         // Check pasted and dropped text before feeding to child;
-        private void validated_feed (string? text) {
+        private void validated_paste (string? text) {
             // Do nothing when text is invalid
             if (text == null || !text.validate ()) {
                 return;
@@ -631,8 +631,7 @@ namespace Terminal {
 
             // No user interaction because of user's preference
             if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
-                remember_command_start_position ();
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -641,8 +640,7 @@ namespace Terminal {
 
             // No user interaction for safe commands
             if (Utils.is_safe_paste (text, out warn_text_array)) {
-                remember_command_start_position ();
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -653,8 +651,7 @@ namespace Terminal {
             dialog.response.connect ((res) => {
                 dialog.destroy ();
                 if (res == Gtk.ResponseType.ACCEPT) {
-                    remember_command_start_position ();
-                    feed_child (text.data);
+                    paste_text (text);
                 }
             });
 
@@ -957,7 +954,7 @@ namespace Terminal {
                     }
                 } catch (Error e) {
                     // Validate non-uri text for safety before feeding
-                    validated_feed (uris[i]);
+                    validated_paste (uris[i]);
                 }
             }
 
