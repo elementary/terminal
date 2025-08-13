@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-12 14:38+0000\n"
-"PO-Revision-Date: 2025-08-10 03:55+0000\n"
+"PO-Revision-Date: 2025-08-14 08:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "l10n.elementaryos.org/projects/terminal/terminal/zh_Hans/>\n"
@@ -68,7 +68,7 @@ msgstr "进程因错误已退出"
 
 #: src/MainWindow.vala:155
 msgid "Show Search Bar"
-msgstr ""
+msgstr "显示搜索栏"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:162
@@ -81,11 +81,11 @@ msgstr "复制上次输出"
 
 #: src/MainWindow.vala:174
 msgid "Clear Screen"
-msgstr ""
+msgstr "清除界面"
 
 #: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: src/MainWindow.vala:186
 msgid "Paste"
@@ -96,10 +96,8 @@ msgid "Select All"
 msgstr "全选"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "全屏"
+msgstr "退出全屏"
 
 #: src/MainWindow.vala:307 src/MainWindow.vala:1070
 msgid "Find…"
@@ -150,7 +148,7 @@ msgstr "当前粘贴的文本可能会试图获取管理员权限"
 
 #: src/Utils.vala:159
 msgid "The pasted text includes a command to skip warnings and confirmations"
-msgstr ""
+msgstr "粘贴的文本中包含用来跳过警告和确认提示的指令"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:37
 msgid "Color Preferences"
@@ -199,59 +197,59 @@ msgstr "蓝色："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
-msgstr ""
+msgstr "紫："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
-msgstr ""
+msgstr "青："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
-msgstr ""
+msgstr "灰："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
-msgstr ""
+msgstr "白："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
-msgstr ""
+msgstr "亮红："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
-msgstr ""
+msgstr "亮绿："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
-msgstr ""
+msgstr "亮黄："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
-msgstr ""
+msgstr "亮蓝："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
-msgstr ""
+msgstr "亮紫："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
-msgstr ""
+msgstr "亮青："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
-msgstr ""
+msgstr "亮灰："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
-msgstr ""
+msgstr "背景："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
-msgstr ""
+msgstr "前景："
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
-msgstr ""
+msgstr "光标:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
@@ -259,11 +257,11 @@ msgstr "关闭"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is very low"
-msgstr ""
+msgstr "对比非常低"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is low"
-msgstr ""
+msgstr "对比很低"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is good"
@@ -274,14 +272,10 @@ msgid "Contrast is high"
 msgstr ""
 
 #: src/Dialogs/ForegroundProcessDialog.vala:23
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "此标签中有一个进程正在运行。如果您重新加载它，其中的进程将会结束。"
+msgstr "此标签页尚有执行中的程序。继续进行此操作将导致该程序终止。"
 
 #: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
@@ -316,16 +310,12 @@ msgid "Next result"
 msgstr "下一个结果"
 
 #: src/Widgets/SearchToolbar.vala:46
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "循环搜索"
+msgstr "禁用循环搜索"
 
 #: src/Widgets/SearchToolbar.vala:49
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "循环搜索"
+msgstr "启用循环搜索"
 
 #: src/Widgets/SettingsPopover.vala:31
 msgid "Zoom out"
@@ -367,17 +357,15 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "不安全的粘贴警告"
 
 #: src/Widgets/SettingsPopover.vala:109
-#, fuzzy
-#| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
-msgstr "当前粘贴的文本可能包含多个命令"
+msgstr "粘贴的文本可能包含多个指令或管理员指令时显示警告"
 
 #: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
-msgstr ""
+msgstr "事件警告"
 
 #: src/Widgets/SettingsPopover.vala:114
 msgid ""
@@ -390,50 +378,40 @@ msgid "Terminal"
 msgstr "终端"
 
 #: src/Widgets/TerminalWidget.vala:547
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "您确定要退出终端吗？"
+msgstr "您确定要重设终端吗？"
 
 #: src/Widgets/TerminalWidget.vala:946
 msgid "Are you sure you want to reload this tab?"
-msgstr "您确定要重新加载此标签吗？"
+msgstr "您确定要重新加载此标签页吗？"
 
 #: src/Widgets/TerminalWidget.vala:947
 msgid "Reload Tab"
-msgstr "重新加载标签"
+msgstr "重新加载标签页"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "新建标签页"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "关闭标签"
+msgstr "已关闭的标签页"
 
 #: src/Widgets/TerminalView.vala:218
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "关闭右方的标签页"
 
 #: src/Widgets/TerminalView.vala:219
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "关闭标签"
+msgstr "关闭其他标签页"
 
 #: src/Widgets/TerminalView.vala:223
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "新建窗口"
+msgstr "在新窗口中开启"
 
 #: src/Widgets/TerminalView.vala:224
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate Tab"
-msgstr "重复"
+msgstr "创建标签页副本"
 
 #: src/Widgets/TerminalView.vala:227
 msgid "Reload"
@@ -442,7 +420,7 @@ msgstr "重新加载"
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "缩放：%.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "标签中有正在运行的进程。"
