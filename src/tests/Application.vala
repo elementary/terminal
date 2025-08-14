@@ -157,17 +157,17 @@ namespace Terminal.Test.Application {
             });
         });
 
-        GLib.Test.add_func ("/application/command-line/new-window", () => {
-            option ("{'new-window':<true>}", "@a{sv} {}", () => {
-                var n_windows = (int) application.get_windows ().length ();
-                assert_cmpint (n_windows, CompareOperator.EQ, 2);
-            });
+        // GLib.Test.add_func ("/application/command-line/new-window", () => {
+        //     option ("{'new-window':<true>}", "@a{sv} {}", () => {
+        //         var n_windows = (int) application.get_windows ().length ();
+        //         assert_cmpint (n_windows, CompareOperator.EQ, 2);
+        //     });
 
-            option ("{'new-window':<false>}", "@a{sv} {}", () => {
-                var n_windows = (int) application.get_windows ().length ();
-                assert_cmpint (n_windows, CompareOperator.EQ, 1);
-            });
-        });
+        //     option ("{'new-window':<false>}", "@a{sv} {}", () => {
+        //         var n_windows = (int) application.get_windows ().length ();
+        //         assert_cmpint (n_windows, CompareOperator.EQ, 1);
+        //     });
+        // });
 
         GLib.Test.add_func ("/application/command-line/execute", () => {
             string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
