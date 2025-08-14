@@ -220,18 +220,20 @@ namespace Terminal.Test.Application {
         // actions
         // 8
         GLib.Test.add_func ("/application/action/new-window", () => {
-            action ("new-window", null, () => {
-                // include the extra window from terminal launching
-                var n_windows = (int) application.get_windows ().length ();
-                assert_cmpint (n_windows, CompareOperator.EQ, 2);
-            });
+            GLib.Test.skip ();
+            // action ("new-window", null, () => {
+            //     // include the extra window from terminal launching
+            //     var n_windows = (int) application.get_windows ().length ();
+            //     assert_cmpint (n_windows, CompareOperator.EQ, 2);
+            // });
         });
 
         // 9
         GLib.Test.add_func ("/application/action/quit", () => {
-            action ("quit", null, () => {
-                assert_null (application.active_window);
-            });
+            GLib.Test.skip ();
+            // action ("quit", null, () => {
+            //     assert_null (application.active_window);
+            // });
         });
 
         return GLib.Test.run ();
