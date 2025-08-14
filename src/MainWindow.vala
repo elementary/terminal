@@ -505,16 +505,6 @@ namespace Terminal {
 
             default_width = rect.width;
             default_height = rect.height;
-
-            if (default_width == -1 || default_height == -1) {
-                var monitor = get_display ().get_primary_monitor ();
-                if (monitor != null) {
-                    var geometry = monitor.get_geometry ();
-                    default_width = geometry.width * 2 / 3;
-                    default_height = geometry.height * 3 / 4;
-                }
-            }
-
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
             if (window_state == MainWindow.MAXIMIZED) {
                 maximize ();
