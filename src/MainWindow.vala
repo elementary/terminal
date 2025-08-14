@@ -303,7 +303,7 @@ namespace Terminal {
             search_button = new Gtk.ToggleButton () {
                 action_name = ACTION_PREFIX + ACTION_SEARCH,
                 image = new Gtk.Image.from_icon_name ("edit-find-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-                valign = Gtk.Align.CENTER,
+                valign = CENTER,
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
@@ -312,7 +312,7 @@ namespace Terminal {
                 image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
                 popover = new SettingsPopover (),
                 tooltip_text = _("Settings"),
-                valign = Gtk.Align.CENTER
+                valign = CENTER
             };
 
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
@@ -394,9 +394,15 @@ namespace Terminal {
                     return;
                 }
 
-
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
+
+                if (term.tab == null) {
+                    // Happens on opening window - ignore
+                    return;
+                }
+
+                term.tab.icon = null; // Assume only process icons are set
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
@@ -505,6 +511,7 @@ namespace Terminal {
             return false;
         }
 
+        //TODO Replace with separate window-width and window-height settings which are bound to the corresponding default properties
         private void restore_saved_state () {
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
@@ -513,10 +520,12 @@ namespace Terminal {
             default_height = rect.height;
 
             if (default_width == -1 || default_height == -1) {
-                var geometry = get_display ().get_primary_monitor ().get_geometry ();
-
-                default_width = geometry.width * 2 / 3;
-                default_height = geometry.height * 3 / 4;
+                var monitor = get_display ().get_primary_monitor ();
+                if (monitor != null) {
+                    var geometry = monitor.get_geometry ();
+                    default_width = geometry.width * 2 / 3;
+                    default_height = geometry.height * 3 / 4;
+                }
             }
 
             var window_state = Terminal.Application.saved_state.get_enum ("window-state");
@@ -624,6 +633,7 @@ namespace Terminal {
             return appinfo;
         }
 
+        //TODO Remove for Gtk4 and replace with bindings between settings and properties
         protected override bool configure_event (Gdk.EventConfigure event) {
             // triggered when the size, position or stacking of the window has changed
             // it is delayed 400ms to prevent spamming gsettings
@@ -889,6 +899,7 @@ namespace Terminal {
             }
         }
 
+        //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
         public bool on_delete_event () {
             //Avoid saved terminals being overwritten when tabs destroyed.
             notebook.tab_view.page_detached.disconnect (on_tab_removed);
@@ -916,14 +927,16 @@ namespace Terminal {
 
         private void action_open_in_browser () requires (current_terminal != null) {
             var uri = get_current_selection_link_or_pwd ();
-            string? to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location ());
-            if (to_open != null) {
+            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location (), true);
+            var context = Gdk.Display.get_default ().get_app_launch_context ();
+            AppInfo.launch_default_for_uri_async.begin (to_open, context, null, (obj, res) => {
                 try {
-                    Gtk.show_uri_on_window (null, to_open, Gtk.get_current_event_time ());
-                } catch (GLib.Error error) {
-                    warning ("Could not show %s - %s", to_open, error.message);
+                    AppInfo.launch_default_for_uri_async.end (res);
+                } catch (Error e) {
+                    warning ("Launcher failed with error %s", e.message);
+                    //TODO Handle launch failure - message box?
                 }
-            }
+            });
         }
 
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
