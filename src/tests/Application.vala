@@ -107,7 +107,7 @@ namespace Terminal.Test.Application {
         Environment.set_current_dir (Environment.get_home_dir ());
 
         // local command line: any instance from terminal
-        // 1 
+        // 1
         GLib.Test.add_func ("/application/cli/commandline", () => {
             cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
                 assert_true ("commandline" in dict);
@@ -127,7 +127,7 @@ namespace Terminal.Test.Application {
                 assert_cmpstr (commandline, CompareOperator.EQ, "echo true");
             });
         });
-        
+
         // 2
         GLib.Test.add_func ("/application/cli/working-directory", () => {
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
@@ -180,24 +180,24 @@ namespace Terminal.Test.Application {
 
         // 5
         GLib.Test.add_func ("/application/command-line/execute", () => {
-            GLib.Test.skip ();
-            // string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
+            // GLib.Test.skip ();
+            string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
-            // //valid
-            // option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
-            //     unowned var window = (MainWindow) application.active_window;
-            //     assert_nonnull (window);
-            //     var n_tabs = window.notebook.n_pages;
-            //     assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
-            // });
+            //valid
+            option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
+                unowned var window = (MainWindow) application.active_window;
+                assert_nonnull (window);
+                var n_tabs = window.notebook.n_pages;
+                assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
+            });
 
-            // // invalid
-            // option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
-            //     unowned var window = (MainWindow) application.active_window;
-            //     assert_nonnull (window);
-            //     var n_tabs = window.notebook.n_pages;
-            //     assert_cmpint (n_tabs, CompareOperator.EQ, 1);
-            // });
+            // invalid
+            option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
+                unowned var window = (MainWindow) application.active_window;
+                assert_nonnull (window);
+                var n_tabs = window.notebook.n_pages;
+                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
+            });
         });
 
         // 6
