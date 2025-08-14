@@ -1,6 +1,6 @@
-
-/* Copyright 2024 elementary, Inc. <https://elementary.io>
- * SPDX-License-Identifier: GPL-3.0-or-later
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2024-2025 elementary, Inc. (https://elementary.io)
  */
 
 public class Terminal.TerminalView : Gtk.Box {
@@ -30,7 +30,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public unowned MainWindow main_window { get; construct; }
-    public Hdy.TabView tab_view { get; construct; }
+    public Hdy.TabView tab_view { get; private set; }
     private Hdy.TabBar tab_bar;
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
@@ -43,7 +43,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
         hexpand = true;
         vexpand = true;
 
@@ -57,7 +57,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.setup_menu.connect (tab_view_setup_menu);
 
         var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
-            relief = Gtk.ReliefStyle.NONE,
+            relief = NONE,
             tooltip_markup = Granite.markup_accel_tooltip (
                 app_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_TAB),
                 _("New Tab")
@@ -66,9 +66,9 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         tab_history_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", Gtk.IconSize.MENU),
+            image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", MENU),
             tooltip_text = _("Closed Tabs"),
-            use_popover = false,
+            use_popover = false
         };
 
         tab_bar = new Hdy.TabBar () {
@@ -211,8 +211,8 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    private GLib.Menu create_menu_model () {
-        var menu = new GLib.Menu ();
+    private Menu create_menu_model () {
+        var menu = new Menu ();
 
         var close_tab_section = new Menu ();
         close_tab_section.append (_("Close Tabs to the Right"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT);
@@ -246,7 +246,7 @@ public class Terminal.TerminalView : Gtk.Box {
             var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
             // ACTION_NEW_TAB_AT only works with local paths to folders
             foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
+                var file = File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
                     return;
@@ -282,7 +282,7 @@ public class Terminal.TerminalView : Gtk.Box {
             var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
             // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
             foreach (var uri in uris) {
-                var file = GLib.File.new_for_uri (uri);
+                var file = File.new_for_uri (uri);
                 var scheme = file.get_uri_scheme ();
                 if (scheme != "file" && scheme != "") {
                     return;

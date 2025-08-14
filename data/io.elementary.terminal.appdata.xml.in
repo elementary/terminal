@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-light.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-find.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -53,6 +53,45 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.1" date="2025-08-10" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li></li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/861">Inconsistent line breaks when pasting</issue>
+        <issue url="https://github.com/elementary/terminal/issues/831">Process exit status icon remains forever</issue>
+      </issues>
+    </release>
+    <release version="7.1.0" date="2025-08-05" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>A warning is now given if a pasted command has an option that skips confirmations</li>
+          <li>When a foreground process is launched, the tab label changes to the name of that process</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Exiting the shell in a tab now closes that tab</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/873">Requires exit twice to close one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/872">Crash when exiting one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/865">Show all detected unsafe paste warnings</issue>
+        <issue url="https://github.com/elementary/terminal/issues/840">Title in titlebar not centered</issue>
+        <issue url="https://github.com/elementary/terminal/issues/698">When using screen tab title does not change</issue>
+        <issue url="https://github.com/elementary/terminal/issues/646">Terminal tab title no change when ssh server</issue>
+      </issues>
+    </release>
+
     <release version="7.0.0" date="2025-02-12" urgency="medium">
       <description>
         <p>Other updates:</p>

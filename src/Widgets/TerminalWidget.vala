@@ -589,12 +589,12 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {
-                validated_feed (text);
+                validated_paste (text);
             });
         }
 
         // Check pasted and dropped text before feeding to child;
-        private void validated_feed (string? text) {
+        private void validated_paste (string? text) {
             // Do nothing when text is invalid
             if (text == null || !text.validate ()) {
                 return;
@@ -602,7 +602,7 @@ namespace Terminal {
 
             // No user interaction because of user's preference
             if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -611,7 +611,7 @@ namespace Terminal {
 
             // No user interaction for safe commands
             if (Utils.is_safe_paste (text, out warn_text_array)) {
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -622,7 +622,7 @@ namespace Terminal {
             dialog.response.connect ((res) => {
                 dialog.destroy ();
                 if (res == Gtk.ResponseType.ACCEPT) {
-                    feed_child (text.data);
+                    paste_text (text);
                 }
             });
 
@@ -899,7 +899,7 @@ namespace Terminal {
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var text = selection_data.get_text ();
-                    validated_feed (text);
+                    validated_paste (text);
                     break;
             }
         }
