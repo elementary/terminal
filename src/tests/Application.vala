@@ -161,8 +161,9 @@ namespace Terminal.Test.Application {
             option ("{'new-window':<true>}", "@a{sv} {}", () => {
                 assert (application != null);
                 assert (application.get_windows () != null);
-                // var n_windows = (int) application.get_windows ().length ();
-                // assert_cmpint (n_windows, CompareOperator.EQ, 2);
+                var n_windows = (int) application.get_windows ().length ();
+                stdout.printf ("n_windows %u\n\n", n_windows);
+                assert_cmpint (n_windows, CompareOperator.EQ, 2);
             });
 
             option ("{'new-window':<false>}", "@a{sv} {}", () => {
