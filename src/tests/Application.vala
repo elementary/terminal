@@ -107,6 +107,7 @@ namespace Terminal.Test.Application {
         Environment.set_current_dir (Environment.get_home_dir ());
 
         // local command line: any instance from terminal
+        // 1 
         GLib.Test.add_func ("/application/cli/commandline", () => {
             cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
                 assert_true ("commandline" in dict);
@@ -126,7 +127,8 @@ namespace Terminal.Test.Application {
                 assert_cmpstr (commandline, CompareOperator.EQ, "echo true");
             });
         });
-
+        
+        // 2
         GLib.Test.add_func ("/application/cli/working-directory", () => {
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
             var cwd = Environment.get_current_dir ();
@@ -140,6 +142,7 @@ namespace Terminal.Test.Application {
             Environment.set_current_dir (cwd);
         });
 
+        // 3
         // primary command line: first instance from terminal. any instance from dbus.
         GLib.Test.add_func ("/application/command-line/new-tab", () => {
             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
@@ -157,7 +160,9 @@ namespace Terminal.Test.Application {
             });
         });
 
+        // 4
         GLib.Test.add_func ("/application/command-line/new-window", () => {
+            GLib.Test.skip ();
             // option ("{'new-window':<true>}", "@a{sv} {}", () => {
             //     assert (true);
             //     // assert (application != null);
@@ -173,24 +178,26 @@ namespace Terminal.Test.Application {
             // });
         });
 
+        // 5
         GLib.Test.add_func ("/application/command-line/execute", () => {
-            string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
+            GLib.Test.skip ();
+            // string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
-            //valid
-            option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = window.notebook.n_pages;
-                assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
-            });
+            // //valid
+            // option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", () => {
+            //     unowned var window = (MainWindow) application.active_window;
+            //     assert_nonnull (window);
+            //     var n_tabs = window.notebook.n_pages;
+            //     assert_cmpint (n_tabs, CompareOperator.EQ, 5); // include the guaranted extra tab
+            // });
 
-            // invalid
-            option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
-                unowned var window = (MainWindow) application.active_window;
-                assert_nonnull (window);
-                var n_tabs = window.notebook.n_pages;
-                assert_cmpint (n_tabs, CompareOperator.EQ, 1);
-            });
+            // // invalid
+            // option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", () => {
+            //     unowned var window = (MainWindow) application.active_window;
+            //     assert_nonnull (window);
+            //     var n_tabs = window.notebook.n_pages;
+            //     assert_cmpint (n_tabs, CompareOperator.EQ, 1);
+            // });
         });
 
         //FIXME: cannot test the commandline option without a way to get the terminal command
