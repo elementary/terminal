@@ -24,7 +24,7 @@ namespace Terminal.Test.Application {
     private void iterate_context () {
         unowned var context = MainContext.default ();
         bool done = false;
-        Timeout.add (200, () => {
+        Timeout.add (500, () => {
             done = true;
             context.wakeup ();
             return Source.REMOVE;

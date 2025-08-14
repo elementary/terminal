@@ -253,7 +253,7 @@ public class Terminal.Application : Gtk.Application {
                 dir = ((MainWindow)active_window).current_terminal.current_working_directory;
             }
 
-            var new_window = new MainWindow (this, active_window == null);
+            var new_window = new MainWindow (this, active_window == null && !is_testing);
             new_window.present ();
             new_window.set_size_request (
                 active_window.width_request,
@@ -291,7 +291,7 @@ public class Terminal.Application : Gtk.Application {
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
-            window = new MainWindow (this, is_first_window);
+            window = new MainWindow (this, is_first_window && !is_testing);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline

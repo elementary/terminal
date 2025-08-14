@@ -504,6 +504,10 @@ namespace Terminal {
 
         //TODO Replace with separate window-width and window-height settings which are bound to the corresponding default properties
         private void restore_saved_state () {
+            if (app.is_testing) {
+                return;
+            }
+
             var rect = Gdk.Rectangle ();
             Terminal.Application.saved_state.get ("window-size", "(ii)", out rect.width, out rect.height);
 
