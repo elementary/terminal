@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 15:47+0000\n"
+"POT-Creation-Date: 2025-08-12 14:38+0000\n"
 "PO-Revision-Date: 2025-04-03 16:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
@@ -21,49 +21,49 @@ msgstr ""
 "X-Generator: Weblate 5.10.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:63
+#: src/Application.vala:52
 msgid "Show version"
 msgstr "Показати версію"
 
 #. -n flag forces a new window
-#: src/Application.vala:65
+#: src/Application.vala:54
 msgid "Open a new terminal window"
 msgstr "Відкрити нове вікно терміналу"
 
 #. -t flag forces a new tab
-#: src/Application.vala:67
+#: src/Application.vala:56
 msgid "Open a new terminal tab at current working directory"
 msgstr "Відкрити нову вкладку термінала в поточній робочій директорії"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:69
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "Встановити робочу теку для оболонки"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:71
+#: src/Application.vala:60
 msgid "Run a program in terminal"
 msgstr "Запустити програму в терміналі"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:73
+#: src/Application.vala:62
 msgid "Open terminal in a minimized state"
 msgstr "Відкрити термінал у згорнутому стані"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:76
+#: src/Application.vala:65
 msgid "Run remainder of line as a command in terminal"
 msgstr "Запустити решту рядка як команду в терміналі"
 
-#: src/Application.vala:128
+#: src/Application.vala:117
 msgid "[-- COMMAND…]"
 msgstr "[-- COMMAND…]"
 
-#: src/Application.vala:188
+#: src/Application.vala:177
 msgid "Process completed"
 msgstr "Процес завершено"
 
-#: src/Application.vala:191
+#: src/Application.vala:180
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
@@ -100,7 +100,7 @@ msgstr "Виділити все"
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1057
+#: src/MainWindow.vala:307 src/MainWindow.vala:1070
 msgid "Find…"
 msgstr "Пошук…"
 
@@ -118,163 +118,163 @@ msgstr "Закрити вкладку"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:571
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:573
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:888
+#: src/MainWindow.vala:899
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:900
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
-#: src/MainWindow.vala:1048
+#: src/MainWindow.vala:1061
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
-#: src/Utils.vala:135
+#: src/Utils.vala:140
 msgid "The pasted text may contain multiple commands"
 msgstr "Вставлений текст може містити кілька команд"
 
-#: src/Utils.vala:139
+#: src/Utils.vala:144
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставлений текст може намагатися отримати доступ до прав адміністратора"
 
-#: src/Utils.vala:154
+#: src/Utils.vala:159
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 "Вставлений текст містить команду для пропуску попереджень і підтверджень"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:48
+#: src/Dialogs/ColorPreferencesDialog.vala:37
 msgid "Color Preferences"
 msgstr "Налаштування кольору"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:50
+#: src/Dialogs/ColorPreferencesDialog.vala:39
 msgid "Window style:"
 msgstr "Стиль вікна:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:57
+#: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
 msgstr "Світлий"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
 msgid "Dark"
 msgstr "Темна"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:62
+#: src/Dialogs/ColorPreferencesDialog.vala:51
 msgid "Color Palette"
 msgstr "Палітра кольорів"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:72
+#: src/Dialogs/ColorPreferencesDialog.vala:61
 msgid "Reset to default"
 msgstr "Відновити типові"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:75
+#: src/Dialogs/ColorPreferencesDialog.vala:64
 msgid "Black:"
 msgstr "Чорний:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:76
+#: src/Dialogs/ColorPreferencesDialog.vala:65
 msgid "Red:"
 msgstr "Червоний:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:77
+#: src/Dialogs/ColorPreferencesDialog.vala:66
 msgid "Green:"
 msgstr "Зелений:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:78
+#: src/Dialogs/ColorPreferencesDialog.vala:67
 msgid "Yellow:"
 msgstr "Жовтий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:79
+#: src/Dialogs/ColorPreferencesDialog.vala:68
 msgid "Blue:"
 msgstr "Блакитний:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:80
+#: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
 msgstr "Маджента:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:81
+#: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
 msgstr "Ціановий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:82
+#: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
 msgstr "Сірий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:83
+#: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
 msgstr "Білий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:84
+#: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
 msgstr "Світло-червоний:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:85
+#: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
 msgstr "Світло-зелений:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:86
+#: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
 msgstr "Світло-жовтий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:87
+#: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
 msgstr "Світло-синій:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:88
+#: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
 msgstr "Маджента світла:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:89
+#: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
 msgstr "Ціан світлий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:90
+#: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
 msgstr "Світло-сірий:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:91
+#: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
 msgstr "Тло:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:92
+#: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
 msgstr "Основний:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:93
+#: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
 msgstr "Курсор:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:190
+#: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
 msgstr "Закрити"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:310
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is very low"
 msgstr "Контрастність дуже низька"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:313
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is low"
 msgstr "Низька контрастність"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:316
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is good"
 msgstr "Хороша контрастність"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:319
+#: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is high"
 msgstr "Контрастність висока"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:37
+#: src/Dialogs/ForegroundProcessDialog.vala:23
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
@@ -282,7 +282,7 @@ msgstr ""
 "На цій вкладці термінала є активний процес. Якщо ви продовжите, процес "
 "завершиться."
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
@@ -290,90 +290,90 @@ msgstr ""
 "Копіювання команд до Термінала може бути небезпечним. Впевніться, що ви "
 "розумієте, що робить кожна з частин вставленого тексту перед продовженням."
 
-#: src/Dialogs/UnsafePasteDialog.vala:36
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
 msgstr "Показувати попередження про небезпеку вставлення"
 
-#: src/Dialogs/UnsafePasteDialog.vala:41
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr "Не вставляти"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr "Все одно вставити"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
 msgstr "Пошук"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr "Попередній результат"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
 msgstr "Наступний результат"
 
-#: src/Widgets/SearchToolbar.vala:59
+#: src/Widgets/SearchToolbar.vala:46
 msgid "Disable cyclic search"
 msgstr "Вимкнути циклічний пошук"
 
-#: src/Widgets/SearchToolbar.vala:62
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Enable cyclic search"
 msgstr "Увімкнути циклічний пошук"
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:31
 msgid "Zoom out"
 msgstr "Зменшити"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:39
 msgid "Default zoom level"
 msgstr "Типовий масштаб"
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:47
 msgid "Zoom in"
 msgstr "Збільшити"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:65
 msgid "Follow System Style"
 msgstr "Використовувати системний стиль"
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:70
 msgid "High Contrast"
 msgstr "Високий контраст"
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:74
 msgid "Solarized Light"
 msgstr "Solarized світла"
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:82
 msgid "Custom"
 msgstr "Власна"
 
-#: src/Widgets/SettingsPopover.vala:111
+#: src/Widgets/SettingsPopover.vala:103
 msgid "Natural Copy/Paste"
 msgstr "Звичайне копіювання/вставляння"
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Скорочення не потребують використання клавіші Shift; може вплинути на "
 "програми CLI"
 
-#: src/Widgets/SettingsPopover.vala:116
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
 msgstr "Застереження про небезпечне вставлення"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
 "Попереджати, якщо вставлений текст містить кілька або адміністративні команди"
 
-#: src/Widgets/SettingsPopover.vala:121
+#: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
 msgstr "Сповіщення про події"
 
-#: src/Widgets/SettingsPopover.vala:122
+#: src/Widgets/SettingsPopover.vala:114
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

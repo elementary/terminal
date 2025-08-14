@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 15:47+0000\n"
+"POT-Creation-Date: 2025-08-12 14:38+0000\n"
 "PO-Revision-Date: 2024-11-10 01:19+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
@@ -20,49 +20,49 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:63
+#: src/Application.vala:52
 msgid "Show version"
 msgstr "ვერსიის ჩვენება"
 
 #. -n flag forces a new window
-#: src/Application.vala:65
+#: src/Application.vala:54
 msgid "Open a new terminal window"
 msgstr "ტერმინალის ახალი ფანჯრის გახსნა"
 
 #. -t flag forces a new tab
-#: src/Application.vala:67
+#: src/Application.vala:56
 msgid "Open a new terminal tab at current working directory"
 msgstr "ტერმინალის ახალი ფანჯრის გახსნა მიმდინარე სამუშაო საქაღალდეში"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:69
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "გარსის სამუშაო საქაღალდის დაყენება"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:71
+#: src/Application.vala:60
 msgid "Run a program in terminal"
 msgstr "პროგრამის ტერმინალში გაშვება"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:73
+#: src/Application.vala:62
 msgid "Open terminal in a minimized state"
 msgstr "ტერმინალის ჩაკეცილ მდგომარეობაში გახსნა"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:76
+#: src/Application.vala:65
 msgid "Run remainder of line as a command in terminal"
 msgstr "დარჩენილი ხაზების ტერმინალში ბრძანების სახით გაშვება"
 
-#: src/Application.vala:128
+#: src/Application.vala:117
 msgid "[-- COMMAND…]"
 msgstr "[-- ბრძანება…]"
 
-#: src/Application.vala:188
+#: src/Application.vala:177
 msgid "Process completed"
 msgstr "პროცესი დასრულდა"
 
-#: src/Application.vala:191
+#: src/Application.vala:180
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
@@ -99,7 +99,7 @@ msgstr "ყველაფრის მონიშვნა"
 msgid "Exit FullScreen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1057
+#: src/MainWindow.vala:307 src/MainWindow.vala:1070
 msgid "Find…"
 msgstr "ძიება…"
 
@@ -117,161 +117,161 @@ msgstr "ჩანართის დახურვა"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:571
 #, c-format
 msgid "Show in %s"
 msgstr "%s-ში ჩვენება"
 
-#: src/MainWindow.vala:564
+#: src/MainWindow.vala:573
 msgid "Default application"
 msgstr "ნაგულისხმები აპლიკაცია"
 
-#: src/MainWindow.vala:888
+#: src/MainWindow.vala:899
 msgid "Are you sure you want to quit Terminal?"
 msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:900
 msgid "Quit Terminal"
 msgstr "ტერმინალიდან გამოსვლა"
 
-#: src/MainWindow.vala:1048
+#: src/MainWindow.vala:1061
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
-#: src/Utils.vala:135
+#: src/Utils.vala:140
 msgid "The pasted text may contain multiple commands"
 msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრანებას შეიცავდეს"
 
-#: src/Utils.vala:139
+#: src/Utils.vala:144
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "ჩასმულ ტექსტი შეიძლება ადმინისტრატორის პრივილეგიების მიღებას ცდილობს"
 
-#: src/Utils.vala:154
+#: src/Utils.vala:159
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:48
+#: src/Dialogs/ColorPreferencesDialog.vala:37
 msgid "Color Preferences"
 msgstr "ფერების მორგება"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:50
+#: src/Dialogs/ColorPreferencesDialog.vala:39
 msgid "Window style:"
 msgstr "ფანჯრის სტილი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:57
+#: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
 msgstr "ღია"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
 msgid "Dark"
 msgstr "ბნელი"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:62
+#: src/Dialogs/ColorPreferencesDialog.vala:51
 msgid "Color Palette"
 msgstr "ფერის პალიტრა"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:72
+#: src/Dialogs/ColorPreferencesDialog.vala:61
 msgid "Reset to default"
 msgstr "ნაგულისხმებ მნიშვნელობაზე დაბრუნება"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:75
+#: src/Dialogs/ColorPreferencesDialog.vala:64
 msgid "Black:"
 msgstr "შავი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:76
+#: src/Dialogs/ColorPreferencesDialog.vala:65
 msgid "Red:"
 msgstr "წითელი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:77
+#: src/Dialogs/ColorPreferencesDialog.vala:66
 msgid "Green:"
 msgstr "მწვანე:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:78
+#: src/Dialogs/ColorPreferencesDialog.vala:67
 msgid "Yellow:"
 msgstr "ყვითელი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:79
+#: src/Dialogs/ColorPreferencesDialog.vala:68
 msgid "Blue:"
 msgstr "ლურჯი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:80
+#: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
 msgstr "ალისფერი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:81
+#: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
 msgstr "ცისფ:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:82
+#: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
 msgstr "ნაცრისფერი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:83
+#: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
 msgstr "თეთრი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:84
+#: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
 msgstr "ღია წითელი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:85
+#: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
 msgstr "ღია მწვანე:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:86
+#: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
 msgstr "ღია ყვითელი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:87
+#: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
 msgstr "ღია ლურჯი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:88
+#: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
 msgstr "ღია ალისფერი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:89
+#: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
 msgstr "ღია ცისფერი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:90
+#: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
 msgstr "ღია ნაცრისფერი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:91
+#: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
 msgstr "ფონი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:92
+#: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
 msgstr "წინა პლანი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:93
+#: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
 msgstr "კურსორი:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:190
+#: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
 msgstr "დახურვა"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:310
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is very low"
 msgstr "კონტრასტი ძალიან დაბალია"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:313
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is low"
 msgstr "კონტრასტი დაბალია"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:316
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is good"
 msgstr "კონტრასტი კარგია"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:319
+#: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is high"
 msgstr "კონტრასტი მაღალია"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:37
+#: src/Dialogs/ForegroundProcessDialog.vala:23
 #, fuzzy
 #| msgid ""
 #| "There is an active process on this tab. If you reload it, the process "
@@ -283,7 +283,7 @@ msgstr ""
 "ამ ჩანართში პროცესია გაშვებული. თუ მას თავიდან ჩატვირთავთ, პროცესი "
 "დასრულდება."
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
@@ -291,88 +291,88 @@ msgstr ""
 "ბრძანებების ტერმინალში კოპირება შეიძლება საშიში იყოს. გაგრძელებამდე "
 "დარწმუნდით, რომ ჩასმული ტექსტის ყველა ნაწილი გესმით."
 
-#: src/Dialogs/UnsafePasteDialog.vala:36
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
 msgstr "ჩასმის უსაფრთხოების გაფრთხილებების ჩვენება"
 
-#: src/Dialogs/UnsafePasteDialog.vala:41
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr "არ ჩასვა"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr "მაინც ჩასმა"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
 msgstr "მოძებნა"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr "წინა შედეგი"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
 msgstr "მომდევნო შედეგი"
 
-#: src/Widgets/SearchToolbar.vala:59
+#: src/Widgets/SearchToolbar.vala:46
 msgid "Disable cyclic search"
 msgstr "ციკლური ძებნის გამორთვა"
 
-#: src/Widgets/SearchToolbar.vala:62
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Enable cyclic search"
 msgstr "ციკლური ძებნის ჩართვა"
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:31
 msgid "Zoom out"
 msgstr "დაპატარავება"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:39
 msgid "Default zoom level"
 msgstr "მასშტაბის ნაგულისხმევი დონე"
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:47
 msgid "Zoom in"
 msgstr "გადიდება"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:65
 msgid "Follow System Style"
 msgstr "სისტემის სტილის მიყოლა"
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:70
 msgid "High Contrast"
 msgstr "მაღალი კონტრასტი"
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:74
 msgid "Solarized Light"
 msgstr "სოლარიზებული ღია"
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:82
 msgid "Custom"
 msgstr "სხვა"
 
-#: src/Widgets/SettingsPopover.vala:111
+#: src/Widgets/SettingsPopover.vala:103
 msgid "Natural Copy/Paste"
 msgstr "ბუნებრივი კოპირება/ჩასმა"
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "მალსახმობებს Shift-ი არ სჭირდება. მან შეიძლება CLI-ის აპებს ხელი შეუშალოს"
 
-#: src/Widgets/SettingsPopover.vala:116
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
 msgstr "საშიში ჩასმის განგაში"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr "ჩასმული ტექსტი შეიძლება ბევრ ბრძანებას შეიცავდეს"
 
-#: src/Widgets/SettingsPopover.vala:121
+#: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
 msgstr "მოვლენის განგაშები"
 
-#: src/Widgets/SettingsPopover.vala:122
+#: src/Widgets/SettingsPopover.vala:114
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"

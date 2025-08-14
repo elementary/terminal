@@ -53,6 +53,22 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.1" date="2025-08-10" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li></li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/861">Inconsistent line breaks when pasting</issue>
+        <issue url="https://github.com/elementary/terminal/issues/831">Process exit status icon remains forever</issue>
+      </issues>
+    </release>
     <release version="7.1.0" date="2025-08-05" urgency="medium">
       <description>
         <p>New features:</p>
