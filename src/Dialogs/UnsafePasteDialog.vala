@@ -24,13 +24,12 @@ public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
 
-        custom_bin.add (show_protection_warnings);
-        custom_bin.show_all ();
+        custom_bin.append (show_protection_warnings);
 
         add_button (_("Don't Paste"), Gtk.ResponseType.CANCEL);
 
         var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), Gtk.ResponseType.ACCEPT);
-        ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         set_default_response (Gtk.ResponseType.CANCEL);
 
