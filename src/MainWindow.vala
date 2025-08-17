@@ -717,6 +717,12 @@ namespace Terminal {
             if (focus_restored_tabs) {
                 var tab = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
                 notebook.selected_page = tab;
+                // On start up the "selected-page" notify signal is not always emitted/received
+                // for the first tab so focus the terminal explicitly
+                //TODO This may be a feature of the Hdy.TabView so review this on port to
+                // Gtk4.
+                var term = get_term_widget (notebook.tab_view.selected_page);
+                term.grab_focus ();
             }
         }
 
