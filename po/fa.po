@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-08-17 12:52+0000\n"
 "PO-Revision-Date: 2018-01-01 00:01+0000\n"
 "Last-Translator: awat (ئاوات ) <ali.aliyan1@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/terminal/"
@@ -107,7 +107,7 @@ msgstr "انتخاب همه"
 msgid "Exit FullScreen"
 msgstr "تمام‌صفحه"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1060
 msgid "Find…"
 msgstr "پیدا کردن…"
 
@@ -125,24 +125,24 @@ msgstr "بستن برگه"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:561
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:563
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "آیا واقعاً می‌خواهید از ترمینال خارج شوید؟"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "خروج از ترمینال"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1051
 msgid "Hide find bar"
 msgstr ""
 
@@ -391,13 +391,13 @@ msgstr "ترمینال"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "آیا واقعاً می‌خواهید از ترمینال خارج شوید؟"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:945
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "آیا واقعاً می‌خواهید این برگه را ببندید؟"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:946
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"

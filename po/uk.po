@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-08-17 12:52+0000\n"
 "PO-Revision-Date: 2025-04-03 16:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
@@ -100,7 +100,7 @@ msgstr "Виділити все"
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1060
 msgid "Find…"
 msgstr "Пошук…"
 
@@ -118,24 +118,24 @@ msgstr "Закрити вкладку"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:561
 #, c-format
 msgid "Show in %s"
 msgstr "Показати в %s"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:563
 msgid "Default application"
 msgstr "Типовий застосунок"
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Ви впевнені, що бажаєте вийти з Терміналу?"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Вийти з Терміналу"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1051
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -389,11 +389,11 @@ msgstr "Термінал"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Ви впевнені, що хочете скинути термінал?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:945
 msgid "Are you sure you want to reload this tab?"
 msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:946
 msgid "Reload Tab"
 msgstr "Перезавантажити вкладку"
 
