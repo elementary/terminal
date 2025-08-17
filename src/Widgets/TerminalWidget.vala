@@ -835,7 +835,6 @@ namespace Terminal {
                 case DropTargets.URILIST:
                     var uris = selection_data.get_uris ();
                     string path;
-                    File file;
                     for (var i = 0; i < uris.length; i++) {
                         // Get unquoted path as some apps may drop uris that are escaped
                         // and quoted.
@@ -846,10 +845,10 @@ namespace Terminal {
                             warning ("Error unquoting %s. %s", uris[i], e.message);
                             unquoted_uri = uris[i];
                         }
-                        // Sanitize the path as we do not want the `file://` scheme included
-                        // and we assume dropped paths are absolute.
-                        file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
-                        path = file.get_path ();
+
+                        // Get path as we do not want the `file://` scheme included
+                        // and we assume dropped paths are absolute so no need for Utils.sanitize_path
+                        path = File.new_for_uri (unquoted_uri).get_path ();
                         if (path != null) {
                             uris[i] = Shell.quote (path) + " ";
                         } else {
