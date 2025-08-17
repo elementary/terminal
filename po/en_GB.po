@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-08-17 12:52+0000\n"
 "PO-Revision-Date: 2025-04-03 16:55+0000\n"
 "Last-Translator: Jeremy Wootten <jeremywootten@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementaryos.org/"
@@ -99,7 +99,7 @@ msgstr "Select All"
 msgid "Exit FullScreen"
 msgstr "Exit FullScreen"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1060
 msgid "Find…"
 msgstr "Find…"
 
@@ -117,24 +117,24 @@ msgstr "Close Tab"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:561
 #, c-format
 msgid "Show in %s"
 msgstr "Show in %s"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:563
 msgid "Default application"
 msgstr "Default application"
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Are you sure you want to quit Terminal?"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Quit Terminal"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1051
 msgid "Hide find bar"
 msgstr "Hide find bar"
 
@@ -383,11 +383,11 @@ msgstr "Terminal"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Are you sure you want to reset the terminal?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:945
 msgid "Are you sure you want to reload this tab?"
 msgstr "Are you sure you want to reload this tab?"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:946
 msgid "Reload Tab"
 msgstr "Reload Tab"
 
