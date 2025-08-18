@@ -100,6 +100,12 @@ namespace Terminal.Test.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
 
         GLib.Test.init (ref args);
+        // Init Gtk here so we can check for existence of display
+        Gtk.init (ref args);
+
+        if (Gdk.Display.get_default () == null) {
+            return 0;
+        }
 
         /* MainWindow always create a tab in home, make it the current dir
          * so that we don't create a extra tab during tests
