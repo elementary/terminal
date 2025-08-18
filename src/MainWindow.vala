@@ -243,6 +243,9 @@ namespace Terminal {
                 open_tabs ();
             }
 
+            var term = get_term_widget (notebook.tab_view.selected_page);
+            term.grab_focus ();
+
             delete_event.connect (on_delete_event);
         }
 
@@ -721,8 +724,6 @@ namespace Terminal {
                 // for the first tab so focus the terminal explicitly
                 //TODO This may be a feature of the Hdy.TabView so review this on port to
                 // Gtk4.
-                var term = get_term_widget (notebook.tab_view.selected_page);
-                term.grab_focus ();
             }
         }
 
