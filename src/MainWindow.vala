@@ -389,16 +389,19 @@ namespace Terminal {
                 current_terminal = term;
                 zoom_overlay.hide_zoom_level ();
 
+                // Happens on closing window - ignore
                 if (term == null) {
-                    // Happens on closing window - ignore
                     return;
                 }
 
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
 
+                // Happens on opening window
                 if (term.tab == null) {
-                    // Happens on opening window - ignore
+                    // The search button is focused by default when opening new window
+                    term.grab_focus ();
+
                     return;
                 }
 
