@@ -102,7 +102,6 @@ namespace Terminal.Test.Application {
 
         GLib.Test.init (ref args);
 
-
         /* MainWindow always create a tab in home, make it the current dir
          * so that we don't create a extra tab during tests
          */
