@@ -110,15 +110,7 @@ namespace Terminal.Test.Application {
 
         GLib.Test.add_func ("/application/test-display", () => {
             Terminal.Test.Application.has_display = true;
-            Gdk.set_allowed_backends ("x11");
-            var x11_display = Gdk.Display.open (null);
-            if (x11_display == null) {
-                Gdk.set_allowed_backends ("wayland");
-                var wayland_display = Gdk.Display.open (null);
-                if (wayland_display == null) {
-                    Terminal.Test.Application.has_display = false;
-                }
-            }
+            has_display = Gdk.Display.open (null) != null;
         });
 
         // local command line: any instance from terminal
