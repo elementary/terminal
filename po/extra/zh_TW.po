@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-17 12:52+0000\n"
-"PO-Revision-Date: 2025-01-16 18:12+0000\n"
+"PO-Revision-Date: 2025-08-22 15:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
-"projects/terminal/extra/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://"
+"l10n.elementaryos.org/projects/terminal/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/io.elementary.terminal.appdata.xml.in:10
@@ -77,17 +77,17 @@ msgstr "新功能："
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
-msgstr ""
+msgstr "在貼上的指令當中包含跳過確認的選項時提供警告"
 
 #: data/io.elementary.terminal.appdata.xml.in:74
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
-msgstr ""
+msgstr "啟動前景程序後，分頁標籤會變為該程序的名稱"
 
 #: data/io.elementary.terminal.appdata.xml.in:78
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "在分頁中離開 shell 之後會關閉分頁"
 
 #: data/io.elementary.terminal.appdata.xml.in:109
 msgid "Stop window size increasing when opened"
