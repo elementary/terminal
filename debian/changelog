@@ -1,3 +1,9 @@
+io.elementary.terminal (7.1.1) jammy; urgency=medium
+
+  * Release version 7.1.1 (#905)
+
+ -- elementary, Inc. <builds@elementary.io>  Fri, 22 Aug 2025 14:49:20 +0000
+
 io.elementary.terminal (7.1.0) jammy; urgency=medium
 
   * Release 7.1.0
