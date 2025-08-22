@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-08-17 12:52+0000\n"
 "PO-Revision-Date: 2020-05-12 15:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -109,7 +109,7 @@ msgstr "اختر الكل"
 msgid "Exit FullScreen"
 msgstr "ملء الشاشة"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1060
 msgid "Find…"
 msgstr "ابحث…"
 
@@ -127,25 +127,25 @@ msgstr "إغلاق تبويب"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:561
 #, fuzzy, c-format
 #| msgid "Show version"
 msgid "Show in %s"
 msgstr "إظهار الإصدار"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:563
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "هل أنت متأكد من أنك تريد اغلاق هذه الطرفية؟"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "اغلاق الطرفية"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1051
 msgid "Hide find bar"
 msgstr "اخفاء شريط البحث"
 
@@ -392,13 +392,13 @@ msgstr "الطرفية"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "هل أنت متأكد من أنك تريد اغلاق هذه الطرفية؟"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:945
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "هل أنت متأكد من أنك تريد اغلاق هذا التبويب؟"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:946
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"

@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-light.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-find.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.0/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -53,18 +53,15 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
-    <release version="7.1.1" date="2025-08-10" urgency="medium">
+    <release version="7.1.1" date="2025-08-22" urgency="medium">
       <description>
-        <p>New features:</p>
-        <ul>
-          <li></li>
-        </ul>
         <p>Other updates:</p>
         <ul>
           <li>Translation updates</li>
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/terminal/issues/876">Dropping a file with '#' in the name causes truncation</issue>
         <issue url="https://github.com/elementary/terminal/issues/861">Inconsistent line breaks when pasting</issue>
         <issue url="https://github.com/elementary/terminal/issues/831">Process exit status icon remains forever</issue>
       </issues>
