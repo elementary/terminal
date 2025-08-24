@@ -313,8 +313,6 @@ namespace Terminal {
             search_toolbar.width_request = 300;
             title_stack.add_child (title_label);
             title_stack.add_child (search_toolbar);
-            // Must show children before visible_child can be set
-            // We set visible child here to avoid transition being visible on startup.
             title_stack.visible_child = title_label;
 
             //TODO Checkout height of header is not larger than necessary (see https://github.com/elementary/terminal/pull/291)
