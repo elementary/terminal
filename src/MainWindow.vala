@@ -756,6 +756,7 @@ namespace Terminal {
                 vadjustment = term.get_vadjustment (),
                 child = term
             };
+
             var tab = notebook.tab_view.insert (sw, pos);
             tab.title = label;
             tab.tooltip = term.current_working_directory;
