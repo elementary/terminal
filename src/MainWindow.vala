@@ -307,12 +307,15 @@ namespace Terminal {
                 single_line_mode = true,
                 ellipsize = Pango.EllipsizeMode.END
             };
+
             title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
+
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN,
                 hhomogeneous = false,
                 hexpand = false
             };
+
             title_stack.add_child (title_label);
             title_stack.add_child (search_toolbar);
             title_stack.visible_child = title_label;
