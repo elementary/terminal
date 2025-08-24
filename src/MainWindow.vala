@@ -298,7 +298,10 @@ namespace Terminal {
                 valign = CENTER
             };
 
-            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
+            search_toolbar = new Terminal.Widgets.SearchToolbar (this) {
+                width_request = 300
+            };
+
             title_label = new Gtk.Label (title) {
                 wrap = false,
                 single_line_mode = true,
@@ -310,7 +313,6 @@ namespace Terminal {
                 hhomogeneous = false,
                 hexpand = false
             };
-            search_toolbar.width_request = 300;
             title_stack.add_child (title_label);
             title_stack.add_child (search_toolbar);
             title_stack.visible_child = title_label;
