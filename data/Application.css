@@ -18,7 +18,6 @@ vte-terminal {
 }
 
 .color-button radio {
-    padding: 10px;
     -gtk-icon-shadow: none;
 }
 

@@ -170,7 +170,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         public string theme { get; construct; }
 
         private const string STYLE_CSS = """
-            .color-button.%s check {
+            .color-button.%s radio {
                 background-color: %s;
                 color: %s;
                 padding: 0.8rem; /* FIXME: Remove during GTK4 port */
