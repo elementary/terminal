@@ -136,7 +136,9 @@ namespace Terminal.Utils {
      */
     public bool is_safe_paste (string text, out string[]? msg_array) {
         string[] msgs = {};
-        if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
+        var newline_index = text.index_of ("\n"); // First occurrence of new line
+        bool embedded_newline = newline_index >= 0 && newline_index < text.length - 1;
+        if (embedded_newline || "&" in text || "|" in text || ";" in text ) {
             msgs += _("The pasted text may contain multiple commands");
         }
 
