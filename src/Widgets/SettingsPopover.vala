@@ -19,7 +19,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     private const string ACTION_GROUP_NAME = "settings";
 
     private BindingGroup terminal_binding;
-    public Gtk.Box theme_buttons { get; private set; }
 
     construct {
         var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
@@ -28,7 +27,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom out")
             )
         };
-
         zoom_out_button.clicked.connect (() => terminal.decrease_font_size ());
 
         var zoom_default_button = new Gtk.Button () {
@@ -37,7 +35,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Default zoom level")
             )
         };
-
         zoom_default_button.clicked.connect (() => terminal.default_font_size ());
 
         var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic") {
@@ -46,7 +43,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 _("Zoom in")
             )
         };
-
         zoom_in_button.clicked.connect (() => terminal.increase_font_size ());
 
         var font_size_box = new Gtk.Box (HORIZONTAL, 0) {
@@ -82,7 +78,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             tooltip_text = _("Custom")
         };
 
-        theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
+        var theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
             homogeneous = true,
             margin_bottom = 6,
             margin_top = 6
