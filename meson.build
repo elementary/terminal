@@ -15,6 +15,12 @@ endif
 gnome = import('gnome')
 i18n = import('i18n')
 
+glib_version = '>=2.50'
+glib_dep = dependency('glib-2.0', version: glib_version)
+gobject_dep = dependency('gobject-2.0', version: glib_version)
+gio_dep = dependency('gio-2.0', version: glib_version)
+gee_dep = dependency('gee-0.8')
+gtk_dep = dependency('gtk4', version: '>=4.1')
 granite_dep = dependency('granite-7', version: '>=7.5')
 adwaita_dep = dependency('libadwaita-1', version: '>=1.5')
 vte_dep = dependency('vte-2.91-gtk4', version: '>=0.76')
@@ -35,9 +41,9 @@ add_project_arguments(
     language: 'vala'
 )
 
-# if glib_dep.version().version_compare('>=2.73.2')
+if glib_dep.version().version_compare('>=2.73.2')
     add_project_arguments('--define', 'HAS_GLIB_2_74', language: 'vala')
-# endif
+endif
 
 if linux_dep.found()
     add_project_arguments('--define', 'HAS_LINUX', language: 'vala')
