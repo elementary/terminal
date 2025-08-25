@@ -1,6 +1,6 @@
-
-/* Copyright (c) 2011-2024 elementary LLC. (https://elementary.io)
- * SPDX-License-Identifier: GPL-3.0-or-later
+/*
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  */
 
 namespace Terminal {
