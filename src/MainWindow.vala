@@ -307,7 +307,6 @@ namespace Terminal {
                 single_line_mode = true,
                 ellipsize = Pango.EllipsizeMode.END
             };
-
             title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
             title_stack = new Gtk.Stack () {
@@ -320,14 +319,13 @@ namespace Terminal {
             title_stack.add_child (search_toolbar);
             title_stack.visible_child = title_label;
 
-            //TODO Checkout height of header is not larger than necessary (see https://github.com/elementary/terminal/pull/291)
-            header = new Adw.HeaderBar ();
+            header = new Adw.HeaderBar () {
+                title_widget = title_stack
+            };
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
-            header.title_widget = title_stack;
-
-            add_css_class ("default-decoration");
+            header.add_css_class ("default-decoration");
 
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
