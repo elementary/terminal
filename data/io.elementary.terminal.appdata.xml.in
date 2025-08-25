@@ -53,6 +53,18 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.2" date="2025-08-25" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/891">Pasting text with trailing newline(s) trigger multiple command warning</issue>
+      </issues>
+    </release>
+
     <release version="7.1.1" date="2025-08-22" urgency="medium">
       <description>
         <p>Other updates:</p>
