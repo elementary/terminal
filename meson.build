@@ -52,7 +52,6 @@ endif
 add_project_arguments(
     '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
     '-DPCRE2_CODE_UNIT_WIDTH=0',
-    # '-DHANDY_USE_UNSTABLE_API',
     language:'c'
 )
 
