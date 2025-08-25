@@ -20,8 +20,8 @@ i18n.merge_file(
 )
 
 i18n.merge_file(
-    input: meson.project_name() + '.appdata.xml.in',
-    output: '@BASENAME@',
+    input: 'terminal.metainfo.xml.in',
+    output: meson.project_name() + '.metainfo.xml.in',
     po_dir: podir / 'extra',
     install: true,
     install_dir: datadir / 'metainfo'
