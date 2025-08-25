@@ -96,6 +96,7 @@ namespace Terminal.Test.Application {
         }
     }
 
+    public static bool has_display = true;
     public static int main (string[] args) {
         Intl.setlocale (LocaleCategory.ALL, "");
 
@@ -106,8 +107,18 @@ namespace Terminal.Test.Application {
          */
         Environment.set_current_dir (Environment.get_home_dir ());
 
+        GLib.Test.add_func ("/application/test-display", () => {
+            Terminal.Test.Application.has_display = true;
+            has_display = Gdk.Display.open (null) != null;
+        });
+
         // local command line: any instance from terminal
         GLib.Test.add_func ("/application/cli/commandline", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+                return;
+            }
+
             cli ({ "io.elementary.terminal", "--commandline=true" }, (dict) => {
                 assert_true ("commandline" in dict);
                 unowned var commandline = dict.lookup_value ("commandline", null).get_bytestring ();
@@ -128,6 +139,12 @@ namespace Terminal.Test.Application {
         });
 
         GLib.Test.add_func ("/application/cli/working-directory", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
             var cwd = Environment.get_current_dir ();
 
@@ -142,6 +159,12 @@ namespace Terminal.Test.Application {
 
         // primary command line: first instance from terminal. any instance from dbus.
         GLib.Test.add_func ("/application/command-line/new-tab", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             option ("{'new-tab':<true>}", "@a{sv} {}", () => {
                 unowned var window = (MainWindow) application.active_window;
                 assert_nonnull (window);
@@ -158,6 +181,12 @@ namespace Terminal.Test.Application {
         });
 
         GLib.Test.add_func ("/application/command-line/new-window", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             option ("{'new-window':<true>}", "@a{sv} {}", () => {
                 var n_windows = (int) application.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
@@ -170,6 +199,12 @@ namespace Terminal.Test.Application {
         });
 
         GLib.Test.add_func ("/application/command-line/execute", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
             //valid
@@ -193,6 +228,12 @@ namespace Terminal.Test.Application {
         GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
 
         GLib.Test.add_func ("/application/command-line/platform-data/cwd", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
 
             option ("{'new-tab':<true>}", "{'cwd':<b'%s'>}".printf (working_directory), () => {
@@ -205,6 +246,12 @@ namespace Terminal.Test.Application {
 
         // actions
         GLib.Test.add_func ("/application/action/new-window", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             action ("new-window", null, () => {
                 // include the extra window from terminal launching
                 var n_windows = (int) application.get_windows ().length ();
@@ -213,6 +260,12 @@ namespace Terminal.Test.Application {
         });
 
         GLib.Test.add_func ("/application/action/quit", () => {
+            if (!has_display) {
+                GLib.Test.skip ();
+
+                return;
+            }
+
             action ("quit", null, () => {
                 assert_null (application.active_window);
             });
