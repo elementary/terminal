@@ -422,8 +422,10 @@ namespace Terminal {
                     break;
 
                 default:
-                    if (!(control_pressed || shift_pressed) ||
-                        !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                    if (
+                        !(control_pressed || shift_pressed) ||
+                        !(Gtk.accelerator_get_default_mod_mask () in modifiers)
+                    ) {
 
                         remember_command_start_position ();
                     }
@@ -463,8 +465,10 @@ namespace Terminal {
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
-                } else if (match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
-                           clipboard.get_formats ().contain_gtype (Type.STRING)) {
+                } else if (
+                    match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
+                    clipboard.get_formats ().contain_gtype (Type.STRING)
+                ) {
 
                     paste_clipboard ();
                     return true;
@@ -512,10 +516,10 @@ namespace Terminal {
             //FIXME Gtk4 Port:For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
             // does not work at the moment so create our own.
             var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
-                has_arrow = false
+                has_arrow = false,
+                pointing_to = { (int)x, (int)y, 1, 1}
             };
             new_context_menu.set_parent (this);
-            new_context_menu.set_pointing_to ({ (int)x, (int)y, 1, 1});
             new_context_menu.closed.connect (() => new_context_menu.destroy ());
             new_context_menu.popup ();
         }
@@ -667,12 +671,11 @@ namespace Terminal {
         }
 
         private void update_theme () {
+            var gtk_settings = Gtk.Settings.get_default ();
             var theme_palette = new Gdk.RGBA[Themes.PALETTE_SIZE];
             if (Application.settings.get_boolean ("follow-system-style")) {
                 var system_prefers_dark = Granite.Settings.get_default ().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
-                Adw.StyleManager.get_default ().set_color_scheme (
-                    system_prefers_dark ? Adw.ColorScheme.PREFER_DARK : Adw.ColorScheme.PREFER_LIGHT
-                );
+                gtk_settings.gtk_application_prefer_dark_theme = system_prefers_dark;
 
                 if (system_prefers_dark) {
                     theme_palette = Themes.get_rgba_palette (Themes.DARK);
@@ -680,10 +683,7 @@ namespace Terminal {
                     theme_palette = Themes.get_rgba_palette (Themes.LIGHT);
                 }
             } else {
-                var prefer_dark_style = Application.settings.get_boolean ("prefer-dark-style");
-                Adw.StyleManager.get_default ().set_color_scheme (
-                    prefer_dark_style ? Adw.ColorScheme.PREFER_DARK : Adw.ColorScheme.PREFER_LIGHT
-                );
+                gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
                 theme_palette = Themes.get_rgba_palette (Application.settings.get_string ("theme"));
             }
 
