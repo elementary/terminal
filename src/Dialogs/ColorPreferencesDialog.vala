@@ -104,7 +104,9 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
 
         var contrast_top_label = new Gtk.Label (""); // Text will be set on showing
         var contrast_bottom_label = new Gtk.Label (""); // Text will be set on showing
-        var contrast_image = new Gtk.Image.from_icon_name ("process-completed");
+        var contrast_image = new Gtk.Image.from_icon_name ("process-completed") {
+            pixel_size = 24
+        };
 
         var contrast_grid = new Gtk.Grid () {
             row_spacing = 3
