@@ -307,12 +307,12 @@ namespace Terminal {
                 single_line_mode = true,
                 ellipsize = Pango.EllipsizeMode.END
             };
+
             title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
             title_stack = new Gtk.Stack () {
                 transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN,
-                hhomogeneous = false,
-                hexpand = false
+                hhomogeneous = false
             };
 
             title_stack.add_child (title_label);
@@ -320,8 +320,10 @@ namespace Terminal {
             title_stack.visible_child = title_label;
 
             header = new Adw.HeaderBar () {
-                title_widget = title_stack
+                title_widget = title_stack,
+                centering_policy = STRICT,
             };
+
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
