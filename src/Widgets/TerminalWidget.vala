@@ -941,9 +941,8 @@ namespace Terminal {
             File file;
 
             for (var i = 0; i < uris.length; i++) {
-                //TODO Gtk Port: Decide appropriate flags
                 try {
-                    if (Uri.is_valid (uris[i], UriFlags.NONE)) {
+                    if (Uri.is_valid (uris[i], UriFlags.PARSE_RELAXED)) {
                         file = File.new_for_uri (uris[i]);
                         if ((path = file.get_path ()) != null) {
                             uris[i] = Shell.quote (path) + " ";
