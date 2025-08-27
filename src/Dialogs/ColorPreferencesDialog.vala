@@ -176,7 +176,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         get_content_area ().append (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
-        close_button.clicked.connect (destroy);
+        close_button.clicked.connect (hide);
 
         Application.settings.set_string ("theme", Themes.CUSTOM);
 
