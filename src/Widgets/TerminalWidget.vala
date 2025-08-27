@@ -789,7 +789,6 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
-            //NOTE Use the non-deprecated async version for Gtk4
             this.spawn_async (
                 Vte.PtyFlags.DEFAULT,
                 dir,
@@ -805,8 +804,6 @@ namespace Terminal {
                     } else {
                         warning (error.message);
                     }
-
-                    // check_cwd_changed ();
                 }
             );
         }
