@@ -95,7 +95,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
 
             try {
                 // FIXME Have a configuration menu or something.
-                /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
+                /* NOTE Using a Vte.Regex and Vte.Terminal.search_set_regex leads to
                  * a "PCRE2 not supported" error.
                  */
                 var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
@@ -109,7 +109,6 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
 
     public new bool grab_focus () {
         return search_entry.grab_focus ();
-        //TODO Gtk4 port:Deselect selection if necessary
     }
 
     public void clear () {
