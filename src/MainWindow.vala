@@ -57,6 +57,7 @@ namespace Terminal {
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_CLOSE_TABS_TO_RIGHT = "action_close_tabs_to_right";
         public const string ACTION_CLOSE_OTHER_TABS = "action_close_other_tabs";
+        public const string ACTION_CUSTOM_TAB_LABEL = "action_custom-label";
         public const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
         public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
@@ -83,6 +84,7 @@ namespace Terminal {
             { ACTION_CLOSE_TAB, action_close_tab },
             { ACTION_CLOSE_TABS_TO_RIGHT, action_close_tabs_to_right },
             { ACTION_CLOSE_OTHER_TABS, action_close_other_tabs },
+            { ACTION_CUSTOM_TAB_LABEL, action_tab_rename },
             { ACTION_FULLSCREEN, action_fullscreen },
             { ACTION_NEW_TAB, action_new_tab },
             { ACTION_NEW_TAB_AT, action_new_tab_at, "s" },
@@ -110,6 +112,7 @@ namespace Terminal {
 
         static construct {
             action_accelerators[ACTION_CLOSE_TAB] = "<Control><Shift>w";
+            action_accelerators[ACTION_CUSTOM_TAB_LABEL] = "<Shift>F2";
             action_accelerators[ACTION_FULLSCREEN] = "F11";
             action_accelerators[ACTION_NEW_TAB] = "<Control><Shift>t";
             action_accelerators[ACTION_DUPLICATE_TAB] = "<Control><Shift>d";
@@ -249,7 +252,8 @@ namespace Terminal {
         public void add_tab_with_working_directory (
             string directory = "",
             string command = "",
-            bool create_new_tab = false
+            bool create_new_tab = false,
+            string? tab_label = null
         ) {
 
             /* This requires all restored tabs to be initialized first so that
@@ -258,7 +262,7 @@ namespace Terminal {
             string location = "";
             if (directory.length == 0) {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
-                    new_tab ("", command);
+                    new_tab ("", command, tab_label);
                 }
 
                 return;
@@ -277,12 +281,12 @@ namespace Terminal {
                     if (file.equal (File.new_for_path (tab_path))) {
                         /* Just focus the duplicate tab instead */
                         notebook.selected_page = tab;
-                        return; /* Duplicate found, abandon adding tab */
+                        return; /* Duplicate found,g abandon adding tab */
                     }
                 }
             }
 
-            new_tab (location, command);
+            new_tab (location, command, tab_label);
         }
 
         private void setup_ui () {
@@ -703,7 +707,7 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    var term = new_tab (loc, "", false);
+                    var term = new_tab (loc, "", null, false);
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
@@ -722,6 +726,7 @@ namespace Terminal {
         private TerminalWidget new_tab (
             string location,
             string program = "",
+            string? tab_label = null,
             bool focus = true,
             int pos = notebook.n_pages
         ) {
@@ -740,8 +745,12 @@ namespace Terminal {
             };
 
             var tab = append_tab (
-                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
-                null, terminal_widget, pos
+                location != null ? Path.get_basename (location) :
+                                   TerminalWidget.DEFAULT_LABEL,
+                null,
+                terminal_widget,
+                pos,
+                tab_label
             );
 
             //Set correct label now to avoid race when spawning shell
@@ -827,7 +836,8 @@ namespace Terminal {
             string label,
             GLib.Icon? icon,
             TerminalWidget term,
-            int pos
+            int pos,
+            string? custom_tab_label = null
         ) {
             var sw = new Gtk.ScrolledWindow (null, null) {
                 vadjustment = term.get_vadjustment (),
@@ -835,12 +845,13 @@ namespace Terminal {
             };
 
             var tab = notebook.tab_view.insert (sw, pos);
-            tab.title = label;
-            tab.tooltip = term.current_working_directory;
+            tab.tooltip = term.window_title;
             tab.icon = icon;
-            term.tab = tab;
-
             tab.child.show_all ();
+
+            term.tab = tab;
+            term.tab_label = label;
+            term.custom_tab_label = custom_tab_label;
             return tab;
         }
 
@@ -939,7 +950,7 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            new_tab (param.get_string ()); //TODO Restore icon?
+            new_tab (param.get_string (), "", null, true); //TODO Restore icon?
         }
 
         private void action_new_tab () requires (current_terminal != null) {
@@ -988,6 +999,20 @@ namespace Terminal {
             }
         }
 
+        private void action_tab_rename () {
+            TerminalWidget? term;
+            var target = notebook.tab_menu_target;
+            if (target != null) {
+                term = get_term_widget (target);
+            } else {
+                term = get_term_widget (notebook.tab_view.selected_page);
+            }
+
+            if (term != null) {
+                term.action_rename_tab ();
+            }
+        }
+
         private void action_duplicate_tab () requires (current_terminal != null) {
             var term = notebook.tab_menu_target != null ?
                        get_term_widget (notebook.tab_menu_target) :
@@ -997,7 +1022,7 @@ namespace Terminal {
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
                       notebook.n_pages;
 
-            new_tab (term.get_shell_location (), "", true, pos);
+            new_tab (term.get_shell_location (), "", null, true, pos);
         }
 
         private void action_next_tab () {
@@ -1118,6 +1143,8 @@ namespace Terminal {
                 string term_path, term_label;
                 if (term.program_string != "") {
                     term.tab_label = term.program_string;
+                    continue;
+                } else if (term.custom_tab_label != null) {
                     continue;
                 } else {
                     term_path = term.current_working_directory;
