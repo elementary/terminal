@@ -544,21 +544,18 @@ namespace Terminal {
             ConfirmedActionCallback cb
         ) {
             if (has_foreground_process ()) {
-                var dialog = new Gtk.AlertDialog (primary_text) {
-                    modal = true,
-                    buttons = {_("Cancel"), button_label},
-                    default_button = 0,
-                    cancel_button = 0,
-                };
+                var dialog = new ForegroundProcessDialog (
+                    (MainWindow) get_root (),
+                    primary_text,
+                    button_label
+                );
 
-                dialog.choose.begin ((MainWindow) get_root (), null, (obj, res) => {
-                    try {
-                        var button = dialog.choose.end (res);
-                        cb (button == 1);
-                    } catch (Error e) {
-                        warning ("Error from AlertDialog.choose %s", e.message);
-                    }
+                dialog.response.connect ((res) => {
+                    dialog.destroy ();
+                    cb (res == Gtk.ResponseType.ACCEPT);
                 });
+
+                dialog.present ();
             } else {
                 cb (true);
             }

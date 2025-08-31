@@ -20,6 +20,7 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
     }
 
     construct {
+        modal = true;
         secondary_text = _("There is an active process on this tab. If you continue, the process will end.");
         image_icon = new ThemedIcon ("dialog-warning");
 
