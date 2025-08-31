@@ -537,7 +537,7 @@ namespace Terminal {
             clipboard.set_text (output);
         }
 
-        public delegate void ConfirmedActionCallback ();
+        public delegate void ConfirmedActionCallback (bool confirmed);
         public void confirm_kill_fg_process (
             string primary_text,
             string button_label,
@@ -554,18 +554,13 @@ namespace Terminal {
                 dialog.choose.begin ((MainWindow) get_root (), null, (obj, res) => {
                     try {
                         var button = dialog.choose.end (res);
-                        warning ("warning returned button %i", button);
-                        if (button == 1) {
-                            kill_fg ();
-                            cb ();
-                        }
+                        cb (button == 1);
                     } catch (Error e) {
                         warning ("Error from AlertDialog.choose %s", e.message);
                     }
                 });
             } else {
-                kill_fg ();
-                cb ();
+                cb (true);
             }
         }
 

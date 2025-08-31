@@ -268,7 +268,6 @@ namespace Terminal {
             new_tab (location, command);
         }
 
-        private Adw.TabPage? tab_to_close = null;
         private void setup_ui () {
             unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
@@ -334,26 +333,25 @@ namespace Terminal {
             notebook.tab_view.page_detached.connect (on_tab_removed);
             notebook.tab_view.page_reordered.connect (on_tab_reordered);
             notebook.tab_view.create_window.connect (on_create_window_request);
-            notebook.tab_view.close_page.connect ((tab) => {
-                var term = get_term_widget (tab);
-                if (term != null) {
-                    if (term.has_foreground_process ()) {
-                        // Need to keep external reference to tab that will be closed else crashes
-                        tab_to_close = tab;
-                        term.confirm_kill_fg_process (
-                            _("Are you sure you want to close this tab?"),
-                            _("Close tab"),
-                            () => {
-                                terminate_and_disconnect (get_term_widget (tab_to_close), true);
-                                notebook.tab_view.close_page_finish (tab_to_close, true);
-                            }
-                        );
 
-                        return Gdk.EVENT_STOP;
-                    } else {
-                        terminate_and_disconnect (term, true);
-                        notebook.tab_view.close_page_finish (tab, true);
-                    }
+            Adw.TabPage? tab_to_close = null;
+            TerminalWidget? term_to_close = null;
+            notebook.tab_view.close_page.connect ((tab) => {
+                term_to_close = get_term_widget (tab);
+                if (term_to_close != null) {
+                    tab_to_close = tab;
+                    term_to_close.confirm_kill_fg_process (
+                        _("Are you sure you want to close this tab?"),
+                        _("Close tab"),
+                        (confirmed) => {
+                            if (confirmed) {
+                                term_to_close.kill_fg ();
+                                terminate_and_disconnect (term_to_close, true);
+                            }
+
+                            notebook.tab_view.close_page_finish (tab_to_close, confirmed);
+                        }
+                    );
                 }
 
                 return Gdk.EVENT_STOP;
