@@ -766,19 +766,6 @@ namespace Terminal {
             return tab;
         }
 
-        private void make_restorable (TerminalWidget term) {
-            //FIXME Terminal child always exits when tab is closed (unlike Granite.DynamicNotebook)
-            if (Application.settings.get_boolean ("save-exited-tabs")) {
-                notebook.make_restorable (term.current_working_directory);
-            }
-
-            if (!term.child_has_exited) {
-                term.term_ps ();
-            }
-
-            return;
-        }
-
         private void update_font () {
             // We have to fetch both values at least once, otherwise
             // GLib.Settings won't notify on their changes
