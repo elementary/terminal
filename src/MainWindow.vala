@@ -826,7 +826,7 @@ namespace Terminal {
             disconnect_terminal_signals (term);
             term.term_ps ();
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
-                make_restorable (term);
+               notebook.make_restorable (term.current_working_directory);
             }
         }
 
