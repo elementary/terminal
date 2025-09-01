@@ -78,6 +78,18 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             tooltip_text = _("Custom")
         };
 
+        var custom_button_controller = new Gtk.GestureClick () {
+            propagation_phase = CAPTURE
+        };
+
+        custom_button_controller.released.connect ((n, x, y) => {
+            if (custom_button.active) {
+                show_theme_editor ();
+                popdown ();
+            }
+        });
+        custom_button.add_controller (custom_button_controller);
+
         var theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
             homogeneous = true,
             margin_bottom = 6,
