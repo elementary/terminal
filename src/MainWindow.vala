@@ -299,9 +299,7 @@ namespace Terminal {
                 valign = CENTER
             };
 
-            search_toolbar = new Terminal.Widgets.SearchToolbar (this) {
-                width_request = 300
-            };
+            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             title_label = new Gtk.Label (title) {
                 wrap = false,
@@ -322,7 +320,7 @@ namespace Terminal {
 
             header = new Adw.HeaderBar () {
                 title_widget = title_stack,
-                centering_policy = STRICT,
+                centering_policy = STRICT
             };
 
             header.pack_end (unfullscreen_button);
