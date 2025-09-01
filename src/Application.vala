@@ -14,7 +14,7 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public bool is_testing { get; set construct; }
+    public bool is_testing { get; set; default = false;}
 
     private static Themes themes;
 
@@ -26,6 +26,10 @@ public class Terminal.Application : Gtk.Application {
     }
 
     construct {
+#if TESTS
+        is_testing = true;
+#endif
+
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
@@ -45,8 +49,9 @@ public class Terminal.Application : Gtk.Application {
                     break;
                 }
             }
-
-            window_to_present.present ();
+            if (!is_testing) {
+                window_to_present.present ();
+            }
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
@@ -67,6 +72,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
+        test_message ("handle local command line - ");
         bool show_help = false;
 
         for (uint i = 1; args[i] != null; i++) {
@@ -121,6 +127,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int handle_local_options (VariantDict options) {
+        test_message ("handle local options -");
         unowned string working_directory;
         unowned string[] args;
 
@@ -151,7 +158,11 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
-        base.dbus_register (connection, object_path);
+         base.dbus_register (connection, object_path);
+
+        if (is_testing) {
+            return true;
+        }
 
         var dbus = new DBus ();
         dbus_id = connection.register_object (object_path, dbus);
@@ -223,6 +234,8 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override void startup () {
+        test_message ("startup - ");
+
         base.startup ();
         Granite.init ();
         Adw.init ();
@@ -247,19 +260,26 @@ public class Terminal.Application : Gtk.Application {
 
         var new_window_action = new SimpleAction ("new-window", null);
         new_window_action.activate.connect (() => {
+        stdout.printf ("activate new window action");
             string dir = Environment.get_home_dir ();
             if (active_window != null) {
                 dir = ((MainWindow)active_window).current_terminal.current_working_directory;
             }
 
             var new_window = new MainWindow (this, active_window == null);
-            new_window.present ();
-            new_window.set_size_request (
-                active_window.width_request,
-                active_window.height_request
-            );
+            // add_window (new_window);
 
+            // if (!is_testing) {
+                new_window.present ();
+                stdout.printf ("new size");
+                // new_window.set_size_request (
+                //     active_window.width_request,
+                //     active_window.height_request
+                // );
+            // }
+            
             new_window.add_tab_with_working_directory (dir);
+            stdout.printf ("action done");
         });
 
         var quit_action = new SimpleAction ("quit", null);
@@ -273,6 +293,7 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
+        test_message ("command line - ");
         unowned var options = command_line.get_options_dict ();
         var window = (MainWindow) active_window;
         var is_first_window = window == null;
@@ -280,7 +301,9 @@ public class Terminal.Application : Gtk.Application {
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
+            test_message ("creating new window - ");
             window = new MainWindow (this, is_first_window);
+            // add_window (window);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
@@ -302,16 +325,19 @@ public class Terminal.Application : Gtk.Application {
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
             window.add_tab_with_working_directory (working_directory, command, new_tab);
         } else if (new_tab || window.notebook.n_pages == 0) {
+        test_message ("add tab with wd %s - ".printf (working_directory));
             window.add_tab_with_working_directory (working_directory, "", new_tab);
+        test_message ("after add tab - ");
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.minimize ();
-        } else {
+        // } else {
+        } else if (!is_testing) {
             window.present ();
         }
 
-        if (is_first_window) {
+        if (!is_testing && is_first_window) {
             /*
             * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
             * Set maximize after height/width else window is min size on unmaximize
@@ -341,6 +367,12 @@ public class Terminal.Application : Gtk.Application {
     public void close () {
         foreach (var window in get_windows ()) {
             window.close (); // if all windows is closed, the main loop will stop automatically.
+        }
+    }
+
+    public void test_message (string message) {
+        if (false && is_testing) {
+            stdout.printf ("# " + message);
         }
     }
 }

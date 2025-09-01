@@ -148,6 +148,7 @@ namespace Terminal {
         }
 
         construct {
+        app.test_message ("construct term widget - ");
             pointer_autohide = true;
             terminal_id = "%i".printf (terminal_id_counter++);
             init_complete = false;
@@ -306,6 +307,8 @@ namespace Terminal {
             var select_all_action = new GLib.SimpleAction ("select-all", null);
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
+
+            app.test_message ("term widget done\n");
         }
 
         private void pointer_focus () {
@@ -752,6 +755,7 @@ namespace Terminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
+        app.test_message ("active shell %s - ".printf (dir));
             string shell = Application.settings.get_string ("shell");
             string?[] envv = null;
 
@@ -759,6 +763,7 @@ namespace Terminal {
                 shell = Vte.get_user_shell ();
             }
 
+        app.test_message ("shell is %s - ".printf (shell));
             if (shell == "") {
                 critical ("No user shell available");
                 return;
@@ -783,6 +788,24 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
+
+
+            // if (app.is_testing) {
+            // stdout.printf ("spawn sync");
+            //     this.spawn_sync (
+            //         Vte.PtyFlags.DEFAULT,
+            //         dir,
+            //         { shell },
+            //         envv,
+            //         SpawnFlags.SEARCH_PATH,
+            //         null,
+            //         out child_pid,
+            //         null
+            //     );
+                
+            //     return;
+            // }
+
             this.spawn_async (
                 Vte.PtyFlags.DEFAULT,
                 dir,
@@ -793,6 +816,7 @@ namespace Terminal {
                 -1,
                 null,
                 (terminal, pid, error) => {
+                app.test_message ("spawn shell callback - ");
                     if (error == null) {
                         this.child_pid = pid;
                     } else {

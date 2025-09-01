@@ -47,7 +47,8 @@ public class Terminal.TerminalView : Gtk.Box {
         hexpand = true;
         vexpand = true;
 
-        var app_instance = (Gtk.Application) GLib.Application.get_default ();
+        var app_instance = (Terminal.Application) GLib.Application.get_default ();
+        app_instance.test_message ("new tabview - ");
         tab_view = new Adw.TabView () {
             hexpand = true,
             vexpand = true
@@ -95,6 +96,8 @@ public class Terminal.TerminalView : Gtk.Box {
 
         append (tab_bar);
         append (tab_view);
+        
+        app_instance.test_message ("term view done\n");
     }
 
     public void make_restorable (string path) {
