@@ -685,6 +685,7 @@ namespace Terminal {
             var palette = theme_palette[0:16];
 
             set_colors (foreground, background, palette);
+            set_opacity (background.alpha);
             set_color_cursor (cursor);
         }
 
