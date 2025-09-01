@@ -268,6 +268,8 @@ namespace Terminal {
             new_tab (location, command);
         }
 
+        Adw.TabPage? tab_to_close = null;
+        TerminalWidget? term_to_close = null;
         private void setup_ui () {
             unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
@@ -334,8 +336,6 @@ namespace Terminal {
             notebook.tab_view.page_reordered.connect (on_tab_reordered);
             notebook.tab_view.create_window.connect (on_create_window_request);
 
-            Adw.TabPage? tab_to_close = null;
-            TerminalWidget? term_to_close = null;
             notebook.tab_view.close_page.connect ((tab) => {
                 term_to_close = get_term_widget (tab);
                 if (term_to_close != null) {

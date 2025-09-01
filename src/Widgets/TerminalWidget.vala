@@ -705,11 +705,12 @@ namespace Terminal {
 
         public void kill_fg () {
             int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid))
+            if (this.try_get_foreground_pid (out fg_pid)) {
                 // Give chance to terminate cleanly before killing
                 Posix.kill (fg_pid, Posix.Signal.HUP);
                 Posix.kill (fg_pid, Posix.Signal.TERM);
                 Posix.kill (fg_pid, Posix.Signal.KILL);
+            }
         }
 
         // Terminate the shell process prior to closing the tab
