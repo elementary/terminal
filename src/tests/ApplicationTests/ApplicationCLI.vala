@@ -8,13 +8,8 @@ namespace Terminal.Test.ApplicationCLI {
 
     private Terminal.Application setup () {
         var application = new Terminal.Application () {
-            application_id = "io.elementary.terminal.tests.application"
+            application_id = "io.elementary.terminal.tests.application.cli"
         };
-
-        application.shutdown.connect (() => {
-            application.close ();
-            application = null;
-        });
 
         return application;
     }

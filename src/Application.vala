@@ -157,61 +157,64 @@ public class Terminal.Application : Gtk.Application {
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
         base.dbus_register (connection, object_path);
 
-        var dbus = new DBus ();
+        var dbus = new Terminal.DBus ();
         dbus_id = connection.register_object (object_path, dbus);
 
-        dbus.finished_process.connect ((id, process, exit_status) => {
-            TerminalWidget terminal = null;
+        dbus.finished_process.connect (on_dbus_process_finished);
 
-            foreach (var window in (List<MainWindow>) get_windows ()) {
-                if (terminal != null) {
-                    break;
-                }
-
-                terminal = window.get_terminal (id);
-            }
-
-            if (terminal == null) {
-                return;
-            } else if (!terminal.is_init_complete ()) {
-                terminal.set_init_complete ();
-                return;
-            }
-
-            var process_string = _("Process completed");
-            var process_icon = new ThemedIcon ("process-completed-symbolic");
-            if (exit_status != 0) {
-                process_string = _("Process exited with errors");
-                process_icon = new ThemedIcon ("process-error-symbolic");
-            }
-
-            if (terminal != terminal.main_window.current_terminal) {
-                terminal.tab.icon = process_icon;
-            }
-
-            if (!(get_active_window ().is_active)) {
-                var notification = new Notification (process_string);
-                notification.set_body (process);
-                notification.set_icon (process_icon);
-                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
-                send_notification ("process-finished-%s".printf (id), notification);
-
-                ulong tab_change_handler = 0;
-                ulong focus_in_handler = 0;
-
-                tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-                });
-
-                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
-                    if (terminal.main_window.is_active) {
-                        withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-                    }
-                });
-            }
-        });
 
         return true;
+    }
+
+    private void on_dbus_process_finished (string id, string process, int exit_status) {
+        test_message ("finish process %s, %s %i".printf (id, process, exit_status));
+
+        TerminalWidget terminal = null;
+        foreach (var window in (List<MainWindow>) get_windows ()) {
+            terminal = window.get_terminal (id);
+            if (terminal != null) {
+                break;
+            }
+        }
+
+        if (terminal == null) {
+            return;
+        } else if (!terminal.is_init_complete ()) {
+            terminal.set_init_complete ();
+            return;
+        }
+
+        var process_string = _("Process completed");
+        var process_icon = new ThemedIcon ("process-completed-symbolic");
+        if (exit_status != 0) {
+            process_string = _("Process exited with errors");
+            process_icon = new ThemedIcon ("process-error-symbolic");
+        }
+
+        if (terminal != terminal.main_window.current_terminal) {
+            terminal.tab.icon = process_icon;
+        }
+
+        if (!(get_active_window ().is_active)) {
+            var notification = new Notification (process_string);
+            notification.set_body (process);
+            notification.set_icon (process_icon);
+            notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+            send_notification ("process-finished-%s".printf (id), notification);
+
+            ulong tab_change_handler = 0;
+            ulong focus_in_handler = 0;
+
+            tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
+                withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+            });
+
+            focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
+                if (terminal.main_window.is_active) {
+                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                }
+            });
+        }
     }
 
     private void withdraw_notification_for_terminal (TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
@@ -343,8 +346,19 @@ public class Terminal.Application : Gtk.Application {
     }
 
     public void close () {
-        foreach (var window in get_windows ()) {
-            window.close (); // if all windows is closed, the main loop will stop automatically.
+        // warning ("close");
+        unowned var windows = (List<MainWindow>) get_windows ();
+        test_message ("windows length %u".printf (windows.length ()));
+        // warning ("windows length %u".printf (windows.length ()));
+        foreach (var window in windows) {
+            if (window != null) {
+                test_message ("Closing window");
+                // warning ("Closing window");
+                Idle.add (() => {
+                    window.close (); // if all windows is closed, the main loop will stop automatically.
+                    return Source.REMOVE;
+                });
+            }
         }
     }
 

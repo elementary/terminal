@@ -53,8 +53,14 @@ test_env = [
 
 add_test_setup(
   'headless',
-  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24 -noreset' ],
+  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24' ],
   is_default: true
+)
+
+add_test_setup(
+    'gdb',
+    gdb: true,
+    is_default: false
 )
 
 app_cli_test = executable(
@@ -73,7 +79,7 @@ app_actions_test = executable(
     meson.project_name() + '.tests.application.actions',
     terminal_sources + 'tests/ApplicationTests/ApplicationActions.vala',
     dependencies: terminal_deps,
-    vala_args: [ '--define', 'TESTS']
+    vala_args: [ '--define=TESTS']
 )
 
 test(

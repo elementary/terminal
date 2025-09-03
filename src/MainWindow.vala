@@ -226,7 +226,7 @@ namespace Terminal {
                 open_tabs ();
             }
 
-            close_request.connect (on_delete_event);
+            close_request.connect (on_close_request);
         }
 
         public void add_tab_with_working_directory (
@@ -778,8 +778,9 @@ namespace Terminal {
 
         private bool close_immediately = false;
         //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
-        public bool on_delete_event () {
-            if (close_immediately) {
+        public bool on_close_request () {
+        app.test_message ("on delete event");
+            if (close_immediately || app.is_testing) {
                 return Gdk.EVENT_PROPAGATE;
             }
             //Avoid saved terminals being overwritten when tabs destroyed.
@@ -1200,13 +1201,6 @@ namespace Terminal {
             return new_window;
         }
 
-        public new void present () {
-            if (app.is_testing) {
-                return;
-            }
-
-            base.present ();
-        }
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
         }

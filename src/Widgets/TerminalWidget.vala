@@ -717,6 +717,10 @@ namespace Terminal {
         public void term_ps () {
             killed = true;
 
+            if (app.is_testing) {
+                return;
+            }
+            
 #if HAS_LINUX
             int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
 #else
@@ -783,7 +787,7 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
-
+app.test_message ("start spawn");
             this.spawn_async (
                 Vte.PtyFlags.DEFAULT,
                 dir,
@@ -794,7 +798,9 @@ namespace Terminal {
                 -1,
                 null,
                 (terminal, pid, error) => {
+                    app.test_message ("spawn_callback");
                     if (error == null) {
+                        app.test_message ("got shell pid");
                         this.child_pid = pid;
                     } else {
                         warning (error.message);
@@ -855,7 +861,11 @@ namespace Terminal {
         }
 
         public bool has_foreground_process () {
-            return try_get_foreground_pid (null);
+            if (pty != null) {
+                return try_get_foreground_pid (null);
+            } else {
+                return false;
+            }
         }
 
         public int calculate_width (int column_count) {
