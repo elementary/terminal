@@ -104,7 +104,6 @@ namespace Terminal {
         }
 
         construct {
-            app.test_message ("Mainwindow construct - ");
             actions = new SimpleActionGroup ();
             actions.add_action_entries (ACTION_ENTRIES, this);
             insert_action_group ("win", actions);
@@ -228,8 +227,6 @@ namespace Terminal {
             }
 
             close_request.connect (on_delete_event);
-            
-            app.test_message ("construct window done\n");
         }
 
         public void add_tab_with_working_directory (
@@ -237,8 +234,6 @@ namespace Terminal {
             string command = "",
             bool create_new_tab = false
         ) {
-        stdout.printf ("start add tab - ");
-        // app.test_message ("start add tab - ");
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
@@ -275,7 +270,6 @@ namespace Terminal {
         Adw.TabPage? tab_to_close = null;
         TerminalWidget? term_to_close = null;
         private void setup_ui () {
-        app.test_message ("setup ui - ");
             unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
@@ -333,7 +327,6 @@ namespace Terminal {
             header.pack_end (search_button);
             header.add_css_class ("default-decoration");
 
-            app.test_message ("new view - ");
             notebook = new TerminalView (this);
             notebook.tab_view.page_attached.connect (on_tab_added);
             notebook.tab_view.page_detached.connect (on_tab_removed);
@@ -650,7 +643,6 @@ namespace Terminal {
             bool focus = true,
             int pos = notebook.n_pages
         ) {
-        app.test_message ("start new tab - ");
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -670,7 +662,6 @@ namespace Terminal {
             );
 
             //Set correct label now to avoid race when spawning shell
-            app.test_message ("set font - ");
             terminal_widget.set_font (term_font);
 
             if (current_terminal != null) {
@@ -679,29 +670,22 @@ namespace Terminal {
                 terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
             }
 
-            app.test_message ("focus - ");
             if (focus) {
                 notebook.selected_page = tab;
             }
 
             if (program.length == 0) {
                 /* Set up the virtual terminal */
-                app.test_message ("active shell - location %s".printf (location));
                     if (location == "") {
                         terminal_widget.active_shell ();
                     } else {
                         terminal_widget.active_shell (location);
                     }
-                    stdout.printf ("after active shell");
             } else {
-                app.test_message ("run program - ");
                 terminal_widget.run_program (program, location);
             }
 
-            app.test_message ("save open terms - ");
             save_opened_terminals (true, true);
-            stdout.printf ("new tab done\n");
-            // app.test_message ("new tab done\n");
             return terminal_widget;
         }
 
@@ -760,7 +744,6 @@ namespace Terminal {
             TerminalWidget term,
             int pos
         ) {
-        app.test_message ("start append tab - ");
             var sw = new Gtk.ScrolledWindow () {
                 vadjustment = term.get_vadjustment (),
                 child = term
@@ -1217,6 +1200,13 @@ namespace Terminal {
             return new_window;
         }
 
+        public new void present () {
+            if (app.is_testing) {
+                return;
+            }
+
+            base.present ();
+        }
         public GLib.SimpleAction? get_simple_action (string action) {
             return actions.lookup_action (action) as GLib.SimpleAction;
         }

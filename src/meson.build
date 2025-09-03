@@ -57,20 +57,45 @@ add_test_setup(
   is_default: true
 )
 
-app_test = executable(
-    meson.project_name() + '.tests.application',
-    terminal_sources + 'tests/Application.vala',
+app_cli_test = executable(
+    meson.project_name() + '.tests.application.cli',
+    terminal_sources + 'tests/ApplicationTests/ApplicationCLI.vala',
+    dependencies: terminal_deps,
+    vala_args: [ '--define', 'TESTS']
+)
+app_options_test = executable(
+    meson.project_name() + '.tests.application.options',
+    terminal_sources + 'tests/ApplicationTests/ApplicationOptions.vala',
+    dependencies: terminal_deps,
+    vala_args: [ '--define', 'TESTS']
+)
+app_actions_test = executable(
+    meson.project_name() + '.tests.application.actions',
+    terminal_sources + 'tests/ApplicationTests/ApplicationActions.vala',
     dependencies: terminal_deps,
     vala_args: [ '--define', 'TESTS']
 )
 
 test(
-    'Application',
-    app_test,
+    'ApplicationCLI',
+    app_cli_test,
     env: test_env,
     protocol: 'tap',
-    depends: test_schemas,
-    is_parallel: false
+    depends: test_schemas
+)
+test(
+    'ApplicationOptions',
+    app_options_test,
+    env: test_env,
+    protocol: 'tap',
+    depends: test_schemas
+)
+test(
+    'ApplicationActions',
+    app_actions_test,
+    env: test_env,
+    protocol: 'tap',
+    depends: test_schemas
 )
 
 subdir('tests')
