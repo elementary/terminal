@@ -53,7 +53,7 @@ test_env = [
 
 add_test_setup(
   'headless',
-  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24' ],
+  exe_wrapper: [ find_program('xvfb-run'), '-a', '-s', '-screen 0 1024x768x24 -noreset' ],
   is_default: true
 )
 

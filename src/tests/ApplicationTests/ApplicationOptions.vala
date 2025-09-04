@@ -7,10 +7,7 @@ namespace Terminal.Test.ApplicationOptions {
     delegate void CommandLineCallback (Terminal.Application app);
 
     private Terminal.Application setup (string id) {
-        var application = new Terminal.Application () {
-            application_id = "io.elementary.terminal.tests.application.options" + id
-        };
-
+        var application = new Terminal.Application ("io.elementary.terminal.tests.application.options." + id);
         return application;
     }
 

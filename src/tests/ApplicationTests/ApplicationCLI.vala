@@ -7,10 +7,7 @@ namespace Terminal.Test.ApplicationCLI {
     delegate void LocalOptionsCallback (VariantDict options);
 
     private Terminal.Application setup () {
-        var application = new Terminal.Application () {
-            application_id = "io.elementary.terminal.tests.application.cli"
-        };
-
+        var application = new Terminal.Application ();
         return application;
     }
 
