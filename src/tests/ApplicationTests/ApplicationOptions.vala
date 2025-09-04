@@ -77,7 +77,7 @@ namespace Terminal.Test.ApplicationOptions {
                 assert_cmpint (n_tabs, CompareOperator.EQ, 2);
             });
 
-            option ("new-tab-false","{'new-tab':<false>}", "@a{sv} {}", (app) => {
+            option ("new-tab-false", "{'new-tab':<false>}", "@a{sv} {}", (app) => {
                 assert_nonnull (app);
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);

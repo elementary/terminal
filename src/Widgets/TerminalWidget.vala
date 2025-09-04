@@ -720,7 +720,7 @@ namespace Terminal {
             if (app.is_testing) {
                 return;
             }
-            
+
 #if HAS_LINUX
             int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
 #else

@@ -52,7 +52,7 @@ namespace Terminal.Test.ApplicationActions {
         if (application.run (null) != 0) {
             GLib.Test.fail ();
         }
-        
+
         stdout.printf ("# action run finished\n");
     }
 
@@ -84,7 +84,7 @@ namespace Terminal.Test.ApplicationActions {
         //         has_shutdown = true;
         //         return;
         //     });
-            
+
         //     action (app, "quit", null, () => {
         //         stdout.printf ("quit callback\n");
         //         assert (true);
