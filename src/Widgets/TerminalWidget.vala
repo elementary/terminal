@@ -555,12 +555,12 @@ namespace Terminal {
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {
-                validated_feed (text);
+                validated_paste (text);
             });
         }
 
         // Check pasted and dropped text before feeding to child;
-        private void validated_feed (string? text) {
+        private void validated_paste (string? text) {
             // Do nothing when text is invalid
             if (text == null || !text.validate ()) {
                 return;
@@ -568,7 +568,7 @@ namespace Terminal {
 
             // No user interaction because of user's preference
             if (!Application.settings.get_boolean ("unsafe-paste-alert")) {
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -577,7 +577,7 @@ namespace Terminal {
 
             // No user interaction for safe commands
             if (Utils.is_safe_paste (text, out warn_text_array)) {
-                feed_child (text.data);
+                paste_text (text);
                 return;
             }
 
@@ -588,7 +588,7 @@ namespace Terminal {
             dialog.response.connect ((res) => {
                 dialog.destroy ();
                 if (res == Gtk.ResponseType.ACCEPT) {
-                    feed_child (text.data);
+                    paste_text (text);
                 }
             });
 
@@ -835,7 +835,6 @@ namespace Terminal {
                 case DropTargets.URILIST:
                     var uris = selection_data.get_uris ();
                     string path;
-                    File file;
                     for (var i = 0; i < uris.length; i++) {
                         // Get unquoted path as some apps may drop uris that are escaped
                         // and quoted.
@@ -846,10 +845,10 @@ namespace Terminal {
                             warning ("Error unquoting %s. %s", uris[i], e.message);
                             unquoted_uri = uris[i];
                         }
-                        // Sanitize the path as we do not want the `file://` scheme included
-                        // and we assume dropped paths are absolute.
-                        file = File.new_for_uri (Utils.sanitize_path (unquoted_uri, "", false));
-                        path = file.get_path ();
+
+                        // Get path as we do not want the `file://` scheme included
+                        // and we assume dropped paths are absolute so no need for Utils.sanitize_path
+                        path = File.new_for_uri (unquoted_uri).get_path ();
                         if (path != null) {
                             uris[i] = Shell.quote (path) + " ";
                         } else {
@@ -865,7 +864,7 @@ namespace Terminal {
                 case DropTargets.STRING:
                 case DropTargets.TEXT:
                     var text = selection_data.get_text ();
-                    validated_feed (text);
+                    validated_paste (text);
                     break;
             }
         }

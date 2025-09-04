@@ -14,23 +14,23 @@
   </description>
 
   <screenshots>
-    <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot.png</image>
+    <screenshot environment="pantheon" type="default">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-light.png</image>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-light.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-high-contrast.png</image>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-high-contrast.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-find.png</image>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-find.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-custom-style.png</image>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-custom-style.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/terminal/6.3.1/data/screenshot-paste-protection.png</image>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.1.1/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -40,11 +40,12 @@
     <binary>io.elementary.terminal</binary>
   </provides>
 
-  <url type="homepage">https://elementary.io/</url>
   <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
   <url type="help">https://github.com/elementary/terminal/discussions/categories/q-a</url>
+  <url type="homepage">https://elementary.io/</url>
   <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
+  <url type="vcs-browser">https://github.com/elementary/terminal</url>
 
   <developer id="org.elementaryos">
     <name>elementary, Inc.</name>
@@ -53,6 +54,55 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.2" date="2025-08-25" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/891">Pasting text with trailing newline(s) trigger multiple command warning</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.1" date="2025-08-22" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/876">Dropping a file with '#' in the name causes truncation</issue>
+        <issue url="https://github.com/elementary/terminal/issues/861">Inconsistent line breaks when pasting</issue>
+        <issue url="https://github.com/elementary/terminal/issues/831">Process exit status icon remains forever</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.0" date="2025-08-05" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>A warning is now given if a pasted command has an option that skips confirmations</li>
+          <li>When a foreground process is launched, the tab label changes to the name of that process</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Exiting the shell in a tab now closes that tab</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/873">Requires exit twice to close one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/872">Crash when exiting one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/865">Show all detected unsafe paste warnings</issue>
+        <issue url="https://github.com/elementary/terminal/issues/840">Title in titlebar not centered</issue>
+        <issue url="https://github.com/elementary/terminal/issues/698">When using screen tab title does not change</issue>
+        <issue url="https://github.com/elementary/terminal/issues/646">Terminal tab title no change when ssh server</issue>
+      </issues>
+    </release>
+
     <release version="7.0.0" date="2025-02-12" urgency="medium">
       <description>
         <p>Other updates:</p>
@@ -84,7 +134,7 @@
     </release>
 
     <release version="6.3.0" date="2024-12-09" urgency="medium">
-      <description>
+      <description translate="no">
         <p>New features:</p>
         <ul>
           <li>Show zoom level in overlay when zooming</li>
@@ -115,7 +165,7 @@
     </release>
 
     <release version="6.2.0" date="2024-07-18" urgency="medium">
-      <description>
+      <description translate="no">
         <p>New features:</p>
         <ul>
           <li>Allow switching event alerts on and off in the app menu</li>
@@ -138,7 +188,7 @@
     </release>
 
     <release version="6.1.2" date="2023-04-03" urgency="medium">
-      <description>
+      <description translate="no">
         <p>Other updates:</p>
         <ul>
           <li>Add shortcuts "Ctrl + PageUp" and "Ctrl + PageDown" to switch between tabs</li>
@@ -155,7 +205,7 @@
     </release>
 
     <release version="6.1.1" date="2022-10-26" urgency="medium">
-      <description>
+      <description translate="no">
         <p>Other updates:</p>
         <ul>
           <li>Translation updates</li>
@@ -167,7 +217,7 @@
     </release>
 
     <release version="6.1.0" date="2022-08-11" urgency="medium">
-      <description>
+      <description translate="no">
         <p>New features:</p>
         <ul>
           <li>Option to follow system dark style preference</li>
@@ -186,7 +236,7 @@
     </release>
 
     <release version="6.0.2" date="2022-05-16" urgency="medium">
-      <description>
+      <description translate="no">
         <p>New features:</p>
         <ul>
           <li>Switch tabs with Alt + 1-9</li>

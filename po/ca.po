@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-01 13:35+0000\n"
+"POT-Creation-Date: 2025-08-17 12:52+0000\n"
 "PO-Revision-Date: 2025-04-02 13:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/terminal/"
@@ -20,49 +20,49 @@ msgstr ""
 "X-Generator: Weblate 5.10.4\n"
 "X-Launchpad-Export-Date: 2016-12-03 05:07+0000\n"
 
-#: src/Application.vala:63
+#: src/Application.vala:52
 msgid "Show version"
 msgstr "Mostra'n la versió"
 
 #. -n flag forces a new window
-#: src/Application.vala:65
+#: src/Application.vala:54
 msgid "Open a new terminal window"
 msgstr "Obre una finestra nova del terminal"
 
 #. -t flag forces a new tab
-#: src/Application.vala:67
+#: src/Application.vala:56
 msgid "Open a new terminal tab at current working directory"
 msgstr "Obre una pestanya nova de terminal al directori de treball actual"
 
 #. -w flag defines the working directory that the new tab/window uses
-#: src/Application.vala:69
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "Configura el directori de treball de l'intèrpret d'ordres"
 
 #. -e flag is used for running single strings as a command line
-#: src/Application.vala:71
+#: src/Application.vala:60
 msgid "Run a program in terminal"
 msgstr "Executa un programa al terminal"
 
 #. -m flag starts terminal in a minimized state
-#: src/Application.vala:73
+#: src/Application.vala:62
 msgid "Open terminal in a minimized state"
 msgstr "Obre el Terminal en un estat minimitzat"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
-#: src/Application.vala:76
+#: src/Application.vala:65
 msgid "Run remainder of line as a command in terminal"
 msgstr "Executa la resta de la línia com a ordre al terminal"
 
-#: src/Application.vala:128
+#: src/Application.vala:117
 msgid "[-- COMMAND…]"
 msgstr "[-- ORDRE…]"
 
-#: src/Application.vala:188
+#: src/Application.vala:177
 msgid "Process completed"
 msgstr "Procés completat"
 
-#: src/Application.vala:191
+#: src/Application.vala:180
 msgid "Process exited with errors"
 msgstr "El procés ha acabat amb errors."
 
@@ -83,7 +83,7 @@ msgstr "Copia l'última sortida"
 msgid "Clear Screen"
 msgstr "Neteja la pantalla"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
 msgid "Reset"
 msgstr "Restableix"
 
@@ -95,192 +95,192 @@ msgstr "Enganxa"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:298
 msgid "Exit FullScreen"
 msgstr "Surt de la pantalla completa"
 
-#: src/MainWindow.vala:306 src/MainWindow.vala:1044
+#: src/MainWindow.vala:307 src/MainWindow.vala:1060
 msgid "Find…"
 msgstr "Cerca…"
 
-#: src/MainWindow.vala:313
+#: src/MainWindow.vala:314
 msgid "Settings"
 msgstr "Paràmetres"
 
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:364
 msgid "Are you sure you want to close this tab?"
 msgstr "Segur que voleu tancar aquesta pestanya?"
 
-#: src/MainWindow.vala:356 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Tanca la pestanya"
 
 #. Changing atributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:552
+#: src/MainWindow.vala:561
 #, c-format
 msgid "Show in %s"
 msgstr "Mostra-ho a %s"
 
-#: src/MainWindow.vala:554
+#: src/MainWindow.vala:563
 msgid "Default application"
 msgstr "Aplicació per defecte"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:889
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Segur que voleu sortir del terminal?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:890
 msgid "Quit Terminal"
 msgstr "Surt del terminal"
 
-#: src/MainWindow.vala:1035
+#: src/MainWindow.vala:1051
 msgid "Hide find bar"
 msgstr "Amaga la barra de cerca"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:140
 msgid "The pasted text may contain multiple commands"
 msgstr "El text enganxat pot contenir ordres diverses."
 
-#: src/Utils.vala:139
+#: src/Utils.vala:144
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "És possible que el text enganxat intenti obtenir accés d'administració."
 
-#: src/Utils.vala:153
+#: src/Utils.vala:159
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 "El text enganxat inclou una ordre per ometre advertències i confirmacions."
 
-#: src/Dialogs/ColorPreferencesDialog.vala:48
+#: src/Dialogs/ColorPreferencesDialog.vala:37
 msgid "Color Preferences"
 msgstr "Preferències del color"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:50
+#: src/Dialogs/ColorPreferencesDialog.vala:39
 msgid "Window style:"
 msgstr "Estil de la finestra:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:57
+#: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
 msgstr "Llum"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:58
-#: src/Widgets/SettingsPopover.vala:100
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
 msgid "Dark"
 msgstr "Fosc"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:62
+#: src/Dialogs/ColorPreferencesDialog.vala:51
 msgid "Color Palette"
 msgstr "Paleta de colors"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:72
+#: src/Dialogs/ColorPreferencesDialog.vala:61
 msgid "Reset to default"
 msgstr "Restableix els valors per defecte"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:75
+#: src/Dialogs/ColorPreferencesDialog.vala:64
 msgid "Black:"
 msgstr "Negre:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:76
+#: src/Dialogs/ColorPreferencesDialog.vala:65
 msgid "Red:"
 msgstr "Vermell:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:77
+#: src/Dialogs/ColorPreferencesDialog.vala:66
 msgid "Green:"
 msgstr "Verd:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:78
+#: src/Dialogs/ColorPreferencesDialog.vala:67
 msgid "Yellow:"
 msgstr "Groc:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:79
+#: src/Dialogs/ColorPreferencesDialog.vala:68
 msgid "Blue:"
 msgstr "Blau:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:80
+#: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
 msgstr "Magenta:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:81
+#: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
 msgstr "Cian:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:82
+#: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
 msgstr "Gris:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:83
+#: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
 msgstr "Blanc:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:84
+#: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
 msgstr "Vermell clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:85
+#: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
 msgstr "Verd clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:86
+#: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
 msgstr "Groc clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:87
+#: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
 msgstr "Blau cel:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:88
+#: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
 msgstr "Magenta clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:89
+#: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
 msgstr "Cian clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:90
+#: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
 msgstr "Gris clar:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:91
+#: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
 msgstr "Fons:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:92
+#: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
 msgstr "Primer pla:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:93
+#: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
 msgstr "Cursor:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:190
+#: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
 msgstr "Tanca"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:310
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is very low"
 msgstr "El contrast és molt baix"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:313
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is low"
 msgstr "El contrast és baix"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:316
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is good"
 msgstr "El contrast està bé"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:319
+#: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is high"
 msgstr "El contrast és alt"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:37
+#: src/Dialogs/ForegroundProcessDialog.vala:23
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
 "Hi ha un procés actiu en aquesta pestanya. Si continueu, el procés s'acabarà."
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
+#: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
@@ -288,89 +288,89 @@ msgstr ""
 "Copiar ordres al Terminal pot ser perillós. Assegureu-vos d’entendre què fa "
 "cada part del text enganxat abans de continuar."
 
-#: src/Dialogs/UnsafePasteDialog.vala:36
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
 msgstr "Mostra els avisos de protecció en enganxar"
 
-#: src/Dialogs/UnsafePasteDialog.vala:41
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr "No enganxis"
 
-#: src/Dialogs/UnsafePasteDialog.vala:43
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr "Enganxa igualment"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
 msgstr "Cerca"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr "Resultat previ"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
 msgstr "Resultat següent"
 
-#: src/Widgets/SearchToolbar.vala:59
+#: src/Widgets/SearchToolbar.vala:46
 msgid "Disable cyclic search"
 msgstr "Inhabilita la cerca cíclica"
 
-#: src/Widgets/SearchToolbar.vala:62
+#: src/Widgets/SearchToolbar.vala:49
 msgid "Enable cyclic search"
 msgstr "Habilita la cerca cíclica"
 
-#: src/Widgets/SettingsPopover.vala:40
+#: src/Widgets/SettingsPopover.vala:31
 msgid "Zoom out"
 msgstr "Allunya"
 
-#: src/Widgets/SettingsPopover.vala:48
+#: src/Widgets/SettingsPopover.vala:39
 msgid "Default zoom level"
 msgstr "Nivell de zoom per defecte"
 
-#: src/Widgets/SettingsPopover.vala:56
+#: src/Widgets/SettingsPopover.vala:47
 msgid "Zoom in"
 msgstr "Apropa"
 
-#: src/Widgets/SettingsPopover.vala:84
+#: src/Widgets/SettingsPopover.vala:65
 msgid "Follow System Style"
 msgstr "Segueix l'estil del sistema"
 
-#: src/Widgets/SettingsPopover.vala:93
+#: src/Widgets/SettingsPopover.vala:70
 msgid "High Contrast"
 msgstr "Contrast alt"
 
-#: src/Widgets/SettingsPopover.vala:96
+#: src/Widgets/SettingsPopover.vala:74
 msgid "Solarized Light"
 msgstr "Llum de dia clara"
 
-#: src/Widgets/SettingsPopover.vala:106
+#: src/Widgets/SettingsPopover.vala:82
 msgid "Custom"
 msgstr "Personalitzat"
 
-#: src/Widgets/SettingsPopover.vala:111
+#: src/Widgets/SettingsPopover.vala:103
 msgid "Natural Copy/Paste"
 msgstr "Copiar i enganxar naturals"
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Les dreceres no necessiten Maj.; això pot interferir en les aplicacions CLI."
 
-#: src/Widgets/SettingsPopover.vala:116
+#: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
 msgstr "Alerta d'enganxament no segur"
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
 "Avisa quan el text enganxat conté múltiples ordres o ordres administratives."
 
-#: src/Widgets/SettingsPopover.vala:121
+#: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
 msgstr "Alertes d'esdeveniments"
 
-#: src/Widgets/SettingsPopover.vala:122
+#: src/Widgets/SettingsPopover.vala:114
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -382,15 +382,15 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:547
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Segur que voleu restablir el terminal?"
 
-#: src/Widgets/TerminalWidget.vala:928
+#: src/Widgets/TerminalWidget.vala:945
 msgid "Are you sure you want to reload this tab?"
 msgstr "Segur que voleu tornar a carregar aquesta pestanya?"
 
-#: src/Widgets/TerminalWidget.vala:929
+#: src/Widgets/TerminalWidget.vala:946
 msgid "Reload Tab"
 msgstr "Torna-la a carregar"
 

@@ -48,6 +48,11 @@ namespace Terminal.Utils {
 
         } while (path.contains ("//"));
 
+        // If just basename of file then assume in current shell location
+        if (!path.contains (Path.DIR_SEPARATOR_S)) {
+            path = string.join (Path.DIR_SEPARATOR_S, ".", path);
+        }
+
         var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
         var index = 0;
         while (parts_sep[index] == null && index < parts_sep.length - 1) {
@@ -131,7 +136,9 @@ namespace Terminal.Utils {
      */
     public bool is_safe_paste (string text, out string[]? msg_array) {
         string[] msgs = {};
-        if ("\n" in text || "&" in text || "|" in text || ";" in text ) {
+        var newline_index = text.index_of ("\n"); // First occurrence of new line
+        bool embedded_newline = newline_index >= 0 && newline_index < text.length - 1;
+        if (embedded_newline || "&" in text || "|" in text || ";" in text ) {
             msgs += _("The pasted text may contain multiple commands");
         }
 
