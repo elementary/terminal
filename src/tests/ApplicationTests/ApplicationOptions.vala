@@ -7,7 +7,7 @@ namespace Terminal.Test.ApplicationOptions {
     delegate void CommandLineCallback (Terminal.Application app);
 
     private Terminal.Application setup (string id) {
-        var application = new Terminal.Application ("io.elementary.terminal.tests.application.options." + id);
+        var application = new Terminal.Application ();
         return application;
     }
 
@@ -52,7 +52,7 @@ namespace Terminal.Test.ApplicationOptions {
     }
 
     public static int main (string[] args) {
-        Intl.setlocale (LocaleCategory.ALL, "");
+        // Intl.setlocale (LocaleCategory.ALL, "");
 
         GLib.Test.init (ref args);
 
@@ -113,7 +113,7 @@ namespace Terminal.Test.ApplicationOptions {
             });
         });
 
-        // //FIXME: cannot test the `--commandline=` option without a way to get the terminal command
+        // FIXME: cannot test the `--commandline=` option without a way to get the terminal command
         GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
 
         GLib.Test.add_func ("/application/command-line/platform-data/cwd", () => {

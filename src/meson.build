@@ -86,21 +86,18 @@ test(
     'ApplicationCLI',
     app_cli_test,
     env: test_env,
-    protocol: 'tap',
     depends: test_schemas
 )
 test(
     'ApplicationOptions',
     app_options_test,
     env: test_env,
-    protocol: 'tap',
     depends: test_schemas
 )
 test(
     'ApplicationActions',
     app_actions_test,
     env: test_env,
-    protocol: 'tap',
     depends: test_schemas
 )
 
