@@ -39,11 +39,8 @@ namespace Terminal.Test.ApplicationOptions {
                 "platform-data", new Variant.parsed (platform_data)
             );
 
-            stdout.printf ("# before commandline\n");
             application.command_line (cmdline);
-            stdout.printf ("# before iterate\n");
             iterate_context ();
-            stdout.printf ("# after iterate\n");
             callback (application);
             application.quit ();
             return 0;
@@ -117,7 +114,7 @@ namespace Terminal.Test.ApplicationOptions {
         });
 
         // //FIXME: cannot test the `--commandline=` option without a way to get the terminal command
-        // GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
+        GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
 
         GLib.Test.add_func ("/application/command-line/platform-data/cwd", () => {
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
@@ -126,9 +123,7 @@ namespace Terminal.Test.ApplicationOptions {
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
                 var terminal_directory = window.current_terminal.get_shell_location ();
-                stdout.printf ("terminal directory %s\n", terminal_directory);
-                stdout.printf ("working_directory %s\n", working_directory);
-                // assert_cmpstr (terminal_directory, CompareOperator.EQ, working_directory);
+                assert_cmpstr (terminal_directory, CompareOperator.EQ, working_directory);
             });
         });
 

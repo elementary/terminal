@@ -12,7 +12,6 @@ namespace Terminal.Test.ApplicationActions {
     }
 
     private void iterate_context () {
-    stdout.printf ("iterate context\n ");
         unowned var context = MainContext.default ();
         bool done = false;
         Timeout.add (200, () => {
@@ -32,25 +31,16 @@ namespace Terminal.Test.ApplicationActions {
             application.disconnect (oneshot);
             application.command_line (nill);
             assert_true (application.has_action (name));
-            stdout.printf ("activate %s\n", name);
             iterate_context (); // Ensure first shell has spawned
             application.activate_action (name, @value);
-            iterate_context ();
             callback ();
-            iterate_context ();
-            Idle.add (() => {
-                stdout.printf ("quitting in idle\n");
-                application.quit ();
-                return Source.REMOVE;
-            });
+            // For actions other than "quit" the callback must close the application
             return 0;
         });
 
         if (application.run (null) != 0) {
             GLib.Test.fail ();
         }
-
-        stdout.printf ("# action run finished\n");
     }
 
     public static int main (string[] args) {
@@ -70,23 +60,27 @@ namespace Terminal.Test.ApplicationActions {
                 // include the extra window from terminal launching
                 var n_windows = (int) app.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
+                app.quit ();
             });
         });
 
-        // GLib.Test.add_func ("/application/action/quit", () => {
-        //     var app = setup ("quit");
-        //     bool has_shutdown = false;
-        //     app.shutdown.connect (() => {
-        //         stdout.printf ("app has shutdown\n");
-        //         has_shutdown = true;
-        //         return;
-        //     });
+        GLib.Test.add_func ("/application/action/quit", () => {
+            var app = setup ("quit");
+            bool has_shutdown = false;
+            app.shutdown.connect (() => {
+                has_shutdown = true;
+                return;
+            });
 
-        //     action (app, "quit", null, () => {
-        //         stdout.printf ("quit callback\n");
-        //         assert (true);
-        //     });
-        // });
+            action (app, "quit", null, () => {
+                // Wait for shutdown signal from action
+                Idle.add (() => {
+                    // The app should already have been shutdown by the action
+                    assert (has_shutdown);
+                    return Source.REMOVE;
+                });
+            });
+        });
 
         return GLib.Test.run ();
     }

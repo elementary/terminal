@@ -779,7 +779,6 @@ namespace Terminal {
         private bool close_immediately = false;
         //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
         public bool on_close_request () {
-        app.test_message ("on delete event");
             if (close_immediately || app.is_testing) {
                 return Gdk.EVENT_PROPAGATE;
             }

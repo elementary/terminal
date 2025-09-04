@@ -167,8 +167,6 @@ public class Terminal.Application : Gtk.Application {
     }
 
     private void on_dbus_process_finished (string id, string process, int exit_status) {
-        test_message ("finish process %s, %s %i".printf (id, process, exit_status));
-
         TerminalWidget terminal = null;
         foreach (var window in (List<MainWindow>) get_windows ()) {
             terminal = window.get_terminal (id);
@@ -270,7 +268,7 @@ public class Terminal.Application : Gtk.Application {
         });
 
         var quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (close);
+        quit_action.activate.connect (() => {close (this);});
 
         add_action (new_window_action);
         add_action (quit_action);
@@ -345,23 +343,29 @@ public class Terminal.Application : Gtk.Application {
         base.dbus_unregister (connection, path);
     }
 
-    public void close () {
-        // warning ("close");
-        unowned var windows = (List<MainWindow>) get_windows ();
-        test_message ("windows length %u".printf (windows.length ()));
-        // warning ("windows length %u".printf (windows.length ()));
-        foreach (var window in windows) {
-            if (window != null) {
-                test_message ("Closing window");
-                // warning ("Closing window");
-                Idle.add (() => {
-                    window.close (); // if all windows is closed, the main loop will stop automatically.
-                    return Source.REMOVE;
-                });
-            }
+    // Using a static method here to allow testing the "quit" action in CI
+    // Using instance method and `foreach` loop results in segfault in CI and with >1 window
+    public static void close (Terminal.Application inst) {
+        unowned var windows = (List<MainWindow>) inst.get_windows ();
+        var n_windows = windows.length ();
+        var windows_array = new MainWindow?[n_windows];
+        for (uint i = 0; i < n_windows; i++) {
+            windows_array[i] = windows.nth_data (i);
         }
+        for (uint i = 0; i < n_windows; i++) {
+            if (windows_array[i] == null) {
+                continue;
+            }
+
+            var window = windows_array[i];
+            window.close (); // if all windows are closed, the main loop will stop automatically.
+            window = null;
+        }
+
+        inst.quit ();
     }
 
+    // Convenience method for debugging unit tests
     public void test_message (string message) {
         if (is_testing) {
             stdout.printf ("# " + message + "\n");

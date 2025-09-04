@@ -787,7 +787,6 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
-app.test_message ("start spawn");
             this.spawn_async (
                 Vte.PtyFlags.DEFAULT,
                 dir,
@@ -798,9 +797,7 @@ app.test_message ("start spawn");
                 -1,
                 null,
                 (terminal, pid, error) => {
-                    app.test_message ("spawn_callback");
                     if (error == null) {
-                        app.test_message ("got shell pid");
                         this.child_pid = pid;
                     } else {
                         warning (error.message);
