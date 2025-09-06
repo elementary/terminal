@@ -28,14 +28,13 @@ jobs:
       run: |
         meson setup build
         meson compile -C build
+        meson install -C build
+        meson test -C build --print-errorlogs --setup=headless ApplicationActions
         meson test -C build --print-errorlogs --setup=headless ApplicationOptions
         meson test -C build --print-errorlogs --setup=headless "Validate desktop file"
         meson test -C build --print-errorlogs --setup=headless "Validate open here desktop file"
         meson test -C build --print-errorlogs --setup=headless "UnsafePaste Test"
         meson test -C build --print-errorlogs --setup=headless ApplicationCLI
-        meson test -C build --print-errorlogs --setup=headless ApplicationActions
-
-        meson install -C build
 
   lint:
     runs-on: ubuntu-latest
