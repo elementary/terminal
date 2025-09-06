@@ -716,11 +716,6 @@ namespace Terminal {
         // Terminate the shell process prior to closing the tab
         public void term_ps () {
             killed = true;
-
-            if (app.is_testing) {
-                return;
-            }
-
 #if HAS_LINUX
             int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
 #else

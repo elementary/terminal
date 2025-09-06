@@ -565,6 +565,7 @@ namespace Terminal {
             int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
 
+            // Unit tests require no tabs are restored so ensure that here
             if (!app.is_testing && Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
@@ -779,7 +780,7 @@ namespace Terminal {
         private bool close_immediately = false;
         //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
         public bool on_close_request () {
-            if (close_immediately || app.is_testing) {
+            if (close_immediately) {
                 return Gdk.EVENT_PROPAGATE;
             }
             //Avoid saved terminals being overwritten when tabs destroyed.
@@ -1111,11 +1112,6 @@ namespace Terminal {
             string[] zooms = {};
             string[] opened_tabs = {};
             int focused_tab = 0;
-
-            // Continuous saving of opened terminals interferes with current unit tests
-            if (app.is_testing) {
-                return;
-            }
 
             if (save_zooms && current_terminal != null) {
                 Application.saved_state.set_double ("zoom", current_terminal.font_scale);
