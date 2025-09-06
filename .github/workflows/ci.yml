@@ -33,7 +33,7 @@ jobs:
         meson test -C build --print-errorlogs --setup=headless ApplicationOptions
         meson test -C build --print-errorlogs --setup=headless "Validate desktop file"
         meson test -C build --print-errorlogs --setup=headless "Validate open here desktop file"
-        meson test -C build --print-errorlogs --setup=headless "UnsafePaste Test"
+        meson test -C build --print-errorlogs --setup=headless "UnsafePasteTest"
         meson test -C build --print-errorlogs --setup=headless ApplicationCLI
 
   lint:
