@@ -11,6 +11,6 @@ unsafe_paste_test = executable(
 
 test(
     'UnsafePasteTest',
-    unsafe_paste_test,
-    env: test_env
+    unsafe_paste_test
+    # env: test_env
 )
