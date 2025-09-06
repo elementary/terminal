@@ -43,13 +43,13 @@ executable(
 
 # tests
 
-# test_env = [
-#     'G_TEST_SRCDIR=' + meson.current_source_dir(),
-#     'G_TEST_BUILDDIR=' + meson.current_build_dir(),
-#     'GSETTINGS_SCHEMA_DIR=' + meson.project_build_root() / 'data',
-#     'GSETTINGS_BACKEND=memory',
-#     'GIO_USE_VFS=local'
-# ]
+test_env = [
+    'G_TEST_SRCDIR=' + meson.current_source_dir(),
+    'G_TEST_BUILDDIR=' + meson.current_build_dir(),
+    'GSETTINGS_SCHEMA_DIR=' + meson.project_build_root() / 'data',
+    'GSETTINGS_BACKEND=memory',
+    'GIO_USE_VFS=local'
+]
 
 add_test_setup(
   'headless',
@@ -85,19 +85,19 @@ app_actions_test = executable(
 test(
     'ApplicationCLI',
     app_cli_test,
-    # env: test_env,
+    env: test_env,
     depends: test_schemas
 )
 test(
     'ApplicationOptions',
     app_options_test,
-    # env: test_env,
+    env: test_env,
     depends: test_schemas
 )
 test(
     'ApplicationActions',
     app_actions_test,
-    # env: test_env,
+    env: test_env,
     depends: test_schemas
 )
 
