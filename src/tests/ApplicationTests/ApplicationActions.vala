@@ -7,7 +7,7 @@ namespace Terminal.Test.ApplicationActions {
     delegate void ActivateCallback ();
 
     private Terminal.Application setup (string id) {
-        var application = new Terminal.Application ();
+        var application = new Terminal.Application (id);
         return application;
     }
 

@@ -18,9 +18,9 @@ public class Terminal.Application : Gtk.Application {
 
     private static Themes themes;
 
-    public Application (string id = "io.elementary.terminal") {
+    public Application (string id = "") {
         Object (
-            application_id: id, /* Ensures only one instance runs */
+            application_id: "io.elementary.terminal" + id, /* Ensures only unique instance for each test runs */
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
     }
