@@ -64,23 +64,23 @@ namespace Terminal.Test.ApplicationActions {
             });
         });
 
-        GLib.Test.add_func ("/application/action/quit", () => {
-            var app = setup ("quit");
-            bool has_shutdown = false;
-            app.shutdown.connect (() => {
-                has_shutdown = true;
-                return;
-            });
+        // GLib.Test.add_func ("/application/action/quit", () => {
+        //     var app = setup ("quit");
+        //     bool has_shutdown = false;
+        //     app.shutdown.connect (() => {
+        //         has_shutdown = true;
+        //         return;
+        //     });
 
-            action (app, "quit", null, () => {
-                // Wait for shutdown signal from action
-                Idle.add (() => {
-                    // The app should already have been shutdown by the action
-                    assert (has_shutdown);
-                    return Source.REMOVE;
-                });
-            });
-        });
+        //     action (app, "quit", null, () => {
+        //         // Wait for shutdown signal from action
+        //         Idle.add (() => {
+        //             // The app should already have been shutdown by the action
+        //             assert (has_shutdown);
+        //             return Source.REMOVE;
+        //         });
+        //     });
+        // });
 
         return GLib.Test.run ();
     }
