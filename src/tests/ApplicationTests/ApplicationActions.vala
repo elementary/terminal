@@ -6,8 +6,10 @@
 namespace Terminal.Test.ApplicationActions {
     delegate void ActivateCallback ();
 
-    private Terminal.Application setup (string id = "") {
-        var application = new Terminal.Application (id);
+    private Terminal.Application setup () {
+        var application = new Terminal.Application () {
+            application_id = "io.elementary.terminal.tests.application.applicationactions"
+        };
         return application;
     }
 
@@ -55,8 +57,7 @@ namespace Terminal.Test.ApplicationActions {
 
         // actions
         GLib.Test.add_func ("/application/action/new-window", () => {
-            var app = setup ("");
-            // var app = setup ("new-window");
+            var app = setup ();
             action (app, "new-window", null, () => {
                 // include the extra window from terminal launching
                 var n_windows = (int) app.get_windows ().length ();

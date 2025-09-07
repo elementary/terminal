@@ -448,7 +448,7 @@ namespace Terminal {
                 return false;
             }
 
-            // FIXME Gtk4 Port:It appears the Vte.Terminal native handling of copy with <Shift><Control>C
+            //NOTE It appears the Vte.Terminal native handling of copy with <Shift><Control>C
             // does not work in Gtk4 so for now handle natural and native.
             var natural = Application.settings.get_boolean ("natural-copy-paste");
             if (control_pressed) {
@@ -499,7 +499,6 @@ namespace Terminal {
 
             if (formats != null) {
                 can_paste = formats.contain_gtype (Type.STRING);
-                //TODO Gtk4 Port:Use mimetype for text and uris?
             }
 
             paste_action.set_enabled (can_paste);
@@ -513,7 +512,7 @@ namespace Terminal {
             main_window.update_context_menu ();
             setup_menu ();
 
-            //FIXME Gtk4 Port:For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
+            //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
             // does not work at the moment so create our own.
             var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
                 has_arrow = false,

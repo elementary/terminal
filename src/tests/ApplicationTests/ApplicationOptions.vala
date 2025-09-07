@@ -6,8 +6,10 @@
 namespace Terminal.Test.ApplicationOptions {
     delegate void CommandLineCallback (Terminal.Application app);
 
-    private Terminal.Application setup (string id) {
-        var application = new Terminal.Application ();
+    private Terminal.Application setup () {
+        var application = new Terminal.Application () {
+            application_id = "io.elementary.terminal.tests.application.applicationoptions"
+        };
         return application;
     }
 
@@ -25,9 +27,9 @@ namespace Terminal.Test.ApplicationOptions {
         }
     }
 
-    private void option (string id, string options, string platform_data, CommandLineCallback callback) {
+    private void option (string options, string platform_data, CommandLineCallback callback) {
         ulong oneshot = 0;
-        var application = setup (id);
+        var application = setup ();
 
         oneshot = application.command_line.connect ((nil) => {
             application.disconnect (oneshot);
@@ -52,7 +54,7 @@ namespace Terminal.Test.ApplicationOptions {
     }
 
     public static int main (string[] args) {
-        // Intl.setlocale (LocaleCategory.ALL, "");
+        Intl.setlocale (LocaleCategory.ALL, "");
 
         GLib.Test.init (ref args);
 
@@ -63,7 +65,7 @@ namespace Terminal.Test.ApplicationOptions {
 
         // primary command line: first instance from terminal. any instance from dbus.
         GLib.Test.add_func ("/application/command-line/new-tab", () => {
-            option ("new-tab-true", "{'new-tab':<true>}", "@a{sv} {}", (app) => {
+            option ("{'new-tab':<true>}", "@a{sv} {}", (app) => {
                 assert_nonnull (app);
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
@@ -71,7 +73,7 @@ namespace Terminal.Test.ApplicationOptions {
                 assert_cmpint (n_tabs, CompareOperator.EQ, 2);
             });
 
-            option ("new-tab-false", "{'new-tab':<false>}", "@a{sv} {}", (app) => {
+            option ("{'new-tab':<false>}", "@a{sv} {}", (app) => {
                 assert_nonnull (app);
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
@@ -82,12 +84,12 @@ namespace Terminal.Test.ApplicationOptions {
         });
 
         GLib.Test.add_func ("/application/command-line/new-window", () => {
-            option ("new-window-true", "{'new-window':<true>}", "@a{sv} {}", (app) => {
+            option ("{'new-window':<true>}", "@a{sv} {}", (app) => {
                 var n_windows = (int) app.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 2);
             });
 
-            option ("new-window-false", "{'new-window':<false>}", "@a{sv} {}", (app) => {
+            option ("{'new-window':<false>}", "@a{sv} {}", (app) => {
                 var n_windows = (int) app.get_windows ().length ();
                 assert_cmpint (n_windows, CompareOperator.EQ, 1);
             });
@@ -97,7 +99,7 @@ namespace Terminal.Test.ApplicationOptions {
             string[] execute = { "true", "echo test", "echo -e te\\tst", "false" };
 
             //valid
-            option ("execute-1", "{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", (app) => {
+            option ("{'execute':<[b'%s']>}".printf (string.joinv ("',b'", execute)), "@a{sv} {}", (app) => {
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
                 var n_tabs = window.notebook.n_pages;
@@ -105,7 +107,7 @@ namespace Terminal.Test.ApplicationOptions {
             });
 
             // invalid
-            option ("execute-2", "{'execute':<[b'',b'',b'']>}", "@a{sv} {}", (app) => {
+            option ("{'execute':<[b'',b'',b'']>}", "@a{sv} {}", (app) => {
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
                 var n_tabs = window.notebook.n_pages;
@@ -113,13 +115,13 @@ namespace Terminal.Test.ApplicationOptions {
             });
         });
 
-        // FIXME: cannot test the `--commandline=` option without a way to get the terminal command
+        //FIXME: cannot test the `--commandline=` option without a way to get the terminal command
         GLib.Test.add_func ("/application/command-line/commandline", () => GLib.Test.skip ());
 
         GLib.Test.add_func ("/application/command-line/platform-data/cwd", () => {
             unowned var working_directory = GLib.Test.get_dir (GLib.Test.FileType.DIST);
 
-            option ("cwd", "{'new-tab':<true>}", "{'cwd':<b'%s'>}".printf (working_directory), (app) => {
+            option ("{'new-tab':<true>}", "{'cwd':<b'%s'>}".printf (working_directory), (app) => {
                 unowned var window = (MainWindow) app.active_window;
                 assert_nonnull (window);
                 var terminal_directory = window.current_terminal.get_shell_location ();
