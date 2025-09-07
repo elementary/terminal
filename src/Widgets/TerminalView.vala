@@ -85,7 +85,21 @@ public class Terminal.TerminalView : Gtk.Box {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
+        var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY) {
+            preload = true //So we can predetermine whether string is suitable for dropping here
+        };
+
+        button_target.notify["value"].connect (() => {
+            var val = button_target.get_value ();
+            var uris = Uri.list_extract_uris (val.dup_string ());
+            foreach (string s in uris) {
+                if (!Utils.valid_local_uri (s, null)) {
+                    button_target.reject ();
+                    break;
+                }
+            }
+        });
+
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
 
@@ -232,24 +246,12 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     private bool on_add_button_drop (Value val, double x, double y) {
-        //TODO Gtk4 Port:Check val holds uri list
         var uris = Uri.list_extract_uris (val.dup_string ());
         var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
         // ACTION_NEW_TAB_AT only works with local paths to folders
         foreach (var uri in uris) {
-            var file = GLib.File.new_for_uri (uri);
-            var scheme = file.get_uri_scheme ();
-            if (scheme != "file" && scheme != "") {
-                return false;
-            }
-
-            var type = file.query_file_type (NONE);
             string path;
-            if (type == DIRECTORY) {
-                path = file.get_path ();
-            } else if (type == REGULAR) {
-                path = file.get_parent ().get_path ();
-            } else {
+            if (!Utils.valid_local_uri (uri, out path)) {
                 continue;
             }
 
