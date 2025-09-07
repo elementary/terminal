@@ -23,19 +23,12 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y desktop-file-utils gettext libgranite-7-dev libgtk-4-dev libadwaita-1-dev libvte-2.91-gtk4-dev libxml2-utils meson valac xvfb dbus-x11 at-spi2-core
+        apt install -y desktop-file-utils gettext libgranite-7-dev libgtk-4-dev libadwaita-1-dev libvte-2.91-gtk4-dev libxml2-utils meson valac xvfb
     - name: Build
       run: |
         meson setup build
         meson compile -C build
-
-        meson test -C build --print-errorlogs --setup=headless ApplicationActions
-        meson test -C build --print-errorlogs --setup=headless ApplicationOptions
-        meson test -C build --print-errorlogs --setup=headless "Validate desktop file"
-        meson test -C build --print-errorlogs --setup=headless "Validate open here desktop file"
-        meson test -C build --print-errorlogs --setup=headless "UnsafePasteTest"
-        meson test -C build --print-errorlogs --setup=headless ApplicationCLI
-
+        meson test -C build --print-errorlogs
         meson install -C build
 
   lint:

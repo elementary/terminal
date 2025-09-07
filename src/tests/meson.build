@@ -9,8 +9,4 @@ unsafe_paste_test = executable(
     install: false
 )
 
-test(
-    'UnsafePasteTest',
-    unsafe_paste_test
-    # env: test_env
-)
+test('UnsafePaste Test', unsafe_paste_test)

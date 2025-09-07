@@ -14,22 +14,18 @@ public class Terminal.Application : Gtk.Application {
     public static GLib.Settings settings;
     public static GLib.Settings settings_sys;
 
-    public bool is_testing { get; set; default = false;}
+    public bool is_testing { get; set construct; }
 
     private static Themes themes;
 
     public Application () {
         Object (
-            application_id: "io.elementary.terminal", //* Ensures only unique instance for each test runs */
+            application_id: "io.elementary.terminal", /* Ensures only one instance runs */
             flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.CAN_OVERRIDE_APP_ID
         );
     }
 
     construct {
-#if TESTS
-        is_testing = true;
-#endif
-
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
@@ -157,16 +153,18 @@ public class Terminal.Application : Gtk.Application {
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
         base.dbus_register (connection, object_path);
 
-        var dbus = new Terminal.DBus ();
+        var dbus = new DBus ();
         dbus_id = connection.register_object (object_path, dbus);
 
         dbus.finished_process.connect ((id, process, exit_status) => {
             TerminalWidget terminal = null;
+
             foreach (var window in (List<MainWindow>) get_windows ()) {
-                terminal = window.get_terminal (id);
                 if (terminal != null) {
                     break;
                 }
+
+                terminal = window.get_terminal (id);
             }
 
             if (terminal == null) {
@@ -209,12 +207,7 @@ public class Terminal.Application : Gtk.Application {
             }
         });
 
-
         return true;
-    }
-
-    private void on_dbus_process_finished (string id, string process, int exit_status) {
-
     }
 
     private void withdraw_notification_for_terminal (TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
@@ -270,7 +263,7 @@ public class Terminal.Application : Gtk.Application {
         });
 
         var quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (() => {close (this);});
+        quit_action.activate.connect (close);
 
         add_action (new_window_action);
         add_action (quit_action);
@@ -345,32 +338,9 @@ public class Terminal.Application : Gtk.Application {
         base.dbus_unregister (connection, path);
     }
 
-    // Using a static method here to allow testing the "quit" action in CI
-    // Using instance method and `foreach` loop results in segfault in CI and with >1 window
-    public static void close (Terminal.Application inst) {
-        unowned var windows = (List<MainWindow>) inst.get_windows ();
-        var n_windows = windows.length ();
-        var windows_array = new MainWindow?[n_windows];
-        for (uint i = 0; i < n_windows; i++) {
-            windows_array[i] = windows.nth_data (i);
-        }
-        for (uint i = 0; i < n_windows; i++) {
-            if (windows_array[i] == null) {
-                continue;
-            }
-
-            var window = windows_array[i];
-            window.close (); // if all windows are closed, the main loop will stop automatically.
-            window = null;
-        }
-
-        inst.quit ();
-    }
-
-    // Convenience method for debugging unit tests
-    public void test_message (string message) {
-        if (is_testing) {
-            stdout.printf ("# " + message + "\n");
+    public void close () {
+        foreach (var window in get_windows ()) {
+            window.close (); // if all windows is closed, the main loop will stop automatically.
         }
     }
 }
