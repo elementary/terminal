@@ -716,7 +716,6 @@ namespace Terminal {
         // Terminate the shell process prior to closing the tab
         public void term_ps () {
             killed = true;
-
 #if HAS_LINUX
             int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
 #else
@@ -854,7 +853,11 @@ namespace Terminal {
         }
 
         public bool has_foreground_process () {
-            return try_get_foreground_pid (null);
+            if (pty != null) {
+                return try_get_foreground_pid (null);
+            } else {
+                return false;
+            }
         }
 
         public int calculate_width (int column_count) {

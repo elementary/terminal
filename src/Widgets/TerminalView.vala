@@ -47,7 +47,7 @@ public class Terminal.TerminalView : Gtk.Box {
         hexpand = true;
         vexpand = true;
 
-        var app_instance = (Gtk.Application) GLib.Application.get_default ();
+        var app_instance = (Terminal.Application) GLib.Application.get_default ();
         tab_view = new Adw.TabView () {
             hexpand = true,
             vexpand = true

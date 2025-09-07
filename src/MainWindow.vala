@@ -226,7 +226,7 @@ namespace Terminal {
                 open_tabs ();
             }
 
-            close_request.connect (on_delete_event);
+            close_request.connect (on_close_request);
         }
 
         public void add_tab_with_working_directory (
@@ -234,7 +234,6 @@ namespace Terminal {
             string command = "",
             bool create_new_tab = false
         ) {
-
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
@@ -566,7 +565,8 @@ namespace Terminal {
             int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
 
-            if (Granite.Services.System.history_is_enabled () &&
+            // Unit tests require no tabs are restored so ensure that here
+            if (!app.is_testing && Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
                 tabs = Terminal.Application.saved_state.get_strv ("tabs");
@@ -644,7 +644,6 @@ namespace Terminal {
             bool focus = true,
             int pos = notebook.n_pages
         ) {
-
             /*
              * If the user choose to use a specific working directory.
              * Reassigning the directory variable a new value
@@ -664,7 +663,6 @@ namespace Terminal {
             );
 
             //Set correct label now to avoid race when spawning shell
-
             terminal_widget.set_font (term_font);
 
             if (current_terminal != null) {
@@ -679,17 +677,16 @@ namespace Terminal {
 
             if (program.length == 0) {
                 /* Set up the virtual terminal */
-                if (location == "") {
-                    terminal_widget.active_shell ();
-                } else {
-                    terminal_widget.active_shell (location);
-                }
+                    if (location == "") {
+                        terminal_widget.active_shell ();
+                    } else {
+                        terminal_widget.active_shell (location);
+                    }
             } else {
                 terminal_widget.run_program (program, location);
             }
 
             save_opened_terminals (true, true);
-
             return terminal_widget;
         }
 
@@ -782,7 +779,7 @@ namespace Terminal {
 
         private bool close_immediately = false;
         //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
-        public bool on_delete_event () {
+        public bool on_close_request () {
             if (close_immediately) {
                 return Gdk.EVENT_PROPAGATE;
             }
@@ -1115,11 +1112,6 @@ namespace Terminal {
             string[] zooms = {};
             string[] opened_tabs = {};
             int focused_tab = 0;
-
-            // Continuous saving of opened terminals interferes with current unit tests
-            if (app.is_testing) {
-                return;
-            }
 
             if (save_zooms && current_terminal != null) {
                 Application.saved_state.set_double ("zoom", current_terminal.font_scale);
