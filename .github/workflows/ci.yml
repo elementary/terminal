@@ -28,15 +28,40 @@ jobs:
       run: |
         meson setup build
         meson compile -C build
-
-        meson test -C build --print-errorlogs --setup=headless ApplicationActions
-        meson test -C build --print-errorlogs --setup=headless ApplicationOptions
+        meson install -C build
+    - name: Validate
+      run: |
         meson test -C build --print-errorlogs --setup=headless "Validate desktop file"
         meson test -C build --print-errorlogs --setup=headless "Validate open here desktop file"
+    - name: UnsafePasteTest
+      run: |
         meson test -C build --print-errorlogs --setup=headless "UnsafePasteTest"
-        meson test -C build --print-errorlogs --setup=headless ApplicationCLI
 
+  applicationtests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [stable]
+    container:
+          image: ghcr.io/elementary/docker:${{ matrix.version }}
+    steps:
+    - uses: actions/checkout@v5
+    - name: Install Dependencies
+      run: |
+        apt update
+        apt install -y desktop-file-utils gettext libgranite-7-dev libgtk-4-dev libadwaita-1-dev libvte-2.91-gtk4-dev libxml2-utils meson valac xvfb dbus-x11 at-spi2-core
+    - name: Build
+      run: |
+        meson setup build
+        meson compile -C build
         meson install -C build
+    - name: ApplicationTests
+      run: |
+        meson test -C build --print-errorlogs --setup=headless ApplicationActions
+        meson test -C build --print-errorlogs --setup=headless ApplicationOptions
+        meson test -C build --print-errorlogs --setup=headless ApplicationCLI
 
   lint:
     runs-on: ubuntu-latest
