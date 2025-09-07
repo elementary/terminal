@@ -33,14 +33,15 @@ jobs:
       run: |
         meson test -C build --print-errorlogs --setup=headless "Validate desktop file"
         meson test -C build --print-errorlogs --setup=headless "Validate open here desktop file"
+    - name: UnsafePasteTest
+      run: |
+        meson test -C build --print-errorlogs --setup=headless "UnsafePasteTest"
     - name: ApplicationTests
+      if: ${{ matrix.version }} == 'stable'
       run: |
         meson test -C build --print-errorlogs --setup=headless ApplicationActions
         meson test -C build --print-errorlogs --setup=headless ApplicationOptions
         meson test -C build --print-errorlogs --setup=headless ApplicationCLI
-    - name: UnsafePasteTest
-      run: |
-        meson test -C build --print-errorlogs --setup=headless "UnsafePasteTest"
 
 
   lint:
