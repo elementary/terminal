@@ -6,13 +6,16 @@ command: io.elementary.terminal
 
 finish-args:
   - '--metadata=X-DConf=migrate-path=/io/elementary/terminal/'
+  - '--allow=devel'
   - '--filesystem=host'
-  - '--filesystem=xdg-run/gvfsd'
+  - '--filesystem=home'
+  # - '--filesystem=xdg-run/gvfsd'
   - '--share=ipc'
+  - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
-  - '--socket=session-bus'
-  - '--device=all'
+  - '--device=dri'
+  # - '--device=all'
   - '--talk-name=org.freedesktop.Flatpak'
 
 cleanup:
