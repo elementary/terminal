@@ -1,1 +1,1 @@
-option('terminal_is_flatpak', type: 'boolean', value: false)
+option('terminal_is_flatpak', type: 'boolean', value: true)
