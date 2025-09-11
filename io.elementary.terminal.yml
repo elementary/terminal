@@ -1,0 +1,46 @@
+app-id: io.elementary.terminal
+runtime: io.elementary.Platform
+runtime-version: '8.2'
+sdk: io.elementary.Sdk
+command: io.elementary.terminal
+
+finish-args:
+  - '--metadata=X-DConf=migrate-path=/io/elementary/terminal/'
+  - '--filesystem=host'
+  - '--filesystem=xdg-run/gvfsd'
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+  - '--socket=session-bus'
+  - '--device=all'
+  - '--talk-name=org.freedesktop.Flatpak'
+
+cleanup:
+  - '/include'
+  - '/lib/pkgconfig'
+  - '/lib/cmake'
+  - '/lib/girepository-1.0'
+  - '/share/gir-1.0'
+  - '/share/vala'
+  - '*.a'
+  - '*.la'
+
+build-options:
+  libdir: /app/lib
+
+modules:
+  - name: vte
+    buildsystem: meson
+    config-opts:
+      - '-Dgtk4=true'
+      - '-Dgtk3=false'
+    sources:
+      - type: archive
+        url: https://gitlab.gnome.org/GNOME/vte/-/archive/3c8f66be867aca6656e4109ce880b6ea7431b895/vte-3c8f66be867aca6656e4109ce880b6ea7431b895.tar.gz
+        sha256: 320618260a29c99ab68d1e8674f6d4926bbf1e7e6541e8e04898fad85bb6e1b9
+
+  - name: terminal
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
