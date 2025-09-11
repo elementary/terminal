@@ -1,3 +1,7 @@
+if get_option('terminal_is_flatpak')
+  add_project_arguments('-D', 'TERMINAL_IS_FLATPAK', language: 'vala')
+endif
+
 terminal_deps = [
     glib_dep,
     gobject_dep,

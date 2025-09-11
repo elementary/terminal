@@ -41,6 +41,8 @@ modules:
 
   - name: terminal
     buildsystem: meson
+    config-opts:
+      - 'Dterminal_is_flatpak=true'
     sources:
       - type: dir
         path: .
