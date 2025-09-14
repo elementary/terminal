@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2023 Paulo Queiroz <pvaqueiroz@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,12 +17,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace FlatPakUtils {
-
-#if TERMINAL_IS_FLATPAK
+ /* All these functions must be called only when running in a Flatpak */
+namespace Terminal.FlatpakUtils {
   internal string? flatpak_root = null;
 
-  public string get_flatpak_root () throws GLib.Error {
+  public string get_flatpak_root ()
+  throws GLib.Error {
     if (flatpak_root == null) {
       KeyFile kf = new KeyFile ();
 
@@ -31,9 +31,8 @@ namespace FlatPakUtils {
     }
     return flatpak_root;
   }
-#endif
 
-  public string? host_or_flatpak_spawn (
+  public string? flatpak_spawn_on_host (
     string[] argv,
     out int status = null
   ) throws GLib.Error {
@@ -44,10 +43,11 @@ namespace FlatPakUtils {
 
     status = -1;
 
-#if TERMINAL_IS_FLATPAK
+    assert (Terminal.Application.is_running_in_flatpak);
+// #if TERMINAL_IS_FLATPAK
     real_argv += "flatpak-spawn";
     real_argv += "--host";
-#endif
+// #endif
 
     foreach (unowned string arg in argv) {
       real_argv += arg;
@@ -82,60 +82,60 @@ namespace FlatPakUtils {
    *
    * SPDX-License-Identifier: (MIT OR Apache-2.0)
    */
-  public string? fp_guess_shell(Cancellable? cancellable = null) throws Error {
-#if !TERMINAL_IS_FLATPAK
-    return Vte.get_user_shell();
-#endif
+  public string? fp_guess_shell (Cancellable? cancellable = null) {
+    assert (Terminal.Application.is_running_in_flatpak);
+    try {
+        string[] argv = { "flatpak-spawn", "--host", "getent", "passwd",
+          Environment.get_user_name () };
 
-    string[] argv = { "flatpak-spawn", "--host", "getent", "passwd",
-      Environment.get_user_name() };
+        var launcher = new GLib.SubprocessLauncher (
+          SubprocessFlags.STDOUT_PIPE | SubprocessFlags.STDERR_SILENCE
+        );
 
-    var launcher = new GLib.SubprocessLauncher(
+        launcher.unsetenv ("G_MESSAGES_DEBUG");
+        var sp = launcher.spawnv (argv);
+
+        if (sp == null)
+          return null;
+
+        string? buf = null;
+        if (!sp.communicate_utf8 (null, cancellable, out buf, null))
+          return null;
+
+        var parts = buf.split (":");
+
+        if (parts.length < 7) {
+          return null;
+        }
+
+        return parts[6].strip ();
+    } catch (Error e) {
+        warning ("Failed to guess Flatpak shell");
+        return null;
+    }
+  }
+
+  public string[]? fp_get_env (Cancellable? cancellable = null) throws Error {
+    string[] argv = { "flatpak-spawn", "--host", "env" };
+
+    var launcher = new GLib.SubprocessLauncher (
       SubprocessFlags.STDOUT_PIPE | SubprocessFlags.STDERR_SILENCE
     );
 
-    launcher.unsetenv("G_MESSAGES_DEBUG");
-    var sp = launcher.spawnv(argv);
+    launcher.setenv ("G_MESSAGES_DEBUG", "false", true);
 
-    if (sp == null)
-      return null;
+    var sp = launcher.spawnv (argv);
 
-    string? buf = null;
-    if (!sp.communicate_utf8(null, cancellable, out buf, null))
-      return null;
-
-    var parts = buf.split(":");
-
-    if (parts.length < 7) {
+    if (sp == null) {
       return null;
     }
 
-    return parts[6].strip();
-  }
-
-  public string[]? fp_get_env(Cancellable? cancellable = null) throws Error {
-#if !TERMINAL_IS_FLATPAK
-    return Environ.get();
-#endif
-
-    string[] argv = { "flatpak-spawn", "--host", "env" };
-
-    var launcher = new GLib.SubprocessLauncher(
-      SubprocessFlags.STDOUT_PIPE | SubprocessFlags.STDERR_SILENCE
-    );
-
-    launcher.setenv("G_MESSAGES_DEBUG", "false", true);
-
-    var sp = launcher.spawnv(argv);
-
-    if (sp == null)
-      return null;
-
     string? buf = null;
-    if (!sp.communicate_utf8(null, cancellable, out buf, null))
+    if (!sp.communicate_utf8 (null, cancellable, out buf, null)) {
       return null;
+    }
 
-    string[] arr = buf.strip().split("\n");
+    string[] arr = buf.strip ().split ("\n");
 
     return arr;
   }
@@ -144,9 +144,6 @@ namespace FlatPakUtils {
     int terminal_fd,
     Cancellable? cancellable = null
   ) {
-#if !TERMINAL_IS_FLATPAK
-    return Posix.tcgetpgrp (terminal_fd);
-#endif
 
     try {
       KeyFile kf = new KeyFile ();
@@ -213,10 +210,6 @@ namespace FlatPakUtils {
     out int pid
   ) throws GLib.Error {
     pid = -1;
-
-#if !TERMINAL_IS_FLATPAK
-    return false;
-#endif
 
     uint[] handles = {};
 
@@ -360,7 +353,7 @@ namespace FlatPakUtils {
   public string? get_process_cmdline (int pid) {
     try {
       //  ps -p PID -o args --no-headers
-      string? response = host_or_flatpak_spawn ({
+      string? response = flatpak_spawn_on_host ({
         "ps",
         "-p",
         pid.to_string (),
@@ -377,11 +370,12 @@ namespace FlatPakUtils {
     return null;
   }
 
-  public int get_euid_from_pid (int pid,
-                                GLib.Cancellable? cancellable) throws GLib.Error
-  {
+    public int get_euid_from_pid (
+        int pid,
+        GLib.Cancellable? cancellable
+    ) throws GLib.Error {
+
     string proc_file = @"/proc/$pid";
-#if TERMINAL_IS_FLATPAK
     string[] argv = {
       "%s/bin/terminal-toolbox".printf (get_flatpak_root ()),
       "stat",
@@ -389,7 +383,7 @@ namespace FlatPakUtils {
     };
 
     int status;
-    var response = host_or_flatpak_spawn (argv, out status);
+    var response = flatpak_spawn_on_host (argv, out status);
     int euid = -1;
 
     if (status == 0 && int.try_parse (response.strip (), out euid, null, 10)) {
@@ -398,11 +392,5 @@ namespace FlatPakUtils {
     else {
       return -1;
     }
-#else
-    Posix.Stat? buf = null;
-    Posix.stat (proc_file, out buf);
-
-    return (int) buf.st_uid;
-#endif
   }
 }

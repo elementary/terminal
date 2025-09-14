@@ -751,24 +751,36 @@ namespace Terminal {
         }
 
         public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-            string shell = Application.settings.get_string ("shell");
-            string?[] envv = null;
+            spawn (dir);
+        }
 
+        private string get_shell () {
+            var shell = Application.settings.get_string ("shell");
             if (shell == "") {
-                shell = Vte.get_user_shell ();
+                shell = Terminal.Application.is_running_in_flatpak ? FlatpakUtils.fp_guess_shell () : Vte.get_user_shell ();
             }
 
             if (shell == "") {
-                critical ("No user shell available");
-                return;
+                critical ("No user shell available - trying bash");
+                shell = "/usr/bin/bash";
             }
 
+            return shell;
+        }
+
+        private void spawn (
+            string dir,
+            string? _shell = null,
+            string? _command = null
+        ) {
             if (dir == "") {
                 debug ("Using fallback directory");
                 dir = "/";
             }
 
-            envv = {
+            Array<string> argv = new Array<string> ();
+            Array<string> envv = new Array<string> ();
+            string?[] terminal_envv = {
                 // Export ID so we can identify the terminal for which the process completion is reported
                 "PANTHEON_TERMINAL_ID=" + terminal_id,
 
@@ -780,25 +792,124 @@ namespace Terminal {
                 // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
             };
 
-            /* We need opening uri to be available asap when constructing window with working directory
-             * so remove idle loop, which appears not to be necessary any longer */
-            this.spawn_async (
-                Vte.PtyFlags.DEFAULT,
-                dir,
-                { shell },
-                envv,
-                SpawnFlags.SEARCH_PATH,
-                null,
-                -1,
-                null,
-                (terminal, pid, error) => {
-                    if (error == null) {
-                        this.child_pid = pid;
-                    } else {
-                        warning (error.message);
+            bool flatpak = Terminal.Application.is_running_in_flatpak;
+            var temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
+            foreach (string s in temp_envv) {
+                envv.append_val (s);
+            }
+            foreach (string s in terminal_envv) {
+                envv.append_val (s);
+            }
+
+            var shell = _shell != null ? _shell : get_shell ();
+            argv.append_val (shell);
+
+            if (flatpak) {
+                this.spawn_on_flatpak.begin (
+                    Vte.PtyFlags.DEFAULT,
+                    dir,
+                    argv,
+                    envv,
+                    (terminal, pid, error) => {
+                        if (error == null) {
+                            this.child_pid = pid;
+                            // on_spawn_finished (); //TODO implement notification of child exited
+                        } else {
+                            warning (error.message);
+                            // on_spawn_failed (); //TODO Expose message in UI as toast or otherwise
+                        }
                     }
-                }
-            );
+                );
+            } else {
+                this.spawn_async (
+                    Vte.PtyFlags.DEFAULT,
+                    dir,
+                    argv.data,
+                    envv.data,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
+                    -1,
+                    null,
+                    (terminal, pid, error) => {
+                        if (error == null) {
+                            this.child_pid = pid;
+                        } else {
+                            warning (error.message);
+                        }
+                    }
+                );
+            }
+        }
+
+        // delegate void TerminalSpawnAsyncCallback (Terminal terminal, Pid pid, Error error);
+        // The following function is derived from the work of [BlackBox] tweaked to make interface
+        // more like Vte.spawn_async
+        private GLib.Cancellable? fp_spawn_host_command_callback_cancellable = null;
+        private async void spawn_on_flatpak (
+            Vte.PtyFlags flags,
+            string? cwd,
+            Array<string> argv,
+            Array<string> envv,
+            Vte.TerminalSpawnAsyncCallback? cb) {
+
+            int p = -1;
+            Vte.Pty _ppty;
+
+            try {
+              _ppty = new Vte.Pty.sync (flags, null);
+            } catch (GLib.Error e) {
+                cb (this, p, e);
+                return;
+            }
+
+            int pty_master = _ppty.get_fd ();
+
+            if (Posix.grantpt (pty_master) != 0) {
+              cb (this, p, new FileError.FAILED ("Failed granting access to slave pseudoterminal device"));
+              return;
+            }
+
+            if (Posix.unlockpt (pty_master) != 0) {
+              cb (this, p, new FileError.FAILED ("Failed unlocking slave pseudoterminal device"));
+              return;
+            }
+
+            int[] pty_slaves = {};
+
+            pty_slaves += Posix.open (Posix.ptsname (pty_master), Posix.O_RDWR | Posix.O_CLOEXEC);
+
+            if (pty_slaves [0] < 0) {
+              cb (this, p, new FileError.FAILED ("Failed opening slave pseudoterminal device"));
+              return;
+            }
+
+            pty_slaves += Posix.dup (pty_slaves [0]);
+            pty_slaves += Posix.dup (pty_slaves [0]);
+
+            this.fp_spawn_host_command_callback_cancellable = new GLib.Cancellable ();
+
+            try {
+                var res = yield Terminal.FlatpakUtils.send_host_command (
+                  cwd,
+                  argv,
+                  envv,
+                  pty_slaves,
+                  this.on_host_command_exited,
+                  this.fp_spawn_host_command_callback_cancellable,
+                  out p
+                );
+            } catch (Error e) {
+                warning ("send host command failed");
+                cb (this, p, e);
+            }
+
+            this.pty = _ppty;
+
+            cb (this, p, null);
+        }
+
+        public void on_host_command_exited (uint pid, uint status) {
+            warning ("host command exited pid %u, %u status", pid, status);
         }
 
         public void run_program (string _program_string, string? working_directory) {
