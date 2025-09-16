@@ -44,10 +44,8 @@ namespace Terminal.FlatpakUtils {
     status = -1;
 
     assert (Terminal.Application.is_running_in_flatpak);
-// #if TERMINAL_IS_FLATPAK
     real_argv += "flatpak-spawn";
     real_argv += "--host";
-// #endif
 
     foreach (unowned string arg in argv) {
       real_argv += arg;
@@ -60,9 +58,13 @@ namespace Terminal.FlatpakUtils {
     launcher.unsetenv ("G_MESSAGES_DEBUG");
     sp = launcher.spawnv (real_argv);
 
-    if (sp == null) return null;
+    if (sp == null) {
+        return null;
+    }
 
-    if (!sp.communicate_utf8 (null, null, out buf, null)) return null;
+    if (!sp.communicate_utf8 (null, null, out buf, null)) {
+        return null;
+    }
 
     int exit_status = sp.get_exit_status ();
     status = exit_status;
@@ -95,12 +97,14 @@ namespace Terminal.FlatpakUtils {
         launcher.unsetenv ("G_MESSAGES_DEBUG");
         var sp = launcher.spawnv (argv);
 
-        if (sp == null)
-          return null;
+        if (sp == null) {
+            return null;
+        }
 
         string? buf = null;
-        if (!sp.communicate_utf8 (null, cancellable, out buf, null))
-          return null;
+        if (!sp.communicate_utf8 (null, cancellable, out buf, null)) {
+            return null;
+        }
 
         var parts = buf.split (":");
 
@@ -108,6 +112,7 @@ namespace Terminal.FlatpakUtils {
           return null;
         }
 
+        warning ("guessed fp shell %s", parts[6].strip ());
         return parts[6].strip ();
     } catch (Error e) {
         warning ("Failed to guess Flatpak shell");
@@ -209,6 +214,7 @@ namespace Terminal.FlatpakUtils {
     GLib.Cancellable? cancellable,
     out int pid
   ) throws GLib.Error {
+
     pid = -1;
 
     uint[] handles = {};
@@ -253,7 +259,7 @@ namespace Terminal.FlatpakUtils {
 
         parameters.get ("(uu)", &ppid, &status);
 
-        debug ("Command exited %s %s %s %s pid: %u status %u", signal_name, sender_name, object_path, interface_name, ppid, status);
+        warning ("Command exited %s %s %s %s pid: %u status %u", signal_name, sender_name, object_path, interface_name, ppid, status);
 
         if (callback != null) {
           if (cancellable?.is_cancelled ()) {
@@ -290,6 +296,7 @@ namespace Terminal.FlatpakUtils {
       // failed. In the context of opening new terminals, this means we failed
       // to spawn the user's shell or the specific command given to a tab. Most
       // users would expect to see an error banner/alert at this point.
+      warning ("error %s", e.message);
       connection.signal_unsubscribe (signal_id);
       throw e;
     }

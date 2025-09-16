@@ -8,14 +8,13 @@ finish-args:
   - '--metadata=X-DConf=migrate-path=/io/elementary/terminal/'
   - '--allow=devel'
   - '--filesystem=host'
-  - '--filesystem=home'
-  # - '--filesystem=xdg-run/gvfsd'
+  - '--filesystem=xdg-run/gvfsd'
   - '--share=ipc'
   - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
-  - '--device=dri'
-  # - '--device=all'
+  - '--socket=session-bus'
+  - '--device=all'
   - '--talk-name=org.freedesktop.Flatpak'
 
 cleanup:

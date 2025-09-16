@@ -365,9 +365,9 @@ namespace Terminal {
                     return;
                 }
 
+
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
-
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
@@ -647,12 +647,6 @@ namespace Terminal {
             bool focus = true,
             int pos = notebook.n_pages
         ) {
-
-            /*
-             * If the user choose to use a specific working directory.
-             * Reassigning the directory variable a new value
-             * leads to free'd memory being read.
-             */
             /* Set up terminal */
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
@@ -683,12 +677,12 @@ namespace Terminal {
             if (program.length == 0) {
                 /* Set up the virtual terminal */
                 if (location == "") {
-                    terminal_widget.active_shell ();
+                    terminal_widget.spawn_shell ();
                 } else {
-                    terminal_widget.active_shell (location);
+                    terminal_widget.spawn_shell (location);
                 }
             } else {
-                terminal_widget.run_program (program, location);
+                terminal_widget.spawn_shell (location, program);
             }
 
             save_opened_terminals (true, true);
@@ -724,7 +718,7 @@ namespace Terminal {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
                     tw.program_string = "";
-                    tw.active_shell (tw.current_working_directory);
+                    tw.spawn_shell (tw.current_working_directory);
                     check_for_tabs_with_same_name ();
                 } else {
                     if (tw.tab != null) {
