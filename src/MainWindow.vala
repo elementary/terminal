@@ -674,17 +674,18 @@ namespace Terminal {
                 notebook.selected_page = tab;
             }
 
-            if (program.length == 0) {
-                /* Set up the virtual terminal */
-                if (location == "") {
-                    terminal_widget.spawn_shell ();
-                } else {
-                    terminal_widget.spawn_shell (location);
-                }
-            } else {
-                terminal_widget.spawn_shell (location, program);
-            }
+            // if (program.length == 0) {
+            //     /* Set up the virtual terminal */
+            //     if (location == "") {
+            //         terminal_widget.spawn_shell ();
+            //     } else {
+            //         terminal_widget.spawn_shell (location);
+            //     }
+            // } else {
+            //     terminal_widget.spawn_shell (location, program);
+            // }
 
+            terminal_widget.spawn_shell (location, program);
             save_opened_terminals (true, true);
 
             return terminal_widget;
