@@ -396,7 +396,10 @@ namespace Terminal {
             content = box;
             add_css_class ("terminal-window");
 
-            bind_property ("title", title_label, "label");
+            notify["title"].connect (() => {
+                warning ("title changed to %s", title);
+                title_label.label = title;
+            });
 
             unowned var menu_popover = (SettingsPopover) menu_button.popover;
 

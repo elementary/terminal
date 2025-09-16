@@ -5,6 +5,20 @@
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
+        static string[] terminal_envv = {
+            // Export callback command a BASH-specific variable, see "man bash" for details
+            "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
+            // ZSH callback command will be read from ZSH config file supplied by us, see data/
+            // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
+            // Taken from BlackBox
+            "TERM=xterm-256color", // This is required for the window-title notify signal to work in Flatpak
+            "COLORTERM=truecolor",
+            "TERM_PROGRAM=Terminal",
+            "VTE_VERSION=%u".printf (
+              Vte.MAJOR_VERSION * 10000 + Vte.MINOR_VERSION * 100 + Vte.MICRO_VERSION
+            )
+        };
+
         enum DropTargets {
             URILIST,
             STRING,
@@ -780,17 +794,6 @@ namespace Terminal {
 
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
-            string?[] terminal_envv = {
-                // Export ID so we can identify the terminal for which the process completion is reported
-                "PANTHEON_TERMINAL_ID=" + terminal_id,
-
-                // Export callback command a BASH-specific variable, see "man bash" for details
-                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
-
-                // ZSH callback command will be read from ZSH config file supplied by us, see data/
-
-                // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
-            };
 
             bool flatpak = Terminal.Application.is_running_in_flatpak;
             var temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
@@ -801,7 +804,10 @@ namespace Terminal {
                 envv.append_val (s);
             }
 
-            var shell = _shell != null ? _shell : get_shell ();
+            // Export ID so we can identify the terminal for which the process completion is reported
+            envv.append_val ("PANTHEON_TERMINAL_ID=" + terminal_id);
+
+            var shell = get_shell ();
             argv.append_val (shell);
 
             if (flatpak) {
