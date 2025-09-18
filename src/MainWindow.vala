@@ -674,17 +674,6 @@ namespace Terminal {
                 notebook.selected_page = tab;
             }
 
-            // if (program.length == 0) {
-            //     /* Set up the virtual terminal */
-            //     if (location == "") {
-            //         terminal_widget.spawn_shell ();
-            //     } else {
-            //         terminal_widget.spawn_shell (location);
-            //     }
-            // } else {
-            //     terminal_widget.spawn_shell (location, program);
-            // }
-
             terminal_widget.spawn_shell (location, program);
             save_opened_terminals (true, true);
 
@@ -696,7 +685,7 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
+            terminal_widget.foreground_process_changed.connect (on_terminal_foreground_process_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
@@ -704,7 +693,7 @@ namespace Terminal {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
+            terminal_widget.foreground_process_changed.disconnect (on_terminal_foreground_process_changed);
             terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
@@ -719,7 +708,6 @@ namespace Terminal {
                 if (tw.program_string.length > 0) {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
-                    tw.program_string = "";
                     tw.spawn_shell (tw.current_working_directory);
                     check_for_tabs_with_same_name ();
                 } else {
@@ -1105,8 +1093,7 @@ namespace Terminal {
             save_opened_terminals (true, false);
         }
 
-        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
-            src.program_string = cmdline;
+        private void on_terminal_foreground_process_changed (TerminalWidget src) {
             check_for_tabs_with_same_name (); // Also sets window title
         }
 
