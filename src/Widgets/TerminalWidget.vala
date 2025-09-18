@@ -939,7 +939,7 @@ namespace Terminal {
 
             int pty = get_pty ().fd;
             if (Terminal.Application.is_running_in_flatpak) {
-                fg_pid = yield FlatpakUtils.get_foreground_process (pty, null);
+                fg_pid = FlatpakUtils.fp_get_foreground_pid (child_pid);
             } else {
                 fg_pid = Posix.tcgetpgrp (pty);
                 warning ("Not flatpak tcgetpgrp gave %i", fg_pid);

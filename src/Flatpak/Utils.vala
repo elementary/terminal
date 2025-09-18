@@ -112,7 +112,6 @@ namespace Terminal.FlatpakUtils {
           return null;
         }
 
-        warning ("guessed fp shell %s", parts[6].strip ());
         return parts[6].strip ();
     } catch (Error e) {
         warning ("Failed to guess Flatpak shell");
@@ -145,6 +144,42 @@ namespace Terminal.FlatpakUtils {
     return arr;
   }
 
+    public int fp_get_foreground_pid (int shell_pid, Cancellable? cancellable = null) throws Error {
+        string[] argv = { "flatpak-spawn", "--host", "ps", "-O", "stat", "--no-headers", "--ppid", shell_pid.to_string () };
+
+        var launcher = new GLib.SubprocessLauncher (
+          SubprocessFlags.STDOUT_PIPE | SubprocessFlags.STDERR_SILENCE
+        );
+
+        launcher.setenv ("G_MESSAGES_DEBUG", "false", true);
+
+        var sp = launcher.spawnv (argv);
+
+        if (sp == null) {
+          return -1;
+        }
+
+        string? buf = null;
+        if (!sp.communicate_utf8 (null, cancellable, out buf, null)) {
+          return -1;
+        }
+
+        int foreground_pid = -1;
+        if (buf != null && buf.length > 0) {
+            string[] arr = buf.strip ().split ("\n");
+            foreach (string s in arr) {
+                string[] parts = s.split (" ");
+                if (parts[1].contains ("+")) {
+                    warning ("Got foreground %i", int.parse (parts[0]));
+                    foreground_pid = int.parse (parts[0]);
+                }
+                warning ("\n");
+            }
+        }
+
+        return foreground_pid;
+  }
+
     public string? fp_get_current_directory_uri (int pid, Cancellable? cancellable = null) throws Error {
         return fp_read_proc_link (pid, "cwd", cancellable);
     }
@@ -155,7 +190,6 @@ namespace Terminal.FlatpakUtils {
 
     private string? fp_read_proc_link (int pid, string link, Cancellable? cancellable) throws Error {
         string command = "/proc/%d/%s".printf (pid, link);
-        warning ("command arg %s", command);
         string[] argv = { "flatpak-spawn", "--host", "readlink", command };
 
         var launcher = new GLib.SubprocessLauncher (
@@ -180,56 +214,6 @@ namespace Terminal.FlatpakUtils {
         return buf;
     }
 
-  public async int get_foreground_process (
-    int terminal_fd,
-    Cancellable? cancellable = null
-  ) {
-
-    try {
-      KeyFile kf = new KeyFile ();
-
-      kf.load_from_file ("/.flatpak-info", KeyFileFlags.NONE);
-      string host_root = kf.get_string ("Instance", "app-path");
-
-      var argv = new Array<string> ();
-
-      argv.append_val ("%s/bin/terminal-toolbox".printf (host_root));
-      argv.append_val ("tcgetpgrp");
-      argv.append_val (terminal_fd.to_string ());
-
-      int[] fds = new int[2];
-
-      // This creates two fds, where we can write to one and read from the
-      // other. We'll pass one fd to the HostCommand as stdout, which means
-      // we'll be able to read what is HostCommand prints out from the other
-      // fd we just opened.
-      Unix.open_pipe (fds, Posix.FD_CLOEXEC);
-
-      var read_fs = GLib.FileStream.fdopen (fds [0], "r");
-      var write_fs = GLib.FileStream.fdopen (fds [1], "w");
-      int[] pass_fds = {
-        0,
-        write_fs.fileno (), // stdout for toolbox, we can read from read_fs
-        2,
-        terminal_fd // we pass the terminal fd as (3) for toolbox
-      };
-
-      debug ("Send command");
-      yield send_host_command (null, argv, new Array<string> (), pass_fds, null, null, null);
-
-      string text = read_fs.read_line ();
-      int response;
-
-      if (int.try_parse (text, out response, null, 10)) {
-        return response;
-      }
-    }
-    catch (GLib.Error e) {
-      warning ("%s", e.message);
-    }
-
-    return -1;
-  }
 
   public delegate void HostCommandExitedCallback (uint pid, uint status);
 
