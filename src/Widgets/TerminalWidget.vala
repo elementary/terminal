@@ -778,20 +778,18 @@ namespace Terminal {
         }
 
         public void spawn_shell (
-            string dir = GLib.Environment.get_current_dir (),
+            string _dir = GLib.Environment.get_current_dir (),
             string command = ""
         ) {
-        warning ("spawn %s, %s", dir, command);
-            if (dir == "") {
-                debug ("Using fallback directory");
-                dir = "/";
-            }
-
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
-
             bool flatpak = Terminal.Application.is_running_in_flatpak;
             var temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
+            var dir = _dir == "" ? "/" : _dir;
+
+            this.program_string = command;
+            this.current_working_directory = dir;
+
             foreach (string s in temp_envv) {
                 envv.append_val (s);
             }
