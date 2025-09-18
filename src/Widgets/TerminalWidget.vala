@@ -27,14 +27,14 @@ namespace Terminal {
 
         internal const string DEFAULT_LABEL = _("Terminal");
         public string terminal_id;
-        public string current_working_directory { get; private set; default = "";}
-        public string program_string { get; set; default = ""; }
+        public string current_working_directory { get; private set; default = "";} // Location of shell
+        public string program_string { get; private set; default = ""; } // Corresponds to fg_pid
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
-        GLib.Pid child_pid;
-        GLib.Pid fg_pid;
+        GLib.Pid child_pid; // Corresponds to shell process or whatever was initial process spawned
+        GLib.Pid fg_pid; // Corresponds to a process spawned by the shell
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -276,6 +276,7 @@ namespace Terminal {
                     }
                 }
             });
+
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
@@ -720,6 +721,7 @@ namespace Terminal {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
         }
 
+        //NOTE THis is triggered when the shell exits but not when the foreground process exits
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
@@ -825,7 +827,6 @@ namespace Terminal {
                     argv,
                     envv,
                     (pid, error) => {
-                    warning ("in callback pid %u", pid);
                         if (error == null) {
                             this.child_pid = pid;
                         } else {
@@ -915,8 +916,6 @@ namespace Terminal {
 
             if (Posix.grantpt (pty_master) != 0) {
                 throw (new FileError.FAILED ("Failed granting access to slave pseudoterminal device"));
-              // cb (p, );
-              // return;
             }
 
             if (Posix.unlockpt (pty_master) != 0) {
@@ -983,7 +982,6 @@ namespace Terminal {
             int pid = (!) (this.child_pid);
             if (Terminal.Application.is_running_in_flatpak) {
                 string? cwd = FlatpakUtils.fp_get_current_directory_uri (pid, null);
-                warning ("Flatpak got %s", cwd);
                 return cwd;
             } else {
                 try {
@@ -991,7 +989,6 @@ namespace Terminal {
                 } catch (GLib.FileError error) {
                     /* Tab name disambiguation may call this before shell location available. */
                     /* No terminal warning needed */
-                    critical ("Error getting shell location  - pid %d ", pid);
                     return "";
                 }
             }
@@ -1127,6 +1124,10 @@ namespace Terminal {
             action.set_enabled (false); // Repeated presses are ignored
         }
 
+        // Note that this handler is triggered by *any* change in the visible appearance of
+        // the terminal including resizing or moving so is not very efficient
+        // BlackBox just polls the terminal at regular intervals.
+        // Unfortunately, the `current_directory_uri` signal does not currently work in Vte.
         private uint contents_changed_timeout_id = 0;
         private const int CONTENTS_CHANGED_DELAY_MSEC = 200;
         private bool contents_changed_continue = true;
@@ -1137,7 +1138,6 @@ namespace Terminal {
             }
 
             contents_changed_timeout_id = Timeout.add (
-
                 CONTENTS_CHANGED_DELAY_MSEC,
                 () => {
                     if (contents_changed_continue) {
