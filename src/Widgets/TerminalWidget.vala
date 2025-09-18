@@ -717,8 +717,7 @@ namespace Terminal {
         }
 
         public void kill_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid)) {
+            if (has_foreground_process ()) {
                 // Give chance to terminate cleanly before killing
                 Posix.kill (fg_pid, Posix.Signal.HUP);
                 Posix.kill (fg_pid, Posix.Signal.TERM);
@@ -926,26 +925,22 @@ namespace Terminal {
             pty_slaves[2] = Posix.dup (pty_slaves [0]);
         }
 
-        public bool try_get_foreground_pid (out int pid) {
+        public async void try_get_foreground_pid () {
             if (child_has_exited) {
-                pid = -1;
-                return false;
+                return;
             }
 
             int pty = get_pty ().fd;
-            int fgpid = Posix.tcgetpgrp (pty);
-
-            if (fgpid != this.child_pid && fgpid != -1) {
-                pid = (int) fgpid;
-                return true;
+            if (Terminal.Application.is_running_in_flatpak) {
+                fg_pid = yield FlatpakUtils.get_foreground_process (pty, null);
             } else {
-                pid = -1;
-                return false;
+                fg_pid = Posix.tcgetpgrp (pty);
+                warning ("Not flatpak tcgetpgrp gave %i", fg_pid);
             }
         }
 
         public bool has_foreground_process () {
-            return try_get_foreground_pid (null);
+            return fg_pid != this.child_pid && fg_pid != -1;
         }
 
         public int calculate_width (int column_count) {
@@ -975,21 +970,33 @@ namespace Terminal {
             return check_match_at (x, y, out tag);
         }
 
+        // Get current working directory of shell
         public string get_shell_location () {
             int pid = (!) (this.child_pid);
-
-            try {
-                return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
-            } catch (GLib.FileError error) {
-                /* Tab name disambiguation may call this before shell location available. */
-                /* No terminal warning needed */
-                return "";
+            if (Terminal.Application.is_running_in_flatpak) {
+                string? cwd = FlatpakUtils.fp_get_current_directory_uri (pid, null);
+                warning ("Flatpak got %s", cwd);
+                return cwd;
+            } else {
+                try {
+                    return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
+                } catch (GLib.FileError error) {
+                    /* Tab name disambiguation may call this before shell location available. */
+                    /* No terminal warning needed */
+                    critical ("Error getting shell location  - pid %d ", pid);
+                    return "";
+                }
             }
         }
 
         public string get_pid_exe_name (int pid) {
             try {
-                var exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                string exe;
+                if (Terminal.Application.is_running_in_flatpak) {
+                    exe = FlatpakUtils.fp_get_exe_name (pid);
+                } else {
+                    exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                }
                 return Path.get_basename (exe);
             } catch (GLib.Error e) {
                 return "";
@@ -1113,7 +1120,7 @@ namespace Terminal {
         }
 
         private uint contents_changed_timeout_id = 0;
-        private const int CONTENTS_CHANGED_DELAY_MSEC = 100;
+        private const int CONTENTS_CHANGED_DELAY_MSEC = 200;
         private bool contents_changed_continue = true;
         private void on_contents_changed () {
             contents_changed_continue = true;
@@ -1135,13 +1142,22 @@ namespace Terminal {
                         update_current_working_directory (cwd);
                     }
 
-                    int pid;
-                    try_get_foreground_pid (out pid);
-                    if (pid != fg_pid) {
-                        var name = get_pid_exe_name (pid);
-                        foreground_process_changed (name);
-                        fg_pid = pid;
-                    }
+                    int pid = fg_pid;
+                    warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
+                    try_get_foreground_pid.begin ((obj, res) => {
+                    warning ("after try fg_pid is %i", fg_pid);
+                       if (pid != fg_pid) {
+                            if (has_foreground_process ()) {
+                                var name = get_pid_exe_name (fg_pid);
+                                warning ("fg process changed");
+                                foreground_process_changed (name);
+                            } else {
+                                //fg exited?
+                                fg_pid = -1;
+                            }
+                        }
+                    });
+
 
                     contents_changed_timeout_id = 0;
                     return Source.REMOVE;

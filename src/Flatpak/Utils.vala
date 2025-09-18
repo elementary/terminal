@@ -145,6 +145,41 @@ namespace Terminal.FlatpakUtils {
     return arr;
   }
 
+    public string? fp_get_current_directory_uri (int pid, Cancellable? cancellable = null) throws Error {
+        return fp_read_proc_link (pid, "cwd", cancellable);
+    }
+
+    public string? fp_get_exe_name (int pid, Cancellable? cancellable = null) throws Error {
+        return fp_read_proc_link (pid, "exe", cancellable);
+    }
+
+    private string? fp_read_proc_link (int pid, string link, Cancellable? cancellable) throws Error {
+        string command = "/proc/%d/%s".printf (pid, link);
+        warning ("command arg %s", command);
+        string[] argv = { "flatpak-spawn", "--host", "readlink", command };
+
+        var launcher = new GLib.SubprocessLauncher (
+          SubprocessFlags.STDOUT_PIPE | SubprocessFlags.STDERR_SILENCE
+        );
+
+        launcher.setenv ("G_MESSAGES_DEBUG", "false", true);
+
+        var sp = launcher.spawnv (argv);
+
+        if (sp == null) {
+        warning ("failed to spawn subprocess");
+          return null;
+        }
+
+        string? buf = null;
+        if (!sp.communicate_utf8 (null, cancellable, out buf, null)) {
+            warning ("failed to communicate utf8");
+          return null;
+        }
+
+        return buf;
+    }
+
   public async int get_foreground_process (
     int terminal_fd,
     Cancellable? cancellable = null
