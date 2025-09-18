@@ -1076,6 +1076,8 @@ namespace Terminal {
                     string term2_name = Path.get_basename (term2_path);
 
                     if (term2.terminal_id != term.terminal_id &&
+                        term2.program_string == "" &&
+                        term2.tab_label != TerminalWidget.DEFAULT_LABEL &&
                         term2_name == term_label &&
                         term2_path != term_path) {
 
