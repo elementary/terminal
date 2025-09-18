@@ -688,6 +688,7 @@ namespace Terminal {
             terminal_widget.spawn_shell (location, program);
             save_opened_terminals (true, true);
 
+            check_for_tabs_with_same_name ();
             return terminal_widget;
         }
 
