@@ -1163,25 +1163,24 @@ namespace Terminal {
 
                     int pid = fg_pid;
                     warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
-                    try_get_foreground_pid.begin ((obj, res) => {
+                    try_get_foreground_pid ();
                     warning ("after try fg_pid is %i", fg_pid);
-                       if (pid != fg_pid) {
-                            if (has_foreground_process ()) {
-                                program_string = get_pid_exe_name (fg_pid);
-                            } else {
-                                fg_pid = -1;
-                                program_string = "";
-                            }
-
-                            foreground_process_changed ();
+                    if (pid != fg_pid) {
+                        if (has_foreground_process ()) {
+                            program_string = get_pid_exe_name (fg_pid);
+                        } else {
+                            fg_pid = -1;
+                            program_string = "";
                         }
-                    });
 
+                        foreground_process_changed ();
+                    }
 
                     contents_changed_timeout_id = 0;
                     return Source.REMOVE;
                 }
             );
+
         }
 
         public void prepare_to_close () {
