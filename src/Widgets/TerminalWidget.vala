@@ -153,7 +153,7 @@ namespace Terminal {
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
-        public signal void foreground_process_changed (string cmdline);
+        public signal void foreground_process_changed ();
 
         public TerminalWidget (MainWindow parent_window) {
             Object (
@@ -1156,13 +1156,13 @@ namespace Terminal {
                     warning ("after try fg_pid is %i", fg_pid);
                        if (pid != fg_pid) {
                             if (has_foreground_process ()) {
-                                var name = get_pid_exe_name (fg_pid);
-                                warning ("fg process changed");
-                                foreground_process_changed (name);
+                                program_string = get_pid_exe_name (fg_pid);
                             } else {
-                                //fg exited?
                                 fg_pid = -1;
+                                program_string = "";
                             }
+
+                            foreground_process_changed ();
                         }
                     });
 
