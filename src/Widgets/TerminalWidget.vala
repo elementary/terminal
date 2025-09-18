@@ -264,8 +264,18 @@ namespace Terminal {
             // Cannot use copy last output action if window was resized after remembering start position
             notify["height-request"].connect (() => resized = true);
             notify["width-request"].connect (() => resized = true);
-            contents_changed.connect (on_contents_changed);
+            //NOTE Vte.Terminal `current_directory_uri_changed` signal does not work and is deprecated since v0.78
             child_exited.connect (on_child_exited);
+            commit.connect ((text, size) => {
+                unichar c;
+                for (int i = 0; text.get_next_char (ref i, out c);) {
+                    UnicodeType t = c.type ();
+                    if (t == 0) {
+                        on_contents_changed ();
+                        break;
+                    }
+                }
+            });
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
