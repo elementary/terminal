@@ -796,7 +796,13 @@ namespace Terminal {
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
             bool flatpak = Terminal.Application.is_running_in_flatpak;
-            var temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
+            string[] temp_envv;
+            try {
+                temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
+            } catch (Error e) {
+                temp_envv = Environ.get ();
+            }
+
             var dir = _dir == "" ? "/" : _dir;
 
             this.program_string = command;
@@ -932,17 +938,22 @@ namespace Terminal {
             pty_slaves[2] = Posix.dup (pty_slaves [0]);
         }
 
-        public async void try_get_foreground_pid () {
+        public void try_get_foreground_pid () {
             if (child_has_exited) {
                 return;
             }
 
-            int pty = get_pty ().fd;
-            if (Terminal.Application.is_running_in_flatpak) {
-                fg_pid = FlatpakUtils.fp_get_foreground_pid (child_pid);
-            } else {
-                fg_pid = Posix.tcgetpgrp (pty);
-                warning ("Not flatpak tcgetpgrp gave %i", fg_pid);
+            try {
+                int pty = get_pty ().fd;
+                if (Terminal.Application.is_running_in_flatpak) {
+                    fg_pid = FlatpakUtils.fp_get_foreground_pid (child_pid);
+                } else {
+                    //TODO Use same method as Flatpak as we can get name at same time
+                    fg_pid = Posix.tcgetpgrp (pty);
+                }
+            } catch (Error e) {
+                warning ("Error getting foreground process pid. %s", e.message);
+                fg_pid = -1;
             }
         }
 
