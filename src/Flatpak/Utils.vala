@@ -144,7 +144,15 @@ namespace Terminal.FlatpakUtils {
     return arr;
   }
 
-    public int fp_get_foreground_pid (int shell_pid, Cancellable? cancellable = null) throws Error {
+    public int fp_get_foreground_pid (
+        int shell_pid,
+        Cancellable? cancellable = null
+    ) throws Error {
+
+        //This should return info for each child process of the shell in the form:
+        // PID STAT S TTY TIME COMMAND
+        // as separate lines but without the headers
+        // The STAT will contain "+" for the foreground process
         string[] argv = { "flatpak-spawn", "--host", "ps", "-O", "stat", "--no-headers", "--ppid", shell_pid.to_string () };
 
         var launcher = new GLib.SubprocessLauncher (
@@ -169,11 +177,11 @@ namespace Terminal.FlatpakUtils {
             string[] arr = buf.strip ().split ("\n");
             foreach (string s in arr) {
                 string[] parts = s.split (" ");
-                if (parts[1].contains ("+")) {
-                    warning ("Got foreground %i", int.parse (parts[0]));
-                    foreground_pid = int.parse (parts[0]);
+                if (parts.length >= 2) {
+                    if (parts[1].contains ("+")) {
+                        foreground_pid = int.parse (parts[0]);
+                    }
                 }
-                warning ("\n");
             }
         }
 
