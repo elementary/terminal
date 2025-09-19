@@ -33,8 +33,8 @@ namespace Terminal {
         private bool init_complete;
         public bool resized {get; set;}
 
-        GLib.Pid child_pid; // Corresponds to shell process or whatever was initial process spawned
-        GLib.Pid fg_pid; // Corresponds to a process spawned by the shell
+        GLib.Pid child_pid = -1; // Corresponds to shell process or whatever was initial process spawned
+        GLib.Pid fg_pid = -1; // Corresponds to a process spawned by the shell
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -578,7 +578,6 @@ namespace Terminal {
                     dialog.destroy ();
                     cb (res == Gtk.ResponseType.ACCEPT);
                 });
-
                 dialog.present ();
             } else {
                 cb (true);
