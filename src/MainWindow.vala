@@ -782,17 +782,19 @@ namespace Terminal {
                     term.confirm_kill_fg_process (
                         _("Are you sure you want to close all foreground processes before closing the window?"),
                         _("Close window"),
-                        (() => {
-                            terminate_all ();
-                            close_immediately = true;
-                            this.close ();
+                        ((confirmed) => {
+                            if (confirmed) {
+                                warning ("terminate all - after confirmation");
+                                terminate_all ();
+                                close_immediately = true;
+                                this.close ();
+                            }
                         })
                     );
 
                     return Gdk.EVENT_STOP;
                 }
             }
-
             terminate_all ();
 
             return Gdk.EVENT_PROPAGATE;
