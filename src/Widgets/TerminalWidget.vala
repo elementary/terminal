@@ -5,6 +5,20 @@
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
+        static string[] terminal_envv = {
+            // Export callback command a BASH-specific variable, see "man bash" for details
+            "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
+            // ZSH callback command will be read from ZSH config file supplied by us, see data/
+            // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
+            // Taken from BlackBox
+            "TERM=xterm-256color", // This is required for the window-title notify signal to work in Flatpak
+            "COLORTERM=truecolor",
+            "TERM_PROGRAM=Terminal",
+            "VTE_VERSION=%u".printf (
+              Vte.MAJOR_VERSION * 10000 + Vte.MINOR_VERSION * 100 + Vte.MICRO_VERSION
+            )
+        };
+
         enum DropTargets {
             URILIST,
             STRING,
@@ -13,14 +27,14 @@ namespace Terminal {
 
         internal const string DEFAULT_LABEL = _("Terminal");
         public string terminal_id;
-        public string current_working_directory { get; private set; default = "";}
-        public string program_string { get; set; default = ""; }
+        public string current_working_directory { get; private set; default = "";} // Location of shell
+        public string program_string { get; private set; default = ""; } // Corresponds to fg_pid
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
 
-        GLib.Pid child_pid;
-        GLib.Pid fg_pid;
+        GLib.Pid child_pid = -1; // Corresponds to shell process or whatever was initial process spawned
+        GLib.Pid fg_pid = -1; // Corresponds to a process spawned by the shell
 
         public unowned MainWindow main_window { get; construct set; }
 
@@ -139,7 +153,7 @@ namespace Terminal {
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
-        public signal void foreground_process_changed (string cmdline);
+        public signal void foreground_process_changed ();
 
         public TerminalWidget (MainWindow parent_window) {
             Object (
@@ -250,8 +264,19 @@ namespace Terminal {
             // Cannot use copy last output action if window was resized after remembering start position
             notify["height-request"].connect (() => resized = true);
             notify["width-request"].connect (() => resized = true);
-            contents_changed.connect (on_contents_changed);
+            //NOTE Vte.Terminal `current_directory_uri_changed` signal does not work and is deprecated since v0.78
             child_exited.connect (on_child_exited);
+            commit.connect ((text, size) => {
+                unichar c;
+                for (int i = 0; text.get_next_char (ref i, out c);) {
+                    UnicodeType t = c.type ();
+                    if (t == 0) {
+                        on_contents_changed ();
+                        break;
+                    }
+                }
+            });
+
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
@@ -553,7 +578,6 @@ namespace Terminal {
                     dialog.destroy ();
                     cb (res == Gtk.ResponseType.ACCEPT);
                 });
-
                 dialog.present ();
             } else {
                 cb (true);
@@ -589,7 +613,7 @@ namespace Terminal {
                 _("Reload"),
                 () => {
                     reset (true, true);
-                    active_shell (old_loc);
+                    spawn_shell (old_loc);
                 }
             );
         }
@@ -696,6 +720,7 @@ namespace Terminal {
             set_cursor_shape ((Vte.CursorShape) Application.settings.get_enum ("cursor-shape"));
         }
 
+        //NOTE THis is triggered when the shell exits but not when the foreground process exits
         void on_child_exited () {
             child_has_exited = true;
             last_key_was_return = true;
@@ -703,8 +728,7 @@ namespace Terminal {
         }
 
         public void kill_fg () {
-            int fg_pid;
-            if (this.try_get_foreground_pid (out fg_pid)) {
+            if (has_foreground_process ()) {
                 // Give chance to terminate cleanly before killing
                 Posix.kill (fg_pid, Posix.Signal.HUP);
                 Posix.kill (fg_pid, Posix.Signal.TERM);
@@ -750,110 +774,196 @@ namespace Terminal {
             Posix.close (pid_fd);
         }
 
-        public void active_shell (string dir = GLib.Environment.get_current_dir ()) {
-            string shell = Application.settings.get_string ("shell");
-            string?[] envv = null;
-
+        private string get_shell () {
+            var shell = Application.settings.get_string ("shell");
             if (shell == "") {
-                shell = Vte.get_user_shell ();
+                shell = Terminal.Application.is_running_in_flatpak ? FlatpakUtils.fp_guess_shell () : Vte.get_user_shell ();
             }
 
             if (shell == "") {
-                critical ("No user shell available");
-                return;
+                critical ("No user shell available - trying bash");
+                shell = "/usr/bin/bash";
             }
 
-            if (dir == "") {
-                debug ("Using fallback directory");
-                dir = "/";
-            }
-
-            envv = {
-                // Export ID so we can identify the terminal for which the process completion is reported
-                "PANTHEON_TERMINAL_ID=" + terminal_id,
-
-                // Export callback command a BASH-specific variable, see "man bash" for details
-                "PROMPT_COMMAND=" + SEND_PROCESS_FINISHED_BASH + Environment.get_variable ("PROMPT_COMMAND"),
-
-                // ZSH callback command will be read from ZSH config file supplied by us, see data/
-
-                // TODO: support FISH, see https://github.com/fish-shell/fish-shell/issues/1382
-            };
-
-            /* We need opening uri to be available asap when constructing window with working directory
-             * so remove idle loop, which appears not to be necessary any longer */
-            this.spawn_async (
-                Vte.PtyFlags.DEFAULT,
-                dir,
-                { shell },
-                envv,
-                SpawnFlags.SEARCH_PATH,
-                null,
-                -1,
-                null,
-                (terminal, pid, error) => {
-                    if (error == null) {
-                        this.child_pid = pid;
-                    } else {
-                        warning (error.message);
-                    }
-                }
-            );
+            return shell;
         }
 
-        public void run_program (string _program_string, string? working_directory) {
-            string[]? program_with_args = null;
-            this.program_string = _program_string;
+        public void spawn_shell (
+            string _dir = GLib.Environment.get_current_dir (),
+            string command = ""
+        ) {
+            Array<string> argv = new Array<string> ();
+            Array<string> envv = new Array<string> ();
+            bool flatpak = Terminal.Application.is_running_in_flatpak;
+            string[] temp_envv;
             try {
-                Shell.parse_argv (program_string, out program_with_args);
+                temp_envv = flatpak ? FlatpakUtils.fp_get_env () : Environ.get ();
             } catch (Error e) {
-                warning (e.message);
-                feed ((e.message + "\r\n\r\n").data);
-                active_shell (working_directory);
-                return;
+                temp_envv = Environ.get ();
             }
 
-            this.spawn_async (
-                Vte.PtyFlags.DEFAULT,
-                working_directory,
-                program_with_args,
-                null,
-                SpawnFlags.SEARCH_PATH,
-                null,
-                -1,
-                null,
-                (terminal, pid, error) => {
-                    if (error == null) {
-                        this.child_pid = pid;
-                    } else {
-                        warning (error.message);
-                        feed ((error.message + "\r\n\r\n").data);
-                        active_shell (working_directory);
-                    }
+            var dir = _dir == "" ? "/" : _dir;
+
+            this.program_string = command;
+            this.current_working_directory = dir;
+
+            foreach (string s in temp_envv) {
+                envv.append_val (s);
+            }
+            foreach (string s in terminal_envv) {
+                envv.append_val (s);
+            }
+
+            // Export ID so we can identify the terminal for which the process completion is reported
+            envv.append_val ("PANTHEON_TERMINAL_ID=" + terminal_id);
+
+            var shell = get_shell ();
+
+            if (flatpak) {
+                // In flatpak we always have to spawn a shell on the host first
+                argv.append_val (shell);
+                if (command.length > 0) {
+                    argv.append_val ("-c");
+                    argv.append_val (command);
                 }
-            );
+
+                this.spawn_on_flatpak_host.begin (
+                    dir,
+                    argv,
+                    envv,
+                    (pid, error) => {
+                        if (error == null) {
+                            this.child_pid = pid;
+                        } else {
+                            warning (error.message);
+                            // on_spawn_failed (); //TODO Expose message in UI as toast or otherwise
+                        }
+                    }
+                );
+            } else {
+                // When running natively we just spawn the command
+                if (command.length > 0) {
+                    argv.append_val (command);
+                } else {
+                    argv.append_val (shell);
+                }
+
+                this.spawn_async (
+                    Vte.PtyFlags.DEFAULT,
+                    dir,
+                    argv.data,
+                    envv.data,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
+                    -1,
+                    null,
+                    (terminal, pid, error) => {
+                        if (error == null) {
+                            this.child_pid = pid;
+                        } else {
+                            warning (error.message);
+                        }
+                    }
+                );
+            }
         }
 
-        public bool try_get_foreground_pid (out int pid) {
-            if (child_has_exited) {
-                pid = -1;
-                return false;
+        // delegate void TerminalSpawnAsyncCallback (Terminal terminal, Pid pid, Error error);
+        // The following function is derived from the work of [BlackBox] tweaked to make interface
+        // more like Vte.spawn_async
+        private GLib.Cancellable? fp_spawn_host_command_callback_cancellable = null;
+        private delegate void HostSpawnAsyncCallback (Pid pid, Error? e);
+        private async void spawn_on_flatpak_host (
+            string? cwd,
+            Array<string> argv,
+            Array<string> envv,
+            HostSpawnAsyncCallback cb) {
+
+            fp_spawn_host_command_callback_cancellable = new GLib.Cancellable ();
+            var pty_slaves = new int[3];
+            Vte.Pty _ppty;
+
+            try {
+                make_pty_and_slaves (out _ppty, ref pty_slaves);
+            } catch (Error e) {
+                warning ("creating pty slaves failed");
+                cb (-1, e);
             }
 
-            int pty = get_pty ().fd;
-            int fgpid = Posix.tcgetpgrp (pty);
+            int p = -1;
+            try {
+                yield Terminal.FlatpakUtils.send_host_command (
+                    cwd,
+                    argv,
+                    envv,
+                    pty_slaves,
+                    (pid, status) => {
+                        warning ("host command exited pid %u, %u status", pid, status);
+                        // This does not get emitted automatically in Flatpak so do it ourselves
+                        child_exited ((int)pid);
+                    },
+                    fp_spawn_host_command_callback_cancellable,
+                    out p
+                );
 
-            if (fgpid != this.child_pid && fgpid != -1) {
-                pid = (int) fgpid;
-                return true;
-            } else {
-                pid = -1;
-                return false;
+                this.pty = _ppty;
+                cb (p, null);
+            } catch (Error e) {
+                warning ("send host command failed");
+                cb (-1, e);
+            }
+        }
+
+        private void make_pty_and_slaves (out Vte.Pty vte_pty, ref int[] pty_slaves) throws Error {
+            vte_pty = new Vte.Pty.sync (Vte.PtyFlags.NO_CTTY, null);
+
+            int pty_master = vte_pty.get_fd ();
+
+            if (Posix.grantpt (pty_master) != 0) {
+                throw (new FileError.FAILED ("Failed granting access to slave pseudoterminal device"));
+            }
+
+            if (Posix.unlockpt (pty_master) != 0) {
+                throw (new FileError.FAILED ("Failed unlocking slave pseudoterminal device"));
+            }
+
+            pty_slaves[0] = Posix.open (Posix.ptsname (pty_master), Posix.O_RDWR | Posix.O_CLOEXEC);
+
+            if (pty_slaves[0] < 0) {
+                throw (new FileError.FAILED ("Failed opening slave pseudoterminal device"));
+            }
+
+            pty_slaves[1] = Posix.dup (pty_slaves [0]);
+            pty_slaves[2] = Posix.dup (pty_slaves [0]);
+        }
+
+        private int try_get_foreground_pid () {
+            if (child_has_exited) {
+                return -1;
+            }
+
+            try {
+                int pty = get_pty ().fd;
+                if (Terminal.Application.is_running_in_flatpak) {
+                    return FlatpakUtils.fp_get_foreground_pid (child_pid);
+                } else {
+                    //TODO Use same method as Flatpak as we can get name at same time
+                    return Posix.tcgetpgrp (pty);
+                }
+            } catch (Error e) {
+                warning ("Error getting foreground process pid. %s", e.message);
+                return -1;
             }
         }
 
         public bool has_foreground_process () {
-            return try_get_foreground_pid (null);
+            int _fg_pid = try_get_foreground_pid ();
+            if (_fg_pid != this.child_pid && _fg_pid != -1) {
+                fg_pid = _fg_pid;
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public int calculate_width (int column_count) {
@@ -883,21 +993,31 @@ namespace Terminal {
             return check_match_at (x, y, out tag);
         }
 
+        // Get current working directory of shell
         public string get_shell_location () {
             int pid = (!) (this.child_pid);
-
-            try {
-                return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
-            } catch (GLib.FileError error) {
-                /* Tab name disambiguation may call this before shell location available. */
-                /* No terminal warning needed */
-                return "";
+            if (Terminal.Application.is_running_in_flatpak) {
+                string? cwd = FlatpakUtils.fp_get_current_directory_uri (pid, null);
+                return cwd;
+            } else {
+                try {
+                    return GLib.FileUtils.read_link ("/proc/%d/cwd".printf (pid));
+                } catch (GLib.FileError error) {
+                    /* Tab name disambiguation may call this before shell location available. */
+                    /* No terminal warning needed */
+                    return "";
+                }
             }
         }
 
         public string get_pid_exe_name (int pid) {
             try {
-                var exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                string exe;
+                if (Terminal.Application.is_running_in_flatpak) {
+                    exe = FlatpakUtils.fp_get_exe_name (pid);
+                } else {
+                    exe = GLib.FileUtils.read_link ("/proc/%d/exe".printf (pid));
+                }
                 return Path.get_basename (exe);
             } catch (GLib.Error e) {
                 return "";
@@ -1020,8 +1140,12 @@ namespace Terminal {
             action.set_enabled (false); // Repeated presses are ignored
         }
 
+        // Note that this handler is triggered by *any* change in the visible appearance of
+        // the terminal including resizing or moving so is not very efficient
+        // BlackBox just polls the terminal at regular intervals.
+        // Unfortunately, the `current_directory_uri` signal does not currently work in Vte.
         private uint contents_changed_timeout_id = 0;
-        private const int CONTENTS_CHANGED_DELAY_MSEC = 100;
+        private const int CONTENTS_CHANGED_DELAY_MSEC = 200;
         private bool contents_changed_continue = true;
         private void on_contents_changed () {
             contents_changed_continue = true;
@@ -1030,7 +1154,6 @@ namespace Terminal {
             }
 
             contents_changed_timeout_id = Timeout.add (
-
                 CONTENTS_CHANGED_DELAY_MSEC,
                 () => {
                     if (contents_changed_continue) {
@@ -1038,23 +1161,40 @@ namespace Terminal {
                         return Source.CONTINUE;
                     }
 
-                    var cwd = get_shell_location ();
-                    if (cwd != current_working_directory) {
-                        update_current_working_directory (cwd);
-                    }
-
-                    int pid;
-                    try_get_foreground_pid (out pid);
-                    if (pid != fg_pid) {
-                        var name = get_pid_exe_name (pid);
-                        foreground_process_changed (name);
-                        fg_pid = pid;
-                    }
-
                     contents_changed_timeout_id = 0;
-                    return Source.REMOVE;
+                    return check_cwd_and_fg_pid ();
                 }
             );
+
+        }
+
+        private bool check_cwd_and_fg_pid () {
+            var cwd = get_shell_location ();
+            if (cwd != current_working_directory) {
+                update_current_working_directory (cwd);
+            }
+
+            int pid = fg_pid;
+            int _fg_pid;
+            warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
+            // Signal if foreground process just started or just finished
+            if (has_foreground_process ()) {
+                if (pid != fg_pid) { // has a new foreground process
+                    debug ("process started");
+                    program_string = get_pid_exe_name (fg_pid);
+                    foreground_process_changed ();
+                }
+
+                return Source.CONTINUE; // Continue to poll while there is a fg process to detect it ending.
+            } else if (fg_pid != child_pid && fg_pid != -1) { // Process just ended
+                debug ("process finished");
+                fg_pid = -1;
+                program_string = "";
+                foreground_process_changed ();
+            }
+
+            debug ("now fg_pid %i, child_pid %i", fg_pid, child_pid);
+            return Source.REMOVE;
         }
 
         public void prepare_to_close () {

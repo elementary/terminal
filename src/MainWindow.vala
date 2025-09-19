@@ -365,9 +365,9 @@ namespace Terminal {
                     return;
                 }
 
+
                 title = term.window_title != "" ? term.window_title
                                                 : term.current_working_directory;
-
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
@@ -396,7 +396,10 @@ namespace Terminal {
             content = box;
             add_css_class ("terminal-window");
 
-            bind_property ("title", title_label, "label");
+            notify["title"].connect (() => {
+                warning ("title changed to %s", title);
+                title_label.label = title;
+            });
 
             unowned var menu_popover = (SettingsPopover) menu_button.popover;
 
@@ -644,12 +647,6 @@ namespace Terminal {
             bool focus = true,
             int pos = notebook.n_pages
         ) {
-
-            /*
-             * If the user choose to use a specific working directory.
-             * Reassigning the directory variable a new value
-             * leads to free'd memory being read.
-             */
             /* Set up terminal */
             var terminal_widget = new TerminalWidget (this) {
                 scrollback_lines = Application.settings.get_int ("scrollback-lines"),
@@ -677,19 +674,10 @@ namespace Terminal {
                 notebook.selected_page = tab;
             }
 
-            if (program.length == 0) {
-                /* Set up the virtual terminal */
-                if (location == "") {
-                    terminal_widget.active_shell ();
-                } else {
-                    terminal_widget.active_shell (location);
-                }
-            } else {
-                terminal_widget.run_program (program, location);
-            }
-
+            terminal_widget.spawn_shell (location, program);
             save_opened_terminals (true, true);
 
+            check_for_tabs_with_same_name ();
             return terminal_widget;
         }
 
@@ -697,7 +685,7 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
+            terminal_widget.foreground_process_changed.connect (on_terminal_foreground_process_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
@@ -705,7 +693,7 @@ namespace Terminal {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
+            terminal_widget.foreground_process_changed.disconnect (on_terminal_foreground_process_changed);
             terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
@@ -720,8 +708,7 @@ namespace Terminal {
                 if (tw.program_string.length > 0) {
                     /* If a program was running, do not close the tab so that output of program
                      * remains visible */
-                    tw.program_string = "";
-                    tw.active_shell (tw.current_working_directory);
+                    tw.spawn_shell (tw.current_working_directory);
                     check_for_tabs_with_same_name ();
                 } else {
                     if (tw.tab != null) {
@@ -795,17 +782,19 @@ namespace Terminal {
                     term.confirm_kill_fg_process (
                         _("Are you sure you want to close all foreground processes before closing the window?"),
                         _("Close window"),
-                        (() => {
-                            terminate_all ();
-                            close_immediately = true;
-                            this.close ();
+                        ((confirmed) => {
+                            if (confirmed) {
+                                warning ("terminate all - after confirmation");
+                                terminate_all ();
+                                close_immediately = true;
+                                this.close ();
+                            }
                         })
                     );
 
                     return Gdk.EVENT_STOP;
                 }
             }
-
             terminate_all ();
 
             return Gdk.EVENT_PROPAGATE;
@@ -1089,6 +1078,8 @@ namespace Terminal {
                     string term2_name = Path.get_basename (term2_path);
 
                     if (term2.terminal_id != term.terminal_id &&
+                        term2.program_string == "" &&
+                        term2.tab_label != TerminalWidget.DEFAULT_LABEL &&
                         term2_name == term_label &&
                         term2_path != term_path) {
 
@@ -1106,8 +1097,7 @@ namespace Terminal {
             save_opened_terminals (true, false);
         }
 
-        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
-            src.program_string = cmdline;
+        private void on_terminal_foreground_process_changed (TerminalWidget src) {
             check_for_tabs_with_same_name (); // Also sets window title
         }
 
