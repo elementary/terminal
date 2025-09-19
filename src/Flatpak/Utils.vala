@@ -149,6 +149,8 @@ namespace Terminal.FlatpakUtils {
         Cancellable? cancellable = null
     ) throws Error {
 
+        int foreground_pid = shell_pid;
+
         //This should return info for each child process of the shell in the form:
         // PID STAT S TTY TIME COMMAND
         // as separate lines but without the headers
@@ -164,15 +166,14 @@ namespace Terminal.FlatpakUtils {
         var sp = launcher.spawnv (argv);
 
         if (sp == null) {
-          return -1;
+          throw new IOError.FAILED ("Failed to spawn subprocess");
         }
 
         string? buf = null;
         if (!sp.communicate_utf8 (null, cancellable, out buf, null)) {
-          return -1;
+          throw new IOError.FAILED ("Failed to communicate with subprocess");
         }
 
-        int foreground_pid = -1;
         if (buf != null && buf.length > 0) {
             string[] arr = buf.strip ().split ("\n");
             foreach (string s in arr) {

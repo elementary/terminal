@@ -937,27 +937,33 @@ namespace Terminal {
             pty_slaves[2] = Posix.dup (pty_slaves [0]);
         }
 
-        public void try_get_foreground_pid () {
+        private int try_get_foreground_pid () {
             if (child_has_exited) {
-                return;
+                return -1;
             }
 
             try {
                 int pty = get_pty ().fd;
                 if (Terminal.Application.is_running_in_flatpak) {
-                    fg_pid = FlatpakUtils.fp_get_foreground_pid (child_pid);
+                    return FlatpakUtils.fp_get_foreground_pid (child_pid);
                 } else {
                     //TODO Use same method as Flatpak as we can get name at same time
-                    fg_pid = Posix.tcgetpgrp (pty);
+                    return Posix.tcgetpgrp (pty);
                 }
             } catch (Error e) {
                 warning ("Error getting foreground process pid. %s", e.message);
-                fg_pid = -1;
+                return -1;
             }
         }
 
         public bool has_foreground_process () {
-            return fg_pid != this.child_pid && fg_pid != -1;
+            int _fg_pid = try_get_foreground_pid ();
+            if (_fg_pid != this.child_pid && _fg_pid != -1) {
+                fg_pid = _fg_pid;
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public int calculate_width (int column_count) {
@@ -1155,31 +1161,40 @@ namespace Terminal {
                         return Source.CONTINUE;
                     }
 
-                    var cwd = get_shell_location ();
-                    if (cwd != current_working_directory) {
-                        update_current_working_directory (cwd);
-                    }
-
-                    int pid = fg_pid;
-                    warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
-                    try_get_foreground_pid ();
-                    warning ("after try fg_pid is %i", fg_pid);
-                    if (pid != fg_pid) {
-                        if (has_foreground_process ()) {
-                            program_string = get_pid_exe_name (fg_pid);
-                        } else {
-                            fg_pid = -1;
-                            program_string = "";
-                        }
-
-                        foreground_process_changed ();
-                    }
-
                     contents_changed_timeout_id = 0;
-                    return Source.REMOVE;
+                    return check_cwd_and_fg_pid ();
                 }
             );
 
+        }
+
+        private bool check_cwd_and_fg_pid () {
+            var cwd = get_shell_location ();
+            if (cwd != current_working_directory) {
+                update_current_working_directory (cwd);
+            }
+
+            int pid = fg_pid;
+            int _fg_pid;
+            warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
+            // Signal if foreground process just started or just finished
+            if (has_foreground_process ()) {
+                if (pid != fg_pid) { // has a new foreground process
+                    debug ("process started");
+                    program_string = get_pid_exe_name (fg_pid);
+                    foreground_process_changed ();
+                }
+
+                return Source.CONTINUE; // Continue to poll while there is a fg process to detect it ending.
+            } else if (fg_pid != child_pid && fg_pid != -1) { // Process just ended
+                debug ("process finished");
+                fg_pid = -1;
+                program_string = "";
+                foreground_process_changed ();
+            }
+
+            debug ("now fg_pid %i, child_pid %i", fg_pid, child_pid);
+            return Source.REMOVE;
         }
 
         public void prepare_to_close () {
