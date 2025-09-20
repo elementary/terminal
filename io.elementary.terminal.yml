@@ -46,3 +46,5 @@ modules:
     sources:
       - type: dir
         path: .
+    run-tests: true
+    
