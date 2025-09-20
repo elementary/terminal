@@ -220,6 +220,7 @@ namespace Terminal {
                 propagation_phase = TARGET
             };
             key_controller.key_pressed.connect (key_pressed);
+            key_controller.key_released.connect (key_released);
             key_controller.focus_in.connect (() => {
                 if (focus_timeout == 0) {
                     focus_timeout = Timeout.add (20, () => {
@@ -228,6 +229,9 @@ namespace Terminal {
                         return Source.REMOVE;
                     });
                 }
+            });
+            key_controller.focus_out.connect (() => {
+                cancel_tab_numbers ();
             });
 
             update_font ();
@@ -440,7 +444,12 @@ namespace Terminal {
             bind_property ("current-terminal", menu_popover, "terminal");
         }
 
+        private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            cancel_tab_numbers ();
+        }
+
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            cancel_tab_numbers ();
             switch (keyval) {
                 case Gdk.Key.Escape:
                     if (search_toolbar.search_entry.has_focus) {
@@ -458,6 +467,16 @@ namespace Terminal {
                         }
                         return true;
                     }
+
+                    break;
+
+                case Gdk.Key.@0: //Show tab numbers
+                case Gdk.Key.KP_0:
+                    if (MOD1_MASK in modifiers) {
+                        show_tab_numbers ();
+                        return Gdk.EVENT_STOP;
+                    }
+
                     break;
 
                 case Gdk.Key.@1: //alt+[1-8]
@@ -472,13 +491,13 @@ namespace Terminal {
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
                         var tab_index = keyval - 49;
-                        if (tab_index > notebook.n_pages - 1) {
-                            return false;
+                        if (tab_index <= notebook.n_pages - 1) {
+                            notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         }
 
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
                         return true;
                     }
+
                     break;
 
                 case Gdk.Key.@9:
@@ -488,13 +507,69 @@ namespace Terminal {
                         notebook.selected_page = notebook.tab_view.get_nth_page (notebook.n_pages - 1);
                         return true;
                     }
+
                     break;
 
                 default:
+                    if (keyval == Gdk.Key.Alt_L) {
+                        schedule_tab_numbers ();
+                    }
+
                     break;
             }
 
             return false;
+        }
+
+        private uint tab_number_timeout = 0;
+        private bool tab_numbers_showing = false;
+        private void schedule_tab_numbers () {
+            if (tab_numbers_showing || tab_number_timeout > 0) {
+                return;
+            }
+
+            tab_number_timeout = Timeout.add (
+                Gtk.Settings.get_default ().gtk_long_press_time,
+                () => {
+                    tab_number_timeout = 0;
+                    show_tab_numbers ();
+                    return Source.REMOVE;
+                }
+            );
+        }
+
+
+        private void show_tab_numbers () {
+            tab_numbers_showing = true;
+            //TODO Show number as badge? Need way of converting number to suitable icon
+            // that can be used as TabPage.indicator_icon.
+            // For now use text
+            for (int i = 0; i < notebook.n_pages; i++) {
+                var tab = notebook.tab_view.get_nth_page (i);
+                var badge = "(%d) ".printf (i + 1);
+                if (!tab.title.has_prefix (badge)) {
+                    tab.title = badge + tab.title;
+                }
+            }
+        }
+
+        private void cancel_tab_numbers () {
+            if (tab_number_timeout > 0) {
+                Source.remove (tab_number_timeout);
+                tab_number_timeout = 0;
+            }
+
+            if (tab_numbers_showing) {
+                for (int i = 0; i < notebook.n_pages; i++) {
+                    var tab = notebook.tab_view.get_nth_page (i);
+                    var badge = "(%d) ".printf (i + 1);
+                    if (tab.title.has_prefix (badge)) {
+                        tab.title = tab.title.slice (badge.length, tab.title.length);
+                    }
+                }
+
+                tab_numbers_showing = false;
+            }
         }
 
         //TODO Replace with separate window-width and window-height settings which are bound to the corresponding default properties
