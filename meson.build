@@ -15,18 +15,16 @@ endif
 gnome = import('gnome')
 i18n = import('i18n')
 
-glib_version = '>=2.40'
-
+glib_version = '>=2.50'
 glib_dep = dependency('glib-2.0', version: glib_version)
 gobject_dep = dependency('gobject-2.0', version: glib_version)
 gio_dep = dependency('gio-2.0', version: glib_version)
 gee_dep = dependency('gee-0.8')
-gtk_dep = dependency('gtk+-3.0', version: '>=3.24')
-granite_dep = dependency('granite', version: '>=6.1')
-handy_dep = dependency('libhandy-1', version: '>=0.83')
-vte_dep = dependency('vte-2.91', version: '>=0.59')
-pcre2_dep = dependency('libpcre2-8')
-
+gtk_dep = dependency('gtk4', version: '>=4.1')
+granite_dep = dependency('granite-7', version: '>=7.5')
+adwaita_dep = dependency('libadwaita-1', version: '>=1.5')
+vte_dep = dependency('vte-2.91-gtk4', version: '>=0.76')
+pcre2_dep = dependency('libpcre2-8', version: '>=10.4') # Perl Regular Expression library
 posix_dep = valac.find_library('posix')
 linux_dep = valac.find_library('linux', required: false)
 m_dep = cc.find_library('m', required : false)
@@ -54,7 +52,6 @@ endif
 add_project_arguments(
     '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
     '-DPCRE2_CODE_UNIT_WIDTH=0',
-    '-DHANDY_USE_UNSTABLE_API',
     language:'c'
 )
 

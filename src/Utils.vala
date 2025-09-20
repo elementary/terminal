@@ -198,4 +198,39 @@ namespace Terminal.Utils {
     public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
         return ((SimpleAction) action_group.lookup_action (action_name));
     }
+
+    public bool valid_local_uri (string s, out string path) {
+        var scheme = Uri.peek_scheme (s);
+        path = "";
+        string absolute_uri;
+        if (scheme == null || scheme == "") {
+            absolute_uri = "file:///" + s;
+        } else if (scheme != "file") {
+                return false;
+        } else {
+            absolute_uri = s;
+        }
+
+        try {
+            if (!Uri.is_valid (absolute_uri, PARSE_RELAXED)) {
+                return false;
+            }
+
+            var file = GLib.File.new_for_uri (absolute_uri);
+            var type = file.query_file_type (NONE);
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                return false;
+            }
+
+            return true;
+        } catch (Error e) {
+            warning ("Error parsing uri - %s", e.message);
+        }
+
+        return false;
+    }
 }
