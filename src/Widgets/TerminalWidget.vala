@@ -549,6 +549,8 @@ namespace Terminal {
                 _("Are you sure you want to reset the terminal?"),
                 _("Reset"))
             ) {
+                // We need to clear any pending input else it can get unexpectedly executed
+                clear_pending_input ();
                 // This also clears the screen and the scrollback
                 // We know there is no foreground process so we can just feed the command in
                 feed_child ("\rreset\n".data);

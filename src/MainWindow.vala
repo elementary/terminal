@@ -963,14 +963,14 @@ namespace Terminal {
                 return;
             }
 
-            // Clear any partially entered command
-            term.reload ();
+            // We need to clear any pending input else it can get unexpectedly executed
+            term.clear_pending_input ();
 
             // Change to requested directory
             var command = "cd '" + path + "'\n";
             term.feed_child (command.data);
 
-            // Clear screen
+            // Clear screen to hide fed in data
             term.feed_child ("clear\n".data);
         }
 
