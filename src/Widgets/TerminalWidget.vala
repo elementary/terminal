@@ -539,7 +539,7 @@ namespace Terminal {
 
             // We keep the scrollback history, just clear the screen
             // We know there is no foreground process so we can just feed the command in
-            feed_child ("clear -x\n".data);
+            feed_child ("\rclear -x\n".data);
         }
 
         private void action_reset () {
