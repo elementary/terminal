@@ -549,7 +549,7 @@ namespace Terminal {
             ) {
                 // This also clears the screen and the scrollback
                 // We know there is no foreground process so we can just feed the command in
-                feed_child ("reset\n".data);
+                feed_child ("\rreset\n".data);
             }
         }
 
