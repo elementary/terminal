@@ -220,7 +220,7 @@ namespace Terminal.FlatpakUtils {
           return null;
         }
 
-        return buf;
+        return buf.strip (); // Remove extraneous CRLF
     }
 
 
