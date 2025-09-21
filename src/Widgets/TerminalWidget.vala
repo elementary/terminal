@@ -537,9 +537,11 @@ namespace Terminal {
                 return;
             }
 
-            // We keep the scrollback history, just clear the screen
+            // We need to clear any pending input else it can get unexpectedly executed
+            clear_pending_input ();
             // We know there is no foreground process so we can just feed the command in
-            feed_child ("\rclear -x\n".data);
+            // We keep the scrollback history (-x), just clear the screen
+            feed_child ("clear -x\n".data);
         }
 
         private void action_reset () {
@@ -551,6 +553,13 @@ namespace Terminal {
                 // We know there is no foreground process so we can just feed the command in
                 feed_child ("\rreset\n".data);
             }
+        }
+
+        public void clear_pending_input () {
+            // This is hacky but no obvious way to feed in escape sequences to clear the line
+            // Assume any pending input is less than 1000 chars.
+            string backspaces = string.nfill (1000, '\b');
+            feed_child (backspaces.data);
         }
 
         protected override void paste_clipboard () {
