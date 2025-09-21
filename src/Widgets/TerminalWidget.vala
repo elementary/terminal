@@ -591,9 +591,11 @@ namespace Terminal {
                 return;
             }
 
+            clear_pending_input ();
+            feed_child ("clear -x\n".data);
+
             // We keep the scrollback history, just clear the screen
             // We know there is no foreground process so we can just feed the command in
-            feed_child ("clear -x\n".data);
         }
 
         private void action_reset () {
@@ -612,11 +614,26 @@ namespace Terminal {
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
                 () => {
-                    reset (true, true);
+                    term_ps ();
+                    //TODO Do we need to deal with cases where shell does not
+                    // exit ever?
+                    while (child_pid != -1) {
+                        MainContext.get_thread_default ().iteration (true);
+                    }
+
                     spawn_shell (old_loc);
                 }
             );
         }
+
+        public void clear_pending_input () {
+            // This is hacky but no obvious way to feed in escape sequences to clear the line
+            // Assume any pending input is less than 1000 chars.
+            string backspaces = string.nfill (1000, '\b');
+            feed_child (backspaces.data);
+        }
+
+
         protected override void paste_clipboard () {
             var content_provider = clipboard.get_content ();
             if (content_provider != null) {
@@ -725,6 +742,7 @@ namespace Terminal {
             child_has_exited = true;
             last_key_was_return = true;
             fg_pid = -1;
+            child_pid = -1;
         }
 
         public void kill_fg () {
@@ -738,40 +756,12 @@ namespace Terminal {
 
         // Terminate the shell process prior to closing the tab
         public void term_ps () {
-            killed = true;
-
-#if HAS_LINUX
-            int pid_fd = Linux.syscall (SYS_PIDFD_OPEN, this.child_pid, 0);
-#else
-            int pid_fd = -1;
-#endif
-
-            Posix.kill (this.child_pid, Posix.Signal.HUP);
-            Posix.kill (this.child_pid, Posix.Signal.TERM);
-
-            // pidfd_open isn't supported in Linux kernel < 5.3
-            if (pid_fd == -1) {
-#if HAS_GLIB_2_74
-                // GLib 2.73.2 dropped global GChildWatch, we need to wait ourselves
-                Posix.waitpid (this.child_pid, null, 0);
-#else
-                while (Posix.kill (this.child_pid, 0) == 0) {
-                    Thread.usleep (100);
-                }
-#endif
-                return;
-            }
-
-            Posix.pollfd pid_pfd[1];
-            pid_pfd[0] = Posix.pollfd () {
-                fd = pid_fd,
-                events = Posix.POLLIN
-            };
-
-            // The loop deals the case when SIGCHLD is delivered to us and restarts the call
-            while (Posix.poll (pid_pfd, -1) != 1) {}
-
-            Posix.close (pid_fd);
+            kill_fg ();
+            // We know there is no foreground process so we can just feed the command in
+            // This works with Flatpak as well so is simpler than trying to kill the
+            // process.
+            feed_child ("exit\n".data);
+            killed = true; // Flag that shell was deliberately killed - do not close page
         }
 
         private string get_shell () {
@@ -792,6 +782,7 @@ namespace Terminal {
             string _dir = GLib.Environment.get_current_dir (),
             string command = ""
         ) {
+
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
             bool flatpak = Terminal.Application.is_running_in_flatpak;
@@ -802,8 +793,8 @@ namespace Terminal {
                 temp_envv = Environ.get ();
             }
 
+            // We assume _dir is a valid path?
             var dir = _dir == "" ? "/" : _dir;
-
             this.program_string = command;
             this.current_working_directory = dir;
 
@@ -833,10 +824,11 @@ namespace Terminal {
                     envv,
                     (pid, error) => {
                         if (error == null) {
-                            this.child_pid = pid;
+                            after_successful_spawn (pid);
                         } else {
                             warning (error.message);
                             // on_spawn_failed (); //TODO Expose message in UI as toast or otherwise
+                            return;
                         }
                     }
                 );
@@ -859,13 +851,26 @@ namespace Terminal {
                     null,
                     (terminal, pid, error) => {
                         if (error == null) {
-                            this.child_pid = pid;
+                            after_successful_spawn (pid);
                         } else {
                             warning (error.message);
+                            return;
                         }
                     }
                 );
             }
+        }
+
+        private void after_successful_spawn (int pid) {
+            // Success - reset these flags
+            this.child_pid = pid;
+            killed = false;
+            child_has_exited = false;
+            fg_pid = -1;
+            // Its a new shell so no need to clear pending input
+            // but after respawning the shell, the terminal widget may have extraneous
+            // content.
+            feed_child ("clear\n".data);
         }
 
         // delegate void TerminalSpawnAsyncCallback (Terminal terminal, Pid pid, Error error);
@@ -909,7 +914,7 @@ namespace Terminal {
                 this.pty = _ppty;
                 cb (p, null);
             } catch (Error e) {
-                warning ("send host command failed");
+                warning ("send host command failed: %s", e.message);
                 cb (-1, e);
             }
         }
@@ -1148,6 +1153,10 @@ namespace Terminal {
         private const int CONTENTS_CHANGED_DELAY_MSEC = 200;
         private bool contents_changed_continue = true;
         private void on_contents_changed () {
+            // Ignore any changes during reloading
+            if (killed) {
+                return;
+            }
             contents_changed_continue = true;
             if (contents_changed_timeout_id > 0) {
                 return;
@@ -1169,6 +1178,10 @@ namespace Terminal {
         }
 
         private bool check_cwd_and_fg_pid () {
+            if (killed || child_has_exited) {
+                return Source.REMOVE;
+            }
+
             var cwd = get_shell_location ();
             if (cwd != current_working_directory) {
                 update_current_working_directory (cwd);
@@ -1176,7 +1189,7 @@ namespace Terminal {
 
             int pid = fg_pid;
             int _fg_pid;
-            warning ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
+            debug ("current fg_pid %i, child_pid %i", fg_pid, child_pid);
             // Signal if foreground process just started or just finished
             if (has_foreground_process ()) {
                 if (pid != fg_pid) { // has a new foreground process
