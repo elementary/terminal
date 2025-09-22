@@ -587,8 +587,10 @@ namespace Terminal {
             confirm_kill_fg_process (
                 _("Are you sure you want to reset the terminal?"),
                 _("Reset"),
-                () => {
-                    reset (true, true);
+                (confirmed) => {
+                    if (confirmed) {
+                        reset (true, true);
+                    }
                 }
             );
         }
@@ -598,15 +600,17 @@ namespace Terminal {
             confirm_kill_fg_process (
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
-                () => {
-                    term_ps ();
-                    //TODO Do we need to deal with cases where shell does not
-                    // exit ever?
-                    while (child_pid != -1) {
-                        MainContext.get_thread_default ().iteration (true);
-                    }
+                (confirmed) => {
+                    if (confirmed) {
+                        term_ps ();
+                        //TODO Do we need to deal with cases where shell does not
+                        // exit ever?
+                        while (child_pid != -1) {
+                            MainContext.get_thread_default ().iteration (true);
+                        }
 
-                    spawn_shell (old_loc);
+                        spawn_shell (old_loc);
+                    }
                 }
             );
         }
