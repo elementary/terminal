@@ -783,7 +783,6 @@ namespace Terminal {
                         _("Close window"),
                         ((confirmed) => {
                             if (confirmed) {
-                                warning ("terminate all - after confirmation");
                                 terminate_all ();
                                 close_immediately = true;
                                 this.close ();
