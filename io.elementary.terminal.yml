@@ -1,6 +1,6 @@
 app-id: io.elementary.terminal
 runtime: io.elementary.Platform
-runtime-version: '8.2'
+runtime-version: '8.1'
 sdk: io.elementary.Sdk
 command: io.elementary.terminal
 
