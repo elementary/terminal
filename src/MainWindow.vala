@@ -590,7 +590,7 @@ namespace Terminal {
                 }
 
                 if (appinfo == null) {
-                    var file = File.new_for_uri (uri);
+                    var file = File.new_for_commandline_arg (uri);
                     try {
                         var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
                                                     FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
