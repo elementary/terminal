@@ -576,8 +576,10 @@ namespace Terminal {
             confirm_kill_fg_process (
                 _("Are you sure you want to reset the terminal?"),
                 _("Reset"),
-                () => {
-                    reset (true, true);
+                (confirmed) => {
+                    if (confirmed) {
+                        reset (true, true);
+                    }
                 }
             );
         }
@@ -587,9 +589,11 @@ namespace Terminal {
             confirm_kill_fg_process (
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
-                () => {
-                    reset (true, true);
-                    active_shell (old_loc);
+                (confirmed) => {
+                    if (confirmed ) {
+                        reset (true, true);
+                        active_shell (old_loc);
+                    }
                 }
             );
         }
