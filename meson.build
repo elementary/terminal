@@ -23,7 +23,7 @@ gee_dep = dependency('gee-0.8')
 gtk_dep = dependency('gtk4', version: '>=4.1')
 granite_dep = dependency('granite-7', version: '>=7.5')
 adwaita_dep = dependency('libadwaita-1', version: '>=1.5')
-vte_dep = dependency('vte-2.91-gtk4', version: '>=0.73')
+vte_dep = dependency('vte-2.91-gtk4', version: '>=0.76')
 pcre2_dep = dependency('libpcre2-8', version: '>=10.4') # Perl Regular Expression library
 posix_dep = valac.find_library('posix')
 linux_dep = valac.find_library('linux', required: false)

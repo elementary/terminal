@@ -38,8 +38,8 @@ modules:
       - '-Dgtk3=false'
     sources:
       - type: archive
-        url: https://gitlab.gnome.org/GNOME/vte/-/archive/3c8f66be867aca6656e4109ce880b6ea7431b895/vte-3c8f66be867aca6656e4109ce880b6ea7431b895.tar.gz
-        sha256: 320618260a29c99ab68d1e8674f6d4926bbf1e7e6541e8e04898fad85bb6e1b9
+        url: https://download.gnome.org/sources/vte/0.76/vte-0.76.6.tar.xz
+        sha256: 9ac739ad73b63e109269088a6d27029b6d45700b0993977c1e00ed1bcb1a3d39
 
   - name: terminal
     buildsystem: meson
