@@ -850,7 +850,7 @@ namespace Terminal {
                     try {
                         var cp = primary_selection.get_content ();
                         if (cp != null) {
-                            Value? val = null;
+                            Value val = new Value (typeof (string));
                             cp.get_value (ref val);
                             return val.dup_string ();
                         }
