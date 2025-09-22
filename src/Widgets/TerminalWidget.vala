@@ -215,7 +215,8 @@ namespace Terminal {
                 propagation_phase = TARGET,
                 button = Gdk.BUTTON_SECONDARY
             };
-            secondary_gesture.released.connect (secondary_released);
+
+            secondary_gesture.pressed.connect ((n, x, y) => setup_menu (x, y));
 
             // Accels added by set_accels_for_action in Application do not work for actions
             // in child widgets so use shortcut_controller instead.
@@ -280,7 +281,7 @@ namespace Terminal {
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
-                clipboard.changed.connect (setup_menu);
+                clipboard.changed.connect (() => { setup_menu (); });
                 disconnect (once);
             });
 
@@ -338,17 +339,6 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
-            link_uri = get_link (x, y);
-
-            if (link_uri != null) {
-                copy_action.set_enabled (true);
-            }
-
-            popup_context_menu (x, y);
-
-            gesture.set_state (CLAIMED);
-        }
 
         private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
             link_uri = null;
@@ -409,13 +399,12 @@ namespace Terminal {
 
                 case Gdk.Key.Menu:
                     long col, row;
-
                     get_cursor_position (out col, out row);
 
                     var cell_width = get_char_width ();
                     var cell_height = get_char_height ();
                     var vadj = vadjustment.value;
-                    popup_context_menu (col * cell_width, (row - vadj) * cell_height);
+                    setup_menu (col * cell_width, (row - vadj) * cell_height);
                     break;
 
                 case Gdk.Key.plus:
@@ -517,7 +506,14 @@ namespace Terminal {
             return false;
         }
 
-        private void setup_menu () {
+        private void setup_menu (double x = -1, double y = -1) {
+            main_window.update_context_menu ();
+
+            link_uri = get_link (x, y);
+            if (link_uri != null) {
+                copy_action.set_enabled (true);
+            }
+
             // Update the "Paste" menu option
             var formats = clipboard.get_formats ();
             bool can_paste = false;
@@ -531,22 +527,11 @@ namespace Terminal {
             // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
             copy_output_action.set_enabled (has_output);
+
+            context_menu_model = main_window.context_menu_model;
         }
 
-        private void popup_context_menu (double x, double y) {
-            main_window.update_context_menu ();
-            setup_menu ();
 
-            //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
-            // does not work at the moment so create our own.
-            var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
-                has_arrow = false,
-                pointing_to = { (int)x, (int)y, 1, 1}
-            };
-            new_context_menu.set_parent (this);
-            new_context_menu.closed.connect (() => new_context_menu.destroy ());
-            new_context_menu.popup ();
-        }
 
         protected override void copy_clipboard () {
             if (link_uri != null && !get_has_selection ()) {
@@ -993,7 +978,7 @@ namespace Terminal {
             }
         }
 
-        private string? get_link (double? x, double? y) {
+        private string? get_link (double x = -1, double y = -1) {
             int tag = 0;
             return check_match_at (x, y, out tag);
         }
