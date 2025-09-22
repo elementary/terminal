@@ -589,7 +589,10 @@ namespace Terminal {
                 _("Reset"),
                 (confirmed) => {
                     if (confirmed) {
+                        kill_fg ();
                         reset (true, true);
+                        // For some reason prompt does not appear unless we clear screen
+                        feed_child ("clear -x\n".data);
                     }
                 }
             );
