@@ -910,8 +910,6 @@ namespace Terminal {
                     primary_selection.request_text ((clipboard, uri) => {
                         text = uri;
                     });
-
-                    // return Utils.sanitize_path (text, current_terminal.get_shell_location ());
                 }
 
                 if (text == null) {
