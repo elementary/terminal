@@ -929,7 +929,6 @@ namespace Terminal {
         }
 
         private bool on_drop (Value val, double x, double y) {
-            var text = val.dup_string ();
             var uris = Uri.list_extract_uris (val.dup_string ());
             string path;
             File file;
