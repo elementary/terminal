@@ -396,10 +396,7 @@ namespace Terminal {
             content = box;
             add_css_class ("terminal-window");
 
-            notify["title"].connect (() => {
-                warning ("title changed to %s", title);
-                title_label.label = title;
-            });
+            bind_property ("title", title_label, "label");
 
             unowned var menu_popover = (SettingsPopover) menu_button.popover;
 
@@ -684,7 +681,7 @@ namespace Terminal {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (on_terminal_foreground_process_changed);
+            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
         }
 
@@ -692,7 +689,7 @@ namespace Terminal {
             terminal_widget.child_exited.disconnect (on_terminal_child_exited);
             terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.disconnect (on_terminal_foreground_process_changed);
+            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
             terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
@@ -1098,7 +1095,7 @@ namespace Terminal {
             save_opened_terminals (true, false);
         }
 
-        private void on_terminal_foreground_process_changed (TerminalWidget src) {
+        private void on_terminal_program_changed (TerminalWidget src) {
             check_for_tabs_with_same_name (); // Also sets window title
         }
 
