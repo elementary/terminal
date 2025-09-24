@@ -221,26 +221,25 @@ namespace Terminal {
             // Accels added by set_accels_for_action in Application do not work for actions
             // in child widgets so use shortcut_controller instead.
             var select_all_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.A, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.A, CONTROL_MASK | SHIFT_MASK),
                 new Gtk.NamedAction ("term.select-all")
             );
 
-            var reload_trigger = new Gtk.AlternativeTrigger (
-                new Gtk.KeyvalTrigger (Gdk.Key.R, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK),
-                new Gtk.KeyvalTrigger (Gdk.Key.F5, Gdk.ModifierType.CONTROL_MASK)
-            );
             var reload_shortcut = new Gtk.Shortcut (
-                reload_trigger,
+                new Gtk.AlternativeTrigger (
+                    new Gtk.KeyvalTrigger (Gdk.Key.R, CONTROL_MASK | SHIFT_MASK),
+                    new Gtk.KeyvalTrigger (Gdk.Key.F5, CONTROL_MASK)
+                ),
                 new Gtk.NamedAction ("term.reload")
             );
 
             var scroll_to_command_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.Up, Gdk.ModifierType.ALT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.Up, ALT_MASK),
                 new Gtk.NamedAction ("term.scroll-to-command")
             );
 
             var copy_output_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.C, Gdk.ModifierType.ALT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.C, ALT_MASK),
                 new Gtk.NamedAction ("term.copy-output")
             );
 
@@ -1042,7 +1041,6 @@ namespace Terminal {
         }
 
         private bool on_drop (Value val, double x, double y) {
-            var text = val.dup_string ();
             var uris = Uri.list_extract_uris (val.dup_string ());
             string path;
             File file;
