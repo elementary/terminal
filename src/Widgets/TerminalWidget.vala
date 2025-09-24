@@ -433,7 +433,9 @@ namespace Terminal {
 
             // Use hardware keycodes so the key used is unaffected by internationalized layout
             bool match_keycode (uint keyval, uint code) {
-                //TODO Gtk4 Port:Check this works for non-standard keyboard layouts
+                // In Gtk4 Gdk.KeyMap does not exist so instead of looking up the codes corresponding
+                // to the keyval, we look up the keyvals corresponding to the code.
+                // TODO Check this still works for non-standard keyboard layouts
                 Gdk.KeymapKey[] keys;
                 uint[] keyvals;
                 if (get_display ().map_keycode (code, out keys, out keyvals)) {
