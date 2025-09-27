@@ -9,6 +9,7 @@ terminal_deps = [
     vte_dep,
     posix_dep,
     linux_dep,
+    portal_dep,
     m_dep
 ]
 
@@ -17,6 +18,7 @@ terminal_sources = [
     'Dialogs/ForegroundProcessDialog.vala',
     'Dialogs/UnsafePasteDialog.vala',
     'Flatpak/Utils.vala',
+    'Flatpak/Portal.vala',
     'Widgets/SearchToolbar.vala',
     'Widgets/SettingsPopover.vala',
     'Widgets/TerminalView.vala',
