@@ -17,6 +17,7 @@ public class Terminal.Application : Gtk.Application {
     public bool is_testing { get; set construct; }
 
     public static Terminal.PortalHelper portal_helper;
+    public static Terminal.DBus dbus_helper;
     public static bool is_running_in_flatpak {
         get { return portal_helper.is_running_in_flatpak; }
     }
@@ -72,6 +73,8 @@ public class Terminal.Application : Gtk.Application {
         add_main_option (
             "commandline", 'x', 0, OptionArg.FILENAME, _("Run remainder of line as a command in terminal"), "COMMAND"
         );
+
+        dbus_helper = new Terminal.DBus ();
     }
 
     protected override bool local_command_line (ref unowned string[] args, out int exit_status) {
@@ -159,12 +162,19 @@ public class Terminal.Application : Gtk.Application {
     }
 
     protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
-        base.dbus_register (connection, object_path);
 
-        var dbus = new DBus ();
-        dbus_id = connection.register_object (object_path, dbus);
+        if (!is_running_in_flatpak) {
+            // Connects to a DBus signal emitted due to insertion of
+            // SEND_PROCESS_FINISHED_BASH into the Bash prompt (see TerminalWidget).
+            // This does not seem to work in Flatpak.
+            base.dbus_register (connection, object_path);
+            dbus_id = connection.register_object (object_path, dbus_helper);
+        } else {
+            // In Flatpak we will emit `dbus_helper.finished_process` signal ourselves
+            // when polling detects the foreground process has ended
+        }
 
-        dbus.finished_process.connect ((terminal_id, process, exit_status) => {
+        dbus_helper.finished_process.connect ((terminal_id, process, exit_status) => {
             TerminalWidget terminal = null;
 
             foreach (var window in (List<MainWindow>) get_windows ()) {

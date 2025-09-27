@@ -50,7 +50,6 @@ public class Terminal.PortalHelper : Object {
         string action_name,
         Variant target
     ) {
-
         var process_icon = new ThemedIcon (process_icon_name);
 
         var builder = new GLib.VariantBuilder (VariantType.VARDICT);

@@ -331,6 +331,8 @@ namespace Terminal {
             var select_all_action = new GLib.SimpleAction ("select-all", null);
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
+
+            init_complete = true;
         }
 
         private void pointer_focus () {
@@ -1193,6 +1195,16 @@ namespace Terminal {
                 return Source.CONTINUE; // Continue to poll while there is a fg process to detect it ending.
             } else if (fg_pid != child_pid && fg_pid != -1) { // Process just ended
                 debug ("process finished");
+                if (Terminal.Application.is_running_in_flatpak) {
+                    // Send signal via dbus_helper for now to ensure consistency with
+                    // non-flatpak code
+                    Terminal.Application.dbus_helper.process_finished (
+                        this.terminal_id,
+                        program_string,
+                        0 // Cannot currently get exit status so assume success
+                                            );
+                }
+
                 fg_pid = -1;
                 program_string = "";
                 foreground_process_changed ();
