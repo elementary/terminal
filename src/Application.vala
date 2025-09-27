@@ -23,10 +23,6 @@ public class Terminal.Application : Gtk.Application {
     }
     private static Themes themes;
 
-    static construct {
-        portal_helper = PortalHelper.get_instance ();
-    }
-
     public Application () {
         Object (
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
@@ -56,6 +52,12 @@ public class Terminal.Application : Gtk.Application {
             }
 
             window_to_present.present ();
+        });
+
+
+        portal_helper = PortalHelper.get_instance ();
+        portal_helper.action_invoked.connect ((id, action, target) => {
+           warning ("action invoked received");
         });
 
         add_main_option ("version", 'v', 0, OptionArg.NONE, _("Show version"), null);
@@ -188,12 +190,17 @@ public class Terminal.Application : Gtk.Application {
             if (terminal == null) {
                 return;
             } else if (!terminal.is_init_complete ()) {
-                terminal.set_init_complete ();
+                // Suppress startup notifications
                 return;
             }
 
             var title = exit_status != 0 ? _("Process exited with errors") : _("Process completed");
             var process_icon = exit_status != 0 ? "process-error-symbolic" : "process-completed-symbolic";
+
+            if (terminal.main_window.is_active && terminal == terminal.main_window.current_terminal) {
+                // No notifications for active window with terminal visible
+                return;
+            }
 
             if (terminal != terminal.main_window.current_terminal) {
                 terminal.tab.icon = new ThemedIcon (process_icon);

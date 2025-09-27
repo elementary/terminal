@@ -51,7 +51,6 @@ public class Terminal.PortalHelper : Object {
         Variant target
     ) {
         var process_icon = new ThemedIcon (process_icon_name);
-
         var builder = new GLib.VariantBuilder (VariantType.VARDICT);
         builder.add ("{sv}", "title", new GLib.Variant.string (title));
         builder.add ("{sv}", "body", new GLib.Variant.string (process));

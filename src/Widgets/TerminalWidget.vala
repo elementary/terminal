@@ -331,8 +331,6 @@ namespace Terminal {
             var select_all_action = new GLib.SimpleAction ("select-all", null);
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
-
-            init_complete = true;
         }
 
         private void pointer_focus () {
@@ -777,7 +775,6 @@ namespace Terminal {
             string _dir = GLib.Environment.get_current_dir (),
             string command = ""
         ) {
-
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
             bool flatpak = Terminal.Application.is_running_in_flatpak;
@@ -866,9 +863,14 @@ namespace Terminal {
             // but after respawning the shell, the terminal widget may have extraneous
             // content.
             feed_child ("clear\n".data);
+            // Suppress spurious notifications while starting up by
+            // delaying setting initialisation complete
+            Timeout.add (50, () => {
+                set_init_complete ();
+                return Source.REMOVE;
+            });
         }
 
-        // delegate void TerminalSpawnAsyncCallback (Terminal terminal, Pid pid, Error error);
         // The following function is derived from the work of [BlackBox] tweaked to make interface
         // more like Vte.spawn_async
         private GLib.Cancellable? fp_spawn_host_command_callback_cancellable = null;
