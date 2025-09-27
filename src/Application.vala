@@ -16,11 +16,14 @@ public class Terminal.Application : Gtk.Application {
 
     public bool is_testing { get; set construct; }
 
-    public static bool is_running_in_flatpak;
+    public static Terminal.PortalHelper portal_helper;
+    public static bool is_running_in_flatpak {
+        get { return portal_helper.is_running_in_flatpak; }
+    }
     private static Themes themes;
 
     static construct {
-        is_running_in_flatpak = FileUtils.test ("/.flatpak-info", FileTest.IS_REGULAR);
+        portal_helper = PortalHelper.get_instance ();
     }
 
     public Application () {
@@ -161,7 +164,7 @@ public class Terminal.Application : Gtk.Application {
         var dbus = new DBus ();
         dbus_id = connection.register_object (object_path, dbus);
 
-        dbus.finished_process.connect ((id, process, exit_status) => {
+        dbus.finished_process.connect ((terminal_id, process, exit_status) => {
             TerminalWidget terminal = null;
 
             foreach (var window in (List<MainWindow>) get_windows ()) {
@@ -169,7 +172,7 @@ public class Terminal.Application : Gtk.Application {
                     break;
                 }
 
-                terminal = window.get_terminal (id);
+                terminal = window.get_terminal (terminal_id);
             }
 
             if (terminal == null) {
@@ -179,50 +182,79 @@ public class Terminal.Application : Gtk.Application {
                 return;
             }
 
-            var process_string = _("Process completed");
-            var process_icon = new ThemedIcon ("process-completed-symbolic");
-            if (exit_status != 0) {
-                process_string = _("Process exited with errors");
-                process_icon = new ThemedIcon ("process-error-symbolic");
-            }
+            var title = exit_status != 0 ? _("Process exited with errors") : _("Process completed");
+            var process_icon = exit_status != 0 ? "process-error-symbolic" : "process-completed-symbolic";
 
             if (terminal != terminal.main_window.current_terminal) {
-                terminal.tab.icon = process_icon;
+                terminal.tab.icon = new ThemedIcon (process_icon);
             }
 
+            var action_name = "app.process-finished";
+            var target = new Variant.string (terminal_id);
+            var notification_id = "process-finished-%s".printf (terminal_id);
             if (!(get_active_window ().is_active)) {
-                var notification = new Notification (process_string);
-                notification.set_body (process);
-                notification.set_icon (process_icon);
-                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
-                send_notification ("process-finished-%s".printf (id), notification);
-
+                if (is_running_in_flatpak) {
+                    portal_helper.send_notification (
+                        notification_id,
+                        title,
+                        process,
+                        process_icon,
+                        action_name,
+                        target
+                    );
+                } else {
+                    var notification = new Notification (title);
+                    notification.set_body (process);
+                    notification.set_icon (new ThemedIcon (process_icon));
+                    notification.set_default_action_and_target_value (
+                        action_name,
+                        target
+                    );
+                    send_notification (notification_id, notification);
+                }
                 ulong tab_change_handler = 0;
                 ulong focus_in_handler = 0;
 
-                tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-                });
-
-                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
-                    if (terminal.main_window.is_active) {
-                        withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                tab_change_handler = terminal.main_window.notify["current-terminal"].connect (
+                    () => {
+                        withdraw_notification_for_terminal (
+                            terminal, notification_id, tab_change_handler, focus_in_handler
+                        );
                     }
-                });
+                );
+
+                focus_in_handler = terminal.main_window.notify["is-active"].connect (
+                    () => {
+                        if (terminal.main_window.is_active) {
+                            withdraw_notification_for_terminal (
+                                terminal, notification_id, tab_change_handler, focus_in_handler
+                            );
+                        }
+                    }
+                );
             }
         });
 
         return true;
     }
 
-    private void withdraw_notification_for_terminal (TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+    private void withdraw_notification_for_terminal (
+        TerminalWidget terminal,
+        string notification_id,
+        ulong tab_change_handler,
+        ulong focus_in_handler
+    ) {
         if (terminal.main_window.current_terminal != terminal) {
             return;
         }
 
-        terminal.tab.icon = null;
-        withdraw_notification ("process-finished-%s".printf (id));
+        if (is_running_in_flatpak) {
+            portal_helper.withdraw_notification (notification_id);
+        } else {
+            withdraw_notification (notification_id);
+        }
 
+        terminal.tab.icon = null;
         terminal.main_window.disconnect (tab_change_handler);
         terminal.main_window.disconnect (focus_in_handler);
     }

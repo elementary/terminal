@@ -27,11 +27,56 @@ public class Terminal.PortalHelper : Object {
     }
 
     private Xdp.Portal xdp_portal;
-    private PortalHelper () {
+    private PortalHelper () {}
 
+    public bool is_running_in_flatpak {
+        get { return xdp_portal.running_under_flatpak (); }
     }
+
+    public signal void action_invoked (string id, string? action, Variant? target);
 
     construct {
         xdp_portal = new Xdp.Portal ();
+        xdp_portal.notification_action_invoked.connect ((id, action, target) => {
+            action_invoked (id, action, target);
+        });
+    }
+
+    public void send_notification (
+        string notification_id,
+        string title,
+        string process,
+        string process_icon_name,
+        string action_name,
+        Variant target
+    ) {
+
+        var process_icon = new ThemedIcon (process_icon_name);
+
+        var builder = new GLib.VariantBuilder (VariantType.VARDICT);
+        builder.add ("{sv}", "title", new GLib.Variant.string (title));
+        builder.add ("{sv}", "body", new GLib.Variant.string (process));
+        builder.add ("{sv}", "icon", process_icon.serialize ());
+        builder.add ("{sv}", "default-action", new GLib.Variant.string (action_name));
+        builder.add ("{sv}", "target", target);
+
+
+        xdp_portal.add_notification.begin (
+            notification_id,
+            builder.end (),
+            NONE,
+            null,
+            (obj, res) => {
+                try {
+                    var success = xdp_portal.add_notification.end (res);
+                } catch (Error e) {
+                    warning ("Notification failed. %s", e.message);
+                }
+            }
+        );
+    }
+
+    public void withdraw_notification (string notification_id) {
+        xdp_portal.remove_notification (notification_id);
     }
 }
