@@ -775,7 +775,6 @@ namespace Terminal {
             string _dir = GLib.Environment.get_current_dir (),
             string command = ""
         ) {
-
             Array<string> argv = new Array<string> ();
             Array<string> envv = new Array<string> ();
             bool flatpak = Terminal.Application.is_running_in_flatpak;
@@ -864,9 +863,14 @@ namespace Terminal {
             // but after respawning the shell, the terminal widget may have extraneous
             // content.
             feed_child ("clear\n".data);
+            // Suppress spurious notifications while starting up by
+            // delaying setting initialisation complete
+            Timeout.add (50, () => {
+                set_init_complete ();
+                return Source.REMOVE;
+            });
         }
 
-        // delegate void TerminalSpawnAsyncCallback (Terminal terminal, Pid pid, Error error);
         // The following function is derived from the work of [BlackBox] tweaked to make interface
         // more like Vte.spawn_async
         private GLib.Cancellable? fp_spawn_host_command_callback_cancellable = null;
@@ -1193,6 +1197,16 @@ namespace Terminal {
                 return Source.CONTINUE; // Continue to poll while there is a fg process to detect it ending.
             } else if (fg_pid != child_pid && fg_pid != -1) { // Process just ended
                 debug ("process finished");
+                if (Terminal.Application.is_running_in_flatpak) {
+                    // Send signal via dbus_helper for now to ensure consistency with
+                    // non-flatpak code
+                    Terminal.Application.dbus_helper.process_finished (
+                        this.terminal_id,
+                        program_string,
+                        0 // Cannot currently get exit status so assume success
+                                            );
+                }
+
                 fg_pid = -1;
                 program_string = "";
                 foreground_process_changed ();
