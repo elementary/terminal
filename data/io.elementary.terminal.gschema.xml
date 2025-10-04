@@ -169,7 +169,7 @@
     <key name="tab-bar-behavior" enum="tab-bar-behavior">
       <default>'Always Show Tabs'</default>
       <summary>Tab Behavior</summary>
-      <description>Whether to always show tabs, or hide tabs when there is only one tab.</description>
+      <description>Whether to always show the tab bar, or to hide it when there is only one tab.</description>
     </key>
     <key name="save-exited-tabs" type="b">
       <default>true</default>
