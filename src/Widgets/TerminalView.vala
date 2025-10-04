@@ -72,6 +72,7 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         tab_bar = new Hdy.TabBar () {
+            autohide = Application.settings.get_enum ("tab-bar-behavior") == 1,
             expand_tabs = false,
             inverted = true,
             start_action_widget = new_tab_button,
@@ -79,20 +80,9 @@ public class Terminal.TerminalView : Gtk.Box {
             view = tab_view,
         };
 
-        Application.settings.bind_with_mapping (
-            "tab-bar-behavior",
-            tab_bar,
-            "autohide",
-            GET,
-            (prop_val, setting_variant) => {
-                //The setting variant contains the nick of the enum not the value!?
-                prop_val.set_boolean (setting_variant.get_string ().contains ("Single"));
-                return true;
-            },
-            () => {},
-            null,
-            null
-        );
+        Application.settings.changed["tab-bar-behavior"].connect (() => {
+            tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
+        });
 
         style_provider = new Gtk.CssProvider ();
         Gtk.StyleContext.add_provider_for_screen (
