@@ -1,0 +1,50 @@
+app-id: io.elementary.terminal
+runtime: io.elementary.Platform
+runtime-version: '8.1'
+sdk: io.elementary.Sdk
+command: io.elementary.terminal
+
+finish-args:
+  - '--metadata=X-DConf=migrate-path=/io/elementary/terminal/'
+  - '--allow=devel'
+  - '--filesystem=host'
+  - '--filesystem=xdg-run/gvfsd'
+  - '--share=ipc'
+  - '--share=network'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+  - '--socket=session-bus'
+  - '--device=all'
+  - '--talk-name=org.freedesktop.Flatpak'
+
+cleanup:
+  - '/include'
+  - '/lib/pkgconfig'
+  - '/lib/cmake'
+  - '/lib/girepository-1.0'
+  - '/share/gir-1.0'
+  - '/share/vala'
+  - '*.a'
+  - '*.la'
+
+build-options:
+  libdir: /app/lib
+
+modules:
+  - name: vte
+    buildsystem: meson
+    config-opts:
+      - '-Dgtk4=true'
+      - '-Dgtk3=false'
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/vte/0.76/vte-0.76.6.tar.xz
+        sha256: 9ac739ad73b63e109269088a6d27029b6d45700b0993977c1e00ed1bcb1a3d39
+
+  - name: terminal
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
+    run-tests: true
+    

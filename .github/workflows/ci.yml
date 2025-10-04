@@ -8,28 +8,38 @@ on:
       - synchronize
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  flatpak:
+    name: Flatpak (${{ matrix.configuration.arch }})
+    runs-on: ${{ matrix.configuration.runs-on }}
 
     strategy:
-      fail-fast: false
       matrix:
-        version: [stable, unstable, development-target]
+        configuration:
+          - arch: x86_64
+            runs-on: ubuntu-latest
+          - arch: aarch64
+            runs-on: ubuntu-24.04-arm
+      # Don't fail the whole workflow if one architecture fails
+      fail-fast: false
+
     container:
-      image: ghcr.io/elementary/docker:${{ matrix.version }}
+      image: ghcr.io/elementary/flatpak-platform/runtime:8.1-${{ matrix.configuration.arch }}
+      options: --privileged
 
     steps:
-    - uses: actions/checkout@v5
-    - name: Install Dependencies
-      run: |
-        apt update
-        apt install -y desktop-file-utils gettext libgranite-7-dev libgtk-4-dev libadwaita-1-dev libvte-2.91-gtk4-dev libxml2-utils meson valac xvfb
-    - name: Build
-      run: |
-        meson setup build
-        meson compile -C build
-        meson test -C build --print-errorlogs
-        meson install -C build
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6.5
+        with:
+          bundle: terminal.flatpak
+          manifest-path: io.elementary.terminal.yml
+          run-tests: true
+          repository-name: appcenter
+          repository-url: https://flatpak.elementary.io/repo.flatpakrepo
+          cache-key: "flatpak-builder-${{ github.sha }}"
+          arch: ${{ matrix.configuration.arch }}
 
   lint:
     runs-on: ubuntu-latest

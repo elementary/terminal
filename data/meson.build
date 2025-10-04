@@ -21,7 +21,7 @@ i18n.merge_file(
 
 i18n.merge_file(
     input: 'terminal.metainfo.xml.in',
-    output: meson.project_name() + '.metainfo.xml',
+    output: '@BASENAME', # Must use @BASENAME@ else flatpak build fails
     po_dir: podir / 'extra',
     install: true,
     install_dir: datadir / 'metainfo'
