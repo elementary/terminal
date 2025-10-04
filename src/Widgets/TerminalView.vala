@@ -10,13 +10,6 @@ public class Terminal.TerminalView : Gtk.Box {
         URI_LIST
     }
 
-    // Make sure to match with the value of "tab-bar-behavior" in gschema
-    public enum TabBarBehavior {
-        ALWAYS = 0,
-        SINGLE = 1,
-        NEVER = 2
-    }
-
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Hdy.TabPage page);
 
@@ -39,7 +32,6 @@ public class Terminal.TerminalView : Gtk.Box {
     public unowned MainWindow main_window { get; construct; }
     public Hdy.TabView tab_view { get; private set; }
     private Hdy.TabBar tab_bar;
-    private Gtk.Revealer tab_revealer;
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
@@ -79,9 +71,7 @@ public class Terminal.TerminalView : Gtk.Box {
             use_popover = false
         };
 
-        var tab_bar_behavior = (TabBarBehavior)Application.settings.get_enum ("tab-bar-behavior");
         tab_bar = new Hdy.TabBar () {
-            autohide = (tab_bar_behavior == TabBarBehavior.SINGLE),
             expand_tabs = false,
             inverted = true,
             start_action_widget = new_tab_button,
@@ -89,10 +79,20 @@ public class Terminal.TerminalView : Gtk.Box {
             view = tab_view,
         };
 
-        tab_revealer = new Gtk.Revealer () {
-            child = tab_bar,
-            reveal_child = (tab_bar_behavior != TabBarBehavior.NEVER),
-        };
+        Application.settings.bind_with_mapping (
+            "tab-bar-behavior",
+            tab_bar,
+            "autohide",
+            GET,
+            (prop_val, setting_variant) => {
+                //The setting variant contains the nick of the enum not the value!?
+                prop_val.set_boolean (setting_variant.get_string ().contains ("Single"));
+                return true;
+            },
+            () => {},
+            null,
+            null
+        );
 
         style_provider = new Gtk.CssProvider ();
         Gtk.StyleContext.add_provider_for_screen (
@@ -110,7 +110,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
         tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
 
-        add (tab_revealer);
+        add (tab_bar);
         add (tab_view);
     }
 
