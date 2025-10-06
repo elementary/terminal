@@ -31,7 +31,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public unowned MainWindow main_window { get; construct; }
     public Hdy.TabView tab_view { get; private set; }
-    private Hdy.TabBar tab_bar;
+    public Hdy.TabBar tab_bar { get; private set; }
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
