@@ -20,10 +20,11 @@ public class Terminal.ForegroundProcessDialog : Granite.MessageDialog {
     }
 
     construct {
+        modal = true;
         secondary_text = _("There is an active process on this tab. If you continue, the process will end.");
         image_icon = new ThemedIcon ("dialog-warning");
 
         var close_button = add_button (button_label, Gtk.ResponseType.ACCEPT);
-        close_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        close_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
     }
 }
