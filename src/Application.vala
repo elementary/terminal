@@ -16,7 +16,12 @@ public class Terminal.Application : Gtk.Application {
 
     public bool is_testing { get; set construct; }
 
+    public static bool is_running_in_flatpak;
     private static Themes themes;
+
+    static construct {
+        is_running_in_flatpak = FileUtils.test ("/.flatpak-info", FileTest.IS_REGULAR);
+    }
 
     public Application () {
         Object (
