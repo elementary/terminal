@@ -553,7 +553,8 @@ namespace Terminal {
 
         private void update_menu_label (string? uri) {
             AppInfo? appinfo = get_default_app_for_uri (uri);
-            //Changing atributes has no effect after adding item to menu so remove and re-add.
+
+            //Changing attributes has no effect after adding item to menu so remove and re-add.
             context_menu_model.remove (0); // This item was added first
             get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
             var new_name = _("Show in %s").printf (
