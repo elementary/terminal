@@ -912,7 +912,7 @@ namespace Terminal {
             font_scale += 0.1;
         }
 
-        public new void decrease_font_size () {
+        public override void decrease_font_size () {
             font_scale -= 0.1;
         }
 
