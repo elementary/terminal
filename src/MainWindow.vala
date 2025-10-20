@@ -889,7 +889,6 @@ namespace Terminal {
         }
 
         private void action_open_in_browser () requires (current_terminal != null) {
-            string to_open;
             var uri = get_current_selection_link_or_pwd ();
             var context = Gdk.Display.get_default ().get_app_launch_context ();
             AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
