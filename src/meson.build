@@ -73,4 +73,3 @@ executable(
 # )
 
 subdir('tests')
-
