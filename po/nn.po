@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-20 15:02+0000\n"
 "PO-Revision-Date: 2019-01-06 11:59+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -107,7 +107,7 @@ msgstr "Vel alle"
 msgid "Exit FullScreen"
 msgstr "Fullskjerm"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1046
 msgid "Find…"
 msgstr "Finn…"
 
@@ -115,47 +115,47 @@ msgstr "Finn…"
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:362
 msgid "Are you sure you want to close this tab?"
 msgstr "Er du sikker på at du vil lukke denne fana?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Lukk fane"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:560
 #, fuzzy, c-format
 #| msgid "Show in File Browser"
 msgid "Show in %s"
 msgstr "Vis i filutforskar"
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:562
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Er du sikker på at du ønsker å lukke terminalen?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Avslutt terminalen"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1037
 msgid "Hide find bar"
 msgstr "Gøym søkemeny"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 

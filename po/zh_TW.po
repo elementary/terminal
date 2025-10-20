@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-20 15:02+0000\n"
 "PO-Revision-Date: 2025-04-25 16:10+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
@@ -99,7 +99,7 @@ msgstr "全部選擇"
 msgid "Exit FullScreen"
 msgstr "離開全螢幕"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1046
 msgid "Find…"
 msgstr "尋找…"
 
@@ -107,46 +107,46 @@ msgstr "尋找…"
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:362
 msgid "Are you sure you want to close this tab?"
 msgstr "您確定您想要關閉此分頁嗎？"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "關閉分頁"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:560
 #, c-format
 msgid "Show in %s"
 msgstr "在 %s 中顯示"
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:562
 msgid "Default application"
 msgstr "預設應用程式"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "您確定要退出終端機嗎？"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "退出終端機"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1037
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "貼上的文字可能包含多項指令"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr "貼上的文字當中包含用來跳過警告和確認提示的指令"
 
