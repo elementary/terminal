@@ -884,8 +884,7 @@ namespace Terminal {
         }
 
         private string? get_link (double? x, double? y) {
-            int tag = 0;
-            return check_match_at (x, y, out tag);
+            return check_match_at (x, y, null);
         }
 
         public string get_shell_location () {
