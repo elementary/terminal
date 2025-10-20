@@ -206,7 +206,7 @@ namespace Terminal.Utils {
         if (scheme == null || scheme == "") {
             absolute_uri = "file:///" + s;
         } else if (scheme != "file") {
-                return false;
+            return false;
         } else {
             absolute_uri = s;
         }
