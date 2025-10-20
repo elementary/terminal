@@ -314,7 +314,8 @@ namespace Terminal {
             };
 
             var new_tab_revealer = new Gtk.Revealer () {
-                child = new_tab_button
+                child = new_tab_button,
+                transition_type = SLIDE_LEFT
             };
 
             var menu_button = new Gtk.MenuButton () {
