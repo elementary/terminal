@@ -92,11 +92,15 @@ public class Terminal.TerminalView : Gtk.Box {
 
         button_target.notify["value"].connect (() => {
             var val = button_target.get_value ();
-            var uris = Uri.list_extract_uris (val.dup_string ());
-            foreach (string s in uris) {
-                if (!Utils.valid_local_uri (s, null)) {
-                    button_target.reject ();
-                    break;
+            if (!val.holds (typeof (string))) {
+                button_target.reject ();
+            } else {
+                var uris = Uri.list_extract_uris (val.dup_string ());
+                foreach (string s in uris) {
+                    if (!Utils.valid_local_uri (s, null)) {
+                        button_target.reject ();
+                        break;
+                    }
                 }
             }
         });
