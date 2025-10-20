@@ -908,7 +908,7 @@ namespace Terminal {
             }
         }
 
-        public new void increase_font_size () {
+        public override void increase_font_size () {
             font_scale += 0.1;
         }
 
