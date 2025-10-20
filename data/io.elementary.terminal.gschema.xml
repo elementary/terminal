@@ -14,6 +14,7 @@
    <value value="0" nick="Always Show Tabs"/>
    <value value="1" nick="Hide When Single Tab"/>
   </enum>
+
   <schema path="/io/elementary/terminal/saved-state/" id="io.elementary.terminal.saved-state">
     <key name="window-size" type="(ii)">
       <default>(600, 400)</default>
