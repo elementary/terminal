@@ -168,8 +168,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             if (n == "background" || n == "foreground") {
                 custom_button.update_theme_provider ();
             } else if (n == "tab-bar-behavior") {
-                var autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
-                auto_hide_button.active = autohide;
+                auto_hide_button.active = Application.settings.get_enum ("tab-bar-behavior") == 1;
             }
         });
 
