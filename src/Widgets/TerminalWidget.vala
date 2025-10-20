@@ -541,7 +541,12 @@ namespace Terminal {
             clear_pending_input ();
             // We know there is no foreground process so we can just feed the command in
             // We keep the scrollback history (-x), just clear the screen
-            feed_child ("clear -x\n".data);
+            // We have to wait for current command to clear else can get corrupted
+            // entry in scrollback history.
+            Timeout.add (100, () => {
+                feed_child ("clear -x\n".data);
+                return Source.REMOVE;
+            });
         }
 
         private void action_reset () {
@@ -551,9 +556,13 @@ namespace Terminal {
             ) {
                 // We need to clear any pending input else it can get unexpectedly executed
                 clear_pending_input ();
-                // This also clears the screen and the scrollback
                 // We know there is no foreground process so we can just feed the command in
-                feed_child ("\rreset\n".data);
+                // We have to wait for current command to clear else can get corrupted
+                // entry in scrollback history.
+                Timeout.add (100, () => {
+                    feed_child ("reset\n".data);
+                    return Source.REMOVE;
+                });
             }
         }
 
