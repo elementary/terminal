@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-20 15:02+0000\n"
 "PO-Revision-Date: 2015-12-05 14:35+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -105,7 +105,7 @@ msgstr "Përzgjidh gjithçka"
 msgid "Exit FullScreen"
 msgstr "Ekran të plotë"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1046
 msgid "Find…"
 msgstr "Gjej…"
 
@@ -113,46 +113,46 @@ msgstr "Gjej…"
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:362
 msgid "Are you sure you want to close this tab?"
 msgstr "Je i sigurt që do të mbyllësh këtë skedë?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
 msgid "Close Tab"
 msgstr "Mbyll skedën"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:560
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:562
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:875
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Je i sigurt që do të mbyllësh terminalin?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:876
 msgid "Quit Terminal"
 msgstr "Mbyll terminalin"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1037
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
