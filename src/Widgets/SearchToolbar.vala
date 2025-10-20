@@ -107,7 +107,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
         });
     }
 
-    public new bool grab_focus () {
+    public override bool grab_focus () {
         return search_entry.grab_focus ();
     }
 
