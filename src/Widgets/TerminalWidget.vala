@@ -558,10 +558,7 @@ namespace Terminal {
         }
 
         public void clear_pending_input () {
-            // This is hacky but no obvious way to feed in escape sequences to clear the line
-            // Assume any pending input is less than 1000 chars.
-            string backspaces = string.nfill (1000, '\b');
-            feed_child (backspaces.data);
+            Posix.kill (child_pid, Posix.Signal.INT);
         }
 
         protected override void paste_clipboard () {
