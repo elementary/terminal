@@ -422,18 +422,6 @@ namespace Terminal {
                 term.tab.icon = null; // Assume only process icons are set
             });
 
-            notebook.tab_bar.notify["autohide"].connect (() => {
-                new_tab_revealer.reveal_child =
-                    notebook.tab_bar.autohide &&
-                    notebook.tab_view.n_pages == 1;
-            });
-
-            notebook.tab_view.notify["n-pages"].connect (() => {
-                new_tab_revealer.reveal_child =
-                    notebook.tab_bar.autohide &&
-                    notebook.tab_view.n_pages == 1;
-            });
-
             notebook.tab_bar.bind_property (
                 "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
             );
