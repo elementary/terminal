@@ -553,7 +553,7 @@ namespace Terminal {
             //Clear pending input
             Posix.kill (child_pid, Posix.Signal.INT); //Equivalent to pressing Ctrl-C
 
-            //Wait for signal handler to finish before feedng in the command
+            //Wait for signal handler to finish before feeding in the command
             Timeout.add (10, ()=> {
                 feed_child (command.data);
                 return Source.REMOVE;
@@ -570,10 +570,6 @@ namespace Terminal {
             var command = "cd '%s';clear\n".printf (path);
             feed_command (command);
         }
-
-        // public void clear_pending_input () {
-        //     Posix.kill (child_pid, Posix.Signal.INT);
-        // }
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {
