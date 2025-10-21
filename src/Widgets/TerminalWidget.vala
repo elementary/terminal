@@ -537,9 +537,7 @@ namespace Terminal {
                 return;
             }
 
-            // We keep the scrollback history, just clear the screen
-            // We know there is no foreground process so we can just feed the command in
-            feed_child ("clear -x\n".data);
+            feed_command ("clear -x\n");
         }
 
         private void action_reset () {
@@ -547,10 +545,30 @@ namespace Terminal {
                 _("Are you sure you want to reset the terminal?"),
                 _("Reset"))
             ) {
-                // This also clears the screen and the scrollback
-                // We know there is no foreground process so we can just feed the command in
-                feed_child ("reset\n".data);
+                feed_command ("reset\n");
             }
+        }
+
+        private void feed_command (string command) {
+            //Clear pending input
+            Posix.kill (child_pid, Posix.Signal.INT); //Equivalent to pressing Ctrl-C
+
+            //Wait for signal handler to finish before feeding in the command
+            Timeout.add (10, ()=> {
+                feed_child (command.data);
+                return Source.REMOVE;
+            });
+        }
+
+        public void change_directory (string path) {
+            // Ignore if foreground process running, for now.
+            if (has_foreground_process ()) {
+                return;
+            }
+
+            // Change to requested directory and clear screen to hide fed in data
+            var command = "cd '%s';clear\n".printf (path);
+            feed_command (command);
         }
 
         protected override void paste_clipboard () {
