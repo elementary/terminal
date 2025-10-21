@@ -8,35 +8,31 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2018-10-22 15:24+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
-"Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
 msgid "Show version"
-msgstr ""
+msgstr "Visa version"
 
 #. -n flag forces a new window
 #: src/Application.vala:54
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Öppna ett nytt fönster"
+msgstr "Öppna ett nytt terminalfönster"
 
 #. -t flag forces a new tab
 #: src/Application.vala:56
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Öppna ett nytt fönster"
+msgstr "Öppna en ny terminalflik i den aktuella arbetskatalogen"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:58
@@ -45,36 +41,34 @@ msgstr "Ställ in terminalens arbetsmapp"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:60
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
 msgstr "Kör ett program i terminalen"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:62
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Öppen terminal i minimerat tillstånd"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:65
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
+msgstr "Kör resten av raden som ett kommando i terminalen"
 
 #: src/Application.vala:117
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- KOMMANDO...]"
 
 #: src/Application.vala:177
 msgid "Process completed"
-msgstr ""
+msgstr "Processen slutförd"
 
 #: src/Application.vala:180
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Processen avslutades med fel"
 
 #: src/MainWindow.vala:155
 msgid "Show Search Bar"
-msgstr ""
+msgstr "Visa sökfältet"
 
 #. TerminalWidget actions
 #: src/MainWindow.vala:162
@@ -83,15 +77,15 @@ msgstr "Kopiera"
 
 #: src/MainWindow.vala:168
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Kopiera senaste utdata"
 
 #: src/MainWindow.vala:174
 msgid "Clear Screen"
-msgstr ""
+msgstr "Klar skärm"
 
 #: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
-msgstr ""
+msgstr "Återställ"
 
 #: src/MainWindow.vala:186
 msgid "Paste"
@@ -102,10 +96,8 @@ msgid "Select All"
 msgstr "Markera allt"
 
 #: src/MainWindow.vala:298
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Helskärm"
+msgstr "Avsluta helskärm"
 
 #: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
@@ -119,7 +111,7 @@ msgstr "Ny flik"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
-msgstr ""
+msgstr "Inställningar"
 
 #: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
@@ -132,14 +124,13 @@ msgstr "Stäng flik"
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
 #: src/MainWindow.vala:576
-#, fuzzy, c-format
-#| msgid "Show in File Browser"
+#, c-format
 msgid "Show in %s"
-msgstr "Visa i Filer"
+msgstr "Visa i %s"
 
 #: src/MainWindow.vala:578
 msgid "Default application"
-msgstr ""
+msgstr "Standardapplikation"
 
 #: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
@@ -151,120 +142,122 @@ msgstr "Avsluta terminalen"
 
 #: src/MainWindow.vala:1039
 msgid "Hide find bar"
-msgstr ""
+msgstr "Dölj sökfältet"
 
 #: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Den inklistrade texten kan innehålla flera kommandon"
 
 #: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Den inklistrade texten kan vara ett försök att få administrativ åtkomst"
 
 #: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
+"Den inklistrade texten innehåller ett kommando om att hoppa över varningar "
+"och bekräftelser"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:37
 msgid "Color Preferences"
-msgstr ""
+msgstr "Färginställningar"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:39
 msgid "Window style:"
-msgstr ""
+msgstr "Fönster stil:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
-msgstr ""
+msgstr "Ljus"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
 #: src/Widgets/SettingsPopover.vala:78
 msgid "Dark"
-msgstr ""
+msgstr "Mörk"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:51
 msgid "Color Palette"
-msgstr ""
+msgstr "Färgpalett"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:61
 msgid "Reset to default"
-msgstr ""
+msgstr "Återställ till standard"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:64
 msgid "Black:"
-msgstr ""
+msgstr "Svart:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:65
 msgid "Red:"
-msgstr ""
+msgstr "Röd:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:66
 msgid "Green:"
-msgstr ""
+msgstr "Grön:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:67
 msgid "Yellow:"
-msgstr ""
+msgstr "Gul:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:68
 msgid "Blue:"
-msgstr ""
+msgstr "Blå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
-msgstr ""
+msgstr "Cyan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
-msgstr ""
+msgstr "Grå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
-msgstr ""
+msgstr "Vit:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
-msgstr ""
+msgstr "Ljusröd:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
-msgstr ""
+msgstr "Ljusgrön:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Ljusgul:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
-msgstr ""
+msgstr "Ljusblå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Ljus Magenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Ljus Cyan:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
-msgstr ""
+msgstr "Ljusgrå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
-msgstr ""
+msgstr "Bakgrund:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
-msgstr ""
+msgstr "Förgrund:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
-msgstr ""
+msgstr "Cursor:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
@@ -272,37 +265,39 @@ msgstr "Stäng"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Kontrasten är mycket låg"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is low"
-msgstr ""
+msgstr "Kontrasten är låg"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is good"
-msgstr ""
+msgstr "Kontrasten är bra"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:308
 msgid "Contrast is high"
-msgstr ""
+msgstr "Kontrasten är hög"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:23
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "Terminalen innehåller en aktiv process."
+msgstr ""
+"Det finns en aktiv process på den här fliken. Om du fortsätter kommer "
+"processen att avslutas."
 
 #: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Att kopiera kommandon till Terminal kan vara farligt. Se till att du förstår "
+"vad varje del av den inklistrade texten gör innan du fortsätter."
 
 #: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Visa varningar för klisterskydd"
 
 #: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
@@ -325,34 +320,28 @@ msgid "Next result"
 msgstr "Nästa resultat"
 
 #: src/Widgets/SearchToolbar.vala:46
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Disable cyclic search"
-msgstr "Starta om sökning från toppen"
+msgstr "Avaktivera cyklisk sökning"
 
 #: src/Widgets/SearchToolbar.vala:49
-#, fuzzy
-#| msgid "Cyclic search"
 msgid "Enable cyclic search"
-msgstr "Starta om sökning från toppen"
+msgstr "Aktivera cyklisk sökning"
 
 #: src/Widgets/SettingsPopover.vala:31
-#, fuzzy
 msgid "Zoom out"
-msgstr "Förminska"
+msgstr "Zooma ut"
 
 #: src/Widgets/SettingsPopover.vala:39
 msgid "Default zoom level"
 msgstr "Normalstorlek"
 
 #: src/Widgets/SettingsPopover.vala:47
-#, fuzzy
 msgid "Zoom in"
-msgstr "Förstora"
+msgstr "Zooma in"
 
 #: src/Widgets/SettingsPopover.vala:65
 msgid "Follow System Style"
-msgstr ""
+msgstr "Följ systemets stil"
 
 #: src/Widgets/SettingsPopover.vala:70
 msgid "High Contrast"
@@ -364,33 +353,36 @@ msgstr "Solariserat ljus"
 
 #: src/Widgets/SettingsPopover.vala:82
 msgid "Custom"
-msgstr ""
+msgstr "Anpassad"
 
 #: src/Widgets/SettingsPopover.vala:103
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Naturlig kopiera/klistra in"
 
 #: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
+msgstr "Genvägar kräver inte Shift; kan störa CLI-applikationer"
 
 #: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Varning för osäker inklistring"
 
 #: src/Widgets/SettingsPopover.vala:109
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
+"Varning när klistrad text innehåller flera eller administrativa kommandon"
 
 #: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
-msgstr ""
+msgstr "Händelseaviseringar"
 
 #: src/Widgets/SettingsPopover.vala:114
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Meddela vid ogiltig inmatning eller flera möjliga slutföranden (beroende på "
+"Systeminställningar → Ljud)"
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
@@ -405,63 +397,49 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: src/Widgets/TerminalWidget.vala:545
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Är du säker på att du vill stänga Terminalen?"
+msgstr "Är du säker på att du vill återställa terminalen?"
 
 #: src/Widgets/TerminalWidget.vala:963
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Är du säker på att du vill stänga den här fliken?"
+msgstr "Är du säker på att du vill ladda om den här fliken?"
 
 #: src/Widgets/TerminalWidget.vala:964
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload Tab"
-msgstr "Stäng flik"
+msgstr "Fliken Ladda om"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
 msgstr "Ny flik"
 
 #: src/Widgets/TerminalView.vala:70
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Stäng flik"
+msgstr "Stängda flikar"
 
 #: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Stäng flikarna till höger"
 
 #: src/Widgets/TerminalView.vala:223
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Stäng flik"
+msgstr "Stäng andra flikar"
 
 #: src/Widgets/TerminalView.vala:227
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Nytt fönster"
+msgstr "Öppna i nytt fönster"
 
 #: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
-msgstr ""
+msgstr "Fliken Duplicera"
 
 #: src/Widgets/TerminalView.vala:231
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload"
-msgstr "Stäng flik"
+msgstr "Ladda om"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Zoom: %.0f%%"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Fliken innehåller en aktiv process."
