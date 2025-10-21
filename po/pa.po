@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 15:02+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
 "PO-Revision-Date: 2021-07-28 03:24+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/terminal/"
@@ -83,7 +83,7 @@ msgstr "ਆਖ਼ਰੀ ਆਊਟਪੁਟ ਨਕਲ ਕਰੋ"
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
@@ -99,42 +99,48 @@ msgstr "ਸਾਰੇ/ਸਾਰੀਆਂ ਚੁਣੋ"
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1046
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "ਲੱਭੋ…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "ਨਵੀਂ ਟੈਬ"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:560
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "%s ਵਿੱਚ ਵਿਖਾਓ"
 
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "ਡਿਫ਼ਾਲਟ ਐਪ"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "ਟਰਮੀਨਲ ਬੰਦ ਕਰੋ"
 
-#: src/MainWindow.vala:1037
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "ਲੱਭਣ-ਪੱਟੀ ਲੁਕਾਓ"
 
@@ -384,21 +390,29 @@ msgid ""
 "Settings → Sound)"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ਟਰਮੀਨਲ"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਟਰਮੀਨਲ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "ਕੀ ਤੁਸੀਂ ਵਾਕਿਆ ਹੀ ਇਸ ਟੈਬ ਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "ਟੈਬ ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 
@@ -412,29 +426,29 @@ msgstr "ਨਵੀਂ ਟੈਬ"
 msgid "Closed Tabs"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "ਟੈਬ ਬੰਦ ਕਰੋ"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "Open a new terminal window"
 msgid "Open in New Window"
 msgstr "ਇੱਕ ਨਵੀਂ ਟਰਮੀਨਲ ਵਿੰਡੋ ਖੋਲ੍ਹੋ"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "ਡੁਪਲੀਕੇਟ ਬਣਾਓ"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ"
 

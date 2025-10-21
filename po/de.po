@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 15:02+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
 "PO-Revision-Date: 2025-04-11 19:55+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementaryos.org/projects/terminal/"
@@ -83,7 +83,7 @@ msgstr "Letzte Ausgabe kopieren"
 msgid "Clear Screen"
 msgstr "Fenster leeren"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -99,42 +99,48 @@ msgstr "Alles auswählen"
 msgid "Exit FullScreen"
 msgstr "Vollbild verlassen"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1046
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Suchen …"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Neuer Tab"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Sind Sie sicher, dass Sie diesen Tab schließen wollen?"
 
-#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Tab schließen"
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:560
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "In %s anzeigen"
 
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Standardanwendung"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sind Sie sicher, dass Sie das Terminal schließen wollen?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Terminal beenden"
 
-#: src/MainWindow.vala:1037
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Suchleiste ausblenden"
 
@@ -381,19 +387,27 @@ msgstr ""
 "Benachrichtigung bei ungültiger Eingabe oder mehreren möglichen "
 "Vervollständigungen (abhängig von Systemeinstellungen → Audio)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Sind Sie sicher, dass Sie das Terminal zurücksetzen wollen?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Sind Sie sicher, dass Sie diesen Tab neu laden wollen?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Tab neu laden"
 
@@ -405,23 +419,23 @@ msgstr "Neuer Tab"
 msgid "Closed Tabs"
 msgstr "Geschlossene Tabs"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Rechte Tabs schließen"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Andere Tabs schließen"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "In neuem Fenster öffnen"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Tab duplizieren"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Neu laden"
 
