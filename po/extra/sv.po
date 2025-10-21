@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2018-10-19 18:40+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
-"Language-Team: Swedish <https://weblate.elementary.io/projects/terminal/"
+"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
@@ -44,7 +44,7 @@ msgstr ""
 #: data/terminal.metainfo.xml.in:209 data/terminal.metainfo.xml.in:230
 #: data/terminal.metainfo.xml.in:249
 msgid "Other updates:"
-msgstr ""
+msgstr "Övriga uppdateringar:"
 
 #: data/terminal.metainfo.xml.in:61 data/terminal.metainfo.xml.in:73
 #: data/terminal.metainfo.xml.in:93 data/terminal.metainfo.xml.in:110
@@ -53,137 +53,151 @@ msgstr ""
 #: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:232
 #: data/terminal.metainfo.xml.in:251
 msgid "Translation updates"
-msgstr ""
+msgstr "Uppdateringar av översättningar"
 
 #: data/terminal.metainfo.xml.in:85 data/terminal.metainfo.xml.in:138
 #: data/terminal.metainfo.xml.in:169 data/terminal.metainfo.xml.in:221
 #: data/terminal.metainfo.xml.in:240
 msgid "New features:"
-msgstr ""
+msgstr "Nya funktioner:"
 
 #: data/terminal.metainfo.xml.in:87
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
+"En varning ges nu om ett klistrat kommando har ett alternativ som hoppar "
+"över bekräftelser"
 
 #: data/terminal.metainfo.xml.in:88
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
+"När en förgrundsprocess startas ändras flikens etikett till namnet på den "
+"processen"
 
 #: data/terminal.metainfo.xml.in:92
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "När du lämnar skalet i en flik stängs nu den fliken"
 
 #: data/terminal.metainfo.xml.in:123
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Stoppa fönsterstorleken från att öka när det öppnas"
 
 #: data/terminal.metainfo.xml.in:124
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "Ändra snabbtangenter för återställning och rensning av skärm"
 
 #: data/terminal.metainfo.xml.in:140
 msgid "Show zoom level in overlay when zooming"
-msgstr ""
+msgstr "Visa zoomnivån i överlägget när du zoomar"
 
 #: data/terminal.metainfo.xml.in:141
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
+msgstr "Implementera snabbmenyåtgärderna Clear och Reset med acceleratorer"
 
 #: data/terminal.metainfo.xml.in:142
 msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
+msgstr "Lägg till växling för osäker klistra in varning i applikationsmenyn"
 
 #: data/terminal.metainfo.xml.in:146
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr ""
+"Uppdatera ikonen och verktygstipset för växlingsknappen för cyklisk sökning "
+"enligt dess tillstånd"
 
 #: data/terminal.metainfo.xml.in:147
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr ""
+"Fokusera rätt flik efter att ha klickat på ett meddelande om att processen "
+"är klar"
 
 #: data/terminal.metainfo.xml.in:148
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 msgstr ""
+"Sök efter \"doas\", \"pkexec\", \"run0\" och \"su\" samt \"sudo\" när text "
+"klistras in i terminalen"
 
 #: data/terminal.metainfo.xml.in:149
 msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
+msgstr "Kontrollera även om det finns osäkra klistermärken på droppande text"
 
 #: data/terminal.metainfo.xml.in:150
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
+msgstr "Kontrollera om det finns flerledade kommandon i osäkra klistrar"
 
 #: data/terminal.metainfo.xml.in:151
 msgid "Improve gray contrast in dark theme"
-msgstr ""
+msgstr "Förbättra gråkontrasten i mörkt tema"
 
 #: data/terminal.metainfo.xml.in:171
 msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
+msgstr "Tillåt att aktivera och inaktivera händelseaviseringar i appmenyn"
 
 #: data/terminal.metainfo.xml.in:172
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
+msgstr "Spara flikar och zoomar till de sparade inställningarna när de ändras"
 
 #: data/terminal.metainfo.xml.in:176
 msgid "Document missing options in the man page"
-msgstr ""
+msgstr "Dokumentera saknade alternativ i man-sidan"
 
 #: data/terminal.metainfo.xml.in:177
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
+msgstr "Undertrycka oönskad standardflik när ett nytt fönster öppnas"
 
 #: data/terminal.metainfo.xml.in:194
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr ""
+"Lägg till genvägarna \"Ctrl + PageUp\" och \"Ctrl + PageDown\" för att växla "
+"mellan flikar"
 
 #: data/terminal.metainfo.xml.in:195
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr ""
+msgstr "DBus-gränssnittet exporteras korrekt vid avslutning"
 
 #: data/terminal.metainfo.xml.in:223
 msgid "Option to follow system dark style preference"
-msgstr ""
+msgstr "Möjlighet att följa systemets mörka stilpreferens"
 
 #: data/terminal.metainfo.xml.in:224
 msgid "Create a custom color palette"
-msgstr ""
+msgstr "Skapa en anpassad färgpalett"
 
 #: data/terminal.metainfo.xml.in:226 data/terminal.metainfo.xml.in:245
 msgid "Fixes:"
-msgstr ""
+msgstr "Åtgärdar:"
 
 #: data/terminal.metainfo.xml.in:228
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
+"Standardstilarna är helt ogenomskinliga och uppdaterade till de senaste "
+"uppströmsvärdena från Solarized för förbättrad läsbarhet"
 
 #: data/terminal.metainfo.xml.in:233
 msgid "Performance improvements"
-msgstr ""
+msgstr "Förbättringar av prestanda"
 
 #: data/terminal.metainfo.xml.in:242
 msgid "Switch tabs with Alt + 1-9"
-msgstr ""
+msgstr "Byt flikar med Alt + 1-9"
 
 #: data/terminal.metainfo.xml.in:243
 msgid "Quit with Ctrl + Shift + Q"
-msgstr ""
+msgstr "Avsluta med Ctrl + Skift + Q"
 
 #: data/terminal.metainfo.xml.in:247
 msgid "Fix build on OS 7"
-msgstr ""
+msgstr "Fixa byggnaden på OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
