@@ -554,7 +554,7 @@ namespace Terminal {
             Posix.kill (child_pid, Posix.Signal.INT); //Equivalent to pressing Ctrl-C
 
             //Wait for signal handler to finish before feedng in the command
-            Timeout.add (100, ()=> {
+            Timeout.add (10, ()=> {
                 feed_child (command.data);
                 return Source.REMOVE;
             });
