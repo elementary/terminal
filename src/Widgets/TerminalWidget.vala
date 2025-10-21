@@ -537,16 +537,7 @@ namespace Terminal {
                 return;
             }
 
-            // We need to clear any pending input else it can get unexpectedly executed
-            clear_pending_input ();
-            // We know there is no foreground process so we can just feed the command in
-            // We keep the scrollback history (-x), just clear the screen
-            // We have to wait for current command to clear else can get corrupted
-            // entry in scrollback history.
-            Timeout.add (100, () => {
-                feed_child ("clear -x\n".data);
-                return Source.REMOVE;
-            });
+            feed_command ("clear -x\n");
         }
 
         private void action_reset () {
@@ -554,21 +545,35 @@ namespace Terminal {
                 _("Are you sure you want to reset the terminal?"),
                 _("Reset"))
             ) {
-                // We need to clear any pending input else it can get unexpectedly executed
-                clear_pending_input ();
-                // We know there is no foreground process so we can just feed the command in
-                // We have to wait for current command to clear else can get corrupted
-                // entry in scrollback history.
-                Timeout.add (100, () => {
-                    feed_child ("reset\n".data);
-                    return Source.REMOVE;
-                });
+                feed_command ("reset\n");
             }
         }
 
-        public void clear_pending_input () {
-            Posix.kill (child_pid, Posix.Signal.INT);
+        private void feed_command (string command) {
+            //Clear pending input
+            Posix.kill (child_pid, Posix.Signal.INT); //Equivalent to pressing Ctrl-C
+
+            //Wait for signal handler to finish before feedng in the command
+            Timeout.add (100, ()=> {
+                feed_child (command.data);
+                return Source.REMOVE;
+            });
         }
+
+        public void change_directory (string path) {
+            // Ignore if foreground process running, for now.
+            if (has_foreground_process ()) {
+                return;
+            }
+
+            // Change to requested directory and clear screen to hide fed in data
+            var command = "cd '%s';clear\n".printf (path);
+            feed_command (command);
+        }
+
+        // public void clear_pending_input () {
+        //     Posix.kill (child_pid, Posix.Signal.INT);
+        // }
 
         protected override void paste_clipboard () {
             clipboard.request_text ((clipboard, text) => {

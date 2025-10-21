@@ -957,21 +957,7 @@ namespace Terminal {
 
         private void action_tab_active_shell (GLib.SimpleAction action, GLib.Variant? param) {
             var path = param.get_string ();
-            var term = current_terminal;
-            // Ignore if foreground process running, for now.
-            if (term.has_foreground_process ()) {
-                return;
-            }
-
-            // We need to clear any pending input else it can get unexpectedly executed
-            term.clear_pending_input ();
-
-            // Change to requested directory
-            var command = "cd '" + path + "'\n";
-            term.feed_child (command.data);
-
-            // Clear screen to hide fed in data
-            term.feed_child ("clear\n".data);
+            current_terminal.change_directory (path);
         }
 
         private void action_tab_reload () {
