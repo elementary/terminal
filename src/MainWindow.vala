@@ -307,6 +307,17 @@ namespace Terminal {
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
+            var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
+                valign = CENTER,
+                action_name = ACTION_PREFIX + ACTION_NEW_TAB,
+                tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>t"}, _("New Tab…"))
+            };
+
+            var new_tab_revealer = new Gtk.Revealer () {
+                child = new_tab_button,
+                transition_type = SLIDE_LEFT
+            };
+
             var menu_button = new Gtk.MenuButton () {
                 can_focus = false,
                 image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -343,6 +354,7 @@ namespace Terminal {
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
+            header.pack_end (new_tab_revealer);
             header.set_custom_title (title_stack);
 
             header.get_style_context ().add_class ("default-decoration");
@@ -409,6 +421,10 @@ namespace Terminal {
 
                 term.tab.icon = null; // Assume only process icons are set
             });
+
+            notebook.tab_bar.bind_property (
+                "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
+            );
 
             var overlay = new Gtk.Overlay () {
                 child = notebook
