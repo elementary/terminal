@@ -659,7 +659,7 @@ namespace Terminal {
         }
 
         private void update_current_working_directory (string cwd) {
-            if (tab is Adw.TabPage) { // May not be the case if closing tab
+            if (tab != null) { // May not be the case if closing tab
                 current_working_directory = cwd;
                 tab.tooltip = current_working_directory;
                 cwd_changed ();
