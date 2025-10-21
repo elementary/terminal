@@ -883,7 +883,7 @@ namespace Terminal {
             }
         }
 
-        private string? get_link (double? x, double? y) {
+        private string? get_link (double x, double y) {
             return check_match_at (x, y, null);
         }
 
