@@ -434,6 +434,10 @@ namespace Terminal {
                     notebook.tab_view.n_pages == 1;
             });
 
+            notebook.tab_bar.bind_property (
+                "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
+            );
+
             var overlay = new Gtk.Overlay () {
                 child = notebook
             };
