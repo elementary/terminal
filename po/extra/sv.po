@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/sv/>\n"
@@ -99,7 +99,7 @@ msgstr "Implementera snabbmenyåtgärderna Clear och Reset med acceleratorer"
 
 #: data/terminal.metainfo.xml.in:142
 msgid "Add toggle for unsafe paste warning to application menu"
-msgstr "Lägg till växling för osäker klistra in varning i applikationsmenyn"
+msgstr "Lägg till växla varning för osäker inklistring i programmenyn"
 
 #: data/terminal.metainfo.xml.in:146
 msgid ""
