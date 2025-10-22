@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
@@ -104,10 +104,8 @@ msgid "Find…"
 msgstr "Sök…"
 
 #: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "Ny flik"
+msgstr "Ny flik…"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
@@ -130,7 +128,7 @@ msgstr "Visa i %s"
 
 #: src/MainWindow.vala:578
 msgid "Default application"
-msgstr "Standardapplikation"
+msgstr "Standardprogram"
 
 #: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
@@ -257,7 +255,7 @@ msgstr "Förgrund:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
-msgstr "Cursor:"
+msgstr "Markör:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:179
 msgid "Close"
@@ -361,7 +359,7 @@ msgstr "Naturlig kopiera/klistra in"
 
 #: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr "Genvägar kräver inte Shift; kan störa CLI-applikationer"
+msgstr "Genvägar kräver inte Shift; kan störa CLI-program"
 
 #: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
@@ -386,11 +384,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "Dölj automatiskt flikfältet"
 
 #: src/Widgets/SettingsPopover.vala:119
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "Dölj flikfältet när det endast finns en flik"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
