@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 15:02+0000\n"
-"PO-Revision-Date: 2025-04-16 13:55+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
 #: src/Application.vala:52
@@ -83,7 +83,7 @@ msgstr "העתקת הפלט האחרון"
 msgid "Clear Screen"
 msgstr "פינוי המסך"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "איפוס"
 
@@ -99,42 +99,46 @@ msgstr "בחירת הכל"
 msgid "Exit FullScreen"
 msgstr "יציאה ממסך מלא"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1046
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "חיפוש…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+msgid "New Tab…"
+msgstr "לשונית חדשה…"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "הגדרות"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "האם לסגור לשונית זו?"
 
-#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "סגירת הלשונית"
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:560
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "האם לצאת מהמסוף?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "יציאה מהמסוף"
 
-#: src/MainWindow.vala:1037
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -372,19 +376,27 @@ msgid ""
 msgstr ""
 "להודיע על קלט שגוי או שיש יותר מאפשרות אחת להשלמה (כפוף להגדרות מערכת ← צליל)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr "הסתרת סרגל הלשוניות אוטומטית"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr "להסתיר את סרגל הלשוניות כשיש רק לשונית אחת"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "מסוף"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "לאפס את המסוף?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "האם לרענן לשונית זו?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "רענון לשונית"
 
@@ -396,23 +408,23 @@ msgstr "לשונית חדשה"
 msgid "Closed Tabs"
 msgstr "לשוניות סגורות"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "סגירת הלשוניות מימין"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "סגירת שאר הלשונית"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "פתיחה בחלון חדש"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "שכפול לשונית"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "רענון"
 

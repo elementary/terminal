@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 15:02+0000\n"
-"PO-Revision-Date: 2025-04-05 13:55+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -83,7 +83,7 @@ msgstr "最後の出力をコピー"
 msgid "Clear Screen"
 msgstr "画面を消去"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "リセット"
 
@@ -99,42 +99,46 @@ msgstr "すべて選択"
 msgid "Exit FullScreen"
 msgstr "全画面表示を終了"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1046
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+msgid "New Tab…"
+msgstr "新しいタブ…"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "このタブを閉じてもよろしいですか?"
 
-#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:560
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "“%s”で表示"
 
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "デフォルトのアプリケーション"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "“ターミナル”を終了してもよろしいですか?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "“ターミナル”を終了"
 
-#: src/MainWindow.vala:1037
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -378,19 +382,27 @@ msgstr ""
 "入力が無効な場合や補完候補が複数の場合に通知します (システム設定 → サウンド "
 "の影響を受けます)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr "タブバーを自動的に非表示にする"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr "タブが 1 つのみの場合にタブバーを自動で非表示にします"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "ターミナル"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "ターミナルをリセットしてもよろしいですか?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "このタブを再読み込みしてもよろしいですか?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "タブを再読み込み"
 
@@ -402,23 +414,23 @@ msgstr "新しいタブ"
 msgid "Closed Tabs"
 msgstr "閉じたタブ"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "右側のタブを閉じる"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "他のタブを閉じる"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "新しいウィンドウで開く"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "タブを複製"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "再読み込み"
 

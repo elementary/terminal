@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-20 15:02+0000\n"
-"PO-Revision-Date: 2025-04-10 11:55+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -83,7 +83,7 @@ msgstr "Copier la dernière sortie"
 msgid "Clear Screen"
 msgstr "Effacer l'écran"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -99,42 +99,46 @@ msgstr "Tout Sélectionner"
 msgid "Exit FullScreen"
 msgstr "Quitter le plein écran"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1046
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Rechercher…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+msgid "New Tab…"
+msgstr "Nouvel Onglet…"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:362
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Voulez-vous vraiment fermer cet onglet ?"
 
-#: src/MainWindow.vala:363 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Fermer l'onglet"
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:560
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Afficher dans %s"
 
-#: src/MainWindow.vala:562
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Application par défaut"
 
-#: src/MainWindow.vala:875
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Voulez-vous vraiment quitter le Terminal ?"
 
-#: src/MainWindow.vala:876
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Quitter le Terminal"
 
-#: src/MainWindow.vala:1037
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -382,19 +386,27 @@ msgstr ""
 "Notifier en cas de saisie non valide ou de complétion multiple possible "
 "(sous réserve de Paramètres du système → Son)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr "Masquer automatiquement la barre d'onglets"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr "Masquer la barre d'onglets lorsqu'il n'y a qu'un seul onglet"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Voulez-vous vraiment réinitialiser le terminal ?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Voulez-vous vraiment recharger cet onglet ?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Recharger l'onglet"
 
@@ -406,23 +418,23 @@ msgstr "Nouvel Onglet"
 msgid "Closed Tabs"
 msgstr "Onglets fermés"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Fermer les onglets à droite"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Fermer les autres onglets"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Dupliquer l'onglet"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Recharger"
 
