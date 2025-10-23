@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2025-04-16 13:55+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-22 06:29+0000\n"
 
 #: src/Application.vala:52
@@ -104,10 +104,8 @@ msgid "Find…"
 msgstr "חיפוש…"
 
 #: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "לשונית חדשה"
+msgstr "לשונית חדשה…"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
@@ -380,11 +378,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "הסתרת סרגל הלשוניות אוטומטית"
 
 #: src/Widgets/SettingsPopover.vala:119
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "להסתיר את סרגל הלשוניות כשיש רק לשונית אחת"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
