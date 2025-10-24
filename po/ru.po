@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
 "PO-Revision-Date: 2025-06-27 14:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
@@ -79,7 +79,7 @@ msgstr "Копировать последний вывод"
 msgid "Clear Screen"
 msgstr "Очистить экран"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Сбросить"
 
@@ -95,55 +95,61 @@ msgstr "Выделить всё"
 msgid "Exit FullScreen"
 msgstr "Выйти из полноэкранного режима"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Поиск…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Создать вкладку"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Параметры"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Закрыть эту вкладку?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Закрыть вкладку"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Показать в %s"
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Приложение по умолчанию"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Выйти из Терминала?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Выйти из Терминала"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "Вставленный текст может содержать несколько команд"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Вставленный текст может пытаться получить доступ к правам администратора"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 "Вставленный текст содержит команду, отключающую предупреждения и "
@@ -376,19 +382,27 @@ msgstr ""
 "Уведомлять о неправильном вводе или нескольких возможных дополнениях (также "
 "зависит от настройки в Параметры системы → Звуки)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Сбросить этот терминал?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Перезагрузить эту вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Перезагрузить вкладку"
 
@@ -400,23 +414,23 @@ msgstr "Создать вкладку"
 msgid "Closed Tabs"
 msgstr "Закрытые вкладки"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Закрыть вкладки справа"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Закрыть остальные вкладки"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "Открыть в новом окне"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Дублировать вкладку"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Перезагрузить"
 

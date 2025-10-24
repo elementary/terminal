@@ -31,7 +31,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
     public unowned MainWindow main_window { get; construct; }
     public Hdy.TabView tab_view { get; private set; }
-    private Hdy.TabBar tab_bar;
+    public Hdy.TabBar tab_bar { get; private set; }
     public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
@@ -72,13 +72,17 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         tab_bar = new Hdy.TabBar () {
-            autohide = false,
+            autohide = Application.settings.get_enum ("tab-bar-behavior") == 1,
             expand_tabs = false,
             inverted = true,
             start_action_widget = new_tab_button,
             end_action_widget = tab_history_button,
             view = tab_view,
         };
+
+        Application.settings.changed["tab-bar-behavior"].connect (() => {
+            tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
+        });
 
         style_provider = new Gtk.CssProvider ();
         Gtk.StyleContext.add_provider_for_screen (

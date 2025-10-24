@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
-"PO-Revision-Date: 2025-04-02 13:55+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"PO-Revision-Date: 2025-10-22 08:08+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-01-06 06:03+0000\n"
 
 #: src/Application.vala:52
@@ -84,7 +84,7 @@ msgstr "Copiar última salida"
 msgid "Clear Screen"
 msgstr "Limpiar pantalla"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -100,56 +100,60 @@ msgstr "Seleccionar todo"
 msgid "Exit FullScreen"
 msgstr "Salir de pantalla completa"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+msgid "New Tab…"
+msgstr "Pestaña nueva…"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "¿Está seguro que desea cerrar esta pestaña?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Cerrar pestaña"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar en %s"
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Aplicación predeterminada"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "¿Está seguro que desea salir de Terminal?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Salir de Terminal"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Ocultar barra de búsqueda"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "El texto pegado puede contener varios comandos"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Es posible que el texto pegado esté intentando obtener permisos de "
 "administrador"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 "El texto pegado incluye un comando para saltarse advertencias y "
@@ -382,19 +386,27 @@ msgstr ""
 "Notifica de entradas no válidas o múltiples posibles palabras a completar "
 "(sujeto a Configuración del Sistema → Sonido)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr "Esconder la barra de pestañas automáticamente"
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr "Esconder la barra de pestañas cuando exista solo una pestaña"
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "¿Está seguro que desea reiniciar la terminal?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "¿Está seguro que desea volver a cargar esta pestaña?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Volver a cargar pestaña"
 
@@ -406,23 +418,23 @@ msgstr "Pestaña nueva"
 msgid "Closed Tabs"
 msgstr "Pestañas cerradas"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Cerrar pestañas hacia la derecha"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Cerrar las otras pestañas"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "Abrir en nueva ventana"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Duplicar pestaña"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Volver a cargar"
 

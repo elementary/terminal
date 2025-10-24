@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
 "PO-Revision-Date: 2016-01-21 14:50+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
@@ -103,54 +103,60 @@ msgstr "Selectaţi Tot"
 msgid "Exit FullScreen"
 msgstr "Afişare pe întregul ecranul"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Filă Nouă"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Sunteți sigur că doriți să închideți această filă?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Închideți Fila"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sunteți sigur că doriți să închideți Consola?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Închideți Consola"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr ""
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
@@ -375,23 +381,31 @@ msgid ""
 "Settings → Sound)"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Consolă"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Sunteți sigur că doriți să închideți Consola?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "Sunteți sigur că doriți să închideți această filă?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload Tab"
@@ -407,27 +421,27 @@ msgstr "Filă Nouă"
 msgid "Closed Tabs"
 msgstr "Închideți Fila"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Închideți Fila"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Fereastră Nouă"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"

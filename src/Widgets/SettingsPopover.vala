@@ -115,6 +115,16 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             active = Application.settings.get_boolean ("audible-bell")
         };
 
+        var auto_hide_button = new Granite.SwitchModelButton (_("Auto-hide Tab Bar")) {
+            description = _("Hide the tab bar when there is only one tab"),
+            active = Application.settings.get_enum ("tab-bar-behavior") == 1
+        };
+
+        auto_hide_button.toggled.connect (() => {
+          Application.settings.set_enum ("tab-bar-behavior", auto_hide_button.active ? 1 : 0);
+        });
+
+
         var box = new Gtk.Box (VERTICAL, 6) {
             margin_bottom = 6,
             margin_top = 12,
@@ -127,6 +137,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.add (natural_copy_paste_button);
         box.add (unsafe_paste_alert_button);
         box.add (audible_bell_button);
+        box.add (auto_hide_button);
         child = box;
 
         var settings_action = Application.settings.create_action ("theme");
@@ -156,6 +167,8 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         Application.settings.changed.connect ((s, n) => {
             if (n == "background" || n == "foreground") {
                 custom_button.update_theme_provider ();
+            } else if (n == "tab-bar-behavior") {
+                auto_hide_button.active = Application.settings.get_enum ("tab-bar-behavior") == 1;
             }
         });
 

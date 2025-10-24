@@ -307,6 +307,17 @@ namespace Terminal {
                 tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>f"}, _("Find…"))
             };
 
+            var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
+                valign = CENTER,
+                action_name = ACTION_PREFIX + ACTION_NEW_TAB,
+                tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl><Shift>t"}, _("New Tab…"))
+            };
+
+            var new_tab_revealer = new Gtk.Revealer () {
+                child = new_tab_button,
+                transition_type = SLIDE_LEFT
+            };
+
             var menu_button = new Gtk.MenuButton () {
                 can_focus = false,
                 image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
@@ -343,6 +354,7 @@ namespace Terminal {
             header.pack_end (unfullscreen_button);
             header.pack_end (menu_button);
             header.pack_end (search_button);
+            header.pack_end (new_tab_revealer);
             header.set_custom_title (title_stack);
 
             header.get_style_context ().add_class ("default-decoration");
@@ -409,6 +421,10 @@ namespace Terminal {
 
                 term.tab.icon = null; // Assume only process icons are set
             });
+
+            notebook.tab_bar.bind_property (
+                "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
+            );
 
             var overlay = new Gtk.Overlay () {
                 child = notebook
@@ -548,13 +564,13 @@ namespace Terminal {
         public void update_context_menu () requires (current_terminal != null) {
             /* Update the "Show in ..." menu option */
             var uri = get_current_selection_link_or_pwd ();
-            update_menu_label (Utils.sanitize_path (uri, current_terminal.get_shell_location ()));
+            update_menu_label (uri);
         }
 
         private void update_menu_label (string? uri) {
             AppInfo? appinfo = get_default_app_for_uri (uri);
 
-            //Changing atributes has no effect after adding item to menu so remove and re-add.
+            //Changing attributes has no effect after adding item to menu so remove and re-add.
             context_menu_model.remove (0); // This item was added first
             get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
             var new_name = _("Show in %s").printf (
@@ -591,7 +607,7 @@ namespace Terminal {
                 }
 
                 if (appinfo == null) {
-                    var file = File.new_for_uri (uri);
+                    var file = File.new_for_commandline_arg (uri);
                     try {
                         var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
                                                     FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
@@ -890,9 +906,8 @@ namespace Terminal {
 
         private void action_open_in_browser () requires (current_terminal != null) {
             var uri = get_current_selection_link_or_pwd ();
-            var to_open = Utils.sanitize_path (uri, current_terminal.get_shell_location (), true);
             var context = Gdk.Display.get_default ().get_app_launch_context ();
-            AppInfo.launch_default_for_uri_async.begin (to_open, context, null, (obj, res) => {
+            AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
                 try {
                     AppInfo.launch_default_for_uri_async.end (res);
                 } catch (Error e) {
@@ -905,18 +920,19 @@ namespace Terminal {
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
+                string? text = null;
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
-
-                    string? text = null;
                     primary_selection.request_text ((clipboard, uri) => {
                         text = uri;
                     });
-
-                    return text;
-                } else {
-                    return current_terminal.get_shell_location ();
                 }
+
+                if (text == null) {
+                    text = current_terminal.get_shell_location ();
+                }
+
+                return Utils.sanitize_path (text, current_terminal.get_shell_location (), true);
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
@@ -957,21 +973,7 @@ namespace Terminal {
 
         private void action_tab_active_shell (GLib.SimpleAction action, GLib.Variant? param) {
             var path = param.get_string ();
-            var term = current_terminal;
-            // Ignore if foreground process running, for now.
-            if (term.has_foreground_process ()) {
-                return;
-            }
-
-            // Clear any partially entered command
-            term.reload ();
-
-            // Change to requested directory
-            var command = "cd '" + path + "'\n";
-            term.feed_child (command.data);
-
-            // Clear screen
-            term.feed_child ("clear\n".data);
+            current_terminal.change_directory (path);
         }
 
         private void action_tab_reload () {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 12:52+0000\n"
+"POT-Creation-Date: 2025-10-21 17:48+0000\n"
 "PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -83,7 +83,7 @@ msgstr "Kopírovať posledný výstup"
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
@@ -99,54 +99,60 @@ msgstr "Označiť všetko"
 msgid "Exit FullScreen"
 msgstr "Opustiť režim celej obrazovky"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1060
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Nájsť…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Nová karta"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Naozaj chcete zatvoriť túto kartu?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Zatvoriť kartu"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:561
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Zobraziť v %s"
 
-#: src/MainWindow.vala:563
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Predvolená aplikácia"
 
-#: src/MainWindow.vala:889
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Naozaj chcete ukončiť Terminál?"
 
-#: src/MainWindow.vala:890
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Ukončiť Terminál"
 
-#: src/MainWindow.vala:1051
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Skryť panel vyhľadávania"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "Vložený text môže obsahovať viacero príkazov"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
@@ -387,21 +393,29 @@ msgstr ""
 "Oznámiť neplatný vstup alebo viaceré možné ukončenia (podlieha Nastaveniam "
 "systému → Zvuk)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Naozaj chcete ukončiť Terminál?"
 
-#: src/Widgets/TerminalWidget.vala:945
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Naozaj chcete obnoviť túto kartu?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Obnoviť kartu"
 
@@ -415,29 +429,29 @@ msgstr "Nová karta"
 msgid "Closed Tabs"
 msgstr "Zatvoriť kartu"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Zatvoriť kartu"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Nové okno"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Duplikovať"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Obnoviť"
 
