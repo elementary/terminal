@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
@@ -148,7 +148,8 @@ msgstr "Den inklistrade texten kan innehålla flera kommandon"
 
 #: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
-msgstr "Den inklistrade texten kan vara ett försök att få administrativ åtkomst"
+msgstr ""
+"Den inklistrade texten kan vara ett försök att få administrativ åtkomst"
 
 #: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
