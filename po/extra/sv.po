@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"PO-Revision-Date: 2025-10-25 08:49+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/sv/>\n"
@@ -51,6 +51,8 @@ msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
+"Alternativet att dölja flikfältet när det bara finns en flik är nu synligt "
+"och aktiverat"
 
 #: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
 #: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
