@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"PO-Revision-Date: 2025-10-26 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
@@ -405,7 +405,7 @@ msgstr "Är du säker på att du vill ladda om den här fliken?"
 
 #: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
-msgstr "Fliken Ladda om"
+msgstr "Uppdatera flik"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -433,7 +433,7 @@ msgstr "Fliken Duplicera"
 
 #: src/Widgets/TerminalView.vala:231
 msgid "Reload"
-msgstr "Ladda om"
+msgstr "Uppdatera"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
