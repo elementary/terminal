@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-08-05 14:55+0000\n"
+"PO-Revision-Date: 2025-10-28 10:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/terminal/extra/"
 "fr/>\n"
@@ -51,6 +51,8 @@ msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
+"L'option permettant de masquer la barre d'onglets lorsqu'il n'y a qu'un seul "
+"onglet est désormais visible et prise en compte"
 
 #: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
 #: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
