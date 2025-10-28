@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
-"PO-Revision-Date: 2024-12-02 14:16+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-09-29 19:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/terminal/"
+"Language-Team: Finnish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -83,7 +83,7 @@ msgstr "Kopioi viimeisin tuloste"
 msgid "Clear Screen"
 msgstr "Tyhjennä näyttö"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Nollaa"
 
@@ -99,55 +99,61 @@ msgstr "Valitse kaikki"
 msgid "Exit FullScreen"
 msgstr "Poistu koko näytön tilasta"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Etsi…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Uusi välilehti"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Haluatko varmasti sulkea tämän välilehden?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Näytä sovelluksessa %s"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Oletussovellus"
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Haluatko varmasti lopettaa päätteen?"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Lopeta pääte"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Piilota hakupalkki"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "Tämä liitetty teksti saattaa sisältää useita komentoja"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 "Tämä liitetty teksti yrittää mahdollisesti saada ylläpitäjän käyttöoikeuksia"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
@@ -273,16 +279,11 @@ msgid "Contrast is high"
 msgstr "Kontrasti on korkea"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:23
-#, fuzzy
-#| msgid ""
-#| "There is an active process on this tab. If you reload it, the process "
-#| "will end."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
 msgstr ""
-"Päätteessä on käynnissä oleva prosessi. Jos lataat välilehden uudelleen, "
-"prosessi päättyy."
+"Tässä välilehdessä on käynnissä oleva prosessi. Jos jatkat, prosessi päättyy."
 
 #: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
@@ -381,21 +382,29 @@ msgid ""
 "Settings → Sound)"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Pääte"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Haluatko varmasti lopettaa päätteen?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Haluatko varmasti ladata tämän välilehden uudelleen?"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Lataa välilehti uudelleen"
 
@@ -407,23 +416,23 @@ msgstr "Uusi välilehti"
 msgid "Closed Tabs"
 msgstr "Suljetut välilehdet"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Sulje välilehdet tästä oikealle"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Sulje muut välilehdet"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "Avaa uudessa ikkunassa"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Tee kaksoiskappale välilehdestä"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Lataa uudelleen"
 

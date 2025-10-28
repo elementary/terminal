@@ -7,31 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
-"PO-Revision-Date: 2025-01-16 18:12+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-08-22 15:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
-"projects/terminal/extra/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://"
+"l10n.elementaryos.org/projects/terminal/extra/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: data/io.elementary.terminal.appdata.xml.in:10
-#: data/io.elementary.terminal.desktop.in:3
+#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "終端機"
 
-#: data/io.elementary.terminal.appdata.xml.in:11
-#: data/io.elementary.terminal.desktop.in:5
+#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "使用指令列"
 
-#: data/io.elementary.terminal.appdata.xml.in:13
+#: data/terminal.metainfo.xml.in:13
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
@@ -39,88 +37,83 @@ msgstr ""
 "《終端機》是終端機模擬器程式，提供 UNIX shell 殼層環境，可用來執行系統上的程"
 "式。"
 
-#: data/io.elementary.terminal.appdata.xml.in:58
-#: data/io.elementary.terminal.appdata.xml.in:74
-#: data/io.elementary.terminal.appdata.xml.in:127
-#: data/io.elementary.terminal.appdata.xml.in:158
-#: data/io.elementary.terminal.appdata.xml.in:210
-#: data/io.elementary.terminal.appdata.xml.in:229
-msgid "New features:"
-msgstr "新功能："
-
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:79
-#: data/io.elementary.terminal.appdata.xml.in:97
-#: data/io.elementary.terminal.appdata.xml.in:110
-#: data/io.elementary.terminal.appdata.xml.in:133
-#: data/io.elementary.terminal.appdata.xml.in:163
-#: data/io.elementary.terminal.appdata.xml.in:181
-#: data/io.elementary.terminal.appdata.xml.in:198
-#: data/io.elementary.terminal.appdata.xml.in:219
-#: data/io.elementary.terminal.appdata.xml.in:238
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
+#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
+#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
+#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
+#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
+#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
 msgid "Other updates:"
 msgstr "其他更新："
 
-#: data/io.elementary.terminal.appdata.xml.in:64
-#: data/io.elementary.terminal.appdata.xml.in:82
-#: data/io.elementary.terminal.appdata.xml.in:99
-#: data/io.elementary.terminal.appdata.xml.in:114
-#: data/io.elementary.terminal.appdata.xml.in:141
-#: data/io.elementary.terminal.appdata.xml.in:167
-#: data/io.elementary.terminal.appdata.xml.in:185
-#: data/io.elementary.terminal.appdata.xml.in:200
-#: data/io.elementary.terminal.appdata.xml.in:221
-#: data/io.elementary.terminal.appdata.xml.in:240
+#: data/terminal.metainfo.xml.in:61
+msgid ""
+"The option to hide the tabbar when there is only one tab is now exposed and "
+"honored"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
+#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
+#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
+#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
+#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
+#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
 msgid "Translation updates"
 msgstr "翻譯更新"
 
-#: data/io.elementary.terminal.appdata.xml.in:76
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
+#: data/terminal.metainfo.xml.in:255
+msgid "New features:"
+msgstr "新功能："
+
+#: data/terminal.metainfo.xml.in:102
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
-msgstr ""
+msgstr "在貼上的指令當中包含跳過確認的選項時提供警告"
 
-#: data/io.elementary.terminal.appdata.xml.in:77
+#: data/terminal.metainfo.xml.in:103
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
-msgstr ""
+msgstr "啟動前景程序後，分頁標籤會變為該程序的名稱"
 
-#: data/io.elementary.terminal.appdata.xml.in:81
+#: data/terminal.metainfo.xml.in:107
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "在分頁中離開 shell 之後會關閉分頁"
 
-#: data/io.elementary.terminal.appdata.xml.in:112
+#: data/terminal.metainfo.xml.in:138
 msgid "Stop window size increasing when opened"
 msgstr "修正視窗隨著每次開啟而變得越來越大的問題"
 
-#: data/io.elementary.terminal.appdata.xml.in:113
+#: data/terminal.metainfo.xml.in:139
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "變更「重設」與「清除畫面」動作的快捷鍵"
 
-#: data/io.elementary.terminal.appdata.xml.in:129
+#: data/terminal.metainfo.xml.in:155
 msgid "Show zoom level in overlay when zooming"
 msgstr "縮放時在覆蓋視窗中顯示縮放層級"
 
-#: data/io.elementary.terminal.appdata.xml.in:130
+#: data/terminal.metainfo.xml.in:156
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr "實作「清除」與「重設」的內文選單動作，並提供鍵盤加速器"
 
-#: data/io.elementary.terminal.appdata.xml.in:131
+#: data/terminal.metainfo.xml.in:157
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr "新增「不安全的貼上」警告的開關到應用程式選單中"
 
-#: data/io.elementary.terminal.appdata.xml.in:135
+#: data/terminal.metainfo.xml.in:161
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 msgstr "讓循環搜尋切換按鈕依它的狀態更新圖示與工具提示"
 
-#: data/io.elementary.terminal.appdata.xml.in:136
+#: data/terminal.metainfo.xml.in:162
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "點擊程序完成時彈出的通知時聚焦在正確的分頁尚"
 
-#: data/io.elementary.terminal.appdata.xml.in:137
+#: data/terminal.metainfo.xml.in:163
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
@@ -128,76 +121,75 @@ msgstr ""
 "將文字貼上至終端機時除了 \"sudo\" 以外也檢查 \"doas\"、\"pkexec\"、\"run0\" "
 "和 \"su\""
 
-#: data/io.elementary.terminal.appdata.xml.in:138
+#: data/terminal.metainfo.xml.in:164
 msgid "Check for unsafe paste on dropping text as well"
 msgstr "拖放文字到終端機時也檢查不安全的貼上"
 
-#: data/io.elementary.terminal.appdata.xml.in:139
+#: data/terminal.metainfo.xml.in:165
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr "偵測不安全的貼上時也檢查多行指令"
 
-#: data/io.elementary.terminal.appdata.xml.in:140
+#: data/terminal.metainfo.xml.in:166
 msgid "Improve gray contrast in dark theme"
 msgstr "改善深色主題中的灰色對比"
 
-#: data/io.elementary.terminal.appdata.xml.in:160
+#: data/terminal.metainfo.xml.in:186
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr "允許在應用程式選單中切換是否使用事件警告"
 
-#: data/io.elementary.terminal.appdata.xml.in:161
+#: data/terminal.metainfo.xml.in:187
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr "分頁和縮放狀態變更時將其儲存到已儲存的狀態設定值裡"
 
-#: data/io.elementary.terminal.appdata.xml.in:165
+#: data/terminal.metainfo.xml.in:191
 msgid "Document missing options in the man page"
 msgstr "在 man 手冊裡補上尚未說明的選項"
 
-#: data/io.elementary.terminal.appdata.xml.in:166
+#: data/terminal.metainfo.xml.in:192
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr "修正開啟新視窗時顯示不適合的預設分頁的問題"
 
-#: data/io.elementary.terminal.appdata.xml.in:183
+#: data/terminal.metainfo.xml.in:209
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 msgstr "新增用來切換分頁的 \"Ctrl + PageUp\" 和 \"Ctrl + PageDown\" 快捷鍵"
 
-#: data/io.elementary.terminal.appdata.xml.in:184
+#: data/terminal.metainfo.xml.in:210
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "離開時適當的解除匯出 (unexport) DBus 介面"
 
-#: data/io.elementary.terminal.appdata.xml.in:212
+#: data/terminal.metainfo.xml.in:238
 msgid "Option to follow system dark style preference"
 msgstr "新增跟隨系統深色風格的選項"
 
-#: data/io.elementary.terminal.appdata.xml.in:213
+#: data/terminal.metainfo.xml.in:239
 msgid "Create a custom color palette"
 msgstr "新增建立自訂配色方案的功能"
 
-#: data/io.elementary.terminal.appdata.xml.in:215
-#: data/io.elementary.terminal.appdata.xml.in:234
+#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
 msgid "Fixes:"
 msgstr "修正："
 
-#: data/io.elementary.terminal.appdata.xml.in:217
+#: data/terminal.metainfo.xml.in:243
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr "預設風格改為完全不透明，並且更新上游 Solarized 的新顏色來改善可讀性"
 
-#: data/io.elementary.terminal.appdata.xml.in:222
+#: data/terminal.metainfo.xml.in:248
 msgid "Performance improvements"
 msgstr "效能改善"
 
-#: data/io.elementary.terminal.appdata.xml.in:231
+#: data/terminal.metainfo.xml.in:257
 msgid "Switch tabs with Alt + 1-9"
 msgstr "用 Alt + 1-9 來切換分頁"
 
-#: data/io.elementary.terminal.appdata.xml.in:232
+#: data/terminal.metainfo.xml.in:258
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "用 Ctrl + Shift + Q 來退出"
 
-#: data/io.elementary.terminal.appdata.xml.in:236
+#: data/terminal.metainfo.xml.in:262
 msgid "Fix build on OS 7"
 msgstr "修正 elementary OS 7 上的編譯"
 

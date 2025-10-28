@@ -27,7 +27,8 @@ private void main (string[] args) {
         assert (!Terminal.Utils.is_safe_paste ("sudo apt autoremove", out msg_array));
 
         // Multi-line commands
-        assert (!Terminal.Utils.is_safe_paste ("\n", out msg_array));
+        assert (Terminal.Utils.is_safe_paste ("xx\n", out msg_array));
+        assert (!Terminal.Utils.is_safe_paste ("xx\nyy", out msg_array));
         assert (!Terminal.Utils.is_safe_paste ("&", out msg_array));
         assert (!Terminal.Utils.is_safe_paste ("|", out msg_array));
         assert (!Terminal.Utils.is_safe_paste (";", out msg_array));

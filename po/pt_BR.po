@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2025-07-28 16:55+0000\n"
 "Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
@@ -83,7 +83,7 @@ msgstr "Copiar a Última Saída"
 msgid "Clear Screen"
 msgstr "Limpar Tela"
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr "Redefinir"
 
@@ -99,54 +99,60 @@ msgstr "Selecionar tudo"
 msgid "Exit FullScreen"
 msgstr "Sair da Tela cheia"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Buscar…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Nova aba"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Você tem certeza que deseja fechar esta aba ?"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Fechar aba"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "Mostrar em %s"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "Aplicativo Padrão"
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Tem certeza de que deseja sair do Terminal ?"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Sair do Terminal"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "Ocultar barra de localização"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "O texto colado pode conter múltiplos comandos"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "O texto colado pode estar tentando ganhar acesso administrativo"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr "O texto colado inclue um commando para pular alertas e confirmações"
 
@@ -375,19 +381,27 @@ msgstr ""
 "Notificar em caso de entrada inválida ou de vários preenchimentos possíveis "
 "(sujeito a Configurações do Sistema → Som)"
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Tem certeza de que pretende resetar o terminal?"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "Você tem certeza que deseja recarregar esta aba?"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "Recarregar aba"
 
@@ -399,23 +413,23 @@ msgstr "Nova aba"
 msgid "Closed Tabs"
 msgstr "Abas Fechadas"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr "Fechar Abas à Direita"
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
 msgstr "Fechar as Outras Abas"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
 msgstr "Abrir em uma Nova Janela"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
 msgstr "Duplicar Aba"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "Recarregar"
 

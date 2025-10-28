@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 14:38+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2022-09-21 21:57+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -92,7 +92,7 @@ msgstr "کۆتا ئەنجام لەبەربگرەوە"
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:548
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
 msgstr ""
 
@@ -110,54 +110,60 @@ msgstr "هه‌مووی دیاری بکه‌"
 msgid "Exit FullScreen"
 msgstr "ته‌واوی تێکست"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1070
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "دۆزینەوە…"
 
-#: src/MainWindow.vala:314
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "تابی تازە"
+
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr "ڕێکخستنەکان"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "دڵنیای لە داخستنی ئەم تابە؟"
 
-#: src/MainWindow.vala:365 src/Widgets/TerminalView.vala:220
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "داخستنی تاب"
 
-#. Changing atributes has no effect after adding item to menu so remove and re-add.
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:571
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr "پشاندان لە %s"
 
-#: src/MainWindow.vala:573
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr "بەرنامە بنەڕەتییەکان"
 
-#: src/MainWindow.vala:899
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
 
-#: src/MainWindow.vala:900
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "داخستنی تێرمیناڵ"
 
-#: src/MainWindow.vala:1061
+#: src/MainWindow.vala:1039
 msgid "Hide find bar"
 msgstr "شاردنەوەی شریتی دۆزینەوە"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
 msgstr "لەوەیە دەقی لکێندراو فەرمانێک زیاتر لەخۆ بگرێت"
 
-#: src/Utils.vala:144
+#: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
 msgstr "لەوەیە دەقی پۆستکراوە هەوڵبدات مۆڵەتی بەڕێوەبەر بەدەست بهێنێت"
 
-#: src/Utils.vala:159
+#: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
@@ -393,21 +399,29 @@ msgid ""
 "Settings → Sound)"
 msgstr ""
 
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
+
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "تێرمیناڵ"
 
-#: src/Widgets/TerminalWidget.vala:547
+#: src/Widgets/TerminalWidget.vala:545
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "دڵنیای لە داخستنی تێرمیناڵ؟"
 
-#: src/Widgets/TerminalWidget.vala:946
+#: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
 msgstr "دڵنیای لەنوێ کردنەوەی ئەم تابە؟"
 
-#: src/Widgets/TerminalWidget.vala:947
+#: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
 msgstr "نوێکردنەوەی تاب"
 
@@ -421,29 +435,29 @@ msgstr "تابی تازە"
 msgid "Closed Tabs"
 msgstr "داخستنی تاب"
 
-#: src/Widgets/TerminalView.vala:218
+#: src/Widgets/TerminalView.vala:222
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:219
+#: src/Widgets/TerminalView.vala:223
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "داخستنی تاب"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:227
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "پەنجەرەیەکی نوێ"
 
-#: src/Widgets/TerminalView.vala:224
+#: src/Widgets/TerminalView.vala:228
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "بەدووکردن"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:231
 msgid "Reload"
 msgstr "نوێکردنەوە"
 
