@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-10-25 08:49+0000\n"
+"PO-Revision-Date: 2025-10-31 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/sv/>\n"
@@ -95,7 +95,7 @@ msgstr "Stoppa fönsterstorleken från att öka när det öppnas"
 
 #: data/terminal.metainfo.xml.in:139
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr "Ändra snabbtangenter för återställning och rensning av skärm"
+msgstr "Ändra snabbtangenter för återställning och tömning av skärm"
 
 #: data/terminal.metainfo.xml.in:155
 msgid "Show zoom level in overlay when zooming"
@@ -103,7 +103,7 @@ msgstr "Visa zoomnivån i överlägget när du zoomar"
 
 #: data/terminal.metainfo.xml.in:156
 msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr "Implementera snabbmenyåtgärderna Clear och Reset med acceleratorer"
+msgstr "Implementera snabbmenyåtgärderna Töm och Återställ med acceleratorer"
 
 #: data/terminal.metainfo.xml.in:157
 msgid "Add toggle for unsafe paste warning to application menu"
@@ -133,11 +133,11 @@ msgstr ""
 
 #: data/terminal.metainfo.xml.in:164
 msgid "Check for unsafe paste on dropping text as well"
-msgstr "Kontrollera även om det finns osäkra klistermärken på droppande text"
+msgstr "Kontrollera även om det finns osäker inklistring på släppt text"
 
 #: data/terminal.metainfo.xml.in:165
 msgid "Check for multiline commands in unsafe paste detection"
-msgstr "Kontrollera om det finns flerledade kommandon i osäkra klistrar"
+msgstr "Kontrollera om det finns flerradiga kommandon i osäkra inklistringar"
 
 #: data/terminal.metainfo.xml.in:166
 msgid "Improve gray contrast in dark theme"
@@ -149,15 +149,17 @@ msgstr "Tillåt att aktivera och inaktivera händelseaviseringar i appmenyn"
 
 #: data/terminal.metainfo.xml.in:187
 msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr "Spara flikar och zoomar till de sparade inställningarna när de ändras"
+msgstr ""
+"Spara flikar och zoomningar till sparade tillståndsinställningar när de "
+"ändras"
 
 #: data/terminal.metainfo.xml.in:191
 msgid "Document missing options in the man page"
-msgstr "Dokumentera saknade alternativ i man-sidan"
+msgstr "Dokumentera saknade flaggor i manualsidan"
 
 #: data/terminal.metainfo.xml.in:192
 msgid "Suppress unwanted default tab when opening a new window"
-msgstr "Undertrycka oönskad standardflik när ett nytt fönster öppnas"
+msgstr "Utelämna oönskad standardflik när ett nytt fönster öppnas"
 
 #: data/terminal.metainfo.xml.in:209
 msgid ""
@@ -169,11 +171,11 @@ msgstr ""
 
 #: data/terminal.metainfo.xml.in:210
 msgid "Properly unexport the DBus Interface on Exit"
-msgstr "DBus-gränssnittet exporteras korrekt vid avslutning"
+msgstr "DBus-gränssnittet avexporteras korrekt vid avslutning"
 
 #: data/terminal.metainfo.xml.in:238
 msgid "Option to follow system dark style preference"
-msgstr "Möjlighet att följa systemets mörka stilpreferens"
+msgstr "Möjlighet att följa systemets mörka stilinställning"
 
 #: data/terminal.metainfo.xml.in:239
 msgid "Create a custom color palette"
@@ -188,7 +190,7 @@ msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 msgstr ""
-"Standardstilarna är helt ogenomskinliga och uppdaterade till de senaste "
+"Standardstilarna är helt opaka och uppdaterade till de senaste "
 "uppströmsvärdena från Solarized för förbättrad läsbarhet"
 
 #: data/terminal.metainfo.xml.in:248
@@ -197,7 +199,7 @@ msgstr "Förbättringar av prestanda"
 
 #: data/terminal.metainfo.xml.in:257
 msgid "Switch tabs with Alt + 1-9"
-msgstr "Byt flikar med Alt + 1-9"
+msgstr "Växla flikar med Alt + 1-9"
 
 #: data/terminal.metainfo.xml.in:258
 msgid "Quit with Ctrl + Shift + Q"
@@ -205,7 +207,7 @@ msgstr "Avsluta med Ctrl + Skift + Q"
 
 #: data/terminal.metainfo.xml.in:262
 msgid "Fix build on OS 7"
-msgstr "Fixa byggnaden på OS 7"
+msgstr "Fixa byggversion på OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
