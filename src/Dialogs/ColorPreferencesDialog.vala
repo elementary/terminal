@@ -5,26 +5,26 @@
 
 
 public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
-    //TODO Gtk.ColorButton is deprecated after 4.10. After Gtk4 port use Gtk.ColorDialogButton instead.
-    private Gtk.ColorButton black_button;
-    private Gtk.ColorButton red_button;
-    private Gtk.ColorButton green_button;
-    private Gtk.ColorButton yellow_button;
-    private Gtk.ColorButton blue_button;
-    private Gtk.ColorButton magenta_button;
-    private Gtk.ColorButton cyan_button;
-    private Gtk.ColorButton light_gray_button;
-    private Gtk.ColorButton dark_gray_button;
-    private Gtk.ColorButton light_red_button;
-    private Gtk.ColorButton light_green_button;
-    private Gtk.ColorButton light_yellow_button;
-    private Gtk.ColorButton light_blue_button;
-    private Gtk.ColorButton light_magenta_button;
-    private Gtk.ColorButton light_cyan_button;
-    private Gtk.ColorButton white_button;
-    private Gtk.ColorButton background_button;
-    private Gtk.ColorButton foreground_button;
-    private Gtk.ColorButton cursor_button;
+    private Gtk.ColorDialogButton black_button;
+    private Gtk.ColorDialogButton red_button;
+    private Gtk.ColorDialogButton green_button;
+    private Gtk.ColorDialogButton yellow_button;
+    private Gtk.ColorDialogButton blue_button;
+    private Gtk.ColorDialogButton magenta_button;
+    private Gtk.ColorDialogButton cyan_button;
+    private Gtk.ColorDialogButton light_gray_button;
+    private Gtk.ColorDialogButton dark_gray_button;
+    private Gtk.ColorDialogButton light_red_button;
+    private Gtk.ColorDialogButton light_green_button;
+    private Gtk.ColorDialogButton light_yellow_button;
+    private Gtk.ColorDialogButton light_blue_button;
+    private Gtk.ColorDialogButton light_magenta_button;
+    private Gtk.ColorDialogButton light_cyan_button;
+    private Gtk.ColorDialogButton white_button;
+    private Gtk.ColorDialogButton background_button;
+    private Gtk.ColorDialogButton foreground_button;
+    private Gtk.ColorDialogButton cursor_button;
+    private Gtk.ColorDialog color_dialog;
 
     public ColorPreferences (Gtk.Window? parent) {
         Object (
@@ -33,11 +33,11 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     }
 
     construct {
+        hide_on_close = true;
         resizable = false;
         title = _("Color Preferences");
 
         var window_theme_label = settings_label (_("Window style:"));
-        window_theme_label.margin_bottom = 12;
 
         var window_theme_switch = new Granite.ModeSwitch.from_icon_name (
             "display-brightness-symbolic",
@@ -52,7 +52,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             margin_top = 12,
             margin_bottom = 12
         };
-        palette_header.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        palette_header.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var default_button = new Gtk.Button.from_icon_name ("edit-clear-all-symbolic") {
             halign = END,
@@ -81,33 +81,32 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         var foreground_label = settings_label (_("Foreground:"));
         var cursor_label = settings_label (_("Cursor:"));
 
-        black_button = new Gtk.ColorButton ();
-        red_button = new Gtk.ColorButton ();
-        green_button = new Gtk.ColorButton ();
-        yellow_button = new Gtk.ColorButton ();
-        blue_button = new Gtk.ColorButton ();
-        magenta_button = new Gtk.ColorButton ();
-        cyan_button = new Gtk.ColorButton ();
-        light_gray_button = new Gtk.ColorButton ();
-        dark_gray_button = new Gtk.ColorButton ();
-        light_red_button = new Gtk.ColorButton ();
-        light_green_button = new Gtk.ColorButton ();
-        light_yellow_button = new Gtk.ColorButton ();
-        light_blue_button = new Gtk.ColorButton ();
-        light_magenta_button = new Gtk.ColorButton ();
-        light_cyan_button = new Gtk.ColorButton ();
-        white_button = new Gtk.ColorButton ();
-        background_button = new Gtk.ColorButton () {
-            use_alpha = true
-        };
-        foreground_button = new Gtk.ColorButton ();
-        cursor_button = new Gtk.ColorButton () {
-            use_alpha = true
-        };
+        color_dialog = new Gtk.ColorDialog ();
+        black_button = new Gtk.ColorDialogButton (color_dialog);
+        red_button = new Gtk.ColorDialogButton (color_dialog);
+        green_button = new Gtk.ColorDialogButton (color_dialog);
+        yellow_button = new Gtk.ColorDialogButton (color_dialog);
+        blue_button = new Gtk.ColorDialogButton (color_dialog);
+        magenta_button = new Gtk.ColorDialogButton (color_dialog);
+        cyan_button = new Gtk.ColorDialogButton (color_dialog);
+        light_gray_button = new Gtk.ColorDialogButton (color_dialog);
+        dark_gray_button = new Gtk.ColorDialogButton (color_dialog);
+        light_red_button = new Gtk.ColorDialogButton (color_dialog);
+        light_green_button = new Gtk.ColorDialogButton (color_dialog);
+        light_yellow_button = new Gtk.ColorDialogButton (color_dialog);
+        light_blue_button = new Gtk.ColorDialogButton (color_dialog);
+        light_magenta_button = new Gtk.ColorDialogButton (color_dialog);
+        light_cyan_button = new Gtk.ColorDialogButton (color_dialog);
+        white_button = new Gtk.ColorDialogButton (color_dialog);
+        background_button = new Gtk.ColorDialogButton (color_dialog);
+        foreground_button = new Gtk.ColorDialogButton (color_dialog);
+        cursor_button = new Gtk.ColorDialogButton (color_dialog);
 
         var contrast_top_label = new Gtk.Label (""); // Text will be set on showing
         var contrast_bottom_label = new Gtk.Label (""); // Text will be set on showing
-        var contrast_image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.LARGE_TOOLBAR);
+        var contrast_image = new Gtk.Image.from_icon_name ("process-completed") {
+            pixel_size = 24
+        };
 
         var contrast_grid = new Gtk.Grid () {
             row_spacing = 3
@@ -174,29 +173,29 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
         update_buttons_from_settings ();
         update_contrast (contrast_image);
 
-        get_content_area ().add (colors_grid);
+        get_content_area ().append (colors_grid);
 
         var close_button = (Gtk.Button) add_button (_("Close"), Gtk.ResponseType.CLOSE);
-        close_button.clicked.connect (destroy);
+        close_button.clicked.connect (() => { close (); });
 
         Application.settings.set_string ("theme", Themes.CUSTOM);
 
-        black_button.color_set.connect (update_palette_settings);
-        red_button.color_set.connect (update_palette_settings);
-        green_button.color_set.connect (update_palette_settings);
-        yellow_button.color_set.connect (update_palette_settings);
-        blue_button.color_set.connect (update_palette_settings);
-        magenta_button.color_set.connect (update_palette_settings);
-        cyan_button.color_set.connect (update_palette_settings);
-        light_gray_button.color_set.connect (update_palette_settings);
-        dark_gray_button.color_set.connect (update_palette_settings);
-        light_red_button.color_set.connect (update_palette_settings);
-        light_green_button.color_set.connect (update_palette_settings);
-        light_yellow_button.color_set.connect (update_palette_settings);
-        light_blue_button.color_set.connect (update_palette_settings);
-        light_magenta_button.color_set.connect (update_palette_settings);
-        light_cyan_button.color_set.connect (update_palette_settings);
-        white_button.color_set.connect (update_palette_settings);
+        black_button.notify["rgba"].connect (update_palette_settings);
+        red_button.notify["rgba"].connect (update_palette_settings);
+        green_button.notify["rgba"].connect (update_palette_settings);
+        yellow_button.notify["rgba"].connect (update_palette_settings);
+        blue_button.notify["rgba"].connect (update_palette_settings);
+        magenta_button.notify["rgba"].connect (update_palette_settings);
+        cyan_button.notify["rgba"].connect (update_palette_settings);
+        light_gray_button.notify["rgba"].connect (update_palette_settings);
+        dark_gray_button.notify["rgba"].connect (update_palette_settings);
+        light_red_button.notify["rgba"].connect (update_palette_settings);
+        light_green_button.notify["rgba"].connect (update_palette_settings);
+        light_yellow_button.notify["rgba"].connect (update_palette_settings);
+        light_blue_button.notify["rgba"].connect (update_palette_settings);
+        light_magenta_button.notify["rgba"].connect (update_palette_settings);
+        light_cyan_button.notify["rgba"].connect (update_palette_settings);
+        white_button.notify["rgba"].connect (update_palette_settings);
 
         default_button.clicked.connect (() => {
             Application.settings.reset ("palette");
@@ -207,18 +206,18 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             update_buttons_from_settings ();
         });
 
-        background_button.color_set.connect (() => {
-            Application.settings.set_string ("background", background_button.rgba.to_string ());
+        background_button.notify["rgba"].connect (() => {
+            Application.settings.set_string ("background", background_button.get_rgba ().to_string ());
             update_contrast (contrast_image);
         });
 
-        foreground_button.color_set.connect (() => {
-            Application.settings.set_string ("foreground", foreground_button.rgba.to_string ());
+        foreground_button.notify["rgba"].connect (() => {
+            Application.settings.set_string ("foreground", foreground_button.get_rgba ().to_string ());
             update_contrast (contrast_image);
         });
 
-        cursor_button.color_set.connect (() => {
-            Application.settings.set_string ("cursor-color", cursor_button.rgba.to_string ());
+        cursor_button.notify["rgba"].connect (() => {
+            Application.settings.set_string ("cursor-color", cursor_button.get_rgba ().to_string ());
         });
 
         contrast_top_label.state_flags_changed.connect ((previous_flags) => {
@@ -226,28 +225,26 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
             contrast_top_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┐" : "┌";
             contrast_bottom_label.label = Gtk.StateFlags.DIR_LTR in state_flags ? "┘" : "└";
         });
-
-        show.connect (get_child ().show_all);
     }
 
-    private void update_palette_settings () {
+    private void update_palette_settings (ParamSpec param) {
         string[] colors = {
-            black_button.rgba.to_string (),
-            red_button.rgba.to_string (),
-            green_button.rgba.to_string (),
-            yellow_button.rgba.to_string (),
-            blue_button.rgba.to_string (),
-            magenta_button.rgba.to_string (),
-            cyan_button.rgba.to_string (),
-            light_gray_button.rgba.to_string (),
-            dark_gray_button.rgba.to_string (),
-            light_red_button.rgba.to_string (),
-            light_green_button.rgba.to_string (),
-            light_yellow_button.rgba.to_string (),
-            light_blue_button.rgba.to_string (),
-            light_magenta_button.rgba.to_string (),
-            light_cyan_button.rgba.to_string (),
-            white_button.rgba.to_string ()
+            black_button.get_rgba ().to_string (),
+            red_button.get_rgba ().to_string (),
+            green_button.get_rgba ().to_string (),
+            yellow_button.get_rgba ().to_string (),
+            blue_button.get_rgba ().to_string (),
+            magenta_button.get_rgba ().to_string (),
+            cyan_button.get_rgba ().to_string (),
+            light_gray_button.get_rgba ().to_string (),
+            dark_gray_button.get_rgba ().to_string (),
+            light_red_button.get_rgba ().to_string (),
+            light_green_button.get_rgba ().to_string (),
+            light_yellow_button.get_rgba ().to_string (),
+            light_blue_button.get_rgba ().to_string (),
+            light_magenta_button.get_rgba ().to_string (),
+            light_cyan_button.get_rgba ().to_string (),
+            white_button.get_rgba ().to_string ()
         };
 
         Application.settings.set_string ("palette", string.joinv (":", colors));
@@ -293,7 +290,7 @@ public class Terminal.Dialogs.ColorPreferences : Granite.Dialog {
     }
 
     private void update_contrast (Gtk.Image contrast_image) {
-        var contrast_ratio = get_contrast_ratio (foreground_button.rgba, background_button.rgba);
+        var contrast_ratio = get_contrast_ratio (foreground_button.get_rgba (), background_button.get_rgba ());
         if (contrast_ratio < 3) {
             contrast_image.icon_name = "dialog-warning";
             contrast_image.tooltip_text = _("Contrast is very low");

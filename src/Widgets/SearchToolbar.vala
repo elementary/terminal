@@ -38,33 +38,26 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
 
         cycle_button = new Gtk.ToggleButton () {
             active = false,
-            sensitive = false,
-            image = new Gtk.Image ()
+            sensitive = false
         };
         cycle_button.toggled.connect (() => {
             if (cycle_button.active) {
                 cycle_button.tooltip_text = _("Disable cyclic search");
-                ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-symbolic";
+                cycle_button.icon_name = "media-playlist-repeat-symbolic";
             } else {
                 cycle_button.tooltip_text = _("Enable cyclic search");
-                ((Gtk.Image)cycle_button.image).icon_name = "media-playlist-repeat-disabled-symbolic";
+                cycle_button.icon_name = "media-playlist-repeat-disabled-symbolic";
             }
         });
         // Toggle to update
         // TODO Restore state from settings
         cycle_button.toggled ();
 
-        get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        add (search_entry);
-        add (next_button);
-        add (previous_button);
-        add (cycle_button);
-
-        show_all ();
-
-        grab_focus.connect (() => {
-            search_entry.grab_focus_without_selecting ();
-        });
+        add_css_class (Granite.STYLE_CLASS_LINKED);
+        append (search_entry);
+        append (next_button);
+        append (previous_button);
+        append (cycle_button);
 
         next_button.clicked.connect_after (() => {
             grab_focus ();
@@ -102,7 +95,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
 
             try {
                 // FIXME Have a configuration menu or something.
-                /* NOTE Using a Vte.Regex leads and Vte.Terminal.search_set_regex leads to
+                /* NOTE Using a Vte.Regex and Vte.Terminal.search_set_regex leads to
                  * a "PCRE2 not supported" error.
                  */
                 var regex = new Vte.Regex.for_search (GLib.Regex.escape_string (search_term), -1, PCRE2.Flags.CASELESS | PCRE2.Flags.MULTILINE);
@@ -112,6 +105,10 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
                 warning ("There was an error to compile the regex: %s", er.message);
             }
         });
+    }
+
+    public override bool grab_focus () {
+        return search_entry.grab_focus ();
     }
 
     public void clear () {

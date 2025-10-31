@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
  */
 
-public class Terminal.Widgets.ZoomOverlay : Granite.Widgets.OverlayBar {
+public class Terminal.Widgets.ZoomOverlay : Granite.OverlayBar {
     const uint VISIBLE_DURATION = 1500;
     private uint timer_id;
 
