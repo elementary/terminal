@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2025-06-27 14:55+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-10-26 09:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ru/>\n"
@@ -100,10 +100,8 @@ msgid "Find…"
 msgstr "Поиск…"
 
 #: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "Создать вкладку"
+msgstr "Создать вкладку…"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
@@ -384,11 +382,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "Автоматически скрывать панель вкладок"
 
 #: src/Widgets/SettingsPopover.vala:119
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "Скрывать панель, когда открыта только одна вкладка"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"

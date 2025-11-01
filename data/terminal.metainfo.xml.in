@@ -54,6 +54,21 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="7.1.3" date="2025-10-19" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>The option to hide the tabbar when there is only one tab is now exposed and honored</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/922">Launch link in web browser sends incorrect uri to browser</issue>
+        <issue url="https://github.com/elementary/terminal/issues/920">Clear screen does not work properly if there is pending input</issue>
+        <issue url="https://github.com/elementary/terminal/issues/832">Setting to hide tab title when there is only one tab no more work</issue>
+      </issues>
+    </release>
+
     <release version="7.1.2" date="2025-09-23" urgency="medium">
       <description>
         <p>Other updates:</p>

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-10-31 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
@@ -37,7 +37,7 @@ msgstr "Öppna en ny terminalflik i den aktuella arbetskatalogen"
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:58
 msgid "Set shell working directory"
-msgstr "Ställ in terminalens arbetsmapp"
+msgstr "Ställ in skalets arbetsmapp"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:60
@@ -81,7 +81,7 @@ msgstr "Kopiera senaste utdata"
 
 #: src/MainWindow.vala:174
 msgid "Clear Screen"
-msgstr "Klar skärm"
+msgstr "Töm skärm"
 
 #: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
 msgid "Reset"
@@ -132,7 +132,7 @@ msgstr "Standardprogram"
 
 #: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
-msgstr "Är du säker på att du vill stänga Terminalen?"
+msgstr "Är du säker på att du vill avsluta terminalen?"
 
 #: src/MainWindow.vala:892
 msgid "Quit Terminal"
@@ -148,7 +148,8 @@ msgstr "Den inklistrade texten kan innehålla flera kommandon"
 
 #: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
-msgstr "Den inklistrade texten kan vara ett försök att få administrativ åtkomst"
+msgstr ""
+"Den inklistrade texten kan vara ett försök att få administrativ åtkomst"
 
 #: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
@@ -162,7 +163,7 @@ msgstr "Färginställningar"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:39
 msgid "Window style:"
-msgstr "Fönster stil:"
+msgstr "Fönsterstil:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
@@ -235,11 +236,11 @@ msgstr "Ljusblå:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
-msgstr "Ljus Magenta:"
+msgstr "Ljusmagenta:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
-msgstr "Ljus Cyan:"
+msgstr "Turkos:"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
@@ -295,7 +296,7 @@ msgstr ""
 
 #: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
-msgstr "Visa varningar för klisterskydd"
+msgstr "Visa varningar för inklistringsskydd"
 
 #: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
@@ -319,7 +320,7 @@ msgstr "Nästa resultat"
 
 #: src/Widgets/SearchToolbar.vala:46
 msgid "Disable cyclic search"
-msgstr "Avaktivera cyklisk sökning"
+msgstr "Inaktivera cyklisk sökning"
 
 #: src/Widgets/SearchToolbar.vala:49
 msgid "Enable cyclic search"
@@ -331,7 +332,7 @@ msgstr "Zooma ut"
 
 #: src/Widgets/SettingsPopover.vala:39
 msgid "Default zoom level"
-msgstr "Normalstorlek"
+msgstr "Standardnivå för zoom"
 
 #: src/Widgets/SettingsPopover.vala:47
 msgid "Zoom in"
@@ -359,7 +360,7 @@ msgstr "Naturlig kopiera/klistra in"
 
 #: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr "Genvägar kräver inte Shift; kan störa CLI-program"
+msgstr "Genvägar kräver inte Skift; kan störa CLI-program"
 
 #: src/Widgets/SettingsPopover.vala:108
 msgid "Unsafe Paste Alert"
@@ -368,7 +369,7 @@ msgstr "Varning för osäker inklistring"
 #: src/Widgets/SettingsPopover.vala:109
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
-"Varning när klistrad text innehåller flera eller administrativa kommandon"
+"Varna när inklistrad text innehåller flera eller administrativa kommandon"
 
 #: src/Widgets/SettingsPopover.vala:113
 msgid "Event Alerts"
@@ -379,8 +380,8 @@ msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
-"Meddela vid ogiltig inmatning eller flera möjliga slutföranden (beroende på "
-"Systeminställningar → Ljud)"
+"Meddela vid ogiltig inmatning eller flera möjliga kompletteringar (beroende "
+"på Systeminställningar → Ljud)"
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
@@ -400,11 +401,11 @@ msgstr "Är du säker på att du vill återställa terminalen?"
 
 #: src/Widgets/TerminalWidget.vala:963
 msgid "Are you sure you want to reload this tab?"
-msgstr "Är du säker på att du vill ladda om den här fliken?"
+msgstr "Är du säker på att du vill läsa om den här fliken?"
 
 #: src/Widgets/TerminalWidget.vala:964
 msgid "Reload Tab"
-msgstr "Fliken Ladda om"
+msgstr "Uppdatera flik"
 
 #: src/Widgets/TerminalView.vala:63
 msgid "New Tab"
@@ -420,7 +421,7 @@ msgstr "Stäng flikarna till höger"
 
 #: src/Widgets/TerminalView.vala:223
 msgid "Close Other Tabs"
-msgstr "Stäng andra flikar"
+msgstr "Stäng övriga flikar"
 
 #: src/Widgets/TerminalView.vala:227
 msgid "Open in New Window"
@@ -428,11 +429,11 @@ msgstr "Öppna i nytt fönster"
 
 #: src/Widgets/TerminalView.vala:228
 msgid "Duplicate Tab"
-msgstr "Fliken Duplicera"
+msgstr "Duplicera flik"
 
 #: src/Widgets/TerminalView.vala:231
 msgid "Reload"
-msgstr "Ladda om"
+msgstr "Uppdatera"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
