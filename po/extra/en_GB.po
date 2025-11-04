@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 17:48+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2025-01-13 13:16+0000\n"
 "Last-Translator: Jeremy Wootten <jeremywootten@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -37,67 +37,73 @@ msgstr ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:71
-#: data/terminal.metainfo.xml.in:90 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:121 data/terminal.metainfo.xml.in:144
-#: data/terminal.metainfo.xml.in:174 data/terminal.metainfo.xml.in:192
-#: data/terminal.metainfo.xml.in:209 data/terminal.metainfo.xml.in:230
-#: data/terminal.metainfo.xml.in:249
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
+#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
+#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
+#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
+#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
+#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
 msgid "Other updates:"
 msgstr "Other updates:"
 
-#: data/terminal.metainfo.xml.in:61 data/terminal.metainfo.xml.in:73
-#: data/terminal.metainfo.xml.in:93 data/terminal.metainfo.xml.in:110
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:152
-#: data/terminal.metainfo.xml.in:178 data/terminal.metainfo.xml.in:196
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:232
-#: data/terminal.metainfo.xml.in:251
+#: data/terminal.metainfo.xml.in:61
+msgid ""
+"The option to hide the tabbar when there is only one tab is now exposed and "
+"honored"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
+#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
+#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
+#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
+#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
+#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
 msgid "Translation updates"
 msgstr "Translation updates"
 
-#: data/terminal.metainfo.xml.in:85 data/terminal.metainfo.xml.in:138
-#: data/terminal.metainfo.xml.in:169 data/terminal.metainfo.xml.in:221
-#: data/terminal.metainfo.xml.in:240
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
+#: data/terminal.metainfo.xml.in:255
 msgid "New features:"
 msgstr "New features:"
 
-#: data/terminal.metainfo.xml.in:87
+#: data/terminal.metainfo.xml.in:102
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:88
+#: data/terminal.metainfo.xml.in:103
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:92
+#: data/terminal.metainfo.xml.in:107
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:123
+#: data/terminal.metainfo.xml.in:138
 msgid "Stop window size increasing when opened"
 msgstr "Stop window size increasing when opened"
 
-#: data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:139
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "Change hotkeys for Reset and Clear Screen actions"
 
-#: data/terminal.metainfo.xml.in:140
+#: data/terminal.metainfo.xml.in:155
 msgid "Show zoom level in overlay when zooming"
 msgstr "Show zoom level in overlay when zooming"
 
-#: data/terminal.metainfo.xml.in:141
+#: data/terminal.metainfo.xml.in:156
 msgid "Implement Clear and Reset context menu actions with accelerators"
 msgstr "Implement Clear and Reset context menu actions with accelerators"
 
-#: data/terminal.metainfo.xml.in:142
+#: data/terminal.metainfo.xml.in:157
 msgid "Add toggle for unsafe paste warning to application menu"
 msgstr "Add toggle for unsafe paste warning to application menu"
 
-#: data/terminal.metainfo.xml.in:146
+#: data/terminal.metainfo.xml.in:161
 msgid ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
@@ -105,11 +111,11 @@ msgstr ""
 "Update the icon and tooltip of the cyclic search togglebutton according to "
 "its state"
 
-#: data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:162
 msgid "Focus correct tab after clicking on a process finished notification"
 msgstr "Focus correct tab after clicking on a process finished notification"
 
-#: data/terminal.metainfo.xml.in:148
+#: data/terminal.metainfo.xml.in:163
 msgid ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
@@ -117,35 +123,35 @@ msgstr ""
 "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
 "when text pasted into terminal"
 
-#: data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
 msgid "Check for unsafe paste on dropping text as well"
 msgstr "Check for unsafe paste on dropping text as well"
 
-#: data/terminal.metainfo.xml.in:150
+#: data/terminal.metainfo.xml.in:165
 msgid "Check for multiline commands in unsafe paste detection"
 msgstr "Check for multiline commands in unsafe paste detection"
 
-#: data/terminal.metainfo.xml.in:151
+#: data/terminal.metainfo.xml.in:166
 msgid "Improve gray contrast in dark theme"
 msgstr "Improve gray contrast in dark theme"
 
-#: data/terminal.metainfo.xml.in:171
+#: data/terminal.metainfo.xml.in:186
 msgid "Allow switching event alerts on and off in the app menu"
 msgstr "Allow switching event alerts on and off in the app menu"
 
-#: data/terminal.metainfo.xml.in:172
+#: data/terminal.metainfo.xml.in:187
 msgid "Save tabs and zooms to the saved state settings when they change"
 msgstr "Save tabs and zooms to the saved state settings when they change"
 
-#: data/terminal.metainfo.xml.in:176
+#: data/terminal.metainfo.xml.in:191
 msgid "Document missing options in the man page"
 msgstr "Document missing options in the man page"
 
-#: data/terminal.metainfo.xml.in:177
+#: data/terminal.metainfo.xml.in:192
 msgid "Suppress unwanted default tab when opening a new window"
 msgstr "Suppress unwanted default tab when opening a new window"
 
-#: data/terminal.metainfo.xml.in:194
+#: data/terminal.metainfo.xml.in:209
 msgid ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
@@ -153,23 +159,23 @@ msgstr ""
 "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
 "tabs"
 
-#: data/terminal.metainfo.xml.in:195
+#: data/terminal.metainfo.xml.in:210
 msgid "Properly unexport the DBus Interface on Exit"
 msgstr "Properly unexport the DBus Interface on Exit"
 
-#: data/terminal.metainfo.xml.in:223
+#: data/terminal.metainfo.xml.in:238
 msgid "Option to follow system dark style preference"
 msgstr "Option to follow system dark style preference"
 
-#: data/terminal.metainfo.xml.in:224
+#: data/terminal.metainfo.xml.in:239
 msgid "Create a custom color palette"
 msgstr "Create a custom colour palette"
 
-#: data/terminal.metainfo.xml.in:226 data/terminal.metainfo.xml.in:245
+#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
 msgid "Fixes:"
 msgstr "Fixes:"
 
-#: data/terminal.metainfo.xml.in:228
+#: data/terminal.metainfo.xml.in:243
 msgid ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
@@ -177,19 +183,19 @@ msgstr ""
 "Default styles are fully opaque and updated to the latest upstream values "
 "from Solarized for improved legibility"
 
-#: data/terminal.metainfo.xml.in:233
+#: data/terminal.metainfo.xml.in:248
 msgid "Performance improvements"
 msgstr "Performance improvements"
 
-#: data/terminal.metainfo.xml.in:242
+#: data/terminal.metainfo.xml.in:257
 msgid "Switch tabs with Alt + 1-9"
 msgstr "Switch tabs with Alt + 1-9"
 
-#: data/terminal.metainfo.xml.in:243
+#: data/terminal.metainfo.xml.in:258
 msgid "Quit with Ctrl + Shift + Q"
 msgstr "Quit with Ctrl + Shift + Q"
 
-#: data/terminal.metainfo.xml.in:247
+#: data/terminal.metainfo.xml.in:262
 msgid "Fix build on OS 7"
 msgstr "Fix build on OS 7"
 

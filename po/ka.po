@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 17:48+0000\n"
-"PO-Revision-Date: 2024-11-10 01:19+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-10-24 13:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://l10n.elementary.io/projects/terminal/"
+"Language-Team: Georgian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -104,10 +104,8 @@ msgid "Find…"
 msgstr "ძიება…"
 
 #: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "ახალი ჩანართი"
+msgstr "ახალი ჩანართი…"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
