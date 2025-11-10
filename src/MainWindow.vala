@@ -484,6 +484,18 @@ namespace Terminal {
                 case Gdk.Key.@6:
                 case Gdk.Key.@7:
                 case Gdk.Key.@8:
+                case Gdk.Key.KP_1: //alt+[1-8]
+                case Gdk.Key.KP_2:
+                case Gdk.Key.KP_3:
+                case Gdk.Key.KP_4:
+                case Gdk.Key.KP_5:
+                case Gdk.Key.KP_6:
+                case Gdk.Key.KP_7:
+                case Gdk.Key.KP_8:
+                    if (keyval > 48 + 8) {
+                        keyval -= (Gdk.Key.KP_1 - Gdk.Key.@1);
+                    }
+
                     if (MOD1_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
@@ -498,6 +510,7 @@ namespace Terminal {
                     break;
 
                 case Gdk.Key.@9:
+                case Gdk.Key.KP_9:
                     if (MOD1_MASK in modifiers
                     && Application.settings.get_boolean ("alt-changes-tab")
                     && notebook.n_pages > 1) {
