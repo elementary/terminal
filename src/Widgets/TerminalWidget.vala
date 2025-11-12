@@ -328,6 +328,11 @@ namespace Terminal {
         }
 
         private void secondary_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+            if (has_foreground_process ()) {
+                gesture.set_state (CLAIMED);
+                return;
+            }
+
             link_uri = get_link (gesture.get_last_event (null));
 
             if (link_uri != null) {
