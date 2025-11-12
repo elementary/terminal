@@ -224,7 +224,8 @@ public class Terminal.Application : Gtk.Application {
 
     protected override void startup () {
         base.startup ();
-        Hdy.init ();
+        Granite.init ();
+        Adw.init ();
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
@@ -238,8 +239,8 @@ public class Terminal.Application : Gtk.Application {
          * https://gitlab.gnome.org/GNOME/vte/blob/0.68.0/src/vtegtk.cc#L844-847
          * To be able to overwrite their styles, we need to use +1.
          */
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
         );
@@ -269,16 +270,6 @@ public class Terminal.Application : Gtk.Application {
 
         set_accels_for_action ("app.new-window", { "<Control><Shift>N" });
         set_accels_for_action ("app.quit", { "<Control><Shift>Q" });
-
-        set_accels_for_action (TerminalWidget.ACTION_COPY, TerminalWidget.ACCELS_COPY);
-        set_accels_for_action (TerminalWidget.ACTION_COPY_OUTPUT, TerminalWidget.ACCELS_COPY_OUTPUT);
-        set_accels_for_action (TerminalWidget.ACTION_PASTE, TerminalWidget.ACCELS_PASTE);
-        set_accels_for_action (TerminalWidget.ACTION_RELOAD, TerminalWidget.ACCELS_RELOAD);
-        set_accels_for_action (TerminalWidget.ACTION_SCROLL_TO_COMMAND, TerminalWidget.ACCELS_SCROLL_TO_COMMAND);
-        set_accels_for_action (TerminalWidget.ACTION_SELECT_ALL, TerminalWidget.ACCELS_SELECT_ALL);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_DEFAULT, TerminalWidget.ACCELS_ZOOM_DEFAULT);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_IN, TerminalWidget.ACCELS_ZOOM_IN);
-        set_accels_for_action (TerminalWidget.ACTION_ZOOM_OUT, TerminalWidget.ACCELS_ZOOM_OUT);
     }
 
     protected override int command_line (ApplicationCommandLine command_line) {
@@ -315,10 +306,27 @@ public class Terminal.Application : Gtk.Application {
         }
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
-            window.iconify ();
+            window.minimize ();
         } else {
             window.present ();
         }
+
+        if (is_first_window) {
+            /*
+            * This is very finicky. Bind size after present else set_titlebar gives us bad sizes
+            * Set maximize after height/width else window is min size on unmaximize
+            * Bind maximize as SET else get get bad sizes
+            */
+            saved_state.bind ("window-height", window, "default-height", SettingsBindFlags.DEFAULT);
+            saved_state.bind ("window-width", window, "default-width", SettingsBindFlags.DEFAULT);
+
+            if (saved_state.get_boolean ("is-maximized")) {
+                window.maximize ();
+            }
+
+            saved_state.bind ("is-maximized", window, "maximized", SettingsBindFlags.SET);
+        }
+
         return 0;
     }
 
