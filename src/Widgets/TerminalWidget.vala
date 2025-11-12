@@ -313,6 +313,11 @@ namespace Terminal {
         }
 
         private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
+            if (has_foreground_process ()) {
+                gesture.set_state (CLAIMED);
+                return;
+            }
+
             link_uri = get_link (x, y);
 
             if (link_uri != null) {

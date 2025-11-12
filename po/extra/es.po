@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-08-02 12:55+0000\n"
+"PO-Revision-Date: 2025-11-06 01:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/es/>\n"
@@ -51,6 +51,8 @@ msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
+"La opción para esconder la barra de pestañas cuando existe una sola pestaña "
+"está expuesta y funcional"
 
 #: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
 #: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
