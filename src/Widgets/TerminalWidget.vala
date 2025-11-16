@@ -565,6 +565,13 @@ namespace Terminal {
             });
         }
 
+        // Only used when command launched from command lines
+        // We do not send SIGINT or reset the shell as we know the shell has only
+        // just been created and we may need to run e.g. `conda` which sets the environment
+        public void run_program (string program) {
+            feed_child ((program + "\n").data);
+        }
+
         public void change_directory (string path) {
             // Ignore if foreground process running, for now.
             if (has_foreground_process ()) {
@@ -745,21 +752,6 @@ namespace Terminal {
                                         envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
-            }
-        }
-
-        public void run_program (string _program_string, string? working_directory) requires (_program_string.length > 0) {
-            try {
-                string[] program_with_args = {};
-                this.program_string = _program_string;
-                Shell.parse_argv (program_string, out program_with_args);
-
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-            } catch (Error e) {
-                warning (e.message);
-                feed ((e.message + "\r\n\r\n").data);
-                active_shell (working_directory);
             }
         }
 
@@ -1002,6 +994,7 @@ namespace Terminal {
                     if (pid != fg_pid) {
                         var name = get_pid_exe_name (pid);
                         foreground_process_changed (name);
+
                         fg_pid = pid;
                     }
 
