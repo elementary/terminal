@@ -400,14 +400,17 @@ namespace Terminal {
             );
 
             var overlay = new Gtk.Overlay () {
-                child = notebook
+                child = notebook.tab_view
             };
 
             zoom_overlay = new Widgets.ZoomOverlay (overlay);
 
-            var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            box.append (header);
-            box.append (overlay);
+            var box = new Adw.ToolbarView () {
+                content = overlay,
+                top_bar_style = RAISED_BORDER
+            };
+            box.add_top_bar (header);
+            box.add_top_bar (notebook.tab_bar);
 
             content = box;
             add_css_class ("terminal-window");

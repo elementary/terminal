@@ -44,10 +44,6 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     construct {
-        orientation = VERTICAL;
-        hexpand = true;
-        vexpand = true;
-
         var app_instance = (Gtk.Application) GLib.Application.get_default ();
 
         tab_view = new Adw.TabView () {
@@ -116,9 +112,6 @@ public class Terminal.TerminalView : Gtk.Box {
         Type[] types = { Type.STRING };
         tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, types);
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
-
-        append (tab_bar);
-        append (tab_view);
     }
 
     public void make_restorable (string path) {
