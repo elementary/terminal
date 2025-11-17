@@ -11,11 +11,14 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 ## Building, Testing, and Installation
 
 You'll need the following dependencies:
-* libgranite-dev >= 6.1.0
-* libhandy-1-dev >= 0.83.0
-* libvte-2.91-dev >= 0.59
-* meson
-* valac >= 0.56
+ * gettext
+ * libadwaita-1-dev (>= 1.5.0)
+ * libgranite-7-dev (>= 7.5.0)
+ * libgtk-4-dev (>= 4.1.0)
+ * libvte-2.91-gtk4-dev (>= 0.76.0)
+ * libxml2-utils
+ * meson
+ * valac (>= 0.56)
 
 Run `meson` to configure the build environment and then `ninja test` to build and run tests
 
