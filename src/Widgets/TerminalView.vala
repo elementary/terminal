@@ -11,7 +11,7 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public signal void new_tab_requested ();
-    public signal void tab_duplicated (Hdy.TabPage page);
+    public signal void tab_duplicated (Adw.TabPage page);
 
     public int n_pages {
         get {
@@ -19,7 +19,7 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    public Hdy.TabPage selected_page {
+    public Adw.TabPage selected_page {
         get {
             return tab_view.selected_page;
         }
@@ -30,9 +30,10 @@ public class Terminal.TerminalView : Gtk.Box {
     }
 
     public unowned MainWindow main_window { get; construct; }
-    public Hdy.TabView tab_view { get; private set; }
-    public Hdy.TabBar tab_bar { get; private set; }
-    public Hdy.TabPage? tab_menu_target { get; private set; default = null; }
+    public Adw.TabBar tab_bar { get; private set; }
+    public Adw.TabView tab_view { get; private set; }
+    public Adw.TabPage? tab_menu_target { get; private set; default = null; }
+
     private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
 
@@ -49,7 +50,7 @@ public class Terminal.TerminalView : Gtk.Box {
 
         var app_instance = (Gtk.Application) GLib.Application.get_default ();
 
-        tab_view = new Hdy.TabView () {
+        tab_view = new Adw.TabView () {
             hexpand = true,
             vexpand = true
         };
@@ -57,7 +58,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.setup_menu.connect (tab_view_setup_menu);
 
         var new_tab_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
-            relief = NONE,
+            has_frame = false,
             tooltip_markup = Granite.markup_accel_tooltip (
                 app_instance.get_accels_for_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_NEW_TAB),
                 _("New Tab")
@@ -66,12 +67,11 @@ public class Terminal.TerminalView : Gtk.Box {
         };
 
         tab_history_button = new Gtk.MenuButton () {
-            image = new Gtk.Image.from_icon_name ("document-open-recent-symbolic", MENU),
-            tooltip_text = _("Closed Tabs"),
-            use_popover = false
+            icon_name = "document-open-recent-symbolic",
+            tooltip_text = _("Closed Tabs")
         };
 
-        tab_bar = new Hdy.TabBar () {
+        tab_bar = new Adw.TabBar () {
             autohide = Application.settings.get_enum ("tab-bar-behavior") == 1,
             expand_tabs = false,
             inverted = true,
@@ -85,28 +85,46 @@ public class Terminal.TerminalView : Gtk.Box {
         });
 
         style_provider = new Gtk.CssProvider ();
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        // Handle Drag-and-drop of directory files onto add button to open in new tab
-        Gtk.TargetEntry uris = {"text/uri-list", 0, TargetType.URI_LIST};
-        Gtk.drag_dest_set (new_tab_button, Gtk.DestDefaults.ALL, {uris}, Gdk.DragAction.COPY);
-        new_tab_button.drag_data_received.connect (drag_received);
+        var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY) {
+            preload = true //So we can predetermine whether string is suitable for dropping here
+        };
 
-        // Handle Drag-and-drop of directory files onto tab to open in that tab
-        tab_bar.extra_drag_dest_targets = new Gtk.TargetList ({uris});
-        tab_bar.extra_drag_data_received.connect (on_extra_drag_data_received);
+        button_target.notify["value"].connect (() => {
+            var val = button_target.get_value ();
+            if (!val.holds (typeof (string))) {
+                button_target.reject ();
+            } else {
+                var uris = Uri.list_extract_uris (val.dup_string ());
+                foreach (string s in uris) {
+                    if (!Utils.valid_local_uri (s, null)) {
+                        button_target.reject ();
+                        break;
+                    }
+                }
+            }
+        });
 
-        add (tab_bar);
-        add (tab_view);
+        button_target.drop.connect (on_add_button_drop);
+        new_tab_button.add_controller (button_target);
+
+        Type[] types = { Type.STRING };
+        tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, types);
+        tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
+
+        append (tab_bar);
+        append (tab_view);
     }
 
     public void make_restorable (string path) {
         if (tab_history_button.menu_model == null) {
             tab_history_button.menu_model = new Menu ();
+            tab_history_button.popover.has_arrow = false;
         }
 
         var menu = (Menu) tab_history_button.menu_model;
@@ -169,7 +187,7 @@ public class Terminal.TerminalView : Gtk.Box {
         tab_view.selected_page = target;
     }
 
-    public void cycle_tabs (Hdy.NavigationDirection direction) {
+    public void cycle_tabs (Adw.NavigationDirection direction) {
         var pos = tab_view.get_page_position (selected_page);
         pos = direction == FORWARD ? pos + 1 : pos - 1;
         pos = (pos + n_pages) % n_pages;
@@ -177,28 +195,29 @@ public class Terminal.TerminalView : Gtk.Box {
         selected_page = tab_view.get_nth_page (pos);
     }
 
-    public void transfer_tab_to_new_window () {
+    public void transfer_tab_to_window (MainWindow window) {
         var target = tab_menu_target ?? tab_view.selected_page;
 
         if (target == null) {
             return;
         }
 
-        var new_window = new MainWindow (main_window.app, false);
-        tab_view.transfer_page (target, new_window.notebook.tab_view, 0);
+        tab_view.transfer_page (target, window.notebook.tab_view, 0);
     }
 
     // This is called when tab context menu is opened or closed
-    private void tab_view_setup_menu (Hdy.TabPage? page) {
+    private void tab_view_setup_menu (Adw.TabPage? page) {
         tab_menu_target = page;
-
-        var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, main_window.actions);
-        var close_tabs_to_right_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, main_window.actions);
+        var actions = main_window.actions;
+        var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, actions);
+        var close_tabs_to_right_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, actions);
+        var open_in_new_window_action = Utils.action_from_group (MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW, actions);
 
         int page_position = page != null ? tab_view.get_page_position (page) : -1;
 
         close_other_tabs_action.set_enabled (page != null && tab_view.n_pages > 1);
         close_tabs_to_right_action.set_enabled (page != null && page_position != tab_view.n_pages - 1);
+        open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
     }
 
     public void after_tab_restored (TerminalWidget term) {
@@ -236,75 +255,47 @@ public class Terminal.TerminalView : Gtk.Box {
         return menu;
     }
 
-    private void drag_received (Gtk.Widget w,
-                                Gdk.DragContext ctx,
-                                int x,
-                                int y,
-                                Gtk.SelectionData data,
-                                uint info,
-                                uint time) {
-
-        if (info == TargetType.URI_LIST) {
-            var uris = data.get_uris ();
-            var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
-            // ACTION_NEW_TAB_AT only works with local paths to folders
-            foreach (var uri in uris) {
-                var file = File.new_for_uri (uri);
-                var scheme = file.get_uri_scheme ();
-                if (scheme != "file" && scheme != "") {
-                    return;
-                }
-
-                var type = file.query_file_type (NONE);
-                string path;
-                if (type == DIRECTORY) {
-                    path = file.get_path ();
-                } else if (type == REGULAR) {
-                    path = file.get_parent ().get_path ();
-                } else {
-                    continue;
-                }
-
-                new_tab_action.activate (path);
+    private bool on_add_button_drop (Value val, double x, double y) {
+        var uris = Uri.list_extract_uris (val.dup_string ());
+        var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
+        // ACTION_NEW_TAB_AT only works with local paths to folders
+        foreach (var uri in uris) {
+            string path;
+            if (!Utils.valid_local_uri (uri, out path)) {
+                continue;
             }
+
+            new_tab_action.activate (path);
         }
 
-        Gtk.drag_finish (ctx, true, false, time);
+        return true;
     }
 
-    private void on_extra_drag_data_received (
-        Hdy.TabBar tab_bar,
-        Hdy.TabPage page,
-        Gdk.DragContext ctx,
-        Gtk.SelectionData data,
-        uint info,
-        uint time) {
-
-        if (info == TargetType.URI_LIST) {
-            var uris = data.get_uris ();
-            var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
-            // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
-            foreach (var uri in uris) {
-                var file = File.new_for_uri (uri);
-                var scheme = file.get_uri_scheme ();
-                if (scheme != "file" && scheme != "") {
-                    return;
-                }
-
-                var type = file.query_file_type (NONE);
-                string path;
-                if (type == DIRECTORY) {
-                    path = file.get_path ();
-                } else if (type == REGULAR) {
-                    path = file.get_parent ().get_path ();
-                } else {
-                    continue;
-                }
-
-                active_shell_action.activate (path);
+    private bool on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
+        //TODO Gtk4 Port:Check val contains uri_list
+        var uris = Uri.list_extract_uris (val.dup_string ());
+        var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
+        // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
+        foreach (var uri in uris) {
+            var file = GLib.File.new_for_uri (uri);
+            var scheme = file.get_uri_scheme ();
+            if (scheme != "file" && scheme != "") {
+                return false;
             }
+
+            var type = file.query_file_type (NONE);
+            string path;
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                continue;
+            }
+
+            active_shell_action.activate (path);
         }
 
-        Gtk.drag_finish (ctx, true, false, time);
+        return true;
     }
 }

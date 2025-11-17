@@ -1,21 +1,7 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*
-* Copyright (c) 2011-2017 elementary LLC. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
+ */
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
@@ -44,8 +30,8 @@ namespace Terminal {
             }
         }
 
-        // There may be no associated tab while made restorable
-        public unowned Hdy.TabPage tab;
+        // There may be no associated tab while made restorable or when closing
+        public unowned Adw.TabPage? tab;
         public string? link_uri;
 
         public string tab_label {
@@ -68,9 +54,6 @@ namespace Terminal {
         public const string ACTION_RELOAD = "term.reload";
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
         public const string ACTION_SELECT_ALL = "term.select-all";
-        public const string ACTION_ZOOM_DEFAULT = "term.zoom::default";
-        public const string ACTION_ZOOM_IN = "term.zoom::in";
-        public const string ACTION_ZOOM_OUT = "term.zoom::out";
 
 
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
@@ -81,6 +64,7 @@ namespace Terminal {
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
         public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
         public const string[] ACCELS_SELECT_ALL = { "<Control><Shift>A", null };
+        // Specify zooming shortcuts for use by tooltips in SettingsPopover. We don't use actions for this.
         public const string[] ACCELS_ZOOM_DEFAULT = { "<control>0", "<Control>KP_0", null };
         public const string[] ACCELS_ZOOM_IN = { "<Control>plus", "<Control>equal", "<Control>KP_Add", null };
         public const string[] ACCELS_ZOOM_OUT = { "<Control>minus", "<Control>KP_Subtract", null };
@@ -137,7 +121,7 @@ namespace Terminal {
             private set;
         }
 
-        private unowned Gtk.Clipboard clipboard;
+        private unowned Gdk.Clipboard clipboard;
 
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
@@ -151,13 +135,7 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
 
-        private Gtk.EventControllerMotion motion_controller;
         private Gtk.EventControllerScroll scroll_controller;
-        private Gtk.EventControllerKey key_controller;
-        private Gtk.GestureMultiPress primary_gesture;
-        private Gtk.GestureMultiPress secondary_gesture;
-
-        private bool modifier_pressed = false;
         private double scroll_delta = 0.0;
 
         public signal void cwd_changed ();
@@ -192,75 +170,99 @@ namespace Terminal {
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
 
-            motion_controller = new Gtk.EventControllerMotion (this) {
+            var motion_controller = new Gtk.EventControllerMotion () {
                 propagation_phase = CAPTURE
             };
             motion_controller.enter.connect (pointer_focus);
 
-            scroll_controller = new Gtk.EventControllerScroll (this, NONE) {
+            // Used only for ctrl-scroll zooming
+            scroll_controller = new Gtk.EventControllerScroll (VERTICAL) {
                 propagation_phase = TARGET
             };
-            scroll_controller.scroll.connect (scroll);
+            scroll_controller.scroll.connect (on_scroll);
             scroll_controller.scroll_end.connect (() => scroll_delta = 0.0);
 
-            key_controller = new Gtk.EventControllerKey (this) {
-                propagation_phase = NONE
+            var key_controller = new Gtk.EventControllerKey () {
+                propagation_phase = CAPTURE
             };
-            key_controller.key_pressed.connect (key_pressed);
-            key_controller.key_released.connect (() => scroll_controller.flags = NONE);
-            key_controller.focus_out.connect (() => scroll_controller.flags = NONE);
+            key_controller.key_pressed.connect (on_key_pressed);
 
-            // XXX(Gtk3): This is used to stop the key_pressed() handler from breaking the copy last output action,
-            //            when a modifier is pressed, since it won't be in the modifier mask there (neither here).
-            //
-            // TODO(Gtk4): check if the modifier emission was fixed.
-            key_controller.modifiers.connect (() => {
-                // if two modifers are pressed in sequence (like <Control> -> <Shift>), modifier_pressed will be false.
-                // However, the modifer mask in key_pressed() will already contain the previous modifier.
-                modifier_pressed = !modifier_pressed;
-                return true;
-            });
+            var focus_controller = new Gtk.EventControllerFocus ();
+            focus_controller.leave.connect (() => scroll_controller.flags = NONE);
+            focus_controller.enter.connect (() => scroll_controller.flags = VERTICAL);
 
-            primary_gesture = new Gtk.GestureMultiPress (this) {
+            var primary_gesture = new Gtk.GestureClick () {
                 propagation_phase = TARGET,
-                button = 1
+                button = Gdk.BUTTON_PRIMARY
             };
             primary_gesture.pressed.connect (primary_pressed);
 
-            secondary_gesture = new Gtk.GestureMultiPress (this) {
+            var secondary_gesture = new Gtk.GestureClick () {
                 propagation_phase = TARGET,
-                button = 3
+                button = Gdk.BUTTON_SECONDARY
             };
             secondary_gesture.released.connect (secondary_released);
 
-            // send events to key controller manually, since key_released isn't emitted in any propagation phase
-            event.connect (key_controller.handle_event);
+            // Accels added by set_accels_for_action in Application do not work for actions
+            // in child widgets so use shortcut_controller instead.
+            var select_all_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.A, CONTROL_MASK | SHIFT_MASK),
+                new Gtk.NamedAction ("term.select-all")
+            );
+
+            var reload_shortcut = new Gtk.Shortcut (
+                new Gtk.AlternativeTrigger (
+                    new Gtk.KeyvalTrigger (Gdk.Key.R, CONTROL_MASK | SHIFT_MASK),
+                    new Gtk.KeyvalTrigger (Gdk.Key.F5, CONTROL_MASK)
+                ),
+                new Gtk.NamedAction ("term.reload")
+            );
+
+            var scroll_to_command_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.Up, ALT_MASK),
+                new Gtk.NamedAction ("term.scroll-to-command")
+            );
+
+            var copy_output_shortcut = new Gtk.Shortcut (
+                new Gtk.KeyvalTrigger (Gdk.Key.C, ALT_MASK),
+                new Gtk.NamedAction ("term.copy-output")
+            );
+
+            var shortcut_controller = new Gtk.ShortcutController () {
+                propagation_phase = CAPTURE,
+                propagation_limit = SAME_NATIVE
+            };
+            shortcut_controller.add_shortcut (select_all_shortcut);
+            shortcut_controller.add_shortcut (reload_shortcut);
+            shortcut_controller.add_shortcut (scroll_to_command_shortcut);
+            shortcut_controller.add_shortcut (copy_output_shortcut);
+
+            add_controller (motion_controller);
+            add_controller (scroll_controller);
+            add_controller (key_controller);
+            add_controller (focus_controller);
+            add_controller (secondary_gesture);
+            add_controller (primary_gesture);
+            add_controller (shortcut_controller);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
-            size_allocate.connect (() => resized = true);
+            // Cannot use copy last output action if window was resized after remembering start position
+            notify["height-request"].connect (() => resized = true);
+            notify["width-request"].connect (() => resized = true);
             contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
             ulong once = 0;
             once = realize.connect (() => {
-                clipboard = get_clipboard (Gdk.SELECTION_CLIPBOARD);
-                clipboard.owner_change.connect (setup_menu);
+                clipboard = Gdk.Display.get_default ().get_clipboard ();
+                clipboard.changed.connect (setup_menu);
                 disconnect (once);
             });
 
-            /* target entries specify what kind of data the terminal widget accepts */
-            Gtk.TargetEntry uri_entry = { "text/uri-list", Gtk.TargetFlags.OTHER_APP, DropTargets.URILIST };
-            Gtk.TargetEntry string_entry = { "STRING", Gtk.TargetFlags.OTHER_APP, DropTargets.STRING };
-            Gtk.TargetEntry text_entry = { "text/plain", Gtk.TargetFlags.OTHER_APP, DropTargets.TEXT };
-
-            Gtk.TargetEntry[] targets = { };
-            targets += uri_entry;
-            targets += string_entry;
-            targets += text_entry;
-
-            Gtk.drag_dest_set (this, Gtk.DestDefaults.ALL, targets, Gdk.DragAction.COPY);
+            var drop_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
+            drop_target.drop.connect (on_drop);
+            add_controller (drop_target);
 
             /* Make Links Clickable */
-            this.drag_data_received.connect (drag_received);
             this.clickable (REGEX_STRINGS);
 
             // Setup Actions
@@ -303,23 +305,6 @@ namespace Terminal {
             var select_all_action = new GLib.SimpleAction ("select-all", null);
             select_all_action.activate.connect (select_all);
             action_group.add_action (select_all_action);
-
-            //TODO In Gtk4 replace action with `add_binding_signal ()``
-            var zoom_action = new GLib.SimpleAction ("zoom", VariantType.STRING);
-            zoom_action.activate.connect ((p) => {
-                switch ((string) p) {
-                    case "in":
-                        increase_font_size ();
-                        break;
-                    case "out":
-                        decrease_font_size ();
-                        break;
-                    case "default":
-                        default_font_size ();
-                        break;
-                }
-            });
-            action_group.add_action (zoom_action);
         }
 
         private void pointer_focus () {
@@ -327,27 +312,27 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void secondary_released (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
             if (has_foreground_process ()) {
                 gesture.set_state (CLAIMED);
                 return;
             }
 
-            link_uri = get_link (gesture.get_last_event (null));
+            link_uri = get_link (x, y);
 
             if (link_uri != null) {
                 copy_action.set_enabled (true);
             }
 
-            popup_context_menu ({ (int) x, (int) y });
+            popup_context_menu (x, y);
 
             gesture.set_state (CLAIMED);
         }
 
-        private void primary_pressed (Gtk.GestureMultiPress gesture, int n_press, double x, double y) {
+        private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
             link_uri = null;
             if (allow_hyperlink) {
-                link_uri = get_link (gesture.get_last_event (null));
+                link_uri = get_link (x, y);
 
                 if (link_uri != null && !get_has_selection ()) {
                    main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
@@ -357,8 +342,14 @@ namespace Terminal {
             }
         }
 
-        private void scroll (double x, double y) {
-            // try to emulate a normal scrolling event by summing deltas. step size of 0.5 chosen to match sensitivity
+        private bool on_scroll (Gtk.EventControllerScroll controller, double x, double y) {
+            // If control is pressed try to emulate a normal scrolling event by summing deltas.
+            // Step size of 0.5 chosen to match sensitivity
+            var control_pressed = Gdk.ModifierType.CONTROL_MASK in controller.get_current_event_state ();
+            if (!control_pressed) {
+                return false;
+            }
+
             scroll_delta += y;
 
             if (scroll_delta >= 0.5) {
@@ -368,13 +359,19 @@ namespace Terminal {
                 increase_font_size ();
                 scroll_delta = 0.0;
             }
+
+            return true;
         }
 
-        private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+        private bool on_key_pressed (Gtk.EventControllerKey controller, uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+            var control_pressed = CONTROL_MASK in modifiers;
+            var shift_pressed = SHIFT_MASK in modifiers;
+
             switch (keyval) {
-                case Gdk.Key.Control_R:
-                case Gdk.Key.Control_L:
-                    scroll_controller.flags = VERTICAL;
+                case Gdk.Key.Alt_L:
+                case Gdk.Key.Alt_R:
+                    // enable/disable the action before we try to use
+                    copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
                     break;
 
                 case Gdk.Key.Return:
@@ -397,25 +394,43 @@ namespace Terminal {
                     var cell_width = get_char_width ();
                     var cell_height = get_char_height ();
                     var vadj = vadjustment.value;
-
-                    Gdk.Rectangle rect = {
-                        (int) (col * cell_width),
-                        (int) ((row - vadj) * cell_height),
-                        (int) cell_width,
-                        (int) cell_height
-                    };
-
-                    popup_context_menu (rect);
+                    popup_context_menu (col * cell_width, (row - vadj) * cell_height);
                     break;
 
-                case Gdk.Key.Alt_L:
-                case Gdk.Key.Alt_R:
-                    // enable/disable the action before we try to use
-                    copy_output_action.set_enabled (!resized && get_last_output ().length > 0);
+                case Gdk.Key.plus:
+                case Gdk.Key.equal:
+                case Gdk.Key.KP_Add:
+                    if (control_pressed) {
+                        increase_font_size ();
+                        return true;
+                    }
+
+                    break;
+
+                case Gdk.Key.minus:
+                case Gdk.Key.KP_Subtract:
+                    if (control_pressed) {
+                        decrease_font_size ();
+                        return true;
+                    }
+
+                    break;
+
+                case Gdk.Key.@0:
+                case Gdk.Key.KP_0:
+                    if (control_pressed) {
+                        default_font_size ();
+                        return true;
+                    }
+
                     break;
 
                 default:
-                    if (!modifier_pressed || !(Gtk.accelerator_get_default_mod_mask () in modifiers)) {
+                    if (
+                        !(control_pressed || shift_pressed) ||
+                        !(Gtk.accelerator_get_default_mod_mask () in modifiers)
+                    ) {
+
                         remember_command_start_position ();
                     }
                     break;
@@ -423,12 +438,14 @@ namespace Terminal {
 
             // Use hardware keycodes so the key used is unaffected by internationalized layout
             bool match_keycode (uint keyval, uint code) {
+                // In Gtk4 Gdk.KeyMap does not exist so instead of looking up the codes corresponding
+                // to the keyval, we look up the keyvals corresponding to the code.
+                // TODO Check this still works for non-standard keyboard layouts
                 Gdk.KeymapKey[] keys;
-
-                var keymap = Gdk.Keymap.get_for_display (get_display ());
-                if (keymap.get_entries_for_keyval (keyval, out keys)) {
-                    foreach (var key in keys) {
-                        if (code == key.keycode) {
+                uint[] keyvals;
+                if (get_display ().map_keycode (code, out keys, out keyvals)) {
+                    foreach (var kv in keyvals) {
+                        if (kv == keyval) {
                             return true;
                         }
                     }
@@ -437,18 +454,28 @@ namespace Terminal {
                 return false;
             }
 
-            if (CONTROL_MASK in modifiers && Application.settings.get_boolean ("natural-copy-paste")) {
+            //NOTE It appears the Vte.Terminal native handling of copy with <Shift><Control>C
+            // does not work in Gtk4 so for now handle natural and native.
+            var natural = Application.settings.get_boolean ("natural-copy-paste");
+            if (control_pressed) {
                 if (match_keycode (Gdk.Key.c, keycode)) {
-                    if (get_has_selection ()) {
+                    //Links not copied unless selected (compare context menu action)
+                    if (get_has_selection () && (natural || shift_pressed)) {
                         copy_clipboard ();
-                        if (!(SHIFT_MASK in modifiers)) { // Shift not pressed
+                        // Natural copy unselects unless the shift is held down
+                        if (natural && !shift_pressed) {
                             unselect_all ();
                         }
+
                         return true;
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
                     }
-                } else if (match_keycode (Gdk.Key.v, keycode) && clipboard.wait_is_text_available ()) {
+                } else if (
+                    match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
+                    clipboard.get_formats ().contain_gtype (Type.STRING)
+                ) {
+
                     paste_clipboard ();
                     return true;
                 }
@@ -464,7 +491,7 @@ namespace Terminal {
                 return true;
             }
 
-            if (MOD1_MASK in modifiers && keyval == Gdk.Key.Up) {
+            if (ALT_MASK in modifiers && keyval == Gdk.Key.Up) {
                 return !scroll_to_command_action.enabled;
             }
 
@@ -473,35 +500,38 @@ namespace Terminal {
 
         private void setup_menu () {
             // Update the "Paste" menu option
-            clipboard.request_targets ((clipboard, atoms) => {
-                bool can_paste = false;
+            var formats = clipboard.get_formats ();
+            bool can_paste = false;
 
-                if (atoms != null && atoms.length > 0) {
-                    can_paste = Gtk.targets_include_text (atoms) || Gtk.targets_include_uri (atoms);
-                }
+            if (formats != null) {
+                can_paste = formats.contain_gtype (Type.STRING);
+            }
 
-                paste_action.set_enabled (can_paste);
-            });
+            paste_action.set_enabled (can_paste);
 
             // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
             copy_output_action.set_enabled (has_output);
         }
 
-        private void popup_context_menu (Gdk.Rectangle rect) {
+        private void popup_context_menu (double x, double y) {
             main_window.update_context_menu ();
             setup_menu ();
 
-            // Popup context menu below cursor position
-            var context_menu = new Gtk.Menu.from_model (main_window.context_menu_model) {
-                attach_widget = this
+            //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
+            // does not work at the moment so create our own.
+            var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
+                has_arrow = false,
+                pointing_to = { (int)x, (int)y, 1, 1}
             };
-            context_menu.popup_at_rect (get_window (), rect, SOUTH_WEST, NORTH_WEST);
+            new_context_menu.set_parent (this);
+            new_context_menu.closed.connect (() => new_context_menu.destroy ());
+            new_context_menu.popup ();
         }
 
         protected override void copy_clipboard () {
             if (link_uri != null && !get_has_selection ()) {
-                clipboard.set_text (link_uri, link_uri.length);
+                clipboard.set_text (link_uri);
             } else {
                 base.copy_clipboard ();
             }
@@ -509,30 +539,31 @@ namespace Terminal {
 
         private void copy_output () {
             var output = get_last_output ();
-            clipboard.set_text (output, output.length);
+            clipboard.set_text (output);
         }
 
-        public bool confirm_kill_fg_process (
+        public delegate void ConfirmedActionCallback (bool confirmed);
+        public void confirm_kill_fg_process (
             string primary_text,
-            string button_label
+            string button_label,
+            ConfirmedActionCallback cb
         ) {
             if (has_foreground_process ()) {
                 var dialog = new ForegroundProcessDialog (
-                    (MainWindow) get_toplevel (),
+                    (MainWindow) get_root (),
                     primary_text,
                     button_label
                 );
 
-                if (dialog.run () == Gtk.ResponseType.ACCEPT) {
+                dialog.response.connect ((res) => {
                     dialog.destroy ();
-                    kill_fg ();
-                } else {
-                    dialog.destroy ();
-                    return false;
-                }
-            }
+                    cb (res == Gtk.ResponseType.ACCEPT);
+                });
 
-            return true;
+                dialog.present ();
+            } else {
+                cb (true);
+            }
         }
 
         private void action_clear_screen () {
@@ -546,12 +577,15 @@ namespace Terminal {
         }
 
         private void action_reset () {
-            if (confirm_kill_fg_process (
+            confirm_kill_fg_process (
                 _("Are you sure you want to reset the terminal?"),
-                _("Reset"))
-            ) {
-                feed_command ("reset\n");
-            }
+                _("Reset"),
+                (confirmed) => {
+                    if (confirmed) {
+                        feed_command ("reset\n");
+                    }
+                }
+            );
         }
 
         private void feed_command (string command) {
@@ -576,10 +610,42 @@ namespace Terminal {
             feed_command (command);
         }
 
+        public void reload () {
+            var old_loc = get_shell_location ();
+            confirm_kill_fg_process (
+                _("Are you sure you want to reload this tab?"),
+                _("Reload"),
+                (confirmed) => {
+                    if (confirmed ) {
+                        var command = "reset;cd '%s';clear\n".printf (old_loc);
+                        feed_command (command);
+                    }
+                }
+            );
+        }
+
         protected override void paste_clipboard () {
-            clipboard.request_text ((clipboard, text) => {
-                validated_paste (text);
-            });
+            var content_provider = clipboard.get_content ();
+            if (content_provider != null) {
+                try {
+                    Value val = Value (typeof (string));
+                    content_provider.get_value (ref val);
+                    var text = val.dup_string ();
+                    validated_paste (text);
+                } catch (Error e) {
+                    warning ("Error getting clipboard content - %s", e.message);
+                    return;
+                }
+            } else {
+                clipboard.read_text_async.begin (null, (obj, res) => {
+                    try {
+                        var text = clipboard.read_text_async.end (res);
+                        validated_paste (text);
+                    } catch (Error e) {
+                        warning ("Error reading text from clipboard - %s", e.message);
+                    }
+                });
+            }
         }
 
         // Check pasted and dropped text before feeding to child;
@@ -605,7 +671,7 @@ namespace Terminal {
             }
 
             // Ask user for interaction for unsafe commands
-            unowned var toplevel = (MainWindow) get_toplevel ();
+            unowned var toplevel = (MainWindow) get_root ();
             var warn_text = string.joinv ("\n\n", warn_text_array);
             var dialog = new UnsafePasteDialog (toplevel, warn_text, text.strip ());
             dialog.response.connect ((res) => {
@@ -619,9 +685,11 @@ namespace Terminal {
         }
 
         private void update_current_working_directory (string cwd) {
-            current_working_directory = cwd;
-            tab.tooltip = current_working_directory;
-            cwd_changed ();
+            if (tab != null) { // May not be the case if closing tab
+                current_working_directory = cwd;
+                tab.tooltip = current_working_directory;
+                cwd_changed ();
+            }
         }
 
         private void update_theme () {
@@ -647,6 +715,7 @@ namespace Terminal {
             var palette = theme_palette[0:16];
 
             set_colors (foreground, background, palette);
+            set_opacity (background.alpha);
             set_color_cursor (cursor);
         }
 
@@ -665,9 +734,13 @@ namespace Terminal {
         }
 
         public void kill_fg () {
-            int pid;
-            if (this.try_get_foreground_pid (out pid))
-                Posix.kill (pid, Posix.Signal.KILL);
+            int fg_pid;
+            if (this.try_get_foreground_pid (out fg_pid)) {
+                // Give chance to terminate cleanly before killing
+                Posix.kill (fg_pid, Posix.Signal.HUP);
+                Posix.kill (fg_pid, Posix.Signal.TERM);
+                Posix.kill (fg_pid, Posix.Signal.KILL);
+            }
         }
 
         // Terminate the shell process prior to closing the tab
@@ -740,27 +813,56 @@ namespace Terminal {
 
             /* We need opening uri to be available asap when constructing window with working directory
              * so remove idle loop, which appears not to be necessary any longer */
-            try {
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, dir, { shell },
-                                        envv, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
-            } catch (Error e) {
-                warning (e.message);
-            }
+            this.spawn_async (
+                Vte.PtyFlags.DEFAULT,
+                dir,
+                { shell },
+                envv,
+                SpawnFlags.SEARCH_PATH,
+                null,
+                -1,
+                null,
+                (terminal, pid, error) => {
+                    if (error == null) {
+                        this.child_pid = pid;
+                    } else {
+                        warning (error.message);
+                    }
+                }
+            );
         }
 
-        public void run_program (string _program_string, string? working_directory) requires (_program_string.length > 0) {
+        public void run_program (string _program_string, string? working_directory) {
+            string[]? program_with_args = null;
+            this.program_string = _program_string;
             try {
-                string[] program_with_args = {};
-                this.program_string = _program_string;
                 Shell.parse_argv (program_string, out program_with_args);
-
-                this.spawn_sync (Vte.PtyFlags.DEFAULT, working_directory, program_with_args,
-                                        null, SpawnFlags.SEARCH_PATH, null, out this.child_pid, null);
             } catch (Error e) {
                 warning (e.message);
                 feed ((e.message + "\r\n\r\n").data);
                 active_shell (working_directory);
+                return;
             }
+
+            this.spawn_async (
+                Vte.PtyFlags.DEFAULT,
+                working_directory,
+                program_with_args,
+                null,
+                SpawnFlags.SEARCH_PATH,
+                null,
+                -1,
+                null,
+                (terminal, pid, error) => {
+                    if (error == null) {
+                        this.child_pid = pid;
+                    } else {
+                        warning (error.message);
+                        feed ((error.message + "\r\n\r\n").data);
+                        active_shell (working_directory);
+                    }
+                }
+            );
         }
 
         public bool try_get_foreground_pid (out int pid) {
@@ -807,8 +909,8 @@ namespace Terminal {
             }
         }
 
-        private string? get_link (Gdk.Event event) {
-            return this.match_check_event (event, null);
+        private string? get_link (double x, double y) {
+            return check_match_at (x, y, null);
         }
 
         public string get_shell_location () {
@@ -832,11 +934,11 @@ namespace Terminal {
             }
         }
 
-        protected override void increase_font_size () {
+        public override void increase_font_size () {
             font_scale += 0.1;
         }
 
-        protected override void decrease_font_size () {
+        public override void decrease_font_size () {
             font_scale -= 0.1;
         }
 
@@ -852,44 +954,28 @@ namespace Terminal {
             init_complete = true;
         }
 
-        public void drag_received (Gdk.DragContext context, int x, int y,
-                                   Gtk.SelectionData selection_data, uint target_type, uint time_) {
-            switch (target_type) {
-                case DropTargets.URILIST:
-                    var uris = selection_data.get_uris ();
-                    string path;
-                    for (var i = 0; i < uris.length; i++) {
-                        // Get unquoted path as some apps may drop uris that are escaped
-                        // and quoted.
-                        string? unquoted_uri;
-                        try {
-                            unquoted_uri = Shell.unquote (uris[i]);
-                        } catch (Error e) {
-                            warning ("Error unquoting %s. %s", uris[i], e.message);
-                            unquoted_uri = uris[i];
-                        }
+        private bool on_drop (Value val, double x, double y) {
+            var uris = Uri.list_extract_uris (val.dup_string ());
+            string path;
+            File file;
 
-                        // Get path as we do not want the `file://` scheme included
-                        // and we assume dropped paths are absolute so no need for Utils.sanitize_path
-                        path = File.new_for_uri (unquoted_uri).get_path ();
-                        if (path != null) {
+            for (var i = 0; i < uris.length; i++) {
+                try {
+                    if (Uri.is_valid (uris[i], UriFlags.PARSE_RELAXED)) {
+                        file = File.new_for_uri (uris[i]);
+                        if ((path = file.get_path ()) != null) {
                             uris[i] = Shell.quote (path) + " ";
-                        } else {
-                            // Ignore unvalid paths
-                            uris[i] = "";
                         }
+
+                        feed_child (uris[i].data);
                     }
-
-                    var uris_s = string.joinv ("", uris);
-                    this.feed_child (uris_s.data);
-                    break;
-
-                case DropTargets.STRING:
-                case DropTargets.TEXT:
-                    var text = selection_data.get_text ();
-                    validated_paste (text);
-                    break;
+                } catch (Error e) {
+                    // Validate non-uri text for safety before feeding
+                    validated_paste (uris[i]);
+                }
             }
+
+            return true;
         }
 
         public void remember_position () {
@@ -926,7 +1012,8 @@ namespace Terminal {
             last_key_was_return = true;
         }
 
-        public string get_last_output (bool include_command = true) {
+        // This is only ever called privately with the default parameter at the moment
+        private string get_last_output (bool include_command = true) {
             long output_end_col, output_end_row, start_row;
             get_cursor_position (out output_end_col, out output_end_row);
 
@@ -948,7 +1035,8 @@ namespace Terminal {
              * Note that using end_row, 0 for the end parameters results in the first
              * character of the prompt being selected for some reason. We assume a nominal
              * maximum line length rather than determine the actual length.  */
-            return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
+            size_t len = 0;
+            return get_text_range_format (Vte.Format.TEXT, start_row, 0, output_end_row - 1, 1000, out len) + "\n";
         }
 
         private void scroll_to_command (GLib.SimpleAction action, GLib.Variant? parameter) {
@@ -957,21 +1045,8 @@ namespace Terminal {
             get_cursor_position (null, out row);
             delta = remembered_position - row;
 
-            vadjustment.value += (int) delta + get_window ().get_height () / get_char_height () - 1;
+            vadjustment.value += (int) delta + height_request / get_char_height () - 1;
             action.set_enabled (false); // Repeated presses are ignored
-        }
-
-        public void reload () {
-            var old_loc = get_shell_location ();
-
-            if (confirm_kill_fg_process (
-                    _("Are you sure you want to reload this tab?"),
-                    _("Reload Tab"))
-                ) {
-
-                reset (true, true);
-                active_shell (old_loc);
-            }
         }
 
         private uint contents_changed_timeout_id = 0;
