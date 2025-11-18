@@ -596,10 +596,8 @@ namespace Terminal {
                     zooms += default_zoom;
                 } else {
                     foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
-                        var zoom = double.parse (zoom_s); // Locale independent
-
                         if (zooms.length < n_tabs) {
-                            zooms += zoom;
+                            zooms += double.parse (zoom_s); // Locale independent
                         } else {
                             break;
                         }
@@ -622,7 +620,7 @@ namespace Terminal {
             for (int i = 0; i < tabs.length; i++) {
                 File file = File.new_for_path (tabs[i]);
 
-                if (file.query_exists () == false) {
+                if (!file.query_exists ()) {
                     null_dirs++;
                     tabs[i] = "";
                 }
@@ -863,13 +861,12 @@ namespace Terminal {
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
-                string? text = null;
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
                     try {
                         var cp = primary_selection.get_content ();
                         if (cp != null) {
-                            Value val = new Value (typeof (string));
+                            var val = Value (typeof (string));
                             cp.get_value (ref val);
                             return val.dup_string ();
                         }
@@ -881,12 +878,6 @@ namespace Terminal {
                 } else {
                     return current_terminal.get_shell_location ();
                 }
-
-                if (text == null) {
-                    text = current_terminal.get_shell_location ();
-                }
-
-                return Utils.sanitize_path (text, current_terminal.get_shell_location (), true);
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
@@ -1006,12 +997,12 @@ namespace Terminal {
                 current_terminal.grab_focus ();
             }
 
-            string [] next_accels = new string [] {};
+            string[] next_accels = {};
             if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
                 next_accels = action_accelerators[ACTION_SEARCH_NEXT].to_array ();
             }
 
-            string [] prev_accels = new string [] {};
+            string[] prev_accels = {};
             if (!action_accelerators[ACTION_SEARCH_NEXT].is_empty) {
                 prev_accels = action_accelerators[ACTION_SEARCH_PREVIOUS].to_array ();
             }
@@ -1050,7 +1041,7 @@ namespace Terminal {
             }
         }
 
-        private unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
+        private static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
             if (tab == null) {
                 return null;
             }
@@ -1182,7 +1173,7 @@ namespace Terminal {
         }
 
         /** Return enough of @path to distinguish it from @conflict_path **/
-        private string disambiguate_label (string path, string conflict_path) {
+        private static string disambiguate_label (string path, string conflict_path) {
             string prefix = "";
             string conflict_prefix = "";
             string temp_path = path;
