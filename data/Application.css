@@ -13,6 +13,10 @@
     background-color: #000;
 }
 
+toolbarview revealer.top-bar headerbar {
+    background: @bg_color;
+}
+
 vte-terminal {
     padding: 0 9px;
 }
