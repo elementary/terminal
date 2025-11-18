@@ -13,7 +13,7 @@ A super lightweight, beautiful, and simple terminal. Comes with sane defaults, b
 You'll need the following dependencies:
  * gettext
  * libadwaita-1-dev (>= 1.5.0)
- * libgranite-7-dev (>= 7.5.0)
+ * libgranite-7-dev (>= 7.7.0)
  * libgtk-4-dev (>= 4.1.0)
  * libvte-2.91-gtk4-dev (>= 0.76.0)
  * libxml2-utils
