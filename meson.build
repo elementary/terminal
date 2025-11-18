@@ -21,7 +21,7 @@ gobject_dep = dependency('gobject-2.0', version: glib_version)
 gio_dep = dependency('gio-2.0', version: glib_version)
 gee_dep = dependency('gee-0.8')
 gtk_dep = dependency('gtk4', version: '>=4.1')
-granite_dep = dependency('granite-7', version: '>=7.5')
+granite_dep = dependency('granite-7', version: '>=7.7.0')
 adwaita_dep = dependency('libadwaita-1', version: '>=1.5')
 vte_dep = dependency('vte-2.91-gtk4', version: '>=0.76')
 pcre2_dep = dependency('libpcre2-8', version: '>=10.4') # Perl Regular Expression library

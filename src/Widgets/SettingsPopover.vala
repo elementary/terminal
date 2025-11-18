@@ -45,7 +45,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
         zoom_in_button.clicked.connect (() => terminal.increase_font_size ());
 
-        var font_size_box = new Gtk.Box (HORIZONTAL, 0) {
+        var font_size_box = new Granite.Box (HORIZONTAL, LINKED) {
             homogeneous = true,
             hexpand = true,
             margin_start = 12,
@@ -55,8 +55,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         font_size_box.append (zoom_out_button);
         font_size_box.append (zoom_default_button);
         font_size_box.append (zoom_in_button);
-
-        font_size_box.add_css_class (Granite.STYLE_CLASS_LINKED);
 
         var follow_system_button = new Granite.SwitchModelButton (_("Follow System Style")) {
             active = Application.settings.get_boolean ("follow-system-style"),
