@@ -863,13 +863,12 @@ namespace Terminal {
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
             var link_uri = current_terminal.link_uri;
             if (link_uri == null) {
-                string? text = null;
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
                     try {
                         var cp = primary_selection.get_content ();
                         if (cp != null) {
-                            Value val = new Value (typeof (string));
+                            var val = Value (typeof (string));
                             cp.get_value (ref val);
                             return val.dup_string ();
                         }
@@ -881,12 +880,6 @@ namespace Terminal {
                 } else {
                     return current_terminal.get_shell_location ();
                 }
-
-                if (text == null) {
-                    text = current_terminal.get_shell_location ();
-                }
-
-                return Utils.sanitize_path (text, current_terminal.get_shell_location (), true);
             } else {
                 if (!link_uri.contains ("://")) {
                     link_uri = "http://" + link_uri;
