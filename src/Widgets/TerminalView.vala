@@ -33,8 +33,6 @@ public class Terminal.TerminalView : Gtk.Box {
     public Adw.TabBar tab_bar { get; private set; }
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
-
-    private Gtk.CssProvider style_provider;
     private Gtk.MenuButton tab_history_button;
 
     public TerminalView (MainWindow window) {
@@ -79,13 +77,6 @@ public class Terminal.TerminalView : Gtk.Box {
         Application.settings.changed["tab-bar-behavior"].connect (() => {
             tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
         });
-
-        style_provider = new Gtk.CssProvider ();
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            style_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
 
         var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY) {
             preload = true //So we can predetermine whether string is suitable for dropping here
