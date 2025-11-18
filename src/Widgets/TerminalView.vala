@@ -6,10 +6,6 @@
 public class Terminal.TerminalView : Gtk.Box {
     const int TAB_HISTORY_MAX_ITEMS = 20;
 
-    public enum TargetType {
-        URI_LIST
-    }
-
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Adw.TabPage page);
 
@@ -29,16 +25,14 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    public unowned MainWindow main_window { get; construct; }
+    public unowned MainWindow main_window { private get; construct; }
     public Adw.TabBar tab_bar { get; private set; }
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
     private Gtk.MenuButton tab_history_button;
 
     public TerminalView (MainWindow window) {
-        Object (
-            main_window: window
-        );
+        Object (main_window: window);
     }
 
     construct {
@@ -79,29 +73,14 @@ public class Terminal.TerminalView : Gtk.Box {
         });
 
         var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY) {
-            preload = true //So we can predetermine whether string is suitable for dropping here
+            preload = true // So we can predetermine whether string is suitable for dropping here
         };
 
-        button_target.notify["value"].connect (() => {
-            var val = button_target.get_value ();
-            if (!val.holds (typeof (string))) {
-                button_target.reject ();
-            } else {
-                var uris = Uri.list_extract_uris (val.dup_string ());
-                foreach (string s in uris) {
-                    if (!Utils.valid_local_uri (s, null)) {
-                        button_target.reject ();
-                        break;
-                    }
-                }
-            }
-        });
-
+        button_target.notify["value"].connect (on_add_button_target_value_changed);
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
 
-        Type[] types = { Type.STRING };
-        tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, types);
+        tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, { Type.STRING });
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
     }
 
@@ -218,9 +197,7 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    private Menu create_menu_model () {
-        var menu = new Menu ();
-
+    private static Menu create_menu_model () {
         var close_tab_section = new Menu ();
         close_tab_section.append (_("Close Tabs to the Right"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT);
         close_tab_section.append (_("Close Other Tabs"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_OTHER_TABS);
@@ -233,14 +210,35 @@ public class Terminal.TerminalView : Gtk.Box {
         var reload_section = new Menu ();
         reload_section.append (_("Reload"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
 
+        var menu = new Menu ();
         menu.append_section (null, open_tab_section);
         menu.append_section (null, close_tab_section);
         menu.append_section (null, reload_section);
+
         return menu;
     }
 
+    private static void on_add_button_target_value_changed (Object obj, ParamSpec pspec)
+    requires (obj is Gtk.DropTarget) {
+        var button_target = (Gtk.DropTarget) obj;
+
+        unowned var value = button_target.get_value ();
+        if (!value.holds (typeof (string))) {
+            button_target.reject ();
+            return;
+        }
+
+        var uris = Uri.list_extract_uris (value.get_string ());
+        foreach (unowned var uri in uris) {
+            if (!Utils.valid_local_uri (uri, null)) {
+                button_target.reject ();
+                break;
+            }
+        }
+    }
+
     private bool on_add_button_drop (Value val, double x, double y) {
-        var uris = Uri.list_extract_uris (val.dup_string ());
+        var uris = Uri.list_extract_uris (val.get_string ());
         var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
         // ACTION_NEW_TAB_AT only works with local paths to folders
         foreach (var uri in uris) {
