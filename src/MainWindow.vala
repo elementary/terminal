@@ -634,7 +634,6 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    // Todo: Focus first tab
                     var term = notebook.add_new_tab (loc, "");
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
