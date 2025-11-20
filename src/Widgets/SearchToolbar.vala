@@ -4,11 +4,11 @@
  */
 
 public class Terminal.Widgets.SearchToolbar : Granite.Box {
+    public weak MainWindow window { private get; construct; }
+
     private Gtk.ToggleButton cycle_button;
     private uint last_search_term_length = 0;
-
-    public weak MainWindow window { get; construct; }
-    public Gtk.SearchEntry search_entry;
+    private Gtk.SearchEntry search_entry;
 
     public SearchToolbar (MainWindow window) {
         Object (window: window);

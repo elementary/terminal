@@ -74,7 +74,7 @@ namespace Terminal {
             { ACTION_MOVE_TAB_RIGHT, action_move_tab_right},
             { ACTION_MOVE_TAB_LEFT, action_move_tab_left},
             { ACTION_MOVE_TAB_TO_NEW_WINDOW, action_move_tab_to_new_window},
-            { ACTION_SEARCH, action_search, null, "false" },
+            { ACTION_SEARCH, action_search, null, "false", action_search_change_state },
             { ACTION_SEARCH_NEXT, action_search_next },
             { ACTION_SEARCH_PREVIOUS, action_search_previous },
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
@@ -196,7 +196,7 @@ namespace Terminal {
             setup_ui ();
 
             key_controller = new Gtk.EventControllerKey () {
-                propagation_phase = TARGET
+                propagation_phase = CAPTURE
             };
             key_controller.key_pressed.connect (key_pressed);
 
@@ -433,14 +433,14 @@ namespace Terminal {
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
             switch (keyval) {
                 case Gdk.Key.Escape:
-                    if (search_toolbar.search_entry.has_focus) {
-                        search_button.active = !search_button.active;
+                    if (focus_widget.is_ancestor (search_toolbar)) {
+                        actions.lookup_action (ACTION_SEARCH).change_state (false);
                         return true;
                     }
                     break;
 
                 case Gdk.Key.Return:
-                    if (search_toolbar.search_entry.has_focus) {
+                    if (focus_widget.is_ancestor (search_toolbar)) {
                         if (SHIFT_MASK in modifiers) {
                             search_toolbar.previous_search ();
                         } else {
@@ -968,13 +968,13 @@ namespace Terminal {
             notebook.transfer_tab_to_window (present_new_empty_window ());
         }
 
-        private void action_search () requires (current_terminal != null) {
-            var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
-            var search_state = search_action.get_state ().get_boolean ();
+        private void action_search_change_state (SimpleAction search_action, GLib.Variant value)
+        requires (value.is_of_type (VariantType.BOOLEAN))
+        requires (current_terminal != null) {
+            search_action.set_state (value);
 
-            search_action.set_state (!search_state);
-
-            if (search_button.active) {
+            if (search_action.state.get_boolean ()) {
+                search_button.active = true;
                 title_stack.visible_child = search_toolbar;
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>g";
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
@@ -986,6 +986,7 @@ namespace Terminal {
                 );
                 search_toolbar.grab_focus ();
             } else {
+                search_button.active = false;
                 title_stack.visible_child = title_label;
                 action_accelerators.remove_all (ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
@@ -1017,14 +1018,19 @@ namespace Terminal {
             );
         }
 
+        private void action_search () {
+            unowned var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
+            search_action.change_state (!search_action.state.get_boolean ());
+        }
+
         private void action_search_next () {
-            if (search_button.active) {
+            if (actions.lookup_action (ACTION_SEARCH).state.get_boolean ()) {
                 search_toolbar.next_search ();
             }
         }
 
         private void action_search_previous () {
-            if (search_button.active) {
+            if (actions.lookup_action (ACTION_SEARCH).state.get_boolean ()) {
                 search_toolbar.previous_search ();
             }
         }
