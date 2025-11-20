@@ -62,7 +62,6 @@ namespace Terminal {
         public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
-        public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt><Shift>Up", null };
         public const string[] ACCELS_SELECT_ALL = { "<Control><Shift>A", null };
         // Specify zooming shortcuts for use by tooltips in SettingsPopover. We don't use actions for this.
         public const string[] ACCELS_ZOOM_DEFAULT = { "<control>0", "<Control>KP_0", null };
@@ -219,7 +218,7 @@ namespace Terminal {
             );
 
             var scroll_to_command_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.Up, ALT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.U, ALT_MASK),
                 new Gtk.NamedAction ("term.scroll-to-command")
             );
 
