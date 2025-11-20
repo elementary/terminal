@@ -124,7 +124,11 @@ public class Terminal.TerminalView : Gtk.Box {
         );
     }
 
-    public TerminalWidget add_new_tab (string? location, string program = "", int pos = n_pages) {
+    public TerminalWidget add_new_tab (string? location, string program = "", int pos = -1) {
+        if (pos == -1) {
+            pos = n_pages;
+        }
+
         var terminal_widget = new TerminalWidget (main_window) {
             scrollback_lines = Application.settings.get_int ("scrollback-lines"),
             /* Make the terminal occupy the whole GUI */
