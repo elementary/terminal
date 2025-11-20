@@ -610,8 +610,9 @@ namespace Terminal {
             feed_command (command);
         }
 
+        private string old_loc = "";
         public void reload () {
-            var old_loc = get_shell_location ();
+            old_loc = get_shell_location ();
             confirm_kill_fg_process (
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
