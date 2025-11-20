@@ -425,6 +425,14 @@ namespace Terminal {
 
                     break;
 
+                case Gdk.Key.BackSpace:
+                    if (control_pressed) {
+                        feed_child ("\x1b\x7f".data);
+                        return Gdk.EVENT_STOP;
+                    }
+
+                    break;
+
                 default:
                     if (
                         !(control_pressed || shift_pressed) ||
