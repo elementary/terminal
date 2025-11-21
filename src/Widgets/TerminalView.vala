@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2024-2025 elementary, Inc. (https://elementary.io)
  */
 
-public class Terminal.TerminalView : Gtk.Box {
+public class Terminal.TerminalView : Granite.Bin {
     const int TAB_HISTORY_MAX_ITEMS = 20;
 
     public signal void new_tab_requested ();
@@ -30,6 +30,7 @@ public class Terminal.TerminalView : Gtk.Box {
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
 
+    private Widgets.ZoomOverlay zoom_overlay;
     private Gtk.MenuButton tab_history_button;
     private Pango.FontDescription term_font;
 
@@ -70,6 +71,18 @@ public class Terminal.TerminalView : Gtk.Box {
             view = tab_view,
         };
 
+        var overlay = new Gtk.Overlay () {
+            child = tab_view
+        };
+
+        zoom_overlay = new Widgets.ZoomOverlay (overlay);
+
+        var box = new Gtk.Box (VERTICAL, 0);
+        box.append (tab_bar);
+        box.append (overlay);
+
+        child = box;
+
         Application.settings.changed["tab-bar-behavior"].connect (() => {
             tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
         });
@@ -81,6 +94,8 @@ public class Terminal.TerminalView : Gtk.Box {
         button_target.notify["value"].connect (on_add_button_target_value_changed);
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
+
+        tab_view.notify["selected-page"].connect (zoom_overlay.hide_zoom_level);
 
         tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, { Type.STRING });
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
@@ -135,6 +150,11 @@ public class Terminal.TerminalView : Gtk.Box {
             hexpand = true,
             vexpand = true
         };
+
+        terminal_widget.notify["font-scale"].connect ((obj, pspec) => {
+            zoom_overlay.show_zoom_level (((TerminalWidget) obj).font_scale);
+            main_window.save_opened_terminals (false, true);
+        });
 
         var scrolled = new Gtk.ScrolledWindow () {
             vadjustment = terminal_widget.vadjustment,

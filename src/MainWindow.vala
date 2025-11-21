@@ -14,7 +14,6 @@ namespace Terminal {
         private Gtk.Label title_label;
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
-        private Widgets.ZoomOverlay zoom_overlay;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
         private Gtk.EventControllerKey key_controller;
@@ -365,7 +364,6 @@ namespace Terminal {
             notebook.tab_view.notify["selected-page"].connect (() => {
                 var term = get_term_widget (notebook.tab_view.selected_page);
                 current_terminal = term;
-                zoom_overlay.hide_zoom_level ();
 
                 if (term == null) {
                     // Happens on closing window - ignore
@@ -394,18 +392,11 @@ namespace Terminal {
                 "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
             );
 
-            var overlay = new Gtk.Overlay () {
-                child = notebook.tab_view
-            };
-
-            zoom_overlay = new Widgets.ZoomOverlay (overlay);
-
             var box = new Adw.ToolbarView () {
-                content = overlay,
-                top_bar_style = RAISED_BORDER
+                content = notebook,
+                top_bar_style = FLAT
             };
             box.add_top_bar (header);
-            box.add_top_bar (notebook.tab_bar);
 
             content = box;
             add_css_class ("terminal-window");
@@ -498,8 +489,6 @@ namespace Terminal {
                 check_for_tabs_with_same_name ();
                 save_opened_terminals (true, true);
             }
-
-            disconnect_terminal_signals (get_term_widget (tab));
         }
 
         private void on_tab_reordered (Adw.TabPage tab, int new_pos) {
@@ -652,18 +641,9 @@ namespace Terminal {
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
-            terminal_widget.notify["font-scale"].connect (on_terminal_font_scale_changed);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
             terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
-        }
-
-        private void disconnect_terminal_signals (TerminalWidget terminal_widget) {
-            terminal_widget.child_exited.disconnect (on_terminal_child_exited);
-            terminal_widget.notify["font-scale"].disconnect (on_terminal_font_scale_changed);
-            terminal_widget.cwd_changed.disconnect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.disconnect (on_terminal_program_changed);
-            terminal_widget.window_title_changed.disconnect (on_terminal_window_title_changed);
         }
 
         private void on_terminal_child_exited (Vte.Terminal term, int status) {
@@ -688,11 +668,6 @@ namespace Terminal {
                     return;
                 }
             }
-        }
-
-        private void on_terminal_font_scale_changed () {
-            zoom_overlay.show_zoom_level (current_terminal.font_scale);
-            save_opened_terminals (false, true);
         }
 
         private void on_terminal_window_title_changed () {
@@ -740,7 +715,6 @@ namespace Terminal {
         }
 
         private void terminate_and_disconnect (TerminalWidget term, bool make_restorable_required) {
-            disconnect_terminal_signals (term);
             term.term_ps ();
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
                notebook.make_restorable (term.current_working_directory);
