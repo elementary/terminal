@@ -29,7 +29,9 @@ public class Terminal.TerminalView : Gtk.Box {
     public Adw.TabBar tab_bar { get; private set; }
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
+
     private Gtk.MenuButton tab_history_button;
+    private Pango.FontDescription term_font;
 
     public TerminalView (MainWindow window) {
         Object (main_window: window);
@@ -82,6 +84,10 @@ public class Terminal.TerminalView : Gtk.Box {
 
         tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, { Type.STRING });
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
+
+        update_font ();
+        Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+        Application.settings.changed["font"].connect (update_font);
     }
 
     public void make_restorable (string path) {
@@ -116,6 +122,57 @@ public class Terminal.TerminalView : Gtk.Box {
             path,
             "%s::%s".printf (MainWindow.ACTION_PREFIX + MainWindow.ACTION_RESTORE_CLOSED_TAB, path)
         );
+    }
+
+    public TerminalWidget add_new_tab (string? location, string program = "", int pos = -1) {
+        if (pos == -1) {
+            pos = n_pages;
+        }
+
+        var terminal_widget = new TerminalWidget (main_window) {
+            scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+            /* Make the terminal occupy the whole GUI */
+            hexpand = true,
+            vexpand = true
+        };
+
+        var scrolled = new Gtk.ScrolledWindow () {
+            vadjustment = terminal_widget.vadjustment,
+            child = terminal_widget
+        };
+
+        unowned var tab = tab_view.insert (scrolled, pos);
+        tab.title = location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL;
+        tab.tooltip = terminal_widget.current_working_directory;
+        terminal_widget.tab = tab;
+
+        //Set correct label now to avoid race when spawning shell
+
+        terminal_widget.set_font (term_font);
+
+        var current_terminal = get_term_widget (tab_view.selected_page);
+        if (current_terminal != null) {
+            terminal_widget.font_scale = current_terminal.font_scale;
+        } else {
+            terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+        }
+
+        selected_page = tab;
+
+        if (program.length == 0) {
+            /* Set up the virtual terminal */
+            if (location == "") {
+                terminal_widget.active_shell ();
+            } else {
+                terminal_widget.active_shell (location);
+            }
+        } else {
+            terminal_widget.run_program (program, location);
+        }
+
+        main_window.save_opened_terminals (true, true);
+
+        return terminal_widget;
     }
 
     public void close_tab () {
@@ -181,6 +238,34 @@ public class Terminal.TerminalView : Gtk.Box {
         close_other_tabs_action.set_enabled (page != null && tab_view.n_pages > 1);
         close_tabs_to_right_action.set_enabled (page != null && page_position != tab_view.n_pages - 1);
         open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
+    }
+
+    private void update_font () {
+        // We have to fetch both values at least once, otherwise
+        // GLib.Settings won't notify on their changes
+        var app_font_name = Application.settings.get_string ("font");
+        var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
+
+        if (app_font_name != "") {
+            term_font = Pango.FontDescription.from_string (app_font_name);
+        } else {
+            term_font = Pango.FontDescription.from_string (sys_font_name);
+        }
+
+        for (int i = 0; i < n_pages; i++) {
+            var term = get_term_widget (tab_view.get_nth_page (i));
+            term.set_font (term_font);
+        }
+    }
+
+    private static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
+        if (tab == null) {
+            return null;
+        }
+
+        var tab_child = (Gtk.ScrolledWindow) tab.child;
+        unowned var term = (TerminalWidget) tab_child.child;
+        return term;
     }
 
     public void after_tab_restored (TerminalWidget term) {
