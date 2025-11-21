@@ -77,11 +77,8 @@ public class Terminal.TerminalView : Granite.Bin {
 
         zoom_overlay = new Widgets.ZoomOverlay (overlay);
 
-        var box = new Gtk.Box (VERTICAL, 0);
-        box.append (tab_bar);
-        box.append (overlay);
-
-        child = box;
+        // We don't add tab_bar because it's in the main window header
+        child = overlay;
 
         Application.settings.changed["tab-bar-behavior"].connect (() => {
             tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;

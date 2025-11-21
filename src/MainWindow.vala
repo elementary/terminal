@@ -394,9 +394,10 @@ namespace Terminal {
 
             var box = new Adw.ToolbarView () {
                 content = notebook,
-                top_bar_style = FLAT
+                top_bar_style = RAISED_BORDER
             };
             box.add_top_bar (header);
+            box.add_top_bar (notebook.tab_bar);
 
             content = box;
             add_css_class ("terminal-window");
