@@ -5,7 +5,6 @@
 
 namespace Terminal {
     public class MainWindow : Adw.Window {
-        private Pango.FontDescription term_font;
         private Adw.HeaderBar header;
         public TerminalView notebook { get; private set construct; }
         private Gdk.Clipboard clipboard;
@@ -216,10 +215,6 @@ namespace Terminal {
             ((Gtk.Widget)this).add_controller (key_controller);
             ((Gtk.Widget)this).add_controller (focus_controller);
 
-            update_font ();
-            Application.settings_sys.changed["monospace-font-name"].connect (update_font);
-            Application.settings.changed["font"].connect (update_font);
-
             set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
             if (recreate_tabs) {
@@ -241,7 +236,7 @@ namespace Terminal {
             string location = "";
             if (directory.length == 0) {
                 if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
-                    new_tab ("", command);
+                    notebook.add_new_tab ("", command);
                 }
 
                 return;
@@ -265,7 +260,7 @@ namespace Terminal {
                 }
             }
 
-            new_tab (location, command);
+            notebook.add_new_tab (location, command);
         }
 
         Adw.TabPage? tab_to_close = null;
@@ -639,7 +634,7 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    var term = new_tab (loc, "", false);
+                    var term = notebook.add_new_tab (loc, "");
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
@@ -653,61 +648,6 @@ namespace Terminal {
                 var tab = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
                 notebook.selected_page = tab;
             }
-        }
-
-        private TerminalWidget new_tab (
-            string location,
-            string program = "",
-            bool focus = true,
-            int pos = notebook.n_pages
-        ) {
-
-            /*
-             * If the user choose to use a specific working directory.
-             * Reassigning the directory variable a new value
-             * leads to free'd memory being read.
-             */
-            /* Set up terminal */
-            var terminal_widget = new TerminalWidget (this) {
-                scrollback_lines = Application.settings.get_int ("scrollback-lines"),
-                /* Make the terminal occupy the whole GUI */
-                hexpand = true,
-                vexpand = true
-            };
-
-            var tab = append_tab (
-                location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL,
-                null, terminal_widget, pos
-            );
-
-            //Set correct label now to avoid race when spawning shell
-
-            terminal_widget.set_font (term_font);
-
-            if (current_terminal != null) {
-                terminal_widget.font_scale = current_terminal.font_scale;
-            } else {
-                terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
-            }
-
-            if (focus) {
-                notebook.selected_page = tab;
-            }
-
-            if (program.length == 0) {
-                /* Set up the virtual terminal */
-                if (location == "") {
-                    terminal_widget.active_shell ();
-                } else {
-                    terminal_widget.active_shell (location);
-                }
-            } else {
-                terminal_widget.run_program (program, location);
-            }
-
-            save_opened_terminals (true, true);
-
-            return terminal_widget;
         }
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
@@ -757,44 +697,6 @@ namespace Terminal {
 
         private void on_terminal_window_title_changed () {
             title = current_terminal.window_title;
-        }
-
-        private Adw.TabPage append_tab (
-            string label,
-            GLib.Icon? icon,
-            TerminalWidget term,
-            int pos
-        ) {
-            var sw = new Gtk.ScrolledWindow () {
-                vadjustment = term.get_vadjustment (),
-                child = term
-            };
-
-            var tab = notebook.tab_view.insert (sw, pos);
-            tab.title = label;
-            tab.tooltip = term.current_working_directory;
-            tab.icon = icon;
-            term.tab = tab;
-
-            return tab;
-        }
-
-        private void update_font () {
-            // We have to fetch both values at least once, otherwise
-            // GLib.Settings won't notify on their changes
-            var app_font_name = Application.settings.get_string ("font");
-            var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
-
-            if (app_font_name != "") {
-                term_font = Pango.FontDescription.from_string (app_font_name);
-            } else {
-                term_font = Pango.FontDescription.from_string (sys_font_name);
-            }
-
-            for (int i = 0; i < notebook.n_pages; i++) {
-                var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                term.set_font (term_font);
-            }
         }
 
         private bool close_immediately = false;
@@ -900,20 +802,21 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            new_tab (param.get_string ()); //TODO Restore icon?
+            notebook.add_new_tab (param.get_string ()); //TODO Restore icon?
         }
 
         private void action_new_tab () requires (current_terminal != null) {
             if (Application.settings.get_boolean ("follow-last-tab")) {
-                new_tab (current_terminal.get_shell_location ());
+                notebook.add_new_tab (current_terminal.get_shell_location ());
             } else {
-                new_tab (Environment.get_home_dir ());
+                notebook.add_new_tab (Environment.get_home_dir ());
             }
         }
 
-        private void action_new_tab_at (GLib.SimpleAction action, GLib.Variant? param) {
-            var uri = param.get_string ();
-            new_tab (uri);
+        private void action_new_tab_at (GLib.SimpleAction action, GLib.Variant? param)
+        requires (param != null)
+        requires (param.is_of_type (VariantType.STRING)) {
+            notebook.add_new_tab (param.get_string ());
         }
 
         private void action_tab_active_shell (GLib.SimpleAction action, GLib.Variant? param) {
@@ -944,7 +847,7 @@ namespace Terminal {
                       notebook.tab_view.get_page_position (notebook.tab_menu_target) + 1 :
                       notebook.n_pages;
 
-            new_tab (term.get_shell_location (), "", true, pos);
+            notebook.add_new_tab (term.get_shell_location (), "", pos);
         }
 
         private void action_next_tab () {
@@ -1121,7 +1024,7 @@ namespace Terminal {
             check_for_tabs_with_same_name (); // Also sets window title
         }
 
-        private void save_opened_terminals (bool save_tabs, bool save_zooms) {
+        public void save_opened_terminals (bool save_tabs, bool save_zooms) {
             string[] zooms = {};
             string[] opened_tabs = {};
             int focused_tab = 0;
