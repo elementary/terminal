@@ -426,7 +426,7 @@ namespace Terminal {
                     break;
 
                 case Gdk.Key.BackSpace:
-                    if (control_pressed) {
+                    if (control_pressed && !has_foreground_process ()) {
                         feed_child ("\x1b\x7f".data);
                         return Gdk.EVENT_STOP;
                     }
