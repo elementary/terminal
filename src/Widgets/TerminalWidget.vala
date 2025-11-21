@@ -330,8 +330,10 @@ namespace Terminal {
         }
 
         private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
+            var control_pressed = Gdk.ModifierType.CONTROL_MASK in gesture.get_current_event_state ();
+
             link_uri = null;
-            if (allow_hyperlink) {
+            if (allow_hyperlink && control_pressed) {
                 link_uri = get_link (x, y);
 
                 if (link_uri != null && !get_has_selection ()) {
