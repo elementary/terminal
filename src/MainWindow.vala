@@ -511,7 +511,7 @@ namespace Terminal {
 
             //Changing attributes has no effect after adding item to menu so remove and re-add.
             context_menu_model.remove (0); // This item was added first
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            action_set_enabled (ACTION_OPEN_IN_BROWSER, appinfo != null);
             var new_name = _("Show in %s").printf (
                 appinfo != null ?
                 appinfo.get_display_name () : _("Default application")
@@ -897,7 +897,7 @@ namespace Terminal {
         }
 
         private void action_search () {
-            unowned var search_action = (SimpleAction) actions.lookup_action (ACTION_SEARCH);
+            unowned var search_action = actions.lookup_action (ACTION_SEARCH);
             search_action.change_state (!search_action.state.get_boolean ());
         }
 
@@ -1090,10 +1090,6 @@ namespace Terminal {
 
             new_window.present ();
             return new_window;
-        }
-
-        public GLib.SimpleAction? get_simple_action (string action) {
-            return actions.lookup_action (action) as GLib.SimpleAction;
         }
     }
 }

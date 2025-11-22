@@ -72,17 +72,12 @@ public class Terminal.Widgets.SearchToolbar : Granite.Box {
         });
 
         search_entry.search_changed.connect (() => {
-            if (search_entry.text != "") {
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (true);
-                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (true);
-                cycle_button.sensitive = true;
-            } else {
-                window.get_simple_action (MainWindow.ACTION_SEARCH_NEXT).set_enabled (false);
-                window.get_simple_action (MainWindow.ACTION_SEARCH_PREVIOUS).set_enabled (false);
-                cycle_button.sensitive = false;
-            }
+            var search_entry_is_empty = search_entry.text == "";
+            window.action_set_enabled (MainWindow.ACTION_SEARCH_NEXT, !search_entry_is_empty);
+            window.action_set_enabled (MainWindow.ACTION_SEARCH_PREVIOUS, !search_entry_is_empty);
+            cycle_button.sensitive = !search_entry_is_empty;
 
-            var term = (Vte.Terminal)(window.current_terminal);
+            var term = (Vte.Terminal) (window.current_terminal);
             var search_term = search_entry.text;
             previous_search ();  /* Ensure that we still at the highlighted occurrence */
 
