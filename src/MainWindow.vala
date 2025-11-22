@@ -7,8 +7,6 @@ namespace Terminal {
     public class MainWindow : Adw.Window {
         private Adw.HeaderBar header;
         public TerminalView notebook { get; private set construct; }
-        private Gdk.Clipboard clipboard;
-        private Gdk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Button unfullscreen_button;
         private Gtk.Label title_label;
@@ -117,9 +115,6 @@ namespace Terminal {
             }
 
             title = TerminalWidget.DEFAULT_LABEL;
-
-            clipboard = Gdk.Display.get_default ().get_clipboard ();
-            primary_selection = Gdk.Display.get_default ().get_primary_clipboard ();
 
             //Window actions
             open_in_browser_menuitem = new MenuItem (
@@ -741,7 +736,7 @@ namespace Terminal {
                 if (current_terminal.get_has_selection ()) {
                     current_terminal.copy_primary ();
                     try {
-                        var cp = primary_selection.get_content ();
+                        var cp = Gdk.Display.get_default ().get_primary_clipboard ().get_content ();
                         if (cp != null) {
                             var val = Value (typeof (string));
                             cp.get_value (ref val);
