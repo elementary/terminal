@@ -245,16 +245,12 @@ public class Terminal.TerminalView : Granite.Bin {
     // This is called when tab context menu is opened or closed
     private void tab_view_setup_menu (Adw.TabPage? page) {
         tab_menu_target = page;
-        var actions = main_window.actions;
-        var close_other_tabs_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_OTHER_TABS, actions);
-        var close_tabs_to_right_action = Utils.action_from_group (MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, actions);
-        var open_in_new_window_action = Utils.action_from_group (MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW, actions);
 
         int page_position = page != null ? tab_view.get_page_position (page) : -1;
 
-        close_other_tabs_action.set_enabled (page != null && tab_view.n_pages > 1);
-        close_tabs_to_right_action.set_enabled (page != null && page_position != tab_view.n_pages - 1);
-        open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
+        main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_OTHER_TABS, page != null && tab_view.n_pages > 1);
+        main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, page != null && page_position != tab_view.n_pages - 1);
+        main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, page != null && tab_view.n_pages > 1);
     }
 
     private void update_font () {
@@ -341,7 +337,6 @@ public class Terminal.TerminalView : Granite.Bin {
 
     private bool on_add_button_drop (Value val, double x, double y) {
         var uris = Uri.list_extract_uris (val.get_string ());
-        var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
         // ACTION_NEW_TAB_AT only works with local paths to folders
         foreach (var uri in uris) {
             string path;
@@ -349,7 +344,7 @@ public class Terminal.TerminalView : Granite.Bin {
                 continue;
             }
 
-            new_tab_action.activate (path);
+            main_window.activate_action (MainWindow.ACTION_NEW_TAB_AT, "s", path);
         }
 
         return true;
@@ -358,7 +353,6 @@ public class Terminal.TerminalView : Granite.Bin {
     private bool on_tab_bar_extra_drag_drop (Adw.TabPage tab, Value val) {
         //TODO Gtk4 Port:Check val contains uri_list
         var uris = Uri.list_extract_uris (val.dup_string ());
-        var active_shell_action = Utils.action_from_group (MainWindow.ACTION_TAB_ACTIVE_SHELL, main_window.actions);
         // ACTION_TAB_ACTIVE_SHELL only works with local paths to folders
         foreach (var uri in uris) {
             var file = GLib.File.new_for_uri (uri);
@@ -377,7 +371,7 @@ public class Terminal.TerminalView : Granite.Bin {
                 continue;
             }
 
-            active_shell_action.activate (path);
+            main_window.activate_action (MainWindow.ACTION_TAB_ACTIVE_SHELL, "s", path);
         }
 
         return true;

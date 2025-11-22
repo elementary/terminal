@@ -195,10 +195,6 @@ namespace Terminal.Utils {
         ).replace (placeholder, "#");
     }
 
-    public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
-        return ((SimpleAction) action_group.lookup_action (action_name));
-    }
-
     public bool valid_local_uri (string s, out string path) {
         var scheme = Uri.peek_scheme (s);
         path = "";

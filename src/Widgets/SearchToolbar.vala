@@ -73,8 +73,8 @@ public class Terminal.Widgets.SearchToolbar : Granite.Box {
 
         search_entry.search_changed.connect (() => {
             var search_entry_is_empty = search_entry.text == "";
-            window.action_set_enabled (MainWindow.ACTION_SEARCH_NEXT, !search_entry_is_empty);
-            window.action_set_enabled (MainWindow.ACTION_SEARCH_PREVIOUS, !search_entry_is_empty);
+            window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_NEXT, !search_entry_is_empty);
+            window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_SEARCH_PREVIOUS, !search_entry_is_empty);
             cycle_button.sensitive = !search_entry_is_empty;
 
             var term = (Vte.Terminal) (window.current_terminal);

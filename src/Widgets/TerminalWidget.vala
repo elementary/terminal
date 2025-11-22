@@ -337,7 +337,7 @@ namespace Terminal {
                 link_uri = get_link (x, y);
 
                 if (link_uri != null && !get_has_selection ()) {
-                    main_window.activate_action (MainWindow.ACTION_OPEN_IN_BROWSER, null);
+                    main_window.activate_action (MainWindow.ACTION_PREFIX + MainWindow.ACTION_OPEN_IN_BROWSER, null);
                 }
             } else {
                 allow_hyperlink = true;
