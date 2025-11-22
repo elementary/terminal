@@ -250,7 +250,7 @@ public class Terminal.TerminalView : Granite.Bin {
 
         main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_OTHER_TABS, page != null && tab_view.n_pages > 1);
         main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, page != null && page_position != tab_view.n_pages - 1);
-        main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT, page != null && tab_view.n_pages > 1);
+        main_window.action_set_enabled (MainWindow.ACTION_PREFIX + MainWindow.ACTION_MOVE_TAB_TO_NEW_WINDOW, page != null && tab_view.n_pages > 1);
     }
 
     private void update_font () {
