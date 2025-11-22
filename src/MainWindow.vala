@@ -16,7 +16,6 @@ namespace Terminal {
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private MenuItem open_in_browser_menuitem;
-        private Gtk.EventControllerKey key_controller;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
@@ -193,7 +192,7 @@ namespace Terminal {
 
             setup_ui ();
 
-            key_controller = new Gtk.EventControllerKey () {
+            var key_controller = new Gtk.EventControllerKey () {
                 propagation_phase = CAPTURE
             };
             key_controller.key_pressed.connect (key_pressed);
@@ -388,9 +387,7 @@ namespace Terminal {
                 term.tab.icon = null; // Assume only process icons are set
             });
 
-            notebook.tab_bar.bind_property (
-                "tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN
-            );
+            notebook.tab_bar.bind_property ("tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN);
 
             var box = new Adw.ToolbarView () {
                 content = notebook,
@@ -422,7 +419,7 @@ namespace Terminal {
                 case Gdk.Key.Escape:
                     if (focus_widget.is_ancestor (search_toolbar)) {
                         actions.lookup_action (ACTION_SEARCH).change_state (false);
-                        return true;
+                        return Gdk.EVENT_STOP;
                     }
                     break;
 
@@ -433,45 +430,12 @@ namespace Terminal {
                         } else {
                             search_toolbar.next_search ();
                         }
-                        return true;
+                        return Gdk.EVENT_STOP;
                     }
-                    break;
-
-                case Gdk.Key.@1: //alt+[1-8]
-                case Gdk.Key.@2:
-                case Gdk.Key.@3:
-                case Gdk.Key.@4:
-                case Gdk.Key.@5:
-                case Gdk.Key.@6:
-                case Gdk.Key.@7:
-                case Gdk.Key.@8:
-                    if (ALT_MASK in modifiers
-                    && Application.settings.get_boolean ("alt-changes-tab")
-                    && notebook.n_pages > 1) {
-                        var tab_index = keyval - 49;
-                        if (tab_index > notebook.n_pages - 1) {
-                            return false;
-                        }
-
-                        notebook.selected_page = notebook.tab_view.get_nth_page ((int) tab_index);
-                        return true;
-                    }
-                    break;
-
-                case Gdk.Key.@9:
-                    if (ALT_MASK in modifiers
-                    && Application.settings.get_boolean ("alt-changes-tab")
-                    && notebook.n_pages > 1) {
-                        notebook.selected_page = notebook.tab_view.get_nth_page (notebook.n_pages - 1);
-                        return true;
-                    }
-                    break;
-
-                default:
                     break;
             }
 
-            return false;
+            return Gdk.EVENT_PROPAGATE;
         }
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
