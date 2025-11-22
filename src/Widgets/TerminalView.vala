@@ -273,16 +273,12 @@ public class Terminal.TerminalView : Granite.Bin {
             case Gdk.Key.@6:
             case Gdk.Key.@7:
             case Gdk.Key.@8:
+                var tab_index = (int) (keyval - Gdk.Key.@1);
                 if (ALT_MASK in modifiers &&
                     Application.settings.get_boolean ("alt-changes-tab") &&
-                    n_pages > 1
+                    tab_index < n_pages
                 ) {
-                    var tab_index = keyval - 49;
-                    if (tab_index > n_pages - 1) {
-                        return Gdk.EVENT_PROPAGATE;
-                    }
-
-                    selected_page = tab_view.get_nth_page ((int) tab_index);
+                    selected_page = tab_view.get_nth_page (tab_index);
                     return Gdk.EVENT_STOP;
                 }
                 break;
