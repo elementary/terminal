@@ -97,6 +97,12 @@ public class Terminal.TerminalView : Granite.Bin {
         tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, { Type.STRING });
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
 
+        var key_controller = new Gtk.EventControllerKey () {
+            propagation_phase = CAPTURE
+        };
+        key_controller.key_pressed.connect (key_pressed);
+        add_controller (key_controller);
+
         update_font ();
         Application.settings_sys.changed["monospace-font-name"].connect (update_font);
         Application.settings.changed["font"].connect (update_font);
@@ -255,6 +261,37 @@ public class Terminal.TerminalView : Granite.Bin {
         close_other_tabs_action.set_enabled (page != null && tab_view.n_pages > 1);
         close_tabs_to_right_action.set_enabled (page != null && page_position != tab_view.n_pages - 1);
         open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
+    }
+
+    private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+        switch (keyval) {
+            case Gdk.Key.@1: //alt+[1-8]
+            case Gdk.Key.@2:
+            case Gdk.Key.@3:
+            case Gdk.Key.@4:
+            case Gdk.Key.@5:
+            case Gdk.Key.@6:
+            case Gdk.Key.@7:
+            case Gdk.Key.@8:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
+                    var tab_index = (int) (keyval - Gdk.Key.@1);
+                    if (tab_index < n_pages) {
+                        selected_page = tab_view.get_nth_page (tab_index);
+                    }
+
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+
+            case Gdk.Key.@9:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab") && n_pages > 0) {
+                    selected_page = tab_view.get_nth_page (n_pages - 1);
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+        }
+
+        return Gdk.EVENT_PROPAGATE;
     }
 
     private void update_font () {
