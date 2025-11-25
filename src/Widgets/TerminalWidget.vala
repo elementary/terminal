@@ -472,11 +472,6 @@ namespace Terminal {
                     //Links not copied unless selected (compare context menu action)
                     if (get_has_selection () && (natural || shift_pressed)) {
                         copy_clipboard ();
-                        // Natural copy unselects unless the shift is held down
-                        if (natural && !shift_pressed) {
-                            unselect_all ();
-                        }
-
                         return true;
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
@@ -485,7 +480,6 @@ namespace Terminal {
                     match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
                     clipboard.get_formats ().contain_gtype (Type.STRING)
                 ) {
-
                     paste_clipboard ();
                     return true;
                 }
