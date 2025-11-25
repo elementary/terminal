@@ -298,6 +298,15 @@ namespace Terminal {
                 valign = CENTER
             };
 
+            menu_button.popover.show.connect (() => {
+                var p = menu_button.popover;
+                var is_ltr = (p.get_state_flags () & Gtk.StateFlags.DIR_LTR) > 0;
+                Gtk.Requisition min, nat;
+                p.get_preferred_size (out min, out nat);
+                var offset = min.width / 2 - 12;
+                p.set_offset (is_ltr ? -offset : offset, 0);
+            });
+
             search_toolbar = new Terminal.Widgets.SearchToolbar (this);
 
             title_label = new Gtk.Label (title) {
