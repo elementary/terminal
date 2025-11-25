@@ -300,7 +300,7 @@ namespace Terminal {
 
             menu_button.popover.show.connect (() => {
                 var p = menu_button.popover;
-                var is_ltr = (p.get_state_flags () & Gtk.StateFlags.DIR_LTR) > 0;
+                var is_ltr = Gtk.StateFlags.DIR_LTR in p.get_state_flags ();
                 Gtk.Requisition min, nat;
                 p.get_preferred_size (out min, out nat);
                 var offset = min.width / 2 - 12;
