@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-17 20:46+0000\n"
+"POT-Creation-Date: 2025-11-25 16:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,49 +36,71 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-msgid "Other updates:"
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:122
+msgid "New features:"
 msgstr ""
 
 #: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:81
+#: data/terminal.metainfo.xml.in:96 data/terminal.metainfo.xml.in:108
+#: data/terminal.metainfo.xml.in:127 data/terminal.metainfo.xml.in:145
+#: data/terminal.metainfo.xml.in:158
+msgid "Other updates:"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69 data/terminal.metainfo.xml.in:84
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:130 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:162
+msgid "Translation updates"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:83
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-msgid "Translation updates"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:100
-msgid "New features:"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:124
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:125
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:129
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:160
 msgid "Stop window size increasing when opened"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:161
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 

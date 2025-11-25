@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-17 20:46+0000\n"
+"POT-Creation-Date: 2025-11-25 16:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,81 +63,81 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:134
+#: src/MainWindow.vala:126
 msgid "Show Search Bar"
 msgstr ""
 
 #. TerminalWidget actions
-#: src/MainWindow.vala:141
+#: src/MainWindow.vala:133
 msgid "Copy"
 msgstr ""
 
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:139
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:153
+#: src/MainWindow.vala:145
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:159 src/Widgets/TerminalWidget.vala:582
+#: src/MainWindow.vala:151 src/Widgets/TerminalWidget.vala:592
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:165
+#: src/MainWindow.vala:157
 msgid "Paste"
 msgstr ""
 
-#: src/MainWindow.vala:171
+#: src/MainWindow.vala:163
 msgid "Select All"
 msgstr ""
 
-#: src/MainWindow.vala:282
+#: src/MainWindow.vala:270
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:291 src/MainWindow.vala:1000
+#: src/MainWindow.vala:279 src/MainWindow.vala:832
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:297
+#: src/MainWindow.vala:285
 msgid "New Tab…"
 msgstr ""
 
-#: src/MainWindow.vala:309
+#: src/MainWindow.vala:297
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:354
+#: src/MainWindow.vala:342
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: src/MainWindow.vala:355
+#: src/MainWindow.vala:343
 msgid "Close tab"
 msgstr ""
 
 #. Changing attributes has no effect after adding item to menu so remove and re-add.
 #. This item was added first
-#: src/MainWindow.vala:527
+#: src/MainWindow.vala:474
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:529
+#: src/MainWindow.vala:476
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:812
+#: src/MainWindow.vala:650
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:813
+#: src/MainWindow.vala:651
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:991
+#: src/MainWindow.vala:822
 msgid "Hide find bar"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr ""
 
@@ -330,53 +330,53 @@ msgstr ""
 msgid "Zoom in"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:61
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:66
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:111
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:112
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:116
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:117
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:121
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:122
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:126
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:127
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
@@ -384,43 +384,43 @@ msgstr ""
 msgid "Terminal"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:581
+#: src/Widgets/TerminalWidget.vala:591
 msgid "Are you sure you want to reset the terminal?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:616
+#: src/Widgets/TerminalWidget.vala:626
 msgid "Are you sure you want to reload this tab?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:617 src/Widgets/TerminalView.vala:250
+#: src/Widgets/TerminalWidget.vala:627 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:64
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:71
+#: src/Widgets/TerminalView.vala:62
 msgid "Closed Tabs"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:241
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:242
+#: src/Widgets/TerminalView.vala:342
 msgid "Close Other Tabs"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:243
+#: src/Widgets/TerminalView.vala:343
 msgid "Close Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:246
+#: src/Widgets/TerminalView.vala:346
 msgid "Open in New Window"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:247
+#: src/Widgets/TerminalView.vala:347
 msgid "Duplicate Tab"
 msgstr ""
 
