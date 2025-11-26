@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 16:55+0000\n"
+"POT-Creation-Date: 2025-11-26 18:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:151 src/Widgets/TerminalWidget.vala:592
+#: src/MainWindow.vala:151 src/Widgets/TerminalWidget.vala:586
 msgid "Reset"
 msgstr ""
 
@@ -384,15 +384,15 @@ msgstr ""
 msgid "Terminal"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:591
+#: src/Widgets/TerminalWidget.vala:585
 msgid "Are you sure you want to reset the terminal?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:626
+#: src/Widgets/TerminalWidget.vala:620
 msgid "Are you sure you want to reload this tab?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:627 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:621 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr ""
 
