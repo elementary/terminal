@@ -66,12 +66,14 @@
           <li>Update code and packaging for Gtk4</li>
           <li>Flatter styles</li>
           <li>Tab bar now in window drag area</li>
+          <li>Smart copy no longer deselects</li>
           <li>Translation updates</li>
         </ul>
       </description>
       <issues>
         <issue url="https://github.com/elementary/terminal/issues/653">Links open when clicking on Terminal app in Alt+Tab</issue>
         <issue url="https://github.com/elementary/terminal/issues/643">Port Terminal to GTK4</issue>
+        <issue url="https://github.com/elementary/terminal/issues/510">Natural Copy/Paste. Ctrl+c clears the highlighted word. Ctrl+x doesn't.</issue>
         <issue url="https://github.com/elementary/terminal/issues/469">Ctrl + Click to open URLs</issue>
       </issues>
     </release>
