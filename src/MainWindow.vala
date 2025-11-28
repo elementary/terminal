@@ -917,16 +917,16 @@ namespace Terminal {
                 var term = get_term_widget (notebook.tab_view.get_nth_page (i));
                 string term_path, term_label;
                 if (term.program_string != "") {
-                    term.tab_label = term.program_string;
+                    term.tab.title = term.program_string;
                     continue;
                 } else {
                     term_path = term.current_working_directory;
                     term_label = Path.get_basename (term_path);
                     if (term_label == "" || term_label == "/") {
-                        term.tab_label = TerminalWidget.DEFAULT_LABEL;
+                        term.tab.title = TerminalWidget.DEFAULT_LABEL;
                         continue;
                     } else {
-                        term.tab_label = term_label;
+                        term.tab.title = term_label;
                     }
                 }
 
@@ -939,8 +939,8 @@ namespace Terminal {
                         term2_name == term_label &&
                         term2_path != term_path) {
 
-                        term2.tab_label = disambiguate_label (term2_path, term_path);
-                        term.tab_label = disambiguate_label (term_path, term2_path);
+                        term2.tab.title = disambiguate_label (term2_path, term_path);
+                        term.tab.title = disambiguate_label (term_path, term2_path);
                     }
                 }
             }

@@ -34,18 +34,6 @@ namespace Terminal {
         public unowned Adw.TabPage? tab;
         public string? link_uri;
 
-        public string tab_label {
-            get {
-                return tab != null ? tab.title : "";
-            }
-
-            set {
-                if (value != null && tab != null) {
-                    tab.title = value;
-                }
-            }
-        }
-
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
         public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
@@ -111,15 +99,7 @@ namespace Terminal {
 
         public const int SYS_PIDFD_OPEN = 434; // Same on every arch
 
-        public bool child_has_exited {
-            get;
-            private set;
-        }
-
-        public bool killed {
-            get;
-            private set;
-        }
+        public bool killed { get; private set; default = false; }
 
         private unowned Gdk.Clipboard clipboard;
 
@@ -134,6 +114,7 @@ namespace Terminal {
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
+        private bool child_has_exited = false;
 
         private Gtk.EventControllerScroll scroll_controller;
         private double scroll_delta = 0.0;
@@ -151,8 +132,6 @@ namespace Terminal {
             pointer_autohide = true;
             terminal_id = "%i".printf (terminal_id_counter++);
             init_complete = false;
-            child_has_exited = false;
-            killed = false;
 
             update_audible_bell ();
             update_cursor_shape ();
@@ -689,11 +668,8 @@ namespace Terminal {
         }
 
         private void update_current_working_directory (string cwd) {
-            if (tab != null) { // May not be the case if closing tab
-                current_working_directory = cwd;
-                tab.tooltip = current_working_directory;
-                cwd_changed ();
-            }
+            current_working_directory = cwd;
+            cwd_changed ();
         }
 
         private void update_theme () {

@@ -166,7 +166,7 @@ public class Terminal.TerminalView : Granite.Bin {
 
         unowned var tab = tab_view.insert (scrolled, pos);
         tab.title = location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL;
-        tab.tooltip = terminal_widget.current_working_directory;
+        terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
         terminal_widget.tab = tab;
 
         //Set correct label now to avoid race when spawning shell
