@@ -498,12 +498,13 @@ namespace Terminal {
         }
 
         private void popup_context_menu (double x, double y) {
-            main_window.update_context_menu ();
             setup_menu ();
+
+            var context_menu_model = main_window.construct_context_menu_model ();
 
             //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
             // does not work at the moment so create our own.
-            var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
+            var new_context_menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
                 has_arrow = false,
                 pointing_to = { (int)x, (int)y, 1, 1}
             };
