@@ -21,7 +21,6 @@ namespace Terminal {
         private const int FULLSCREEN = 2;
 
         public bool focus_restored_tabs { get; construct; default = true; }
-        public bool recreate_tabs { get; construct; default = true; }
         public Menu context_menu_model { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
@@ -75,11 +74,8 @@ namespace Terminal {
             { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
         };
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
-            Object (
-                app: app,
-                recreate_tabs: recreate_tabs
-            );
+        public MainWindow (Terminal.Application app) {
+            Object (app: app);
         }
 
         static construct {
@@ -210,10 +206,6 @@ namespace Terminal {
 
             set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
-            if (recreate_tabs) {
-                open_tabs ();
-            }
-
             close_request.connect (on_delete_event);
         }
 
@@ -253,6 +245,7 @@ namespace Terminal {
                 }
             }
 
+            warning ("ok...");
             notebook.add_new_tab (location, command);
         }
 
@@ -523,7 +516,7 @@ namespace Terminal {
             return appinfo;
         }
 
-        private void open_tabs () {
+        public void open_tabs () {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
@@ -1041,7 +1034,7 @@ namespace Terminal {
         }
 
         private MainWindow present_new_empty_window () {
-            var new_window = new MainWindow (app, false);
+            var new_window = new MainWindow (app);
             new_window.set_size_request (
                 app.active_window.width_request,
                 app.active_window.height_request
