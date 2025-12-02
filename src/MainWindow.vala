@@ -13,7 +13,6 @@ namespace Terminal {
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
-        private MenuItem open_in_browser_menuitem;
         private uint focus_timeout = 0;
 
         private const int NORMAL = 0;
@@ -22,7 +21,6 @@ namespace Terminal {
 
         public bool focus_restored_tabs { get; construct; default = true; }
         public bool recreate_tabs { get; construct; default = true; }
-        public Menu context_menu_model { get; private set; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
 
@@ -115,9 +113,45 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
 
-            //Window actions
-            open_in_browser_menuitem = new MenuItem (
-               "", // Appropriate label attribute will be set in update_menu_label ()
+            setup_ui ();
+
+            var key_controller = new Gtk.EventControllerKey () {
+                propagation_phase = CAPTURE
+            };
+            key_controller.key_pressed.connect (key_pressed);
+
+            var focus_controller = new Gtk.EventControllerFocus ();
+            focus_controller.enter.connect (() => {
+                if (focus_timeout == 0) {
+                    focus_timeout = Timeout.add (20, () => {
+                        focus_timeout = 0;
+                        save_opened_terminals (true, true);
+                        current_terminal.grab_focus ();
+                        return Source.REMOVE;
+                    });
+                }
+            });
+
+            // Need to disambiguate from ShortcutManager interface add_controller ()
+            ((Gtk.Widget)this).add_controller (key_controller);
+            ((Gtk.Widget)this).add_controller (focus_controller);
+
+            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
+
+            if (recreate_tabs) {
+                open_tabs ();
+            }
+
+            close_request.connect (on_delete_event);
+        }
+
+        public Menu construct_context_menu_model () requires (current_terminal != null) {
+            var show_in_browser_uri = get_current_selection_link_or_pwd ();
+            var appinfo = Utils.get_default_app_for_uri (show_in_browser_uri);
+
+            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
+            var open_in_browser_menuitem = new MenuItem (
+               _("Show in %s").printf (appinfo != null ? appinfo.get_display_name () : _("Default application")),
                ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
             );
             open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
@@ -128,7 +162,6 @@ namespace Terminal {
             );
             search_menuitem.set_attribute_value ("accel", ACTION_SEARCH_ACCEL);
 
-            //TerminalWidget actions
             var copy_menuitem = new MenuItem (
                 _("Copy"),
                 TerminalWidget.ACTION_COPY
@@ -178,43 +211,13 @@ namespace Terminal {
             var search_section = new Menu ();
             search_section.append_item (search_menuitem);
 
-            context_menu_model = new Menu ();
-            // "Open in" item must be in position 0 (see update_menu_label ())
+            var context_menu_model = new Menu ();
             context_menu_model.append_item (open_in_browser_menuitem);
             context_menu_model.append_section (null, terminal_action_section);
             context_menu_model.append_section (null, search_section);
             context_menu_model.append_section (null, terminal_clear_reset_section);
 
-            setup_ui ();
-
-            var key_controller = new Gtk.EventControllerKey () {
-                propagation_phase = CAPTURE
-            };
-            key_controller.key_pressed.connect (key_pressed);
-
-            var focus_controller = new Gtk.EventControllerFocus ();
-            focus_controller.enter.connect (() => {
-                if (focus_timeout == 0) {
-                    focus_timeout = Timeout.add (20, () => {
-                        focus_timeout = 0;
-                        save_opened_terminals (true, true);
-                        current_terminal.grab_focus ();
-                        return Source.REMOVE;
-                    });
-                }
-            });
-
-            // Need to disambiguate from ShortcutManager interface add_controller ()
-            ((Gtk.Widget)this).add_controller (key_controller);
-            ((Gtk.Widget)this).add_controller (focus_controller);
-
-            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
-
-            if (recreate_tabs) {
-                open_tabs ();
-            }
-
-            close_request.connect (on_delete_event);
+            return context_menu_model;
         }
 
         public void add_tab_with_working_directory (
@@ -457,70 +460,6 @@ namespace Terminal {
 
         private unowned Adw.TabView? on_create_window_request () {
             return present_new_empty_window ().notebook.tab_view;
-        }
-
-        public void update_context_menu () requires (current_terminal != null) {
-            /* Update the "Show in ..." menu option */
-            var uri = get_current_selection_link_or_pwd ();
-            update_menu_label (uri);
-        }
-
-        private void update_menu_label (string? uri) {
-            AppInfo? appinfo = get_default_app_for_uri (uri);
-
-            //Changing attributes has no effect after adding item to menu so remove and re-add.
-            context_menu_model.remove (0); // This item was added first
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
-            var new_name = _("Show in %s").printf (
-                appinfo != null ?
-                appinfo.get_display_name () : _("Default application")
-            );
-
-            open_in_browser_menuitem.set_attribute_value (
-                "label",
-                new Variant ("s", new_name)
-            );
-
-            context_menu_model.prepend_item (open_in_browser_menuitem);
-        }
-
-        private AppInfo? get_default_app_for_uri (string? uri) {
-            if (uri == null) {
-                return null;
-            }
-
-            AppInfo? appinfo = null;
-            var scheme = Uri.parse_scheme (uri);
-            if (scheme != null) {
-                appinfo = AppInfo.get_default_for_uri_scheme (scheme);
-            }
-
-            if (appinfo == null) {
-                bool uncertain;
-                /* Guess content type from filename if possible */
-                //TODO Get content type from actual file (if exists)
-                var ctype = ContentType.guess (uri, null, out uncertain);
-                if (!uncertain) {
-                    appinfo = AppInfo.get_default_for_type (ctype, true);
-                }
-
-                if (appinfo == null) {
-                    var file = File.new_for_commandline_arg (uri);
-                    try {
-                        var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
-                                                    FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
-
-                        if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
-                            appinfo = AppInfo.get_default_for_type (
-                                        info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
-                        }
-                    } catch (Error e) {
-                        warning ("Could not get file info %s", e.message);
-                    }
-                }
-            }
-
-            return appinfo;
         }
 
         private void open_tabs () {
