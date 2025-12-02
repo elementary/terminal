@@ -185,26 +185,30 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab.icon = process_icon;
             }
 
-            if (!(get_active_window ().is_active)) {
-                var notification = new Notification (process_string);
-                notification.set_body (process);
-                notification.set_icon (process_icon);
-                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
-                send_notification ("process-finished-%s".printf (id), notification);
+            Timeout.add (200, () => {
+                if (!(terminal.main_window.is_active)) {
+                    var notification = new Notification (process_string);
+                    notification.set_body (process);
+                    notification.set_icon (process_icon);
+                    notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+                    send_notification ("process-finished-%s".printf (id), notification);
 
-                ulong tab_change_handler = 0;
-                ulong focus_in_handler = 0;
+                    ulong tab_change_handler = 0;
+                    ulong focus_in_handler = 0;
 
-                tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
-                    withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-                });
-
-                focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
-                    if (terminal.main_window.is_active) {
+                    tab_change_handler = terminal.main_window.notify["current-terminal"].connect (() => {
                         withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
-                    }
-                });
-            }
+                    });
+
+                    focus_in_handler = terminal.main_window.notify["is-active"].connect (() => {
+                        if (terminal.main_window.is_active) {
+                            withdraw_notification_for_terminal (terminal, id, tab_change_handler, focus_in_handler);
+                        }
+                    });
+                }
+
+                return Source.REMOVE;
+            });
         });
 
         return true;
