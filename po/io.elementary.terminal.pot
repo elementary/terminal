@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 16:55+0000\n"
+"POT-Creation-Date: 2025-12-02 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,81 +63,78 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:126
-msgid "Show Search Bar"
-msgstr ""
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:133
-msgid "Copy"
-msgstr ""
-
-#: src/MainWindow.vala:139
-msgid "Copy Last Output"
-msgstr ""
-
-#: src/MainWindow.vala:145
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:151 src/Widgets/TerminalWidget.vala:592
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:157
-msgid "Paste"
-msgstr ""
-
-#: src/MainWindow.vala:163
-msgid "Select All"
-msgstr ""
-
-#: src/MainWindow.vala:270
-msgid "Exit FullScreen"
-msgstr ""
-
-#: src/MainWindow.vala:279 src/MainWindow.vala:832
-msgid "Find…"
-msgstr ""
-
-#: src/MainWindow.vala:285
-msgid "New Tab…"
-msgstr ""
-
-#: src/MainWindow.vala:297
-msgid "Settings"
-msgstr ""
-
-#: src/MainWindow.vala:342
-msgid "Are you sure you want to close this tab?"
-msgstr ""
-
-#: src/MainWindow.vala:343
-msgid "Close tab"
-msgstr ""
-
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:474
+#: src/MainWindow.vala:154
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:476
+#: src/MainWindow.vala:154
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:650
+#: src/MainWindow.vala:160
+msgid "Show Search Bar"
+msgstr ""
+
+#: src/MainWindow.vala:166
+msgid "Copy"
+msgstr ""
+
+#: src/MainWindow.vala:172
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/MainWindow.vala:178
+msgid "Clear Screen"
+msgstr ""
+
+#: src/MainWindow.vala:184 src/Widgets/TerminalWidget.vala:566
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:190
+msgid "Paste"
+msgstr ""
+
+#: src/MainWindow.vala:196
+msgid "Select All"
+msgstr ""
+
+#: src/MainWindow.vala:273
+msgid "Exit FullScreen"
+msgstr ""
+
+#: src/MainWindow.vala:282 src/MainWindow.vala:771
+msgid "Find…"
+msgstr ""
+
+#: src/MainWindow.vala:288
+msgid "New Tab…"
+msgstr ""
+
+#: src/MainWindow.vala:300
+msgid "Settings"
+msgstr ""
+
+#: src/MainWindow.vala:345
+msgid "Are you sure you want to close this tab?"
+msgstr ""
+
+#: src/MainWindow.vala:346
+msgid "Close tab"
+msgstr ""
+
+#: src/MainWindow.vala:589
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:651
+#: src/MainWindow.vala:590
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:822
+#: src/MainWindow.vala:761
 msgid "Hide find bar"
 msgstr ""
 
@@ -384,15 +381,15 @@ msgstr ""
 msgid "Terminal"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:591
+#: src/Widgets/TerminalWidget.vala:565
 msgid "Are you sure you want to reset the terminal?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:626
+#: src/Widgets/TerminalWidget.vala:600
 msgid "Are you sure you want to reload this tab?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:627 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr ""
 

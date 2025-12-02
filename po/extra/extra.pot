@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 16:55+0000\n"
+"POT-Creation-Date: 2025-12-02 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:122
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
 msgid "New features:"
 msgstr ""
 
@@ -48,10 +48,10 @@ msgstr ""
 msgid "Ctrl + Click is now required to open a link"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:81
-#: data/terminal.metainfo.xml.in:96 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:127 data/terminal.metainfo.xml.in:145
-#: data/terminal.metainfo.xml.in:158
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
 msgid "Other updates:"
 msgstr ""
 
@@ -67,40 +67,44 @@ msgstr ""
 msgid "Tab bar now in window drag area"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:69 data/terminal.metainfo.xml.in:84
-#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
-#: data/terminal.metainfo.xml.in:130 data/terminal.metainfo.xml.in:147
-#: data/terminal.metainfo.xml.in:162
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
 msgid "Translation updates"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:85
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:125
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:129
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:160
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:161
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 

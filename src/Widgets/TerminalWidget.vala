@@ -34,18 +34,6 @@ namespace Terminal {
         public unowned Adw.TabPage? tab;
         public string? link_uri;
 
-        public string tab_label {
-            get {
-                return tab != null ? tab.title : "";
-            }
-
-            set {
-                if (value != null && tab != null) {
-                    tab.title = value;
-                }
-            }
-        }
-
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
         public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
@@ -111,15 +99,7 @@ namespace Terminal {
 
         public const int SYS_PIDFD_OPEN = 434; // Same on every arch
 
-        public bool child_has_exited {
-            get;
-            private set;
-        }
-
-        public bool killed {
-            get;
-            private set;
-        }
+        public bool killed { get; private set; default = false; }
 
         private unowned Gdk.Clipboard clipboard;
 
@@ -134,6 +114,7 @@ namespace Terminal {
         private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
+        private bool child_has_exited = false;
 
         private Gtk.EventControllerScroll scroll_controller;
         private double scroll_delta = 0.0;
@@ -151,8 +132,6 @@ namespace Terminal {
             pointer_autohide = true;
             terminal_id = "%i".printf (terminal_id_counter++);
             init_complete = false;
-            child_has_exited = false;
-            killed = false;
 
             update_audible_bell ();
             update_cursor_shape ();
@@ -472,11 +451,6 @@ namespace Terminal {
                     //Links not copied unless selected (compare context menu action)
                     if (get_has_selection () && (natural || shift_pressed)) {
                         copy_clipboard ();
-                        // Natural copy unselects unless the shift is held down
-                        if (natural && !shift_pressed) {
-                            unselect_all ();
-                        }
-
                         return true;
                     } else {
                         last_key_was_return = true; // Ctrl-c: Command cancelled
@@ -485,7 +459,6 @@ namespace Terminal {
                     match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
                     clipboard.get_formats ().contain_gtype (Type.STRING)
                 ) {
-
                     paste_clipboard ();
                     return true;
                 }
@@ -525,12 +498,13 @@ namespace Terminal {
         }
 
         private void popup_context_menu (double x, double y) {
-            main_window.update_context_menu ();
             setup_menu ();
+
+            var context_menu_model = main_window.construct_context_menu_model ();
 
             //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
             // does not work at the moment so create our own.
-            var new_context_menu = new Gtk.PopoverMenu.from_model (main_window.context_menu_model) {
+            var new_context_menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
                 has_arrow = false,
                 pointing_to = { (int)x, (int)y, 1, 1}
             };
@@ -695,11 +669,8 @@ namespace Terminal {
         }
 
         private void update_current_working_directory (string cwd) {
-            if (tab != null) { // May not be the case if closing tab
-                current_working_directory = cwd;
-                tab.tooltip = current_working_directory;
-                cwd_changed ();
-            }
+            current_working_directory = cwd;
+            cwd_changed ();
         }
 
         private void update_theme () {
