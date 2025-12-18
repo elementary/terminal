@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-04-03 16:55+0000\n"
+"PO-Revision-Date: 2025-12-19 00:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -105,10 +105,8 @@ msgid "Find…"
 msgstr "Пошук…"
 
 #: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "Нова вкладка"
+msgstr "Нова вкладка…"
 
 #: src/MainWindow.vala:325
 msgid "Settings"
@@ -389,11 +387,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:118
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "Автоматично ховати панель вкладок"
 
 #: src/Widgets/SettingsPopover.vala:119
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "Ховати панель вкладок, коли є лише одна вкладка"
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
