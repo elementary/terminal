@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2020-09-20 09:14+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/terminal/extra/nl/"
-">\n"
+"PO-Revision-Date: 2025-12-20 18:55+0000\n"
+"Last-Translator: Bas Ernst <bas@ernstgenova.it>\n"
+"Language-Team: Dutch <https://l10n.elementaryos.org/projects/terminal/extra/"
+"nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-20 06:06+0000\n"
 
 #: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
@@ -51,6 +51,8 @@ msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
+"De optie om de tabbalk te verbergen als er maar een tabblad is, wordt nu "
+"weergegeven en mogelijk gemaakt"
 
 #: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
 #: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
@@ -72,24 +74,28 @@ msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
+"Er wordt nu een waarschuwing gegeven als een in te plakken opdracht een "
+"optie heeft die bevestigingen overslaat"
 
 #: data/terminal.metainfo.xml.in:103
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
+"Als een voorgrondproces wordt gestart, dan verandert het tabbladlabel in de "
+"naam van dat proces"
 
 #: data/terminal.metainfo.xml.in:107
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "Wanneer je de shell verlaat in een tab, wordt die tab gesloten"
 
 #: data/terminal.metainfo.xml.in:138
 msgid "Stop window size increasing when opened"
-msgstr ""
+msgstr "Voorkom dat het venster groter wordt als het geopend wordt"
 
 #: data/terminal.metainfo.xml.in:139
 msgid "Change hotkeys for Reset and Clear Screen actions"
-msgstr ""
+msgstr "Wijzig de sneltoetsen voor de acties Reset en Scherm wissen"
 
 #: data/terminal.metainfo.xml.in:155
 msgid "Show zoom level in overlay when zooming"
