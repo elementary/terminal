@@ -156,12 +156,6 @@ namespace Terminal {
             );
             open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
 
-            var search_menuitem = new MenuItem (
-                _("Show Search Bar"),
-                ACTION_PREFIX + ACTION_SEARCH
-            );
-            search_menuitem.set_attribute_value ("accel", ACTION_SEARCH_ACCEL);
-
             var copy_menuitem = new MenuItem (
                 _("Copy"),
                 TerminalWidget.ACTION_COPY
@@ -208,13 +202,9 @@ namespace Terminal {
             terminal_clear_reset_section.append_item (clear_screen_menuitem);
             terminal_clear_reset_section.append_item (reset_menuitem);
 
-            var search_section = new Menu ();
-            search_section.append_item (search_menuitem);
-
             var context_menu_model = new Menu ();
             context_menu_model.append_item (open_in_browser_menuitem);
             context_menu_model.append_section (null, terminal_action_section);
-            context_menu_model.append_section (null, search_section);
             context_menu_model.append_section (null, terminal_clear_reset_section);
 
             return context_menu_model;
