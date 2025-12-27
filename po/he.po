@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/terminal/"
@@ -66,79 +66,76 @@ msgstr "התהליך הושלם"
 msgid "Process exited with errors"
 msgstr "התהליך הסתיים עם שגיאות"
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr "הצגת סרגל חיפוש"
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
-msgid "Copy"
-msgstr "העתקה"
-
-#: src/MainWindow.vala:168
-msgid "Copy Last Output"
-msgstr "העתקת הפלט האחרון"
-
-#: src/MainWindow.vala:174
-msgid "Clear Screen"
-msgstr "פינוי המסך"
-
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
-msgid "Reset"
-msgstr "איפוס"
-
-#: src/MainWindow.vala:186
-msgid "Paste"
-msgstr "הדבקה"
-
-#: src/MainWindow.vala:192
-msgid "Select All"
-msgstr "בחירת הכל"
-
-#: src/MainWindow.vala:298
-msgid "Exit FullScreen"
-msgstr "יציאה ממסך מלא"
-
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
-msgid "Find…"
-msgstr "חיפוש…"
-
-#: src/MainWindow.vala:313
-msgid "New Tab…"
-msgstr "לשונית חדשה…"
-
-#: src/MainWindow.vala:325
-msgid "Settings"
-msgstr "הגדרות"
-
-#: src/MainWindow.vala:374
-msgid "Are you sure you want to close this tab?"
-msgstr "האם לסגור לשונית זו?"
-
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
-msgstr "סגירת הלשונית"
-
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
+#: src/MainWindow.vala:154
 #, c-format
 msgid "Show in %s"
 msgstr "להציג עם %s"
 
-#: src/MainWindow.vala:578
+#: src/MainWindow.vala:154
 msgid "Default application"
 msgstr "יישום בררת מחדל"
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
-msgstr "האם לצאת מהמסוף?"
+#: src/MainWindow.vala:160
+msgid "Copy"
+msgstr "העתקה"
 
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr "יציאה מהמסוף"
+#: src/MainWindow.vala:166
+msgid "Copy Last Output"
+msgstr "העתקת הפלט האחרון"
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:172
+msgid "Clear Screen"
+msgstr "פינוי המסך"
+
+#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
+msgid "Reset"
+msgstr "איפוס"
+
+#: src/MainWindow.vala:184
+msgid "Paste"
+msgstr "הדבקה"
+
+#: src/MainWindow.vala:190
+msgid "Select All"
+msgstr "בחירת הכל"
+
+#: src/MainWindow.vala:263
+msgid "Exit FullScreen"
+msgstr "יציאה ממסך מלא"
+
+#: src/MainWindow.vala:272 src/MainWindow.vala:761
+msgid "Find…"
+msgstr "חיפוש…"
+
+#: src/MainWindow.vala:278
+msgid "New Tab…"
+msgstr "לשונית חדשה…"
+
+#: src/MainWindow.vala:290
+msgid "Settings"
+msgstr "הגדרות"
+
+#: src/MainWindow.vala:335
+msgid "Are you sure you want to close this tab?"
+msgstr "האם לסגור לשונית זו?"
+
+#: src/MainWindow.vala:336
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close tab"
+msgstr "סגירת הלשונית"
+
+#: src/MainWindow.vala:579
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
+msgstr ""
+
+#: src/MainWindow.vala:580
+msgid "Close window"
+msgstr ""
+
+#: src/MainWindow.vala:751
 msgid "Hide find bar"
 msgstr "הסתרת סרגל החיפוש"
 
@@ -154,11 +151,11 @@ msgstr "הטקסט שמיועד להדבקה חשוד בניסיון השגת ג
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr "הטקסט שהודבק כולל פקודה לדילוג אזהרות ואישורים"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr "העדפות צבעים"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr "סגנון חלון:"
 
@@ -167,7 +164,7 @@ msgid "Light"
 msgstr "בהיר"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "כהה"
 
@@ -255,27 +252,27 @@ msgstr "חזית:"
 msgid "Cursor:"
 msgstr "סמן:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr "סגירה"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr "הניגוד נמוך מאוד"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr "הניגוד נמוך"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr "הניגוד טוב"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr "הניגוד גבוה"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
@@ -293,11 +290,11 @@ msgstr ""
 msgid "Show paste protection warnings"
 msgstr "הצגת אזהרות הגנת הדבקה"
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "לא להדביק"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr "להדביק בכל זאת"
 
@@ -313,125 +310,137 @@ msgstr "התוצאה הקודמת"
 msgid "Next result"
 msgstr "התוצאה הבאה"
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 msgid "Disable cyclic search"
 msgstr "השבתת חיפוש מעגלי"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 msgid "Enable cyclic search"
 msgstr "הפעלת חיפוש מעגלי"
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr "התרחקות"
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr "רמת התקריב כבררת מחדל"
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr "התקרבות"
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr "כמו סגנון המערכת"
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr "ניגודיות גבוהה"
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr "זריחה בהירה"
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr "משלך"
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr "העתקה/הדבקה טבעיים"
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "קיצורי המקשים אינם דורשים Shift, עשוי להפריע ליישומי מסוף"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr "התראת הדבקה מפוקפקת"
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr "להזהיר כאשר טקסט מודבק מכיל מגוון פקודות או פקודות ניהוליות"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "התראות על אירועים"
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
 "להודיע על קלט שגוי או שיש יותר מאפשרות אחת להשלמה (כפוף להגדרות מערכת ← צליל)"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr "הסתרת סרגל הלשוניות אוטומטית"
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr "להסתיר את סרגל הלשוניות כשיש רק לשונית אחת"
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "מסוף"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:565
 msgid "Are you sure you want to reset the terminal?"
 msgstr "לאפס את המסוף?"
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:600
 msgid "Are you sure you want to reload this tab?"
 msgstr "האם לרענן לשונית זו?"
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
-msgstr "רענון לשונית"
+#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+msgid "Reload"
+msgstr "רענון"
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr "לשונית חדשה"
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 msgid "Closed Tabs"
 msgstr "לשוניות סגורות"
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr "סגירת הלשוניות מימין"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 msgid "Close Other Tabs"
 msgstr "סגירת שאר הלשונית"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr "סגירת הלשונית"
+
+#: src/Widgets/TerminalView.vala:346
 msgid "Open in New Window"
 msgstr "פתיחה בחלון חדש"
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 msgid "Duplicate Tab"
 msgstr "שכפול לשונית"
-
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
-msgstr "רענון"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "תקריב: %.0f%%"
+
+#~ msgid "Show Search Bar"
+#~ msgstr "הצגת סרגל חיפוש"
+
+#~ msgid "Are you sure you want to quit Terminal?"
+#~ msgstr "האם לצאת מהמסוף?"
+
+#~ msgid "Quit Terminal"
+#~ msgstr "יציאה מהמסוף"
+
+#~ msgid "Reload Tab"
+#~ msgstr "רענון לשונית"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "קיים תהליך פעיל בלשונית זו."
