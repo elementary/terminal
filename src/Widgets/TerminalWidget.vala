@@ -34,6 +34,7 @@ namespace Terminal {
         public unowned Adw.TabPage? tab;
         public string? link_uri;
 
+        public const string ACTION_OPEN_IN_BROWSER = "term.open-in-browser";
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
         public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
@@ -43,7 +44,7 @@ namespace Terminal {
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
         public const string ACTION_SELECT_ALL = "term.select-all";
 
-
+        public const string[] ACCELS_OPEN_IN_BROWSER = { "<Control><Shift>E", null };
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
         public const string[] ACCELS_CLEAR_SCREEN = { "<Control><Shift>L", null };
@@ -103,6 +104,7 @@ namespace Terminal {
 
         private unowned Gdk.Clipboard clipboard;
 
+        private GLib.SimpleAction open_in_browser_action;
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
         private GLib.SimpleAction clear_screen_action;
@@ -248,6 +250,11 @@ namespace Terminal {
             var action_group = new GLib.SimpleActionGroup ();
             insert_action_group ("term", action_group);
 
+            open_in_browser_action = new GLib.SimpleAction ("open-in-browser", null);
+            open_in_browser_action.set_enabled (false);
+            open_in_browser_action.activate.connect (open_in_browser);
+            action_group.add_action (open_in_browser_action);
+
             copy_action = new GLib.SimpleAction ("copy", null);
             copy_action.set_enabled (false);
             copy_action.activate.connect (() => copy_clipboard.emit ());
@@ -316,7 +323,7 @@ namespace Terminal {
                 link_uri = get_link (x, y);
 
                 if (link_uri != null && !get_has_selection ()) {
-                   main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                    open_in_browser_action.activate (null);
                 }
             } else {
                 allow_hyperlink = true;
@@ -482,15 +489,13 @@ namespace Terminal {
         }
 
         private void setup_menu () {
+            // Update the "Open in" menu option
+            var appinfo = Utils.get_default_app_for_uri (get_current_selection_link_or_pwd ());
+            open_in_browser_action.set_enabled (appinfo != null);
+
             // Update the "Paste" menu option
-            var formats = clipboard.get_formats ();
-            bool can_paste = false;
-
-            if (formats != null) {
-                can_paste = formats.contain_gtype (Type.STRING);
-            }
-
-            paste_action.set_enabled (can_paste);
+            var clipboard_has_string = clipboard.formats != null && clipboard.formats.contain_gtype (Type.STRING);
+            paste_action.set_enabled (clipboard_has_string);
 
             // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
@@ -1071,6 +1076,49 @@ namespace Terminal {
             if (contents_changed_timeout_id > 0) {
                 Source.remove (contents_changed_timeout_id);
                 contents_changed_timeout_id = 0;
+            }
+        }
+
+        private void open_in_browser (GLib.SimpleAction action, GLib.Variant? parameter) {
+            var uri = get_current_selection_link_or_pwd ();
+            var context = Gdk.Display.get_default ().get_app_launch_context ();
+            AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
+                try {
+                    AppInfo.launch_default_for_uri_async.end (res);
+                } catch (Error e) {
+                    warning ("Launcher failed with error %s", e.message);
+                    //TODO Handle launch failure - message box?
+                }
+            });
+        }
+
+        private string? get_current_selection_link_or_pwd () {
+            if (link_uri == null) {
+                if (get_has_selection ()) {
+                    copy_primary ();
+                    try {
+                        var cp = Gdk.Display.get_default ().get_primary_clipboard ().get_content ();
+                        if (cp != null) {
+                            var val = Value (typeof (string));
+                            cp.get_value (ref val);
+                            return val.dup_string ();
+                        }
+                    } catch (Error e) {
+                        critical ("Unable to get clipboard contents");
+                    }
+
+                    return null;
+                } else {
+                    var shell_location_path = get_shell_location ();
+                    var shell_location_file = GLib.File.new_for_path (shell_location_path);
+                    return shell_location_file.get_uri ();
+                }
+            } else {
+                if (!link_uri.contains ("://")) {
+                    link_uri = "http://" + link_uri;
+                }
+
+                return link_uri;
             }
         }
     }
