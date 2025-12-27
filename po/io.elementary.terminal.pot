@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-02 11:00+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,68 +73,64 @@ msgid "Default application"
 msgstr ""
 
 #: src/MainWindow.vala:160
-msgid "Show Search Bar"
-msgstr ""
-
-#: src/MainWindow.vala:166
 msgid "Copy"
 msgstr ""
 
-#: src/MainWindow.vala:172
+#: src/MainWindow.vala:166
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:178
+#: src/MainWindow.vala:172
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:184 src/Widgets/TerminalWidget.vala:566
+#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:190
+#: src/MainWindow.vala:184
 msgid "Paste"
 msgstr ""
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:190
 msgid "Select All"
 msgstr ""
 
-#: src/MainWindow.vala:273
+#: src/MainWindow.vala:263
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:282 src/MainWindow.vala:771
+#: src/MainWindow.vala:272 src/MainWindow.vala:761
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:288
+#: src/MainWindow.vala:278
 msgid "New Tab…"
 msgstr ""
 
-#: src/MainWindow.vala:300
+#: src/MainWindow.vala:290
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:345
+#: src/MainWindow.vala:335
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: src/MainWindow.vala:346
+#: src/MainWindow.vala:336
 msgid "Close tab"
 msgstr ""
 
-#: src/MainWindow.vala:589
+#: src/MainWindow.vala:579
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:590
+#: src/MainWindow.vala:580
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:761
+#: src/MainWindow.vala:751
 msgid "Hide find bar"
 msgstr ""
 
