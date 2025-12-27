@@ -46,8 +46,6 @@ namespace Terminal {
         public const string ACTION_SEARCH_ACCEL = "<Control><Shift>f";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
-        public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
-        public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -69,8 +67,7 @@ namespace Terminal {
             { ACTION_MOVE_TAB_TO_NEW_WINDOW, action_move_tab_to_new_window},
             { ACTION_SEARCH, action_search, null, "false", action_search_change_state },
             { ACTION_SEARCH_NEXT, action_search_next },
-            { ACTION_SEARCH_PREVIOUS, action_search_previous },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
+            { ACTION_SEARCH_PREVIOUS, action_search_previous }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -93,7 +90,6 @@ namespace Terminal {
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_SEARCH] = ACTION_SEARCH_ACCEL;
-            action_accelerators[ACTION_OPEN_IN_BROWSER] = ACTION_OPEN_IN_BROWSER_ACCEL;
         }
 
         construct {
@@ -149,12 +145,11 @@ namespace Terminal {
             var show_in_browser_uri = get_current_selection_link_or_pwd ();
             var appinfo = Utils.get_default_app_for_uri (show_in_browser_uri);
 
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
             var open_in_browser_menuitem = new MenuItem (
                _("Show in %s").printf (appinfo != null ? appinfo.get_display_name () : _("Default application")),
-               ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
+               TerminalWidget.ACTION_OPEN_IN_BROWSER
             );
-            open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
+            open_in_browser_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_OPEN_IN_BROWSER[0]));
 
             var copy_menuitem = new MenuItem (
                 _("Copy"),
@@ -608,19 +603,6 @@ namespace Terminal {
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
                notebook.make_restorable (term.current_working_directory);
             }
-        }
-
-        private void action_open_in_browser () requires (current_terminal != null) {
-            var uri = get_current_selection_link_or_pwd ();
-            var context = Gdk.Display.get_default ().get_app_launch_context ();
-            AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
-                try {
-                    AppInfo.launch_default_for_uri_async.end (res);
-                } catch (Error e) {
-                    warning ("Launcher failed with error %s", e.message);
-                    //TODO Handle launch failure - message box?
-                }
-            });
         }
 
         private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
