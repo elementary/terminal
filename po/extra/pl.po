@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: 2025-01-07 19:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/terminal/extra/pl/"
@@ -38,178 +38,81 @@ msgstr ""
 "Terminal jest programem umożliwiającym dostęp do wiersza poleceń środowiska "
 "UNIX, który może być używany do uruchamiania programów dostępnych w systemie."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
-#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
-#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
+#: data/terminal.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+msgid "New features:"
+msgstr "Nowe funkcje:"
+
+#: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
 msgid "Other updates:"
 msgstr "Inne aktualizacje:"
 
-#: data/terminal.metainfo.xml.in:61
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
+msgid "Translation updates"
+msgstr "Aktualizacje tłumaczeń"
+
+#: data/terminal.metainfo.xml.in:85
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
-#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
-msgid "Translation updates"
-msgstr "Aktualizacje tłumaczeń"
-
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
-#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
-#: data/terminal.metainfo.xml.in:255
-msgid "New features:"
-msgstr "Nowe funkcje:"
-
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr "Okno nie powiększa się już po otwarciu"
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "Zmieniono skróty do resetowania i czyszczenia ekranu"
-
-#: data/terminal.metainfo.xml.in:155
-msgid "Show zoom level in overlay when zooming"
-msgstr "Poziom przybliżeniu jest pokazywany w nakładce podczas przybliżania"
-
-#: data/terminal.metainfo.xml.in:156
-msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
-"Implementacja akcji menu kontekstowego „Wyczyść” oraz „Resetuj” przy użyciu "
-"akceleratorów"
-
-#: data/terminal.metainfo.xml.in:157
-msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
-"Dodano przełącznik dla ostrzeżenia o niebezpiecznym wklejeniu w menu "
-"aplikacji"
-
-#: data/terminal.metainfo.xml.in:161
-msgid ""
-"Update the icon and tooltip of the cyclic search togglebutton according to "
-"its state"
-msgstr ""
-"Aktualizowanie ikony i tooltipa przycisku cyklicznego wyszukiwania w "
-"zależności od jego stanu"
-
-#: data/terminal.metainfo.xml.in:162
-msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
-"Skupienie na poprawnej karcie po kliknięciu na powiadomienie o zakończonym "
-"procesie"
-
-#: data/terminal.metainfo.xml.in:163
-msgid ""
-"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
-"when text pasted into terminal"
-msgstr ""
-"Sprawdzanie zarówno obecności „doas”, „pkexec”, „run0” oraz „su” w dodatku "
-"do „sudo” przy wklejaniu tekstu do terminala"
-
-#: data/terminal.metainfo.xml.in:164
-msgid "Check for unsafe paste on dropping text as well"
-msgstr "Sprawdzanie niebezpiecznego wklejania również przy upuszczaniu tekstu"
-
-#: data/terminal.metainfo.xml.in:165
-msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
-"Sprawdzanie poleceń wielowierszowych podczas sprawdzania niebezpiecznych "
-"wklejeń"
-
-#: data/terminal.metainfo.xml.in:166
-msgid "Improve gray contrast in dark theme"
-msgstr "Poprawiono kontrast szarości w ciemnym motywie"
-
-#: data/terminal.metainfo.xml.in:186
-msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
-"Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
-
-#: data/terminal.metainfo.xml.in:187
-msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr ""
-"Karty oraz skala przybliżenia są teraz zapisywane w ustawieniach stanu gdy "
-"są one zmieniane"
-
-#: data/terminal.metainfo.xml.in:191
-msgid "Document missing options in the man page"
-msgstr "Strony man zostały uzupełnione o brakujące opcje"
-
-#: data/terminal.metainfo.xml.in:192
-msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
-"Przy otwieraniu nowego okna nie jest wyświetlana niechciana karta domyślna"
-
-#: data/terminal.metainfo.xml.in:209
-msgid ""
-"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
-"tabs"
-msgstr ""
-"Dodano skróty „Ctrl + PageUp” oraz „Ctrl + PageDown” do zmiany między kartami"
-
-#: data/terminal.metainfo.xml.in:210
-msgid "Properly unexport the DBus Interface on Exit"
-msgstr "Poprawne odeksportowanie interfejsu DBus przy wychodzeniu"
-
-#: data/terminal.metainfo.xml.in:238
-msgid "Option to follow system dark style preference"
-msgstr "Możliwość ustawienia trybu ciemnego na podstawie ustawień systemu"
-
-#: data/terminal.metainfo.xml.in:239
-msgid "Create a custom color palette"
-msgstr "Tworzenie niestandardowej palety kolorów"
-
-#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
-msgid "Fixes:"
-msgstr "Poprawki:"
-
-#: data/terminal.metainfo.xml.in:243
-msgid ""
-"Default styles are fully opaque and updated to the latest upstream values "
-"from Solarized for improved legibility"
-msgstr ""
-"Domyślne style są całkowicie nieprzejrzyste i zaktualizowane do najnowszych "
-"wartości Solarized by poprawić czytelność"
-
-#: data/terminal.metainfo.xml.in:248
-msgid "Performance improvements"
-msgstr "Ulepszenia wydajności"
-
-#: data/terminal.metainfo.xml.in:257
-msgid "Switch tabs with Alt + 1-9"
-msgstr "Zmiana karty przy użyciu Alt + 1-9"
-
-#: data/terminal.metainfo.xml.in:258
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "Zamknięcie przy użyciu Ctrl + Shift + Q"
-
-#: data/terminal.metainfo.xml.in:262
-msgid "Fix build on OS 7"
-msgstr "Naprawiono wersję dla OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -222,6 +125,104 @@ msgstr "Nowe okno"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Nowa karta z uprawnieniami root"
+
+#~ msgid "Show zoom level in overlay when zooming"
+#~ msgstr "Poziom przybliżeniu jest pokazywany w nakładce podczas przybliżania"
+
+#~ msgid "Implement Clear and Reset context menu actions with accelerators"
+#~ msgstr ""
+#~ "Implementacja akcji menu kontekstowego „Wyczyść” oraz „Resetuj” przy "
+#~ "użyciu akceleratorów"
+
+#~ msgid "Add toggle for unsafe paste warning to application menu"
+#~ msgstr ""
+#~ "Dodano przełącznik dla ostrzeżenia o niebezpiecznym wklejeniu w menu "
+#~ "aplikacji"
+
+#~ msgid ""
+#~ "Update the icon and tooltip of the cyclic search togglebutton according "
+#~ "to its state"
+#~ msgstr ""
+#~ "Aktualizowanie ikony i tooltipa przycisku cyklicznego wyszukiwania w "
+#~ "zależności od jego stanu"
+
+#~ msgid "Focus correct tab after clicking on a process finished notification"
+#~ msgstr ""
+#~ "Skupienie na poprawnej karcie po kliknięciu na powiadomienie o "
+#~ "zakończonym procesie"
+
+#~ msgid ""
+#~ "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+#~ "when text pasted into terminal"
+#~ msgstr ""
+#~ "Sprawdzanie zarówno obecności „doas”, „pkexec”, „run0” oraz „su” w "
+#~ "dodatku do „sudo” przy wklejaniu tekstu do terminala"
+
+#~ msgid "Check for unsafe paste on dropping text as well"
+#~ msgstr ""
+#~ "Sprawdzanie niebezpiecznego wklejania również przy upuszczaniu tekstu"
+
+#~ msgid "Check for multiline commands in unsafe paste detection"
+#~ msgstr ""
+#~ "Sprawdzanie poleceń wielowierszowych podczas sprawdzania niebezpiecznych "
+#~ "wklejeń"
+
+#~ msgid "Improve gray contrast in dark theme"
+#~ msgstr "Poprawiono kontrast szarości w ciemnym motywie"
+
+#~ msgid "Allow switching event alerts on and off in the app menu"
+#~ msgstr ""
+#~ "Umożliwiono włązanie/wyłączanie alarmów o wydarzeniach w menu aplikacji"
+
+#~ msgid "Save tabs and zooms to the saved state settings when they change"
+#~ msgstr ""
+#~ "Karty oraz skala przybliżenia są teraz zapisywane w ustawieniach stanu "
+#~ "gdy są one zmieniane"
+
+#~ msgid "Document missing options in the man page"
+#~ msgstr "Strony man zostały uzupełnione o brakujące opcje"
+
+#~ msgid "Suppress unwanted default tab when opening a new window"
+#~ msgstr ""
+#~ "Przy otwieraniu nowego okna nie jest wyświetlana niechciana karta domyślna"
+
+#~ msgid ""
+#~ "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+#~ "tabs"
+#~ msgstr ""
+#~ "Dodano skróty „Ctrl + PageUp” oraz „Ctrl + PageDown” do zmiany między "
+#~ "kartami"
+
+#~ msgid "Properly unexport the DBus Interface on Exit"
+#~ msgstr "Poprawne odeksportowanie interfejsu DBus przy wychodzeniu"
+
+#~ msgid "Option to follow system dark style preference"
+#~ msgstr "Możliwość ustawienia trybu ciemnego na podstawie ustawień systemu"
+
+#~ msgid "Create a custom color palette"
+#~ msgstr "Tworzenie niestandardowej palety kolorów"
+
+#~ msgid "Fixes:"
+#~ msgstr "Poprawki:"
+
+#~ msgid ""
+#~ "Default styles are fully opaque and updated to the latest upstream values "
+#~ "from Solarized for improved legibility"
+#~ msgstr ""
+#~ "Domyślne style są całkowicie nieprzejrzyste i zaktualizowane do "
+#~ "najnowszych wartości Solarized by poprawić czytelność"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Ulepszenia wydajności"
+
+#~ msgid "Switch tabs with Alt + 1-9"
+#~ msgstr "Zmiana karty przy użyciu Alt + 1-9"
+
+#~ msgid "Quit with Ctrl + Shift + Q"
+#~ msgstr "Zamknięcie przy użyciu Ctrl + Shift + Q"
+
+#~ msgid "Fix build on OS 7"
+#~ msgstr "Naprawiono wersję dla OS 7"
 
 #~ msgid "Properly restore zoom levels for all locales"
 #~ msgstr "Poprawne przywracanie poziomu przybliżenia we wszystkich językach"
@@ -240,9 +241,6 @@ msgstr "Nowa karta z uprawnieniami root"
 #~ msgstr ""
 #~ "Zmieniono rekomendowany skrót dla „Odświeżenia karty” na Shift + Control "
 #~ "+ R"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Przenoś karty za pomocą Ctrl + Alt + ←/→"
