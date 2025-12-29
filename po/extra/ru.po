@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-10-26 09:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
@@ -38,16 +38,53 @@ msgstr ""
 "Терминал — это эмулятор терминала для доступа к командной оболочке UNIX, "
 "которая может быть использована для запуска программ, доступных в системе."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
-#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
-#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
+#: data/terminal.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+msgid "New features:"
+msgstr "Новые возможности:"
+
+#: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
 msgid "Other updates:"
 msgstr "Остальные обновления:"
 
-#: data/terminal.metainfo.xml.in:61
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
+msgid "Translation updates"
+msgstr "Обновления переводов"
+
+#: data/terminal.metainfo.xml.in:85
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
@@ -55,22 +92,7 @@ msgstr ""
 "Опция скрытия панели вкладок, когда открыта только одна вкладка, теперь "
 "доступна через интерфейс и учитывается"
 
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
-#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
-msgid "Translation updates"
-msgstr "Обновления переводов"
-
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
-#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
-#: data/terminal.metainfo.xml.in:255
-msgid "New features:"
-msgstr "Новые возможности:"
-
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
@@ -78,7 +100,7 @@ msgstr ""
 "При вставке команды с опциями пропуска подтверждения теперь показывается "
 "предупреждение"
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
@@ -86,128 +108,17 @@ msgstr ""
 "При запуске процесса название вкладки теперь соответствует названию "
 "запущенного процесса"
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr "Выход из оболочки теперь закрывает вкладку"
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr "Размер окна больше не увеличивается при открытии"
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "Изменены сочетания клавиш для очистки экрана и сброса"
-
-#: data/terminal.metainfo.xml.in:155
-msgid "Show zoom level in overlay when zooming"
-msgstr "Отображение уровня масштаба при масштабировании"
-
-#: data/terminal.metainfo.xml.in:156
-msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr "Реализованы действия контекстного меню «Очистить» и «Сбросить»"
-
-#: data/terminal.metainfo.xml.in:157
-msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
-"В меню приложения добавлен переключатель для предупреждений об опасной "
-"вставке"
-
-#: data/terminal.metainfo.xml.in:161
-msgid ""
-"Update the icon and tooltip of the cyclic search togglebutton according to "
-"its state"
-msgstr ""
-"Обновление значка и подписи переключаемой кнопки циклического поиска в "
-"соответствии с её состоянием"
-
-#: data/terminal.metainfo.xml.in:162
-msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
-"Фокус на текущий вкладке после нажатия на уведомление о завершении процесса"
-
-#: data/terminal.metainfo.xml.in:163
-msgid ""
-"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
-"when text pasted into terminal"
-msgstr ""
-"Проверка на наличие «doas», «pkexec», «run0» и «su», а также «sudo» при "
-"вставке текста в терминал"
-
-#: data/terminal.metainfo.xml.in:164
-msgid "Check for unsafe paste on dropping text as well"
-msgstr "Проверка на опасность вставки и для перетаскиваемого текста"
-
-#: data/terminal.metainfo.xml.in:165
-msgid "Check for multiline commands in unsafe paste detection"
-msgstr "Проверка многострочных команд при обнаружении небезопасной вставки"
-
-#: data/terminal.metainfo.xml.in:166
-msgid "Improve gray contrast in dark theme"
-msgstr "Улучшена контрастность серого цвета в тёмной теме"
-
-#: data/terminal.metainfo.xml.in:186
-msgid "Allow switching event alerts on and off in the app menu"
-msgstr "Возможность включения и выключения оповещений в меню приложения"
-
-#: data/terminal.metainfo.xml.in:187
-msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr "Сохранение состояния вкладок и масштабов при их изменении"
-
-#: data/terminal.metainfo.xml.in:191
-msgid "Document missing options in the man page"
-msgstr "Задокументированы отсутствовавшие в man опции"
-
-#: data/terminal.metainfo.xml.in:192
-msgid "Suppress unwanted default tab when opening a new window"
-msgstr "Подавление нежелательной вкладки по умолчанию при открытии нового окна"
-
-#: data/terminal.metainfo.xml.in:209
-msgid ""
-"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
-"tabs"
-msgstr ""
-"Добавлены сочетания клавиш «Ctrl + PageUp» и «Ctrl + PageDown» для "
-"переключения вкладок"
-
-#: data/terminal.metainfo.xml.in:210
-msgid "Properly unexport the DBus Interface on Exit"
-msgstr "Правильное закрытие интерфейса DBus при выходе"
-
-#: data/terminal.metainfo.xml.in:238
-msgid "Option to follow system dark style preference"
-msgstr "Опция для использования стиля системы"
-
-#: data/terminal.metainfo.xml.in:239
-msgid "Create a custom color palette"
-msgstr "Создание собственной цветовой палитры"
-
-#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
-msgid "Fixes:"
-msgstr "Исправления:"
-
-#: data/terminal.metainfo.xml.in:243
-msgid ""
-"Default styles are fully opaque and updated to the latest upstream values "
-"from Solarized for improved legibility"
-msgstr ""
-"Стандартные стили полностью непрозрачны и обновлены до последних исходных "
-"значений от Solarized для улучшения читаемости"
-
-#: data/terminal.metainfo.xml.in:248
-msgid "Performance improvements"
-msgstr "Улучшения производительности"
-
-#: data/terminal.metainfo.xml.in:257
-msgid "Switch tabs with Alt + 1-9"
-msgstr "Переключение вкладок с помощью Alt + 1–9"
-
-#: data/terminal.metainfo.xml.in:258
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "Выход с помощью Ctrl + Shift + Q"
-
-#: data/terminal.metainfo.xml.in:262
-msgid "Fix build on OS 7"
-msgstr "Исправление сборки на OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -220,6 +131,96 @@ msgstr "Новое окно"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Новая вкладка от имени root"
+
+#~ msgid "Show zoom level in overlay when zooming"
+#~ msgstr "Отображение уровня масштаба при масштабировании"
+
+#~ msgid "Implement Clear and Reset context menu actions with accelerators"
+#~ msgstr "Реализованы действия контекстного меню «Очистить» и «Сбросить»"
+
+#~ msgid "Add toggle for unsafe paste warning to application menu"
+#~ msgstr ""
+#~ "В меню приложения добавлен переключатель для предупреждений об опасной "
+#~ "вставке"
+
+#~ msgid ""
+#~ "Update the icon and tooltip of the cyclic search togglebutton according "
+#~ "to its state"
+#~ msgstr ""
+#~ "Обновление значка и подписи переключаемой кнопки циклического поиска в "
+#~ "соответствии с её состоянием"
+
+#~ msgid "Focus correct tab after clicking on a process finished notification"
+#~ msgstr ""
+#~ "Фокус на текущий вкладке после нажатия на уведомление о завершении "
+#~ "процесса"
+
+#~ msgid ""
+#~ "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+#~ "when text pasted into terminal"
+#~ msgstr ""
+#~ "Проверка на наличие «doas», «pkexec», «run0» и «su», а также «sudo» при "
+#~ "вставке текста в терминал"
+
+#~ msgid "Check for unsafe paste on dropping text as well"
+#~ msgstr "Проверка на опасность вставки и для перетаскиваемого текста"
+
+#~ msgid "Check for multiline commands in unsafe paste detection"
+#~ msgstr "Проверка многострочных команд при обнаружении небезопасной вставки"
+
+#~ msgid "Improve gray contrast in dark theme"
+#~ msgstr "Улучшена контрастность серого цвета в тёмной теме"
+
+#~ msgid "Allow switching event alerts on and off in the app menu"
+#~ msgstr "Возможность включения и выключения оповещений в меню приложения"
+
+#~ msgid "Save tabs and zooms to the saved state settings when they change"
+#~ msgstr "Сохранение состояния вкладок и масштабов при их изменении"
+
+#~ msgid "Document missing options in the man page"
+#~ msgstr "Задокументированы отсутствовавшие в man опции"
+
+#~ msgid "Suppress unwanted default tab when opening a new window"
+#~ msgstr ""
+#~ "Подавление нежелательной вкладки по умолчанию при открытии нового окна"
+
+#~ msgid ""
+#~ "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+#~ "tabs"
+#~ msgstr ""
+#~ "Добавлены сочетания клавиш «Ctrl + PageUp» и «Ctrl + PageDown» для "
+#~ "переключения вкладок"
+
+#~ msgid "Properly unexport the DBus Interface on Exit"
+#~ msgstr "Правильное закрытие интерфейса DBus при выходе"
+
+#~ msgid "Option to follow system dark style preference"
+#~ msgstr "Опция для использования стиля системы"
+
+#~ msgid "Create a custom color palette"
+#~ msgstr "Создание собственной цветовой палитры"
+
+#~ msgid "Fixes:"
+#~ msgstr "Исправления:"
+
+#~ msgid ""
+#~ "Default styles are fully opaque and updated to the latest upstream values "
+#~ "from Solarized for improved legibility"
+#~ msgstr ""
+#~ "Стандартные стили полностью непрозрачны и обновлены до последних исходных "
+#~ "значений от Solarized для улучшения читаемости"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Улучшения производительности"
+
+#~ msgid "Switch tabs with Alt + 1-9"
+#~ msgstr "Переключение вкладок с помощью Alt + 1–9"
+
+#~ msgid "Quit with Ctrl + Shift + Q"
+#~ msgstr "Выход с помощью Ctrl + Shift + Q"
+
+#~ msgid "Fix build on OS 7"
+#~ msgstr "Исправление сборки на OS 7"
 
 #~ msgid "Properly restore zoom levels for all locales"
 #~ msgstr ""
@@ -238,9 +239,6 @@ msgstr "Новая вкладка от имени root"
 #~ msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 #~ msgstr ""
 #~ "Изменение сочетания клавиш «Перезагрузить вкладку» на Shift + Control + R"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Перемещение вкладок сочетанием клавиш Ctrl + Alt + ←/→"

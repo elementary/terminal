@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2021-07-11 10:46+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/terminal/"
@@ -59,80 +59,41 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr ""
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
-msgid "Copy"
-msgstr "පිටපත්"
-
-#: src/MainWindow.vala:168
-msgid "Copy Last Output"
-msgstr "අවසාන ප්‍රතිදානය පිටපත් කරන්න"
-
-#: src/MainWindow.vala:174
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:186
-msgid "Paste"
-msgstr "අලවන්න"
-
-#: src/MainWindow.vala:192
-msgid "Select All"
-msgstr "සියල්ල තෝරන්න"
-
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr ""
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:313
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr ""
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "සැකසුම්"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr ""
 
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
+#: src/MainWindow.vala:267
+msgid "Close tab"
 msgstr ""
 
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
-#, fuzzy, c-format
-#| msgid "Show version"
-msgid "Show in %s"
-msgstr "අනුවාදය පෙන්වන්න"
-
-#: src/MainWindow.vala:578
-msgid "Default application"
+#: src/MainWindow.vala:510
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
 msgstr ""
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
+#: src/MainWindow.vala:511
+msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr ""
-
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr ""
 
@@ -148,11 +109,11 @@ msgstr ""
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr ""
 
@@ -161,7 +122,7 @@ msgid "Light"
 msgstr ""
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "අඳුරු"
 
@@ -249,27 +210,27 @@ msgstr ""
 msgid "Cursor:"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
@@ -285,11 +246,11 @@ msgstr ""
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "අලවන්න එපා"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr ""
 
@@ -305,118 +266,152 @@ msgstr ""
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 msgid "Disable cyclic search"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 msgid "Enable cyclic search"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "අග්‍රය"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:512
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "අනුවාදය පෙන්වන්න"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "පිටපත්"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "අවසාන ප්‍රතිදානය පිටපත් කරන්න"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "අලවන්න"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "සියල්ල තෝරන්න"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
+msgid "Reload"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 msgid "Closed Tabs"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 msgid "Close Other Tabs"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:346
 msgid "Open in New Window"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 msgid "Duplicate Tab"
-msgstr ""
-
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
 msgstr ""
 
 #: src/Widgets/ZoomOverlay.vala:15

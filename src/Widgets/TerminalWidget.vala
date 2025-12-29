@@ -32,8 +32,8 @@ namespace Terminal {
 
         // There may be no associated tab while made restorable or when closing
         public unowned Adw.TabPage? tab;
-        public string? link_uri;
 
+        public const string ACTION_OPEN_IN_BROWSER = "term.open-in-browser";
         public const string ACTION_COPY = "term.copy";
         public const string ACTION_COPY_OUTPUT = "term.copy-output";
         public const string ACTION_CLEAR_SCREEN = "term.clear-screen";
@@ -43,7 +43,7 @@ namespace Terminal {
         public const string ACTION_SCROLL_TO_COMMAND = "term.scroll-to-command";
         public const string ACTION_SELECT_ALL = "term.select-all";
 
-
+        public const string[] ACCELS_OPEN_IN_BROWSER = { "<Control><Shift>E", null };
         public const string[] ACCELS_COPY = { "<Control><Shift>C", null };
         public const string[] ACCELS_COPY_OUTPUT = { "<Alt>C", null };
         public const string[] ACCELS_CLEAR_SCREEN = { "<Control><Shift>L", null };
@@ -103,6 +103,7 @@ namespace Terminal {
 
         private unowned Gdk.Clipboard clipboard;
 
+        private GLib.SimpleAction open_in_browser_action;
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
         private GLib.SimpleAction clear_screen_action;
@@ -115,6 +116,7 @@ namespace Terminal {
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
         public bool last_key_was_return = true;
         private bool child_has_exited = false;
+        private string? link_uri = null;
 
         private Gtk.EventControllerScroll scroll_controller;
         private double scroll_delta = 0.0;
@@ -233,7 +235,7 @@ namespace Terminal {
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
-                clipboard.changed.connect (setup_menu);
+                clipboard.changed.connect (update_actions_state);
                 disconnect (once);
             });
 
@@ -247,6 +249,11 @@ namespace Terminal {
             // Setup Actions
             var action_group = new GLib.SimpleActionGroup ();
             insert_action_group ("term", action_group);
+
+            open_in_browser_action = new GLib.SimpleAction ("open-in-browser", null);
+            open_in_browser_action.set_enabled (false);
+            open_in_browser_action.activate.connect (open_in_browser);
+            action_group.add_action (open_in_browser_action);
 
             copy_action = new GLib.SimpleAction ("copy", null);
             copy_action.set_enabled (false);
@@ -316,7 +323,7 @@ namespace Terminal {
                 link_uri = get_link (x, y);
 
                 if (link_uri != null && !get_has_selection ()) {
-                   main_window.get_simple_action (MainWindow.ACTION_OPEN_IN_BROWSER).activate (null);
+                    open_in_browser_action.activate (null);
                 }
             } else {
                 allow_hyperlink = true;
@@ -481,28 +488,90 @@ namespace Terminal {
             return false;
         }
 
-        private void setup_menu () {
+        private void update_actions_state () {
+            // Update the "Open in" menu option
+            var appinfo = Utils.get_default_app_for_uri (get_current_selection_link_or_pwd ());
+            open_in_browser_action.set_enabled (appinfo != null);
+
             // Update the "Paste" menu option
-            var formats = clipboard.get_formats ();
-            bool can_paste = false;
-
-            if (formats != null) {
-                can_paste = formats.contain_gtype (Type.STRING);
-            }
-
-            paste_action.set_enabled (can_paste);
+            var clipboard_has_string = clipboard.formats != null && clipboard.formats.contain_gtype (Type.STRING);
+            paste_action.set_enabled (clipboard_has_string);
 
             // Update the "Copy Last Output" menu option
             var has_output = !resized && get_last_output ().length > 0;
             copy_output_action.set_enabled (has_output);
         }
 
+        private Menu construct_context_menu_model () {
+            update_actions_state ();
+
+            var show_in_browser_uri = get_current_selection_link_or_pwd ();
+            var appinfo = Utils.get_default_app_for_uri (show_in_browser_uri);
+
+            var open_in_browser_menuitem = new MenuItem (
+               _("Show in %s").printf (appinfo != null ? appinfo.get_display_name () : _("Default application")),
+               ACTION_OPEN_IN_BROWSER
+            );
+            open_in_browser_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_OPEN_IN_BROWSER[0]));
+
+            var copy_menuitem = new MenuItem (
+                _("Copy"),
+                ACTION_COPY
+            );
+            copy_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY[0]));
+
+            var copy_last_output_menuitem = new MenuItem (
+                _("Copy Last Output"),
+                ACTION_COPY_OUTPUT
+            );
+            copy_last_output_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY_OUTPUT[0]));
+
+            var clear_screen_menuitem = new MenuItem (
+                _("Clear Screen"),
+                ACTION_CLEAR_SCREEN
+            );
+            clear_screen_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_CLEAR_SCREEN[0]));
+
+            var reset_menuitem = new MenuItem (
+                _("Reset"),
+                ACTION_RESET
+            );
+            reset_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_RESET[0]));
+
+            var paste_menuitem = new MenuItem (
+                _("Paste"),
+                ACTION_PASTE
+            );
+            paste_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_PASTE[0]));
+
+            var select_all_menuitem = new MenuItem (
+                _("Select All"),
+                ACTION_SELECT_ALL
+            );
+            select_all_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_SELECT_ALL[0]));
+
+            var terminal_action_section = new Menu ();
+            terminal_action_section.append_item (copy_menuitem);
+            terminal_action_section.append_item (copy_last_output_menuitem);
+            terminal_action_section.append_item (paste_menuitem);
+            terminal_action_section.append_item (select_all_menuitem);
+
+            var terminal_clear_reset_section = new Menu ();
+            terminal_clear_reset_section.append_item (clear_screen_menuitem);
+            terminal_clear_reset_section.append_item (reset_menuitem);
+
+            var context_menu_model = new Menu ();
+            context_menu_model.append_item (open_in_browser_menuitem);
+            context_menu_model.append_section (null, terminal_action_section);
+            context_menu_model.append_section (null, terminal_clear_reset_section);
+
+            return context_menu_model;
+        }
+
         private void popup_context_menu (double x, double y) {
-            setup_menu ();
+            var context_menu_model = construct_context_menu_model ();
 
-            var context_menu_model = main_window.construct_context_menu_model ();
-
-            //NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
+            // NOTE For some reason using the built in context_menu and context_menu_model of vte-2.91-gtk4
             // does not work at the moment so create our own.
             var new_context_menu = new Gtk.PopoverMenu.from_model (context_menu_model) {
                 has_arrow = false,
@@ -1071,6 +1140,49 @@ namespace Terminal {
             if (contents_changed_timeout_id > 0) {
                 Source.remove (contents_changed_timeout_id);
                 contents_changed_timeout_id = 0;
+            }
+        }
+
+        private void open_in_browser (GLib.SimpleAction action, GLib.Variant? parameter) {
+            var uri = get_current_selection_link_or_pwd ();
+            var context = Gdk.Display.get_default ().get_app_launch_context ();
+            AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
+                try {
+                    AppInfo.launch_default_for_uri_async.end (res);
+                } catch (Error e) {
+                    warning ("Launcher failed with error %s", e.message);
+                    //TODO Handle launch failure - message box?
+                }
+            });
+        }
+
+        private string? get_current_selection_link_or_pwd () {
+            if (link_uri == null) {
+                if (get_has_selection ()) {
+                    copy_primary ();
+                    try {
+                        var cp = Gdk.Display.get_default ().get_primary_clipboard ().get_content ();
+                        if (cp != null) {
+                            var val = Value (typeof (string));
+                            cp.get_value (ref val);
+                            return val.dup_string ();
+                        }
+                    } catch (Error e) {
+                        critical ("Unable to get clipboard contents");
+                    }
+
+                    return null;
+                } else {
+                    var shell_location_path = get_shell_location ();
+                    var shell_location_file = GLib.File.new_for_path (shell_location_path);
+                    return shell_location_file.get_uri ();
+                }
+            } else {
+                if (!link_uri.contains ("://")) {
+                    link_uri = "http://" + link_uri;
+                }
+
+                return link_uri;
             }
         }
     }

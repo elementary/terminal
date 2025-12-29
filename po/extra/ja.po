@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-10-25 08:49+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
@@ -37,38 +37,61 @@ msgstr ""
 "“ターミナル”は、システム上のプログラムを実行するのに使用される UNIX のシェル"
 "環境にアクセスするための端末エミュレータアプリケーションです。"
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
-#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
-#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
-msgid "Other updates:"
-msgstr "その他のアップデート:"
+#: data/terminal.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
-#: data/terminal.metainfo.xml.in:61
-msgid ""
-"The option to hide the tabbar when there is only one tab is now exposed and "
-"honored"
-msgstr "タブが 1 つのみの場合にタブバーを非表示にするオプションを UI "
-"に追加し、アプリに設定が反映されるように修正"
-
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
-#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
-msgid "Translation updates"
-msgstr "翻訳の更新"
-
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
-#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
-#: data/terminal.metainfo.xml.in:255
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
+msgid "Other updates:"
+msgstr "その他のアップデート:"
+
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
+msgid "Translation updates"
+msgstr "翻訳の更新"
+
+#: data/terminal.metainfo.xml.in:85
+msgid ""
+"The option to hide the tabbar when there is only one tab is now exposed and "
+"honored"
+msgstr ""
+"タブが 1 つのみの場合にタブバーを非表示にするオプションを UI に追加し、アプリ"
+"に設定が反映されるように修正"
+
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
@@ -76,7 +99,7 @@ msgstr ""
 "貼り付けられたコマンドに確認をスキップするオプションが含まれていた場合、警告"
 "を表示する機能を追加"
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
@@ -84,133 +107,17 @@ msgstr ""
 "フォアグラウンドプロセスが起動した場合、タブのラベルをそのプロセス名に変更す"
 "るように修正"
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr "タブで開いていたシェルが終了してもタブが閉じない不具合を修正"
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr "ウィンドウが開くたびに大きくなる不具合を修正"
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "“リセット”と“画面を消去”アクションのホットキーを変更"
-
-#: data/terminal.metainfo.xml.in:155
-msgid "Show zoom level in overlay when zooming"
-msgstr "拡大/縮小中に拡大率をオーバーレイ表示する機能を追加"
-
-#: data/terminal.metainfo.xml.in:156
-msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
-"“画面を消去”と“リセット”を、ショートカットキー付きのコンテキストメニューアク"
-"ションとして実装"
-
-#: data/terminal.metainfo.xml.in:157
-msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
-"安全でない貼り付け警告の有効/無効を切り替えるスイッチをアプリケーションメ"
-"ニューに追加"
-
-#: data/terminal.metainfo.xml.in:161
-msgid ""
-"Update the icon and tooltip of the cyclic search togglebutton according to "
-"its state"
-msgstr ""
-"循環検索のトグルボタンのアイコンとツールチップをボタンの状態に応じて更新する"
-"ように修正"
-
-#: data/terminal.metainfo.xml.in:162
-msgid "Focus correct tab after clicking on a process finished notification"
-msgstr "プロセス完了通知をクリックした際、適切なタブにフォーカスするように修正"
-
-#: data/terminal.metainfo.xml.in:163
-msgid ""
-"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
-"when text pasted into terminal"
-msgstr ""
-"ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\"、\"pkexec\"、"
-"\"run0\"、\"su\" も警告対象として確認するように修正"
-
-#: data/terminal.metainfo.xml.in:164
-msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
-"テキストをドラッグ & ドロップした際も、安全でない貼り付け確認を実施するように"
-"修正"
-
-#: data/terminal.metainfo.xml.in:165
-msgid "Check for multiline commands in unsafe paste detection"
-msgstr "安全でない貼り付け検出で複数行コマンドも確認するように修正"
-
-#: data/terminal.metainfo.xml.in:166
-msgid "Improve gray contrast in dark theme"
-msgstr "ダークテーマでの灰色のコントラストを改善"
-
-#: data/terminal.metainfo.xml.in:186
-msgid "Allow switching event alerts on and off in the app menu"
-msgstr "アプリメニューからイベント警告のオン/オフを切り替えできる機能を追加"
-
-#: data/terminal.metainfo.xml.in:187
-msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr "タブと拡大率の変更時、保存状態の設定に保存するように変更"
-
-#: data/terminal.metainfo.xml.in:191
-msgid "Document missing options in the man page"
-msgstr "man ページに記載が漏れていたオプションを追記"
-
-#: data/terminal.metainfo.xml.in:192
-msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
-"新しいウィンドウを開いた場合に、不要なデフォルトのタブが表示されないように修"
-"正"
-
-#: data/terminal.metainfo.xml.in:209
-msgid ""
-"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
-"tabs"
-msgstr ""
-"タブの切り替えに \"Ctrl + PageUp\" と \"Ctrl + PageDown\" を使用できるように"
-"変更"
-
-#: data/terminal.metainfo.xml.in:210
-msgid "Properly unexport the DBus Interface on Exit"
-msgstr "終了時に DBus インターフェースを適切に削除するよう修正"
-
-#: data/terminal.metainfo.xml.in:238
-msgid "Option to follow system dark style preference"
-msgstr "システムのダークモード設定に従うオプションを追加"
-
-#: data/terminal.metainfo.xml.in:239
-msgid "Create a custom color palette"
-msgstr "カスタムカラーパレットを作成する機能を追加"
-
-#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
-msgid "Fixes:"
-msgstr "修正点:"
-
-#: data/terminal.metainfo.xml.in:243
-msgid ""
-"Default styles are fully opaque and updated to the latest upstream values "
-"from Solarized for improved legibility"
-msgstr ""
-"デフォルトのスタイルが、完全に不透明になり、さらに最新の Solarized のカラー"
-"コードに更新されたことで、可読性が向上しました"
-
-#: data/terminal.metainfo.xml.in:248
-msgid "Performance improvements"
-msgstr "パフォーマンスの改善"
-
-#: data/terminal.metainfo.xml.in:257
-msgid "Switch tabs with Alt + 1-9"
-msgstr "Alt + 1〜9 キーでタブを切り替え可能に"
-
-#: data/terminal.metainfo.xml.in:258
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "Ctrl + Shift + Q キーで終了可能に"
-
-#: data/terminal.metainfo.xml.in:262
-msgid "Fix build on OS 7"
-msgstr "elementary OS 7 上でのビルドを修正"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -224,6 +131,100 @@ msgstr "新しいウィンドウ"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "新しい root タブ"
+
+#~ msgid "Show zoom level in overlay when zooming"
+#~ msgstr "拡大/縮小中に拡大率をオーバーレイ表示する機能を追加"
+
+#~ msgid "Implement Clear and Reset context menu actions with accelerators"
+#~ msgstr ""
+#~ "“画面を消去”と“リセット”を、ショートカットキー付きのコンテキストメニューア"
+#~ "クションとして実装"
+
+#~ msgid "Add toggle for unsafe paste warning to application menu"
+#~ msgstr ""
+#~ "安全でない貼り付け警告の有効/無効を切り替えるスイッチをアプリケーションメ"
+#~ "ニューに追加"
+
+#~ msgid ""
+#~ "Update the icon and tooltip of the cyclic search togglebutton according "
+#~ "to its state"
+#~ msgstr ""
+#~ "循環検索のトグルボタンのアイコンとツールチップをボタンの状態に応じて更新す"
+#~ "るように修正"
+
+#~ msgid "Focus correct tab after clicking on a process finished notification"
+#~ msgstr ""
+#~ "プロセス完了通知をクリックした際、適切なタブにフォーカスするように修正"
+
+#~ msgid ""
+#~ "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+#~ "when text pasted into terminal"
+#~ msgstr ""
+#~ "ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\"、"
+#~ "\"pkexec\"、\"run0\"、\"su\" も警告対象として確認するように修正"
+
+#~ msgid "Check for unsafe paste on dropping text as well"
+#~ msgstr ""
+#~ "テキストをドラッグ & ドロップした際も、安全でない貼り付け確認を実施するよ"
+#~ "うに修正"
+
+#~ msgid "Check for multiline commands in unsafe paste detection"
+#~ msgstr "安全でない貼り付け検出で複数行コマンドも確認するように修正"
+
+#~ msgid "Improve gray contrast in dark theme"
+#~ msgstr "ダークテーマでの灰色のコントラストを改善"
+
+#~ msgid "Allow switching event alerts on and off in the app menu"
+#~ msgstr "アプリメニューからイベント警告のオン/オフを切り替えできる機能を追加"
+
+#~ msgid "Save tabs and zooms to the saved state settings when they change"
+#~ msgstr "タブと拡大率の変更時、保存状態の設定に保存するように変更"
+
+#~ msgid "Document missing options in the man page"
+#~ msgstr "man ページに記載が漏れていたオプションを追記"
+
+#~ msgid "Suppress unwanted default tab when opening a new window"
+#~ msgstr ""
+#~ "新しいウィンドウを開いた場合に、不要なデフォルトのタブが表示されないように"
+#~ "修正"
+
+#~ msgid ""
+#~ "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+#~ "tabs"
+#~ msgstr ""
+#~ "タブの切り替えに \"Ctrl + PageUp\" と \"Ctrl + PageDown\" を使用できるよう"
+#~ "に変更"
+
+#~ msgid "Properly unexport the DBus Interface on Exit"
+#~ msgstr "終了時に DBus インターフェースを適切に削除するよう修正"
+
+#~ msgid "Option to follow system dark style preference"
+#~ msgstr "システムのダークモード設定に従うオプションを追加"
+
+#~ msgid "Create a custom color palette"
+#~ msgstr "カスタムカラーパレットを作成する機能を追加"
+
+#~ msgid "Fixes:"
+#~ msgstr "修正点:"
+
+#~ msgid ""
+#~ "Default styles are fully opaque and updated to the latest upstream values "
+#~ "from Solarized for improved legibility"
+#~ msgstr ""
+#~ "デフォルトのスタイルが、完全に不透明になり、さらに最新の Solarized のカ"
+#~ "ラーコードに更新されたことで、可読性が向上しました"
+
+#~ msgid "Performance improvements"
+#~ msgstr "パフォーマンスの改善"
+
+#~ msgid "Switch tabs with Alt + 1-9"
+#~ msgstr "Alt + 1〜9 キーでタブを切り替え可能に"
+
+#~ msgid "Quit with Ctrl + Shift + Q"
+#~ msgstr "Ctrl + Shift + Q キーで終了可能に"
+
+#~ msgid "Fix build on OS 7"
+#~ msgstr "elementary OS 7 上でのビルドを修正"
 
 #~ msgid "Properly restore zoom levels for all locales"
 #~ msgstr "ロケールに関わらず、拡大レベルを適切に復元するように修正"
@@ -243,9 +244,6 @@ msgstr "新しい root タブ"
 #~ msgstr ""
 #~ "“タブを再読み込み”のデフォルトのショートカットキーを Shift + Ctrl + R に変"
 #~ "更"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Ctrl + Alt + ←/→ でタブを移動できるように変更"

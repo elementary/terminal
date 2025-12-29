@@ -46,8 +46,6 @@ namespace Terminal {
         public const string ACTION_SEARCH_ACCEL = "<Control><Shift>f";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
-        public const string ACTION_OPEN_IN_BROWSER = "action-open-in-browser";
-        public const string ACTION_OPEN_IN_BROWSER_ACCEL = "<Control><Shift>e";
 
         private static Gee.MultiMap<string, string> action_accelerators = new Gee.HashMultiMap<string, string> ();
 
@@ -69,8 +67,7 @@ namespace Terminal {
             { ACTION_MOVE_TAB_TO_NEW_WINDOW, action_move_tab_to_new_window},
             { ACTION_SEARCH, action_search, null, "false", action_search_change_state },
             { ACTION_SEARCH_NEXT, action_search_next },
-            { ACTION_SEARCH_PREVIOUS, action_search_previous },
-            { ACTION_OPEN_IN_BROWSER, action_open_in_browser }
+            { ACTION_SEARCH_PREVIOUS, action_search_previous }
         };
 
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
@@ -93,7 +90,6 @@ namespace Terminal {
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
             action_accelerators[ACTION_SEARCH] = ACTION_SEARCH_ACCEL;
-            action_accelerators[ACTION_OPEN_IN_BROWSER] = ACTION_OPEN_IN_BROWSER_ACCEL;
         }
 
         construct {
@@ -143,81 +139,6 @@ namespace Terminal {
             }
 
             close_request.connect (on_delete_event);
-        }
-
-        public Menu construct_context_menu_model () requires (current_terminal != null) {
-            var show_in_browser_uri = get_current_selection_link_or_pwd ();
-            var appinfo = Utils.get_default_app_for_uri (show_in_browser_uri);
-
-            get_simple_action (ACTION_OPEN_IN_BROWSER).set_enabled (appinfo != null);
-            var open_in_browser_menuitem = new MenuItem (
-               _("Show in %s").printf (appinfo != null ? appinfo.get_display_name () : _("Default application")),
-               ACTION_PREFIX + ACTION_OPEN_IN_BROWSER
-            );
-            open_in_browser_menuitem.set_attribute_value ("accel", ACTION_OPEN_IN_BROWSER_ACCEL);
-
-            var search_menuitem = new MenuItem (
-                _("Show Search Bar"),
-                ACTION_PREFIX + ACTION_SEARCH
-            );
-            search_menuitem.set_attribute_value ("accel", ACTION_SEARCH_ACCEL);
-
-            var copy_menuitem = new MenuItem (
-                _("Copy"),
-                TerminalWidget.ACTION_COPY
-            );
-            copy_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY[0]));
-
-            var copy_last_output_menuitem = new MenuItem (
-                _("Copy Last Output"),
-                TerminalWidget.ACTION_COPY_OUTPUT
-            );
-            copy_last_output_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY_OUTPUT[0]));
-
-            var clear_screen_menuitem = new MenuItem (
-                _("Clear Screen"),
-                TerminalWidget.ACTION_CLEAR_SCREEN
-            );
-            clear_screen_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_CLEAR_SCREEN[0]));
-
-            var reset_menuitem = new MenuItem (
-                _("Reset"),
-                TerminalWidget.ACTION_RESET
-            );
-            reset_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_RESET[0]));
-
-            var paste_menuitem = new MenuItem (
-                _("Paste"),
-                TerminalWidget.ACTION_PASTE
-            );
-            paste_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_PASTE[0]));
-
-            var select_all_menuitem = new MenuItem (
-                _("Select All"),
-                TerminalWidget.ACTION_SELECT_ALL
-            );
-            select_all_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_SELECT_ALL[0]));
-
-            var terminal_action_section = new Menu ();
-            terminal_action_section.append_item (copy_menuitem);
-            terminal_action_section.append_item (copy_last_output_menuitem);
-            terminal_action_section.append_item (paste_menuitem);
-            terminal_action_section.append_item (select_all_menuitem);
-
-            var terminal_clear_reset_section = new Menu ();
-            terminal_clear_reset_section.append_item (clear_screen_menuitem);
-            terminal_clear_reset_section.append_item (reset_menuitem);
-
-            var search_section = new Menu ();
-            search_section.append_item (search_menuitem);
-
-            var context_menu_model = new Menu ();
-            context_menu_model.append_item (open_in_browser_menuitem);
-            context_menu_model.append_section (null, terminal_action_section);
-            context_menu_model.append_section (null, search_section);
-            context_menu_model.append_section (null, terminal_clear_reset_section);
-
-            return context_menu_model;
         }
 
         public void add_tab_with_working_directory (
@@ -617,48 +538,6 @@ namespace Terminal {
             term.term_ps ();
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
                notebook.make_restorable (term.current_working_directory);
-            }
-        }
-
-        private void action_open_in_browser () requires (current_terminal != null) {
-            var uri = get_current_selection_link_or_pwd ();
-            var context = Gdk.Display.get_default ().get_app_launch_context ();
-            AppInfo.launch_default_for_uri_async.begin (uri, context, null, (obj, res) => {
-                try {
-                    AppInfo.launch_default_for_uri_async.end (res);
-                } catch (Error e) {
-                    warning ("Launcher failed with error %s", e.message);
-                    //TODO Handle launch failure - message box?
-                }
-            });
-        }
-
-        private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
-            var link_uri = current_terminal.link_uri;
-            if (link_uri == null) {
-                if (current_terminal.get_has_selection ()) {
-                    current_terminal.copy_primary ();
-                    try {
-                        var cp = Gdk.Display.get_default ().get_primary_clipboard ().get_content ();
-                        if (cp != null) {
-                            var val = Value (typeof (string));
-                            cp.get_value (ref val);
-                            return val.dup_string ();
-                        }
-                    } catch (Error e) {
-                        critical ("Unable to get clipboard contents");
-                    }
-
-                    return null;
-                } else {
-                    return current_terminal.get_shell_location ();
-                }
-            } else {
-                if (!link_uri.contains ("://")) {
-                    link_uri = "http://" + link_uri;
-                }
-
-                return link_uri;
             }
         }
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-10-28 10:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/terminal/extra/"
@@ -37,16 +37,53 @@ msgstr ""
 "Terminal est un émulateur de terminal pour accéder à un environnement shell "
 "Unix, qui vous permet d'exécuter les programmes de votre système."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
-#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
-#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
+#: data/terminal.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+msgid "New features:"
+msgstr "Nouvelles fonctionnalités :"
+
+#: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
 msgid "Other updates:"
 msgstr "Autres mises à jour :"
 
-#: data/terminal.metainfo.xml.in:61
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
+msgid "Translation updates"
+msgstr "Mise à jour des traductions"
+
+#: data/terminal.metainfo.xml.in:85
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
@@ -54,22 +91,7 @@ msgstr ""
 "L'option permettant de masquer la barre d'onglets lorsqu'il n'y a qu'un seul "
 "onglet est désormais visible et prise en compte"
 
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
-#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
-msgid "Translation updates"
-msgstr "Mise à jour des traductions"
-
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
-#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
-#: data/terminal.metainfo.xml.in:255
-msgid "New features:"
-msgstr "Nouvelles fonctionnalités :"
-
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
@@ -77,7 +99,7 @@ msgstr ""
 "Un avertissement est désormais affiché si une commande collée comporte une "
 "option qui ignore les confirmations"
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
@@ -85,139 +107,18 @@ msgstr ""
 "Lorsqu'un processus est lancé au premier plan, le nom de l'onglet change "
 "pour afficher le nom de ce processus"
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr "Quitter le shell dans un onglet ferme désormais cet onglet"
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr "Arrêt de l'augmentation de la taille de la fenêtre à l'ouverture"
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 "Modification du raccourci pour les actions Réinitialiser et Effacer l'écran"
-
-#: data/terminal.metainfo.xml.in:155
-msgid "Show zoom level in overlay when zooming"
-msgstr "Affichage du niveau de zoom en surimpression lors d'un zoom"
-
-#: data/terminal.metainfo.xml.in:156
-msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr ""
-"Implémentation des actions Effacer et Réinitialiser dans le menu contextuel "
-"à l'aide de raccourcis"
-
-#: data/terminal.metainfo.xml.in:157
-msgid "Add toggle for unsafe paste warning to application menu"
-msgstr ""
-"Ajout d'un bouton pour l'avertissement de collage non sécurisé dans le menu "
-"de l'application"
-
-#: data/terminal.metainfo.xml.in:161
-msgid ""
-"Update the icon and tooltip of the cyclic search togglebutton according to "
-"its state"
-msgstr ""
-"Mise à jour de l'icône et de l'infobulle du bouton de recherche cyclique en "
-"fonction de son état"
-
-#: data/terminal.metainfo.xml.in:162
-msgid "Focus correct tab after clicking on a process finished notification"
-msgstr ""
-"Focalisation sur le bon onglet après avoir cliqué sur une notification de "
-"fin de processus"
-
-#: data/terminal.metainfo.xml.in:163
-msgid ""
-"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
-"when text pasted into terminal"
-msgstr ""
-"Vérification de la présence de « doas », « pkexec », « run0 », et « su » "
-"ainsi que « sudo » lorsque le texte est collé dans le terminal"
-
-#: data/terminal.metainfo.xml.in:164
-msgid "Check for unsafe paste on dropping text as well"
-msgstr ""
-"Vérification de la présence d'un collage non sécurisé sur le texte glissé-"
-"déposé"
-
-#: data/terminal.metainfo.xml.in:165
-msgid "Check for multiline commands in unsafe paste detection"
-msgstr ""
-"Vérification des commandes multilignes dans la détection des collages non "
-"sécurisés"
-
-#: data/terminal.metainfo.xml.in:166
-msgid "Improve gray contrast in dark theme"
-msgstr "Amélioration du contraste des gris en thème sombre"
-
-#: data/terminal.metainfo.xml.in:186
-msgid "Allow switching event alerts on and off in the app menu"
-msgstr ""
-"Il est désormais possible d'activer/désactiver les alertes d'événements "
-"depuis le menu de l'application"
-
-#: data/terminal.metainfo.xml.in:187
-msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr "Sauvegarde des onglets et du niveau de zoom lorsqu'ils sont modifiés"
-
-#: data/terminal.metainfo.xml.in:191
-msgid "Document missing options in the man page"
-msgstr "Documentation des options manquantes dans la page de manuel"
-
-#: data/terminal.metainfo.xml.in:192
-msgid "Suppress unwanted default tab when opening a new window"
-msgstr ""
-"Suppression de l'onglet par défaut lors de l'ouverture d'une nouvelle fenêtre"
-
-#: data/terminal.metainfo.xml.in:209
-msgid ""
-"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
-"tabs"
-msgstr ""
-"Ajout des raccourcis « Ctrl + Page précédente » et « Ctrl + Page suivante » "
-"pour naviguer entre les onglets"
-
-#: data/terminal.metainfo.xml.in:210
-msgid "Properly unexport the DBus Interface on Exit"
-msgstr "L'interface DBus est désormais déprogrammée correctement à la sortie"
-
-#: data/terminal.metainfo.xml.in:238
-msgid "Option to follow system dark style preference"
-msgstr "Option pour suivre le thème du système"
-
-#: data/terminal.metainfo.xml.in:239
-msgid "Create a custom color palette"
-msgstr "Création d'une palette de couleurs personnalisée"
-
-#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
-msgid "Fixes:"
-msgstr "Corrections :"
-
-#: data/terminal.metainfo.xml.in:243
-msgid ""
-"Default styles are fully opaque and updated to the latest upstream values "
-"from Solarized for improved legibility"
-msgstr ""
-"Les thèmes par défaut sont totalement opaques et mis à jour avec les "
-"dernières valeurs en amont de Solarized pour une meilleure lisibilité"
-
-#: data/terminal.metainfo.xml.in:248
-msgid "Performance improvements"
-msgstr "Amélioration des performances"
-
-#: data/terminal.metainfo.xml.in:257
-msgid "Switch tabs with Alt + 1-9"
-msgstr "Basculez entre les onglets avec Alt + 1-0"
-
-#: data/terminal.metainfo.xml.in:258
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "Quittez l'application avec Ctrl + Maj + Q"
-
-#: data/terminal.metainfo.xml.in:262
-msgid "Fix build on OS 7"
-msgstr "Correction du déploiement sur OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -230,6 +131,107 @@ msgstr "Nouvelle fenêtre"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "Nouvel onglet en tant qu'administrateur"
+
+#~ msgid "Show zoom level in overlay when zooming"
+#~ msgstr "Affichage du niveau de zoom en surimpression lors d'un zoom"
+
+#~ msgid "Implement Clear and Reset context menu actions with accelerators"
+#~ msgstr ""
+#~ "Implémentation des actions Effacer et Réinitialiser dans le menu "
+#~ "contextuel à l'aide de raccourcis"
+
+#~ msgid "Add toggle for unsafe paste warning to application menu"
+#~ msgstr ""
+#~ "Ajout d'un bouton pour l'avertissement de collage non sécurisé dans le "
+#~ "menu de l'application"
+
+#~ msgid ""
+#~ "Update the icon and tooltip of the cyclic search togglebutton according "
+#~ "to its state"
+#~ msgstr ""
+#~ "Mise à jour de l'icône et de l'infobulle du bouton de recherche cyclique "
+#~ "en fonction de son état"
+
+#~ msgid "Focus correct tab after clicking on a process finished notification"
+#~ msgstr ""
+#~ "Focalisation sur le bon onglet après avoir cliqué sur une notification de "
+#~ "fin de processus"
+
+#~ msgid ""
+#~ "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+#~ "when text pasted into terminal"
+#~ msgstr ""
+#~ "Vérification de la présence de « doas », « pkexec », « run0 », et « su » "
+#~ "ainsi que « sudo » lorsque le texte est collé dans le terminal"
+
+#~ msgid "Check for unsafe paste on dropping text as well"
+#~ msgstr ""
+#~ "Vérification de la présence d'un collage non sécurisé sur le texte glissé-"
+#~ "déposé"
+
+#~ msgid "Check for multiline commands in unsafe paste detection"
+#~ msgstr ""
+#~ "Vérification des commandes multilignes dans la détection des collages non "
+#~ "sécurisés"
+
+#~ msgid "Improve gray contrast in dark theme"
+#~ msgstr "Amélioration du contraste des gris en thème sombre"
+
+#~ msgid "Allow switching event alerts on and off in the app menu"
+#~ msgstr ""
+#~ "Il est désormais possible d'activer/désactiver les alertes d'événements "
+#~ "depuis le menu de l'application"
+
+#~ msgid "Save tabs and zooms to the saved state settings when they change"
+#~ msgstr ""
+#~ "Sauvegarde des onglets et du niveau de zoom lorsqu'ils sont modifiés"
+
+#~ msgid "Document missing options in the man page"
+#~ msgstr "Documentation des options manquantes dans la page de manuel"
+
+#~ msgid "Suppress unwanted default tab when opening a new window"
+#~ msgstr ""
+#~ "Suppression de l'onglet par défaut lors de l'ouverture d'une nouvelle "
+#~ "fenêtre"
+
+#~ msgid ""
+#~ "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+#~ "tabs"
+#~ msgstr ""
+#~ "Ajout des raccourcis « Ctrl + Page précédente » et « Ctrl + Page "
+#~ "suivante » pour naviguer entre les onglets"
+
+#~ msgid "Properly unexport the DBus Interface on Exit"
+#~ msgstr ""
+#~ "L'interface DBus est désormais déprogrammée correctement à la sortie"
+
+#~ msgid "Option to follow system dark style preference"
+#~ msgstr "Option pour suivre le thème du système"
+
+#~ msgid "Create a custom color palette"
+#~ msgstr "Création d'une palette de couleurs personnalisée"
+
+#~ msgid "Fixes:"
+#~ msgstr "Corrections :"
+
+#~ msgid ""
+#~ "Default styles are fully opaque and updated to the latest upstream values "
+#~ "from Solarized for improved legibility"
+#~ msgstr ""
+#~ "Les thèmes par défaut sont totalement opaques et mis à jour avec les "
+#~ "dernières valeurs en amont de Solarized pour une meilleure lisibilité"
+
+#~ msgid "Performance improvements"
+#~ msgstr "Amélioration des performances"
+
+#~ msgid "Switch tabs with Alt + 1-9"
+#~ msgstr "Basculez entre les onglets avec Alt + 1-0"
+
+#~ msgid "Quit with Ctrl + Shift + Q"
+#~ msgstr "Quittez l'application avec Ctrl + Maj + Q"
+
+#~ msgid "Fix build on OS 7"
+#~ msgstr "Correction du déploiement sur OS 7"
 
 #~ msgid "Properly restore zoom levels for all locales"
 #~ msgstr "Restauration correcte du niveau de zoom pour toutes les langues"
@@ -250,9 +252,6 @@ msgstr "Nouvel onglet en tant qu'administrateur"
 #~ msgstr ""
 #~ "Modification du raccourci par défaut pour Recharger l'onglet par Maj + "
 #~ "Ctrl + R"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "Déplacez les onglets avec le raccourci Ctrl + Alt + ←/→"
