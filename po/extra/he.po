@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: 2025-10-30 06:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/terminal/extra/"
@@ -37,164 +37,81 @@ msgstr ""
 "מסוף הוא יישום מדמה מסוף לגישה לסביבת מעטפת UNIX המשמשת להרצת התכניות "
 "הזמינות במערכת."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
-#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
-#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
-#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
-#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
-#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
+#: data/terminal.metainfo.xml.in:51
+msgid "elementary, Inc."
+msgstr "elementary בע״מ."
+
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+msgid "New features:"
+msgstr "יכולות חדשות:"
+
+#: data/terminal.metainfo.xml.in:61
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:62
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
+#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
+#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
+#: data/terminal.metainfo.xml.in:160
 msgid "Other updates:"
 msgstr "עדכונים נוספים:"
 
-#: data/terminal.metainfo.xml.in:61
+#: data/terminal.metainfo.xml.in:66
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:67
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:68
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:69
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
+#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
+#: data/terminal.metainfo.xml.in:164
+msgid "Translation updates"
+msgstr "תרגומים עודכנו"
+
+#: data/terminal.metainfo.xml.in:85
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr "האפשרות להסתרת סרגל הלשוניות חשופה ומטופלת כראוי מעתה"
 
-#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
-#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
-#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
-#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
-#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
-#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
-msgid "Translation updates"
-msgstr "תרגומים עודכנו"
-
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
-#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
-#: data/terminal.metainfo.xml.in:255
-msgid "New features:"
-msgstr "יכולות חדשות:"
-
-#: data/terminal.metainfo.xml.in:102
+#: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr "מעתה מופיעה אזהרה אם לפקודה שהודבקה יש אפשרות שמדלגת על אישורים"
 
-#: data/terminal.metainfo.xml.in:103
+#: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr "כשתהליך חזית מופעל, תווית הלשונית מתחלפת לשם התהליך הזה"
 
-#: data/terminal.metainfo.xml.in:107
+#: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr "יציאה מהמעטפת בלשונית סוגרת מעתה את הלשונית הזאת"
 
-#: data/terminal.metainfo.xml.in:138
+#: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"
 msgstr "נעצר מצב שגודל החלון גדל בעת הפתיחה"
 
-#: data/terminal.metainfo.xml.in:139
+#: data/terminal.metainfo.xml.in:163
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr "הוחלפו מקשי הקיצור לפעולות המסך איפוס ופינוי"
-
-#: data/terminal.metainfo.xml.in:155
-msgid "Show zoom level in overlay when zooming"
-msgstr "הצגת רמת תקריב בתצוגת על בעת שינוי המרחק"
-
-#: data/terminal.metainfo.xml.in:156
-msgid "Implement Clear and Reset context menu actions with accelerators"
-msgstr "מימוש פעולות תפריט ההקשר פינוי ואיפוס עם מקשי האצה"
-
-#: data/terminal.metainfo.xml.in:157
-msgid "Add toggle for unsafe paste warning to application menu"
-msgstr "הוספת מתג לאזהרת הדבקה מפוקפקת לתפריט היישום"
-
-#: data/terminal.metainfo.xml.in:161
-msgid ""
-"Update the icon and tooltip of the cyclic search togglebutton according to "
-"its state"
-msgstr "עדכון הסמל וחלונית העצה של מתג החיפוש המעגלי למצב שלו"
-
-#: data/terminal.metainfo.xml.in:162
-msgid "Focus correct tab after clicking on a process finished notification"
-msgstr "התמקדות על הלשונית הנוכחית לאחר לחיצה על התראת סיום תהליך"
-
-#: data/terminal.metainfo.xml.in:163
-msgid ""
-"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
-"when text pasted into terminal"
-msgstr ""
-"לבדוק גם את „doas”,‏ „pkexec”,‏ „run0”, ואת „su” כמו גם את „sudo” בעת הדבקת "
-"טקסט למסוף"
-
-#: data/terminal.metainfo.xml.in:164
-msgid "Check for unsafe paste on dropping text as well"
-msgstr "לבדוק הדבקה מפוקפקת גם בעת גרירת טקסט"
-
-#: data/terminal.metainfo.xml.in:165
-msgid "Check for multiline commands in unsafe paste detection"
-msgstr "לבדוק פקודות מרובות שורות בזיהוי הדבקה מפוקפקת"
-
-#: data/terminal.metainfo.xml.in:166
-msgid "Improve gray contrast in dark theme"
-msgstr "שיפור ניגודיות הצבע האפור בערכה הכהה"
-
-#: data/terminal.metainfo.xml.in:186
-msgid "Allow switching event alerts on and off in the app menu"
-msgstr "לאפשר להפעיל ולכבות התראות אירועים בתפריט היישום"
-
-#: data/terminal.metainfo.xml.in:187
-msgid "Save tabs and zooms to the saved state settings when they change"
-msgstr "לשמור לשוניות ומרחק מתצוגה להגדרות המצב כשאלו משתנים"
-
-#: data/terminal.metainfo.xml.in:191
-msgid "Document missing options in the man page"
-msgstr "האפשרויות החסרות תועדו בעמוד ההדרכה (man)"
-
-#: data/terminal.metainfo.xml.in:192
-msgid "Suppress unwanted default tab when opening a new window"
-msgstr "הדחקת לשונית ברירת מחדל בלתי רצויה בעת פתיחת חלון חדש"
-
-#: data/terminal.metainfo.xml.in:209
-msgid ""
-"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
-"tabs"
-msgstr ""
-"נוספו קיצורי הדרך „Ctrl + PageUp” ו־„Ctrl + PageDown” כדי לעבור בין לשוניות"
-
-#: data/terminal.metainfo.xml.in:210
-msgid "Properly unexport the DBus Interface on Exit"
-msgstr "ביטול הולם של ייצוא מנשק ה־D-Bus עם היציאה"
-
-#: data/terminal.metainfo.xml.in:238
-msgid "Option to follow system dark style preference"
-msgstr "אפשרות לעקוב אחר העדפת המצב הכהה של המערכת"
-
-#: data/terminal.metainfo.xml.in:239
-msgid "Create a custom color palette"
-msgstr "יצירת ערכת צבעים משלך"
-
-#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
-msgid "Fixes:"
-msgstr "תיקונים:"
-
-#: data/terminal.metainfo.xml.in:243
-msgid ""
-"Default styles are fully opaque and updated to the latest upstream values "
-"from Solarized for improved legibility"
-msgstr ""
-"סגנונות ברירת המחדל אטומים לחלוטין ומעודכנים לערכים העדכניים מ־Solarized "
-"לשיפור המראה"
-
-#: data/terminal.metainfo.xml.in:248
-msgid "Performance improvements"
-msgstr "שיפורי ביצועים"
-
-#: data/terminal.metainfo.xml.in:257
-msgid "Switch tabs with Alt + 1-9"
-msgstr "מעבר בין טאבים עם Alt + 1-9"
-
-#: data/terminal.metainfo.xml.in:258
-msgid "Quit with Ctrl + Shift + Q"
-msgstr "יציאה עם Ctrl + Shift + Q"
-
-#: data/terminal.metainfo.xml.in:262
-msgid "Fix build on OS 7"
-msgstr "תוקנה הבנייה ב־OS 7"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -207,6 +124,89 @@ msgstr "חלון חדש"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "לשונית חדשה כמנהל"
+
+#~ msgid "Show zoom level in overlay when zooming"
+#~ msgstr "הצגת רמת תקריב בתצוגת על בעת שינוי המרחק"
+
+#~ msgid "Implement Clear and Reset context menu actions with accelerators"
+#~ msgstr "מימוש פעולות תפריט ההקשר פינוי ואיפוס עם מקשי האצה"
+
+#~ msgid "Add toggle for unsafe paste warning to application menu"
+#~ msgstr "הוספת מתג לאזהרת הדבקה מפוקפקת לתפריט היישום"
+
+#~ msgid ""
+#~ "Update the icon and tooltip of the cyclic search togglebutton according "
+#~ "to its state"
+#~ msgstr "עדכון הסמל וחלונית העצה של מתג החיפוש המעגלי למצב שלו"
+
+#~ msgid "Focus correct tab after clicking on a process finished notification"
+#~ msgstr "התמקדות על הלשונית הנוכחית לאחר לחיצה על התראת סיום תהליך"
+
+#~ msgid ""
+#~ "Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+#~ "when text pasted into terminal"
+#~ msgstr ""
+#~ "לבדוק גם את „doas”,‏ „pkexec”,‏ „run0”, ואת „su” כמו גם את „sudo” בעת הדבקת "
+#~ "טקסט למסוף"
+
+#~ msgid "Check for unsafe paste on dropping text as well"
+#~ msgstr "לבדוק הדבקה מפוקפקת גם בעת גרירת טקסט"
+
+#~ msgid "Check for multiline commands in unsafe paste detection"
+#~ msgstr "לבדוק פקודות מרובות שורות בזיהוי הדבקה מפוקפקת"
+
+#~ msgid "Improve gray contrast in dark theme"
+#~ msgstr "שיפור ניגודיות הצבע האפור בערכה הכהה"
+
+#~ msgid "Allow switching event alerts on and off in the app menu"
+#~ msgstr "לאפשר להפעיל ולכבות התראות אירועים בתפריט היישום"
+
+#~ msgid "Save tabs and zooms to the saved state settings when they change"
+#~ msgstr "לשמור לשוניות ומרחק מתצוגה להגדרות המצב כשאלו משתנים"
+
+#~ msgid "Document missing options in the man page"
+#~ msgstr "האפשרויות החסרות תועדו בעמוד ההדרכה (man)"
+
+#~ msgid "Suppress unwanted default tab when opening a new window"
+#~ msgstr "הדחקת לשונית ברירת מחדל בלתי רצויה בעת פתיחת חלון חדש"
+
+#~ msgid ""
+#~ "Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+#~ "tabs"
+#~ msgstr ""
+#~ "נוספו קיצורי הדרך „Ctrl + PageUp” ו־„Ctrl + PageDown” כדי לעבור בין "
+#~ "לשוניות"
+
+#~ msgid "Properly unexport the DBus Interface on Exit"
+#~ msgstr "ביטול הולם של ייצוא מנשק ה־D-Bus עם היציאה"
+
+#~ msgid "Option to follow system dark style preference"
+#~ msgstr "אפשרות לעקוב אחר העדפת המצב הכהה של המערכת"
+
+#~ msgid "Create a custom color palette"
+#~ msgstr "יצירת ערכת צבעים משלך"
+
+#~ msgid "Fixes:"
+#~ msgstr "תיקונים:"
+
+#~ msgid ""
+#~ "Default styles are fully opaque and updated to the latest upstream values "
+#~ "from Solarized for improved legibility"
+#~ msgstr ""
+#~ "סגנונות ברירת המחדל אטומים לחלוטין ומעודכנים לערכים העדכניים מ־Solarized "
+#~ "לשיפור המראה"
+
+#~ msgid "Performance improvements"
+#~ msgstr "שיפורי ביצועים"
+
+#~ msgid "Switch tabs with Alt + 1-9"
+#~ msgstr "מעבר בין טאבים עם Alt + 1-9"
+
+#~ msgid "Quit with Ctrl + Shift + Q"
+#~ msgstr "יציאה עם Ctrl + Shift + Q"
+
+#~ msgid "Fix build on OS 7"
+#~ msgstr "תוקנה הבנייה ב־OS 7"
 
 #~ msgid "Properly restore zoom levels for all locales"
 #~ msgstr "שחזור נכון של רמות התקריב לכל השפות"
@@ -223,9 +223,6 @@ msgstr "לשונית חדשה כמנהל"
 
 #~ msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
 #~ msgstr "הקיצור המועדף ל„רענון לשונית” הוחלף לכדי Shift + Control + R"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary בע״מ."
 
 #~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
 #~ msgstr "העברת לשוניות עם קיצור המקשים Ctrl + Alt + ←/→‎"

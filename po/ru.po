@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: 2025-10-26 09:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
@@ -62,79 +62,76 @@ msgstr "Процесс завершён"
 msgid "Process exited with errors"
 msgstr "Процесс завершён с ошибками"
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr "Показать строку поиска"
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
-msgid "Copy"
-msgstr "Копировать"
-
-#: src/MainWindow.vala:168
-msgid "Copy Last Output"
-msgstr "Копировать последний вывод"
-
-#: src/MainWindow.vala:174
-msgid "Clear Screen"
-msgstr "Очистить экран"
-
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
-msgid "Reset"
-msgstr "Сбросить"
-
-#: src/MainWindow.vala:186
-msgid "Paste"
-msgstr "Вставить"
-
-#: src/MainWindow.vala:192
-msgid "Select All"
-msgstr "Выделить всё"
-
-#: src/MainWindow.vala:298
-msgid "Exit FullScreen"
-msgstr "Выйти из полноэкранного режима"
-
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
-msgid "Find…"
-msgstr "Поиск…"
-
-#: src/MainWindow.vala:313
-msgid "New Tab…"
-msgstr "Создать вкладку…"
-
-#: src/MainWindow.vala:325
-msgid "Settings"
-msgstr "Параметры"
-
-#: src/MainWindow.vala:374
-msgid "Are you sure you want to close this tab?"
-msgstr "Закрыть эту вкладку?"
-
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
-msgstr "Закрыть вкладку"
-
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
+#: src/MainWindow.vala:154
 #, c-format
 msgid "Show in %s"
 msgstr "Показать в %s"
 
-#: src/MainWindow.vala:578
+#: src/MainWindow.vala:154
 msgid "Default application"
 msgstr "Приложение по умолчанию"
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Выйти из Терминала?"
+#: src/MainWindow.vala:160
+msgid "Copy"
+msgstr "Копировать"
 
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr "Выйти из Терминала"
+#: src/MainWindow.vala:166
+msgid "Copy Last Output"
+msgstr "Копировать последний вывод"
 
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:172
+msgid "Clear Screen"
+msgstr "Очистить экран"
+
+#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
+msgid "Reset"
+msgstr "Сбросить"
+
+#: src/MainWindow.vala:184
+msgid "Paste"
+msgstr "Вставить"
+
+#: src/MainWindow.vala:190
+msgid "Select All"
+msgstr "Выделить всё"
+
+#: src/MainWindow.vala:263
+msgid "Exit FullScreen"
+msgstr "Выйти из полноэкранного режима"
+
+#: src/MainWindow.vala:272 src/MainWindow.vala:761
+msgid "Find…"
+msgstr "Поиск…"
+
+#: src/MainWindow.vala:278
+msgid "New Tab…"
+msgstr "Создать вкладку…"
+
+#: src/MainWindow.vala:290
+msgid "Settings"
+msgstr "Параметры"
+
+#: src/MainWindow.vala:335
+msgid "Are you sure you want to close this tab?"
+msgstr "Закрыть эту вкладку?"
+
+#: src/MainWindow.vala:336
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close tab"
+msgstr "Закрыть вкладку"
+
+#: src/MainWindow.vala:579
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
+msgstr ""
+
+#: src/MainWindow.vala:580
+msgid "Close window"
+msgstr ""
+
+#: src/MainWindow.vala:751
 msgid "Hide find bar"
 msgstr "Скрыть строку поиска"
 
@@ -153,11 +150,11 @@ msgstr ""
 "Вставленный текст содержит команду, отключающую предупреждения и "
 "подтверждения"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr "Цветовые предпочтения"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr "Стиль окна:"
 
@@ -166,7 +163,7 @@ msgid "Light"
 msgstr "Светлый"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "Тёмный"
 
@@ -254,27 +251,27 @@ msgstr "Передний план:"
 msgid "Cursor:"
 msgstr "Курсор:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr "Закрыть"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr "Очень низкий контраст"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr "Низкий контраст"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr "Хороший контраст"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr "Высокий контраст"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
@@ -293,11 +290,11 @@ msgstr ""
 msgid "Show paste protection warnings"
 msgstr "Показывать предупреждения о вставках"
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "Не вставлять"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr "Всё равно вставить"
 
@@ -313,66 +310,66 @@ msgstr "Предыдущий результат"
 msgid "Next result"
 msgstr "Следующий результат"
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 msgid "Disable cyclic search"
 msgstr "Отключить циклический поиск"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 msgid "Enable cyclic search"
 msgstr "Выключить циклический поиск"
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr "Уменьшить"
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr "Масштаб по умолчанию"
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr "Увеличить"
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr "Использовать стиль системы"
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr "Высокий контраст"
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr "Solarized светлый"
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr "Пользовательский"
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr "Обычное копирование/вставка"
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Сочетания клавиш не требуют Shift. Может конфликтовать c CLI-приложениями"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr "Оповещать об опасной вставке"
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
 "Предупреждать, когда вставленный текст содержит несколько команд или команды "
 "от администратора"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "Оповещения о событиях"
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -380,62 +377,74 @@ msgstr ""
 "Уведомлять о неправильном вводе или нескольких возможных дополнениях (также "
 "зависит от настройки в Параметры системы → Звуки)"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr "Автоматически скрывать панель вкладок"
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr "Скрывать панель, когда открыта только одна вкладка"
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "Терминал"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:565
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Сбросить этот терминал?"
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:600
 msgid "Are you sure you want to reload this tab?"
 msgstr "Перезагрузить эту вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
-msgstr "Перезагрузить вкладку"
+#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+msgid "Reload"
+msgstr "Перезагрузить"
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr "Создать вкладку"
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 msgid "Closed Tabs"
 msgstr "Закрытые вкладки"
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr "Закрыть вкладки справа"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 msgid "Close Other Tabs"
 msgstr "Закрыть остальные вкладки"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr "Закрыть вкладку"
+
+#: src/Widgets/TerminalView.vala:346
 msgid "Open in New Window"
 msgstr "Открыть в новом окне"
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 msgid "Duplicate Tab"
 msgstr "Дублировать вкладку"
-
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
-msgstr "Перезагрузить"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "Масштаб: %.0f%%"
+
+#~ msgid "Show Search Bar"
+#~ msgstr "Показать строку поиска"
+
+#~ msgid "Are you sure you want to quit Terminal?"
+#~ msgstr "Выйти из Терминала?"
+
+#~ msgid "Quit Terminal"
+#~ msgstr "Выйти из Терминала"
+
+#~ msgid "Reload Tab"
+#~ msgstr "Перезагрузить вкладку"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Во вкладке выполняется процесс."

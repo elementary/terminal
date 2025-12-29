@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-27 15:49+0000\n"
 "PO-Revision-Date: 2024-07-10 09:24+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -66,81 +66,78 @@ msgstr "Proces úspešne dokončený"
 msgid "Process exited with errors"
 msgstr "Proces bol ukončený s chybami"
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr ""
+#: src/MainWindow.vala:154
+#, c-format
+msgid "Show in %s"
+msgstr "Zobraziť v %s"
 
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
+#: src/MainWindow.vala:154
+msgid "Default application"
+msgstr "Predvolená aplikácia"
+
+#: src/MainWindow.vala:160
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:166
 msgid "Copy Last Output"
 msgstr "Kopírovať posledný výstup"
 
-#: src/MainWindow.vala:174
+#: src/MainWindow.vala:172
 msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
 msgid "Reset"
 msgstr ""
 
-#: src/MainWindow.vala:186
+#: src/MainWindow.vala:184
 msgid "Paste"
 msgstr "Vložiť"
 
-#: src/MainWindow.vala:192
+#: src/MainWindow.vala:190
 msgid "Select All"
 msgstr "Označiť všetko"
 
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:263
 msgid "Exit FullScreen"
 msgstr "Opustiť režim celej obrazovky"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
+#: src/MainWindow.vala:272 src/MainWindow.vala:761
 msgid "Find…"
 msgstr "Nájsť…"
 
-#: src/MainWindow.vala:313
+#: src/MainWindow.vala:278
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "Nová karta"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:290
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:335
 msgid "Are you sure you want to close this tab?"
 msgstr "Naozaj chcete zatvoriť túto kartu?"
 
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
+#: src/MainWindow.vala:336
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close tab"
 msgstr "Zatvoriť kartu"
 
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
-#, c-format
-msgid "Show in %s"
-msgstr "Zobraziť v %s"
+#: src/MainWindow.vala:579
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
+msgstr ""
 
-#: src/MainWindow.vala:578
-msgid "Default application"
-msgstr "Predvolená aplikácia"
+#: src/MainWindow.vala:580
+msgid "Close window"
+msgstr ""
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Naozaj chcete ukončiť Terminál?"
-
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr "Ukončiť Terminál"
-
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:751
 msgid "Hide find bar"
 msgstr "Skryť panel vyhľadávania"
 
@@ -156,11 +153,11 @@ msgstr "Vložený text sa môže pokúsiť získať administrátorské práva"
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr "Nastavenia farieb"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr "Štýl okna:"
 
@@ -169,7 +166,7 @@ msgid "Light"
 msgstr "Svetlý"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "Tmavý"
 
@@ -257,27 +254,27 @@ msgstr "Popredie:"
 msgid "Cursor:"
 msgstr "Kurzor:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr "Zatvoriť"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr "Kontrast je príliš nízky"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr "Kontrast je nízky"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr "Kontrast je dobrý"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr "Kontrast je vysoký"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 #, fuzzy
 #| msgid ""
 #| "There is an active process on this tab. If you reload it, the process "
@@ -301,11 +298,11 @@ msgstr ""
 msgid "Show paste protection warnings"
 msgstr "Zobrazovať upozornenia o vkladaní"
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "Nevkladať"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr "Napriek tomu vložiť"
 
@@ -321,71 +318,71 @@ msgstr "Predchádzajúci výsledok"
 msgid "Next result"
 msgstr "Ďalší výsledok"
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 #, fuzzy
 #| msgid "Cyclic search"
 msgid "Disable cyclic search"
 msgstr "Opakované hľadanie"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 #, fuzzy
 #| msgid "Cyclic search"
 msgid "Enable cyclic search"
 msgstr "Opakované hľadanie"
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr "Oddialiť"
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr "Mierka 1:1"
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr "Priblížiť"
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr "Nasledovať systémový štýl"
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr "Solarizovaný svetlý"
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr "Vlastné"
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr "Prirodzené kopírovanie/vkladanie"
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Klávesové skratky nevyžadujú Shift; môže kolidovať s aplikáciami v "
 "príkazovom riadku"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 #, fuzzy
 #| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr "Vložený text môže obsahovať viacero príkazov"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "Upozornenia na udalosti"
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
@@ -393,72 +390,81 @@ msgstr ""
 "Oznámiť neplatný vstup alebo viaceré možné ukončenia (podlieha Nastaveniam "
 "systému → Zvuk)"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "Terminál"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:565
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Naozaj chcete ukončiť Terminál?"
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:600
 msgid "Are you sure you want to reload this tab?"
 msgstr "Naozaj chcete obnoviť túto kartu?"
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
-msgstr "Obnoviť kartu"
+#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+msgid "Reload"
+msgstr "Obnoviť"
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr "Nová karta"
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Closed Tabs"
 msgstr "Zatvoriť kartu"
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Zatvoriť kartu"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr "Zatvoriť kartu"
+
+#: src/Widgets/TerminalView.vala:346
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Nové okno"
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Duplikovať"
 
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
-msgstr "Obnoviť"
-
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "Are you sure you want to quit Terminal?"
+#~ msgstr "Naozaj chcete ukončiť Terminál?"
+
+#~ msgid "Quit Terminal"
+#~ msgstr "Ukončiť Terminál"
+
+#~ msgid "Reload Tab"
+#~ msgstr "Obnoviť kartu"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Na tejto karte je spustený aktívny proces."
