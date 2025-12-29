@@ -169,6 +169,20 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
         terminal_widget.tab = tab;
 
+        terminal_widget.notify["tab-state"].connect (() => {
+            switch (terminal_widget.tab_state) {
+                case NONE:
+                    tab.icon = null;
+                    break;
+                case COMPLETED:
+                    tab.icon = new ThemedIcon ("process-completed-symbolic");
+                    break;
+                case ERROR:
+                    tab.icon = new ThemedIcon ("process-error-symbolic");
+                    break;
+            }
+        });
+
         //Set correct label now to avoid race when spawning shell
 
         terminal_widget.set_font (term_font);
