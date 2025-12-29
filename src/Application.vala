@@ -185,6 +185,8 @@ public class Terminal.Application : Gtk.Application {
 
             if (terminal != terminal.main_window.current_terminal) {
                 terminal.tab_state = tab_state;
+            } else if (terminal.tab_state == WORKING) {
+                terminal.tab_state = NONE;
             }
 
             if (!(get_active_window ().is_active)) {

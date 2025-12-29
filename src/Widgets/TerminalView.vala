@@ -170,8 +170,11 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.tab = tab;
 
         terminal_widget.notify["tab-state"].connect (() => {
+            tab.loading = terminal_widget.tab_state == WORKING;
+
             switch (terminal_widget.tab_state) {
                 case NONE:
+                case WORKING:
                     tab.icon = null;
                     break;
                 case COMPLETED:
