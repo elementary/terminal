@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot environment="pantheon" type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot-light.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot-find.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.0.0/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -54,7 +54,7 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
-    <release version="8.0.0" date="2025-12-05" urgency="medium">
+    <release version="8.0.0" date="2025-12-30" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
