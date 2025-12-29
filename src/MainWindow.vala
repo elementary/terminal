@@ -141,70 +141,6 @@ namespace Terminal {
             close_request.connect (on_delete_event);
         }
 
-        public Menu construct_context_menu_model () requires (current_terminal != null) {
-            var show_in_browser_uri = get_current_selection_link_or_pwd ();
-            var appinfo = Utils.get_default_app_for_uri (show_in_browser_uri);
-
-            var open_in_browser_menuitem = new MenuItem (
-               _("Show in %s").printf (appinfo != null ? appinfo.get_display_name () : _("Default application")),
-               TerminalWidget.ACTION_OPEN_IN_BROWSER
-            );
-            open_in_browser_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_OPEN_IN_BROWSER[0]));
-
-            var copy_menuitem = new MenuItem (
-                _("Copy"),
-                TerminalWidget.ACTION_COPY
-            );
-            copy_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY[0]));
-
-            var copy_last_output_menuitem = new MenuItem (
-                _("Copy Last Output"),
-                TerminalWidget.ACTION_COPY_OUTPUT
-            );
-            copy_last_output_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_COPY_OUTPUT[0]));
-
-            var clear_screen_menuitem = new MenuItem (
-                _("Clear Screen"),
-                TerminalWidget.ACTION_CLEAR_SCREEN
-            );
-            clear_screen_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_CLEAR_SCREEN[0]));
-
-            var reset_menuitem = new MenuItem (
-                _("Reset"),
-                TerminalWidget.ACTION_RESET
-            );
-            reset_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_RESET[0]));
-
-            var paste_menuitem = new MenuItem (
-                _("Paste"),
-                TerminalWidget.ACTION_PASTE
-            );
-            paste_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_PASTE[0]));
-
-            var select_all_menuitem = new MenuItem (
-                _("Select All"),
-                TerminalWidget.ACTION_SELECT_ALL
-            );
-            select_all_menuitem.set_attribute_value ("accel", new Variant ("s", TerminalWidget.ACCELS_SELECT_ALL[0]));
-
-            var terminal_action_section = new Menu ();
-            terminal_action_section.append_item (copy_menuitem);
-            terminal_action_section.append_item (copy_last_output_menuitem);
-            terminal_action_section.append_item (paste_menuitem);
-            terminal_action_section.append_item (select_all_menuitem);
-
-            var terminal_clear_reset_section = new Menu ();
-            terminal_clear_reset_section.append_item (clear_screen_menuitem);
-            terminal_clear_reset_section.append_item (reset_menuitem);
-
-            var context_menu_model = new Menu ();
-            context_menu_model.append_item (open_in_browser_menuitem);
-            context_menu_model.append_section (null, terminal_action_section);
-            context_menu_model.append_section (null, terminal_clear_reset_section);
-
-            return context_menu_model;
-        }
-
         public void add_tab_with_working_directory (
             string directory = "",
             string command = "",
@@ -602,35 +538,6 @@ namespace Terminal {
             term.term_ps ();
             if (make_restorable_required && Application.settings.get_boolean ("save-exited-tabs")) {
                notebook.make_restorable (term.current_working_directory);
-            }
-        }
-
-        private string? get_current_selection_link_or_pwd () requires (current_terminal != null) {
-            var link_uri = current_terminal.link_uri;
-            if (link_uri == null) {
-                if (current_terminal.get_has_selection ()) {
-                    current_terminal.copy_primary ();
-                    try {
-                        var cp = Gdk.Display.get_default ().get_primary_clipboard ().get_content ();
-                        if (cp != null) {
-                            var val = Value (typeof (string));
-                            cp.get_value (ref val);
-                            return val.dup_string ();
-                        }
-                    } catch (Error e) {
-                        critical ("Unable to get clipboard contents");
-                    }
-
-                    return null;
-                } else {
-                    return current_terminal.get_shell_location ();
-                }
-            } else {
-                if (!link_uri.contains ("://")) {
-                    link_uri = "http://" + link_uri;
-                }
-
-                return link_uri;
             }
         }
 
