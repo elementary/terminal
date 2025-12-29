@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-10-24 13:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/terminal/"
@@ -66,76 +66,43 @@ msgstr "პროცესი დასრულდა"
 msgid "Process exited with errors"
 msgstr "პროცესი შეცდომებით დასრულდა"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "%s-ში ჩვენება"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "ნაგულისხმები აპლიკაცია"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "კოპირება"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "ბოლო გამოტანის კოპირება"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "ეკრანის გასუფთავება"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "ჩამოყრა"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "ჩასმა"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "ყველაფრის მონიშვნა"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "ძიება…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr "ახალი ჩანართი…"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "მორგება"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "ნამდვილად გსურთ ამ ჩანართის დახურვა?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "ჩანართის დახურვა"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "ძებნის პანელის დახურვა"
 
@@ -393,17 +360,50 @@ msgstr ""
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "%s-ში ჩვენება"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "ნაგულისხმები აპლიკაცია"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "კოპირება"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "ბოლო გამოტანის კოპირება"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "ეკრანის გასუფთავება"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "ჩამოყრა"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "ყველაფრის მონიშვნა"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "ნამდვილად გსურთ ტერმინალიდან გამოსვლა?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "ნამდვილად გსურთ ამ ჩანართის თავიდან ჩატვირთვა?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "თავიდან ჩატვირთვა"
 

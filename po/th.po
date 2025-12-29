@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2015-12-05 14:34+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Thai <th@li.org>\n"
@@ -68,80 +68,47 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr ""
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr ""
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "คัดลอก"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr ""
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "วาง"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "เลือกทั้งหมด"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "แสดงเต็มจอ"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "ค้นหา..."
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "เปิดแท็บใหม่"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "คุณต้องการ ปิดแท็บ นี่ ใช่หรือไม่"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "ปิดแท็บ"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr ""
 
@@ -390,19 +357,52 @@ msgstr ""
 msgid "Terminal"
 msgstr "เทอร์มินัล"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "คัดลอก"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "วาง"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "เลือกทั้งหมด"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "คุณต้องการ ปิดแท็บ นี่ ใช่หรือไม่"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "คุณต้องการ ปิดแท็บ นี่ ใช่หรือไม่"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"

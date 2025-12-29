@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2022-08-06 11:37+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -75,80 +75,47 @@ msgstr "프로세스 끝"
 msgid "Process exited with errors"
 msgstr "오류로 끝난 프로세스"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "%s에서 보기"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "기본 애플리케이션"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "복사"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "마지막 출력물 복사하기"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "붙여넣기"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "전체 선택"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "전체화면"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "찾기…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "새 탭"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "설정"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "정말로 이 탭을 닫으시겠습니까?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "탭 닫기"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "검색창 숨기기"
 
@@ -408,17 +375,50 @@ msgstr ""
 msgid "Terminal"
 msgstr "터미널"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "%s에서 보기"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "기본 애플리케이션"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "복사"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "마지막 출력물 복사하기"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "붙여넣기"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "전체 선택"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "정말로 터미널을 닫으시겠습니까?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "정말로 이 탭을 새로 고치시겠습니까?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "새로고침"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/terminal/"
@@ -66,76 +66,43 @@ msgstr "Processus terminé"
 msgid "Process exited with errors"
 msgstr "Le processus s'est arrêté avec des erreurs"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "Afficher dans %s"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "Application par défaut"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Copier"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Copier la dernière sortie"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "Effacer l'écran"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "Réinitialiser"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Coller"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Tout Sélectionner"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "Quitter le plein écran"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Rechercher…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr "Nouvel Onglet…"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Voulez-vous vraiment fermer cet onglet ?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Fermer l'onglet"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Masquer la barre de recherche"
 
@@ -395,15 +362,48 @@ msgstr "Masquer la barre d'onglets lorsqu'il n'y a qu'un seul onglet"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "Afficher dans %s"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Application par défaut"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Copier"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Copier la dernière sortie"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "Effacer l'écran"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Coller"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Tout Sélectionner"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Voulez-vous vraiment réinitialiser le terminal ?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Voulez-vous vraiment recharger cet onglet ?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "Recharger"
 

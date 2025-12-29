@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-12-19 00:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
@@ -67,76 +67,43 @@ msgstr "Процес завершено"
 msgid "Process exited with errors"
 msgstr "Процес завершено з помилками"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "Показати в %s"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "Типовий застосунок"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Копіювати"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Копіювати останній вивід"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "Очистити екран"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "Скинути"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Вставити"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Виділити все"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "Вийти з повноекранного режиму"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Пошук…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr "Нова вкладка…"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Закрити вкладку"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Сховати панель пошуку"
 
@@ -394,15 +361,48 @@ msgstr "Ховати панель вкладок, коли є лише одна 
 msgid "Terminal"
 msgstr "Термінал"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "Показати в %s"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Типовий застосунок"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Копіювати"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Копіювати останній вивід"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "Очистити екран"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "Скинути"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Вставити"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Виділити все"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Ви впевнені, що хочете скинути термінал?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Ви впевнені, що хочете перезавантажити цю вкладку?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "Перезавантажити"
 
