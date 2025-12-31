@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-10-25 08:49+0000\n"
+"PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
 "extra/ja/>\n"
@@ -47,11 +47,11 @@ msgstr "新機能:"
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "単語の削除に Ctrl + BackSpace を使えるように修正"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "Ctrl + クリックでリンクを開くように修正"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -62,19 +62,19 @@ msgstr "その他のアップデート:"
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "コードとパッケージ管理システムを GTK 4 向けに更新"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "よりフラットなスタイルに変更"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
-msgstr ""
+msgstr "タブバーをウィンドウのドラッグ領域に移動"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "スマートコピーで選択解除されないように修正"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
