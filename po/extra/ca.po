@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-10-25 08:49+0000\n"
+"PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/terminal/"
 "extra/ca/>\n"
@@ -47,11 +47,11 @@ msgstr "Funcions noves:"
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "Ara es pot usar Ctrl + Enrere per suprimir paraules"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "Ara cal Ctrl + Clic per obrir un enllaç"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -62,19 +62,20 @@ msgstr "Altres actualitzacions:"
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "Actualització del codi i dels paquets per a Gtk4"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "Estils més plans"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
 msgstr ""
+"La barra de pestanyes ara es troba a l'àrea d'arrossegament de la finestra"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "La còpia intel·ligent ja no desselecciona"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
