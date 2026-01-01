@@ -5,10 +5,10 @@
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
-        enum DropTargets {
-            URILIST,
-            STRING,
-            TEXT
+        public enum TabState {
+            NONE,
+            COMPLETED,
+            ERROR
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
@@ -18,6 +18,7 @@ namespace Terminal {
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
+        public TabState tab_state { get; set; default = NONE; }
 
         GLib.Pid child_pid;
         GLib.Pid fg_pid;

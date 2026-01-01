@@ -174,21 +174,23 @@ public class Terminal.Application : Gtk.Application {
                 return;
             }
 
-            var process_string = _("Process completed");
-            var process_icon = new ThemedIcon ("process-completed-symbolic");
+            var notification_title = _("Process completed");
+            var notification_icon = new ThemedIcon ("process-completed-symbolic");
+            var tab_state = TerminalWidget.TabState.COMPLETED;
             if (exit_status != 0) {
-                process_string = _("Process exited with errors");
-                process_icon = new ThemedIcon ("process-error-symbolic");
+                notification_title = _("Process exited with errors");
+                notification_icon = new ThemedIcon ("process-error-symbolic");
+                tab_state = ERROR;
             }
 
             if (terminal != terminal.main_window.current_terminal) {
-                terminal.tab.icon = process_icon;
+                terminal.tab_state = tab_state;
             }
 
             if (!(get_active_window ().is_active)) {
-                var notification = new Notification (process_string);
+                var notification = new Notification (notification_title);
                 notification.set_body (process);
-                notification.set_icon (process_icon);
+                notification.set_icon (notification_icon);
                 notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
                 send_notification ("process-finished-%s".printf (id), notification);
 
@@ -215,7 +217,7 @@ public class Terminal.Application : Gtk.Application {
             return;
         }
 
-        terminal.tab.icon = null;
+        terminal.tab_state = NONE;
         withdraw_notification ("process-finished-%s".printf (id));
 
         terminal.main_window.disconnect (tab_change_handler);
