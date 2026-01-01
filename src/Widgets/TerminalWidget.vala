@@ -5,10 +5,11 @@
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
-        enum DropTargets {
-            URILIST,
-            STRING,
-            TEXT
+        public enum TabState {
+            NONE,
+            WORKING,
+            COMPLETED,
+            ERROR
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
@@ -18,6 +19,7 @@ namespace Terminal {
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
+        public TabState tab_state { get; set; default = NONE; }
 
         GLib.Pid child_pid;
         GLib.Pid fg_pid;
@@ -232,6 +234,7 @@ namespace Terminal {
             notify["width-request"].connect (() => resized = true);
             contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
+            window_title_changed.connect (on_window_title_changed);
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
@@ -781,6 +784,14 @@ namespace Terminal {
             child_has_exited = true;
             last_key_was_return = true;
             fg_pid = -1;
+        }
+
+        private void on_window_title_changed () {
+            if (has_foreground_process ()) {
+                tab_state = WORKING;
+            }
+
+            // Application.dbus_register handles resetting the state
         }
 
         public void kill_fg () {
