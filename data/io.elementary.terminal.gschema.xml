@@ -56,9 +56,9 @@
 
   <schema path="/io/elementary/terminal/settings/" id="io.elementary.terminal.settings">
     <key name="scrollback-lines" type="i">
-      <default>-1</default>
+      <default>1000</default>
       <summary>Number of scrollback lines</summary>
-      <description>The number of scrollback lines of the terminal.</description>
+      <description>The number of scrollback lines of the terminal. Use -1 for unlimited scrollback (may impact performance)</description>
     </key>
     <key name="follow-last-tab" type="b">
       <default>false</default>
