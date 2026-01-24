@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2020-05-28 11:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/terminal/terminal/"
@@ -75,81 +75,47 @@ msgstr ""
 msgid "Process exited with errors"
 msgstr ""
 
-#: src/MainWindow.vala:154
-#, fuzzy, c-format
-#| msgid "Show version"
-msgid "Show in %s"
-msgstr "Vis version"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr ""
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Kopiér"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Kopier Forrige Resultat"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Indsæt"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Markér alt"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Fuld skærm"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Find…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "Nyt faneblad"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Er du sikker på, at du vil lukke dette faneblad?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Luk faneblad"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Skjul søgebar"
 
@@ -402,19 +368,53 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, fuzzy, c-format
+#| msgid "Show version"
+msgid "Show in %s"
+msgstr "Vis version"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Kopiér"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Kopier Forrige Resultat"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Indsæt"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Markér alt"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Er du sikker på, at du vil afslutte Terminal?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 #, fuzzy
 #| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
 msgstr "Er du sikker på, at du vil lukke dette faneblad?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Reload"

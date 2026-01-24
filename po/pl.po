@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-07-07 18:55+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementaryos.org/projects/terminal/"
@@ -67,78 +67,45 @@ msgstr "Proces ukończony"
 msgid "Process exited with errors"
 msgstr "Proces zakończył się z błędami"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "Wyświetl w %s"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "Aplikacja domyślna"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Skopiuj"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Kopiuj ostatnie wyjście"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "Wyczyść ekran"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "Zresetuj"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Wklej"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Zaznacz wszystko"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "Opuść pełny ekran"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Znajdź…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "Nowa karta"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Jesteś pewien, że chcesz zamknąć tę kartę?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Zamyka kartę"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Ukryj pasek wyszukiwania"
 
@@ -394,15 +361,48 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "Wyświetl w %s"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Aplikacja domyślna"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Skopiuj"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Kopiuj ostatnie wyjście"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "Wyczyść ekran"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "Zresetuj"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Wklej"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Zaznacz wszystko"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Czy na pewno chcesz zresetować terminal?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Czy na pewno chcesz odświeżyć tę kartę?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "Odśwież"
 

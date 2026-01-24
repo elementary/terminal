@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
-"PO-Revision-Date: 2025-10-31 09:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2025-12-29 12:28+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
@@ -66,76 +66,43 @@ msgstr "Processen slutförd"
 msgid "Process exited with errors"
 msgstr "Processen avslutades med fel"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "Visa i %s"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "Standardprogram"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Kopiera"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Kopiera senaste utdata"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "Töm skärm"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "Återställ"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Klistra in"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Markera allt"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "Avsluta helskärm"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Sök…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr "Ny flik…"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Inställningar"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Är du säker på att du vill stänga den här fliken?"
 
-#: src/MainWindow.vala:336
-#, fuzzy
-#| msgid "Close Tab"
+#: src/MainWindow.vala:267
 msgid "Close tab"
 msgstr "Stäng flik"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
+"Är du säker på att du vill stänga alla förgrundsprocesser innan fönstret "
+"stängs?"
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "Stäng fönster"
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Dölj sökfältet"
 
@@ -392,15 +359,48 @@ msgstr "Dölj flikfältet när det endast finns en flik"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "Visa i %s"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Standardprogram"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Kopiera"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Kopiera senaste utdata"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "Töm skärm"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "Återställ"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Klistra in"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Markera allt"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Är du säker på att du vill återställa terminalen?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Är du säker på att du vill läsa om den här fliken?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "Uppdatera"
 

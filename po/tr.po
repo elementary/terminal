@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2022-10-17 14:57+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -75,80 +75,47 @@ msgstr "İşlem tamamlandı"
 msgid "Process exited with errors"
 msgstr "İşlem hata ile sonlandı"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "%s ile aç"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "Varsayılan uygulama"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "Kopyala"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "Son Çıktıyı Kopyala"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "Yapıştır"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "Tümünü Seç"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Tam Ekran"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "Yeni Sekme"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Bu sekmeyi kapatmak istediğinizden emin misiniz?"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Sekmeyi Kapat"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -409,17 +376,50 @@ msgstr ""
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "%s ile aç"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Varsayılan uygulama"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Son Çıktıyı Kopyala"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Tümünü Seç"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Bu sekmeyi yeniden yüklemek istediğinizden emin misiniz?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "Yeniden Yükle"
 

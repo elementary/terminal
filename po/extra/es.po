@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
-"PO-Revision-Date: 2025-11-06 01:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2025-12-30 14:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/terminal/"
 "extra/es/>\n"
@@ -47,11 +47,11 @@ msgstr "Nuevas características:"
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "Ahora se puede usar Ctrl + Retroceso para borrar palabras,"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "Para abrir un enlace ahora es necesario usar Ctrl + Clic"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -62,19 +62,20 @@ msgstr "Otras actualizaciones:"
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "Se ha actualizado el código y empaquetado con Gtk4"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "Ahora se usan estilos más planos"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
 msgstr ""
+"La barra de pestañas ahora se encuentra en el área de arrastre de la ventana"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "La copia inteligente ya no elimina la selección"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
@@ -104,7 +105,7 @@ msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
-"Ahora cuando un proceso en segundo plano se ejecuta, la etiqueta de la "
+"Ahora cuando un proceso en primer plano se ejecuta, la etiqueta de la "
 "pestaña cambia al nombre de ese proceso"
 
 #: data/terminal.metainfo.xml.in:131

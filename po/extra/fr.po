@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
-"PO-Revision-Date: 2025-10-28 10:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2026-01-20 13:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/terminal/extra/"
 "fr/>\n"
@@ -47,11 +47,11 @@ msgstr "Nouvelles fonctionnalités :"
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "Ctrl + Effacer peut désormais être utilisé pour supprimer des mots"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "Ctrl + Clic est désormais nécessaire pour ouvrir un lien"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -62,19 +62,21 @@ msgstr "Autres mises à jour :"
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "Mise à jour du code et du paquet pour Gtk4"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "Styles aplatis"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
 msgstr ""
+"La barre d'onglets est désormais dans la zone de glisser-déposer de la "
+"fenêtre"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "La copie intelligente n'efface plus la sélection"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
