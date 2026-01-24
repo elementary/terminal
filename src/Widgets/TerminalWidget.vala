@@ -8,7 +8,19 @@ namespace Terminal {
         public enum TabState {
             NONE,
             COMPLETED,
-            ERROR
+            ERROR;
+
+            public GLib.Icon to_icon () {
+                switch (this) {
+                    case COMPLETED:
+                        return new GLib.ThemedIcon ("process-completed-symbolic");
+                    case ERROR:
+                        return new GLib.ThemedIcon ("process-error-symbolic");
+                    default:
+                        critical ("Called TabState.to_icon () with invalid tab state. The icon will be inaccurate.");
+                        return new GLib.ThemedIcon ("image-missing");
+                }
+            }
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
