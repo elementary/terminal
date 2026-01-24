@@ -170,17 +170,7 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.tab = tab;
 
         terminal_widget.notify["tab-state"].connect (() => {
-            switch (terminal_widget.tab_state) {
-                case NONE:
-                    tab.icon = null;
-                    break;
-                case COMPLETED:
-                    tab.icon = new ThemedIcon ("process-completed-symbolic");
-                    break;
-                case ERROR:
-                    tab.icon = new ThemedIcon ("process-error-symbolic");
-                    break;
-            }
+            tab.icon = terminal_widget.tab_state.to_icon ();
         });
 
         //Set correct label now to avoid race when spawning shell
