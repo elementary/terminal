@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ja/>\n"
@@ -66,76 +66,42 @@ msgstr "プロセスが完了しました"
 msgid "Process exited with errors"
 msgstr "プロセスがエラー終了しました"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "“%s”で表示"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "デフォルトのアプリケーション"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "コピー"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "最後の出力をコピー"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "画面を消去"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "リセット"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "貼り付け"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "すべて選択"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "全画面表示を終了"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "検索…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 msgid "New Tab…"
 msgstr "新しいタブ…"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "このタブを閉じてもよろしいですか?"
 
-#: src/MainWindow.vala:336
-#, fuzzy
-#| msgid "Close Tab"
+#: src/MainWindow.vala:267
 msgid "Close tab"
 msgstr "タブを閉じる"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
-msgstr ""
+msgstr "ウィンドウを閉じる前に、すべてのフォアグラウンドプロセスを閉じてもよろしいで"
+"すか?"
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "ウィンドウを閉じる"
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "検索バーを非表示にします"
 
@@ -391,15 +357,48 @@ msgstr "タブが 1 つのみの場合にタブバーを自動で非表示にし
 msgid "Terminal"
 msgstr "ターミナル"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "“%s”で表示"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "デフォルトのアプリケーション"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "コピー"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "最後の出力をコピー"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "画面を消去"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "リセット"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "貼り付け"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "すべて選択"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "ターミナルをリセットしてもよろしいですか?"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "このタブを再読み込みしてもよろしいですか?"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "再読み込み"
 

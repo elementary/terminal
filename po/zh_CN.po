@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2025-08-14 08:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
@@ -66,78 +66,45 @@ msgstr "进程已完成"
 msgid "Process exited with errors"
 msgstr "进程因错误已退出"
 
-#: src/MainWindow.vala:154
-#, c-format
-msgid "Show in %s"
-msgstr "在 %s 中显示"
-
-#: src/MainWindow.vala:154
-msgid "Default application"
-msgstr "默认应用"
-
-#: src/MainWindow.vala:160
-msgid "Copy"
-msgstr "复制"
-
-#: src/MainWindow.vala:166
-msgid "Copy Last Output"
-msgstr "复制上次输出"
-
-#: src/MainWindow.vala:172
-msgid "Clear Screen"
-msgstr "清除界面"
-
-#: src/MainWindow.vala:178 src/Widgets/TerminalWidget.vala:566
-msgid "Reset"
-msgstr "重置"
-
-#: src/MainWindow.vala:184
-msgid "Paste"
-msgstr "粘贴"
-
-#: src/MainWindow.vala:190
-msgid "Select All"
-msgstr "全选"
-
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "退出全屏"
 
-#: src/MainWindow.vala:272 src/MainWindow.vala:761
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "查找…"
 
-#: src/MainWindow.vala:278
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "新建标签页"
 
-#: src/MainWindow.vala:290
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "设置"
 
-#: src/MainWindow.vala:335
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "您确定要关闭此标签吗？"
 
-#: src/MainWindow.vala:336
+#: src/MainWindow.vala:267
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "关闭标签"
 
-#: src/MainWindow.vala:579
+#: src/MainWindow.vala:510
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
 
-#: src/MainWindow.vala:580
+#: src/MainWindow.vala:511
 msgid "Close window"
 msgstr ""
 
-#: src/MainWindow.vala:751
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "隐藏查找"
 
@@ -388,15 +355,48 @@ msgstr ""
 msgid "Terminal"
 msgstr "终端"
 
-#: src/Widgets/TerminalWidget.vala:565
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "在 %s 中显示"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "默认应用"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "复制"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "复制上次输出"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "清除界面"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "重置"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "粘贴"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "全选"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "您确定要重设终端吗？"
 
-#: src/Widgets/TerminalWidget.vala:600
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "您确定要重新加载此标签页吗？"
 
-#: src/Widgets/TerminalWidget.vala:601 src/Widgets/TerminalView.vala:350
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
 msgid "Reload"
 msgstr "重新加载"
 

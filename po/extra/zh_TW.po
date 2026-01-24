@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-27 15:49+0000\n"
-"PO-Revision-Date: 2025-08-22 15:58+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2026-01-06 12:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
-"l10n.elementaryos.org/projects/terminal/extra/zh_Hant/>\n"
+"l10n.elementaryos.org/projects/terminal/extra/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,11 +47,11 @@ msgstr "新功能："
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "支援用 Ctrl + Backspace 來刪除整個單詞"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "現在需要按住 Ctrl 再點擊才會開啟連結"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -62,19 +62,19 @@ msgstr "其他更新："
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "為 Gtk4 更新程式碼與套件打包"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "改用更扁平化的風格"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
-msgstr ""
+msgstr "將分頁列移至視窗拖曳區域"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "智慧複製現在不會解除選取"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
@@ -87,7 +87,7 @@ msgstr "翻譯更新"
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
-msgstr ""
+msgstr "提供並實現只有一個分頁時隱藏分頁列的選項"
 
 #: data/terminal.metainfo.xml.in:126
 msgid ""
