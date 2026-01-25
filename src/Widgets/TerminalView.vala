@@ -169,6 +169,10 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
         terminal_widget.tab = tab;
 
+        terminal_widget.notify["tab-state"].connect (() => {
+            tab.icon = terminal_widget.tab_state.to_icon ();
+        });
+
         //Set correct label now to avoid race when spawning shell
 
         terminal_widget.set_font (term_font);
