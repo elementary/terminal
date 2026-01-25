@@ -50,7 +50,6 @@ namespace Terminal {
         public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
-        public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
         public const string[] ACCELS_SELECT_ALL = { "<Control><Shift>A", null };
         // Specify zooming shortcuts for use by tooltips in SettingsPopover. We don't use actions for this.
         public const string[] ACCELS_ZOOM_DEFAULT = { "<control>0", "<Control>KP_0", null };
@@ -199,7 +198,7 @@ namespace Terminal {
             );
 
             var scroll_to_command_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.Up, ALT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.U, ALT_MASK),
                 new Gtk.NamedAction ("term.scroll-to-command")
             );
 
@@ -670,8 +669,9 @@ namespace Terminal {
             feed_command (command);
         }
 
+        private string old_loc = "";
         public void reload () {
-            var old_loc = get_shell_location ();
+            old_loc = get_shell_location ();
             confirm_kill_fg_process (
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
@@ -1097,11 +1097,10 @@ namespace Terminal {
         }
 
         private void scroll_to_command (GLib.SimpleAction action, GLib.Variant? parameter) {
+            //Note. This does not work when running under `tmux` - native scrolling is suppressed in a tmux pane
             long row, delta;
-
             get_cursor_position (null, out row);
             delta = remembered_position - row;
-
             vadjustment.value += (int) delta + height_request / get_char_height () - 1;
             action.set_enabled (false); // Repeated presses are ignored
         }
