@@ -361,7 +361,6 @@ namespace Terminal {
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
             var term = get_term_widget (tab);
-            term.main_window = this;
             save_opened_terminals (true, true);
             connect_terminal_signals (term);
         }
