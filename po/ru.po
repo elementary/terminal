@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-10-26 09:55+0000\n"
+"PO-Revision-Date: 2025-12-30 17:21+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ru/>\n"
@@ -83,8 +83,6 @@ msgid "Are you sure you want to close this tab?"
 msgstr "Закрыть эту вкладку?"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Закрыть вкладку"
 
@@ -92,11 +90,11 @@ msgstr "Закрыть вкладку"
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
-msgstr ""
+msgstr "Закрыть все процессы переднего плана перед закрытием окна?"
 
 #: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "Закрыть окно"
 
 #: src/MainWindow.vala:640
 msgid "Hide find bar"

@@ -175,11 +175,9 @@ public class Terminal.Application : Gtk.Application {
             }
 
             var notification_title = _("Process completed");
-            var notification_icon = new ThemedIcon ("process-completed-symbolic");
             var tab_state = TerminalWidget.TabState.COMPLETED;
             if (exit_status != 0) {
                 notification_title = _("Process exited with errors");
-                notification_icon = new ThemedIcon ("process-error-symbolic");
                 tab_state = ERROR;
             }
 
@@ -192,7 +190,7 @@ public class Terminal.Application : Gtk.Application {
             if (!(get_active_window ().is_active)) {
                 var notification = new Notification (notification_title);
                 notification.set_body (process);
-                notification.set_icon (notification_icon);
+                notification.set_icon (tab_state.to_icon ());
                 notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
                 send_notification ("process-finished-%s".printf (id), notification);
 

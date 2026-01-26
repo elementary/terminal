@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ca/>\n"
@@ -87,8 +87,6 @@ msgid "Are you sure you want to close this tab?"
 msgstr "Segur que voleu tancar aquesta pestanya?"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Tanca la pestanya"
 
@@ -97,10 +95,12 @@ msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
+"Segur que voleu tancar tots els processos en primer pla abans de tancar la "
+"finestra?"
 
 #: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "Tanca la finestra"
 
 #: src/MainWindow.vala:640
 msgid "Hide find bar"

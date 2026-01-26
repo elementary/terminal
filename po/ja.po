@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ja/>\n"
@@ -87,8 +87,6 @@ msgid "Are you sure you want to close this tab?"
 msgstr "このタブを閉じてもよろしいですか?"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "タブを閉じる"
 
@@ -96,11 +94,12 @@ msgstr "タブを閉じる"
 msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
-msgstr ""
+msgstr "ウィンドウを閉じる前に、すべてのフォアグラウンドプロセスを閉じてもよろしいで"
+"すか?"
 
 #: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "ウィンドウを閉じる"
 
 #: src/MainWindow.vala:640
 msgid "Hide find bar"

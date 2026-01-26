@@ -9,7 +9,18 @@ namespace Terminal {
             NONE,
             WORKING,
             COMPLETED,
-            ERROR
+            ERROR;
+
+            public GLib.Icon? to_icon () {
+                switch (this) {
+                    case COMPLETED:
+                        return new GLib.ThemedIcon ("process-completed-symbolic");
+                    case ERROR:
+                        return new GLib.ThemedIcon ("process-error-symbolic");
+                    default:
+                        return null;
+                }
+            }
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
@@ -52,7 +63,6 @@ namespace Terminal {
         public const string[] ACCELS_RESET = { "<Control><Shift>K", null };
         public const string[] ACCELS_PASTE = { "<Control><Shift>V", null };
         public const string[] ACCELS_RELOAD = { "<Control><Shift>R", "<Ctrl>F5", null };
-        public const string[] ACCELS_SCROLL_TO_COMMAND = { "<Alt>Up", null };
         public const string[] ACCELS_SELECT_ALL = { "<Control><Shift>A", null };
         // Specify zooming shortcuts for use by tooltips in SettingsPopover. We don't use actions for this.
         public const string[] ACCELS_ZOOM_DEFAULT = { "<control>0", "<Control>KP_0", null };
@@ -174,17 +184,16 @@ namespace Terminal {
             focus_controller.leave.connect (() => scroll_controller.flags = NONE);
             focus_controller.enter.connect (() => scroll_controller.flags = VERTICAL);
 
-            var primary_gesture = new Gtk.GestureClick () {
-                propagation_phase = TARGET,
-                button = Gdk.BUTTON_PRIMARY
+            var click_controller = new Gtk.GestureClick () {
+                button = 0,
+                exclusive = true
             };
-            primary_gesture.pressed.connect (primary_pressed);
+            click_controller.pressed.connect (click_pressed);
 
-            var secondary_gesture = new Gtk.GestureClick () {
-                propagation_phase = TARGET,
-                button = Gdk.BUTTON_SECONDARY
+            var long_press_controller = new Gtk.GestureLongPress () {
+                touch_only = true
             };
-            secondary_gesture.released.connect (secondary_released);
+            long_press_controller.pressed.connect (secondary_pressed);
 
             // Accels added by set_accels_for_action in Application do not work for actions
             // in child widgets so use shortcut_controller instead.
@@ -202,7 +211,7 @@ namespace Terminal {
             );
 
             var scroll_to_command_shortcut = new Gtk.Shortcut (
-                new Gtk.KeyvalTrigger (Gdk.Key.Up, ALT_MASK),
+                new Gtk.KeyvalTrigger (Gdk.Key.U, ALT_MASK),
                 new Gtk.NamedAction ("term.scroll-to-command")
             );
 
@@ -224,8 +233,8 @@ namespace Terminal {
             add_controller (scroll_controller);
             add_controller (key_controller);
             add_controller (focus_controller);
-            add_controller (secondary_gesture);
-            add_controller (primary_gesture);
+            add_controller (click_controller);
+            add_controller (long_press_controller);
             add_controller (shortcut_controller);
 
             selection_changed.connect (() => copy_action.set_enabled (get_has_selection ()));
@@ -301,7 +310,7 @@ namespace Terminal {
             allow_hyperlink = has_focus;
         }
 
-        private void secondary_released (Gtk.GestureClick gesture, int n_press, double x, double y) {
+        private void secondary_pressed (Gtk.GestureSingle gesture, double x, double y) {
             if (has_foreground_process ()) {
                 gesture.set_state (CLAIMED);
                 return;
@@ -316,11 +325,19 @@ namespace Terminal {
             popup_context_menu (x, y);
 
             gesture.set_state (CLAIMED);
+            gesture.reset ();
         }
 
-        private void primary_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
-            var control_pressed = Gdk.ModifierType.CONTROL_MASK in gesture.get_current_event_state ();
+        private void click_pressed (Gtk.GestureClick gesture, int n_press, double x, double y) {
+            var sequence = gesture.get_current_sequence ();
+            var event = gesture.get_last_event (sequence);
 
+            if (event.triggers_context_menu ()) {
+                secondary_pressed (gesture, x, y);
+                return;
+            }
+
+            var control_pressed = Gdk.ModifierType.CONTROL_MASK in gesture.get_current_event_state ();
             link_uri = null;
             if (allow_hyperlink && control_pressed) {
                 link_uri = get_link (x, y);
@@ -666,8 +683,9 @@ namespace Terminal {
             feed_command (command);
         }
 
+        private string old_loc = "";
         public void reload () {
-            var old_loc = get_shell_location ();
+            old_loc = get_shell_location ();
             confirm_kill_fg_process (
                 _("Are you sure you want to reload this tab?"),
                 _("Reload"),
@@ -1101,11 +1119,10 @@ namespace Terminal {
         }
 
         private void scroll_to_command (GLib.SimpleAction action, GLib.Variant? parameter) {
+            //Note. This does not work when running under `tmux` - native scrolling is suppressed in a tmux pane
             long row, delta;
-
             get_cursor_position (null, out row);
             delta = remembered_position - row;
-
             vadjustment.value += (int) delta + height_request / get_char_height () - 1;
             action.set_enabled (false); // Repeated presses are ignored
         }
