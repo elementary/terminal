@@ -303,7 +303,9 @@ namespace Terminal {
                     return;
                 }
 
-                term.tab_state = NONE;
+                if (term.tab_state != WORKING) {
+                    term.tab_state = NONE;
+                }
             });
 
             notebook.tab_bar.bind_property ("tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN);

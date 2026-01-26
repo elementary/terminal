@@ -171,6 +171,7 @@ public class Terminal.TerminalView : Granite.Bin {
 
         terminal_widget.notify["tab-state"].connect (() => {
             tab.icon = terminal_widget.tab_state.to_icon ();
+            tab.loading = terminal_widget.tab_state == WORKING;
         });
 
         //Set correct label now to avoid race when spawning shell
