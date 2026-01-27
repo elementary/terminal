@@ -297,11 +297,6 @@ namespace Terminal {
                     return Source.REMOVE;
                 });
 
-                if (term.tab == null) {
-                    // Happens on opening window - ignore
-                    return;
-                }
-
                 if (term.tab_state != WORKING) {
                     term.tab_state = NONE;
                 }
@@ -359,9 +354,8 @@ namespace Terminal {
         }
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
-            var term = get_term_widget (tab);
             save_opened_terminals (true, true);
-            connect_terminal_signals (term);
+            connect_terminal_signals (get_term_widget (tab));
         }
 
         private void on_tab_removed (Adw.TabPage tab) {
@@ -460,34 +454,9 @@ namespace Terminal {
         }
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
-            terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
             terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
-        }
-
-        private void on_terminal_child_exited (Vte.Terminal term, int status) {
-            var tw = (TerminalWidget)term;
-            if (tw.tab.child != tw.parent) {
-                // TabView already removed tab - ignore signal
-                return;
-            }
-
-            if (!tw.killed) {
-                if (tw.program_string.length > 0) {
-                    /* If a program was running, do not close the tab so that output of program
-                     * remains visible */
-                    tw.program_string = "";
-                    tw.active_shell (tw.current_working_directory);
-                    check_for_tabs_with_same_name ();
-                } else {
-                    if (tw.tab != null) {
-                        notebook.tab_view.close_page (tw.tab);
-                    }
-
-                    return;
-                }
-            }
         }
 
         private void on_terminal_window_title_changed () {
@@ -724,15 +693,7 @@ namespace Terminal {
         }
 
         public unowned Adw.TabPage? get_page (string terminal_id) {
-            for (var i = 0; i < notebook.n_pages; i++) {
-                unowned var page = notebook.tab_view.get_nth_page (i);
-                unowned var terminal_widget = get_term_widget (page);
-                if (terminal_widget.terminal_id == terminal_id) {
-                    return page;
-                }
-            }
-
-            return null;
+            return notebook.get_page (terminal_id);
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/

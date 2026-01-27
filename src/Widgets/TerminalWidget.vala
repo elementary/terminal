@@ -24,7 +24,6 @@ namespace Terminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public string terminal_id;
         public string current_working_directory { get; private set; default = "";}
         public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
@@ -103,6 +102,7 @@ namespace Terminal {
         public const int SYS_PIDFD_OPEN = 434; // Same on every arch
 
         public bool killed { get; private set; default = false; }
+        public string terminal_id { get; private set; }
 
         private GLib.SimpleAction open_in_browser_action;
         private GLib.SimpleAction copy_action;

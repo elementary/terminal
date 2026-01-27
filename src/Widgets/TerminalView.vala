@@ -169,6 +169,7 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
         terminal_widget.tab = tab;
 
+        terminal_widget.child_exited.connect (on_child_exited);
         terminal_widget.notify["tab-state"].connect (() => {
             tab.icon = terminal_widget.tab_state.to_icon ();
             tab.loading = terminal_widget.tab_state == WORKING;
@@ -251,6 +252,40 @@ public class Terminal.TerminalView : Granite.Bin {
         }
 
         tab_view.transfer_page (target, window.notebook.tab_view, 0);
+    }
+
+    public unowned Adw.TabPage? get_page (string terminal_id) {
+        for (var i = 0; i < n_pages; i++) {
+            unowned var page = tab_view.get_nth_page (i);
+            unowned var terminal_widget = get_term_widget (page);
+            if (terminal_widget.terminal_id == terminal_id) {
+                return page;
+            }
+        }
+
+        return null;
+    }
+
+    private void on_child_exited (Vte.Terminal vte_terminal, int status) requires (vte_terminal is TerminalWidget) {
+        unowned var terminal_widget = (TerminalWidget) vte_terminal;
+
+        unowned var page = get_page (terminal_widget.terminal_id);
+        if (page == null) {
+            // TabView already removed tab - ignore signal
+            return;
+        }
+
+        if (terminal_widget.killed) {
+            return;
+        }
+
+        if (terminal_widget.program_string.length > 0) {
+            // If a program was running, do not close the tab so that output of program remains visible
+            terminal_widget.program_string = "";
+            terminal_widget.active_shell (terminal_widget.current_working_directory);
+        } else {
+            tab_view.close_page (page);
+        }
     }
 
     // This is called when tab context menu is opened or closed
