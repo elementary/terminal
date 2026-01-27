@@ -104,8 +104,6 @@ namespace Terminal {
 
         public bool killed { get; private set; default = false; }
 
-        private unowned Gdk.Clipboard clipboard;
-
         private GLib.SimpleAction open_in_browser_action;
         private GLib.SimpleAction copy_action;
         private GLib.SimpleAction copy_output_action;
@@ -228,12 +226,9 @@ namespace Terminal {
             contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
             window_title_changed.connect (on_window_title_changed);
-            ulong once = 0;
-            once = realize.connect (() => {
-                clipboard = Gdk.Display.get_default ().get_clipboard ();
-                clipboard.changed.connect (update_actions_state);
-                disconnect (once);
-            });
+
+            unowned var clipboard = Gdk.Display.get_default ().get_clipboard ();
+            clipboard.changed.connect (update_actions_state);
 
             var drop_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY);
             drop_target.drop.connect (on_drop);
@@ -468,7 +463,7 @@ namespace Terminal {
                     }
                 } else if (
                     match_keycode (Gdk.Key.v, keycode) && (natural || shift_pressed) &&
-                    clipboard.get_formats ().contain_gtype (Type.STRING)
+                    Gdk.Display.get_default ().get_clipboard ().get_formats ().contain_gtype (Type.STRING)
                 ) {
                     paste_clipboard ();
                     return true;
@@ -498,6 +493,7 @@ namespace Terminal {
             open_in_browser_action.set_enabled (appinfo != null);
 
             // Update the "Paste" menu option
+            unowned var clipboard = Gdk.Display.get_default ().get_clipboard ();
             var clipboard_has_string = clipboard.formats != null && clipboard.formats.contain_gtype (Type.STRING);
             paste_action.set_enabled (clipboard_has_string);
 
@@ -588,15 +584,14 @@ namespace Terminal {
 
         protected override void copy_clipboard () {
             if (link_uri != null && !get_has_selection ()) {
-                clipboard.set_text (link_uri);
+                Gdk.Display.get_default ().get_clipboard ().set_text (link_uri);
             } else {
                 base.copy_clipboard ();
             }
         }
 
         private void copy_output () {
-            var output = get_last_output ();
-            clipboard.set_text (output);
+            Gdk.Display.get_default ().get_clipboard ().set_text (get_last_output ());
         }
 
         public delegate void ConfirmedActionCallback (bool confirmed);
@@ -683,6 +678,8 @@ namespace Terminal {
         }
 
         protected override void paste_clipboard () {
+            unowned var clipboard = Gdk.Display.get_default ().get_clipboard ();
+
             var content_provider = clipboard.get_content ();
             if (content_provider != null) {
                 try {
@@ -696,8 +693,10 @@ namespace Terminal {
                 }
             } else {
                 clipboard.read_text_async.begin (null, (obj, res) => {
+                    unowned var _clipboard = (Gdk.Clipboard) obj;
+
                     try {
-                        var text = clipboard.read_text_async.end (res);
+                        var text = _clipboard.read_text_async.end (res);
                         validated_paste (text);
                     } catch (Error e) {
                         warning ("Error reading text from clipboard - %s", e.message);
