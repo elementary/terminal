@@ -30,14 +30,15 @@ public class Terminal.Application : Gtk.Application {
 
         var act = new SimpleAction ("process-finished", VariantType.STRING);
         add_action (act);
-        act.activate.connect ((v) => {
-            MainWindow window_to_present = (MainWindow)active_window;
-            size_t len;
-            var tid = v.get_string (out len);
-            foreach (var window in (List<MainWindow>) get_windows ()) {
-                var terminal = window.get_terminal (tid);
-                if (terminal != null) {
-                    window.set_active_terminal_tab (terminal.tab);
+        act.activate.connect ((parameter) => {
+            unowned var window_to_present = active_window;
+
+            unowned var terminal_id = parameter.get_string ();
+
+            foreach (unowned var window in (List<MainWindow>) get_windows ()) {
+                unowned var page = window.get_page (terminal_id);
+                if (page != null) {
+                    window.notebook.selected_page = page;
                     window_to_present = window;
                     break;
                 }
