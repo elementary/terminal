@@ -6,7 +6,6 @@
 namespace Terminal {
     public class MainWindow : Adw.Window {
         private Adw.HeaderBar header;
-        public TerminalView notebook { get; private set construct; }
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Button unfullscreen_button;
         private Gtk.Label title_label;
@@ -23,7 +22,7 @@ namespace Terminal {
         public bool recreate_tabs { get; construct; default = true; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
-
+        public TerminalView notebook { get; private set; }
         public TerminalWidget? current_terminal { get; private set; default = null; }
 
         public const string ACTION_PREFIX = "win.";
@@ -713,10 +712,10 @@ namespace Terminal {
             return term;
         }
 
-        public unowned TerminalWidget? get_terminal (string id) {
-            for (int i = 0; i < notebook.n_pages; i++) {
+        public unowned TerminalWidget? get_terminal (string terminal_id) {
+            for (var i = 0; i < notebook.n_pages; i++) {
                 unowned var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.terminal_id == id) {
+                if (term.terminal_id == terminal_id) {
                     return term;
                 }
             }
@@ -724,8 +723,16 @@ namespace Terminal {
             return null;
         }
 
-        public void set_active_terminal_tab (Adw.TabPage tab) {
-            notebook.tab_view.selected_page = tab;
+        public unowned Adw.TabPage? get_page (string terminal_id) {
+            for (var i = 0; i < notebook.n_pages; i++) {
+                unowned var page = notebook.tab_view.get_nth_page (i);
+                unowned var terminal_widget = get_term_widget (page);
+                if (terminal_widget.terminal_id == terminal_id) {
+                    return page;
+                }
+            }
+
+            return null;
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
@@ -763,8 +770,6 @@ namespace Terminal {
                     }
                 }
             }
-
-            return;
         }
 
         private void on_terminal_cwd_changed () {
