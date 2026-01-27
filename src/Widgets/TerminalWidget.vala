@@ -28,7 +28,6 @@ namespace Terminal {
         public string current_working_directory { get; private set; default = "";}
         public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
-        private bool init_complete;
         public bool resized {get; set;}
         public TabState tab_state { get; set; default = NONE; }
 
@@ -131,7 +130,6 @@ namespace Terminal {
         construct {
             pointer_autohide = true;
             terminal_id = "%i".printf (terminal_id_counter++);
-            init_complete = false;
 
             update_audible_bell ();
             update_cursor_shape ();
@@ -1009,14 +1007,6 @@ namespace Terminal {
 
         public void default_font_size () {
             font_scale = 1.0;
-        }
-
-        public bool is_init_complete () {
-            return init_complete;
-        }
-
-        public void set_init_complete () {
-            init_complete = true;
         }
 
         private bool on_drop (Value val, double x, double y) {

@@ -169,9 +169,6 @@ public class Terminal.Application : Gtk.Application {
 
             if (terminal == null) {
                 return;
-            } else if (!terminal.is_init_complete ()) {
-                terminal.set_init_complete ();
-                return;
             }
 
             var notification_title = _("Process completed");
