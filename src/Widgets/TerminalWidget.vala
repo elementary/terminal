@@ -34,14 +34,6 @@ namespace Terminal {
         GLib.Pid child_pid;
         GLib.Pid fg_pid;
 
-        public unowned MainWindow main_window { get; construct set; }
-
-        private Terminal.Application app {
-            get {
-                return main_window.app;
-            }
-        }
-
         // There may be no associated tab while made restorable or when closing
         public unowned Adw.TabPage? tab;
 
@@ -134,12 +126,6 @@ namespace Terminal {
 
         public signal void cwd_changed ();
         public signal void foreground_process_changed (string cmdline);
-
-        public TerminalWidget (MainWindow parent_window) {
-            Object (
-                main_window: parent_window
-            );
-        }
 
         construct {
             pointer_autohide = true;
