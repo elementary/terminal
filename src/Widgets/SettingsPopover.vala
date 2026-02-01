@@ -150,7 +150,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         var natural_copy_paste_action = Application.settings.create_action ("natural-copy-paste");
         var unsafe_paste_alert_action = Application.settings.create_action ("unsafe-paste-alert");
         var audible_bell_action = Application.settings.create_action ("audible-bell");
-        var follow_system_style_action = Application.settings.create_action ("");
+        var follow_system_style_action = Application.settings.create_action ("follow-system-style");
 
         var action_group = new SimpleActionGroup ();
         action_group.add_action (theme_action);
