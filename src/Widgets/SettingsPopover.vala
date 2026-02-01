@@ -17,6 +17,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
     }
 
     private const string ACTION_GROUP_NAME = "settings";
+    private const string ACTION_GROUP_PREFIX = ACTION_GROUP_NAME + ".";
 
     private BindingGroup terminal_binding;
 
@@ -57,7 +58,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         font_size_box.append (zoom_in_button);
 
         var follow_system_button = new Granite.SwitchModelButton (_("Follow System Style")) {
-            active = Application.settings.get_boolean ("follow-system-style"),
+            action_name = ACTION_GROUP_PREFIX + "follow-system-style"
         };
 
         var hc_button = new ThemeCheckButton (Themes.HIGH_CONTRAST) {
@@ -108,17 +109,17 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
             description = _("Shortcuts don’t require Shift; may interfere with CLI apps"),
-            active = Application.settings.get_boolean ("natural-copy-paste")
+            action_name = ACTION_GROUP_PREFIX + "natural-copy-paste"
         };
 
         var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
             description = _("Warn when pasted text contains multiple or administrative commands"),
-            active = Application.settings.get_boolean ("unsafe-paste-alert")
+            action_name = ACTION_GROUP_PREFIX + "unsafe-paste-alert"
         };
 
         var audible_bell_button = new Granite.SwitchModelButton (_("Event Alerts")) {
             description = _("Notify for invalid input or multiple possible completions (subject to System Settings → Sound)"),
-            active = Application.settings.get_boolean ("audible-bell")
+            action_name = ACTION_GROUP_PREFIX + "audible-bell"
         };
 
         var auto_hide_button = new Granite.SwitchModelButton (_("Auto-hide Tab Bar")) {
@@ -129,7 +130,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         auto_hide_button.toggled.connect (() => {
           Application.settings.set_enum ("tab-bar-behavior", auto_hide_button.active ? 1 : 0);
         });
-
 
         var box = new Gtk.Box (VERTICAL, 6) {
             margin_bottom = 6,
@@ -146,11 +146,18 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.append (auto_hide_button);
         child = box;
 
-        var settings_action = Application.settings.create_action ("theme");
+        var theme_action = Application.settings.create_action ("theme");
+        var natural_copy_paste_action = Application.settings.create_action ("natural-copy-paste");
+        var unsafe_paste_alert_action = Application.settings.create_action ("unsafe-paste-alert");
+        var audible_bell_action = Application.settings.create_action ("audible-bell");
+        var follow_system_style_action = Application.settings.create_action ("");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (settings_action);
-
+        action_group.add_action (theme_action);
+        action_group.add_action (natural_copy_paste_action);
+        action_group.add_action (unsafe_paste_alert_action);
+        action_group.add_action (audible_bell_action);
+        action_group.add_action (follow_system_style_action);
         insert_action_group (ACTION_GROUP_NAME, action_group);
 
         custom_button.toggled.connect (() => {
@@ -164,11 +171,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         terminal_binding.bind_property ("font-scale", zoom_default_button, "label", SYNC_CREATE, font_scale_to_zoom);
 
         follow_system_button.bind_property ("active", theme_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN);
-
-        Application.settings.bind ("follow-system-style", follow_system_button, "active", DEFAULT);
-        Application.settings.bind ("natural-copy-paste", natural_copy_paste_button, "active", DEFAULT);
-        Application.settings.bind ("unsafe-paste-alert", unsafe_paste_alert_button, "active", DEFAULT);
-        Application.settings.bind ("audible-bell", audible_bell_button, "active", DEFAULT);
 
         Application.settings.changed.connect ((s, n) => {
             if (n == "background" || n == "foreground") {
@@ -202,7 +204,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         }
 
         construct {
-            action_name = ACTION_GROUP_NAME + ".theme";
+            action_name = ACTION_GROUP_PREFIX + "theme";
             action_target = new Variant.string (theme);
             halign = CENTER;
 
