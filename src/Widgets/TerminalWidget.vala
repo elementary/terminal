@@ -5,10 +5,22 @@
 
 namespace Terminal {
     public class TerminalWidget : Vte.Terminal {
-        enum DropTargets {
-            URILIST,
-            STRING,
-            TEXT
+        public enum TabState {
+            NONE,
+            WORKING,
+            COMPLETED,
+            ERROR;
+
+            public GLib.Icon? to_icon () {
+                switch (this) {
+                    case COMPLETED:
+                        return new GLib.ThemedIcon ("process-completed-symbolic");
+                    case ERROR:
+                        return new GLib.ThemedIcon ("process-error-symbolic");
+                    default:
+                        return null;
+                }
+            }
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
@@ -18,17 +30,10 @@ namespace Terminal {
         static int terminal_id_counter = 0;
         private bool init_complete;
         public bool resized {get; set;}
+        public TabState tab_state { get; set; default = NONE; }
 
         GLib.Pid child_pid;
         GLib.Pid fg_pid;
-
-        public unowned MainWindow main_window { get; construct set; }
-
-        private Terminal.Application app {
-            get {
-                return main_window.app;
-            }
-        }
 
         // There may be no associated tab while made restorable or when closing
         public unowned Adw.TabPage? tab;
@@ -122,12 +127,6 @@ namespace Terminal {
 
         public signal void cwd_changed ();
         public signal void foreground_process_changed (string cmdline);
-
-        public TerminalWidget (MainWindow parent_window) {
-            Object (
-                main_window: parent_window
-            );
-        }
 
         construct {
             pointer_autohide = true;
@@ -230,6 +229,7 @@ namespace Terminal {
             notify["width-request"].connect (() => resized = true);
             contents_changed.connect (on_contents_changed);
             child_exited.connect (on_child_exited);
+            window_title_changed.connect (on_window_title_changed);
             ulong once = 0;
             once = realize.connect (() => {
                 clipboard = Gdk.Display.get_default ().get_clipboard ();
@@ -788,6 +788,14 @@ namespace Terminal {
             child_has_exited = true;
             last_key_was_return = true;
             fg_pid = -1;
+        }
+
+        private void on_window_title_changed () {
+            if (has_foreground_process ()) {
+                tab_state = WORKING;
+            }
+
+            // Application.dbus_register handles resetting the state
         }
 
         public void kill_fg () {

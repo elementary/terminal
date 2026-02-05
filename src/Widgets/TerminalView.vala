@@ -147,7 +147,7 @@ public class Terminal.TerminalView : Granite.Bin {
             pos = n_pages;
         }
 
-        var terminal_widget = new TerminalWidget (main_window) {
+        var terminal_widget = new TerminalWidget () {
             scrollback_lines = Application.settings.get_int ("scrollback-lines"),
             /* Make the terminal occupy the whole GUI */
             hexpand = true,
@@ -168,6 +168,11 @@ public class Terminal.TerminalView : Granite.Bin {
         tab.title = location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL;
         terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
         terminal_widget.tab = tab;
+
+        terminal_widget.notify["tab-state"].connect (() => {
+            tab.icon = terminal_widget.tab_state.to_icon ();
+            tab.loading = terminal_widget.tab_state == WORKING;
+        });
 
         //Set correct label now to avoid race when spawning shell
 

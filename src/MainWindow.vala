@@ -303,7 +303,9 @@ namespace Terminal {
                     return;
                 }
 
-                term.tab.icon = null; // Assume only process icons are set
+                if (term.tab_state != WORKING) {
+                    term.tab_state = NONE;
+                }
             });
 
             notebook.tab_bar.bind_property ("tabs-revealed", new_tab_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN);
@@ -359,7 +361,6 @@ namespace Terminal {
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
             var term = get_term_widget (tab);
-            term.main_window = this;
             save_opened_terminals (true, true);
             connect_terminal_signals (term);
         }
