@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-01-13 13:16+0000\n"
+"PO-Revision-Date: 2026-01-31 23:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/terminal/extra/"
-"uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
+"extra/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
@@ -49,11 +49,11 @@ msgstr "Нові функції:"
 
 #: data/terminal.metainfo.xml.in:61
 msgid "Ctrl + BackSpace can now be used delete words"
-msgstr ""
+msgstr "Ctrl + BackSpace можна використовувати, щоб видаляти слова"
 
 #: data/terminal.metainfo.xml.in:62
 msgid "Ctrl + Click is now required to open a link"
-msgstr ""
+msgstr "Ctrl + Click відтепер обов'язкові, щоб відкрити посилання"
 
 #: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
 #: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
@@ -64,19 +64,19 @@ msgstr "Інші оновлення:"
 
 #: data/terminal.metainfo.xml.in:66
 msgid "Update code and packaging for Gtk4"
-msgstr ""
+msgstr "Оновлення коду та пакетів для Gtk4"
 
 #: data/terminal.metainfo.xml.in:67
 msgid "Flatter styles"
-msgstr ""
+msgstr "Стилі Flatter"
 
 #: data/terminal.metainfo.xml.in:68
 msgid "Tab bar now in window drag area"
-msgstr ""
+msgstr "Панель вкладок відтепер розміщена у зоні перетягування вікна"
 
 #: data/terminal.metainfo.xml.in:69
 msgid "Smart copy no longer deselects"
-msgstr ""
+msgstr "Функція «Розумне копіювання» більше не скасовує вибір"
 
 #: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
 #: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
@@ -90,22 +90,28 @@ msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
+"Відтепер доступна і підтримується опція приховування панелі вкладок, коли є "
+"тільки одна вкладка"
 
 #: data/terminal.metainfo.xml.in:126
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
+"Відтепер видається попередження, якщо вставлена команда має опцію, яка "
+"пропускає підтвердження"
 
 #: data/terminal.metainfo.xml.in:127
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
+"Коли запускається процес на передньому плані, назва вкладки змінюється на "
+"назву цього процесу"
 
 #: data/terminal.metainfo.xml.in:131
 msgid "Exiting the shell in a tab now closes that tab"
-msgstr ""
+msgstr "Вихід з оболонки у вкладці тепер закриває цю вкладку"
 
 #: data/terminal.metainfo.xml.in:162
 msgid "Stop window size increasing when opened"

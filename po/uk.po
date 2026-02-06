@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-12-19 00:55+0000\n"
+"PO-Revision-Date: 2026-01-31 23:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/uk/>\n"
@@ -88,8 +88,6 @@ msgid "Are you sure you want to close this tab?"
 msgstr "Ви впевнені, що бажаєте закрити цю вкладку?"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Закрити вкладку"
 
@@ -98,10 +96,12 @@ msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
+"Ви впевнені, що хочете закрити всі процеси на передньому плані перед "
+"закриттям вікна?"
 
 #: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "Закрити вікно"
 
 #: src/MainWindow.vala:640
 msgid "Hide find bar"
