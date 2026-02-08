@@ -3,12 +3,12 @@
  * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
  */
 
-public class Terminal.Widgets.SearchToolbar : Gtk.Box {
+public class Terminal.Widgets.SearchToolbar : Granite.Box {
+    public weak MainWindow window { private get; construct; }
+
     private Gtk.ToggleButton cycle_button;
     private uint last_search_term_length = 0;
-
-    public weak MainWindow window { get; construct; }
-    public Gtk.SearchEntry search_entry;
+    private Gtk.SearchEntry search_entry;
 
     public SearchToolbar (MainWindow window) {
         Object (window: window);
@@ -53,7 +53,7 @@ public class Terminal.Widgets.SearchToolbar : Gtk.Box {
         // TODO Restore state from settings
         cycle_button.toggled ();
 
-        add_css_class (Granite.STYLE_CLASS_LINKED);
+        child_spacing = LINKED;
         append (search_entry);
         append (next_button);
         append (previous_button);

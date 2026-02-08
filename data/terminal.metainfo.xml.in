@@ -54,6 +54,31 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.0" date="2025-12-05" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Ctrl + BackSpace can now be used delete words</li>
+          <li>Ctrl + Click is now required to open a link</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Update code and packaging for Gtk4</li>
+          <li>Flatter styles</li>
+          <li>Tab bar now in window drag area</li>
+          <li>Smart copy no longer deselects</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/317">Show symbol while terminal is working</issue>
+        <issue url="https://github.com/elementary/terminal/issues/653">Links open when clicking on Terminal app in Alt+Tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/643">Port Terminal to GTK4</issue>
+        <issue url="https://github.com/elementary/terminal/issues/510">Natural Copy/Paste. Ctrl+c clears the highlighted word. Ctrl+x doesn't.</issue>
+        <issue url="https://github.com/elementary/terminal/issues/469">Ctrl + Click to open URLs</issue>
+      </issues>
+    </release>
+
     <release version="7.2.0" date="2025-11-14" urgency="medium">
       <description>
         <p>Other updates:</p>

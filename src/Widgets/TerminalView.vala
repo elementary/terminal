@@ -3,12 +3,8 @@
  * SPDX-FileCopyrightText: 2024-2025 elementary, Inc. (https://elementary.io)
  */
 
-public class Terminal.TerminalView : Gtk.Box {
+public class Terminal.TerminalView : Granite.Bin {
     const int TAB_HISTORY_MAX_ITEMS = 20;
-
-    public enum TargetType {
-        URI_LIST
-    }
 
     public signal void new_tab_requested ();
     public signal void tab_duplicated (Adw.TabPage page);
@@ -29,18 +25,17 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    public unowned MainWindow main_window { get; construct; }
+    public unowned MainWindow main_window { private get; construct; }
     public Adw.TabBar tab_bar { get; private set; }
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
 
-    private Gtk.CssProvider style_provider;
+    private Widgets.ZoomOverlay zoom_overlay;
     private Gtk.MenuButton tab_history_button;
+    private Pango.FontDescription term_font;
 
     public TerminalView (MainWindow window) {
-        Object (
-            main_window: window
-        );
+        Object (main_window: window);
     }
 
     construct {
@@ -76,42 +71,41 @@ public class Terminal.TerminalView : Gtk.Box {
             view = tab_view,
         };
 
+        var overlay = new Gtk.Overlay () {
+            child = tab_view
+        };
+
+        zoom_overlay = new Widgets.ZoomOverlay (overlay);
+
+        // We don't add tab_bar because it's in the main window header
+        child = overlay;
+
         Application.settings.changed["tab-bar-behavior"].connect (() => {
             tab_bar.autohide = Application.settings.get_enum ("tab-bar-behavior") == 1;
         });
 
-        style_provider = new Gtk.CssProvider ();
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            style_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
         var button_target = new Gtk.DropTarget (Type.STRING, Gdk.DragAction.COPY) {
-            preload = true //So we can predetermine whether string is suitable for dropping here
+            preload = true // So we can predetermine whether string is suitable for dropping here
         };
 
-        button_target.notify["value"].connect (() => {
-            var val = button_target.get_value ();
-            if (!val.holds (typeof (string))) {
-                button_target.reject ();
-            } else {
-                var uris = Uri.list_extract_uris (val.dup_string ());
-                foreach (string s in uris) {
-                    if (!Utils.valid_local_uri (s, null)) {
-                        button_target.reject ();
-                        break;
-                    }
-                }
-            }
-        });
-
+        button_target.notify["value"].connect (on_add_button_target_value_changed);
         button_target.drop.connect (on_add_button_drop);
         new_tab_button.add_controller (button_target);
 
-        Type[] types = { Type.STRING };
-        tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, types);
+        tab_view.notify["selected-page"].connect (zoom_overlay.hide_zoom_level);
+
+        tab_bar.setup_extra_drop_target (Gdk.DragAction.COPY, { Type.STRING });
         tab_bar.extra_drag_drop.connect (on_tab_bar_extra_drag_drop);
+
+        var key_controller = new Gtk.EventControllerKey () {
+            propagation_phase = CAPTURE
+        };
+        key_controller.key_pressed.connect (key_pressed);
+        add_controller (key_controller);
+
+        update_font ();
+        Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+        Application.settings.changed["font"].connect (update_font);
     }
 
     public void make_restorable (string path) {
@@ -146,6 +140,67 @@ public class Terminal.TerminalView : Gtk.Box {
             path,
             "%s::%s".printf (MainWindow.ACTION_PREFIX + MainWindow.ACTION_RESTORE_CLOSED_TAB, path)
         );
+    }
+
+    public TerminalWidget add_new_tab (string? location, string program = "", int pos = -1) {
+        if (pos == -1) {
+            pos = n_pages;
+        }
+
+        var terminal_widget = new TerminalWidget () {
+            scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+            /* Make the terminal occupy the whole GUI */
+            hexpand = true,
+            vexpand = true
+        };
+
+        terminal_widget.notify["font-scale"].connect ((obj, pspec) => {
+            zoom_overlay.show_zoom_level (((TerminalWidget) obj).font_scale);
+            main_window.save_opened_terminals (false, true);
+        });
+
+        var scrolled = new Gtk.ScrolledWindow () {
+            vadjustment = terminal_widget.vadjustment,
+            child = terminal_widget
+        };
+
+        unowned var tab = tab_view.insert (scrolled, pos);
+        tab.title = location != null ? Path.get_basename (location) : TerminalWidget.DEFAULT_LABEL;
+        terminal_widget.bind_property ("current-working-directory", tab, "tooltip");
+        terminal_widget.tab = tab;
+
+        terminal_widget.notify["tab-state"].connect (() => {
+            tab.icon = terminal_widget.tab_state.to_icon ();
+            tab.loading = terminal_widget.tab_state == WORKING;
+        });
+
+        //Set correct label now to avoid race when spawning shell
+
+        terminal_widget.set_font (term_font);
+
+        var current_terminal = get_term_widget (tab_view.selected_page);
+        if (current_terminal != null) {
+            terminal_widget.font_scale = current_terminal.font_scale;
+        } else {
+            terminal_widget.font_scale = Terminal.Application.saved_state.get_double ("zoom");
+        }
+
+        selected_page = tab;
+
+        if (program.length == 0) {
+            /* Set up the virtual terminal */
+            if (location == "") {
+                terminal_widget.active_shell ();
+            } else {
+                terminal_widget.active_shell (location);
+            }
+        } else {
+            terminal_widget.run_program (program, location);
+        }
+
+        main_window.save_opened_terminals (true, true);
+
+        return terminal_widget;
     }
 
     public void close_tab () {
@@ -213,6 +268,65 @@ public class Terminal.TerminalView : Gtk.Box {
         open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
     }
 
+    private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+        switch (keyval) {
+            case Gdk.Key.@1: //alt+[1-8]
+            case Gdk.Key.@2:
+            case Gdk.Key.@3:
+            case Gdk.Key.@4:
+            case Gdk.Key.@5:
+            case Gdk.Key.@6:
+            case Gdk.Key.@7:
+            case Gdk.Key.@8:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
+                    var tab_index = (int) (keyval - Gdk.Key.@1);
+                    if (tab_index < n_pages) {
+                        selected_page = tab_view.get_nth_page (tab_index);
+                    }
+
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+
+            case Gdk.Key.@9:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab") && n_pages > 0) {
+                    selected_page = tab_view.get_nth_page (n_pages - 1);
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+        }
+
+        return Gdk.EVENT_PROPAGATE;
+    }
+
+    private void update_font () {
+        // We have to fetch both values at least once, otherwise
+        // GLib.Settings won't notify on their changes
+        var app_font_name = Application.settings.get_string ("font");
+        var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
+
+        if (app_font_name != "") {
+            term_font = Pango.FontDescription.from_string (app_font_name);
+        } else {
+            term_font = Pango.FontDescription.from_string (sys_font_name);
+        }
+
+        for (int i = 0; i < n_pages; i++) {
+            var term = get_term_widget (tab_view.get_nth_page (i));
+            term.set_font (term_font);
+        }
+    }
+
+    private static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
+        if (tab == null) {
+            return null;
+        }
+
+        var tab_child = (Gtk.ScrolledWindow) tab.child;
+        unowned var term = (TerminalWidget) tab_child.child;
+        return term;
+    }
+
     public void after_tab_restored (TerminalWidget term) {
         var menu = (Menu) tab_history_button.menu_model;
         for (var i = 0; i < menu.get_n_items (); i++) {
@@ -227,9 +341,7 @@ public class Terminal.TerminalView : Gtk.Box {
         }
     }
 
-    private Menu create_menu_model () {
-        var menu = new Menu ();
-
+    private static Menu create_menu_model () {
         var close_tab_section = new Menu ();
         close_tab_section.append (_("Close Tabs to the Right"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_TABS_TO_RIGHT);
         close_tab_section.append (_("Close Other Tabs"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_CLOSE_OTHER_TABS);
@@ -242,14 +354,35 @@ public class Terminal.TerminalView : Gtk.Box {
         var reload_section = new Menu ();
         reload_section.append (_("Reload"), MainWindow.ACTION_PREFIX + MainWindow.ACTION_TAB_RELOAD);
 
+        var menu = new Menu ();
         menu.append_section (null, open_tab_section);
         menu.append_section (null, close_tab_section);
         menu.append_section (null, reload_section);
+
         return menu;
     }
 
+    private static void on_add_button_target_value_changed (Object obj, ParamSpec pspec)
+    requires (obj is Gtk.DropTarget) {
+        var button_target = (Gtk.DropTarget) obj;
+
+        unowned var value = button_target.get_value ();
+        if (!value.holds (typeof (string))) {
+            button_target.reject ();
+            return;
+        }
+
+        var uris = Uri.list_extract_uris (value.get_string ());
+        foreach (unowned var uri in uris) {
+            if (!Utils.valid_local_uri (uri, null)) {
+                button_target.reject ();
+                break;
+            }
+        }
+    }
+
     private bool on_add_button_drop (Value val, double x, double y) {
-        var uris = Uri.list_extract_uris (val.dup_string ());
+        var uris = Uri.list_extract_uris (val.get_string ());
         var new_tab_action = Utils.action_from_group (MainWindow.ACTION_NEW_TAB_AT, main_window.actions);
         // ACTION_NEW_TAB_AT only works with local paths to folders
         foreach (var uri in uris) {
