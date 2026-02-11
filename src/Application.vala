@@ -150,7 +150,10 @@ public class Terminal.Application : Gtk.Application {
         return -1;
     }
 
-    protected override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+    protected override bool dbus_register (
+        DBusConnection connection,
+        string object_path
+    ) throws Error {
         base.dbus_register (connection, object_path);
 
         var dbus = new DBus ();
@@ -192,21 +195,39 @@ public class Terminal.Application : Gtk.Application {
                     var notification = new Notification (notification_title);
                     notification.set_body (process);
                     notification.set_icon (tab_state.to_icon ());
-                    notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+                    notification.set_default_action_and_target_value (
+                        "app.process-finished",
+                        new Variant.string (id)
+                    );
                     send_notification ("process-finished-%s".printf (id), notification);
 
                     ulong tab_change_handler = 0;
                     ulong focus_in_handler = 0;
-
-                    tab_change_handler = ((MainWindow) terminal.root).notify["current-terminal"].connect ((obj, pspec) => {
-                        withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
-                    });
-
-                    focus_in_handler = ((MainWindow) terminal.root).notify["is-active"].connect ((obj, pspec) => {
-                        if (((MainWindow) obj).is_active) {
-                            withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                    var window = ((MainWindow) terminal.root);
+                    tab_change_handler = window.notify["current-terminal"].connect (
+                        (obj, pspec) => {
+                            withdraw_notification_for_terminal (
+                                (MainWindow) obj,
+                                terminal, id,
+                                tab_change_handler,
+                                focus_in_handler
+                            );
                         }
-                    });
+                    );
+
+                    focus_in_handler = window.notify["is-active"].connect (
+                        (obj, pspec) => {
+                            if (((MainWindow) obj).is_active) {
+                                withdraw_notification_for_terminal (
+                                    (MainWindow) obj,
+                                    terminal,
+                                    id,
+                                    tab_change_handler,
+                                    focus_in_handler
+                                );
+                            }
+                        }
+                    );
                 }
 
                 return Source.REMOVE;
