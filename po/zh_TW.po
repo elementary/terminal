@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
-"PO-Revision-Date: 2025-04-25 16:10+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"PO-Revision-Date: 2026-01-06 12:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
-"l10n.elementaryos.org/projects/terminal/terminal/zh_Hant/>\n"
+"l10n.elementaryos.org/projects/terminal/terminal/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -66,81 +66,41 @@ msgstr "程序已完成"
 msgid "Process exited with errors"
 msgstr "程序錯誤地結束"
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr "顯示搜尋列"
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
-msgid "Copy"
-msgstr "複製"
-
-#: src/MainWindow.vala:168
-msgid "Copy Last Output"
-msgstr "複製上次的輸出"
-
-#: src/MainWindow.vala:174
-msgid "Clear Screen"
-msgstr "清除畫面"
-
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
-msgid "Reset"
-msgstr "重設"
-
-#: src/MainWindow.vala:186
-msgid "Paste"
-msgstr "貼上"
-
-#: src/MainWindow.vala:192
-msgid "Select All"
-msgstr "全部選擇"
-
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:194
 msgid "Exit FullScreen"
 msgstr "離開全螢幕"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "尋找…"
 
-#: src/MainWindow.vala:313
-#, fuzzy
-#| msgid "New Tab"
+#: src/MainWindow.vala:209
 msgid "New Tab…"
-msgstr "新增分頁"
+msgstr "新增分頁…"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "設定"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "您確定您想要關閉此分頁嗎？"
 
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
+#: src/MainWindow.vala:267
+msgid "Close tab"
 msgstr "關閉分頁"
 
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
-#, c-format
-msgid "Show in %s"
-msgstr "在 %s 中顯示"
+#: src/MainWindow.vala:510
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
+msgstr "您確定要在關閉視窗前關閉所有前景程序嗎？"
 
-#: src/MainWindow.vala:578
-msgid "Default application"
-msgstr "預設應用程式"
+#: src/MainWindow.vala:511
+msgid "Close window"
+msgstr "關閉視窗"
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
-msgstr "您確定要退出終端機嗎？"
-
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr "退出終端機"
-
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "隱藏搜尋列"
 
@@ -156,11 +116,11 @@ msgstr "貼上的文字有可能在嘗試獲得管理員權限"
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr "貼上的文字當中包含用來跳過警告和確認提示的指令"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr "色彩偏好設定"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr "視窗風格："
 
@@ -169,7 +129,7 @@ msgid "Light"
 msgstr "亮色"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "深色"
 
@@ -257,27 +217,27 @@ msgstr "前景："
 msgid "Cursor:"
 msgstr "游標："
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr "關閉"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr "對比非常低"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr "對比很低"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr "對比沒問題"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr "對比很高"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
@@ -293,11 +253,11 @@ msgstr "複製指令至終端機有一定的風險。請確定您了解您貼上
 msgid "Show paste protection warnings"
 msgstr "顯示貼上保護警告"
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "不要貼上"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
@@ -313,124 +273,169 @@ msgstr "上個結果"
 msgid "Next result"
 msgstr "下個結果"
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 msgid "Disable cyclic search"
 msgstr "停用循環搜尋"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 msgid "Enable cyclic search"
 msgstr "啟用循環搜尋"
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr "縮小"
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr "預設遠近層級"
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr "放大"
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr "跟隨系統風格"
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr "高對比"
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr "Solarized 亮色"
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr "自訂"
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr "自然地複製 / 貼上"
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "快捷鍵操作免按 Shift；可能會與 CLI 程式產生衝突"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr "為不安全的貼上顯示警告"
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr "貼上的文字可能包含多個指令或管理員指令時顯示警告"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr "事件警告"
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr "輸入錯誤或有多個補完候補時提醒（受系統設定→音效的設定值影響）"
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "自動隱藏分頁列"
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "只有一個分頁的時候隱藏分頁列"
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "終端機"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "在 %s 中顯示"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "預設應用程式"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "複製"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "複製上次的輸出"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr "清除畫面"
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr "重設"
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "貼上"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "全部選擇"
+
+#: src/Widgets/TerminalWidget.vala:634
 msgid "Are you sure you want to reset the terminal?"
 msgstr "您確定要重設終端機嗎？"
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "您確定您想要重新載入此分頁嗎？"
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
+msgid "Reload"
 msgstr "重新載入"
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr "新增分頁"
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 msgid "Closed Tabs"
 msgstr "已關閉的分頁"
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr "關閉右方的分頁"
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 msgid "Close Other Tabs"
 msgstr "關閉其他分頁"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr "關閉分頁"
+
+#: src/Widgets/TerminalView.vala:346
 msgid "Open in New Window"
 msgstr "在新視窗中開啟"
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 msgid "Duplicate Tab"
 msgstr "建立分頁副本"
-
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
-msgstr "重新載入"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr "縮放：%.0f%%"
+
+#~ msgid "Show Search Bar"
+#~ msgstr "顯示搜尋列"
+
+#~ msgid "Are you sure you want to quit Terminal?"
+#~ msgstr "您確定要退出終端機嗎？"
+
+#~ msgid "Quit Terminal"
+#~ msgstr "退出終端機"
+
+#~ msgid "Reload Tab"
+#~ msgstr "重新載入"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "此分頁中有執行中的程序。"

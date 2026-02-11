@@ -233,4 +233,43 @@ namespace Terminal.Utils {
 
         return false;
     }
+
+    public static AppInfo? get_default_app_for_uri (string? uri) {
+        if (uri == null) {
+            return null;
+        }
+
+        AppInfo? appinfo = null;
+        var scheme = Uri.parse_scheme (uri);
+        if (scheme != null) {
+            appinfo = AppInfo.get_default_for_uri_scheme (scheme);
+        }
+
+        if (appinfo == null) {
+            bool uncertain;
+            /* Guess content type from filename if possible */
+            //TODO Get content type from actual file (if exists)
+            var ctype = ContentType.guess (uri, null, out uncertain);
+            if (!uncertain) {
+                appinfo = AppInfo.get_default_for_type (ctype, true);
+            }
+
+            if (appinfo == null) {
+                var file = File.new_for_commandline_arg (uri);
+                try {
+                    var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
+                                                FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+
+                    if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                        appinfo = AppInfo.get_default_for_type (
+                                    info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                    }
+                } catch (Error e) {
+                    warning ("Could not get file info %s", e.message);
+                }
+            }
+        }
+
+        return appinfo;
+    }
 }

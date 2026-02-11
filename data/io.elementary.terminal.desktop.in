@@ -15,8 +15,10 @@ Actions=NewWindow;NewRootWindow;
 
 [Desktop Action NewWindow]
 Name=New Window
+Icon=window-new
 Exec=io.elementary.terminal -n
 
 [Desktop Action NewRootWindow]
 Name=New Root Tab
+Icon=dialog-password
 Exec=io.elementary.terminal -e "sudo -s"
