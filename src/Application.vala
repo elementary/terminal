@@ -192,42 +192,7 @@ public class Terminal.Application : Gtk.Application {
 
             Timeout.add (200, () => {
                 if (!(get_active_window ().is_active)) {
-                    var notification = new Notification (notification_title);
-                    notification.set_body (process);
-                    notification.set_icon (tab_state.to_icon ());
-                    notification.set_default_action_and_target_value (
-                        "app.process-finished",
-                        new Variant.string (id)
-                    );
-                    send_notification ("process-finished-%s".printf (id), notification);
-
-                    ulong tab_change_handler = 0;
-                    ulong focus_in_handler = 0;
-                    var window = ((MainWindow) terminal.root);
-                    tab_change_handler = window.notify["current-terminal"].connect (
-                        (obj, pspec) => {
-                            withdraw_notification_for_terminal (
-                                (MainWindow) obj,
-                                terminal, id,
-                                tab_change_handler,
-                                focus_in_handler
-                            );
-                        }
-                    );
-
-                    focus_in_handler = window.notify["is-active"].connect (
-                        (obj, pspec) => {
-                            if (((MainWindow) obj).is_active) {
-                                withdraw_notification_for_terminal (
-                                    (MainWindow) obj,
-                                    terminal,
-                                    id,
-                                    tab_change_handler,
-                                    focus_in_handler
-                                );
-                            }
-                        }
-                    );
+                    send_processed_finished_notification (terminal, notification_title, process);
                 }
 
                 return Source.REMOVE;
@@ -237,13 +202,44 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    private void withdraw_notification_for_terminal (MainWindow window, TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+    private void send_processed_finished_notification (TerminalWidget terminal, string title, string process) {
+        var notification = new Notification (title);
+        notification.set_body (process);
+        notification.set_icon (terminal.tab_state.to_icon ());
+        notification.set_default_action_and_target_value (
+            "app.process-finished",
+            new Variant.string (terminal.terminal_id)
+        );
+
+        send_notification ("process-finished-%s".printf (terminal.terminal_id), notification);
+
+        ulong tab_change_handler = 0;
+        ulong focus_in_handler = 0;
+        var window = (MainWindow)terminal.root;
+
+        tab_change_handler = window.notify["current-terminal"].connect (() => {
+            withdraw_notification_for_terminal (terminal, tab_change_handler, focus_in_handler);
+        });
+
+        focus_in_handler = window.notify["is-active"].connect (() => {
+            if (window.is_active) {
+                withdraw_notification_for_terminal (terminal, tab_change_handler, focus_in_handler);
+            }
+        });
+    }
+
+    private void withdraw_notification_for_terminal (
+        TerminalWidget terminal,
+        ulong tab_change_handler,
+        ulong focus_in_handler
+    ) {
+        var window = ((MainWindow) terminal.root);
         if (window.current_terminal != terminal) {
             return;
         }
 
         terminal.tab_state = NONE;
-        withdraw_notification ("process-finished-%s".printf (id));
+        withdraw_notification ("process-finished-%s".printf (terminal.terminal_id));
 
         window.disconnect (tab_change_handler);
         window.disconnect (focus_in_handler);
