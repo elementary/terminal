@@ -16,8 +16,6 @@ public class Terminal.Application : Gtk.Application {
 
     public bool is_testing { get; set construct; }
 
-    private static Themes themes;
-
     public Application () {
         Object (
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
@@ -232,7 +230,8 @@ public class Terminal.Application : Gtk.Application {
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
         settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-        themes = new Themes ();
+
+        new Themes (); // Start listening to gsettings to sync headerbar dark style preference
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/io/elementary/terminal/Application.css");

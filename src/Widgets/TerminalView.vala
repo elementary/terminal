@@ -4,10 +4,7 @@
  */
 
 public class Terminal.TerminalView : Granite.Bin {
-    const int TAB_HISTORY_MAX_ITEMS = 20;
-
-    public signal void new_tab_requested ();
-    public signal void tab_duplicated (Adw.TabPage page);
+    private const int TAB_HISTORY_MAX_ITEMS = 20;
 
     public int n_pages {
         get {
@@ -325,20 +322,6 @@ public class Terminal.TerminalView : Granite.Bin {
         var tab_child = (Gtk.ScrolledWindow) tab.child;
         unowned var term = (TerminalWidget) tab_child.child;
         return term;
-    }
-
-    public void after_tab_restored (TerminalWidget term) {
-        var menu = (Menu) tab_history_button.menu_model;
-        for (var i = 0; i < menu.get_n_items (); i++) {
-            if (term.terminal_id == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
-                menu.remove (i);
-                break;
-            }
-        }
-
-        if (menu.get_n_items () == 0) {
-            tab_history_button.menu_model = null;
-        }
     }
 
     private static Menu create_menu_model () {
