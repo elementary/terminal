@@ -4,10 +4,7 @@
  */
 
 public class Terminal.TerminalView : Granite.Bin {
-    const int TAB_HISTORY_MAX_ITEMS = 20;
-
-    public signal void new_tab_requested ();
-    public signal void tab_duplicated (Adw.TabPage page);
+    private const int TAB_HISTORY_MAX_ITEMS = 20;
 
     public int n_pages {
         get {
