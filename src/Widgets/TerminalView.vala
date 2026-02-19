@@ -115,20 +115,15 @@ public class Terminal.TerminalView : Granite.Bin {
         }
 
         var menu = (Menu) tab_history_button.menu_model;
-        int position_in_menu = -1;
-        var path_in_menu = false;
-        int i;
-        for (i = 0; i < menu.get_n_items (); i++) {
-            if (path == menu.get_item_attribute_value (
-                i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()
-            ) {
-                path_in_menu = true;
+        var position_in_menu = -1;
+        for (var i = 0; i < menu.get_n_items (); i++) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 position_in_menu = i;
                 break;
             }
         }
 
-        if (path_in_menu) {
+        if (position_in_menu != -1) {
             menu.remove (position_in_menu);
         }
 
@@ -327,10 +322,10 @@ public class Terminal.TerminalView : Granite.Bin {
         return term;
     }
 
-    public void after_tab_restored (TerminalWidget term) {
+    public void after_tab_restored (string path) {
         var menu = (Menu) tab_history_button.menu_model;
         for (var i = 0; i < menu.get_n_items (); i++) {
-            if (term.terminal_id == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 menu.remove (i);
                 break;
             }
