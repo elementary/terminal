@@ -546,7 +546,8 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            notebook.add_new_tab (param.get_string ()); //TODO Restore icon?
+            notebook.add_new_tab (param.get_string ()); // TODO Restore icon?
+            notebook.after_tab_restored (param.get_string ());
         }
 
         private void action_new_tab () requires (current_terminal != null) {

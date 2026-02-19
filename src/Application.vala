@@ -185,7 +185,11 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab_state = NONE;
             }
 
-            if (!(get_active_window ().is_active)) {
+            Timeout.add (200, () => {
+                if (active_window.is_active) {
+                    return Source.REMOVE;
+                }
+
                 var notification = new Notification (notification_title);
                 notification.set_body (process);
                 notification.set_icon (tab_state.to_icon ());
@@ -204,7 +208,9 @@ public class Terminal.Application : Gtk.Application {
                         withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
                     }
                 });
-            }
+
+                return Source.REMOVE;
+            });
         });
 
         return true;
