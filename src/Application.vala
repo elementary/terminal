@@ -15,8 +15,6 @@ public class Terminal.Application : Gtk.Application {
 
     public bool is_testing { get; set construct; }
 
-    private static Themes themes;
-
     public Application () {
         Object (
             application_id: "io.elementary.terminal", /* Ensures only one instance runs */
@@ -186,7 +184,11 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab_state = NONE;
             }
 
-            if (!(get_active_window ().is_active)) {
+            Timeout.add (200, () => {
+                if (active_window.is_active) {
+                    return Source.REMOVE;
+                }
+
                 var notification = new Notification (notification_title);
                 notification.set_body (process);
                 notification.set_icon (tab_state.to_icon ());
@@ -205,7 +207,9 @@ public class Terminal.Application : Gtk.Application {
                         withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
                     }
                 });
-            }
+
+                return Source.REMOVE;
+            });
         });
 
         return true;
@@ -230,7 +234,9 @@ public class Terminal.Application : Gtk.Application {
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
-        themes = new Themes ();
+        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
+
+        new Themes (); // Start listening to gsettings to sync headerbar dark style preference
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/io/elementary/terminal/Application.css");

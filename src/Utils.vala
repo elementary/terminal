@@ -172,29 +172,6 @@ namespace Terminal.Utils {
         }
     }
 
-    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
-        // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
-        var placeholder = "::::::";
-        var parts = uri.split (Path.DIR_SEPARATOR_S);
-        parts[parts.length - 1] = parts[parts.length - 1].replace ("#", placeholder);
-        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts);
-        string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
-                    .replace ("#", "")
-                    .replace ("*", "")
-                    .replace ("~", "");
-
-        if (!allow_single_quote) {
-            rc = rc.replace ("'", "");
-        }
-
-        //Escape and then replace fragment identifier
-        return Uri.escape_string (
-            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape),
-            rc ,
-            allow_utf8
-        ).replace (placeholder, "#");
-    }
-
     public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
         return ((SimpleAction) action_group.lookup_action (action_name));
     }
