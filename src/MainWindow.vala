@@ -6,7 +6,6 @@
 namespace Terminal {
     public class MainWindow : Adw.Window {
         private Adw.HeaderBar header;
-        public TerminalView notebook { get; private set construct; }
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Button unfullscreen_button;
         private Gtk.Label title_label;
@@ -18,7 +17,7 @@ namespace Terminal {
         public bool recreate_tabs { get; construct; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
-
+        public TerminalView notebook { get; private set; }
         public TerminalWidget? current_terminal { get; private set; default = null; }
 
         public const string ACTION_PREFIX = "win.";
@@ -292,11 +291,6 @@ namespace Terminal {
                     return Source.REMOVE;
                 });
 
-                if (term.tab == null) {
-                    // Happens on opening window - ignore
-                    return;
-                }
-
                 if (term.tab_state != WORKING) {
                     term.tab_state = NONE;
                 }
@@ -354,9 +348,8 @@ namespace Terminal {
         }
 
         private void on_tab_added (Adw.TabPage tab, int pos) {
-            var term = get_term_widget (tab);
             save_opened_terminals (true, true);
-            connect_terminal_signals (term);
+            connect_terminal_signals (get_term_widget (tab));
         }
 
         private void on_tab_removed (Adw.TabPage tab) {
@@ -450,34 +443,9 @@ namespace Terminal {
         }
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
-            terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
             terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
             terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
-        }
-
-        private void on_terminal_child_exited (Vte.Terminal term, int status) {
-            var tw = (TerminalWidget)term;
-            if (tw.tab.child != tw.parent) {
-                // TabView already removed tab - ignore signal
-                return;
-            }
-
-            if (!tw.killed) {
-                if (tw.program_string.length > 0) {
-                    /* If a program was running, do not close the tab so that output of program
-                     * remains visible */
-                    tw.program_string = "";
-                    tw.active_shell (tw.current_working_directory);
-                    check_for_tabs_with_same_name ();
-                } else {
-                    if (tw.tab != null) {
-                        notebook.tab_view.close_page (tw.tab);
-                    }
-
-                    return;
-                }
-            }
         }
 
         private void on_terminal_window_title_changed () {
@@ -703,10 +671,10 @@ namespace Terminal {
             return term;
         }
 
-        public unowned TerminalWidget? get_terminal (string id) {
-            for (int i = 0; i < notebook.n_pages; i++) {
+        public unowned TerminalWidget? get_terminal (string terminal_id) {
+            for (var i = 0; i < notebook.n_pages; i++) {
                 unowned var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.terminal_id == id) {
+                if (term.terminal_id == terminal_id) {
                     return term;
                 }
             }
@@ -714,8 +682,8 @@ namespace Terminal {
             return null;
         }
 
-        public void set_active_terminal_tab (Adw.TabPage tab) {
-            notebook.tab_view.selected_page = tab;
+        public unowned Adw.TabPage? get_page (string terminal_id) {
+            return notebook.get_page (terminal_id);
         }
 
         /** Compare every tab label with every other and resolve ambiguities **/
@@ -753,8 +721,6 @@ namespace Terminal {
                     }
                 }
             }
-
-            return;
         }
 
         private void on_terminal_cwd_changed () {
