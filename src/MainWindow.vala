@@ -382,11 +382,9 @@ namespace Terminal {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
-            var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
+            var default_zoom = Application.saved_state.get_double ("zoom"); // Range set in settings 0.25 - 4.0
 
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
-
+            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
                 tabs = Terminal.Application.saved_state.get_strv ("tabs");
                 var n_tabs = tabs.length;
 

@@ -12,7 +12,6 @@ public class Terminal.Application : Gtk.Application {
 
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
-    public static GLib.Settings settings_sys;
 
     public bool is_testing { get; set construct; }
 
@@ -235,7 +234,6 @@ public class Terminal.Application : Gtk.Application {
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
-        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
 
         new Themes (); // Start listening to gsettings to sync headerbar dark style preference
 
