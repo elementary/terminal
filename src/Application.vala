@@ -12,11 +12,8 @@ public class Terminal.Application : Gtk.Application {
 
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
-    public static GLib.Settings settings_sys;
 
     public bool is_testing { get; set construct; }
-
-    private static Themes themes;
 
     public Application () {
         Object (
@@ -188,26 +185,28 @@ public class Terminal.Application : Gtk.Application {
             }
 
             Timeout.add (200, () => {
-                if (!(get_active_window ().is_active)) {
-                    var notification = new Notification (notification_title);
-                    notification.set_body (process);
-                    notification.set_icon (tab_state.to_icon ());
-                    notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
-                    send_notification ("process-finished-%s".printf (id), notification);
-
-                    ulong tab_change_handler = 0;
-                    ulong focus_in_handler = 0;
-
-                    tab_change_handler = ((MainWindow) terminal.root).notify["current-terminal"].connect ((obj, pspec) => {
-                        withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
-                    });
-
-                    focus_in_handler = ((MainWindow) terminal.root).notify["is-active"].connect ((obj, pspec) => {
-                        if (((MainWindow) obj).is_active) {
-                            withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
-                        }
-                    });
+                if (active_window.is_active) {
+                    return Source.REMOVE;
                 }
+
+                var notification = new Notification (notification_title);
+                notification.set_body (process);
+                notification.set_icon (tab_state.to_icon ());
+                notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+                send_notification ("process-finished-%s".printf (id), notification);
+
+                ulong tab_change_handler = 0;
+                ulong focus_in_handler = 0;
+
+                tab_change_handler = ((MainWindow) terminal.root).notify["current-terminal"].connect ((obj, pspec) => {
+                    withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                });
+
+                focus_in_handler = ((MainWindow) terminal.root).notify["is-active"].connect ((obj, pspec) => {
+                    if (((MainWindow) obj).is_active) {
+                        withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                    }
+                });
 
                 return Source.REMOVE;
             });
@@ -235,8 +234,8 @@ public class Terminal.Application : Gtk.Application {
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
-        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-        themes = new Themes ();
+
+        new Themes (); // Start listening to gsettings to sync headerbar dark style preference
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/io/elementary/terminal/Application.css");

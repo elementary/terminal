@@ -4,10 +4,7 @@
  */
 
 public class Terminal.TerminalView : Granite.Bin {
-    const int TAB_HISTORY_MAX_ITEMS = 20;
-
-    public signal void new_tab_requested ();
-    public signal void tab_duplicated (Adw.TabPage page);
+    private const int TAB_HISTORY_MAX_ITEMS = 20;
 
     public int n_pages {
         get {
@@ -30,9 +27,14 @@ public class Terminal.TerminalView : Granite.Bin {
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
 
+    private static GLib.Settings gnome_interface_settings;
     private Widgets.ZoomOverlay zoom_overlay;
     private Gtk.MenuButton tab_history_button;
     private Pango.FontDescription term_font;
+
+    static construct {
+        gnome_interface_settings = new GLib.Settings ("org.gnome.desktop.interface");
+    }
 
     public TerminalView (MainWindow window) {
         Object (main_window: window);
@@ -104,7 +106,7 @@ public class Terminal.TerminalView : Granite.Bin {
         add_controller (key_controller);
 
         update_font ();
-        Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+        gnome_interface_settings.changed["monospace-font-name"].connect (update_font);
         Application.settings.changed["font"].connect (update_font);
     }
 
@@ -115,20 +117,15 @@ public class Terminal.TerminalView : Granite.Bin {
         }
 
         var menu = (Menu) tab_history_button.menu_model;
-        int position_in_menu = -1;
-        var path_in_menu = false;
-        int i;
-        for (i = 0; i < menu.get_n_items (); i++) {
-            if (path == menu.get_item_attribute_value (
-                i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()
-            ) {
-                path_in_menu = true;
+        var position_in_menu = -1;
+        for (var i = 0; i < menu.get_n_items (); i++) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 position_in_menu = i;
                 break;
             }
         }
 
-        if (path_in_menu) {
+        if (position_in_menu != -1) {
             menu.remove (position_in_menu);
         }
 
@@ -174,7 +171,7 @@ public class Terminal.TerminalView : Granite.Bin {
             tab.loading = terminal_widget.tab_state == WORKING;
         });
 
-        //Set correct label now to avoid race when spawning shell
+        // Set correct label now to avoid race when spawning shell
 
         terminal_widget.set_font (term_font);
 
@@ -303,7 +300,7 @@ public class Terminal.TerminalView : Granite.Bin {
         // We have to fetch both values at least once, otherwise
         // GLib.Settings won't notify on their changes
         var app_font_name = Application.settings.get_string ("font");
-        var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
+        var sys_font_name = gnome_interface_settings.get_string ("monospace-font-name");
 
         if (app_font_name != "") {
             term_font = Pango.FontDescription.from_string (app_font_name);
@@ -327,10 +324,10 @@ public class Terminal.TerminalView : Granite.Bin {
         return term;
     }
 
-    public void after_tab_restored (TerminalWidget term) {
+    public void after_tab_restored (string path) {
         var menu = (Menu) tab_history_button.menu_model;
         for (var i = 0; i < menu.get_n_items (); i++) {
-            if (term.terminal_id == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 menu.remove (i);
                 break;
             }
