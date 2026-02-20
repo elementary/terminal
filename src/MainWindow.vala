@@ -282,12 +282,9 @@ namespace Terminal {
                     return;
                 }
 
-                title = term.window_title != "" ? term.window_title
-                                                : term.current_working_directory;
-
-
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
+                    set_title ();
                     term.grab_focus ();
                     return Source.REMOVE;
                 });
@@ -452,8 +449,8 @@ namespace Terminal {
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
-            terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
+            terminal_widget.foreground_process_changed.connect (set_title);
+            terminal_widget.window_title_changed.connect (set_title);
         }
 
         private void on_terminal_child_exited (Vte.Terminal term, int status) {
@@ -480,8 +477,14 @@ namespace Terminal {
             }
         }
 
-        private void on_terminal_window_title_changed () {
-            title = current_terminal.window_title;
+        private void set_title () {
+            if (current_terminal.window_title != "") {
+                title = current_terminal.window_title;
+            } else if (current_terminal.current_working_directory != "") {
+                title = current_terminal.current_working_directory;
+            } else {
+                title = TerminalWidget.DEFAULT_LABEL; // Do we need a different fallback window title?
+            }
         }
 
         private bool close_immediately = false;
