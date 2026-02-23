@@ -766,11 +766,6 @@ namespace Terminal {
             set_title ();
         }
 
-        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
-            src.program_string = cmdline;
-            check_for_tabs_with_same_name (); // Also sets window title
-        }
-
         public void save_opened_terminals (bool save_tabs, bool save_zooms) {
             string[] zooms = {};
             string[] opened_tabs = {};
