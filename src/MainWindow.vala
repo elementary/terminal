@@ -761,8 +761,9 @@ namespace Terminal {
         }
 
         private void on_terminal_cwd_changed () {
-            check_for_tabs_with_same_name (); // Also sets window title
+            check_for_tabs_with_same_name ();
             save_opened_terminals (true, false);
+            set_title ();
         }
 
         private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
