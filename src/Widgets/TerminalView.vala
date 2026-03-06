@@ -146,6 +146,8 @@ public class Terminal.TerminalView : Granite.Bin {
 
         var terminal_widget = new TerminalWidget () {
             scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+            enable_fallback_scrolling = false,
+            scroll_unit_is_pixels = true,
             /* Make the terminal occupy the whole GUI */
             hexpand = true,
             vexpand = true
