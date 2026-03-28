@@ -1,7 +1,7 @@
 Source: io.elementary.terminal
 Section: x11
 Priority: optional
-Maintainer: elementary, Inc. <builds@elementary.io>
+Maintainer: elementary <builds@elementary.io>
 Build-Depends: appstream,
                debhelper (>= 10.5.1),
                desktop-file-utils,
