@@ -13,6 +13,7 @@ namespace Terminal {
 
             public GLib.Icon? to_icon () {
                 switch (this) {
+                    //TODO Should we have an icon for the presence of a foreground process?
                     case COMPLETED:
                         return new GLib.ThemedIcon ("process-completed-symbolic");
                     case ERROR:

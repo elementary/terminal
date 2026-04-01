@@ -71,7 +71,6 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/terminal/issues/317">Show symbol while terminal is working</issue>
         <issue url="https://github.com/elementary/terminal/issues/469">Ctrl + Click to open URLs</issue>
         <issue url="https://github.com/elementary/terminal/issues/510">Natural Copy/Paste. Ctrl+c clears the highlighted word. Ctrl+x doesn't.</issue>
         <issue url="https://github.com/elementary/terminal/issues/526">Changing font size when terminal has lots of output is slow.</issue>
