@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-29 12:28+0000\n"
-"PO-Revision-Date: 2025-09-29 19:55+0000\n"
+"PO-Revision-Date: 2026-03-22 15:55+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/fi/>\n"
@@ -75,10 +75,8 @@ msgid "Find…"
 msgstr "Etsi…"
 
 #: src/MainWindow.vala:209
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "Uusi välilehti"
+msgstr "Uusi välilehti…"
 
 #: src/MainWindow.vala:221
 msgid "Settings"
@@ -89,8 +87,6 @@ msgid "Are you sure you want to close this tab?"
 msgstr "Haluatko varmasti sulkea tämän välilehden?"
 
 #: src/MainWindow.vala:267
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Sulje välilehti"
 
@@ -99,10 +95,11 @@ msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
+"Haluatko varmasti sulkea kaikki edustaprosessit ennen ikkunan sulkemista?"
 
 #: src/MainWindow.vala:511
 msgid "Close window"
-msgstr ""
+msgstr "Sulje ikkuna"
 
 #: src/MainWindow.vala:640
 msgid "Hide find bar"
@@ -119,7 +116,7 @@ msgstr ""
 
 #: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
-msgstr ""
+msgstr "Liitetty teksti sisältää komennon ohittaa varoitukset ja vahvistukset"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
@@ -348,11 +345,11 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "Piilota välilehtipalkki automaattisesti"
 
 #: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "Piilota välilehtipalkki, kun avoinna on vain yksi välilehti"
 
 #: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
@@ -392,10 +389,8 @@ msgid "Select All"
 msgstr "Valitse kaikki"
 
 #: src/Widgets/TerminalWidget.vala:634
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Haluatko varmasti lopettaa päätteen?"
+msgstr "Haluatko varmasti nollata päätteen?"
 
 #: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
