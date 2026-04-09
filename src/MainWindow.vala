@@ -284,7 +284,7 @@ namespace Terminal {
 
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
-                    set_title ();
+                    set_title_label ();
                     term.grab_focus ();
                     return Source.REMOVE;
                 });
@@ -449,8 +449,8 @@ namespace Terminal {
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
             terminal_widget.child_exited.connect (on_terminal_child_exited);
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (set_title);
-            terminal_widget.window_title_changed.connect (set_title);
+            terminal_widget.foreground_process_changed.connect (set_title_label);
+            terminal_widget.window_title_changed.connect (set_title_label);
         }
 
         private void on_terminal_child_exited (Vte.Terminal term, int status) {
@@ -477,7 +477,7 @@ namespace Terminal {
             }
         }
 
-        private void set_title () {
+        private void set_title_label () {
             if (current_terminal.window_title != "") {
                 title = current_terminal.window_title;
             } else if (current_terminal.current_working_directory != "") {
@@ -763,7 +763,7 @@ namespace Terminal {
         private void on_terminal_cwd_changed () {
             check_for_tabs_with_same_name ();
             save_opened_terminals (true, false);
-            set_title ();
+            set_title_label ();
         }
 
         public void save_opened_terminals (bool save_tabs, bool save_zooms) {
