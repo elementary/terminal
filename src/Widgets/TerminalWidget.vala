@@ -298,7 +298,7 @@ namespace Terminal {
 
         private void secondary_pressed (Gtk.GestureSingle gesture, double x, double y) {
             if (has_foreground_process ()) {
-                gesture.set_state (CLAIMED);
+                gesture.set_state (DENIED);
                 return;
             }
 
