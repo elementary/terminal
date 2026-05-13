@@ -284,7 +284,7 @@ public class Terminal.TerminalView : Granite.Bin {
         switch (keyval) {
             //NOTE Keys @1 to @9 in combination with Alt_L do not natively change tab - they
             // cause `bash` to enter "digit argument" mode. Whether this behaviour is overridden is determined
-            // by the "alt-changes-tab" setting.
+            // by the "alt-changes-tab" setting (default true).
             // However keys KP_1 to KP_9 in combination with Alt_L is handled natively by Vte and always
             // changes tab regardless of the setting.
             // Holding down Alt_L causes tab numbers to appear in the tab labels regardless of the setting
