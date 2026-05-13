@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"POT-Creation-Date: 2025-12-29 12:28+0000\n"
 "PO-Revision-Date: 2022-10-17 14:57+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/terminal/"
@@ -75,83 +75,47 @@ msgstr "İşlem tamamlandı"
 msgid "Process exited with errors"
 msgstr "İşlem hata ile sonlandı"
 
-#: src/MainWindow.vala:155
-msgid "Show Search Bar"
-msgstr ""
-
-#. TerminalWidget actions
-#: src/MainWindow.vala:162
-msgid "Copy"
-msgstr "Kopyala"
-
-#: src/MainWindow.vala:168
-msgid "Copy Last Output"
-msgstr "Son Çıktıyı Kopyala"
-
-#: src/MainWindow.vala:174
-msgid "Clear Screen"
-msgstr ""
-
-#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
-msgid "Reset"
-msgstr ""
-
-#: src/MainWindow.vala:186
-msgid "Paste"
-msgstr "Yapıştır"
-
-#: src/MainWindow.vala:192
-msgid "Select All"
-msgstr "Tümünü Seç"
-
-#: src/MainWindow.vala:298
+#: src/MainWindow.vala:194
 #, fuzzy
 #| msgid "Fullscreen"
 msgid "Exit FullScreen"
 msgstr "Tam Ekran"
 
-#: src/MainWindow.vala:307 src/MainWindow.vala:1048
+#: src/MainWindow.vala:203 src/MainWindow.vala:650
 msgid "Find…"
 msgstr "Bul…"
 
-#: src/MainWindow.vala:313
+#: src/MainWindow.vala:209
 #, fuzzy
 #| msgid "New Tab"
 msgid "New Tab…"
 msgstr "Yeni Sekme"
 
-#: src/MainWindow.vala:325
+#: src/MainWindow.vala:221
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/MainWindow.vala:374
+#: src/MainWindow.vala:266
 msgid "Are you sure you want to close this tab?"
 msgstr "Bu sekmeyi kapatmak istediğinizden emin misiniz?"
 
-#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
-msgid "Close Tab"
+#: src/MainWindow.vala:267
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close tab"
 msgstr "Sekmeyi Kapat"
 
-#. Changing attributes has no effect after adding item to menu so remove and re-add.
-#. This item was added first
-#: src/MainWindow.vala:576
-#, c-format
-msgid "Show in %s"
-msgstr "%s ile aç"
+#: src/MainWindow.vala:510
+msgid ""
+"Are you sure you want to close all foreground processes before closing the "
+"window?"
+msgstr ""
 
-#: src/MainWindow.vala:578
-msgid "Default application"
-msgstr "Varsayılan uygulama"
+#: src/MainWindow.vala:511
+msgid "Close window"
+msgstr ""
 
-#: src/MainWindow.vala:891
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
-
-#: src/MainWindow.vala:892
-msgid "Quit Terminal"
-msgstr "Terminal'den Çık"
-
-#: src/MainWindow.vala:1039
+#: src/MainWindow.vala:640
 msgid "Hide find bar"
 msgstr "Bul çubuğunu gizle"
 
@@ -167,11 +131,11 @@ msgstr "Yapıştırılan metin yönetim erişimi kazanmaya çalışıyor olabili
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
 
-#: src/Dialogs/ColorPreferencesDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
 msgstr "Renk Tercihleri"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:39
+#: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
 msgstr "Pencere stili:"
 
@@ -180,7 +144,7 @@ msgid "Light"
 msgstr "Açık Renk Tema"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
-#: src/Widgets/SettingsPopover.vala:78
+#: src/Widgets/SettingsPopover.vala:72
 msgid "Dark"
 msgstr "Koyu Renk Tema"
 
@@ -268,27 +232,27 @@ msgstr "Ön Plan:"
 msgid "Cursor:"
 msgstr "İmleç:"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:179
+#: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
 msgstr "Kapat"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:299
+#: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
 msgstr "Kontrast çok düşük"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:302
+#: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
 msgstr "Kontrast düşük"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:305
+#: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
 msgstr "Kontrast iyi"
 
-#: src/Dialogs/ColorPreferencesDialog.vala:308
+#: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
 msgstr "Kontrast çok yüksek"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:23
+#: src/Dialogs/ForegroundProcessDialog.vala:24
 #, fuzzy
 #| msgid ""
 #| "There is an active process on this tab. If you reload it, the process "
@@ -312,11 +276,11 @@ msgstr ""
 msgid "Show paste protection warnings"
 msgstr "Yapıştırma koruması uyarılarını göster"
 
-#: src/Dialogs/UnsafePasteDialog.vala:30
+#: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
 msgstr "Yapıştırma"
 
-#: src/Dialogs/UnsafePasteDialog.vala:32
+#: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
 msgstr "Yine de Yapıştır"
 
@@ -332,140 +296,182 @@ msgstr "Önceki sonuç"
 msgid "Next result"
 msgstr "Sonraki sonuç"
 
-#: src/Widgets/SearchToolbar.vala:46
+#: src/Widgets/SearchToolbar.vala:45
 #, fuzzy
 #| msgid "Cyclic search"
 msgid "Disable cyclic search"
 msgstr "Döngüsel arama"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:48
 #, fuzzy
 #| msgid "Cyclic search"
 msgid "Enable cyclic search"
 msgstr "Döngüsel arama"
 
-#: src/Widgets/SettingsPopover.vala:31
+#: src/Widgets/SettingsPopover.vala:27
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: src/Widgets/SettingsPopover.vala:39
+#: src/Widgets/SettingsPopover.vala:35
 msgid "Default zoom level"
 msgstr "Varsayılan yakınlaştırma seviyesi"
 
-#: src/Widgets/SettingsPopover.vala:47
+#: src/Widgets/SettingsPopover.vala:43
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: src/Widgets/SettingsPopover.vala:65
+#: src/Widgets/SettingsPopover.vala:59
 msgid "Follow System Style"
 msgstr "Sistem Temasını Takip Et"
 
-#: src/Widgets/SettingsPopover.vala:70
+#: src/Widgets/SettingsPopover.vala:64
 msgid "High Contrast"
 msgstr "Yüksek Karşıtlık"
 
-#: src/Widgets/SettingsPopover.vala:74
+#: src/Widgets/SettingsPopover.vala:68
 msgid "Solarized Light"
 msgstr "Açık Renk Tema"
 
-#: src/Widgets/SettingsPopover.vala:82
+#: src/Widgets/SettingsPopover.vala:76
 msgid "Custom"
 msgstr "Özel"
 
-#: src/Widgets/SettingsPopover.vala:103
+#: src/Widgets/SettingsPopover.vala:109
 msgid "Natural Copy/Paste"
 msgstr "Doğal Kopyala/Yapıştır"
 
-#: src/Widgets/SettingsPopover.vala:104
+#: src/Widgets/SettingsPopover.vala:110
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr "Kısayollar Shift gerektirmez; bazı CLI uygulamalarını engelleyebilir"
 
-#: src/Widgets/SettingsPopover.vala:108
+#: src/Widgets/SettingsPopover.vala:114
 msgid "Unsafe Paste Alert"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:109
+#: src/Widgets/SettingsPopover.vala:115
 #, fuzzy
 #| msgid "The pasted text may contain multiple commands"
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr "Yapıştırılan metin birden fazla komut içerebilir"
 
-#: src/Widgets/SettingsPopover.vala:113
+#: src/Widgets/SettingsPopover.vala:119
 msgid "Event Alerts"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:114
+#: src/Widgets/SettingsPopover.vala:120
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:118
+#: src/Widgets/SettingsPopover.vala:124
 msgid "Auto-hide Tab Bar"
 msgstr ""
 
-#: src/Widgets/SettingsPopover.vala:119
+#: src/Widgets/SettingsPopover.vala:125
 msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
-#: src/Widgets/TerminalWidget.vala:28
+#: src/Widgets/TerminalWidget.vala:14
 msgid "Terminal"
 msgstr "Terminal"
 
-#: src/Widgets/TerminalWidget.vala:545
+#: src/Widgets/TerminalWidget.vala:512
+#, c-format
+msgid "Show in %s"
+msgstr "%s ile aç"
+
+#: src/Widgets/TerminalWidget.vala:512
+msgid "Default application"
+msgstr "Varsayılan uygulama"
+
+#: src/Widgets/TerminalWidget.vala:518
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/Widgets/TerminalWidget.vala:524
+msgid "Copy Last Output"
+msgstr "Son Çıktıyı Kopyala"
+
+#: src/Widgets/TerminalWidget.vala:530
+msgid "Clear Screen"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:536 src/Widgets/TerminalWidget.vala:635
+msgid "Reset"
+msgstr ""
+
+#: src/Widgets/TerminalWidget.vala:542
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: src/Widgets/TerminalWidget.vala:548
+msgid "Select All"
+msgstr "Tümünü Seç"
+
+#: src/Widgets/TerminalWidget.vala:634
 #, fuzzy
 #| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
 msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
 
-#: src/Widgets/TerminalWidget.vala:963
+#: src/Widgets/TerminalWidget.vala:669
 msgid "Are you sure you want to reload this tab?"
 msgstr "Bu sekmeyi yeniden yüklemek istediğinizden emin misiniz?"
 
-#: src/Widgets/TerminalWidget.vala:964
-msgid "Reload Tab"
-msgstr "Sekmeyi Yeniden Yükle"
+#: src/Widgets/TerminalWidget.vala:670 src/Widgets/TerminalView.vala:350
+msgid "Reload"
+msgstr "Yeniden Yükle"
 
-#: src/Widgets/TerminalView.vala:63
+#: src/Widgets/TerminalView.vala:55
 msgid "New Tab"
 msgstr "Yeni Sekme"
 
-#: src/Widgets/TerminalView.vala:70
+#: src/Widgets/TerminalView.vala:62
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Closed Tabs"
 msgstr "Sekmeyi Kapat"
 
-#: src/Widgets/TerminalView.vala:222
+#: src/Widgets/TerminalView.vala:341
 msgid "Close Tabs to the Right"
 msgstr ""
 
-#: src/Widgets/TerminalView.vala:223
+#: src/Widgets/TerminalView.vala:342
 #, fuzzy
 #| msgid "Close Tab"
 msgid "Close Other Tabs"
 msgstr "Sekmeyi Kapat"
 
-#: src/Widgets/TerminalView.vala:227
+#: src/Widgets/TerminalView.vala:343
+msgid "Close Tab"
+msgstr "Sekmeyi Kapat"
+
+#: src/Widgets/TerminalView.vala:346
 #, fuzzy
 #| msgid "New Window"
 msgid "Open in New Window"
 msgstr "Yeni Pencere"
 
-#: src/Widgets/TerminalView.vala:228
+#: src/Widgets/TerminalView.vala:347
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate Tab"
 msgstr "Çoğalt"
 
-#: src/Widgets/TerminalView.vala:231
-msgid "Reload"
-msgstr "Yeniden Yükle"
-
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
 msgstr ""
+
+#~ msgid "Are you sure you want to quit Terminal?"
+#~ msgstr "Terminal'den çıkmak istediğinize emin misiniz?"
+
+#~ msgid "Quit Terminal"
+#~ msgstr "Terminal'den Çık"
+
+#~ msgid "Reload Tab"
+#~ msgstr "Sekmeyi Yeniden Yükle"
 
 #~ msgid "There is an active process on this tab."
 #~ msgstr "Bu sekmede bir işlem devam etmekte."

@@ -172,30 +172,81 @@ namespace Terminal.Utils {
         }
     }
 
-    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
-        // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
-        var placeholder = "::::::";
-        var parts = uri.split (Path.DIR_SEPARATOR_S);
-        parts[parts.length - 1] = parts[parts.length - 1].replace ("#", placeholder);
-        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts);
-        string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
-                    .replace ("#", "")
-                    .replace ("*", "")
-                    .replace ("~", "");
-
-        if (!allow_single_quote) {
-            rc = rc.replace ("'", "");
-        }
-
-        //Escape and then replace fragment identifier
-        return Uri.escape_string (
-            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape),
-            rc ,
-            allow_utf8
-        ).replace (placeholder, "#");
-    }
-
     public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
         return ((SimpleAction) action_group.lookup_action (action_name));
+    }
+
+    public bool valid_local_uri (string s, out string path) {
+        var scheme = Uri.peek_scheme (s);
+        path = "";
+        string absolute_uri;
+        if (scheme == null || scheme == "") {
+            absolute_uri = "file:///" + s;
+        } else if (scheme != "file") {
+            return false;
+        } else {
+            absolute_uri = s;
+        }
+
+        try {
+            if (!Uri.is_valid (absolute_uri, PARSE_RELAXED)) {
+                return false;
+            }
+
+            var file = GLib.File.new_for_uri (absolute_uri);
+            var type = file.query_file_type (NONE);
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                return false;
+            }
+
+            return true;
+        } catch (Error e) {
+            warning ("Error parsing uri - %s", e.message);
+        }
+
+        return false;
+    }
+
+    public static AppInfo? get_default_app_for_uri (string? uri) {
+        if (uri == null) {
+            return null;
+        }
+
+        AppInfo? appinfo = null;
+        var scheme = Uri.parse_scheme (uri);
+        if (scheme != null) {
+            appinfo = AppInfo.get_default_for_uri_scheme (scheme);
+        }
+
+        if (appinfo == null) {
+            bool uncertain;
+            /* Guess content type from filename if possible */
+            //TODO Get content type from actual file (if exists)
+            var ctype = ContentType.guess (uri, null, out uncertain);
+            if (!uncertain) {
+                appinfo = AppInfo.get_default_for_type (ctype, true);
+            }
+
+            if (appinfo == null) {
+                var file = File.new_for_commandline_arg (uri);
+                try {
+                    var info = file.query_info (FileAttribute.STANDARD_CONTENT_TYPE,
+                                                FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null);
+
+                    if (info.has_attribute (FileAttribute.STANDARD_CONTENT_TYPE)) {
+                        appinfo = AppInfo.get_default_for_type (
+                                    info.get_attribute_string (FileAttribute.STANDARD_CONTENT_TYPE), true);
+                    }
+                } catch (Error e) {
+                    warning ("Could not get file info %s", e.message);
+                }
+            }
+        }
+
+        return appinfo;
     }
 }

@@ -13,16 +13,13 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         set {
             terminal_binding.source = value;
-            if (value != null) {
-                insert_action_group ("term", value.get_action_group ("term"));
-            }
         }
     }
 
     private const string ACTION_GROUP_NAME = "settings";
+    private const string ACTION_GROUP_PREFIX = ACTION_GROUP_NAME + ".";
 
     private BindingGroup terminal_binding;
-    private Gtk.Box theme_buttons;
 
     construct {
         var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic") {
@@ -49,21 +46,19 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         };
         zoom_in_button.clicked.connect (() => terminal.increase_font_size ());
 
-        var font_size_box = new Gtk.Box (HORIZONTAL, 0) {
+        var font_size_box = new Granite.Box (HORIZONTAL, LINKED) {
             homogeneous = true,
             hexpand = true,
             margin_start = 12,
             margin_end = 12,
             margin_bottom = 6
         };
-        font_size_box.add (zoom_out_button);
-        font_size_box.add (zoom_default_button);
-        font_size_box.add (zoom_in_button);
-
-        font_size_box.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        font_size_box.append (zoom_out_button);
+        font_size_box.append (zoom_default_button);
+        font_size_box.append (zoom_in_button);
 
         var follow_system_button = new Granite.SwitchModelButton (_("Follow System Style")) {
-            active = Application.settings.get_boolean ("follow-system-style"),
+            action_name = ACTION_GROUP_PREFIX + "follow-system-style"
         };
 
         var hc_button = new ThemeCheckButton (Themes.HIGH_CONTRAST) {
@@ -82,37 +77,49 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             tooltip_text = _("Custom")
         };
 
-        theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
+        var custom_button_controller = new Gtk.GestureClick () {
+            propagation_phase = CAPTURE
+        };
+
+        custom_button_controller.released.connect ((n, x, y) => {
+            if (custom_button.active) {
+                show_theme_editor ();
+                popdown ();
+            }
+        });
+        custom_button.add_controller (custom_button_controller);
+
+        var theme_buttons = new Gtk.Box (HORIZONTAL, 0) {
             homogeneous = true,
             margin_bottom = 6,
             margin_top = 6
         };
-        theme_buttons.add (hc_button);
-        theme_buttons.add (light_button);
-        theme_buttons.add (dark_button);
-        theme_buttons.add (custom_button);
+        theme_buttons.append (hc_button);
+        theme_buttons.append (light_button);
+        theme_buttons.append (dark_button);
+        theme_buttons.append (custom_button);
 
         var theme_revealer = new Gtk.Revealer () {
             child = theme_buttons
         };
 
         var theme_box = new Gtk.Box (VERTICAL, 0);
-        theme_box.add (follow_system_button);
-        theme_box.add (theme_revealer);
+        theme_box.append (follow_system_button);
+        theme_box.append (theme_revealer);
 
         var natural_copy_paste_button = new Granite.SwitchModelButton (_("Natural Copy/Paste")) {
             description = _("Shortcuts don’t require Shift; may interfere with CLI apps"),
-            active = Application.settings.get_boolean ("natural-copy-paste")
+            action_name = ACTION_GROUP_PREFIX + "natural-copy-paste"
         };
 
         var unsafe_paste_alert_button = new Granite.SwitchModelButton (_("Unsafe Paste Alert")) {
             description = _("Warn when pasted text contains multiple or administrative commands"),
-            active = Application.settings.get_boolean ("unsafe-paste-alert")
+            action_name = ACTION_GROUP_PREFIX + "unsafe-paste-alert"
         };
 
         var audible_bell_button = new Granite.SwitchModelButton (_("Event Alerts")) {
             description = _("Notify for invalid input or multiple possible completions (subject to System Settings → Sound)"),
-            active = Application.settings.get_boolean ("audible-bell")
+            action_name = ACTION_GROUP_PREFIX + "audible-bell"
         };
 
         var auto_hide_button = new Granite.SwitchModelButton (_("Auto-hide Tab Bar")) {
@@ -124,30 +131,36 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
           Application.settings.set_enum ("tab-bar-behavior", auto_hide_button.active ? 1 : 0);
         });
 
-
         var box = new Gtk.Box (VERTICAL, 6) {
             margin_bottom = 6,
             margin_top = 12,
         };
 
-        box.add (font_size_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (theme_box);
-        box.add (new Gtk.Separator (HORIZONTAL));
-        box.add (natural_copy_paste_button);
-        box.add (unsafe_paste_alert_button);
-        box.add (audible_bell_button);
-        box.add (auto_hide_button);
+        box.append (font_size_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (theme_box);
+        box.append (new Gtk.Separator (HORIZONTAL));
+        box.append (natural_copy_paste_button);
+        box.append (unsafe_paste_alert_button);
+        box.append (audible_bell_button);
+        box.append (auto_hide_button);
         child = box;
 
-        var settings_action = Application.settings.create_action ("theme");
+        var theme_action = Application.settings.create_action ("theme");
+        var natural_copy_paste_action = Application.settings.create_action ("natural-copy-paste");
+        var unsafe_paste_alert_action = Application.settings.create_action ("unsafe-paste-alert");
+        var audible_bell_action = Application.settings.create_action ("audible-bell");
+        var follow_system_style_action = Application.settings.create_action ("follow-system-style");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (settings_action);
-
+        action_group.add_action (theme_action);
+        action_group.add_action (natural_copy_paste_action);
+        action_group.add_action (unsafe_paste_alert_action);
+        action_group.add_action (audible_bell_action);
+        action_group.add_action (follow_system_style_action);
         insert_action_group (ACTION_GROUP_NAME, action_group);
 
-        custom_button.clicked.connect (() => {
+        custom_button.toggled.connect (() => {
             if (custom_button.active) {
                 show_theme_editor ();
                 popdown ();
@@ -159,11 +172,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
 
         follow_system_button.bind_property ("active", theme_revealer, "reveal-child", SYNC_CREATE | INVERT_BOOLEAN);
 
-        Application.settings.bind ("follow-system-style", follow_system_button, "active", DEFAULT);
-        Application.settings.bind ("natural-copy-paste", natural_copy_paste_button, "active", DEFAULT);
-        Application.settings.bind ("unsafe-paste-alert", unsafe_paste_alert_button, "active", DEFAULT);
-        Application.settings.bind ("audible-bell", audible_bell_button, "active", DEFAULT);
-
         Application.settings.changed.connect ((s, n) => {
             if (n == "background" || n == "foreground") {
                 custom_button.update_theme_provider ();
@@ -171,8 +179,6 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
                 auto_hide_button.active = Application.settings.get_enum ("tab-bar-behavior") == 1;
             }
         });
-
-        show.connect (get_child ().show_all);
     }
 
     private static bool font_scale_to_zoom (Binding binding, Value font_scale, ref Value label) {
@@ -184,7 +190,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         public string theme { get; construct; }
 
         private const string STYLE_CSS = """
-            .color-button.%s check {
+            .color-button.%s radio {
                 background-color: %s;
                 color: %s;
                 padding: 0.8rem; /* FIXME: Remove during GTK4 port */
@@ -198,17 +204,17 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         }
 
         construct {
-            action_name = ACTION_GROUP_NAME + ".theme";
+            action_name = ACTION_GROUP_PREFIX + "theme";
             action_target = new Variant.string (theme);
             halign = CENTER;
 
-            get_style_context ().add_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            get_style_context ().add_class (theme);
+            add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            add_css_class (theme);
 
             css_provider = new Gtk.CssProvider ();
 
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
+            Gtk.StyleContext.add_provider_for_display (
+                Gdk.Display.get_default (),
                 css_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
@@ -221,11 +227,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             var background = theme_palette[Themes.PALETTE_SIZE - 3].to_string ();
             var foreground = theme_palette[Themes.PALETTE_SIZE - 2].to_string ();
 
-            try {
-                css_provider.load_from_data (STYLE_CSS.printf (theme, background, foreground));
-            } catch (Error e) {
-                critical ("Unable to style color button: %s", e.message);
-            }
+            css_provider.load_from_string (STYLE_CSS.printf (theme, background, foreground));
         }
     }
 }
