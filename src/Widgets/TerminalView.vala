@@ -282,6 +282,12 @@ public class Terminal.TerminalView : Granite.Bin {
 
     private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
         switch (keyval) {
+            //NOTE Keys @1 to @9 in combination with Alt_L do not natively change tab - they
+            // cause `bash` to enter "digit argument" mode. Whether this behaviour is overridden is determined
+            // by the "alt-changes-tab" setting.
+            // However keys KP_1 to KP_9 in combination with Alt_L is handled natively by Vte and always
+            // changes tab regardless of the setting.
+            // Holding down Alt_L causes tab numbers to appear in the tab labels regardless of the setting
             case Gdk.Key.@1: //alt+[1-8]
             case Gdk.Key.@2:
             case Gdk.Key.@3:
@@ -307,7 +313,7 @@ public class Terminal.TerminalView : Granite.Bin {
                 }
                 break;
 
-            case Gdk.Key.@0: //Show tab numbers
+            case Gdk.Key.@0:
             case Gdk.Key.KP_0:
                 if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
                     show_tab_numbers ();
