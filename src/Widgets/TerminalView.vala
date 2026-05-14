@@ -103,7 +103,16 @@ public class Terminal.TerminalView : Granite.Bin {
             propagation_phase = CAPTURE
         };
         key_controller.key_pressed.connect (key_pressed);
+        key_controller.key_released.connect (key_released);
         add_controller (key_controller);
+
+        var focus_controller = new Gtk.EventControllerFocus () {
+            propagation_phase = CAPTURE
+        };
+        focus_controller.leave.connect (() => {
+            cancel_tab_numbers ();
+        });
+        add_controller (focus_controller);
 
         update_font ();
         gnome_interface_settings.changed["monospace-font-name"].connect (update_font);
@@ -267,8 +276,18 @@ public class Terminal.TerminalView : Granite.Bin {
         open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
     }
 
+    private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+        cancel_tab_numbers ();
+    }
+
     private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
         switch (keyval) {
+            //NOTE Keys @1 to @9 in combination with Alt_L do not natively change tab - they
+            // cause `bash` to enter "digit argument" mode. Whether this behaviour is overridden is determined
+            // by the "alt-changes-tab" setting (default true).
+            // However keys KP_1 to KP_9 in combination with Alt_L is handled natively by Vte and always
+            // changes tab regardless of the setting.
+            // Holding down Alt_L causes tab numbers to appear in the tab labels regardless of the setting
             case Gdk.Key.@1: //alt+[1-8]
             case Gdk.Key.@2:
             case Gdk.Key.@3:
@@ -288,14 +307,79 @@ public class Terminal.TerminalView : Granite.Bin {
                 break;
 
             case Gdk.Key.@9:
-                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab") && n_pages > 0) {
+                if (n_pages > 0 && ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
                     selected_page = tab_view.get_nth_page (n_pages - 1);
                     return Gdk.EVENT_STOP;
+                }
+                break;
+
+            case Gdk.Key.@0:
+            case Gdk.Key.KP_0:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
+                    show_tab_numbers ();
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+
+            default:
+                if (keyval == Gdk.Key.Alt_L) {
+                    schedule_tab_numbers ();
                 }
                 break;
         }
 
         return Gdk.EVENT_PROPAGATE;
+    }
+
+    private uint tab_number_timeout = 0;
+    private bool tab_numbers_showing = false;
+    private void schedule_tab_numbers () {
+        if (tab_numbers_showing || tab_number_timeout > 0) {
+            return;
+        }
+
+        tab_number_timeout = Timeout.add (
+            Gtk.Settings.get_default ().gtk_long_press_time,
+            () => {
+                tab_number_timeout = 0;
+                show_tab_numbers ();
+                return Source.REMOVE;
+            }
+        );
+    }
+
+
+    private void show_tab_numbers () {
+        tab_numbers_showing = true;
+        //TODO Show number as badge? Need way of converting number to suitable icon
+        // that can be used as TabPage.indicator_icon.
+        // For now use text
+        for (int i = 0; i < this.n_pages; i++) {
+            var tab = this.tab_view.get_nth_page (i);
+            var badge = "(%d) ".printf (i + 1);
+            if (!tab.title.has_prefix (badge)) {
+                tab.title = badge + tab.title;
+            }
+        }
+    }
+
+    private void cancel_tab_numbers () {
+        if (tab_number_timeout > 0) {
+            Source.remove (tab_number_timeout);
+            tab_number_timeout = 0;
+        }
+
+        if (tab_numbers_showing) {
+            for (int i = 0; i < this.n_pages; i++) {
+                var tab = this.tab_view.get_nth_page (i);
+                var badge = "(%d) ".printf (i + 1);
+                if (tab.title.has_prefix (badge)) {
+                    tab.title = tab.title.slice (badge.length, tab.title.length);
+                }
+            }
+
+            tab_numbers_showing = false;
+        }
     }
 
     private void update_font () {
