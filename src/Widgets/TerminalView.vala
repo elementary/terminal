@@ -195,15 +195,15 @@ public class Terminal.TerminalView : Granite.Bin {
 
         selected_page = tab;
 
-        if (program.length == 0) {
-            /* Set up the virtual terminal */
-            if (location == "") {
-                terminal_widget.active_shell ();
-            } else {
-                terminal_widget.active_shell (location);
-            }
+        /* Set up the virtual terminal */
+        if (location == "") {
+            terminal_widget.active_shell ();
         } else {
-            terminal_widget.run_program (program, location);
+            terminal_widget.active_shell (location);
+        }
+
+        if (program.length > 0) {
+            terminal_widget.run_program (program);
         }
 
         main_window.save_opened_terminals (true, true);

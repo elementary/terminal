@@ -896,37 +896,15 @@ namespace Terminal {
             );
         }
 
-        public void run_program (string _program_string, string? working_directory) {
-            string[]? program_with_args = null;
-            this.program_string = _program_string;
-            try {
-                Shell.parse_argv (program_string, out program_with_args);
-            } catch (Error e) {
-                warning (e.message);
-                feed ((e.message + "\r\n\r\n").data);
-                active_shell (working_directory);
-                return;
-            }
+        // Only used when command launched from command lines
+        // We do not send SIGINT or reset the shell as we know the shell has only
+        // just been created and we may need to run e.g. `conda` which sets the environment
+        public void run_program (string program) {
+            Idle.add (() => {
+                feed_child ((program + "\n").data);
+                return Source.REMOVE;
+            });
 
-            this.spawn_async (
-                Vte.PtyFlags.DEFAULT,
-                working_directory,
-                program_with_args,
-                null,
-                SpawnFlags.SEARCH_PATH,
-                null,
-                -1,
-                null,
-                (terminal, pid, error) => {
-                    if (error == null) {
-                        this.child_pid = pid;
-                    } else {
-                        warning (error.message);
-                        feed ((error.message + "\r\n\r\n").data);
-                        active_shell (working_directory);
-                    }
-                }
-            );
         }
 
         private bool try_get_foreground_pid (out int pid) {
