@@ -154,6 +154,53 @@ public class Terminal.Application : Gtk.Application {
         var dbus = new DBus ();
         dbus_id = connection.register_object (object_path, dbus);
 
+        dbus.attention_requested.connect ((id, message) => {
+            TerminalWidget terminal = null;
+
+            foreach (var window in (List<MainWindow>) get_windows ()) {
+                if (terminal != null) {
+                    break;
+                }
+
+                terminal = window.get_terminal (id);
+            }
+
+            if (terminal == null) {
+                return;
+            }
+
+            unowned var window = (MainWindow) terminal.root;
+            if (terminal != window.current_terminal || !window.is_active) {
+                terminal.tab_state = ATTENTION;
+            }
+
+            if (window.is_active && terminal == window.current_terminal) {
+                return;
+            }
+
+            var notification_title = _("Terminal needs your attention");
+            var notification = new Notification (notification_title);
+            if (message.length > 0) {
+                notification.set_body (message);
+            }
+            notification.set_icon (TerminalWidget.TabState.ATTENTION.to_icon ());
+            notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+            send_notification ("attention-requested-%s".printf (id), notification);
+
+            ulong tab_change_handler = 0;
+            ulong focus_in_handler = 0;
+
+            tab_change_handler = window.notify["current-terminal"].connect ((obj, pspec) => {
+                withdraw_attention_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+            });
+
+            focus_in_handler = window.notify["is-active"].connect ((obj, pspec) => {
+                if (((MainWindow) obj).is_active) {
+                    withdraw_attention_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                }
+            });
+        });
+
         dbus.finished_process.connect ((id, process, exit_status) => {
             TerminalWidget terminal = null;
 
@@ -223,6 +270,20 @@ public class Terminal.Application : Gtk.Application {
 
         terminal.tab_state = NONE;
         withdraw_notification ("process-finished-%s".printf (id));
+
+        window.disconnect (tab_change_handler);
+        window.disconnect (focus_in_handler);
+    }
+
+    private void withdraw_attention_for_terminal (MainWindow window, TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+        if (window.current_terminal != terminal) {
+            return;
+        }
+
+        if (terminal.tab_state == ATTENTION) {
+            terminal.tab_state = NONE;
+        }
+        withdraw_notification ("attention-requested-%s".printf (id));
 
         window.disconnect (tab_change_handler);
         window.disconnect (focus_in_handler);

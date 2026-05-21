@@ -180,6 +180,7 @@ public class Terminal.TerminalView : Granite.Bin {
 
         terminal_widget.notify["tab-state"].connect (() => {
             tab.icon = terminal_widget.tab_state.to_icon ();
+            tab.needs_attention = terminal_widget.tab_state == ATTENTION;
         });
 
         // Set correct label now to avoid race when spawning shell

@@ -23,11 +23,18 @@ namespace Terminal {
         [DBus (visible = false)]
         public signal void finished_process (string terminal_id, string process, int exit_status);
 
+        [DBus (visible = false)]
+        public signal void attention_requested (string terminal_id, string message);
+
         public DBus () {
         }
 
         public void process_finished (string terminal_id, string process, int exit_status) throws GLib.Error {
             finished_process (terminal_id, process, exit_status);
+        }
+
+        public void request_attention (string terminal_id, string message) throws GLib.Error {
+            attention_requested (terminal_id, message);
         }
     }
 }
