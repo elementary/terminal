@@ -191,12 +191,22 @@ public class Terminal.Application : Gtk.Application {
             ulong focus_in_handler = 0;
 
             tab_change_handler = window.notify["current-terminal"].connect ((obj, pspec) => {
-                withdraw_attention_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                withdraw_notification_for_terminal (
+                    (MainWindow) obj, terminal,
+                    "attention-requested-%s".printf (id),
+                    { TerminalWidget.TabState.ATTENTION },
+                    tab_change_handler, focus_in_handler
+                );
             });
 
             focus_in_handler = window.notify["is-active"].connect ((obj, pspec) => {
                 if (((MainWindow) obj).is_active) {
-                    withdraw_attention_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                    withdraw_notification_for_terminal (
+                        (MainWindow) obj, terminal,
+                        "attention-requested-%s".printf (id),
+                        { TerminalWidget.TabState.ATTENTION },
+                        tab_change_handler, focus_in_handler
+                    );
                 }
             });
         });
@@ -247,12 +257,22 @@ public class Terminal.Application : Gtk.Application {
                 ulong focus_in_handler = 0;
 
                 tab_change_handler = ((MainWindow) terminal.root).notify["current-terminal"].connect ((obj, pspec) => {
-                    withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                    withdraw_notification_for_terminal (
+                        (MainWindow) obj, terminal,
+                        "process-finished-%s".printf (id),
+                        { TerminalWidget.TabState.COMPLETED, TerminalWidget.TabState.ERROR },
+                        tab_change_handler, focus_in_handler
+                    );
                 });
 
                 focus_in_handler = ((MainWindow) terminal.root).notify["is-active"].connect ((obj, pspec) => {
                     if (((MainWindow) obj).is_active) {
-                        withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                        withdraw_notification_for_terminal (
+                            (MainWindow) obj, terminal,
+                            "process-finished-%s".printf (id),
+                            { TerminalWidget.TabState.COMPLETED, TerminalWidget.TabState.ERROR },
+                            tab_change_handler, focus_in_handler
+                        );
                     }
                 });
 
@@ -263,27 +283,26 @@ public class Terminal.Application : Gtk.Application {
         return true;
     }
 
-    private void withdraw_notification_for_terminal (MainWindow window, TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+    private void withdraw_notification_for_terminal (
+        MainWindow window,
+        TerminalWidget terminal,
+        string notification_id,
+        TerminalWidget.TabState[] clear_states,
+        ulong tab_change_handler,
+        ulong focus_in_handler
+    ) {
         if (window.current_terminal != terminal) {
             return;
         }
 
-        terminal.tab_state = NONE;
-        withdraw_notification ("process-finished-%s".printf (id));
-
-        window.disconnect (tab_change_handler);
-        window.disconnect (focus_in_handler);
-    }
-
-    private void withdraw_attention_for_terminal (MainWindow window, TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
-        if (window.current_terminal != terminal) {
-            return;
+        foreach (var state in clear_states) {
+            if (terminal.tab_state == state) {
+                terminal.tab_state = NONE;
+                break;
+            }
         }
 
-        if (terminal.tab_state == ATTENTION) {
-            terminal.tab_state = NONE;
-        }
-        withdraw_notification ("attention-requested-%s".printf (id));
+        withdraw_notification (notification_id);
 
         window.disconnect (tab_change_handler);
         window.disconnect (focus_in_handler);
