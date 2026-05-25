@@ -156,7 +156,6 @@ public class Terminal.Application : Gtk.Application {
 
         dbus.attention_requested.connect ((id, message) => {
             TerminalWidget terminal = null;
-
             foreach (var window in (List<MainWindow>) get_windows ()) {
                 if (terminal != null) {
                     break;
@@ -174,7 +173,7 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab_state = ATTENTION;
             }
 
-            if (window.is_active && terminal == window.current_terminal) {
+            if (window.is_active) {
                 return;
             }
 
@@ -183,6 +182,7 @@ public class Terminal.Application : Gtk.Application {
             if (message.length > 0) {
                 notification.set_body (message);
             }
+
             notification.set_icon (TerminalWidget.TabState.ATTENTION.to_icon ());
             notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
             send_notification ("attention-requested-%s".printf (id), notification);
