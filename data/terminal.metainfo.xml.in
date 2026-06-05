@@ -54,6 +54,24 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
+    <release version="8.1.0" date="2026-06-17" urgency="medium">
+     <description>
+       <p>New features:</p>
+       <ul>
+         <li>Pressing Alt + 0 or holding Alt down now shows the tab number in the tab labels</li>
+         <li>Foreground processes can now request attention using a DBus method</li>
+       </ul>
+       <p>Other updates:</p>
+       <ul>
+         <li>Translation updates</li>
+       </ul>
+     </description>
+     <issues>
+       <issue url="https://github.com/elementary/terminal/issues/655">Show the number of tabs</issue>
+       <issue url="https://github.com/elementary/terminal/issues/1010">Add RequestAttention DBus method for tabs needing input</issue>
+     </issues>
+    </release>
+
     <release version="8.0.0" date="2026-04-17" urgency="medium">
       <description>
         <p>New features:</p>
