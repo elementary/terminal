@@ -9,7 +9,8 @@ namespace Terminal {
             NONE,
             WORKING,
             COMPLETED,
-            ERROR;
+            ERROR,
+            ATTENTION;
 
             public GLib.Icon? to_icon () {
                 switch (this) {
@@ -18,6 +19,8 @@ namespace Terminal {
                         return new GLib.ThemedIcon ("process-completed-symbolic");
                     case ERROR:
                         return new GLib.ThemedIcon ("process-error-symbolic");
+                    case ATTENTION:
+                        return new GLib.ThemedIcon ("dialog-question-symbolic");
                     default:
                         return null;
                 }

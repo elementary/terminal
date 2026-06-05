@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"POT-Creation-Date: 2026-05-25 17:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
-#: data/io.elementary.terminal.desktop.in:4
+#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:2
+#: data/io.elementary.terminal.desktop.in:3
 msgid "Terminal"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:5
+#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:4
 msgid "Use the command line"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:130
 msgid "New features:"
 msgstr ""
 
@@ -48,10 +48,10 @@ msgstr ""
 msgid "Ctrl + Click is now required to open a link"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
-#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
-#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
-#: data/terminal.metainfo.xml.in:160
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:89
+#: data/terminal.metainfo.xml.in:104 data/terminal.metainfo.xml.in:116
+#: data/terminal.metainfo.xml.in:135 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:166
 msgid "Other updates:"
 msgstr ""
 
@@ -71,48 +71,48 @@ msgstr ""
 msgid "Smart copy no longer deselects"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
-#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
-#: data/terminal.metainfo.xml.in:164
+#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:92
+#: data/terminal.metainfo.xml.in:106 data/terminal.metainfo.xml.in:118
+#: data/terminal.metainfo.xml.in:138 data/terminal.metainfo.xml.in:155
+#: data/terminal.metainfo.xml.in:170
 msgid "Translation updates"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:85
+#: data/terminal.metainfo.xml.in:91
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:126
+#: data/terminal.metainfo.xml.in:132
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:127
+#: data/terminal.metainfo.xml.in:133
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:131
+#: data/terminal.metainfo.xml.in:137
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:162
+#: data/terminal.metainfo.xml.in:168
 msgid "Stop window size increasing when opened"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:163
+#: data/terminal.metainfo.xml.in:169
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:13
+#: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
 msgstr ""
 
