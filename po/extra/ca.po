@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"POT-Creation-Date: 2026-06-05 14:37+0000\n"
 "PO-Revision-Date: 2026-01-01 02:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementaryos.org/projects/terminal/"
@@ -20,12 +20,12 @@ msgstr ""
 "X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-12-02 05:14+0000\n"
 
-#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
-#: data/io.elementary.terminal.desktop.in:4
+#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:2
+#: data/io.elementary.terminal.desktop.in:3
 msgid "Terminal"
 msgstr "Terminal"
 
-#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:5
+#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:4
 msgid "Use the command line"
 msgstr "Usa la línia d'ordres"
 
@@ -41,50 +41,61 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:77
+#: data/terminal.metainfo.xml.in:148
 msgid "New features:"
 msgstr "Funcions noves:"
 
 #: data/terminal.metainfo.xml.in:61
-msgid "Ctrl + BackSpace can now be used delete words"
-msgstr "Ara es pot usar Ctrl + Enrere per suprimir paraules"
+msgid ""
+"Pressing Alt + 0 or holding Alt down now shows the tab number in the tab "
+"labels"
+msgstr ""
 
 #: data/terminal.metainfo.xml.in:62
-msgid "Ctrl + Click is now required to open a link"
-msgstr "Ara cal Ctrl + Clic per obrir un enllaç"
+msgid "Foreground processes can now request attention using a DBus method"
+msgstr ""
 
-#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
-#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
-#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
-#: data/terminal.metainfo.xml.in:160
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:82
+#: data/terminal.metainfo.xml.in:107 data/terminal.metainfo.xml.in:122
+#: data/terminal.metainfo.xml.in:134 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:171 data/terminal.metainfo.xml.in:184
 msgid "Other updates:"
 msgstr "Altres actualitzacions:"
 
-#: data/terminal.metainfo.xml.in:66
+#: data/terminal.metainfo.xml.in:66 data/terminal.metainfo.xml.in:88
+#: data/terminal.metainfo.xml.in:110 data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:136 data/terminal.metainfo.xml.in:156
+#: data/terminal.metainfo.xml.in:173 data/terminal.metainfo.xml.in:188
+msgid "Translation updates"
+msgstr "Actualitzacions de les traduccions"
+
+#: data/terminal.metainfo.xml.in:79
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr "Ara es pot usar Ctrl + Enrere per suprimir paraules"
+
+#: data/terminal.metainfo.xml.in:80
+msgid "Ctrl + Click is now required to open a link"
+msgstr "Ara cal Ctrl + Clic per obrir un enllaç"
+
+#: data/terminal.metainfo.xml.in:84
 msgid "Update code and packaging for Gtk4"
 msgstr "Actualització del codi i dels paquets per a Gtk4"
 
-#: data/terminal.metainfo.xml.in:67
+#: data/terminal.metainfo.xml.in:85
 msgid "Flatter styles"
 msgstr "Estils més plans"
 
-#: data/terminal.metainfo.xml.in:68
+#: data/terminal.metainfo.xml.in:86
 msgid "Tab bar now in window drag area"
 msgstr ""
 "La barra de pestanyes ara es troba a l'àrea d'arrossegament de la finestra"
 
-#: data/terminal.metainfo.xml.in:69
+#: data/terminal.metainfo.xml.in:87
 msgid "Smart copy no longer deselects"
 msgstr "La còpia intel·ligent ja no desselecciona"
 
-#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
-#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
-#: data/terminal.metainfo.xml.in:164
-msgid "Translation updates"
-msgstr "Actualitzacions de les traduccions"
-
-#: data/terminal.metainfo.xml.in:85
+#: data/terminal.metainfo.xml.in:109
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
@@ -92,7 +103,7 @@ msgstr ""
 "L'opció d'amagar la barra de pestanyes quan només hi ha una pestanya ara és "
 "exposada i respectada."
 
-#: data/terminal.metainfo.xml.in:126
+#: data/terminal.metainfo.xml.in:150
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
@@ -100,7 +111,7 @@ msgstr ""
 "Ara es mostra un avís si una ordre enganxada té una opció que omet les "
 "confirmacions."
 
-#: data/terminal.metainfo.xml.in:127
+#: data/terminal.metainfo.xml.in:151
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
@@ -108,26 +119,26 @@ msgstr ""
 "Quan s'inicia un procés en primer pla, l'etiqueta de la pestanya canvia al "
 "nom d'aquest procés."
 
-#: data/terminal.metainfo.xml.in:131
+#: data/terminal.metainfo.xml.in:155
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 "Sortir de l'intèrpret d'ordres en una pestanya ara tanca aquesta pestanya."
 
-#: data/terminal.metainfo.xml.in:162
+#: data/terminal.metainfo.xml.in:186
 msgid "Stop window size increasing when opened"
 msgstr "Deixa d'augmentar la mida de la finestra quan s'obre."
 
-#: data/terminal.metainfo.xml.in:163
+#: data/terminal.metainfo.xml.in:187
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 "Canvi de les tecles d'accés directe per a les accions de restabliment i de "
 "netejar la pantalla"
 
-#: data/io.elementary.terminal.desktop.in:13
+#: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "ordre;indicador;cmd;línia d'ordres;executa;"
 
-#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
 msgstr "Finestra nova"
 

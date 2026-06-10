@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-29 12:28+0000\n"
+"POT-Creation-Date: 2026-06-05 14:37+0000\n"
 "PO-Revision-Date: 2018-03-11 14:30-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
-#: data/io.elementary.terminal.desktop.in:4
+#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:2
+#: data/io.elementary.terminal.desktop.in:3
 msgid "Terminal"
 msgstr "Terminal"
 
-#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:5
+#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:4
 msgid "Use the command line"
 msgstr "Use the command line"
 
@@ -40,83 +40,94 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
-#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:77
+#: data/terminal.metainfo.xml.in:148
 msgid "New features:"
 msgstr ""
 
 #: data/terminal.metainfo.xml.in:61
-msgid "Ctrl + BackSpace can now be used delete words"
+msgid ""
+"Pressing Alt + 0 or holding Alt down now shows the tab number in the tab "
+"labels"
 msgstr ""
 
 #: data/terminal.metainfo.xml.in:62
-msgid "Ctrl + Click is now required to open a link"
+msgid "Foreground processes can now request attention using a DBus method"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:83
-#: data/terminal.metainfo.xml.in:98 data/terminal.metainfo.xml.in:110
-#: data/terminal.metainfo.xml.in:129 data/terminal.metainfo.xml.in:147
-#: data/terminal.metainfo.xml.in:160
+#: data/terminal.metainfo.xml.in:64 data/terminal.metainfo.xml.in:82
+#: data/terminal.metainfo.xml.in:107 data/terminal.metainfo.xml.in:122
+#: data/terminal.metainfo.xml.in:134 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:171 data/terminal.metainfo.xml.in:184
 msgid "Other updates:"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:66
-msgid "Update code and packaging for Gtk4"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:67
-msgid "Flatter styles"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:68
-msgid "Tab bar now in window drag area"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:69
-msgid "Smart copy no longer deselects"
-msgstr ""
-
-#: data/terminal.metainfo.xml.in:70 data/terminal.metainfo.xml.in:86
-#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:112
-#: data/terminal.metainfo.xml.in:132 data/terminal.metainfo.xml.in:149
-#: data/terminal.metainfo.xml.in:164
+#: data/terminal.metainfo.xml.in:66 data/terminal.metainfo.xml.in:88
+#: data/terminal.metainfo.xml.in:110 data/terminal.metainfo.xml.in:124
+#: data/terminal.metainfo.xml.in:136 data/terminal.metainfo.xml.in:156
+#: data/terminal.metainfo.xml.in:173 data/terminal.metainfo.xml.in:188
 msgid "Translation updates"
 msgstr ""
 
+#: data/terminal.metainfo.xml.in:79
+msgid "Ctrl + BackSpace can now be used delete words"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:80
+msgid "Ctrl + Click is now required to open a link"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:84
+msgid "Update code and packaging for Gtk4"
+msgstr ""
+
 #: data/terminal.metainfo.xml.in:85
+msgid "Flatter styles"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:86
+msgid "Tab bar now in window drag area"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:87
+msgid "Smart copy no longer deselects"
+msgstr ""
+
+#: data/terminal.metainfo.xml.in:109
 msgid ""
 "The option to hide the tabbar when there is only one tab is now exposed and "
 "honored"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:126
+#: data/terminal.metainfo.xml.in:150
 msgid ""
 "A warning is now given if a pasted command has an option that skips "
 "confirmations"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:127
+#: data/terminal.metainfo.xml.in:151
 msgid ""
 "When a foreground process is launched, the tab label changes to the name of "
 "that process"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:131
+#: data/terminal.metainfo.xml.in:155
 msgid "Exiting the shell in a tab now closes that tab"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:162
+#: data/terminal.metainfo.xml.in:186
 msgid "Stop window size increasing when opened"
 msgstr ""
 
-#: data/terminal.metainfo.xml.in:163
+#: data/terminal.metainfo.xml.in:187
 msgid "Change hotkeys for Reset and Clear Screen actions"
 msgstr ""
 
-#: data/io.elementary.terminal.desktop.in:13
+#: data/io.elementary.terminal.desktop.in:12
 msgid "command;prompt;cmd;commandline;run;"
 msgstr "command;prompt;cmd;commandline;run;"
 
-#: data/io.elementary.terminal.desktop.in:18
+#: data/io.elementary.terminal.desktop.in:17
 msgid "New Window"
 msgstr "New Window"
 
