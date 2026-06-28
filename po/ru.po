@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Terminal)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2025-12-30 17:21+0000\n"
+"PO-Revision-Date: 2026-06-29 05:56+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ru/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:50
@@ -56,7 +56,7 @@ msgstr "[-- КОМАНДА…]"
 
 #: src/Application.vala:180
 msgid "Terminal needs your attention"
-msgstr ""
+msgstr "Терминал требует внимания"
 
 #: src/Application.vala:232
 msgid "Process completed"
