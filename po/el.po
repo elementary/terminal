@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2026-06-29 05:56+0000\n"
+"PO-Revision-Date: 2026-06-30 08:56+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/el/>\n"
@@ -314,7 +314,7 @@ msgstr "Υψηλή αντίθεση"
 
 #: src/Widgets/SettingsPopover.vala:69
 msgid "Solarized Light"
-msgstr ""
+msgstr "Ξεθωριασμένο ανοιχτόχρωμο"
 
 #: src/Widgets/SettingsPopover.vala:77
 msgid "Custom"
