@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2026-06-30 08:56+0000\n"
+"PO-Revision-Date: 2026-07-10 16:00+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/el/>\n"
@@ -322,7 +322,7 @@ msgstr "Προσαρμοσμένο"
 
 #: src/Widgets/SettingsPopover.vala:110
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Φυσική αντιγραφή/επικόλληση"
 
 #: src/Widgets/SettingsPopover.vala:111
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
@@ -338,7 +338,7 @@ msgstr ""
 
 #: src/Widgets/SettingsPopover.vala:120
 msgid "Event Alerts"
-msgstr ""
+msgstr "Ειδοποιήσεις συμβάντων"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid ""
@@ -377,7 +377,7 @@ msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:535
 msgid "Clear Screen"
-msgstr ""
+msgstr "Απαλοιφή οθόνης"
 
 #: src/Widgets/TerminalWidget.vala:541 src/Widgets/TerminalWidget.vala:639
 msgid "Reset"
@@ -428,10 +428,8 @@ msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
 
 #: src/Widgets/TerminalView.vala:435
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Νέο παράθυρο"
+msgstr "Άνοιγμα σε νέο παράθυρο"
 
 #: src/Widgets/TerminalView.vala:436
 msgid "Duplicate Tab"
