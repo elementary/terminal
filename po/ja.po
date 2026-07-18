@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2026-01-01 02:55+0000\n"
+"PO-Revision-Date: 2026-07-19 13:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
 #: src/Application.vala:50
@@ -60,7 +60,7 @@ msgstr "[-- コマンド…]"
 
 #: src/Application.vala:180
 msgid "Terminal needs your attention"
-msgstr ""
+msgstr "ターミナルの確認が必要です"
 
 #: src/Application.vala:232
 msgid "Process completed"
