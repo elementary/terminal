@@ -67,8 +67,11 @@
        </ul>
      </description>
      <issues>
+       <issue url="https://github.com/elementary/terminal/issues/311">Elementary terminal does not properly respect -e flag</issue>
        <issue url="https://github.com/elementary/terminal/issues/655">Show the number of tabs</issue>
+       <issue url="https://github.com/elementary/terminal/issues/929">Tab closes after command launched from commandline exits</issue>
        <issue url="https://github.com/elementary/terminal/issues/1010">Add RequestAttention DBus method for tabs needing input</issue>
+       <issue url="https://github.com/elementary/terminal/pull/1005">Fix secondary click foreground process</issue>
      </issues>
     </release>
 
