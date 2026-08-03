@@ -1,3 +1,9 @@
+io.elementary.terminal (8.1.0) jammy; urgency=medium
+
+  * Release version 8.1.0 (#1013)
+
+ -- elementary <builds@elementary.io>  Mon, 03 Aug 2026 19:08:26 +0000
+
 io.elementary.terminal (8.0.0) jammy; urgency=medium
 
   * Release version 8.0.0 (#970)
