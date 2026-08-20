@@ -665,13 +665,7 @@ namespace Terminal {
         }
 
         private static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
-            if (tab == null) {
-                return null;
-            }
-
-            var tab_child = (Gtk.ScrolledWindow) tab.child;
-            unowned var term = (TerminalWidget) tab_child.child;
-            return term;
+            return TerminalView.get_term_widget (tab);
         }
 
         public unowned TerminalWidget? get_terminal (string terminal_id) {

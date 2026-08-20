@@ -436,7 +436,7 @@ public class Terminal.TerminalView : Granite.Bin {
         }
     }
 
-    private static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
+    public static unowned TerminalWidget? get_term_widget (Adw.TabPage? tab) {
         if (tab == null) {
             return null;
         }
