@@ -15,22 +15,22 @@
 
   <screenshots>
     <screenshot environment="pantheon" type="default">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-light.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot-light.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-high-contrast.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot-high-contrast.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-find.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot-find.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-custom-style.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot-custom-style.png</image>
     </screenshot>
     <screenshot environment="pantheon">
-      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-paste-protection.png</image>
+      <image>https://raw.githubusercontent.com/elementary/terminal/8.1.0/data/screenshot-paste-protection.png</image>
     </screenshot>
   </screenshots>
 
@@ -54,7 +54,28 @@
   <update_contact>contact_AT_elementary.io</update_contact>
 
   <releases>
-    <release version="8.0.0" date="2025-12-05" urgency="medium">
+    <release version="8.1.0" date="2026-08-03" urgency="medium">
+     <description>
+       <p>New features:</p>
+       <ul>
+         <li>Pressing Alt + 0 or holding Alt down now shows the tab number in the tab labels</li>
+         <li>Foreground processes can now request attention using a DBus method</li>
+       </ul>
+       <p>Other updates:</p>
+       <ul>
+         <li>Translation updates</li>
+       </ul>
+     </description>
+     <issues>
+       <issue url="https://github.com/elementary/terminal/issues/311">Elementary terminal does not properly respect -e flag</issue>
+       <issue url="https://github.com/elementary/terminal/issues/655">Show the number of tabs</issue>
+       <issue url="https://github.com/elementary/terminal/issues/929">Tab closes after command launched from commandline exits</issue>
+       <issue url="https://github.com/elementary/terminal/issues/1010">Add RequestAttention DBus method for tabs needing input</issue>
+       <issue url="https://github.com/elementary/terminal/pull/1005">Fix secondary click foreground process</issue>
+     </issues>
+    </release>
+
+    <release version="8.0.0" date="2026-04-17" urgency="medium">
       <description>
         <p>New features:</p>
         <ul>
@@ -71,11 +92,16 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/terminal/issues/317">Show symbol while terminal is working</issue>
-        <issue url="https://github.com/elementary/terminal/issues/653">Links open when clicking on Terminal app in Alt+Tab</issue>
-        <issue url="https://github.com/elementary/terminal/issues/643">Port Terminal to GTK4</issue>
-        <issue url="https://github.com/elementary/terminal/issues/510">Natural Copy/Paste. Ctrl+c clears the highlighted word. Ctrl+x doesn't.</issue>
         <issue url="https://github.com/elementary/terminal/issues/469">Ctrl + Click to open URLs</issue>
+        <issue url="https://github.com/elementary/terminal/issues/510">Natural Copy/Paste. Ctrl+c clears the highlighted word. Ctrl+x doesn't.</issue>
+        <issue url="https://github.com/elementary/terminal/issues/526">Changing font size when terminal has lots of output is slow.</issue>
+        <issue url="https://github.com/elementary/terminal/issues/643">Port Terminal to GTK4</issue>
+        <issue url="https://github.com/elementary/terminal/issues/653">Links open when clicking on Terminal app in Alt+Tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/714">Allow to use Ctrl+Backspace for deleting words to the left</issue>
+        <issue url="https://github.com/elementary/terminal/issues/870">Add icon names for Launcher actions</issue>
+        <issue url="https://github.com/elementary/terminal/issues/943">Alt + Up doesn't work in tmux</issue>
+        <issue url="https://github.com/elementary/terminal/issues/955">Using Alt + digit to change tabs clashes with readline</issue>
+        <issue url="https://github.com/elementary/terminal/issues/975">Vanilla "Custom" theme: apt output sometimes invisible through SSH</issue>
       </issues>
     </release>
 

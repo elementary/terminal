@@ -12,11 +12,8 @@ public class Terminal.Application : Gtk.Application {
 
     public static GLib.Settings saved_state;
     public static GLib.Settings settings;
-    public static GLib.Settings settings_sys;
 
     public bool is_testing { get; set construct; }
-
-    private static Themes themes;
 
     public Application () {
         Object (
@@ -157,6 +154,63 @@ public class Terminal.Application : Gtk.Application {
         var dbus = new DBus ();
         dbus_id = connection.register_object (object_path, dbus);
 
+        dbus.attention_requested.connect ((id, message) => {
+            TerminalWidget terminal = null;
+            foreach (var window in (List<MainWindow>) get_windows ()) {
+                if (terminal != null) {
+                    break;
+                }
+
+                terminal = window.get_terminal (id);
+            }
+
+            if (terminal == null) {
+                return;
+            }
+
+            unowned var window = (MainWindow) terminal.root;
+            if (terminal != window.current_terminal || !window.is_active) {
+                terminal.tab_state = ATTENTION;
+            }
+
+            if (window.is_active) {
+                return;
+            }
+
+            var notification_title = _("Terminal needs your attention");
+            var notification = new Notification (notification_title);
+            if (message.length > 0) {
+                notification.set_body (message);
+            }
+
+            notification.set_icon (TerminalWidget.TabState.ATTENTION.to_icon ());
+            notification.set_default_action_and_target_value ("app.process-finished", new Variant.string (id));
+            send_notification ("attention-requested-%s".printf (id), notification);
+
+            ulong tab_change_handler = 0;
+            ulong focus_in_handler = 0;
+
+            tab_change_handler = window.notify["current-terminal"].connect ((obj, pspec) => {
+                withdraw_notification_for_terminal (
+                    (MainWindow) obj, terminal,
+                    "attention-requested-%s".printf (id),
+                    { TerminalWidget.TabState.ATTENTION },
+                    tab_change_handler, focus_in_handler
+                );
+            });
+
+            focus_in_handler = window.notify["is-active"].connect ((obj, pspec) => {
+                if (((MainWindow) obj).is_active) {
+                    withdraw_notification_for_terminal (
+                        (MainWindow) obj, terminal,
+                        "attention-requested-%s".printf (id),
+                        { TerminalWidget.TabState.ATTENTION },
+                        tab_change_handler, focus_in_handler
+                    );
+                }
+            });
+        });
+
         dbus.finished_process.connect ((id, process, exit_status) => {
             TerminalWidget terminal = null;
 
@@ -169,6 +223,9 @@ public class Terminal.Application : Gtk.Application {
             }
 
             if (terminal == null) {
+                return;
+            } else if (!terminal.is_init_complete ()) {
+                terminal.set_init_complete ();
                 return;
             }
 
@@ -185,7 +242,11 @@ public class Terminal.Application : Gtk.Application {
                 terminal.tab_state = NONE;
             }
 
-            if (!(get_active_window ().is_active)) {
+            Timeout.add (200, () => {
+                if (active_window.is_active) {
+                    return Source.REMOVE;
+                }
+
                 var notification = new Notification (notification_title);
                 notification.set_body (process);
                 notification.set_icon (tab_state.to_icon ());
@@ -196,27 +257,52 @@ public class Terminal.Application : Gtk.Application {
                 ulong focus_in_handler = 0;
 
                 tab_change_handler = ((MainWindow) terminal.root).notify["current-terminal"].connect ((obj, pspec) => {
-                    withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                    withdraw_notification_for_terminal (
+                        (MainWindow) obj, terminal,
+                        "process-finished-%s".printf (id),
+                        { TerminalWidget.TabState.COMPLETED, TerminalWidget.TabState.ERROR },
+                        tab_change_handler, focus_in_handler
+                    );
                 });
 
                 focus_in_handler = ((MainWindow) terminal.root).notify["is-active"].connect ((obj, pspec) => {
                     if (((MainWindow) obj).is_active) {
-                        withdraw_notification_for_terminal ((MainWindow) obj, terminal, id, tab_change_handler, focus_in_handler);
+                        withdraw_notification_for_terminal (
+                            (MainWindow) obj, terminal,
+                            "process-finished-%s".printf (id),
+                            { TerminalWidget.TabState.COMPLETED, TerminalWidget.TabState.ERROR },
+                            tab_change_handler, focus_in_handler
+                        );
                     }
                 });
-            }
+
+                return Source.REMOVE;
+            });
         });
 
         return true;
     }
 
-    private void withdraw_notification_for_terminal (MainWindow window, TerminalWidget terminal, string id, ulong tab_change_handler, ulong focus_in_handler) {
+    private void withdraw_notification_for_terminal (
+        MainWindow window,
+        TerminalWidget terminal,
+        string notification_id,
+        TerminalWidget.TabState[] clear_states,
+        ulong tab_change_handler,
+        ulong focus_in_handler
+    ) {
         if (window.current_terminal != terminal) {
             return;
         }
 
-        terminal.tab_state = NONE;
-        withdraw_notification ("process-finished-%s".printf (id));
+        foreach (var state in clear_states) {
+            if (terminal.tab_state == state) {
+                terminal.tab_state = NONE;
+                break;
+            }
+        }
+
+        withdraw_notification (notification_id);
 
         window.disconnect (tab_change_handler);
         window.disconnect (focus_in_handler);
@@ -229,8 +315,8 @@ public class Terminal.Application : Gtk.Application {
 
         saved_state = new GLib.Settings ("io.elementary.terminal.saved-state");
         settings = new GLib.Settings ("io.elementary.terminal.settings");
-        settings_sys = new GLib.Settings ("org.gnome.desktop.interface");
-        themes = new Themes ();
+
+        new Themes (); // Start listening to gsettings to sync headerbar dark style preference
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/io/elementary/terminal/Application.css");

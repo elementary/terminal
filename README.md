@@ -38,3 +38,17 @@ Terminal implements process completion notifications. They are enabled for BASH 
     builtin . /usr/share/io.elementary.terminal/enable-zsh-completion-notifications || builtin true
 
 DISTRIBUTORS: depending on the policy of your distribution, either inform the user about this via the default mechanism for your distribution (for DIY distros like Arch), or add that line to `/etc/zshrc` automatically on installation (for preconfigured distros like Ubuntu).
+
+## Attention Requests
+
+Long-running interactive programs (for example AI agents) can ask the terminal to flag a tab when they need user input. The terminal marks the tab with an attention indicator and a `dialog-question-symbolic` icon, and posts a desktop notification if the window is not focused or the tab is not selected. The indicator clears automatically when the user focuses the tab.
+
+Each tab exports its identifier as `PANTHEON_TERMINAL_ID`. A program can request attention with a single DBus call:
+
+    dbus-send --type=method_call --session \
+        --dest=io.elementary.terminal /io/elementary/terminal \
+        io.elementary.terminal.RequestAttention \
+        string:"$PANTHEON_TERMINAL_ID" \
+        string:"Waiting for confirmation"
+
+The second string is shown as the notification body and may be empty.

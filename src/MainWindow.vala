@@ -14,12 +14,7 @@ namespace Terminal {
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private uint focus_timeout = 0;
 
-        private const int NORMAL = 0;
-        private const int MAXIMIZED = 1;
-        private const int FULLSCREEN = 2;
-
-        public bool focus_restored_tabs { get; construct; default = true; }
-        public bool recreate_tabs { get; construct; default = true; }
+        public bool recreate_tabs { get; construct; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalView notebook { get; private set; }
@@ -29,20 +24,19 @@ namespace Terminal {
         public const string ACTION_CLOSE_TAB = "action-close-tab";
         public const string ACTION_CLOSE_TABS_TO_RIGHT = "action_close_tabs_to_right";
         public const string ACTION_CLOSE_OTHER_TABS = "action_close_other_tabs";
-        public const string ACTION_FULLSCREEN = "action-fullscreen";
+        private const string ACTION_FULLSCREEN = "action-fullscreen";
         public const string ACTION_NEW_TAB = "action-term_widgetnew-tab";
         public const string ACTION_NEW_TAB_AT = "action-new-tab-at";
         public const string ACTION_TAB_ACTIVE_SHELL = "action-tab_active_shell";
         public const string ACTION_TAB_RELOAD = "action-tab_reload";
         public const string ACTION_RESTORE_CLOSED_TAB = "action-restore-closed-tab";
         public const string ACTION_DUPLICATE_TAB = "action-duplicate-tab";
-        public const string ACTION_NEXT_TAB = "action-next-tab";
-        public const string ACTION_PREVIOUS_TAB = "action-previous-tab";
-        public const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
-        public const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
+        private const string ACTION_NEXT_TAB = "action-next-tab";
+        private const string ACTION_PREVIOUS_TAB = "action-previous-tab";
+        private const string ACTION_MOVE_TAB_RIGHT = "action-move-tab-right";
+        private const string ACTION_MOVE_TAB_LEFT = "action-move-tab-left";
         public const string ACTION_MOVE_TAB_TO_NEW_WINDOW = "action-move-tab-to-new-window";
-        public const string ACTION_SEARCH = "action-search";
-        public const string ACTION_SEARCH_ACCEL = "<Control><Shift>f";
+        private const string ACTION_SEARCH = "action-search";
         public const string ACTION_SEARCH_NEXT = "action-search-next";
         public const string ACTION_SEARCH_PREVIOUS = "action-search-previous";
 
@@ -88,7 +82,7 @@ namespace Terminal {
             action_accelerators[ACTION_PREVIOUS_TAB] = "<Control>Page_Up";
             action_accelerators[ACTION_MOVE_TAB_RIGHT] = "<Control><Alt>Right";
             action_accelerators[ACTION_MOVE_TAB_LEFT] = "<Control><Alt>Left";
-            action_accelerators[ACTION_SEARCH] = ACTION_SEARCH_ACCEL;
+            action_accelerators[ACTION_SEARCH] = "<Control><Shift>f";
         }
 
         construct {
@@ -179,8 +173,8 @@ namespace Terminal {
             notebook.add_new_tab (location, command);
         }
 
-        Adw.TabPage? tab_to_close = null;
-        TerminalWidget? term_to_close = null;
+        private Adw.TabPage? tab_to_close = null;
+        private TerminalWidget? term_to_close = null;
         private void setup_ui () {
             unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
@@ -287,12 +281,9 @@ namespace Terminal {
                     return;
                 }
 
-                title = term.window_title != "" ? term.window_title
-                                                : term.current_working_directory;
-
-
                 // Need to wait for default handler to run before focusing
                 Idle.add (() => {
+                    set_title_label ();
                     term.grab_focus ();
                     return Source.REMOVE;
                 });
@@ -381,11 +372,9 @@ namespace Terminal {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
-            var default_zoom = Application.saved_state.get_double ("zoom"); //Range set in settings 0.25 - 4.0
+            var default_zoom = Application.saved_state.get_double ("zoom"); // Range set in settings 0.25 - 4.0
 
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
-
+            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
                 tabs = Terminal.Application.saved_state.get_strv ("tabs");
                 var n_tabs = tabs.length;
 
@@ -447,25 +436,28 @@ namespace Terminal {
                 index++;
             }
 
-            if (focus_restored_tabs) {
-                var tab = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
-                notebook.selected_page = tab;
-            }
+            notebook.selected_page = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
         }
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {
             terminal_widget.cwd_changed.connect (on_terminal_cwd_changed);
-            terminal_widget.foreground_process_changed.connect (on_terminal_program_changed);
-            terminal_widget.window_title_changed.connect (on_terminal_window_title_changed);
+            terminal_widget.foreground_process_changed.connect (set_title_label);
+            terminal_widget.window_title_changed.connect (set_title_label);
         }
 
-        private void on_terminal_window_title_changed () {
-            title = current_terminal.window_title;
+        private void set_title_label () {
+            if (current_terminal.window_title != "") {
+                title = current_terminal.window_title;
+            } else if (current_terminal.current_working_directory != "") {
+                title = current_terminal.current_working_directory;
+            } else {
+                title = TerminalWidget.DEFAULT_LABEL; // Do we need a different fallback window title?
+            }
         }
 
         private bool close_immediately = false;
         //TODO Make TerminalWidget.confirm_kill_fg_process asynchronous and terminate all in callback
-        public bool on_delete_event () {
+        private bool on_delete_event () {
             if (close_immediately) {
                 return Gdk.EVENT_PROPAGATE;
             }
@@ -523,7 +515,8 @@ namespace Terminal {
         }
 
         private void action_restore_closed_tab (GLib.SimpleAction action, GLib.Variant? param) {
-            notebook.add_new_tab (param.get_string ()); //TODO Restore icon?
+            notebook.add_new_tab (param.get_string ()); // TODO Restore icon?
+            notebook.after_tab_restored (param.get_string ());
         }
 
         private void action_new_tab () requires (current_terminal != null) {
@@ -579,15 +572,15 @@ namespace Terminal {
             notebook.cycle_tabs (BACK);
         }
 
-        void action_move_tab_right () {
+        private void action_move_tab_right () {
             notebook.tab_view.reorder_forward (notebook.selected_page);
         }
 
-        void action_move_tab_left () {
+        private void action_move_tab_left () {
             notebook.tab_view.reorder_backward (notebook.selected_page);
         }
 
-        void action_move_tab_to_new_window () {
+        private void action_move_tab_to_new_window () {
             // Do not use app action because we do not want default tab added
             notebook.transfer_tab_to_window (present_new_empty_window ());
         }
@@ -734,13 +727,9 @@ namespace Terminal {
         }
 
         private void on_terminal_cwd_changed () {
-            check_for_tabs_with_same_name (); // Also sets window title
+            check_for_tabs_with_same_name ();
             save_opened_terminals (true, false);
-        }
-
-        private void on_terminal_program_changed (TerminalWidget src, string cmdline) {
-            src.program_string = cmdline;
-            check_for_tabs_with_same_name (); // Also sets window title
+            set_title_label ();
         }
 
         public void save_opened_terminals (bool save_tabs, bool save_zooms) {

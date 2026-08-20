@@ -4,10 +4,7 @@
  */
 
 public class Terminal.TerminalView : Granite.Bin {
-    const int TAB_HISTORY_MAX_ITEMS = 20;
-
-    public signal void new_tab_requested ();
-    public signal void tab_duplicated (Adw.TabPage page);
+    private const int TAB_HISTORY_MAX_ITEMS = 20;
 
     public int n_pages {
         get {
@@ -30,9 +27,14 @@ public class Terminal.TerminalView : Granite.Bin {
     public Adw.TabView tab_view { get; private set; }
     public Adw.TabPage? tab_menu_target { get; private set; default = null; }
 
+    private static GLib.Settings gnome_interface_settings;
     private Widgets.ZoomOverlay zoom_overlay;
     private Gtk.MenuButton tab_history_button;
     private Pango.FontDescription term_font;
+
+    static construct {
+        gnome_interface_settings = new GLib.Settings ("org.gnome.desktop.interface");
+    }
 
     public TerminalView (MainWindow window) {
         Object (main_window: window);
@@ -101,10 +103,19 @@ public class Terminal.TerminalView : Granite.Bin {
             propagation_phase = CAPTURE
         };
         key_controller.key_pressed.connect (key_pressed);
+        key_controller.key_released.connect (key_released);
         add_controller (key_controller);
 
+        var focus_controller = new Gtk.EventControllerFocus () {
+            propagation_phase = CAPTURE
+        };
+        focus_controller.leave.connect (() => {
+            cancel_tab_numbers ();
+        });
+        add_controller (focus_controller);
+
         update_font ();
-        Application.settings_sys.changed["monospace-font-name"].connect (update_font);
+        gnome_interface_settings.changed["monospace-font-name"].connect (update_font);
         Application.settings.changed["font"].connect (update_font);
     }
 
@@ -115,20 +126,15 @@ public class Terminal.TerminalView : Granite.Bin {
         }
 
         var menu = (Menu) tab_history_button.menu_model;
-        int position_in_menu = -1;
-        var path_in_menu = false;
-        int i;
-        for (i = 0; i < menu.get_n_items (); i++) {
-            if (path == menu.get_item_attribute_value (
-                i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()
-            ) {
-                path_in_menu = true;
+        var position_in_menu = -1;
+        for (var i = 0; i < menu.get_n_items (); i++) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 position_in_menu = i;
                 break;
             }
         }
 
-        if (path_in_menu) {
+        if (position_in_menu != -1) {
             menu.remove (position_in_menu);
         }
 
@@ -149,6 +155,9 @@ public class Terminal.TerminalView : Granite.Bin {
 
         var terminal_widget = new TerminalWidget () {
             scrollback_lines = Application.settings.get_int ("scrollback-lines"),
+            /* Ensure usable scroll speed on Wayland - see https://github.com/elementary/terminal/issues/993 */
+            enable_fallback_scrolling = false,
+            scroll_unit_is_pixels = true,
             /* Make the terminal occupy the whole GUI */
             hexpand = true,
             vexpand = true
@@ -172,10 +181,10 @@ public class Terminal.TerminalView : Granite.Bin {
         terminal_widget.child_exited.connect (on_child_exited);
         terminal_widget.notify["tab-state"].connect (() => {
             tab.icon = terminal_widget.tab_state.to_icon ();
-            tab.loading = terminal_widget.tab_state == WORKING;
+            tab.needs_attention = terminal_widget.tab_state == ATTENTION;
         });
 
-        //Set correct label now to avoid race when spawning shell
+        // Set correct label now to avoid race when spawning shell
 
         terminal_widget.set_font (term_font);
 
@@ -188,15 +197,15 @@ public class Terminal.TerminalView : Granite.Bin {
 
         selected_page = tab;
 
-        if (program.length == 0) {
-            /* Set up the virtual terminal */
-            if (location == "") {
-                terminal_widget.active_shell ();
-            } else {
-                terminal_widget.active_shell (location);
-            }
+        /* Set up the virtual terminal */
+        if (location == "") {
+            terminal_widget.active_shell ();
         } else {
-            terminal_widget.run_program (program, location);
+            terminal_widget.active_shell (location);
+        }
+
+        if (program.length > 0) {
+            terminal_widget.run_program (program);
         }
 
         main_window.save_opened_terminals (true, true);
@@ -303,8 +312,18 @@ public class Terminal.TerminalView : Granite.Bin {
         open_in_new_window_action.set_enabled (page != null && tab_view.n_pages > 1);
     }
 
+    private void key_released (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
+        cancel_tab_numbers ();
+    }
+
     private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
         switch (keyval) {
+            //NOTE Keys @1 to @9 in combination with Alt_L do not natively change tab - they
+            // cause `bash` to enter "digit argument" mode. Whether this behaviour is overridden is determined
+            // by the "alt-changes-tab" setting (default true).
+            // However keys KP_1 to KP_9 in combination with Alt_L is handled natively by Vte and always
+            // changes tab regardless of the setting.
+            // Holding down Alt_L causes tab numbers to appear in the tab labels regardless of the setting
             case Gdk.Key.@1: //alt+[1-8]
             case Gdk.Key.@2:
             case Gdk.Key.@3:
@@ -324,9 +343,23 @@ public class Terminal.TerminalView : Granite.Bin {
                 break;
 
             case Gdk.Key.@9:
-                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab") && n_pages > 0) {
+                if (n_pages > 0 && ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
                     selected_page = tab_view.get_nth_page (n_pages - 1);
                     return Gdk.EVENT_STOP;
+                }
+                break;
+
+            case Gdk.Key.@0:
+            case Gdk.Key.KP_0:
+                if (ALT_MASK in modifiers && Application.settings.get_boolean ("alt-changes-tab")) {
+                    show_tab_numbers ();
+                    return Gdk.EVENT_STOP;
+                }
+                break;
+
+            default:
+                if (keyval == Gdk.Key.Alt_L) {
+                    schedule_tab_numbers ();
                 }
                 break;
         }
@@ -334,11 +367,62 @@ public class Terminal.TerminalView : Granite.Bin {
         return Gdk.EVENT_PROPAGATE;
     }
 
+    private uint tab_number_timeout = 0;
+    private bool tab_numbers_showing = false;
+    private void schedule_tab_numbers () {
+        if (tab_numbers_showing || tab_number_timeout > 0) {
+            return;
+        }
+
+        tab_number_timeout = Timeout.add (
+            Gtk.Settings.get_default ().gtk_long_press_time,
+            () => {
+                tab_number_timeout = 0;
+                show_tab_numbers ();
+                return Source.REMOVE;
+            }
+        );
+    }
+
+
+    private void show_tab_numbers () {
+        tab_numbers_showing = true;
+        //TODO Show number as badge? Need way of converting number to suitable icon
+        // that can be used as TabPage.indicator_icon.
+        // For now use text
+        for (int i = 0; i < this.n_pages; i++) {
+            var tab = this.tab_view.get_nth_page (i);
+            var badge = "(%d) ".printf (i + 1);
+            if (!tab.title.has_prefix (badge)) {
+                tab.title = badge + tab.title;
+            }
+        }
+    }
+
+    private void cancel_tab_numbers () {
+        if (tab_number_timeout > 0) {
+            Source.remove (tab_number_timeout);
+            tab_number_timeout = 0;
+        }
+
+        if (tab_numbers_showing) {
+            for (int i = 0; i < this.n_pages; i++) {
+                var tab = this.tab_view.get_nth_page (i);
+                var badge = "(%d) ".printf (i + 1);
+                if (tab.title.has_prefix (badge)) {
+                    tab.title = tab.title.slice (badge.length, tab.title.length);
+                }
+            }
+
+            tab_numbers_showing = false;
+        }
+    }
+
     private void update_font () {
         // We have to fetch both values at least once, otherwise
         // GLib.Settings won't notify on their changes
         var app_font_name = Application.settings.get_string ("font");
-        var sys_font_name = Application.settings_sys.get_string ("monospace-font-name");
+        var sys_font_name = gnome_interface_settings.get_string ("monospace-font-name");
 
         if (app_font_name != "") {
             term_font = Pango.FontDescription.from_string (app_font_name);
@@ -362,10 +446,10 @@ public class Terminal.TerminalView : Granite.Bin {
         return term;
     }
 
-    public void after_tab_restored (TerminalWidget term) {
+    public void after_tab_restored (string path) {
         var menu = (Menu) tab_history_button.menu_model;
         for (var i = 0; i < menu.get_n_items (); i++) {
-            if (term.terminal_id == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
+            if (path == menu.get_item_attribute_value (i, Menu.ATTRIBUTE_TARGET, VariantType.STRING).get_string ()) {
                 menu.remove (i);
                 break;
             }
