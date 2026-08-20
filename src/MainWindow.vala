@@ -669,14 +669,7 @@ namespace Terminal {
         }
 
         public unowned TerminalWidget? get_terminal (string terminal_id) {
-            for (var i = 0; i < notebook.n_pages; i++) {
-                unowned var term = get_term_widget (notebook.tab_view.get_nth_page (i));
-                if (term.terminal_id == terminal_id) {
-                    return term;
-                }
-            }
-
-            return null;
+            return get_term_widget (get_page (terminal_id));
         }
 
         public unowned Adw.TabPage? get_page (string terminal_id) {
