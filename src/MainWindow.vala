@@ -63,6 +63,9 @@ namespace Terminal {
             { ACTION_SEARCH_PREVIOUS, action_search_previous }
         };
 
+        private Adw.TabPage? tab_to_close = null;
+        private TerminalWidget? term_to_close = null;
+
         public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
             Object (
                 app: app,
@@ -102,80 +105,6 @@ namespace Terminal {
 
             title = TerminalWidget.DEFAULT_LABEL;
 
-            setup_ui ();
-
-            var key_controller = new Gtk.EventControllerKey () {
-                propagation_phase = CAPTURE
-            };
-            key_controller.key_pressed.connect (key_pressed);
-
-            var focus_controller = new Gtk.EventControllerFocus ();
-            focus_controller.enter.connect (() => {
-                if (focus_timeout == 0) {
-                    focus_timeout = Timeout.add (20, () => {
-                        focus_timeout = 0;
-                        save_opened_terminals (true, true);
-                        current_terminal.grab_focus ();
-                        return Source.REMOVE;
-                    });
-                }
-            });
-
-            // Need to disambiguate from ShortcutManager interface add_controller ()
-            ((Gtk.Widget)this).add_controller (key_controller);
-            ((Gtk.Widget)this).add_controller (focus_controller);
-
-            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
-
-            if (recreate_tabs) {
-                open_tabs ();
-            }
-
-            close_request.connect (on_delete_event);
-        }
-
-        public void add_tab_with_working_directory (
-            string directory = "",
-            string command = "",
-            bool create_new_tab = false
-        ) {
-
-            /* This requires all restored tabs to be initialized first so that
-             * the shell location is available.
-             * Do not add a new tab if location is already open in existing tab */
-            string location = "";
-            if (directory.length == 0) {
-                if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
-                    notebook.add_new_tab ("", command);
-                }
-
-                return;
-            } else {
-                location = directory;
-            }
-
-            /* We can match existing tabs only if there is no command and create_new_tab == false */
-            if (command.length == 0 && !create_new_tab) {
-                var file = File.new_for_commandline_arg (location);
-                for (int pos = 0; pos < notebook.n_pages; pos++) {
-                    var tab = notebook.tab_view.get_nth_page (pos);
-                    var terminal_widget = get_term_widget (tab);
-                    var tab_path = terminal_widget.get_shell_location ();
-                    /* Detect equialent paths */
-                    if (file.equal (File.new_for_path (tab_path))) {
-                        /* Just focus the duplicate tab instead */
-                        notebook.selected_page = tab;
-                        return; /* Duplicate found, abandon adding tab */
-                    }
-                }
-            }
-
-            notebook.add_new_tab (location, command);
-        }
-
-        private Adw.TabPage? tab_to_close = null;
-        private TerminalWidget? term_to_close = null;
-        private void setup_ui () {
             unfullscreen_button = new Gtk.Button.from_icon_name ("view-restore-symbolic") {
                 action_name = ACTION_PREFIX + ACTION_FULLSCREEN,
                 can_focus = false,
@@ -318,6 +247,74 @@ namespace Terminal {
             });
 
             bind_property ("current-terminal", menu_popover, "terminal");
+
+            var key_controller = new Gtk.EventControllerKey () {
+                propagation_phase = CAPTURE
+            };
+            key_controller.key_pressed.connect (key_pressed);
+
+            var focus_controller = new Gtk.EventControllerFocus ();
+            focus_controller.enter.connect (() => {
+                if (focus_timeout == 0) {
+                    focus_timeout = Timeout.add (20, () => {
+                        focus_timeout = 0;
+                        save_opened_terminals (true, true);
+                        current_terminal.grab_focus ();
+                        return Source.REMOVE;
+                    });
+                }
+            });
+
+            // Need to disambiguate from ShortcutManager interface add_controller ()
+            ((Gtk.Widget)this).add_controller (key_controller);
+            ((Gtk.Widget)this).add_controller (focus_controller);
+
+            set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
+
+            if (recreate_tabs) {
+                open_tabs ();
+            }
+
+            close_request.connect (on_delete_event);
+        }
+
+        public void add_tab_with_working_directory (
+            string directory = "",
+            string command = "",
+            bool create_new_tab = false
+        ) {
+
+            /* This requires all restored tabs to be initialized first so that
+             * the shell location is available.
+             * Do not add a new tab if location is already open in existing tab */
+            string location = "";
+            if (directory.length == 0) {
+                if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
+                    notebook.add_new_tab ("", command);
+                }
+
+                return;
+            } else {
+                location = directory;
+            }
+
+            /* We can match existing tabs only if there is no command and create_new_tab == false */
+            if (command.length == 0 && !create_new_tab) {
+                var file = File.new_for_commandline_arg (location);
+                for (int pos = 0; pos < notebook.n_pages; pos++) {
+                    var tab = notebook.tab_view.get_nth_page (pos);
+                    var terminal_widget = get_term_widget (tab);
+                    var tab_path = terminal_widget.get_shell_location ();
+                    /* Detect equialent paths */
+                    if (file.equal (File.new_for_path (tab_path))) {
+                        /* Just focus the duplicate tab instead */
+                        notebook.selected_page = tab;
+                        return; /* Duplicate found, abandon adding tab */
+                    }
+                }
+            }
+
+            notebook.add_new_tab (location, command);
         }
 
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
