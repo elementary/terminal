@@ -377,8 +377,6 @@ public class Terminal.Application : Gtk.Application {
 
         options.lookup ("new-tab", "b", out new_tab);
         Adw.TabPage? added_page = null;
-        // If "execute" option or "commandline" option used ignore any "new-tab" option
-        // because these add new tab(s) already
 
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
@@ -392,14 +390,17 @@ public class Terminal.Application : Gtk.Application {
 
         var restored = false;
         // Only try to restore saved tabs if first window and a command was not executed
+        // If "execute" option or "commandline" option used also ignore any "new-tab" option
+        // because these add new tab(s) already
         if (window.notebook.n_pages == 0) {
-            if (is_first_window) {
+            if (!new_tab && is_first_window) {
                 restored = window.open_saved_tabs ();
             }
-        }
 
-        if (new_tab || window.notebook.n_pages == 0) {
-            added_page = window.add_tab_with_working_directory (working_directory, "", new_tab);
+            // Ensure at least one tab
+            if (new_tab || window.notebook.n_pages == 0) {
+                added_page = window.add_tab_with_working_directory (working_directory, "", new_tab);
+            }
         }
 
         if (added_page != null) {
