@@ -338,7 +338,7 @@ public class Terminal.Application : Gtk.Application {
                 dir = ((MainWindow)active_window).current_terminal.current_working_directory;
             }
 
-            var new_window = new MainWindow (this, active_window == null);
+            var new_window = new MainWindow (this);
             new_window.present ();
             new_window.set_size_request (
                 active_window.width_request,
@@ -366,7 +366,7 @@ public class Terminal.Application : Gtk.Application {
 
         // Always restore tabs if creating first window, but no extra tab at this stage
         if (is_first_window || options.lookup ("new-window", "b", out new_window) && new_window) {
-            window = new MainWindow (this, is_first_window);
+            window = new MainWindow (this);
         }
 
         // If a specified working directory is not requested, use the current working directory from the commandline
@@ -376,20 +376,35 @@ public class Terminal.Application : Gtk.Application {
         bool new_tab, minimized;
 
         options.lookup ("new-tab", "b", out new_tab);
-
-        // If "execute" option or "commandline" option used ignore any "new-tab option
+        Adw.TabPage? added_page = null;
+        // If "execute" option or "commandline" option used ignore any "new-tab" option
         // because these add new tab(s) already
+
         if (options.lookup ("execute", "^a&ay", out commands)) {
             for (var i = 0; commands[i] != null; i++) {
                 if (commands[i] != "\0") {
-                    window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
+                    added_page = window.add_tab_with_working_directory (working_directory, commands[i], new_tab);
                 }
             }
         } else if (options.lookup ("commandline", "^&ay", out command) && command != "\0") {
-            window.add_tab_with_working_directory (working_directory, command, new_tab);
-        } else if (new_tab || window.notebook.n_pages == 0) {
-            window.add_tab_with_working_directory (working_directory, "", new_tab);
+            added_page = window.add_tab_with_working_directory (working_directory, command, new_tab);
         }
+
+        var restored = false;
+        // Only try to restore saved tabs if first window and a command was not executed
+        if (window.notebook.n_pages == 0) {
+            if (is_first_window) {
+                restored = window.open_saved_tabs ();
+            }
+        }
+
+        if (new_tab || window.notebook.n_pages == 0) {
+            added_page = window.add_tab_with_working_directory (working_directory, "", new_tab);
+        }
+
+        if (added_page != null) {
+            window.notebook.selected_page = added_page;
+        } // Else one of the restored tabs will be selected
 
         if (options.lookup ("minimized", "b", out minimized) && minimized) {
             window.minimize ();
