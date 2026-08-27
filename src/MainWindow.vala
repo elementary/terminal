@@ -273,18 +273,17 @@ namespace Terminal {
             close_request.connect (on_delete_event);
         }
 
-        // Add a new tab or find duplicate only.
+        // Add requested tab or find duplicate only. Do not overload by adding default tab or
+        // selecting a tab. This must be done by the caller if required.
         public Adw.TabPage? add_tab_with_working_directory (
             string directory = "",
             string command = "",
             bool create_new_tab = false
         ) {
-
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
             if (directory.length == 0) {
-
                 return null;
             }
 
@@ -299,7 +298,6 @@ namespace Terminal {
                     var tab_path = terminal_widget.get_shell_location ();
                     /* Detect equivalent paths */
                     if (file.equal (File.new_for_path (tab_path))) {
-                        /* Just focus the duplicate tab instead */
                         return tab; /* Duplicate found, return this in case it needs selecting etc */
                     }
                 }
