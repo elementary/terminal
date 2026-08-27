@@ -28,7 +28,7 @@ namespace Terminal {
         }
 
         internal const string DEFAULT_LABEL = _("Terminal");
-        public string terminal_id;
+        public string terminal_id { get; private set; }
         public string current_working_directory { get; private set; default = "";}
         public string program_string { get; set; default = ""; }
         static int terminal_id_counter = 0;
