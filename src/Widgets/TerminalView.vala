@@ -148,7 +148,7 @@ public class Terminal.TerminalView : Granite.Bin {
         );
     }
 
-    public TerminalWidget add_new_tab (string? location, string program = "", int pos = -1) {
+    public Adw.TabPage add_new_tab (string? location, string program = "", int pos = -1) {
         if (pos == -1) {
             pos = n_pages;
         }
@@ -210,7 +210,7 @@ public class Terminal.TerminalView : Granite.Bin {
 
         main_window.save_opened_terminals (true, true);
 
-        return terminal_widget;
+        return tab;
     }
 
     public void close_tab () {

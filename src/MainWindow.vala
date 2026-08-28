@@ -14,7 +14,6 @@ namespace Terminal {
         private Dialogs.ColorPreferences? color_preferences_dialog;
         private uint focus_timeout = 0;
 
-        public bool recreate_tabs { get; construct; }
         public Terminal.Application app { get; construct; }
         public SimpleActionGroup actions { get; construct; }
         public TerminalView notebook { get; private set; }
@@ -66,10 +65,9 @@ namespace Terminal {
         private Adw.TabPage? tab_to_close = null;
         private TerminalWidget? term_to_close = null;
 
-        public MainWindow (Terminal.Application app, bool recreate_tabs = true) {
+        public MainWindow (Terminal.Application app) {
             Object (
-                app: app,
-                recreate_tabs: recreate_tabs
+                app: app
             );
         }
 
@@ -271,32 +269,25 @@ namespace Terminal {
 
             set_size_request (Application.MINIMUM_WIDTH, Application.MINIMUM_HEIGHT);
 
-            if (recreate_tabs) {
-                open_tabs ();
-            }
 
             close_request.connect (on_delete_event);
         }
 
-        public void add_tab_with_working_directory (
+        // Add requested tab or find duplicate only. Do not overload by adding default tab or
+        // selecting a tab. This must be done by the caller if required.
+        public Adw.TabPage? add_tab_with_working_directory (
             string directory = "",
             string command = "",
             bool create_new_tab = false
         ) {
-
             /* This requires all restored tabs to be initialized first so that
              * the shell location is available.
              * Do not add a new tab if location is already open in existing tab */
-            string location = "";
             if (directory.length == 0) {
-                if (notebook.n_pages == 0 || command != null || create_new_tab) { //Ensure at least one tab
-                    notebook.add_new_tab ("", command);
-                }
-
-                return;
-            } else {
-                location = directory;
+                return null;
             }
+
+            string location = directory;
 
             /* We can match existing tabs only if there is no command and create_new_tab == false */
             if (command.length == 0 && !create_new_tab) {
@@ -305,16 +296,14 @@ namespace Terminal {
                     var tab = notebook.tab_view.get_nth_page (pos);
                     var terminal_widget = get_term_widget (tab);
                     var tab_path = terminal_widget.get_shell_location ();
-                    /* Detect equialent paths */
+                    /* Detect equivalent paths */
                     if (file.equal (File.new_for_path (tab_path))) {
-                        /* Just focus the duplicate tab instead */
-                        notebook.selected_page = tab;
-                        return; /* Duplicate found, abandon adding tab */
+                        return tab; /* Duplicate found, return this in case it needs selecting etc */
                     }
                 }
             }
 
-            notebook.add_new_tab (location, command);
+            return notebook.add_new_tab (location, command);
         }
 
         private bool key_pressed (uint keyval, uint keycode, Gdk.ModifierType modifiers) {
@@ -365,38 +354,40 @@ namespace Terminal {
             return present_new_empty_window ().notebook.tab_view;
         }
 
-        private void open_tabs () {
+        // Only adds restorable tabs - does not add default tab - that is left to the caller as required
+        public void open_saved_tabs () {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); // Range set in settings 0.25 - 4.0
 
-            if (Granite.Services.System.history_is_enabled () && Application.settings.get_boolean ("remember-tabs")) {
-                tabs = Terminal.Application.saved_state.get_strv ("tabs");
-                var n_tabs = tabs.length;
+            if (!Granite.Services.System.history_is_enabled () ||
+                !Application.settings.get_boolean ("remember-tabs")) {
 
-                if (n_tabs == 0) {
-                    tabs += Environment.get_home_dir ();
-                    zooms += default_zoom;
-                } else {
-                    foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
-                        if (zooms.length < n_tabs) {
-                            zooms += double.parse (zoom_s); // Locale independent
-                        } else {
-                            break;
-                        }
-                    }
+                return;
+            }
 
-                    while (zooms.length < n_tabs) {
-                        zooms += default_zoom;
+            tabs = Terminal.Application.saved_state.get_strv ("tabs");
+            var n_tabs = tabs.length;
+
+            if (n_tabs == 0) {
+                tabs += Environment.get_home_dir ();
+                zooms += default_zoom;
+            } else {
+                foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
+                    if (zooms.length < n_tabs) {
+                        zooms += double.parse (zoom_s); // Locale independent
+                    } else {
+                        break;
                     }
                 }
 
-                focus = Terminal.Application.saved_state.get_int ("focused-tab");
-            } else {
-                tabs += Environment.get_current_dir ();
-                zooms += default_zoom;
+                while (zooms.length < n_tabs) {
+                    zooms += default_zoom;
+                }
             }
+
+            focus = Terminal.Application.saved_state.get_int ("focused-tab");
 
             assert (zooms.length == tabs.length);
 
@@ -423,7 +414,8 @@ namespace Terminal {
                 if (loc == "") {
                     focus--;
                 } else {
-                    var term = notebook.add_new_tab (loc, "");
+                    var page = notebook.add_new_tab (loc, "");
+                    var term = notebook.get_term_widget (page);
                     term.font_scale = zooms[index].clamp (
                         TerminalWidget.MIN_SCALE,
                         TerminalWidget.MAX_SCALE
@@ -799,7 +791,7 @@ namespace Terminal {
         }
 
         private MainWindow present_new_empty_window () {
-            var new_window = new MainWindow (app, false);
+            var new_window = new MainWindow (app);
             new_window.set_size_request (
                 app.active_window.width_request,
                 app.active_window.height_request
