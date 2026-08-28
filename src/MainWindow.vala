@@ -361,31 +361,33 @@ namespace Terminal {
             int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); // Range set in settings 0.25 - 4.0
 
-            if (Granite.Services.System.history_is_enabled () &&
-                Application.settings.get_boolean ("remember-tabs")) {
+            if (!Granite.Services.System.history_is_enabled () ||
+                !Application.settings.get_boolean ("remember-tabs")) {
 
-                tabs = Terminal.Application.saved_state.get_strv ("tabs");
-                var n_tabs = tabs.length;
+                return;
+            }
 
-                if (n_tabs == 0) {
-                    tabs += Environment.get_home_dir ();
-                    zooms += default_zoom;
-                } else {
-                    foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
-                        if (zooms.length < n_tabs) {
-                            zooms += double.parse (zoom_s); // Locale independent
-                        } else {
-                            break;
-                        }
-                    }
+            tabs = Terminal.Application.saved_state.get_strv ("tabs");
+            var n_tabs = tabs.length;
 
-                    while (zooms.length < n_tabs) {
-                        zooms += default_zoom;
+            if (n_tabs == 0) {
+                tabs += Environment.get_home_dir ();
+                zooms += default_zoom;
+            } else {
+                foreach (unowned string zoom_s in Terminal.Application.saved_state.get_strv ("tab-zooms")) {
+                    if (zooms.length < n_tabs) {
+                        zooms += double.parse (zoom_s); // Locale independent
+                    } else {
+                        break;
                     }
                 }
 
-                focus = Terminal.Application.saved_state.get_int ("focused-tab");
+                while (zooms.length < n_tabs) {
+                    zooms += default_zoom;
+                }
             }
+
+            focus = Terminal.Application.saved_state.get_int ("focused-tab");
 
             assert (zooms.length == tabs.length);
 
