@@ -355,13 +355,12 @@ namespace Terminal {
         }
 
         // Only adds restorable tabs - does not add default tab - that is left to the caller as required
-        public bool open_saved_tabs () {
+        public void open_saved_tabs () {
             string[] tabs = {};
             double[] zooms = {};
             int focus = 0;
             var default_zoom = Application.saved_state.get_double ("zoom"); // Range set in settings 0.25 - 4.0
 
-            var restored = false;
             if (Granite.Services.System.history_is_enabled () &&
                 Application.settings.get_boolean ("remember-tabs")) {
 
@@ -386,7 +385,6 @@ namespace Terminal {
                 }
 
                 focus = Terminal.Application.saved_state.get_int ("focused-tab");
-                restored = true;
             }
 
             assert (zooms.length == tabs.length);
@@ -426,8 +424,6 @@ namespace Terminal {
             }
 
             notebook.selected_page = notebook.tab_view.get_nth_page (focus.clamp (0, notebook.n_pages - 1));
-
-            return restored;
         }
 
         private void connect_terminal_signals (TerminalWidget terminal_widget) {

@@ -388,13 +388,12 @@ public class Terminal.Application : Gtk.Application {
             added_page = window.add_tab_with_working_directory (working_directory, command, new_tab);
         }
 
-        var restored = false;
         // Only try to restore saved tabs if first window and a command was not executed
         // If "execute" option or "commandline" option used also ignore any "new-tab" option
         // because these add new tab(s) already
         if (window.notebook.n_pages == 0) {
             if (!new_tab && is_first_window) {
-                restored = window.open_saved_tabs ();
+                window.open_saved_tabs ();
             }
 
             // Ensure at least one tab
