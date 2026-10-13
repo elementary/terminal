@@ -129,6 +129,8 @@ namespace Terminal {
         public signal void cwd_changed ();
         public signal void foreground_process_changed (string cmdline);
 
+        private Terminal.Widgets.Policies.IBusDeadKeysPolicy ibus_policy; /* Used to fix stuck dead keys */
+
         construct {
             pointer_autohide = true;
             terminal_id = "%i".printf (terminal_id_counter++);
@@ -149,6 +151,10 @@ namespace Terminal {
             Application.settings.changed["palette"].connect (update_theme);
             Application.settings.changed["prefer-dark-style"].connect (update_theme);
             Application.settings.changed["theme"].connect (update_theme);
+
+            ibus_policy = new Terminal.Widgets.Policies.IBusDeadKeysPolicy ();
+
+            commit.connect (on_commit);
 
             var motion_controller = new Gtk.EventControllerMotion () {
                 propagation_phase = CAPTURE
@@ -489,7 +495,13 @@ namespace Terminal {
                 return !scroll_to_command_action.enabled;
             }
 
+            ibus_policy.check_dead_key (keyval);
+
             return false;
+        }
+
+        private void on_commit (string val) {
+            ibus_policy.reset_cursor_if_needed (get_focus_controller ());
         }
 
         private void update_actions_state () {
@@ -1161,6 +1173,18 @@ namespace Terminal {
 
                 return link_uri;
             }
+        }
+
+        private Gtk.EventControllerFocus? get_focus_controller () {
+            var controller_list = observe_controllers();
+            for (uint i = 0; i < controller_list.get_n_items(); i++) {
+                var focus_controller = controller_list.get_item(i) as Gtk.EventControllerFocus;
+                if (focus_controller != null) {
+                    return focus_controller;
+                }
+            }
+
+            return null;
         }
     }
 }
