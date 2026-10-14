@@ -1176,9 +1176,9 @@ namespace Terminal {
         }
 
         private Gtk.EventControllerFocus? get_focus_controller () {
-            var controller_list = observe_controllers();
-            for (uint i = 0; i < controller_list.get_n_items(); i++) {
-                var focus_controller = controller_list.get_item(i) as Gtk.EventControllerFocus;
+            var controller_list = observe_controllers ();
+            for (uint i = 0; i < controller_list.get_n_items (); i++) {
+                var focus_controller = controller_list.get_item (i) as Gtk.EventControllerFocus;
                 if (focus_controller != null) {
                     return focus_controller;
                 }

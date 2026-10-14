@@ -33,12 +33,12 @@ namespace Terminal.Widgets.Policies {
                 return false;
             }
 
-            var ibus_ver = Utils.SemVer(
+            var ibus_ver = Utils.SemVer (
                 IBus.MAJOR_VERSION,
                 IBus.MINOR_VERSION,
                 IBus.MICRO_VERSION
             );
-            var ibus_patched_ver = Utils.SemVer(1, 5, 30);
+            var ibus_patched_ver = Utils.SemVer (1, 5, 30);
 
             if (ibus_ver.is_greater_than_or_equals_to (ibus_patched_ver)) {
                 applies_result = false;
@@ -57,7 +57,7 @@ namespace Terminal.Widgets.Policies {
             if (is_dead_key (keyval)) {
                 this.dead_key_waiting_for_commit = true;
             }
-        } 
+        }
 
         public void reset_cursor_if_needed (Gtk.EventControllerFocus? focus_controller) {
             if (!applies () || focus_controller == null || !this.dead_key_waiting_for_commit) {
