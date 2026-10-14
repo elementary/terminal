@@ -9,7 +9,8 @@ terminal_deps = [
     vte_dep,
     posix_dep,
     linux_dep,
-    m_dep
+    m_dep,
+    ibus_dep
 ]
 
 terminal_sources = [
