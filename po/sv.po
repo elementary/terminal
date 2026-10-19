@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2026-10-18 20:03+0000\n"
+"PO-Revision-Date: 2026-10-19 08:17+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/terminal/"
 "terminal/sv/>\n"
@@ -56,7 +56,7 @@ msgstr "Kör resten av raden som ett kommando i terminalen"
 
 #: src/Application.vala:115
 msgid "[-- COMMAND…]"
-msgstr "[-- KOMMANDO...]"
+msgstr "[-- KOMMANDO…]"
 
 #: src/Application.vala:180
 msgid "Terminal needs your attention"
