@@ -19,6 +19,7 @@ You'll need the following dependencies:
  * libxml2-utils
  * meson
  * valac (>= 0.56)
+ * libibus-1.0-dev
 
 Run `meson` to configure the build environment and then `ninja test` to build and run tests
 
