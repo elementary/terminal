@@ -13,7 +13,7 @@
     background-color: #000;
 }
 
-toolbarview revealer.top-bar headerbar {
+toolbarview revealer.top-bar {
     background: @bg_color;
 }
 
