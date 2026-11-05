@@ -5,6 +5,7 @@
 
 public sealed class Terminal.SettingsPopover : Gtk.Popover {
     public signal void show_theme_editor ();
+    public signal void show_shell_preferences ();
 
     public TerminalWidget? terminal {
         owned get {
@@ -81,6 +82,19 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
             propagation_phase = CAPTURE
         };
 
+        var change_shell_button = new Gtk.Button.with_label (_("Change Shell…")) {
+            tooltip_text = _("Use custom command as a shell"),
+            halign = FILL,
+            hexpand = true,
+            margin_start = 6,
+            margin_end = 6
+        };
+
+        change_shell_button.clicked.connect (() => {
+            show_shell_preferences ();
+            popdown ();
+        });
+
         custom_button_controller.released.connect ((n, x, y) => {
             if (custom_button.active) {
                 show_theme_editor ();
@@ -144,6 +158,7 @@ public sealed class Terminal.SettingsPopover : Gtk.Popover {
         box.append (unsafe_paste_alert_button);
         box.append (audible_bell_button);
         box.append (auto_hide_button);
+        box.append (change_shell_button);
         child = box;
 
         var theme_action = Application.settings.create_action ("theme");
