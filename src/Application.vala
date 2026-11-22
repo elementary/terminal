@@ -391,7 +391,8 @@ public class Terminal.Application : Gtk.Application {
         // Only try to restore saved tabs if first window and a command was not executed
         // If "execute" option or "commandline" option used also ignore any "new-tab" option
         // because these add new tab(s) already
-        if (window.notebook.n_pages == 0) {
+        // Also when the window already has tabs (e.g. "Open in Terminal" while running): honour -t / -w
+        if (window.notebook.n_pages == 0 || (new_tab && added_page == null)) {
             if (!new_tab && is_first_window) {
                 window.open_saved_tabs ();
             }
