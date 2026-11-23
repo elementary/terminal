@@ -28,6 +28,7 @@ pcre2_dep = dependency('libpcre2-8', version: '>=10.4') # Perl Regular Expressio
 posix_dep = valac.find_library('posix')
 linux_dep = valac.find_library('linux', required: false)
 m_dep = cc.find_library('m', required : false)
+ibus_dep = dependency('ibus-1.0')
 
 conf_data = configuration_data()
 conf_data.set_quoted('PROJECT_NAME', meson.project_name())

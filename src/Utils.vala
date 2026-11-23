@@ -249,4 +249,59 @@ namespace Terminal.Utils {
 
         return appinfo;
     }
+
+    public enum SemVerComparison {
+        OLDER,
+        IDENTICAL,
+        NEWER
+    }
+
+    public struct SemVer {
+        public int major;
+        public int minor;
+        public int patch;
+
+        public SemVer (int major, int minor, int patch) {
+            this.major = major;
+            this.minor = minor;
+            this.patch = patch;
+        }
+
+        public Utils.SemVerComparison compare (Utils.SemVer other) {
+            if (this.major != other.major) {
+                return (this.major < other.major) ? SemVerComparison.OLDER : SemVerComparison.NEWER;
+            }
+            if (this.minor != other.minor) {
+                return (this.minor < other.minor) ? SemVerComparison.OLDER : SemVerComparison.NEWER;
+            }
+            if (this.patch != other.patch) {
+                return (this.patch < other.patch) ? SemVerComparison.OLDER : SemVerComparison.NEWER;
+            }
+            return SemVerComparison.IDENTICAL;
+        }
+
+        public bool is_equal_to (Utils.SemVer other) {
+            return this.compare (other) == SemVerComparison.IDENTICAL;
+        }
+
+        public bool is_greater_than (Utils.SemVer other) {
+            return this.compare (other) == SemVerComparison.NEWER;
+        }
+
+        public bool is_greater_than_or_equals_to (Utils.SemVer other) {
+            return this.is_greater_than (other) || this.is_equal_to (other);
+        }
+
+        public bool is_less_than (Utils.SemVer other) {
+            return this.compare (other) == SemVerComparison.OLDER;
+        }
+
+        public bool is_less_than_or_equals_to (Utils.SemVer other) {
+            return this.is_less_than (other) || this.is_equal_to (other);
+        }
+
+        public string to_string () {
+            return "%d.%d.%d".printf (this.major, this.minor, this.patch);
+        }
+    }
 }

@@ -9,7 +9,8 @@ terminal_deps = [
     vte_dep,
     posix_dep,
     linux_dep,
-    m_dep
+    m_dep,
+    ibus_dep
 ]
 
 terminal_sources = [
@@ -21,6 +22,7 @@ terminal_sources = [
     'Widgets/TerminalView.vala',
     'Widgets/TerminalWidget.vala',
     'Widgets/ZoomOverlay.vala',
+    'Widgets/Policies/IBusDeadKeysPolicy.vala',
     'Application.vala',
     'DBus.vala',
     'MainWindow.vala',
