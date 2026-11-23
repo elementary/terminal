@@ -14,6 +14,7 @@ terminal_deps = [
 
 terminal_sources = [
     'Dialogs/ColorPreferencesDialog.vala',
+    'Dialogs/ShellPreferencesDialog.vala',
     'Dialogs/ForegroundProcessDialog.vala',
     'Dialogs/UnsafePasteDialog.vala',
     'Widgets/SearchToolbar.vala',

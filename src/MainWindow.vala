@@ -12,6 +12,7 @@ namespace Terminal {
         private Gtk.Stack title_stack;
         private Gtk.ToggleButton search_button;
         private Dialogs.ColorPreferences? color_preferences_dialog;
+        private Dialogs.ShellPreferences? shell_preferences_dialog;
         private uint focus_timeout = 0;
 
         public Terminal.Application app { get; construct; }
@@ -242,6 +243,14 @@ namespace Terminal {
                 }
 
                 color_preferences_dialog.present ();
+            });
+
+            menu_popover.show_shell_preferences.connect (() => {
+                if (shell_preferences_dialog == null) {
+                    shell_preferences_dialog = new Dialogs.ShellPreferences (this);
+                }
+
+                shell_preferences_dialog.present ();
             });
 
             bind_property ("current-terminal", menu_popover, "terminal");
