@@ -8,99 +8,89 @@ msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-05 14:37+0000\n"
-"PO-Revision-Date: 2015-12-05 14:39+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: Armenian <hy@li.org>\n"
+"PO-Revision-Date: 2026-11-26 22:05+0000\n"
+"Last-Translator: Davit Yedigaryan <davit.yedigaryan.1993@gmail.com>\n"
+"Language-Team: Armenian <https://l10n.elementaryos.org/projects/terminal/"
+"terminal/hy/>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
 
 #: src/Application.vala:50
 msgid "Show version"
-msgstr ""
+msgstr "Ցուցադրել տարբերակը"
 
 #. -n flag forces a new window
 #: src/Application.vala:52
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal window"
-msgstr "Բացել նոր պատուհան"
+msgstr "Բացել տերմինալի նոր պատուհան"
 
 #. -t flag forces a new tab
 #: src/Application.vala:54
-#, fuzzy
-#| msgid "Open a new window"
 msgid "Open a new terminal tab at current working directory"
-msgstr "Բացել նոր պատուհան"
+msgstr "Բացել տերմինալի նոր ներդիր ընթացիկ աշխատանքային պանակում"
 
 #. -w flag defines the working directory that the new tab/window uses
 #: src/Application.vala:56
 msgid "Set shell working directory"
-msgstr ""
+msgstr "Սահմանել թաղանթի աշխատանքային պանակը"
 
 #. -e flag is used for running single strings as a command line
 #: src/Application.vala:58
-#, fuzzy
-#| msgid "Run a program in terminal"
 msgid "Run a program in terminal"
-msgstr "Գործարկել ծրագիրը տերմինալում"
+msgstr "Գործարկել ծրագիր տերմինալում"
 
 #. -m flag starts terminal in a minimized state
 #: src/Application.vala:60
 msgid "Open terminal in a minimized state"
-msgstr ""
+msgstr "Բացել տերմինալը ծալված վիճակում"
 
 #. -x flag is used for using the rest of the command line in the new tab/window
 #: src/Application.vala:63
 msgid "Run remainder of line as a command in terminal"
-msgstr ""
+msgstr "Տողի մնացած մասը գործարկել որպես հրաման տերմինալում"
 
 #: src/Application.vala:115
 msgid "[-- COMMAND…]"
-msgstr ""
+msgstr "[-- ՀՐԱՄԱՆ…]"
 
 #: src/Application.vala:180
 msgid "Terminal needs your attention"
-msgstr ""
+msgstr "Տերմինալը Ձեր ուշադրության կարիքն ունի"
 
 #: src/Application.vala:232
 msgid "Process completed"
-msgstr ""
+msgstr "Պրոցեսն ավարտվել է"
 
 #: src/Application.vala:235
 msgid "Process exited with errors"
-msgstr ""
+msgstr "Պրոցեսն ավարտվել է սխալներով"
 
 #: src/MainWindow.vala:187
-#, fuzzy
-#| msgid "Fullscreen"
 msgid "Exit FullScreen"
-msgstr "Ամբողջ էկրանով"
+msgstr "Դուրս գալ ամբողջ էկրանի ռեժիմից"
 
 #: src/MainWindow.vala:196 src/MainWindow.vala:643
 msgid "Find…"
-msgstr ""
+msgstr "Գտնել…"
 
 #: src/MainWindow.vala:202
-#, fuzzy
-#| msgid "New Tab"
 msgid "New Tab…"
-msgstr "Նոր ներդիր"
+msgstr "Նոր ներդիր…"
 
 #: src/MainWindow.vala:214
 msgid "Settings"
-msgstr ""
+msgstr "Կարգավորումներ"
 
 #: src/MainWindow.vala:259
 msgid "Are you sure you want to close this tab?"
-msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել այս ներդիրը:"
+msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել այս ներդիրը։"
 
 #: src/MainWindow.vala:260
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close tab"
 msgstr "Փակել ներդիրը"
 
@@ -109,127 +99,131 @@ msgid ""
 "Are you sure you want to close all foreground processes before closing the "
 "window?"
 msgstr ""
+"Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել առաջին պլանի բոլոր պրոցեսները "
+"նախքան պատուհանը փակելը։"
 
 #: src/MainWindow.vala:503
 msgid "Close window"
-msgstr ""
+msgstr "Փակել պատուհանը"
 
 #: src/MainWindow.vala:633
 msgid "Hide find bar"
-msgstr ""
+msgstr "Թաքցնել որոնման գոտին"
 
 #: src/Utils.vala:142
 msgid "The pasted text may contain multiple commands"
-msgstr ""
+msgstr "Տեղադրվող տեքստը կարող է պարունակել մի քանի հրաման"
 
 #: src/Utils.vala:146
 msgid "The pasted text may be trying to gain administrative access"
-msgstr ""
+msgstr "Տեղադրվող տեքստը կարող է փորձել ադմինիստրատորի հասանելիություն ստանալ"
 
 #: src/Utils.vala:161
 msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
+"Տեղադրվող տեքստը պարունակում է նախազգուշացումներն ու հաստատումները շրջանցող "
+"հրաման"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:38
 msgid "Color Preferences"
-msgstr ""
+msgstr "Գույների կարգավորումներ"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:40
 msgid "Window style:"
-msgstr ""
+msgstr "Պատուհանի ոճ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:46
 msgid "Light"
-msgstr ""
+msgstr "Բաց"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:47
 #: src/Widgets/SettingsPopover.vala:73
 msgid "Dark"
-msgstr ""
+msgstr "Մուգ"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:51
 msgid "Color Palette"
-msgstr ""
+msgstr "Գունապնակ"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:61
 msgid "Reset to default"
-msgstr ""
+msgstr "Վերականգնել լռելյայնը"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:64
 msgid "Black:"
-msgstr ""
+msgstr "Սև՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:65
 msgid "Red:"
-msgstr ""
+msgstr "Կարմիր՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:66
 msgid "Green:"
-msgstr ""
+msgstr "Կանաչ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:67
 msgid "Yellow:"
-msgstr ""
+msgstr "Դեղին՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:68
 msgid "Blue:"
-msgstr ""
+msgstr "Կապույտ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:69
 msgid "Magenta:"
-msgstr ""
+msgstr "Մագենտա՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:70
 msgid "Cyan:"
-msgstr ""
+msgstr "Փիրուզագույն՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:71
 msgid "Gray:"
-msgstr ""
+msgstr "Մոխրագույն՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:72
 msgid "White:"
-msgstr ""
+msgstr "Սպիտակ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:73
 msgid "Light Red:"
-msgstr ""
+msgstr "Բաց կարմիր՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:74
 msgid "Light Green:"
-msgstr ""
+msgstr "Բաց կանաչ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:75
 msgid "Light Yellow:"
-msgstr ""
+msgstr "Բաց դեղին՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:76
 msgid "Light Blue:"
-msgstr ""
+msgstr "Բաց կապույտ՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:77
 msgid "Light Magenta:"
-msgstr ""
+msgstr "Բաց մագենտա՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:78
 msgid "Light Cyan:"
-msgstr ""
+msgstr "Բաց փիրուզագույն՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:79
 msgid "Light Gray:"
-msgstr ""
+msgstr "Բաց մոխրագույն՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:80
 msgid "Background:"
-msgstr ""
+msgstr "Ֆոն՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:81
 msgid "Foreground:"
-msgstr ""
+msgstr "Առաջին պլան՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:82
 msgid "Cursor:"
-msgstr ""
+msgstr "Կուրսոր՝"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:178
 msgid "Close"
@@ -237,129 +231,134 @@ msgstr "Փակել"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:296
 msgid "Contrast is very low"
-msgstr ""
+msgstr "Հակադրությունը շատ ցածր է"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:299
 msgid "Contrast is low"
-msgstr ""
+msgstr "Հակադրությունը ցածր է"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:302
 msgid "Contrast is good"
-msgstr ""
+msgstr "Հակադրությունը լավ է"
 
 #: src/Dialogs/ColorPreferencesDialog.vala:305
 msgid "Contrast is high"
-msgstr ""
+msgstr "Հակադրությունը բարձր է"
 
 #: src/Dialogs/ForegroundProcessDialog.vala:24
-#, fuzzy
-#| msgid "There is an active process on this terminal."
 msgid ""
 "There is an active process on this tab. If you continue, the process will "
 "end."
-msgstr "Տերմինալում առկա է ակտիվ գարծընթաց;"
+msgstr "Այս ներդիրում կա ակտիվ պրոցես։ Եթե շարունակեք, պրոցեսը կավարտվի։"
 
 #: src/Dialogs/UnsafePasteDialog.vala:22
 msgid ""
 "Copying commands into Terminal can be dangerous. Be sure you understand what "
 "each part of the pasted text does before continuing."
 msgstr ""
+"Տերմինալում հրամաններ տեղադրելը կարող է վտանգավոր լինել։ Շարունակելուց առաջ "
+"համոզվեք, որ հասկանում եք, թե ինչ է անում տեղադրվող տեքստի յուրաքանչյուր մասը"
+"։"
 
 #: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Ցուցադրել տեղադրման անվտանգության նախազգուշացումները"
 
 #: src/Dialogs/UnsafePasteDialog.vala:29
 msgid "Don't Paste"
-msgstr ""
+msgstr "Չտեղադրել"
 
 #: src/Dialogs/UnsafePasteDialog.vala:31
 msgid "Paste Anyway"
-msgstr ""
+msgstr "Այնուամենայնիվ տեղադրել"
 
 #: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
-msgstr ""
+msgstr "Գտնել"
 
 #: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
-msgstr ""
+msgstr "Նախորդ արդյունքը"
 
 #: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
-msgstr ""
+msgstr "Հաջորդ արդյունքը"
 
 #: src/Widgets/SearchToolbar.vala:45
 msgid "Disable cyclic search"
-msgstr ""
+msgstr "Անջատել շրջանաձև որոնումը"
 
 #: src/Widgets/SearchToolbar.vala:48
 msgid "Enable cyclic search"
-msgstr ""
+msgstr "Միացնել շրջանաձև որոնումը"
 
 #: src/Widgets/SettingsPopover.vala:28
-#, fuzzy
 msgid "Zoom out"
 msgstr "Փոքրացնել"
 
 #: src/Widgets/SettingsPopover.vala:36
 msgid "Default zoom level"
-msgstr ""
+msgstr "Լռելյայն մասշտաբ"
 
 #: src/Widgets/SettingsPopover.vala:44
-#, fuzzy
 msgid "Zoom in"
 msgstr "Խոշորացնել"
 
 #: src/Widgets/SettingsPopover.vala:60
 msgid "Follow System Style"
-msgstr ""
+msgstr "Հետևել համակարգի ոճին"
 
 #: src/Widgets/SettingsPopover.vala:65
 msgid "High Contrast"
-msgstr ""
+msgstr "Բարձր հակադրություն"
 
 #: src/Widgets/SettingsPopover.vala:69
 msgid "Solarized Light"
-msgstr ""
+msgstr "Solarized Light"
 
 #: src/Widgets/SettingsPopover.vala:77
 msgid "Custom"
-msgstr ""
+msgstr "Հատուկ"
 
 #: src/Widgets/SettingsPopover.vala:110
 msgid "Natural Copy/Paste"
-msgstr ""
+msgstr "Սովորական պատճենում/տեղադրում"
 
 #: src/Widgets/SettingsPopover.vala:111
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
+"Դյուրանցումների համար Shift սեղմել պետք չէ, սակայն դրանք կարող են խանգարել "
+"CLI հավելվածներին"
 
 #: src/Widgets/SettingsPopover.vala:115
 msgid "Unsafe Paste Alert"
-msgstr ""
+msgstr "Անապահով տեղադրման նախազգուշացում"
 
 #: src/Widgets/SettingsPopover.vala:116
 msgid "Warn when pasted text contains multiple or administrative commands"
 msgstr ""
+"Նախազգուշացնել, երբ տեղադրվող տեքստը պարունակում է մի քանի կամ "
+"ադմինիստրատորի հրամաններ"
 
 #: src/Widgets/SettingsPopover.vala:120
 msgid "Event Alerts"
-msgstr ""
+msgstr "Իրադարձությունների ազդանշաններ"
 
 #: src/Widgets/SettingsPopover.vala:121
 msgid ""
 "Notify for invalid input or multiple possible completions (subject to System "
 "Settings → Sound)"
 msgstr ""
+"Ծանուցել անվավեր մուտքագրման կամ մի քանի հնարավոր լրացումների դեպքում "
+"(կախված Համակարգի կարգավորումներ → Ձայն բաժնից)"
 
 #: src/Widgets/SettingsPopover.vala:125
 msgid "Auto-hide Tab Bar"
-msgstr ""
+msgstr "Ավտոմատ թաքցնել ներդիրների գոտին"
 
 #: src/Widgets/SettingsPopover.vala:126
 msgid "Hide the tab bar when there is only one tab"
-msgstr ""
+msgstr "Թաքցնել ներդիրների գոտին, երբ կա միայն մեկ ներդիր"
 
 #: src/Widgets/TerminalWidget.vala:30
 msgid "Terminal"
@@ -368,11 +367,11 @@ msgstr "Տերմինալ"
 #: src/Widgets/TerminalWidget.vala:517
 #, c-format
 msgid "Show in %s"
-msgstr ""
+msgstr "Ցուցադրել այստեղ՝ %s"
 
 #: src/Widgets/TerminalWidget.vala:517
 msgid "Default application"
-msgstr ""
+msgstr "Լռելյայն հավելված"
 
 #: src/Widgets/TerminalWidget.vala:523
 msgid "Copy"
@@ -380,15 +379,15 @@ msgstr "Պատճենել"
 
 #: src/Widgets/TerminalWidget.vala:529
 msgid "Copy Last Output"
-msgstr ""
+msgstr "Պատճենել վերջին ելքը"
 
 #: src/Widgets/TerminalWidget.vala:535
 msgid "Clear Screen"
-msgstr ""
+msgstr "Մաքրել էկրանը"
 
 #: src/Widgets/TerminalWidget.vala:541 src/Widgets/TerminalWidget.vala:639
 msgid "Reset"
-msgstr ""
+msgstr "Վերակայել"
 
 #: src/Widgets/TerminalWidget.vala:547
 msgid "Paste"
@@ -399,61 +398,49 @@ msgid "Select All"
 msgstr "Ընտրել բոլորը"
 
 #: src/Widgets/TerminalWidget.vala:638
-#, fuzzy
-#| msgid "Are you sure you want to quit Terminal?"
 msgid "Are you sure you want to reset the terminal?"
-msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք դուրս գալ Տերմինալից:"
+msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք վերակայել տերմինալը։"
 
 #: src/Widgets/TerminalWidget.vala:674
-#, fuzzy
-#| msgid "Are you sure you want to close this tab?"
 msgid "Are you sure you want to reload this tab?"
-msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք փակել այս ներդիրը:"
+msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք վերաբեռնել այս ներդիրը։"
 
 #: src/Widgets/TerminalWidget.vala:675 src/Widgets/TerminalView.vala:439
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Reload"
-msgstr "Փակել ներդիրը"
+msgstr "Վերաբեռնել"
 
 #: src/Widgets/TerminalView.vala:57
 msgid "New Tab"
 msgstr "Նոր ներդիր"
 
 #: src/Widgets/TerminalView.vala:64
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Closed Tabs"
-msgstr "Փակել ներդիրը"
+msgstr "Փակված ներդիրներ"
 
 #: src/Widgets/TerminalView.vala:430
 msgid "Close Tabs to the Right"
-msgstr ""
+msgstr "Փակել աջ կողմի ներդիրները"
 
 #: src/Widgets/TerminalView.vala:431
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close Other Tabs"
-msgstr "Փակել ներդիրը"
+msgstr "Փակել մյուս ներդիրները"
 
 #: src/Widgets/TerminalView.vala:432
 msgid "Close Tab"
 msgstr "Փակել ներդիրը"
 
 #: src/Widgets/TerminalView.vala:435
-#, fuzzy
-#| msgid "New Window"
 msgid "Open in New Window"
-msgstr "Նոր պատուհան"
+msgstr "Բացել նոր պատուհանում"
 
 #: src/Widgets/TerminalView.vala:436
 msgid "Duplicate Tab"
-msgstr ""
+msgstr "Կրկնօրինակել ներդիրը"
 
 #: src/Widgets/ZoomOverlay.vala:15
 #, c-format
 msgid "Zoom: %.0f%%"
-msgstr ""
+msgstr "Մասշտաբ՝ %.0f%%"
 
 #~ msgid "Are you sure you want to quit Terminal?"
 #~ msgstr "Դուք համոզվա՞ծ եք, որ ցանկանում եք դուրս գալ Տերմինալից:"
